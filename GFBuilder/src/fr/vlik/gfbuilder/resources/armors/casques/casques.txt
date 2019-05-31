@@ -1,0 +1,4 @@
+Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/0/null
+Tiare enchantée d'Elminster/6/100/100gold6/5/true/5/VIT,false,25,true/INT,false,31,true/VOL,false,16,true/DefP,false,614,true/DefM,false,778,true/100gold6
+Casque du Fourvoyé/6/100/100pvp6/4/false/7/VIT,false,34,true/INT,false,17,true/DefP,false,597,true/DefM,false,726,true/ESQ,false,8/ReducPeneP,false,7/ReducPeneM,false,7/100pvp6
+Murmure du Démon Tarot/0,1,2,3,4,5,6,7,8,9,10,11/90/90tarot1/5/true/5/VIT,false,19,true/INT,false,29,true/VOL,false,16,true/DefP,false,571,true/DefM,false,723,true/90tarot1

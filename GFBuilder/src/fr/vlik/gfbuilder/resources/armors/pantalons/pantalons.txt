@@ -1,0 +1,3 @@
+Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/0/null
+Jambières du Fourvoyé/6/100/100pvp6/4/false/7/VIT,false,48,true/INT,false,36,true/DefP,false,701,true/DefM,false,853,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp6
+Pantalon enchanté d'Elminster/6/97/100gold6/5/true/5/VIT,false,52,true/INT,false,44,true/VOL,false,48,true/DefP,false,721,true/DefM,false,914,true/100gold6

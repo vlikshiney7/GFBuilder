@@ -1,0 +1,4 @@
+Rien/0/0/0/null
+Canon des Ombres/80/3/3/Bullet,false,97/PeneP,false,2/PeneM,false,2
+Flèche d'Obsidienne/80/3/2/Bullet,false,80/Toucher,true,4
+Flèches renforcées/6/1/1/Bullet,false,15

@@ -1,0 +1,6 @@
+Écarlate/1/PV,false,24/red
+Indigo/1/PM,false,10/blue
+Jaune/2/Atk,false,13/AtkD,false,10/orange
+Violette/1/AtkM,false,10/purple
+Émeraude/1/DefP,false,6/green
+Rose/1/DefM,false,5/pink

@@ -1,0 +1,1 @@
+Clé du tigre ombréclair/10,11/100/5/true/false/5/AtkD,false,3157,true/AtkM,false,1344,true/INT,false,75,true/VOL,false,52,true/AGI,false,41,true/Toucher,true,20

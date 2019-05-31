@@ -1,0 +1,147 @@
+Rien/0/0/-1/0
+Ami du Père Noël/8/0/-1/0
+Héritage d'Ezio/8/0/-1/2/ESQ,true,5/Depla,false,5
+Hors-la-loi/8/20/-1/0
+Romantique Désespéré/8/0/-1/0
+Éternel ressuscité/7/101/-1/6/Atk,true,5/AtkD,true,5/AtkM,true,5/VOL,false,20/VIT,false,20/Depla,false,5
+Expert en Duels/6/31/-1/5/Toucher,true,3/DefP,true,3/DefM,true,3/ESQ,true,3/Depla,false,6
+Maître des Duels/6/31/-1/7/Toucher,true,4/TCCP,false,4/TCCM,false,4/DefP,true,4/DefM,true,4/ESQ,true,4/Depla,false,8
+Consul de Mosunk/5/1/-1/2/DegStdBa,false,2/PV,true,-2
+Délégué de Quayle/5/1/-1/4/DegStdEp,false,2/Toucher,true,5/DegFoudre,false,50/PV,true,-5
+Diplomate de Siropas/5/1/-1/4/DegStdMa,false,2/Toucher,true,5/DegFeu,false,50/PV,true,-5
+Élu de Bodor/5/1/-1/2/Parade,false,5/PV,true,-2
+Émissaire d'Ewan/5/1/-1/4/DegStdHa,false,2/Toucher,true,5/DegOmbre,false,50/PV,true,-5
+Envoyé d'Alice/5/1/-1/4/DegStdArc,false,2/Toucher,true,5/DegNature,false,50/PV,true,-5
+Explorateur du Cauchemar/5/183/-1/2/Atk,true,10/Toucher,true,-8
+Favori de Bahadolo/5/1/-1/2/DegStdMa,false,2/PV,true,-2
+Héraut de Smulca/5/1/-1/2/DegStdHa,false,2/PV,true,-2
+Mandataire de Jundo/5/1/-1/3/Toucher,true,5/DegSacre,false,50/PV,true,-3
+Porte-parole de Ronto/5/1/-1/2/DegStdGun,false,2/PV,true,-2
+Champion en 10 Rounds de Pandemonium/4/61/-1/2/VOL,false,5/ESQ,false,-3
+Champion en 20 Rounds de Pandemonium/4/61/-1/2/INT,false,5/TCCM,false,-3
+Champion en 30 Rounds de Pandemonium/4/61/-1/2/INT,false,5/DefP,true,-3
+Explorateur de la Forteresse/4/85/-1/2/Toucher,true,10/PM,true,-8
+Explorateur de la Tour/4/85/-1/2/MEN,false,10/PV,true,-8
+Explorateur des Flammes/4/90/-1/3/VitAtk,false,10/VitAtkD,false,3/PV,true,-10
+Explorateur du Labyrinthe/4/95/-1/2/Toucher,true,10/DefP,true,-8
+Héritier Légendaire/4/72/-1/3/AGI,false,5/TCCP,false,-3/TCCM,false,-3
+Héros des Terres du Nord/4/71/-1/2/AGI,false,5/DegAtkD,false,-3
+Minotaure du Dédale/4/81/-1/2/VitAtkD,false,10/DefP,true,-8
+Observateur de la Côte des Naufrages/4/69/-1/2/AGI,false,5/DegAtkD,false,-3
+Professionnel de SOS Fantômes/4/69/-1/2/FCE,false,5/TCCP,false,-3
+Sauveur de la Terre d'Elsa/4/73/-1/2/VOL,false,5/DefM,true,-3
+Sensei Zen/4/72/-1/2/FCE,false,5/DefP,true,-3
+Ambassadeur du Chocolat de l'Amour/3/15/-1/3/PV,false,200/DefP,false,2/DefM,false,2
+Amoureux Ensorcelé/3/53/-1/1/VOL,false,1
+Bourreau des Rebelles/3/57/-1/2/FCE,false,3/DefP,true,-2
+Chasseur du Monstrounet du Nouvel An/3/15/-1/3/PM,false,200/DegP,false,2/DegM,false,2
+Chevalier du Cristal/3/31/-1/1/PM,false,200
+Combattant d'Élite/3/57/-1/2/FCE,false,3/TCCP,false,-2
+Corsaire Indomptable/3/60/-1/1/VOL,false,1
+Défenseur du Cristal/3/31/-1/2/PV,false,100/PM,false,100
+Dentiste de la Gueule Rugissante/3/50/-1/2/TCCP,false,10/DefP,true,-10
+Dieu du Cristal/3/31/-1/1/PV,false,300
+Embrouillé/3/15/-1/3/VIT,false,3/ESQ,false,3/Nature,false,5
+Espoir de Gaïa/3/56/-1/2/VOL,false,3/ESQ,false,-1
+Explorateur de la Cité/3/80/-1/2/DCCP,false,10/ESQ,false,-10
+Explorateur de la Gueule/3/70/-1/2/TCCP,false,10/DefP,true,-10
+Explorateur de la Tombe/3/75/-1/2/VitComp,false,10/PV,true,-10
+Explorateur du Temps/3/65/-1/2/ESQ,false,7/DefP,true,-5
+Éxécuteur du Devoir Divin/3/65/-1/2/INT,false,3/DefP,true,-2
+Gardien de la Tombe du Roi/3/56/-1/2/VitComp,false,10/PV,true,-10
+Général du Cristal/3/31/-1/1/PV,false,200
+Maître du Dragon de Feu/3/56/-1/2/AGI,false,3/DegAtkD,false,-2
+Maître farceur/3/15/-1/1/Depla,false,-120
+Membre Honoraire du Clan Infernal/3/15/-1/3/PV,false,200/Atk,false,2/AtkM,false,2
+Montagnard au Pied Sûr/3/67/-1/2/VOL,false,3/DefM,true,2
+Péché mignon du Roi Lapin malin/3/15/-1/3/Toucher,true,3/Depla,false,1/Loot,false,3
+Prophète Visionnaire/3/63/-1/2/INT,false,3/TCCM,false,2
+Purificateur Fanatique/3/62/-1/2/FCE,false,3/DefP,true,-2
+Seigneur du Cristal/3/31/-1/1/PM,false,300
+Supernova/3/67/-1/3/AGI,false,3/TCCP,false,-2/TCCM,false,-2
+Voyageur Temporel/3/46/-1/2/ESQ,false,7/DefP,true,-5
+Agent Double/2/62/-1/1/INT,false,1
+Âme de Dragon Noir/2/51/-1/2/DegBete,true,2/DegBete,false,20
+Ami de l'Océan/2/38/-1/1/AGI,false,1
+Annonciateur de Mauvaises Nouvelles/2/62/-1/1/DCCM,false,1
+Arracheur de Pétales/2/77/-1/2/DegPlante,true,2/DegPlante,false,20
+Assistant du Garde de Kaslow/2/80/-1/2/FCE,false,7/VitAtk,false,-4
+Bannisseur de l'Esprit d'Epée/2/71/-1/2/DegMeca,true,2/DegMeca,false,20
+Bienfaiteur de l'Île aux Trois Côtes/2/60/-1/1/AGI,false,1
+Bûcheron Infatigable/2/46/-1/2/DegPlante,true,2/DegPlante,false,20
+Chasseur de Démons/2/36/-1/2/DegElem,true,2/DegElem,false,20
+Chasseur Élite/2/25/-1/2/DegBete,true,1.5/DegBete,false,15
+Chevalier à Plumes/2/60/-1/2/Depla,false,5/PV,true,-45
+Combattant du Crime/2/46/-1/1/VOL,false,1
+Compagnon Ailé/2/81/-1/2/INT,false,7/Depla,false,-4
+Conquérant de la Caverne de l'Écho/2/40/-1/2/Loot,false,10/Depla,false,-5
+Cortex Maximus/2/81/-1/2/INT,false,3/Depla,false,-2
+Destructeur de Preuve/2/81/-1/2/AGI,false,7/Toucher,true,-4
+Disciple de Carso/2/80/-1/2/FCE,false,3/Depla,false,-2
+Dompteur de Loups Sauvages/2/60/-1/2/Depla,false,5/PV,true,-45
+Dresseur de Lions/2/31/-1/2/DegDemon,true,2/DegDemon,false,20
+Éleveur de Poulets/2/60/-1/2/Depla,false,5/PV,true,-45
+Ennemi des Pirates/2/38/-1/1/DefP,true,1
+Excavateur du Temple Déserté/2/36/-1/2/DefP,true,5/ESQ,false,-3
+Expert au Bras de Fer/2/66/-1/2/DegMeca,true,2/DegMeca,false,20
+Expert Jardinier/2/15/-1/2/DegPlante,true,1/DegPlante,false,10
+Explorateur de la Caverne/2/60/-1/2/Loot,false,10/Depla,false,-5
+Explorateur de la Caverne de la Prairie/2/20/-1/2/AtkM,true,5/DefP,true,-3
+Explorateur de la Mine/2/52/-1/2/ESQ,false,5/Toucher,true,-3
+Exterminateur d'Insectes/2/75/-1/2/DegHuma,true,2/DegHuma,false,20
+Fléau des Dragons/2/56/-1/2/DegDemon,true,2/DegDemon,false,20
+Fléau des Moustiques/2/18/-1/1/INT,false,1
+Gardien de la Nature/2/20/-1/1/INT,false,1
+Geek Surdoué/2/60/-1/2/Depla,false,5/PV,true,-45
+Grand Méchant Loup/2/60/-1/2/Depla,false,5/PV,true,-45
+Héros de la Tribu des Dragons/2/45/-1/1/DegAtkD,false,1
+Indiana Jones/2/55/-1/2/DefP,true,5/ESQ,false,-3
+Ingénieur Talentueux/2/60/-1/2/Depla,false,5/PV,true,-45
+Maître des Sprites/2/51/-1/4/FCE,false,1/INT,false,1/VOL,false,1/AGI,false,1
+Maître du Temps/2/51/-1/1/ESQ,false,1
+Maître Tacticien/2/63/-1/2/DegHuma,true,2/DegHuma,false,20
+Messager de la Justice/2/20/-1/1/INT,false,1
+Messager Exceptionnel/2/71/-1/4/FCE,false,2/INT,false,2/VOL,false,2/AGI,false,2
+Nettoyeur du Monstre de Boue/2/61/-1/2/DegElem,true,2/DegElem,false,20
+Nomade du Désert/2/41/-1/1/INT,false,1
+Pourfendeur du Mal/2/76/-1/2/DegMort,true,2/DegMort,false,20
+Prospecteur de la Mine Interdite/2/31/-1/2/ESQ,false,5/Toucher,true,-3
+Sentinelle de la Montagne/2/50/-1/1/INT,false,1
+Spécialiste du Surimi/2/71/-1/2/DegBete,true,2/DegBete,false,20
+Spéléologue/2/50/-1/2/AtkM,true,5/DefP,true,-3
+Tortue Ninja/2/83/-1/4/DegDemon,true,2/DegDemon,false,20/DegHuma,true,2/DegHuma,false,20
+Trafiquant d'Ivoire/2/80/-1/4/DegBete,true,2/DegBete,false,20/DegMort,true,2/DegMort,false,20
+Tueur de Dragons/2/41/-1/2/DegMort,true,2/DegMort,false,20
+Tueur de Vermine/2/38/-1/1/FCE,false,1
+Vainqueur de Ken/2/90/-1/2/DegHuma,true,2/DegHuma,false,20
+Vainqueur de la Boue/2/80/-1/2/DegElem,true,2/DegElem,false,20
+Vainqueur de Leonardo/2/90/-1/4/DegDemon,true,2/DegDemon,false,20/DegHuma,true,2/DegHuma,false,20
+Vainqueur de Nagranok/2/90/-1/2/DegMeca,true,2/DegMeca,false,20
+Vainqueur de Pazuzu/2/90/-1/2/DegMort,true,2/DegMort,false,20
+Vainqueur de Seymour/2/90/-1/2/DegPlante,true,2/DegPlante,false,20
+Vainqueur du Colonel/2/90/-1/4/DegBete,true,2/DegBete,false,20/DegMort,true,2/DegMort,false,20
+Vainqueur du Crabe Géant/2/90/-1/2/DegBete,true,2/DegBete,false,20
+Vainqueur du Cyclope/2/85/-1/2/DegHuma,true,2/DegHuma,false,20
+Vainqueur du Démon/2/55/-1/2/DegElem,true,2/DegElem,false,20
+Vainqueur du Dragon Noir/2/70/-1/2/DegBete,true,2/DegBete,false,20
+Vainqueur du Dragon Zombie/2/60/-1/2/DegMort,true,2/DegMort,false,20
+Vainqueur du Feu/2/75/-1/2/DegDemon,true,2/DegDemon,false,20
+Vainqueur du Gorille d'Acier/2/85/-1/2/DegMeca,true,2/DegMeca,false,20
+Vainqueur du Lion/2/50/-1/2/DegDemon,true,2/DegDemon,false,20
+Vainqueur du Marécage/2/65/-1/2/DegPlante,true,2/DegPlante,false,20
+Votre pire cauchemar/2/60/-1/1/ESQ,false,1
+Ami des Gélapins/1/20/-1/0
+Champion de l'Ile de Siwa/1/1/-1/0
+Chevalier de l'Ordre du Gélapin/1/70/-1/0
+Défenseur du Plateau/1/24/-1/0
+Disciple de la Lumière/1/24/-1/0
+Disciple de Maître Nanco/1/31/-1/0
+Espoir de la Plaine/1/11/-1/0
+Fan des Gélapins/1/30/-1/0
+Gardien de l'Héritage/1/24/-1/0
+Gardien des Mines/1/11/-1/0
+Groupie des Gélapins/1/40/-1/0
+Héros des Gélapins/1/50/-1/0
+Président du Fanclub des Gélapins/1/80/-1/0
+Protecteur de la Forêt/1/11/-1/0
+Protecteur des Gélapins/1/60/-1/0

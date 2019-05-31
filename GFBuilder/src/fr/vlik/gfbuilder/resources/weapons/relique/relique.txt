@@ -1,0 +1,4 @@
+Trotteur magique de la dépravation/6,7/100/6/true/false/4/VIT,false,47,true/INT,false,99,true/VOL,false,74,true/PM,false,1122/100vio2
+Sabot Ultime de Skiddo/6,7/100/5/true/false/6/VIT,false,32,true/INT,false,74,true/VOL,false,62,true/PM,false,924/TCCM,false,15/PM,true,15/100gold2
+Bourgeon éternel de l'arbre-Mana/4,5/100/5/true/false/7/VIT,false,51/INT,false,57/AGI,false,60/PV,false,647/PM,false,647/VitComp,false,25/Depla,false,15/100gold1
+Bois légendaire de Shishi-gami/1/100/5/true/false/6/FCE,false,52/VIT,false,75/AGI,false,41/PV,false,1848/MEN,false,25/PV,true,15/100gold0

@@ -1,0 +1,6 @@
+Rien/0/false/true/0/null
+Perle de Résolnance d'Aggravation Magique 5/3/false/true/1/DCCM,false,10/purple1
+Perle de Résolnance d'Aggravation Physique 5/3/false/true/1/DCCP,false,10/purple1
+Pierre runique des Arcanes spéciale/2/false/false/1/AtkM,true,4/black1
+Pierre runique des Arcanes antique/3/false/false/1/AtkM,true,6/orange1
+Pierre runique d'Occultisme antique/3/false/false/1/DCCM,false,10/orange1

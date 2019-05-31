@@ -1,0 +1,9 @@
+0 - Rien/0
+1 - Alice/5/FCE,false,15/VIT,false,15/INT,false,15/VOL,false,15/AGI,false,15
+2 - Ronto/6/FCE,false,15/VIT,false,15/INT,false,15/VOL,false,15/AGI,false,15/XP,false,5
+3 - Bodor/10/FCE,false,15/VIT,false,15/INT,false,15/VOL,false,15/AGI,false,15/XP,false,5/DegP,false,3/DegM,false,3/PeneP,false,3/PeneM,false,3
+4 - Smulca/10/FCE,true,5/VIT,true,5/INT,true,5/VOL,true,5/AGI,true,5/XP,false,5/DegP,false,3/DegM,false,3/PeneP,false,3/PeneM,false,3
+5 - Ewan/10/FCE,true,5/VIT,true,5/INT,true,5/VOL,true,5/AGI,true,5/XP,false,8/DegP,false,3/DegM,false,3/PeneP,false,3/PeneM,false,3
+6 - Bahadolo/10/FCE,true,5/VIT,true,5/INT,true,5/VOL,true,5/AGI,true,5/XP,false,8/DegP,false,5/DegM,false,5/PeneP,false,5/PeneM,false,5
+7 - Quill/10/FCE,true,10/VIT,true,10/INT,true,10/VOL,true,10/AGI,true,10/XP,false,8/DegP,false,5/DegM,false,5/PeneP,false,5/PeneM,false,5
+8 - Mosunk/10/FCE,true,10/VIT,true,10/INT,true,10/VOL,true,10/AGI,true,10/XP,false,11/DegP,false,5/DegM,false,5/PeneP,false,5/PeneM,false,5

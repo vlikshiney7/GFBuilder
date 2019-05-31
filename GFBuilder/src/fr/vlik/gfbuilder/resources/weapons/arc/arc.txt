@@ -1,0 +1,1 @@
+Arc démoniaque de Serah Farron/0,2,3/100/5/true/false/6/AtkD,false,3843,true/FCE,false,31,true/VIT,false,43,true/AGI,false,94,true/PV,true,10/Atk,true,20

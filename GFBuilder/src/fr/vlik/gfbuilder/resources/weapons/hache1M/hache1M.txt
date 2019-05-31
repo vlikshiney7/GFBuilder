@@ -1,0 +1,1 @@
+Hâche maléfique de Shenron/0,1/100/5/true/true/6/Atk,false,4482,true/FCE,false,87,true/VIT,false,26,true/AGI,false,55,true/MEN,false,-35/Depla,false,15

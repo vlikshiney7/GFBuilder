@@ -1,0 +1,61 @@
+6
+Rien/0/0/null
+Nucléus FCE +4%/2/1/FCE,true,4/FCEgreen
+Nucléus VIT +2%/2/1/VIT,true,2/VITgreen
+Nucléus INT +4%/2/1/INT,true,4/INTgreen
+Nucléus VOL +2%/2/1/VOL,true,2/VOLgreen
+Nucléus AGI +4%/2/1/AGI,true,4/AGIgreen
+6
+Rien/0/0/null
+Trésor FCE +5%/3/1/FCE,true,5/FCEblue
+Trésor VIT +3%/3/1/VIT,true,3/VITblue
+Trésor INT +5%/3/1/INT,true,5/INTblue
+Trésor VOL +3%/3/1/VOL,true,3/VOLblue
+Trésor AGI +5%/3/1/AGI,true,5/AGIblue
+6
+Rien/0/0/null
+Éclatant FCE +6%/3/1/FCE,true,6/FCEblue
+Éclatant VIT +4%/3/1/VIT,true,4/VITblue
+Éclatant INT +6%/3/1/INT,true,6/INTblue
+Éclatant VOL +4%/3/1/VOL,true,4/VOLblue
+Éclatant AGI +6%/3/1/AGI,true,6/AGIblue
+6
+Rien/0/0/null
+Coloré-Chantant FCE +8%/4/1/FCE,true,8/FCEorange
+Coloré-Chantant VIT +6%/4/1/VIT,true,6/VITorange
+Coloré-Chantant INT +8%/4/1/INT,true,8/INTorange
+Coloré-Chantant VOL +6%/4/1/VOL,true,6/VOLorange
+Coloré-Chantant AGI +8%/4/1/AGI,true,8/AGIorange
+21
+Rien/0/0/null
+Gold FCE +10%/5/1/FCE,true,10/FCEgold
+Gold VIT +8%/5/1/VIT,true,8/VITgold
+Gold INT +10%/5/1/INT,true,10/INTgold
+Gold VOL +8%/5/1/VOL,true,8/VOLgold
+Gold AGI +10%/5/1/AGI,true,10/AGIgold
+Gold FCE +10% Depla +5%/5/2/FCE,true,10/Depla,false,5/FCEgold
+Gold VIT +8% Depla +5%/5/2/VIT,true,8/Depla,false,5/VITgold
+Gold INT +10% Depla +5%/5/2/INT,true,10/Depla,false,5/INTgold
+Gold VOL +8% Depla +5%/5/2/VOL,true,8/Depla,false,5/VOLgold
+Gold AGI +10% Depla +5%/5/2/AGI,true,10/Depla,false,5/AGIgold
+Gold FCE +10% Depla +10%/5/2/FCE,true,10/Depla,false,10/FCEgold
+Gold VIT +8% Depla +10%/5/2/VIT,true,8/Depla,false,10/VITgold
+Gold INT +10% Depla +10%/5/2/INT,true,10/Depla,false,10/INTgold
+Gold VOL +8% Depla +10%/5/2/VOL,true,8/Depla,false,10/VOLgold
+Gold AGI +10% Depla +10%/5/2/AGI,true,10/Depla,false,10/AGIgold
+Gold FCE +10% Depla +15%/5/2/FCE,true,10/Depla,false,15/FCEgold
+Gold VIT +8% Depla +15%/5/2/VIT,true,8/Depla,false,15/VITgold
+Gold INT +10% Depla +15%/5/2/INT,true,10/Depla,false,15/INTgold
+Gold VOL +8% Depla +15%/5/2/VOL,true,8/Depla,false,15/VOLgold
+Gold AGI +10% Depla +15%/5/2/AGI,true,10/Depla,false,15/AGIgold
+6
+Rien/0/0/null
+Violet FCE +12%/6/1/FCE,true,12/FCEpurple
+Violet VIT +10%/6/1/VIT,true,10/VITpurple
+Violet INT +12%/6/1/INT,true,12/INTpurple
+Violet VOL +10%/6/1/VOL,true,10/VOLpurple
+Violet AGI +12%/6/1/AGI,true,12/AGIpurple
+3
+Doctrines bien-aimées de Werther/1/2/RegenPM,false,250/VitAtk,false,5/doctrine
+Griffe de la Brute cristalline magique/1/2/DegP,false,5/VitAtk,false,5/griffe
+Pierre de Bénédiction de la Baie Bleue/2/0/blueBay
