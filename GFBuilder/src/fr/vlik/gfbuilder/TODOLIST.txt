@@ -1,12 +1,10 @@
-OPTIMISATION SPE (ne pas tout remettre à 10 si réinca ou lvl)
-
 SYSTEME ENCHANTEMENT
-
-BUFF GUILDE
 
 TRONE
 
-PROJECTILE
+BONUS XP EQUIPEMENT SPECIAL
+
+ENERGIE PRO
 
 -----------
 

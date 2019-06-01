@@ -13,7 +13,7 @@ public final class Weapon extends Equipment {
 	private boolean isUnique;
 	
 	public Weapon() {
-		super("Rien", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 }, 0, 7, false, new ArrayList<Effect>());
+		super("Rien", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 }, 0, 0, false, new ArrayList<Effect>());
 		
 		this.type = -1;
 		this.isUnique = false;

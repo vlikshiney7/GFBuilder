@@ -1006,10 +1006,9 @@ public class GameStuff {
 		for(int i = 0; i < quality.size(); i++) {
 			if(quality.get(i).isSelected()) {
 				if(i == 0) return null;
-				int index = Math.abs(i-5);
-				for(int j = 0; j < this.listGenki.get(index).size(); j++) {
-					if(this.listGenki.get(index).get(j).getStar() == nbStar) {
-						result.add(this.listGenki.get(index).get(j));
+				for(int j = 0; j < this.listGenki.get(i-1).size(); j++) {
+					if(this.listGenki.get(i-1).get(j).getStar() == nbStar) {
+						result.add(this.listGenki.get(i-1).get(j));
 					}
 				}
 				break;

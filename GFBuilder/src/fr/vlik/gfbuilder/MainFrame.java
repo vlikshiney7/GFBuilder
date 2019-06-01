@@ -370,6 +370,7 @@ public class MainFrame extends JFrame {
 		page1.add(page1Elem5);
 		page1.add(page1Elem6);
 		
+		
 		this.mainPage.add(page1);
 		
 		/****************************************/
@@ -981,7 +982,7 @@ public class MainFrame extends JFrame {
 			this.allLabel.get(page).get(i+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.colorGenki.add(new JRadioButton(this.allLabel.get(page).get(i+3).getText(), true));
 			this.colorGenki.get(i).setBackground(Consts.UIColor[1]);
-			this.colorGenki.get(i).setForeground(Consts.itemColor[Math.abs(i-7)]);
+			this.colorGenki.get(i).setForeground(Consts.itemColor[i]);
 			this.colorGenki.get(i).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -1105,15 +1106,13 @@ public class MainFrame extends JFrame {
 			this.allLabel.get(page).get(i+7).setFont(new Font("Open Sans", Font.PLAIN, 14));
 			currentQualityPanel.add(this.allLabel.get(page).get(i+7));
 			ButtonGroup currentQuality = new ButtonGroup();
-			int decal = 0;
 			int id = i;
 			for(int j = 0; j < 5; j++) {
 				this.costQuality.add(new ArrayList<JRadioButton>(5));
 				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i).add(new JRadioButton(this.allLabel.get(page).get(j+9).getText(), true));
 				this.costQuality.get(i).get(j).setBackground(Consts.UIColor[1]);
-				if(j == 4) decal++;
-				this.costQuality.get(i).get(j).setForeground(Consts.itemColor[Math.abs(j-7) - decal]);
+				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -1229,15 +1228,13 @@ public class MainFrame extends JFrame {
 			JPanel currentQualityPanel = new JPanel();
 			currentQualityPanel.setBackground(Consts.UIColor[1]);
 			ButtonGroup currentQuality = new ButtonGroup();
-			int decal = 0;
 			int id = i+2;
 			for(int j = 0; j < 5; j++) {
 				this.costQuality.add(new ArrayList<JRadioButton>(5));
 				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i+2).add(new JRadioButton(this.allLabel.get(page).get(j+9).getText(), true));
 				this.costQuality.get(i+2).get(j).setBackground(Consts.UIColor[1]);
-				if(j == 4) decal++;
-				this.costQuality.get(i+2).get(j).setForeground(Consts.itemColor[Math.abs(j-7) - decal]);
+				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -1733,7 +1730,6 @@ public class MainFrame extends JFrame {
 		this.listGuildBuff.setMaximumSize(new Dimension(500, 100));
 		JScrollPane scrollList = new JScrollPane(this.listGuildBuff, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
-		
 		JPanel page11Elem3 = new JPanel();
 		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -1969,6 +1965,12 @@ public class MainFrame extends JFrame {
 		JPanel content = new JPanel();
 		content.setBorder(new EmptyBorder(20, 20, 20, 20));
 		content.setBackground(Consts.UIColor[2]);
+		
+		JScrollPane scrollContent = new JScrollPane(content, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		scrollContent.setBorder(null);
+		scrollContent.getVerticalScrollBar().setUnitIncrement(10);
+		scrollContent.getHorizontalScrollBar().setUnitIncrement(10);
+		
 		for(int i = 0; i < this.mainPage.size(); i++) {
 			content.add(this.mainPage.get(i));
 		}
@@ -2091,15 +2093,17 @@ public class MainFrame extends JFrame {
 		listStats.add(res);
 		
 		JPanel stats = new JPanel();
-		stats.setPreferredSize(new Dimension(160, 600));
+		stats.setPreferredSize(new Dimension(160, 602));
 		stats.setBackground(Consts.UIColor[0]);
 		stats.add(listStats);
 		
-		JScrollPane scroll = new JScrollPane(stats, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		JScrollPane scrollStats = new JScrollPane(stats, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollStats.setBorder(null);
+		scrollStats.getVerticalScrollBar().setUnitIncrement(10);
 		
 		this.main.add(menu, BorderLayout.WEST);
-		this.main.add(content, BorderLayout.CENTER);
-		this.main.add(scroll, BorderLayout.EAST);
+		this.main.add(scrollContent, BorderLayout.CENTER);
+		this.main.add(scrollStats, BorderLayout.EAST);
 		
 		initUI();
 		
