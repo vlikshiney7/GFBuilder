@@ -80,9 +80,9 @@ public class MainFrame extends JFrame {
 	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(24);
 	
 	private JCustomComboBox<Mount> CBoxMount;
-	private ArrayList<JRadioButton> colorGenki = new ArrayList<JRadioButton>(6);
-	private ArrayList<JRadioButton> starGenki = new ArrayList<JRadioButton>(5);
-	private JCustomComboBox<Genki> CBoxGenki;
+	private ArrayList<ArrayList<JRadioButton>> colorGenki = new ArrayList<ArrayList<JRadioButton>>(2);
+	private ArrayList<ArrayList<JRadioButton>> starGenki = new ArrayList<ArrayList<JRadioButton>>(2);
+	private ArrayList<JCustomComboBox<Genki>> CBoxGenki = new ArrayList<JCustomComboBox<Genki>>(2);
 	
 	private ArrayList<JRadioButton> costWeapon = new ArrayList<JRadioButton>(2);
 	private ArrayList<JCheckBox> checkBoxRunway = new ArrayList<JCheckBox>(8);
@@ -964,81 +964,93 @@ public class MainFrame extends JFrame {
 		this.showAndHideXpStuff.add(xpRide);
 		this.showAndHide.add(page5Elem1);
 		
-		/* GENKI */
-		JPanel qualityPanel = new JPanel();
-		JPanel starPanel = new JPanel();
-		ButtonGroup quality = new ButtonGroup();
-		ButtonGroup star = new ButtonGroup();
-		
-		qualityPanel.setBackground(Consts.UIColor[1]);
-		qualityPanel.setForeground(Consts.FontColor[0]);
-		qualityPanel.setBorder(null);
-		
-		starPanel.setBackground(Consts.UIColor[1]);
-		starPanel.setForeground(Consts.FontColor[0]);
-		starPanel.setBorder(null);
-		
-		for(int i = 0; i < 6; i++) {
-			this.allLabel.get(page).get(i+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.colorGenki.add(new JRadioButton(this.allLabel.get(page).get(i+3).getText(), true));
-			this.colorGenki.get(i).setBackground(Consts.UIColor[1]);
-			this.colorGenki.get(i).setForeground(Consts.itemColor[i]);
-			this.colorGenki.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateGenkiQuality();
-					MainFrame.this.updateStat();
-				}
-			});
-			quality.add(this.colorGenki.get(i));
-			qualityPanel.add(this.colorGenki.get(i));
-		}
-		
-		for(int i = 0; i < 5; i++) {
-			this.starGenki.add(new JRadioButton(i+1 + " E", true));
-			this.starGenki.get(i).setBackground(Consts.UIColor[1]);
-			this.starGenki.get(i).setForeground(Consts.FontColor[0]);
-			this.starGenki.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateGenkiStar();
-					MainFrame.this.updateStat();
-				}
-			});
-			this.starGenki.get(i).setVisible(false);
-			
-			star.add(this.starGenki.get(i));
-			starPanel.add(this.starGenki.get(i));
-		}
-		
-		this.CBoxGenki = new JCustomComboBox<Genki>();
-		this.CBoxGenki.setRenderer(new CustomListCellRenderer());
-		this.CBoxGenki.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		this.CBoxGenki.setVisible(false);
-
-		JPanel page5Elem2 = new JPanel();
-		page5Elem2.setLayout(new BoxLayout(page5Elem2, BoxLayout.Y_AXIS));
-		page5Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page5Elem2.setBackground(Consts.UIColor[1]);
-		page5Elem2.add(this.allLabel.get(page).get(2));
-		page5Elem2.add(Box.createVerticalStrut(10));
-		page5Elem2.add(qualityPanel);
-		page5Elem2.add(Box.createVerticalStrut(5));
-		page5Elem2.add(starPanel);
-		page5Elem2.add(Box.createVerticalStrut(5));
-		page5Elem2.add(this.CBoxGenki);
 		
 		JPanel page5 = new JPanel();
 		page5.setLayout(new BoxLayout(page5, BoxLayout.Y_AXIS));
 		page5.setBackground(Consts.UIColor[2]);
 		page5.add(page5Elem1);
-		page5.add(Box.createVerticalStrut(10));
-		page5.add(page5Elem2);
+		
+		/* GENKI */
+		
+		for(int i = 0; i < 2; i++) {
+			JPanel qualityPanel = new JPanel();
+			JPanel starPanel = new JPanel();
+			ButtonGroup quality = new ButtonGroup();
+			ButtonGroup star = new ButtonGroup();
+			
+			int id = i;
+			
+			qualityPanel.setBackground(Consts.UIColor[1]);
+			qualityPanel.setForeground(Consts.FontColor[0]);
+			qualityPanel.setBorder(null);
+			
+			starPanel.setBackground(Consts.UIColor[1]);
+			starPanel.setForeground(Consts.FontColor[0]);
+			starPanel.setBorder(null);
+			
+			this.colorGenki.add(new ArrayList<JRadioButton>(6));
+			
+			for(int j = 0; j < 6; j++) {
+				this.allLabel.get(page).get(i*7+j+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
+				this.colorGenki.get(i).add(new JRadioButton(this.allLabel.get(page).get(i*7+j+3).getText(), true));
+				this.colorGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
+				this.colorGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
+				this.colorGenki.get(i).get(j).addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						MainFrame.this.updateGenkiQuality(id);
+						MainFrame.this.updateStat();
+					}
+				});
+				quality.add(this.colorGenki.get(i).get(j));
+				qualityPanel.add(this.colorGenki.get(i).get(j));
+			}
+			
+			this.starGenki.add(new ArrayList<JRadioButton>(5));
+			
+			for(int j = 0; j < 5; j++) {
+				this.starGenki.get(i).add(new JRadioButton(j+1 + " E", true));
+				this.starGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
+				this.starGenki.get(i).get(j).setForeground(Consts.FontColor[0]);
+				this.starGenki.get(i).get(j).addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						MainFrame.this.updateGenkiStar(id);
+						MainFrame.this.updateStat();
+					}
+				});
+				this.starGenki.get(i).get(j).setVisible(false);
+				
+				star.add(this.starGenki.get(i).get(j));
+				starPanel.add(this.starGenki.get(i).get(j));
+			}
+			
+			this.CBoxGenki.add(new JCustomComboBox<Genki>());
+			
+			this.CBoxGenki.get(i).setRenderer(new CustomListCellRenderer());
+			this.CBoxGenki.get(i).addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					MainFrame.this.updateStat();
+				}
+			});
+			this.CBoxGenki.get(i).setVisible(false);
+	
+			JPanel page5ElemI = new JPanel();
+			page5ElemI.setLayout(new BoxLayout(page5ElemI, BoxLayout.Y_AXIS));
+			page5ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
+			page5ElemI.setBackground(Consts.UIColor[1]);
+			page5ElemI.add(this.allLabel.get(page).get(i*7+2));
+			page5ElemI.add(Box.createVerticalStrut(10));
+			page5ElemI.add(qualityPanel);
+			page5ElemI.add(Box.createVerticalStrut(5));
+			page5ElemI.add(starPanel);
+			page5ElemI.add(Box.createVerticalStrut(5));
+			page5ElemI.add(this.CBoxGenki.get(i));
+			
+			page5.add(Box.createVerticalStrut(10));
+			page5.add(page5ElemI);
+		}
 		
 		this.mainPage.add(page5);
 		
@@ -2262,11 +2274,12 @@ public class MainFrame extends JFrame {
 			else build.addEffect(new Effect(type, false, valueXpStuff, true, -1));
 		}
 		
-		
-		if(!this.colorGenki.get(0).isSelected()) {
-			Genki genki = new Genki((Genki) this.CBoxGenki.getSelectedItem());
-			genki.addStarBonus(this.starGenki);
-			build.addEffect(genki.getEffects());
+		for(int i = 0; i < this.colorGenki.size(); i++) {
+			if(!this.colorGenki.get(i).get(0).isSelected()) {
+				Genki genki = new Genki((Genki) this.CBoxGenki.get(i).getSelectedItem());
+				genki.addStarBonus(this.starGenki.get(i), i);
+				build.addEffect(genki.getEffects());
+			}
 		}
 		
 		
@@ -2484,33 +2497,33 @@ public class MainFrame extends JFrame {
 		else this.showAndHide.get(1).setVisible(false);
 	}
 	
-	private void updateGenkiQuality() {
-		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki, this.starGenki);
+	private void updateGenkiQuality(int idList) {
+		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki.get(idList), this.starGenki.get(idList));
 		
 		if(tabGenki == null) {
-			for(int i = 0; i < this.starGenki.size(); i++) {
-				this.starGenki.get(i).setVisible(false);
+			for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
+				this.starGenki.get(idList).get(i).setVisible(false);
 			}
-			this.CBoxGenki.setVisible(false);
+			this.CBoxGenki.get(idList).setVisible(false);
 		} else {
-			for(int i = 0; i < this.starGenki.size(); i++) {
-				this.starGenki.get(i).setVisible(true);
+			for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
+				this.starGenki.get(idList).get(i).setVisible(true);
 			}
-			this.CBoxGenki.setVisible(true);
+			this.CBoxGenki.get(idList).setVisible(true);
 			
-			Genki memory = this.CBoxGenki.getSelectedItem() != null ? (Genki) this.CBoxGenki.getSelectedItem() : tabGenki[0];
+			Genki memory = this.CBoxGenki.get(idList).getSelectedItem() != null ? (Genki) this.CBoxGenki.get(idList).getSelectedItem() : tabGenki[0];
 			
-			this.CBoxGenki.setModel(new DefaultComboBoxModel<Genki>(tabGenki));
-			this.CBoxGenki.setSelectedItem(memory);
+			this.CBoxGenki.get(idList).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
+			this.CBoxGenki.get(idList).setSelectedItem(memory);
 		}
 	}
 	
-	private void updateGenkiStar() {
-		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki, this.starGenki);
-		int memory = this.CBoxGenki.getSelectedIndex();
+	private void updateGenkiStar(int idList) {
+		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki.get(idList), this.starGenki.get(idList));
+		int memory = this.CBoxGenki.get(idList).getSelectedIndex();
 		
-		this.CBoxGenki.setModel(new DefaultComboBoxModel<Genki>(tabGenki));
-		this.CBoxGenki.setSelectedIndex(memory);
+		this.CBoxGenki.get(idList).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
+		this.CBoxGenki.get(idList).setSelectedIndex(memory);
 	}
 	
 	private void updateListStuff() {
@@ -3496,8 +3509,10 @@ public class MainFrame extends JFrame {
 			if(this.capeRingSetInfo.getText().equals("No active set"))
 				this.capeRingSetInfo.setText(this.fr_en.get(0).get(4).get(6));
 			
-			for(int i = 0; i < this.colorGenki.size(); i++) {
-				this.colorGenki.get(i).setText(this.fr_en.get(0).get(5).get(i+3));
+			for(ArrayList<JRadioButton> array : this.colorGenki) {
+				for(int i = 0; i < array.size(); i++) {
+					array.get(i).setText(this.fr_en.get(0).get(5).get(i+3));
+				}
 			}
 		} else {
 			this.language.setIcon(this.language.getDisabledIcon());
@@ -3519,8 +3534,10 @@ public class MainFrame extends JFrame {
 			if(this.capeRingSetInfo.getText().equals("Aucun set actif"))
 				this.capeRingSetInfo.setText(this.fr_en.get(1).get(4).get(6));
 			
-			for(int i = 0; i < this.colorGenki.size(); i++) {
-				this.colorGenki.get(i).setText(this.fr_en.get(1).get(5).get(i+3));
+			for(ArrayList<JRadioButton> array : this.colorGenki) {
+				for(int i = 0; i < array.size(); i++) {
+					array.get(i).setText(this.fr_en.get(1).get(5).get(i+3));
+				}
 			}
 		}
 	}

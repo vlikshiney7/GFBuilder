@@ -63,20 +63,20 @@ public class Genki {
 		return Consts.itemColor[this.quality];
 	}
 
-	public void addStarBonus(ArrayList<JRadioButton> star) {
+	public void addStarBonus(ArrayList<JRadioButton> star, int idList) {
 		int nbStar = 0;
 		while(!star.get(nbStar).isSelected() && nbStar < 5) nbStar++;
 		nbStar++;
 		
 		if(nbStar == 3 || nbStar == 4) {
-			this.effects.add(new Effect(TypeEffect.Depla, true, 10, false, -1));
+			this.effects.add(new Effect(TypeEffect.Depla, true, 10 / (idList+1), false, -1));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 4, false, -1));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (idList+1), false, -1));
 			}
 		} else if(nbStar == 5) {
-			this.effects.add(new Effect(TypeEffect.Depla, true, 20, false, -1));
+			this.effects.add(new Effect(TypeEffect.Depla, true, 20 / (idList+1), false, -1));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 8, false, -1));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (idList+1), false, -1));
 			}
 		}
 	}
