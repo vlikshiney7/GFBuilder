@@ -77,7 +77,7 @@ public class Effect {
 		XP, Loot, RegenCB, DegBete, DegPlante, DegHuma, DegElem, DegMeca, DegMort, DegDemon,
 		DegSacre, DegOmbre, DegFoudre, DegFeu, DegGlace, DegNature, IntComp, CostComp, ReloadComp, Parade,
 		DegStdEp, DegStdMa, DegStdHa, DegStdArc, DegStdGun, DegStdBa, DegAtkD, RegenPV, RegenPM, MEN,
-		BoostCraft, TimeCraft, Heal, Bullet;
+		BoostCraft, TimeCraft, Heal, Bullet, Reflect;
 	}
 	
 	@Override
@@ -89,7 +89,7 @@ public class Effect {
 				"XP", "Taux de Butin", "Régénération Coup Blanc", "Dégât sur Bête", "Dégât sur Plante", "Dégât sur Humanoïde", "Dégât sur Élémentaire", "Dégât sur Mécanique", "Dégât sur Mort", "Dégât sur Démon",
 				"Dégât Sacré", "Dégât Ombre", "Dégât Foudre", "Dégât Feu", "Dégât Glace", "Dégât Nature", "Interruption Compétence", "Coût Compétence", "Rechargement Compétence", "Parade",
 				"Dégât Standard Épée", "Dégât Standard Marteau", "Dégât Standard Hache", "Dégât Standard Arc", "Dégât Standard Gun", "Dégât Standard Bâton", "Dégât Attaque Distance", "Régénération PV Assis", "Régénération PM Assis", "Menace",
-				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin", "Bonus d'Attaque à Distance" };
+				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin", "Bonus d'Attaque à Distance", "Reflect" };
 		String result = enumName[this.getType().ordinal()] + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
 		if(withWeapon != -1) {
 			result += " si équipé ";

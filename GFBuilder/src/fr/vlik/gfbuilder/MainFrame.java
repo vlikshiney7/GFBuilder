@@ -23,7 +23,6 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -96,7 +95,7 @@ public class MainFrame extends JFrame {
 	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent());
 	
 	private Speciality[] tabSpeciality;
-	private JLabel nbSpePoint;
+	private JLabel nbSpePoint = new JLabel("1145");
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
 	private ArrayList<JCustomComboBox<Integer>> CBoxSpePoint = new ArrayList<JCustomComboBox<Integer>>(20);
 	
@@ -1508,27 +1507,44 @@ public class MainFrame extends JFrame {
 		page++;
 		
 		/* SPECIALITE */
-		JPanel speciality = new JPanel();
-		JLabel labelSpe = new JLabel("Spécialisation");
-		labelSpe.setFont(new Font("Open Sans", Font.BOLD, 12));
-		this.nbSpePoint = new JLabel("Points restant : 1145");
-		JPanel labelsSpe = new JPanel();
-		labelsSpe.add(labelSpe);
-		labelsSpe.add(this.nbSpePoint);
-		speciality.add(labelsSpe);
 		
-		speciality.setLayout(new BoxLayout(speciality, BoxLayout.Y_AXIS));
-		speciality.setBorder(BorderFactory.createLineBorder(Color.black));
+		JPanel page8 = new JPanel();
+		page8.setLayout(new BoxLayout(page8, BoxLayout.Y_AXIS));
+		page8.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page8.setBackground(Consts.UIColor[1]);
+		page8.add(this.allLabel.get(page).get(0));
+		page8.add(Box.createVerticalStrut(10));
+		
+		JPanel remain = new JPanel();
+		remain.setBackground(Consts.UIColor[1]);
+		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		remain.add(this.allLabel.get(page).get(1));
+		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
+		this.nbSpePoint.setForeground(Consts.FontColor[0]);
+		remain.add(this.nbSpePoint);
+		
+		page8.add(remain);
+		page8.add(Box.createVerticalStrut(5));
 		
 		this.tabSpeciality = this.allGameStuff.getSpeFromClass(this.listClasses.getSelectedIndex());
 		
+		
+		JPanel catSpe = new JPanel(new GridLayout(4, 1));
+		catSpe.setBackground(Consts.UIColor[1]);
+		JPanel gridSpe = new JPanel(new GridLayout(4, 6, 5, 5));
+		gridSpe.setBackground(Consts.UIColor[1]);
+		
 		int numSpe = 0;
+		
 		for(int i = 0; i < 4; i++) {
-			JPanel lineSpe = new JPanel();
+			this.allLabel.get(page).get(i+2).setFont(new Font("Open Sans", Font.PLAIN, 14));
+			this.allLabel.get(page).get(i+2).setPreferredSize(new Dimension(76, 70));
+			catSpe.add(this.allLabel.get(page).get(i+2));
+			
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
-				this.CBoxSpePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
 				int id = numSpe;
+				this.CBoxSpePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
 				this.CBoxSpePoint.get(numSpe).setRenderer(new CustomListCellRenderer());
 				this.CBoxSpePoint.get(numSpe).addActionListener(new ActionListener() {
 					@Override
@@ -1541,36 +1557,51 @@ public class MainFrame extends JFrame {
 				this.CBoxSpePoint.get(numSpe).setVisible(false);
 				
 				this.iconSpe.add(new JLabel(new ImageIcon(this.tabSpeciality[numSpe].getIcon())));
+				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getTooltip());
 				this.iconSpe.get(numSpe).setVisible(false);
 				
 				JPanel panelSpe = new JPanel();
 				panelSpe.setLayout(new BoxLayout(panelSpe, BoxLayout.Y_AXIS));
+				panelSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
+				panelSpe.setPreferredSize(new Dimension(46, 65));
+				panelSpe.setBackground(Consts.UIColor[0]);
+				this.iconSpe.get(numSpe).setAlignmentX(CENTER_ALIGNMENT);
 				panelSpe.add(this.iconSpe.get(numSpe));
+				panelSpe.add(Box.createVerticalStrut(5));
 				panelSpe.add(this.CBoxSpePoint.get(numSpe));
 				
-				lineSpe.add(panelSpe);
+				gridSpe.add(panelSpe);
 				
 				numSpe++;
 			}
-			
-			JPanel completeLine = new JPanel();
-			completeLine.add(lineSpe);
-			
-			speciality.add(completeLine);
+			for(int j = k; j < 6; j++) {
+				JPanel voidPanel = new JPanel();
+				voidPanel.setBackground(Consts.UIColor[1]);
+				gridSpe.add(voidPanel);
+			}
 		}
 		
-		JButton maxSpe = new JButton("Max");
+		JPanel page8Elem1 = new JPanel();
+		page8Elem1.setBackground(Consts.UIColor[1]);
+		page8Elem1.add(catSpe);
+		page8Elem1.add(Box.createHorizontalStrut(10));
+		page8Elem1.add(gridSpe);
+		
+		page8.add(page8Elem1);
+		
+		
+		JCustomButton maxSpe = new JCustomButton("Mettre toutes les spécialités au niveau maximum");
+		maxSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
+		maxSpe.setMinimumSize(new Dimension(0, 30));
+		maxSpe.setAlignmentX(CENTER_ALIGNMENT);
 		maxSpe.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				MainFrame.this.setMaxCBoxSpe();
 			}
 		});
-		speciality.add(maxSpe);
 		
-		JPanel page8 = new JPanel();
-		page8.setBackground(Consts.UIColor[2]);
-		page8.add(speciality);
+		page8.add(maxSpe);
 		
 		this.mainPage.add(page8);
 		
@@ -2140,6 +2171,7 @@ public class MainFrame extends JFrame {
 		for(JCustomComboBox<Skill> skill : this.skillProgress) skill.setVisible(false);
 		for(JPanel panel : this.showAndHide) panel.setVisible(false);
 		for(JPanel panel : this.showAndHideXpStuff) panel.setVisible(false);
+		for(JPanel panel : this.showAndHideTalent) panel.setVisible(false);
 		this.costWeapon.get(0).setSelected(true);
 		updateStat();
 	}
@@ -2849,6 +2881,7 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			this.iconSpe.get(i).setIcon(new ImageIcon(this.tabSpeciality[i].getIcon()));
+			this.iconSpe.get(i).setToolTipText(this.tabSpeciality[i].getTooltip());
 			this.CBoxSpePoint.get(i).setSelectedIndex(0);
 		}
 	}
@@ -2899,7 +2932,7 @@ public class MainFrame extends JFrame {
 				remain -= current * 8;
 			}
 		}
-		this.nbSpePoint.setText("Points restant : " + remain);
+		this.nbSpePoint.setText("" + remain);
 		for(int i = 0; i < 20; i++) {
 			if(this.CBoxSpePoint.get(i).getItemCount() != this.CBoxSpePoint.get(i).getSelectedIndex()) {
 				if(this.tabSpeciality[i].getLvl() == 45) {
@@ -3343,6 +3376,8 @@ public class MainFrame extends JFrame {
 				this.CBoxSpePoint.get(i).setVisible(true);
 				if(this.CBoxSpePoint.get(i).getSelectedIndex() > 10) {
 					this.CBoxSpePoint.get(i).setSelectedIndex(10);
+				} else {
+					updateSpeElement(i);
 				}
 			}
 		}

@@ -8,7 +8,7 @@ ARME 2M	(CRIT)	:	23+
 
 ARMURE
 TORSE 		:	45	47+
-JAMBE		:	39	43+
+JAMBE		:	43+
 CRIT		:	27	31	35>36	38+
 
 

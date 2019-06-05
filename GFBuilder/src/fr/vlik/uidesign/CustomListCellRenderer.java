@@ -63,11 +63,11 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		} else if(value instanceof Integer) {
 			renderer.setText(value.toString());
 			if(index > 15)
-				renderer.setForeground(Consts.itemColor[2]);
+				renderer.setForeground(Consts.speColor[2]);
 			else if(index > 10)
-				renderer.setForeground(Consts.itemColor[5]);
+				renderer.setForeground(Consts.speColor[1]);
 			else
-				renderer.setForeground(Consts.itemColor[6]);
+				renderer.setForeground(Consts.speColor[0]);
 		} else if(value instanceof Title) {
 			Title title = (Title) value;
 			renderer.setText(title.getName());

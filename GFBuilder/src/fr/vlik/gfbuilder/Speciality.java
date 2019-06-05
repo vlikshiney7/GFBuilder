@@ -52,6 +52,16 @@ public class Speciality {
 		
 		return object;
 	}
+	
+	public String getTooltip() {
+		StringBuilder tooltip = new StringBuilder(this.getName());
+		for(Effect e : this.effects) {
+			tooltip.append("<br>");
+			tooltip.append(e.getTooltip());
+		}
+		
+		return "<html>" + tooltip + "</html>";
+	}
 
 	public static Effect multiplyEffect(Effect effect, int point) {
 		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * point, effect.getWithReinca(), effect.getWithWeapon());
