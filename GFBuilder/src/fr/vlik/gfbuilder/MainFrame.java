@@ -73,6 +73,7 @@ public class MainFrame extends JFrame {
 	private JTextPane armorSetInfo = new JTextPane();
 	private JTextPane capeRingSetInfo = new JTextPane();
 	
+	private ArrayList<JCustomComboBox<Enchantment>> CBoxEnchant = new ArrayList<JCustomComboBox<Enchantment>>(11);
 	private ArrayList<JCustomComboBox<String>> valueFortif = new ArrayList<JCustomComboBox<String>>(8);
 	private ArrayList<JCustomComboBox<Pearl>> CBoxPearl = new ArrayList<JCustomComboBox<Pearl>>(18);
 	private ArrayList<JCustomComboBox<String>> listEffectXpStuff = new ArrayList<JCustomComboBox<String>>(24);
@@ -383,7 +384,7 @@ public class MainFrame extends JFrame {
 		page2.setBackground(Consts.UIColor[2]);
 
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue());
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue(), null);
 			this.CBoxWeapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.CBoxWeapon.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxWeapon.get(i).setRenderer(new CustomListCellRenderer());
@@ -395,10 +396,23 @@ public class MainFrame extends JFrame {
 					MainFrame.this.showXpStuff(id, MainFrame.this.CBoxWeapon.get(id).getSelectedIndex());
 					MainFrame.this.showStuffDetails(id, MainFrame.this.CBoxWeapon.get(id).getSelectedIndex());
 					MainFrame.this.updatePearl(id);
+					MainFrame.this.updateEnchant(id);
 					MainFrame.this.weaponType(id, MainFrame.this.CBoxWeapon.get(id).getSelectedIndex());
 					MainFrame.this.updateStat();
 				}
 			});
+			
+			/* ENCHANTEMENT */
+			this.CBoxEnchant.add(new JCustomComboBox<Enchantment>());
+			this.CBoxEnchant.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
+			this.CBoxEnchant.get(i).setRenderer(new CustomListCellRenderer());
+			this.CBoxEnchant.get(i).addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					MainFrame.this.updateStat();
+				}
+			});
+			this.CBoxEnchant.get(i).setVisible(false);
 			
 			/* FORTIF */
 			String nameFortif[] = { "+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20" };
@@ -472,6 +486,7 @@ public class MainFrame extends JFrame {
 			descWeapon.setLayout(new BoxLayout(descWeapon, BoxLayout.X_AXIS));
 			descWeapon.setBackground(Consts.UIColor[1]);
 			descWeapon.add(this.CBoxWeapon.get(i));
+			descWeapon.add(this.CBoxEnchant.get(i));
 			descWeapon.add(this.valueFortif.get(i));
 			
 			JPanel pearlWeapon = new JPanel();
@@ -2561,20 +2576,22 @@ public class MainFrame extends JFrame {
 	private void updateListStuff() {
 		/* ARME */
 		for(int i = 0; i < this.CBoxWeapon.size(); i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), null);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(i).getSelectedItem();
 			
 			this.CBoxWeapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
 			this.CBoxWeapon.get(i).setSelectedItem(memory);
 			
 			if(!this.CBoxWeapon.get(i).getSelectedItem().equals(memory)) {
+				weaponType(i, 0);
+				showStuffDetails(i, 0);
+				showXpStuff(i, 0);
+				updateEnchant(i);
+				
 				this.valueFortif.get(i).setSelectedIndex(0);
 				this.CBoxPearl.get(i).setSelectedIndex(0);
 				this.CBoxPearl.get(i+1).setSelectedIndex(0);
 				this.CBoxPearl.get(i+2).setSelectedIndex(0);
-				
-				weaponType(i, 0);
-				showStuffDetails(i, 0);
 			}
 		}
 		
@@ -2622,6 +2639,25 @@ public class MainFrame extends JFrame {
 			
 			this.CBoxRing.get(i).setModel(new DefaultComboBoxModel<Ring>(tabRing));
 			this.CBoxRing.get(i).setSelectedItem(memory);
+		}
+	}
+	
+	private void updateEnchant(int idList) {
+		if(idList < 3) {
+			if(this.CBoxWeapon.get(idList).getSelectedIndex() != 0) {
+				Weapon weapon = (Weapon) this.CBoxWeapon.get(idList).getSelectedItem();
+				
+				if(weapon.getCanEnchant()) {
+					Enchantment[] tabEnchant = this.allGameStuff.getPossibleWeaponEnchant(weapon.getQuality(), weapon.getType());
+					
+					this.CBoxEnchant.get(idList).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+					this.CBoxEnchant.get(idList).setVisible(true);
+				} else {
+					this.CBoxEnchant.get(idList).setVisible(false);
+				}
+			} else {
+				this.CBoxEnchant.get(idList).setVisible(false);
+			}
 		}
 	}
 	
@@ -3343,7 +3379,7 @@ public class MainFrame extends JFrame {
 	private void showXpStuff(int idList, int indexCB) {
 		if(indexCB != 0) {
 			if(idList < 3) {
-				int weaponType = ((Weapon)this.CBoxWeapon.get(idList).getSelectedItem()).getType();
+				int weaponType = ((Weapon) this.CBoxWeapon.get(idList).getSelectedItem()).getType();
 				String[] tmp = new String[this.allGameStuff.getListXpStuff().get(weaponType).size()+1];
 				tmp[0] = "Rien";
 				for(int i = 0; i < tmp.length-1; i++) tmp[i+1] = this.allGameStuff.getListXpStuff().get(weaponType).get(i).getType().name();
@@ -3387,7 +3423,7 @@ public class MainFrame extends JFrame {
 		Weapon choice = new Weapon((Weapon) this.CBoxWeapon.get(idList).getSelectedItem());
 		if(idList == 0) {
 			if(choice.getType() == 3 || choice.getType() == 4 || choice.getType() == 5 || choice.getType() == 7 || choice.getType() == 12 || choice.getType() == 13) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), null);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 				
 				this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3402,20 +3438,8 @@ public class MainFrame extends JFrame {
 				
 				this.showAndHide.get(0).setVisible(false);
 			} else if(choice.getType() == 0 || choice.getType() == 1 || choice.getType() == 2 || choice.getType() == 6) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), choice);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(1).getSelectedItem();
-				
-				if(choice.getIsUnique()) {
-					for(int i = 0; i < tabWeapon.length; i++) {
-						if(choice.equals(tabWeapon[i])) {
-							for(int j = i; j < tabWeapon.length-1; j++) {
-								tabWeapon[j] = tabWeapon[j+1];
-							}
-							tabWeapon[tabWeapon.length-1] = null;
-							break;
-						}
-					}
-				}
 				
 				this.CBoxWeapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
 				this.CBoxWeapon.get(1).setSelectedItem(memory);
@@ -3434,20 +3458,8 @@ public class MainFrame extends JFrame {
 				this.showAndHide.get(0).setVisible(true);
 			} else this.showAndHide.get(0).setVisible(true);
 		} else if(idList == 1) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), choice);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
-			
-			if(choice.getIsUnique()) {
-				for(int i = 0; i < tabWeapon.length; i++) {
-					if(choice.equals(tabWeapon[i])) {
-						for(int j = i; j < tabWeapon.length-1; j++) {
-							tabWeapon[j] = tabWeapon[j+1];
-						}
-						tabWeapon[tabWeapon.length-1] = null;
-						break;
-					}
-				}
-			}
 			
 			this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
 			this.CBoxWeapon.get(0).setSelectedItem(memory);

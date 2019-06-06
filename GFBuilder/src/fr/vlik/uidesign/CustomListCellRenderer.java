@@ -17,6 +17,7 @@ import fr.vlik.gfbuilder.Buff;
 import fr.vlik.gfbuilder.Bullet;
 import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Costume;
+import fr.vlik.gfbuilder.Enchantment;
 import fr.vlik.gfbuilder.Equipment;
 import fr.vlik.gfbuilder.Genki;
 import fr.vlik.gfbuilder.GuildBuff;
@@ -170,6 +171,10 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			renderer.setText("Lvl " + bullet.getLvl() + " - " + bullet.getName());
 			renderer.setForeground(bullet.getColor());
 			renderer.setToolTipText(bullet.getTooltip());
+		} else if(value instanceof Enchantment) {
+			Enchantment enchant = (Enchantment) value;
+			renderer.setText(enchant.getName());
+			renderer.setForeground(Consts.FontColor[0]);
 		}
 		
 		if (cellHasFocus || isSelected) renderer.setBackground(Consts.UIColor[1]);

@@ -27,6 +27,7 @@ public class GameStuff {
 	private ArrayList<Pearl> listWeaponPearl = new ArrayList<Pearl>();
 	private ArrayList<Pearl> listArmorPearl = new ArrayList<Pearl>();
 	private ArrayList<ArrayList<XpStuff>> listXpStuff = new ArrayList<ArrayList<XpStuff>>(6);
+	private ArrayList<Enchantment> listEnchantment = new ArrayList<Enchantment>();
 
 	private ArrayList<Mount> listMount = new ArrayList<Mount>();
 	private ArrayList<ArrayList<Genki>> listGenki = new ArrayList<ArrayList<Genki>>(5);
@@ -389,6 +390,23 @@ public class GameStuff {
 				
 				line = reader.readLine();
 			}
+			line = reader.readLine();
+		}
+		reader.close();
+		
+		/* ENCHANTMENT */
+		reader = new BufferedReader(new InputStreamReader(
+				MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/resources/enchantement.txt")));
+		line = reader.readLine();
+		while (line != null) {
+			String[] lineSplit = line.split("/");
+			
+			ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
+			for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
+				effects.add(new Effect(lineSplit[j+3]));
+			
+			this.listEnchantment.add(new Enchantment(lineSplit[0], Boolean.parseBoolean(lineSplit[1]), effects));
+			
 			line = reader.readLine();
 		}
 		reader.close();
@@ -1021,7 +1039,7 @@ public class GameStuff {
 		return cast;
 	}
 	
-	public Weapon[] getPossibleWeapon(int idList, int idClass, int lvl) {
+	public Weapon[] getPossibleWeapon(int idList, int idClass, int lvl, Weapon toIgnore) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weapon = null;
 		switch (idList) {
@@ -1048,6 +1066,8 @@ public class GameStuff {
 				}
 			}
 		}
+		
+		if(toIgnore != null && toIgnore.getIsUnique()) result.remove(toIgnore);
 		
 		Weapon[] cast = new Weapon[result.size()];
 		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
@@ -1144,6 +1164,78 @@ public class GameStuff {
 		}
 		
 		Ring[] cast = new Ring[result.size()];
+		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		
+		return cast;
+	}
+	
+	public Enchantment[] getPossibleWeaponEnchant(int quality, int type) {
+		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
+		result.add(new Enchantment());
+		
+		if(type < 8) {
+			if(quality == 4 || quality == 5) {
+				for(int index : Enchantment.EpMaHaMe45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			} else if(quality == 6) {
+				for(int index : Enchantment.EpMaHaMe6) {
+					result.add(this.listEnchantment.get(index));
+				}
+			}
+		} else if(type < 11 || type == 14) {
+			if(quality == 4 || quality == 5) {
+				for(int index : Enchantment.ArcGunCanCle45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			} else if(quality == 6) {
+				for(int index : Enchantment.ArcGunCanCle6) {
+					result.add(this.listEnchantment.get(index));
+				}
+			}
+		} else if(type == 11) {
+			if(quality == 4 || quality == 5) {
+				for(int index : Enchantment.Rel45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			} else if(quality == 6) {
+				for(int index : Enchantment.Rel6) {
+					result.add(this.listEnchantment.get(index));
+				}
+			}
+		} else if(type == 12) {
+			if(quality == 4 || quality == 5) {
+				for(int index : Enchantment.Baton45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			} else if(quality == 6) {
+				for(int index : Enchantment.Baton6) {
+					result.add(this.listEnchantment.get(index));
+				}
+			}
+		} else if(type == 13) {
+			if(quality == 4 || quality == 5) {
+				for(int index : Enchantment.Lame45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			} else if(quality == 6) {
+				for(int index : Enchantment.Lame45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			}
+		} else if(type == 15) {
+			if(quality == 4 || quality == 5) {
+				for(int index : Enchantment.Bou45) {
+					result.add(this.listEnchantment.get(index));
+				}
+			} else if(quality == 6) {
+				for(int index : Enchantment.Bou6) {
+					result.add(this.listEnchantment.get(index));
+				}
+			}
+		}
+		
+		Enchantment[] cast = new Enchantment[result.size()];
 		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
 		
 		return cast;

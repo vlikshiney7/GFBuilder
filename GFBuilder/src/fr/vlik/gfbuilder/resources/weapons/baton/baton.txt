@@ -27,5 +27,4 @@ Regard des Dieux Infernaux/4,5,6,7/85/4/true/false/8/Atk,false,2614,true/AtkM,fa
 Flamme Ardente du Phoenix/4,5,6,7/85/4/false/false/9/Atk,false,2614,true/AtkM,false,2774,true/VIT,false,62,true/INT,false,42,true/VOL,false,31,true/Toucher,true,15/TCCM,false,6/DCCM,false,10/Sacre,false,40/85pvp
 Épiphanie Divine/4,5,6,7/84/4/true/false/9/Atk,false,2573,true/AtkM,false,2732,true/VIT,false,51,true/INT,false,41,true/VOL,false,43,true/Toucher,true,18/PV,true,10/Depla,false,8/MEN,false,-20/86sprite
 Bâton de l'Espoir Renaissant des Sprites/4,5,6,7/82/2/false/false/4/Atk,false,2137,true/AtkM,false,2269,true/INT,false,45,true/Toucher,true,15/82sprite
-Bâton de l'Éveil de Lune/4,5,6,7/81/3/true/false/4/Atk,false,2805,true/AtkM,false,2977,true/VIT,false,74,true/INT,false,66,true/86sprite
 Bâton du Serment des Sprites/4,5,6,7/81/2/false/false/4/Atk,false,2104,true/AtkM,false,2232,true/VIT,false,45,true/Toucher,true,15/99ora
