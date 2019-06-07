@@ -21,6 +21,8 @@ public class Enchantment {
 	public static final int[] Armor45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20 };
 	public static final int[] Armor6 = { 24, 25, 26, 27, 28, 6 };
 	
+	public static final int[] CapeRing = { 24, 25, 26, 27, 28 };
+	
 	private String name;
 	private boolean isFix;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();

@@ -1154,7 +1154,7 @@ public class GameStuff {
 		return cast;
 	}
 	
-	public Ring[] getPossibleRing(int lvl) {
+	public Ring[] getPossibleRing(int lvl, Ring toIgnore) {
 		ArrayList<Ring> result = new ArrayList<Ring>();
 		
 		for(Ring ring : this.listRing) {
@@ -1162,6 +1162,8 @@ public class GameStuff {
 				result.add(ring);
 			}
 		}
+		
+		if(toIgnore != null && toIgnore.getIsUnique()) result.remove(toIgnore);
 		
 		Ring[] cast = new Ring[result.size()];
 		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
@@ -1219,7 +1221,7 @@ public class GameStuff {
 					result.add(this.listEnchantment.get(index));
 				}
 			} else if(quality == 6) {
-				for(int index : Enchantment.Lame45) {
+				for(int index : Enchantment.Lame6) {
 					result.add(this.listEnchantment.get(index));
 				}
 			}
@@ -1233,6 +1235,40 @@ public class GameStuff {
 					result.add(this.listEnchantment.get(index));
 				}
 			}
+		}
+		
+		Enchantment[] cast = new Enchantment[result.size()];
+		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		
+		return cast;
+	}
+	
+	public Enchantment[] getPossibleArmorEnchant(int quality) {
+		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
+		result.add(new Enchantment());
+		
+		if(quality == 4 || quality == 5) {
+			for(int index : Enchantment.Armor45) {
+				result.add(this.listEnchantment.get(index));
+			}
+		} else if(quality == 6) {
+			for(int index : Enchantment.Armor6) {
+				result.add(this.listEnchantment.get(index));
+			}
+		}
+		
+		Enchantment[] cast = new Enchantment[result.size()];
+		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		
+		return cast;
+	}
+	
+	public Enchantment[] getPossibleCapeRingEnchant() {
+		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
+		result.add(new Enchantment());
+		
+		for(int index : Enchantment.CapeRing) {
+			result.add(this.listEnchantment.get(index));
 		}
 		
 		Enchantment[] cast = new Enchantment[result.size()];

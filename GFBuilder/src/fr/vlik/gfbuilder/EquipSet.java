@@ -34,6 +34,9 @@ public class EquipSet {
 		String equipCode[] = { armors[0].getSetCode(), armors[1].getSetCode(), armors[2].getSetCode(), armors[3].getSetCode(), armors[4].getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
+		
+		System.out.println(this.nbCurrentUsed);
+		
 		for(int i = 0; i < listEquipSet.size(); i++) {
 			if(listEquipSet.get(i).getCode().equals(this.code)) {
 				this.name = listEquipSet.get(i).getName();
