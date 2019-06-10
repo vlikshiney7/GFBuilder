@@ -6,9 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import javax.swing.JRadioButton;
-
 import fr.vlik.gfbuilder.Effect.TypeEffect;
+import fr.vlik.uidesign.JCustomRadioButton;
 
 public class GameStuff {
 	private ArrayList<MultiEffect> listMultiEffects = new ArrayList<MultiEffect>();
@@ -1010,22 +1009,14 @@ public class GameStuff {
 		return cast;
 	}
 	
-	public Genki[] getPossibleGenki(ArrayList<JRadioButton> quality, ArrayList<JRadioButton> star) {
+	public Genki[] getPossibleGenki(ArrayList<JCustomRadioButton> quality, int star) {
 		ArrayList<Genki> result = new ArrayList<Genki>();
-		int nbStar = 0;
-		
-		for(int i = 0; i < star.size(); i++) {
-			if(star.get(i).isSelected()) {
-				nbStar = i+1;
-				break;
-			}
-		}
 		
 		for(int i = 0; i < quality.size(); i++) {
 			if(quality.get(i).isSelected()) {
 				if(i == 0) return null;
 				for(int j = 0; j < this.listGenki.get(i-1).size(); j++) {
-					if(this.listGenki.get(i-1).get(j).getStar() == nbStar) {
+					if(this.listGenki.get(i-1).get(j).getStar() == star) {
 						result.add(this.listGenki.get(i-1).get(j));
 					}
 				}
@@ -1205,23 +1196,13 @@ public class GameStuff {
 					result.add(this.listEnchantment.get(index));
 				}
 			}
-		} else if(type == 12) {
+		} else if(type < 14) {
 			if(quality == 4 || quality == 5) {
-				for(int index : Enchantment.Baton45) {
+				for(int index : Enchantment.BatonLame45) {
 					result.add(this.listEnchantment.get(index));
 				}
 			} else if(quality == 6) {
-				for(int index : Enchantment.Baton6) {
-					result.add(this.listEnchantment.get(index));
-				}
-			}
-		} else if(type == 13) {
-			if(quality == 4 || quality == 5) {
-				for(int index : Enchantment.Lame45) {
-					result.add(this.listEnchantment.get(index));
-				}
-			} else if(quality == 6) {
-				for(int index : Enchantment.Lame6) {
+				for(int index : Enchantment.BatonLame6) {
 					result.add(this.listEnchantment.get(index));
 				}
 			}

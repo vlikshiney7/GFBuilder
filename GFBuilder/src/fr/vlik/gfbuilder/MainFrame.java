@@ -23,12 +23,10 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -36,6 +34,7 @@ import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
+import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -80,18 +79,18 @@ public class MainFrame extends JFrame {
 	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(24);
 	
 	private JCustomComboBox<Mount> CBoxMount;
-	private ArrayList<ArrayList<JRadioButton>> colorGenki = new ArrayList<ArrayList<JRadioButton>>(2);
-	private ArrayList<ArrayList<JRadioButton>> starGenki = new ArrayList<ArrayList<JRadioButton>>(2);
+	private ArrayList<ArrayList<JCustomRadioButton>> colorGenki = new ArrayList<ArrayList<JCustomRadioButton>>(2);
+	private ArrayList<ArrayList<JStarCheckBox>> starGenki = new ArrayList<ArrayList<JStarCheckBox>>(2);
 	private ArrayList<JCustomComboBox<Genki>> CBoxGenki = new ArrayList<JCustomComboBox<Genki>>(2);
 	
-	private ArrayList<JRadioButton> costWeapon = new ArrayList<JRadioButton>(2);
-	private ArrayList<JCheckBox> checkBoxRunway = new ArrayList<JCheckBox>(8);
-	private ArrayList<ArrayList<JRadioButton>> costQuality = new ArrayList<ArrayList<JRadioButton>>(5);
+	private ArrayList<JCustomRadioButton> costWeapon = new ArrayList<JCustomRadioButton>(2);
+	private ArrayList<JCustomCheckBox> checkBoxRunway = new ArrayList<JCustomCheckBox>(8);
+	private ArrayList<ArrayList<JCustomRadioButton>> costQuality = new ArrayList<ArrayList<JCustomRadioButton>>(5);
 	private ArrayList<JCustomComboBox<Costume>> CBoxCostume = new ArrayList<JCustomComboBox<Costume>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> CBoxCostPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
 	
 	private JLabel[] tabChosenTalent = new JLabel[9];
-	private ArrayList<ArrayList<JRadioButton>> radioTalent = new ArrayList<ArrayList<JRadioButton>>(32);
+	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(32);
 	private ArrayList<JCustomComboBox<Talent>> CBoxTalent = new ArrayList<JCustomComboBox<Talent>>(24);
 	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent());
 	
@@ -232,6 +231,7 @@ public class MainFrame extends JFrame {
 		/* CLASSE */
 		String nameCl[] = { "Destructeur", "Croisé", "Prédateur", "Kage", "Archange", "Druide", "Arcaniste", "Faucheur", "Oméga", "Suprême", "Dimensionnaliste", "Chronomancien" };
 		this.listClasses = new JCustomComboBox<String>(nameCl);
+		this.listClasses.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.listClasses.setRenderer(new CustomListCellRenderer());
 		this.listClasses.addActionListener(new ActionListener() {
 			@Override
@@ -247,8 +247,13 @@ public class MainFrame extends JFrame {
 		JPanel page1Elem1 = new JPanel(new GridLayout(2, 1, 10, 10));
 		page1Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page1Elem1.setBackground(Consts.UIColor[1]);
-		page1Elem1.add(this.allLabel.get(page).get(0), BorderLayout.NORTH);
-		page1Elem1.add(this.listClasses, BorderLayout.SOUTH);
+		
+		JPanel panelTitle1 = new JPanel();
+		panelTitle1.setBackground(Consts.UIColor[1]);
+		panelTitle1.add(this.allLabel.get(page).get(0));
+		
+		page1Elem1.add(panelTitle1);
+		page1Elem1.add(this.listClasses);
 		
 		/* LEVEL */
 		this.spinnerLvl = new JSpinner(new SpinnerNumberModel(1, 1, 100, 1));
@@ -279,12 +284,18 @@ public class MainFrame extends JFrame {
 		JPanel page1Elem2 = new JPanel(new GridLayout(2, 1, 10, 10));
 		page1Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page1Elem2.setBackground(Consts.UIColor[1]);
-		page1Elem2.add(this.allLabel.get(page).get(1), BorderLayout.NORTH);
-		page1Elem2.add(this.spinnerLvl, BorderLayout.SOUTH);
+		
+		JPanel panelTitle2 = new JPanel();
+		panelTitle2.setBackground(Consts.UIColor[1]);
+		panelTitle2.add(this.allLabel.get(page).get(1));
+		
+		page1Elem2.add(panelTitle2);
+		page1Elem2.add(this.spinnerLvl);
 		
 		/* REINCARNATION */
 		String nameReinca[] = { "Aucune", "Niveau 1" };
 		this.lvlReinca = new JCustomComboBox<String>(nameReinca);
+		this.lvlReinca.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.lvlReinca.setRenderer(new CustomListCellRenderer());
 		this.lvlReinca.addActionListener(new ActionListener() {
 			@Override
@@ -304,12 +315,18 @@ public class MainFrame extends JFrame {
 		JPanel page1Elem3 = new JPanel(new GridLayout(2, 1, 10, 10));
 		page1Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page1Elem3.setBackground(Consts.UIColor[1]);
-		page1Elem3.add(this.allLabel.get(page).get(2), BorderLayout.NORTH);
-		page1Elem3.add(this.lvlReinca, BorderLayout.SOUTH);
+		
+		JPanel panelTitle3 = new JPanel();
+		panelTitle3.setBackground(Consts.UIColor[1]);
+		panelTitle3.add(this.allLabel.get(page).get(2));
+		
+		page1Elem3.add(panelTitle3);
+		page1Elem3.add(this.lvlReinca);
 		
 		/* TITRE */
 		Title[] tabTitle = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue(), false);
 		this.CBoxTitle = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
+		this.CBoxTitle.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxTitle.setRenderer(new CustomListCellRenderer());
 		this.CBoxTitle.addActionListener(new ActionListener() {
 			@Override
@@ -321,13 +338,19 @@ public class MainFrame extends JFrame {
 		JPanel page1Elem4 = new JPanel(new GridLayout(2, 1, 10, 10));
 		page1Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page1Elem4.setBackground(Consts.UIColor[1]);
-		page1Elem4.add(this.allLabel.get(page).get(3), BorderLayout.NORTH);
-		page1Elem4.add(this.CBoxTitle, BorderLayout.SOUTH);
+		
+		JPanel panelTitle4 = new JPanel();
+		panelTitle4.setBackground(Consts.UIColor[1]);
+		panelTitle4.add(this.allLabel.get(page).get(3));
+		
+		page1Elem4.add(panelTitle4);
+		page1Elem4.add(this.CBoxTitle);
 		
 		/* YGGDRASIL */
 		Yggdrasil[] tabYggdra = new Yggdrasil[this.allGameStuff.getListYggdrasil().size()];
 		for(int i = 0; i < tabYggdra.length; i++) tabYggdra[i] = this.allGameStuff.getListYggdrasil().get(i);
 		this.yggdrasil = new JCustomComboBox<Yggdrasil>(tabYggdra);
+		this.yggdrasil.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.yggdrasil.setRenderer(new CustomListCellRenderer());
 		this.yggdrasil.addActionListener(new ActionListener() {
 			@Override
@@ -339,14 +362,20 @@ public class MainFrame extends JFrame {
 		JPanel page1Elem5 = new JPanel(new GridLayout(2, 1, 10, 10));
 		page1Elem5.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page1Elem5.setBackground(Consts.UIColor[1]);
-		page1Elem5.add(this.allLabel.get(page).get(4), BorderLayout.NORTH);
-		page1Elem5.add(this.yggdrasil, BorderLayout.SOUTH);
+		
+		JPanel panelTitle5 = new JPanel();
+		panelTitle5.setBackground(Consts.UIColor[1]);
+		panelTitle5.add(this.allLabel.get(page).get(4));
+		
+		page1Elem5.add(panelTitle5);
+		page1Elem5.add(this.yggdrasil);
 		
 		/* BONUS ARCHIVE */
 		Archive[] tabArchive = new Archive[this.allGameStuff.getListArchive().size()];
 		for(int i = 0; i < tabArchive.length; i++) tabArchive[i] = this.allGameStuff.getListArchive().get(i);
 		
 		this.CBoxArchive = new JCustomComboBox<Archive>(new DefaultComboBoxModel<Archive>(tabArchive));
+		this.CBoxArchive.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxArchive.setRenderer(new CustomListCellRenderer());
 		this.CBoxArchive.addActionListener(new ActionListener() {
 			@Override
@@ -358,8 +387,13 @@ public class MainFrame extends JFrame {
 		JPanel page1Elem6 = new JPanel(new GridLayout(2, 1, 10, 10));
 		page1Elem6.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page1Elem6.setBackground(Consts.UIColor[1]);
-		page1Elem6.add(this.allLabel.get(page).get(5), BorderLayout.NORTH);
-		page1Elem6.add(this.CBoxArchive, BorderLayout.SOUTH);
+		
+		JPanel panelTitle6 = new JPanel();
+		panelTitle6.setBackground(Consts.UIColor[1]);
+		panelTitle6.add(this.allLabel.get(page).get(5));
+		
+		page1Elem6.add(panelTitle6);
+		page1Elem6.add(this.CBoxArchive);
 		
 		JPanel page1 = new JPanel(new GridLayout(3, 2, 10, 10));
 		page1.setBackground(Consts.UIColor[2]);
@@ -952,18 +986,6 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		page++;
 		
-		/* MONTURE */
-		/*this.spectralMount = new JCustomTabPane("specOFF", "specON");
-		this.spectralMount.setSelected(true);
-		this.spectralMount.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				updateWolfMount();
-				updateStat();
-			}
-		});
-		*/
-		
 		Mount[] tabMount = this.allGameStuff.getPossibleMount((int) this.spinnerLvl.getValue(), this.lvlReinca.getSelectedIndex() == 1);
 		this.CBoxMount = new JCustomComboBox<Mount>(tabMount);
 		this.CBoxMount.setFont(new Font("Open Sans", Font.PLAIN, 12));
@@ -1042,7 +1064,6 @@ public class MainFrame extends JFrame {
 			JPanel qualityPanel = new JPanel();
 			JPanel starPanel = new JPanel();
 			ButtonGroup quality = new ButtonGroup();
-			ButtonGroup star = new ButtonGroup();
 			
 			int id = i;
 			
@@ -1054,11 +1075,11 @@ public class MainFrame extends JFrame {
 			starPanel.setForeground(Consts.FontColor[0]);
 			starPanel.setBorder(null);
 			
-			this.colorGenki.add(new ArrayList<JRadioButton>(6));
+			this.colorGenki.add(new ArrayList<JCustomRadioButton>(6));
 			
 			for(int j = 0; j < 6; j++) {
 				this.allLabel.get(page).get(i*7+j+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.colorGenki.get(i).add(new JRadioButton(this.allLabel.get(page).get(i*7+j+3).getText(), true));
+				this.colorGenki.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(i*7+j+3).getText()));
 				this.colorGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
 				this.colorGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
 				this.colorGenki.get(i).get(j).addActionListener(new ActionListener() {
@@ -1072,22 +1093,21 @@ public class MainFrame extends JFrame {
 				qualityPanel.add(this.colorGenki.get(i).get(j));
 			}
 			
-			this.starGenki.add(new ArrayList<JRadioButton>(5));
+			this.starGenki.add(new ArrayList<JStarCheckBox>(5));
 			
 			for(int j = 0; j < 5; j++) {
-				this.starGenki.get(i).add(new JRadioButton(j+1 + " E", true));
-				this.starGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
-				this.starGenki.get(i).get(j).setForeground(Consts.FontColor[0]);
+				int idCheck = j;
+				
+				this.starGenki.get(i).add(new JStarCheckBox());
 				this.starGenki.get(i).get(j).addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateGenkiStar(id);
+						MainFrame.this.updateGenkiStar(id, idCheck);
 						MainFrame.this.updateStat();
 					}
 				});
 				this.starGenki.get(i).get(j).setVisible(false);
 				
-				star.add(this.starGenki.get(i).get(j));
 				starPanel.add(this.starGenki.get(i).get(j));
 			}
 			
@@ -1133,7 +1153,7 @@ public class MainFrame extends JFrame {
 		costGroupPanel.add(this.allLabel.get(page).get(4));
 		
 		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JRadioButton(this.allLabel.get(page).get(i+5).getText(), true));
+			this.costWeapon.add(new JCustomRadioButton(this.allLabel.get(page).get(i+5).getText()));
 			this.costWeapon.get(i).setBackground(Consts.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Consts.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(new ActionListener() {
@@ -1153,10 +1173,10 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < 2; i++) {
 			if(i == 0) {
-				this.checkBoxRunway.add(new JCheckBox(this.allLabel.get(page).get(14).getText()));
+				this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(14).getText()));
 				this.checkBoxRunway.get(i).setToolTipText(this.allGameStuff.getTooltipRunway(Runway.currentRunway[0]));
 			} else {
-				this.checkBoxRunway.add(new JCheckBox(this.allLabel.get(page).get(18).getText()));
+				this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(18).getText()));
 				this.checkBoxRunway.get(i).setToolTipText(this.allGameStuff.getTooltipRunway(Runway.currentRunway[4]));
 			}
 			
@@ -1185,10 +1205,10 @@ public class MainFrame extends JFrame {
 			currentQualityPanel.add(this.allLabel.get(page).get(i+7));
 			ButtonGroup currentQuality = new ButtonGroup();
 			int id = i;
+			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
-				this.costQuality.add(new ArrayList<JRadioButton>(5));
 				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i).add(new JRadioButton(this.allLabel.get(page).get(j+9).getText(), true));
+				this.costQuality.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText()));
 				this.costQuality.get(i).get(j).setBackground(Consts.UIColor[1]);
 				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(new ActionListener() {
@@ -1282,10 +1302,10 @@ public class MainFrame extends JFrame {
 			
 			for(int j = 0; j < 2; j++) {
 				if(j == 0) {
-					this.checkBoxRunway.add(new JCheckBox(this.allLabel.get(page).get(i+15).getText()));
+					this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(i+15).getText()));
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(this.allGameStuff.getTooltipRunway(Runway.currentRunway[i+1]));
 				} else {
-					this.checkBoxRunway.add(new JCheckBox(this.allLabel.get(page).get(18).getText()));
+					this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(18).getText()));
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(this.allGameStuff.getTooltipRunway(Runway.currentRunway[4]));
 				}
 				
@@ -1307,10 +1327,10 @@ public class MainFrame extends JFrame {
 			currentQualityPanel.setBackground(Consts.UIColor[1]);
 			ButtonGroup currentQuality = new ButtonGroup();
 			int id = i+2;
+			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
-				this.costQuality.add(new ArrayList<JRadioButton>(5));
 				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i+2).add(new JRadioButton(this.allLabel.get(page).get(j+9).getText(), true));
+				this.costQuality.get(i+2).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText()));
 				this.costQuality.get(i+2).get(j).setBackground(Consts.UIColor[1]);
 				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(new ActionListener() {
@@ -1471,8 +1491,8 @@ public class MainFrame extends JFrame {
 				lineTalent.setBackground(Consts.UIColor[0]);
 				
 				int id1 = i*4+j;
-				this.radioTalent.add(new ArrayList<JRadioButton>());
-				this.radioTalent.get(i*4+j).add(new JRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/crossTalent.png")))));
+				this.radioTalent.add(new ArrayList<JCustomRadioButton>());
+				this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossTalent.png")))));
 				this.radioTalent.get(i*4+j).get(0).setBackground(Consts.UIColor[0]);
 				this.radioTalent.get(i*4+j).get(0).addActionListener(new ActionListener() {
 					@Override
@@ -1502,7 +1522,7 @@ public class MainFrame extends JFrame {
 						}
 					});
 					
-					this.radioTalent.get(i*4+j).add(new JRadioButton(new ImageIcon(this.allGameStuff.getListTalent().get(this.listClasses.getSelectedIndex()).get(i*12+j*3+k).getIcon())));
+					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(this.allGameStuff.getListTalent().get(this.listClasses.getSelectedIndex()).get(i*12+j*3+k).getIcon())));
 					this.radioTalent.get(i*4+j).get(k+1).setBackground(Consts.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).addActionListener(new ActionListener() {
 						@Override
@@ -1800,7 +1820,7 @@ public class MainFrame extends JFrame {
 			
 			int id = i;
 			
-			JCustomButton remove = new JCustomButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/crossBase.png"))));
+			JCustomButton remove = new JCustomButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossBase.png"))));
 			remove.setAlignmentX(RIGHT_ALIGNMENT);
 			remove.addActionListener(new ActionListener() {
 				@Override
@@ -1872,7 +1892,7 @@ public class MainFrame extends JFrame {
 			
 			int id = i;
 			
-			JCustomButton remove = new JCustomButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/crossBase.png"))));
+			JCustomButton remove = new JCustomButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossBase.png"))));
 			remove.setAlignmentX(RIGHT_ALIGNMENT);
 			remove.addActionListener(new ActionListener() {
 				@Override
@@ -2230,16 +2250,28 @@ public class MainFrame extends JFrame {
 		UIManager.put("ToolTip.border", new LineBorder(Consts.UIColor[1], 2));
 		UIManager.put("ToolTip.background", Consts.UIColor[0]);
 		UIManager.put("ToolTip.foreground", Consts.UIColor[3]);
+		
+		ToolTipManager.sharedInstance().setInitialDelay(500);
+	    ToolTipManager.sharedInstance().setDismissDelay(30000);
 	}
 	
 	private void initUI() {
 		updateTabPane(0);
+		
+		for(ArrayList<JCustomRadioButton> color : this.colorGenki) color.get(0).setSelected(true);
+		for(ArrayList<JStarCheckBox> star : this.starGenki) star.get(0).setSelected(true);
+		
+		this.costWeapon.get(0).setSelected(false);
+		this.costWeapon.get(1).setSelected(true);
+		for(ArrayList<JCustomRadioButton> quality : this.costQuality) quality.get(0).setSelected(true);
+		
 		for(JLabel label : this.skillNatif) label.setVisible(false);
 		for(JCustomComboBox<Skill> skill : this.skillProgress) skill.setVisible(false);
+		
 		for(JPanel panel : this.showAndHide) panel.setVisible(false);
 		for(JPanel panel : this.showAndHideXpStuff) panel.setVisible(false);
 		for(JPanel panel : this.showAndHideTalent) panel.setVisible(false);
-		this.costWeapon.get(0).setSelected(true);
+		
 		updateStat();
 	}
 	
@@ -2329,7 +2361,7 @@ public class MainFrame extends JFrame {
 		}
 		
 		EquipSet armorSet = new EquipSet(this.allGameStuff.getListEquipSet(), armors);
-		if(armorSet.getNbCurrentUsed() >= 3) { System.out.println("hey"); build.addEffect(armorSet.getWith3()); }
+		if(armorSet.getNbCurrentUsed() >= 3) build.addEffect(armorSet.getWith3());
 		if(armorSet.getNbCurrentUsed() >= 4) build.addEffect(armorSet.getWith4());
 		if(armorSet.getNbCurrentUsed() == 5) build.addEffect(armorSet.getWith5());
 		
@@ -2521,7 +2553,7 @@ public class MainFrame extends JFrame {
 		this.valueRes.get(4).setText("" + allStats[17]);
 		this.valueRes.get(5).setText("" + allStats[18]);
 		
-		if(armorSet == null || armorSet.getNbCurrentUsed() < 3) this.armorSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(3).get(10));
+		if(armorSet == null || armorSet.getNbCurrentUsed() >= 3) this.armorSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(3).get(10));
 		else {
 			String setInfo = armorSet.getName() + "\n";
 			setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
@@ -2539,7 +2571,7 @@ public class MainFrame extends JFrame {
 			this.armorSetInfo.setText(setInfo);
 		}
 		
-		if(capeRingSet == null || capeRingSet.getNbCurrentUsed() < 2) this.capeRingSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(4).get(6));
+		if(capeRingSet == null || capeRingSet.getNbCurrentUsed() >= 2) this.capeRingSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(4).get(6));
 		else {
 			String setInfo = capeRingSet.getName() + "\n";
 			setInfo += "2 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 2 ? "(Actif) " : "") + ":\n";
@@ -2597,7 +2629,13 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateGenkiQuality(int idList) {
-		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki.get(idList), this.starGenki.get(idList));
+		int star = 0;
+		while(star < 5) {
+			if(!this.starGenki.get(idList).get(star).isSelected()) break;
+			star++;
+		}
+		
+		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki.get(idList), star);
 		
 		if(tabGenki == null) {
 			for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
@@ -2617,8 +2655,14 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	private void updateGenkiStar(int idList) {
-		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki.get(idList), this.starGenki.get(idList));
+	private void updateGenkiStar(int idList, int idCheck) {
+		Genki[] tabGenki = this.allGameStuff.getPossibleGenki(this.colorGenki.get(idList), idCheck+1);
+		
+		for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
+			if(i <= idCheck) this.starGenki.get(idList).get(i).setSelected(true);
+			else this.starGenki.get(idList).get(i).setSelected(false);
+		}
+		
 		int memory = this.CBoxGenki.get(idList).getSelectedIndex();
 		
 		this.CBoxGenki.get(idList).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
@@ -2887,6 +2931,14 @@ public class MainFrame extends JFrame {
 				this.CBoxCostPearl.get(idList+2).setVisible(false);
 				this.CBoxCostPearl.get(idList+2).setSelectedIndex(0);
 			}
+			
+			if(idList == 0) {
+				updateCheckBoxRunway(0);
+				updateCheckBoxRunway(1);
+			} else {
+				updateCheckBoxRunway(idList*2-2);
+				updateCheckBoxRunway(idList*2-1);
+			}
 		} else {
 			if(idList == 0) {
 				this.CBoxCostPearl.get(idList).setVisible(true);
@@ -2921,6 +2973,15 @@ public class MainFrame extends JFrame {
 	
 	private void updateCheckBoxRunway(int index) {
 		int indexPair = (index % 2 == 0) ? index + 1 : index -1;
+		int indexQuality = index/2 +1;
+		
+		if(indexQuality == 1) {
+			if(this.costQuality.get(0).get(0).isSelected() && this.costQuality.get(1).get(0).isSelected()) {
+				this.checkBoxRunway.get(index).setSelected(false);
+			}
+		} else if(this.costQuality.get(indexQuality).get(0).isSelected()) {
+			this.checkBoxRunway.get(index).setSelected(false);
+		}
 		
 		if(this.checkBoxRunway.get(index).isSelected()) {
 			this.checkBoxRunway.get(indexPair).setSelected(false);
@@ -2962,7 +3023,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void updateSelectedTalent(int index) {
-		ArrayList<JRadioButton> radio = this.radioTalent.get(index);
+		ArrayList<JCustomRadioButton> radio = this.radioTalent.get(index);
 		for(int i = 0; i < radio.size(); i++) {
 			if(radio.get(i).isSelected()) {
 				if(i == 0 || this.CBoxTalent.get(index*3+i-1).getSelectedIndex() == 0) {
@@ -3649,7 +3710,7 @@ public class MainFrame extends JFrame {
 			if(this.capeRingSetInfo.getText().equals("No active set"))
 				this.capeRingSetInfo.setText(this.fr_en.get(0).get(4).get(6));
 			
-			for(ArrayList<JRadioButton> array : this.colorGenki) {
+			for(ArrayList<JCustomRadioButton> array : this.colorGenki) {
 				for(int i = 0; i < array.size(); i++) {
 					array.get(i).setText(this.fr_en.get(0).get(5).get(i+3));
 				}
@@ -3674,7 +3735,7 @@ public class MainFrame extends JFrame {
 			if(this.capeRingSetInfo.getText().equals("Aucun set actif"))
 				this.capeRingSetInfo.setText(this.fr_en.get(1).get(4).get(6));
 			
-			for(ArrayList<JRadioButton> array : this.colorGenki) {
+			for(ArrayList<JCustomRadioButton> array : this.colorGenki) {
 				for(int i = 0; i < array.size(); i++) {
 					array.get(i).setText(this.fr_en.get(1).get(5).get(i+3));
 				}

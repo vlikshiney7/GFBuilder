@@ -35,8 +35,6 @@ public class EquipSet {
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
 		
-		System.out.println(this.nbCurrentUsed);
-		
 		for(int i = 0; i < listEquipSet.size(); i++) {
 			if(listEquipSet.get(i).getCode().equals(this.code)) {
 				this.name = listEquipSet.get(i).getName();

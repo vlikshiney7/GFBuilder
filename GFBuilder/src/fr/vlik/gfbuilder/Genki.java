@@ -3,9 +3,8 @@ package fr.vlik.gfbuilder;
 import java.awt.Color;
 import java.util.ArrayList;
 
-import javax.swing.JRadioButton;
-
 import fr.vlik.gfbuilder.Effect.TypeEffect;
+import fr.vlik.uidesign.JStarCheckBox;
 
 public class Genki {
 	private String name;
@@ -63,9 +62,12 @@ public class Genki {
 		return Consts.itemColor[this.quality];
 	}
 
-	public void addStarBonus(ArrayList<JRadioButton> star, int idList) {
+	public void addStarBonus(ArrayList<JStarCheckBox> star, int idList) {
 		int nbStar = 0;
-		while(!star.get(nbStar).isSelected() && nbStar < 5) nbStar++;
+		while(nbStar < 5) {
+			if(!star.get(nbStar).isSelected()) break;
+			nbStar++;
+		}
 		nbStar++;
 		
 		if(nbStar == 3 || nbStar == 4) {

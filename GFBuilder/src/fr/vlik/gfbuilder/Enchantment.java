@@ -6,15 +6,13 @@ public class Enchantment {
 	
 	public static final int[] EpMaHaMe45 = { 24, 25, 26, 27, 28, 8, 9, 10, 11, 14, 15, 21, 29 };
 	public static final int[] ArcGunCanCle45 = { 24, 25, 26, 27, 28, 8, 9, 10, 11, 15, 22, 29 };
-	public static final int[] Baton45 = { 24, 25, 26, 27, 28, 8, 9, 12, 13, 14, 15, 19, 29 };
-	public static final int[] Lame45 = { 24, 25, 26, 27, 28, 8, 9, 12, 13, 14, 15, 17, 19, 29 };
-	public static final int[] Rel45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 7, 12, 13, 16, 20 };
+	public static final int[] BatonLame45 = { 24, 25, 26, 27, 28, 8, 9, 12, 13, 14, 15, 17, 19, 29 };
+	public static final int[] Rel45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 7, 12, 13, 15, 16, 20 };
 	public static final int[] Bou45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 15, 18, 19, 30 };
 	
 	public static final int[] EpMaHaMe6 = { 24, 25, 26, 27, 28, 29 };
 	public static final int[] ArcGunCanCle6 = { 24, 25, 26, 27, 28, 29 };
-	public static final int[] Baton6 = { 24, 25, 26, 27, 28, 14, 29 };
-	public static final int[] Lame6 = { 24, 25, 26, 27, 28, 29 };
+	public static final int[] BatonLame6 = { 24, 25, 26, 27, 28, 14, 29 };
 	public static final int[] Rel6 = { 24, 25, 26, 27, 28 };
 	public static final int[] Bou6 = { 24, 25, 26, 27, 28 };
 	

@@ -30,19 +30,19 @@ public class JCustomButton extends JButton{
 		super(imageIcon);
 		
 		try {
-			this.setPressedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/crossPress.png"))));
+			this.setPressedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossPress.png"))));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : crossPress.png");
 		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : /crossPress.png");
+			System.out.println("Image introuvable : crossPress.png");
 		}
 		
 		try {
-			this.setRolloverIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/crossHover.png"))));
+			this.setRolloverIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossHover.png"))));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : crossPress.png");
 		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : /crossPress.png");
+			System.out.println("Image introuvable : crossPress.png");
 		}
 		
 		setVoidUI();
