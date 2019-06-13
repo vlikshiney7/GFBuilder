@@ -1,1 +1,1 @@
-Marteau infernal de Ryuk/0,1,4,5/100/5/true/false/5/Atk,false,7684,true/AtkM,false,3093,true/FCE,false,235,true/VIT,false,100,true/INT,false,129,true
+Marteau infernal de Ryuk/0,1,4,5/100/5/true/false/false/5/Atk,false,7684,true/AtkM,false,3093,true/FCE,false,235,true/VIT,false,100,true/INT,false,129,true

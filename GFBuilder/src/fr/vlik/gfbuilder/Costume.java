@@ -12,7 +12,7 @@ public class Costume {
 	
 	public Costume() {
 		this.name = "Rien";
-		this.quality = 7;
+		this.quality = 0;
 	}
 	
 	public Costume(String name, int quality, int type, ArrayList<Effect> effects) {

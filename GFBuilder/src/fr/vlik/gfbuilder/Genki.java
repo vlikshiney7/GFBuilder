@@ -68,7 +68,6 @@ public class Genki {
 			if(!star.get(nbStar).isSelected()) break;
 			nbStar++;
 		}
-		nbStar++;
 		
 		if(nbStar == 3 || nbStar == 4) {
 			this.effects.add(new Effect(TypeEffect.Depla, true, 10 / (idList+1), false, -1));

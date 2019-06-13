@@ -1,1 +1,1 @@
-Lame de Lion Noir/10,11/100/5/true/false/5/Atk,false,6147,true/AtkM,false,3711,true/FCE,false,129,true/INT,false,235,true/VOL,false,100,true
+Lame de Lion Noir/10,11/100/5/true/false/false/5/Atk,false,6147,true/AtkM,false,3711,true/FCE,false,129,true/INT,false,235,true/VOL,false,100,true

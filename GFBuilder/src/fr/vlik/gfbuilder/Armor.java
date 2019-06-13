@@ -54,12 +54,47 @@ public final class Armor extends Equipment {
 		
 		return back;
 	}
+	
+	public void addEnchant(Enchantment enchant, int idArmor) {
+		if(enchant == null) return;
+		for(Effect e : enchant.getEffects()) {
+			int ordinal = e.getType().ordinal();
+			if(ordinal < 5) {
+				int doubleValue = idArmor == 1 || idArmor == 2 ? 2 : 1;
+				if(this.getQuality() == 6) {
+					
+				} else if(this.getQuality() == 5) {
+					boolean found = false;
+					for(Effect get : this.effects) {
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							get.addEnchantValue(((this.getLvl()-1)/10 +1) * doubleValue);
+							found = true;
+							break;
+						}
+					}
+					if(!found) {
+						e.addEnchantValue(((this.getLvl()-1)/10 +1) * doubleValue);
+						this.effects.add(e);
+					}
+				} else if(this.getQuality() == 4) {
+					
+				}
+			} else if(ordinal == 19) {
+				
+			} else if(ordinal == 59) {
+				
+			} else {
+				this.effects.add(e);
+			}
+		}
+	}
 
 	public void addFortif(int value) {
 		double coefFortif = Consts.coefFortif[value];
 		
 		for(Effect effect : this.effects) {
 			if(effect.isPercent()) continue;
+			if(!effect.getWithReinca()) continue;
 			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) continue;
 			effect.addFortifValue(coefFortif);
 		}

@@ -1,1 +1,1 @@
-Marteau glacé de Moro/0,1,4,5/100/5/true/true/8/Atk,false,3843,true/AtkM,false,2209,true/FCE,false,91,true/VIT,false,41,true/INT,false,47,true/DCCP,false,40/DegStdMa,true,40/MEN,false,40
+Marteau glacé de Moro/0,1,4,5/100/5/true/true/false/8/Atk,false,3843,true/AtkM,false,2209,true/FCE,false,91,true/VIT,false,41,true/INT,false,47,true/DCCP,false,40/DegStdMa,true,40/MEN,false,40

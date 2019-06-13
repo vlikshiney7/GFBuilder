@@ -262,7 +262,7 @@ public class MainFrame extends JFrame {
 			c.setBackground(Consts.UIColor[0]);
 			c.setForeground(Consts.FontColor[0]);
 		}
-		this.spinnerLvl.setBorder(null);
+		this.spinnerLvl.setBorder(new LineBorder(new Color(199, 199, 199), 2));
 		((JSpinner.DefaultEditor)this.spinnerLvl.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
 		this.spinnerLvl.addChangeListener(new ChangeListener() {
 			@Override
@@ -1079,7 +1079,7 @@ public class MainFrame extends JFrame {
 			
 			for(int j = 0; j < 6; j++) {
 				this.allLabel.get(page).get(i*7+j+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.colorGenki.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(i*7+j+3).getText()));
+				this.colorGenki.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(i*7+j+3).getText(), "radio0" + j, "radioOff"));
 				this.colorGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
 				this.colorGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
 				this.colorGenki.get(i).get(j).addActionListener(new ActionListener() {
@@ -1153,7 +1153,7 @@ public class MainFrame extends JFrame {
 		costGroupPanel.add(this.allLabel.get(page).get(4));
 		
 		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JCustomRadioButton(this.allLabel.get(page).get(i+5).getText()));
+			this.costWeapon.add(new JCustomRadioButton(this.allLabel.get(page).get(i+5).getText(), "radio11", "radioOff"));
 			this.costWeapon.get(i).setBackground(Consts.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Consts.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(new ActionListener() {
@@ -1208,7 +1208,7 @@ public class MainFrame extends JFrame {
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
 				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText()));
+				this.costQuality.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText(), "radio1" + j, "radioOff"));
 				this.costQuality.get(i).get(j).setBackground(Consts.UIColor[1]);
 				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(new ActionListener() {
@@ -1330,7 +1330,7 @@ public class MainFrame extends JFrame {
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
 				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i+2).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText()));
+				this.costQuality.get(i+2).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText(), "radio1" + j, "radioOff"));
 				this.costQuality.get(i+2).get(j).setBackground(Consts.UIColor[1]);
 				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(new ActionListener() {
@@ -1803,11 +1803,52 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		page++;
 		
+		/* NUCLEUS */
+		
+		JPanel page11Elem1 = new JPanel();
+		page11Elem1.setLayout(new BoxLayout(page11Elem1, BoxLayout.Y_AXIS));
+		page11Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page11Elem1.setBackground(Consts.UIColor[1]);
+		page11Elem1.add(this.allLabel.get(page).get(0));
+		page11Elem1.add(Box.createVerticalStrut(10));
+		
+		
+		for(int i = 0; i < 6; i++) {
+			Nucleus[] tabNucleus = this.allGameStuff.getListNucleus(i);
+			
+			this.CBoxNucleus.add(new JCustomComboBox<Nucleus>(tabNucleus));
+			this.CBoxNucleus.get(i).setRenderer(new CustomListCellRenderer());
+			this.CBoxNucleus.get(i).addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					MainFrame.this.updateStat();
+				}
+			});
+			
+			JPanel nucleus = new JPanel();
+			nucleus.setBackground(Consts.UIColor[1]);
+			this.allLabel.get(page).get(i+1).setFont(new Font("Open Sans", Font.PLAIN, 14));
+			this.allLabel.get(page).get(i+1).setPreferredSize(new Dimension(55, 20));
+			nucleus.add(this.allLabel.get(page).get(i+1));
+			this.CBoxNucleus.get(i).setPreferredSize(new Dimension(185, 36));
+			nucleus.add(this.CBoxNucleus.get(i));
+			nucleus.add(Box.createVerticalStrut(5));
+			
+			if(i == 1) {
+				this.showAndHide.add(nucleus);
+			}
+			
+			page11Elem1.add(nucleus);
+		}
+		
+		
+		/* BUFF GUILDE */
+		
 		JPanel blocBuffGuild = new JPanel();
 		blocBuffGuild.setLayout(new BoxLayout(blocBuffGuild, BoxLayout.Y_AXIS));
 		blocBuffGuild.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		blocBuffGuild.add(this.allLabel.get(page).get(1));
+		this.allLabel.get(page).get(8).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		blocBuffGuild.add(this.allLabel.get(page).get(8));
 		blocBuffGuild.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 4; i++) {
@@ -1864,22 +1905,23 @@ public class MainFrame extends JFrame {
 		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem3.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(0).setAlignmentX(LEFT_ALIGNMENT);
-		page11Elem3.add(this.allLabel.get(page).get(0));
+		this.allLabel.get(page).get(7).setAlignmentX(LEFT_ALIGNMENT);
+		page11Elem3.add(this.allLabel.get(page).get(7));
 		page11Elem3.add(Box.createVerticalStrut(10));
 		page11Elem3.add(blocBuffGuild);
 		page11Elem3.add(Box.createVerticalStrut(10));
-		this.allLabel.get(page).get(2).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		page11Elem3.add(this.allLabel.get(page).get(2));
+		this.allLabel.get(page).get(9).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		page11Elem3.add(this.allLabel.get(page).get(9));
 		page11Elem3.add(Box.createVerticalStrut(5));
 		page11Elem3.add(scrollList);
 		
+		/* PIERRE PERMANENTE */
 		
 		JPanel blocStone = new JPanel();
 		blocStone.setLayout(new BoxLayout(blocStone, BoxLayout.Y_AXIS));
 		blocStone.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(4).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		blocStone.add(this.allLabel.get(page).get(4));
+		this.allLabel.get(page).get(11).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		blocStone.add(this.allLabel.get(page).get(11));
 		blocStone.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 3; i++) {
@@ -1933,13 +1975,13 @@ public class MainFrame extends JFrame {
 		page11Elem4.setLayout(new BoxLayout(page11Elem4, BoxLayout.Y_AXIS));
 		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem4.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(3).setAlignmentX(LEFT_ALIGNMENT);
-		page11Elem4.add(this.allLabel.get(page).get(3));
+		this.allLabel.get(page).get(10).setAlignmentX(LEFT_ALIGNMENT);
+		page11Elem4.add(this.allLabel.get(page).get(10));
 		page11Elem4.add(Box.createVerticalStrut(10));
 		page11Elem4.add(blocStone);
 		page11Elem4.add(Box.createVerticalStrut(10));
-		this.allLabel.get(page).get(5).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		page11Elem4.add(this.allLabel.get(page).get(5));
+		this.allLabel.get(page).get(12).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		page11Elem4.add(this.allLabel.get(page).get(12));
 		page11Elem4.add(Box.createVerticalStrut(5));
 		page11Elem4.add(this.listStone);
 		
@@ -1949,9 +1991,13 @@ public class MainFrame extends JFrame {
 		page11Inter1.add(page11Elem3);
 		page11Inter1.add(page11Elem4);
 		
+		
+		
 		JPanel page11 = new JPanel();
 		page11.setLayout(new BoxLayout(page11, BoxLayout.Y_AXIS));
 		page11.setBackground(Consts.UIColor[1]);
+		page11.add(page11Elem1);
+		page11.add(Box.createVerticalStrut(10));
 		page11.add(page11Inter1);
 		
 		this.mainPage.add(page11);
@@ -2020,41 +2066,7 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		page++;
 		
-		/* NUCLEUS */
-		JPanel nucleus = new JPanel();
-		nucleus.setLayout(new BoxLayout(nucleus, BoxLayout.Y_AXIS));
-		nucleus.setBorder(BorderFactory.createLineBorder(Color.black));
 		
-		JLabel labelNucleus = new JLabel("Nucléus");
-		labelNucleus.setFont(new Font("Open Sans", Font.BOLD, 12));
-		
-		nucleus.setLayout(new BoxLayout(nucleus, BoxLayout.Y_AXIS));
-		nucleus.setBorder(BorderFactory.createLineBorder(Color.black));
-		nucleus.add(labelNucleus);
-		
-		String[] nameLabel = new String[] { "Nucléus", "Trésor", "Éclatant", "Orange", "Gold", "Violet" };
-		
-		for(int i = 0; i < 6; i++) {
-			JPanel line1 = new JPanel();
-			JLabel labelFor = new JLabel(nameLabel[i]);
-			
-			Nucleus[] tabNucleus = this.allGameStuff.getListNucleus(i);
-			
-			this.CBoxNucleus.add(new JCustomComboBox<Nucleus>(tabNucleus));
-			this.CBoxNucleus.get(i).setRenderer(new CustomListCellRenderer());
-			this.CBoxNucleus.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			if(i == 1) this.CBoxNucleus.get(i).setVisible(false);
-			
-			line1.add(labelFor);
-			line1.add(this.CBoxNucleus.get(i));
-			
-			nucleus.add(line1);
-		}
 		
 		/* ENERGIE */
 		JPanel energy = new JPanel();
@@ -2086,7 +2098,6 @@ public class MainFrame extends JFrame {
 		
 		JPanel page13 = new JPanel(new GridLayout(1, 2, 10, 10));
 		page13.setBackground(Consts.UIColor[2]);
-		page13.add(nucleus);
 		page13.add(energy);
 		
 		this.mainPage.add(page13);
@@ -2339,6 +2350,7 @@ public class MainFrame extends JFrame {
 		Weapon[] weapons = new Weapon[3];
 		for(int i = 0; i < weapons.length; i++) {
 			weapons[i] = new Weapon((Weapon) this.CBoxWeapon.get(i).getSelectedItem());
+			weapons[i].addEnchant((Enchantment) this.CBoxEnchant.get(i).getSelectedItem());
 			weapons[i].addFortif(this.valueFortif.get(i).getSelectedIndex());
 		}
 		
@@ -2356,6 +2368,7 @@ public class MainFrame extends JFrame {
 		Armor[] armors = new Armor[5];
 		for(int i = 0; i < armors.length; i++) {
 			armors[i] = new Armor((Armor) this.CBoxArmor.get(i).getSelectedItem());
+			armors[i].addEnchant((Enchantment) this.CBoxEnchant.get(i+3).getSelectedItem(), i);
 			armors[i].addFortif(this.valueFortif.get(i+3).getSelectedIndex());
 			build.addEffect(armors[i].getEffects());
 		}
@@ -2553,7 +2566,7 @@ public class MainFrame extends JFrame {
 		this.valueRes.get(4).setText("" + allStats[17]);
 		this.valueRes.get(5).setText("" + allStats[18]);
 		
-		if(armorSet == null || armorSet.getNbCurrentUsed() >= 3) this.armorSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(3).get(10));
+		if(armorSet == null || armorSet.getName().equals("Rien") || armorSet.getNbCurrentUsed() < 3) this.armorSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(3).get(10));
 		else {
 			String setInfo = armorSet.getName() + "\n";
 			setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
@@ -2571,7 +2584,7 @@ public class MainFrame extends JFrame {
 			this.armorSetInfo.setText(setInfo);
 		}
 		
-		if(capeRingSet == null || capeRingSet.getNbCurrentUsed() >= 2) this.capeRingSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(4).get(6));
+		if(capeRingSet == null || capeRingSet.getName().equals("Rien") || capeRingSet.getNbCurrentUsed() < 2) this.capeRingSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(4).get(6));
 		else {
 			String setInfo = capeRingSet.getName() + "\n";
 			setInfo += "2 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 2 ? "(Actif) " : "") + ":\n";
@@ -2598,9 +2611,9 @@ public class MainFrame extends JFrame {
 	
 	private void updateNucleus() {
 		if(this.lvlReinca.getSelectedIndex() == 0) {
-			this.CBoxNucleus.get(1).setVisible(false);
+			this.showAndHide.get(3).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
-		} else this.CBoxNucleus.get(1).setVisible(true);
+		} else this.showAndHide.get(3).setVisible(true);
 	}
 	
 	private void updateMount() {
@@ -3445,9 +3458,9 @@ public class MainFrame extends JFrame {
 		int lvl = (int) this.spinnerLvl.getValue();
 		
 		if(isReinca || lvl >= 20) {
-			this.showAndHide.get(3).setVisible(true);
+			this.showAndHide.get(4).setVisible(true);
 		} else {
-			this.showAndHide.get(3).setVisible(false);
+			this.showAndHide.get(4).setVisible(false);
 			this.CBoxBague.setSelectedIndex(0);
 		}
 	}
@@ -3463,9 +3476,9 @@ public class MainFrame extends JFrame {
 		this.CBoxAnima.setSelectedIndex(memory);
 		
 		if(isReinca && lvl >= 10) {
-			this.showAndHide.get(4).setVisible(true);
+			this.showAndHide.get(5).setVisible(true);
 		} else {
-			this.showAndHide.get(4).setVisible(false);
+			this.showAndHide.get(5).setVisible(false);
 			this.CBoxAnima.setSelectedIndex(0);
 		}
 	}

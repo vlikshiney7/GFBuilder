@@ -164,13 +164,13 @@ public class GameStuff {
 				for(int c = 0; c < classes.length; c++) classesSplit[c] = Integer.parseInt(classes[c]);
 				String path =  weaponFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[6]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[6]); j++)
-					effects.add(new Effect(lineSplit[j+7]));
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[7]));
+				for(int j = 0; j < Integer.parseInt(lineSplit[7]); j++)
+					effects.add(new Effect(lineSplit[j+8]));
 				
 				Weapon weapon = new Weapon(
 						lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), Boolean.parseBoolean(lineSplit[4]),
-						 i, Boolean.parseBoolean(lineSplit[5]), path, effects
+						 i, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects
 						 );
 				this.listWeapon.get(i+1).add(weapon);
 				

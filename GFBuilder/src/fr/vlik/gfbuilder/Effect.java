@@ -57,6 +57,10 @@ public class Effect {
 		this.value = (int) (this.value * coef);
 	}
 	
+	public void addEnchantValue(int value) {
+		this.value = this.value + value;
+	}
+	
 	public void reduceAtkValue() {
 		this.value = (int) (this.value * 0.75);
 	}

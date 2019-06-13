@@ -9,5 +9,5 @@ Combinaison bonus,Bonus combination/Talents,Talents/Ancestraux,Ancestral/Terrest
 Spécialité,Speciality/Points restants : ,Remaining points: /Maître,Master/Mythique,Mythical/Légendaire,Legendary/Ultime,Ultimate
 Compétences passives,Passive skills
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Bonus Île des Sprites,Isle Sprite Bonus
-Buff de guilde,Guild buff/Actif,Active/Inactif,Inactive/Pierre permanente,Permanent stone/Actif,Active/Inactif,Inactive
+Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Buff de guilde,Guild buff/Actif,Active/Inactif,Inactive/Pierre permanente,Permanent stone/Actif,Active/Inactif,Inactive
 Bague de mariage,Wedding ring/Anima,Anima

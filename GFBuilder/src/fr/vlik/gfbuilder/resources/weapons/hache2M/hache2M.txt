@@ -1,1 +1,1 @@
-Hallebarde lourde d'aldebaran/0,1/100/5/true/false/5/Atk,false,8645,true/FCE,false,196,true/VIT,false,107,true/AGI,false,152,true/DefP,true,20
+Hallebarde lourde d'aldebaran/0,1/100/5/true/false/false/5/Atk,false,8645,true/FCE,false,196,true/VIT,false,107,true/AGI,false,152,true/DefP,true,20

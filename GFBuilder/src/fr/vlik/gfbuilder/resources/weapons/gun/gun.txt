@@ -1,1 +1,1 @@
-Enflammeur brûlant de Natsu/0,2,3/100/5/true/false/5/AtkD,false,4482,true/FCE,false,43,true/VIT,false,31,true/AGI,false,94,true/Depla,false,5
+Enflammeur brûlant de Natsu/0,2,3/100/5/true/false/false/5/AtkD,false,4482,true/FCE,false,43,true/VIT,false,31,true/AGI,false,94,true/Depla,false,5

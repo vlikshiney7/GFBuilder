@@ -1,1 +1,1 @@
-Croc de Dragon de feu/8,9/100/5/true/true/5/Atk,false,3202,true/AtkM,false,1767,true/FCE,false,70,true/VIT,false,42,true/AGI,false,56,true
+Croc de Dragon de feu/8,9/100/5/true/true/false/5/Atk,false,3202,true/AtkM,false,1767,true/FCE,false,70,true/VIT,false,42,true/AGI,false,56,true
