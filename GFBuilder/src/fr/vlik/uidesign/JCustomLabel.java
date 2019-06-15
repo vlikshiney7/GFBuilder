@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import fr.vlik.gfbuilder.CombiTalent;
 import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
+import fr.vlik.gfbuilder.Energy;
 import fr.vlik.gfbuilder.GuildBuff;
 import fr.vlik.gfbuilder.Nucleus;
 
@@ -33,6 +34,13 @@ public class JCustomLabel extends JLabel {
 			this.setIcon(new ImageIcon(nucleus.getIcon()));
 			this.setToolTipText(nucleus.getTooltip());
 			this.effects = nucleus.getEffects();
+		} else if(object instanceof Energy) {
+			Energy energy = (Energy) object;
+			
+			this.setText(energy.getName());
+			this.setIcon(new ImageIcon(energy.getIcon()));
+			this.setToolTipText(energy.getTooltip());
+			this.effects = energy.getEffects();
 		} else if(object instanceof CombiTalent) {
 			CombiTalent combiTalent = (CombiTalent) object;
 			

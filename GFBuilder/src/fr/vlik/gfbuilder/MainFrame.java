@@ -2,7 +2,6 @@ package fr.vlik.gfbuilder;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -28,8 +27,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
-import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SpinnerNumberModel;
@@ -58,7 +55,7 @@ public class MainFrame extends JFrame {
 	DefaultComboBoxModel<String> model;
 	
 	private JCustomComboBox<String> listClasses;
-	private JSpinner spinnerLvl;
+	private JCustomSpinner spinnerLvl;
 	private JCustomComboBox<Title> CBoxTitle;
 	private JCustomComboBox<String> lvlReinca;
 	private JCustomComboBox<Yggdrasil> yggdrasil;
@@ -105,6 +102,8 @@ public class MainFrame extends JFrame {
 	private ArrayList<JCustomComboBox<Blason>> CBoxBlason = new ArrayList<JCustomComboBox<Blason>>(2);
 	private JCustomComboBox<Buff> CBoxIsleBuff;
 	
+	private ArrayList<JCustomComboBox<Nucleus>> CBoxNucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
+	private ArrayList<JCustomSpinner> spinnerEnergy = new ArrayList<JCustomSpinner>(6);
 	private ArrayList<JCustomButton> cross = new ArrayList<JCustomButton>(7);
 	private ArrayList<JCustomLabel> guildBuffUsed = new ArrayList<JCustomLabel>(4);
 	private JCustomList<GuildBuff> listGuildBuff;
@@ -113,9 +112,6 @@ public class MainFrame extends JFrame {
 	
 	private JCustomComboBox<Bague> CBoxBague = new JCustomComboBox<Bague>();
 	private JCustomComboBox<Anima> CBoxAnima = new JCustomComboBox<Anima>();
-	
-	private ArrayList<JCustomComboBox<Nucleus>> CBoxNucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
-	private ArrayList<JSpinner> spinnerEnergy = new ArrayList<JSpinner>(6);
 	
 	private int base[][][] = new int[5][12][100];
 	private ArrayList<JLabel> valueLife = new ArrayList<JLabel>();
@@ -256,14 +252,7 @@ public class MainFrame extends JFrame {
 		page1Elem1.add(this.listClasses);
 		
 		/* LEVEL */
-		this.spinnerLvl = new JSpinner(new SpinnerNumberModel(1, 1, 100, 1));
-		for(Component c : this.spinnerLvl.getEditor().getComponents()) {
-			c.setFont(new Font("Open Sans", Font.BOLD, 14));
-			c.setBackground(Consts.UIColor[0]);
-			c.setForeground(Consts.FontColor[0]);
-		}
-		this.spinnerLvl.setBorder(new LineBorder(new Color(199, 199, 199), 2));
-		((JSpinner.DefaultEditor)this.spinnerLvl.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
+		this.spinnerLvl = new JCustomSpinner(new SpinnerNumberModel(1, 1, 100, 1));
 		this.spinnerLvl.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
@@ -324,7 +313,7 @@ public class MainFrame extends JFrame {
 		page1Elem3.add(this.lvlReinca);
 		
 		/* TITRE */
-		Title[] tabTitle = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue(), false);
+		Title[] tabTitle = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), false);
 		this.CBoxTitle = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
 		this.CBoxTitle.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxTitle.setRenderer(new CustomListCellRenderer());
@@ -418,7 +407,7 @@ public class MainFrame extends JFrame {
 		page2.setBackground(Consts.UIColor[2]);
 
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue(), null);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), null);
 			this.CBoxWeapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.CBoxWeapon.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxWeapon.get(i).setRenderer(new CustomListCellRenderer());
@@ -566,7 +555,7 @@ public class MainFrame extends JFrame {
 			page2.add(Box.createVerticalStrut(10));
 		}
 		
-		Bullet[] tabBullet = this.allGameStuff.getPossibleBullet((int) this.spinnerLvl.getValue());
+		Bullet[] tabBullet = this.allGameStuff.getPossibleBullet(this.spinnerLvl.getIntValue());
 		this.CBoxBullet = new JCustomComboBox<Bullet>(tabBullet);
 		this.CBoxBullet.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxBullet.setRenderer(new CustomListCellRenderer());
@@ -601,7 +590,7 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < 5; i++) {
 			/* NOM */
-			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
 			this.CBoxArmor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
 			this.CBoxArmor.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxArmor.get(i).setRenderer(new CustomListCellRenderer());
@@ -785,7 +774,7 @@ public class MainFrame extends JFrame {
 		page++;
 		
 		/* CAPE */
-		Cape[] tabCape = this.allGameStuff.getPossibleCape(this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+		Cape[] tabCape = this.allGameStuff.getPossibleCape(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
 		this.CBoxCape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
 		this.CBoxCape.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxCape.setRenderer(new CustomListCellRenderer());
@@ -876,7 +865,7 @@ public class MainFrame extends JFrame {
 		page4.add(page4Elem1);
 		
 		/* RING */
-		Ring[] tabRing = this.allGameStuff.getPossibleRing((int)this.spinnerLvl.getValue(), null);
+		Ring[] tabRing = this.allGameStuff.getPossibleRing(this.spinnerLvl.getIntValue(), null);
 		for(int i = 0; i < 2; i++) {
 			this.CBoxRing.add(new JCustomComboBox<Ring>(new DefaultComboBoxModel<Ring>(tabRing)));
 			this.CBoxRing.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
@@ -986,7 +975,7 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		page++;
 		
-		Mount[] tabMount = this.allGameStuff.getPossibleMount((int) this.spinnerLvl.getValue(), this.lvlReinca.getSelectedIndex() == 1);
+		Mount[] tabMount = this.allGameStuff.getPossibleMount(this.spinnerLvl.getIntValue(), this.lvlReinca.getSelectedIndex() == 1);
 		this.CBoxMount = new JCustomComboBox<Mount>(tabMount);
 		this.CBoxMount.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxMount.setRenderer(new CustomListCellRenderer());
@@ -1470,7 +1459,7 @@ public class MainFrame extends JFrame {
 		page7.add(page7Elem1);
 		page7.add(Box.createVerticalStrut(10));
 		
-		ArrayList<ArrayList<Talent>> tabTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue());
+		ArrayList<ArrayList<Talent>> tabTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
 		
 		JPanel page7Elem2 = new JPanel(new GridLayout(1,2, 10, 10));
 		page7Elem2.setBackground(Consts.UIColor[2]);
@@ -1746,7 +1735,7 @@ public class MainFrame extends JFrame {
 		page10Elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 2; i++) {
-			Blason[] tabBlason = this.allGameStuff.getPossibleBlason((int) this.spinnerLvl.getValue(), i == 0);
+			Blason[] tabBlason = this.allGameStuff.getPossibleBlason(this.spinnerLvl.getIntValue(), i == 0);
 			this.CBoxBlason.add(new JCustomComboBox<Blason>(tabBlason));
 			this.CBoxBlason.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxBlason.get(i).setRenderer(new CustomListCellRenderer());
@@ -1842,13 +1831,56 @@ public class MainFrame extends JFrame {
 		}
 		
 		
+		/* ENERGIE */
+		
+		JPanel energies = new JPanel(new GridLayout(6, 1, 5, 5));
+		energies.setBackground(Consts.UIColor[1]);
+		
+		for(int i = 0; i < 6; i++) {
+			
+			Energy energy = this.allGameStuff.getListEnergy().get(i);
+			JCustomLabel labelEnergy = new JCustomLabel(energy);
+			labelEnergy.setPreferredSize(new Dimension(120, 32));
+			
+			this.spinnerEnergy.add(new JCustomSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
+			this.spinnerEnergy.get(i).addChangeListener(new ChangeListener() {
+				@Override
+				public void stateChanged(ChangeEvent e) {
+					MainFrame.this.updateStat();
+				}
+			});
+			
+			JPanel panelEnergy = new JPanel();
+			panelEnergy.setBackground(Consts.UIColor[1]);
+			panelEnergy.add(labelEnergy);
+			panelEnergy.add(this.spinnerEnergy.get(i));
+			
+			energies.add(panelEnergy);
+		}
+		
+		JPanel page11Elem2 = new JPanel();
+		page11Elem2.setLayout(new BoxLayout(page11Elem2, BoxLayout.Y_AXIS));
+		page11Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page11Elem2.setBackground(Consts.UIColor[1]);
+		page11Elem2.add(this.allLabel.get(page).get(7));
+		page11Elem2.add(Box.createVerticalStrut(10));
+		page11Elem2.add(energies);
+		
+		
+		JPanel page11Inter1 = new JPanel(new GridLayout(1, 2, 10, 10));
+		page11Inter1.setBackground(Consts.UIColor[2]);
+		page11Inter1.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page11Inter1.add(page11Elem1);
+		page11Inter1.add(page11Elem2);
+		
+		
 		/* BUFF GUILDE */
 		
 		JPanel blocBuffGuild = new JPanel();
 		blocBuffGuild.setLayout(new BoxLayout(blocBuffGuild, BoxLayout.Y_AXIS));
 		blocBuffGuild.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(8).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		blocBuffGuild.add(this.allLabel.get(page).get(8));
+		this.allLabel.get(page).get(9).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		blocBuffGuild.add(this.allLabel.get(page).get(9));
 		blocBuffGuild.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 4; i++) {
@@ -1905,13 +1937,13 @@ public class MainFrame extends JFrame {
 		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem3.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(7).setAlignmentX(LEFT_ALIGNMENT);
-		page11Elem3.add(this.allLabel.get(page).get(7));
+		this.allLabel.get(page).get(8).setAlignmentX(LEFT_ALIGNMENT);
+		page11Elem3.add(this.allLabel.get(page).get(8));
 		page11Elem3.add(Box.createVerticalStrut(10));
 		page11Elem3.add(blocBuffGuild);
 		page11Elem3.add(Box.createVerticalStrut(10));
-		this.allLabel.get(page).get(9).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		page11Elem3.add(this.allLabel.get(page).get(9));
+		this.allLabel.get(page).get(10).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		page11Elem3.add(this.allLabel.get(page).get(10));
 		page11Elem3.add(Box.createVerticalStrut(5));
 		page11Elem3.add(scrollList);
 		
@@ -1920,8 +1952,8 @@ public class MainFrame extends JFrame {
 		JPanel blocStone = new JPanel();
 		blocStone.setLayout(new BoxLayout(blocStone, BoxLayout.Y_AXIS));
 		blocStone.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(11).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		blocStone.add(this.allLabel.get(page).get(11));
+		this.allLabel.get(page).get(12).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		blocStone.add(this.allLabel.get(page).get(12));
 		blocStone.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 3; i++) {
@@ -1975,30 +2007,28 @@ public class MainFrame extends JFrame {
 		page11Elem4.setLayout(new BoxLayout(page11Elem4, BoxLayout.Y_AXIS));
 		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem4.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(10).setAlignmentX(LEFT_ALIGNMENT);
-		page11Elem4.add(this.allLabel.get(page).get(10));
+		this.allLabel.get(page).get(11).setAlignmentX(LEFT_ALIGNMENT);
+		page11Elem4.add(this.allLabel.get(page).get(11));
 		page11Elem4.add(Box.createVerticalStrut(10));
 		page11Elem4.add(blocStone);
 		page11Elem4.add(Box.createVerticalStrut(10));
-		this.allLabel.get(page).get(12).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		page11Elem4.add(this.allLabel.get(page).get(12));
+		this.allLabel.get(page).get(13).setFont(new Font("Open Sans", Font.PLAIN, 14));
+		page11Elem4.add(this.allLabel.get(page).get(13));
 		page11Elem4.add(Box.createVerticalStrut(5));
 		page11Elem4.add(this.listStone);
 		
-		JPanel page11Inter1 = new JPanel(new GridLayout(1, 2, 10, 10));
-		page11Inter1.setBackground(Consts.UIColor[2]);
-		page11Inter1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Inter1.add(page11Elem3);
-		page11Inter1.add(page11Elem4);
-		
+		JPanel page11Inter2 = new JPanel(new GridLayout(1, 2, 10, 10));
+		page11Inter2.setBackground(Consts.UIColor[2]);
+		page11Inter2.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page11Inter2.add(page11Elem3);
+		page11Inter2.add(page11Elem4);
 		
 		
 		JPanel page11 = new JPanel();
 		page11.setLayout(new BoxLayout(page11, BoxLayout.Y_AXIS));
 		page11.setBackground(Consts.UIColor[1]);
-		page11.add(page11Elem1);
-		page11.add(Box.createVerticalStrut(10));
 		page11.add(page11Inter1);
+		page11.add(page11Inter2);
 		
 		this.mainPage.add(page11);
 		
@@ -2029,7 +2059,7 @@ public class MainFrame extends JFrame {
 		this.showAndHide.add(page12Elem1);
 		
 		
-		Anima[] tabAnima = this.allGameStuff.getListAnima((int) this.spinnerLvl.getValue());
+		Anima[] tabAnima = this.allGameStuff.getListAnima(this.spinnerLvl.getIntValue());
 		this.CBoxAnima = new JCustomComboBox<Anima>(tabAnima);
 		this.CBoxAnima.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxAnima.setRenderer(new CustomListCellRenderer());
@@ -2068,39 +2098,9 @@ public class MainFrame extends JFrame {
 		
 		
 		
-		/* ENERGIE */
-		JPanel energy = new JPanel();
-		JLabel labelEnergy = new JLabel("Energies");
-		labelEnergy.setFont(new Font("Open Sans", Font.BOLD, 12));
 		
-		energy.setLayout(new BoxLayout(energy, BoxLayout.Y_AXIS));
-		energy.setBorder(BorderFactory.createLineBorder(Color.black));
-		energy.add(labelEnergy);
 		
-		for(int i = 0; i < 6; i++) {
-			JPanel line1 = new JPanel();
-			Energy currentEnergy = this.allGameStuff.getListEnergy().get(i);
-			line1.add(new JLabel(new ImageIcon(currentEnergy.getIcon())));
-			line1.add(new JLabel(currentEnergy.getName()));
-			
-			this.spinnerEnergy.add(new JSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
-			this.spinnerEnergy.get(i).addChangeListener(new ChangeListener() {
-				@Override
-				public void stateChanged(ChangeEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			
-			line1.add(this.spinnerEnergy.get(i));
-			
-			energy.add(line1);
-		}
-		
-		JPanel page13 = new JPanel(new GridLayout(1, 2, 10, 10));
-		page13.setBackground(Consts.UIColor[2]);
-		page13.add(energy);
-		
-		this.mainPage.add(page13);
+		this.mainPage.add(new JPanel());
 		
 		
 		JPanel content = new JPanel();
@@ -2311,7 +2311,7 @@ public class MainFrame extends JFrame {
 		Build build;
 		
 		int idClass = this.listClasses.getSelectedIndex();
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		double coefReinca = 1;
 		
 		if(this.lvlReinca.getSelectedIndex() == 1) {
@@ -2505,6 +2505,18 @@ public class MainFrame extends JFrame {
 			build.addEffect(blason.getEffects());
 		}
 		
+		
+		for(JCustomComboBox<Nucleus> nuclei : this.CBoxNucleus) {
+			Nucleus nucleus = (Nucleus) nuclei.getSelectedItem();
+			build.addEffect(nucleus.getEffects());
+		}
+		
+		for(int i = 0; i < this.spinnerEnergy.size(); i++) {
+			for(Effect effect : this.allGameStuff.getListEnergy().get(i).getEffects()) {
+				build.addAdditionalEffect(Energy.multiplyEffect(effect, Math.min(this.spinnerEnergy.get(i).getIntValue(), this.spinnerLvl.getIntValue() *2)));
+			}
+		}
+		
 		Buff buff = (Buff) this.CBoxIsleBuff.getSelectedItem();
 		build.addEffect(buff.getEffects());
 		
@@ -2524,17 +2536,6 @@ public class MainFrame extends JFrame {
 		Anima anima = (Anima) this.CBoxAnima.getSelectedItem();
 		build.addEffect(anima.getEffects());
 		
-		
-		for(JCustomComboBox<Nucleus> nuclei : this.CBoxNucleus) {
-			Nucleus nucleus = (Nucleus) nuclei.getSelectedItem();
-			build.addEffect(nucleus.getEffects());
-		}
-		
-		for(int i = 0; i < this.spinnerEnergy.size(); i++) {
-			for(Effect effect : this.allGameStuff.getListEnergy().get(i).getEffects()) {
-				build.addAdditionalEffect(Energy.multiplyEffect(effect, Math.min((int) this.spinnerEnergy.get(i).getValue(), (int) this.spinnerLvl.getValue() *2)));
-			}
-		}
 		
 		updateLabel(build.calculStatFromEffect(), armorSet, capeRingSet);
 	}
@@ -2602,7 +2603,7 @@ public class MainFrame extends JFrame {
 	private void updateTitle() {
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 0 ? false : true;
 		
-		Title tabTitle[] = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue(), isReinca);
+		Title tabTitle[] = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca);
 		Title memory = (Title) this.CBoxTitle.getSelectedItem();
 		
 		this.CBoxTitle.setModel(new DefaultComboBoxModel<Title>(tabTitle));
@@ -2619,7 +2620,7 @@ public class MainFrame extends JFrame {
 	private void updateMount() {
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 0 ? false : true;
 		
-		Mount tabMount[] = this.allGameStuff.getPossibleMount((int) this.spinnerLvl.getValue(), isReinca);
+		Mount tabMount[] = this.allGameStuff.getPossibleMount(this.spinnerLvl.getIntValue(), isReinca);
 		Mount memory = (Mount) this.CBoxMount.getSelectedItem();
 		
 		this.CBoxMount.setModel(new DefaultComboBoxModel<Mount>(tabMount));
@@ -2685,7 +2686,7 @@ public class MainFrame extends JFrame {
 	private void updateListStuff() {
 		/* ARME */
 		for(int i = 0; i < this.CBoxWeapon.size(); i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), null);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), null);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(i).getSelectedItem();
 			
 			this.CBoxWeapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -2706,7 +2707,7 @@ public class MainFrame extends JFrame {
 		
 		/* ARMURE */
 		for(int i = 0; i < this.CBoxArmor.size(); i++) {
-			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue());
+			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
 			Armor memory = (Armor) this.CBoxArmor.get(i).getSelectedItem();
 			
 			this.CBoxArmor.get(i).setModel(new DefaultComboBoxModel<Armor>(tabArmor));
@@ -2728,14 +2729,14 @@ public class MainFrame extends JFrame {
 		}
 		
 		/* PROJECTILE */
-		Bullet[] tabBullet = this.allGameStuff.getPossibleBullet((int) this.spinnerLvl.getValue());
+		Bullet[] tabBullet = this.allGameStuff.getPossibleBullet(this.spinnerLvl.getIntValue());
 		Bullet memoryBullet = (Bullet) this.CBoxBullet.getSelectedItem();
 		
 		this.CBoxBullet.setModel(new DefaultComboBoxModel<Bullet>(tabBullet));
 		this.CBoxBullet.setSelectedItem(memoryBullet);
 		
 		/* CAPE */
-		Cape[] tabCape = this.allGameStuff.getPossibleCape(this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue());
+		Cape[] tabCape = this.allGameStuff.getPossibleCape(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
 		Cape memoryCape = (Cape) this.CBoxCape.getSelectedItem();
 		
 		this.CBoxCape.setModel(new DefaultComboBoxModel<Cape>(tabCape));
@@ -2743,7 +2744,7 @@ public class MainFrame extends JFrame {
 		
 		/* RING */
 		for(int i = 0; i < 2; i++) {
-			Ring[] tabRing = this.allGameStuff.getPossibleRing((int) this.spinnerLvl.getValue(), null);
+			Ring[] tabRing = this.allGameStuff.getPossibleRing(this.spinnerLvl.getIntValue(), null);
 			Ring memory = (Ring) this.CBoxRing.get(i).getSelectedItem();
 			
 			this.CBoxRing.get(i).setModel(new DefaultComboBoxModel<Ring>(tabRing));
@@ -3002,7 +3003,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateListTalent() {
-		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), (int) this.spinnerLvl.getValue());
+		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
 		
 		for(int i = 0; i < listTalent.size(); i++) {
 			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
@@ -3015,7 +3016,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateTalent() {
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), lvl);
 		
 		for(int i = 0; i < listTalent.size(); i++) {
@@ -3172,7 +3173,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateSpeElement(int idList) {
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		boolean reinca = this.lvlReinca.getSelectedIndex() != 0;
 		int nb10sup = 0;
 		int nb15sup = 0;
@@ -3288,7 +3289,7 @@ public class MainFrame extends JFrame {
 	
 	private void updateSkill() {
 		int idClass = this.listClasses.getSelectedIndex();
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
@@ -3367,7 +3368,7 @@ public class MainFrame extends JFrame {
 	
 	private void updateBlason() {
 		for(int i = 0; i < 2; i++) {
-			Blason tabBlason[] = this.allGameStuff.getPossibleBlason((int) this.spinnerLvl.getValue(), i == 0);
+			Blason tabBlason[] = this.allGameStuff.getPossibleBlason(this.spinnerLvl.getIntValue(), i == 0);
 			Blason memory = (Blason) this.CBoxBlason.get(i).getSelectedItem();
 			
 			this.CBoxBlason.get(i).setModel(new DefaultComboBoxModel<Blason>(tabBlason));
@@ -3455,7 +3456,7 @@ public class MainFrame extends JFrame {
 	
 	private void updateBague() {
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		
 		if(isReinca || lvl >= 20) {
 			this.showAndHide.get(4).setVisible(true);
@@ -3467,7 +3468,7 @@ public class MainFrame extends JFrame {
 	
 	private void updateAnima() {
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		
 		Anima[] tabAnima = this.allGameStuff.getListAnima(lvl);
 		int memory = this.CBoxAnima.getSelectedIndex();
@@ -3484,11 +3485,11 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateEnergy() {
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
 		
 		for(int i = 0; i < this.spinnerEnergy.size(); i++) {
-			int memory = (int) this.spinnerEnergy.get(i).getValue();
+			int memory = (int) this.spinnerEnergy.get(i).getIntValue();
 			if(!isReinca) {
 				if(memory > lvl*2) memory = lvl*2;
 				this.spinnerEnergy.get(i).setModel(new SpinnerNumberModel(memory, 0, lvl*2, 1));
@@ -3571,7 +3572,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void showSpe() {
-		int lvl = (int) this.spinnerLvl.getValue();
+		int lvl = this.spinnerLvl.getIntValue();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			if(lvl < this.tabSpeciality[i].getLvl()) {
@@ -3596,7 +3597,7 @@ public class MainFrame extends JFrame {
 			int keepEnchant = this.CBoxEnchant.get(1).getSelectedIndex();
 			
 			if(choice.getType() == 3 || choice.getType() == 4 || choice.getType() == 5 || choice.getType() == 7 || choice.getType() == 12 || choice.getType() == 13) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), null);
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), null);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 				
 				this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3611,7 +3612,7 @@ public class MainFrame extends JFrame {
 				
 				this.showAndHide.get(0).setVisible(false);
 			} else if(choice.getType() == 0 || choice.getType() == 1 || choice.getType() == 2 || choice.getType() == 6) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), choice);
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), choice);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(1).getSelectedItem();
 				
 				this.CBoxWeapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3635,7 +3636,7 @@ public class MainFrame extends JFrame {
 		} else if(idList == 1) {
 			int keepEnchant = this.CBoxEnchant.get(0).getSelectedIndex();
 			
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), (int)this.spinnerLvl.getValue(), choice);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), choice);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 			
 			this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3652,7 +3653,7 @@ public class MainFrame extends JFrame {
 		Ring choice = (Ring) this.CBoxRing.get(idList).getSelectedItem();
 		int other = idList == 0 ? 1 : 0;
 		
-		Ring[] tabRing = this.allGameStuff.getPossibleRing((int) this.spinnerLvl.getValue(), choice);
+		Ring[] tabRing = this.allGameStuff.getPossibleRing(this.spinnerLvl.getIntValue(), choice);
 		Ring memory = (Ring) this.CBoxRing.get(other).getSelectedItem();
 		
 		this.CBoxRing.get(other).setModel(new DefaultComboBoxModel<Ring>(tabRing));
