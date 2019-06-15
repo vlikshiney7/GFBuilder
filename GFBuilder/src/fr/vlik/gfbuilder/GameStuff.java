@@ -164,13 +164,19 @@ public class GameStuff {
 				for(int c = 0; c < classes.length; c++) classesSplit[c] = Integer.parseInt(classes[c]);
 				String path =  weaponFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[7]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[7]); j++)
+				String[] effectSplit = lineSplit[7].split(",");
+				
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 					effects.add(new Effect(lineSplit[j+8]));
+				
+				ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
+					bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 				
 				Weapon weapon = new Weapon(
 						lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), Boolean.parseBoolean(lineSplit[4]),
-						 i, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects
+						 i, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects, bonusXP
 						 );
 				this.listWeapon.get(i+1).add(weapon);
 				
@@ -249,14 +255,21 @@ public class GameStuff {
 				int classesSplit[] = new int[classes.length];
 				for(int c = 0; c < classes.length; c++) classesSplit[c] = Integer.parseInt(classes[c]);
 				String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
-
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[6]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[6]); j++)
+				
+				String[] effectSplit = lineSplit[6].split(",");
+				
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 					effects.add(new Effect(lineSplit[j+7]));
+				
+				ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
+					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+				
 				
 				Armor armor = new Armor(
 						lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[4]), Boolean.parseBoolean(lineSplit[5]),
-						lineSplit[3], path, effects
+						lineSplit[3], path, effects, bonusXP
 						);
 				this.listArmor.get(i).add(armor);
 				
@@ -333,14 +346,21 @@ public class GameStuff {
 			int classesSplit[] = new int[classes.length];
 			for(int c = 0; c < classes.length; c++) classesSplit[c] = Integer.parseInt(classes[c]);
 			String path =  lineSplit[lineSplit.length-1] + ".png";
-
-			ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[6]));
-			for(int j = 0; j < Integer.parseInt(lineSplit[6]); j++)
+			
+			String[] effectSplit = lineSplit[6].split(",");
+			
+			ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+			for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 				effects.add(new Effect(lineSplit[j+7]));
+			
+			ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+			for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
+				bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+			
 			
 			Cape cape = new Cape(
 					lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[4]), Boolean.parseBoolean(lineSplit[5]),
-					lineSplit[3], path, effects
+					lineSplit[3], path, effects, bonusXP
 					);
 			this.listCape.add(cape);
 			
@@ -355,14 +375,21 @@ public class GameStuff {
 		while (line != null) {
 			String[] lineSplit = line.split("/");
 			String path =  lineSplit[lineSplit.length-1] + ".png";
-
-			ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[6]));
-			for(int j = 0; j < Integer.parseInt(lineSplit[6]); j++)
+			
+			String[] effectSplit = lineSplit[6].split(",");
+			
+			ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+			for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 				effects.add(new Effect(lineSplit[j+7]));
+			
+			ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+			for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
+				bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+			
 			
 			Ring ring = new Ring(
 					lineSplit[0], Integer.parseInt(lineSplit[1]), Integer.parseInt(lineSplit[3]), Boolean.parseBoolean(lineSplit[4]),
-					lineSplit[2], Boolean.parseBoolean(lineSplit[5]), path, effects
+					lineSplit[2], Boolean.parseBoolean(lineSplit[5]), path, effects, bonusXP
 					);
 			this.listRing.add(ring);
 			

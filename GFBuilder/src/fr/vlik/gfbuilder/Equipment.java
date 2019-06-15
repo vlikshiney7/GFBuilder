@@ -13,6 +13,7 @@ public abstract class Equipment {
 	private boolean canEnchant;
 	protected BufferedImage img;
 	protected ArrayList<Effect> effects = new ArrayList<Effect>();
+	protected ArrayList<Effect> bonusXP = new ArrayList<Effect>();
 	
 	public Equipment() {
 		this.name = "Rien";
@@ -20,13 +21,14 @@ public abstract class Equipment {
 		this.lvl = 0;
 	}
 	
-	public Equipment(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, ArrayList<Effect> effects) {
+	public Equipment(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		this.name = name;
 		this.idClasses = idClasses;
 		this.lvl = lvl;
 		this.quality = quality;
 		this.canEnchant = canEnchant;
 		this.effects = effects;
+		this.bonusXP = bonusXP;
 	}
 	
 	public String getName() {
@@ -65,6 +67,14 @@ public abstract class Equipment {
 		return list;
 	}
 	
+	public ArrayList<Effect> getBonusXP() {
+		ArrayList<Effect> list = new ArrayList<Effect>(this.bonusXP.size());
+		for(Effect effect : this.bonusXP) {
+			list.add(new Effect(effect));
+		}
+		return list;
+	}
+	
 	public boolean containIdClass(int idClass) {
 		for(int element : idClasses) {
 			if(element == idClass) return true;
@@ -86,6 +96,12 @@ public abstract class Equipment {
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {
+			tooltip.append("<br>");
+			tooltip.append(e.getTooltip());
+		}
+		tooltip.append("<br><br>");
+		tooltip.append("Bonus XP Stuff lvl " + this.lvl);
+		for(Effect e : this.bonusXP) {
 			tooltip.append("<br>");
 			tooltip.append(e.getTooltip());
 		}

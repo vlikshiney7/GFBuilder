@@ -14,7 +14,7 @@ public final class Weapon extends Equipment {
 	private boolean forReinca;
 	
 	public Weapon() {
-		super("Rien", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 }, 0, 0, false, new ArrayList<Effect>());
+		super("Rien", new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 }, 0, 0, false, new ArrayList<Effect>(), new ArrayList<Effect>());
 		
 		this.type = -1;
 		this.isUnique = false;
@@ -23,7 +23,7 @@ public final class Weapon extends Equipment {
 	}
 	
 	public Weapon(Weapon weapon) {
-		super(weapon.getName(), weapon.getIdClasses(), weapon.getLvl(), weapon.getQuality(), weapon.getCanEnchant(), weapon.getEffects());
+		super(weapon.getName(), weapon.getIdClasses(), weapon.getLvl(), weapon.getQuality(), weapon.getCanEnchant(), weapon.getEffects(), weapon.getBonusXP());
 		
 		this.type = weapon.getType();
 		this.isUnique = weapon.getIsUnique();
@@ -32,8 +32,8 @@ public final class Weapon extends Equipment {
 		this.effects = weapon.getEffects();
 	}
 	
-	public Weapon(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, int type, boolean isUnique, boolean forReinca, String iconPath, ArrayList<Effect> effects) {
-		super(name, idClasses, lvl, quality, canEnchant, effects);
+	public Weapon(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, int type, boolean isUnique, boolean forReinca, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+		super(name, idClasses, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.type = type;
 		this.isUnique = isUnique;

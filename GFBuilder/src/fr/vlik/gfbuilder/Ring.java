@@ -13,15 +13,15 @@ public final class Ring extends Equipment {
 	private boolean isUnique;
 	
 	public Ring(Ring ring) {
-		super(ring.getName(), ring.getIdClasses(), ring.getLvl(), ring.getQuality(), ring.getCanEnchant(), ring.getEffects());
+		super(ring.getName(), ring.getIdClasses(), ring.getLvl(), ring.getQuality(), ring.getCanEnchant(), ring.getEffects(), ring.getBonusXP());
 		
 		this.setCode = ring.getSetCode();
 		this.isUnique = ring.getIsUnique();
 		this.img = ring.getIcon();
 	}
 	
-	public Ring(String name, int lvl, int quality, boolean canEnchant, String setCode, boolean isUnique, String iconPath, ArrayList<Effect> effects) {
-		super(name, new int[] { -1 } , lvl, quality, canEnchant, effects);
+	public Ring(String name, int lvl, int quality, boolean canEnchant, String setCode, boolean isUnique, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+		super(name, new int[] { -1 } , lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.isUnique = isUnique;

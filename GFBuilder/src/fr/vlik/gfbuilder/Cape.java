@@ -12,14 +12,14 @@ public final class Cape extends Equipment {
 	private String setCode;
 	
 	public Cape(Cape cape) {
-		super(cape.getName(), cape.getIdClasses(), cape.getLvl(), cape.getQuality(), cape.getCanEnchant(), cape.getEffects());
+		super(cape.getName(), cape.getIdClasses(), cape.getLvl(), cape.getQuality(), cape.getCanEnchant(), cape.getEffects(), cape.getBonusXP());
 		
 		this.setCode = cape.getSetCode();
 		this.img = cape.getIcon();
 	}
 	
-	public Cape(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects) {
-		super(name, idClasses, lvl, quality, canEnchant, effects);
+	public Cape(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+		super(name, idClasses, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.img = setIcon(iconPath, quality);

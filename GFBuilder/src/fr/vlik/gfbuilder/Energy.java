@@ -33,7 +33,7 @@ public class Energy {
 		}
 		return list;
 	}
-
+	
 	private BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		

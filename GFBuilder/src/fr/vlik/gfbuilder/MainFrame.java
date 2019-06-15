@@ -2418,6 +2418,31 @@ public class MainFrame extends JFrame {
 			else build.addEffect(new Effect(type, false, valueXpStuff, true, -1));
 		}
 		
+		for(int i = 0; i < 11; i++) {
+			if(!(this.listEffectXpStuff.get(i*2).getSelectedIndex() == 0) && !(this.listEffectXpStuff.get(i*2+1).getSelectedIndex() == 0)
+					&& this.listEffectXpStuff.get(i*2).getSelectedIndex() != this.listEffectXpStuff.get(i*2+1).getSelectedIndex()) {
+				int lvlXpStuff = this.listLvlXpStuff.get(i*2).getSelectedIndex() + this.listLvlXpStuff.get(i*2+1).getSelectedIndex() +1;
+				if(i < 3) {
+					if(lvlXpStuff >= weapons[i].getLvl()) {
+						build.addEffect(weapons[i].getBonusXP());
+					}
+				} else if(i < 8) {
+					if(lvlXpStuff >= armors[i-3].getLvl()) {
+						build.addEffect(armors[i-3].getBonusXP());
+					}
+				} else if(i < 9) {
+					if(lvlXpStuff >= cape.getLvl()) {
+						build.addEffect(cape.getBonusXP());
+					}
+				} else if(i < 11) {
+					if(lvlXpStuff >= rings[i-9].getLvl()) {
+						build.addEffect(rings[i-9].getBonusXP());
+					}
+				}
+			}
+		}
+		
+		
 		for(int i = 0; i < this.colorGenki.size(); i++) {
 			if(!this.colorGenki.get(i).get(0).isSelected()) {
 				Genki genki = new Genki((Genki) this.CBoxGenki.get(i).getSelectedItem());

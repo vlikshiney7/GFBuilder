@@ -1,1 +1,1 @@
-Épée Croc de Chauve-souris/0,1,2,3/100/5/true/true/false/5/Atk,false,3202,true/FCE,false,145,true/VIT,false,64,true/AGI,false,43,true/RegenCB,false,25
+Épée Croc de Chauve-souris/0,1,2,3/100/5/true/true/false/5,0,0/Atk,false,3202,true/FCE,false,145,true/VIT,false,64,true/AGI,false,43,true/RegenCB,false,25

@@ -10,16 +10,16 @@ import javax.imageio.ImageIO;
 public final class Armor extends Equipment {
 	
 	private String setCode;
-
+	
 	public Armor(Armor armor) {
-		super(armor.getName(), armor.getIdClasses(), armor.getLvl(), armor.getQuality(), armor.getCanEnchant(), armor.getEffects());
+		super(armor.getName(), armor.getIdClasses(), armor.getLvl(), armor.getQuality(), armor.getCanEnchant(), armor.getEffects(), armor.getBonusXP());
 		
 		this.setCode = armor.getSetCode();
 		this.img = armor.getIcon();
 	}
 	
-	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects) {
-		super(name, idClasses, lvl, quality, canEnchant, effects);
+	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+		super(name, idClasses, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.img = setIcon(iconPath, quality);

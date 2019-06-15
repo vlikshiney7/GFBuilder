@@ -1,4 +1,4 @@
-Rien/0/-1/0/false/false/0/null
-Chevalière Martiale de l'Enfer/100/-1/4/false/true/5/DefM,false,605,true/VIT,false,20,true/VOL,false,10,true/PV,false,950/Ombre,false,18/100gt
-Chevalière Élite de la Violence/95/-1/4/false/true/5/DefM,false,559,true/VIT,false,18,true/VOL,false,9,true/PV,false,800/Ombre,false,17/100gt
-Bague d'Os Réptilienne/80/-1/3/false/true/5/DefM,false,530,true/INT,false,15,true/VOL,false,15,true/Glace,false,21/DegM,false,5/80gvg2
+Rien/0/-1/0/false/false/0,0,0/null
+Chevalière Martiale de l'Enfer/100/-1/4/false/true/5,0,0/DefM,false,605,true/VIT,false,20,true/VOL,false,10,true/PV,false,950/Ombre,false,18/100gt
+Chevalière Élite de la Violence/95/-1/4/false/true/5,0,0/DefM,false,559,true/VIT,false,18,true/VOL,false,9,true/PV,false,800/Ombre,false,17/100gt
+Bague d'Os Réptilienne/80/-1/3/false/true/5,0,0/DefM,false,530,true/INT,false,15,true/VOL,false,15,true/Glace,false,21/DegM,false,5/80gvg2

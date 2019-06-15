@@ -1,1 +1,1 @@
-Griffes de chasse de Tigre de glace/8,9/100/5/true/false/false/6/Atk,false,6725,true/FCE,false,158,true/VIT,false,104,true/AGI,false,82,true/MEN,false,30/PeneP,false,20
+Griffes de chasse de Tigre de glace/8,9/100/5/true/false/false/6,0,0/Atk,false,6725,true/FCE,false,158,true/VIT,false,104,true/AGI,false,82,true/MEN,false,30/PeneP,false,20
