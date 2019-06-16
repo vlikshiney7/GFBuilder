@@ -1,9 +1,7 @@
 package fr.vlik.gfbuilder;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -16,7 +14,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -115,11 +112,8 @@ public class MainFrame extends JFrame {
 	private JCustomComboBox<Anima> CBoxAnima = new JCustomComboBox<Anima>();
 	
 	private int base[][][] = new int[5][12][100];
-	private ArrayList<JLabel> valueLife = new ArrayList<JLabel>();
-	private ArrayList<JLabel> valueBase = new ArrayList<JLabel>();
-	private ArrayList<JLabel> valueAtk = new ArrayList<JLabel>();
-	private ArrayList<JLabel> valueDefCritEsq = new ArrayList<JLabel>();
-	private ArrayList<JLabel> valueRes = new ArrayList<JLabel>();
+	
+	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
 	private GameStuff allGameStuff;
 	
@@ -2152,125 +2146,51 @@ public class MainFrame extends JFrame {
 		/*		****	   STATS	  	****	*/
 		/****************************************/
 		
-		/* PV PM */
-		JPanel life = new JPanel();
-		life.setLayout(new BoxLayout(life, BoxLayout.Y_AXIS));
-		life.setBorder(BorderFactory.createLineBorder(Color.black));
-		
-		tmp = new String[] { "PV", "PM" };
-		Color colorLabel[] = { Color.GREEN, Color.MAGENTA };
-		for(int i = 0; i < 2; i++) {
-			JLabel labelFor = new JLabel(tmp[i]);
-			labelFor.setFont(new Font("Open Sans", Font.BOLD, 12));
-			labelFor.setForeground(colorLabel[i]);
-			this.valueLife.add(new JLabel());
-			this.valueLife.get(i).setFont(new Font("Open Sans", Font.LAYOUT_LEFT_TO_RIGHT, 12));
-			
-			JPanel panelLife = new JPanel(new FlowLayout(1));
-			panelLife.add(labelFor);
-			panelLife.add(this.valueLife.get(i));
-			
-			life.add(panelLife);
-		}
-		
-		/* FCE VIT INT VOL AGI */
-		JPanel base = new JPanel();
-		base.setLayout(new BoxLayout(base, BoxLayout.Y_AXIS));
-		base.setBorder(BorderFactory.createLineBorder(Color.black));
-		
-		tmp = new String[] { "FCE", "VIT", "INT", "VOL", "AGI" };
-		colorLabel = new Color[] { Color.RED, Color.GREEN, Color.BLUE, Color.MAGENTA, Color.YELLOW };
-		for(int i = 0; i < 5; i++) {
-			JLabel labelFor = new JLabel(tmp[i]);
-			labelFor.setFont(new Font("Open Sans", Font.BOLD, 12));
-			labelFor.setForeground(colorLabel[i]);
-			this.valueBase.add(new JLabel());
-			this.valueBase.get(i).setFont(new Font("Open Sans", Font.LAYOUT_LEFT_TO_RIGHT, 12));
-			
-			JPanel panelBase = new JPanel(new FlowLayout(1));
-			panelBase.add(labelFor);
-			panelBase.add(this.valueBase.get(i));
-			
-			base.add(panelBase);
-		}
-		
-		/* ATK ATKD ATKM */
-		JPanel atk = new JPanel();
-		atk.setLayout(new BoxLayout(atk, BoxLayout.Y_AXIS));
-		atk.setBorder(BorderFactory.createLineBorder(Color.black));
-		
-		tmp = new String[] { "ATQ", "ATQ D", "ATQ M" };
-		colorLabel = new Color[] { Color.RED, Color.YELLOW, Color.BLUE };
-		for(int i = 0; i < 3; i++) {
-			JLabel labelFor = new JLabel(tmp[i]);
-			labelFor.setFont(new Font("Open Sans", Font.BOLD, 12));
-			labelFor.setForeground(colorLabel[i]);
-			this.valueAtk.add(new JLabel());
-			this.valueAtk.get(i).setFont(new Font("Open Sans", Font.LAYOUT_LEFT_TO_RIGHT, 12));
-			
-			JPanel panelAtk = new JPanel(new FlowLayout(1));
-			panelAtk.add(labelFor);
-			panelAtk.add(this.valueAtk.get(i));
-			
-			atk.add(panelAtk);
-		}
-		
-		/* DEFP DEFM TCCP TCCM ESQ */
-		JPanel defCritEsq = new JPanel();
-		defCritEsq.setLayout(new BoxLayout(defCritEsq, BoxLayout.Y_AXIS));
-		defCritEsq.setBorder(BorderFactory.createLineBorder(Color.black));
-		
-		tmp = new String[] { "DEF P", "DEF M", "CRIT P", "CRIT M", "ESQ" };
-		colorLabel = new Color[] { Color.GREEN, Color.MAGENTA, Color.YELLOW, Color.BLUE, Color.YELLOW };
-		for(int i = 0; i < 5; i++) {
-			JLabel labelFor = new JLabel(tmp[i]);
-			labelFor.setFont(new Font("Open Sans", Font.BOLD, 12));
-			labelFor.setForeground(colorLabel[i]);
-			this.valueDefCritEsq.add(new JLabel());
-			this.valueDefCritEsq.get(i).setFont(new Font("Open Sans", Font.LAYOUT_LEFT_TO_RIGHT, 12));
-			
-			JPanel panelDefCritEsq = new JPanel(new FlowLayout(1));
-			panelDefCritEsq.add(labelFor);
-			panelDefCritEsq.add(this.valueDefCritEsq.get(i));
-			
-			defCritEsq.add(panelDefCritEsq);
-		}
-		
-		/* SACRE OMBRE FOUDRE FEU GLACE NATURE */
-		JPanel res = new JPanel();
-		res.setLayout(new BoxLayout(res, BoxLayout.Y_AXIS));
-		res.setBorder(BorderFactory.createLineBorder(Color.black));
-		
-		tmp = new String[] { "Sacré", "Ombre", "Foudre", "Feu", "Glace", "Nature" };
-		colorLabel = new Color[] { Color.YELLOW, Color.MAGENTA, Color.BLUE, Color.RED, Color.CYAN, Color.GREEN };
-		for(int i = 0; i < 6; i++) {
-			JLabel labelFor = new JLabel(tmp[i]);
-			labelFor.setFont(new Font("Open Sans", Font.BOLD, 12));
-			labelFor.setForeground(colorLabel[i]);
-			this.valueRes.add(new JLabel());
-			this.valueRes.get(i).setFont(new Font("Open Sans", Font.LAYOUT_LEFT_TO_RIGHT, 12));
-			
-			JPanel panelRes = new JPanel(new FlowLayout(1));
-			panelRes.add(labelFor);
-			panelRes.add(this.valueRes.get(i));
-			
-			res.add(panelRes);
-		}
-		
-		JPanel listStats = new JPanel();
-		listStats.setLayout(new BoxLayout(listStats, BoxLayout.Y_AXIS));
-		listStats.add(life);
-		listStats.add(base);
-		listStats.add(atk);
-		listStats.add(defCritEsq);
-		listStats.add(res);
-		
 		JPanel stats = new JPanel();
-		stats.setPreferredSize(new Dimension(160, 602));
-		stats.setBackground(Consts.UIColor[0]);
-		stats.add(listStats);
+		stats.setLayout(new BoxLayout(stats, BoxLayout.Y_AXIS));
+		stats.setBackground(Consts.UIColor[1]);
 		
-		JScrollPane scrollStats = new JScrollPane(stats, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		int[] section = new int[] { 5, 3, 5, 6, 3 };
+		int ordinal = 0;
+		
+		for(int i = 0; i < section.length; i++) {
+			JPanel blocStat = new JPanel();
+			blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
+			blocStat.setBorder(new EmptyBorder(5, 5, 5, 5));
+			blocStat.setBackground(Consts.UIColor[0]);
+			
+			for(int j = 0; j < section[i]; j++) {
+				this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
+				this.valueStat.get(ordinal).setForeground(Consts.FontColor[0]);
+				this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
+				this.valueStat.get(ordinal).setPreferredSize(new Dimension(140, 20));
+				
+				blocStat.add(this.valueStat.get(ordinal));
+				
+				ordinal++;
+			}
+			
+			stats.add(blocStat);
+		}
+		
+		JPanel blocStat = new JPanel();
+		blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
+		blocStat.setBorder(new EmptyBorder(5, 5, 5, 5));
+		blocStat.setBackground(Consts.UIColor[0]);
+		
+		while(ordinal < TypeEffect.values().length) {
+			this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
+			this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
+			this.valueStat.get(ordinal).setForeground(Consts.FontColor[0]);
+			
+			blocStat.add(this.valueStat.get(ordinal));
+			
+			ordinal++;
+		}
+		
+		stats.add(blocStat);
+		
+		JScrollPane scrollStats = new JScrollPane(stats, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollStats.setBorder(null);
 		scrollStats.getVerticalScrollBar().setUnitIncrement(10);
 		
@@ -2601,31 +2521,15 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateLabel(int[] allStats, EquipSet armorSet, EquipSet capeRingSet) {
-		this.valueLife.get(0).setText("" + allStats[20]);
-		this.valueLife.get(1).setText("" + allStats[21]);
-		
-		this.valueBase.get(0).setText("" + allStats[0]);
-		this.valueBase.get(1).setText("" + allStats[1]);
-		this.valueBase.get(2).setText("" + allStats[2]);
-		this.valueBase.get(3).setText("" + allStats[3]);
-		this.valueBase.get(4).setText("" + allStats[4]);
-		
-		this.valueAtk.get(0).setText("" + allStats[5]);
-		this.valueAtk.get(1).setText("" + allStats[6]);
-		this.valueAtk.get(2).setText("" + allStats[7]);
-		
-		this.valueDefCritEsq.get(0).setText("" + allStats[8]);
-		this.valueDefCritEsq.get(1).setText("" + allStats[9]);
-		this.valueDefCritEsq.get(2).setText("" + allStats[10]);
-		this.valueDefCritEsq.get(3).setText("" + allStats[11]);
-		this.valueDefCritEsq.get(4).setText("" + allStats[12]);
-		
-		this.valueRes.get(0).setText("" + allStats[13]);
-		this.valueRes.get(1).setText("" + allStats[14]);
-		this.valueRes.get(2).setText("" + allStats[15]);
-		this.valueRes.get(3).setText("" + allStats[16]);
-		this.valueRes.get(4).setText("" + allStats[17]);
-		this.valueRes.get(5).setText("" + allStats[18]);
+		for(int i = 0; i < this.valueStat.size(); i++) {
+			this.valueStat.get(i).setText(TypeEffect.values()[i].name() + " : " + allStats[i]);
+			
+			if(allStats[i] == 0 && i > 21) {
+				this.valueStat.get(i).setVisible(false);
+			} else {
+				this.valueStat.get(i).setVisible(true);
+			}
+		}
 		
 		if(armorSet == null || armorSet.getName().equals("Rien") || armorSet.getNbCurrentUsed() < 3) this.armorSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(3).get(10));
 		else {

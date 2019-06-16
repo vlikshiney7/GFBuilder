@@ -1,4 +1,4 @@
-Général,General/Armes,Weapons/Armures,Armors/Cape - Anneaux,Cape - Rings/Monture - Trône,Ride - Throne/Costumes,Costumes/Talent,Talent/Spécialisation,Specialization/Compétence,Skill/Sprite,Sprite/Buff permanant,Permanent buff/Alliance - Anima,Marriage - Anima/Nucléus - Énergies,Nucleus - Energy
+Général,General/Armes,Weapons/Armures,Armors/Cape - Anneaux,Cape - Rings/Monture - Trône,Ride - Throne/Costumes,Costumes/Talent,Talent/Spécialisation,Specialization/Compétence,Skill/Sprite,Sprite/Buff permanant,Permanent buff/Alliance - Anima,Marriage - Anima/Paramètre,Parameter
 Classe,Class/Niveau,Level/Réincarnation,Rebirth/Titre,Title/Yggdrasil,Yggdrasil/Bonus Archive,Archive Bonus
 Arme principale,Primary weapon/Arme secondaire,Secondary weapon/Arme tertiaire,Tertiary weapon/XP Arme,Weapon Exp/XP Arme,Weapon Exp/XP Arme,Weapon Exp/Projectile,Projectile
 Casque,Helmet/Plastron,Breastplate/Jambière,Legging/Gantelet,Gauntlet/Botte,Boot/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/Aucun set actif,No active set
