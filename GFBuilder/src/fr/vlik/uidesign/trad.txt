@@ -7,7 +7,7 @@ Monture,Mount/XP Monture,Mount Exp/Monture enchantée,Mount enchantment/Rien,Noth
 Armes,Weapons/Tête,Head/Tenue,Body/Dos,Back/Type d'armes,Weapons type/Armes 1 main,1 hand weapons/Arme 2 mains,2 hands weapon/Arme 1,Weapon 1/Arme 2,Weapon 2/Rien,Nothing/Blanc,White/Vert,Green/Bleu,Blue/Jaune,Yellow/Runway Arme,Weapon Runway/Runway Tête,Head Runway/Runway Tenue,Body Runway/Runway Dos,Back Runway/Runway Nouveauté,New Runway
 Combinaison bonus,Bonus combination/Talents,Talents/Ancestraux,Ancestral/Terrestres,Earthly/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Terrestres,Earthly/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar
 Spécialité,Speciality/Points restants : ,Remaining points: /Maître,Master/Mythique,Mythical/Légendaire,Legendary/Ultime,Ultimate
-Compétences passives,Passive skills
-Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Bonus Île des Sprites,Isle Sprite Bonus
+Compétences passives,Passive skills/Énergie professionnelle,Professional energy
+Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination
 Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Énergies,Energy/Buff de guilde,Guild buff/Actif,Active/Inactif,Inactive/Pierre permanente,Permanent stone/Actif,Active/Inactif,Inactive
 Bague de mariage,Wedding ring/Anima,Anima

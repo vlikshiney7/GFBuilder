@@ -42,6 +42,7 @@ public class GameStuff {
 	private ArrayList<ArrayList<Speciality>> listSpeciality = new ArrayList<ArrayList<Speciality>>(12);
 	
 	private ArrayList<ArrayList<Skill>> listSkill = new ArrayList<ArrayList<Skill>>(13);
+	private ArrayList<ArrayList<ProSkill>> listProSkill = new ArrayList<ArrayList<ProSkill>>(12);
 	
 	private ArrayList<Blason> listBlason = new ArrayList<Blason>();
 	private ArrayList<Buff> listBuff = new ArrayList<Buff>();
@@ -682,6 +683,33 @@ public class GameStuff {
 		}
 		reader.close();
 		
+		/* SKILL PRO */
+		reader = new BufferedReader(new InputStreamReader(
+				MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/resources/pro/pro.txt")));
+		line = reader.readLine();
+		
+		for(int i = 0; i < 12; i++) {
+			ArrayList<ProSkill> skills = new ArrayList<ProSkill>(9);
+			for(int j = 0; j < 9; j++) {
+				String[] lineSplit = line.split("/");
+				String path =  lineSplit[lineSplit.length-1] + ".png";
+				
+				String[] effectSplit = lineSplit[2].split(",");
+				
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+				for(int k = 0; k < Integer.parseInt(effectSplit[0]); k++)
+					effects.add(new Effect(lineSplit[k+3]));
+				
+				skills.add(new ProSkill(lineSplit[0], Integer.parseInt(lineSplit[1]), path, effects));
+				
+				line = reader.readLine();
+			}
+			
+			this.listProSkill.add(skills);
+			line = reader.readLine();
+		}
+		reader.close();
+		
 		/* BLASON */
 		reader = new BufferedReader(new InputStreamReader(
 				MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/resources/sprites/blasons.txt")));
@@ -875,6 +903,19 @@ public class GameStuff {
 	
 	public ArrayList<ArrayList<Skill>> getListSkill() {
 		return this.listSkill;
+	}
+	
+	public ProSkill[] getListProSkill(int idClass, int lvl) {
+		ArrayList<ProSkill> result = new ArrayList<ProSkill>();
+		
+		for(ProSkill proSkill : this.listProSkill.get(idClass)) {
+			if(proSkill.getLvl() <= lvl) result.add(proSkill);
+		}
+		
+		ProSkill[] cast = new ProSkill[result.size()];
+		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		
+		return cast;
 	}
 	
 	public ArrayList<Blason> getListBlason() {

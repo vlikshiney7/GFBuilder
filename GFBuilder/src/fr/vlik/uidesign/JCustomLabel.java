@@ -12,6 +12,7 @@ import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Energy;
 import fr.vlik.gfbuilder.GuildBuff;
 import fr.vlik.gfbuilder.Nucleus;
+import fr.vlik.gfbuilder.Skill;
 
 public class JCustomLabel extends JLabel {
 	
@@ -80,6 +81,13 @@ public class JCustomLabel extends JLabel {
 			this.setToolTipText(guildBuff.getTooltip());
 			this.effects = guildBuff.getEffects();
 		}
+	}
+	
+	public void setObject(Skill skill, int maxLvlIndex) {
+		this.setText("Lvl " + skill.getLvl()[maxLvlIndex] + " - " + skill.getName() + (skill.getLvl().length == 1 ? "" : " " + (maxLvlIndex+1)));
+		this.setIcon(new ImageIcon(skill.getIcon()));
+		this.setToolTipText(skill.getTooltip(maxLvlIndex));
+		this.effects = skill.getEffects(maxLvlIndex);
 	}
 	
 	public ArrayList<Effect> getEffects() {

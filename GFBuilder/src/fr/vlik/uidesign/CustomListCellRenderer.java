@@ -24,6 +24,7 @@ import fr.vlik.gfbuilder.GuildBuff;
 import fr.vlik.gfbuilder.Mount;
 import fr.vlik.gfbuilder.Nucleus;
 import fr.vlik.gfbuilder.Pearl;
+import fr.vlik.gfbuilder.ProSkill;
 import fr.vlik.gfbuilder.Skill;
 import fr.vlik.gfbuilder.Talent;
 import fr.vlik.gfbuilder.Title;
@@ -130,6 +131,12 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			renderer.setText("Lvl " + skill.getLvl()[0] + " - " + skill.getName());
 			renderer.setForeground(Consts.FontColor[0]);
 			renderer.setToolTipText(skill.getTooltip(0));
+		} else if(value instanceof ProSkill) {
+			ProSkill proSkill = (ProSkill) value;
+			renderer.setIcon(new ImageIcon(proSkill.getIcon()));
+			renderer.setText("Lvl " + proSkill.getLvl() + " - " + proSkill.getName());
+			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setToolTipText(proSkill.getTooltip(0));
 		} else if(value instanceof Blason) {
 			Blason blason = (Blason) value;
 			renderer.setIcon(new ImageIcon(blason.getIcon()));

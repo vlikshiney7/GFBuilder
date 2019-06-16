@@ -4,7 +4,7 @@ de la Foudre/true/1/Foudre,false,3
 du Feu/true/1/Feu,false,3
 de la Glace/true/1/Glace,false,3
 de la Nature/true/1/Nature,false,3
-d'Esquive/true/1/ESQ,false,2
+d'Esquive/true/1/ESQ,false,4
 du Sprint/true/1/Depla,false,2
 du Sarcasme/true/1/MEN,false,2
 de la Surveillance/true/1/MEN,false,-2

@@ -96,8 +96,9 @@ public class MainFrame extends JFrame {
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
 	private ArrayList<JCustomComboBox<Integer>> CBoxSpePoint = new ArrayList<JCustomComboBox<Integer>>(20);
 	
-	private ArrayList<JLabel> skillNatif = new ArrayList<JLabel>(5);
+	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
 	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
+	private JCustomComboBox<ProSkill> CBoxProSkill;
 	
 	private ArrayList<JCustomComboBox<Blason>> CBoxBlason = new ArrayList<JCustomComboBox<Blason>>(2);
 	private JCustomComboBox<Buff> CBoxIsleBuff;
@@ -233,6 +234,7 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				MainFrame.this.updateSkill();
+				MainFrame.this.updateProSkill();
 				MainFrame.this.updateListStuff();
 				MainFrame.this.updateListTalent();
 				MainFrame.this.updateListSpe();
@@ -257,6 +259,7 @@ public class MainFrame extends JFrame {
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
 				MainFrame.this.updateSkill();
+				MainFrame.this.updateProSkill();
 				MainFrame.this.updateListStuff();
 				MainFrame.this.updateTitle();
 				MainFrame.this.updateMount();
@@ -1686,22 +1689,22 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		page++;
 		
-		JPanel page9 = new JPanel();
-		page9.setLayout(new BoxLayout(page9, BoxLayout.Y_AXIS));
-		page9.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page9.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(0).setAlignmentX(LEFT_ALIGNMENT);
-		page9.add(this.allLabel.get(page).get(0));
-		page9.add(Box.createVerticalStrut(10));
+		JPanel page9Elem1 = new JPanel();
+		page9Elem1.setLayout(new BoxLayout(page9Elem1, BoxLayout.Y_AXIS));
+		page9Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page9Elem1.setBackground(Consts.UIColor[1]);
+		page9Elem1.add(this.allLabel.get(page).get(0));
+		page9Elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 5; i++) {
-			this.skillNatif.add(new JLabel());
-			this.skillNatif.get(i).setForeground(Consts.FontColor[0]);
-			this.skillNatif.get(i).setFont(new Font("Open Sans", Font.PLAIN, 14));
-			this.skillNatif.get(i).setAlignmentX(LEFT_ALIGNMENT);
+			this.skillNatif.add(new JCustomLabel());
+			this.skillNatif.get(i).setPreferredSize(new Dimension(250, 32));
 			
-			page9.add(this.skillNatif.get(i));
-			page9.add(Box.createVerticalStrut(5));
+			JPanel skill = new JPanel();
+			skill.setBackground(Consts.UIColor[1]);
+			skill.add(this.skillNatif.get(i));
+			
+			page9Elem1.add(skill);
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -1713,12 +1716,41 @@ public class MainFrame extends JFrame {
 					MainFrame.this.updateStat();
 				}
 			});
-			this.skillProgress.get(i).setAlignmentX(LEFT_ALIGNMENT);
 			this.skillProgress.get(i).setVisible(false);
 			
-			page9.add(Box.createVerticalStrut(5));
-			page9.add(this.skillProgress.get(i));
+			page9Elem1.add(Box.createVerticalStrut(5));
+			page9Elem1.add(this.skillProgress.get(i));
 		}
+		
+		JPanel page9Elem2 = new JPanel();
+		page9Elem2.setLayout(new BoxLayout(page9Elem2, BoxLayout.Y_AXIS));
+		page9Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page9Elem2.setBackground(Consts.UIColor[1]);
+		page9Elem2.add(this.allLabel.get(page).get(1));
+		page9Elem2.add(Box.createVerticalStrut(10));
+		
+		ProSkill[] tabProSkill = this.allGameStuff.getListProSkill(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		this.CBoxProSkill = new JCustomComboBox<ProSkill>(tabProSkill);
+		this.CBoxProSkill.setRenderer(new CustomListCellRenderer());
+		this.CBoxProSkill.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MainFrame.this.updateStat();
+			}
+		});
+		
+		page9Elem2.add(this.CBoxProSkill);
+		
+		this.showAndHide.add(page9Elem1);
+		this.showAndHide.add(page9Elem2);
+		
+		JPanel page9 = new JPanel();
+		page9.setLayout(new BoxLayout(page9, BoxLayout.Y_AXIS));
+		page9.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page9.setBackground(Consts.UIColor[2]);
+		page9.add(page9Elem1);
+		page9.add(Box.createVerticalStrut(10));
+		page9.add(page9Elem2);
 		
 		this.mainPage.add(page9);
 		
@@ -2514,14 +2546,17 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {
-				char num = this.skillNatif.get(i).getText().charAt(this.skillNatif.get(i).getText().length()-1);
-				int lvlNatif = num > 57 ? 0 : num - 49;
-				build.addEffect(this.allGameStuff.getListSkill().get(idClass).get(i).getEffects(lvlNatif));
+				build.addEffect(this.skillNatif.get(i).getEffects());
 			}
 		}
 		
 		for(JCustomComboBox<Skill> skill : this.skillProgress) {
 			if(skill.isVisible()) build.addEffect(((Skill) skill.getSelectedItem()).getEffects(0));
+		}
+		
+		if(this.showAndHide.get(4).isVisible()) {
+			ProSkill proSkill = (ProSkill) this.CBoxProSkill.getSelectedItem();
+			build.addEffect(proSkill.getEffects());
 		}
 		
 		
@@ -2637,9 +2672,9 @@ public class MainFrame extends JFrame {
 	
 	private void updateNucleus() {
 		if(this.lvlReinca.getSelectedIndex() == 0) {
-			this.showAndHide.get(3).setVisible(false);
+			this.showAndHide.get(5).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
-		} else this.showAndHide.get(3).setVisible(true);
+		} else this.showAndHide.get(5).setVisible(true);
 	}
 	
 	private void updateMount() {
@@ -3318,6 +3353,9 @@ public class MainFrame extends JFrame {
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
+		if(lvl < 6) this.showAndHide.get(3).setVisible(false);
+		else this.showAndHide.get(3).setVisible(true);
+		
 		for(Skill skill : this.allGameStuff.getListSkill().get(idClass)) {
 			if(skill.getLvl()[0] > lvl) continue;
 			if(skill.getNatif()) {
@@ -3326,9 +3364,7 @@ public class MainFrame extends JFrame {
 					maxLvlIndex++;
 				}
 				
-				this.skillNatif.get(count).setIcon(new ImageIcon(skill.getIcon()));
-				this.skillNatif.get(count).setText("Lvl " + skill.getLvl()[maxLvlIndex] + " - " + skill.getName() + (skill.getLvl().length == 1 ? "" : " " + (maxLvlIndex+1)));
-				this.skillNatif.get(count).setToolTipText(skill.getTooltip(maxLvlIndex));
+				this.skillNatif.get(count).setObject(skill, maxLvlIndex);
 				this.skillNatif.get(count).setVisible(true);
 				count++;
 			} else {
@@ -3391,9 +3427,22 @@ public class MainFrame extends JFrame {
 		else this.skillProgress.get(1).setVisible(false);
 	}
 	
+	private void updateProSkill() {
+		int lvl = this.spinnerLvl.getIntValue();
+		
+		if(lvl < 66) this.showAndHide.get(4).setVisible(false);
+		else this.showAndHide.get(4).setVisible(true);
+		
+		ProSkill[] tabProSkill = this.allGameStuff.getListProSkill(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		ProSkill memory = (ProSkill) this.CBoxProSkill.getSelectedItem();
+		this.CBoxProSkill.setModel(new DefaultComboBoxModel<ProSkill>(tabProSkill));
+		if(memory != null) this.CBoxProSkill.setSelectedItem(memory);
+		if(this.CBoxProSkill.getSelectedIndex() == -1 && tabProSkill.length > 0) this.CBoxProSkill.setSelectedIndex(0);
+	}
+	
 	private void updateBlason() {
 		for(int i = 0; i < 2; i++) {
-			Blason tabBlason[] = this.allGameStuff.getPossibleBlason(this.spinnerLvl.getIntValue(), i == 0);
+			Blason[] tabBlason = this.allGameStuff.getPossibleBlason(this.spinnerLvl.getIntValue(), i == 0);
 			Blason memory = (Blason) this.CBoxBlason.get(i).getSelectedItem();
 			
 			this.CBoxBlason.get(i).setModel(new DefaultComboBoxModel<Blason>(tabBlason));
@@ -3484,9 +3533,9 @@ public class MainFrame extends JFrame {
 		int lvl = this.spinnerLvl.getIntValue();
 		
 		if(isReinca || lvl >= 20) {
-			this.showAndHide.get(4).setVisible(true);
+			this.showAndHide.get(6).setVisible(true);
 		} else {
-			this.showAndHide.get(4).setVisible(false);
+			this.showAndHide.get(6).setVisible(false);
 			this.CBoxBague.setSelectedIndex(0);
 		}
 	}
@@ -3502,9 +3551,9 @@ public class MainFrame extends JFrame {
 		this.CBoxAnima.setSelectedIndex(memory);
 		
 		if(isReinca && lvl >= 10) {
-			this.showAndHide.get(5).setVisible(true);
+			this.showAndHide.get(7).setVisible(true);
 		} else {
-			this.showAndHide.get(5).setVisible(false);
+			this.showAndHide.get(7).setVisible(false);
 			this.CBoxAnima.setSelectedIndex(0);
 		}
 	}
