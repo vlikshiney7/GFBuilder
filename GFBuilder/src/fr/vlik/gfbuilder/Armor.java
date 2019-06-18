@@ -62,7 +62,18 @@ public final class Armor extends Equipment {
 			if(ordinal < 5) {
 				int doubleValue = idArmor == 1 || idArmor == 2 ? 2 : 1;
 				if(this.getQuality() == 6) {
-					
+					boolean found = false;
+					for(Effect get : this.effects) {
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							get.addEnchantValue(((this.getLvl()-1)/10 +2) * doubleValue);
+							found = true;
+							break;
+						}
+					}
+					if(!found) {
+						e.addEnchantValue(((this.getLvl()-1)/10 +1) * doubleValue);
+						this.effects.add(e);
+					}
 				} else if(this.getQuality() == 5) {
 					boolean found = false;
 					for(Effect get : this.effects) {

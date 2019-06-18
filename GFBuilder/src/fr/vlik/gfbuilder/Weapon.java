@@ -85,7 +85,26 @@ public final class Weapon extends Equipment {
 			int ordinal = e.getType().ordinal();
 			if(ordinal < 5) {
 				if(this.getQuality() == 6) {
-					
+					boolean found = false;
+					for(Effect get : this.effects) {
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							if(this.type == 3 || this.type == 4 || this.type == 5 || this.type == 7 || this.type == 12 || this.type == 13) {								
+								get.addEnchantValue(this.getLvl() / 5 * 2 + 3);
+							} else {
+								get.addEnchantValue(this.getLvl() / 5 + 1);
+							}
+							found = true;
+							break;
+						}
+					}
+					if(!found) {
+						if(this.type == 3 || this.type == 4 || this.type == 5 || this.type == 7 || this.type == 12 || this.type == 13) {								
+							e.addEnchantValue(this.getLvl() / 5 * 2 + 3);
+						} else {
+							e.addEnchantValue(this.getLvl() / 5 + 1);
+						}
+						this.effects.add(e);
+					}
 				} else if(this.getQuality() == 5) {
 					boolean found = false;
 					for(Effect get : this.effects) {

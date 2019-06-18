@@ -111,9 +111,11 @@ public class MainFrame extends JFrame {
 	private JCustomComboBox<Bague> CBoxBague = new JCustomComboBox<Bague>();
 	private JCustomComboBox<Anima> CBoxAnima = new JCustomComboBox<Anima>();
 	
-	private int base[][][] = new int[5][12][100];
-	
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
+	
+	private JTextPane parameter = new JTextPane();
+	
+	private int base[][][] = new int[5][12][100];
 	
 	private GameStuff allGameStuff;
 	
@@ -133,32 +135,47 @@ public class MainFrame extends JFrame {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
 				MainFrame.class.getResourceAsStream("/fr/vlik/uidesign/trad.txt")));
 		String line = reader.readLine();
-		fr_en.add(new ArrayList<ArrayList<String>>());
-		fr_en.add(new ArrayList<ArrayList<String>>());
+		this.fr_en.add(new ArrayList<ArrayList<String>>());
+		this.fr_en.add(new ArrayList<ArrayList<String>>());
 		int lineCount = 0;
 		while(line != null) {
-			fr_en.get(0).add(new ArrayList<String>());
-			fr_en.get(1).add(new ArrayList<String>());
+			this.fr_en.get(0).add(new ArrayList<String>());
+			this.fr_en.get(1).add(new ArrayList<String>());
 			String[] lineSplit = line.split("/");
 			for(int i = 0; i < lineSplit.length; i++) {
 				String[] language = lineSplit[i].split(",");
-				fr_en.get(0).get(lineCount).add(language[0]);
-				fr_en.get(1).get(lineCount).add(language[1]);
+				this.fr_en.get(0).get(lineCount).add(language[0]);
+				this.fr_en.get(1).get(lineCount).add(language[1]);
 			}
 			lineCount++;
 			line = reader.readLine();
 		}
+		reader.close();
+		
+		reader = new BufferedReader(new InputStreamReader(
+				MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/credit.txt")));
+		line = reader.readLine();
+		
+		for(int i = 0; i < 2; i++) {
+			this.fr_en.get(i).add(new ArrayList<String>());
+			while(!line.equals("/")) {
+				this.fr_en.get(i).get(this.fr_en.get(i).size()-1).add(line);
+				line = reader.readLine();
+			}
+			line = reader.readLine();
+		}
+		reader.close();
 		
 		/****************************************/
 		/*		****	   MENU		  	****	*/
 		/****************************************/
 		
 		JPanel menu = new JPanel();
-		menu.setPreferredSize(new Dimension(160, 0));
+		menu.setPreferredSize(new Dimension(200, 0));
 		menu.setBackground(Consts.UIColor[0]);
 		menu.setLayout(new GridLayout(14, 1, 0, 0));
 		
-		for(int i = 0; i < this.fr_en.get(0).size(); i++) {
+		for(int i = 0; i < this.fr_en.get(0).size()-1; i++) {
 			if(i == 0) {
 				for(int j = 0; j < this.fr_en.get(0).get(i).size(); j++) {
 					JCustomTabPane tabPane = new JCustomTabPane(this.fr_en.get(0).get(i).get(j));
@@ -2118,15 +2135,35 @@ public class MainFrame extends JFrame {
 		this.mainPage.add(page12);
 		
 		/****************************************/
-		/*				 PAGE 12				*/
+		/*				 PAGE 13				*/
 		/****************************************/
 		page++;
 		
+		String buildCredit = "";
+		for(int i = 0; i < this.fr_en.get(0).get(this.fr_en.get(0).size()-1).size(); i++) {
+			buildCredit += this.fr_en.get(0).get(this.fr_en.get(0).size()-1).get(i) + "\n";
+		}
 		
+		this.parameter.setEditable(false);
+		this.parameter.setText(buildCredit);
+		this.parameter.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.parameter.setBorder(new EmptyBorder(10, 10, 10, 10));
+		this.parameter.setBackground(Consts.UIColor[1]);
+		this.parameter.setForeground(Consts.FontColor[0]);
 		
+		JPanel page13 = new JPanel();
+		page13.setLayout(new BoxLayout(page13, BoxLayout.Y_AXIS));
+		page13.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page13.setBackground(Consts.UIColor[1]);
+		page13.add(this.allLabel.get(page).get(0));
+		page13.add(Box.createVerticalStrut(10));
+		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.BOLD, 14));
+		page13.add(this.allLabel.get(page).get(1));
+		page13.add(Box.createVerticalStrut(5));
+		page13.add(this.parameter);
 		
+		this.mainPage.add(page13);
 		
-		this.mainPage.add(new JPanel());
 		
 		
 		JPanel content = new JPanel();
@@ -2332,11 +2369,13 @@ public class MainFrame extends JFrame {
 		
 		
 		Cape cape = new Cape((Cape) this.CBoxCape.getSelectedItem());
+		cape.addEnchant((Enchantment) this.CBoxEnchant.get(8).getSelectedItem());
 		build.addEffect(cape.getEffects());
 		
 		Ring[] rings = new Ring[2];
 		for(int i = 0; i < rings.length; i++) {
 			rings[i] = (Ring) this.CBoxRing.get(i).getSelectedItem();
+			rings[i].addEnchant((Enchantment) this.CBoxEnchant.get(i+9).getSelectedItem());
 			build.addEffect(rings[i].getEffects());
 		}
 		
@@ -3684,7 +3723,7 @@ public class MainFrame extends JFrame {
 	public void updateLanguage() {
 		if(this.language.isSelected()) {
 			this.language.setIcon(this.language.getSelectedIcon());
-			for(int i = 0; i < this.fr_en.get(0).size(); i++) {
+			for(int i = 0; i < this.fr_en.get(0).size()-1; i++) {
 				if(i == 0) {
 					for(int j = 0; j < this.fr_en.get(0).get(i).size(); j++) {
 						this.tabPaneMenu.get(j).setText(this.fr_en.get(0).get(i).get(j));
@@ -3695,6 +3734,12 @@ public class MainFrame extends JFrame {
 					}
 				}
 			}
+			
+			String buildCredit = "";
+			for(int i = 0; i < this.fr_en.get(0).get(this.fr_en.get(0).size()-1).size(); i++) {
+				buildCredit += this.fr_en.get(0).get(this.fr_en.get(0).size()-1).get(i) + "\n";
+			}
+			this.parameter.setText(buildCredit);
 			
 			if(this.armorSetInfo.getText().equals("No active set"))
 				this.armorSetInfo.setText(this.fr_en.get(0).get(3).get(10));
@@ -3709,7 +3754,7 @@ public class MainFrame extends JFrame {
 			}
 		} else {
 			this.language.setIcon(this.language.getDisabledIcon());
-			for(int i = 0; i < this.fr_en.get(1).size(); i++) {
+			for(int i = 0; i < this.fr_en.get(1).size()-1; i++) {
 				if(i == 0) {
 					for(int j = 0; j < this.fr_en.get(1).get(i).size(); j++) {
 						this.tabPaneMenu.get(j).setText(this.fr_en.get(1).get(i).get(j));
@@ -3720,6 +3765,12 @@ public class MainFrame extends JFrame {
 					}
 				}
 			}
+			
+			String buildCredit = "";
+			for(int i = 0; i < this.fr_en.get(1).get(this.fr_en.get(1).size()-1).size(); i++) {
+				buildCredit += this.fr_en.get(1).get(this.fr_en.get(1).size()-1).get(i) + "\n";
+			}
+			this.parameter.setText(buildCredit);
 			
 			if(this.armorSetInfo.getText().equals("Aucun set actif"))
 				this.armorSetInfo.setText(this.fr_en.get(1).get(3).get(10));

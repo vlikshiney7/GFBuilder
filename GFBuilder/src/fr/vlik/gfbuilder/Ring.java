@@ -61,4 +61,29 @@ public final class Ring extends Equipment {
 		
 		return back;
 	}
+	
+	public void addEnchant(Enchantment enchant) {
+		if(enchant == null) return;
+		for(Effect e : enchant.getEffects()) {
+			int ordinal = e.getType().ordinal();
+			if(ordinal < 5) {
+				if(this.getQuality() == 5) {
+					boolean found = false;
+					for(Effect get : this.effects) {
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							get.addEnchantValue((this.getLvl()-1)/10 +1);
+							found = true;
+							break;
+						}
+					}
+					if(!found) {
+						e.addEnchantValue((this.getLvl()-1)/10 +1);
+						this.effects.add(e);
+					}
+				}
+			} else {
+				this.effects.add(e);
+			}
+		}
+	}
 }
