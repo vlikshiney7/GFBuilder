@@ -2165,7 +2165,6 @@ public class MainFrame extends JFrame {
 		this.mainPage.add(page13);
 		
 		
-		
 		JPanel content = new JPanel();
 		content.setBorder(new EmptyBorder(20, 20, 20, 20));
 		content.setBackground(Consts.UIColor[2]);
