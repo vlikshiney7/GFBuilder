@@ -99,11 +99,13 @@ public abstract class Equipment {
 			tooltip.append("<br>");
 			tooltip.append(e.getTooltip());
 		}
-		tooltip.append("<br><br>");
-		tooltip.append("Bonus XP Stuff lvl " + this.lvl);
-		for(Effect e : this.bonusXP) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		if(this.bonusXP.size() != 0) {
+			tooltip.append("<br><br>");
+			tooltip.append("Bonus XP Stuff lvl " + this.lvl);
+			for(Effect e : this.bonusXP) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";

@@ -1,1 +1,8 @@
-Épée Croc de Chauve-souris/0,1,2,3/100/5/true/true/false/5,0,0/Atk,false,3202,true/FCE,false,145,true/VIT,false,64,true/AGI,false,43,true/RegenCB,false,25
+Croc de brisé de serpent féérique noir/0,1,2,3/100/6/true/true/false/5,0,0/Atk,false,3558,true/FCE,false,155,true/VIT,false,71,true/AGI,false,49,true/Toucher,true,20/100vio
+Épée Croc de Chauve-souris/0,1,2,3/100/5/true/true/false/5,0,0/Atk,false,3202,true/FCE,false,145,true/VIT,false,64,true/AGI,false,43,true/RegenCB,false,25/100gold
+Épée du Jugement Éternel/0,1,2,3/95/6/true/true/false/5,0,0/Atk,false,3325,true/FCE,false,143,true/VIT,false,50,true/AGI,false,59,true/Toucher,true,20/95vio
+Epée du Roi Tenrô/0,1,2,3/90/6/true/true/false/5,0,0/Atk,false,3096,true/FCE,false,128,true/VIT,false,45,true/AGI,false,54,true/Toucher,true,20/90vio
+Epée de Cendre d'Amaterasu/0,1,2,3/85/6/true/true/false/5,0,0/Atk,false,2872,true/FCE,false,119,true/VIT,false,43,true/AGI,false,52,true/Toucher,true,18/85vio
+Epée Ikazuchi Jumeaux/0,1,2,3/80/6/true/true/false/5,0,0/Atk,false,2653,true/FCE,false,95,true/VIT,false,34,true/AGI,false,41,true/Toucher,true,18/80vio
+Rapière d'Empereur Déchu/0,1,2,3/75/6/true/true/false/5,0,0/Atk,false,2438,true/FCE,false,80,true/VIT,false,30,true/AGI,false,50,true/Toucher,true,18/75vio
+Lame des Limbes Profondes/0,1,2,3/70/6/true/true/false/5,0,0/Atk,false,2229,true/FCE,false,75,true/VIT,false,27,true/AGI,false,48,true/Toucher,true,18/70vio
