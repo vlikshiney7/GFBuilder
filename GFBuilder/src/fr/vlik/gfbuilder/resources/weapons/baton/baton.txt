@@ -1,30 +1,30 @@
-Baguette magique de gargouilles assassines/4,5,6,7/100/6/true/false/false/6,0,0/Atk,false,4590,true/AtkM,false,4892,true/VIT,false,95,true/INT,false,233,true/VOL,false,122,true/Toucher,true,27/100vio
+Baguette magique de gargouilles assassines/4,5,6,7/100/6/true/false/false/6,0,0/Atk,false,4590,true/AtkM,false,4892,true/VIT,false,95,true/INT,false,233,true/VOL,false,122,true/Toucher,false,27/100vio
 Bâton glacé de Dovahkiin/4,5,6,7/100/5/true/false/false/6,0,0/Atk,false,4163,true/AtkM,false,4419,true/VIT,false,68,true/INT,false,185,true/VOL,false,91,true/AtkM,true,45/100gold
 Bâton Écaille Noir/4,5,6,7/100/4/true/false/false/7,0,0/Atk,false,3238,true/AtkM,false,3437,true/VIT,false,46,true/INT,false,54,true/VOL,false,71,true/AtkM,true,40/DefM,true,20/100pre
-Sceptre de purification de Mosunk/4,5,6,7/100/4/false/false/false/11,0,0/Atk,false,3700,true/AtkM,false,3928,true/VIT,false,82,true/INT,false,62,true/VOL,false,51,true/Toucher,true,15/TCCM,false,6/DCCM,false,10/PeneM,false,5/Sacre,false,35/Ombre,false,35/100pvp
+Sceptre de purification de Mosunk/4,5,6,7/100/4/false/false/false/11,0,0/Atk,false,3700,true/AtkM,false,3928,true/VIT,false,82,true/INT,false,62,true/VOL,false,51,true/Toucher,false,15/TCCM,false,6/DCCM,false,10/PeneM,false,5/Sacre,false,35/Ombre,false,35/100pvp
 Bâton Plume Arc-en-Ciel/4,5,6,7/99/4/true/false/false/6,0,0/Atk,false,3195,true/AtkM,false,3392,true/VIT,false,50,true/INT,false,69,true/VOL,false,62,true/AtkM,true,25/99ora
-Bâton Vipère de Sprite/4,5,6,7/97/2/false/false/false/3,0,0/Atk,false,2665,true/AtkM,false,2830,true/VOL,false,57,true/97sprite
-Bâton Papillon de Sprite/4,5,6,7/96/2/false/false/false/3,0,0/Atk,false,2629,true/AtkM,false,2791,true/INT,false,57,true/96sprite
-Bâton des Ailes de Cristal/4,5,6,7/95/6/true/false/false/6,0,0/Atk,false,4289,true/AtkM,false,4572,true/VIT,false,135,true/INT,false,130,true/VOL,false,135,true/Toucher,true,27/95vio1
-Bâton de l'Esprit Enflammé/4,5,6,7/95/6/true/false/false/6,0,0/Atk,false,4289,true/AtkM,false,4572,true/VIT,false,112,true/INT,false,160,true/VOL,false,128,true/Toucher,true,27/95vio0
+Bâton Vipère de Sprite/4,5,6,7/97/2/false/false/false/3,0,0/Atk,false,2665,true/AtkM,false,2830,true/VOL,false,57,true/60pre
+Bâton Papillon de Sprite/4,5,6,7/96/2/false/false/false/3,0,0/Atk,false,2629,true/AtkM,false,2791,true/INT,false,57,true/58ora1
+Bâton des Ailes de Cristal/4,5,6,7/95/6/true/false/false/6,0,0/Atk,false,4289,true/AtkM,false,4572,true/VIT,false,135,true/INT,false,130,true/VOL,false,135,true/Toucher,false,27/95vio1
+Bâton de l'Esprit Enflammé/4,5,6,7/95/6/true/false/false/6,0,0/Atk,false,4289,true/AtkM,false,4572,true/VIT,false,112,true/INT,false,160,true/VOL,false,128,true/Toucher,false,27/95vio0
 Sceptre maléfique de Jafar/4,5,6,7/95/5/true/false/false/7,0,0/Atk,false,3890,true/AtkM,false,4129,true/VIT,false,72,true/INT,false,91,true/VOL,false,165,true/PV,true,20/Depla,false,15/95gold1
 Sceptre indestructible Soul-Edge/4,5,6,7/95/5/true/false/false/7,0,0/Atk,false,3890,true/AtkM,false,4129,true/VIT,false,64,true/INT,false,178,true/VOL,false,86,true/VitComp,false,25/AtkM,true,20/95gold0
 Bâton à Mille Mains/4,5,6,7/95/4/true/false/false/7,0,0/Atk,false,3025,true/AtkM,false,3212,true/VIT,false,45,true/INT,false,52,true/VOL,false,62,true/PV,true,15/Depla,false,10/95pre
-Bâton des longues mémoires de Mosunk/4,5,6,7/95/4/false/false/false/9,0,0/Atk,false,3025,true/AtkM,false,3212,true/VIT,false,70,true/INT,false,50,true/VOL,false,39,true/Toucher,true,15/TCCM,true,6/DCCM,false,10/Sacre,false,40/95pvp
+Bâton des longues mémoires de Mosunk/4,5,6,7/95/4/false/false/false/9,0,0/Atk,false,3025,true/AtkM,false,3212,true/VIT,false,70,true/INT,false,50,true/VOL,false,39,true/Toucher,false,15/TCCM,true,6/DCCM,false,10/Sacre,false,40/95pvp
 Bâton Arracheur d'Âme/4,5,6,7/94/4/true/false/false/7,0,0/Atk,false,2983,true/AtkM,false,3167,true/VIT,false,49,true/INT,false,60,true/VOL,false,50,true/VitComp,false,20/AtkM,true,15/94pre
-Bâton Lanterne de Sprite/4,5,6,7/92/2/false/false/false/3,0,0/Atk,false,2486,true/AtkM,false,2639,true/VOL,false,53,true/92sprite
+Bâton Lanterne de Sprite/4,5,6,7/92/2/false/false/false/3,0,0/Atk,false,2486,true/AtkM,false,2639,true/VOL,false,53,true/30ora
 Bâton Fantôme de Sprite/4,5,6,7/91/2/false/false/false/3,0,0/Atk,false,2450,true/AtkM,false,2601,true/INT,false,53,true/91sprite
-Sceptre de Minas Tirith/4,5,6,7/90/6/true/false/false/6,0,0/Atk,false,3994,true/AtkM,false,4527,true/VIT,false,107,true/INT,false,156,true/VOL,false,127,true/Toucher,true,27/90vio
-Torche Maléfique de Daku Shunaida/4,5,6,7/90/5/true/false/false/7,0,0/Atk,false,3623,true/AtkM,false,3845,true/VIT,false,89,true/INT,false,120,true/VOL,false,103,true/Toucher,true,25/VitComp,false,15/90gold1
-Sceptre de Pureté d'Aeris/4,5,6,7/90/5/true/false/false/7,0,0/Atk,false,3623,true/AtkM,false,3845,true/VIT,false,116,true/INT,false,99,true/VOL,false,97,true/Toucher,true,25/AtkM,true,10/90gold0
-Aile Divine - Cicatrice de l'Esprit/4,5,6,7/90/4/true/false/false/8,0,0/Atk,false,2818,true/AtkM,false,2991,true/VIT,false,42,true/INT,false,56,true/VOL,false,49,true/Toucher,true,18/DefM,true,8/VitComp,false,8/90pre
-Aile Divine - Source de la Lame/4,5,6,7/89/4/true/false/false/8,0,0/Atk,false,2776,true/AtkM,false,2947,true/VIT,false,54,true/INT,false,47,true/VOL,false,46,true/Toucher,true,18/AtkM,true,8/DCCM,false,8/89pre
-Bâton Brise-Péché des Sprites/4,5,6,7/87/2/false/false/false/4,0,0/Atk,false,2310,true/AtkM,false,2452,true/INT,false,49,true/Toucher,true,15/87sprite
-Bâton d'Éternité des Sprites/4,5,6,7/86/2/false/false/false/4,0,0/Atk,false,2275,true/AtkM,false,2415,true/VIT,false,49,true/Toucher,true,15/86sprite
-Bâton maléfique d'Izual/4,5,6,7/85/6/true/false/false/6,0,0/Atk,false,3705,true/AtkM,false,3949,true/VIT,false,99,true/INT,false,149,true/VOL,false,122,true/Toucher,true,25/85vio
-Oeil Sinistre du Roi Sorcier Sauron/4,5,6,7/85/5/true/false/false/8,0,0/Atk,false,3361,true/AtkM,false,3567,true/VIT,false,91,true/INT,false,105,true/VOL,false,100,true/Toucher,true,25/Depla,false,12/VitComp,false,30/85gold
-Regard des Dieux Infernaux/4,5,6,7/85/4/true/false/false/8,0,0/Atk,false,2614,true/AtkM,false,2774,true/VIT,false,38,true/INT,false,52,true/VOL,false,45,true/Toucher,true,18/Depla,false,12/VitComp,false,30/87sprite
-Flamme Ardente du Phoenix/4,5,6,7/85/4/false/false/false/9,0,0/Atk,false,2614,true/AtkM,false,2774,true/VIT,false,62,true/INT,false,42,true/VOL,false,31,true/Toucher,true,15/TCCM,false,6/DCCM,false,10/Sacre,false,40/85pvp
-Épiphanie Divine/4,5,6,7/84/4/true/false/false/9,0,0/Atk,false,2573,true/AtkM,false,2732,true/VIT,false,51,true/INT,false,41,true/VOL,false,43,true/Toucher,true,18/PV,true,10/Depla,false,8/MEN,false,-20/86sprite
-Bâton de l'Espoir Renaissant des Sprites/4,5,6,7/82/2/false/false/false/4,0,0/Atk,false,2137,true/AtkM,false,2269,true/INT,false,45,true/Toucher,true,15/82sprite
-Bâton du Serment des Sprites/4,5,6,7/81/2/false/false/false/4,0,0/Atk,false,2104,true/AtkM,false,2232,true/VIT,false,45,true/Toucher,true,15/99ora
+Sceptre de Minas Tirith/4,5,6,7/90/6/true/false/false/6,0,0/Atk,false,3994,true/AtkM,false,4527,true/VIT,false,107,true/INT,false,156,true/VOL,false,127,true/Toucher,false,27/90vio
+Torche Maléfique de Daku Shunaida/4,5,6,7/90/5/true/false/false/7,0,0/Atk,false,3623,true/AtkM,false,3845,true/VIT,false,89,true/INT,false,120,true/VOL,false,103,true/Toucher,false,25/VitComp,false,15/90gold1
+Sceptre de Pureté d'Aeris/4,5,6,7/90/5/true/false/false/7,0,0/Atk,false,3623,true/AtkM,false,3845,true/VIT,false,116,true/INT,false,99,true/VOL,false,97,true/Toucher,false,25/AtkM,true,10/90gold0
+Aile Divine - Cicatrice de l'Esprit/4,5,6,7/90/4/true/false/false/8,0,0/Atk,false,2818,true/AtkM,false,2991,true/VIT,false,42,true/INT,false,56,true/VOL,false,49,true/Toucher,false,18/DefM,true,8/VitComp,false,8/90pre
+Aile Divine - Source de la Lame/4,5,6,7/89/4/true/false/false/8,0,0/Atk,false,2776,true/AtkM,false,2947,true/VIT,false,54,true/INT,false,47,true/VOL,false,46,true/Toucher,false,18/AtkM,true,8/DCCM,false,8/89pre
+Bâton Brise-Péché des Sprites/4,5,6,7/87/2/false/false/false/4,0,0/Atk,false,2310,true/AtkM,false,2452,true/INT,false,49,true/Toucher,false,15/85pre
+Bâton d'Éternité des Sprites/4,5,6,7/86/2/false/false/false/4,0,0/Atk,false,2275,true/AtkM,false,2415,true/VIT,false,49,true/Toucher,false,15/84ora
+Bâton maléfique d'Izual/4,5,6,7/85/6/true/false/false/6,0,0/Atk,false,3705,true/AtkM,false,3949,true/VIT,false,99,true/INT,false,149,true/VOL,false,122,true/Toucher,false,25/85vio
+Oeil Sinistre du Roi Sorcier Sauron/4,5,6,7/85/5/true/false/false/8,0,0/Atk,false,3361,true/AtkM,false,3567,true/VIT,false,91,true/INT,false,105,true/VOL,false,100,true/Toucher,false,25/Depla,false,12/VitComp,false,30/85gold
+Regard des Dieux Infernaux/4,5,6,7/85/4/true/false/false/8,0,0/Atk,false,2614,true/AtkM,false,2774,true/VIT,false,38,true/INT,false,52,true/VOL,false,45,true/Toucher,false,18/Depla,false,12/VitComp,false,30/85pre
+Flamme Ardente du Phoenix/4,5,6,7/85/4/false/false/false/9,0,0/Atk,false,2614,true/AtkM,false,2774,true/VIT,false,62,true/INT,false,42,true/VOL,false,31,true/Toucher,false,15/TCCM,false,6/DCCM,false,10/Sacre,false,40/85pvp
+Épiphanie Divine/4,5,6,7/84/4/true/false/false/9,0,0/Atk,false,2573,true/AtkM,false,2732,true/VIT,false,51,true/INT,false,41,true/VOL,false,43,true/Toucher,false,18/PV,true,10/Depla,false,8/MEN,false,-20/84ora
+Bâton de l'Espoir Renaissant des Sprites/4,5,6,7/82/2/false/false/false/4,0,0/Atk,false,2137,true/AtkM,false,2269,true/INT,false,45,true/Toucher,false,15/80pre
+Bâton du Serment des Sprites/4,5,6,7/81/2/false/false/false/4,0,0/Atk,false,2104,true/AtkM,false,2232,true/VIT,false,45,true/Toucher,false,15/99ora

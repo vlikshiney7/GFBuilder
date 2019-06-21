@@ -1,1 +1,1 @@
-Flamberge fascinante draconienne/0,1,2/100/5/true/false/false/6,0,0/Atk,false,6725,true/FCE,false,134,true/VIT,false,114,true/AGI,false,227,true/FCE,false,120/Toucher,true,15
+Flamberge fascinante draconienne/0,1,2/100/5/true/false/false/6,0,0/Atk,false,6725,true/FCE,false,134,true/VIT,false,114,true/AGI,false,227,true/FCE,false,120/Toucher,false,15/100gold

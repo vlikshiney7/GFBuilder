@@ -1,10 +1,13 @@
 Épreuve du roi des Sprites/1/XP,false,5/xpGuild
+Bénédiction Secrète d'Alice/1/Loot,false,7/0-0
+Barrière Naturelle d'Alice/1/Nature,false,50/0-1
+Aria de défense d'Alice/2/DefP,true,8/DefM,true,8/0-2
 Armure Sacrée de Bodor/2/Sacre,false,25/Nature,false,25/null
 Corne de bataille de Bodor/2/PV,true,8/PM,true,8/null
 Cri de bataille de Bodor/3/Atk,true,7/AtkD,true,7/AtkM,true,7/null
-Bénédiction Secrète d'Alice/1/Loot,false,7/1-0
-Barrière Naturelle d'Alice/1/Nature,false,50/1-1
-Aria de défense d'Alice/2/DefP,true,8/DefM,true,8/1-2
+Leggings Venteux de Quill/1/Depla,false,12/6-0
+Rugissement Tempétueux de Quill/2/DCCP,false,10/DCCM,false,10/6-1
+Tornade Orageuse de Quill/0/6-2
 Magie Chanceuse de Mosunk/1/Loot,false,10/7-0
 Armure Magique de Mosunk/2/DegP,false,5/DegM,false,5/7-1
 Lumière Bénie de Mosunk/0/7-2
