@@ -1,7 +1,7 @@
 Force Frénétique/45/1/FCE,false,9/0-0
 Frappe Critique Mortelle/45/1/TCCP,false,0.8/0-1
 Maître dans l'Usage de la Hache/45/1/DegStdHa,false,1.5/0-2
-Confession Brutable/45/2/DegHuma,false,50/DegHuma,true,1/0-3
+Confession Brutable/45/2/DegHumaP,false,50/DegHumaP,true,1/0-3
 Armes à Vacillement/45/1/VitAtk,false,1/0-4
 Tatouage Ardent/45/1/Feu,false,3/0-5
 /60/0/0-6
@@ -127,7 +127,7 @@ Tatouage Ardent/45/1/Feu,false,3/0-5
 Maître dans l'Usage de la Magie/45/1/AtkM,true,1/6-0
 Résistance des Éléments/45/3/Foudre,false,2/Feu,false,2/Glace,false,2/6-1
 Masque des Éléments/45/1/ReducM,false,2/6-2
-Sort des Éléments/45/2/DegElem,false,50/DegElem,true,1/6-3
+Sort des Éléments/45/2/DegElemM,false,50/DegElemM,true,1/6-3
 Volonté de la Sorcellerie/45/1/PM,true,1/6-4
 Parler Clairement/45/1/IntComp,false,-3/6-5
 Connaissance Runique/60/1/VitComp,false,1.5/6-6

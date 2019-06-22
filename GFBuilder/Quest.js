@@ -1,51 +1,17 @@
 
-2783|L44.可能是這樣|44|1|18|角色|If_Reputation 12 >= 4000|add_appellation 8037
-2785|L41.偷取魚人藥材|41|1|18|角色|If_Reputation 13 >= 4000|add_appellation 8038
-2787|L43.有錢的收藏家|43|1|18|角色|If_Reputation 14 >= 4000|add_appellation 8039
-2412|L60.來自鵝毛筆的邀請|60|1|7|角色|If_CheckRebirthCount >= 0|add_appellation 8055
+3869|L70.百凰塔討伐令II(重複)|70|4|6|討伐令|If_CharLevel >= 68:If_CharLevel <= 78:If_If_CheckBuff 2 14|add_appellation 8119
+3470|此區段編號已被程式廢棄不可使用|70|4|16|討伐令|If_CharLevel >= 95|add_appellation 8119
+3871|L75.黑炎遺跡討伐令II(重複)|75|4|6|討伐令|If_CharLevel >= 73:If_CharLevel <= 80:If_If_CheckBuff 2 14|add_appellation 8123
+3472|此區段編號已被程式廢棄不可使用|75|4|16|討伐令|If_CharLevel >= 95|add_appellation 8123
+3525|L85.哭泣水手號封印預言II(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckBuff 2 14|add_appellation 8181 
+3526|L85.哭泣水手號封印預言II(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckBuff 2 14|add_appellation 8181 
+4428|L85.哭泣水手號封印預言(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckRebirthCount >= 0|add_appellation 8181
 
-3273|L82.不能問的秘密|82|1|18|虛空碎塊|If_CharLevel >= 81|add_appellation 8230
-3275|L83.探查不同的怨靈|83|1|16|虛空碎塊|If_CharLevel >= 82|add_appellation 8231
-3276|L83.被昆蟲圍繞|83|1|16|虛空碎塊|If_CharLevel >= 82|add_appellation 8232
-3278|L85.金錢的力量之一|85|1|18|命運少女之謎|If_CharLevel >= 84|add_appellation 8233
-3279|L85.金錢的力量之二|85|1|18|命運少女之謎|If_CharLevel >= 84|add_appellation 8234
-3285|L86.奇蹟少女的足跡之二|87|1|18|命運少女之謎|If_CharLevel >= 85|add_appellation 8235
-3299|L85.傳送斯托拉克島|85|1|18|寒焰峽關|If_CharLevel >= 81|add_appellation 8236
-3303|L87.溫泉商城|87|1|16|寒焰峽關|If_CharLevel >= 83|add_appellation 8237
-3306|L88.過去的偉業之一|88|1|18|命運少女之謎|If_CharLevel >= 86|add_appellation 8238
-3312|L89.海盜與正義之一|89|1|18|命運少女之謎|If_CharLevel >= 86|add_appellation 8239
-3313|L89.海盜與正義之二|89|1|18|命運少女之謎|If_CharLevel >= 86|add_appellation 8240
-3317|L89.海盜與正義之六|89|1|18|命運少女之謎|If_CharLevel >= 86|add_appellation 8241
-3320|L89.阿登尼斯的秘密之三|89|1|18|地下城：死獄島|If_CharLevel >= 86|add_appellation 8242
-3321|L90.阿登尼斯的秘密之四|90|1|18|地下城：死獄島|If_CharLevel >= 86|add_appellation 8243
-3402|L85.職業進階：所卡的考驗|90|1|11|85|角色|If_CharLevel >= 85:If_Class 17 |PlayerLevel <= 85|add_appellation 8244:change_class 32
-3403|L85.職業進階：禁的考驗|90|1|11|85|角色|If_CharLevel >= 85:If_Class 18 |PlayerLevel <= 85|add_appellation 8245:change_class 33
-3404|L85.職業進階：最強射手傳說|90|1|11|85|角色|If_CharLevel >= 85:If_Class 19 |PlayerLevel <= 85|add_appellation 8246:change_class 34
-3405|L85.職業進階：最強忍者狂隼|90|1|11|85|角色|If_CharLevel >= 85:If_Class 20 |PlayerLevel <= 85|add_appellation 8247:change_class 35
-3406|L85.職業進階：老耿的考驗|90|1|11|85|角色|If_CharLevel >= 85:If_Class 23 |PlayerLevel <= 85|add_appellation 8248:change_class 38
-3407|L85.職業進階：奇奇拉美的考驗|90|1|11|85|角色|If_CharLevel >= 85:If_Class 24 |PlayerLevel <= 85|add_appellation 8249:change_class 39
-3408|L85.職業進階：知識的考驗|90|1|11|85|角色|If_CharLevel >= 85:If_Class 21 |PlayerLevel <= 85|add_appellation 8250:change_class 36
-3409|L85.職業進階：時間的考驗|90|1|11|85|角色|If_CharLevel >= 85:If_Class 22 |PlayerLevel <= 85|add_appellation 8251:change_class 37
-
-3411|L05.三週年的紀念禮|5|1|18|節慶|If_CharLevel >= 5:If_CheckRebirthCount >= 0|add_appellation 8636
-3417|L88.死獄島討伐令(重複)|94|1|6|討伐令|If_CharLevel >= 88:If_CharLevel <= 94:If_CheckRebirthCount >= 0|add_appellation 8637
-
-3434|L15.涼風徐徐|15|1|26|15|518|精靈小島|If_ElfIsle 1|add_appellation 8255
-
-3466|此區段編號已被程式廢棄不可使用|60|4|16|討伐令|If_CharLevel >= 95|RewardBuff :add_appellation 8085
-
-3468|此區段編號已被程式廢棄不可使用|65|4|16|討伐令|If_CharLevel >= 95|RewardBuff :add_appellation 8097
-3470|此區段編號已被程式廢棄不可使用|70|4|16|討伐令|If_CharLevel >= 95|RewardBuff :add_appellation 8119
-3472|此區段編號已被程式廢棄不可使用|75|4|16|討伐令|If_CharLevel >= 95|RewardBuff :add_appellation 8123
-3474|此區段編號已被程式廢棄不可使用|80|4|16|討伐令|If_CharLevel >= 95|add_appellation 8163
-3512|L15.十週年的榮耀|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8640
-3525|L85.哭泣水手號封印預言II(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckBuff 2 14|add_appellation 8181:RewardBuff 
-3526|L85.哭泣水手號封印預言II(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckBuff 2 14|add_appellation 8181:RewardBuff 
-3527|L88.死獄島討伐令II(重複)|94|1|6|討伐令|If_CharLevel >= 88:If_CharLevel <= 94:If_If_CheckBuff 2 14|add_appellation 8637:RewardBuff 
-3528|L85.禁忌神殿超限討伐令II(重複)|85|4|6|討伐令|If_CharLevel >= 81:If_CharLevel <= 85:If_CheckBuff 2 14:add_appellation 8163:RewardBuff 
-3529|L85.禁忌神殿超限討伐令II(重複)|85|4|6|討伐令|If_CharLevel >= 81:If_CharLevel <= 85:If_CheckBuff 2 14:add_appellation 8163:RewardBuff 
-3530|L31.毅力的考驗|31|1|16|GM活動|If_CharLevel >= 31|add_appellation 8650
 3534|L90.甦醒的遠古惡魔之三|90|4|16|地下城：噩夢迴廊|If_CharLevel >= 75|add_appellation 8264
+
+3512|L15.十週年的榮耀|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8640
+3527|L88.死獄島討伐令II(重複)|94|1|6|討伐令|If_CharLevel >= 88:If_CharLevel <= 94:If_If_CheckBuff 2 14|add_appellation 8637 
+3530|L31.毅力的考驗|31|1|16|GM活動|If_CharLevel >= 31|add_appellation 8650
 3537|L15.擊敗大盜賊|15|1|16|節慶|If_CharLevel >= 15|add_appellation 8652
 3538|L01.毅力才是王道|1|1|19|角色|If_CharLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8650
 3558|L20.勇氣與守護的考驗(重複)|20|1|4|角色|If_CharLevel >= 20:If_FMS 3563 open:If_Married 0:If_CheckRebirthCount >= 0|add_appellation 8668
@@ -56,51 +22,10 @@
 3573|L15.萬聖群魔剋星！|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8681
 3576|L15.無私奉獻的獎勵！|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8687
 3580|L15.聖誕守護之星|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8688
-3605|L66.來自遠方的求救聲之五|66|1|18|引導|If_CharLevel >= 62|Event_TriggerEvent 105 0 0:add_appellation 8696
-3614|L72.染血的海岸線之四|72|1|18|主線|If_CharLevel >= 68|add_appellation 8697
-3618|L74.偷懶的聯絡人之四|74|1|18|主線|If_CharLevel >= 70|add_appellation 8698
-3625|L68.溫暖的回憶|68|1|18|染血的藍灣|If_CharLevel >= 64|add_appellation 8699
-3629|L75.奇妙的盟友之三|75|1|18|染血的藍灣|If_CharLevel >= 71|add_appellation 8700
-3633|L76.前往迷霧深處之四|76|1|18|主線|If_CharLevel >= 72|add_appellation 8701
-3639|L79.紫色幻影之五|79|1|18|主線|If_CharLevel >= 75|add_appellation 8702
-3654|L83.任性的冒險之三|83|1|18|精靈哭泣之森|If_CharLevel >= 79|AcceptTime 1|add_appellation 8703
-3658|L80.壞習慣的證據|80|1|18|精靈哭泣之森|If_CharLevel >= 76|add_appellation 8704
-3660|L83.修剪雜草|83|4|18|精靈哭泣之森|If_CharLevel >= 79|add_appellation 8705
+
 3671|L87.陷阱作戰之四|87|1|18|主線|If_CharLevel >= 83|add_appellation 8719
-3677|L90.揭發黑幕之六|90|1|18|主線|If_CharLevel >= 86|add_appellation 8706
-3687|L87.迷糊的傳話人之三|87|1|18|加斯洛荒原|If_CharLevel >= 83|add_appellation 8707
-3688|L84.另一個傳說|84|1|18|加斯洛荒原|If_CharLevel >= 80|add_appellation 8708
-3691|L84.戰亂中的日常之三|84|1|18|加斯洛荒原|If_CharLevel >= 80|AcceptTime 1|add_appellation 8709
-3700|L90.觀星者的獨白之六|90|1|18|草原要塞|If_CharLevel >= 86|add_appellation 8710:Event_TriggerEvent 303 0 0
-3703|L90.加斯洛讚歌之三|90|4|18|草原要塞|If_CharLevel >= 86|add_appellation 8711
-3706|L74.巨大的烏雲(重複)|74|5|4|公會任務|If_CharLevel >= 69:If_CharLevel <= 77:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8713
-3709|L83.探明真相(重複)|83|5|4|公會任務|If_CharLevel >= 78:If_CharLevel <= 86:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8714
-3712|L90.斬首行動(重複)|90|5|4|公會任務|If_CharLevel >= 85:If_CharLevel <= 93:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8715
-3766|L90.燃燒的加斯洛之五|90|4|26|85|地下城：燃燒的加斯洛|If_CharLevel >= 85|add_appellation 8712
-3852|L20.草原洞窟討伐令II(重複)|20|4|6|討伐令|If_CharLevel >= 20:If_CharLevel <= 30:If_If_CheckBuff 2 14|add_appellation 8048
-3853|L31.查禁礦坑討伐令II(重複)|31|4|6|討伐令|If_CharLevel >= 31:If_Class 3 4 7 8:If_CharLevel <= 41:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8049
-3854|L31.查禁礦坑討伐令II(重複)|31|4|6|討伐令|If_CharLevel >= 31:If_Class 11 12 15 16:If_CharLevel <= 41:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8049
-3855|L36.廢棄神廟討伐令II(重複)|36|4|6|討伐令|If_CharLevel >= 36:If_Class 3 4 7 8:If_CharLevel <= 46:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8050
-3856|L36.廢棄神廟討伐令II(重複)|36|4|6|討伐令|If_CharLevel >= 36:If_Class 11 12 15 16:If_CharLevel <= 46:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8050
-3857|L40.迴音山洞討伐令II(重複)|40|4|6|討伐令|If_CharLevel >= 40:If_Class 3 4 7 8:If_CharLevel <= 50:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8051
-3858|L40.迴音山洞討伐令II(重複)|40|4|6|討伐令|If_CharLevel >= 40:If_Class 11 12 15 16:If_CharLevel <= 50:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8051
-3859|L46.過去的席瓦島之旅II(重複)|46|4|6|討伐令|If_CharLevel >= 46:If_Class 3 4 7 8:If_CharLevel <= 56:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8052
-3860|L46.過去的席瓦島之旅II(重複)|46|4|6|討伐令|If_CharLevel >= 46:If_Class 11 12 15 16:If_CharLevel <= 56:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8052
-3861|L50.咆哮之口討伐令II(重複)|50|4|6|討伐令|If_CharLevel >= 50:If_Class 3 4 7 8:If_CharLevel <= 60:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8053
-3862|L50.咆哮之口討伐令II(重複)|50|4|6|討伐令|If_CharLevel >= 50:If_Class 11 12 15 16:If_CharLevel <= 60:If_If_CheckBuff 2 14|PlayerLevel <= 85|add_appellation 8053
-3863|L56.聖王之墓討伐令II(重複)|56|4|6|討伐令|If_CharLevel >= 56:If_CharLevel <= 66:If_If_CheckBuff 2 14|add_appellation 8054
-3864|L56.聖王之墓討伐令II(重複)|56|4|6|討伐令|If_CharLevel >= 56:If_CharLevel <= 66:If_If_CheckBuff 2 14|add_appellation 8054
-3865|L60.藤蔓古城討伐令II(重複)|60|4|6|討伐令|If_CharLevel >= 60:If_CharLevel <= 70:If_If_CheckBuff 2 14|add_appellation 8085
-3866|L60.藤蔓古城討伐令II(重複)|60|4|6|討伐令|If_CharLevel >= 60:If_CharLevel <= 70:If_If_CheckBuff 2 14|add_appellation 8085
-3867|L65.機械要塞討伐令II(重複)|65|4|6|討伐令|If_CharLevel >= 63:If_CharLevel <= 73:If_If_CheckBuff 2 14|add_appellation 8097
-3868|L65.機械要塞討伐令II(重複)|65|4|6|討伐令|If_CharLevel >= 63:If_CharLevel <= 73:If_If_CheckBuff 2 14|add_appellation 8097
-3869|L70.百凰塔討伐令II(重複)|70|4|6|討伐令|If_CharLevel >= 68:If_CharLevel <= 78:If_If_CheckBuff 2 14|add_appellation 8119
-3870|L70.百凰塔討伐令II(重複)|70|4|6|討伐令|If_CharLevel >= 68:If_CharLevel <= 78:If_If_CheckBuff 2 14|add_appellation 8119
-3871|L75.黑炎遺跡討伐令II(重複)|75|4|6|討伐令|If_CharLevel >= 73:If_CharLevel <= 80:If_If_CheckBuff 2 14|add_appellation 8123
-3872|L75.黑炎遺跡討伐令II(重複)|75|4|6|討伐令|If_CharLevel >= 73:If_CharLevel <= 80:If_If_CheckBuff 2 14|add_appellation 8123
-3873|L80.禁忌神殿討伐令II(重複)|80|4|6|討伐令|If_CharLevel >= 78:If_CharLevel <= 85:If_If_CheckBuff 2 14|add_appellation 8163
-3874|L80.禁忌神殿討伐令II(重複)|80|4|6|討伐令|If_CharLevel >= 78:If_CharLevel <= 85:If_If_CheckBuff 2 14|add_appellation 8163
-3916|L17.終極復活|90|1|18|節慶|If_CharLevel >= 17:If_CheckRebirthCount >= 0|8205|8206|add_appellation 8743
+4165|L15.馨動的美味|90|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8742
+3916|L17.終極復活|90|1|18|節慶|If_CharLevel >= 17:If_CheckRebirthCount >= 0|add_appellation 8743
 3941|L15.心如明鏡止水|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8751
 3961|L83.哭泣女孩之四|83|1|18|主線|If_CharLevel >= 79|add_appellation 8756
 3966|L85.反攻的號令之五|85|1|18|主線|If_CharLevel >= 79|add_appellation 8757
@@ -112,15 +37,13 @@
 4039|L93.前往希冀聖城之六|93|1|18|主線|If_CharLevel >= 89|add_appellation 8763
 4052|L95.奇蹟之子的傳說之五|95|1|18|主線|If_CharLevel >= 91|add_appellation 8764
 4054|L95.真假夢境之追根究底|95|1|18|希冀高原|If_CharLevel >= 91|add_appellation 8765
-4056|L95.真假夢境之追根究底|95|1|18|希冀高原|If_CharLevel >= 91|add_appellation 8765
-4077|L97.彩虹之境之五|97|4|18|地下城：彩虹之境|If_CharLevel >= 91|add_appellation 8777
-4165|L15.馨動的美味|90|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8742
+4206|L15.向精靈王請願|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8770
 4168|L15.令人畏懼的戀情|90|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8776
-4171|L15.為了乾杯而乾杯 (重複)|100|1|6|節慶|If_CharLevel >= 15:If_If_CheckRebirthCount >= 0|RewardBuff 
+4077|L97.彩虹之境之五|97|4|18|地下城：彩虹之境|If_CharLevel >= 91|add_appellation 8777
 4172|L15.乾杯! 果釀英雄|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8796
+
 4183|L15.執迷不悟|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8800
 4189|L15.莫妮整人計畫|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8801
-4206|L15.向精靈王請願|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8770
 4236|L93.基爾遺址的調查之五|93|1|18|主線|If_CharLevel >= 89|add_appellation 8805
 4240|L94.消失的研發中心之四|94|4|18|主線|If_CharLevel >= 90|add_appellation 8806
 4263|L95.格瑞德族的信任之四|95|1|18|主線|If_CharLevel >= 91|add_appellation 8807
@@ -128,14 +51,11 @@
 4297|L98.突襲機械工廠之六|98|1|18|主線|If_CharLevel >= 94|add_appellation 8809
 4305|L100.突擊坎薩斯巨港之五|100|4|18|主線|If_CharLevel >= 96|add_appellation 8810
 4329|L100.扭曲時空之四|100|4|18|地下城：扭曲時空|If_CharLevel >= 96|add_appellation 8811
+4441|L100.邪惡的遠古惡魔之四|100|4|16|地下城：噩夢迴廊|If_CharLevel >= 86|add_appellation 8816
+4446|L15.禮物快遞|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8820
 4353|L94.洞穴內的巨大魔物(重複)|94|5|4|公會任務|If_CharLevel >= 90:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8821
 4357|L97.格瑞德族人的恐懼(重複)|97|5|4|公會任務|If_CharLevel >= 93:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8822
 4361|L100.沙灘統治者(重複)|100|5|4|公會任務|If_CharLevel >= 96:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8823
-4426|L80.禁忌神殿討伐令(重複)|80|4|6|討伐令|If_CharLevel >= 78:If_CharLevel <= 88:If_CheckRebirthCount >= 0|add_appellation 8163
-4427|L85.禁忌神殿討伐令(重複)|85|4|6|討伐令|If_CharLevel >= 81:If_CharLevel <= 85:If_If_CheckBuff 3 10:If_CheckRebirthCount >= 0|add_appellation 8163:RewardBuff 
-4428|L85.哭泣水手號封印預言(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckRebirthCount >= 0|add_appellation 8181
-4441|L100.邪惡的遠古惡魔之四|100|4|16|地下城：噩夢迴廊|If_CharLevel >= 86|add_appellation 8816
-4446|L15.禮物快遞|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8820
 4452|L15.時空的守護|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8832
 4455|L15. 我才是真正的高端|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8833
 4456|L85.職業進階：核心能量的挑戰|90|1|11|85|角色|If_CharLevel >= 85:If_Class 29 |PlayerLevel <= 85|add_appellation 8834:change_class 48
@@ -145,12 +65,11 @@
 4473|L15.草原騎士的代行者|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8838
 4499|L78.前進．蒸汽礦山之四|78|1|18|主線|If_CharLevel >= 76|add_appellation 8845
 4550|L87.精靈王的甦醒之四|87|1|18|主線|If_CharLevel >= 85|add_appellation 8847
-4569|L76.鏽蝕的尋寶委託單(重複)|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8832
 4630|L95.希望破滅之船的追憶者|95|1|18|加斯洛平原|If_CharLevel >= 95|add_appellation 8854
 4631|L100.死獄島的追憶者|100|1|18|加斯洛平原|If_CharLevel >= 100|add_appellation 8855
+4679|L87.了無遺憾的愛之五|87|1|18|異次元‧赤色山脊|If_CharLevel >= 85|AcceptTime 600 1|add_appellation 8856
 4637|L15.奇蹟的真相|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8860
 4639|L21.魔壺冒險王|100|1|18|節慶|If_CharLevel >= 21:If_CheckRebirthCount >= 0|add_appellation 8863
-4679|L87.了無遺憾的愛之五|87|1|18|異次元‧赤色山脊|If_CharLevel >= 85|AcceptTime 600 1|add_appellation 8856
 4681|L15.遣返傳說|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8864
 4684|L15.嗝！醉拳大師|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8865
 4686|L87.崩毀的礦坑之二|87|1|18|異次元‧蒸氣礦山|If_CharLevel >= 85|add_appellation 8866
@@ -158,19 +77,18 @@
 4689|L15.為惡作劇做準備|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8871
 4728|L15.施比受更有福|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8872
 4740|L15.散播幸福之人|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8876
-4749|L15.拯救藍灣|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8901
 4769|L15.騎士出擊|100|1|18|加斯洛平原|If_CharLevel >= 15|add_appellation 8878
+4875|L96.狩獵之道：扭曲時空|100|1|26|96|狩獵之道|If_CharLevel >= 96|add_appellation 8880
+4854|L15.創真的認可|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8881
 4819|L65.真正的敵人之五|100|1|18|轉生任務|If_CharLevel >= 60|add_appellation 8882
 4838|L95.瑟斐爾的陰影之六|100|1|18|轉生任務|If_CharLevel >= 91|AreaTravel 43 959|add_appellation 8883
-4854|L15.創真的認可|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8881
-4875|L96.狩獵之道：扭曲時空|100|1|26|96|狩獵之道|If_CharLevel >= 96|add_appellation 8880
 4936|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 1:If_CheckRebirthScore <= 1|add_appellation 8884
-4937|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 2:If_CheckRebirthScore <= 2|add_appellation 8885
-4938|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 3:If_CheckRebirthScore <= 3|add_appellation 8886
-4939|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 4:If_CheckRebirthScore <= 4|add_appellation 8887
 4940|L31.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 31:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 1:If_CheckRebirthScore <= 1|add_appellation 8884
+4937|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 2:If_CheckRebirthScore <= 2|add_appellation 8885
 4941|L31.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 31:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 2:If_CheckRebirthScore <= 2|add_appellation 8885
+4938|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 3:If_CheckRebirthScore <= 3|add_appellation 8886
 4942|L31.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 31:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 3:If_CheckRebirthScore <= 3|add_appellation 8886
+4939|L06.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 6:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 4:If_CheckRebirthScore <= 4|add_appellation 8887
 4943|L31.精靈的新生祝福|100|1|19|轉生任務|If_CharLevel >= 31:If_CheckRebirthCount >= 1:If_CheckRebirthScore >= 4:If_CheckRebirthScore <= 4|add_appellation 8887
 4946|L15.神秘的閃耀魚王|100|1|2|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8888
 4947|L15.小桑的戰友|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8890
@@ -181,6 +99,8 @@
 4964|L15.能源危機|100|1|2|蒸氣礦山|If_CharLevel >= 15|add_appellation 8896
 4974|L15.歡慶傳奇週年慶|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8897
 4976|L15.卓越的廚藝|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8898
+
+4749|L15.拯救藍灣|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8901
 4999|L15.附送的禮物|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8902
 5003|L15.史汀姆的讚嘆|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8904
 5014|L15.狂歡無上限|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8905
@@ -205,18 +125,18 @@
 5308|L85.職業進階：追尋時間的傳說|90|1|11|85|角色|If_CharLevel >= 85:If_Class 57 |add_appellation 8931:change_class 59
 5382|L15.華特森把作業吃了！|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8934
 5385|L15.工具人之心|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8935
+5938|L94.令人恐懼的魔獸(重複)|94|5|4|公會任務|If_CharLevel >= 90:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0:If_CharLevel <= 100|add_appellation 8938
+5942|L97.可愛中的危機(重複)|97|5|4|公會任務|If_CharLevel >= 93:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0:If_CharLevel <= 100|add_appellation 8939
+5946|L100.卡索神教最強之劍(重複)|100|5|4|公會任務|If_CharLevel >= 96:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0:If_CharLevel <= 100|add_appellation 8940
+5949|L15.努力工作的證明|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8941
 5407|L15.桃色危機|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8942
 5459|L15. 寂靜的黑暗|100|1|2|異次元‧精靈之森|If_CharLevel >= 15|add_appellation 8943
 5462|L15.秘密即刻救援行動|100|1|2|異次元‧瘟疫林地|If_CharLevel >= 15|add_appellation 8944
 5463|L90.勤勉的誓約|90|1|7|果凍兔後援會|If_CharLevel >= 90|add_appellation 8945
 5464|L100.終結的誓約|100|1|7|果凍兔後援會|If_CharLevel >= 100|add_appellation 8946
 5469|L95.果凍兔後援會榮耀證明|95|1|19|果凍兔後援會|If_CharLevel >= 95|add_appellation 8947
-5938|L94.令人恐懼的魔獸(重複)|94|5|4|公會任務|If_CharLevel >= 90:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0:If_CharLevel <= 100|add_appellation 8938
-5942|L97.可愛中的危機(重複)|97|5|4|公會任務|If_CharLevel >= 93:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0:If_CharLevel <= 100|add_appellation 8939
-5946|L100.卡索神教最強之劍(重複)|100|5|4|公會任務|If_CharLevel >= 96:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0:If_CharLevel <= 100|add_appellation 8940
-5949|L15.努力工作的證明|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8941
-5975|L15.廚神之道|100|1|2|15|節慶|If_CharLevel >= 15|add_appellation 8949
 5977|L15.好歡樂的萬聖節|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8948
+5975|L15.廚神之道|100|1|2|15|節慶|If_CharLevel >= 15|add_appellation 8949
 5978|L15.破曉之際的剿滅行動|100|1|2|異次元‧加斯洛平原|If_CharLevel >= 15|add_appellation 8950
 5983|L15.盡情享受慶典吧！|100|1|2|15|節慶|If_CharLevel >= 15|add_appellation 8951
 5987|L15.雪國風情|100|1|2|節慶|If_CharLevel >= 15|add_appellation 8952

@@ -1,30 +1,12 @@
 
-8055|Écrivain Populaire|Bonus / Malus : 
-VOL +1 pt|
-8062|Cœur de Pierre||
-8063|Enfant des Fleurs||
-8064|Chasseur de Gros Gibier||
-8065|Collectionneur Maniaque||
-8066|Lecteur Insatiable||
-8067|Messager Corrompu||
-8068|Ombre parmi les Ombres||
-8069|Noble chevalier de Kaslow||
-8070|Conseillé avisé d'Ilya||
-8071|Savant génial de Technopolis||
 8072|Gardien du Royaume de Saphaël|Bonus / Malus : 
 DÉG ATQ STD toute arme +2 %
 PV Max 5 %|
 8073|Messager d'Élite||
 
 8084|Ambassadeur des Rois des Sprites||
-8085|Envoyé des Anciens|Bonus / Malus : 
-DÉG CRIT PHY +10 % 
-ESQ -10 %|
 
 8096|Sportif de l'Extrême||
-8097|Rouleur de Mécaniques|Bonus / Malus : 
-Toucher +10 % 
-PM -8 %|
 
 8111|Défenseur des Glaces d'Ilannia|Bonus / Malus : 
 DÉG ATQ STD Épée à deux mains +2 %
@@ -131,119 +113,6 @@ Possibilité d'être transformé en monstre de l'Arène de Feu
 Inutilisable pendant le combat. VIT DÉP -100 % 
 * Toute autre compétence de métamorphose annulera celle-ci|
 
-8230|Preux Chevalier|Bonus / Malus : 
-FCE +2 pts
-INT +2 pts
-VIT DÉP +1 %|
-8231|Expert de la Colère|Bonus / Malus :
-INT +3
-Chance de battre les Démons avec une attaque magique +2 %
-Dégâts spéciaux sur les Démons avec l'attaque magique +20 pts|
-8232|Mangeur d'Insectes|Bonus / Malus :
-RÉS Nature +2 %
-Chance de battre les Bêtes avec une attaque physique +2 %
-+15 pts de dégâts spéciaux sur les Bêtes avec l'attaque physique|
-8233|Gros Blasé|Bonus / Malus :
-FCE +3
-VIT DÉP +2 %
-Chance de battre les Humanoïdes avec une attaque physique +1 %
-Dégâts spéciaux sur les Humanoïdes avec l'attaque physique +10 pts|
-8234|Sherlock Sprite|Bonus / Malus : 
-AGI +3 pts
-VIT ATQ +2 %|
-8235|Buveur sans Soif|Bonus / Malus : 
-Possibilité d'être transformé en Gélapin des Sources 
-Inutilisable pendant le combat. VIT DÉP -120 % 
-* Toute autre compétence de métamorphose annulera celle-ci|
-8236|Super-Touriste|Bonus / Malus : 
-ATQ MÊL -50 % 
-DÉF +2 % 
-VIT DÉP +10 %|
-8237|Messager du Vent|Bonus / Malus : 
-INT +10 pts
-DÉF -50 % 
-VIT DÉP +10 %|
-8238|Grand Génie|Bonus / Malus : 
-ESQ +7 %|
-8239|Crapule Pirate|Bonus / Malus :
-Possibilité de se transformer en Gélapin Pirate.
-*Cet effet prend fin si une autre métamorphose est utilisée.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8240|Forban Pirate|Bonus / Malus :
-Une chance de se transformer en Pirate.
-*Cet effet prend fin si une autre métamorphose est utilisée.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8241|Mégère Pirate|Bonus / Malus :
-Une chance de se transformer en Femme Pirate.
-*Cet effet prend fin si une autre métamorphose est utilisée.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8242|Demi de Mêlée|Bonus / Malus : 
-VIT ATQ MÊL +12 % 
-VIT ATQ DIST +5 %|
-8243|Roi des Pirates|Bonus / Malus : 
-FCE +4 pts
-INT +4 pts
-VIT DÉP +5 % 
-Taux de Butin +5 %|
-8244|Ravageur|Bonus / Malus :
-FCE +20
-PV max +500
-VIT DÉP +5 %
-DÉF PHY +3 %
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8245|Templier|Bonus / Malus :
-PV max +3 %
-PV max +500
-VIT DÉP +5 %
-DÉF PHY +3 %
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8246|Sniper|Bonus / Malus :
-Taux de Butin +3 %.
-PV max +500
-VIT DÉP +5 %
-ATQ PHY +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8247|Maître Ninja|Bonus / Malus :
-ESQ +2 %
-PV max +500
-VIT DÉP +5 %
-ATQ PHY +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8248|Maître Archimage|Bonus / Malus :
-PM Max +5 %.
-PV max +500
-VIT DÉP +5 %
-ATQ MAG +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8249|Maître Shinigami|Bonus / Malus :
-+80 pts de DÉG Ombre avec les ATQ MAG.
-PV max +500
-VIT DÉP +5 %
-ATQ MAG +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8250|Exorciste|Bonus / Malus :
-Dégâts d'ATQ PHY subis -50 pts.
-PV max +500.
-VIT DÉP +5 %
-ATQ MAG +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8251|Shaman|Bonus / Malus :
-Dégâts d'attaque magique subis -80
-PV max +500
-VIT DÉP +5 %
-ATQ MAG +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8252|Dompteur de WorldBoss|Bonus / Malus :
-ATQ MAG +4 %
-ATQ DIST +8 %.
-ESQ +5 %
-DÉF +4 %
-Toucher +9 %
-VIT ATQ MÊL +8 %
-VIT COMP +8 %
-$12$Ne fonctionne qu'avec les compétences de Personnages de niv. 70 minimum.|
-
-8255|Touriste des Îles||
 8256|Roi des Duels|Bonus / Malus : 
 ATQ MÊL et ATQ DIST +5 % 
 ATQ MAG +5 % 
@@ -298,18 +167,7 @@ $12$Ne fonctionne qu'avec les compétences de Personnages de niv. 70 minimum.|
 8635|Maître du Destin|Bonus / Malus : 
 PV +100 
 PM -100|
-8636|Cupidon Amoureux|Bonus / Malus : 
-Transformation en Sprite Géant 
-Inutilisable pendant le combat. VIT DÉP -120 % 
-* Toute autre compétence de métamorphose annulera celle-ci|
-8637|Nakama Pirate|Bonus / Malus :
-PV Max +10 %
-PM Max -15 %.
-Effet du titre : Pionnier
-Quand les PV sont inférieurs à 20 %, l'attaque subie a 35 % de
-chance de réduire les PM à 0 et de restaurer tous les PV.
-Recharge : 7 200 s.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N88 minimum.|
+
 8638|Certificat d'Appréciation|Bonus / Malus : 
 PV Max +6 % 
 PM Max +3 % 
@@ -521,98 +379,7 @@ PV Max +4 %
 PM Max +4 %
 Taux de Butin +4 % 
 EXP Combat +4 %|
-8696|Voyageur Temporel|Bonus / Malus : 
-FCE +3 pts
-VIT +3 pts
-Toucher +3 % 
-VIT DÉP -3 %|
-8697|Expert du Défi|Bonus / Malus :
-FCE +4
-VIT DÉP +3 %
-Chance de battre les bêtes avec une attaque physique +3 %
-Dégâts spéciaux sur les Bêtes avec l'attaque physique +20 pts|
-8698|La Mode des Carapaces|Bonus / Malus : 
-VIT +3 pts
-INT +3 pts
-VIT DÉP +3 % 
-VIT ATQ -3 %|
-8699|Insecticide|Bonus / Malus : 
-VIT +3 pts
-AGI +3 pts
-VIT ATQ +3 % 
-Toucher -3 %|
-8700|Amitié Inter Espèce|Bonus / Malus : 
-FCE +5 pts
-INT +5 pts
-VIT DÉP +6 % 
-Taux de Butin +6 %|
-8701|Vous cherchez quelque chose ?|Bonus / Malus : 
-ESQ +9 %|
-8702|Ombres Chinoises|Bonus / Malus : 
-FCE +3 pts
-AGI +3 pts
-VIT DÉP +3 % 
-Toucher -3 %|
-8703|Nounou d'Enfer|Bonus / Malus : 
-INT +3 pts
-VOL +3 pts
-Toucher +3 % 
-VIT ATQ -3 %|
-8704|Détective Autodidacte|Bonus / Malus : 
-VOL +3 pts
-AGI +3 pts
-VIT DÉP +3 % 
-VIT ATQ -3 %|
-8705|Supérieur du Centurion|Bonus / Malus :
-INT +4
-VIT DÉP +3 %
-Chance de battre les Plantes avec une attaque magique +3 %
-Dégâts spéciaux sur les Plantes avec l'Attaque magique +20 pts|
-8706|Membre Spécial de l'Expédition Royale|Bonus / Malus : 
-FCE +3 pts
-VOL +3 pts
-VIT ATQ +3 % 
-VIT DÉP -3 %|
-8707|Maître en dissipation de désastres|Bonus / Malus :
-FCE +4
-VIT DÉP +3 %
-Chance de battre les Humanoïdes avec une attaque physique +3 %
-Dégâts spéciaux sur les Humanoïdes avec l'attaque physique +20 pts|
-8708|Tueur de Déesse|Bonus / Malus :
-INT +4
-VIT DÉP +3 %
-Chances de battre les démons avec une attaque magique +3 %
-Dégâts spéciaux sur les Démons avec l'attaque magique +20 pts|
-8709|Jouer au plus bête|Bonus / Malus : 
-VIT +3 pts
-VOL +3 pts
-Toucher +3 % 
-VIT DÉP -3 %|
-8710|Messager Cauchemar|Bonus / Malus : 
-INT +3 pts
-AGI +3 pts
-VIT ATQ +3 % 
-Toucher -3 %|
-8711|Grand Maître tout Puissant|Bonus / Malus : 
-VIT ATQ MÊL +14 % 
-VIT ATQ DIST +7 %|
-8712|Héraut de Cœur de Lion Embrasé|Bonus / Malus :
-PV Max +6 000.
-PM Max +6 000.
-VIT DÉP +5 %
-Toucher +5 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8713|Guerrier ayant vaincu Griffe de l'Effroi|Bonus / Malus :
-Chance de battre les bêtes avec une attaque physique +3 %
-Dégâts spéciaux sur les Bêtes avec attaque physique +30 pts|
-8714|Guerrier ayant vaincu Seigneur de la Forêt du Triste Sprite|Bonus / Malus :
-Chance de battre les Bêtes avec une attaque magique +3 %
-Dégâts spéciaux sur les Bêtes avec l'attaque magique +30 pts|
-8715|Guerrier ayant vaincu Gardien de Tombe Homme-bête|Bonus / Malus :
-Chance de battre les Démons avec une attaque physique +3 %
-Dégâts spéciaux sur les Démons avec l'attaque physique +30 pts
-Chances de battre les démons avec une attaque magique +3 %
-Dégâts spéciaux sur les Démons avec l'attaque magique +30 pts|
+
 8716|Gardien de la Baie Bleue|Bonus / Malus : 
 Possibilité d'être transformé en Soldat Insecte Géant 
 * Toute autre compétence de métamorphose annulera celle-ci|
@@ -1602,12 +1369,3 @@ Déplacement et combat impossible. Disparaît si vous êtes attaqué.
 VIT DÉP +5 %
 VOL +3 %
 FCE +3 %|
-8030|Baron par Alliance|Bonus / Malus : 
-FCE +1 pt|
-8031|Protecteur des Thermes|
-8037|Membre du Syndicat|Bonus / Malus : 
-DÉF +1 %|
-8038|Étudiant de l'Académie|Bonus / Malus : 
-VOL +1 pt|
-8039|Explorateur Intrépide|Bonus / Malus : 
-DÉG ATQ DIST +1 %|
