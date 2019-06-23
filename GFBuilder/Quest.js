@@ -1,31 +1,4 @@
 
-3869|L70.百凰塔討伐令II(重複)|70|4|6|討伐令|If_CharLevel >= 68:If_CharLevel <= 78:If_If_CheckBuff 2 14|add_appellation 8119
-3470|此區段編號已被程式廢棄不可使用|70|4|16|討伐令|If_CharLevel >= 95|add_appellation 8119
-3871|L75.黑炎遺跡討伐令II(重複)|75|4|6|討伐令|If_CharLevel >= 73:If_CharLevel <= 80:If_If_CheckBuff 2 14|add_appellation 8123
-3472|此區段編號已被程式廢棄不可使用|75|4|16|討伐令|If_CharLevel >= 95|add_appellation 8123
-3525|L85.哭泣水手號封印預言II(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckBuff 2 14|add_appellation 8181 
-3526|L85.哭泣水手號封印預言II(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckBuff 2 14|add_appellation 8181 
-4428|L85.哭泣水手號封印預言(重複)|85|4|6|討伐令|If_CharLevel >= 83:If_CharLevel <= 90:If_If_CheckRebirthCount >= 0|add_appellation 8181
-
-3534|L90.甦醒的遠古惡魔之三|90|4|16|地下城：噩夢迴廊|If_CharLevel >= 75|add_appellation 8264
-
-3512|L15.十週年的榮耀|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8640
-3527|L88.死獄島討伐令II(重複)|94|1|6|討伐令|If_CharLevel >= 88:If_CharLevel <= 94:If_If_CheckBuff 2 14|add_appellation 8637 
-3530|L31.毅力的考驗|31|1|16|GM活動|If_CharLevel >= 31|add_appellation 8650
-3537|L15.擊敗大盜賊|15|1|16|節慶|If_CharLevel >= 15|add_appellation 8652
-3538|L01.毅力才是王道|1|1|19|角色|If_CharLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8650
-3558|L20.勇氣與守護的考驗(重複)|20|1|4|角色|If_CharLevel >= 20:If_FMS 3563 open:If_Married 0:If_CheckRebirthCount >= 0|add_appellation 8668
-3561|L20.耐心與執著的考驗III(重複)|20|1|4|角色|If_If_CharLevel >= 20:If_CheckRebirthCount >= 0|AcceptTime 5400 0|add_appellation 8669
-3562|L20.照顧與生活的考驗(重複)|20|1|4|角色|If_FMS 3563 open:If_CharLevel >= 20:If_CheckRebirthCount >= 0|add_appellation 8670
-3563|L20.愛情的考驗(重複)|20|1|4|角色|If_Married 0:If_CharLevel >= 20:If_Lover 1:If_CheckRebirthCount >= 0|add_appellation 8672:add_appellation 8671
-3570|L15.妙手回春！|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8673
-3573|L15.萬聖群魔剋星！|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8681
-3576|L15.無私奉獻的獎勵！|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8687
-3580|L15.聖誕守護之星|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8688
-
-3671|L87.陷阱作戰之四|87|1|18|主線|If_CharLevel >= 83|add_appellation 8719
-4165|L15.馨動的美味|90|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8742
-3916|L17.終極復活|90|1|18|節慶|If_CharLevel >= 17:If_CheckRebirthCount >= 0|add_appellation 8743
 3941|L15.心如明鏡止水|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8751
 3961|L83.哭泣女孩之四|83|1|18|主線|If_CharLevel >= 79|add_appellation 8756
 3966|L85.反攻的號令之五|85|1|18|主線|If_CharLevel >= 79|add_appellation 8757

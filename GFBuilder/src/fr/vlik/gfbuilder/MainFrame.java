@@ -125,7 +125,7 @@ public class MainFrame extends JFrame {
 		
 		this.main = new JFrame("Grand Fantasia Builder");
 		this.main.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/resources/images/itemIcon.png")));
-		this.main.setSize(1200, 800);
+		this.main.setSize(1240, 800);
 		this.main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.main.getContentPane().setLayout(new BorderLayout());
 		

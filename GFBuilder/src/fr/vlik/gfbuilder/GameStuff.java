@@ -96,13 +96,15 @@ public class GameStuff {
 		reader = new BufferedReader(new InputStreamReader(
 				MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/resources/title.txt")));
 		line = reader.readLine();
+		int count = 1;
 		while (line != null) {
 			String[] lineSplit = line.split("/");
 			String[] effects = new String[Integer.parseInt(lineSplit[4])];
+			System.out.println(count);
 			for(int i = 0; i < effects.length; i++) effects[i] = lineSplit[i+5];
 			
 			this.listTitle.add(new Title(lineSplit[0], Integer.parseInt(lineSplit[1]), Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), effects));
-			
+			count++;
 			line = reader.readLine();
 		}
 		reader.close();

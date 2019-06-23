@@ -1,4 +1,5 @@
-Épreuve du roi des Sprites/1/XP,false,5/xpGuild
+Épreuve du roi des Sprites/1/XP,false,5/xp0
+Bénédiction interdimensionnelle d'Eugénie/2/XP,false,20/Loot,false,20/xp1
 Bénédiction Secrète d'Alice/1/Loot,false,7/0-0
 Barrière Naturelle d'Alice/1/Nature,false,50/0-1
 Aria de défense d'Alice/2/DefP,true,8/DefM,true,8/0-2
@@ -7,7 +8,13 @@ Corne de bataille de Bodor/2/PV,true,8/PM,true,8/null
 Cri de bataille de Bodor/3/Atk,true,7/AtkD,true,7/AtkM,true,7/null
 Leggings Venteux de Quill/1/Depla,false,12/6-0
 Rugissement Tempétueux de Quill/2/DCCP,false,10/DCCM,false,10/6-1
-Tornade Orageuse de Quill/0/6-2
+Tornade Orageuse de Quill/1/Foudre,false,50/6-2
 Magie Chanceuse de Mosunk/1/Loot,false,10/7-0
 Armure Magique de Mosunk/2/DegP,false,5/DegM,false,5/7-1
 Lumière Bénie de Mosunk/0/7-2
+Encouragement d'Ilannia/5/VitAtk,false,6/VitAtkD,false,6/VitAtkM,false,6/VitComp,false,6/CostComp,false,-10/10-0
+Bouclier Gelé d'Ilannia/2/DefP,true,6/DefM,true,6/10-1
+Armure Glacée d'Ilannia/1/Glace,false,50/10-2
+Pouvoir interdimensionnelle d'Eugénie/0/11-0
+Contre-Attaque Interdimensionnelle d'Eugénie/0/11-1
+Arrivée Interdimensionnelle d'Eugénie/0/11-2

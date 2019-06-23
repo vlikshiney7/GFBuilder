@@ -77,12 +77,12 @@ public class Effect {
 		FCE, VIT, INT, VOL, AGI, Atk, AtkD, AtkM, DefP, DefM,
 		TCCP, TCCM, ESQ, Sacre, Ombre, Foudre, Feu, Glace, Nature, Toucher,
 		PV, PM, DegP, DegM, ReducP, ReducM, PeneP, PeneM, ReducPeneP, ReducPeneM,
-		DCCP, DCCM, RDCCP, RDCCM, RTCCP, RTCCM, VitAtk, VitAtkD, VitComp, Depla,
+		DCCP, DCCM, RDCCP, RDCCM, RTCCP, RTCCM, VitAtk, VitAtkD, VitAtkM, VitComp,
 		XP, Loot, RegenCB, DegBeteP, DegPlanteP, DegHumaP, DegElemP, DegMecaP, DegMortP, DegDemonP,
 		DegBeteM, DegPlanteM, DegHumaM, DegElemM, DegMecaM, DegMortM, DegDemonM, ReducAtk, ReducAtkD, ReducAtkM,
 		DegSacre, DegOmbre, DegFoudre, DegFeu, DegGlace, DegNature, IntComp, CostComp, ReloadComp, Parade,
-		DegStdEp, DegStdMa, DegStdHa, DegStdArc, DegStdGun, DegStdBa, DegAtkD, RegenPV, RegenPM, MEN,
-		BoostCraft, TimeCraft, Heal, Bullet, Reflect;
+		DegStdEp, DegStdMa, DegStdHa, DegStd2Ep, DegStd2Ma, DegStd2Ha, DegStdArc, DegStdGun, DegStdBa, DegAtkD, RegenPV, RegenPM, MEN,
+		BoostCraft, TimeCraft, Heal, Bullet, Reflect, Depla;
 	}
 	
 	@Override
@@ -90,12 +90,12 @@ public class Effect {
 		String[] enumName = { "FCE", "VIT", "INT", "VOL", "AGI", "Attaque Physique", "Attaque Distance", "Attaque Magique", "Défense Physique", "Défense Magique",
 				"Taux Critique Physique", "Taux Critique Magique", "ESQ", "Résistance Sacré", "Résistance Ombre", "Résistance Foudre", "Résistance Feu", "Résistance Glace", "Résistance Nature", "Toucher",
 				"PV", "PM", "Dégât Physique", "Dégât Magique", "Réduction Physique", "Réduction Magique", "Pénétration Physique", "Pénétration Magique", "Réduction Pénétration Physique", "Réduction Pénétration Magique",
-				"Dégât Critique Physique", "Dégât Critique Magique", "Réduction Dégât Critique Physique", "Réduction Dégât Critique Magique", "Réduction Taux Critique Physique", "Réduction Taux Critique Magique", "Vitesse d'attaque", "Vitesse d'attaque à distance", "Incantation", "Vitesse de Déplacement",
+				"Dégât Critique Physique", "Dégât Critique Magique", "Réduction Dégât Critique Physique", "Réduction Dégât Critique Magique", "Réduction Taux Critique Physique", "Réduction Taux Critique Magique", "Vitesse d'attaque", "Vitesse d'attaque à distance", "Vitesse d'attaque magique", "Incantation",
 				"XP", "Taux de Butin", "Régénération Coup Blanc", "Dégât Physique sur Bête", "Dégât Physique sur Plante", "Dégât Physique sur Humanoïde", "Dégât Physique sur Élémentaire", "Dégât Physique sur Mécanique", "Dégât Physique sur Mort", "Dégât Physique sur Démon",
 				"Dégât Magique sur Bête", "Dégât Magique sur Plante", "Dégât Magique sur Humanoïde", "Dégât Magique sur Élémentaire", "Dégât Magique sur Mécanique", "Dégât Magique sur Mort", "Dégât Magique sur Démon", "Dégât Physique Subit", "Dégât Distance Subit", "Dégât Magique Subit",
 				"Dégât Sacré", "Dégât Ombre", "Dégât Foudre", "Dégât Feu", "Dégât Glace", "Dégât Nature", "Interruption Compétence", "Coût Compétence", "Rechargement Compétence", "Parade",
-				"Dégât Standard Épée", "Dégât Standard Marteau", "Dégât Standard Hache", "Dégât Standard Arc", "Dégât Standard Gun", "Dégât Standard Bâton", "Dégât Attaque Distance", "Régénération PV Assis", "Régénération PM Assis", "Menace",
-				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin", "Bonus d'Attaque à Distance", "Reflect" };
+				"Dégât Standard Épée", "Dégât Standard Marteau", "Dégât Standard Hache", "Dégât Standard Épée 2 Mains", "Dégât Standard Marteau 2 Mains", "Dégât Standard Hache 2 Mains", "Dégât Standard Arc", "Dégât Standard Gun", "Dégât Standard Bâton", "Dégât Attaque Distance", "Régénération PV Assis", "Régénération PM Assis", "Menace",
+				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin", "Bonus d'Attaque à Distance", "Reflect", "Vitesse de Déplacement" };
 		String result = enumName[this.getType().ordinal()] + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
 		if(withWeapon != -1) {
 			result += " si équipé ";
