@@ -64,6 +64,6 @@ public class Speciality {
 	}
 
 	public static Effect multiplyEffect(Effect effect, int point) {
-		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * point, effect.getWithReinca(), effect.getWithWeapon());
+		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * point, effect.getWithReinca(), effect.getWithWeapon(), effect.getTransfert());
 	}
 }

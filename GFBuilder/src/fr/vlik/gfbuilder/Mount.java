@@ -19,7 +19,7 @@ public class Mount {
 	public Mount(String name, int lvl, int depla, boolean isReinca, String path) {
 		this.name = name;
 		this.lvl = lvl;
-		this.depla = new Effect(TypeEffect.Depla, false, depla, false, -1);
+		this.depla = new Effect(TypeEffect.Depla, false, depla, false, -1, null);
 		this.isReinca = isReinca;
 		this.img = setIcon(path);
 	}

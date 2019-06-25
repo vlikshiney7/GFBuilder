@@ -1,15 +1,24 @@
 Croc de brisé de serpent féérique noir/0,1,2,3/100/6/true/true/false/5,0,0/Atk,false,3558,true/FCE,false,155,true/VIT,false,71,true/AGI,false,49,true/Toucher,false,20/100vio
 Épée Croc de Chauve-souris/0,1,2,3/100/5/true/true/false/5,0,0/Atk,false,3202,true/FCE,false,145,true/VIT,false,64,true/AGI,false,43,true/RegenCB,false,25/100gold
+Sacrelame victorieuse de Bodor/0,1,2,3/100/4/false/true/false/13,0,0/Atk,false,2830,true/FCE,false,38,true/VIT,false,28,true/AGI,false,30,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Sacre,false,25/Ombre,false,25/Foudre,false,25/Feu,false,25/Glace,false,25/Nature,false,25/100pvp
+Épée Croc de Vipère/0,1,2,3/99/4/true/true/false/5,0,0/Atk,false,2457,true/FCE,false,95,true/VIT,false,46,true/AGI,false,27,true/RegenCB,false,15/99pre
 Épée du Jugement Éternel/0,1,2,3/95/6/true/true/false/5,0,0/Atk,false,3325,true/FCE,false,143,true/VIT,false,50,true/AGI,false,59,true/Toucher,false,20/95vio
 Épée buster de Zack/0,1,2,3/95/5/true/true/false/5,0,0/Atk,false,2992,true/FCE,false,121,true/VIT,false,59,true/AGI,false,48,true/VitAtk,false,18/95gold
+Épée Berimaru Ardente de Bodor/0,1,2,3/95/4/false/true/false/8,0,0/Atk,false,2327,true/FCE,false,32,true/VIT,false,22,true/AGI,false,24,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Nature,false,40/95pvp
+Épée Féroce Mystique/0,1,2,3/94/4/true/true/false/5,0,0/Atk,false,2295,true/FCE,false,81,true/VIT,false,26,true/AGI,false,23,true/VitAtk,false,10/94pre
 Epée du Roi Tenrô/0,1,2,3/90/6/true/true/false/5,0,0/Atk,false,3096,true/FCE,false,128,true/VIT,false,45,true/AGI,false,54,true/Toucher,false,20/90vio
 Équarrisseur de Zodd Nosferatu/0,1,2,3/90/5/true/true/false/5,0,0/Atk,false,2786,true/FCE,false,110,true/VIT,false,44,true/AGI,false,48,true/Toucher,false,18/90gold
+Lame Divine - Aile en Or/0,1,2,3/89/4/true/true/false/6,0,0/Atk,false,2136,true/FCE,false,72,true/VIT,false,22,true/AGI,false,26,true/Toucher,false,12/ESQ,false,8/89pre
 Epée de Cendre d'Amaterasu/0,1,2,3/85/6/true/true/false/5,0,0/Atk,false,2872,true/FCE,false,119,true/VIT,false,43,true/AGI,false,52,true/Toucher,false,18/85vio
 Zanpakuto Enflammé du Dragon/0,1,2,3/85/5/true/true/false/5,0,0/Atk,false,2585,true/FCE,false,99,true/VIT,false,45,true/AGI,false,50,true/Toucher,false,18/85gold
+Lame Glaciale d'Hitsugaya/0,1,2,3/85/4/false/true/false/8,0,0/Atk,false,2010,true/FCE,false,28,true/VIT,false,18,true/AGI,false,20,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Nature,false,40/85pvp
+Lave du Volcan du Dragon/0,1,2,3/84/4/true/true/false/5,0,0/Atk,false,1980,true/FCE,false,72,true/VIT,false,20,true/AGI,false,24,true/Toucher,false,12/84pre
 Epée Ikazuchi Jumeaux/0,1,2,3/80/6/true/true/false/5,0,0/Atk,false,2653,true/FCE,false,95,true/VIT,false,34,true/AGI,false,41,true/Toucher,false,18/80vio
 Vierge Immaculée/0,1,2,3/80/5/true/true/false/6,0,0/Atk,false,2387,true/FCE,false,67,true/VIT,false,27,true/AGI,false,42,true/Toucher,false,18/FCE,false,50/80gold
+Invincible Tyrannie/0,1,2,3/79/4/true/true/false/6,0,0/Atk,false,1827,true/FCE,false,18,true/VIT,false,18,true/AGI,false,24,true/Toucher,false,14/FCE,false,50/79pre
 Rapière d'Empereur Déchu/0,1,2,3/75/6/true/true/false/5,0,0/Atk,false,2438,true/FCE,false,80,true/VIT,false,30,true/AGI,false,50,true/Toucher,false,18/75vio
 Épée Royale de la Providence/0,1,2,3/75/5/true/true/false/5,0,0/Atk,false,2194,true/FCE,false,64,true/VIT,false,24,true/AGI,false,40,true/Toucher,false,18/75gold
+Châtiment de l'Empereur/0,1,2,3/74/4/true/true/false/5,0,0/Atk,false,1677,true/FCE,false,17,true/VIT,false,17,true/AGI,false,20,true/Toucher,false,12/74pre
 Lame des Limbes Profondes/0,1,2,3/70/6/true/true/false/5,0,0/Atk,false,2229,true/FCE,false,75,true/VIT,false,27,true/AGI,false,48,true/Toucher,false,18/70vio
 Empereur Déchu/0,1,2,3/70/5/true/true/false/7,0,0/Atk,false,2005,true/FCE,false,60,true/VIT,false,22,true/AGI,false,38,true/Toucher,false,18/RegenCB,false,30/CostComp,false,-45/70gold
 Épée de la Justice de l'Empereur/0,1,2,3/65/5/true/true/false/5,0,0/Atk,false,1822,true/FCE,false,55,true/VIT,false,17,true/AGI,false,40,true/Toucher,false,18/95gold

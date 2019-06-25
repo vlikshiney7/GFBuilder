@@ -12,6 +12,7 @@ public class Build {
 	private ArrayList<Effect> effectPoint = new ArrayList<Effect>();
 	private ArrayList<Effect> effectPercent = new ArrayList<Effect>();
 	private ArrayList<Effect> effectAdditional = new ArrayList<Effect>();
+	private ArrayList<Effect> effectConvert = new ArrayList<Effect>();
 	
 	public Build(double coefReinca, int[] weaponType) {
 		this.coefReinca = coefReinca;
@@ -50,6 +51,14 @@ public class Build {
 		return list;
 	}
 	
+	public ArrayList<Effect> getEffectConvert() {
+		ArrayList<Effect> list = new ArrayList<Effect>(this.effectConvert.size());
+		for(Effect effect : this.effectConvert) {
+			list.add(new Effect(effect));
+		}
+		return list;
+	}
+	
 	public void addEffect(Effect e) {
 		if(containIdWeapon(e.getWithWeapon())) {
 			if(e.isPercent())	this.effectPercent.add(e);
@@ -79,6 +88,10 @@ public class Build {
 		}
 	}
 	
+	public void addConvertEffect(Effect e) {
+		this.effectConvert.add(e);
+	}
+	
 	private boolean containIdWeapon(int weaponType) {
 		boolean result = false;
 		if(weaponType == -1) return true;
@@ -101,6 +114,12 @@ public class Build {
 		/* FCE VIT INT VOL AGI */
 		for(int i = 0; i < 5; i++) {
 			result[i] = (int) Math.floor(combinePoint[i] * ((double)combinePercent[i] / 100 +1));
+		}
+		
+		/* CONVERSION */
+		for(Effect e : this.effectConvert) {
+			double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
+			result[e.getType().ordinal()] += (int) value * ((double)combinePercent[e.getType().ordinal()] / 100 +1);
 		}
 		
 		/* Atk AtkD AtkM */

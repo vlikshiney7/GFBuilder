@@ -2320,7 +2320,7 @@ public class MainFrame extends JFrame {
 		Effect[] baseFromClass = new Effect[5];
 		for(int i = 0; i < baseFromClass.length; i++) {
 			int value = this.base[i][idClass][lvl-1];
-			baseFromClass[i] = new Effect(TypeEffect.values()[i], false, Math.floor(value*coefReinca), false, -1);
+			baseFromClass[i] = new Effect(TypeEffect.values()[i], false, Math.floor(value*coefReinca), false, -1, null);
 		}
 		
 		build.addEffect(baseFromClass);
@@ -2404,8 +2404,8 @@ public class MainFrame extends JFrame {
 					.get(idListXp).get(this.listEffectXpStuff.get(i).getSelectedIndex()-1)
 					.getValueFromLvl(this.listLvlXpStuff.get(i).getSelectedIndex());
 			if(i > 21 && mount.getName().equals("Loup Spectral de Combat"))
-				build.addEffect(new Effect(type, false, valueXpStuff/2, true, -1));
-			else build.addEffect(new Effect(type, false, valueXpStuff, true, -1));
+				build.addEffect(new Effect(type, false, valueXpStuff/2, true, -1, null));
+			else build.addEffect(new Effect(type, false, valueXpStuff, true, -1, null));
 		}
 		
 		for(int i = 0; i < 11; i++) {
@@ -2453,7 +2453,7 @@ public class MainFrame extends JFrame {
 			if(!this.costQuality.get(0).get(0).isSelected()) {
 				Costume cost = new Costume((Costume) this.CBoxCostume.get(0).getSelectedItem());
 				for(Effect e : cost.getEffects()) {
-					build.addEffect(new Effect(e.getType(), e.isPercent(), e.getValue()*2, e.getWithReinca(), e.getWithWeapon()));
+					build.addEffect(new Effect(e.getType(), e.isPercent(), e.getValue()*2, e.getWithReinca(), e.getWithWeapon(), null));
 				}
 			}
 		}
@@ -2497,7 +2497,11 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(int j = 0; j < this.tabSpeciality[i].getEffects().size(); j++) {
-				build.addEffect(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
+				if(this.tabSpeciality[i].getEffects().get(j).getTransfert() == null) {
+					build.addEffect(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
+				} else {
+					build.addConvertEffect(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
+				}
 			}
 		}
 		

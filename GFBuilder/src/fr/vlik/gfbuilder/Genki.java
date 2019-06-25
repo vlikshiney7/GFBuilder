@@ -70,14 +70,14 @@ public class Genki {
 		}
 		
 		if(nbStar == 3 || nbStar == 4) {
-			this.effects.add(new Effect(TypeEffect.Depla, false, 10 / (idList+1), false, -1));
+			this.effects.add(new Effect(TypeEffect.Depla, false, 10 / (idList+1), false, -1, null));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (idList+1), false, -1));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (idList+1), false, -1, null));
 			}
 		} else if(nbStar == 5) {
-			this.effects.add(new Effect(TypeEffect.Depla, false, 20 / (idList+1), false, -1));
+			this.effects.add(new Effect(TypeEffect.Depla, false, 20 / (idList+1), false, -1, null));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (idList+1), false, -1));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (idList+1), false, -1, null));
 			}
 		}
 	}

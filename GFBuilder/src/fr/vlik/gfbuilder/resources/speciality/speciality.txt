@@ -229,23 +229,23 @@ Bâton gravé/91/1/AtkM,true,1,false,12/6-19
 /91/0/10-18
 /91/0/10-19
 
-/45/0/11-0
-/45/0/11-1
-/45/0/11-2
-/45/0/11-3
-/45/0/11-4
-/45/0/11-5
-/60/0/11-6
-/60/0/11-7
-/60/0/11-8
-/60/0/11-9
-/75/0/11-10
-/75/0/11-11
-/75/0/11-12
-/75/0/11-13
-/75/0/11-14
-/75/0/11-15
-/91/0/11-16
-/91/0/11-17
-/91/0/11-18
-/91/0/11-19
+Fortifier Cristal/45/1/INT,false,9/11-0
+Contrôle du Royaume/45/1/Toucher,false,1/11-1
+Vibration Cristalline/45/1/TCCM,false,1.5/11-2
+Maîtrise du Baton-Clé/45/1/DegStdLa,false,1.5/11-3
+Drainage Magique/45/1/CostComp,false,-3/11-4
+Accumulation de Magie/45/1/PM,true,1/11-5
+Danse du cristal/60/1/VitComp,false,1.5/11-6
+Contrôle du Pouvoir Magique/60/1/AtkM,true,1/11-7
+Déformation Temporele/60/1/PeneM,false,1/11-8
+Royaume de Chronos/60/1/MEN,false,-1.5/11-9
+Bouclier Cristal Gardien/75/1/ReducP,false,2/11-10
+Bouclier Temporel/75/1/DefP,true,1.5/11-11
+Volonté du Maître du Temps/75/2/ReducP,false,1/ReducM,false,1/11-12
+Marionnette de Gardien/75/1/RTCCP,false,3/11-13
+Amélioration de la Clé Magique/75/2/VOL,false,4/INT,false,5/11-14
+Transfert de Position/75/1/ESQ,false,2/11-15
+Transfert de Chronos/91/1/AGI,false,3,false,-1,INT/11-16
+Echange de Cristal/91/1/VIT,false,3,false,-1,VOL/11-17
+Esprit Gardien/91/1/IntComp,false,-3/11-18
+Rupture Temporelle/91/1/DCCM,false,3/11-19
