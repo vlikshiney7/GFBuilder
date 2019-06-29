@@ -110,7 +110,7 @@ Professionnel de SOS Fantômes/4/69/-1/2/FCE,false,5/TCCP,false,-3
 Protecteur d'Eugénie/4/91/-1/4/VitAtk,false,5/VitAtkD,false,5/PV,true,4/Depla,false,5
 Ravageur/4/186/0/4/FCE,false,20/PV,false,500/Depla,false,5/DefP,true,3
 Rayon de lumière/4/0/-1/4/VitComp,false,5/Depla,false,5/DefP,true,-8/DefM,true,-8
-Récupérateur des Mines/4/0/-1/4/ESQ,false,15/XP,false,2/PefP,true,-8/DefM,true,-8
+Récupérateur des Mines/4/0/-1/4/ESQ,false,15/XP,false,2/DefP,true,-8/DefM,true,-8
 Réouverture de la Mine Effondrée/4/0/-1/2/PV,true,5/PM,true,5
 Révolution de Kaslow en Flammes/4/86/-1/3/DefP,true,7/DefM,true,4/ESQ,false,-10
 Rouleur de Mécaniques/4/63/-1/2/Toucher,false,10/PM,true,-8
@@ -272,7 +272,7 @@ Guerriers combattant Foudre rugissante/2/96/-1/4/DegElemP,true,3/DegElemP,false,
 Guerriers combattant la Fuite d'essence/2/90/-1/2/DegMecaP,true,3/DegMecaP,false,30
 Guerriers combattant Sire Fungus/2/93/-1/2/DegPlanteM,true,3/DegPlanteM,false,30
 Héritier de la Fournaise/2/21/-1/0
-Héros de la Crête Dimensionnelle/2/85/-1/4/Vit,false,8/VOL,false,6/TCCP,false,10/ESQ,false,-10
+Héros de la Crête Dimensionnelle/2/85/-1/4/VIT,false,8/VOL,false,6/TCCP,false,10/ESQ,false,-10
 Héros de la Tribu des Dragons/2/45/-1/1/DegAtkD,false,1
 Héros des Côtes Dimensionnelles/2/76/-1/4/FCE,false,7/VIT,false,7/Depla,false,3/Toucher,false,-3
 Héros des Mines Dimensionnelles/2/0/-1/3/PV,false,300/AGI,false,7/VitAtk,false,-5
