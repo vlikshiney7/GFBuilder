@@ -1,47 +1,4 @@
 
-3941|L15.心如明鏡止水|15|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8751
-3961|L83.哭泣女孩之四|83|1|18|主線|If_CharLevel >= 79|add_appellation 8756
-3966|L85.反攻的號令之五|85|1|18|主線|If_CharLevel >= 79|add_appellation 8757
-3969|L83.琉璃的秘密之三|83|1|18|憂傷半島|If_CharLevel >= 79|add_appellation 8758
-3987|L86.封閉部落之四|86|1|18|主線|If_CharLevel >= 82|add_appellation 8759
-4000|L89.諾倫湖泊謎團之四|89|4|18|主線|If_CharLevel >= 85|add_appellation 8760
-4010|L90.殘酷的事實之告訴真相|90|1|18|琉璃山脈|If_CharLevel >= 86|add_appellation 8761
-4011|L90.殘酷的事實之隱瞞真相|90|1|18|琉璃山脈|If_CharLevel >= 86|add_appellation 8762
-4039|L93.前往希冀聖城之六|93|1|18|主線|If_CharLevel >= 89|add_appellation 8763
-4052|L95.奇蹟之子的傳說之五|95|1|18|主線|If_CharLevel >= 91|add_appellation 8764
-4054|L95.真假夢境之追根究底|95|1|18|希冀高原|If_CharLevel >= 91|add_appellation 8765
-4206|L15.向精靈王請願|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8770
-4168|L15.令人畏懼的戀情|90|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8776
-4077|L97.彩虹之境之五|97|4|18|地下城：彩虹之境|If_CharLevel >= 91|add_appellation 8777
-4172|L15.乾杯! 果釀英雄|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8796
-
-4183|L15.執迷不悟|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8800
-4189|L15.莫妮整人計畫|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8801
-4236|L93.基爾遺址的調查之五|93|1|18|主線|If_CharLevel >= 89|add_appellation 8805
-4240|L94.消失的研發中心之四|94|4|18|主線|If_CharLevel >= 90|add_appellation 8806
-4263|L95.格瑞德族的信任之四|95|1|18|主線|If_CharLevel >= 91|add_appellation 8807
-4274|L97.璀璨秘林的探險之六|97|1|18|主線|If_CharLevel >= 93|add_appellation 8808
-4297|L98.突襲機械工廠之六|98|1|18|主線|If_CharLevel >= 94|add_appellation 8809
-4305|L100.突擊坎薩斯巨港之五|100|4|18|主線|If_CharLevel >= 96|add_appellation 8810
-4329|L100.扭曲時空之四|100|4|18|地下城：扭曲時空|If_CharLevel >= 96|add_appellation 8811
-4441|L100.邪惡的遠古惡魔之四|100|4|16|地下城：噩夢迴廊|If_CharLevel >= 86|add_appellation 8816
-4446|L15.禮物快遞|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8820
-4353|L94.洞穴內的巨大魔物(重複)|94|5|4|公會任務|If_CharLevel >= 90:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8821
-4357|L97.格瑞德族人的恐懼(重複)|97|5|4|公會任務|If_CharLevel >= 93:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8822
-4361|L100.沙灘統治者(重複)|100|5|4|公會任務|If_CharLevel >= 96:If_FamilyLevel >= 1:If_CheckRebirthCount >= 0|add_appellation 8823
-4452|L15.時空的守護|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8832
-4455|L15. 我才是真正的高端|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8833
-4456|L85.職業進階：核心能量的挑戰|90|1|11|85|角色|If_CharLevel >= 85:If_Class 29 |PlayerLevel <= 85|add_appellation 8834:change_class 48
-4457|L85.職業進階：追尋流星的傳說|90|1|11|85|角色|If_CharLevel >= 85:If_Class 30 |PlayerLevel <= 85|add_appellation 8835:change_class 49
-4466|L17.友情甜美的果實|100|1|18|節慶|If_CharLevel >= 17:If_CheckRebirthCount >= 0|add_appellation 8836
-4471|L15.母子連心|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8837
-4473|L15.草原騎士的代行者|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8838
-4499|L78.前進．蒸汽礦山之四|78|1|18|主線|If_CharLevel >= 76|add_appellation 8845
-4550|L87.精靈王的甦醒之四|87|1|18|主線|If_CharLevel >= 85|add_appellation 8847
-4630|L95.希望破滅之船的追憶者|95|1|18|加斯洛平原|If_CharLevel >= 95|add_appellation 8854
-4631|L100.死獄島的追憶者|100|1|18|加斯洛平原|If_CharLevel >= 100|add_appellation 8855
-4679|L87.了無遺憾的愛之五|87|1|18|異次元‧赤色山脊|If_CharLevel >= 85|AcceptTime 600 1|add_appellation 8856
-4637|L15.奇蹟的真相|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8860
 4639|L21.魔壺冒險王|100|1|18|節慶|If_CharLevel >= 21:If_CheckRebirthCount >= 0|add_appellation 8863
 4681|L15.遣返傳說|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8864
 4684|L15.嗝！醉拳大師|100|1|18|節慶|If_CharLevel >= 15:If_CheckRebirthCount >= 0|add_appellation 8865

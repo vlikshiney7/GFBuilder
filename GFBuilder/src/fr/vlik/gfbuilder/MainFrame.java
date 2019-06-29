@@ -304,6 +304,7 @@ public class MainFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				MainFrame.this.updateSkillReinca();
+				MainFrame.this.updateListStuff();
 				MainFrame.this.updateTitle();
 				MainFrame.this.updateMount();
 				MainFrame.this.showSpe();
@@ -421,7 +422,7 @@ public class MainFrame extends JFrame {
 		page2.setBackground(Consts.UIColor[2]);
 
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), null);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), false, null);
 			this.CBoxWeapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.CBoxWeapon.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxWeapon.get(i).setRenderer(new CustomListCellRenderer());
@@ -2690,9 +2691,11 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateListStuff() {
+		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
+		
 		/* ARME */
 		for(int i = 0; i < this.CBoxWeapon.size(); i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), null);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, null);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(i).getSelectedItem();
 			
 			this.CBoxWeapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3612,12 +3615,14 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void weaponType(int idList, int indexCB) {
+		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
+		
 		Weapon choice = new Weapon((Weapon) this.CBoxWeapon.get(idList).getSelectedItem());
 		if(idList == 0) {
 			int keepEnchant = this.CBoxEnchant.get(1).getSelectedIndex();
 			
 			if(choice.getType() == 3 || choice.getType() == 4 || choice.getType() == 5 || choice.getType() == 7 || choice.getType() == 12 || choice.getType() == 13) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), null);
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, null);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 				
 				this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3632,7 +3637,7 @@ public class MainFrame extends JFrame {
 				
 				this.showAndHide.get(0).setVisible(false);
 			} else if(choice.getType() == 0 || choice.getType() == 1 || choice.getType() == 2 || choice.getType() == 6) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), choice);
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, choice);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(1).getSelectedItem();
 				
 				this.CBoxWeapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3656,7 +3661,7 @@ public class MainFrame extends JFrame {
 		} else if(idList == 1) {
 			int keepEnchant = this.CBoxEnchant.get(0).getSelectedIndex();
 			
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), choice);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, choice);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 			
 			this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));

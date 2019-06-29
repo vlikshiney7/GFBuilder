@@ -1102,7 +1102,7 @@ public class GameStuff {
 		return cast;
 	}
 	
-	public Weapon[] getPossibleWeapon(int idList, int idClass, int lvl, Weapon toIgnore) {
+	public Weapon[] getPossibleWeapon(int idList, int idClass, int lvl, boolean isReinca, Weapon toIgnore) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weapon = null;
 		switch (idList) {
@@ -1117,14 +1117,24 @@ public class GameStuff {
 				if(!this.listWeapon.get(weapon[i]+1).get(0).containIdClass(idClass)) continue;
 				for(int j = 0; j < this.listWeapon.get(weapon[i]+1).size(); j++) {
 					if(this.listWeapon.get(weapon[i]+1).get(j).getLvl() <= lvl) {
-						result.add(this.listWeapon.get(weapon[i]+1).get(j));
+						if(!this.listWeapon.get(weapon[i]+1).get(j).getForReinca())
+							result.add(this.listWeapon.get(weapon[i]+1).get(j));
+						else {
+							if(isReinca)
+								result.add(this.listWeapon.get(weapon[i]+1).get(j));
+						}
 					}
 				}
 			} else {
 				for(int j = 0; j < this.listWeapon.get(weapon[i]+1).size(); j++) {
 					if(!this.listWeapon.get(weapon[i]+1).get(j).containIdClass(idClass)) continue;
 					if(this.listWeapon.get(weapon[i]+1).get(j).getLvl() <= lvl) {
-						result.add(this.listWeapon.get(weapon[i]+1).get(j));
+						if(!this.listWeapon.get(weapon[i]+1).get(j).getForReinca())
+							result.add(this.listWeapon.get(weapon[i]+1).get(j));
+						else {
+							if(isReinca)
+								result.add(this.listWeapon.get(weapon[i]+1).get(j));
+						}
 					}
 				}
 			}

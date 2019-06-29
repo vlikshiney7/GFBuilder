@@ -1,466 +1,4 @@
 
-8748|Super Pilote|Bonus / Malus : 
-VIT DÉP +5 %|
-8749|Secours Immédiats|Bonus / Malus : 
-VIT DÉP +6 %|
-8750|Assaillant de Tour|Bonus / Malus : 
-VIT DÉP +7 %|
-8751|Clair comme de l'Eau|Bonus / Malus : 
-Rétablit 10 à 15 PV toutes les 10 sec. 
-Rétablit 10 à 15 PM toutes les 10 sec.|
-8752|Héros du Serveur Forêt||
-8753|Héros du Serveur Arc-en-Ciel||
-8754|Héros du Serveur Lune||
-8755|Héros des Âmes Nombreuses||
-8756|Faust|Bonus / Malus : 
-FCE +6 pts
-VIT +6 pts 
-Toucher +6 % 
-VIT DÉP -3 %|
-8757|Commandant|Bonus / Malus : 
-FCE +7 
-VIT DÉP +6 %|
-8758|Maître Exorciste|Bonus / Malus :
-VITA +7
-INT +7
-VIT DÉP +7 %
-VIT ATQ -3 %|
-8759|Inspiration|Bonus / Malus : 
-VIT +5 pts
-AGI +5 pts 
-VIT ATQ +3 % 
-Toucher -3 %|
-8760|Défenseur de l'Eau Bénite|Bonus / Malus : 
-FCE +7 pts
-INT +7 pts
-VIT DÉP +6 % 
-Taux de Butin +6 %|
-8761|Dure Vérité|Bonus / Malus : 
-FCE +5 pts
-AGI +5 pts
-VIT DÉP +3 % 
-Toucher +3 %|
-8762|Soin Essentiel|Bonus / Malus : 
-FCE +5 pts
-AGI +5 pts
-VIT DÉP +3 % 
-Toucher +3 %|
-8763|Amitié de l'Apprentie Sorcière|Bonus / Malus : 
-INT +5 pts
-VOL +5 pts
-Toucher +3 %
-VIT ATQ -3 %|
-8764|Protéger l'Enfant du Miracle|Bonus / Malus : 
-VOL +7 pts
-AGI +7 pts
-VIT DÉP +7 % 
-VIT ATQ -3 %|
-8765|Analyseur de Rêve|Bonus / Malus : 
-INT +7 pts
-VIT DÉP +7 % 
-|
-8766|Messager d'Eugénie|Bonus / Malus : 
-Esquive +10 % 
-VIT DÉP +10 %|
-8767|Péninsule du Chagrin - Garde de Fer|Bonus / Malus : 
-Transformation en Bête du Feu Éternel 
-* Toute autre compétence de métamorphose annulera celle-ci|
-8768|Purificateur des Montagnes de Verre|Bonus / Malus : 
-Transformation en Chevreuil Sauvage
-* Toute autre compétence de métamorphose annulera celle-ci|
-8769|Défenseur du Plateau de l'Espoir|Bonus / Malus : 
-Transformation en Miaoubline 
-* Toute autre compétence de métamorphose annulera celle-ci|
-8770|Le pacificateur|Bonus / Malus :
-PM Max +200
-DÉF PHY +2 %
-DÉF MAG +2 %|
-8771|Roi Gladiateur|Bonus / Malus : 
-ATQ MÊL et ATQ DIST +8 % 
-ATQ MAG +8 % 
-Toucher +8 % 
-CRIT PHY et CRIT MAG +0,8 % 
-DÉF PHY et DÉF MAG +8 % 
-ESQ +5 %|
-8772|Maître Gladiateur|Bonus / Malus :
-Toucher +6 %
-DÉG CRIT PHY et MAG +6 %
-DÉF PHY et MAG +6 %
-ESQ +4 %|
-8773|Gladiateur Champion|Bonus / Malus : 
-Toucher +4 % 
-DÉF PHY et DÉF MAG +4 % 
-ESQ +3 %|
-8774|Star des Gladiateurs|Bonus / Malus : 
-DÉF PHY et DÉF MAG +3 % 
-ESQ -2 %|
-8775|Gladiateur Émergeant||
-8776|Entremetteur de Saphaël|Bonus / Malus : 
-PV Max +200 
-ATQ PHY +2 % 
-ATQ MAG +2 %|
-8777|Protecteur d'Eugénie|Bonus / Malus : 
-VIT ATQ MÊL et VIT ATQ DIST +5 % 
-PV Max +4 % 
-VIT DÉP +5 %|
-8778|Analyseur du Pays Arc-en-Ciel|Bonus / Malus : 
-ATQ MAG +2 %
-PM Max +4 %
-VIT COMP +5 % 
-VIT DÉP +5 %|
-8779|Gardien de l'Amour|Bonus / Malus :
-Taux de Butin +3 %
-DÉF PHY +3 %
-DÉF MAG +3 %|
-8780|Chasseur de Monstres|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +4 %
-VIT DÉP +4 %
-DÉF PHY et DÉF MAG -6 %|
-8781|Traqueur de Monstres|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +7 %
-VIT DÉP +7 % 
-DÉF PHY et DÉF MAG -9 %|
-8782|Dompteur de Monstres|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +10 %
-VIT DÉP +10 % 
-DÉF PHY et DÉF MAG -12 %|
-8783|Chasseur de Monstres - Champion|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +8 %
-Toucher +9 %
-ESQ +5 %|
-8784|Chasseur de Monstres - Gladiateur|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +6 %
-Toucher +7 %
-ESQ +4 %|
-8785|Chasseur de Monstres - Élite|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +4 %
-Toucher +5 %
-ESQ +3 %|
-8786|Sprite Express|Bonus / Malus : 
-VIT ATQ +8 % 
-VIT ATQ MAG +8 % 
-VIT COMP +8 % 
-VIT DÉP +10 %|
-8787|Chasseur de Monstres - Mercenaire|Bonus / Malus :
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +2 %
-Toucher +3 %
-ESQ +2 %|
-8788|Traqueur de Monstres - Champion|Bonus / Malus :
-DÉG CRIT PHY et DÉG CRIT MAG +8 %
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +5 %
-Toucher +9 %|
-8789|Traqueur de Monstres - Gladiateur|Bonus / Malus :
-DÉG CRIT PHY et DÉG CRIT MAG +6 %
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +4 %
-Toucher +7 %|
-8790|Traqueur de Monstres - Élite|Bonus / Malus :
-DÉG CRIT PHY et DÉG CRIT MAG +4 %
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +3 %
-Toucher +5 %|
-8791|Traqueur de Monstres - Mercenaire|Bonus / Malus :
-DÉG CRIT PHY et DÉG CRIT MAG +2 %
-VIT ATQ MÊL, ATQ DIST et ATQ MAG +2 %
-Toucher +3 %|
-8792|Dompteur de Monstres - Champion|Bonus / Malus :
-Dégâts reçus -5 %
-DÉG CRIT PHY et DÉG CRIT MAG +10 %
-VIT DÉP +8 %|
-8793|Dompteur de Monstres - Gladiateur|Bonus / Malus :
-DÉG reçus -4 %
-DÉG CRIT PHY et DÉG CRIT MAG +8 %
-VIT DÉP +6 %|
-8794|Dompteur de Monstres - Élite|Bonus / Malus :
-DÉG reçus -3 %
-DÉG CRIT PHY et DÉG CRIT MAG +6 %
-VIT DÉP +4 %|
-8795|Dompteur de Monstres - Mercenaire|Bonus / Malus :
-DÉG reçus -2 %
-DÉG CRIT PHY et DÉG CRIT MAG +4 %
-VIT DÉP +2 %|
-8796|Héros du Ratafia|Bonus / Malus : 
-PV Max +200 
-DÉF PHY +2 %
-DÉF MAG +2 %|
-8797|Super Lumière Divine sans fin|Bonus / Malus : 
-VIT ATQ MÊL et VIT ATQ DIST +12 % 
-VIT COMP +12 % 
-VIT DÉP +18 %|
-8798|Gladiateur de l'Épreuve sans fin|Bonus / Malus : 
-DÉF, DÉF MAG +6 % 
-Toucher +9 % 
-ESQ +6 %|
-8799|Grâce Divine|Bonus / Malus : 
-EXP +20 %
-PV +5 %
-PM Max +5 %
-VIT DÉP +10 %|
-8800|Amateur de Gâteau de Lune|Bonus / Malus :
-PM Max +200
-ATQ PHY +2 %
-ATQ MAG +2 %|
-8801|Costumadier|Bonus / Malus : 
-DÉF PHY +3 %,
- DÉF MAG +2 %,
- PV max +400
-|
-8802|Pirate des 7 mers|Bonus / Malus : 
-DÉG CRIT PHY +7 % 
-DÉG CRIT MAG +7 %
-ESQ +5 %
-Si touché, 1 % de chances de se transformer en pirate pendant 30 secondes avec une recharge de 30 minutes.  |
-8803|Hakuna MataSprite|Bonus / Malus : 
- DÉG CRIT PHY -8 % 
- DÉG CRIT MAG -8 %
- ESQ +5 %. Si touché, 1 % de chance de se transformer en lion pendant 30 secondes avec une recharge de 30 minutes.|
-8804|Roi des Ombres|Bonus / Malus : 
-PRÉC +5 %
-ESQ +7 %
-DÉG CRIT PHY +5 % 
-DÉG CRIT MAG +5 %|
-8805|Explorez les membres pour trouver les reliques de Technopolis.|Bonus / Malus :
-INT +7
-VOL +7
-Toucher +3 % 
-ESQ -3 %|
-8806|Exterminateur d'insectes robots|Bonus / Malus :
-ATQ et ATQ M +3 %
-RÉS Foudre +5 %
-Toucher -3 % |
-8807|Ami des Grayds|Bonus / Malus :
-PV max +300
-INT +8
-VOL +6
-VIT DÉP -5 %|
-8808|Explorateurs de la Forêt lumineuse|Bonus / Malus :
-FCE +7
-AGI +7
-Taux de Butin +10 %
-Toucher -3 % |
-8809|Roi de la Destruction|Bonus / Malus :
-FCE +8
-INT +6
-Taux critique +5%
-ESQ -5 %|
-8810|Gardien de Kansas Palembang|Bonus / Malus :
-VITA +7
-VOL +7
-Toucher +5 %
-VIT ATQ -3 %|
-8811|Intercepteur de Dimension déformée|Bonus / Malus :
-PV max +7 200.
-PM Max +7 200.
-RÉS Foudre +10 %.
-VIT DÉP +6 %
-$12$Ne fonctionne qu'avec les compétences de Personnages de N96 minimum.|
-8812|Briseur de Dimension déformée|Bonus / Malus :
-ESQ +10%
-Défense physique et Défense magique -7 %
-25 % de chances d'avoir +1 000 de DÉG Foudre supplémentaires à chaque attaque|
-8813|Sauveur du Bassin fumant|Bonus / Malus :
-Chances de se transformer en insecte géant
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8814|Libérateur de la Vallée de la lumière|Bonus / Malus :
-Chances de se transformer en gardien Grayd
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8815|Ressusciteur du Port escarpé|Bonus / Malus :
-Chances de se transformer en Capitaine blindé du Kansas
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8816|Achevez le tour 60 du Pandemonium.|Bonus / Malus :
-FCE +15
-INT +15
-VIT +15
-VIT ATQ -3 %
-VIT COMP -3 %|
-8817|Placeholder||
-8818|Placeholder||
-8819|Messager du 5e anniversaire|Bonus / Malus :
-ESQ +5 %
-Toucher +5 %
-EXP acquise +5 %
-VIT DÉP +5%
-Taux de Butin +5 %|
-8820|Bénédiction de Joline|Bonus / Malus :
-Toucher +3 %
-ESQ +1 %
-VIT DÉP +9 %
-Taux de Butin +5 %.|
-8821|Guerriers combattant la Fuite d'essence|Bonus / Malus :
-Chance de battre les Mécaniques avec une attaque physique +3 %
-+30 dégâts spéciaux sur les Mécaniques avec une attaque physique|
-8822|Guerriers combattant Sire Fungus|Bonus / Malus :
-Chance de battre les Plantes avec une attaque magique +3 %
-Dégâts spéciaux sur les Plantes avec l'attaque magique +30 pts|
-8823|Guerriers combattant Foudre rugissante|Bonus / Malus :
-Chance de battre les Élémentaires avec une attaque physique +3 %
-+30 dégâts spéciaux sur les Élémentaires avec une attaque physique
-Chance de battre les Élémentaires avec une attaque magique +3 %
-+30 dégâts spéciaux sur les Élémentaires avec une attaque magique|
-8824|L'argent est roi|Bonus / Malus :
-PV max +500
-+500 de PM Max
-Taux de Butin +10 %|
-8825|Gardien de l'amour|Bonus / Malus :
-PV max +300
-+300 de PM Max pendant le temps imparti
-DÉF PHY +3 %
-DÉF MAG +3 %
-|
-8826|BANKAI|ATQ MÊL +5 %
-ATQ DIST +5 %
-ATQ MAG +5 %
-Lors d'un CRIT PHY : ATQ MÊL +5 % et VIT ATQ MÊL +7 % pendant 10 sec.
-Lors d'un CRIT MAG : ATQ MAG +5 % et VIT COMP +7 % pendant 10 sec.|
-8827|Dernier Rempart|DÉF PHY +5 %
-DÉF MAG +5 %
-VIT +15 pts
-Quand le joueur est touché, 5 % de chance de ralentir la VIT DÉP de l'ennemi de 20 % pendant 5 sec.|
-8828|Disciple du Hokuto|FCE +15 pts
-VIT +15 pts
-INT +15 pts
-VOL +15 pts
-AGI +15 pts
-ESQ +10 %|
-8829|Rage du Berserk|Bonus / Malus : 
-Lors d'une ATQ PHY ou d'une ATQ MAG, vol de vie +5 %
-VIT ATQ MÊL et VIT ATQ DIST +8 %|
-8830|Héritage d'Ezio|Bonus / Malus : 
-ESQ +5 %
-VIT DÉP +5 %
-Lors de l'ATQ, 1 % de chance de déclencher l'effet suivant :  VIT DÉP -25 % pendant 5 sec. Ennemi empoisonné pendant 12 sec. 
-(Perte de 2,5 % du total des PV toutes les 3 sec.)|
-8831|Force Titanesque|Bonus / Malus : 
-DÉF +7 %
-DÉF MAG +7 %
-Lorsque les PV du joueur sont inférieurs à 15 % : DÉF +100 %, DÉF MAG + 100 % et VIT DÉP +10 % pendant 10 sec. 
-Rechargement : 30 min
-|
-8832|Le Gardien du Futur|Bonus / Malus :
-PV max +300
-+300 de PM Max pendant le temps imparti
-ATQ PHY +2 %
-ATQ MAG +2 %|
-8833|Maître des Farces|Bonus / Malus :
-EXP acquise +10 %
-DÉF PHY +3 %
-DÉF MAG +3 %|
-8834|Âme de Mégatron|Bonus / Malus :
-VITA +30 pts.
-PV max +500
-VIT DÉP +5 %
-DÉF MAG +3 %
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8835|Âme de Galvatron|Bonus / Malus :
-Taux CRIT +2 %.
-PV max +500
-VIT DÉP +5 %
-ATQ PHY +2 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum.|
-8836|À l'étouffée !|Bonus / Malus : 
-PV max +300 
-ATQ PHY +3 % 
-ATQ MAG +3 %|
-8837|Ambassadeur de l'amour|Bonus / Malus :
-PV Max +200 pendant le temps imparti
-PM Max +200
-VIT DÉP +5 %
-Taux de Butin +5 %|
-8838|Pilote de bateau-dragon estival|Bonus / Malus :
-PV Max +200 pendant le temps imparti
-VIT +5
-ESQ +3 %|
-8839|Placeholder||
-8840|Placeholder||
-8841|Placeholder||
-8842|Placeholder||
-8843|Aujourd'hui, je n'ai pas de limites|Bonus / Malus :
-Vitesse de déplacement +5%
-Taux d'ESQ +3 %
-|
-8844|Supernova de Saphaël|Bonus / Malus :
-ATQ PHY +5 %
-ATQ MAG +5 %
-EXP acquise +5 %
-Toucher +2 %|
-8845|Héros des Côtes Dimensionnelles|Bonus / Malus :
-FCE +7
-VITA +7
-Vitesse de déplacement +3 %
-Toucher -3 %|
-8846|Héros des Mines Dimensionnelles|Bonus / Malus :
-PV max +300
-AGI +7
-VIT ATQ -5 %|
-8847|Héros de la Crête Dimensionnelle|Bonus / Malus :
-VITA +8
-VOL +6
-Taux CRIT +10 %
-ESQ -10 %|
-8848|Rayon de lumière|Bonus / Malus :
-VIT COMP +5 %
-VIT DÉP +5 %
-DÉF PHY -8 %
-Défense magique -8 %|
-8849|Inquisiteur de la Frégate du Désespoir|Bonus / Malus :
-PV Max +6 000.
-PM Max +6 000.
-Taux de Butin +10 %.
-Toucher -5 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N77 minimum.|
-8850|Récupérateur des Mines|Bonus / Malus :
-ESQ +15%
-EXP acquise +2 %
-DÉF PHY -8 %
-Défense magique -8 %|
-8851|Réouverture de la Mine Effondrée|Bonus / Malus :
-Récupération de 10 PV et PM toutes les 5 secondes
-PV Max +5%
-PM Max +5%
-|
-8852|Sauveur du Sanctuaire|Bonus / Malus :
-Menace -10 %
-VIT DÉP -2 %
-DÉG reçus +2 %.|
-8853|Seigneur du Sanctuaire de l'Abandon|Bonus / Malus :
-VIT ATQ +20 %
-DÉG reçus +50 %.|
-8854|Explorateur de la Frégate du Désespoir|Bonus / Malus :
-PV Max +6 000.
-PM Max +6 000.
-Taux de Butin +10 %.
-Toucher -5 %.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N77 minimum.|
-8855|Explorateur de l'Île Condamnée|Bonus / Malus :
-PV Max +10 %
-PM Max -15 %.
-Effet du titre : Pionnier
-Quand les PV sont inférieurs à 20 %, l'attaque subie a 35 % de
-chance de réduire les PM à 0 et de restaurer tous les PV.
-Recharge : 7 200 s.
-$12$Ne fonctionne qu'avec les compétences de Personnages de N88 minimum.|
-8856|Aimer sans Regrets|Bonus / Malus :
-AGI +8
-INT +6 
-Chances de Taux CRIT +10 %
-ESQ +10%|
-8857|Défenseur de fer -Quatrième Dimension|Bonus / Malus :
-Chance de devenir Agarma, le Vil'marée
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8858|Soutien des mines - Quatrième Dimension|Bonus / Malus :
-Chance de devenir Gadouillos, Boue Mangetout
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8859|Tueur pourpre - Quatrième Dimension|Bonus / Malus :
-Chance de devenir Kutila, Vétéran
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8860|Un Brin d'Amour|Bonus / Malus :
-PV max +300
-VIT DÉP +5 %|
-8861|Placeholder|Bonus / Malus :
-Taux de Butin +10 %
-DÉF PHY et MAG +200 %|
-8862|Placeholder|Bonus / Malus :
-VIT DÉP +5 %
-ATQ PHY et MAG +300 %.
-EXP acquise +10 %|
 8863| Héros en Herbe|Bonus / Malus :
 PV max +300
 Toucher +3 %
@@ -508,32 +46,16 @@ PM Max +300|
 PV Max +200
 DÉF PHY +2 %
 DÉF MAG +2 %|
-8873|Ami des Sprites|Bonus / Malus :
-VIT ATQ DIST et MÊL +5 %
-VIT COMP +5 %
-EXP acquise +5 %|
-8874|Rêve de fer|Bonus / Malus :
-VIT DÉP +4 %
-DÉF PHY +2 %
-DÉF MAG +2 %
-|
-8875|Le gras c'est la vie|Bonus / Malus :
-Taux de Butin +5 %
-PV max +3 %
-PM max +3 %|
+
 8876|Un messager chaleureux dans le froid|Bonus / Malus :
 ATQ PHY +3 %
 ATQ MAG +3 %
 Toucher +3 %|
-8877|Tenez bon ! |Bonus / Malus :
-PM max +300
-Récupération de 10-15 PM toutes les 5 secondes.|
+
 8878|File au vent|Bonus / Malus :
 VIT DÉP +2 % toutes les 2 sec. Max 20 %.
 VIT DÉP -30 % quand attaqué.|
-8879|Placeholder|Bonus / Malus :
-VIT DÉP +5 %
-DÉF PHY et MAG +200 %|
+
 8880|Braconnier suprême|Bonus / Malus :
 ATQ MÊL et DIST +3 %
 ATQ MAG +3 %
@@ -586,11 +108,7 @@ VIT DÉP +5 %|
 PV Max +250
 PM max +250
 VIT DÉP +5 %|
-8889|Mouton comblé|Bonus / Malus :
-Taux CRIT PHY +3 %
-Taux CRIT PHY MAG +3 %
-VIT DÉP +4 %
-EXP acquise +5 %|
+
 8890|La voie de la Forêt|Bonus / Malus :
 Taux de Butin +5 %
 VIT COMP +5 %|
@@ -628,13 +146,7 @@ VIT DÉP +5 %.|
 Taux CRIT PHY +5 %.
 Taux CRIT MAG +5 %.
 Taux CRIT subi +10 %.|
-8899|Maître-loup|Bonus / Malus :
-Transformation possible en mouton ou en loup.
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8900|Assistant personnel|Bonus / Malus :
-PV max +300.
-PM max +300.
-EXP acquise +2 %.|
+
 8901|Protecteur de Baie|Bonus / Malus :
 Taux de Butin +5 %.
 PV max +500.
@@ -642,10 +154,7 @@ PM Max +500.|
 8902|Grande bienveillance|Bonus / Malus :
 Soins reçus +5 %.
 Récupération de 15-20 PV toutes les 5 secondes.|
-8903|Messager appliqué|Bonus / Malus :
-VIT ATQ +3 %.
-Soins reçus +5 %.
-EXP acquise +5 %.|
+
 8904|Goûteur de chocolat|Bonus / Malus :
 Les attaques normales ont 1 % de chance de causer des coups doubles.
 Les attaques normales ont 1 % de chance de causer des coups triples.|
@@ -674,10 +183,7 @@ Inutilisable pendant le combat. VIT DÉP -120 %
 VIT DÉP +5 %
 PV max +300
 PM max +300|
-8912|Ancien Messager des Sprites Légendaire||
-8913|I believe I can fly !|Bonus / Malus :
-ESQ +1 %
-VIT DÉP +3 %|
+
 8914|Dompteur du domaine du chaos|Bonus / Malus :
 ATQ MÊL et DIST +3 %
 ATQ MAG +3 %
@@ -706,9 +212,7 @@ DÉF MAG +3 %.|
 VIT ATQ DIST et MÊL +15 %
 VIT COMP Magique +15 %
 VIT DÉP +15 %.|
-8921|Irremplaçable|Bonus / Malus :
-PV Max +5 %.
-VIT DÉP -1 %.|
+
 8922|Faisons la fête avec l'idole (Répét.)|Bonus / Malus :
 VIT DÉP +2 %
 VIT COMP +2 %
@@ -722,17 +226,7 @@ VIT ATQ DIST +5 %|
 8925|Singe de mon coeur|Bonus / Malus :
 Réduction pénétration physique +5 %
 VIT DÉP -5 %.|
-8926|Amour Interdit|Bonus / Malus :
-ATQ PHY +2 %.
-ATQ MAG +2 %|
-8927|GFWT 2016 - DO NOT USE|Bonus / Malus :
-ATQ MAG +4 %
-ATQ DIST +8 %
-ESQ +5 %
-DÉF +4 %
-Toucher +9 %
-VIT ATQ MÊL +8 %
-VIT COMP +8 % |
+
 8928|Roi de la friture|PM Max +500.
 DÉG CRIT MAG +3 %
 DÉG CRIT PHY +3 %
@@ -752,15 +246,7 @@ ATQ MAG +2 %.|
 PV max +500.
 VIT DÉP +5 %.
 ATQ MAG +2 %.|
-8932|Soulèvement des héros|Bonus / Malus :
-PV max +300.
-PM max +300.
-VIT DÉP +5 %
-EXP acquise +5 %.|
-8933|Retour des héros|Bonus / Malus :
-VIT DÉP +5 %
-INT +5.
-VOL +5|
+
 8934|Migraine paternelle|Bonus / Malus :
 PM Max +500.
 PV max +500.
@@ -768,10 +254,7 @@ ESQ +5 %.|
 8935|Qu'est-ce que l'amour ?|Bonus / Malus :
 VIT DÉP +5 %
 Régénération des PV et PM +250 quand vous êtes assis.|
-8936|Bannissement des Créatures de la Quatrième Dimension|Bonus / Malus :
-ESQ +5 %.
-Taux de Butin +5 %
-EXP acquise +5 %.|
+
 8937|Athée de Carso|PV Max +1 000
 PM Max +1 000.
 DÉF MAG +5 %.
@@ -831,10 +314,7 @@ Inutilisable pendant le combat. VIT DÉP -120 %
 RÉS Nature +10 %
 Taux CRIT MAG +2 %
 Chances de coup critique +2 %|
-8954|Lorsque l'aube se lève à nouveau|Bonus / Malus :
-Soins reçus +5 %
-EXP acquise +5 %.
-VIT DÉP +5 %|
+
 8955|Un flot de bonne fortune|Bonus / Malus :
 PV max +300.
 PM max +300.
@@ -846,6 +326,7 @@ VIT DÉP +18 %|
 8957|Le miracle qu'est l'amour|Bonus / Malus :
 Toucher +5 %
 RÉS Sacré +10 %.|
+
 8976|Nouveau titre de serveur étranger 1|Bonus / Malus :
 ATQ MÉL et DIST +5 %
 ATQ MAG +5 %
@@ -857,22 +338,7 @@ VIT COMP +3 %
 Toucher +5 %
 PV max +3 %.
 PM max +3 %|
+
 8979|Représentant de la Douce nuit|Bonus / Malus :
 ATQ PHY +3 %
 ATQ MAG +3 %|
-9014|Titre du tournoi PvP 2018|Bonus / Malus :
-ATQ MAG +4 %
-ATQ DIST +8 %.
-ESQ +5 %
-DÉF +4 %
-Toucher +9 %
-VIT ATQ MÊL +8 %
-VIT COMP +8 %|
-8961|Légende parmi les légendes|Bonus / Malus :
-Vous métamorphose temporairement en Ballon festif
-Déplacement et combat impossible. Disparaît si vous êtes attaqué.
-*Cet effet prend fin si une autre métamorphose est utilisée.|
-8963|Gardien de l'Archipel Millénaire|Bonus / Malus :
-VIT DÉP +5 %
-VOL +3 %
-FCE +3 %|
