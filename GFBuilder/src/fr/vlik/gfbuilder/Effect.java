@@ -89,7 +89,7 @@ public class Effect {
 		DegBeteM, DegPlanteM, DegHumaM, DegElemM, DegMecaM, DegMortM, DegDemonM, ReducAtk, ReducAtkD, ReducAtkM,
 		DegSacre, DegOmbre, DegFoudre, DegFeu, DegGlace, DegNature, IntComp, CostComp, ReloadComp, Parade,
 		DegStdEp, DegStdMa, DegStdHa, DegStd2Ep, DegStd2Ma, DegStd2Ha, DegStdArc, DegStdGun, DegStdBa, DegStdLa, DegAtkD, RegenPV, RegenPM, MEN,
-		BoostCraft, TimeCraft, Heal, Bullet, Reflect, Depla;
+		BoostCraft, TimeCraft, HealD, HealR, Bullet, Reflect, Depla;
 	}
 	
 	@Override
@@ -102,7 +102,7 @@ public class Effect {
 				"Dégât Magique sur Bête", "Dégât Magique sur Plante", "Dégât Magique sur Humanoïde", "Dégât Magique sur Élémentaire", "Dégât Magique sur Mécanique", "Dégât Magique sur Mort", "Dégât Magique sur Démon", "Dégât Physique Subit", "Dégât Distance Subit", "Dégât Magique Subit",
 				"Dégât Sacré", "Dégât Ombre", "Dégât Foudre", "Dégât Feu", "Dégât Glace", "Dégât Nature", "Interruption Compétence", "Coût Compétence", "Rechargement Compétence", "Parade",
 				"Dégât Standard Épée", "Dégât Standard Marteau", "Dégât Standard Hache", "Dégât Standard Épée 2 Mains", "Dégât Standard Marteau 2 Mains", "Dégât Standard Hache 2 Mains", "Dégât Standard Arc", "Dégât Standard Gun", "Dégât Standard Bâton", "Dégât Standard Lame", "Dégât Attaque Distance", "Régénération PV Assis", "Régénération PM Assis", "Menace",
-				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin", "Bonus d'Attaque à Distance", "Reflect", "Vitesse de Déplacement" };
+				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin donné", "Soin reçu", "Bonus d'Attaque à Distance", "Reflect", "Vitesse de Déplacement" };
 		String result = enumName[this.getType().ordinal()] + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
 		if(withWeapon != -1) {
 			result += " si équipé ";
