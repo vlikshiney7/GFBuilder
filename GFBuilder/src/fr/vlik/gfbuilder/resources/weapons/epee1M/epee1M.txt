@@ -2,31 +2,93 @@ Croc de brisé de serpent féérique noir/0,1,2,3/100/6/true/true/false/5,0,0/Atk,f
 Épée Croc de Chauve-souris/0,1,2,3/100/5/true/true/false/5,0,0/Atk,false,3202,true/FCE,false,145,true/VIT,false,64,true/AGI,false,43,true/RegenCB,false,25/100gold
 Sacrelame victorieuse de Bodor/0,1,2,3/100/4/false/true/false/13,0,0/Atk,false,2830,true/FCE,false,38,true/VIT,false,28,true/AGI,false,30,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Sacre,false,25/Ombre,false,25/Foudre,false,25/Feu,false,25/Glace,false,25/Nature,false,25/100pvp
 Épée Croc de Vipère/0,1,2,3/99/4/true/true/false/5,0,0/Atk,false,2457,true/FCE,false,95,true/VIT,false,46,true/AGI,false,27,true/RegenCB,false,15/99pre
+Épée Courte Toxique de Sprite/0,1,2,3/96/2/false/false/false/2,0,0/Atk,false,2023,true/FCE,false,28,true/38ora2
 Épée du Jugement Éternel/0,1,2,3/95/6/true/true/false/5,0,0/Atk,false,3325,true/FCE,false,143,true/VIT,false,50,true/AGI,false,59,true/Toucher,false,20/95vio
 Épée buster de Zack/0,1,2,3/95/5/true/true/false/5,0,0/Atk,false,2992,true/FCE,false,121,true/VIT,false,59,true/AGI,false,48,true/VitAtk,false,18/95gold
 Épée Berimaru Ardente de Bodor/0,1,2,3/95/4/false/true/false/8,0,0/Atk,false,2327,true/FCE,false,32,true/VIT,false,22,true/AGI,false,24,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Nature,false,40/95pvp
+Épée Courte Victorieuse/0,1,2,3/95/1/false/false/false/1,0,0/Atk,false,1662,true/95blanc
 Épée Féroce Mystique/0,1,2,3/94/4/true/true/false/5,0,0/Atk,false,2295,true/FCE,false,81,true/VIT,false,26,true/AGI,false,23,true/VitAtk,false,10/94pre
+Épée Brûlante de Sprite/0,1,2,3/91/2/false/false/false/2,0,0/Atk,false,1885,true/FCE,false,26,true/91sprite
 Epée du Roi Tenrô/0,1,2,3/90/6/true/true/false/5,0,0/Atk,false,3096,true/FCE,false,128,true/VIT,false,45,true/AGI,false,54,true/Toucher,false,20/90vio
 Équarrisseur de Zodd Nosferatu/0,1,2,3/90/5/true/true/false/5,0,0/Atk,false,2786,true/FCE,false,110,true/VIT,false,44,true/AGI,false,48,true/Toucher,false,18/90gold
 Lame Divine - Aile en Or/0,1,2,3/89/4/true/true/false/6,0,0/Atk,false,2136,true/FCE,false,72,true/VIT,false,22,true/AGI,false,26,true/Toucher,false,12/ESQ,false,8/89pre
+Épée Bleue enflammée/0,1,2,3/86/3/false/false/false/4,0,0/Atk,false,2333,true/FCE,false,36,true/AGI,false,36,true/Toucher,false,15/86bleu
+Épée Gelée des Sprites/0,1,2,3/86/2/false/false/false/3,0,0/Atk,false,1750,true/AGI,false,24,true/Toucher,false,10/84pre
+Katanas du Givre/0,1,2,3/86/1/false/false/false/1,0,0/Atk,false,1458,true/79pre
 Epée de Cendre d'Amaterasu/0,1,2,3/85/6/true/true/false/5,0,0/Atk,false,2872,true/FCE,false,119,true/VIT,false,43,true/AGI,false,52,true/Toucher,false,18/85vio
 Zanpakuto Enflammé du Dragon/0,1,2,3/85/5/true/true/false/5,0,0/Atk,false,2585,true/FCE,false,99,true/VIT,false,45,true/AGI,false,50,true/Toucher,false,18/85gold
 Lame Glaciale d'Hitsugaya/0,1,2,3/85/4/false/true/false/8,0,0/Atk,false,2010,true/FCE,false,28,true/VIT,false,18,true/AGI,false,20,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Nature,false,40/85pvp
 Lave du Volcan du Dragon/0,1,2,3/84/4/true/true/false/5,0,0/Atk,false,1980,true/FCE,false,72,true/VIT,false,20,true/AGI,false,24,true/Toucher,false,12/84pre
+Épée d'Assaut Inébranlable/0,1,2,3/81/3/false/false/false/3,0,0/Atk,false,2157,true/FCE,false,34,true/AGI,false,34,true/81bleu
+Épée de Glace Brûlante de Sprite/0,1,2,3/81/2/false/false/false/3,0,0/Atk,false,1618,true/AGI,false,22,true/Toucher,false,10/79pre
+Lame Torturée/0,1,2,3/81/1/false/false/false/1,0,0/Atk,false,1348,true/86bleu
 Epée Ikazuchi Jumeaux/0,1,2,3/80/6/true/true/false/5,0,0/Atk,false,2653,true/FCE,false,95,true/VIT,false,34,true/AGI,false,41,true/Toucher,false,18/80vio
 Vierge Immaculée/0,1,2,3/80/5/true/true/false/6,0,0/Atk,false,2387,true/FCE,false,67,true/VIT,false,27,true/AGI,false,42,true/Toucher,false,18/FCE,false,50/80gold
+Sombre Sournoiserie/0,1,2,3/80/3/false/true/false/4,0,0/Atk,false,2122,true/FCE,false,44,true/VIT,false,20,true/Toucher,false,10/80gvg
 Invincible Tyrannie/0,1,2,3/79/4/true/true/false/6,0,0/Atk,false,1827,true/FCE,false,18,true/VIT,false,18,true/AGI,false,24,true/Toucher,false,14/FCE,false,50/79pre
+Double Lame du Levant/0,1,2,3/76/3/false/false/false/4,0,0/Atk,false,1984,true/FCE,false,32,true/AGI,false,32,true/Toucher,false,14/81bleu
+Tribu Engloutie/0,1,2,3/76/2/false/false/false/3,0,0/Atk,false,1488,true/AGI,false,20,true/Toucher,false,12/66pre
 Rapière d'Empereur Déchu/0,1,2,3/75/6/true/true/false/5,0,0/Atk,false,2438,true/FCE,false,80,true/VIT,false,30,true/AGI,false,50,true/Toucher,false,18/75vio
 Épée Royale de la Providence/0,1,2,3/75/5/true/true/false/5,0,0/Atk,false,2194,true/FCE,false,64,true/VIT,false,24,true/AGI,false,40,true/Toucher,false,18/75gold
 Châtiment de l'Empereur/0,1,2,3/74/4/true/true/false/5,0,0/Atk,false,1677,true/FCE,false,17,true/VIT,false,17,true/AGI,false,20,true/Toucher,false,12/74pre
+Grand Sabre Elsaien/0,1,2,3/72/3/false/false/false/4,0,0/Atk,false,1850,true/FCE,false,30,true/AGI,false,30,true/Toucher,false,12/80gvg
+Lame Pourpre des Sprites/0,1,2,3/71/2/false/false/false/3,0,0/Atk,false,1362,true/AGI,false,18,true/Toucher,false,10/65ora
 Lame des Limbes Profondes/0,1,2,3/70/6/true/true/false/5,0,0/Atk,false,2229,true/FCE,false,75,true/VIT,false,27,true/AGI,false,48,true/Toucher,false,18/70vio
 Empereur Déchu/0,1,2,3/70/5/true/true/false/7,0,0/Atk,false,2005,true/FCE,false,60,true/VIT,false,22,true/AGI,false,38,true/Toucher,false,18/RegenCB,false,30/CostComp,false,-45/70gold
+Lame d'Acier Noir/0,1,2,3/70/3/false/true/false/4,0,0/Atk,false,1782,true/FCE,false,40,true/VIT,false,16,true/Toucher,false,10/70gvg
 Sabre en Écailles de Dragon Rouge/1,2,3/68/4/true/true/false/6,0,0/Atk,false,1502,true/FCE,false,10,true/VIT,false,20,true/AGI,false,18,true/Toucher,false,12/TCCP,false,7/68ora
 Glaive à Lame Cruelle/0,1,2,3/66/4/true/true/false/7,0,0/Atk,false,1446,true/FCE,false,20,true/VIT,false,18,true/AGI,false,10,true/Toucher,false,12/RegenCB,false,30/CostComp,false,-45/66pre
+Lame Rituelle de Décapitation/0,1,2,3/66/3/false/false/false/4,0,0/Atk,false,1653,true/FCE,false,28,true/AGI,false,28,true/Toucher,false,12/80gvg
+Machette Ciselée/0,1,2,3/66/1/false/false/false/1,0,0/Atk,false,1033,true/80gvg
 Épée de la Justice de l'Empereur/0,1,2,3/65/5/true/true/false/5,0,0/Atk,false,1822,true/FCE,false,55,true/VIT,false,17,true/AGI,false,40,true/Toucher,false,18/95gold
 Épée Conquérante du Chevalier Noir/0,1,2,3/65/4/true/false/false/6,0,0/Atk,false,1417,true/FCE,false,20,true/VIT,false,10,true/AGI,false,12,true/Toucher,false,12/TCCP,false,6/65ora
 Épée de la Vérité de l'Empereur/0,1,2,3/63/4/true/true/false/5,0,0/Atk,false,1361,true/FCE,false,20,true/VIT,false,12,true/AGI,false,10,true/Toucher,false,10/63pre
+Épée en Os de Dragon Originel/0,1,2,3/63/3/false/false/false/4,0,0/Atk,false,1555,true/FCE,false,32,true/VIT,false,20,true/Toucher,false,10/44sprite
+Dague Violette Sauvage/0,1,2,3/61/3/false/false/false/4,0,0/Atk,false,1493,true/VIT,false,30,true/AGI,false,22,true/Toucher,false,10/34sprite
+Épée de Pierre de Cristal Sanglante des Sprites/0,1,2,3/61/2/false/false/false/2,0,0/Atk,false,1120,true/VIT,false,14,true/38ora2
 Lame de l'Eternité de Bodor/0,1,2,3/60/5/true/true/false/5,0,0/Atk,false,1643,true/FCE,false,34,true/VIT,false,14,true/AGI,false,48,true/Toucher,false,15/60gold
 Épée du Marquis Bodor (Reforgée)/0,1,2,3/60/4/false/true/true/5,0,0/Atk,false,1409,true/FCE,false,14,true/VIT,false,22,true/Toucher,false,9/TCCP,false,5/60pvp
 Épée du Marquis Bodor/0,1,2,3/60/4/false/true/false/5,0,0/Atk,false,1280,true/FCE,false,13,true/VIT,false,20,true/Toucher,false,8/TCCP,false,5/60pvp
+Lame Sanglante Vengeance Douloureuse/0,1,2,3/60/3/false/false/false/3,0,0/Atk,false,1461,true/AGI,false,33,true/Toucher,false,10/58pre
+Épée Légendaire, Le Roi Immuable/1,2,3/58/4/true/false/false/6,0,0/Atk,false,1240,true/FCE,false,20,true/VIT,false,9,true/AGI,false,4,true/Toucher,false,10/TCCP,false,3.5/58ora
+Épée Coeur de Lion/0,1,2,3/58/4/true/true/false/5,0,0/Atk,false,1224,true/FCE,false,13,true/VIT,false,7,true/AGI,false,13,true/Toucher,false,8/65ora
+Épée des Promesses de Bodor/0,1,2,3/58/4/true/true/false/4,0,0/Atk,false,1256,true/FCE,false,11,true/VIT,false,17,true/Toucher,false,8/58pre
+Épée Royale Coeur de Lion/0,1,2,3/58/3/false/false/false/4,0,0/Atk,false,1398,true/FCE,false,29,true/AGI,false,15,true/Toucher,false,10/58bleu
+Épée des Sprites du Trône/0,1,2,3/54/2/false/false/false/3,0,0/Atk,false,958,true/AGI,false,10,true/Toucher,false,4/91sprite
+Épée du Cristal Céleste/0,1,2,3/52/3/false/false/false/4,0,0/Atk,false,1216,true/FCE,false,21,true/AGI,false,15,true/Toucher,false,8/48ora0
 Éclair Ultime/0,1,2,3/50/5/true/true/false/6,0,0/Atk,false,1303,true/FCE,false,26,true/VIT,false,10,true/AGI,false,36,true/Toucher,false,8/Foudre,false,15/50gold
+Épée d'Ofanim/0,1,2,3/50/1/false/false/false/1,0,0/Atk,false,724,true/48vert
+Lame Ecaille de Dragon Vert/0,1,2,3/48/4/true/true/false/5,0,0/Atk,false,962,true/FCE,false,9,true/VIT,false,9,true/AGI,false,9,true/Toucher,false,6/48ora1
+Lumière Dorée/0,1,2,3/48/4/true/true/false/5,0,0/Atk,false,969,true/VIT,false,10,true/AGI,false,13,true/Toucher,false,6/Foudre,false,15/48pre
+Épée Spectrale; Flamme du Dragon de Glace/3/48/4/true/false/false/5,0,0/Atk,false,970,true/FCE,false,18,true/AGI,false,9,true/Toucher,false,8/TCCP,false,3/48ora0
+Épée Familiale du Noble/0,1,2,3/48/2/false/false/false/3,0,0/Atk,false,824,true/AGI,false,10,true/Toucher,false,4/48vert
+Épée du Chevalier Bodor (Reforgé)/0,1,2,3/45/4/false/true/true/5,0,0/Atk,false,985,true/FCE,false,10,true/VIT,false,13,true/Toucher,false,7/TCCP,false,3/45pvp
+Épée du Chevalier Bodor/0,1,2,3/45/4/false/true/false/5,0,0/Atk,false,895,true/FCE,false,9,true/VIT,false,12,true/Toucher,false,6/TCCP,false,3/45pvp
+Dieu de la Guerre au Visage Vert/0,1,2,3/44/3/false/false/false/4,0,0/Atk,false,986,true/VIT,false,13,true/AGI,false,15,true/Toucher,false,6/38ora0
+Épée des Sprites du Seigneur de Guerre/0,1,2,3/44/2/false/false/false/3,0,0/Atk,false,739,true/AGI,false,8,true/Toucher,false,2/44sprite
+Longue Épée des Ruines à Os Blanc/0,1,2,3/40/2/false/false/false/3,0,0/Atk,false,656,true/VIT,false,8,true/Toucher,false,2/44sprite
+Épée de la Crapule Courageuse/0,1,2,3/40/1/false/false/false/1,0,0/Atk,false,547,true/40blanc
+Epine de Rose Sanglante/0,1,2,3/38/4/true/true/false/5,0,0/Atk,false,720,true/FCE,false,6,true/VIT,false,5,true/AGI,false,10,true/Toucher,false,4/38ora2
+Épée du Chevalier de la Forteresse/0,1,2,3/38/4/true/true/false/4,0,0/Atk,false,728,true/VIT,false,11,true/AGI,false,7,true/Toucher,false,4/38ora1
+Rage d'Akuma/3/38/4/true/false/false/5,0,0/Atk,false,740,true/FCE,false,14,true/AGI,false,7,true/Toucher,false,6/TCCP,false,2.5/38ora0
+Découpe Rouge Flamme/0,1,2,3/36/3/false/false/false/3,0,0/Atk,false,770,true/FCE,false,21,true/Toucher,false,6/91sprite
+Petit Couteau des Sprites de Destruction/0,1,2,3/34/2/false/false/false/2,0,0/Atk,false,539,true/AGI,false,6,true/34sprite
+Épée du Champion réincarné/0,1/31/3/false/false/true/3,0,0/Atk,false,618,true/FCE,false,12,true/AGI,false,8,true/31rein
+Dague de la Destruction/0,1,2,3/30/1/false/false/false/1,0,0/Atk,false,386,true/30blanc
+Canine Enflammée/0,1,2,3/28/4/true/true/false/4,0,0/Atk,false,498,true/FCE,false,7,true/VIT,false,5,true/AGI,false,3,true/94pre
+Dague de l'Onde Verte/2,3/28/4/true/false/false/6,0,0/Atk,false,510,true/FCE,false,3,true/VIT,false,2,true/AGI,false,10,true/Toucher,false,4/TCCP,false,2/28ora
+Épée de Gobelin/0,1,2,3/28/3/false/false/false/3,0,0/Atk,false,570,true/FCE,false,15,true/AGI,false,5,true/44sprite
+Épée Métallique des Sprites/0,1,2,3/24/2/false/false/false/2,0,0/Atk,false,358,true/AGI,false,4,true/24sprite
+Éminente Épée du Chevalier/0,1,2,3/24/1/false/false/false/1,0,0/Atk,false,298,true/24blanc
+Épée de Métal/0,1,2,3/20/1/false/false/false/1,0,0/Atk,false,244,true/18ora1
+Épée d'Aube/0,1,2,3/18/4/true/true/false/4,0,0/Atk,false,305,true/FCE,false,3,true/VIT,false,3,true/AGI,false,3,true/18ora1
+Épée Mortelle Diabolique/2,3/18/4/true/false/false/5,0,0/Atk,false,315,true/VIT,false,3,true/AGI,false,6,true/Toucher,false,2/TCCP,false,1.5/18ora0
+Épée du Chevalier/0,1,2,3/16/1/false/false/false/1,0,0/Atk,false,193,true/24blanc
+Glaive Runique des Sprites/0,1,2,3/14/2/false/false/false/2,0,0/Atk,false,203,true/AGI,false,2,true/31rein
+Longue épée du Gardien/0,1,2,3/12/1/false/false/false/1,0,0/Atk,false,147,true/24blanc
+Épée de Fer Raffinée/0,1,2,3/10/1/false/false/false/1,0,0/Atk,false,125,true/10blanc
+Glaive des Sprites/0,1,2,3/8/2/false/false/false/2,0,0/Atk,false,127,true/AGI,false,2,true/8sprite
+Épée du Brave de Siwa/0,1/6/3/false/false/false/2,0,0/Atk,false,203,true/AGI,false,2,true/31rein
+Épée des Prémices du Voyage de Muha/0,1,2,3/6/2/false/false/false/2,0,0/Atk,false,106,true/FCE,false,2,true/6vert
+Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/10blanc
+Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/10blanc
