@@ -90,5 +90,5 @@ Longue épée du Gardien/0,1,2,3/12/1/false/false/false/1,0,0/Atk,false,147,true/2
 Glaive des Sprites/0,1,2,3/8/2/false/false/false/2,0,0/Atk,false,127,true/AGI,false,2,true/8sprite
 Épée du Brave de Siwa/0,1/6/3/false/false/false/2,0,0/Atk,false,203,true/AGI,false,2,true/31rein
 Épée des Prémices du Voyage de Muha/0,1,2,3/6/2/false/false/false/2,0,0/Atk,false,106,true/FCE,false,2,true/6vert
-Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/10blanc
-Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/10blanc
+Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/0novice
+Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/0novice

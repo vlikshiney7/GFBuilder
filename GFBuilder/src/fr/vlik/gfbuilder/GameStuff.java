@@ -169,7 +169,7 @@ public class GameStuff {
 				String[] effectSplit = lineSplit[7].split(",");
 				
 				assert lineSplit.length == Integer.parseInt(effectSplit[0]) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
-						: weaponFile[i] + " line " + this.listWeapon.get(i+1).size();
+						: weaponFile[i] + " line " + (this.listWeapon.get(i+1).size() + 1);
 				
 				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
 				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
