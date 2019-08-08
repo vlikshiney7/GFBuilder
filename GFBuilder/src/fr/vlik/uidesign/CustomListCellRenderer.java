@@ -20,6 +20,7 @@ import fr.vlik.gfbuilder.Costume;
 import fr.vlik.gfbuilder.Enchantment;
 import fr.vlik.gfbuilder.Equipment;
 import fr.vlik.gfbuilder.Genki;
+import fr.vlik.gfbuilder.Grade;
 import fr.vlik.gfbuilder.GuildBuff;
 import fr.vlik.gfbuilder.Mount;
 import fr.vlik.gfbuilder.Nucleus;
@@ -70,6 +71,11 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 				renderer.setForeground(Consts.speColor[1]);
 			else
 				renderer.setForeground(Consts.speColor[0]);
+		} else if(value instanceof Grade) {
+			Grade grade = (Grade) value;
+			renderer.setIcon(new ImageIcon(grade.getIcon()));
+			renderer.setText(grade.getName(0));
+			renderer.setForeground(Consts.FontColor[0]);
 		} else if(value instanceof Title) {
 			Title title = (Title) value;
 			renderer.setText(title.getName());

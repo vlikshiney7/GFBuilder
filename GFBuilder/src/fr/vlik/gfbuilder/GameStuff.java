@@ -12,6 +12,7 @@ import fr.vlik.uidesign.JCustomRadioButton;
 public class GameStuff {
 	private ArrayList<MultiEffect> listMultiEffects = new ArrayList<MultiEffect>();
 	
+	private ArrayList<Grade> listGrade = new ArrayList<Grade>();
 	private ArrayList<Title> listTitle = new ArrayList<Title>();
 	private ArrayList<Yggdrasil> listYggdrasil = new ArrayList<Yggdrasil>(8);
 	private ArrayList<Archive> listArchive = new ArrayList<Archive>(39);
@@ -87,6 +88,21 @@ public class GameStuff {
 			}
 			
 			this.listMultiEffects.add(new MultiEffect(lineInfoSplit[0], effects));
+			
+			line = reader.readLine();
+		}
+		reader.close();
+		
+		/* CLASS */
+		reader = new BufferedReader(new InputStreamReader(
+				MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/resources/grade/grade.txt")));
+		line = reader.readLine();
+		while (line != null) {
+			String[] lineSplit = line.split("/");
+			String[] name = lineSplit[0].split(",");
+			String path =  lineSplit[lineSplit.length-1] + ".png";
+			
+			this.listGrade.add(new Grade(name, Integer.parseInt(lineSplit[1]), Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), path));
 			
 			line = reader.readLine();
 		}
@@ -845,8 +861,17 @@ public class GameStuff {
 		reader.close();
 	}
 	
-	public ArrayList<Title> getListTitle() {
-		return this.listTitle;
+	public Grade[] getListGrade(int lvl) {
+		ArrayList<Grade> result = new ArrayList<Grade>();
+		
+		for(Grade grade : this.listGrade) {
+			if(grade.getLvlMin() <= lvl && grade.getLvlMax() >= lvl) result.add(grade);
+		}
+		
+		Grade[] cast = new Grade[result.size()];
+		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		
+		return cast;
 	}
 	
 	public ArrayList<Yggdrasil> getListYggdrasil() {

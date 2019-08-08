@@ -51,7 +51,7 @@ public class MainFrame extends JFrame {
 	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
 	DefaultComboBoxModel<String> model;
 	
-	private JCustomComboBox<String> listClasses;
+	private JCustomComboBox<Grade> listClasses;
 	private JCustomSpinner spinnerLvl;
 	private JCustomComboBox<Title> CBoxTitle;
 	private JCustomComboBox<String> lvlReinca;
@@ -237,8 +237,9 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		
 		/* CLASSE */
-		String nameCl[] = { "Destructeur", "Croisé", "Prédateur", "Kage", "Archange", "Druide", "Arcaniste", "Faucheur", "Oméga", "Suprême", "Dimensionnaliste", "Chronomancien" };
-		this.listClasses = new JCustomComboBox<String>(nameCl);
+		Grade[] tabGrade = this.allGameStuff.getListGrade(0);
+		
+		this.listClasses = new JCustomComboBox<Grade>(tabGrade);
 		this.listClasses.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.listClasses.setRenderer(new CustomListCellRenderer());
 		this.listClasses.addActionListener(new ActionListener() {
@@ -269,6 +270,7 @@ public class MainFrame extends JFrame {
 		this.spinnerLvl.addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
+				MainFrame.this.updateGrade();
 				MainFrame.this.updateSkill();
 				MainFrame.this.updateProSkill();
 				MainFrame.this.updateListStuff();
@@ -328,7 +330,8 @@ public class MainFrame extends JFrame {
 		page1Elem3.add(this.lvlReinca);
 		
 		/* TITRE */
-		Title[] tabTitle = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), false);
+		Grade currentGrade = (Grade) this.listClasses.getSelectedItem();
+		Title[] tabTitle = this.allGameStuff.getPossibleTitle(currentGrade.getIndex(), this.spinnerLvl.getIntValue(), false);
 		this.CBoxTitle = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
 		this.CBoxTitle.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxTitle.setRenderer(new CustomListCellRenderer());
@@ -422,7 +425,7 @@ public class MainFrame extends JFrame {
 		page2.setBackground(Consts.UIColor[2]);
 
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), false, null);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, currentGrade.getIndex(), this.spinnerLvl.getIntValue(), false, null);
 			this.CBoxWeapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.CBoxWeapon.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxWeapon.get(i).setRenderer(new CustomListCellRenderer());
@@ -605,7 +608,7 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < 5; i++) {
 			/* NOM */
-			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, currentGrade.getIndex(), this.spinnerLvl.getIntValue());
 			this.CBoxArmor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
 			this.CBoxArmor.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxArmor.get(i).setRenderer(new CustomListCellRenderer());
@@ -789,7 +792,7 @@ public class MainFrame extends JFrame {
 		page++;
 		
 		/* CAPE */
-		Cape[] tabCape = this.allGameStuff.getPossibleCape(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		Cape[] tabCape = this.allGameStuff.getPossibleCape(currentGrade.getIndex(), this.spinnerLvl.getIntValue());
 		this.CBoxCape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
 		this.CBoxCape.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.CBoxCape.setRenderer(new CustomListCellRenderer());
@@ -1474,7 +1477,7 @@ public class MainFrame extends JFrame {
 		page7.add(page7Elem1);
 		page7.add(Box.createVerticalStrut(10));
 		
-		ArrayList<ArrayList<Talent>> tabTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		ArrayList<ArrayList<Talent>> tabTalent = this.allGameStuff.getPossibleTalent(currentGrade.getIndex(), this.spinnerLvl.getIntValue());
 		
 		JPanel page7Elem2 = new JPanel(new GridLayout(1,2, 10, 10));
 		page7Elem2.setBackground(Consts.UIColor[2]);
@@ -1526,7 +1529,7 @@ public class MainFrame extends JFrame {
 						}
 					});
 					
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(this.allGameStuff.getListTalent().get(this.listClasses.getSelectedIndex()).get(i*12+j*3+k).getIcon())));
+					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(this.allGameStuff.getListTalent().get(currentGrade.getIndex()).get(i*12+j*3+k).getIcon())));
 					this.radioTalent.get(i*4+j).get(k+1).setBackground(Consts.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).addActionListener(new ActionListener() {
 						@Override
@@ -1617,7 +1620,7 @@ public class MainFrame extends JFrame {
 		page8.add(remain);
 		page8.add(Box.createVerticalStrut(5));
 		
-		this.tabSpeciality = this.allGameStuff.getSpeFromClass(this.listClasses.getSelectedIndex());
+		this.tabSpeciality = this.allGameStuff.getSpeFromClass(currentGrade.getIndex());
 		
 		
 		JPanel catSpe = new JPanel(new GridLayout(4, 1));
@@ -1741,7 +1744,7 @@ public class MainFrame extends JFrame {
 		page9Elem2.add(this.allLabel.get(page).get(1));
 		page9Elem2.add(Box.createVerticalStrut(10));
 		
-		ProSkill[] tabProSkill = this.allGameStuff.getListProSkill(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		ProSkill[] tabProSkill = this.allGameStuff.getListProSkill(currentGrade.getIndex(), this.spinnerLvl.getIntValue());
 		this.CBoxProSkill = new JCustomComboBox<ProSkill>(tabProSkill);
 		this.CBoxProSkill.setRenderer(new CustomListCellRenderer());
 		this.CBoxProSkill.addActionListener(new ActionListener() {
@@ -2299,7 +2302,7 @@ public class MainFrame extends JFrame {
 	protected void updateStat() {
 		Build build;
 		
-		int idClass = this.listClasses.getSelectedIndex();
+		int idClass = ((Grade) this.listClasses.getSelectedItem()).getIndex();
 		int lvl = this.spinnerLvl.getIntValue();
 		double coefReinca = 1;
 		
@@ -2607,10 +2610,38 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
+	private void updateGrade() {
+		Grade tabGrade[] = this.allGameStuff.getListGrade(this.spinnerLvl.getIntValue());
+		int memoryIndex = ((Grade) this.listClasses.getSelectedItem()).getIndex();
+		Grade memory = null;
+		
+		for(Grade grade : tabGrade) {
+			if(grade.getIndex() == memoryIndex) {
+				memory = grade;
+				break;
+			}
+		}
+		
+		if(memory == null) {
+			for(Grade grade : tabGrade) {
+				if(grade.getIndex() == memoryIndex-1) {
+					memory = grade;
+					break;
+				}
+			}
+		}
+		
+		if(memory == null) memory = tabGrade[0];
+		
+		this.listClasses.setModel(new DefaultComboBoxModel<Grade>(tabGrade));
+		this.listClasses.setSelectedItem(memory);
+	}
+	
 	private void updateTitle() {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 0 ? false : true;
 		
-		Title tabTitle[] = this.allGameStuff.getPossibleTitle(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca);
+		Title tabTitle[] = this.allGameStuff.getPossibleTitle(grade.getIndex(), this.spinnerLvl.getIntValue(), isReinca);
 		Title memory = (Title) this.CBoxTitle.getSelectedItem();
 		
 		this.CBoxTitle.setModel(new DefaultComboBoxModel<Title>(tabTitle));
@@ -2691,11 +2722,12 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateListStuff() {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
 		
 		/* ARME */
 		for(int i = 0; i < this.CBoxWeapon.size(); i++) {
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, null);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(i, grade.getIndex(), this.spinnerLvl.getIntValue(), isReinca, null);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(i).getSelectedItem();
 			
 			this.CBoxWeapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -2716,7 +2748,7 @@ public class MainFrame extends JFrame {
 		
 		/* ARMURE */
 		for(int i = 0; i < this.CBoxArmor.size(); i++) {
-			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, grade.getIndex(), this.spinnerLvl.getIntValue());
 			Armor memory = (Armor) this.CBoxArmor.get(i).getSelectedItem();
 			
 			this.CBoxArmor.get(i).setModel(new DefaultComboBoxModel<Armor>(tabArmor));
@@ -2745,7 +2777,7 @@ public class MainFrame extends JFrame {
 		this.CBoxBullet.setSelectedItem(memoryBullet);
 		
 		/* CAPE */
-		Cape[] tabCape = this.allGameStuff.getPossibleCape(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		Cape[] tabCape = this.allGameStuff.getPossibleCape(grade.getIndex(), this.spinnerLvl.getIntValue());
 		Cape memoryCape = (Cape) this.CBoxCape.getSelectedItem();
 		
 		this.CBoxCape.setModel(new DefaultComboBoxModel<Cape>(tabCape));
@@ -3012,21 +3044,23 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateListTalent() {
-		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
+		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(grade.getIndex(), this.spinnerLvl.getIntValue());
 		
 		for(int i = 0; i < listTalent.size(); i++) {
 			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
 			tabTalent[0] = new Talent();
 			for(int j = 0; j < tabTalent.length-1; j++) tabTalent[j+1] = listTalent.get(i).get(j);
 			
-			this.radioTalent.get(i/3).get((i%3)+1).setIcon(new ImageIcon(this.allGameStuff.getListTalent().get(this.listClasses.getSelectedIndex()).get(i).getIcon()));
+			this.radioTalent.get(i/3).get((i%3)+1).setIcon(new ImageIcon(this.allGameStuff.getListTalent().get(grade.getIndex()).get(i).getIcon()));
 			this.CBoxTalent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));
 		}
 	}
 	
 	private void updateTalent() {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		int lvl = this.spinnerLvl.getIntValue();
-		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(this.listClasses.getSelectedIndex(), lvl);
+		ArrayList<ArrayList<Talent>> listTalent = this.allGameStuff.getPossibleTalent(grade.getIndex(), lvl);
 		
 		for(int i = 0; i < listTalent.size(); i++) {
 			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
@@ -3046,32 +3080,35 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void updateSelectedTalent(int index) {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		ArrayList<JCustomRadioButton> radio = this.radioTalent.get(index);
 		for(int i = 0; i < radio.size(); i++) {
 			if(radio.get(i).isSelected()) {
 				if(i == 0 || this.CBoxTalent.get(index*3+i-1).getSelectedIndex() == 0) {
 					this.tabChosenTalent[index].setIcon(new ImageIcon());
 				} else {
-					this.tabChosenTalent[index].setIcon(new ImageIcon(this.allGameStuff.getListTalent().get(this.listClasses.getSelectedIndex()).get(index*3+i-1).getIcon()));
+					this.tabChosenTalent[index].setIcon(new ImageIcon(this.allGameStuff.getListTalent().get(grade.getIndex()).get(index*3+i-1).getIcon()));
 				}
 			}
 		}
 	}
 	
 	public void updateRadioTalent(int index) {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		if(this.radioTalent.get(index/3).get(index % 3 + 1).isSelected()) {
 			if(this.CBoxTalent.get(index).getSelectedIndex() == 0) {
 				this.radioTalent.get(index/3).get(index % 3 + 1).setSelected(false);
 				this.radioTalent.get(index/3).get(0).setSelected(true);
 				this.tabChosenTalent[index/3].setIcon(new ImageIcon());
 			} else {
-				this.tabChosenTalent[index/3].setIcon(new ImageIcon(this.allGameStuff.getListTalent().get(this.listClasses.getSelectedIndex()).get(index).getIcon()));
+				this.tabChosenTalent[index/3].setIcon(new ImageIcon(this.allGameStuff.getListTalent().get(grade.getIndex()).get(index).getIcon()));
 			}
 			
 		}
 	}
 	
 	private void updateCombiTalent() {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		int[] currentCode = new int[4];
 		for(int i = 0; i < 4; i++) {
 			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {
@@ -3081,7 +3118,7 @@ public class MainFrame extends JFrame {
 				}
 			}
 		}
-		this.combiTalent.setObject(this.allGameStuff.getCombiTalent(this.listClasses.getSelectedIndex(), currentCode));
+		this.combiTalent.setObject(this.allGameStuff.getCombiTalent(grade.getIndex(), currentCode));
 		this.combiTalent.setVisible(true);
 	}
 	
@@ -3094,7 +3131,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateListSpe() {
-		this.tabSpeciality = this.allGameStuff.getSpeFromClass(this.listClasses.getSelectedIndex());
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
+		this.tabSpeciality = this.allGameStuff.getSpeFromClass(grade.getIndex());
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			this.iconSpe.get(i).setIcon(new ImageIcon(this.tabSpeciality[i].getIcon()));
@@ -3297,7 +3335,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateSkill() {
-		int idClass = this.listClasses.getSelectedIndex();
+		int idClass = ((Grade) this.listClasses.getSelectedItem()).getIndex();
 		int lvl = this.spinnerLvl.getIntValue();
 		int count = 0;
 		boolean isProgressUpdate = false;
@@ -3377,12 +3415,13 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateProSkill() {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		int lvl = this.spinnerLvl.getIntValue();
 		
 		if(lvl < 66) this.showAndHide.get(4).setVisible(false);
 		else this.showAndHide.get(4).setVisible(true);
 		
-		ProSkill[] tabProSkill = this.allGameStuff.getListProSkill(this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue());
+		ProSkill[] tabProSkill = this.allGameStuff.getListProSkill(grade.getIndex(), this.spinnerLvl.getIntValue());
 		ProSkill memory = (ProSkill) this.CBoxProSkill.getSelectedItem();
 		this.CBoxProSkill.setModel(new DefaultComboBoxModel<ProSkill>(tabProSkill));
 		if(memory != null) this.CBoxProSkill.setSelectedItem(memory);
@@ -3615,6 +3654,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void weaponType(int idList, int indexCB) {
+		Grade grade = (Grade) this.listClasses.getSelectedItem();
 		boolean isReinca = this.lvlReinca.getSelectedIndex() == 1;
 		
 		Weapon choice = new Weapon((Weapon) this.CBoxWeapon.get(idList).getSelectedItem());
@@ -3622,7 +3662,7 @@ public class MainFrame extends JFrame {
 			int keepEnchant = this.CBoxEnchant.get(1).getSelectedIndex();
 			
 			if(choice.getType() == 3 || choice.getType() == 4 || choice.getType() == 5 || choice.getType() == 7 || choice.getType() == 12 || choice.getType() == 13) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, null);
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, grade.getIndex(), this.spinnerLvl.getIntValue(), isReinca, null);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 				
 				this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3637,7 +3677,7 @@ public class MainFrame extends JFrame {
 				
 				this.showAndHide.get(0).setVisible(false);
 			} else if(choice.getType() == 0 || choice.getType() == 1 || choice.getType() == 2 || choice.getType() == 6) {
-				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, choice);
+				Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(1, grade.getIndex(), this.spinnerLvl.getIntValue(), isReinca, choice);
 				Weapon memory = (Weapon) this.CBoxWeapon.get(1).getSelectedItem();
 				
 				this.CBoxWeapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -3661,7 +3701,7 @@ public class MainFrame extends JFrame {
 		} else if(idList == 1) {
 			int keepEnchant = this.CBoxEnchant.get(0).getSelectedIndex();
 			
-			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, this.listClasses.getSelectedIndex(), this.spinnerLvl.getIntValue(), isReinca, choice);
+			Weapon[] tabWeapon = this.allGameStuff.getPossibleWeapon(0, grade.getIndex(), this.spinnerLvl.getIntValue(), isReinca, choice);
 			Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
 			
 			this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
