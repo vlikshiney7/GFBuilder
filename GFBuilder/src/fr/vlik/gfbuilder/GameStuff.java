@@ -1132,8 +1132,8 @@ public class GameStuff {
 		int[] weapon = null;
 		switch (idList) {
 			case 0 : weapon = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13 };	break;
-			case 1 : weapon = new int[] { 0, 1, 2, 6 };						break;
-			case 2 : weapon = new int[] { 8, 9, 10, 11, 14, 15 };			break;
+			case 1 : weapon = new int[] { 0, 1, 2, 6, 15 };					break;
+			case 2 : weapon = new int[] { 8, 9, 10, 11, 14 };				break;
 		}
 		
 		result.add(this.listWeapon.get(0).get(0));

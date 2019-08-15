@@ -1,1 +1,93 @@
+Arc divin de palombe brillante/0,2,3/100/6/true/false/false/5,0,0/AtkD,false,4270,true/FCE,false,38,true/VIT,false,61,true/AGI,false,121,true/Toucher,false,20/100vio
 Arc démoniaque de Serah Farron/0,2,3/100/5/true/false/false/6,0,0/AtkD,false,3843,true/FCE,false,31,true/VIT,false,43,true/AGI,false,94,true/PV,true,10/Atk,true,20/100gold
+Arc tempétueux de Quill/0,2,3/100/4/false/false/false/8,0,0/AtkD,false,3397,true/FCE,false,34,true/VIT,false,32,true/AGI,false,30,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Foudre,false,40/100pvp
+Arc Œil de Faucon/0,2,3/99/4/true/false/false/6,0,0/AtkD,false,2950,true/FCE,false,18,true/VIT,false,30,true/AGI,false,36,true/PV,true,10/Atk,true,20/99pre
+Arc Long Hélicide de Sprite/0,2,3/96/2/false/false/false/2,0,0/AtkD,false,2428,true/AGI,false,28,true/96sprite
+Ombre de l'Horreur Écarlate/0,2,3/95/6/true/false/false/5,0,0/AtkD,false,3990,true/FCE,false,46,true/VIT,false,60,true/AGI,false,94,true/Toucher,false,20/95vio
+Arc infaillible d'Icarus/0,2,3/95/5/true/false/false/6,0,0/AtkD,false,3591,true/FCE,false,29,true/VIT,false,42,true/AGI,false,89,true/VitAtkD,false,30/DegAtkD,false,15/95gold
+Arc de Cyclone Solaire de Quill/0,2,3/95/4/false/false/false/8,0,0/AtkD,false,2793,true/FCE,false,28,true/VIT,false,26,true/AGI,false,24,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Foudre,false,40/95pvp
+Arc Long Œil de Lynx/0,2,3/95/1/false/false/false/1,0,0/AtkD,false,1995,true/38ora0
+Arc de Fée Volant/0,2,3/94/4/true/false/false/6,0,0/AtkD,false,2360,true/FCE,false,17,true/VIT,false,28,true/AGI,false,33,true/VitAtkD,false,25/DegAtkD,false,10/94pre
+Arc Court Sylvestre de Sprite/0,2,3/91/2/false/false/false/2,0,0/AtkD,false,2262,true/AGI,false,26,true/91sprite
+Arc ailé d'Eurystos/0,2,3/90/6/true/false/false/5,0,0/AtkD,false,3715,true/FCE,false,44,true/VIT,false,57,true/AGI,false,89,true/Toucher,false,20/90vio
+Lumière Sacrée du Démon Irvine/0,2,3/90/5/true/false/false/6,0,0/AtkD,false,3344,true/FCE,false,34,true/VIT,false,54,true/AGI,false,64,true/Toucher,false,18/AtkD,true,12/90gold
+Ailes Sacrées - Dans le mille/0,2,3/89/4/true/false/false/6,0,0/AtkD,false,2563,true/FCE,false,16,true/VIT,false,26,true/AGI,false,30,true/Toucher,false,12/RDegAtkD,false,20/89pre
+Arc Enflammé du Traqueur/0,2,3/89/1/false/false/false/1,0,0/AtkD,false,1831,true/79pre
+Arc du Feu Sacré/0,2,3/86/3/false/false/false/4,0,0/AtkD,false,2800,true/VIT,false,36,true/AGI,false,36,true/Toucher,false,15/86bleu
+Grand Arc des Sprites Rapides/0,2,3/86/2/false/false/false/3,0,0/AtkD,false,2100,true/AGI,false,24,true/Toucher,false,10/84pre
+Arc des puissants Jumeaux/0,2,3/85/6/true/false/false/5,0,0/AtkD,false,3446,true/FCE,false,42,true/VIT,false,55,true/AGI,false,83,true/Toucher,false,18/85vio
+Cataclysme de Quetzalcoalt/0,2,3/85/5/true/false/false/7,0,0/AtkD,false,3101,true/FCE,false,41,true/VIT,false,48,true/AGI,false,55,true/Toucher,false,18/RDegAtkD,false,20/Depla,false,10/85gold
+Arc du Clan Quincy/0,2,3/85/4/false/false/false/8,0,0/AtkD,false,2412,true/FCE,false,24,true/VIT,false,22,true/AGI,false,20,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Foudre,false,40/85pvp
+Annihilateur de Destinée/0,2,3/84/4/true/false/false/7,0,0/AtkD,false,2376,true/FCE,false,14,true/VIT,false,24,true/AGI,false,28,true/Toucher,false,12/RDegAtkD,false,20/Depla,false,10/84pre
+Arc de Corail Rouge/0,2,3/84/1/false/false/false/1,0,0/AtkD,false,1697,true/86bleu
+Arc de Mithril de la Rébeliion/0,2,3/83/3/false/false/false/3,0,0/AtkD,false,2672,true/VIT,false,34,true/AGI,false,34,true/83bleu
+Grand Arc de l'Âme des Sprites/0,2,3/81/2/false/false/false/3,0,0/AtkD,false,1942,true/AGI,false,22,true/Toucher,false,10/79pre
+Grand Arc Quincy/0,2,3/80/6/true/false/false/5,0,0/AtkD,false,3184,true/FCE,false,41,true/VIT,false,50,true/AGI,false,79,true/Toucher,false,18/80vio
+Clair de Lune Gibbeuse/0,2,3/80/5/true/false/false/5,0,0/AtkD,false,2866,true/FCE,false,32,true/VIT,false,51,true/AGI,false,53,true/Toucher,false,18/80gold
+Arc Perce-cœur/0,2,3/80/3/false/false/false/5,0,0/AtkD,false,2547,true/VIT,false,34,true/AGI,false,30,true/Toucher,false,10/VitAtk,false,15/68ora
+Massacre de Rêves/0,2,3/79/4/true/false/false/5,0,0/AtkD,false,2192,true/FCE,false,13,true/VIT,false,19,true/AGI,false,28,true/Toucher,false,14/79pre
+Arc de la Grâce/0,2,3/76/3/false/false/false/4,0,0/AtkD,false,2381,true/VIT,false,32,true/AGI,false,32,true/Toucher,false,14/83bleu
+Funambule de l'Or/0,2,3/76/2/false/false/false/3,0,0/AtkD,false,1786,true/AGI,false,20,true/Toucher,false,12/66pre
+Annonciateur Céleste/0,2,3/75/6/true/false/false/5,0,0/AtkD,false,2926,true/FCE,false,38,true/VIT,false,60,true/AGI,false,62,true/Toucher,false,18/75vio
+Ailes de Vertu de l'Archange/0,2,3/75/5/true/false/false/5,0,0/AtkD,false,2633,true/FCE,false,30,true/VIT,false,48,true/AGI,false,50,true/Toucher,false,18/75gold
+Aile Sacrée/0,2,3/74/4/true/false/false/5,0,0/AtkD,false,2013,true/FCE,false,10,true/VIT,false,18,true/AGI,false,26,true/Toucher,false,12/94pre
+Fureur des Dragons/0,2,3/74/4/true/false/false/5,0,0/AtkD,false,2013,true/FCE,false,10,true/VIT,false,26,true/AGI,false,18,true/Toucher,false,12/74ora
+Arc d'Ivoire Infaillible/0,2,3/72/3/false/false/false/4,0,0/AtkD,false,2219,true/VIT,false,30,true/AGI,false,30,true/Toucher,false,12/72bleu
+Arc de la Colère des Sprites/0,2,3/71/2/false/false/false/3,0,0/AtkD,false,1634,true/AGI,false,18,true/Toucher,false,10/58ora
+Agate Chaotique/0,2,3/70/6/true/false/false/5,0,0/AtkD,false,2675,true/VIT,false,56,true/VOL,false,48,true/AGI,false,46,true/Toucher,false,18/70vio
+Mistral Merveilleux/0,2,3/70/5/true/false/false/7,0,0/AtkD,false,2407,true/VIT,false,45,true/VOL,false,38,true/AGI,false,37,true/Toucher,false,18/ESQ,false,20/RDCCP,false,45/70gold
+Tueur-né/0,2,3/70/3/false/false/false/5,0,0/AtkD,false,2139,true/VIT,false,30,true/AGI,false,26,true/Toucher,false,10/Depla,false,10/70gvg
+Arc de Trappeur/0,2,3/69/1/false/false/false/1,0,0/AtkD,false,1313,true/72bleu
+Grand Arc d'Ingénieur/0,2,3/68/4/true/false/false/6,0,0/AtkD,false,1803,true/FCE,false,12,true/VIT,false,20,true/AGI,false,16,true/Toucher,false,15/TCCP,false,8/68ora
+Arc de Tempête de Neige/0,2,3/67/3/false/false/false/4,0,0/AtkD,false,2021,true/VIT,false,20,true/AGI,false,36,true/Toucher,false,12/72bleu
+Arc de Cupidon/0,2,3/66/4/true/false/false/7,0,0/AtkD,false,1735,true/FCE,false,10,true/VIT,false,15,true/AGI,false,23,true/Toucher,false,12/ESQ,false,20/RDCCP,false,45/66pre
+Courroux de Poussière d'Etoile/0,2,3/65/5/true/false/false/5,0,0/AtkD,false,2187,true/VIT,false,40,true/VOL,false,30,true/AGI,false,42,true/Toucher,false,18/65gold
+Étoile Déchue/0,2,3/63/4/true/false/false/5,0,0/AtkD,false,1634,true/FCE,false,5,true/VIT,false,15,true/AGI,false,22,true/Toucher,false,10/63pre
+Arc de Chasse aux Requins/0,2,3/62/3/false/false/false/4,0,0/AtkD,false,1829,true/FCE,false,20,true/AGI,false,32,true/Toucher,false,10/18ora
+Arc d'Os des Sprites/0,2,3/61/2/false/false/false/2,0,0/AtkD,false,1343,true/VIT,false,14,true/28ora0
+Arc de la Bête Céleste de Quill/0,2,3/60/5/true/false/false/5,0,0/AtkD,false,1973,true/FCE,false,16,true/VIT,false,40,true/AGI,false,40,true/Toucher,false,15/95gold
+Arc du Roi Dragon de Quill (Reforgé)/0,2,3/60/4/false/false/true/5,0,0/AtkD,false,1694,true/VIT,false,24,true/AGI,false,12,true/Toucher,false,9/TCCP,false,5/60pvp
+Arc du Roi Dragon de Quill/0,2,3/60/4/false/false/false/5,0,0/AtkD,false,1540,true/VIT,false,22,true/AGI,false,11,true/Toucher,false,8/TCCP,false,5/60pvp
+Arbalète Fantastique du Dieu de la Mort/0,2,3/60/3/false/false/false/3,0,0/AtkD,false,1754,true/AGI,false,33,true/Toucher,false,10/28ora0
+Arc aux Deux Dragons, Lumière de la Pénétration/0,2,3/59/3/false/false/false/4,0,0/AtkD,false,1715,true/VIT,false,15,true/AGI,false,29,true/Toucher,false,10/59bleu
+Regard des Dieux Démoniaques/0,2,3/58/4/true/false/false/5,0,0/AtkD,false,1469,true/FCE,false,7,true/INT,false,10,true/AGI,false,16,true/Toucher,false,8/58ora
+Arc Bestial du Sceau de Quill/0,2,3/58/4/true/false/false/4,0,0/AtkD,false,1495,true/INT,false,5,true/AGI,false,23,true/Toucher,false,8/58pre
+Arc du Regard Céleste/0,2,3/58/3/false/false/false/3,0,0/AtkD,false,1678,true/AGI,false,33,true/Toucher,false,10/58bleu
+Arc des Sprites de la Poursuite Solaire/0,2,3/54/2/false/false/false/3,0,0/AtkD,false,1148,true/AGI,false,10,true/Toucher,false,4/96sprite
+Croissant de l'Epine du Dragon/0,2,3/51/3/false/false/false/3,0,0/AtkD,false,1424,true/VIT,false,27,true/Toucher,false,8/38ora0
+Marque du Dragon Noir Magique/0,2,3/50/5/true/false/false/4,0,0/AtkD,false,1562,true/VIT,false,36,true/AGI,false,36,true/Toucher,false,8/50gold
+Grand Arc de Guerre/0,2,3/50/1/false/false/false/1,0,0/AtkD,false,868,true/96sprite
+Arc de Métal Tranchant/0,2,3/48/4/true/false/false/5,0,0/AtkD,false,1155,true/FCE,false,9,true/VIT,false,6,true/AGI,false,12,true/Toucher,false,6/48ora
+Marque du Dragon Noir/0,2,3/48/4/true/false/false/4,0,0/AtkD,false,1187,true/FCE,false,8,true/AGI,false,15,true/Toucher,false,6/58ora
+Long Arc à Lame d'Alliage Supérieur/0,2,3/48/3/false/false/false/4,0,0/AtkD,false,1320,true/VIT,false,15,true/AGI,false,21,true/Toucher,false,8/48ora
+Arc du Chef Dragon de Quill (Reforgé)/0,2,3/45/4/false/false/true/5,0,0/AtkD,false,1177,true/VIT,false,13,true/AGI,false,10,true/Toucher,false,7/TCCP,false,3/45pvp
+Arc du Chef Dragon de Quill/0,2,3/45/4/false/false/false/5,0,0/AtkD,false,1070,true/VIT,false,12,true/AGI,false,9,true/Toucher,false,6/TCCP,false,3/45pvp
+Long Arc des Sprites de la Grâce/0,2,3/44/2/false/false/false/3,0,0/AtkD,false,887,true/AGI,false,8,true/Toucher,false,2/91sprite
+Pattes de Cent Vers/0,2,3/43/3/false/false/false/4,0,0/AtkD,false,1149,true/INT,false,15,true/AGI,false,13,true/Toucher,false,6/43bleu
+Arc Perce-Armure du Fripon/0,2,3/40/2/false/false/false/3,0,0/AtkD,false,788,true/AGI,false,8,true/Toucher,false,2/18ora
+Élégant Arc de Jade/0,2,3/40/1/false/false/false/1,0,0/AtkD,false,657,true/91sprite
+Arc Miraculeux/0,2,3/38/4/true/false/false/5,0,0/AtkD,false,862,true/VIT,false,7,true/INT,false,7,true/AGI,false,7,true/Toucher,false,4/38ora1
+Arc des Dieux Protecteurs/0,2,3/38/4/true/false/false/4,0,0/AtkD,false,888,true/VIT,false,10,true/AGI,false,8,true/Toucher,false,4/38ora0
+Arbalète du Mammouth aux Longues Défenses/0,2,3/35/3/false/false/false/3,0,0/AtkD,false,893,true/VIT,false,7,true/AGI,false,13,true/18ora
+Arc des Sprites de Combat Ancestral/0,2,3/34/2/false/false/false/2,0,0/AtkD,false,646,true/AGI,false,6,true/34sprite
+Arc du Champion réincarné/2,3/31/3/false/false/true/3,0,0/AtkD,false,741,true/FCE,false,7,true/AGI,false,13,true/14sprite
+Arc Ancestral/0,1,2,3/30/1/false/false/false/1,0,0/AtkD,false,463,true/34sprite
+Serpent Noir/0,1,2,3/28/4/true/false/false/4,0,0/AtkD,false,598,true/FCE,false,5,true/INT,false,5,true/AGI,false,5,true/28ora1
+Arc de Vue/0,1,2,3/28/4/true/false/false/3,0,0/AtkD,false,612,true/INT,false,5,true/AGI,false,8,true/28ora0
+Arc du Chasseur Précis/0,1,2,3/28/1/true/false/false/1,0,0/AtkD,false,427,true/24sprite
+Arc Serpentueux de la Cupidité/0,1,2,3/27/3/false/false/false/2,0,0/AtkD,false,656,true/AGI,false,15,true/27bleu
+Arc Ciselé/0,1,2,3/27/1/false/false/false/1,0,0/AtkD,false,410,true/28ora1
+Arc Barbare/0,1,2,3/27/1/false/false/false/1,0,0/AtkD,false,424,true/34sprite
+Arc des Sprites du Chasseur/0,1,2,3/24/2/false/false/false/2,0,0/AtkD,false,430,true/AGI,false,4,true/24sprite
+Arc du Chasseur/0,1,2,3/20/1/false/false/false/1,0,0/AtkD,false,292,true/18ora
+Nobles Célestes/0,1,2,3/18/4/true/false/false/4,0,0/AtkD,false,365,true/FCE,false,2,true/INT,false,3,true/AGI,false,4,true/18ora
+Long Arc de Guerre des Sprites/0,1,2,3/14/2/false/false/false/2,0,0/AtkD,false,244,true/AGI,false,2,true/14sprite
+Puissant Arc de Bois/0,1,2,3/14/1/false/false/false/1,0,0/AtkD,false,203,true/27bleu
+Arc d'Entraînement/0,1,2,3/13/1/false/false/false/1,0,0/AtkD,false,189,true/27bleu
+Court Arc des Sprites du Chasseur/0,1,2,3/10/2/false/false/false/2,0,0/AtkD,false,181,true/AGI,false,2,true/10sprite
+Arc des Serpents/0,1,2,3/10/1/false/false/false/1,0,0/AtkD,false,151,true/14sprite
+Arc de Bois/0,1,2,3/8/1/true/false/false/1,0,0/AtkD,false,127,true/8blanc
+Arc du Brave de Siwa/2,3/6/3/false/false/false/2,0,0/AtkD,false,244,true/AGI,false,2,true/14sprite
+Arc Volant de Muha/0,1,2,3/6/2/false/false/false/2,0,0/AtkD,false,126,true/AGI,false,2,true/27bleu
+Arc Court et Épais/0,1,2,3/6/1/false/false/false/1,0,0/AtkD,false,105,true/6blanc
+Court Arc de Chasse/0,1,2,3/6/1/false/false/false/1,0,0/AtkD,false,112,true/6blanc

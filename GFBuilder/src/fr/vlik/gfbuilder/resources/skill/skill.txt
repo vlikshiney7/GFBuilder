@@ -50,13 +50,13 @@ Double armes mécaniques/true/31/0/4-2
 Évolution en démolisseur/true/31/0/31-9
 5
 Résonance cristalline/true/6/0/5-0
-Cristal du Temps/true/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
+Cristal du Temps/false/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
 Noyau de Cristallisation de l'Espace/true/31/2/PeneP,false,5/PeneM,false,5/5-2
 Évolution en spatiodériveur/true/31/0/31-10
 Poids de l'univers/true/66/3/Depla,false,5/ReducP,false,5/ReducM,false,5/66-0
 5
 Résonance cristalline/true/6/0/5-0
-Cristal du Temps/true/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
+Cristal du Temps/false/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
 Noyau de Cristallisation de l'Espace/true/31/2/PeneP,false,5/PeneM,false,5/5-2
 Évolution en chronodériveur/true/31/1/PM,false,800/31-11
 Pouvoir du Temps/true/66/1/VitComp,false,10/66-1
