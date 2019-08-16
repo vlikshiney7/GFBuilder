@@ -11,4 +11,4 @@ Compétences passives,Passive skills/Énergie professionnelle,Professional energy
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination
 Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Énergies,Energy/Buff de guilde,Guild buff/Actif,Active/Inactif,Inactive/Pierre permanente,Permanent stone/Actif,Active/Inactif,Inactive
 Bague de mariage,Wedding ring/Anima,Anima
-Crédit,Credit/Version : 0.2.2,Version: 0.2.2
+Crédit,Credit/Version : 0.2.3,Version: 0.2.3
