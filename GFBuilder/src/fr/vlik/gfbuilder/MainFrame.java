@@ -608,7 +608,7 @@ public class MainFrame extends JFrame {
 		
 		for(int i = 0; i < 5; i++) {
 			/* NOM */
-			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, currentGrade.getIndex(), this.spinnerLvl.getIntValue());
+			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, currentGrade.getIndex(), this.spinnerLvl.getIntValue(), false);
 			this.CBoxArmor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
 			this.CBoxArmor.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.CBoxArmor.get(i).setRenderer(new CustomListCellRenderer());
@@ -2748,7 +2748,7 @@ public class MainFrame extends JFrame {
 		
 		/* ARMURE */
 		for(int i = 0; i < this.CBoxArmor.size(); i++) {
-			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, grade.getIndex(), this.spinnerLvl.getIntValue());
+			Armor[] tabArmor = this.allGameStuff.getPossibleArmor(i, grade.getIndex(), this.spinnerLvl.getIntValue(), isReinca);
 			Armor memory = (Armor) this.CBoxArmor.get(i).getSelectedItem();
 			
 			this.CBoxArmor.get(i).setModel(new DefaultComboBoxModel<Armor>(tabArmor));

@@ -66,9 +66,9 @@ public class GameStuff {
 		String line = reader.readLine();
 		while (line != null) {
 			String[] lineInfoSplit = line.split("/");
-			ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>(Integer.parseInt(lineInfoSplit[2]));
+			ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>(Integer.parseInt(lineInfoSplit[3]));
 			
-			for(int i = 0; i < Integer.parseInt(lineInfoSplit[2]); i++) {
+			for(int i = 0; i < Integer.parseInt(lineInfoSplit[3]); i++) {
 				effects.add(new ArrayList<Effect>(Integer.parseInt(lineInfoSplit[1])));
 			}
 			
@@ -87,7 +87,7 @@ public class GameStuff {
 				}
 			}
 			
-			this.listMultiEffects.add(new MultiEffect(lineInfoSplit[0], effects));
+			this.listMultiEffects.add(new MultiEffect(lineInfoSplit[0], Integer.parseInt(lineInfoSplit[2]), effects));
 			
 			line = reader.readLine();
 		}
@@ -277,22 +277,34 @@ public class GameStuff {
 				for(int c = 0; c < classes.length; c++) classesSplit[c] = Integer.parseInt(classes[c]);
 				String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
 				
-				String[] effectSplit = lineSplit[6].split(",");
+				String[] effectSplit = lineSplit[7].split(",");
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
-				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-					effects.add(new Effect(lineSplit[j+7]));
+				assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
+						: armorFile[i] + " line " + (this.listArmor.get(i+1).size() + 1);
 				
 				ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
 				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
-					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+					bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 				
-				
-				Armor armor = new Armor(
-						lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[4]), Boolean.parseBoolean(lineSplit[5]),
-						lineSplit[3], path, effects, bonusXP
-						);
-				this.listArmor.get(i).add(armor);
+				if(Integer.parseInt(effectSplit[0]) > -1) {
+					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
+						effects.add(new Effect(lineSplit[j+8]));
+					
+					Armor armor = new Armor(
+							lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[4]), Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+							lineSplit[3], path, effects, bonusXP
+							);
+					this.listArmor.get(i).add(armor);
+				} else {
+					MultiEffect effects = getFromCode(lineSplit[8]);
+					
+					Armor armor = new Armor(
+							lineSplit[0], classesSplit, Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[4]), Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+							lineSplit[3], path, effects, bonusXP
+							);
+					this.listArmor.get(i).add(armor);
+				}
 				
 				line = reader.readLine();
 			}
@@ -977,8 +989,7 @@ public class GameStuff {
 		Anima[] cast = new Anima[this.listAnima.size()];
 		for(int i = 0; i < cast.length; i++) {
 			if(this.listAnima.get(i).isMultiEffect()) {
-				int index = lvl > 66 ? 65 : lvl-1;
-				this.listAnima.get(i).setEffects(index);
+				this.listAnima.get(i).setEffects(lvl);
 			}
 			cast[i] = this.listAnima.get(i);
 		}
@@ -1186,12 +1197,24 @@ public class GameStuff {
 		return cast;
 	}
 	
-	public Armor[] getPossibleArmor(int idList, int idClass, int lvl) {
+	public Armor[] getPossibleArmor(int idList, int idClass, int lvl, boolean isReinca) {
 		ArrayList<Armor> result = new ArrayList<Armor>();
 		
 		for(Armor armor : this.listArmor.get(idList)) {
 			if(armor.getLvl() <= lvl && armor.containIdClass(idClass)) {
-				result.add(armor);
+				if(!armor.getForReinca()) {
+					if(armor.isMultiEffect()) {
+						armor.setEffects(lvl);
+					}
+					result.add(armor);
+				} else {
+					if(isReinca) {
+						if(armor.isMultiEffect()) {
+							armor.setEffects(lvl);
+						}
+						result.add(armor);
+					}
+				}
 			}
 		}
 		

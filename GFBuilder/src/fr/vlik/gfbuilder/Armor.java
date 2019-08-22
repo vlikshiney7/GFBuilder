@@ -10,23 +10,62 @@ import javax.imageio.ImageIO;
 public final class Armor extends Equipment {
 	
 	private String setCode;
+	private boolean forReinca;
+	private boolean isMultiEffect;
+	private MultiEffect multiEffects;
 	
 	public Armor(Armor armor) {
 		super(armor.getName(), armor.getIdClasses(), armor.getLvl(), armor.getQuality(), armor.getCanEnchant(), armor.getEffects(), armor.getBonusXP());
 		
 		this.setCode = armor.getSetCode();
+		this.forReinca = armor.getForReinca();
+		this.isMultiEffect = armor.isMultiEffect();
+		this.multiEffects = armor.getMultiEffect();
 		this.img = armor.getIcon();
 	}
 	
-	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, boolean forReinca, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, idClasses, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
+		this.forReinca = forReinca;
+		this.isMultiEffect = false;
+		this.img = setIcon(iconPath, quality);
+	}
+	
+	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, boolean forReinca, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
+		super(name, idClasses, lvl, quality, canEnchant, new ArrayList<Effect>(), bonusXP);
+		
+		this.setCode = setCode;
+		this.forReinca = forReinca;
+		this.isMultiEffect = true;
+		this.multiEffects = effects;
 		this.img = setIcon(iconPath, quality);
 	}
 	
 	public String getSetCode() {
 		return this.setCode;
+	}
+	
+	public boolean getForReinca() {
+		return this.forReinca;
+	}
+	
+	public boolean isMultiEffect() {
+		return this.isMultiEffect;
+	}
+	
+	public MultiEffect getMultiEffect() {
+		if(this.multiEffects == null) return null;
+		else return new MultiEffect(this.multiEffects.getCode(), this.multiEffects.getLvlMin(), this.multiEffects.getEffects());
+	}
+	
+	public void setEffects(int lvl) {
+		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
+	}
+	
+	public ArrayList<Effect> getMultiEffects(int lvl) {
+		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
 	protected BufferedImage setIcon(String path, int quality) {
