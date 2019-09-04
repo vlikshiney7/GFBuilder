@@ -1,5 +1,0 @@
-Rien/0/0/false/32-7
-Mordragon spectral de guerre/1/50/true/000
-Loup Spectral de Combat/60/60/false/001
-Loup Sanglant de Combat/40/80/false/020
-Robot Tueur de Combat/40/75/false/030

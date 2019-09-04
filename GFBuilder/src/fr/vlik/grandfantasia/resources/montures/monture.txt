@@ -1,0 +1,79 @@
+Rien/0/0/false/null
+Mordragon spectral de guerre/1/50/true/000
+Loup Spectral de Combat/60/60/false/001
+Loup Sanglant de Combat/40/80/false/020
+Robot Tueur de Combat/40/75/false/030
+Goldo-Tigre de Combat/40/75/false/031
+Jeune Dragon de Combat/40/75/false/040
+Dragon Noir de Combat/40/75/false/041
+Sprite Gundam Volant/40/75/false/050
+Tigre Rouge de Combat/40/75/false/032
+Manchot Dodu de Combat/40/75/false/060
+Lion Doré de Combat/40/75/false/070
+Lapin Sauteur de Combat/40/75/false/080
+Tigre des Glaces de Combat/40/75/false/033
+Lion de Guerre Noir/40/75/false/071
+Tigre Vert de Combat/40/75/false/034
+Manchot Soldat du Coeur/40/75/false/061
+Tigre des Ombres de Combat/40/75/false/035
+Monture de combat de Sprite pionnier/40/75/false/090
+Lion Violet de Combat/40/75/false/072
+Dragon de combat en armure/40/95/false/100
+Monture de combat scorpion mécanique/40/75/false/110
+Renard rouge ultime de combat/40/100/false/120
+Hélicoptère à vapeur blindé/40/75/false/130
+Dragon de combat blindé/40/90/false/101
+Dragon violet de combat/40/80/false/140
+Renard bleu ultime de combat/40/100/false/121
+Scorpion de combat de cristal pourpre à double place/40/100/false/111
+Lapin Sauteur de Combat/40/85/false/080
+Manchot Dodu de Combat Rapide/40/85/false/060
+Puissant Loup de Combat/40/85/false/020
+Lion de Guerre d'Onyx/40/85/false/071
+Renard rouge ultime rapide de combat/40/90/false/120
+Renard bleu ultime rapide de combat/40/90/false/121
+Tigre Rouge rapide de Combat/40/90/false/032
+Goldo-Tigre rapide de Combat/40/90/false/031
+Tigre des Ombres Rapide de Combat/40/90/false/035
+Tigre Vert Rapide de Combat/40/90/false/034
+Tigre des Glaces Rapide de Combat/40/90/false/033
+Ours Polaire de combat/40/75/false/150
+Lion ailé de combat/40/75/false/160
+Pyrodragon démoniaque de combat/40/75/false/170
+Renard des ténèbres de combat/40/75/false/122
+Hélicoptère solaire de combat/40/75/false/131
+Manchot jaune de combat/40/75/false/062
+Fenrir enragé de combat/40/100/false/180
+Scorpion de combat nocturne deux places/40/75/false/112
+Dents-de-sabre Féroce Suprême/40/100/false/036
+Dents-de-sabre de Glace Suprême/40/100/false/037
+Dents-de-sabre Enragé Suprême/40/100/false/038
+Étalon doré de combat/40/75/false/190
+Dragon améthyste de combat/40/100/false/102
+Loup des ténèbres/40/100/false/021
+Dragon doré impérial/40/100/false/200
+Fléau de l'ombre/40/100/false/039
+Dragon infernal/40/100/false/201
+Monture Loup Lotus rouge/40/100/false/022
+Étalon enflammé de combat/40/100/false
+Écureuil de Guerre/40/100/false
+Voiture rapide de combat/40/100/false
+Dragon ardent de combat/40/100/false
+Loup de Combat de la Flamme mystique/40/100/false
+Renne du Père Noël féroce de combat/40/100/false
+Monture de Combat Otto des Abîmes/40/100/false
+Monture de Combat Lion Céleste/40/100/false
+Loup de Combat de la Flamme opaline/40/100/false
+Étalon de guerre de Morgoth/40/75/false
+Félin de l'Aria Nocturne/40/75/false
+Goldo-Lion de Guerre/40/100/false
+Dragon des ombres/40/100/false
+Dragon mécanique de combat/40/100/false
+Cheval de Guerre des Flammes Sombres/40/100/false
+Kurama à Neuf Queues de Bataille/40/100/false
+Licorne Cosmique de combat/40/100/false
+Alpaga Étincelant de combat/40/100/false
+Vilain pingoin de combat/40/100/false
+Félin flamboyant de combat/40/100/false
+Fantôme d'Hattori/40/0/false
+Lion cramoisi de combat/40/100/false
