@@ -29,3 +29,4 @@ de Volonté/false/1/VOL,false,0
 d'Agilité/false/1/AGI,false,0
 de Précision/false/1/Toucher,true,0
 de Parade/false/1/Parade,false,0
+/true/0

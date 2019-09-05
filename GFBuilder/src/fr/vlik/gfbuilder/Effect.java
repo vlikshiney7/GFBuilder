@@ -1,15 +1,17 @@
 package fr.vlik.gfbuilder;
 
+import fr.vlik.grandfantasia.Weapon.WeaponType;
+
 public class Effect {
 	
 	private TypeEffect type;
 	private boolean isPercent;
 	private double value;
 	private boolean withReinca = false;
-	private int withWeapon = -1;
+	private WeaponType withWeapon = WeaponType.NONE;
 	private TypeEffect transfert = null;
 	
-	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, int withWeapon, TypeEffect transfert) {
+	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon, TypeEffect transfert) {
 		this.type = type;
 		this.isPercent = isPercent;
 		this.value = value;
@@ -31,9 +33,23 @@ public class Effect {
 		this.type = TypeEffect.valueOf(split[0]);
 		this.isPercent = Boolean.parseBoolean(split[1]);
 		this.value = Double.parseDouble(split[2]);
-		if(split.length > 3) this.withReinca = Boolean.parseBoolean(split[3]);
-		if(split.length > 4) this.withWeapon = Integer.parseInt(split[4]);
-		if(split.length > 5) this.transfert = TypeEffect.valueOf(split[5]);
+		
+		if(split.length > 3) {
+			this.withReinca = Boolean.parseBoolean(split[3]);
+		}
+		
+		if(split.length > 4) {
+			try {
+				this.withWeapon = WeaponType.values()[Integer.parseInt(split[4])];
+			} catch (ArrayIndexOutOfBoundsException e) {
+				this.withWeapon = WeaponType.NONE;
+			}
+			
+		}
+		
+		if(split.length > 5) {
+			this.transfert = TypeEffect.valueOf(split[5]);
+		}
 	}
 	
 	public TypeEffect getType() {
@@ -52,7 +68,7 @@ public class Effect {
 		return this.withReinca;
 	}
 	
-	public int getWithWeapon() {
+	public WeaponType getWithWeapon() {
 		return this.withWeapon;
 	}
 	
@@ -104,25 +120,26 @@ public class Effect {
 				"Dégât Standard Épée", "Dégât Standard Marteau", "Dégât Standard Hache", "Dégât Standard Épée 2 Mains", "Dégât Standard Marteau 2 Mains", "Dégât Standard Hache 2 Mains", "Dégât Standard Arc", "Dégât Standard Gun", "Dégât Standard Bâton", "Dégât Standard Lame", "Dégât Attaque Distance", "Réduction Dégât Attaque Distance", "Régénération PV Assis", "Régénération PM Assis", "Menace",
 				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin donné", "Soin reçu", "Bonus d'Attaque à Distance", "Reflect", "Vitesse de Déplacement" };
 		String result = enumName[this.getType().ordinal()] + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
-		if(withWeapon != -1) {
+		if(this.withWeapon != WeaponType.NONE) {
 			result += " si équipé ";
-			switch (withWeapon) {
-				case 0 : result += "d'une épée une main";				break;
-				case 1 : result += "d'un marteau une main";				break;
-				case 2 : result += "d'une hache une main";				break;
-				case 3 : result += "d'une épée à deux mains";			break;
-				case 4 : result += "d'un marteau à deux mains";			break;
-				case 5 : result += "d'une hache à deux mains";			break;
-				case 6 : result += "d'une arme mécanique une main";		break;
-				case 7 : result += "d'une arme mécanique à deux mains";	break;
-				case 8 : result += "d'un arc";							break;
-				case 9 : result += "d'un pistolet";						break;
-				case 10 : result += "d'un canon";						break;
-				case 11 : result += "d'une relique";					break;
-				case 12 : result += "d'un bâton";						break;
-				case 13 : result += "d'une lame";						break;
-				case 14 : result += "d'une clé";						break;
-				case 15 : result += "d'un bouclier";					break;
+			switch (this.withWeapon) {
+				case EPEE1M :		result += "d'une épée une main";				break;
+				case MARTEAU1M :	result += "d'un marteau une main";				break;
+				case HACHE1M :		result += "d'une hache une main";				break;
+				case EPEE2M :		result += "d'une épée à deux mains";			break;
+				case MARTEAU2M :	result += "d'un marteau à deux mains";			break;
+				case HACHE2M :		result += "d'une hache à deux mains";			break;
+				case MECA1M :		result += "d'une arme mécanique une main";		break;
+				case MECA2M :		result += "d'une arme mécanique à deux mains";	break;
+				case ARC :			result += "d'un arc";							break;
+				case GUN :			result += "d'un pistolet";						break;
+				case CANON :		result += "d'un canon";							break;
+				case RELIQUE :		result += "d'une relique";						break;
+				case BATON :		result += "d'un bâton";							break;
+				case LAME :			result += "d'une lame";							break;
+				case CLE :			result += "d'une clé";							break;
+				case BOUCLIER :		result += "d'un bouclier";						break;
+				default:			result += "";									break;
 			}
 		}
 		return result;

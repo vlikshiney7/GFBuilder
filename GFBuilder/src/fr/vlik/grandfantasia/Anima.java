@@ -15,30 +15,35 @@ import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Quality;
 
-public class Bullet {
+public class Anima {
 	
-	private static Bullet[] data;
+	private static Anima[] data;
 	
 	private String name;
-	private int lvl;
 	private Quality quality;
 	private BufferedImage img;
+	private boolean isMultiEffect;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private MultiEffect multiEffects;
 	
-	public Bullet(String name, int lvl, Quality quality, String path, ArrayList<Effect> effects) {
+	public Anima(String name, Quality quality, String path, ArrayList<Effect> effects) {
 		this.name = name;
-		this.lvl = lvl;
 		this.quality = quality;
 		this.img = setIcon(path);
+		this.isMultiEffect = false;
 		this.effects = effects;
+	}
+	
+	public Anima(String name, Quality quality, String path, MultiEffect effects) {
+		this.name = name;
+		this.quality = quality;
+		this.img = setIcon(path);
+		this.isMultiEffect = true;
+		this.multiEffects = effects;
 	}
 	
 	public String getName() {
 		return this.name;
-	}
-	
-	public int getLvl() {
-		return this.lvl;
 	}
 	
 	public Quality getQuality() {
@@ -47,6 +52,10 @@ public class Bullet {
 	
 	public BufferedImage getIcon() {
 		return this.img;
+	}
+	
+	public boolean isMultiEffect() {
+		return this.isMultiEffect;
 	}
 	
 	public Color getColor() {
@@ -61,6 +70,14 @@ public class Bullet {
 		return list;
 	}
 	
+	public void setEffects(int lvl) {
+		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
+	}
+	
+	public ArrayList<Effect> getMultiEffects(int lvl) {
+		return this.multiEffects.getEffectsFromLvl(lvl);
+	}
+	
 	private BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
@@ -72,7 +89,7 @@ public class Bullet {
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/bullet/" + path));
+			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/anima/" + path));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : " + path);
 		} catch (IllegalArgumentException e) {
@@ -98,24 +115,29 @@ public class Bullet {
 	}
 	
 	public static void loadData() {
-		ArrayList<Bullet> list = new ArrayList<Bullet>();
+		ArrayList<Anima> list = new ArrayList<Anima>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/bullet/bullet.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/anima/anima.txt")));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				String path =  lineSplit[lineSplit.length-1] + ".png";
 				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[2])];
+				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[3]));
-				for(int i = 0; i < Integer.parseInt(lineSplit[3]); i++)
-					effects.add(new Effect(lineSplit[i+4]));
-				
-				Bullet bullet = new Bullet(lineSplit[0], Integer.parseInt(lineSplit[1]), quality, path, effects);
-				list.add(bullet);
+				if(Integer.parseInt(lineSplit[2]) > -1) {
+					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
+					for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
+						effects.add(new Effect(lineSplit[j+3]));
+					
+					list.add(new Anima(lineSplit[0], quality, path, effects));
+				} else {
+					MultiEffect effects = MultiEffect.getFromCode(lineSplit[3]);
+					
+					list.add(new Anima(lineSplit[0], quality, path, effects));
+				}
 				
 				line = reader.readLine();
 			}
@@ -124,24 +146,19 @@ public class Bullet {
 			System.out.println("Error with " + Class.class.getName() + " class");
 		}
 		
-		Bullet.data = new Bullet[list.size()];
+		Anima.data = new Anima[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			data[i] = list.get(i);
 		}
 	}
 	
-	public static Bullet[] getPossibleBullet(int lvl) {
-		ArrayList<Bullet> result = new ArrayList<Bullet>();
-		
-		for(Bullet bullet : Bullet.data) {
-			if(bullet.getLvl() <= lvl) result.add(bullet);
+	public static Anima[] getData(int lvl) {
+		for(int i = 0; i < Anima.data.length; i++) {
+			if(Anima.data[i].isMultiEffect()) {
+				Anima.data[i].setEffects(lvl);
+			}
 		}
 		
-		Bullet[] cast = new Bullet[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
-		
-		return cast;
+		return Anima.data;
 	}
 }

@@ -1,43 +1,53 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.grandfantasia;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import fr.vlik.gfbuilder.Consts;
+import fr.vlik.gfbuilder.Effect;
+import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Quality;
+import fr.vlik.grandfantasia.Grade.GradeName;
+
 public final class Armor extends Equipment {
 	
+	public static Armor[][] data;
+	
 	private String setCode;
-	private boolean forReinca;
+	private boolean reinca;
 	private boolean isMultiEffect;
 	private MultiEffect multiEffects;
 	
 	public Armor(Armor armor) {
-		super(armor.getName(), armor.getIdClasses(), armor.getLvl(), armor.getQuality(), armor.getCanEnchant(), armor.getEffects(), armor.getBonusXP());
+		super(armor.getName(), armor.getGrades(), armor.getLvl(), armor.getQuality(), armor.isEnchantable(), armor.getEffects(), armor.getBonusXP());
 		
 		this.setCode = armor.getSetCode();
-		this.forReinca = armor.getForReinca();
+		this.reinca = armor.isReinca();
 		this.isMultiEffect = armor.isMultiEffect();
 		this.multiEffects = armor.getMultiEffect();
 		this.img = armor.getIcon();
 	}
 	
-	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, boolean forReinca, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
-		super(name, idClasses, lvl, quality, canEnchant, effects, bonusXP);
+	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.setCode = setCode;
-		this.forReinca = forReinca;
+		this.reinca = reinca;
 		this.isMultiEffect = false;
 		this.img = setIcon(iconPath, quality);
 	}
 	
-	public Armor(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, boolean forReinca, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
-		super(name, idClasses, lvl, quality, canEnchant, new ArrayList<Effect>(), bonusXP);
+	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
+		super(name, grades, lvl, quality, enchantable, new ArrayList<Effect>(), bonusXP);
 		
 		this.setCode = setCode;
-		this.forReinca = forReinca;
+		this.reinca = reinca;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
 		this.img = setIcon(iconPath, quality);
@@ -47,8 +57,8 @@ public final class Armor extends Equipment {
 		return this.setCode;
 	}
 	
-	public boolean getForReinca() {
-		return this.forReinca;
+	public boolean isReinca() {
+		return this.reinca;
 	}
 	
 	public boolean isMultiEffect() {
@@ -68,18 +78,18 @@ public final class Armor extends Equipment {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	protected BufferedImage setIcon(String path, int quality) {
+	protected BufferedImage setIcon(String path, Quality quality) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/resources/images/32-" + quality + ".png"));
+			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/resources/armors/" + path));
+			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/armors/" + path));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : " + path);
 		} catch (IllegalArgumentException e) {
@@ -100,33 +110,33 @@ public final class Armor extends Equipment {
 			int ordinal = e.getType().ordinal();
 			if(ordinal < 5) {
 				int doubleValue = idArmor == 1 || idArmor == 2 ? 2 : 1;
-				if(this.getQuality() == 6) {
+				if(this.quality == Quality.PURPLE) {
 					boolean found = false;
 					for(Effect get : this.effects) {
 						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(((this.getLvl()-1)/10 +2) * doubleValue);
+							get.addEnchantValue(((this.lvl-1)/10 +2) * doubleValue);
 							found = true;
 							break;
 						}
 					}
 					if(!found) {
-						e.addEnchantValue(((this.getLvl()-1)/10 +1) * doubleValue);
+						e.addEnchantValue(((this.lvl-1)/10 +1) * doubleValue);
 						this.effects.add(e);
 					}
-				} else if(this.getQuality() == 5) {
+				} else if(this.quality == Quality.GOLD) {
 					boolean found = false;
 					for(Effect get : this.effects) {
 						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(((this.getLvl()-1)/10 +1) * doubleValue);
+							get.addEnchantValue(((this.lvl-1)/10 +1) * doubleValue);
 							found = true;
 							break;
 						}
 					}
 					if(!found) {
-						e.addEnchantValue(((this.getLvl()-1)/10 +1) * doubleValue);
+						e.addEnchantValue(((this.lvl-1)/10 +1) * doubleValue);
 						this.effects.add(e);
 					}
-				} else if(this.getQuality() == 4) {
+				} else if(this.quality == Quality.ORANGE) {
 					
 				}
 			} else if(ordinal == 19) {
@@ -143,10 +153,116 @@ public final class Armor extends Equipment {
 		double coefFortif = Consts.coefFortif[value];
 		
 		for(Effect effect : this.effects) {
-			if(effect.isPercent()) continue;
-			if(!effect.getWithReinca()) continue;
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) continue;
+			if(effect.isPercent()) {
+				continue;
+			}
+			
+			if(!effect.getWithReinca()) {
+				continue;
+			}
+			
+			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+				continue;
+			}
+			
 			effect.addFortifValue(coefFortif);
 		}
+	}
+	
+	public static void loadData() {
+		String[] armorFile = { "casques", "torses", "pantalons", "gants", "bottes" };
+		
+		ArrayList<ArrayList<Armor>> list = new ArrayList<ArrayList<Armor>>();
+		
+		for(int i = 0; i < armorFile.length; i++) {
+			try {
+				BufferedReader reader = new BufferedReader(new InputStreamReader(
+						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/armors/" + armorFile[i] + "/" + armorFile[i] + ".txt")));
+				list.add(new ArrayList<Armor>());
+				String line = reader.readLine();
+				while (line != null) {
+					String[] lineSplit = line.split("/");
+					String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
+					
+					String classes[] = lineSplit[1].split(",");
+					GradeName[] grades = new GradeName[classes.length];
+					for(int j = 0; j < classes.length; j++) {
+						grades[j] = GradeName.values()[Integer.parseInt(classes[j])];
+					}
+					
+					Quality quality = Quality.values()[Integer.parseInt(lineSplit[4])];
+					
+					String[] effectSplit = lineSplit[7].split(",");
+					
+					assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
+							: armorFile[i] + " line " + (list.get(i+1).size() + 1);
+					
+					ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
+						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+					
+					if(Integer.parseInt(effectSplit[0]) > -1) {
+						ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+						for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
+							effects.add(new Effect(lineSplit[j+8]));
+						
+						Armor armor = new Armor(
+								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+								lineSplit[3], path, effects, bonusXP
+								);
+						list.get(i).add(armor);
+					} else {
+						MultiEffect effects = MultiEffect.getFromCode(lineSplit[8]);
+						
+						Armor armor = new Armor(
+								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+								lineSplit[3], path, effects, bonusXP
+								);
+						list.get(i).add(armor);
+					}
+					
+					line = reader.readLine();
+				}
+				reader.close();
+			} catch (IOException e) {
+				System.out.println("Error with " + Class.class.getName() + " class");
+			}
+		}
+		
+		Armor.data = new Armor[list.size()][];
+		for(int i = 0; i < data.length; i++) {
+			Armor[] armorPiece = new Armor[list.get(i).size()];
+			for(int j = 0; j < list.get(i).size(); j++) {
+				armorPiece[j] = list.get(i).get(j);				
+			}
+			Armor.data[i] = armorPiece;
+		}
+	}
+	
+	public static Armor[] getPossibleArmor(int idList, GradeName grade, int lvl, boolean reinca) {
+		ArrayList<Armor> result = new ArrayList<Armor>();
+		
+		for(Armor armor : Armor.data[idList]) {
+			if(armor.getLvl() <= lvl && armor.containGrade(grade)) {
+				if(!armor.isReinca()) {
+					if(armor.isMultiEffect()) {
+						armor.setEffects(lvl);
+					}
+					result.add(armor);
+				} else {
+					if(reinca) {
+						if(armor.isMultiEffect()) {
+							armor.setEffects(lvl);
+						}
+						result.add(armor);
+					}
+				}
+			}
+		}
+		
+		Armor[] cast = new Armor[result.size()];
+		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		
+		return cast;
 	}
 }

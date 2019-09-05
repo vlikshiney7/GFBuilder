@@ -1,32 +1,37 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.grandfantasia;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public abstract class Equipment {
+import fr.vlik.gfbuilder.Consts;
+import fr.vlik.gfbuilder.Effect;
+import fr.vlik.gfbuilder.Quality;
+import fr.vlik.grandfantasia.Grade.GradeName;
 
-	private String name;
-	private int idClasses[];
-	private int lvl;
-	private int quality;
-	private boolean canEnchant;
+public abstract class Equipment {
+	
+	protected String name;
+	protected GradeName[] grades;
+	protected int lvl;
+	protected Quality quality;
+	protected boolean enchantable;
 	protected BufferedImage img;
 	protected ArrayList<Effect> effects = new ArrayList<Effect>();
 	protected ArrayList<Effect> bonusXP = new ArrayList<Effect>();
 	
 	public Equipment() {
 		this.name = "Rien";
-		this.idClasses = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 };
+		this.grades = new GradeName[] {	GradeName.NONE };
 		this.lvl = 0;
 	}
 	
-	public Equipment(String name, int[] idClasses, int lvl, int quality, boolean canEnchant, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Equipment(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		this.name = name;
-		this.idClasses = idClasses;
+		this.grades = grades;
 		this.lvl = lvl;
 		this.quality = quality;
-		this.canEnchant = canEnchant;
+		this.enchantable = enchantable;
 		this.effects = effects;
 		this.bonusXP = bonusXP;
 	}
@@ -35,24 +40,24 @@ public abstract class Equipment {
 		return this.name;
 	}
 	
-	public int[] getIdClasses() {
-		return this.idClasses;
+	public GradeName[] getGrades() {
+		return this.grades;
 	}
 	
 	public int getLvl() {
 		return this.lvl;
 	}
 	
-	public int getQuality() {
+	public Quality getQuality() {
 		return this.quality;
 	}
 	
-	public boolean getCanEnchant() {
-		return this.canEnchant;
+	public boolean isEnchantable() {
+		return this.enchantable;
 	}
 	
 	public Color getColor() {
-		return Consts.itemColor[this.quality];
+		return Consts.itemColor[this.quality.index];
 	}
 	
 	public BufferedImage getIcon() {
@@ -75,21 +80,38 @@ public abstract class Equipment {
 		return list;
 	}
 	
-	public boolean containIdClass(int idClass) {
-		for(int element : idClasses) {
-			if(element == idClass) return true;
+	public boolean containGrade(GradeName grade) {
+		if(grade == GradeName.NONE) {
+			return true;
 		}
+		
+		for(GradeName element : grades) {
+			if(element == grade) {
+				return true;
+			}
+		}
+		
 		return false;
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
-		boolean b = false;
-		if (obj instanceof Equipment) {
-			Equipment equip = (Equipment) obj;
-			b = this.name.equals(equip.name)
-			 && this.lvl == equip.lvl;
+		if(this == obj) {
+			return true;
 		}
+		
+		if(obj == null) {
+			return false;
+		}
+		
+		if (!(obj instanceof Equipment)) {
+			return false;
+		}
+		
+		Equipment equip = (Equipment) obj;
+		boolean b = this.name.equals(equip.name)
+				&& this.lvl == equip.lvl;
+		
 		return b;
 	}
 	
@@ -112,5 +134,5 @@ public abstract class Equipment {
 		return "<html>" + tooltip + "</html>";
 	}
 	
-	abstract protected BufferedImage setIcon(String path, int quality);
+	abstract protected BufferedImage setIcon(String path, Quality quality);
 }

@@ -1,8 +1,18 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.grandfantasia;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import fr.vlik.gfbuilder.Effect;
+import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Effect.TypeEffect;
+import fr.vlik.grandfantasia.Weapon.WeaponType;
+
 public class MultiEffect {
+	
+	private static MultiEffect[] data;
 	
 	private String code;
 	private int lvlMin;
@@ -49,5 +59,64 @@ public class MultiEffect {
 			list.add(new Effect(effect));
 		}
 		return list;
+	}
+	
+	public static void loadData() {
+		ArrayList<MultiEffect> list = new ArrayList<MultiEffect>();
+		
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/multiEffect.txt")));
+			String line = reader.readLine();
+			while (line != null) {
+				String[] lineInfoSplit = line.split("/");
+				ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>(Integer.parseInt(lineInfoSplit[3]));
+				
+				for(int i = 0; i < Integer.parseInt(lineInfoSplit[3]); i++) {
+					effects.add(new ArrayList<Effect>(Integer.parseInt(lineInfoSplit[1])));
+				}
+				
+				for(int i = 0; i < Integer.parseInt(lineInfoSplit[1]); i++) {
+					line = reader.readLine();
+					
+					String[] lineSplit = line.split("/");
+					TypeEffect typeEffect = TypeEffect.valueOf(lineSplit[0]);
+					boolean isPercent = Boolean.parseBoolean(lineSplit[1]);
+					String[] values = lineSplit[2].split(",");
+					boolean isReinca = Boolean.parseBoolean(lineSplit[3]);
+					
+					WeaponType withWeapon;
+					try {
+						withWeapon = WeaponType.values()[Integer.parseInt(lineSplit[4])];
+					} catch (ArrayIndexOutOfBoundsException e) {
+						withWeapon = WeaponType.NONE;
+					}
+					
+					for(int j = 0; j < values.length; j++) {
+						effects.get(j).add(new Effect(typeEffect, isPercent, Double.parseDouble(values[j]), isReinca, withWeapon, null));
+					}
+				}
+				
+				list.add(new MultiEffect(lineInfoSplit[0], Integer.parseInt(lineInfoSplit[2]), effects));
+				
+				line = reader.readLine();
+			}
+			reader.close();
+		} catch (IOException e) {
+			System.out.println("Error with " + Class.class.getName() + " class");
+		}
+		
+		MultiEffect.data = new MultiEffect[list.size()];
+		for(int i = 0; i < data.length; i++) {
+			data[i] = list.get(i);
+		}
+	}
+	
+	public static MultiEffect getFromCode(String code) {
+		for(MultiEffect multi : MultiEffect.data) {
+			if(multi.getCode().equals(code)) return multi;
+		}
+		
+		return null;
 	}
 }

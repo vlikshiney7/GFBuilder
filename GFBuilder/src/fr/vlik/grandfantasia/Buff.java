@@ -8,27 +8,28 @@ import java.util.ArrayList;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
 
-public class Yggdrasil {
+public class Buff {
 	
-	private static Yggdrasil[] data;
-
+	private static Buff[] data;
+	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
-	public Yggdrasil(String name, String[] effects) {
+	public Buff(String name, ArrayList<Effect> effects) {
 		this.name = name;
-		
-		for(int i = 0; i < effects.length; i++) {
-			this.effects.add(new Effect(effects[i]));
-		}
+		this.effects = effects;
 	}
-
+	
 	public String getName() {
-		return name;
+		return this.name;
 	}
-
+	
 	public ArrayList<Effect> getEffects() {
-		return effects;
+		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
+		for(Effect effect : this.effects) {
+			list.add(new Effect(effect));
+		}
+		return list;
 	}
 	
 	public String getTooltip() {
@@ -42,18 +43,20 @@ public class Yggdrasil {
 	}
 	
 	public static void loadData() {
-		ArrayList<Yggdrasil> list = new ArrayList<Yggdrasil>();
+		ArrayList<Buff> list = new ArrayList<Buff>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/yggdrasil.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/sprites/isle.txt")));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String[] effects = new String[Integer.parseInt(lineSplit[1])];
-				for(int i = 0; i < effects.length; i++) effects[i] = lineSplit[i+2];
 				
-				list.add(new Yggdrasil(lineSplit[0], effects));
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
+				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
+					effects.add(new Effect(lineSplit[j+2]));
+				
+				list.add(new Buff(lineSplit[0], effects));
 				
 				line = reader.readLine();
 			}
@@ -62,13 +65,13 @@ public class Yggdrasil {
 			System.out.println("Error with " + Class.class.getName() + " class");
 		}
 		
-		Yggdrasil.data = new Yggdrasil[list.size()];
+		Buff.data = new Buff[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			data[i] = list.get(i);
 		}
 	}
 	
-	public static Yggdrasil[] getData() {
-		return Yggdrasil.data;
+	public static Buff[] getData() {
+		return Buff.data;
 	}
 }

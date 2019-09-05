@@ -1,7 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,27 +8,42 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Quality;
 
-public class Bullet {
+public class Blason {
 	
-	private static Bullet[] data;
+	private static Blason[] data;
 	
 	private String name;
 	private int lvl;
-	private Quality quality;
+	private BlasonType type;
 	private BufferedImage img;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
-	public Bullet(String name, int lvl, Quality quality, String path, ArrayList<Effect> effects) {
+	public Blason() {
+		this.name = "Rien";
+		this.lvl = 0;
+		this.type = BlasonType.OFFENSIVE;
+		this.img = setIcon("32-7.png");
+	}
+	
+	public Blason(String name, int lvl, BlasonType type, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
-		this.quality = quality;
-		this.img = setIcon(path);
+		this.type = type;
+		this.img = setIcon(type == BlasonType.OFFENSIVE ? "atk.png" : "def.png");
 		this.effects = effects;
+	}
+	
+	public static enum BlasonType {
+		OFFENSIVE(0), DEFENSIVE(1);
+		
+		public final int type;
+		 
+	    private BlasonType(int type) {
+	        this.type = type;
+	    }
 	}
 	
 	public String getName() {
@@ -41,16 +54,12 @@ public class Bullet {
 		return this.lvl;
 	}
 	
-	public Quality getQuality() {
-		return this.quality;
+	public BlasonType getType() {
+		return this.type;
 	}
 	
 	public BufferedImage getIcon() {
 		return this.img;
-	}
-	
-	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -62,29 +71,17 @@ public class Bullet {
 	}
 	
 	private BufferedImage setIcon(String path) {
-		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/bullet/" + path));
+			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/sprites/" + path));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		return object;
 	}
 	
 	public String getTooltip() {
@@ -98,24 +95,22 @@ public class Bullet {
 	}
 	
 	public static void loadData() {
-		ArrayList<Bullet> list = new ArrayList<Bullet>();
+		ArrayList<Blason> list = new ArrayList<Blason>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/bullet/bullet.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/sprites/blasons.txt")));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
 				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[2])];
+				BlasonType type = BlasonType.values()[Integer.parseInt(lineSplit[2])];
 				
 				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[3]));
-				for(int i = 0; i < Integer.parseInt(lineSplit[3]); i++)
-					effects.add(new Effect(lineSplit[i+4]));
+				for(int j = 0; j < Integer.parseInt(lineSplit[3]); j++)
+					effects.add(new Effect(lineSplit[j+4]));
 				
-				Bullet bullet = new Bullet(lineSplit[0], Integer.parseInt(lineSplit[1]), quality, path, effects);
-				list.add(bullet);
+				list.add(new Blason(lineSplit[0], Integer.parseInt(lineSplit[1]), type, effects));
 				
 				line = reader.readLine();
 			}
@@ -124,20 +119,24 @@ public class Bullet {
 			System.out.println("Error with " + Class.class.getName() + " class");
 		}
 		
-		Bullet.data = new Bullet[list.size()];
+		Blason.data = new Blason[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			data[i] = list.get(i);
 		}
 	}
 	
-	public static Bullet[] getPossibleBullet(int lvl) {
-		ArrayList<Bullet> result = new ArrayList<Bullet>();
+	public static Blason[] getPossibleBlason(int lvl, BlasonType type) {
+		ArrayList<Blason> result = new ArrayList<Blason>();
 		
-		for(Bullet bullet : Bullet.data) {
-			if(bullet.getLvl() <= lvl) result.add(bullet);
+		result.add(new Blason());
+		
+		for(Blason blason : Blason.data) {
+			if(blason.getLvl() <= lvl && blason.getType() == type) {
+				result.add(blason);
+			}
 		}
 		
-		Bullet[] cast = new Bullet[result.size()];
+		Blason[] cast = new Blason[result.size()];
 		for(int i = 0; i < cast.length; i++) {
 			cast[i] = result.get(i);
 		}

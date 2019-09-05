@@ -15,19 +15,17 @@ import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Quality;
 
-public class Bullet {
+public class Bague {
 	
-	private static Bullet[] data;
+	private static Bague[] data;
 	
 	private String name;
-	private int lvl;
 	private Quality quality;
 	private BufferedImage img;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
-	public Bullet(String name, int lvl, Quality quality, String path, ArrayList<Effect> effects) {
+	public Bague(String name, Quality quality, String path, ArrayList<Effect> effects) {
 		this.name = name;
-		this.lvl = lvl;
 		this.quality = quality;
 		this.img = setIcon(path);
 		this.effects = effects;
@@ -35,10 +33,6 @@ public class Bullet {
 	
 	public String getName() {
 		return this.name;
-	}
-	
-	public int getLvl() {
-		return this.lvl;
 	}
 	
 	public Quality getQuality() {
@@ -72,7 +66,7 @@ public class Bullet {
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/bullet/" + path));
+			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/bague/" + path));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : " + path);
 		} catch (IllegalArgumentException e) {
@@ -98,24 +92,23 @@ public class Bullet {
 	}
 	
 	public static void loadData() {
-		ArrayList<Bullet> list = new ArrayList<Bullet>();
+		ArrayList<Bague> list = new ArrayList<Bague>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/bullet/bullet.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/bague/bague.txt")));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				String path =  lineSplit[lineSplit.length-1] + ".png";
 				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[2])];
+				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[3]));
-				for(int i = 0; i < Integer.parseInt(lineSplit[3]); i++)
-					effects.add(new Effect(lineSplit[i+4]));
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
+				for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
+					effects.add(new Effect(lineSplit[j+3]));
 				
-				Bullet bullet = new Bullet(lineSplit[0], Integer.parseInt(lineSplit[1]), quality, path, effects);
-				list.add(bullet);
+				list.add(new Bague(lineSplit[0], quality, path, effects));
 				
 				line = reader.readLine();
 			}
@@ -124,24 +117,13 @@ public class Bullet {
 			System.out.println("Error with " + Class.class.getName() + " class");
 		}
 		
-		Bullet.data = new Bullet[list.size()];
+		Bague.data = new Bague[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			data[i] = list.get(i);
 		}
 	}
 	
-	public static Bullet[] getPossibleBullet(int lvl) {
-		ArrayList<Bullet> result = new ArrayList<Bullet>();
-		
-		for(Bullet bullet : Bullet.data) {
-			if(bullet.getLvl() <= lvl) result.add(bullet);
-		}
-		
-		Bullet[] cast = new Bullet[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
-		
-		return cast;
+	public static Bague[] getData() {
+		return Bague.data;
 	}
 }

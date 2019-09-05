@@ -9,27 +9,27 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
-import fr.vlik.gfbuilder.Anima;
-import fr.vlik.gfbuilder.Archive;
-import fr.vlik.gfbuilder.Bague;
-import fr.vlik.gfbuilder.Blason;
-import fr.vlik.gfbuilder.Buff;
-import fr.vlik.gfbuilder.Bullet;
 import fr.vlik.gfbuilder.Consts;
-import fr.vlik.gfbuilder.Costume;
-import fr.vlik.gfbuilder.Enchantment;
-import fr.vlik.gfbuilder.Equipment;
-import fr.vlik.gfbuilder.Genki;
-import fr.vlik.gfbuilder.Grade;
-import fr.vlik.gfbuilder.GuildBuff;
-import fr.vlik.gfbuilder.Mount;
-import fr.vlik.gfbuilder.Nucleus;
-import fr.vlik.gfbuilder.Pearl;
-import fr.vlik.gfbuilder.ProSkill;
-import fr.vlik.gfbuilder.Skill;
-import fr.vlik.gfbuilder.Talent;
-import fr.vlik.gfbuilder.Title;
-import fr.vlik.gfbuilder.Yggdrasil;
+import fr.vlik.grandfantasia.Anima;
+import fr.vlik.grandfantasia.Archive;
+import fr.vlik.grandfantasia.Bague;
+import fr.vlik.grandfantasia.Blason;
+import fr.vlik.grandfantasia.Buff;
+import fr.vlik.grandfantasia.Bullet;
+import fr.vlik.grandfantasia.Costume;
+import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Equipment;
+import fr.vlik.grandfantasia.Genki;
+import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.GuildBuff;
+import fr.vlik.grandfantasia.Mount;
+import fr.vlik.grandfantasia.Nucleus;
+import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.ProSkill;
+import fr.vlik.grandfantasia.Skill;
+import fr.vlik.grandfantasia.Talent;
+import fr.vlik.grandfantasia.Title;
+import fr.vlik.grandfantasia.Yggdrasil;
 
 public class CustomListCellRenderer implements ListCellRenderer<Object> {
 	protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer();
@@ -176,7 +176,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			Mount mount = (Mount) value;
 			renderer.setIcon(new ImageIcon(mount.getIcon()));
 			renderer.setText("Lvl " + mount.getLvl() + " - " + mount.getName());
-			renderer.setForeground(Consts.itemColor[4]);
+			renderer.setForeground(mount.getName().equals("Rien") ? Consts.itemColor[0] : Consts.itemColor[4]);
 			renderer.setToolTipText(mount.getTooltip());
 		} else if(value instanceof Bullet) {
 			Bullet bullet = (Bullet) value;

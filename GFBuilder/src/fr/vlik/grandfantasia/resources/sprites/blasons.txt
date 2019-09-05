@@ -1,5 +1,5 @@
-Valse des Lutins 6/100/true/2/AtkM,true,16/Toucher,true,10
-Symphonie de Mur de Lumière 2/100/false/2/DefM,true,16/PV,true,5
-Symphonie du Titan 2/100/false/2/DefP,true,16/PV,true,5
-Furie de la Magie 2/90/true/2/AtkM,true,6,false,12/ReducP,false,6,false,12
-Valse de la Reine de Glace 4/80/false/2/INT,false,35/Glace,false,21
+Valse des Lutins 6/100/0/2/AtkM,true,16/Toucher,true,10
+Symphonie de Mur de Lumière 2/100/1/2/DefM,true,16/PV,true,5
+Symphonie du Titan 2/100/1/2/DefP,true,16/PV,true,5
+Furie de la Magie 2/90/0/2/AtkM,true,6,false,12/ReducP,false,6,false,12
+Valse de la Reine de Glace 4/80/1/2/INT,false,35/Glace,false,21

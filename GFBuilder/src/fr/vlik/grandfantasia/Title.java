@@ -1,21 +1,32 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.grandfantasia;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import fr.vlik.gfbuilder.Consts;
+import fr.vlik.gfbuilder.Effect;
+import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Quality;
+import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Title {
 
+	private static Title[] data;
+	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
-	private int quality;
+	private Quality quality;
 	private int lvl;
-	private int idClass;
+	private GradeName grade;
 	
-	public Title(String name, int quality, int lvl, int idClass, String[] effects) {
+	public Title(String name, Quality quality, int lvl, GradeName grade, String[] effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.quality = quality;
-		this.idClass = idClass;
+		this.grade = grade;
 		
 		for(int i = 0; i < effects.length; i++) {
 			this.effects.add(new Effect(effects[i]));
@@ -30,7 +41,7 @@ public class Title {
 		return this.effects;
 	}
 
-	public int getQuality() {
+	public Quality getQuality() {
 		return this.quality;
 	}
 	
@@ -38,12 +49,12 @@ public class Title {
 		return this.lvl;
 	}
 	
-	public int getIdClass() {
-		return this.idClass;
+	public GradeName getGrade() {
+		return this.grade;
 	}
 	
 	public Color getColor() {
-		return Consts.titleColor[this.quality];
+		return Consts.titleColor[this.quality.index];
 	}
 	
 	public String getTooltip() {
@@ -54,5 +65,80 @@ public class Title {
 		}
 		
 		return "<html>" + tooltip + "</html>";
+	}
+	
+	public static void loadData() {
+		ArrayList<Title> list = new ArrayList<Title>();
+		
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/title.txt")));
+			String line = reader.readLine();
+			while (line != null) {
+				String[] lineSplit = line.split("/");
+				String[] effects = new String[Integer.parseInt(lineSplit[4])];
+				
+				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
+				GradeName grade;
+				try {
+					grade = GradeName.values()[Integer.parseInt(lineSplit[3])];
+				} catch (ArrayIndexOutOfBoundsException e) {
+					grade = GradeName.NONE;
+				}
+				
+				for(int i = 0; i < effects.length; i++) effects[i] = lineSplit[i+5];
+				
+				list.add(new Title(lineSplit[0], quality, Integer.parseInt(lineSplit[2]), grade, effects));
+				
+				line = reader.readLine();
+			}
+			reader.close();
+		} catch (IOException e) {
+			System.out.println("Error with " + Class.class.getName() + " class");
+		}
+		
+		Title.data = new Title[list.size()];
+		for(int i = 0; i < data.length; i++) {
+			data[i] = list.get(i);
+		}
+	}
+	
+	public static Title[] getPossibleData(GradeName grade, int lvl, boolean reinca) {
+		ArrayList<Title> result = new ArrayList<Title>();
+		
+		if(reinca) {
+			lvl += 100;
+			for(int i = 0; i < Title.data.length; i++) {
+				if(Title.data[i].getLvl() <= lvl
+						&& (Title.data[i].getGrade() == GradeName.NONE || Title.data[i].getGrade() == grade)) {
+					
+					result.add(Title.data[i]);
+				}
+			}
+		} else {
+			for(int i = 0; i < Title.data.length; i++) {
+				if(Title.data[i].getQuality() == Quality.RED) {
+					continue;
+				}
+				
+				if(Title.data[i].getGrade() == GradeName.NONE
+						|| Title.data[i].getGrade() == grade) {
+					
+					if(Title.data[i].getLvl() <= lvl) {
+						result.add(Title.data[i]);
+					} else if(Title.data[i].getLvl() > 100
+							&& Title.data[i].getLvl()-100 <= lvl)
+						
+						result.add(Title.data[i]);
+				}
+			}
+		}
+		
+		Title[] cast = new Title[result.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = result.get(i);
+		}
+		
+		return cast;
 	}
 }

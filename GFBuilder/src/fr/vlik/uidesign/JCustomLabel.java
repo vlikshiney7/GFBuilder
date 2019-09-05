@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import fr.vlik.gfbuilder.CombiTalent;
 import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.Energy;
-import fr.vlik.gfbuilder.GuildBuff;
-import fr.vlik.gfbuilder.Nucleus;
-import fr.vlik.gfbuilder.Skill;
+import fr.vlik.grandfantasia.CombiTalent;
+import fr.vlik.grandfantasia.Energy;
+import fr.vlik.grandfantasia.GuildBuff;
+import fr.vlik.grandfantasia.Nucleus;
+import fr.vlik.grandfantasia.Skill;
 
 public class JCustomLabel extends JLabel {
 	

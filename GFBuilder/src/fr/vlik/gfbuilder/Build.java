@@ -3,18 +3,19 @@ package fr.vlik.gfbuilder;
 import java.util.ArrayList;
 
 import fr.vlik.gfbuilder.Effect.TypeEffect;
+import fr.vlik.grandfantasia.Weapon.WeaponType;
 
 public class Build {
 	
 	private double coefReinca;
-	private int[] weaponType;
+	private WeaponType[] weaponType;
 	
 	private ArrayList<Effect> effectPoint = new ArrayList<Effect>();
 	private ArrayList<Effect> effectPercent = new ArrayList<Effect>();
 	private ArrayList<Effect> effectAdditional = new ArrayList<Effect>();
 	private ArrayList<Effect> effectConvert = new ArrayList<Effect>();
 	
-	public Build(double coefReinca, int[] weaponType) {
+	public Build(double coefReinca, WeaponType[] weaponType) {
 		this.coefReinca = coefReinca;
 		this.weaponType = weaponType;
 	}
@@ -23,7 +24,7 @@ public class Build {
 		return this.coefReinca;
 	}
 	
-	public int[] getWeaponType() {
+	public WeaponType[] getWeaponType() {
 		return this.weaponType;
 	}
 	
@@ -92,12 +93,13 @@ public class Build {
 		this.effectConvert.add(e);
 	}
 	
-	private boolean containIdWeapon(int weaponType) {
+	private boolean containIdWeapon(WeaponType type) {
 		boolean result = false;
-		if(weaponType == -1) return true;
-		else {
-			for(int currentType : this.weaponType) {
-				if(weaponType == currentType) {
+		if(type == WeaponType.NONE) {
+			return true;
+		} else {
+			for(WeaponType currentType : this.weaponType) {
+				if(type == currentType) {
 					result = true;
 					break;
 				}
