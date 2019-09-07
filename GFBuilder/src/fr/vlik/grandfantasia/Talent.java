@@ -15,6 +15,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public final class Talent {
 	
 	private static Talent[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int[] lvl;
@@ -67,7 +70,7 @@ public final class Talent {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/talent/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -121,7 +124,7 @@ public final class Talent {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Talent.class.getClass().getSimpleName() + " class");
 		}
 		
 		Talent.data = new Talent[list.size()][];

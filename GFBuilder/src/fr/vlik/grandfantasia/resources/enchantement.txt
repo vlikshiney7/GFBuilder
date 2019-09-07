@@ -1,4 +1,4 @@
-du Sacré/true/1/Sacre,false,3
+du SacrÃ©/true/1/Sacre,false,3
 de l'Ombre/true/1/Ombre,false,3
 de la Foudre/true/1/Foudre,false,3
 du Feu/true/1/Feu,false,3
@@ -11,22 +11,21 @@ de la Surveillance/true/1/MEN,false,-2
 de la Mort/true/1/DCCP,false,8
 des Mortels/true/1/TCCP,false,2
 de l'Amplification/true/1/DCCM,false,8
-d'Explosion énergétique/true/1/TCCM,false,2
-d'Absorption énergétique/true/0
+d'Explosion Ã‰nergÃ©tique/true/1/TCCM,false,2
+d'Absorption Ã‰nergÃ©tique/true/0
 de Soif Sanguine/true/1/RegenCB,false,3
-de Tempérance/true/1/CostComp,false,-6
+de TempÃ©rance/true/1/CostComp,false,-6
 de Coordination/true/2/RTCCP,false,3/RTCCM,false,3
-de la Détermination/true/2/RDCCP,false,10/RDCCM,false,10
+de la DÃ©termination/true/2/RDCCP,false,10/RDCCM,false,10
 du Bonheur Pur/true/2/ReducP,false,1/ReducM,false,1
-d'Adversité/true/1/Reflect,false,10
-Sans Tâche/true/1/VitAtk,false,4
-de Réflexe/true/1/VitAtkD,false,5
+d'Adversitï¿½/true/1/Reflect,false,10
+Sans TÃ¢che/true/1/VitAtk,false,4
+de RÃ©flexe/true/1/VitAtkD,false,5
 de Parole/true/1/VitComp,false,3
 de Force/false/1/FCE,false,0
 de Vitesse/false/1/VIT,false,0
 d'Intelligence/false/1/INT,false,0
-de Volonté/false/1/VOL,false,0
-d'Agilité/false/1/AGI,false,0
-de Précision/false/1/Toucher,true,0
+de VolontÃ©/false/1/VOL,false,0
+d'AgilitÃ©/false/1/AGI,false,0
+de PrÃ©cision/false/1/Toucher,true,0
 de Parade/false/1/Parade,false,0
-/true/0

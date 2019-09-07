@@ -1,10 +1,10 @@
 Rien/0/0/null
-Anima de Rétablissement/4/2/Toucher,true,8/HealD,false,10/ora0
-Anima de Rapidité/4/3/Toucher,true,8/VitAtk,false,10/VitComp,false,10/ora1
+Anima de RÃ©tablissement/4/2/Toucher,true,8/HealD,false,10/ora0
+Anima de RapiditÃ©/4/3/Toucher,true,8/VitAtk,false,10/VitComp,false,10/ora1
 Anima de Polyvalence/4/-1/anima2/ora2
 Anima de Sort/4/-1/anima3/ora3
-Anima d'Exécution/4/-1/anima4/ora4
+Anima d'ExÃ©cution/4/-1/anima4/ora4
 Anima de Courage/4/-1/anima5/ora5
-Anima de Discrétion/4/-1/anima6/ora6
-Anima de Précision/4/-1/anima7/ora7
+Anima de DiscrÃ©tion/4/-1/anima6/ora6
+Anima de PrÃ©cision/4/-1/anima7/ora7
 Anima multi-noyaux/4/-1/anima8/ora8

@@ -13,6 +13,9 @@ import fr.vlik.grandfantasia.Weapon.WeaponType;
 public class MultiEffect {
 	
 	private static MultiEffect[] data;
+	static {
+		loadData();
+	}
 	
 	private String code;
 	private int lvlMin;
@@ -103,7 +106,7 @@ public class MultiEffect {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + MultiEffect.class.getClass().getSimpleName() + " class");
 		}
 		
 		MultiEffect.data = new MultiEffect[list.size()];

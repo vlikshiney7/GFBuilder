@@ -18,6 +18,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public final class Armor extends Equipment {
 	
 	public static Armor[][] data;
+	static {
+		loadData();
+	}
 	
 	private String setCode;
 	private boolean reinca;
@@ -225,7 +228,7 @@ public final class Armor extends Equipment {
 				}
 				reader.close();
 			} catch (IOException e) {
-				System.out.println("Error with " + Class.class.getName() + " class");
+				System.out.println("Error with " + Armor.class.getClass().getSimpleName() + " class");
 			}
 		}
 		

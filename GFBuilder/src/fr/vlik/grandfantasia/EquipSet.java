@@ -12,6 +12,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class EquipSet {
 	
 	private static EquipSet[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private String code;
@@ -146,7 +149,7 @@ public class EquipSet {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + EquipSet.class.getClass().getSimpleName() + " class");
 		}
 		
 		EquipSet.data = new EquipSet[list.size()];

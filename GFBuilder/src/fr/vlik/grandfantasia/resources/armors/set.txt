@@ -1,3 +1,3 @@
 Rien/-1/0,0,0
-Enchantée d'Elminster/100gold6/3,1,1/INT,false,60/PM,true,10/AtkM,true,15,false,12/MEN,false,-18/DCCM,false,20
-Fourvoyé/100pvp6/1,4,3/INT,false,60/RTCCP,false,35/RTCCM,false,35/Toucher,true,35/ESQ,false,35/VitComp,false,40/ReducP,false,30/PeneM,false,15
+EnchantÃ©e d'Elminster/100gold6/3,1,1/INT,false,60/PM,true,10/AtkM,true,15,false,12/MEN,false,-18/DCCM,false,20
+FourvoyÃ©/100pvp6/1,4,3/INT,false,60/RTCCP,false,35/RTCCM,false,35/Toucher,true,35/ESQ,false,35/VitComp,false,40/ReducP,false,30/PeneM,false,15

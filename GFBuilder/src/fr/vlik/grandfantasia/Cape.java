@@ -17,6 +17,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public final class Cape extends Equipment {
 	
 	private static Cape[] data;
+	static {
+		loadData();
+	}
 
 	private String setCode;
 	
@@ -129,7 +132,7 @@ public final class Cape extends Equipment {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Cape.class.getClass().getSimpleName() + " class");
 		}
 		
 		Cape.data = new Cape[list.size()];

@@ -148,36 +148,36 @@
 /0,0,0/0/5-22
 /0,0,0/0/0-17
 
-Explosion Magique Enchaînée/6,14,31,61,86,91/1/TCCM,false,1/TCCM,false,2/TCCM,false,3/TCCM,false,4/TCCM,false,5/TCCM,false,6/6-0
-Spécialité Défense Magique/6,14,31,61,86,91/1/ReducM,false,10/ReducM,false,12/ReducM,false,14/ReducM,false,16/ReducM,false,18/ReducM,false,20/4-1
-Spécialité Bâton/6,14,31,61,86,91/2/AtkM,true,7,false,12/DCCM,false,10/AtkM,true,9,false,12/DCCM,false,14/AtkM,true,11,false,12/DCCM,false,18/AtkM,true,13,false,12/DCCM,false,20/AtkM,true,15,false,12/DCCM,false,22/AtkM,true,18,false,12/DCCM,false,24/4-2
-Énergie Abondante/16,28,46,66,86,91/2/PM,true,8/RTCCM,false,5/PM,true,9/RTCCM,false,8/PM,true,10/RTCCM,false,11/PM,true,11/RTCCM,false,13/PM,true,12/RTCCM,false,15/PM,true,13/RTCCM,false,17/4-4
-Spécialité Attaque Magique/16,28,46,66,86,91/1/DegM,false,10/DegM,false,12/DegM,false,15/DegM,false,17/DegM,false,19/DegM,false,21/6-4
+Explosion Magique EnchaÃ®nÃ©e/6,14,31,61,86,91/1/TCCM,false,1/TCCM,false,2/TCCM,false,3/TCCM,false,4/TCCM,false,5/TCCM,false,6/6-0
+SpÃ©cialitÃ© DÃ©fense Magique/6,14,31,61,86,91/1/ReducM,false,10/ReducM,false,12/ReducM,false,14/ReducM,false,16/ReducM,false,18/ReducM,false,20/4-1
+SpÃ©cialitÃ© BÃ¢ton/6,14,31,61,86,91/2/AtkM,true,7,false,12/DCCM,false,10/AtkM,true,9,false,12/DCCM,false,14/AtkM,true,11,false,12/DCCM,false,18/AtkM,true,13,false,12/DCCM,false,20/AtkM,true,15,false,12/DCCM,false,22/AtkM,true,18,false,12/DCCM,false,24/4-2
+Ã‰nergie Abondante/16,28,46,66,86,91/2/PM,true,8/RTCCM,false,5/PM,true,9/RTCCM,false,8/PM,true,10/RTCCM,false,11/PM,true,11/RTCCM,false,13/PM,true,12/RTCCM,false,15/PM,true,13/RTCCM,false,17/4-4
+SpÃ©cialitÃ© Attaque Magique/16,28,46,66,86,91/1/DegM,false,10/DegM,false,12/DegM,false,15/DegM,false,17/DegM,false,19/DegM,false,21/6-4
 Guide Magique/16,28,46,66,86,91/1/CostComp,false,-10/CostComp,false,-25/CostComp,false,-40/CostComp,false,-50/CostComp,false,-60/CostComp,false,-70/4-5
-Défense au Bâton/31,41,50,69,86,91/2/ReducP,false,8,false,12/ESQ,false,2/ReducP,false,12,false,12/ESQ,false,4/ReducP,false,18,false,12/ESQ,false,6/ReducP,false,20,false,12/ESQ,false,8/ReducP,false,22,false,12/ESQ,false,10/ReducP,false,24,false,12/ESQ,false,12/5-8
+DÃ©fense au BÃ¢ton/31,41,50,69,86,91/2/ReducP,false,8,false,12/ESQ,false,2/ReducP,false,12,false,12/ESQ,false,4/ReducP,false,18,false,12/ESQ,false,6/ReducP,false,20,false,12/ESQ,false,8/ReducP,false,22,false,12/ESQ,false,10/ReducP,false,24,false,12/ESQ,false,12/5-8
 Croissance Explosive Magique/31,41,50,69,86,91/2/DCCM,false,10/TCCM,false,1/DCCM,false,13/TCCM,false,2/DCCM,false,16/TCCM,false,3/DCCM,false,18/TCCM,false,4/DCCM,false,20/TCCM,false,5/DCCM,false,22/TCCM,false,6/6-7
-Envoûtement Focalisé/31,41,50,69,86,91/2/IntComp,false,-15/VitComp,false,10/IntComp,false,-25/VitComp,false,15/IntComp,false,-35/VitComp,false,20/IntComp,false,-45/VitComp,false,22/IntComp,false,-55/VitComp,false,24/IntComp,false,-65/VitComp,false,26/6-8
-Élément Flamme/46,50,54,72,86,91/0/6-9
-Élément Éclair/46,50,54,72,86,91/0/6-10
-Élément Glace/46,50,54,72,86,91/0/6-11
+EnvoÃ»tement FocalisÃ©/31,41,50,69,86,91/2/IntComp,false,-15/VitComp,false,10/IntComp,false,-25/VitComp,false,15/IntComp,false,-35/VitComp,false,20/IntComp,false,-45/VitComp,false,22/IntComp,false,-55/VitComp,false,24/IntComp,false,-65/VitComp,false,26/6-8
+Ã‰lÃ©ment Flamme/46,50,54,72,86,91/0/6-9
+Ã‰lÃ©ment Ã‰clair/46,50,54,72,86,91/0/6-10
+Ã‰lÃ©ment Glace/46,50,54,72,86,91/0/6-11
 Physique d'Acier/66,80,91/2/RTCCP,false,5/DefP,true,20/RTCCP,false,6/DefP,true,20/RTCCP,false,7/DefP,true,22/2-19
-Magie Sans Pitié/66,80,91/2/DCCM,false,15/Toucher,false,15/DCCM,false,16/Toucher,false,15/DCCM,false,17/Toucher,false,16/1-20
+Magie Sans PitiÃ©/66,80,91/2/DCCM,false,15/Toucher,false,15/DCCM,false,16/Toucher,false,15/DCCM,false,17/Toucher,false,16/1-20
 Charge Magique Violente/66,80,91/1/AtkM,true,10/AtkM,true,11/AtkM,true,12/1-17
 Sagesse Occulte/70,83,93/1/INT,false,40/INT,false,45/INT,false,50/1-19
 Calcul Magique/70,83,93/2/CostComp,false,-35/VitComp,false,10/CostComp,false,-40/VitComp,false,10/CostComp,false,-45/VitComp,false,12/3-21
-Vigueur Retrouvée/70,83,93/1/PV,true,15/PV,true,17/PV,true,19/0-18
+Vigueur RetrouvÃ©e/70,83,93/1/PV,true,15/PV,true,17/PV,true,19/0-18
 Couverture Magistrale/73,87,97/2/MEN,false,-15/ESQ,false,10/MEN,false,-17/ESQ,false,10/MEN,false,-19/ESQ,false,12/0-21
-Surplus d'Énergie/73,87,97/2/PM,true,15/INT,false,10/PM,true,15/INT,false,15/PM,true,16/INT,false,20/0-17
+Surplus d'Ã‰nergie/73,87,97/2/PM,true,15/INT,false,10/PM,true,15/INT,false,15/PM,true,16/INT,false,20/0-17
 Don de la Nature/73,87,97/2/Nature,false,20/VIT,false,15/Nature,false,20/VIT,false,20/Nature,false,30/VIT,false,25/6-20
 Puissance en Crise/77,90,100/0/5-21
-Résistance d'Attaque/77,90,100/2/RTCCP,false,5/VIT,false,10/RTCCP,false,5/VIT,false,15/RTCCP,false,6/VIT,false,20/0-13
-Incantation Appliquée/77,90,100/2/IntComp,false,-10/RDCCM,false,15/IntComp,false,-20/RDCCM,false,28/IntComp,false,-30/RDCCM,false,40/6-23
+RÃ©sistance d'Attaque/77,90,100/2/RTCCP,false,5/VIT,false,10/RTCCP,false,5/VIT,false,15/RTCCP,false,6/VIT,false,20/0-13
+Incantation AppliquÃ©e/77,90,100/2/IntComp,false,-10/RDCCM,false,15/IntComp,false,-20/RDCCM,false,28/IntComp,false,-30/RDCCM,false,40/6-23
 
-Explosion Magique Enchaînée/6,14,31,61,86,91/1/TCCM,false,1/TCCM,false,2/TCCM,false,3/TCCM,false,4/TCCM,false,5/TCCM,false,6/6-0
-Spécialité Défense Magique/6,14,31,61,86,91/1/ReducM,false,10/ReducM,false,12/ReducM,false,14/ReducM,false,16/ReducM,false,18/ReducM,false,20/4-1
-Spécialité Bâton/6,14,31,61,86,91/2/AtkM,true,7,false,12/DCCM,false,10/AtkM,true,9,false,12/DCCM,false,14/AtkM,true,11,false,12/DCCM,false,18/AtkM,true,13,false,12/DCCM,false,20/AtkM,true,15,false,12/DCCM,false,22/AtkM,true,18,false,12/DCCM,false,24/4-2
-Énergie Abondante/16,28,46,66,86,91/2/PM,true,8/RTCCM,false,5/PM,true,9/RTCCM,false,8/PM,true,10/RTCCM,false,11/PM,true,11/RTCCM,false,13/PM,true,12/RTCCM,false,15/PM,true,13/RTCCM,false,17/4-4
-Spécialité Attaque Magique/16,28,46,66,86,91/1/DegM,false,10/DegM,false,12/DegM,false,15/DegM,false,17/DegM,false,19/DegM,false,21/6-4
+Explosion Magique EnchaÃ®nÃ©e/6,14,31,61,86,91/1/TCCM,false,1/TCCM,false,2/TCCM,false,3/TCCM,false,4/TCCM,false,5/TCCM,false,6/6-0
+SpÃ©cialitÃ© DÃ©fense Magique/6,14,31,61,86,91/1/ReducM,false,10/ReducM,false,12/ReducM,false,14/ReducM,false,16/ReducM,false,18/ReducM,false,20/4-1
+SpÃ©cialitÃ© BÃ¢ton/6,14,31,61,86,91/2/AtkM,true,7,false,12/DCCM,false,10/AtkM,true,9,false,12/DCCM,false,14/AtkM,true,11,false,12/DCCM,false,18/AtkM,true,13,false,12/DCCM,false,20/AtkM,true,15,false,12/DCCM,false,22/AtkM,true,18,false,12/DCCM,false,24/4-2
+Ã‰nergie Abondante/16,28,46,66,86,91/2/PM,true,8/RTCCM,false,5/PM,true,9/RTCCM,false,8/PM,true,10/RTCCM,false,11/PM,true,11/RTCCM,false,13/PM,true,12/RTCCM,false,15/PM,true,13/RTCCM,false,17/4-4
+SpÃ©cialitÃ© Attaque Magique/16,28,46,66,86,91/1/DegM,false,10/DegM,false,12/DegM,false,15/DegM,false,17/DegM,false,19/DegM,false,21/6-4
 Guide Magique/16,28,46,66,86,91/1/CostComp,false,-10/CostComp,false,-25/CostComp,false,-40/CostComp,false,-50/CostComp,false,-60/CostComp,false,-70/4-5
 /0,0,0,0,0,0/0/5-8
 /0,0,0,0,0,0/0/6-8

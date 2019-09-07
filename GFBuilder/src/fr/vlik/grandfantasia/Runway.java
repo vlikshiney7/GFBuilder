@@ -13,6 +13,9 @@ public class Runway {
 	public static final int[][] currentRunway = { {6, 7}, {4, 9}, {0, 3}, {1, 5}, {10, 8, 2} };
 	
 	public static Runway[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
@@ -64,7 +67,7 @@ public class Runway {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Runway.class.getClass().getSimpleName() + " class");
 		}
 		
 		Runway.data = new Runway[list.size()];

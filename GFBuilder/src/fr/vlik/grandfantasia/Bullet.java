@@ -18,6 +18,9 @@ import fr.vlik.gfbuilder.Quality;
 public class Bullet {
 	
 	private static Bullet[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int lvl;
@@ -121,7 +124,7 @@ public class Bullet {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Bullet.class.getClass().getSimpleName() + " class");
 		}
 		
 		Bullet.data = new Bullet[list.size()];

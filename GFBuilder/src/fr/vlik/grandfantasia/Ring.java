@@ -17,6 +17,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public final class Ring extends Equipment {
 	
 	private static Ring[] data;
+	static {
+		loadData();
+	}
 
 	private String setCode;
 	private boolean uniqueEquip;
@@ -58,7 +61,7 @@ public final class Ring extends Equipment {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/capering/ring/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -130,7 +133,7 @@ public final class Ring extends Equipment {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Ring.class.getClass().getSimpleName() + " class");
 		}
 		
 		Ring.data = new Ring[list.size()];

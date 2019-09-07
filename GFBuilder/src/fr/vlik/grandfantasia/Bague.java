@@ -18,6 +18,9 @@ import fr.vlik.gfbuilder.Quality;
 public class Bague {
 	
 	private static Bague[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private Quality quality;
@@ -114,7 +117,7 @@ public class Bague {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Bague.class.getClass().getSimpleName() + " class");
 		}
 		
 		Bague.data = new Bague[list.size()];

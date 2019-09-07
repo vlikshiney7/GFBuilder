@@ -17,6 +17,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class Nucleus {
 	
 	private static Nucleus[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int quality;
@@ -67,7 +70,7 @@ public class Nucleus {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/nucleus/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -118,7 +121,7 @@ public class Nucleus {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Nucleus.class.getClass().getSimpleName() + " class");
 		}
 		
 		Nucleus.data = new Nucleus[list.size()][];

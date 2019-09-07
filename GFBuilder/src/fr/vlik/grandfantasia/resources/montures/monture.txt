@@ -9,7 +9,7 @@ Dragon Noir de Combat/40/75/false/041
 Sprite Gundam Volant/40/75/false/050
 Tigre Rouge de Combat/40/75/false/032
 Manchot Dodu de Combat/40/75/false/060
-Lion Dor� de Combat/40/75/false/070
+Lion Doré de Combat/40/75/false/070
 Lapin Sauteur de Combat/40/75/false/080
 Tigre des Glaces de Combat/40/75/false/033
 Lion de Guerre Noir/40/75/false/071
@@ -21,7 +21,7 @@ Lion Violet de Combat/40/75/false/072
 Dragon de combat en armure/40/95/false/100
 Monture de combat scorpion mécanique/40/75/false/110
 Renard rouge ultime de combat/40/100/false/120
-H�licopt�re à vapeur blindé/40/75/false/130
+Hélicoptère à vapeur blindé/40/75/false/130
 Dragon de combat blindé/40/90/false/101
 Dragon violet de combat/40/80/false/140
 Renard bleu ultime de combat/40/100/false/121

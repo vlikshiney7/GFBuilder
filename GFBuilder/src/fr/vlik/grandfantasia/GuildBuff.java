@@ -14,6 +14,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class GuildBuff extends Buff {
 	
 	private static GuildBuff[] data;
+	static {
+		loadData();
+	}
 	
 	private BufferedImage img;
 
@@ -32,7 +35,7 @@ public class GuildBuff extends Buff {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/guild/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -62,7 +65,7 @@ public class GuildBuff extends Buff {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + GuildBuff.class.getClass().getSimpleName() + " class");
 		}
 		
 		GuildBuff.data = new GuildBuff[list.size()];

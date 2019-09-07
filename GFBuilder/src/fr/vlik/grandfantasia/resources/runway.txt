@@ -5,7 +5,7 @@ Enchantement/3/VIT,false,7/INT,false,7/VitComp,false,2
 Gardien/1/ReducP,false,3
 Hymne/1/VitComp,false,4
 Lutte/0
-Malédiction/0
+MalÃ©diction/0
 Praetor/7/FCE,false,6/VIT,false,6/INT,false,6/VOL,false,6/AGI,false,6/DefP,true,3/DefM,true,3
-Prêtre/1/ReducM,false,3
-Rapidité/1/Toucher,true,5
+PrÃªtre/1/ReducM,false,3
+RapiditÃ©/1/Toucher,true,5

@@ -102,4 +102,13 @@ public class JCustomLabel extends JLabel {
 		this.setForeground(Consts.FontColor[0]);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 14));
 	}
+	
+	public static JLabel getSimpleLabel(String text) {
+		JLabel label = new JLabel(text);
+		label.setFont(new Font("Open Sans", Font.BOLD, 16));
+		label.setForeground(Consts.FontColor[0]);
+		label.setAlignmentX(CENTER_ALIGNMENT);
+		
+		return label;
+	}
 }

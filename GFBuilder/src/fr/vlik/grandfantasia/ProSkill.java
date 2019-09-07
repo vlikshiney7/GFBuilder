@@ -15,6 +15,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public class ProSkill {
 	
 	private static ProSkill[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int lvl;
@@ -54,7 +57,7 @@ public class ProSkill {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/pro/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -101,7 +104,7 @@ public class ProSkill {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + ProSkill.class.getClass().getSimpleName() + " class");
 		}
 		
 		ProSkill.data = new ProSkill[list.size()][];

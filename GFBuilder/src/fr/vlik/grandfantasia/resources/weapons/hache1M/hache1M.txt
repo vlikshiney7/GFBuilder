@@ -1,16 +1,16 @@
-Hache hurlante de loup démoniaque sanguinaire/0,1/100/6/true/true/false/5,0,0/Atk,false,4981,true/FCE,false,100,true/VIT,false,45,true/AGI,false,75,true/Toucher,false,20/100vio
-Hâche maléfique de Shenron/0,1/100/5/true/true/false/6,0,0/Atk,false,4482,true/FCE,false,87,true/VIT,false,26,true/AGI,false,55,true/MEN,false,-35/Depla,false,15/100gold
-Écerveleuse de Smulca/0,1/100/4/false/true/false/8,0,0/Atk,false,3962,true/FCE,false,38,true/VIT,false,33,true/AGI,false,25,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Ombre,false,40/100pvp
+Hache hurlante de loup dÃ©moniaque sanguinaire/0,1/100/6/true/true/false/5,0,0/Atk,false,4981,true/FCE,false,100,true/VIT,false,45,true/AGI,false,75,true/Toucher,false,20/100vio
+HÃ¢che malÃ©fique de Shenron/0,1/100/5/true/true/false/6,0,0/Atk,false,4482,true/FCE,false,87,true/VIT,false,26,true/AGI,false,55,true/MEN,false,-35/Depla,false,15/100gold
+Ã‰cerveleuse de Smulca/0,1/100/4/false/true/false/8,0,0/Atk,false,3962,true/FCE,false,38,true/VIT,false,33,true/AGI,false,25,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Ombre,false,40/100pvp
 Hache Double Corne/0,1/99/4/true/true/false/6,0,0/Atk,false,3441,true/FCE,false,43,true/VIT,false,13,true/AGI,false,28,true/MEN,false,-30/Depla,false,10/99pre
-Hachette Affûtée de Sprite/0,1/96/2/true/false/false/2,0,0/Atk,false,2360,true/FCE,false,30,true/58ora
+Hachette AffÃ»tÃ©e de Sprite/0,1/96/2/true/false/false/2,0,0/Atk,false,2360,true/FCE,false,30,true/58ora
 Hache du motif magique/0,1/95/6/true/true/false/5,0,0/Atk,false,4655,true/FCE,false,81,true/VIT,false,70,true/AGI,false,49,true/Toucher,false,20/95vio
-Hachette affûtée de Bahamut/0,1/95/5/true/true/false/5,0,0/Atk,false,4189,true/FCE,false,82,true/VIT,false,26,true/AGI,false,52,true/AGI,false,45/95gold
+Hachette affÃ»tÃ©e de Bahamut/0,1/95/5/true/true/false/5,0,0/Atk,false,4189,true/FCE,false,82,true/VIT,false,26,true/AGI,false,52,true/AGI,false,45/95gold
 Hache de Guerre d'Assassin de Smulca/0,1/95/4/false/true/false/9,0,0/Atk,false,3258,true/FCE,false,32,true/VIT,false,27,true/AGI,false,19,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Feu,false,35/Glace,false,35/95pvp
 Hachette de Foudre/0,1/95/1/false/false/false/1,0,0/Atk,false,2327,true/18ora1
-Hache Affûtée de la Désolation/0,1/94/4/true/true/false/5,0,0/Atk,false,3213,true/FCE,false,40,true/VIT,false,12,true/AGI,false,26,true/AGI,false,35/94pre
-Hache Érable de Sprite/0,1/91/2/true/false/false/2,0,0/Atk,false,2639,true/FCE,false,26,true/91sprite
+Hache AffÃ»tÃ©e de la DÃ©solation/0,1/94/4/true/true/false/5,0,0/Atk,false,3213,true/FCE,false,40,true/VIT,false,12,true/AGI,false,26,true/AGI,false,35/94pre
+Hache Ã‰rable de Sprite/0,1/91/2/true/false/false/2,0,0/Atk,false,2639,true/FCE,false,26,true/91sprite
 Briseur du Gotei 13/0,1/90/6/true/true/false/5,0,0/Atk,false,4334,true/FCE,false,76,true/VIT,false,67,true/AGI,false,47,true/Toucher,false,20/90vio
-Décapiteur Funeste du Roi Squelette/0,1/90/5/true/true/false/6,0,0/Atk,false,3901,true/FCE,false,60,true/VIT,false,50,true/AGI,false,42,true/Toucher,false,18/TCCP,false,12/90gold
+DÃ©capiteur Funeste du Roi Squelette/0,1/90/5/true/true/false/6,0,0/Atk,false,3901,true/FCE,false,60,true/VIT,false,50,true/AGI,false,42,true/Toucher,false,18/TCCP,false,12/90gold
 Poison Douloureux - Damnation/0,1/89/4/true/true/false/6,0,0/Atk,false,2990,true/FCE,false,28,true/VIT,false,24,true/AGI,false,20,true/Toucher,false,12/TCCP,false,10/89pre
 Hachette du Serpent Venimeux/0,1/87/1/false/false/false/1,0,0/Atk,false,2073,true/79pre
 Hache du Spectre Bleu/0,1/86/3/false/false/false/4,0,0/Atk,false,3267,true/FCE,false,42,true/AGI,false,30,true/Toucher,false,15/86bleu
@@ -22,67 +22,67 @@ Dent du Roi Cannibale/0,1/84/4/true/true/false/6,0,0/Atk,false,2771,true/FCE,fal
 Hache du Dieu de la Mort/0,1/82/3/false/false/false/3,0,0/Atk,false,3069,true/FCE,false,40,true/AGI,false,28,true/82bleu
 Hachoir en Malachite/0,1/82/1/false/false/false/1,0,0/Atk,false,1918,true/86bleu
 Hache de Combat Divine des Sprites/0,1/81/2/false/false/false/3,0,0/Atk,false,2264,true/FCE,false,22,true/Toucher,false,10/79pre
-Héritage de Kilik/0,1/80/6/true/true/false/5,0,0/Atk,false,3714,true/FCE,false,69,true/VIT,false,58,true/AGI,false,43,true/Toucher,false,18/80vio
+HÃ©ritage de Kilik/0,1/80/6/true/true/false/5,0,0/Atk,false,3714,true/FCE,false,69,true/VIT,false,58,true/AGI,false,43,true/Toucher,false,18/80vio
 Hache de Golgotha/0,1/80/5/true/true/false/6,0,0/Atk,false,3343,true/FCE,false,71,true/VIT,false,25,true/AGI,false,40,true/Toucher,false,18/MEN,false,-20/80gold
 Hache de Commandement/0,1/80/3/false/true/false/5,0,0/Atk,false,2971,true/FCE,false,48,true/VIT,false,16,true/Toucher,false,10/RegenCB,false,10/80gvg
-Fierté du Survivant/0,1/79/4/true/true/false/6,0,0/Atk,false,2558,true/FCE,false,26,true/VIT,false,22,true/AGI,false,12,true/Toucher,false,14/MEN,false,-20/79pre
+FiertÃ© du Survivant/0,1/79/4/true/true/false/6,0,0/Atk,false,2558,true/FCE,false,26,true/VIT,false,22,true/AGI,false,12,true/Toucher,false,14/MEN,false,-20/79pre
 Hache de Jade Brillante/0,1/76/3/false/false/false/4,0,0/Atk,false,2779,true/FCE,false,38,true/AGI,false,26,true/Toucher,false,14/82bleu
-Protecteur Dévoué/0,1/76/2/false/false/false/3,0,0/Atk,false,2084,true/FCE,false,20,true/Toucher,false,12/66pre
+Protecteur DÃ©vouÃ©/0,1/76/2/false/false/false/3,0,0/Atk,false,2084,true/FCE,false,20,true/Toucher,false,12/66pre
 Clair de Lune Sanglante/0,1/75/6/true/true/false/5,0,0/Atk,false,3413,true/FCE,false,85,true/VIT,false,29,true/AGI,false,46,true/Toucher,false,18/75vio
-Rugissement Déchirant de Haine/0,1/75/5/true/true/false/5,0,0/Atk,false,3073,true/FCE,false,68,true/VIT,false,23,true/AGI,false,37,true/Toucher,false,18/75gold
+Rugissement DÃ©chirant de Haine/0,1/75/5/true/true/false/5,0,0/Atk,false,3073,true/FCE,false,68,true/VIT,false,23,true/AGI,false,37,true/Toucher,false,18/75gold
 Larme de Sang/0,1/74/4/true/true/false/5,0,0/Atk,false,2348,true/FCE,false,24,true/VIT,false,20,true/AGI,false,10,true/Toucher,false,12/74pre
 Hache de la Lune Bleue des Sprites/0,1/71/2/false/false/false/3,0,0/Atk,false,1907,true/FCE,false,18,true/Toucher,false,10/58ora
 Faucille de l'Aurore/0,1/70/6/true/true/false/5,0,0/Atk,false,3121,true/FCE,false,81,true/VIT,false,25,true/AGI,false,44,true/Toucher,false,18/70vio
 Baiser Mortel/0,1/70/5/true/true/false/5,0,0/Atk,false,2808,true/FCE,false,65,true/VIT,false,20,true/AGI,false,35,true/Toucher,false,18/70gold
-Héritage Viking/0,1/70/3/false/true/false/6,0,0/Atk,false,2496,true/FCE,false,44,true/VIT,false,12,true/Toucher,false,10/RegenCB,false,5/DefP,true,5/70gvg
+HÃ©ritage Viking/0,1/70/3/false/true/false/6,0,0/Atk,false,2496,true/FCE,false,44,true/VIT,false,12,true/Toucher,false,10/RegenCB,false,5/DefP,true,5/70gvg
 Hachoir de Cannibale/0,1/68/4/true/true/false/6,0,0/Atk,false,2104,true/FCE,false,23,true/VIT,false,15,true/AGI,false,10,true/Toucher,false,12/DCCP,false,35/68ora
 Hache-Stalactite/0,1/68/1/false/false/false/1,0,0/Atk,false,1503,true/80gvg
-Brise-Glace Enchanté/0,1/67/3/false/false/false/4,0,0/Atk,false,2358,true/FCE,false,36,true/AGI,false,20,true/Toucher,false,12/80gvg
-Coupe-Tête Runique/0,1/66/4/true/true/false/5,0,0/Atk,false,2024,true/FCE,false,28,true/VIT,false,15,true/AGI,false,5,true/Toucher,false,12/66pre
-Lame de l'Aurore Ailée/0,1/65/5/true/true/false/6,0,0/Atk,false,2551,true/FCE,false,58,true/VIT,false,30,true/VOL,false,10,true/AGI,false,14,true/Toucher,false,18/65gold
-Rugissement Blasphématoire/0/65/4/true/false/false/6,0,0/Atk,false,1984,true/FCE,false,20,true/VIT,false,15,true/AGI,false,7,true/Toucher,false,12/DCCP,false,25/65ora
+Brise-Glace EnchantÃ©/0,1/67/3/false/false/false/4,0,0/Atk,false,2358,true/FCE,false,36,true/AGI,false,20,true/Toucher,false,12/80gvg
+Coupe-TÃªte Runique/0,1/66/4/true/true/false/5,0,0/Atk,false,2024,true/FCE,false,28,true/VIT,false,15,true/AGI,false,5,true/Toucher,false,12/66pre
+Lame de l'Aurore AilÃ©e/0,1/65/5/true/true/false/6,0,0/Atk,false,2551,true/FCE,false,58,true/VIT,false,30,true/VOL,false,10,true/AGI,false,14,true/Toucher,false,18/65gold
+Rugissement BlasphÃ©matoire/0/65/4/true/false/false/6,0,0/Atk,false,1984,true/FCE,false,20,true/VIT,false,15,true/AGI,false,7,true/Toucher,false,12/DCCP,false,25/65ora
 Serre d'Aigle des Cimes/0,1/63/4/true/true/false/4,0,0/Atk,false,1905,true/FCE,false,28,true/VIT,false,14,true/Toucher,false,10/63pre
 Griffes de Poisson- Dragon des Profondeurs/0,1/62/3/false/false/false/4,0,0/Atk,false,2133,true/FCE,false,34,true/VIT,false,18,true/Toucher,false,10/18ora1
-Hache des Ancètres de Tataya/0,1/61/2/false/false/false/2,0,0/Atk,false,1567,true/FCE,false,14,true/91sprite
-Hache de la Vérité de Smulca/0,1/60/5/true/true/false/6,0,0/Atk,false,2300,true/FCE,false,50,true/VIT,false,24,true/VOL,false,26,true/Toucher,false,15/MEN,false,20/95gold
-Hache du Guerrier de Smulca (Reforgée)/0,1/60/4/false/true/true/5,0,0/Atk,false,1980,true/FCE,false,16,true/VIT,false,20,true/Toucher,false,9/TCCP,false,5/60pvp
+Hache des AncÃ¨tres de Tataya/0,1/61/2/false/false/false/2,0,0/Atk,false,1567,true/FCE,false,14,true/91sprite
+Hache de la VÃ©ritÃ© de Smulca/0,1/60/5/true/true/false/6,0,0/Atk,false,2300,true/FCE,false,50,true/VIT,false,24,true/VOL,false,26,true/Toucher,false,15/MEN,false,20/95gold
+Hache du Guerrier de Smulca (ReforgÃ©e)/0,1/60/4/false/true/true/5,0,0/Atk,false,1980,true/FCE,false,16,true/VIT,false,20,true/Toucher,false,9/TCCP,false,5/60pvp
 Hache du Guerrier de Smulca/0,1/60/4/false/true/false/5,0,0/Atk,false,1800,true/FCE,false,15,true/VIT,false,18,true/Toucher,false,8/TCCP,false,5/60pvp
 Inflammation de l'Ere Finale/0,1/60/3/false/false/false/3,0,0/Atk,false,2045,true/FCE,false,33,true/Toucher,false,10/38ora2
 Canine du Roi Dragon de l'Apocalypse/0,1/58/4/true/true/false/4,0,0/Atk,false,1714,true/FCE,false,18,true/AGI,false,10,true/Toucher,false,8/58ora
 Hache de la Justice de Smulca/0,1/58/4/true/true/false/5,0,0/Atk,false,1730,true/FCE,false,13,true/VIT,false,15,true/Toucher,false,8/MEN,false,20/58pre
-Lame du Corps Etranger Démoniaque/0/58/4/true/false/false/5,0,0/Atk,false,1730,true/FCE,false,20,true/VIT,false,13,true/Toucher,false,10/DCCP,false,20/58pre
+Lame du Corps Etranger DÃ©moniaque/0/58/4/true/false/false/5,0,0/Atk,false,1730,true/FCE,false,20,true/VIT,false,13,true/Toucher,false,10/DCCP,false,20/58pre
 Lame Epine de l'Ancien Monstre Diabolique/0,1/54/3/false/false/false/4,0,0/Atk,false,1787,true/FCE,false,19,true/AGI,false,17,true/Toucher,false,8/54bleu
 Hache des Sprites d'Ares/0,1/54/2/false/false/false/3,0,0/Atk,false,1340,true/FCE,false,10,true/Toucher,false,4/54sprite
-Hache de la Réincarnation/0,1/50/5/true/true/false/6,0,0/Atk,false,1823,true/FCE,false,37,true/VIT,false,20,true/AGI,false,15,true/Toucher,false,8/MEN,false,-20/50gold
+Hache de la RÃ©incarnation/0,1/50/5/true/true/false/6,0,0/Atk,false,1823,true/FCE,false,37,true/VIT,false,20,true/AGI,false,15,true/Toucher,false,8/MEN,false,-20/50gold
 Hache d'Ares/0,1/50/1/false/false/false/1,0,0/Atk,false,1013,true/54sprite
 Attaque de Gowan/0,1/48/4/true/true/false/4,0,0/Atk,false,1347,true/FCE,false,14,true/VIT,false,9,true/Toucher,false,6/48ora
-Hache du Sceau de Réincarnation/0,1/48/4/true/true/false/6,0,0/Atk,false,1355,true/FCE,false,11,true/VIT,false,8,true/AGI,false,8,true/Toucher,false,6/MEN,false,-20/48pre
+Hache du Sceau de RÃ©incarnation/0,1/48/4/true/true/false/6,0,0/Atk,false,1355,true/FCE,false,11,true/VIT,false,8,true/AGI,false,8,true/Toucher,false,6/MEN,false,-20/48pre
 Hache du Scripte Ancestral; Origine/0/48/4/true/false/false/6,0,0/Atk,false,1360,true/FCE,false,14,true/VIT,false,9,true/AGI,false,4,true/Toucher,false,8/DCCP,false,15/48ora
-Hache de la Croix Sacrée/0,1/46/3/false/true/false/4,0,0/Atk,false,1459,true/FCE,false,20,true/VOL,false,16,true/Toucher,false,8/46bleu
-Hache du Garde de Smulca (Reforgé)/0,1/45/4/false/true/true/5,0,0/Atk,false,1375,true/FCE,false,12,true/VIT,false,11,true/Toucher,false,7/TCCP,false,3/45pvp
+Hache de la Croix SacrÃ©e/0,1/46/3/false/true/false/4,0,0/Atk,false,1459,true/FCE,false,20,true/VOL,false,16,true/Toucher,false,8/46bleu
+Hache du Garde de Smulca (ReforgÃ©)/0,1/45/4/false/true/true/5,0,0/Atk,false,1375,true/FCE,false,12,true/VIT,false,11,true/Toucher,false,7/TCCP,false,3/45pvp
 Hache du Garde de Smulca/0,1/45/4/false/true/false/5,0,0/Atk,false,1250,true/FCE,false,11,true/VIT,false,10,true/Toucher,false,6/TCCP,false,3/45pvp
-Hache des Sprites de l'Emblème Sacré/0,1/44/2/false/false/false/3,0,0/Atk,false,1034,true/FCE,false,8,true/Toucher,false,2/18ora0
+Hache des Sprites de l'EmblÃ¨me SacrÃ©/0,1/44/2/false/false/false/3,0,0/Atk,false,1034,true/FCE,false,8,true/Toucher,false,2/18ora0
 Hache de Guerre Violette/0,1/40/2/false/false/false/3,0,0/Atk,false,919,true/FCE,false,8,true/Toucher,false,2/18ora0
-Hache de la Marque Sacrée/0,1/40/1/false/false/false/1,0,0/Atk,false,766,true/46bleu
+Hache de la Marque SacrÃ©e/0,1/40/1/false/false/false/1,0,0/Atk,false,766,true/46bleu
 Roi des Champs de Bataille/0,1/38/4/true/false/false/5,0,0/Atk,false,1007,true/FCE,false,7,true/VIT,false,10,true/AGI,false,4,true/Toucher,false,4/38ora2
-Défenseur de la Jungle à la Hache Abominable/0,1/38/4/true/false/false/5,0,0/Atk,false,1025,true/VIT,false,7,true/AGI,false,11,true/Toucher,false,4/Nature,false,10/38ora1
-Épée Alliée Mortelle/0/38/4/true/false/false/5,0,0/Atk,false,1015,true/FCE,false,12,true/VIT,false,6,true/Toucher,false,6/DCCP,false,15/38ora0
-Hache Sanguinaire de Décapitation/0,1/38/3/false/false/false/4,0,0/Atk,false,1200,true/VIT,false,15,true/AGI,false,13,true/Toucher,false,6/28ora
+DÃ©fenseur de la Jungle Ã  la Hache Abominable/0,1/38/4/true/false/false/5,0,0/Atk,false,1025,true/VIT,false,7,true/AGI,false,11,true/Toucher,false,4/Nature,false,10/38ora1
+Ã‰pÃ©e AlliÃ©e Mortelle/0/38/4/true/false/false/5,0,0/Atk,false,1015,true/FCE,false,12,true/VIT,false,6,true/Toucher,false,6/DCCP,false,15/38ora0
+Hache Sanguinaire de DÃ©capitation/0,1/38/3/false/false/false/4,0,0/Atk,false,1200,true/VIT,false,15,true/AGI,false,13,true/Toucher,false,6/28ora
 Lame Sereine des Profondeurs Marines/0,1/38/3/false/false/false/3,0,0/Atk,false,1150,true/VIT,false,21,true/Toucher,false,6/18ora1
-Hache de Combat des Sprites Compétitive/0,1/34/2/false/false/false/2,0,0/Atk,false,754,true/FCE,false,6,true/94pre
-Faucheur d'Âmes/0,1/30/3/false/false/false/2,0,0/Atk,false,866,true/AGI,false,15,true/30bleu
-Marteau de la Guerre d'Arène/0,1/30/1/false/false/false/1,0,0/Atk,false,545,true/54sprite
+Hache de Combat des Sprites CompÃ©titive/0,1/34/2/false/false/false/2,0,0/Atk,false,754,true/FCE,false,6,true/94pre
+Faucheur d'Ã‚mes/0,1/30/3/false/false/false/2,0,0/Atk,false,866,true/AGI,false,15,true/30bleu
+Marteau de la Guerre d'ArÃ¨ne/0,1/30/1/false/false/false/1,0,0/Atk,false,545,true/54sprite
 Poing du Guerrier Lourd/0,1/28/4/true/false/false/3,0,0/Atk,false,699,true/FCE,false,5,true/VIT,false,8,true/28ora
 Tigre Pourpre/0,1/28/4/true/false/false/5,0,0/Atk,false,710,true/FCE,false,10,true/VIT,false,5,true/Toucher,false,4/DCCP,false,10/94pre
-Hache d'Acier des Sprites à Trois Dents/0,1/24/2/false/false/false/2,0,0/Atk,false,502,true/FCE,false,4,true/24sprite
+Hache d'Acier des Sprites Ã  Trois Dents/0,1/24/2/false/false/false/2,0,0/Atk,false,502,true/FCE,false,4,true/24sprite
 Puissante Hache de Combat/0,1/24/1/false/false/false/1,0,0/Atk,false,418,true/30bleu
-Hache d'Acier à Trois Dents/0,1/20/1/false/false/false/1,0,0/Atk,false,341,true/20blanc
+Hache d'Acier Ã  Trois Dents/0,1/20/1/false/false/false/1,0,0/Atk,false,341,true/20blanc
 Hache Impitoyable/0,1/18/4/true/false/false/5,0,0/Atk,false,427,true/FCE,false,5,true/VIT,false,2,true/AGI,false,2,true/RegenCB,false,3/18ora1
 Hache d'Acier de Cristal Rouge/0,1/18/4/true/false/false/5,0,0/Atk,false,435,true/FCE,false,6,true/VIT,false,3,true/Toucher,false,2/DCCP,false,10/18ora0
 Hache de Guerre/0,1/16/1/false/false/false/1,0,0/Atk,false,270,true/16blanc
 Originale Hache des Sprites du Scieur/0,1/14/2/false/false/false/2,0,0/Atk,false,284,true/FCE,false,2,true/14sprite
-Hache à Bois Spéciale/0,1/10/1/false/false/false/1,0,0/Atk,false,176,true/10blanc
+Hache Ã  Bois SpÃ©ciale/0,1/10/1/false/false/false/1,0,0/Atk,false,176,true/10blanc
 Hache des Sprites du Scieur/0,1/8/2/false/false/false/2,0,0/Atk,false,178,true/FCE,false,2,true/8sprite
-Hache à Couper le Bois/0,1/6/1/false/false/false/1,0,0/Atk,false,123,true/6blanc
-Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/0novice
-Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/0novice
+Hache Ã  Couper le Bois/0,1/6/1/false/false/false/1,0,0/Atk,false,123,true/6blanc
+Ã‰pÃ©e de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/0novice
+Ã‰pÃ©e de Bronze du NÃ©ophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/0novice

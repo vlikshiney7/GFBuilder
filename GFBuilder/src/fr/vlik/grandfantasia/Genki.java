@@ -18,6 +18,9 @@ import fr.vlik.uidesign.JStarCheckBox;
 public class Genki {
 	
 	private static Genki[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
@@ -130,7 +133,7 @@ public class Genki {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Genki.class.getClass().getSimpleName() + " class");
 		}
 		
 		Genki.data = new Genki[list.size()][];

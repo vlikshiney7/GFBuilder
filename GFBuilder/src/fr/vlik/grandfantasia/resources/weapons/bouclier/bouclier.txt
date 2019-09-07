@@ -1,1 +1,1 @@
-Bouclier démoniaque de Kuma/0,1,4/100/5/true/false/false/8,0,0/DefP,false,910,true/DefM,false,864,true/FCE,false,48,true/VIT,false,78,true/AGI,false,43,true/Depla,false,15/VIT,true,10/MEN,false,25/100gold
+Bouclier dÃ©moniaque de Kuma/0,1,4/100/5/true/false/false/8,0,0/DefP,false,910,true/DefM,false,864,true/FCE,false,48,true/VIT,false,78,true/AGI,false,43,true/Depla,false,15/VIT,true,10/MEN,false,25/100gold

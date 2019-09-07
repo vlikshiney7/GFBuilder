@@ -1,38 +1,38 @@
-Épreuve du roi des Sprites/1/XP,false,5/xp0
-Bénédiction interdimensionnelle d'Eugénie/2/XP,false,20/Loot,false,20/xp1
-Bénédiction Secrète d'Alice/1/Loot,false,7/0-0
-Barrière Naturelle d'Alice/1/Nature,false,50/0-1
-Aria de défense d'Alice/2/DefP,true,8/DefM,true,8/0-2
-Tempête de Sable de Ronto/1/Depla,false,8/1-0
-Poussière Terrestre de Ronto/2/Ombre,false,25/Nature,false,25/1-1
-Bénédiction colérique de Ronto/2/TCCP,false,7/TCCM,false,7/1-2
+Ã‰preuve du roi des Sprites/1/XP,false,5/xp0
+BÃ©nÃ©diction interdimensionnelle d'EugÃ©nie/2/XP,false,20/Loot,false,20/xp1
+BÃ©nÃ©diction SecrÃ¨te d'Alice/1/Loot,false,7/0-0
+BarriÃ¨re Naturelle d'Alice/1/Nature,false,50/0-1
+Aria de dÃ©fense d'Alice/2/DefP,true,8/DefM,true,8/0-2
+TempÃªte de Sable de Ronto/1/Depla,false,8/1-0
+PoussiÃ¨re Terrestre de Ronto/2/Ombre,false,25/Nature,false,25/1-1
+BÃ©nÃ©diction colÃ©rique de Ronto/2/TCCP,false,7/TCCM,false,7/1-2
 Corne de Bataille de Bodor/2/PV,true,8/PM,true,8/2-0
-Armure Sacrée de Bodor/2/Sacre,false,25/Nature,false,25/2-1
+Armure SacrÃ©e de Bodor/2/Sacre,false,25/Nature,false,25/2-1
 Cri de bataille de Bodor/3/Atk,true,7/AtkD,true,7/AtkM,true,7/2-2
 Force Sismique de Smulca/0/3-0
-Forme de Bœuf de Smulca/3/VitAtk,false,4/VitComp,false,4/CostComp,false,-10/3-1
+Forme de BÅ“uf de Smulca/3/VitAtk,false,4/VitComp,false,4/CostComp,false,-10/3-1
 Protection Montagneuse de Smulca/1/Glace,false,50/3-2
-Exécution sans pitié d'Ewan/2/DCCP,false,15/DCCM,false,15/4-0
+ExÃ©cution sans pitiÃ© d'Ewan/2/DCCP,false,15/DCCM,false,15/4-0
 Forme Morbide/2/Atk,true,8/ESQ,false,8/4-1
 Regard Noir d'Ewan/1/Ombre,false,50/4-2
 Protection Aquatique de Bahadolo/0/5-0
 Retour de Tsunami de Bahadolo/0/5-1
-Tempête Enragée de Bahadolo/2/Foudre,false,25/Glace,false,25/5-2
+TempÃªte EnragÃ©e de Bahadolo/2/Foudre,false,25/Glace,false,25/5-2
 Leggings Venteux de Quill/1/Depla,false,12/6-0
-Rugissement Tempétueux de Quill/2/DCCP,false,10/DCCM,false,10/6-1
+Rugissement TempÃ©tueux de Quill/2/DCCP,false,10/DCCM,false,10/6-1
 Tornade Orageuse de Quill/1/Foudre,false,50/6-2
 Magie Chanceuse de Mosunk/1/Loot,false,10/7-0
 Armure Magique de Mosunk/2/DegP,false,5/DegM,false,5/7-1
-Lumière Bénie de Mosunk/0/7-2
+LumiÃ¨re BÃ©nie de Mosunk/0/7-2
 Boost de Vie de Jundo/2/PV,true,12/PM,true,12/8-0
 Pouvoir Primal de Jundo/2/TCCP,false,5/TCCM,false,5/8-1
-Immunité Naturelle de Jundo/6/Sacre,false,20/Ombre,false,20/Foudre,false,20/Feu,false,20/Glace,false,20/Nature,false,20/8-2
+ImmunitÃ© Naturelle de Jundo/6/Sacre,false,20/Ombre,false,20/Foudre,false,20/Feu,false,20/Glace,false,20/Nature,false,20/8-2
 Vision Ardente de Siropas/2/Atk,true,12/ESQ,false,12/9-0
-Protection Enflammée de Siropas/0/9-1
-Armure Brûlante de Siropas/1/Feu,false,50/9-2
+Protection EnflammÃ©e de Siropas/0/9-1
+Armure BrÃ»lante de Siropas/1/Feu,false,50/9-2
 Encouragement d'Ilannia/5/VitAtk,false,6/VitAtkD,false,6/VitAtkM,false,6/VitComp,false,6/CostComp,false,-10/10-0
-Bouclier Gelé d'Ilannia/2/DefP,true,6/DefM,true,6/10-1
-Armure Glacée d'Ilannia/1/Glace,false,50/10-2
-Pouvoir interdimensionnelle d'Eugénie/0/11-0
-Contre-Attaque Interdimensionnelle d'Eugénie/0/11-1
-Arrivée Interdimensionnelle d'Eugénie/0/11-2
+Bouclier GelÃ© d'Ilannia/2/DefP,true,6/DefM,true,6/10-1
+Armure GlacÃ©e d'Ilannia/1/Glace,false,50/10-2
+Pouvoir interdimensionnelle d'EugÃ©nie/0/11-0
+Contre-Attaque Interdimensionnelle d'EugÃ©nie/0/11-1
+ArrivÃ©e Interdimensionnelle d'EugÃ©nie/0/11-2

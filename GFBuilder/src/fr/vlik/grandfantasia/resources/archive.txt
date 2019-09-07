@@ -1,39 +1,39 @@
 Rien/0/0
-Architecte Débutant/1/2/PV,false,432/PM,false,180
+Architecte DÃ©butant/1/2/PV,false,432/PM,false,180
 Architecte Amateur/2/2/PV,false,864/PM,false,360
-Architecte Confirmé/2/2/PV,false,1296/PM,false,540
-Décorateur Professionnel de l'Île/3/2/PV,false,1728/PM,false,720
-Artiste de l'Île/3/2/PV,false,2160/PM,false,900
-Top-Model Débutant/1/3/Atk,false,234/AtkD,false,180/AtkM,false,180
+Architecte ConfirmÃ©/2/2/PV,false,1296/PM,false,540
+DÃ©corateur Professionnel de l'Ã®le/3/2/PV,false,1728/PM,false,720
+Artiste de l'Ã®le/3/2/PV,false,2160/PM,false,900
+Top-Model DÃ©butant/1/3/Atk,false,234/AtkD,false,180/AtkM,false,180
 Top-Model Amateur/2/3/Atk,false,468/AtkD,false,360/AtkM,false,360
-Top-Model Confirmé/2/3/Atk,false,702/AtkD,false,540/AtkM,false,540
+Top-Model ConfirmÃ©/2/3/Atk,false,702/AtkD,false,540/AtkM,false,540
 Organisateur Professionnel/3/3/Atk,false,936/AtkD,false,720/AtkM,false,720
-Organisateur Suprême/3/3/Atk,false,1170/AtkD,false,900/AtkM,false,900
-Collectionneur célèbre/4/3/Atk,false,1404/AtkD,false,1080/AtkM,false,1080
+Organisateur SuprÃªme/3/3/Atk,false,1170/AtkD,false,900/AtkM,false,900
+Collectionneur cÃ©lÃ¨bre/4/3/Atk,false,1404/AtkD,false,1080/AtkM,false,1080
 Super collectionneur/4/3/Atk,false,1638/AtkD,false,1260/AtkM,false,1260
 Collectionneur de notes/5/3/Atk,false,1872/AtkD,false,1440/AtkM,false,1440
 Collectionneur professionnel/5/3/Atk,false,2106/AtkD,false,1620/AtkM,false,1620
-Philatéliste Débutant/1/2/Toucher,false,20/ESQ,false,10
-Philatéliste Amateur/2/2/Toucher,false,40/ESQ,false,20
-Philatéliste Confirmé/2/2/Toucher,false,60/ESQ,false,30
-Récolteur Professionnel/3/2/Toucher,false,80/ESQ,false,40
-Récolteur Suprême/3/2/Toucher,false,100/ESQ,false,50
-Sprite Débutant/1/2/DefP,false,108/DefM,false,90
+PhilatÃ©liste DÃ©butant/1/2/Toucher,false,20/ESQ,false,10
+PhilatÃ©liste Amateur/2/2/Toucher,false,40/ESQ,false,20
+PhilatÃ©liste ConfirmÃ©/2/2/Toucher,false,60/ESQ,false,30
+RÃ©colteur Professionnel/3/2/Toucher,false,80/ESQ,false,40
+RÃ©colteur SuprÃªme/3/2/Toucher,false,100/ESQ,false,50
+Sprite DÃ©butant/1/2/DefP,false,108/DefM,false,90
 Sprite Amateur/2/2/DefP,false,216/DefM,false,180
-Sprite Confirmé/2/2/DefP,false,324/DefM,false,270
+Sprite ConfirmÃ©/2/2/DefP,false,324/DefM,false,270
 Nounou Sprite Professionnelle/3/2/DefP,false,432/DefM,false,360
 Protecteur des Sprite/3/2/DefP,false,540/DefM,false,450
-Dompteur Débutant/1/1/Depla,false,2
+Dompteur DÃ©butant/1/1/Depla,false,2
 Dompteur Amateur/2/1/Depla,false,4
-Dompteur Confirmé/2/1/Depla,false,6
+Dompteur ConfirmÃ©/2/1/Depla,false,6
 Parking de Professionnel/3/1/Depla,false,8
 Parking de Luxe/3/1/Depla,false,10
-Collectionneur Débutant/1/9/PV,false,432/PM,false,180/Atk,false,234/AtkD,false,180/AtkM,false,180/Toucher,false,20/ESQ,false,10/DefP,false,108/DefM,false,90
+Collectionneur DÃ©butant/1/9/PV,false,432/PM,false,180/Atk,false,234/AtkD,false,180/AtkM,false,180/Toucher,false,20/ESQ,false,10/DefP,false,108/DefM,false,90
 Collectionneur Amateur/2/9/PV,false,864/PM,false,360/Atk,false,468/AtkD,false,360/AtkM,false,360/Toucher,false,40/ESQ,false,20/DefP,false,216/DefM,false,180
-Collectionneur Confirmé/2/9/PV,false,1296/PM,false,540/Atk,false,702/AtkD,false,540/AtkM,false,540/Toucher,false,60/ESQ,false,30/DefP,false,324/DefM,false,270
+Collectionneur ConfirmÃ©/2/9/PV,false,1296/PM,false,540/Atk,false,702/AtkD,false,540/AtkM,false,540/Toucher,false,60/ESQ,false,30/DefP,false,324/DefM,false,270
 Collectionneur Professionnel/3/9/PV,false,1728/PM,false,720/Atk,false,936/AtkD,false,720/AtkM,false,720/Toucher,false,80/ESQ,false,40/DefP,false,432/DefM,false,360
-Collectionneur Suprême/3/9/PV,false,2160/PM,false,900/Atk,false,1170/AtkD,false,900/AtkM,false,900/Toucher,false,100/ESQ,false,50/DefP,false,540/DefM,false,450
+Collectionneur SuprÃªme/3/9/PV,false,2160/PM,false,900/Atk,false,1170/AtkD,false,900/AtkM,false,900/Toucher,false,100/ESQ,false,50/DefP,false,540/DefM,false,450
 Blogueur novice/1/2/TCCP,false,8/TCCM,false,8
 Blogueur amateur/2/2/TCCP,false,16/TCCM,false,16
-Blogueur intermédiaire/2/4/TCCP,false,20/TCCM,false,20/RTCCP,false,5/RTCCM,false,5
-Blogueur confirmé/3/4/TCCP,false,24/TCCM,false,24/RTCCP,false,10/RTCCM,false,10
+Blogueur intermÃ©diaire/2/4/TCCP,false,20/TCCM,false,20/RTCCP,false,5/RTCCM,false,5
+Blogueur confirmÃ©/3/4/TCCP,false,24/TCCM,false,24/RTCCP,false,10/RTCCM,false,10

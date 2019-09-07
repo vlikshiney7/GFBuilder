@@ -30,6 +30,9 @@ public class Enchantment {
 	public static final int[] CapeRing = { 24, 25, 26, 27, 28 };
 	
 	private static Enchantment[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private boolean fixValue;
@@ -80,7 +83,7 @@ public class Enchantment {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Enchantment.class.getClass().getSimpleName() + " class");
 		}
 		
 		Enchantment.data = new Enchantment[list.size()];

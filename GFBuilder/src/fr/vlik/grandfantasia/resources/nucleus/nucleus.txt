@@ -56,6 +56,6 @@ INT +12%/6/1/INT,true,12/INTpurple
 VOL +10%/6/1/VOL,true,10/VOLpurple
 AGI +12%/6/1/AGI,true,12/AGIpurple
 3
-Doctrines bien-aimées de Werther/1/2/RegenPM,false,250/VitAtk,false,5/doctrine
+Doctrines bien-aimÃ©es de Werther/1/2/RegenPM,false,250/VitAtk,false,5/doctrine
 Griffe de la Brute cristalline magique/1/2/DegP,false,5/VitAtk,false,5/griffe
-Pierre de Bénédiction de la Baie Bleue/2/0/blueBay
+Pierre de BÃ©nÃ©diction de la Baie Bleue/2/0/blueBay

@@ -14,6 +14,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class Skill {
 	
 	private static Skill[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int[] lvl;
@@ -75,7 +78,7 @@ public class Skill {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/skill/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -130,7 +133,7 @@ public class Skill {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Skill.class.getClass().getSimpleName() + " class");
 		}
 		
 		Skill.data = new Skill[list.size()][];

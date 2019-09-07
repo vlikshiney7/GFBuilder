@@ -14,6 +14,9 @@ public class XpStuff {
 	private static XpStuff[][] dataArmor;
 	private static XpStuff[][] dataCapeRing;
 	private static XpStuff[] dataMount;
+	static {
+		loadData();
+	}
 	
 	private TypeEffect type;
 	private ArrayList<Double> lvlValues = new ArrayList<Double>();
@@ -65,7 +68,7 @@ public class XpStuff {
 				}
 				reader.close();
 			} catch (IOException e) {
-				System.out.println("Error with " + Class.class.getName() + " class");
+				System.out.println("Error with " + XpStuff.class.getClass().getSimpleName() + " class");
 			}
 		}
 		

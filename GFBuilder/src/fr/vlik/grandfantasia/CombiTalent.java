@@ -12,6 +12,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public final class CombiTalent {
 	
 	private static CombiTalent[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int[] code;
@@ -80,7 +83,7 @@ public final class CombiTalent {
 				line = reader.readLine();
 			}
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + CombiTalent.class.getClass().getSimpleName() + " class");
 		}
 		
 		CombiTalent.data = new CombiTalent[list.size()][];

@@ -15,6 +15,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public class Title {
 
 	private static Title[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
@@ -94,7 +97,7 @@ public class Title {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Title.class.getClass().getSimpleName() + " class");
 		}
 		
 		Title.data = new Title[list.size()];

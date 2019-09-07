@@ -13,6 +13,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class Grade {
 	
 	private static Grade[] data;
+	static {
+		loadData();
+	}
 	
 	private String[] name;
 	private GradeName grade;
@@ -70,7 +73,7 @@ public class Grade {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/grade/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -97,7 +100,7 @@ public class Grade {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Grade.class.getClass().getSimpleName() + " class");
 		}
 		
 		Grade.data = new Grade[list.size()];

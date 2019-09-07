@@ -11,6 +11,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class Yggdrasil {
 	
 	private static Yggdrasil[] data;
+	static {
+		loadData();
+	}
 
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
@@ -59,7 +62,7 @@ public class Yggdrasil {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Yggdrasil.class.getClass().getSimpleName() + " class");
 		}
 		
 		Yggdrasil.data = new Yggdrasil[list.size()];

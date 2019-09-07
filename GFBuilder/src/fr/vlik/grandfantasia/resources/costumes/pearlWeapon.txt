@@ -1,7 +1,7 @@
 Rien/0/false/true/0/null
-Joyau Épique d'Explosion de Force/3/false/true/1/DCCP,false,10/orange2
-Joyau Épique d'Augmentation de Sorcellerie/3/false/true/1/DCCM,false,10/purple2
-Joyau de Rayonnance Anéantisseur de Pitié/3/false/true/0/black2
-Joyau de Rayonnance Anéantisseur d'Esprits Maléfiques/3/false/true/0/blue2
-Joyau de Rayonnance Anéantisseur de Sagesse/3/false/true/0/blue2
-Joyau de Rayonnance Anéantisseur d'Atômes/3/false/true/0/green2
+Joyau Ã‰pique d'Explosion de Force/3/false/true/1/DCCP,false,10/orange2
+Joyau Ã‰pique d'Augmentation de Sorcellerie/3/false/true/1/DCCM,false,10/purple2
+Joyau de Rayonnance AnÃ©antisseur de PitiÃ©/3/false/true/0/black2
+Joyau de Rayonnance AnÃ©antisseur d'Esprits MalÃ©fiques/3/false/true/0/blue2
+Joyau de Rayonnance AnÃ©antisseur de Sagesse/3/false/true/0/blue2
+Joyau de Rayonnance AnÃ©antisseur d'AtÃ´mes/3/false/true/0/green2

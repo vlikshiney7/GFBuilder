@@ -1,1 +1,1 @@
-Feulements de Tigre-éclair des ombres/8,9/100/5/true/false/false/5,0,0/AtkD,false,4482,true/INT,false,52,true/VOL,false,41,true/AGI,false,75,true/Toucher,false,20/100gold
+Feulements de Tigre-Ã©clair des ombres/8,9/100/5/true/false/false/5,0,0/AtkD,false,4482,true/INT,false,52,true/VOL,false,41,true/AGI,false,75,true/Toucher,false,20/100gold

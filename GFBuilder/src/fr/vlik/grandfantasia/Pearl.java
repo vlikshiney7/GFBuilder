@@ -21,6 +21,9 @@ public class Pearl {
 	private static Pearl[] dataArmor;
 	private static Pearl[] dataWeaponCost;
 	private static Pearl[] dataArmorCost;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private Quality quality;
@@ -83,7 +86,7 @@ public class Pearl {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/pearls/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -132,7 +135,7 @@ public class Pearl {
 				}
 				reader.close();
 			}  catch (IOException e) {
-				System.out.println("Error with " + Class.class.getName() + " class");
+				System.out.println("Error with " + Pearl.class.getClass().getSimpleName() + " class");
 			}
 		}
 		

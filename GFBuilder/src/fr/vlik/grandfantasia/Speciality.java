@@ -15,6 +15,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public class Speciality {
 	
 	private static Speciality[][] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int lvl;
@@ -53,7 +56,7 @@ public class Speciality {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/speciality/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -98,7 +101,7 @@ public class Speciality {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Speciality.class.getClass().getSimpleName() + " class");
 		}
 		
 		Speciality.data = new Speciality[list.size()][];

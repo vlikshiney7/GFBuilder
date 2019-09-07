@@ -11,6 +11,9 @@ import fr.vlik.gfbuilder.MainFrame;
 public class Buff {
 	
 	private static Buff[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
@@ -62,7 +65,7 @@ public class Buff {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Buff.class.getClass().getSimpleName() + " class");
 		}
 		
 		Buff.data = new Buff[list.size()];

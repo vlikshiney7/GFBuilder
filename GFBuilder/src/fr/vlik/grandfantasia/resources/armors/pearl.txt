@@ -1,12 +1,12 @@
 Rien/0/false/true/0/null
-Pierre runique de Sécurité Supérieure/5/true/false/1/DefP,true,20/Glace,false,100/yellow1
-Pierre runique de sécurité dimensionnelle/4/true/false/2/DefP,true,19/Glace,false,200/purple1
-Pierre runique sécurité antique/3/false/false/2/DefP,true,11/Glace,false,100/orange1
+Pierre runique de SÃ©curitÃ© SupÃ©rieure/5/true/false/1/DefP,true,20/Glace,false,100/yellow1
+Pierre runique de sÃ©curitÃ© dimensionnelle/4/true/false/2/DefP,true,19/Glace,false,200/purple1
+Pierre runique sÃ©curitÃ© antique/3/false/false/2/DefP,true,11/Glace,false,100/orange1
 Pierre runique stabilisatrice antique/3/false/false/2/DefM,true,11/Foudre,false,100/orange1
-Pierre runique d'ingénierie antique/3/false/false/2/ESQ,false,7/Foudre,false,100/orange1
-Pierre runique inchangée antique/3/false/false/2/RDCCP,false,11/Sacre,false,100/orange1
+Pierre runique d'ingÃ©nierie antique/3/false/false/2/ESQ,false,7/Foudre,false,100/orange1
+Pierre runique inchangÃ©e antique/3/false/false/2/RDCCP,false,11/Sacre,false,100/orange1
 Pierre runique pacifique antique/3/false/false/2/RDCCM,false,11/Feu,false,100/orange1
-Perle de Résonance de l'Exorciste de Démons 4/3/false/true/2/AGI,false,9/ESQ,false,1/red1
-Pierre runique sécurité spéciale/2/false/false/2/DefP,true,9/Glace,false,100/black1
-Pierre runique stabilisatrice spéciale/2/false/false/2/DefM,true,9/Foudre,false,100/black1
-Pierre runique d'ingénierie spéciale/2/false/false/2/ESQ,false,5/Foudre,false,100/black1
+Perle de RÃ©sonance de l'Exorciste de DÃ©mons 4/3/false/true/2/AGI,false,9/ESQ,false,1/red1
+Pierre runique sÃ©curitÃ© spÃ©ciale/2/false/false/2/DefP,true,9/Glace,false,100/black1
+Pierre runique stabilisatrice spÃ©ciale/2/false/false/2/DefM,true,9/Foudre,false,100/black1
+Pierre runique d'ingÃ©nierie spÃ©ciale/2/false/false/2/ESQ,false,5/Foudre,false,100/black1

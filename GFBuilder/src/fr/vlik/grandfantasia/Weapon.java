@@ -18,6 +18,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 public final class Weapon extends Equipment {
 	
 	public static Weapon[][] data;
+	static {
+		loadData();
+	}
 	
 	private WeaponType type;
 	private boolean uniqueEquip;
@@ -93,7 +96,7 @@ public final class Weapon extends Equipment {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/weapons/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -250,7 +253,7 @@ public final class Weapon extends Equipment {
 				}
 				reader.close();
 			} catch (IOException e) {
-				System.out.println("Error with " + Class.class.getName() + " class");
+				System.out.println("Error with " + Weapon.class.getClass().getSimpleName() + " class");
 			}
 		}
 		

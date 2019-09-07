@@ -17,6 +17,9 @@ import fr.vlik.gfbuilder.Effect.TypeEffect;
 public class Mount {
 	
 	private static Mount[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private int lvl;
@@ -65,7 +68,7 @@ public class Mount {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/montures/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -105,7 +108,7 @@ public class Mount {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Mount.class.getClass().getSimpleName() + " class");
 		}
 		
 		Mount.data = new Mount[list.size()];

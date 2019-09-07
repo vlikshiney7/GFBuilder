@@ -14,6 +14,9 @@ import fr.vlik.gfbuilder.Quality;
 public class Archive {
 	
 	private static Archive[] data;
+	static {
+		loadData();
+	}
 	
 	private String name;
 	private Quality quality;
@@ -77,7 +80,7 @@ public class Archive {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println("Error with " + Class.class.getName() + " class");
+			System.out.println("Error with " + Archive.class.getClass().getSimpleName() + " class");
 		}
 		
 		Archive.data = new Archive[list.size()];
