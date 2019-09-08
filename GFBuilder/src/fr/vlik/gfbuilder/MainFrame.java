@@ -39,12 +39,12 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import fr.vlik.gfbuilder.Effect.TypeEffect;
+import fr.vlik.gfbuilder.page.*;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Armor;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Buff;
-import fr.vlik.grandfantasia.Bullet;
 import fr.vlik.grandfantasia.Cape;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Costume;
@@ -65,7 +65,6 @@ import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.grandfantasia.Weapon;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.Blason.BlasonType;
 import fr.vlik.grandfantasia.Costume.CostType;
@@ -83,33 +82,21 @@ public class MainFrame extends JFrame {
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>();
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
-	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();		// VERSION 1
-	
-	//private ArrayList<JPanel> mainPage2 = new ArrayList<JPanel>();		// VERSION 2
+	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
 	
 	DefaultComboBoxModel<String> model;
 	
-	/*
-	private JCustomComboBox<Grade> listClasses;
-	private JCustomSpinner spinnerLvl;
-	private JCustomComboBox<Title> CBoxTitle;
-	private JCustomComboBox<String> lvlReinca;
-	private JCustomComboBox<Yggdrasil> yggdrasil;
-	private JCustomComboBox<Archive> CBoxArchive = new JCustomComboBox<Archive>();*/
-	
-	private ArrayList<JCustomComboBox<Weapon>> CBoxWeapon = new ArrayList<JCustomComboBox<Weapon>>(3);
-	private JCustomComboBox<Bullet> CBoxBullet;
 	private ArrayList<JCustomComboBox<Armor>> CBoxArmor = new ArrayList<JCustomComboBox<Armor>>(5);
 	private JCustomComboBox<Cape> CBoxCape;
 	private ArrayList<JCustomComboBox<Ring>> CBoxRing = new ArrayList<JCustomComboBox<Ring>>(2);
 	private JTextPane armorSetInfo = new JTextPane();
 	private JTextPane capeRingSetInfo = new JTextPane();
 	
-	private ArrayList<JCustomComboBox<Enchantment>> CBoxEnchant = new ArrayList<JCustomComboBox<Enchantment>>(11);
-	private ArrayList<JCustomComboBox<String>> valueFortif = new ArrayList<JCustomComboBox<String>>(8);
-	private ArrayList<JCustomComboBox<Pearl>> CBoxPearl = new ArrayList<JCustomComboBox<Pearl>>(18);
-	private ArrayList<JCustomComboBox<String>> listEffectXpStuff = new ArrayList<JCustomComboBox<String>>(24);
-	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(24);
+	private ArrayList<JCustomComboBox<Enchantment>> CBoxEnchant = new ArrayList<JCustomComboBox<Enchantment>>(8);
+	private ArrayList<JCustomComboBox<String>> valueFortif = new ArrayList<JCustomComboBox<String>>(5);
+	private ArrayList<JCustomComboBox<Pearl>> CBoxPearl = new ArrayList<JCustomComboBox<Pearl>>(6);
+	private ArrayList<JCustomComboBox<String>> listEffectXpStuff = new ArrayList<JCustomComboBox<String>>(18);
+	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(18);
 	
 	private JCustomComboBox<Mount> CBoxMount;
 	private ArrayList<ArrayList<JCustomRadioButton>> colorGenki = new ArrayList<ArrayList<JCustomRadioButton>>(2);
@@ -283,220 +270,41 @@ public class MainFrame extends JFrame {
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
 		
-		int page = 0;
-		
-		/****************************************/
-		/*				 PAGE 1					*/
-		/****************************************/
-		
-		System.out.println("Début Général : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		System.out.println("Début General : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		this.mainPage.add(PageGeneral.getInstance());
-		System.out.println("Fin Général : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		System.out.println("Fin General : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		/* CLASSE */
-		/*
-		this.listClasses = new JCustomComboBox<Grade>(Grade.getPossibleData(0));
-		this.listClasses.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.listClasses.setRenderer(new CustomListCellRenderer());
-		this.listClasses.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateSkill();
-				MainFrame.this.updateProSkill();
-				MainFrame.this.updateListStuff();
-				MainFrame.this.updateTitle();
-				MainFrame.this.updateListTalent();
-				MainFrame.this.updateListSpe();
-				MainFrame.this.updateStat();
-			}
-		});
 		
-		JPanel page1Elem1 = new JPanel(new GridLayout(2, 1, 10, 10));
-		page1Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page1Elem1.setBackground(Consts.UIColor[1]);
+		System.out.println("Début Weapon : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.mainPage.add(PageWeapon.getInstance());
+		System.out.println("Fin Weapon : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		JPanel panelTitle1 = new JPanel();
-		panelTitle1.setBackground(Consts.UIColor[1]);
-		panelTitle1.add(this.allLabel.get(page).get(0));
-		
-		page1Elem1.add(panelTitle1);
-		page1Elem1.add(this.listClasses);
-		
-		/* LEVEL */
-		/*
-		this.spinnerLvl = new JCustomSpinner(new SpinnerNumberModel(1, 1, 100, 1));
-		this.spinnerLvl.addChangeListener(new ChangeListener() {
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				MainFrame.this.updateGrade();
-				MainFrame.this.updateSkill();
-				MainFrame.this.updateProSkill();
-				MainFrame.this.updateListStuff();
-				MainFrame.this.updateTitle();
-				MainFrame.this.updateMount();
-				MainFrame.this.updateTalent();
-				MainFrame.this.showSpe();
-				MainFrame.this.updateBlason();
-				MainFrame.this.updateEnergy();
-				MainFrame.this.updateBague();
-				MainFrame.this.updateAnima();
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page1Elem2 = new JPanel(new GridLayout(2, 1, 10, 10));
-		page1Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page1Elem2.setBackground(Consts.UIColor[1]);
-		
-		JPanel panelTitle2 = new JPanel();
-		panelTitle2.setBackground(Consts.UIColor[1]);
-		panelTitle2.add(this.allLabel.get(page).get(1));
-		
-		page1Elem2.add(panelTitle2);
-		page1Elem2.add(this.spinnerLvl);
-		
-		/* REINCARNATION */
-		/*
-		String nameReinca[] = { "Aucune", "Niveau 1" };
-		this.lvlReinca = new JCustomComboBox<String>(nameReinca);
-		this.lvlReinca.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.lvlReinca.setRenderer(new CustomListCellRenderer());
-		this.lvlReinca.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateSkillReinca();
-				MainFrame.this.updateListStuff();
-				MainFrame.this.updateTitle();
-				MainFrame.this.updateMount();
-				MainFrame.this.showSpe();
-				MainFrame.this.updateNucleus();
-				MainFrame.this.updateEnergy();
-				MainFrame.this.updateBague();
-				MainFrame.this.updateAnima();
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page1Elem3 = new JPanel(new GridLayout(2, 1, 10, 10));
-		page1Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page1Elem3.setBackground(Consts.UIColor[1]);
-		
-		JPanel panelTitle3 = new JPanel();
-		panelTitle3.setBackground(Consts.UIColor[1]);
-		panelTitle3.add(this.allLabel.get(page).get(2));
-		
-		page1Elem3.add(panelTitle3);
-		page1Elem3.add(this.lvlReinca);
-		
-		/* TITRE */
-		/*
-		Grade currentGrade = (Grade) this.listClasses.getSelectedItem();
-		Title[] tabTitle = Title.getPossibleData(currentGrade.getGrade(), this.spinnerLvl.getIntValue(), false);
-		
-		this.CBoxTitle = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
-		this.CBoxTitle.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxTitle.setRenderer(new CustomListCellRenderer());
-		this.CBoxTitle.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page1Elem4 = new JPanel(new GridLayout(2, 1, 10, 10));
-		page1Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page1Elem4.setBackground(Consts.UIColor[1]);
-		
-		JPanel panelTitle4 = new JPanel();
-		panelTitle4.setBackground(Consts.UIColor[1]);
-		panelTitle4.add(this.allLabel.get(page).get(3));
-		
-		page1Elem4.add(panelTitle4);
-		page1Elem4.add(this.CBoxTitle);
-		
-		/* YGGDRASIL */
-		/*
-		this.yggdrasil = new JCustomComboBox<Yggdrasil>(Yggdrasil.getData());
-		this.yggdrasil.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.yggdrasil.setRenderer(new CustomListCellRenderer());
-		this.yggdrasil.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page1Elem5 = new JPanel(new GridLayout(2, 1, 10, 10));
-		page1Elem5.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page1Elem5.setBackground(Consts.UIColor[1]);
-		
-		JPanel panelTitle5 = new JPanel();
-		panelTitle5.setBackground(Consts.UIColor[1]);
-		panelTitle5.add(this.allLabel.get(page).get(4));
-		
-		page1Elem5.add(panelTitle5);
-		page1Elem5.add(this.yggdrasil);
-		
-		/* BONUS ARCHIVE */
-		/*
-		this.CBoxArchive = new JCustomComboBox<Archive>(new DefaultComboBoxModel<Archive>(Archive.getData()));
-		this.CBoxArchive.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxArchive.setRenderer(new CustomListCellRenderer());
-		this.CBoxArchive.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page1Elem6 = new JPanel(new GridLayout(2, 1, 10, 10));
-		page1Elem6.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page1Elem6.setBackground(Consts.UIColor[1]);
-		
-		JPanel panelTitle6 = new JPanel();
-		panelTitle6.setBackground(Consts.UIColor[1]);
-		panelTitle6.add(this.allLabel.get(page).get(5));
-		
-		page1Elem6.add(panelTitle6);
-		page1Elem6.add(this.CBoxArchive);
-		
-		JPanel page1 = new JPanel(new GridLayout(3, 2, 10, 10));
-		page1.setBackground(Consts.UIColor[2]);
-		page1.add(page1Elem1);
-		page1.add(page1Elem2);
-		page1.add(page1Elem3);
-		page1.add(page1Elem4);
-		page1.add(page1Elem5);
-		page1.add(page1Elem6);
-		*/
-		
-		//this.mainPage.add(page1);
 		
 		/****************************************/
-		/*				 PAGE 2					*/
+		/*				 PAGE 3					*/
 		/****************************************/
-		page++;
+		int page = 2;
 		
-		/* ARME */
-		JPanel page2 = new JPanel();
-		page2.setLayout(new BoxLayout(page2, BoxLayout.Y_AXIS));
-		page2.setBackground(Consts.UIColor[2]);
-
-		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false, null);
-			this.CBoxWeapon.add(new JCustomComboBox<Weapon>(tabWeapon));
-			this.CBoxWeapon.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxWeapon.get(i).setRenderer(new CustomListCellRenderer());
+		/* ARMURE */
+		JPanel page3 = new JPanel();
+		page3.setLayout(new BoxLayout(page3, BoxLayout.Y_AXIS));
+		page3.setBackground(Consts.UIColor[2]);
+		
+		for(int i = 0; i < 5; i++) {
+			/* NOM */
+			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false);
+			this.CBoxArmor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
+			this.CBoxArmor.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
+			this.CBoxArmor.get(i).setRenderer(new CustomListCellRenderer());
 			
 			int id = i;
-			this.CBoxWeapon.get(i).addActionListener(new ActionListener() {
+			this.CBoxArmor.get(i).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.showXpStuff(id, MainFrame.this.CBoxWeapon.get(id).getSelectedIndex());
-					MainFrame.this.showStuffDetails(id, MainFrame.this.CBoxWeapon.get(id).getSelectedIndex());
 					MainFrame.this.updatePearl(id);
+					MainFrame.this.showStuffDetails(id, MainFrame.this.CBoxArmor.get(id).getSelectedIndex());
 					MainFrame.this.updateEnchant(id);
-					MainFrame.this.weaponType(id, MainFrame.this.CBoxWeapon.get(id).getSelectedIndex());
+					MainFrame.this.showXpStuff(id, MainFrame.this.CBoxArmor.get(id).getSelectedIndex());
 					MainFrame.this.updateStat();
 				}
 			});
@@ -526,38 +334,58 @@ public class MainFrame extends JFrame {
 			});
 			this.valueFortif.get(i).setVisible(false);
 			
-			/* PEARL */
-			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(((Weapon) this.CBoxWeapon.get(i).getSelectedItem()).getQuality());
+			/* PERLE */
+			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(((Armor) this.CBoxArmor.get(i).getSelectedItem()).getQuality());
+			
+			this.CBoxPearl.add(new JCustomComboBox<Pearl>(tabPearl));
 			
 			if(i == 0) {
-				for(int j = 0; j < 6; j++) {
-					this.CBoxPearl.add(new JCustomComboBox<Pearl>(tabPearl));
-					this.CBoxPearl.get(j).setRenderer(new CustomListCellRenderer());
-					this.CBoxPearl.get(j).addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							MainFrame.this.updateStat();
-						}
-					});
-					this.CBoxPearl.get(j).setVisible(false);
-				}
+				this.CBoxPearl.get(i).setRenderer(new CustomListCellRenderer());
+				this.CBoxPearl.get(i).addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						MainFrame.this.updateStat();
+					}
+				});
+				this.CBoxPearl.get(i).setVisible(false);
+			} else if(i == 1) {
+				this.CBoxPearl.add(new JCustomComboBox<Pearl>(tabPearl));
+				this.CBoxPearl.get(i).setRenderer(new CustomListCellRenderer());
+				this.CBoxPearl.get(i+1).setRenderer(new CustomListCellRenderer());
+				this.CBoxPearl.get(i).addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						MainFrame.this.updateStat();
+					}
+				});
+				this.CBoxPearl.get(i+1).addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						MainFrame.this.updateStat();
+					}
+				});
+				this.CBoxPearl.get(i).setVisible(false);
+				this.CBoxPearl.get(i+1).setVisible(false);
 			} else {
-				for(int j = 0; j < 3; j++) {
-					this.CBoxPearl.add(new JCustomComboBox<Pearl>(tabPearl));
-					this.CBoxPearl.get(3*(i+1)+j).setRenderer(new CustomListCellRenderer());
-					this.CBoxPearl.get(3*(i+1)+j).addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							MainFrame.this.updateStat();
-						}
-					});
-					this.CBoxPearl.get(3*(i+1)+j).setVisible(false);
-				}
+				this.CBoxPearl.get(i+1).setRenderer(new CustomListCellRenderer());
+				this.CBoxPearl.get(i+1).addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						MainFrame.this.updateStat();
+					}
+				});
+				this.CBoxPearl.get(i+1).setVisible(false);
 			}
 			
 			/* XP STUFF */
+			String[] tmp = new String[XpStuff.getDataArmor()[i].length +1];
+			tmp[0] = "Rien";
+			for(int j = 0; j < tmp.length-1; j++) {
+				tmp[j+1] = XpStuff.getDataArmor()[i][j].getType().name();
+			}
+			
 			for(int j = 0; j < 2; j++) {
-				this.listEffectXpStuff.add(new JCustomComboBox<String>(new String[] {"Rien"}));
+				this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
 				this.listEffectXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
 				this.listEffectXpStuff.get(i*2+j).addActionListener(new ActionListener() {
 					@Override
@@ -581,228 +409,26 @@ public class MainFrame extends JFrame {
 				this.listLvlXpStuff.get(i*2+j).setVisible(false);
 			}
 			
-			JPanel descWeapon = new JPanel();
-			descWeapon.setLayout(new BoxLayout(descWeapon, BoxLayout.X_AXIS));
-			descWeapon.setBackground(Consts.UIColor[1]);
-			descWeapon.add(this.CBoxWeapon.get(i));
-			descWeapon.add(this.CBoxEnchant.get(i));
-			descWeapon.add(this.valueFortif.get(i));
-			
-			JPanel pearlWeapon = new JPanel();
-			pearlWeapon.setLayout(new BoxLayout(pearlWeapon, BoxLayout.Y_AXIS));
-			pearlWeapon.setBackground(Consts.UIColor[1]);
-			if(i == 0)	for(int j = 0; j < 6; j++) {
-				pearlWeapon.add(this.CBoxPearl.get(j));
-				pearlWeapon.add(Box.createVerticalStrut(3));
-			}
-			else		for(int j = 0; j < 3; j++) {
-				pearlWeapon.add(this.CBoxPearl.get(3*(i+1)+j));
-				pearlWeapon.add(Box.createVerticalStrut(3));
-			}
-			
-			JPanel xpWeapon = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpWeapon.setBackground(Consts.UIColor[1]);
-			this.allLabel.get(page).get(i+3).setFont(new Font("Open Sans", Font.PLAIN, 14));
-			xpWeapon.add(this.allLabel.get(page).get(i+3));
-			for(int j = 0; j < 2; j++) {
-				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Consts.UIColor[1]);
-				xp.add(this.listEffectXpStuff.get(i*2+j));
-				xp.add(this.listLvlXpStuff.get(i*2+j));
-				xpWeapon.add(xp);
-			}
-			
-			JPanel page2ElemI = new JPanel();
-			page2ElemI.setLayout(new BoxLayout(page2ElemI, BoxLayout.Y_AXIS));
-			page2ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page2ElemI.setBackground(Consts.UIColor[1]);
-			page2ElemI.add(this.allLabel.get(page).get(i));
-			page2ElemI.add(Box.createVerticalStrut(10));
-			page2ElemI.add(descWeapon);
-			page2ElemI.add(Box.createVerticalStrut(5));
-			page2ElemI.add(pearlWeapon);
-			page2ElemI.add(Box.createVerticalStrut(2));
-			page2ElemI.add(xpWeapon);
-			
-			if(i == 1) this.showAndHide.add(page2ElemI);
-			this.showAndHideXpStuff.add(xpWeapon);	
-			
-			page2.add(page2ElemI);
-			page2.add(Box.createVerticalStrut(10));
-		}
-		
-		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl());
-		this.CBoxBullet = new JCustomComboBox<Bullet>(tabBullet);
-		this.CBoxBullet.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxBullet.setRenderer(new CustomListCellRenderer());
-		this.CBoxBullet.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page2Elem1 = new JPanel();
-		page2Elem1.setLayout(new BoxLayout(page2Elem1, BoxLayout.Y_AXIS));
-		page2Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page2Elem1.setBackground(Consts.UIColor[1]);
-		page2Elem1.add(this.allLabel.get(page).get(6));
-		page2Elem1.add(Box.createVerticalStrut(10));
-		page2Elem1.add(this.CBoxBullet);
-		
-		page2.add(page2Elem1);
-		
-		this.mainPage.add(page2);
-		
-		/****************************************/
-		/*				 PAGE 3					*/
-		/****************************************/
-		page++;
-		
-		/* ARMURE */
-		JPanel page3 = new JPanel();
-		page3.setLayout(new BoxLayout(page3, BoxLayout.Y_AXIS));
-		page3.setBackground(Consts.UIColor[2]);
-		
-		for(int i = 0; i < 5; i++) {
-			/* NOM */
-			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false);
-			this.CBoxArmor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
-			this.CBoxArmor.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxArmor.get(i).setRenderer(new CustomListCellRenderer());
-			
-			int id = i;
-			this.CBoxArmor.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updatePearl(id+3);
-					MainFrame.this.showStuffDetails(id+3, MainFrame.this.CBoxArmor.get(id).getSelectedIndex());
-					MainFrame.this.updateEnchant(id+3);
-					MainFrame.this.showXpStuff(id+3, MainFrame.this.CBoxArmor.get(id).getSelectedIndex());
-					MainFrame.this.updateStat();
-				}
-			});
-			
-			/* ENCHANTEMENT */
-			this.CBoxEnchant.add(new JCustomComboBox<Enchantment>());
-			this.CBoxEnchant.get(i+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxEnchant.get(i+3).setRenderer(new CustomListCellRenderer());
-			this.CBoxEnchant.get(i+3).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.CBoxEnchant.get(i+3).setVisible(false);
-			
-			/* FORTIF */
-			String nameFortif[] = { "+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20" };
-			this.valueFortif.add(new JCustomComboBox<String>(nameFortif));
-			this.valueFortif.get(i+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.valueFortif.get(i+3).setRenderer(new CustomListCellRenderer());
-			this.valueFortif.get(i+3).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.valueFortif.get(i+3).setVisible(false);
-			
-			/* PERLE */
-			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(((Armor) this.CBoxArmor.get(i).getSelectedItem()).getQuality());
-			
-			this.CBoxPearl.add(new JCustomComboBox<Pearl>(tabPearl));
-			
-			if(i == 0) {
-				this.CBoxPearl.get(i+12).setRenderer(new CustomListCellRenderer());
-				this.CBoxPearl.get(i+12).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxPearl.get(i+12).setVisible(false);
-			} else if(i == 1) {
-				this.CBoxPearl.add(new JCustomComboBox<Pearl>(tabPearl));
-				this.CBoxPearl.get(i+12).setRenderer(new CustomListCellRenderer());
-				this.CBoxPearl.get(i+13).setRenderer(new CustomListCellRenderer());
-				this.CBoxPearl.get(i+12).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxPearl.get(i+13).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxPearl.get(i+12).setVisible(false);
-				this.CBoxPearl.get(i+13).setVisible(false);
-			} else {
-				this.CBoxPearl.get(i+13).setRenderer(new CustomListCellRenderer());
-				this.CBoxPearl.get(i+13).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxPearl.get(i+13).setVisible(false);
-			}
-			
-			/* XP STUFF */
-			String[] tmp = new String[XpStuff.getDataArmor()[i].length +1];
-			tmp[0] = "Rien";
-			for(int j = 0; j < tmp.length-1; j++) {
-				tmp[j+1] = XpStuff.getDataArmor()[i][j].getType().name();
-			}
-			
-			for(int j = 0; j < 2; j++) {
-				this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-				this.listEffectXpStuff.get(i*2+j+6).setRenderer(new CustomListCellRenderer());
-				this.listEffectXpStuff.get(i*2+j+6).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateLvlXpStuff(id+3);
-						MainFrame.this.updateStat();
-					}
-				});
-				this.listEffectXpStuff.get(i*2+j+6).setVisible(false);
-				
-				int duo = i*2+j+6;
-				this.listLvlXpStuff.add(new JCustomComboBox<String>());
-				this.listLvlXpStuff.get(i*2+j+6).setRenderer(new CustomListCellRenderer());
-				this.listLvlXpStuff.get(i*2+j+6).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateMaxLvlValue(duo);
-						MainFrame.this.updateStat();
-					}
-				});
-				this.listLvlXpStuff.get(i*2+j+6).setVisible(false);
-			}
-			
 			JPanel descArmor = new JPanel();
 			descArmor.setLayout(new BoxLayout(descArmor, BoxLayout.X_AXIS));
 			descArmor.setBackground(Consts.UIColor[1]);
 			descArmor.add(this.CBoxArmor.get(i));
-			descArmor.add(this.CBoxEnchant.get(i+3));
-			descArmor.add(this.valueFortif.get(i+3));
+			descArmor.add(this.CBoxEnchant.get(i));
+			descArmor.add(this.valueFortif.get(i));
 			
 			JPanel pearlArmor = new JPanel();
 			pearlArmor.setLayout(new BoxLayout(pearlArmor, BoxLayout.Y_AXIS));
 			pearlArmor.setBackground(Consts.UIColor[1]);
 			if(i == 0) {
-				pearlArmor.add(this.CBoxPearl.get(i+12));
+				pearlArmor.add(this.CBoxPearl.get(i));
 				pearlArmor.add(Box.createVerticalStrut(3));
 			} else if (i == 1) {
-				pearlArmor.add(this.CBoxPearl.get(i+12));
+				pearlArmor.add(this.CBoxPearl.get(i));
 				pearlArmor.add(Box.createVerticalStrut(3));
-				pearlArmor.add(this.CBoxPearl.get(i+13));
+				pearlArmor.add(this.CBoxPearl.get(i+1));
 				pearlArmor.add(Box.createVerticalStrut(3));
 			} else {
-				pearlArmor.add(this.CBoxPearl.get(i+13));
+				pearlArmor.add(this.CBoxPearl.get(i+1));
 				pearlArmor.add(Box.createVerticalStrut(3));
 			}
 			
@@ -813,8 +439,8 @@ public class MainFrame extends JFrame {
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Consts.UIColor[1]);
-				xp.add(this.listEffectXpStuff.get(i*2+j+6));
-				xp.add(this.listLvlXpStuff.get(i*2+j+6));
+				xp.add(this.listEffectXpStuff.get(i*2+j));
+				xp.add(this.listLvlXpStuff.get(i*2+j));
 				xpArmor.add(xp);
 			}
 			
@@ -861,23 +487,23 @@ public class MainFrame extends JFrame {
 		this.CBoxCape.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.showXpStuff(8, MainFrame.this.CBoxCape.getSelectedIndex());
-				MainFrame.this.updateEnchant(8);
+				MainFrame.this.showXpStuff(5, MainFrame.this.CBoxCape.getSelectedIndex());
+				MainFrame.this.updateEnchant(5);
 				MainFrame.this.updateStat();
 			}
 		});
 		
 		/* ENCHANTEMENT */
 		this.CBoxEnchant.add(new JCustomComboBox<Enchantment>());
-		this.CBoxEnchant.get(8).setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxEnchant.get(8).setRenderer(new CustomListCellRenderer());
-		this.CBoxEnchant.get(8).addActionListener(new ActionListener() {
+		this.CBoxEnchant.get(5).setFont(new Font("Open Sans", Font.PLAIN, 12));
+		this.CBoxEnchant.get(5).setRenderer(new CustomListCellRenderer());
+		this.CBoxEnchant.get(5).addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				MainFrame.this.updateStat();
 			}
 		});
-		this.CBoxEnchant.get(8).setVisible(false);
+		this.CBoxEnchant.get(5).setVisible(false);
 		
 		/* XP STUFF */
 		String[] tmp = new String[XpStuff.getDataCapeRing()[0].length +1];
@@ -887,34 +513,34 @@ public class MainFrame extends JFrame {
 		}
 		for(int i = 0; i < 2; i++) {
 			this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-			this.listEffectXpStuff.get(i+16).setRenderer(new CustomListCellRenderer());
-			this.listEffectXpStuff.get(i+16).addActionListener(new ActionListener() {
+			this.listEffectXpStuff.get(i+10).setRenderer(new CustomListCellRenderer());
+			this.listEffectXpStuff.get(i+10).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateLvlXpStuff(8);
+					MainFrame.this.updateLvlXpStuff(5);
 					MainFrame.this.updateStat();
 				}
 			});
-			this.listEffectXpStuff.get(i+16).setVisible(false);
+			this.listEffectXpStuff.get(i+10).setVisible(false);
 			
-			int duo = i+16;
+			int duo = i+10;
 			this.listLvlXpStuff.add(new JCustomComboBox<String>());
-			this.listLvlXpStuff.get(i+16).setRenderer(new CustomListCellRenderer());
-			this.listLvlXpStuff.get(i+16).addActionListener(new ActionListener() {
+			this.listLvlXpStuff.get(i+10).setRenderer(new CustomListCellRenderer());
+			this.listLvlXpStuff.get(i+10).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					MainFrame.this.updateMaxLvlValue(duo);
 					MainFrame.this.updateStat();
 				}
 			});
-			this.listLvlXpStuff.get(i+16).setVisible(false);
+			this.listLvlXpStuff.get(i+10).setVisible(false);
 		}
 		
 		JPanel descCape = new JPanel();
 		descCape.setLayout(new BoxLayout(descCape, BoxLayout.X_AXIS));
 		descCape.setBackground(Consts.UIColor[1]);
 		descCape.add(this.CBoxCape);
-		descCape.add(this.CBoxEnchant.get(8));
+		descCape.add(this.CBoxEnchant.get(5));
 		
 		JPanel xpCape = new JPanel(new GridLayout(1, 3, 10, 3));
 		xpCape.setBackground(Consts.UIColor[1]);
@@ -923,8 +549,8 @@ public class MainFrame extends JFrame {
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 			xp.setBackground(Consts.UIColor[1]);
-			xp.add(this.listEffectXpStuff.get(i+16));
-			xp.add(this.listLvlXpStuff.get(i+16));
+			xp.add(this.listEffectXpStuff.get(i+10));
+			xp.add(this.listLvlXpStuff.get(i+10));
 			xpCape.add(xp);
 		}
 		
@@ -956,8 +582,8 @@ public class MainFrame extends JFrame {
 			this.CBoxRing.get(i).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.showXpStuff(id+9, MainFrame.this.CBoxRing.get(id).getSelectedIndex());
-					MainFrame.this.updateEnchant(id+9);
+					MainFrame.this.showXpStuff(id+6, MainFrame.this.CBoxRing.get(id).getSelectedIndex());
+					MainFrame.this.updateEnchant(id+6);
 					MainFrame.this.updateDoubleRing(id);
 					MainFrame.this.updateStat();
 				}
@@ -965,15 +591,15 @@ public class MainFrame extends JFrame {
 			
 			/* ENCHANTEMENT */
 			this.CBoxEnchant.add(new JCustomComboBox<Enchantment>());
-			this.CBoxEnchant.get(i+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxEnchant.get(i+9).setRenderer(new CustomListCellRenderer());
-			this.CBoxEnchant.get(i+9).addActionListener(new ActionListener() {
+			this.CBoxEnchant.get(i+6).setFont(new Font("Open Sans", Font.PLAIN, 12));
+			this.CBoxEnchant.get(i+6).setRenderer(new CustomListCellRenderer());
+			this.CBoxEnchant.get(i+6).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					MainFrame.this.updateStat();
 				}
 			});
-			this.CBoxEnchant.get(i+9).setVisible(false);
+			this.CBoxEnchant.get(i+6).setVisible(false);
 			
 			/* XP STUFF */
 			tmp = new String[XpStuff.getDataCapeRing()[1].length +1];
@@ -983,34 +609,34 @@ public class MainFrame extends JFrame {
 			}
 			for(int j = 0; j < 2; j++) {
 				this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-				this.listEffectXpStuff.get(i*2+j+18).setRenderer(new CustomListCellRenderer());
-				this.listEffectXpStuff.get(i*2+j+18).addActionListener(new ActionListener() {
+				this.listEffectXpStuff.get(i*2+j+12).setRenderer(new CustomListCellRenderer());
+				this.listEffectXpStuff.get(i*2+j+12).addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateLvlXpStuff(id+9);
+						MainFrame.this.updateLvlXpStuff(id+6);
 						MainFrame.this.updateStat();
 					}
 				});
-				this.listEffectXpStuff.get(i*2+j+18).setVisible(false);
+				this.listEffectXpStuff.get(i*2+j+12).setVisible(false);
 				
-				int duo = i*2+j+18;
+				int duo = i*2+j+12;
 				this.listLvlXpStuff.add(new JCustomComboBox<String>());
-				this.listLvlXpStuff.get(i*2+j+18).setRenderer(new CustomListCellRenderer());
-				this.listLvlXpStuff.get(i*2+j+18).addActionListener(new ActionListener() {
+				this.listLvlXpStuff.get(i*2+j+12).setRenderer(new CustomListCellRenderer());
+				this.listLvlXpStuff.get(i*2+j+12).addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						MainFrame.this.updateMaxLvlValue(duo);
 						MainFrame.this.updateStat();
 					}
 				});
-				this.listLvlXpStuff.get(i*2+j+18).setVisible(false);
+				this.listLvlXpStuff.get(i*2+j+12).setVisible(false);
 			}
 			
 			JPanel descRing = new JPanel();
 			descRing.setLayout(new BoxLayout(descRing, BoxLayout.X_AXIS));
 			descRing.setBackground(Consts.UIColor[1]);
 			descRing.add(this.CBoxRing.get(i));
-			descRing.add(this.CBoxEnchant.get(i+9));
+			descRing.add(this.CBoxEnchant.get(i+6));
 			
 			JPanel xpRing = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpRing.setBackground(Consts.UIColor[1]);
@@ -1019,8 +645,8 @@ public class MainFrame extends JFrame {
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Consts.UIColor[1]);
-				xp.add(this.listEffectXpStuff.get(i*2+j+18));
-				xp.add(this.listLvlXpStuff.get(i*2+j+18));
+				xp.add(this.listEffectXpStuff.get(i*2+j+12));
+				xp.add(this.listLvlXpStuff.get(i*2+j+12));
 				xpRing.add(xp);
 			}
 			
@@ -1065,7 +691,7 @@ public class MainFrame extends JFrame {
 		this.CBoxMount.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.showXpStuff(11, MainFrame.this.CBoxMount.getSelectedIndex());
+				MainFrame.this.showXpStuff(8, MainFrame.this.CBoxMount.getSelectedIndex());
 				MainFrame.this.updateStat();
 			}
 		});
@@ -1077,27 +703,27 @@ public class MainFrame extends JFrame {
 		}
 		for(int i = 0; i < 2; i++) {
 			this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-			this.listEffectXpStuff.get(i+22).setRenderer(new CustomListCellRenderer());
-			this.listEffectXpStuff.get(i+22).addActionListener(new ActionListener() {
+			this.listEffectXpStuff.get(i+16).setRenderer(new CustomListCellRenderer());
+			this.listEffectXpStuff.get(i+16).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateLvlXpStuff(11);
+					MainFrame.this.updateLvlXpStuff(8);
 					MainFrame.this.updateStat();
 				}
 			});
-			this.listEffectXpStuff.get(i+22).setVisible(false);
+			this.listEffectXpStuff.get(i+16).setVisible(false);
 			
-			int duo = i+22;
+			int duo = i+16;
 			this.listLvlXpStuff.add(new JCustomComboBox<String>());
-			this.listLvlXpStuff.get(i+22).setRenderer(new CustomListCellRenderer());
-			this.listLvlXpStuff.get(i+22).addActionListener(new ActionListener() {
+			this.listLvlXpStuff.get(i+16).setRenderer(new CustomListCellRenderer());
+			this.listLvlXpStuff.get(i+16).addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					MainFrame.this.updateMaxLvlValue(duo);
 					MainFrame.this.updateStat();
 				}
 			});
-			this.listLvlXpStuff.get(i+22).setVisible(false);
+			this.listLvlXpStuff.get(i+16).setVisible(false);
 		}
 		
 		
@@ -1108,8 +734,8 @@ public class MainFrame extends JFrame {
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 			xp.setBackground(Consts.UIColor[1]);
-			xp.add(this.listEffectXpStuff.get(i+22));
-			xp.add(this.listLvlXpStuff.get(i+22));
+			xp.add(this.listEffectXpStuff.get(i+16));
+			xp.add(this.listLvlXpStuff.get(i+16));
 			xpRide.add(xp);
 		}
 		
@@ -2371,9 +1997,7 @@ public class MainFrame extends JFrame {
 		}
 	}
 
-	protected void updateStat() {
-		Build build;
-		
+	public void updateStat() {
 		GradeName grade = PageGeneral.getInstance().getGrade().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
@@ -2387,12 +2011,10 @@ public class MainFrame extends JFrame {
 			else coefReinca = Consts.coefReinca[5];
 		}
 		
-		WeaponType[] weaponsType = new WeaponType[3];
-		for(int i = 0; i < weaponsType.length; i++) {
-			weaponsType[i] = ((Weapon) this.CBoxWeapon.get(i).getSelectedItem()).getType();
-		}
 		
-		build = new Build(coefReinca, weaponsType);
+		WeaponType[] weaponType = PageWeapon.getInstance().getWeaponType();
+		
+		Build build = new Build(coefReinca, weaponType);
 		
 		Effect[] baseFromClass = new Effect[5];
 		for(int i = 0; i < baseFromClass.length; i++) {
@@ -2405,63 +2027,24 @@ public class MainFrame extends JFrame {
 		build.addEffect(PageGeneral.getInstance().getEffects());
 		build.addAdditionalEffect(PageGeneral.getInstance().getAdditionnalEffects());
 		
-		/*Title title = PageGeneral.getInstance().getTitle();
-		build.addEffect(title.getEffects());
-		
-		Yggdrasil yggdra = PageGeneral.getInstance().getYggdrasil();
-		build.addEffect(yggdra.getEffects());
-		
-		Archive archive = PageGeneral.getInstance().getArchive();
-		build.addAdditionalEffect(archive.getEffects());*/
-		
-		
-		Weapon[] weapons = new Weapon[3];
-		for(int i = 0; i < weapons.length; i++) {
-			weapons[i] = new Weapon((Weapon) this.CBoxWeapon.get(i).getSelectedItem());
-			weapons[i].addEnchant((Enchantment) this.CBoxEnchant.get(i).getSelectedItem());
-			weapons[i].addFortif(this.valueFortif.get(i).getSelectedIndex());
-		}
-		
-		if(!weapons[0].getName().equals("Rien") && !weapons[1].getName().equals("Rien")) {
-			weapons[0].doubleWeapon();
-			weapons[1].doubleWeapon();
-		}
-		
-		for(int i = 0; i < weapons.length; i++) {
-			build.addEffect(weapons[i].getEffects());
-		}
-		
-		for(int i = 0; i < 6; i++) {
-			if(!this.listLvlXpStuff.get(i).isVisible() || this.listEffectXpStuff.get(i).getSelectedIndex() == 0) {
-				continue;
-			}
-			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i).getSelectedItem().toString());
-			int idListXp = ((Weapon) this.CBoxWeapon.get((i/2)).getSelectedItem()).getType().index;
-			double valueXpStuff = XpStuff.getDataWeapon()[idListXp][this.listEffectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i).getSelectedIndex());
-			
-			build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
-		}
-		
-		Bullet bullet = (Bullet) this.CBoxBullet.getSelectedItem();
-		build.addEffect(bullet.getEffects());
+		build.addEffect(PageWeapon.getInstance().getEffects());
 		
 		
 		Armor[] armors = new Armor[5];
 		for(int i = 0; i < armors.length; i++) {
 			armors[i] = new Armor((Armor) this.CBoxArmor.get(i).getSelectedItem());
-			armors[i].addEnchant((Enchantment) this.CBoxEnchant.get(i+3).getSelectedItem(), i);
-			armors[i].addFortif(this.valueFortif.get(i+3).getSelectedIndex());
+			armors[i].addEnchant((Enchantment) this.CBoxEnchant.get(i).getSelectedItem(), i);
+			armors[i].addFortif(this.valueFortif.get(i).getSelectedIndex());
 			build.addEffect(armors[i].getEffects());
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			if(!this.listLvlXpStuff.get(i+6).isVisible() || this.listEffectXpStuff.get(i+6).getSelectedIndex() == 0) {
+			if(!this.listLvlXpStuff.get(i).isVisible() || this.listEffectXpStuff.get(i).getSelectedIndex() == 0) {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+6).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataArmor()[i/2][this.listEffectXpStuff.get(i+6).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+6).getSelectedIndex());
+			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i).getSelectedItem().toString());
+			double valueXpStuff = XpStuff.getDataArmor()[i/2][this.listEffectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i).getSelectedIndex());
 			
 			build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
 		}
@@ -2473,16 +2056,16 @@ public class MainFrame extends JFrame {
 		
 		
 		Cape cape = new Cape((Cape) this.CBoxCape.getSelectedItem());
-		cape.addEnchant((Enchantment) this.CBoxEnchant.get(8).getSelectedItem());
+		cape.addEnchant((Enchantment) this.CBoxEnchant.get(5).getSelectedItem());
 		build.addEffect(cape.getEffects());
 		
 		for(int i = 0; i < 2; i++) {
-			if(!this.listLvlXpStuff.get(i+16).isVisible() || this.listEffectXpStuff.get(i+16).getSelectedIndex() == 0) {
+			if(!this.listLvlXpStuff.get(i+10).isVisible() || this.listEffectXpStuff.get(i+10).getSelectedIndex() == 0) {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+16).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(i+16).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+16).getSelectedIndex());
+			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+10).getSelectedItem().toString());
+			double valueXpStuff = XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(i+10).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+10).getSelectedIndex());
 			
 			build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
 		}
@@ -2490,17 +2073,17 @@ public class MainFrame extends JFrame {
 		Ring[] rings = new Ring[2];
 		for(int i = 0; i < rings.length; i++) {
 			rings[i] = (Ring) this.CBoxRing.get(i).getSelectedItem();
-			rings[i].addEnchant((Enchantment) this.CBoxEnchant.get(i+9).getSelectedItem());
+			rings[i].addEnchant((Enchantment) this.CBoxEnchant.get(i+6).getSelectedItem());
 			build.addEffect(rings[i].getEffects());
 		}
 		
 		for(int i = 0; i < 4; i++) {
-			if(!this.listLvlXpStuff.get(i+18).isVisible() || this.listEffectXpStuff.get(i+18).getSelectedIndex() == 0) {
+			if(!this.listLvlXpStuff.get(i+12).isVisible() || this.listEffectXpStuff.get(i+12).getSelectedIndex() == 0) {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+18).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(i+18).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+18).getSelectedIndex());
+			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+12).getSelectedItem().toString());
+			double valueXpStuff = XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(i+12).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+12).getSelectedIndex());
 			
 			build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
 		}
@@ -2515,7 +2098,7 @@ public class MainFrame extends JFrame {
 			Pearl pearl = (Pearl) pearls.getSelectedItem();
 			if(pearl.isCumulable()) {
 				build.addEffect(pearl.getEffects());
-			} else if(!isAlreadyCount(notCombinablePearl, pearl)) {
+			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
 				notCombinablePearl.add(pearl);
 				build.addEffect(pearl.getEffects());
 			}
@@ -2525,12 +2108,12 @@ public class MainFrame extends JFrame {
 		build.addEffect(mount.getDepla());
 		
 		for(int i = 0; i < 2; i++) {
-			if(!this.listLvlXpStuff.get(i+22).isVisible() || this.listEffectXpStuff.get(i+22).getSelectedIndex() == 0) {
+			if(!this.listLvlXpStuff.get(i+16).isVisible() || this.listEffectXpStuff.get(i+16).getSelectedIndex() == 0) {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+22).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataMount()[this.listEffectXpStuff.get(i+22).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+22).getSelectedIndex());
+			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+16).getSelectedItem().toString());
+			double valueXpStuff = XpStuff.getDataMount()[this.listEffectXpStuff.get(i+16).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+16).getSelectedIndex());
 			
 			if(mount.getName().equals("Loup Spectral de Combat")) {
 				build.addEffect(new Effect(type, false, valueXpStuff/2, true, WeaponType.NONE, null));
@@ -2539,25 +2122,21 @@ public class MainFrame extends JFrame {
 			}
 		}
 		
-		for(int i = 0; i < 11; i++) {
+		for(int i = 0; i < 8; i++) {
 			if(!(this.listEffectXpStuff.get(i*2).getSelectedIndex() == 0) && !(this.listEffectXpStuff.get(i*2+1).getSelectedIndex() == 0)
 					&& this.listEffectXpStuff.get(i*2).getSelectedIndex() != this.listEffectXpStuff.get(i*2+1).getSelectedIndex()) {
 				int lvlXpStuff = this.listLvlXpStuff.get(i*2).getSelectedIndex() + this.listLvlXpStuff.get(i*2+1).getSelectedIndex() +1;
-				if(i < 3) {
-					if(lvlXpStuff >= weapons[i].getLvl()) {
-						build.addEffect(weapons[i].getBonusXP());
+				if(i < 5) {
+					if(lvlXpStuff >= armors[i].getLvl()) {
+						build.addEffect(armors[i].getBonusXP());
 					}
-				} else if(i < 8) {
-					if(lvlXpStuff >= armors[i-3].getLvl()) {
-						build.addEffect(armors[i-3].getBonusXP());
-					}
-				} else if(i < 9) {
+				} else if(i < 6) {
 					if(lvlXpStuff >= cape.getLvl()) {
 						build.addEffect(cape.getBonusXP());
 					}
-				} else if(i < 11) {
-					if(lvlXpStuff >= rings[i-9].getLvl()) {
-						build.addEffect(rings[i-9].getBonusXP());
+				} else if(i < 8) {
+					if(lvlXpStuff >= rings[i-6].getLvl()) {
+						build.addEffect(rings[i-6].getBonusXP());
 					}
 				}
 			}
@@ -2647,7 +2226,7 @@ public class MainFrame extends JFrame {
 			if(skill.isVisible()) build.addEffect(((Skill) skill.getSelectedItem()).getEffects(0));
 		}
 		
-		if(this.showAndHide.get(4).isVisible()) {
+		if(this.showAndHide.get(3).isVisible()) {
 			ProSkill proSkill = (ProSkill) this.CBoxProSkill.getSelectedItem();
 			build.addEffect(proSkill.getEffects());
 		}
@@ -2736,53 +2315,15 @@ public class MainFrame extends JFrame {
 			this.capeRingSetInfo.setText(setInfo);
 		}
 	}
-	/*
-	private void updateGrade() {
-		Grade tabGrade[] = Grade.getPossibleData(this.spinnerLvl.getIntValue());
-		GradeName memoryGrade = ((Grade) this.listClasses.getSelectedItem()).getGrade();
-		Grade memory = null;
-		
-		for(Grade grade : tabGrade) {
-			if(grade.getGrade() == memoryGrade) {
-				memory = grade;
-				break;
-			}
-		}
-		
-		if(memory == null) {
-			for(Grade grade : tabGrade) {
-				if(grade.getGrade().index == memoryGrade.index-1) {
-					memory = grade;
-					break;
-				}
-			}
-		}
-		
-		if(memory == null) memory = tabGrade[0];
-		
-		this.listClasses.setModel(new DefaultComboBoxModel<Grade>(tabGrade));
-		this.listClasses.setSelectedItem(memory);
-	}*/
 	
-	/*private void updateTitle() {
-		Grade grade = (Grade) this.listClasses.getSelectedItem();
-		boolean isReinca = this.lvlReinca.getSelectedIndex() == 0 ? false : true;
-		
-		Title tabTitle[] = Title.getPossibleData(grade.getGrade(), this.spinnerLvl.getIntValue(), isReinca);
-		Title memory = (Title) this.CBoxTitle.getSelectedItem();
-		
-		this.CBoxTitle.setModel(new DefaultComboBoxModel<Title>(tabTitle));
-		this.CBoxTitle.setSelectedItem(memory);
-	}*/
-	
-	void updateNucleus() {
+	public void updateNucleus() {
 		if(PageGeneral.getInstance().getReinca() == 0) {
-			this.showAndHide.get(5).setVisible(false);
+			this.showAndHide.get(4).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
-		} else this.showAndHide.get(5).setVisible(true);
+		} else this.showAndHide.get(4).setVisible(true);
 	}
 	
-	void updateMount() {
+	public void updateMount() {
 		int lvl = PageGeneral.getInstance().getLvl();
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
 		
@@ -2793,19 +2334,19 @@ public class MainFrame extends JFrame {
 		this.CBoxMount.setSelectedItem(memory);
 		
 		if(this.CBoxMount.getSelectedIndex() == 0) {
-			this.listEffectXpStuff.get(22).setVisible(false);
-			this.listEffectXpStuff.get(23).setVisible(false);
-			this.listEffectXpStuff.get(22).setSelectedIndex(0);
-			this.listEffectXpStuff.get(23).setSelectedIndex(0);
-			this.showAndHideXpStuff.get(11).setVisible(false);
+			this.listEffectXpStuff.get(16).setVisible(false);
+			this.listEffectXpStuff.get(17).setVisible(false);
+			this.listEffectXpStuff.get(16).setSelectedIndex(0);
+			this.listEffectXpStuff.get(17).setSelectedIndex(0);
+			this.showAndHideXpStuff.get(8).setVisible(false);
 		} else {
-			this.listEffectXpStuff.get(22).setVisible(true);
-			this.listEffectXpStuff.get(23).setVisible(true);
-			this.showAndHideXpStuff.get(11).setVisible(true);
+			this.listEffectXpStuff.get(16).setVisible(true);
+			this.listEffectXpStuff.get(17).setVisible(true);
+			this.showAndHideXpStuff.get(8).setVisible(true);
 		}
 		
-		if(tabMount.length > 1) this.showAndHide.get(1).setVisible(true);
-		else this.showAndHide.get(1).setVisible(false);
+		if(tabMount.length > 1) this.showAndHide.get(0).setVisible(true);
+		else this.showAndHide.get(0).setVisible(false);
 	}
 	
 	void updateGenkiQuality(int idList) {
@@ -2849,31 +2390,10 @@ public class MainFrame extends JFrame {
 		this.CBoxGenki.get(idList).setSelectedIndex(memory);
 	}
 	
-	void updateListStuff() {
+	public void updateListStuff() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
-		
-		/* ARME */
-		for(int i = 0; i < this.CBoxWeapon.size(); i++) {
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade.getGrade(), lvl, reinca, null);
-			Weapon memory = (Weapon) this.CBoxWeapon.get(i).getSelectedItem();
-			
-			this.CBoxWeapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
-			this.CBoxWeapon.get(i).setSelectedItem(memory);
-			
-			if(!this.CBoxWeapon.get(i).getSelectedItem().equals(memory)) {
-				weaponType(i, 0);
-				showStuffDetails(i, 0);
-				showXpStuff(i, 0);
-				updateEnchant(i);
-				
-				this.valueFortif.get(i).setSelectedIndex(0);
-				this.CBoxPearl.get(i).setSelectedIndex(0);
-				this.CBoxPearl.get(i+1).setSelectedIndex(0);
-				this.CBoxPearl.get(i+2).setSelectedIndex(0);
-			}
-		}
 		
 		/* ARMURE */
 		for(int i = 0; i < this.CBoxArmor.size(); i++) {
@@ -2884,26 +2404,19 @@ public class MainFrame extends JFrame {
 			this.CBoxArmor.get(i).setSelectedItem(memory);
 			
 			if(!this.CBoxArmor.get(i).getSelectedItem().equals(memory)) {
-				this.valueFortif.get(i+3).setSelectedIndex(0);
+				this.valueFortif.get(i).setSelectedIndex(0);
 				if(i == 0) {
-					this.CBoxPearl.get(i+12).setSelectedIndex(0);
+					this.CBoxPearl.get(i).setSelectedIndex(0);
 				} else if (i == 1) {
-					this.CBoxPearl.get(i+12).setSelectedIndex(0);
-					this.CBoxPearl.get(i+13).setSelectedIndex(0);
+					this.CBoxPearl.get(i).setSelectedIndex(0);
+					this.CBoxPearl.get(i+1).setSelectedIndex(0);
 				} else {
-					this.CBoxPearl.get(i+13).setSelectedIndex(0);
+					this.CBoxPearl.get(i+1).setSelectedIndex(0);
 				}
 				
-				showStuffDetails(i+3, 0);
+				showStuffDetails(i, 0);
 			}
 		}
-		
-		/* PROJECTILE */
-		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl);
-		Bullet memoryBullet = (Bullet) this.CBoxBullet.getSelectedItem();
-		
-		this.CBoxBullet.setModel(new DefaultComboBoxModel<Bullet>(tabBullet));
-		this.CBoxBullet.setSelectedItem(memoryBullet);
 		
 		/* CAPE */
 		Cape[] tabCape = Cape.getPossibleCape(grade.getGrade(), lvl);
@@ -2922,25 +2435,10 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	private void updateEnchant(int idList) {
-		if(idList < 3) {
-			if(this.CBoxWeapon.get(idList).getSelectedIndex() != 0) {
-				Weapon weapon = (Weapon) this.CBoxWeapon.get(idList).getSelectedItem();
-				
-				if(weapon.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleWeaponEnchant(weapon.getQuality(), weapon.getType());
-					
-					this.CBoxEnchant.get(idList).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-					this.CBoxEnchant.get(idList).setVisible(true);
-				} else {
-					this.CBoxEnchant.get(idList).setVisible(false);
-				}
-			} else {
-				this.CBoxEnchant.get(idList).setVisible(false);
-			}
-		} else if(idList < 8) {
-			if(this.CBoxArmor.get(idList-3).getSelectedIndex() != 0) {
-				Armor armor = (Armor) this.CBoxArmor.get(idList-3).getSelectedItem();
+	public void updateEnchant(int idList) {
+		if(idList < 5) {
+			if(this.CBoxArmor.get(idList).getSelectedIndex() != 0) {
+				Armor armor = (Armor) this.CBoxArmor.get(idList).getSelectedItem();
 				
 				if(armor.isEnchantable()) {
 					Enchantment[] tabEnchant = Enchantment.getPossibleArmorEnchant(armor.getQuality());
@@ -2953,7 +2451,7 @@ public class MainFrame extends JFrame {
 			} else {
 				this.CBoxEnchant.get(idList).setVisible(false);
 			}
-		} else if(idList == 8) {
+		} else if(idList == 5) {
 			if(this.CBoxCape.getSelectedIndex() != 0) {
 				Cape cape = (Cape) this.CBoxCape.getSelectedItem();
 				
@@ -2969,11 +2467,10 @@ public class MainFrame extends JFrame {
 				this.CBoxEnchant.get(idList).setVisible(false);
 			}
 		} else {
-			if(this.CBoxRing.get(idList-9).getSelectedIndex() != 0) {
-				Ring ring = (Ring) this.CBoxRing.get(idList-9).getSelectedItem();
+			if(this.CBoxRing.get(idList-6).getSelectedIndex() != 0) {
+				Ring ring = (Ring) this.CBoxRing.get(idList-6).getSelectedItem();
 				
-				if(ring.isEnchantable
-						()) {
+				if(ring.isEnchantable()) {
 					Enchantment[] tabEnchant = Enchantment.getPossibleCapeRingEnchant();
 					
 					this.CBoxEnchant.get(idList).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
@@ -2987,47 +2484,29 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	private void updatePearl(int id) {
-		if(id < 3) {
-			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(((Weapon) this.CBoxWeapon.get(id).getSelectedItem()).getQuality());
+	public void updatePearl(int id) {
+		Pearl[] tabPearl = Pearl.getPossibleArmorPearl(((Armor) this.CBoxArmor.get(id).getSelectedItem()).getQuality());
+		
+		if(id == 0) {
+			Pearl memory = (Pearl) this.CBoxPearl.get(id).getSelectedItem();
 			
-			if(id == 0)
-				for(int i = 0; i < 3; i++) {
-					Pearl memory = (Pearl) this.CBoxPearl.get(id*3+i).getSelectedItem();
-					
-					this.CBoxPearl.get(id*3+i).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
-					this.CBoxPearl.get(id*3+i).setSelectedItem(memory);
-				}
-			for(int i = 0; i < 3; i++) {
-				Pearl memory = (Pearl) this.CBoxPearl.get(3*(id+1)+i).getSelectedItem();
-				
-				this.CBoxPearl.get(3*(id+1)+i).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
-				this.CBoxPearl.get(3*(id+1)+i).setSelectedItem(memory);
-			}
+			this.CBoxPearl.get(id).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
+			this.CBoxPearl.get(id).setSelectedItem(memory);
+		} else if (id == 1) {
+			Pearl memory = (Pearl) this.CBoxPearl.get(id).getSelectedItem();
+			
+			this.CBoxPearl.get(id).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
+			this.CBoxPearl.get(id).setSelectedItem(memory);
+			
+			memory = (Pearl) this.CBoxPearl.get(id+1).getSelectedItem();
+			
+			this.CBoxPearl.get(id+1).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
+			this.CBoxPearl.get(id+1).setSelectedItem(memory);
 		} else {
-			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(((Armor) this.CBoxArmor.get(id-3).getSelectedItem()).getQuality());
+			Pearl memory = (Pearl) this.CBoxPearl.get(id+1).getSelectedItem();
 			
-			if(id == 3) {
-				Pearl memory = (Pearl) this.CBoxPearl.get(id+9).getSelectedItem();
-				
-				this.CBoxPearl.get(id+9).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
-				this.CBoxPearl.get(id+9).setSelectedItem(memory);
-			} else if (id == 4) {
-				Pearl memory = (Pearl) this.CBoxPearl.get(id+9).getSelectedItem();
-				
-				this.CBoxPearl.get(id+9).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
-				this.CBoxPearl.get(id+9).setSelectedItem(memory);
-				
-				memory = (Pearl) this.CBoxPearl.get(id+10).getSelectedItem();
-				
-				this.CBoxPearl.get(id+10).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
-				this.CBoxPearl.get(id+10).setSelectedItem(memory);
-			} else {
-				Pearl memory = (Pearl) this.CBoxPearl.get(id+10).getSelectedItem();
-				
-				this.CBoxPearl.get(id+10).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
-				this.CBoxPearl.get(id+10).setSelectedItem(memory);
-			}
+			this.CBoxPearl.get(id+1).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
+			this.CBoxPearl.get(id+1).setSelectedItem(memory);
 		}
 	}
 	
@@ -3040,37 +2519,21 @@ public class MainFrame extends JFrame {
 			setMemoryInList(this.listLvlXpStuff.get(index*2), null);
 			setMemoryInList(this.listLvlXpStuff.get(index*2+1), null);
 		} else {
-			if(index < 3) {
-				WeaponType type = ((Weapon) this.CBoxWeapon.get(index).getSelectedItem()).getType();
-				
-				String[] tmp = new String[XpStuff.getDataWeapon()[type.index][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
+			if(index < 5) {
+				String[] tmp = new String[XpStuff.getDataArmor()[index][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
 				for(int i = 0; i < tmp.length; i++) {
 					tmp[i] = "" + (i+1);
 				}
 				this.listLvlXpStuff.get(index*2).add(new JCustomComboBox<String>(tmp));
 				setMemoryInList(this.listLvlXpStuff, index*2, tmp);
 				
-				tmp = new String[XpStuff.getDataWeapon()[type.index][this.listEffectXpStuff.get(index*2+1).getSelectedIndex()-1].getLvlValue().size()];
+				tmp = new String[XpStuff.getDataArmor()[index][this.listEffectXpStuff.get(index*2+1).getSelectedIndex()-1].getLvlValue().size()];
 				for(int i = 0; i < tmp.length; i++) {
 					tmp[i] = "" + (i+1);
 				}
 				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
 				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			} else if(index < 8) {
-				String[] tmp = new String[XpStuff.getDataArmor()[index-3][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2, tmp);
-				
-				tmp = new String[XpStuff.getDataArmor()[index-3][this.listEffectXpStuff.get(index*2+1).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			} else if(index == 9) {
+			} else if(index == 6) {
 				String[] tmp = new String[XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
 				for(int i = 0; i < tmp.length; i++) {
 					tmp[i] = "" + (i+1);
@@ -3084,7 +2547,7 @@ public class MainFrame extends JFrame {
 				}
 				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
 				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			} else if(index < 11) {
+			} else if(index < 8) {
 				String[] tmp = new String[XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
 				for(int i = 0; i < tmp.length; i++) {
 					tmp[i] = "" + (i+1);
@@ -3098,7 +2561,7 @@ public class MainFrame extends JFrame {
 				}
 				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
 				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			} else if(index == 11){
+			} else if(index == 8){
 				String[] tmp = new String[XpStuff.getDataMount()[this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
 				for(int i = 0; i < tmp.length; i++) {
 					tmp[i] = "" + (i+1);
@@ -3130,16 +2593,13 @@ public class MainFrame extends JFrame {
 		int currentLvl = this.listLvlXpStuff.get(index).getSelectedIndex()+1;
 		int sizePair = -1;
 		
-		if(index < 6) {
-			WeaponType type = ((Weapon)this.CBoxWeapon.get(index/2).getSelectedItem()).getType();
-			sizePair = XpStuff.getDataWeapon()[type.index][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		} else if(index < 16) {
-			sizePair = XpStuff.getDataArmor()[index/2 -3][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		} else if(index < 18) {
+		if(index < 10) {
+			sizePair = XpStuff.getDataArmor()[index/2][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
+		} else if(index < 12) {
 			sizePair = XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		} else if(index < 22) {
+		} else if(index < 16) {
 			sizePair = XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		} else if(index < 24) {
+		} else if(index < 18) {
 			sizePair = XpStuff.getDataMount()[this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
 		}
 		
@@ -3226,11 +2686,11 @@ public class MainFrame extends JFrame {
 	
 	private void showWeaponCost() {
 		if(this.costWeapon.get(0).isSelected()) {
-			this.showAndHide.get(2).setVisible(true);
+			this.showAndHide.get(1).setVisible(true);
 			this.CBoxCostPearl.get(1).setVisible(false);
 			this.CBoxCostPearl.get(1).setSelectedIndex(0);
 		} else {
-			this.showAndHide.get(2).setVisible(false);
+			this.showAndHide.get(1).setVisible(false);
 			if(!this.costQuality.get(0).get(0).isSelected())
 				this.CBoxCostPearl.get(1).setVisible(true);
 		}
@@ -3253,7 +2713,7 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	void updateListTalent() {
+	public void updateListTalent() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), PageGeneral.getInstance().getLvl());
 		
@@ -3267,7 +2727,7 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	void updateTalent() {
+	public void updateTalent() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), lvl);
@@ -3340,7 +2800,7 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	void updateListSpe() {
+	public void updateListSpe() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		this.tabSpeciality = Speciality.getData(grade.getGrade());
 		
@@ -3544,14 +3004,14 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	void updateSkill() {
+	public void updateSkill() {
 		GradeName grade = PageGeneral.getInstance().getGrade().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
-		if(lvl < 6) this.showAndHide.get(3).setVisible(false);
-		else this.showAndHide.get(3).setVisible(true);
+		if(lvl < 6) this.showAndHide.get(2).setVisible(false);
+		else this.showAndHide.get(2).setVisible(true);
 		
 		for(Skill skill : Skill.getData()[grade.index]) {
 			if(skill.getLvl()[0] > lvl) continue;
@@ -3615,7 +3075,7 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	void updateSkillReinca() {
+	public void updateSkillReinca() {
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
 		
 		if(this.skillProgress.get(1).getItemCount() == 0) updateSkill();
@@ -3624,12 +3084,12 @@ public class MainFrame extends JFrame {
 		else this.skillProgress.get(1).setVisible(false);
 	}
 	
-	void updateProSkill() {
+	public void updateProSkill() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		if(lvl < 66) this.showAndHide.get(4).setVisible(false);
-		else this.showAndHide.get(4).setVisible(true);
+		if(lvl < 66) this.showAndHide.get(3).setVisible(false);
+		else this.showAndHide.get(3).setVisible(true);
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
 		ProSkill memory = (ProSkill) this.CBoxProSkill.getSelectedItem();
@@ -3638,7 +3098,7 @@ public class MainFrame extends JFrame {
 		if(this.CBoxProSkill.getSelectedIndex() == -1 && tabProSkill.length > 0) this.CBoxProSkill.setSelectedIndex(0);
 	}
 	
-	void updateBlason() {
+	public void updateBlason() {
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
 			Blason memory = (Blason) this.CBoxBlason.get(i).getSelectedItem();
@@ -3727,19 +3187,19 @@ public class MainFrame extends JFrame {
 		this.listStone.setModel(new DefaultComboBoxModel<Nucleus>(Nucleus.getData(stoneName)));
 	}
 	
-	void updateBague() {
+	public void updateBague() {
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		if(reinca || lvl >= 20) {
-			this.showAndHide.get(6).setVisible(true);
+			this.showAndHide.get(5).setVisible(true);
 		} else {
-			this.showAndHide.get(6).setVisible(false);
+			this.showAndHide.get(5).setVisible(false);
 			this.CBoxBague.setSelectedIndex(0);
 		}
 	}
 	
-	void updateAnima() {
+	public void updateAnima() {
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
 		int lvl = PageGeneral.getInstance().getLvl();
 		
@@ -3750,14 +3210,14 @@ public class MainFrame extends JFrame {
 		this.CBoxAnima.setSelectedIndex(memory);
 		
 		if(reinca && lvl >= 10) {
-			this.showAndHide.get(7).setVisible(true);
+			this.showAndHide.get(6).setVisible(true);
 		} else {
-			this.showAndHide.get(7).setVisible(false);
+			this.showAndHide.get(6).setVisible(false);
 			this.CBoxAnima.setSelectedIndex(0);
 		}
 	}
 	
-	void updateEnergy() {
+	public void updateEnergy() {
 		int lvl = PageGeneral.getInstance().getLvl();
 		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
 		
@@ -3775,66 +3235,34 @@ public class MainFrame extends JFrame {
 	private void showStuffDetails(int idList, int indexCB) {
 		if(indexCB != 0) {
 			this.valueFortif.get(idList).setVisible(true);
-			if(idList < 3) {
-				if(idList == 0) {
-					this.CBoxPearl.get(0).setVisible(true);
-					this.CBoxPearl.get(1).setVisible(true);
-					this.CBoxPearl.get(2).setVisible(true);
-				}
-				this.CBoxPearl.get(3*(idList+1)).setVisible(true);
-				this.CBoxPearl.get(3*(idList+1)+1).setVisible(true);
-				this.CBoxPearl.get(3*(idList+1)+2).setVisible(true);
-			} else if (idList == 3) {
-				this.CBoxPearl.get(idList+9).setVisible(true);
-			} else if (idList == 4) {
-				this.CBoxPearl.get(idList+9).setVisible(true);
-				this.CBoxPearl.get(idList+10).setVisible(true);
+			if (idList == 0) {
+				this.CBoxPearl.get(idList).setVisible(true);
+			} else if (idList == 1) {
+				this.CBoxPearl.get(idList).setVisible(true);
+				this.CBoxPearl.get(idList+1).setVisible(true);
 			} else {
-				this.CBoxPearl.get(idList+10).setVisible(true);
+				this.CBoxPearl.get(idList+1).setVisible(true);
 			}
 		}
 		else {
 			this.valueFortif.get(idList).setVisible(false);
-			if(idList < 3) {
-				if(idList == 0) {
-					for(int i = 0; i < 3; i++) {
-						this.CBoxPearl.get(i).setVisible(false);
-						this.CBoxPearl.get(i).setSelectedIndex(0);
-					}
-				}
-				for(int i = 0; i < 3; i++) {
-					this.CBoxPearl.get(3*(idList+1)+i).setVisible(false);
-					this.CBoxPearl.get(3*(idList+1)+i).setSelectedIndex(0);
-				}
-			} else if (idList == 3) {
-				this.CBoxPearl.get(idList+9).setVisible(false);
-				this.CBoxPearl.get(idList+9).setSelectedIndex(0);
-			} else if (idList == 4) {
-				this.CBoxPearl.get(idList+9).setVisible(false);
-				this.CBoxPearl.get(idList+10).setVisible(false);
-				this.CBoxPearl.get(idList+9).setSelectedIndex(0);
-				this.CBoxPearl.get(idList+10).setSelectedIndex(0);
+			if (idList == 0) {
+				this.CBoxPearl.get(idList).setVisible(false);
+				this.CBoxPearl.get(idList).setSelectedIndex(0);
+			} else if (idList == 1) {
+				this.CBoxPearl.get(idList).setVisible(false);
+				this.CBoxPearl.get(idList+1).setVisible(false);
+				this.CBoxPearl.get(idList).setSelectedIndex(0);
+				this.CBoxPearl.get(idList+1).setSelectedIndex(0);
 			} else {
-				this.CBoxPearl.get(idList+10).setVisible(false);
-				this.CBoxPearl.get(idList+10).setSelectedIndex(0);
+				this.CBoxPearl.get(idList+1).setVisible(false);
+				this.CBoxPearl.get(idList+1).setSelectedIndex(0);
 			}
 		}
 	}
 	
 	private void showXpStuff(int idList, int indexCB) {
 		if(indexCB != 0) {
-			if(idList < 3) {
-				int weaponType = ((Weapon) this.CBoxWeapon.get(idList).getSelectedItem()).getType().index;
-				String[] tmp = new String[XpStuff.getDataWeapon()[weaponType].length +1];
-				tmp[0] = "Rien";
-				for(int i = 0; i < tmp.length-1; i++) {
-					tmp[i+1] = XpStuff.getDataWeapon()[weaponType][i].getType().name();
-				}
-				
-				this.listEffectXpStuff.get(idList*2).setModel(new DefaultComboBoxModel<String>(tmp));
-				this.listEffectXpStuff.get(idList*2+1).setModel(new DefaultComboBoxModel<String>(tmp));
-			}
-			
 			this.showAndHideXpStuff.get(idList).setVisible(true);	
 			this.listEffectXpStuff.get(idList*2).setVisible(true);
 			this.listEffectXpStuff.get(idList*2+1).setVisible(true);
@@ -3847,7 +3275,7 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	void showSpe() {
+	public void showSpe() {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
@@ -3864,70 +3292,6 @@ public class MainFrame extends JFrame {
 					updateSpeElement(i);
 				}
 			}
-		}
-	}
-	
-	private void weaponType(int idList, int indexCB) {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
-		
-		Weapon choice = new Weapon((Weapon) this.CBoxWeapon.get(idList).getSelectedItem());
-		if(idList == 0) {
-			int keepEnchant = this.CBoxEnchant.get(1).getSelectedIndex();
-			
-			if(choice.getType() == WeaponType.EPEE2M || choice.getType() == WeaponType.MARTEAU2M || choice.getType() == WeaponType.HACHE2M
-					|| choice.getType() == WeaponType.MECA2M || choice.getType() == WeaponType.BATON || choice.getType() == WeaponType.LAME) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade.getGrade(), lvl, reinca, null);
-				Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
-				
-				this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
-				this.CBoxWeapon.get(0).setSelectedItem(memory);
-				this.CBoxWeapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(new Weapon[] { new Weapon() } ));
-				
-				for(int i = 0; i < 3; i++) {
-					this.CBoxPearl.get(3+i).setVisible(true);
-					this.CBoxPearl.get(6+i).setVisible(false);
-					this.CBoxPearl.get(6+i).setSelectedIndex(0);
-				}
-				
-				this.showAndHide.get(0).setVisible(false);
-			} else if(choice.getType() == WeaponType.EPEE1M || choice.getType() == WeaponType.MARTEAU1M || choice.getType() == WeaponType.HACHE1M
-					|| choice.getType() == WeaponType.MECA1M) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade.getGrade(), lvl, reinca, choice);
-				Weapon memory = (Weapon) this.CBoxWeapon.get(1).getSelectedItem();
-				
-				this.CBoxWeapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
-				this.CBoxWeapon.get(1).setSelectedItem(memory);
-				
-				for(int i = 0; i < 3; i++) {
-					this.CBoxPearl.get(3+i).setVisible(false);
-					this.CBoxPearl.get(3+i).setSelectedIndex(0);
-				}
-				if(this.CBoxWeapon.get(1).getSelectedIndex() == 0) {
-					for(int i = 0; i < 3; i++) {
-						this.CBoxPearl.get(6+i).setVisible(false);
-						this.CBoxPearl.get(6+i).setSelectedIndex(0);
-					}
-				}
-				
-				this.showAndHide.get(0).setVisible(true);
-			} else this.showAndHide.get(0).setVisible(true);
-			
-			this.CBoxEnchant.get(1).setSelectedIndex(keepEnchant);
-		} else if(idList == 1) {
-			int keepEnchant = this.CBoxEnchant.get(0).getSelectedIndex();
-			
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade.getGrade(), lvl, reinca, choice);
-			Weapon memory = (Weapon) this.CBoxWeapon.get(0).getSelectedItem();
-			
-			this.CBoxWeapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
-			this.CBoxWeapon.get(0).setSelectedItem(memory);
-			
-			this.CBoxEnchant.get(0).setSelectedIndex(keepEnchant);
-		} else if(choice.getType() == WeaponType.RELIQUE) {
-			this.valueFortif.get(idList).setVisible(false);
-			this.valueFortif.get(idList).setSelectedIndex(0);
 		}
 	}
 	
@@ -4049,19 +3413,6 @@ public class MainFrame extends JFrame {
 				}
 			}
 		}
-	}
-	
-	private boolean isAlreadyCount(ArrayList<Pearl> notCombinablePearl, Pearl pearl) {
-		boolean result = false;
-		
-		for(Pearl compare : notCombinablePearl) {
-			if(compare.equals(pearl)) {
-				result = true;
-				break;
-			}
-		}
-		
-		return result;
 	}
 	
 	public JLabel[] getLabel(int idList) {

@@ -1,4 +1,4 @@
 Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/false/0,0,0/null
-Robe du Fourvoyé/6/100/100pvp6/4/false/false/7,0,0/VIT,false,48,true/INT,false,36,true/DefP,false,771,true/DefM,false,938,true/ESQ,false,8/ReducPeneP,false,8/ReducPeneM,false,8/100pvp6
-Cape des Étoiles de l'enfer/6/99/-1/6/true/false/5,0,0/VIT,false,65,true/INT,false,60,true/VOL,false,55,true/DefP,false,828,true/DefM,false,1047,true/100vio6
-Veste enchantée d'Elminster/6/99/100gold6/5/true/false/5,0,0/VIT,false,61,true/INT,false,48,true/VOL,false,35,true/DefP,false,793,true/DefM,false,1004,true/100gold6
+Robe du FourvoyÃ©/6/100/100pvp6/4/false/false/7,0,0/VIT,false,48,true/INT,false,36,true/DefP,false,771,true/DefM,false,938,true/ESQ,false,8/ReducPeneP,false,8/ReducPeneM,false,8/100pvp6
+Cape des Ã‰toiles de l'enfer/6/99/-1/6/true/false/5,0,0/VIT,false,65,true/INT,false,60,true/VOL,false,55,true/DefP,false,828,true/DefM,false,1047,true/100vio6
+Veste enchantÃ©e d'Elminster/6/99/100gold6/5/true/false/5,0,0/VIT,false,61,true/INT,false,48,true/VOL,false,35,true/DefP,false,793,true/DefM,false,1004,true/100gold6

@@ -210,4 +210,17 @@ public class Pearl {
 	public static Pearl[] getArmorCostPearl() {
 		return Pearl.dataArmorCost;
 	}
+	
+	public static boolean isAlreadyCount(ArrayList<Pearl> notCombinablePearl, Pearl pearl) {
+		boolean result = false;
+		
+		for(Pearl compare : notCombinablePearl) {
+			if(compare.equals(pearl)) {
+				result = true;
+				break;
+			}
+		}
+		
+		return result;
+	}
 }

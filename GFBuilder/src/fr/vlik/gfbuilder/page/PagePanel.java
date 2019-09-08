@@ -1,4 +1,4 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.gfbuilder.page;
 
 import java.awt.Color;
 import java.awt.LayoutManager;
@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import fr.vlik.gfbuilder.Effect;
 
 public abstract class PagePanel extends JPanel {
 	

@@ -110,34 +110,34 @@ public class Effect {
 	
 	@Override
 	public String toString() {
-		String[] enumName = { "FCE", "VIT", "INT", "VOL", "AGI", "Attaque Physique", "Attaque Distance", "Attaque Magique", "DÈfense Physique", "DÈfense Magique",
-				"Taux Critique Physique", "Taux Critique Magique", "ESQ", "RÈsistance SacrÈ", "RÈsistance Ombre", "RÈsistance Foudre", "RÈsistance Feu", "RÈsistance Glace", "RÈsistance Nature", "Toucher",
-				"PV", "PM", "DÈg‚t Physique", "DÈg‚t Magique", "RÈduction Physique", "RÈduction Magique", "PÈnÈtration Physique", "PÈnÈtration Magique", "RÈduction PÈnÈtration Physique", "RÈduction PÈnÈtration Magique",
-				"DÈg‚t Critique Physique", "DÈg‚t Critique Magique", "RÈduction DÈg‚t Critique Physique", "RÈduction DÈg‚t Critique Magique", "RÈduction Taux Critique Physique", "RÈduction Taux Critique Magique", "Vitesse d'attaque", "Vitesse d'attaque ‡ distance", "Vitesse d'attaque magique", "Incantation",
-				"XP", "Taux de Butin", "RÈgÈnÈration Coup Blanc", "DÈg‚t Physique sur BÍte", "DÈg‚t Physique sur Plante", "DÈg‚t Physique sur HumanoÔde", "DÈg‚t Physique sur …lÈmentaire", "DÈg‚t Physique sur MÈcanique", "DÈg‚t Physique sur Mort", "DÈg‚t Physique sur DÈmon",
-				"DÈg‚t Magique sur BÍte", "DÈg‚t Magique sur Plante", "DÈg‚t Magique sur HumanoÔde", "DÈg‚t Magique sur …lÈmentaire", "DÈg‚t Magique sur MÈcanique", "DÈg‚t Magique sur Mort", "DÈg‚t Magique sur DÈmon", "DÈg‚t Physique Subit", "DÈg‚t Distance Subit", "DÈg‚t Magique Subit",
-				"DÈg‚t SacrÈ", "DÈg‚t Ombre", "DÈg‚t Foudre", "DÈg‚t Feu", "DÈg‚t Glace", "DÈg‚t Nature", "Interruption CompÈtence", "Co˚t CompÈtence", "Rechargement CompÈtence", "Parade",
-				"DÈg‚t Standard …pÈe", "DÈg‚t Standard Marteau", "DÈg‚t Standard Hache", "DÈg‚t Standard …pÈe 2 Mains", "DÈg‚t Standard Marteau 2 Mains", "DÈg‚t Standard Hache 2 Mains", "DÈg‚t Standard Arc", "DÈg‚t Standard Gun", "DÈg‚t Standard B‚ton", "DÈg‚t Standard Lame", "DÈg‚t Attaque Distance", "RÈduction DÈg‚t Attaque Distance", "RÈgÈnÈration PV Assis", "RÈgÈnÈration PM Assis", "Menace",
-				"Taux de rÈussite de Craft", "Temps de rÈcolte/entraÓnement/craft", "Soin donnÈ", "Soin reÁu", "Bonus d'Attaque ‡ Distance", "Reflect", "Vitesse de DÈplacement" };
+		String[] enumName = { "FCE", "VIT", "INT", "VOL", "AGI", "Attaque Physique", "Attaque Distance", "Attaque Magique", "D√©fense Physique", "D√©fense Magique",
+				"Taux Critique Physique", "Taux Critique Magique", "ESQ", "R√©sistance Sacr√©", "R√©sistance Ombre", "R√©sistance Foudre", "R√©sistance Feu", "R√©sistance Glace", "R√©sistance Nature", "Toucher",
+				"PV", "PM", "D√©g√¢t Physique", "D√©g√¢t Magique", "R√©duction Physique", "R√©duction Magique", "P√©n√©tration Physique", "P√©n√©tration Magique", "R√©duction P√©n√©tration Physique", "R√©duction P√©n√©tration Magique",
+				"D√©g√¢t Critique Physique", "D√©g√¢t Critique Magique", "R√©duction D√©g√¢t Critique Physique", "R√©duction D√©g√¢t Critique Magique", "R√©duction Taux Critique Physique", "R√©duction Taux Critique Magique", "Vitesse d'attaque", "Vitesse d'attaque √† distance", "Vitesse d'attaque magique", "Incantation",
+				"XP", "Taux de Butin", "R√©g√©n√©ration Coup Blanc", "D√©g√¢t Physique sur B√™te", "D√©g√¢t Physique sur Plante", "D√©g√¢t Physique sur Humano√Øde", "D√©g√¢t Physique sur √âl√©mentaire", "D√©g√¢t Physique sur M√©canique", "D√©g√¢t Physique sur Mort", "D√©g√¢t Physique sur D√©mon",
+				"D√©g√¢t Magique sur B√™te", "D√©g√¢t Magique sur Plante", "D√©g√¢t Magique sur Humano√Øde", "D√©g√¢t Magique sur √âl√©mentaire", "D√©g√¢t Magique sur M√©canique", "D√©g√¢t Magique sur Mort", "D√©g√¢t Magique sur D√©mon", "D√©g√¢t Physique Subit", "D√©g√¢t Distance Subit", "D√©g√¢t Magique Subit",
+				"D√©g√¢t Sacr√©", "D√©g√¢t Ombre", "D√©g√¢t Foudre", "D√©g√¢t Feu", "D√©g√¢t Glace", "D√©g√¢t Nature", "Interruption Comp√©tence", "Co√ªt Comp√©tence", "Rechargement Comp√©tence", "Parade",
+				"D√©g√¢t Standard √âp√©e", "D√©g√¢t Standard Marteau", "D√©g√¢t Standard Hache", "D√©g√¢t Standard √âp√©e 2 Mains", "D√©g√¢t Standard Marteau 2 Mains", "D√©g√¢t Standard Hache 2 Mains", "D√©g√¢t Standard Arc", "D√©g√¢t Standard Gun", "D√©g√¢t Standard B√¢ton", "D√©g√¢t Standard Lame", "D√©g√¢t Attaque Distance", "R√©duction D√©g√¢t Attaque Distance", "R√©g√©n√©ration PV Assis", "R√©g√©n√©ration PM Assis", "Menace",
+				"Taux de r√©ussite de Craft", "Temps de r√©colte/entra√Ænement/craft", "Soin donn√©", "Soin re√ßu", "Bonus d'Attaque √† Distance", "Reflect", "Vitesse de D√©placement" };
 		String result = enumName[this.getType().ordinal()] + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
 		if(this.withWeapon != WeaponType.NONE) {
-			result += " si ÈquipÈ ";
+			result += " si √©quip√© ";
 			switch (this.withWeapon) {
-				case EPEE1M :		result += "d'une ÈpÈe une main";				break;
+				case EPEE1M :		result += "d'une √©p√©e une main";				break;
 				case MARTEAU1M :	result += "d'un marteau une main";				break;
 				case HACHE1M :		result += "d'une hache une main";				break;
-				case EPEE2M :		result += "d'une ÈpÈe ‡ deux mains";			break;
-				case MARTEAU2M :	result += "d'un marteau ‡ deux mains";			break;
-				case HACHE2M :		result += "d'une hache ‡ deux mains";			break;
-				case MECA1M :		result += "d'une arme mÈcanique une main";		break;
-				case MECA2M :		result += "d'une arme mÈcanique ‡ deux mains";	break;
+				case EPEE2M :		result += "d'une √©p√©e √† deux mains";			break;
+				case MARTEAU2M :	result += "d'un marteau √† deux mains";			break;
+				case HACHE2M :		result += "d'une hache √† deux mains";			break;
+				case MECA1M :		result += "d'une arme m√©canique une main";		break;
+				case MECA2M :		result += "d'une arme m√©canique √† deux mains";	break;
 				case ARC :			result += "d'un arc";							break;
 				case GUN :			result += "d'un pistolet";						break;
 				case CANON :		result += "d'un canon";							break;
 				case RELIQUE :		result += "d'une relique";						break;
-				case BATON :		result += "d'un b‚ton";							break;
+				case BATON :		result += "d'un b√¢ton";							break;
 				case LAME :			result += "d'une lame";							break;
-				case CLE :			result += "d'une clÈ";							break;
+				case CLE :			result += "d'une cl√©";							break;
 				case BOUCLIER :		result += "d'un bouclier";						break;
 				default:			result += "";									break;
 			}
