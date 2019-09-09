@@ -112,7 +112,7 @@ public class Genki {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/genki.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/genki.txt"), "UTF-8"));
 			String line = reader.readLine();
 			for(int i = 0; i < 5; i++) list.add(new ArrayList<Genki>());
 			while (line != null) {

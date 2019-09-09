@@ -29,7 +29,7 @@ public class Lang {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/trad.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/trad.txt"), "UTF-8"));
 			String line = reader.readLine();
 			list.add(new ArrayList<ArrayList<String>>());
 			list.add(new ArrayList<ArrayList<String>>());
@@ -49,7 +49,7 @@ public class Lang {
 			reader.close();
 			
 			reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/credit.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/credit.txt"), "UTF-8"));
 			line = reader.readLine();
 			
 			for(int i = 0; i < 2; i++) {

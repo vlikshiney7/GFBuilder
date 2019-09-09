@@ -2,8 +2,6 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
@@ -11,8 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
@@ -41,7 +37,7 @@ public class PageGeneral extends PagePanel {
 	private JCustomComboBox<Yggdrasil> yggdra;
 	private JCustomComboBox<Archive> archive;
 	
-	private ArrayList<Effect> additionalEffect = new ArrayList<Effect>();
+	private ArrayList<Effect> additionalEffects = new ArrayList<Effect>();
 	
 	public static PageGeneral getInstance() {
 		return INSTANCE;
@@ -53,66 +49,61 @@ public class PageGeneral extends PagePanel {
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleData(0));
 		this.grade.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.grade.setRenderer(new CustomListCellRenderer());
-		this.grade.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.getInstance().updateSkill();
-				MainFrame.getInstance().updateProSkill();
-				PageWeapon.getInstance().updateWeapon();
-				MainFrame.getInstance().updateListStuff();
-				updateTitle();
-				MainFrame.getInstance().updateListTalent();
-				MainFrame.getInstance().updateListSpe();
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			}
+		this.grade.addActionListener(e -> {
+			MainFrame.getInstance().updateSkill();
+			MainFrame.getInstance().updateProSkill();
+			PageWeapon.getInstance().updateWeapon();
+			PageArmor.getInstance().updateArmor();
+			MainFrame.getInstance().updateListStuff();
+			updateTitle();
+			MainFrame.getInstance().updateListTalent();
+			MainFrame.getInstance().updateListSpe();
+			
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		
 		this.lvl = new JCustomSpinner(new SpinnerNumberModel(1, 1, 100, 1));
-		this.lvl.addChangeListener(new ChangeListener() {
-			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				updateGrade();
-				MainFrame.getInstance().updateSkill();
-				MainFrame.getInstance().updateProSkill();
-				PageWeapon.getInstance().updateWeapon();
-				MainFrame.getInstance().updateListStuff();
-				updateTitle();
-				MainFrame.getInstance().updateMount();
-				MainFrame.getInstance().updateTalent();
-				MainFrame.getInstance().showSpe();
-				MainFrame.getInstance().updateBlason();
-				MainFrame.getInstance().updateEnergy();
-				MainFrame.getInstance().updateBague();
-				MainFrame.getInstance().updateAnima();
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			}
+		this.lvl.addChangeListener(e -> {
+			updateGrade();
+			MainFrame.getInstance().updateSkill();
+			MainFrame.getInstance().updateProSkill();
+			PageWeapon.getInstance().updateWeapon();
+			PageArmor.getInstance().updateArmor();
+			MainFrame.getInstance().updateListStuff();
+			updateTitle();
+			MainFrame.getInstance().updateMount();
+			MainFrame.getInstance().updateTalent();
+			MainFrame.getInstance().showSpe();
+			MainFrame.getInstance().updateBlason();
+			MainFrame.getInstance().updateEnergy();
+			MainFrame.getInstance().updateBague();
+			MainFrame.getInstance().updateAnima();
+			
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		
 		this.reinca = new JCustomComboBox<String>(new String[] { "Aucune", "Niveau 1" });
 		this.reinca.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.reinca.setRenderer(new CustomListCellRenderer());
-		this.reinca.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.getInstance().updateSkillReinca();
-				MainFrame.getInstance().updateListStuff();
-				updateTitle();
-				MainFrame.getInstance().updateMount();
-				MainFrame.getInstance().showSpe();
-				MainFrame.getInstance().updateNucleus();
-				MainFrame.getInstance().updateEnergy();
-				MainFrame.getInstance().updateBague();
-				MainFrame.getInstance().updateAnima();
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			}
+		this.reinca.addActionListener(e -> {
+			MainFrame.getInstance().updateSkillReinca();
+			PageWeapon.getInstance().updateWeapon();
+			PageArmor.getInstance().updateArmor();
+			MainFrame.getInstance().updateListStuff();
+			updateTitle();
+			MainFrame.getInstance().updateMount();
+			MainFrame.getInstance().showSpe();
+			MainFrame.getInstance().updateNucleus();
+			MainFrame.getInstance().updateEnergy();
+			MainFrame.getInstance().updateBague();
+			MainFrame.getInstance().updateAnima();
+			
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		
@@ -120,37 +111,29 @@ public class PageGeneral extends PagePanel {
 		this.title = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
 		this.title.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.title.setRenderer(new CustomListCellRenderer());
-		this.title.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			}
+		this.title.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		
 		this.yggdra = new JCustomComboBox<Yggdrasil>(Yggdrasil.getData());
 		this.yggdra.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.yggdra.setRenderer(new CustomListCellRenderer());
-		this.yggdra.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			}
+		this.yggdra.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		
 		this.archive = new JCustomComboBox<Archive>(new DefaultComboBoxModel<Archive>(Archive.getData()));
 		this.archive.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.archive.setRenderer(new CustomListCellRenderer());
-		this.archive.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setAdditionnalEffect();
-				MainFrame.getInstance().updateStat();
-			}
+		this.archive.addActionListener(e -> {
+			setAdditionnalEffects();
+			MainFrame.getInstance().updateStat();
 		});
+		
 		
 		setLabel();
 		createPanel();
@@ -158,7 +141,7 @@ public class PageGeneral extends PagePanel {
 	}
 	
 	public Grade getGrade() {
-		return (Grade) this.grade.getSelectedItem();
+		return this.grade.getSelectedItem();
 	}
 	
 	public int getLvl() {
@@ -166,7 +149,7 @@ public class PageGeneral extends PagePanel {
 	}
 	
 	public Title getTitle() {
-		return (Title) this.title.getSelectedItem();
+		return this.title.getSelectedItem();
 	}
 	
 	public int getReinca() {
@@ -174,11 +157,11 @@ public class PageGeneral extends PagePanel {
 	}
 	
 	public Yggdrasil getYggdrasil() {
-		return (Yggdrasil) this.yggdra.getSelectedItem();
+		return this.yggdra.getSelectedItem();
 	}
 	
 	public Archive getArchive() {
-		return (Archive) this.archive.getSelectedItem();
+		return this.archive.getSelectedItem();
 	}
 	
 	@Override
@@ -192,11 +175,11 @@ public class PageGeneral extends PagePanel {
 	}
 	
 	public ArrayList<Effect> getAdditionnalEffects() {
-		return this.additionalEffect;
+		return this.additionalEffects;
 	}
 	
-	public void setAdditionnalEffect() {
-		this.additionalEffect = this.getArchive().getEffects();
+	public void setAdditionnalEffects() {
+		this.additionalEffects = this.getArchive().getEffects();
 	}
 
 	@Override

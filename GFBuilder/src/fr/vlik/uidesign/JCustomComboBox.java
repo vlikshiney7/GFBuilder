@@ -5,7 +5,7 @@ import javax.swing.JComboBox;
 
 import fr.vlik.gfbuilder.Consts;
 
-public class JCustomComboBox<E> extends JComboBox<E> {
+public class JCustomComboBox<T> extends JComboBox<T> {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -14,12 +14,17 @@ public class JCustomComboBox<E> extends JComboBox<E> {
 		setBlackUI();
 	}
 	
-	public JCustomComboBox(ComboBoxModel<E> object) {
+	public JCustomComboBox(Integer i) {
+		
+		setBlackUI();
+	}
+	
+	public JCustomComboBox(ComboBoxModel<T> object) {
 		super(object);
 		setBlackUI();
 	}
 	
-	public JCustomComboBox(E[] object) {
+	public JCustomComboBox(T[] object) {
 		super(object);
 		setBlackUI();
 	}
@@ -29,5 +34,11 @@ public class JCustomComboBox<E> extends JComboBox<E> {
 		this.setBorder(null);
 		this.setForeground(Consts.FontColor[0]);
 		this.setOpaque(false);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public T getSelectedItem() {
+		return (T) super.getSelectedItem();
 	}
 }

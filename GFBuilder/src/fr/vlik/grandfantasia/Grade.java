@@ -86,7 +86,7 @@ public class Grade {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/grade/grade.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/grade/grade.txt"), "UTF-8"));
 			String line = reader.readLine();
 			
 			while (line != null) {

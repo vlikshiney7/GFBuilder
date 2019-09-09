@@ -93,7 +93,7 @@ public final class Talent {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/talent/talent.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/talent/talent.txt"), "UTF-8"));
 			String line = reader.readLine();
 			for(int i = 0; i < 12; i++) {
 				list.add(new ArrayList<Talent>());

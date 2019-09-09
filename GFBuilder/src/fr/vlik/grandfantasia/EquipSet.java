@@ -131,7 +131,7 @@ public class EquipSet {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/armors/set.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/armors/set.txt"), "UTF-8"));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");

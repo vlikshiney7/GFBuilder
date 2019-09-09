@@ -101,7 +101,7 @@ public class Skill {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/skill/skill.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/skill/skill.txt"), "UTF-8"));
 			String line = reader.readLine();
 			
 			for(int i = 0; i < 13; i++) {

@@ -79,7 +79,7 @@ public class ProSkill {
 		ArrayList<ArrayList<ProSkill>> list = new ArrayList<ArrayList<ProSkill>>();
 		 try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/pro/pro.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/pro/pro.txt"), "UTF-8"));
 			String line = reader.readLine();
 			
 			for(int i = 0; i < 12; i++) {

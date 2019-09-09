@@ -54,7 +54,7 @@ public final class Cape extends Equipment {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/capering/cape/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
+			System.out.println("Image non chargï¿½ : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -97,7 +97,7 @@ public final class Cape extends Equipment {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/capering/cape/cape.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/capering/cape/cape.txt"), "UTF-8"));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");

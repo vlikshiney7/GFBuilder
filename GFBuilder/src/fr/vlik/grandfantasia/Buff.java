@@ -50,7 +50,7 @@ public class Buff {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/sprites/isle.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/sprites/isle.txt"), "UTF-8"));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");

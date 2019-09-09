@@ -2,8 +2,6 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -18,6 +16,7 @@ import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Util;
 import fr.vlik.gfbuilder.Effect.TypeEffect;
 import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Bullet;
@@ -63,30 +62,24 @@ public class PageWeapon extends PagePanel {
 			this.weapon.get(i).setRenderer(new CustomListCellRenderer());
 			
 			int id = i;
-			this.weapon.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					updateXpStuff(id);
-					updateDetails(id);
-					updatePearl(id);
-					updateEnchant(id);
-					weaponType(id);
-					
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				}
+			this.weapon.get(i).addActionListener(e -> {
+				updateXpStuff(id);
+				updateDetails(id);
+				updatePearl(id);
+				updateEnchant(id);
+				weaponType(id);
+				
+				setEffects();
+				MainFrame.getInstance().updateStat();				
 			});
 			
 			/* ENCHANTEMENT */
 			this.enchant.add(new JCustomComboBox<Enchantment>());
 			this.enchant.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.enchant.get(i).setRenderer(new CustomListCellRenderer());
-			this.enchant.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				}
+			this.enchant.get(i).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
 			});
 			this.enchant.get(i).setVisible(false);
 			
@@ -95,12 +88,9 @@ public class PageWeapon extends PagePanel {
 			this.fortif.add(new JCustomComboBox<String>(nameFortif));
 			this.fortif.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
 			this.fortif.get(i).setRenderer(new CustomListCellRenderer());
-			this.fortif.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				}
+			this.fortif.get(i).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
 			});
 			this.fortif.get(i).setVisible(false);
 			
@@ -111,12 +101,9 @@ public class PageWeapon extends PagePanel {
 				for(int j = 0; j < 6; j++) {
 					this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 					this.pearl.get(j).setRenderer(new CustomListCellRenderer());
-					this.pearl.get(j).addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							setEffects();
-							MainFrame.getInstance().updateStat();
-						}
+					this.pearl.get(j).addActionListener(e -> {
+						setEffects();
+						MainFrame.getInstance().updateStat();
 					});
 					this.pearl.get(j).setVisible(false);
 				}
@@ -124,12 +111,9 @@ public class PageWeapon extends PagePanel {
 				for(int j = 0; j < 3; j++) {
 					this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 					this.pearl.get(3*(i+1)+j).setRenderer(new CustomListCellRenderer());
-					this.pearl.get(3*(i+1)+j).addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							setEffects();
-							MainFrame.getInstance().updateStat();
-						}
+					this.pearl.get(3*(i+1)+j).addActionListener(e -> {
+						setEffects();
+						MainFrame.getInstance().updateStat();
 					});
 					this.pearl.get(3*(i+1)+j).setVisible(false);
 				}
@@ -139,28 +123,22 @@ public class PageWeapon extends PagePanel {
 			for(int j = 0; j < 2; j++) {
 				this.effectXpStuff.add(new JCustomComboBox<String>(new String[] {"Rien"}));
 				this.effectXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
-				this.effectXpStuff.get(i*2+j).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						updateLvlXpStuff(id);
-						
-						setEffects();
-						MainFrame.getInstance().updateStat();
-					}
+				this.effectXpStuff.get(i*2+j).addActionListener(e -> {
+					updateLvlXpStuff(id);
+					
+					setEffects();
+					MainFrame.getInstance().updateStat();
 				});
 				this.effectXpStuff.get(i*2+j).setVisible(false);
 				
 				int duo = i*2+j;
 				this.lvlXpStuff.add(new JCustomComboBox<String>());
 				this.lvlXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
-				this.lvlXpStuff.get(i*2+j).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						updateMaxLvlValue(duo);
-						
-						setEffects();
-						MainFrame.getInstance().updateStat();
-					}
+				this.lvlXpStuff.get(i*2+j).addActionListener(e -> {
+					updateMaxLvlValue(duo);
+					
+					setEffects();
+					MainFrame.getInstance().updateStat();
 				});
 				this.lvlXpStuff.get(i*2+j).setVisible(false);
 			}
@@ -170,12 +148,9 @@ public class PageWeapon extends PagePanel {
 		this.bullet = new JCustomComboBox<Bullet>(tabBullet);
 		this.bullet.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.bullet.setRenderer(new CustomListCellRenderer());
-		this.bullet.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			}
+		this.bullet.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		setLabel();
@@ -184,31 +159,31 @@ public class PageWeapon extends PagePanel {
 	}
 	
 	public Weapon getWeapon(int id) {
-		return (Weapon) this.weapon.get(id).getSelectedItem();
+		return this.weapon.get(id).getSelectedItem();
 	}
 	
 	public Bullet getBullet() {
-		return (Bullet) this.bullet.getSelectedItem();
+		return this.bullet.getSelectedItem();
 	}
 	
 	public Enchantment getEnchantment(int id) {
-		return (Enchantment) this.enchant.get(id).getSelectedItem();
+		return this.enchant.get(id).getSelectedItem();
 	}
 
 	public String getFortif(int id) {
-		return (String) this.fortif.get(id).getSelectedItem();
+		return this.fortif.get(id).getSelectedItem();
 	}
 
 	public Pearl getPearl(int id) {
-		return (Pearl) this.pearl.get(id).getSelectedItem();
+		return this.pearl.get(id).getSelectedItem();
 	}
 
 	public String getEffectXpStuff(int id) {
-		return (String) this.effectXpStuff.get(id).getSelectedItem();
+		return this.effectXpStuff.get(id).getSelectedItem();
 	}
 
 	public String getLvlXpStuff(int id) {
-		return (String) this.lvlXpStuff.get(id).getSelectedItem();
+		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 
 	@Override
@@ -241,6 +216,16 @@ public class PageWeapon extends PagePanel {
 			double valueXpStuff = XpStuff.getDataWeapon()[idListXp][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 			
 			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			if(!(this.effectXpStuff.get(i*2).getSelectedIndex() == 0) && !(this.effectXpStuff.get(i*2+1).getSelectedIndex() == 0)
+					&& this.effectXpStuff.get(i*2).getSelectedIndex() != this.effectXpStuff.get(i*2+1).getSelectedIndex()) {
+				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
+				if(lvlXpStuff >= weapons[i].getLvl()) {
+					list.addAll(weapons[i].getBonusXP());
+				}
+			}
 		}
 		
 		list.addAll(this.getBullet().getEffects());
@@ -327,6 +312,10 @@ public class PageWeapon extends PagePanel {
 		elem1.add(this.bullet);
 		
 		this.add(elem1);
+		
+		for(JPanel panel : this.showAndHideXpStuff) {
+			panel.setVisible(false);
+		}
 	}
 
 	@Override
@@ -541,8 +530,8 @@ public class PageWeapon extends PagePanel {
 				|| this.getEffectXpStuff(id*2).toString().equals(this.getEffectXpStuff(id*2+1).toString())) {
 			this.lvlXpStuff.get(id*2).setVisible(false);
 			this.lvlXpStuff.get(id*2+1).setVisible(false);
-			setMemoryInList(this.lvlXpStuff.get(id*2), null);
-			setMemoryInList(this.lvlXpStuff.get(id*2+1), null);
+			Util.setMemoryInList(this.lvlXpStuff.get(id*2), null);
+			Util.setMemoryInList(this.lvlXpStuff.get(id*2+1), null);
 		} else {
 			WeaponType type = this.getWeapon(id).getType();
 			
@@ -551,14 +540,14 @@ public class PageWeapon extends PagePanel {
 				tmp[i] = "" + (i+1);
 			}
 			this.lvlXpStuff.get(id*2).add(new JCustomComboBox<String>(tmp));
-			setMemoryInList(this.lvlXpStuff, id*2, tmp);
+			Util.setMemoryInList(this.lvlXpStuff, id*2, tmp);
 			
 			tmp = new String[XpStuff.getDataWeapon()[type.index][this.effectXpStuff.get(id*2+1).getSelectedIndex()-1].getLvlValue().size()];
 			for(int i = 0; i < tmp.length; i++) {
 				tmp[i] = "" + (i+1);
 			}
 			this.lvlXpStuff.get(id*2+1).add(new JCustomComboBox<String>(tmp));
-			setMemoryInList(this.lvlXpStuff, id*2+1, tmp);
+			Util.setMemoryInList(this.lvlXpStuff, id*2+1, tmp);
 			
 			this.lvlXpStuff.get(id*2).setVisible(true);
 			this.lvlXpStuff.get(id*2+1).setVisible(true);
@@ -574,27 +563,13 @@ public class PageWeapon extends PagePanel {
 			return;
 		
 		int currentLvl = this.lvlXpStuff.get(id).getSelectedIndex()+1;
-		int sizePair = -1;
 		
 		WeaponType type = this.getWeapon(id/2).getType();
-		sizePair = XpStuff.getDataWeapon()[type.index][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
+		int sizePair = XpStuff.getDataWeapon()[type.index][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
 		
 		String[] tmp = new String[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
 		for(int i = 0; i < tmp.length; i++) tmp[i] = "" + (i+1);
 		this.lvlXpStuff.get(indexPair).add(new JComboBox<String>(tmp));
-		setMemoryInList(this.lvlXpStuff, indexPair, tmp);
-	}
-	
-	private String setMemoryInList(ArrayList<JCustomComboBox<String>> list, int indexList, String[] itemList) {
-		return setMemoryInList(list.get(indexList), itemList);
-	}
-	
-	private String setMemoryInList(JCustomComboBox<String> list, String[] itemList) {
-		String memory = list.getSelectedItem() != null ? list.getSelectedItem().toString() : "";
-		if(itemList != null) {
-			list.setModel(new DefaultComboBoxModel<String>(itemList));
-		}
-		list.setSelectedItem(memory);
-		return memory;
+		Util.setMemoryInList(this.lvlXpStuff, indexPair, tmp);
 	}
 }

@@ -93,7 +93,7 @@ public class Costume {
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/costumes/costume.txt")));
+					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/costumes/costume.txt"), "UTF-8"));
 			String line = reader.readLine();
 			for(int i = 0; i < 4; i++) list.add(new ArrayList<Costume>());
 			while (line != null) {
