@@ -45,7 +45,7 @@ public class PageArmor extends PagePanel {
 	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(10);
 	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(10);
 	
-	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(10);
+	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(5);
 	
 	public static PageArmor getInstance() {
 		return INSTANCE;
@@ -54,6 +54,7 @@ public class PageArmor extends PagePanel {
 	public PageArmor() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLabel();
 		
 		for(int i = 0; i < 5; i++) {
 			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false);
@@ -161,7 +162,6 @@ public class PageArmor extends PagePanel {
 		
 		this.armorSetInfo = new JCustomTextPane();
 		
-		setLabel();
 		createPanel();
 		setEffects();
 	}

@@ -44,15 +44,16 @@ public class PageCapeRing extends PagePanel {
 	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	
-	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(6);
+	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
 	
 	public static PageCapeRing getInstance() {
 		return INSTANCE;
 	}
 	
-	public PageCapeRing() {
+	private PageCapeRing() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLabel();
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
@@ -164,7 +165,6 @@ public class PageCapeRing extends PagePanel {
 		
 		this.capeRingSetInfo = new JCustomTextPane();
 		
-		setLabel();
 		createPanel();
 		setEffects();
 	}
@@ -296,19 +296,19 @@ public class PageCapeRing extends PagePanel {
 			xpCape.add(xp);
 		}
 		
-		JPanel page4Elem1 = new JPanel();
-		page4Elem1.setLayout(new BoxLayout(page4Elem1, BoxLayout.Y_AXIS));
-		page4Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page4Elem1.setBackground(Consts.UIColor[1]);
-		page4Elem1.add(this.label[0]);
-		page4Elem1.add(Box.createVerticalStrut(10));
-		page4Elem1.add(descCape);
-		page4Elem1.add(Box.createVerticalStrut(5));
-		page4Elem1.add(xpCape);
+		JPanel elem1 = new JPanel();
+		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
+		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
+		elem1.setBackground(Consts.UIColor[1]);
+		elem1.add(this.label[0]);
+		elem1.add(Box.createVerticalStrut(10));
+		elem1.add(descCape);
+		elem1.add(Box.createVerticalStrut(5));
+		elem1.add(xpCape);
 		
 		this.showAndHideXpStuff.add(xpCape);
 		
-		this.add(page4Elem1);
+		this.add(elem1);
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel descRing = new JPanel();
@@ -329,20 +329,20 @@ public class PageCapeRing extends PagePanel {
 				xpRing.add(xp);
 			}
 			
-			JPanel page4ElemI = new JPanel();
-			page4ElemI.setLayout(new BoxLayout(page4ElemI, BoxLayout.Y_AXIS));
-			page4ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page4ElemI.setBackground(Consts.UIColor[1]);
-			page4ElemI.add(this.label[i+2]);
-			page4ElemI.add(Box.createVerticalStrut(10));
-			page4ElemI.add(descRing);
-			page4ElemI.add(Box.createVerticalStrut(5));
-			page4ElemI.add(xpRing);
+			JPanel elemI = new JPanel();
+			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
+			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
+			elemI.setBackground(Consts.UIColor[1]);
+			elemI.add(this.label[i+2]);
+			elemI.add(Box.createVerticalStrut(10));
+			elemI.add(descRing);
+			elemI.add(Box.createVerticalStrut(5));
+			elemI.add(xpRing);
 			
 			this.showAndHideXpStuff.add(xpRing);
 			
 			this.add(Box.createVerticalStrut(10));
-			this.add(page4ElemI);
+			this.add(elemI);
 		}
 		
 		this.add(this.capeRingSetInfo);

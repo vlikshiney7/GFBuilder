@@ -45,7 +45,7 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	
 	private JPanel showAndHide;
-	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(6);
+	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
 	
 	public static PageWeapon getInstance() {
 		return INSTANCE;
@@ -54,6 +54,7 @@ public class PageWeapon extends PagePanel {
 	public PageWeapon() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLabel();
 		
 		for(int i = 0; i < 3; i++) {
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false, null);
@@ -153,7 +154,6 @@ public class PageWeapon extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		setLabel();
 		createPanel();
 		setEffects();
 	}

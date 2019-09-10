@@ -47,10 +47,8 @@ import fr.vlik.grandfantasia.Buff;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Costume;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.GuildBuff;
-import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.ProSkill;
@@ -60,7 +58,6 @@ import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.Blason.BlasonType;
 import fr.vlik.grandfantasia.Costume.CostType;
 import fr.vlik.uidesign.*;
@@ -74,20 +71,10 @@ public class MainFrame extends JFrame {
 
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
 	private ArrayList<JPanel> showAndHideTalent = new ArrayList<JPanel>();
-	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>();
+	
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
-	
-	DefaultComboBoxModel<String> model;
-	
-	private ArrayList<JCustomComboBox<String>> listEffectXpStuff = new ArrayList<JCustomComboBox<String>>(2);
-	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(2);
-	
-	private JCustomComboBox<Mount> CBoxMount;
-	private ArrayList<ArrayList<JCustomRadioButton>> colorGenki = new ArrayList<ArrayList<JCustomRadioButton>>(2);
-	private ArrayList<ArrayList<JStarCheckBox>> starGenki = new ArrayList<ArrayList<JStarCheckBox>>(2);
-	private ArrayList<JCustomComboBox<Genki>> CBoxGenki = new ArrayList<JCustomComboBox<Genki>>(2);
 	
 	private ArrayList<JCustomRadioButton> costWeapon = new ArrayList<JCustomRadioButton>(2);
 	private ArrayList<JCustomCheckBox> checkBoxRunway = new ArrayList<JCustomCheckBox>(8);
@@ -269,178 +256,23 @@ public class MainFrame extends JFrame {
 		System.out.println("Début Armor : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		this.mainPage.add(PageArmor.getInstance());
 		System.out.println("Fin Armor : " + (Calendar.getInstance().getTimeInMillis() - this.start));
-		
+
 		
 		System.out.println("Début CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		this.mainPage.add(PageCapeRing.getInstance());
 		System.out.println("Fin CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
 		
-		/****************************************/
-		/*				 PAGE 5					*/
-		/****************************************/
-		int page = 4;
-		
-		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca() == 1);
-		this.CBoxMount = new JCustomComboBox<Mount>(tabMount);
-		this.CBoxMount.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxMount.setRenderer(new CustomListCellRenderer());
-		this.CBoxMount.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.showXpStuff(0, MainFrame.this.CBoxMount.getSelectedIndex());
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		String[] tmp = new String[XpStuff.getDataMount().length +1];
-		tmp[0] = "Rien";
-		for(int i = 0; i < tmp.length-1; i++) {
-			tmp[i+1] = XpStuff.getDataMount()[i].getType().name();
-		}
-		for(int i = 0; i < 2; i++) {
-			this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-			this.listEffectXpStuff.get(i).setRenderer(new CustomListCellRenderer());
-			this.listEffectXpStuff.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateLvlXpStuff(0);
-					MainFrame.this.updateStat();
-				}
-			});
-			this.listEffectXpStuff.get(i).setVisible(false);
-			
-			int duo = i;
-			this.listLvlXpStuff.add(new JCustomComboBox<String>());
-			this.listLvlXpStuff.get(i).setRenderer(new CustomListCellRenderer());
-			this.listLvlXpStuff.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateMaxLvlValue(duo);
-					MainFrame.this.updateStat();
-				}
-			});
-			this.listLvlXpStuff.get(i).setVisible(false);
-		}
+		System.out.println("Début Mount : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.mainPage.add(PageMount.getInstance());
+		System.out.println("Fin Mount : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
 		
-		JPanel xpRide = new JPanel(new GridLayout(1, 3, 10, 3));
-		xpRide.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		xpRide.add(this.allLabel.get(page).get(1));
-		for(int i = 0; i < 2; i++) {
-			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-			xp.setBackground(Consts.UIColor[1]);
-			xp.add(this.listEffectXpStuff.get(i));
-			xp.add(this.listLvlXpStuff.get(i));
-			xpRide.add(xp);
-		}
-		
-		JPanel page5Elem1 = new JPanel();
-		page5Elem1.setLayout(new BoxLayout(page5Elem1, BoxLayout.Y_AXIS));
-		page5Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page5Elem1.setBackground(Consts.UIColor[1]);
-		page5Elem1.add(this.allLabel.get(page).get(0));
-		page5Elem1.add(Box.createVerticalStrut(10));
-		page5Elem1.add(this.CBoxMount);
-		page5Elem1.add(Box.createVerticalStrut(5));
-		page5Elem1.add(xpRide);
-		
-		this.showAndHideXpStuff.add(xpRide);
-		this.showAndHide.add(page5Elem1);
-		
-		
-		JPanel page5 = new JPanel();
-		page5.setLayout(new BoxLayout(page5, BoxLayout.Y_AXIS));
-		page5.setBackground(Consts.UIColor[2]);
-		page5.add(page5Elem1);
-		
-		/* GENKI */
-		
-		for(int i = 0; i < 2; i++) {
-			JPanel qualityPanel = new JPanel();
-			JPanel starPanel = new JPanel();
-			ButtonGroup quality = new ButtonGroup();
-			
-			int id = i;
-			
-			qualityPanel.setBackground(Consts.UIColor[1]);
-			qualityPanel.setForeground(Consts.FontColor[0]);
-			qualityPanel.setBorder(null);
-			
-			starPanel.setBackground(Consts.UIColor[1]);
-			starPanel.setForeground(Consts.FontColor[0]);
-			starPanel.setBorder(null);
-			
-			this.colorGenki.add(new ArrayList<JCustomRadioButton>(6));
-			
-			for(int j = 0; j < 6; j++) {
-				this.allLabel.get(page).get(i*7+j+3).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.colorGenki.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(i*7+j+3).getText(), "radio0" + j, "radioOff"));
-				this.colorGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
-				this.colorGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
-				this.colorGenki.get(i).get(j).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateGenkiQuality(id);
-						MainFrame.this.updateStat();
-					}
-				});
-				quality.add(this.colorGenki.get(i).get(j));
-				qualityPanel.add(this.colorGenki.get(i).get(j));
-			}
-			
-			this.starGenki.add(new ArrayList<JStarCheckBox>(5));
-			
-			for(int j = 0; j < 5; j++) {
-				int idCheck = j;
-				
-				this.starGenki.get(i).add(new JStarCheckBox());
-				this.starGenki.get(i).get(j).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateGenkiStar(id, idCheck);
-						MainFrame.this.updateStat();
-					}
-				});
-				this.starGenki.get(i).get(j).setVisible(false);
-				
-				starPanel.add(this.starGenki.get(i).get(j));
-			}
-			
-			this.CBoxGenki.add(new JCustomComboBox<Genki>());
-			
-			this.CBoxGenki.get(i).setRenderer(new CustomListCellRenderer());
-			this.CBoxGenki.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.CBoxGenki.get(i).setVisible(false);
-	
-			JPanel page5ElemI = new JPanel();
-			page5ElemI.setLayout(new BoxLayout(page5ElemI, BoxLayout.Y_AXIS));
-			page5ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page5ElemI.setBackground(Consts.UIColor[1]);
-			page5ElemI.add(this.allLabel.get(page).get(i*7+2));
-			page5ElemI.add(Box.createVerticalStrut(10));
-			page5ElemI.add(qualityPanel);
-			page5ElemI.add(Box.createVerticalStrut(5));
-			page5ElemI.add(starPanel);
-			page5ElemI.add(Box.createVerticalStrut(5));
-			page5ElemI.add(this.CBoxGenki.get(i));
-			
-			page5.add(Box.createVerticalStrut(10));
-			page5.add(page5ElemI);
-		}
-		
-		this.mainPage.add(page5);
 		
 		/****************************************/
 		/*				 PAGE 6					*/
 		/****************************************/
-		page++;
+		int page = 5;
 		
 		JPanel costGroupPanel = new JPanel();
 		ButtonGroup costGroup = new ButtonGroup();
@@ -1556,9 +1388,6 @@ public class MainFrame extends JFrame {
 	private void initUI() {
 		updateTabPane(0);
 		
-		for(ArrayList<JCustomRadioButton> color : this.colorGenki) color.get(0).setSelected(true);
-		for(ArrayList<JStarCheckBox> star : this.starGenki) star.get(0).setSelected(true);
-		
 		this.costWeapon.get(0).setSelected(false);
 		this.costWeapon.get(1).setSelected(true);
 		for(ArrayList<JCustomRadioButton> quality : this.costQuality) quality.get(0).setSelected(true);
@@ -1567,7 +1396,6 @@ public class MainFrame extends JFrame {
 		for(JCustomComboBox<Skill> skill : this.skillProgress) skill.setVisible(false);
 		
 		for(JPanel panel : this.showAndHide) panel.setVisible(false);
-		for(JPanel panel : this.showAndHideXpStuff) panel.setVisible(false);
 		for(JPanel panel : this.showAndHideTalent) panel.setVisible(false);
 		
 		updateStat();
@@ -1630,33 +1458,7 @@ public class MainFrame extends JFrame {
 		
 		build.addEffect(PageCapeRing.getInstance().getEffects());
 		
-		
-		Mount mount = (Mount) this.CBoxMount.getSelectedItem();
-		build.addEffect(mount.getDepla());
-		
-		for(int i = 0; i < 2; i++) {
-			if(!this.listLvlXpStuff.get(i).isVisible() || this.listEffectXpStuff.get(i).getSelectedIndex() == 0) {
-				continue;
-			}
-			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataMount()[this.listEffectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i).getSelectedIndex());
-			
-			if(mount.getName().equals("Loup Spectral de Combat")) {
-				build.addEffect(new Effect(type, false, valueXpStuff/2, true, WeaponType.NONE, null));
-			} else {
-				build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
-			}
-		}
-		
-		
-		for(int i = 0; i < this.colorGenki.size(); i++) {
-			if(!this.colorGenki.get(i).get(0).isSelected()) {
-				Genki genki = new Genki((Genki) this.CBoxGenki.get(i).getSelectedItem());
-				genki.addStarBonus(this.starGenki.get(i), i);
-				build.addEffect(genki.getEffects());
-			}
-		}
+		build.addEffect(PageMount.getInstance().getEffects());
 		
 		
 		if(this.costWeapon.get(0).isSelected()) {
@@ -1733,7 +1535,7 @@ public class MainFrame extends JFrame {
 			if(skill.isVisible()) build.addEffect(((Skill) skill.getSelectedItem()).getEffects(0));
 		}
 		
-		if(this.showAndHide.get(3).isVisible()) {
+		if(this.showAndHide.get(2).isVisible()) {
 			ProSkill proSkill = (ProSkill) this.CBoxProSkill.getSelectedItem();
 			build.addEffect(proSkill.getEffects());
 		}
@@ -1793,123 +1595,9 @@ public class MainFrame extends JFrame {
 	
 	public void updateNucleus() {
 		if(PageGeneral.getInstance().getReinca() == 0) {
-			this.showAndHide.get(4).setVisible(false);
+			this.showAndHide.get(3).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
 		} else this.showAndHide.get(4).setVisible(true);
-	}
-	
-	public void updateMount() {
-		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
-		
-		Mount tabMount[] = Mount.getPossibleMount(lvl, reinca);
-		Mount memory = (Mount) this.CBoxMount.getSelectedItem();
-		
-		this.CBoxMount.setModel(new DefaultComboBoxModel<Mount>(tabMount));
-		this.CBoxMount.setSelectedItem(memory);
-		
-		if(this.CBoxMount.getSelectedIndex() == 0) {
-			this.listEffectXpStuff.get(0).setVisible(false);
-			this.listEffectXpStuff.get(1).setVisible(false);
-			this.listEffectXpStuff.get(0).setSelectedIndex(0);
-			this.listEffectXpStuff.get(1).setSelectedIndex(0);
-			this.showAndHideXpStuff.get(0).setVisible(false);
-		} else {
-			this.listEffectXpStuff.get(0).setVisible(true);
-			this.listEffectXpStuff.get(1).setVisible(true);
-			this.showAndHideXpStuff.get(0).setVisible(true);
-		}
-		
-		if(tabMount.length > 1) this.showAndHide.get(0).setVisible(true);
-		else this.showAndHide.get(0).setVisible(false);
-	}
-	
-	void updateGenkiQuality(int idList) {
-		int star = 0;
-		while(star < 5) {
-			if(!this.starGenki.get(idList).get(star).isSelected()) break;
-			star++;
-		}
-		
-		Genki[] tabGenki = Genki.getPossibleGenki(this.colorGenki.get(idList), star);
-		
-		if(tabGenki == null) {
-			for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
-				this.starGenki.get(idList).get(i).setVisible(false);
-			}
-			this.CBoxGenki.get(idList).setVisible(false);
-		} else {
-			for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
-				this.starGenki.get(idList).get(i).setVisible(true);
-			}
-			this.CBoxGenki.get(idList).setVisible(true);
-			
-			Genki memory = this.CBoxGenki.get(idList).getSelectedItem() != null ? (Genki) this.CBoxGenki.get(idList).getSelectedItem() : tabGenki[0];
-			
-			this.CBoxGenki.get(idList).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
-			this.CBoxGenki.get(idList).setSelectedItem(memory);
-		}
-	}
-	
-	private void updateGenkiStar(int idList, int idCheck) {
-		Genki[] tabGenki = Genki.getPossibleGenki(this.colorGenki.get(idList), idCheck+1);
-		
-		for(int i = 0; i < this.starGenki.get(idList).size(); i++) {
-			if(i <= idCheck) this.starGenki.get(idList).get(i).setSelected(true);
-			else this.starGenki.get(idList).get(i).setSelected(false);
-		}
-		
-		int memory = this.CBoxGenki.get(idList).getSelectedIndex();
-		
-		this.CBoxGenki.get(idList).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
-		this.CBoxGenki.get(idList).setSelectedIndex(memory);
-	}
-	
-	private void updateLvlXpStuff(int index) {
-		if(this.listEffectXpStuff.get(index*2).getSelectedItem().toString().equals("Rien")
-				|| this.listEffectXpStuff.get(index*2+1).getSelectedItem().toString().equals("Rien")
-				|| this.listEffectXpStuff.get(index*2).getSelectedItem().toString().equals(this.listEffectXpStuff.get(index*2+1).getSelectedItem().toString())) {
-			this.listLvlXpStuff.get(index*2).setVisible(false);
-			this.listLvlXpStuff.get(index*2+1).setVisible(false);
-			setMemoryInList(this.listLvlXpStuff.get(index*2), null);
-			setMemoryInList(this.listLvlXpStuff.get(index*2+1), null);
-		} else {
-			if(index == 0){
-				String[] tmp = new String[XpStuff.getDataMount()[this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2, tmp);
-				
-				tmp = new String[XpStuff.getDataMount()[this.listEffectXpStuff.get(index*2+1).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			}
-			
-			this.listLvlXpStuff.get(index*2).setVisible(true);
-			this.listLvlXpStuff.get(index*2+1).setVisible(true);
-		}
-	}
-	
-	private void updateMaxLvlValue(int index) {
-		int indexPair = (index % 2 == 0) ? index + 1 : index -1;
-		
-		if(this.listEffectXpStuff.get(index).getSelectedIndex() == 0
-				|| this.listEffectXpStuff.get(indexPair).getSelectedIndex() == 0
-				|| this.listEffectXpStuff.get(index).getSelectedIndex() == this.listEffectXpStuff.get(indexPair).getSelectedIndex())
-			return;
-		
-		int currentLvl = this.listLvlXpStuff.get(index).getSelectedIndex()+1;
-		int sizePair = XpStuff.getDataMount()[this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		
-		String[] tmp = new String[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
-		for(int i = 0; i < tmp.length; i++) tmp[i] = "" + (i+1);
-		this.listLvlXpStuff.get(indexPair).add(new JComboBox<String>(tmp));
-		setMemoryInList(this.listLvlXpStuff, indexPair, tmp);
 	}
 	
 	private void updateCostume(int idList) {
@@ -1989,11 +1677,11 @@ public class MainFrame extends JFrame {
 	
 	private void showWeaponCost() {
 		if(this.costWeapon.get(0).isSelected()) {
-			this.showAndHide.get(1).setVisible(true);
+			this.showAndHide.get(0).setVisible(true);
 			this.CBoxCostPearl.get(1).setVisible(false);
 			this.CBoxCostPearl.get(1).setSelectedIndex(0);
 		} else {
-			this.showAndHide.get(1).setVisible(false);
+			this.showAndHide.get(0).setVisible(false);
 			if(!this.costQuality.get(0).get(0).isSelected())
 				this.CBoxCostPearl.get(1).setVisible(true);
 		}
@@ -2317,8 +2005,8 @@ public class MainFrame extends JFrame {
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
-		if(lvl < 6) this.showAndHide.get(2).setVisible(false);
-		else this.showAndHide.get(2).setVisible(true);
+		if(lvl < 6) this.showAndHide.get(1).setVisible(false);
+		else this.showAndHide.get(1).setVisible(true);
 		
 		for(Skill skill : Skill.getData()[grade.index]) {
 			if(skill.getLvl()[0] > lvl) continue;
@@ -2395,8 +2083,8 @@ public class MainFrame extends JFrame {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		if(lvl < 66) this.showAndHide.get(3).setVisible(false);
-		else this.showAndHide.get(3).setVisible(true);
+		if(lvl < 66) this.showAndHide.get(2).setVisible(false);
+		else this.showAndHide.get(2).setVisible(true);
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
 		ProSkill memory = (ProSkill) this.CBoxProSkill.getSelectedItem();
@@ -2499,9 +2187,9 @@ public class MainFrame extends JFrame {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		if(reinca || lvl >= 20) {
-			this.showAndHide.get(5).setVisible(true);
+			this.showAndHide.get(4).setVisible(true);
 		} else {
-			this.showAndHide.get(5).setVisible(false);
+			this.showAndHide.get(4).setVisible(false);
 			this.CBoxBague.setSelectedIndex(0);
 		}
 	}
@@ -2517,9 +2205,9 @@ public class MainFrame extends JFrame {
 		this.CBoxAnima.setSelectedIndex(memory);
 		
 		if(reinca && lvl >= 10) {
-			this.showAndHide.get(6).setVisible(true);
+			this.showAndHide.get(5).setVisible(true);
 		} else {
-			this.showAndHide.get(6).setVisible(false);
+			this.showAndHide.get(5).setVisible(false);
 			this.CBoxAnima.setSelectedIndex(0);
 		}
 	}
@@ -2536,20 +2224,6 @@ public class MainFrame extends JFrame {
 			} else {
 				this.spinnerEnergy.get(i).setModel(new SpinnerNumberModel(memory, 0, 200, 1));
 			}
-		}
-	}
-	
-	private void showXpStuff(int idList, int indexCB) {
-		if(indexCB != 0) {
-			this.showAndHideXpStuff.get(idList).setVisible(true);	
-			this.listEffectXpStuff.get(idList*2).setVisible(true);
-			this.listEffectXpStuff.get(idList*2+1).setVisible(true);
-		} else {
-			this.showAndHideXpStuff.get(idList).setVisible(false);
-			this.listEffectXpStuff.get(idList*2).setVisible(false);
-			this.listEffectXpStuff.get(idList*2+1).setVisible(false);
-			this.listEffectXpStuff.get(idList*2).setSelectedIndex(0);
-			this.listEffectXpStuff.get(idList*2+1).setSelectedIndex(0);
 		}
 	}
 	
@@ -2571,20 +2245,6 @@ public class MainFrame extends JFrame {
 				}
 			}
 		}
-	}
-	
-	private String setMemoryInList(ArrayList<JCustomComboBox<String>> list, int indexList, String[] itemList) {
-		return setMemoryInList(list.get(indexList), itemList);
-	}
-	
-	private String setMemoryInList(JCustomComboBox<String> list, String[] itemList) {
-		String memory = list.getSelectedItem() != null ? list.getSelectedItem().toString() : "";
-		if(itemList != null) {
-			this.model = new DefaultComboBoxModel<String>(itemList);
-			list.setModel(model);
-		}
-		list.setSelectedItem(memory);
-		return memory;
 	}
 	
 	public static MainFrame getInstance() {
@@ -2636,12 +2296,6 @@ public class MainFrame extends JFrame {
 				buildCredit += this.fr_en.get(0).get(this.fr_en.get(0).size()-1).get(i) + "\n";
 			}
 			this.parameter.setText(buildCredit);
-			
-			for(ArrayList<JCustomRadioButton> array : this.colorGenki) {
-				for(int i = 0; i < array.size(); i++) {
-					array.get(i).setText(this.fr_en.get(0).get(5).get(i+3));
-				}
-			}
 		} else {
 			this.language.setIcon(this.language.getDisabledIcon());
 			for(int i = 0; i < this.fr_en.get(1).size()-1; i++) {
@@ -2661,12 +2315,6 @@ public class MainFrame extends JFrame {
 				buildCredit += this.fr_en.get(1).get(this.fr_en.get(1).size()-1).get(i) + "\n";
 			}
 			this.parameter.setText(buildCredit);
-			
-			for(ArrayList<JCustomRadioButton> array : this.colorGenki) {
-				for(int i = 0; i < array.size(); i++) {
-					array.get(i).setText(this.fr_en.get(1).get(5).get(i+3));
-				}
-			}
 		}
 	}
 }

@@ -45,6 +45,7 @@ public class PageGeneral extends PagePanel {
 	
 	private PageGeneral() {
 		super(new GridLayout(3, 2, 10, 10), Consts.UIColor[2]);
+		setLabel();
 		
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleData(0));
 		this.grade.setFont(new Font("Open Sans", Font.PLAIN, 12));
@@ -73,7 +74,7 @@ public class PageGeneral extends PagePanel {
 			PageArmor.getInstance().updateArmor();
 			PageCapeRing.getInstance().updateCapeRing();
 			updateTitle();
-			MainFrame.getInstance().updateMount();
+			PageMount.getInstance().updateMount();
 			MainFrame.getInstance().updateTalent();
 			MainFrame.getInstance().showSpe();
 			MainFrame.getInstance().updateBlason();
@@ -94,7 +95,7 @@ public class PageGeneral extends PagePanel {
 			PageWeapon.getInstance().updateWeapon();
 			PageArmor.getInstance().updateArmor();
 			updateTitle();
-			MainFrame.getInstance().updateMount();
+			PageMount.getInstance().updateMount();
 			MainFrame.getInstance().showSpe();
 			MainFrame.getInstance().updateNucleus();
 			MainFrame.getInstance().updateEnergy();
@@ -133,8 +134,6 @@ public class PageGeneral extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		
-		setLabel();
 		createPanel();
 		setEffects();
 	}
