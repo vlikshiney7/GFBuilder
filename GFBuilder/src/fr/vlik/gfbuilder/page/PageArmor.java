@@ -10,7 +10,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Consts;
@@ -46,7 +45,7 @@ public class PageArmor extends PagePanel {
 	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(10);
 	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(10);
 	
-	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(6);
+	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(10);
 	
 	public static PageArmor getInstance() {
 		return INSTANCE;
@@ -171,7 +170,7 @@ public class PageArmor extends PagePanel {
 		return this.armor.get(id).getSelectedItem();
 	}
 	
-	public JTextPane getArmorSetInfo() {
+	public JCustomTextPane getArmorSetInfo() {
 		return this.armorSetInfo;
 	}
 	
@@ -212,7 +211,7 @@ public class PageArmor extends PagePanel {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.effectXpStuff.get(i).getSelectedItem().toString());
+			TypeEffect type = TypeEffect.valueOf(this.getEffectXpStuff(i).toString());
 			double valueXpStuff = XpStuff.getDataArmor()[i/2][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 			
 			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
@@ -266,10 +265,10 @@ public class PageArmor extends PagePanel {
 			this.armorSetInfo.setVisible(false);
 		}
 		
-		
 		if(armorSet.getNbCurrentUsed() >= 4) {
 			list.addAll(armorSet.getWith4());
 		}
+		
 		if(armorSet.getNbCurrentUsed() == 5) {
 			list.addAll(armorSet.getWith5());
 		}

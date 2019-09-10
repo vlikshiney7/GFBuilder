@@ -211,7 +211,7 @@ public class PageWeapon extends PagePanel {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.effectXpStuff.get(i).getSelectedItem().toString());
+			TypeEffect type = TypeEffect.valueOf(this.getEffectXpStuff(i).toString());
 			int idListXp = weapons[i/2].getType().index;
 			double valueXpStuff = XpStuff.getDataWeapon()[idListXp][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 			

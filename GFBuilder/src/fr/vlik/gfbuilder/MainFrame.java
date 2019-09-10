@@ -44,12 +44,9 @@ import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Buff;
-import fr.vlik.grandfantasia.Cape;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Costume;
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.GuildBuff;
@@ -57,7 +54,6 @@ import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.ProSkill;
-import fr.vlik.grandfantasia.Ring;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Speciality;
@@ -85,13 +81,8 @@ public class MainFrame extends JFrame {
 	
 	DefaultComboBoxModel<String> model;
 	
-	private JCustomComboBox<Cape> CBoxCape;
-	private ArrayList<JCustomComboBox<Ring>> CBoxRing = new ArrayList<JCustomComboBox<Ring>>(2);
-	private JTextPane capeRingSetInfo = new JTextPane();
-	
-	private ArrayList<JCustomComboBox<Enchantment>> CBoxEnchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
-	private ArrayList<JCustomComboBox<String>> listEffectXpStuff = new ArrayList<JCustomComboBox<String>>(8);
-	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(8);
+	private ArrayList<JCustomComboBox<String>> listEffectXpStuff = new ArrayList<JCustomComboBox<String>>(2);
+	private ArrayList<JCustomComboBox<String>> listLvlXpStuff = new ArrayList<JCustomComboBox<String>>(2);
 	
 	private JCustomComboBox<Mount> CBoxMount;
 	private ArrayList<ArrayList<JCustomRadioButton>> colorGenki = new ArrayList<ArrayList<JCustomRadioButton>>(2);
@@ -280,43 +271,32 @@ public class MainFrame extends JFrame {
 		System.out.println("Fin Armor : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
 		
-		/****************************************/
-		/*				 PAGE 4					*/
-		/****************************************/
-		int page = 3;
+		System.out.println("Début CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.mainPage.add(PageCapeRing.getInstance());
+		System.out.println("Fin CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		/* CAPE */
-		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
-		this.CBoxCape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
-		this.CBoxCape.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxCape.setRenderer(new CustomListCellRenderer());
 		
-		this.CBoxCape.addActionListener(new ActionListener() {
+		/****************************************/
+		/*				 PAGE 5					*/
+		/****************************************/
+		int page = 4;
+		
+		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca() == 1);
+		this.CBoxMount = new JCustomComboBox<Mount>(tabMount);
+		this.CBoxMount.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		this.CBoxMount.setRenderer(new CustomListCellRenderer());
+		this.CBoxMount.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.showXpStuff(0, MainFrame.this.CBoxCape.getSelectedIndex());
-				MainFrame.this.updateEnchant(0);
+				MainFrame.this.showXpStuff(0, MainFrame.this.CBoxMount.getSelectedIndex());
 				MainFrame.this.updateStat();
 			}
 		});
 		
-		/* ENCHANTEMENT */
-		this.CBoxEnchant.add(new JCustomComboBox<Enchantment>());
-		this.CBoxEnchant.get(0).setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxEnchant.get(0).setRenderer(new CustomListCellRenderer());
-		this.CBoxEnchant.get(0).addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		this.CBoxEnchant.get(0).setVisible(false);
-		
-		/* XP STUFF */
-		String[] tmp = new String[XpStuff.getDataCapeRing()[0].length +1];
+		String[] tmp = new String[XpStuff.getDataMount().length +1];
 		tmp[0] = "Rien";
 		for(int i = 0; i < tmp.length-1; i++) {
-			tmp[i+1] = XpStuff.getDataCapeRing()[0][i].getType().name();
+			tmp[i+1] = XpStuff.getDataMount()[i].getType().name();
 		}
 		for(int i = 0; i < 2; i++) {
 			this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
@@ -343,196 +323,6 @@ public class MainFrame extends JFrame {
 			this.listLvlXpStuff.get(i).setVisible(false);
 		}
 		
-		JPanel descCape = new JPanel();
-		descCape.setLayout(new BoxLayout(descCape, BoxLayout.X_AXIS));
-		descCape.setBackground(Consts.UIColor[1]);
-		descCape.add(this.CBoxCape);
-		descCape.add(this.CBoxEnchant.get(0));
-		
-		JPanel xpCape = new JPanel(new GridLayout(1, 3, 10, 3));
-		xpCape.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		xpCape.add(this.allLabel.get(page).get(1));
-		for(int i = 0; i < 2; i++) {
-			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-			xp.setBackground(Consts.UIColor[1]);
-			xp.add(this.listEffectXpStuff.get(i));
-			xp.add(this.listLvlXpStuff.get(i));
-			xpCape.add(xp);
-		}
-		
-		JPanel page4Elem1 = new JPanel();
-		page4Elem1.setLayout(new BoxLayout(page4Elem1, BoxLayout.Y_AXIS));
-		page4Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page4Elem1.setBackground(Consts.UIColor[1]);
-		page4Elem1.add(this.allLabel.get(page).get(0));
-		page4Elem1.add(Box.createVerticalStrut(10));
-		page4Elem1.add(descCape);
-		page4Elem1.add(Box.createVerticalStrut(5));
-		page4Elem1.add(xpCape);
-		
-		this.showAndHideXpStuff.add(xpCape);
-		
-		JPanel page4 = new JPanel();
-		page4.setLayout(new BoxLayout(page4, BoxLayout.Y_AXIS));
-		page4.setBackground(Consts.UIColor[2]);
-		page4.add(page4Elem1);
-		
-		/* RING */
-		Ring[] tabRing = Ring.getPossibleRing(PageGeneral.getInstance().getLvl(), null);
-		for(int i = 0; i < 2; i++) {
-			this.CBoxRing.add(new JCustomComboBox<Ring>(new DefaultComboBoxModel<Ring>(tabRing)));
-			this.CBoxRing.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxRing.get(i).setRenderer(new CustomListCellRenderer());
-			
-			int id = i;
-			this.CBoxRing.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.showXpStuff(id+1, MainFrame.this.CBoxRing.get(id).getSelectedIndex());
-					MainFrame.this.updateEnchant(id+1);
-					MainFrame.this.updateDoubleRing(id);
-					MainFrame.this.updateStat();
-				}
-			});
-			
-			/* ENCHANTEMENT */
-			this.CBoxEnchant.add(new JCustomComboBox<Enchantment>());
-			this.CBoxEnchant.get(i+1).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxEnchant.get(i+1).setRenderer(new CustomListCellRenderer());
-			this.CBoxEnchant.get(i+1).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.CBoxEnchant.get(i+1).setVisible(false);
-			
-			/* XP STUFF */
-			tmp = new String[XpStuff.getDataCapeRing()[1].length +1];
-			tmp[0] = "Rien";
-			for(int j = 0; j < tmp.length-1; j++) {
-				tmp[j+1] = XpStuff.getDataCapeRing()[1][j].getType().name();
-			}
-			for(int j = 0; j < 2; j++) {
-				this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-				this.listEffectXpStuff.get(i*2+j+2).setRenderer(new CustomListCellRenderer());
-				this.listEffectXpStuff.get(i*2+j+2).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateLvlXpStuff(id+1);
-						MainFrame.this.updateStat();
-					}
-				});
-				this.listEffectXpStuff.get(i*2+j+2).setVisible(false);
-				
-				int duo = i*2+j+2;
-				this.listLvlXpStuff.add(new JCustomComboBox<String>());
-				this.listLvlXpStuff.get(i*2+j+2).setRenderer(new CustomListCellRenderer());
-				this.listLvlXpStuff.get(i*2+j+2).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateMaxLvlValue(duo);
-						MainFrame.this.updateStat();
-					}
-				});
-				this.listLvlXpStuff.get(i*2+j+2).setVisible(false);
-			}
-			
-			JPanel descRing = new JPanel();
-			descRing.setLayout(new BoxLayout(descRing, BoxLayout.X_AXIS));
-			descRing.setBackground(Consts.UIColor[1]);
-			descRing.add(this.CBoxRing.get(i));
-			descRing.add(this.CBoxEnchant.get(i+1));
-			
-			JPanel xpRing = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpRing.setBackground(Consts.UIColor[1]);
-			this.allLabel.get(page).get(i+4).setFont(new Font("Open Sans", Font.PLAIN, 14));
-			xpRing.add(this.allLabel.get(page).get(i+4));
-			for(int j = 0; j < 2; j++) {
-				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Consts.UIColor[1]);
-				xp.add(this.listEffectXpStuff.get(i*2+j+2));
-				xp.add(this.listLvlXpStuff.get(i*2+j+2));
-				xpRing.add(xp);
-			}
-			
-			JPanel page4ElemI = new JPanel();
-			page4ElemI.setLayout(new BoxLayout(page4ElemI, BoxLayout.Y_AXIS));
-			page4ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page4ElemI.setBackground(Consts.UIColor[1]);
-			page4ElemI.add(this.allLabel.get(page).get(i+2));
-			page4ElemI.add(Box.createVerticalStrut(10));
-			page4ElemI.add(descRing);
-			page4ElemI.add(Box.createVerticalStrut(5));
-			page4ElemI.add(xpRing);
-			
-			this.showAndHideXpStuff.add(xpRing);
-			
-			page4.add(Box.createVerticalStrut(10));
-			page4.add(page4ElemI);
-		}
-		
-		/* BONUS SET */
-		this.capeRingSetInfo.setEditable(false);
-		this.capeRingSetInfo.setText(this.allLabel.get(page).get(6).getText());
-		this.capeRingSetInfo.setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.capeRingSetInfo.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.capeRingSetInfo.setBackground(Consts.UIColor[1]);
-		this.capeRingSetInfo.setForeground(Consts.FontColor[0]);
-		
-		page4.add(Box.createVerticalStrut(10));
-		page4.add(this.capeRingSetInfo);
-		
-		this.mainPage.add(page4);
-		
-		/****************************************/
-		/*				 PAGE 5					*/
-		/****************************************/
-		page++;
-		
-		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca() == 1);
-		this.CBoxMount = new JCustomComboBox<Mount>(tabMount);
-		this.CBoxMount.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxMount.setRenderer(new CustomListCellRenderer());
-		this.CBoxMount.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.showXpStuff(3, MainFrame.this.CBoxMount.getSelectedIndex());
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		tmp = new String[XpStuff.getDataMount().length +1];
-		tmp[0] = "Rien";
-		for(int i = 0; i < tmp.length-1; i++) {
-			tmp[i+1] = XpStuff.getDataMount()[i].getType().name();
-		}
-		for(int i = 0; i < 2; i++) {
-			this.listEffectXpStuff.add(new JCustomComboBox<String>(tmp));
-			this.listEffectXpStuff.get(i+6).setRenderer(new CustomListCellRenderer());
-			this.listEffectXpStuff.get(i+6).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateLvlXpStuff(3);
-					MainFrame.this.updateStat();
-				}
-			});
-			this.listEffectXpStuff.get(i+6).setVisible(false);
-			
-			int duo = i+6;
-			this.listLvlXpStuff.add(new JCustomComboBox<String>());
-			this.listLvlXpStuff.get(i+6).setRenderer(new CustomListCellRenderer());
-			this.listLvlXpStuff.get(i+6).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateMaxLvlValue(duo);
-					MainFrame.this.updateStat();
-				}
-			});
-			this.listLvlXpStuff.get(i+6).setVisible(false);
-		}
-		
 		
 		JPanel xpRide = new JPanel(new GridLayout(1, 3, 10, 3));
 		xpRide.setBackground(Consts.UIColor[1]);
@@ -541,8 +331,8 @@ public class MainFrame extends JFrame {
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 			xp.setBackground(Consts.UIColor[1]);
-			xp.add(this.listEffectXpStuff.get(i+6));
-			xp.add(this.listLvlXpStuff.get(i+6));
+			xp.add(this.listEffectXpStuff.get(i));
+			xp.add(this.listLvlXpStuff.get(i));
 			xpRide.add(xp);
 		}
 		
@@ -1838,10 +1628,11 @@ public class MainFrame extends JFrame {
 		
 		build.addEffect(PageArmor.getInstance().getEffects());
 		
+		build.addEffect(PageCapeRing.getInstance().getEffects());
 		
-		Cape cape = new Cape((Cape) this.CBoxCape.getSelectedItem());
-		cape.addEnchant((Enchantment) this.CBoxEnchant.get(0).getSelectedItem());
-		build.addEffect(cape.getEffects());
+		
+		Mount mount = (Mount) this.CBoxMount.getSelectedItem();
+		build.addEffect(mount.getDepla());
 		
 		for(int i = 0; i < 2; i++) {
 			if(!this.listLvlXpStuff.get(i).isVisible() || this.listEffectXpStuff.get(i).getSelectedIndex() == 0) {
@@ -1849,66 +1640,12 @@ public class MainFrame extends JFrame {
 			}
 			
 			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i).getSelectedIndex());
-			
-			build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
-		}
-		
-		Ring[] rings = new Ring[2];
-		for(int i = 0; i < rings.length; i++) {
-			rings[i] = (Ring) this.CBoxRing.get(i).getSelectedItem();
-			rings[i].addEnchant((Enchantment) this.CBoxEnchant.get(i+1).getSelectedItem());
-			build.addEffect(rings[i].getEffects());
-		}
-		
-		for(int i = 0; i < 4; i++) {
-			if(!this.listLvlXpStuff.get(i+2).isVisible() || this.listEffectXpStuff.get(i+2).getSelectedIndex() == 0) {
-				continue;
-			}
-			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+2).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(i+2).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+2).getSelectedIndex());
-			
-			build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
-		}
-		
-		
-		EquipSet capeRingSet = new EquipSet(rings, cape);
-		if(capeRingSet.getNbCurrentUsed() >= 2) build.addEffect(capeRingSet.getWith2());
-		if(capeRingSet.getNbCurrentUsed() >= 3) build.addEffect(capeRingSet.getWith3());
-		
-		
-		Mount mount = (Mount) this.CBoxMount.getSelectedItem();
-		build.addEffect(mount.getDepla());
-		
-		for(int i = 0; i < 2; i++) {
-			if(!this.listLvlXpStuff.get(i+6).isVisible() || this.listEffectXpStuff.get(i+6).getSelectedIndex() == 0) {
-				continue;
-			}
-			
-			TypeEffect type = TypeEffect.valueOf(this.listEffectXpStuff.get(i+6).getSelectedItem().toString());
-			double valueXpStuff = XpStuff.getDataMount()[this.listEffectXpStuff.get(i+6).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i+6).getSelectedIndex());
+			double valueXpStuff = XpStuff.getDataMount()[this.listEffectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.listLvlXpStuff.get(i).getSelectedIndex());
 			
 			if(mount.getName().equals("Loup Spectral de Combat")) {
 				build.addEffect(new Effect(type, false, valueXpStuff/2, true, WeaponType.NONE, null));
 			} else {
 				build.addEffect(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
-			}
-		}
-		
-		for(int i = 0; i < 3; i++) {
-			if(!(this.listEffectXpStuff.get(i*2).getSelectedIndex() == 0) && !(this.listEffectXpStuff.get(i*2+1).getSelectedIndex() == 0)
-					&& this.listEffectXpStuff.get(i*2).getSelectedIndex() != this.listEffectXpStuff.get(i*2+1).getSelectedIndex()) {
-				int lvlXpStuff = this.listLvlXpStuff.get(i*2).getSelectedIndex() + this.listLvlXpStuff.get(i*2+1).getSelectedIndex() +1;
-				if(i < 1) {
-					if(lvlXpStuff >= cape.getLvl()) {
-						build.addEffect(cape.getBonusXP());
-					}
-				} else if(i < 3) {
-					if(lvlXpStuff >= rings[i-1].getLvl()) {
-						build.addEffect(rings[i-1].getBonusXP());
-					}
-				}
 			}
 		}
 		
@@ -2039,10 +1776,10 @@ public class MainFrame extends JFrame {
 		build.addEffect(anima.getEffects());
 		
 		
-		updateLabel(build.calculStatFromEffect(), capeRingSet);
+		updateLabel(build.calculStatFromEffect());
 	}
 	
-	private void updateLabel(int[] allStats, EquipSet capeRingSet) {
+	private void updateLabel(int[] allStats) {
 		for(int i = 0; i < this.valueStat.size(); i++) {
 			this.valueStat.get(i).setText(TypeEffect.values()[i].name() + " : " + allStats[i]);
 			
@@ -2051,22 +1788,6 @@ public class MainFrame extends JFrame {
 			} else {
 				this.valueStat.get(i).setVisible(true);
 			}
-		}
-		
-		if(capeRingSet == null || capeRingSet.getName().equals("Rien") || capeRingSet.getNbCurrentUsed() < 2) {
-			this.capeRingSetInfo.setText(this.fr_en.get(this.language.isSelected() ? 0 : 1).get(4).get(6));
-		}
-		else {
-			String setInfo = capeRingSet.getName() + "\n";
-			setInfo += "2 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 2 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < capeRingSet.getWith2().size(); i++) {
-				setInfo += "\t- " + capeRingSet.getWith2().get(i).toString() + "\n";
-			}
-			setInfo += "3 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < capeRingSet.getWith3().size(); i++) {
-				setInfo += "\t- " + capeRingSet.getWith3().get(i).toString() + "\n";
-			}
-			this.capeRingSetInfo.setText(setInfo);
 		}
 	}
 	
@@ -2088,15 +1809,15 @@ public class MainFrame extends JFrame {
 		this.CBoxMount.setSelectedItem(memory);
 		
 		if(this.CBoxMount.getSelectedIndex() == 0) {
-			this.listEffectXpStuff.get(6).setVisible(false);
-			this.listEffectXpStuff.get(7).setVisible(false);
-			this.listEffectXpStuff.get(6).setSelectedIndex(0);
-			this.listEffectXpStuff.get(7).setSelectedIndex(0);
-			this.showAndHideXpStuff.get(3).setVisible(false);
+			this.listEffectXpStuff.get(0).setVisible(false);
+			this.listEffectXpStuff.get(1).setVisible(false);
+			this.listEffectXpStuff.get(0).setSelectedIndex(0);
+			this.listEffectXpStuff.get(1).setSelectedIndex(0);
+			this.showAndHideXpStuff.get(0).setVisible(false);
 		} else {
-			this.listEffectXpStuff.get(6).setVisible(true);
-			this.listEffectXpStuff.get(7).setVisible(true);
-			this.showAndHideXpStuff.get(3).setVisible(true);
+			this.listEffectXpStuff.get(0).setVisible(true);
+			this.listEffectXpStuff.get(1).setVisible(true);
+			this.showAndHideXpStuff.get(0).setVisible(true);
 		}
 		
 		if(tabMount.length > 1) this.showAndHide.get(0).setVisible(true);
@@ -2144,61 +1865,6 @@ public class MainFrame extends JFrame {
 		this.CBoxGenki.get(idList).setSelectedIndex(memory);
 	}
 	
-	public void updateListStuff() {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		int lvl = PageGeneral.getInstance().getLvl();
-		
-		/* CAPE */
-		Cape[] tabCape = Cape.getPossibleCape(grade.getGrade(), lvl);
-		Cape memoryCape = (Cape) this.CBoxCape.getSelectedItem();
-		
-		this.CBoxCape.setModel(new DefaultComboBoxModel<Cape>(tabCape));
-		this.CBoxCape.setSelectedItem(memoryCape);
-		
-		/* RING */
-		for(int i = 0; i < 2; i++) {
-			Ring[] tabRing = Ring.getPossibleRing(lvl, null);
-			Ring memory = (Ring) this.CBoxRing.get(i).getSelectedItem();
-			
-			this.CBoxRing.get(i).setModel(new DefaultComboBoxModel<Ring>(tabRing));
-			this.CBoxRing.get(i).setSelectedItem(memory);
-		}
-	}
-	
-	public void updateEnchant(int idList) {
-		if(idList == 0) {
-			if(this.CBoxCape.getSelectedIndex() != 0) {
-				Cape cape = (Cape) this.CBoxCape.getSelectedItem();
-				
-				if(cape.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleCapeRingEnchant();
-					
-					this.CBoxEnchant.get(idList).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-					this.CBoxEnchant.get(idList).setVisible(true);
-				} else {
-					this.CBoxEnchant.get(idList).setVisible(false);
-				}
-			} else {
-				this.CBoxEnchant.get(idList).setVisible(false);
-			}
-		} else {
-			if(this.CBoxRing.get(idList-1).getSelectedIndex() != 0) {
-				Ring ring = (Ring) this.CBoxRing.get(idList-1).getSelectedItem();
-				
-				if(ring.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleCapeRingEnchant();
-					
-					this.CBoxEnchant.get(idList).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-					this.CBoxEnchant.get(idList).setVisible(true);
-				} else {
-					this.CBoxEnchant.get(idList).setVisible(false);
-				}
-			} else {
-				this.CBoxEnchant.get(idList).setVisible(false);
-			}
-		}
-	}
-	
 	private void updateLvlXpStuff(int index) {
 		if(this.listEffectXpStuff.get(index*2).getSelectedItem().toString().equals("Rien")
 				|| this.listEffectXpStuff.get(index*2+1).getSelectedItem().toString().equals("Rien")
@@ -2208,35 +1874,7 @@ public class MainFrame extends JFrame {
 			setMemoryInList(this.listLvlXpStuff.get(index*2), null);
 			setMemoryInList(this.listLvlXpStuff.get(index*2+1), null);
 		} else {
-			if(index == 0) {
-				String[] tmp = new String[XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2, tmp);
-				
-				tmp = new String[XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(index*2+1).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			} else if(index < 3) {
-				String[] tmp = new String[XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2, tmp);
-				
-				tmp = new String[XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(index*2+1).getSelectedIndex()-1].getLvlValue().size()];
-				for(int i = 0; i < tmp.length; i++) {
-					tmp[i] = "" + (i+1);
-				}
-				this.listLvlXpStuff.get(index*2+1).add(new JCustomComboBox<String>(tmp));
-				setMemoryInList(this.listLvlXpStuff, index*2+1, tmp);
-			} else if(index == 3){
+			if(index == 0){
 				String[] tmp = new String[XpStuff.getDataMount()[this.listEffectXpStuff.get(index*2).getSelectedIndex()-1].getLvlValue().size()];
 				for(int i = 0; i < tmp.length; i++) {
 					tmp[i] = "" + (i+1);
@@ -2266,15 +1904,7 @@ public class MainFrame extends JFrame {
 			return;
 		
 		int currentLvl = this.listLvlXpStuff.get(index).getSelectedIndex()+1;
-		int sizePair = -1;
-		
-		if(index < 2) {
-			sizePair = XpStuff.getDataCapeRing()[0][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		} else if(index < 6) {
-			sizePair = XpStuff.getDataCapeRing()[1][this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		} else if(index < 8) {
-			sizePair = XpStuff.getDataMount()[this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		}
+		int sizePair = XpStuff.getDataMount()[this.listEffectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
 		
 		String[] tmp = new String[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
 		for(int i = 0; i < tmp.length; i++) tmp[i] = "" + (i+1);
@@ -2943,17 +2573,6 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	private void updateDoubleRing(int idList) {
-		Ring choice = (Ring) this.CBoxRing.get(idList).getSelectedItem();
-		int other = idList == 0 ? 1 : 0;
-		
-		Ring[] tabRing = Ring.getPossibleRing(PageGeneral.getInstance().getLvl(), choice);
-		Ring memory = (Ring) this.CBoxRing.get(other).getSelectedItem();
-		
-		this.CBoxRing.get(other).setModel(new DefaultComboBoxModel<Ring>(tabRing));
-		this.CBoxRing.get(other).setSelectedItem(memory);
-	}
-	
 	private String setMemoryInList(ArrayList<JCustomComboBox<String>> list, int indexList, String[] itemList) {
 		return setMemoryInList(list.get(indexList), itemList);
 	}
@@ -3018,9 +2637,6 @@ public class MainFrame extends JFrame {
 			}
 			this.parameter.setText(buildCredit);
 			
-			if(this.capeRingSetInfo.getText().equals("No active set"))
-				this.capeRingSetInfo.setText(this.fr_en.get(0).get(4).get(6));
-			
 			for(ArrayList<JCustomRadioButton> array : this.colorGenki) {
 				for(int i = 0; i < array.size(); i++) {
 					array.get(i).setText(this.fr_en.get(0).get(5).get(i+3));
@@ -3045,9 +2661,6 @@ public class MainFrame extends JFrame {
 				buildCredit += this.fr_en.get(1).get(this.fr_en.get(1).size()-1).get(i) + "\n";
 			}
 			this.parameter.setText(buildCredit);
-			
-			if(this.capeRingSetInfo.getText().equals("Aucun set actif"))
-				this.capeRingSetInfo.setText(this.fr_en.get(1).get(4).get(6));
 			
 			for(ArrayList<JCustomRadioButton> array : this.colorGenki) {
 				for(int i = 0; i < array.size(); i++) {
