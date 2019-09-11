@@ -45,21 +45,17 @@ import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Buff;
 import fr.vlik.grandfantasia.CombiTalent;
-import fr.vlik.grandfantasia.Costume;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Nucleus;
-import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.ProSkill;
-import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
 import fr.vlik.grandfantasia.Blason.BlasonType;
-import fr.vlik.grandfantasia.Costume.CostType;
 import fr.vlik.uidesign.*;
 
 public class MainFrame extends JFrame {
@@ -75,12 +71,6 @@ public class MainFrame extends JFrame {
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
-	
-	private ArrayList<JCustomRadioButton> costWeapon = new ArrayList<JCustomRadioButton>(2);
-	private ArrayList<JCustomCheckBox> checkBoxRunway = new ArrayList<JCustomCheckBox>(8);
-	private ArrayList<ArrayList<JCustomRadioButton>> costQuality = new ArrayList<ArrayList<JCustomRadioButton>>(5);
-	private ArrayList<JCustomComboBox<Costume>> CBoxCostume = new ArrayList<JCustomComboBox<Costume>>(5);
-	private ArrayList<JCustomComboBox<Pearl>> CBoxCostPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
 	
 	private JLabel[] tabChosenTalent = new JLabel[9];
 	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(32);
@@ -243,321 +233,31 @@ public class MainFrame extends JFrame {
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
 		
-		System.out.println("Début General : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		System.out.println("Chargement Page : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		
 		this.mainPage.add(PageGeneral.getInstance());
 		System.out.println("Fin General : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		
-		System.out.println("Début Weapon : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		this.mainPage.add(PageWeapon.getInstance());
 		System.out.println("Fin Weapon : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		
-		System.out.println("Début Armor : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		this.mainPage.add(PageArmor.getInstance());
 		System.out.println("Fin Armor : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 
-		
-		System.out.println("Début CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		this.mainPage.add(PageCapeRing.getInstance());
 		System.out.println("Fin CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
-		
-		
-		System.out.println("Début Mount : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+
 		this.mainPage.add(PageMount.getInstance());
 		System.out.println("Fin Mount : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+
+		this.mainPage.add(PageCostume.getInstance());
+		System.out.println("Fin Costume : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		
-		
-		/****************************************/
-		/*				 PAGE 6					*/
-		/****************************************/
-		int page = 5;
-		
-		JPanel costGroupPanel = new JPanel();
-		ButtonGroup costGroup = new ButtonGroup();
-		
-		costGroupPanel.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(4).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		costGroupPanel.add(this.allLabel.get(page).get(4));
-		
-		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JCustomRadioButton(this.allLabel.get(page).get(i+5).getText(), "radio11", "radioOff"));
-			this.costWeapon.get(i).setBackground(Consts.UIColor[1]);
-			this.costWeapon.get(i).setForeground(Consts.FontColor[0]);
-			this.costWeapon.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.showWeaponCost();
-					MainFrame.this.updateStat();
-				}
-			});
-			
-			costGroup.add(this.costWeapon.get(i));
-			costGroupPanel.add(this.costWeapon.get(i));
-		}
-		
-		JPanel runway = new JPanel();
-		runway.setBackground(Consts.UIColor[1]);
-		
-		for(int i = 0; i < 2; i++) {
-			if(i == 0) {
-				this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(14).getText()));
-				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[0]));
-			} else {
-				this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(18).getText()));
-				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
-			}
-			
-			this.checkBoxRunway.get(i).setBackground(Consts.UIColor[1]);
-			this.checkBoxRunway.get(i).setForeground(Consts.FontColor[0]);
-			
-			int id = i;
-			this.checkBoxRunway.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateCheckBoxRunway(id);
-					MainFrame.this.updateStat();
-				}
-			});
-			runway.add(this.checkBoxRunway.get(i));
-		}
-		
-		JPanel sectionCost = new JPanel();
-		sectionCost.setLayout(new BoxLayout(sectionCost, BoxLayout.Y_AXIS));
-		sectionCost.setBackground(Consts.UIColor[1]);
-		
-		for(int i = 0; i < 2; i++) {
-			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Consts.UIColor[1]);
-			this.allLabel.get(page).get(i+7).setFont(new Font("Open Sans", Font.PLAIN, 14));
-			currentQualityPanel.add(this.allLabel.get(page).get(i+7));
-			ButtonGroup currentQuality = new ButtonGroup();
-			int id = i;
-			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
-			for(int j = 0; j < 5; j++) {
-				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText(), "radio1" + j, "radioOff"));
-				this.costQuality.get(i).get(j).setBackground(Consts.UIColor[1]);
-				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
-				this.costQuality.get(i).get(j).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateCostume(id);
-						MainFrame.this.updateStat();
-					}
-				});
-				
-				currentQuality.add(this.costQuality.get(i).get(j));
-				currentQualityPanel.add(this.costQuality.get(i).get(j));
-			}
-			
-			this.CBoxCostume.add(new JCustomComboBox<Costume>());
-			this.CBoxCostume.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxCostume.get(i).setRenderer(new CustomListCellRenderer());
-			this.CBoxCostume.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.CBoxCostume.get(i).setVisible(false);
-			
-			if(i == 0) {
-				this.CBoxCostPearl.add(new JCustomComboBox<Pearl>(Pearl.getWeaponCostPearl()));
-				this.CBoxCostPearl.get(i).setRenderer(new CustomListCellRenderer());
-				this.CBoxCostPearl.get(i).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxCostPearl.get(i).setVisible(false);
-			}
-			
-			this.CBoxCostPearl.add(new JCustomComboBox<Pearl>(Pearl.getWeaponCostPearl()));
-			this.CBoxCostPearl.get(i+1).setRenderer(new CustomListCellRenderer());
-			this.CBoxCostPearl.get(i+1).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.CBoxCostPearl.get(i+1).setVisible(false);
-			
-			
-			JPanel itemCost = new JPanel();
-			itemCost.setLayout(new BoxLayout(itemCost, BoxLayout.Y_AXIS));
-			itemCost.setBackground(Consts.UIColor[1]);
-			itemCost.add(Box.createVerticalStrut(10));
-			itemCost.add(currentQualityPanel);
-			itemCost.add(Box.createVerticalStrut(3));
-			itemCost.add(this.CBoxCostume.get(i));
-			if(i == 0) {
-				itemCost.add(Box.createVerticalStrut(3));
-				itemCost.add(this.CBoxCostPearl.get(i));
-			}
-			itemCost.add(Box.createVerticalStrut(3));
-			itemCost.add(this.CBoxCostPearl.get(i+1));
-			
-			sectionCost.add(itemCost);
-			
-			if(i == 1) this.showAndHide.add(itemCost);
-		}
-		
-		JPanel page6Elem1 = new JPanel();
-		page6Elem1.setLayout(new BoxLayout(page6Elem1, BoxLayout.Y_AXIS));
-		page6Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page6Elem1.setBackground(Consts.UIColor[1]);
-		page6Elem1.add(this.allLabel.get(page).get(0));
-		page6Elem1.add(Box.createVerticalStrut(10));
-		page6Elem1.add(costGroupPanel);
-		page6Elem1.add(Box.createVerticalStrut(3));
-		page6Elem1.add(runway);
-		page6Elem1.add(sectionCost);
-		
-		JPanel page6 = new JPanel();
-		page6.setLayout(new BoxLayout(page6, BoxLayout.Y_AXIS));
-		page6.setBackground(Consts.UIColor[2]);
-		page6.add(page6Elem1);
-		
-		for(int i = 0; i < 3; i++) {
-			JPanel runwayPanel = new JPanel();
-			runwayPanel.setBackground(Consts.UIColor[1]);
-			
-			for(int j = 0; j < 2; j++) {
-				if(j == 0) {
-					this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(i+15).getText()));
-					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[i+1]));
-				} else {
-					this.checkBoxRunway.add(new JCustomCheckBox(this.allLabel.get(page).get(18).getText()));
-					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
-				}
-				
-				this.checkBoxRunway.get(i*2+j+2).setBackground(Consts.UIColor[1]);
-				this.checkBoxRunway.get(i*2+j+2).setForeground(Consts.FontColor[0]);
-				
-				int id = i*2+j+2;
-				this.checkBoxRunway.get(i*2+j+2).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateCheckBoxRunway(id);
-						MainFrame.this.updateStat();
-					}
-				});
-				runwayPanel.add(this.checkBoxRunway.get(i*2+j+2));
-			}
-			
-			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Consts.UIColor[1]);
-			ButtonGroup currentQuality = new ButtonGroup();
-			int id = i+2;
-			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
-			for(int j = 0; j < 5; j++) {
-				this.allLabel.get(page).get(j+9).setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i+2).add(new JCustomRadioButton(this.allLabel.get(page).get(j+9).getText(), "radio1" + j, "radioOff"));
-				this.costQuality.get(i+2).get(j).setBackground(Consts.UIColor[1]);
-				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
-				this.costQuality.get(i+2).get(j).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateCostume(id);
-						MainFrame.this.updateStat();
-					}
-				});
-				
-				currentQuality.add(this.costQuality.get(i+2).get(j));
-				currentQualityPanel.add(this.costQuality.get(i+2).get(j));
-			}
-			
-			this.CBoxCostume.add(new JCustomComboBox<Costume>());
-			this.CBoxCostume.get(i+2).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxCostume.get(i+2).setRenderer(new CustomListCellRenderer());
-			this.CBoxCostume.get(i+2).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.CBoxCostume.get(i+2).setVisible(false);
-			
-			if(i == 0) {
-				this.CBoxCostPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.CBoxCostPearl.get(i+3).setRenderer(new CustomListCellRenderer());
-				this.CBoxCostPearl.get(i+3).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxCostPearl.get(i+3).setVisible(false);
-			} else if(i == 1) {
-				this.CBoxCostPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.CBoxCostPearl.get(i+3).setRenderer(new CustomListCellRenderer());
-				this.CBoxCostPearl.get(i+3).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxCostPearl.get(i+3).setVisible(false);
-				
-				this.CBoxCostPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.CBoxCostPearl.get(i+4).setRenderer(new CustomListCellRenderer());
-				this.CBoxCostPearl.get(i+4).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxCostPearl.get(i+4).setVisible(false);
-			} else {
-				this.CBoxCostPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.CBoxCostPearl.get(i+4).setRenderer(new CustomListCellRenderer());
-				this.CBoxCostPearl.get(i+4).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxCostPearl.get(i+4).setVisible(false);
-			}
-			
-			
-			JPanel page6ElemI = new JPanel();
-			page6ElemI.setLayout(new BoxLayout(page6ElemI, BoxLayout.Y_AXIS));
-			page6ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page6ElemI.setBackground(Consts.UIColor[1]);
-			page6ElemI.add(this.allLabel.get(page).get(i+1));
-			page6ElemI.add(Box.createVerticalStrut(10));
-			page6ElemI.add(runwayPanel);
-			page6ElemI.add(Box.createVerticalStrut(3));
-			page6ElemI.add(currentQualityPanel);
-			page6ElemI.add(Box.createVerticalStrut(3));
-			page6ElemI.add(this.CBoxCostume.get(i+2));
-			if(i == 0) {
-				page6ElemI.add(Box.createVerticalStrut(3));
-				page6ElemI.add(this.CBoxCostPearl.get(i+3));
-			} else if(i == 1) {
-				page6ElemI.add(Box.createVerticalStrut(3));
-				page6ElemI.add(this.CBoxCostPearl.get(i+3));
-				page6ElemI.add(Box.createVerticalStrut(3));
-				page6ElemI.add(this.CBoxCostPearl.get(i+4));
-			} else {
-				page6ElemI.add(Box.createVerticalStrut(3));
-				page6ElemI.add(this.CBoxCostPearl.get(i+4));
-			}
-			
-			page6.add(Box.createVerticalStrut(10));
-			page6.add(page6ElemI);
-		}
-		
-		this.mainPage.add(page6);
 		
 		/****************************************/
 		/*				 PAGE 7					*/
 		/****************************************/
-		page++;
+		int page = 6;
 		
 		/* TALENT */
 		JPanel chosenTalent = new JPanel();
@@ -1388,10 +1088,6 @@ public class MainFrame extends JFrame {
 	private void initUI() {
 		updateTabPane(0);
 		
-		this.costWeapon.get(0).setSelected(false);
-		this.costWeapon.get(1).setSelected(true);
-		for(ArrayList<JCustomRadioButton> quality : this.costQuality) quality.get(0).setSelected(true);
-		
 		for(JLabel label : this.skillNatif) label.setVisible(false);
 		for(JCustomComboBox<Skill> skill : this.skillProgress) skill.setVisible(false);
 		
@@ -1460,47 +1156,7 @@ public class MainFrame extends JFrame {
 		
 		build.addEffect(PageMount.getInstance().getEffects());
 		
-		
-		if(this.costWeapon.get(0).isSelected()) {
-			for(int i = 0; i < 2; i++) {
-				if(!this.costQuality.get(i).get(0).isSelected()) {
-					Costume cost = new Costume((Costume) this.CBoxCostume.get(i).getSelectedItem());
-					build.addEffect(cost.getEffects());
-				}
-			}
-		} else {
-			if(!this.costQuality.get(0).get(0).isSelected()) {
-				Costume cost = new Costume((Costume) this.CBoxCostume.get(0).getSelectedItem());
-				for(Effect e : cost.getEffects()) {
-					build.addEffect(new Effect(e.getType(), e.isPercent(), e.getValue()*2, e.getWithReinca(), e.getWithWeapon(), null));
-				}
-			}
-		}
-		
-		for(int i = 2; i < this.CBoxCostume.size(); i++) {
-			if(!this.costQuality.get(i).get(0).isSelected()) {
-				Costume cost = new Costume((Costume) this.CBoxCostume.get(i).getSelectedItem());
-				build.addEffect(cost.getEffects());
-			}
-		}
-		
-		for(int i = 0; i < this.checkBoxRunway.size(); i++) {
-			if(!this.checkBoxRunway.get(i).isSelected()) continue;
-			if(i % 2 == 0) {
-				for(int j : Runway.currentRunway[i/2]) {
-					build.addEffect(Runway.getData()[j].getEffects());
-				}
-			} else {
-				for(int j : Runway.currentRunway[4]) {
-					build.addEffect(Runway.getData()[j].getEffects());
-				}
-			}
-		}
-		
-		for(JCustomComboBox<Pearl> pearls : this.CBoxCostPearl) {
-			Pearl pearl = (Pearl) pearls.getSelectedItem();
-			build.addEffect(pearl.getEffects());
-		}
+		build.addEffect(PageCostume.getInstance().getEffects());
 		
 		
 		for(int i = 0; i < this.radioTalent.size(); i++) {
@@ -1535,7 +1191,7 @@ public class MainFrame extends JFrame {
 			if(skill.isVisible()) build.addEffect(((Skill) skill.getSelectedItem()).getEffects(0));
 		}
 		
-		if(this.showAndHide.get(2).isVisible()) {
+		if(this.showAndHide.get(1).isVisible()) {
 			ProSkill proSkill = (ProSkill) this.CBoxProSkill.getSelectedItem();
 			build.addEffect(proSkill.getEffects());
 		}
@@ -1595,113 +1251,9 @@ public class MainFrame extends JFrame {
 	
 	public void updateNucleus() {
 		if(PageGeneral.getInstance().getReinca() == 0) {
-			this.showAndHide.get(3).setVisible(false);
+			this.showAndHide.get(2).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
-		} else this.showAndHide.get(4).setVisible(true);
-	}
-	
-	private void updateCostume(int idList) {
-		Quality quality = Quality.GREY;
-		CostType type = idList < 2 || idList == 4 ? CostType.OFFENSIVE : CostType.DEFENSIVE;
-		
-		for(int i = 0; i < 5; i++) {
-			if(this.costQuality.get(idList).get(i).isSelected()) {
-				switch (i) {
-					case 0:	quality = Quality.GREY;		break;
-					case 1:	quality = Quality.WHITE;	break;
-					case 2:	quality = Quality.GREEN;	break;
-					case 3:	quality = Quality.BLUE;		break;
-					case 4:	quality = Quality.GOLD;		break;
-				}
-			}
-		}
-		
-		Costume[] cost = Costume.getPossibleCostume(quality, type);
-		
-		if(cost == null) {
-			this.CBoxCostume.get(idList).setVisible(false);
-		} else {
-			this.CBoxCostume.get(idList).setVisible(true);
-			
-			int memory = this.CBoxCostume.get(idList).getSelectedIndex() != -1 ? this.CBoxCostume.get(idList).getSelectedIndex() : 0;
-			if(memory+1 > cost.length) memory = 0;
-			this.CBoxCostume.get(idList).setModel(new DefaultComboBoxModel<Costume>(cost));
-			this.CBoxCostume.get(idList).setSelectedIndex(memory);
-		}
-		
-		if(quality == Quality.GREY) {
-			if(idList == 0) {
-				this.CBoxCostPearl.get(idList).setVisible(false);
-				this.CBoxCostPearl.get(idList).setSelectedIndex(0);
-				this.CBoxCostPearl.get(idList+1).setVisible(false);
-				this.CBoxCostPearl.get(idList+1).setSelectedIndex(0);
-			} else if(idList < 3) {
-				this.CBoxCostPearl.get(idList+1).setVisible(false);
-				this.CBoxCostPearl.get(idList+1).setSelectedIndex(0);
-			}  else if(idList == 3) {
-				this.CBoxCostPearl.get(idList+1).setVisible(false);
-				this.CBoxCostPearl.get(idList+1).setSelectedIndex(0);
-				this.CBoxCostPearl.get(idList+2).setVisible(false);
-				this.CBoxCostPearl.get(idList+2).setSelectedIndex(0);
-			} else {
-				this.CBoxCostPearl.get(idList+2).setVisible(false);
-				this.CBoxCostPearl.get(idList+2).setSelectedIndex(0);
-			}
-			
-			if(idList == 0) {
-				updateCheckBoxRunway(0);
-				updateCheckBoxRunway(1);
-			} else {
-				updateCheckBoxRunway(idList*2-2);
-				updateCheckBoxRunway(idList*2-1);
-			}
-		} else {
-			if(idList == 0) {
-				this.CBoxCostPearl.get(idList).setVisible(true);
-				this.CBoxCostPearl.get(idList+1).setVisible(true);
-			} else if(idList < 3) {
-				this.CBoxCostPearl.get(idList+1).setVisible(true);
-			}  else if(idList == 3) {
-				this.CBoxCostPearl.get(idList+1).setVisible(true);
-				this.CBoxCostPearl.get(idList+2).setVisible(true);
-			} else {
-				this.CBoxCostPearl.get(idList+2).setVisible(true);
-			}
-		}
-		
-		if(this.costWeapon.get(0).isSelected() || this.costQuality.get(0).get(0).isSelected()) {
-			this.CBoxCostPearl.get(1).setVisible(false);
-			this.CBoxCostPearl.get(1).setSelectedIndex(0);
-		}
-	}
-	
-	private void showWeaponCost() {
-		if(this.costWeapon.get(0).isSelected()) {
-			this.showAndHide.get(0).setVisible(true);
-			this.CBoxCostPearl.get(1).setVisible(false);
-			this.CBoxCostPearl.get(1).setSelectedIndex(0);
-		} else {
-			this.showAndHide.get(0).setVisible(false);
-			if(!this.costQuality.get(0).get(0).isSelected())
-				this.CBoxCostPearl.get(1).setVisible(true);
-		}
-	}
-	
-	private void updateCheckBoxRunway(int index) {
-		int indexPair = (index % 2 == 0) ? index + 1 : index -1;
-		int indexQuality = index/2 +1;
-		
-		if(indexQuality == 1) {
-			if(this.costQuality.get(0).get(0).isSelected() && this.costQuality.get(1).get(0).isSelected()) {
-				this.checkBoxRunway.get(index).setSelected(false);
-			}
-		} else if(this.costQuality.get(indexQuality).get(0).isSelected()) {
-			this.checkBoxRunway.get(index).setSelected(false);
-		}
-		
-		if(this.checkBoxRunway.get(index).isSelected()) {
-			this.checkBoxRunway.get(indexPair).setSelected(false);
-		}
+		} else this.showAndHide.get(2).setVisible(true);
 	}
 	
 	public void updateListTalent() {
@@ -2005,8 +1557,8 @@ public class MainFrame extends JFrame {
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
-		if(lvl < 6) this.showAndHide.get(1).setVisible(false);
-		else this.showAndHide.get(1).setVisible(true);
+		if(lvl < 6) this.showAndHide.get(0).setVisible(false);
+		else this.showAndHide.get(0).setVisible(true);
 		
 		for(Skill skill : Skill.getData()[grade.index]) {
 			if(skill.getLvl()[0] > lvl) continue;
@@ -2083,8 +1635,8 @@ public class MainFrame extends JFrame {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		if(lvl < 66) this.showAndHide.get(2).setVisible(false);
-		else this.showAndHide.get(2).setVisible(true);
+		if(lvl < 66) this.showAndHide.get(1).setVisible(false);
+		else this.showAndHide.get(1).setVisible(true);
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
 		ProSkill memory = (ProSkill) this.CBoxProSkill.getSelectedItem();
@@ -2187,9 +1739,9 @@ public class MainFrame extends JFrame {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		if(reinca || lvl >= 20) {
-			this.showAndHide.get(4).setVisible(true);
+			this.showAndHide.get(3).setVisible(true);
 		} else {
-			this.showAndHide.get(4).setVisible(false);
+			this.showAndHide.get(3).setVisible(false);
 			this.CBoxBague.setSelectedIndex(0);
 		}
 	}
@@ -2205,9 +1757,9 @@ public class MainFrame extends JFrame {
 		this.CBoxAnima.setSelectedIndex(memory);
 		
 		if(reinca && lvl >= 10) {
-			this.showAndHide.get(5).setVisible(true);
+			this.showAndHide.get(4).setVisible(true);
 		} else {
-			this.showAndHide.get(5).setVisible(false);
+			this.showAndHide.get(4).setVisible(false);
 			this.CBoxAnima.setSelectedIndex(0);
 		}
 	}

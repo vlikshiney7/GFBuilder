@@ -110,7 +110,14 @@ public final class Weapon extends Equipment {
 	}
 	
 	public void addEnchant(Enchantment enchant) {
-		if(enchant == null) return;
+		if(enchant == null) {
+			return;
+		}
+		
+		if(!this.enchantable) {
+			return;
+		}
+		
 		for(Effect e : enchant.getEffects()) {
 			int ordinal = e.getType().ordinal();
 			if(ordinal < 5) {

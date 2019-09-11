@@ -108,7 +108,14 @@ public final class Armor extends Equipment {
 	}
 	
 	public void addEnchant(Enchantment enchant, int idArmor) {
-		if(enchant == null) return;
+		if(enchant == null) {
+			return;
+		}
+		
+		if(!this.enchantable) {
+			return;
+		}
+		
 		for(Effect e : enchant.getEffects()) {
 			int ordinal = e.getType().ordinal();
 			if(ordinal < 5) {

@@ -44,6 +44,8 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	
+	private WeaponType[] weaponType = new WeaponType[3];
+	
 	private JPanel showAndHide;
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
 	
@@ -154,6 +156,10 @@ public class PageWeapon extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
+		for(int i = 0; i < this.weapon.size(); i++) {
+			weaponType[i] = this.getWeapon(i).getType();
+		}
+		
 		createPanel();
 		setEffects();
 	}
@@ -184,6 +190,10 @@ public class PageWeapon extends PagePanel {
 
 	public String getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
+	}
+	
+	public WeaponType[] getWeaponType() {
+		return this.weaponType;
 	}
 
 	@Override
@@ -327,14 +337,6 @@ public class PageWeapon extends PagePanel {
 		}
 	}
 	
-	public WeaponType[] getWeaponType() {
-		WeaponType[] result = new WeaponType[3];
-		for(int i = 0; i < result.length; i++) {
-			result[i] = this.getWeapon(i).getType();
-		}
-		return result;
-	}
-	
 	public void updateWeapon() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
@@ -348,10 +350,10 @@ public class PageWeapon extends PagePanel {
 			this.weapon.get(i).setSelectedItem(memory);
 			
 			if(!this.getWeapon(i).equals(memory)) {
-				weaponType(i);
-				updateDetails(i);
 				updateXpStuff(i);
+				updateDetails(i);
 				updateEnchant(i);
+				weaponType(i);
 				
 				this.fortif.get(i).setSelectedIndex(0);
 				this.pearl.get(i).setSelectedIndex(0);
@@ -401,17 +403,17 @@ public class PageWeapon extends PagePanel {
 	
 	private void updateXpStuff(int id) {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
-			
-			int weaponType = this.getWeapon(id).getType().index;
-			String[] tmp = new String[XpStuff.getDataWeapon()[weaponType].length +1];
-			tmp[0] = "Rien";
-			for(int i = 0; i < tmp.length-1; i++) {
-				tmp[i+1] = XpStuff.getDataWeapon()[weaponType][i].getType().name();
+			if(this.weaponType[id] != this.getWeapon(id).getType()) {
+				int weaponType = this.getWeapon(id).getType().index;
+				String[] tmp = new String[XpStuff.getDataWeapon()[weaponType].length +1];
+				tmp[0] = "Rien";
+				for(int i = 0; i < tmp.length-1; i++) {
+					tmp[i+1] = XpStuff.getDataWeapon()[weaponType][i].getType().name();
+				}
+				
+				this.effectXpStuff.get(id*2).setModel(new DefaultComboBoxModel<String>(tmp));
+				this.effectXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<String>(tmp));
 			}
-			
-			this.effectXpStuff.get(id*2).setModel(new DefaultComboBoxModel<String>(tmp));
-			this.effectXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<String>(tmp));
-			
 			this.showAndHideXpStuff.get(id).setVisible(true);	
 			this.effectXpStuff.get(id*2).setVisible(true);
 			this.effectXpStuff.get(id*2+1).setVisible(true);
@@ -422,6 +424,8 @@ public class PageWeapon extends PagePanel {
 			this.effectXpStuff.get(id*2).setSelectedIndex(0);
 			this.effectXpStuff.get(id*2+1).setSelectedIndex(0);
 		}
+		
+		this.weaponType[id] = this.getWeapon(id).getType();
 	}
 	
 	private void updatePearl(int id) {
@@ -450,8 +454,10 @@ public class PageWeapon extends PagePanel {
 			
 			if(weapon.isEnchantable()) {
 				Enchantment[] tabEnchant = Enchantment.getPossibleWeaponEnchant(weapon.getQuality(), weapon.getType());
+				Enchantment memory = this.getEnchantment(id);
 				
 				this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+				this.enchant.get(id).setSelectedItem(memory);
 				this.enchant.get(id).setVisible(true);
 			} else {
 				this.enchant.get(id).setVisible(false);

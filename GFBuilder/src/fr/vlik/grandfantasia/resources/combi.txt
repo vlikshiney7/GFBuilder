@@ -7,7 +7,7 @@
 16
 Maître des Flammes/1,3,3,1/1/Feu,false,10
 Mère des Glaces/2,1,1,3/1/Glace,false,10
-Maître de l'Electricit�/3,2,2,2/1/Foudre,false,10
+Maître de l'Electricité/3,2,2,2/1/Foudre,false,10
 Astrologue/1,1,3/2/MEN,true,-10/DCCM,false,15
 Grand Magicien/1,2,2/2/ESQ,false,6/Toucher,false,15
 Spécialiste en Mana d'�me/2,3,3/2/DefM,true,6/Depla,false,10

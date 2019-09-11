@@ -387,8 +387,10 @@ public class PageCapeRing extends PagePanel {
 				
 				if(cape.isEnchantable()) {
 					Enchantment[] tabEnchant = Enchantment.getPossibleCapeRingEnchant();
+					Enchantment memory = this.getEnchantment(id);
 					
 					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+					this.enchant.get(id).setSelectedItem(memory);
 					this.enchant.get(id).setVisible(true);
 				} else {
 					this.enchant.get(id).setVisible(false);
@@ -402,8 +404,10 @@ public class PageCapeRing extends PagePanel {
 				
 				if(ring.isEnchantable()) {
 					Enchantment[] tabEnchant = Enchantment.getPossibleCapeRingEnchant();
+					Enchantment memory = this.getEnchantment(id);
 					
 					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+					this.enchant.get(id).setSelectedItem(memory);
 					this.enchant.get(id).setVisible(true);
 				} else {
 					this.enchant.get(id).setVisible(false);

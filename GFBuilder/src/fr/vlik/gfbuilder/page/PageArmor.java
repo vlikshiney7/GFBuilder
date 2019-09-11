@@ -451,8 +451,10 @@ public class PageArmor extends PagePanel {
 			
 			if(armor.isEnchantable()) {
 				Enchantment[] tabEnchant = Enchantment.getPossibleArmorEnchant(armor.getQuality());
+				Enchantment memory = this.getEnchantment(id);
 				
 				this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+				this.enchant.get(id).setSelectedItem(memory);
 				this.enchant.get(id).setVisible(true);
 			} else {
 				this.enchant.get(id).setVisible(false);
