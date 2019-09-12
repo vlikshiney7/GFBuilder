@@ -57,8 +57,8 @@ public class PageGeneral extends PagePanel {
 			PageArmor.getInstance().updateArmor();
 			PageCapeRing.getInstance().updateCapeRing();
 			updateTitle();
-			MainFrame.getInstance().updateListTalent();
-			MainFrame.getInstance().updateListSpe();
+			PageTalent.getInstance().updateListTalent();
+			PageSpeciality.getInstance().updateListSpe();
 			
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -75,8 +75,8 @@ public class PageGeneral extends PagePanel {
 			PageCapeRing.getInstance().updateCapeRing();
 			updateTitle();
 			PageMount.getInstance().updateMount();
-			MainFrame.getInstance().updateTalent();
-			MainFrame.getInstance().showSpe();
+			PageTalent.getInstance().updateTalent();
+			PageSpeciality.getInstance().updateSpe();
 			MainFrame.getInstance().updateBlason();
 			MainFrame.getInstance().updateEnergy();
 			MainFrame.getInstance().updateBague();
@@ -96,7 +96,7 @@ public class PageGeneral extends PagePanel {
 			PageArmor.getInstance().updateArmor();
 			updateTitle();
 			PageMount.getInstance().updateMount();
-			MainFrame.getInstance().showSpe();
+			PageSpeciality.getInstance().updateSpe();
 			MainFrame.getInstance().updateNucleus();
 			MainFrame.getInstance().updateEnergy();
 			MainFrame.getInstance().updateBague();

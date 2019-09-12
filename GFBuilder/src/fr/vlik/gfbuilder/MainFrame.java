@@ -19,10 +19,8 @@ import java.util.Calendar;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -44,15 +42,12 @@ import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Buff;
-import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.Skill;
-import fr.vlik.grandfantasia.Speciality;
-import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
 import fr.vlik.grandfantasia.Blason.BlasonType;
@@ -66,21 +61,10 @@ public class MainFrame extends JFrame {
 	private ArrayList<ArrayList<JLabel>> allLabel = new ArrayList<ArrayList<JLabel>>();
 
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
-	private ArrayList<JPanel> showAndHideTalent = new ArrayList<JPanel>();
 	
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
-	
-	private JLabel[] tabChosenTalent = new JLabel[9];
-	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(32);
-	private ArrayList<JCustomComboBox<Talent>> CBoxTalent = new ArrayList<JCustomComboBox<Talent>>(24);
-	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent());
-	
-	private Speciality[] tabSpeciality;
-	private JLabel nbSpePoint = new JLabel("1145");
-	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
-	private ArrayList<JCustomComboBox<Integer>> CBoxSpePoint = new ArrayList<JCustomComboBox<Integer>>(20);
 	
 	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
 	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
@@ -252,279 +236,18 @@ public class MainFrame extends JFrame {
 
 		this.mainPage.add(PageCostume.getInstance());
 		System.out.println("Fin Costume : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+
+		this.mainPage.add(PageTalent.getInstance());
+		System.out.println("Fin Talent : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+
+		this.mainPage.add(PageSpeciality.getInstance());
+		System.out.println("Fin Speciality : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
-		
-		/****************************************/
-		/*				 PAGE 7					*/
-		/****************************************/
-		int page = 6;
-		
-		/* TALENT */
-		JPanel chosenTalent = new JPanel();
-		chosenTalent.setLayout(new GridLayout(3, 3));
-		chosenTalent.setMaximumSize(new Dimension(108, 108));
-		chosenTalent.setBackground(Consts.UIColor[0]);
-		
-		int[] orderTalent = { 5, 0, 4, 1, 8, 2, 7, 3, 6 };
-		for(int i = 0; i < orderTalent.length; i++) {
-			this.tabChosenTalent[orderTalent[i]] = new JLabel();
-			this.tabChosenTalent[orderTalent[i]].setBorder(new EmptyBorder(2, 2, 2, 2));
-			chosenTalent.add(this.tabChosenTalent[orderTalent[i]]);
-		}
-		this.tabChosenTalent[8].setBorder(new EmptyBorder(2, 2, 2, 2));
-		try {
-			this.tabChosenTalent[8].setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/talent/combi.png"))));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		JPanel page7Elem1 = new JPanel();
-		page7Elem1.setLayout(new BoxLayout(page7Elem1, BoxLayout.Y_AXIS));
-		page7Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page7Elem1.setBackground(Consts.UIColor[1]);
-		page7Elem1.add(this.allLabel.get(page).get(0));
-		page7Elem1.add(Box.createVerticalStrut(10));
-		page7Elem1.add(chosenTalent);
-		page7Elem1.add(Box.createVerticalStrut(5));
-		this.combiTalent.setAlignmentX(CENTER_ALIGNMENT);
-		page7Elem1.add(this.combiTalent);
-		
-		JPanel page7 = new JPanel();
-		page7.setLayout(new BoxLayout(page7, BoxLayout.Y_AXIS));
-		page7.setBackground(Consts.UIColor[2]);
-		page7.add(page7Elem1);
-		page7.add(Box.createVerticalStrut(10));
-		
-		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
-		
-		JPanel page7Elem2 = new JPanel(new GridLayout(1,2, 10, 10));
-		page7Elem2.setBackground(Consts.UIColor[2]);
-		
-		for(int i = 0; i < 2; i++) {
-			JPanel colTalent = new JPanel();
-			colTalent.setLayout(new BoxLayout(colTalent, BoxLayout.Y_AXIS));
-			colTalent.setBorder(new EmptyBorder(10, 10, 10, 10));
-			colTalent.setBackground(Consts.UIColor[1]);
-			colTalent.add(this.allLabel.get(page).get(i+1));
-			colTalent.add(Box.createVerticalStrut(10));
-			
-			JPanel blocTalent = new JPanel(new GridLayout(4, 1, 10, 10));
-			blocTalent.setBackground(Consts.UIColor[1]);
-			
-			for(int j = 0; j < 4; j++) {
-				JPanel lineTalent = new JPanel(new GridLayout(1, 4, 5, 5));
-				lineTalent.setBackground(Consts.UIColor[0]);
-				
-				int id1 = i*4+j;
-				this.radioTalent.add(new ArrayList<JCustomRadioButton>());
-				try {
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossTalent.png")))));
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				this.radioTalent.get(i*4+j).get(0).setBackground(Consts.UIColor[0]);
-				this.radioTalent.get(i*4+j).get(0).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateSelectedTalent(id1);
-						MainFrame.this.updateCombiTalent();
-						MainFrame.this.updateStat();
-					}
-				});
-				
-				lineTalent.add(this.radioTalent.get(i*4+j).get(0));
-				
-				for(int k = 0; k < 3; k++) {
-					Talent[] currentTalent = new Talent[tabTalent.get(i*12+j*3+k).size() + 1];
-					currentTalent[0] = new Talent();
-					for(int l = 0; l < currentTalent.length-1; l++) currentTalent[l+1] = tabTalent.get(i*12+j*3+k).get(l);
-					
-					this.CBoxTalent.add(new JCustomComboBox<Talent>(currentTalent));
-					this.CBoxTalent.get(i*12+j*3+k).setRenderer(new CustomListCellRenderer(i));
-					int id2 = i*12+j*3+k;
-					this.CBoxTalent.get(i*12+j*3+k).addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							MainFrame.this.updateRadioTalent(id2);
-							MainFrame.this.updateCombiTalent();
-							MainFrame.this.updateStat();
-						}
-					});
-					
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(Talent.getData()[PageGeneral.getInstance().getGrade().getGrade().index][i*12+j*3+k].getIcon())));
-					this.radioTalent.get(i*4+j).get(k+1).setBackground(Consts.UIColor[0]);
-					this.radioTalent.get(i*4+j).get(k+1).addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							MainFrame.this.updateSelectedTalent(id1);
-							MainFrame.this.updateCombiTalent();
-							MainFrame.this.updateStat();
-						}
-					});
-					
-					JPanel singleTalent = new JPanel();
-					singleTalent.setLayout(new BoxLayout(singleTalent, BoxLayout.Y_AXIS));
-					singleTalent.setBackground(Consts.UIColor[0]);
-					this.radioTalent.get(i*4+j).get(k+1).setAlignmentX(CENTER_ALIGNMENT);
-					singleTalent.add(this.radioTalent.get(i*4+j).get(k+1));
-					singleTalent.add(Box.createVerticalStrut(5));
-					singleTalent.add(this.CBoxTalent.get(i*12+j*3+k));
-					
-					lineTalent.add(singleTalent);
-				}
-				
-				ButtonGroup talentGroup = new ButtonGroup();
-				for(int k = 0; k < 4; k++) {
-					talentGroup.add(this.radioTalent.get(i*4+j).get(k));
-				}
-				
-				JPanel subtitle = new JPanel();
-				subtitle.setLayout(new BoxLayout(subtitle, BoxLayout.Y_AXIS));
-				subtitle.setBorder(new EmptyBorder(5, 5, 5, 5));
-				subtitle.setBackground(Consts.UIColor[0]);
-				this.allLabel.get(page).get(i*4+j+3).setFont(new Font("Open Sans", Font.PLAIN, 14));
-				subtitle.add(this.allLabel.get(page).get(i*4+j+3));
-				subtitle.add(lineTalent);
-				
-				this.showAndHideTalent.add(subtitle);
-				
-				blocTalent.add(subtitle);
-			}
-			
-			colTalent.add(blocTalent);
-			
-			page7Elem2.add(colTalent);
-		}
-		
-		page7.add(page7Elem2);
-		page7.add(Box.createVerticalStrut(10));
-		
-		JCustomButton maxTalent = new JCustomButton("Mettre tous les talents au niveau maximum");
-		maxTalent.setMinimumSize(new Dimension(0, 30));
-		maxTalent.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.setMaxCBoxTalent();
-			}
-		});
-		
-		JPanel page7Elem3 = new JPanel(new GridLayout(1, 1));
-		page7Elem3.setBackground(Consts.UIColor[1]);
-		page7Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page7Elem3.add(maxTalent);
-		
-		page7.add(page7Elem3);
-		
-		this.mainPage.add(page7);
-		
-		/****************************************/
-		/*				 PAGE 8					*/
-		/****************************************/
-		page++;
-		
-		/* SPECIALITE */
-		
-		JPanel page8 = new JPanel();
-		page8.setLayout(new BoxLayout(page8, BoxLayout.Y_AXIS));
-		page8.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page8.setBackground(Consts.UIColor[1]);
-		page8.add(this.allLabel.get(page).get(0));
-		page8.add(Box.createVerticalStrut(10));
-		
-		JPanel remain = new JPanel();
-		remain.setBackground(Consts.UIColor[1]);
-		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.PLAIN, 14));
-		remain.add(this.allLabel.get(page).get(1));
-		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
-		this.nbSpePoint.setForeground(Consts.FontColor[0]);
-		remain.add(this.nbSpePoint);
-		
-		page8.add(remain);
-		page8.add(Box.createVerticalStrut(5));
-		
-		this.tabSpeciality = Speciality.getData(PageGeneral.getInstance().getGrade().getGrade());
-		
-		
-		JPanel catSpe = new JPanel(new GridLayout(4, 1));
-		catSpe.setBackground(Consts.UIColor[1]);
-		JPanel gridSpe = new JPanel(new GridLayout(4, 6, 5, 5));
-		gridSpe.setBackground(Consts.UIColor[1]);
-		
-		int numSpe = 0;
-		
-		for(int i = 0; i < 4; i++) {
-			this.allLabel.get(page).get(i+2).setFont(new Font("Open Sans", Font.PLAIN, 14));
-			this.allLabel.get(page).get(i+2).setPreferredSize(new Dimension(76, 70));
-			catSpe.add(this.allLabel.get(page).get(i+2));
-			
-			int k = i % 2 == 0 ? 6 : 4;
-			for(int j = 0; j < k; j++) {
-				int id = numSpe;
-				this.CBoxSpePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
-				this.CBoxSpePoint.get(numSpe).setRenderer(new CustomListCellRenderer());
-				this.CBoxSpePoint.get(numSpe).addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						MainFrame.this.updateSpeElement(id);
-						MainFrame.this.updateSpePoint();
-						MainFrame.this.updateStat();
-					}
-				});
-				this.CBoxSpePoint.get(numSpe).setVisible(false);
-				
-				this.iconSpe.add(new JLabel(new ImageIcon(this.tabSpeciality[numSpe].getIcon())));
-				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getTooltip());
-				this.iconSpe.get(numSpe).setVisible(false);
-				
-				JPanel panelSpe = new JPanel();
-				panelSpe.setLayout(new BoxLayout(panelSpe, BoxLayout.Y_AXIS));
-				panelSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
-				panelSpe.setPreferredSize(new Dimension(46, 65));
-				panelSpe.setBackground(Consts.UIColor[0]);
-				this.iconSpe.get(numSpe).setAlignmentX(CENTER_ALIGNMENT);
-				panelSpe.add(this.iconSpe.get(numSpe));
-				panelSpe.add(Box.createVerticalStrut(5));
-				panelSpe.add(this.CBoxSpePoint.get(numSpe));
-				
-				gridSpe.add(panelSpe);
-				
-				numSpe++;
-			}
-			for(int j = k; j < 6; j++) {
-				JPanel voidPanel = new JPanel();
-				voidPanel.setBackground(Consts.UIColor[1]);
-				gridSpe.add(voidPanel);
-			}
-		}
-		
-		JPanel page8Elem1 = new JPanel();
-		page8Elem1.setBackground(Consts.UIColor[1]);
-		page8Elem1.add(catSpe);
-		page8Elem1.add(Box.createHorizontalStrut(10));
-		page8Elem1.add(gridSpe);
-		
-		page8.add(page8Elem1);
-		
-		
-		JCustomButton maxSpe = new JCustomButton("Mettre toutes les spécialités au niveau maximum");
-		maxSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
-		maxSpe.setMinimumSize(new Dimension(0, 30));
-		maxSpe.setAlignmentX(CENTER_ALIGNMENT);
-		maxSpe.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.setMaxCBoxSpe();
-			}
-		});
-		
-		page8.add(maxSpe);
-		
-		this.mainPage.add(page8);
 		
 		/****************************************/
 		/*				 PAGE 9					*/
 		/****************************************/
-		page++;
+		int page = 8;
 		
 		JPanel page9Elem1 = new JPanel();
 		page9Elem1.setLayout(new BoxLayout(page9Elem1, BoxLayout.Y_AXIS));
@@ -1092,7 +815,6 @@ public class MainFrame extends JFrame {
 		for(JCustomComboBox<Skill> skill : this.skillProgress) skill.setVisible(false);
 		
 		for(JPanel panel : this.showAndHide) panel.setVisible(false);
-		for(JPanel panel : this.showAndHideTalent) panel.setVisible(false);
 		
 		updateStat();
 	}
@@ -1158,27 +880,23 @@ public class MainFrame extends JFrame {
 		
 		build.addEffect(PageCostume.getInstance().getEffects());
 		
+		build.addEffect(PageTalent.getInstance().getEffects());
 		
-		for(int i = 0; i < this.radioTalent.size(); i++) {
-			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {
-				if(this.radioTalent.get(i).get(j).isSelected() && j != 0 && this.CBoxTalent.get(i*3+j-1).getSelectedIndex() != 0) {
-					Talent talent = (Talent) this.CBoxTalent.get(i*3+j-1).getSelectedItem();
-					build.addEffect(talent.getEffects(0));
-				}
+		build.addEffect(PageSpeciality.getInstance().getEffects());
+		build.addConvertEffect(PageSpeciality.getInstance().getConvertEffects());
+		
+		/*
+		for(JPanel page : this.mainPage) {
+			if(page instanceof PagePanel) {
+				build.addEffect(((PagePanel) page).getEffects());
 			}
 		}
-		build.addEffect(this.combiTalent.getEffects());
+		*/
 		
 		
-		for(int i = 0; i < this.tabSpeciality.length; i++) {
-			for(int j = 0; j < this.tabSpeciality[i].getEffects().size(); j++) {
-				if(this.tabSpeciality[i].getEffects().get(j).getTransfert() == null) {
-					build.addEffect(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
-				} else {
-					build.addConvertEffect(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
-				}
-			}
-		}
+		
+		
+		
 		
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
@@ -1254,301 +972,6 @@ public class MainFrame extends JFrame {
 			this.showAndHide.get(2).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
 		} else this.showAndHide.get(2).setVisible(true);
-	}
-	
-	public void updateListTalent() {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), PageGeneral.getInstance().getLvl());
-		
-		for(int i = 0; i < listTalent.size(); i++) {
-			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
-			tabTalent[0] = new Talent();
-			for(int j = 0; j < tabTalent.length-1; j++) tabTalent[j+1] = listTalent.get(i).get(j);
-			
-			this.radioTalent.get(i/3).get((i%3)+1).setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][i].getIcon()));
-			this.CBoxTalent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));
-		}
-	}
-	
-	public void updateTalent() {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		int lvl = PageGeneral.getInstance().getLvl();
-		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), lvl);
-		
-		for(int i = 0; i < listTalent.size(); i++) {
-			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
-			tabTalent[0] = new Talent();
-			for(int j = 0; j < tabTalent.length-1; j++) tabTalent[j+1] = listTalent.get(i).get(j);
-			
-			int memory = this.CBoxTalent.get(i).getSelectedIndex() > tabTalent.length-1 ? tabTalent.length-1 : this.CBoxTalent.get(i).getSelectedIndex();
-			this.CBoxTalent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));
-			this.CBoxTalent.get(i).setSelectedIndex(memory);
-		}
-		
-		int[] tierLvl = new int[] { 6, 16, 31, 46, 66, 70, 73, 77 };
-		for(int i = 0; i < tierLvl.length; i++) {
-			if(tierLvl[i] <= lvl) this.showAndHideTalent.get(i).setVisible(true);
-			else this.showAndHideTalent.get(i).setVisible(false);
-		}
-	}
-	
-	public void updateSelectedTalent(int index) {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		ArrayList<JCustomRadioButton> radio = this.radioTalent.get(index);
-		for(int i = 0; i < radio.size(); i++) {
-			if(radio.get(i).isSelected()) {
-				if(i == 0 || this.CBoxTalent.get(index*3+i-1).getSelectedIndex() == 0) {
-					this.tabChosenTalent[index].setIcon(new ImageIcon());
-				} else {
-					this.tabChosenTalent[index].setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][index*3+i-1].getIcon()));
-				}
-			}
-		}
-	}
-	
-	public void updateRadioTalent(int index) {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		if(this.radioTalent.get(index/3).get(index % 3 + 1).isSelected()) {
-			if(this.CBoxTalent.get(index).getSelectedIndex() == 0) {
-				this.radioTalent.get(index/3).get(index % 3 + 1).setSelected(false);
-				this.radioTalent.get(index/3).get(0).setSelected(true);
-				this.tabChosenTalent[index/3].setIcon(new ImageIcon());
-			} else {
-				this.tabChosenTalent[index/3].setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][index].getIcon()));
-			}
-			
-		}
-	}
-	
-	private void updateCombiTalent() {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		int[] currentCode = new int[4];
-		for(int i = 0; i < 4; i++) {
-			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {
-				if(this.radioTalent.get(i).get(j).isSelected() && j != 0 && this.CBoxTalent.get(i*3+j-1).getSelectedIndex() != 0) {
-					currentCode[i] = j;
-					break;
-				}
-			}
-		}
-		this.combiTalent.setObject(CombiTalent.getCombiTalent(grade.getGrade(), currentCode));
-		this.combiTalent.setVisible(true);
-	}
-	
-	private void setMaxCBoxTalent() {
-		for(JCustomComboBox<Talent> talent : this.CBoxTalent) {
-			if(talent.isVisible()) {
-				talent.setSelectedIndex(talent.getItemCount()-1);
-			} else break;
-		}
-	}
-	
-	public void updateListSpe() {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		this.tabSpeciality = Speciality.getData(grade.getGrade());
-		
-		for(int i = 0; i < this.tabSpeciality.length; i++) {
-			this.iconSpe.get(i).setIcon(new ImageIcon(this.tabSpeciality[i].getIcon()));
-			this.iconSpe.get(i).setToolTipText(this.tabSpeciality[i].getTooltip());
-			this.CBoxSpePoint.get(i).setSelectedIndex(0);
-		}
-	}
-	
-	private void updateSpePoint() {
-		int remain = 1145;
-		for(int i = 0; i < this.CBoxSpePoint.size(); i++) {
-			int current = this.CBoxSpePoint.get(i).getSelectedIndex();
-			if(this.tabSpeciality[i].getLvl() == 45) {
-				if(current > 15) {
-					remain -= (current - 15) * 9;
-					current -= current - 15;
-				}
-				if(current > 10) {
-					remain -= (current - 10) * 5;
-					current -= current - 10;
-				}
-				remain -= current * 2;
-			} else if(this.tabSpeciality[i].getLvl() == 60) {
-				if(current > 15) {
-					remain -= (current - 15) * 11;
-					current -= current - 15;
-				}
-				if(current > 10) {
-					remain -= (current - 10) * 7;
-					current -= current - 10;
-				}
-				remain -= current * 4;
-			} else if(this.tabSpeciality[i].getLvl() == 75) {
-				if(current > 15) {
-					remain -= (current - 15) * 13;
-					current -= current - 15;
-				}
-				if(current > 10) {
-					remain -= (current - 10) * 9;
-					current -= current - 10;
-				}
-				remain -= current * 6;
-			} else if(this.tabSpeciality[i].getLvl() == 91) {
-				if(current > 15) {
-					remain -= (current - 15) * 15;
-					current -= current - 15;
-				}
-				if(current > 10) {
-					remain -= (current - 10) * 11;
-					current -= current - 10;
-				}
-				remain -= current * 8;
-			}
-		}
-		this.nbSpePoint.setText("" + remain);
-		for(int i = 0; i < 20; i++) {
-			if(this.CBoxSpePoint.get(i).getItemCount() != this.CBoxSpePoint.get(i).getSelectedIndex()) {
-				if(this.tabSpeciality[i].getLvl() == 45) {
-					adjustSpeCombobox(i, remain, 2);
-				} else if(this.tabSpeciality[i].getLvl() == 60) {
-					adjustSpeCombobox(i, remain, 4);
-				} else if(this.tabSpeciality[i].getLvl() == 75) {
-					adjustSpeCombobox(i, remain, 6);
-				} else if(this.tabSpeciality[i].getLvl() == 91) {
-					adjustSpeCombobox(i, remain, 8);
-				}
-			}
-		}
-	}
-	
-	private void adjustSpeCombobox(int idSpe, int remain, int speCost) {
-		int countFull = 0;
-		for(int j = this.CBoxSpePoint.get(idSpe).getSelectedIndex(); j < this.CBoxSpePoint.get(idSpe).getItemCount()-1; j++) {
-			if(j < 11) countFull += speCost;
-			else if(j < 16) countFull += speCost + 3;
-			else if(j < 21) countFull += speCost + 7;
-		}
-		if(remain < 0) {
-			System.out.println(remain);
-		}
-		while(countFull > remain) {
-			int itemCount = this.CBoxSpePoint.get(idSpe).getItemCount();
-			if(itemCount == 0) break;
-			else if(itemCount <= 11) countFull -= speCost;
-			else if(itemCount <= 16) countFull -= speCost + 3;
-			else if(itemCount <= 21) countFull -= speCost + 7;
-			this.CBoxSpePoint.get(idSpe).removeItemAt(itemCount-1);
-		}
-	}
-	
-	private void updateSpeElement(int idList) {
-		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
-		int nb10sup = 0;
-		int nb15sup = 0;
-		
-		for(int i = 0; i < this.CBoxSpePoint.size(); i++) {
-			if(this.CBoxSpePoint.get(i).getSelectedIndex() > 10) nb10sup++;
-			if(this.CBoxSpePoint.get(i).getSelectedIndex() > 15) nb15sup++;
-		}
-		
-		if(!reinca) {
-			if(lvl < 91) {
-				if(nb10sup < 2) {
-					rescaleSpeComboBox(16);
-				} else {
-					rescaleSpeComboBox(11);
-				}
-			} else {
-				if(nb15sup == 0 && nb10sup < 2) {
-					rescaleSpeComboBox(21);
-				} else if(nb15sup == 0 && nb10sup == 2) {
-					rescaleSpeComboBox10SupOnly(21);
-				} else if(nb15sup == 1 && nb10sup < 2) {
-					rescaleSpeComboBox(16);
-				} else {
-					rescaleSpeComboBox(11);
-				}
-			}
-		} else {
-			if(lvl < 86) {
-				if(nb10sup < 2) {
-					rescaleSpeComboBox(16);
-				} else {
-					rescaleSpeComboBox(11);
-				}
-			} else if(lvl < 91) {
-				if(nb10sup < 3) {
-					rescaleSpeComboBox(16);
-				} else {
-					rescaleSpeComboBox(11);
-				}
-			} else if(lvl < 100) {
-				if(nb15sup == 0 && nb10sup < 3) {
-					rescaleSpeComboBox(21);
-				} else if(nb15sup == 0 && nb10sup == 3) {
-					rescaleSpeComboBox10SupOnly(21);
-				} else if(nb15sup == 1 && nb10sup < 3) {
-					rescaleSpeComboBox(16);
-				} else {
-					rescaleSpeComboBox(11);
-				}
-			} else {
-				if(nb15sup < 2 && nb10sup < 4) {
-					rescaleSpeComboBox(21);
-				} else if(nb15sup < 2 && nb10sup == 4) {
-					rescaleSpeComboBox10SupOnly(21);
-				} else if(nb15sup == 2 && nb10sup < 4) {
-					rescaleSpeComboBox(16);
-				} else {
-					rescaleSpeComboBox(11);
-				}
-			}
-		}
-	}
-	
-	private void rescaleSpeComboBox(int rescale) {
-		for(int i = 0; i < 20; i++) {
-			int itemCount = this.CBoxSpePoint.get(i).getItemCount();
-			if(itemCount < rescale) {
-				while(itemCount != rescale) {
-					this.CBoxSpePoint.get(i).addItem(new Integer(itemCount));
-					itemCount++;
-				}
-			} else if(itemCount > rescale && this.CBoxSpePoint.get(i).getSelectedIndex() < rescale) {
-				while(itemCount != rescale) {
-					itemCount--;
-					this.CBoxSpePoint.get(i).removeItemAt(itemCount);
-				}
-			}
-		}
-	}
-	
-	private void rescaleSpeComboBox10SupOnly(int rescale) {
-		for(int i = 0; i < 20; i++) {
-			int itemCount = this.CBoxSpePoint.get(i).getItemCount();
-			if(this.CBoxSpePoint.get(i).getSelectedIndex() > 11) {
-				while(itemCount != rescale) {
-					this.CBoxSpePoint.get(i).addItem(new Integer(itemCount));
-					itemCount++;
-				}
-			} else {
-				if(itemCount < 11) {
-					while(itemCount != 11) {
-						this.CBoxSpePoint.get(i).addItem(new Integer(itemCount));
-						itemCount++;
-					}
-				}
-				else if(itemCount > 11)
-					while(itemCount != 11) {
-						itemCount--;
-						this.CBoxSpePoint.get(i).removeItemAt(itemCount);
-					}
-			}
-		}
-	}
-	
-	private void setMaxCBoxSpe() {
-		for(JComboBox<Integer> speciality : this.CBoxSpePoint) {
-			if(speciality.isVisible()) {
-				speciality.setSelectedIndex(10);
-			} else break;
-		}
 	}
 	
 	public void updateSkill() {
@@ -1775,26 +1198,6 @@ public class MainFrame extends JFrame {
 				this.spinnerEnergy.get(i).setModel(new SpinnerNumberModel(memory, 0, lvl*2, 1));
 			} else {
 				this.spinnerEnergy.get(i).setModel(new SpinnerNumberModel(memory, 0, 200, 1));
-			}
-		}
-	}
-	
-	public void showSpe() {
-		int lvl = PageGeneral.getInstance().getLvl();
-		
-		for(int i = 0; i < this.tabSpeciality.length; i++) {
-			if(lvl < this.tabSpeciality[i].getLvl()) {
-				this.iconSpe.get(i).setVisible(false);
-				this.CBoxSpePoint.get(i).setVisible(false);
-				this.CBoxSpePoint.get(i).setSelectedIndex(0);
-			} else {
-				this.iconSpe.get(i).setVisible(true);
-				this.CBoxSpePoint.get(i).setVisible(true);
-				if(this.CBoxSpePoint.get(i).getSelectedIndex() > 10) {
-					this.CBoxSpePoint.get(i).setSelectedIndex(10);
-				} else {
-					updateSpeElement(i);
-				}
 			}
 		}
 	}

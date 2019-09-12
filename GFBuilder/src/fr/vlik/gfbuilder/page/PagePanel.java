@@ -14,7 +14,6 @@ public abstract class PagePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	protected ArrayList<Effect> effects;
-	protected JPanel page;
 	protected JLabel[] label;
 	
 	

@@ -93,6 +93,12 @@ public class Build {
 		this.effectConvert.add(e);
 	}
 	
+	public void addConvertEffect(ArrayList<Effect> effects) {
+		for(Effect e : effects) {
+			this.effectConvert.add(e);
+		}
+	}
+	
 	private boolean containIdWeapon(WeaponType type) {
 		boolean result = false;
 		if(type == WeaponType.NONE) {
