@@ -25,7 +25,7 @@ import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomSpinner;
 
-public class PageGeneral extends PagePanel {
+public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private static final long serialVersionUID = 1L;
 	private static PageGeneral INSTANCE = new PageGeneral();
@@ -51,8 +51,8 @@ public class PageGeneral extends PagePanel {
 		this.grade.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.grade.setRenderer(new CustomListCellRenderer());
 		this.grade.addActionListener(e -> {
-			MainFrame.getInstance().updateSkill();
-			MainFrame.getInstance().updateProSkill();
+			PageSkill.getInstance().updateSkill();
+			PageSkill.getInstance().updateProSkill();
 			PageWeapon.getInstance().updateWeapon();
 			PageArmor.getInstance().updateArmor();
 			PageCapeRing.getInstance().updateCapeRing();
@@ -68,8 +68,8 @@ public class PageGeneral extends PagePanel {
 		this.lvl = new JCustomSpinner(new SpinnerNumberModel(1, 1, 100, 1));
 		this.lvl.addChangeListener(e -> {
 			updateGrade();
-			MainFrame.getInstance().updateSkill();
-			MainFrame.getInstance().updateProSkill();
+			PageSkill.getInstance().updateSkill();
+			PageSkill.getInstance().updateProSkill();
 			PageWeapon.getInstance().updateWeapon();
 			PageArmor.getInstance().updateArmor();
 			PageCapeRing.getInstance().updateCapeRing();
@@ -77,7 +77,7 @@ public class PageGeneral extends PagePanel {
 			PageMount.getInstance().updateMount();
 			PageTalent.getInstance().updateTalent();
 			PageSpeciality.getInstance().updateSpe();
-			MainFrame.getInstance().updateBlason();
+			PageSprite.getInstance().updateBlason();
 			MainFrame.getInstance().updateEnergy();
 			MainFrame.getInstance().updateBague();
 			MainFrame.getInstance().updateAnima();
@@ -91,7 +91,7 @@ public class PageGeneral extends PagePanel {
 		this.reinca.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.reinca.setRenderer(new CustomListCellRenderer());
 		this.reinca.addActionListener(e -> {
-			MainFrame.getInstance().updateSkillReinca();
+			PageSkill.getInstance().updateSkillReinca();
 			PageWeapon.getInstance().updateWeapon();
 			PageArmor.getInstance().updateArmor();
 			updateTitle();
@@ -130,7 +130,7 @@ public class PageGeneral extends PagePanel {
 		this.archive.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		this.archive.setRenderer(new CustomListCellRenderer());
 		this.archive.addActionListener(e -> {
-			setAdditionnalEffects();
+			setAdditionalEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
@@ -172,11 +172,13 @@ public class PageGeneral extends PagePanel {
 		this.effects = list;
 	}
 	
-	public ArrayList<Effect> getAdditionnalEffects() {
+	@Override
+	public ArrayList<Effect> getAdditionalEffects() {
 		return this.additionalEffects;
 	}
 	
-	public void setAdditionnalEffects() {
+	@Override
+	public void setAdditionalEffects() {
 		this.additionalEffects = this.getArchive().getEffects();
 	}
 

@@ -25,7 +25,7 @@ import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 
-public class PageSpeciality extends PagePanel {
+public class PageSpeciality extends PagePanel implements ConvertEffect {
 
 	private static final long serialVersionUID = 1L;
 	private static PageSpeciality INSTANCE = new PageSpeciality();
@@ -84,10 +84,11 @@ public class PageSpeciality extends PagePanel {
 		setEffects();
 	}
 	
+	@Override
 	public ArrayList<Effect> getConvertEffects() {
 		return this.convertEffects;
 	}
-
+	
 	@Override
 	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
@@ -106,7 +107,7 @@ public class PageSpeciality extends PagePanel {
 		this.effects = list;
 		this.convertEffects = convert;
 	}
-
+	
 	@Override
 	protected void createPanel() {
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));

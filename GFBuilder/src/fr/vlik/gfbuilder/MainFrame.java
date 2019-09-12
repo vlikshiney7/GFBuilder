@@ -40,17 +40,11 @@ import fr.vlik.gfbuilder.Effect.TypeEffect;
 import fr.vlik.gfbuilder.page.*;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
-import fr.vlik.grandfantasia.Blason;
-import fr.vlik.grandfantasia.Buff;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Nucleus;
-import fr.vlik.grandfantasia.ProSkill;
-import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.grandfantasia.Blason.BlasonType;
 import fr.vlik.uidesign.*;
 
 public class MainFrame extends JFrame {
@@ -66,12 +60,6 @@ public class MainFrame extends JFrame {
 	private JCustomTabPane language;
 	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
 	
-	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
-	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
-	private JCustomComboBox<ProSkill> CBoxProSkill;
-	
-	private ArrayList<JCustomComboBox<Blason>> CBoxBlason = new ArrayList<JCustomComboBox<Blason>>(2);
-	private JCustomComboBox<Buff> CBoxIsleBuff;
 	
 	private ArrayList<JCustomComboBox<Nucleus>> CBoxNucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
 	private ArrayList<JCustomSpinner> spinnerEnergy = new ArrayList<JCustomSpinner>(6);
@@ -242,146 +230,18 @@ public class MainFrame extends JFrame {
 
 		this.mainPage.add(PageSpeciality.getInstance());
 		System.out.println("Fin Speciality : " + (Calendar.getInstance().getTimeInMillis() - this.start));
-		
-		
-		/****************************************/
-		/*				 PAGE 9					*/
-		/****************************************/
-		int page = 8;
-		
-		JPanel page9Elem1 = new JPanel();
-		page9Elem1.setLayout(new BoxLayout(page9Elem1, BoxLayout.Y_AXIS));
-		page9Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page9Elem1.setBackground(Consts.UIColor[1]);
-		page9Elem1.add(this.allLabel.get(page).get(0));
-		page9Elem1.add(Box.createVerticalStrut(10));
-		
-		for(int i = 0; i < 5; i++) {
-			this.skillNatif.add(new JCustomLabel());
-			this.skillNatif.get(i).setPreferredSize(new Dimension(250, 32));
-			
-			JPanel skill = new JPanel();
-			skill.setBackground(Consts.UIColor[1]);
-			skill.add(this.skillNatif.get(i));
-			
-			page9Elem1.add(skill);
-		}
-		
-		for(int i = 0; i < 2; i++) {
-			this.skillProgress.add(new JCustomComboBox<Skill>());
-			this.skillProgress.get(i).setRenderer(new CustomListCellRenderer());
-			this.skillProgress.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			this.skillProgress.get(i).setVisible(false);
-			
-			page9Elem1.add(Box.createVerticalStrut(5));
-			page9Elem1.add(this.skillProgress.get(i));
-		}
-		
-		JPanel page9Elem2 = new JPanel();
-		page9Elem2.setLayout(new BoxLayout(page9Elem2, BoxLayout.Y_AXIS));
-		page9Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page9Elem2.setBackground(Consts.UIColor[1]);
-		page9Elem2.add(this.allLabel.get(page).get(1));
-		page9Elem2.add(Box.createVerticalStrut(10));
-		
-		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
-		this.CBoxProSkill = new JCustomComboBox<ProSkill>(tabProSkill);
-		this.CBoxProSkill.setRenderer(new CustomListCellRenderer());
-		this.CBoxProSkill.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		page9Elem2.add(this.CBoxProSkill);
-		
-		this.showAndHide.add(page9Elem1);
-		this.showAndHide.add(page9Elem2);
-		
-		JPanel page9 = new JPanel();
-		page9.setLayout(new BoxLayout(page9, BoxLayout.Y_AXIS));
-		page9.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page9.setBackground(Consts.UIColor[2]);
-		page9.add(page9Elem1);
-		page9.add(Box.createVerticalStrut(10));
-		page9.add(page9Elem2);
-		
-		this.mainPage.add(page9);
-		
-		/****************************************/
-		/*				 PAGE 10				*/
-		/****************************************/
-		page++;
-		
-		JPanel page10Elem1 = new JPanel();
-		page10Elem1.setLayout(new BoxLayout(page10Elem1, BoxLayout.Y_AXIS));
-		page10Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page10Elem1.setBackground(Consts.UIColor[1]);
-		page10Elem1.add(this.allLabel.get(page).get(0));
-		page10Elem1.add(Box.createVerticalStrut(10));
-		
-		for(int i = 0; i < 2; i++) {
-			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
-			this.CBoxBlason.add(new JCustomComboBox<Blason>(tabBlason));
-			this.CBoxBlason.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.CBoxBlason.get(i).setRenderer(new CustomListCellRenderer());
-			this.CBoxBlason.get(i).addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					MainFrame.this.updateStat();
-				}
-			});
-			
-			JPanel panelBlason = new JPanel();
-			panelBlason.setLayout(new BoxLayout(panelBlason, BoxLayout.Y_AXIS));
-			panelBlason.setBackground(Consts.UIColor[1]);
-			this.allLabel.get(page).get(i+1).setFont(new Font("Open Sans", Font.PLAIN, 14));
-			panelBlason.add(this.allLabel.get(page).get(i+1));
-			panelBlason.add(Box.createVerticalStrut(3));
-			panelBlason.add(this.CBoxBlason.get(i));
-			panelBlason.add(Box.createVerticalStrut(5));
-			
-			page10Elem1.add(panelBlason);
-		}
-		
-		this.CBoxIsleBuff = new JCustomComboBox<Buff>(Buff.getData());
-		this.CBoxIsleBuff.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.CBoxIsleBuff.setRenderer(new CustomListCellRenderer());
-		this.CBoxIsleBuff.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				MainFrame.this.updateStat();
-			}
-		});
-		
-		JPanel page10Elem2 = new JPanel();
-		page10Elem2.setLayout(new BoxLayout(page10Elem2, BoxLayout.Y_AXIS));
-		page10Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page10Elem2.setBackground(Consts.UIColor[1]);
-		page10Elem2.add(this.allLabel.get(page).get(3));
-		page10Elem2.add(Box.createVerticalStrut(10));
-		page10Elem2.add(this.CBoxIsleBuff);
-		
-		JPanel page10 = new JPanel();
-		page10.setLayout(new BoxLayout(page10, BoxLayout.Y_AXIS));
-		page10.setBackground(Consts.UIColor[2]);
-		page10.add(page10Elem1);
-		page10.add(Box.createVerticalStrut(10));
-		page10.add(page10Elem2);
-		
-		this.mainPage.add(page10);
+
+		this.mainPage.add(PageSkill.getInstance());
+		System.out.println("Fin Skill : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+
+		this.mainPage.add(PageSprite.getInstance());
+		System.out.println("Fin Sprite : " + (Calendar.getInstance().getTimeInMillis() - this.start));
 		
 		
 		/****************************************/
 		/*				 PAGE 11				*/
 		/****************************************/
-		page++;
+		int page = 10;
 		
 		/* NUCLEUS */
 		
@@ -811,9 +671,6 @@ public class MainFrame extends JFrame {
 	private void initUI() {
 		updateTabPane(0);
 		
-		for(JLabel label : this.skillNatif) label.setVisible(false);
-		for(JCustomComboBox<Skill> skill : this.skillProgress) skill.setVisible(false);
-		
 		for(JPanel panel : this.showAndHide) panel.setVisible(false);
 		
 		updateStat();
@@ -868,7 +725,7 @@ public class MainFrame extends JFrame {
 		build.addEffect(baseFromClass);
 		
 		build.addEffect(PageGeneral.getInstance().getEffects());
-		build.addAdditionalEffect(PageGeneral.getInstance().getAdditionnalEffects());
+		build.addAdditionalEffect(PageGeneral.getInstance().getAdditionalEffects());
 		
 		build.addEffect(PageWeapon.getInstance().getEffects());
 		
@@ -885,10 +742,23 @@ public class MainFrame extends JFrame {
 		build.addEffect(PageSpeciality.getInstance().getEffects());
 		build.addConvertEffect(PageSpeciality.getInstance().getConvertEffects());
 		
+		build.addEffect(PageSkill.getInstance().getEffects());
+		
+		build.addEffect(PageSprite.getInstance().getEffects());
+		
+		
 		/*
 		for(JPanel page : this.mainPage) {
 			if(page instanceof PagePanel) {
 				build.addEffect(((PagePanel) page).getEffects());
+			}
+			
+			if(page instanceof AdditionalEffect) {
+				build.addAdditionalEffect(((AdditionalEffect) page).getAdditionalEffects());
+			}
+			
+			if(page instanceof ConvertEffect) {
+				build.addConvertEffect(((ConvertEffect) page).getConvertEffects());
 			}
 		}
 		*/
@@ -896,29 +766,6 @@ public class MainFrame extends JFrame {
 		
 		
 		
-		
-		
-		
-		for(int i = 0; i < this.skillNatif.size(); i++) {
-			if(this.skillNatif.get(i).isVisible()) {
-				build.addEffect(this.skillNatif.get(i).getEffects());
-			}
-		}
-		
-		for(JCustomComboBox<Skill> skill : this.skillProgress) {
-			if(skill.isVisible()) build.addEffect(((Skill) skill.getSelectedItem()).getEffects(0));
-		}
-		
-		if(this.showAndHide.get(1).isVisible()) {
-			ProSkill proSkill = (ProSkill) this.CBoxProSkill.getSelectedItem();
-			build.addEffect(proSkill.getEffects());
-		}
-		
-		
-		for(JCustomComboBox<Blason> blasons : this.CBoxBlason) {
-			Blason blason = (Blason) blasons.getSelectedItem();
-			build.addEffect(blason.getEffects());
-		}
 		
 		
 		for(JCustomComboBox<Nucleus> nuclei : this.CBoxNucleus) {
@@ -931,10 +778,6 @@ public class MainFrame extends JFrame {
 				build.addAdditionalEffect(Energy.multiplyEffect(effect, Math.min(this.spinnerEnergy.get(i).getIntValue(), PageGeneral.getInstance().getLvl() *2)));
 			}
 		}
-		
-		Buff buff = (Buff) this.CBoxIsleBuff.getSelectedItem();
-		build.addEffect(buff.getEffects());
-		
 		
 		for(JCustomLabel guild : this.guildBuffUsed) {
 			if(guild.isVisible()) build.addEffect(guild.getEffects());
@@ -969,113 +812,9 @@ public class MainFrame extends JFrame {
 	
 	public void updateNucleus() {
 		if(PageGeneral.getInstance().getReinca() == 0) {
-			this.showAndHide.get(2).setVisible(false);
+			this.showAndHide.get(0).setVisible(false);
 			this.CBoxNucleus.get(1).setSelectedIndex(0);
-		} else this.showAndHide.get(2).setVisible(true);
-	}
-	
-	public void updateSkill() {
-		GradeName grade = PageGeneral.getInstance().getGrade().getGrade();
-		int lvl = PageGeneral.getInstance().getLvl();
-		int count = 0;
-		boolean isProgressUpdate = false;
-		
-		if(lvl < 6) this.showAndHide.get(0).setVisible(false);
-		else this.showAndHide.get(0).setVisible(true);
-		
-		for(Skill skill : Skill.getData()[grade.index]) {
-			if(skill.getLvl()[0] > lvl) continue;
-			if(skill.getNatif()) {
-				int maxLvlIndex = 0;
-				while(maxLvlIndex+1 < skill.getLvl().length && skill.getLvl()[maxLvlIndex+1] <= lvl) {
-					maxLvlIndex++;
-				}
-				
-				this.skillNatif.get(count).setObject(skill, maxLvlIndex);
-				this.skillNatif.get(count).setVisible(true);
-				count++;
-			} else {
-				isProgressUpdate = !isProgressUpdate;
-				ArrayList<Skill> lvlSkill = new ArrayList<Skill>();
-				lvlSkill.add(new Skill(skill.getName() + " non acquis"));
-				
-				for(int i = 0; i < skill.getLvl().length; i++) {
-					if(skill.getLvl()[i] <= lvl) lvlSkill.add(new Skill(skill, i));
-				}
-				
-				Skill[] tabSkill = new Skill[lvlSkill.size()];
-				for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
-				
-				Skill memory = (Skill) this.skillProgress.get(0).getSelectedItem();
-				this.skillProgress.get(0).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
-				this.skillProgress.get(0).setSelectedItem(memory);
-				this.skillProgress.get(0).setVisible(true);
-				if(this.skillProgress.get(0).getSelectedIndex() == -1) this.skillProgress.get(0).setSelectedIndex(0);
-			}
-		}
-		
-		Skill skill = Skill.getData()[12][0];
-		
-		ArrayList<Skill> lvlSkill = new ArrayList<Skill>();
-		lvlSkill.add(new Skill(skill.getName() + " non acquis"));
-		
-		for(int i = 0; i < skill.getLvl().length; i++) {
-			if(skill.getLvl()[i] <= lvl) lvlSkill.add(new Skill(skill, i));
-		}
-		
-		if(lvlSkill.size() > 1 && PageGeneral.getInstance().getReinca() == 1) {
-			Skill[] tabSkill = new Skill[lvlSkill.size()];
-			for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
-			
-			Skill memory = (Skill) this.skillProgress.get(1).getSelectedItem();
-			this.skillProgress.get(1).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
-			this.skillProgress.get(1).setSelectedItem(memory);
-			this.skillProgress.get(1).setVisible(true);
-			if(this.skillProgress.get(1).getSelectedIndex() == -1) this.skillProgress.get(1).setSelectedIndex(0);
-		} else {
-			this.skillProgress.get(1).setVisible(false);
-		}
-		
-		while(count < this.skillNatif.size()) {
-			this.skillNatif.get(count).setVisible(false);
-			count++;
-		}
-		if(!isProgressUpdate) {
-			this.skillProgress.get(0).setVisible(false);
-		}
-	}
-	
-	public void updateSkillReinca() {
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
-		
-		if(this.skillProgress.get(1).getItemCount() == 0) updateSkill();
-		
-		if(reinca && this.skillProgress.get(1).getItemCount() > 1) this.skillProgress.get(1).setVisible(true);
-		else this.skillProgress.get(1).setVisible(false);
-	}
-	
-	public void updateProSkill() {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		int lvl = PageGeneral.getInstance().getLvl();
-		
-		if(lvl < 66) this.showAndHide.get(1).setVisible(false);
-		else this.showAndHide.get(1).setVisible(true);
-		
-		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
-		ProSkill memory = (ProSkill) this.CBoxProSkill.getSelectedItem();
-		this.CBoxProSkill.setModel(new DefaultComboBoxModel<ProSkill>(tabProSkill));
-		if(memory != null) this.CBoxProSkill.setSelectedItem(memory);
-		if(this.CBoxProSkill.getSelectedIndex() == -1 && tabProSkill.length > 0) this.CBoxProSkill.setSelectedIndex(0);
-	}
-	
-	public void updateBlason() {
-		for(int i = 0; i < 2; i++) {
-			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
-			Blason memory = (Blason) this.CBoxBlason.get(i).getSelectedItem();
-			
-			this.CBoxBlason.get(i).setModel(new DefaultComboBoxModel<Blason>(tabBlason));
-			this.CBoxBlason.get(i).setSelectedItem(memory);
-		}
+		} else this.showAndHide.get(0).setVisible(true);
 	}
 	
 	private void updateGuildBuff(int idList) {
@@ -1162,9 +901,9 @@ public class MainFrame extends JFrame {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		if(reinca || lvl >= 20) {
-			this.showAndHide.get(3).setVisible(true);
+			this.showAndHide.get(1).setVisible(true);
 		} else {
-			this.showAndHide.get(3).setVisible(false);
+			this.showAndHide.get(1).setVisible(false);
 			this.CBoxBague.setSelectedIndex(0);
 		}
 	}
@@ -1180,9 +919,9 @@ public class MainFrame extends JFrame {
 		this.CBoxAnima.setSelectedIndex(memory);
 		
 		if(reinca && lvl >= 10) {
-			this.showAndHide.get(4).setVisible(true);
+			this.showAndHide.get(2).setVisible(true);
 		} else {
-			this.showAndHide.get(4).setVisible(false);
+			this.showAndHide.get(2).setVisible(false);
 			this.CBoxAnima.setSelectedIndex(0);
 		}
 	}
