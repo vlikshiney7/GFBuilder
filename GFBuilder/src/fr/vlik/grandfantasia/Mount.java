@@ -93,9 +93,10 @@ public class Mount {
 	public static void loadData() {
 		ArrayList<Mount> list = new ArrayList<Mount>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/montures/monture.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -106,7 +107,6 @@ public class Mount {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Mount.class.getClass().getSimpleName() + " class");
 		}

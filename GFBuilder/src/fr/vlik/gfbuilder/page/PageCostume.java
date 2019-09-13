@@ -45,7 +45,7 @@ public class PageCostume extends PagePanel {
 		return INSTANCE;
 	}
 	
-	public PageCostume() {
+	private PageCostume() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel();

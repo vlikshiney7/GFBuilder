@@ -47,7 +47,7 @@ public class PageTalent extends PagePanel {
 		return INSTANCE;
 	}
 
-	public PageTalent() {
+	private PageTalent() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel();

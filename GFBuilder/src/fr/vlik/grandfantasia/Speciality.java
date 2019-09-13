@@ -81,9 +81,10 @@ public class Speciality {
 	public static void loadData() {
 		ArrayList<ArrayList<Speciality>> list = new ArrayList<ArrayList<Speciality>>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/speciality/speciality.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 12; i++) {
 				list.add(new ArrayList<Speciality>());
@@ -99,7 +100,6 @@ public class Speciality {
 				}
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Speciality.class.getClass().getSimpleName() + " class");
 		}

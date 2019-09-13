@@ -91,9 +91,10 @@ public class Costume {
 	public static void loadData() {
 		ArrayList<ArrayList<Costume>> list = new ArrayList<ArrayList<Costume>>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/costumes/costume.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 4; i++) list.add(new ArrayList<Costume>());
 			while (line != null) {
@@ -114,7 +115,6 @@ public class Costume {
 				}
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Costume.class.getClass().getSimpleName() + " class");
 		}

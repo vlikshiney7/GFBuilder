@@ -49,9 +49,10 @@ public class XpStuff {
 		
 		for(int i = 0; i < size.length; i++) {
 			list.add(new ArrayList<ArrayList<XpStuff>>());
-			try {
+			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
 						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/" + filesName[i] + ".txt"), "UTF-8"));
+			) {
 				String line = reader.readLine();
 				for(int j = 0; j < size[i]; j++) {
 					list.get(i).add(new ArrayList<XpStuff>());
@@ -66,7 +67,6 @@ public class XpStuff {
 					}
 					line = reader.readLine();
 				}
-				reader.close();
 			} catch (IOException e) {
 				System.out.println("Error with " + XpStuff.class.getClass().getSimpleName() + " class");
 			}

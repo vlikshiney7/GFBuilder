@@ -99,9 +99,10 @@ public class Skill {
 	public static void loadData() {
 		ArrayList<ArrayList<Skill>> list = new ArrayList<ArrayList<Skill>>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/skill/skill.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			
 			for(int i = 0; i < 13; i++) {
@@ -131,7 +132,6 @@ public class Skill {
 					line = reader.readLine();
 				}
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Skill.class.getClass().getSimpleName() + " class");
 		}

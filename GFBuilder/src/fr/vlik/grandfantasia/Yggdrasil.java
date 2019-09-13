@@ -47,9 +47,10 @@ public class Yggdrasil {
 	public static void loadData() {
 		ArrayList<Yggdrasil> list = new ArrayList<Yggdrasil>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/yggdrasil.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -60,7 +61,6 @@ public class Yggdrasil {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Yggdrasil.class.getClass().getSimpleName() + " class");
 		}

@@ -38,7 +38,7 @@ public class PageSkill extends PagePanel {
 		return INSTANCE;
 	}
 
-	public PageSkill() {
+	private PageSkill() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel();

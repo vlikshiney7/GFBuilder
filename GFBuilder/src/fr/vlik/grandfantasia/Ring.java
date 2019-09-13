@@ -109,9 +109,10 @@ public final class Ring extends Equipment {
 	public static void loadData() {
 		ArrayList<Ring> list = new ArrayList<Ring>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/capering/ring/ring.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -138,7 +139,6 @@ public final class Ring extends Equipment {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Ring.class.getClass().getSimpleName() + " class");
 		}

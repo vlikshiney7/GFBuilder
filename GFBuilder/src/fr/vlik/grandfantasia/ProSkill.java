@@ -77,9 +77,10 @@ public class ProSkill {
 	
 	public static void loadData() {
 		ArrayList<ArrayList<ProSkill>> list = new ArrayList<ArrayList<ProSkill>>();
-		 try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/pro/pro.txt"), "UTF-8"));
+		 try (
+			 BufferedReader reader = new BufferedReader(new InputStreamReader(
+					 MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/pro/pro.txt"), "UTF-8"));
+		 ) {
 			String line = reader.readLine();
 			
 			for(int i = 0; i < 12; i++) {
@@ -102,7 +103,6 @@ public class ProSkill {
 				list.add(skills);
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + ProSkill.class.getClass().getSimpleName() + " class");
 		}

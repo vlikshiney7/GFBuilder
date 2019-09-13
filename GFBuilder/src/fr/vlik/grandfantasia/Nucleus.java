@@ -96,9 +96,10 @@ public class Nucleus {
 	public static void loadData() {
 		ArrayList<ArrayList<Nucleus>> list = new ArrayList<ArrayList<Nucleus>>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/nucleus/nucleus.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while(line != null) {
 				int numLine = Integer.parseInt(line);
@@ -119,7 +120,6 @@ public class Nucleus {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Nucleus.class.getClass().getSimpleName() + " class");
 		}

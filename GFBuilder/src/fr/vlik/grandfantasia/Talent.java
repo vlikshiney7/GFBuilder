@@ -91,9 +91,10 @@ public final class Talent {
 	public static void loadData() {
 		ArrayList<ArrayList<Talent>> list = new ArrayList<ArrayList<Talent>>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/talent/talent.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 12; i++) {
 				list.add(new ArrayList<Talent>());
@@ -122,7 +123,6 @@ public final class Talent {
 				}
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Talent.class.getClass().getSimpleName() + " class");
 		}

@@ -75,9 +75,10 @@ public class Energy {
 	public static void loadData() {
 		ArrayList<Energy> list = new ArrayList<Energy>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/energy/energy.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -91,7 +92,6 @@ public class Energy {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Energy.class.getClass().getSimpleName() + " class");
 		}

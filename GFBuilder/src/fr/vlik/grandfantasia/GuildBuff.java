@@ -46,9 +46,10 @@ public class GuildBuff extends Buff {
 	public static void loadData() {
 		ArrayList<GuildBuff> list = new ArrayList<GuildBuff>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/guild/guildBuff.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -63,7 +64,6 @@ public class GuildBuff extends Buff {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + GuildBuff.class.getClass().getSimpleName() + " class");
 		}

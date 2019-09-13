@@ -129,9 +129,10 @@ public class EquipSet {
 	public static void loadData() {
 		ArrayList<EquipSet> list = new ArrayList<EquipSet>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/armors/set.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -147,7 +148,6 @@ public class EquipSet {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + EquipSet.class.getClass().getSimpleName() + " class");
 		}

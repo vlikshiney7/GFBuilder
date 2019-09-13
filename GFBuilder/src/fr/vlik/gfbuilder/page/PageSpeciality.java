@@ -33,7 +33,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	private Speciality[] tabSpeciality;
 	private JLabel nbSpePoint = new JLabel("1145");
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
-	private ArrayList<JCustomComboBox<Integer>> CBoxSpePoint = new ArrayList<JCustomComboBox<Integer>>(20);
+	private ArrayList<JCustomComboBox<Integer>> spePoint = new ArrayList<JCustomComboBox<Integer>>(20);
 	private JCustomButton maxSpe;
 	
 	private ArrayList<Effect> convertEffects;
@@ -42,7 +42,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		return INSTANCE;
 	}
 	
-	public PageSpeciality() {
+	private PageSpeciality() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel();
@@ -56,16 +56,16 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
 				int id = numSpe;
-				this.CBoxSpePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
-				this.CBoxSpePoint.get(numSpe).setRenderer(new CustomListCellRenderer());
-				this.CBoxSpePoint.get(numSpe).addActionListener(e -> {
+				this.spePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
+				this.spePoint.get(numSpe).setRenderer(new CustomListCellRenderer());
+				this.spePoint.get(numSpe).addActionListener(e -> {
 					updateSpeElement(id);
 					updateSpePoint();
 					
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.CBoxSpePoint.get(numSpe).setVisible(false);
+				this.spePoint.get(numSpe).setVisible(false);
 				
 				this.iconSpe.add(new JLabel(new ImageIcon(this.tabSpeciality[numSpe].getIcon())));
 				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getTooltip());
@@ -97,9 +97,9 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(int j = 0; j < this.tabSpeciality[i].getEffects().size(); j++) {
 				if(this.tabSpeciality[i].getEffects().get(j).getTransfert() == null) {
-					list.add(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
+					list.add(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.spePoint.get(i).getSelectedIndex()));
 				} else {
-					convert.add(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.CBoxSpePoint.get(i).getSelectedIndex()));
+					convert.add(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.spePoint.get(i).getSelectedIndex()));
 				}
 			}
 		}
@@ -149,7 +149,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 				this.iconSpe.get(numSpe).setAlignmentX(CENTER_ALIGNMENT);
 				panelSpe.add(this.iconSpe.get(numSpe));
 				panelSpe.add(Box.createVerticalStrut(5));
-				panelSpe.add(this.CBoxSpePoint.get(numSpe));
+				panelSpe.add(this.spePoint.get(numSpe));
 				
 				gridSpe.add(panelSpe);
 				
@@ -193,7 +193,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			this.iconSpe.get(i).setIcon(new ImageIcon(this.tabSpeciality[i].getIcon()));
 			this.iconSpe.get(i).setToolTipText(this.tabSpeciality[i].getTooltip());
-			this.CBoxSpePoint.get(i).setSelectedIndex(0);
+			this.spePoint.get(i).setSelectedIndex(0);
 		}
 	}
 	
@@ -203,13 +203,13 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			if(lvl < this.tabSpeciality[i].getLvl()) {
 				this.iconSpe.get(i).setVisible(false);
-				this.CBoxSpePoint.get(i).setVisible(false);
-				this.CBoxSpePoint.get(i).setSelectedIndex(0);
+				this.spePoint.get(i).setVisible(false);
+				this.spePoint.get(i).setSelectedIndex(0);
 			} else {
 				this.iconSpe.get(i).setVisible(true);
-				this.CBoxSpePoint.get(i).setVisible(true);
-				if(this.CBoxSpePoint.get(i).getSelectedIndex() > 10) {
-					this.CBoxSpePoint.get(i).setSelectedIndex(10);
+				this.spePoint.get(i).setVisible(true);
+				if(this.spePoint.get(i).getSelectedIndex() > 10) {
+					this.spePoint.get(i).setSelectedIndex(10);
 				} else {
 					updateSpeElement(i);
 				}
@@ -219,8 +219,8 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	private void updateSpePoint() {
 		int remain = 1145;
-		for(int i = 0; i < this.CBoxSpePoint.size(); i++) {
-			int current = this.CBoxSpePoint.get(i).getSelectedIndex();
+		for(int i = 0; i < this.spePoint.size(); i++) {
+			int current = this.spePoint.get(i).getSelectedIndex();
 			if(this.tabSpeciality[i].getLvl() == 45) {
 				if(current > 15) {
 					remain -= (current - 15) * 9;
@@ -265,7 +265,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		}
 		this.nbSpePoint.setText("" + remain);
 		for(int i = 0; i < 20; i++) {
-			if(this.CBoxSpePoint.get(i).getItemCount() != this.CBoxSpePoint.get(i).getSelectedIndex()) {
+			if(this.spePoint.get(i).getItemCount() != this.spePoint.get(i).getSelectedIndex()) {
 				if(this.tabSpeciality[i].getLvl() == 45) {
 					adjustSpeCombobox(i, remain, 2);
 				} else if(this.tabSpeciality[i].getLvl() == 60) {
@@ -281,19 +281,19 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	private void adjustSpeCombobox(int idSpe, int remain, int speCost) {
 		int countFull = 0;
-		for(int j = this.CBoxSpePoint.get(idSpe).getSelectedIndex(); j < this.CBoxSpePoint.get(idSpe).getItemCount()-1; j++) {
+		for(int j = this.spePoint.get(idSpe).getSelectedIndex(); j < this.spePoint.get(idSpe).getItemCount()-1; j++) {
 			if(j < 11) countFull += speCost;
 			else if(j < 16) countFull += speCost + 3;
 			else if(j < 21) countFull += speCost + 7;
 		}
 		
 		while(countFull > remain) {
-			int itemCount = this.CBoxSpePoint.get(idSpe).getItemCount();
+			int itemCount = this.spePoint.get(idSpe).getItemCount();
 			if(itemCount == 0) break;
 			else if(itemCount <= 11) countFull -= speCost;
 			else if(itemCount <= 16) countFull -= speCost + 3;
 			else if(itemCount <= 21) countFull -= speCost + 7;
-			this.CBoxSpePoint.get(idSpe).removeItemAt(itemCount-1);
+			this.spePoint.get(idSpe).removeItemAt(itemCount-1);
 		}
 	}
 	
@@ -303,9 +303,9 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		int nb10sup = 0;
 		int nb15sup = 0;
 		
-		for(int i = 0; i < this.CBoxSpePoint.size(); i++) {
-			if(this.CBoxSpePoint.get(i).getSelectedIndex() > 10) nb10sup++;
-			if(this.CBoxSpePoint.get(i).getSelectedIndex() > 15) nb15sup++;
+		for(int i = 0; i < this.spePoint.size(); i++) {
+			if(this.spePoint.get(i).getSelectedIndex() > 10) nb10sup++;
+			if(this.spePoint.get(i).getSelectedIndex() > 15) nb15sup++;
 		}
 		
 		if(!reinca) {
@@ -365,16 +365,16 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	private void rescaleSpeComboBox(int rescale) {
 		for(int i = 0; i < 20; i++) {
-			int itemCount = this.CBoxSpePoint.get(i).getItemCount();
+			int itemCount = this.spePoint.get(i).getItemCount();
 			if(itemCount < rescale) {
 				while(itemCount != rescale) {
-					this.CBoxSpePoint.get(i).addItem(new Integer(itemCount));
+					this.spePoint.get(i).addItem(new Integer(itemCount));
 					itemCount++;
 				}
-			} else if(itemCount > rescale && this.CBoxSpePoint.get(i).getSelectedIndex() < rescale) {
+			} else if(itemCount > rescale && this.spePoint.get(i).getSelectedIndex() < rescale) {
 				while(itemCount != rescale) {
 					itemCount--;
-					this.CBoxSpePoint.get(i).removeItemAt(itemCount);
+					this.spePoint.get(i).removeItemAt(itemCount);
 				}
 			}
 		}
@@ -382,30 +382,30 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	private void rescaleSpeComboBox10SupOnly(int rescale) {
 		for(int i = 0; i < 20; i++) {
-			int itemCount = this.CBoxSpePoint.get(i).getItemCount();
-			if(this.CBoxSpePoint.get(i).getSelectedIndex() > 11) {
+			int itemCount = this.spePoint.get(i).getItemCount();
+			if(this.spePoint.get(i).getSelectedIndex() > 11) {
 				while(itemCount != rescale) {
-					this.CBoxSpePoint.get(i).addItem(new Integer(itemCount));
+					this.spePoint.get(i).addItem(new Integer(itemCount));
 					itemCount++;
 				}
 			} else {
 				if(itemCount < 11) {
 					while(itemCount != 11) {
-						this.CBoxSpePoint.get(i).addItem(new Integer(itemCount));
+						this.spePoint.get(i).addItem(new Integer(itemCount));
 						itemCount++;
 					}
 				}
 				else if(itemCount > 11)
 					while(itemCount != 11) {
 						itemCount--;
-						this.CBoxSpePoint.get(i).removeItemAt(itemCount);
+						this.spePoint.get(i).removeItemAt(itemCount);
 					}
 			}
 		}
 	}
 	
 	private void setMaxCBoxSpe() {
-		for(JComboBox<Integer> speciality : this.CBoxSpePoint) {
+		for(JComboBox<Integer> speciality : this.spePoint) {
 			if(speciality.isVisible()) {
 				speciality.setSelectedIndex(10);
 			} else break;

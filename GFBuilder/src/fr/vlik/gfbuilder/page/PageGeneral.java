@@ -16,10 +16,12 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Archive;
+import fr.vlik.grandfantasia.Base;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Weapon.WeaponType;
 import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -78,9 +80,9 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageTalent.getInstance().updateTalent();
 			PageSpeciality.getInstance().updateSpe();
 			PageSprite.getInstance().updateBlason();
-			MainFrame.getInstance().updateEnergy();
-			MainFrame.getInstance().updateBague();
-			MainFrame.getInstance().updateAnima();
+			PageBuff.getInstance().updateEnergy();
+			PageOther.getInstance().updateBague();
+			PageOther.getInstance().updateAnima();
 			
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -97,10 +99,10 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			updateTitle();
 			PageMount.getInstance().updateMount();
 			PageSpeciality.getInstance().updateSpe();
-			MainFrame.getInstance().updateNucleus();
-			MainFrame.getInstance().updateEnergy();
-			MainFrame.getInstance().updateBague();
-			MainFrame.getInstance().updateAnima();
+			PageBuff.getInstance().updateNucleus();
+			PageBuff.getInstance().updateEnergy();
+			PageOther.getInstance().updateBague();
+			PageOther.getInstance().updateAnima();
 			
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -136,6 +138,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		createPanel();
 		setEffects();
+		setAdditionalEffects();
 	}
 	
 	public Grade getGrade() {
@@ -165,6 +168,12 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	@Override
 	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
+		
+		for(int i = 0; i < 5; i++) {
+			int value = Base.getBase(i, this.getGrade().getGrade(), this.getLvl());
+			value = (int) Math.floor(value * PageGeneral.getCoefReinca(this.getLvl(), this.getReinca() == 1));
+			list.add(new Effect(Base.getEffect(i), false, value, false, WeaponType.NONE, null));
+		}
 		
 		list.addAll(this.getTitle().getEffects());
 		list.addAll(this.getYggdrasil().getEffects());
@@ -307,5 +316,23 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		this.title.setModel(new DefaultComboBoxModel<Title>(tabTitle));
 		this.title.setSelectedItem(memory);
+	}
+	
+	public static double getCoefReinca(int lvl, boolean reinca) {
+		if(reinca) {
+			if(lvl < 66) {
+				return Consts.coefReinca[1];
+			} else if(lvl < 86) {
+				return Consts.coefReinca[2];
+			} else if(lvl < 91) {
+				return Consts.coefReinca[3];
+			} else if(lvl < 100) {
+				return Consts.coefReinca[4];
+			} else {
+				return Consts.coefReinca[5];
+			}
+		} else {
+			return 1;
+		}
 	}
 }

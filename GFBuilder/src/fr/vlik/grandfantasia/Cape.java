@@ -102,9 +102,10 @@ public final class Cape extends Equipment {
 	public static void loadData() {
 		ArrayList<Cape> list = new ArrayList<Cape>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/capering/cape/cape.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
@@ -137,7 +138,6 @@ public final class Cape extends Equipment {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Cape.class.getClass().getSimpleName() + " class");
 		}

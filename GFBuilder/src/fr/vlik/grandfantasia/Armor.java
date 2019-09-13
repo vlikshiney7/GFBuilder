@@ -185,9 +185,10 @@ public final class Armor extends Equipment {
 		ArrayList<ArrayList<Armor>> list = new ArrayList<ArrayList<Armor>>();
 		
 		for(int i = 0; i < armorFile.length; i++) {
-			try {
+			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
 						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/armors/" + armorFile[i] + "/" + armorFile[i] + ".txt"), "UTF-8"));
+			) {
 				list.add(new ArrayList<Armor>());
 				String line = reader.readLine();
 				while (line != null) {
@@ -233,7 +234,6 @@ public final class Armor extends Equipment {
 					
 					line = reader.readLine();
 				}
-				reader.close();
 			} catch (IOException e) {
 				System.out.println("Error with " + Armor.class.getClass().getSimpleName() + " class");
 			}

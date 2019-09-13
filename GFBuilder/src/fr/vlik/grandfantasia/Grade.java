@@ -84,9 +84,10 @@ public class Grade {
 	public static void loadData() {
 		ArrayList<Grade> list = new ArrayList<Grade>();
 		
-		try {
+		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/grade/grade.txt"), "UTF-8"));
+		) {
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -98,7 +99,6 @@ public class Grade {
 				
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Grade.class.getClass().getSimpleName() + " class");
 		}
