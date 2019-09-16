@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.Effect;
+import fr.vlik.gfbuilder.Lang.Language;
 
 public abstract class PagePanel extends JPanel {
 	
@@ -30,5 +31,7 @@ public abstract class PagePanel extends JPanel {
 	
 	abstract protected void createPanel();
 	
-	abstract protected void setLabel();
+	abstract protected void setLabel(Language lang);
+	
+	abstract public void updateLanguage(Language lang);
 }

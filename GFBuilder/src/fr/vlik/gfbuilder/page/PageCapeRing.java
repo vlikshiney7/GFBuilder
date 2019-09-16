@@ -53,7 +53,7 @@ public class PageCapeRing extends PagePanel {
 	private PageCapeRing() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
@@ -353,11 +353,19 @@ public class PageCapeRing extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 3);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 3);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 3);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	

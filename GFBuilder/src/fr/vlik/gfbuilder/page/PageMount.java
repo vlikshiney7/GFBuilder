@@ -53,7 +53,7 @@ public class PageMount extends PagePanel {
 	private PageMount() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca() == 1);
 		this.mount = new JCustomComboBox<Mount>(tabMount);
@@ -101,7 +101,7 @@ public class PageMount extends PagePanel {
 			
 			for(int j = 0; j < 6; j++) {
 				this.label[i*7+j+3].setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.qualityGenki.get(i).add(new JCustomRadioButton(this.label[i*7+j+3].getText(), "radio0" + j, "radioOff"));
+				this.qualityGenki.get(i).add(new JCustomRadioButton(this.label[i*7+j+3], "radio0" + j, "radioOff"));
 				this.qualityGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
 				this.qualityGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
 				this.qualityGenki.get(i).get(j).addActionListener(e -> {
@@ -270,11 +270,25 @@ public class PageMount extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 4);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 4);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 4);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
+		}
+		
+		for(int i = 0; i < this.qualityGenki.size(); i++) {
+			for(JCustomRadioButton button : this.qualityGenki.get(i)) {
+				button.updateText();
+			}
 		}
 	}
 	

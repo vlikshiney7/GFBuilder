@@ -56,7 +56,7 @@ public class PageWeapon extends PagePanel {
 	public PageWeapon() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		for(int i = 0; i < 3; i++) {
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false, null);
@@ -329,11 +329,19 @@ public class PageWeapon extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 1);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 1);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 1);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	
@@ -405,6 +413,10 @@ public class PageWeapon extends PagePanel {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
 			if(this.weaponType[id] != this.getWeapon(id).getType()) {
 				int weaponType = this.getWeapon(id).getType().index;
+				if(weaponType == 16) {
+					weaponType = 0;
+				}
+				System.out.println(weaponType);
 				String[] tmp = new String[XpStuff.getDataWeapon()[weaponType].length +1];
 				tmp[0] = "Rien";
 				for(int i = 0; i < tmp.length-1; i++) {
@@ -493,7 +505,7 @@ public class PageWeapon extends PagePanel {
 				
 				this.showAndHide.setVisible(false);
 			} else if(choice.getType() == WeaponType.EPEE1M || choice.getType() == WeaponType.MARTEAU1M || choice.getType() == WeaponType.HACHE1M
-					|| choice.getType() == WeaponType.MECA1M) {
+					|| choice.getType() == WeaponType.MECA1M || choice.getType() == WeaponType.DEFAULT) {
 				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade.getGrade(), lvl, reinca, choice);
 				Weapon memory = this.getWeapon(1);
 				

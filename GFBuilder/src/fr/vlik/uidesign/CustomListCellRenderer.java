@@ -10,6 +10,7 @@ import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
 import fr.vlik.gfbuilder.Consts;
+import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Bague;
@@ -32,6 +33,8 @@ import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 
 public class CustomListCellRenderer implements ListCellRenderer<Object> {
+	private static Language lang = Language.FR;
+	
 	protected DefaultListCellRenderer defaultRenderer = new DefaultListCellRenderer();
 	protected boolean forTalent;
 	
@@ -74,7 +77,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		} else if(value instanceof Grade) {
 			Grade grade = (Grade) value;
 			renderer.setIcon(new ImageIcon(grade.getIcon()));
-			renderer.setText(grade.getName(0));
+			renderer.setText(grade.getName(lang.index));
 			renderer.setForeground(Consts.FontColor[0]);
 		} else if(value instanceof Title) {
 			Title title = (Title) value;
@@ -194,5 +197,9 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		else renderer.setBackground(Consts.UIColor[0]);
 		
 		return renderer;
+	}
+	
+	public static void setLang(Language lang) {
+		CustomListCellRenderer.lang = lang;
 	}
 }

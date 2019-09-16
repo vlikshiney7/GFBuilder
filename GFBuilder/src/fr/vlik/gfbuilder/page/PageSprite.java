@@ -37,7 +37,7 @@ public class PageSprite extends PagePanel {
 	private PageSprite() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
@@ -119,11 +119,19 @@ public class PageSprite extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 9);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 9);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 9);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	

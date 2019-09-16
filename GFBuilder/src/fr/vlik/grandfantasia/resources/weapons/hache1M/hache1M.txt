@@ -84,5 +84,3 @@ Originale Hache des Sprites du Scieur/0,1/14/2/false/false/false/2,0,0/Atk,false
 Hache à Bois Spéciale/0,1/10/1/false/false/false/1,0,0/Atk,false,176,true/10blanc
 Hache des Sprites du Scieur/0,1/8/2/false/false/false/2,0,0/Atk,false,178,true/FCE,false,2,true/8sprite
 Hache à Couper le Bois/0,1/6/1/false/false/false/1,0,0/Atk,false,123,true/6blanc
-Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/0novice
-Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/0novice

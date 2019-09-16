@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
@@ -15,14 +16,18 @@ import fr.vlik.gfbuilder.MainFrame;
 public class JCustomButton extends JButton{
 	
 	private static final long serialVersionUID = 1L;
+	private JLabel label;
 
 	public JCustomButton() {
 		super();
 		setBlackUI();
 	}
 	
-	public JCustomButton(String text) {
-		super(text);
+	public JCustomButton(JLabel label) {
+		super();
+		this.label = label;
+		updateText();
+		
 		setBlackUI();
 	}
 	
@@ -32,7 +37,7 @@ public class JCustomButton extends JButton{
 		try {
 			this.setPressedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossPress.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : crossPress.png");
+			System.out.println("Image non chargï¿½ : crossPress.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : crossPress.png");
 		}
@@ -40,7 +45,7 @@ public class JCustomButton extends JButton{
 		try {
 			this.setRolloverIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossHover.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : crossPress.png");
+			System.out.println("Image non chargï¿½ : crossPress.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : crossPress.png");
 		}
@@ -62,5 +67,9 @@ public class JCustomButton extends JButton{
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
+	}
+	
+	public void updateText() {
+		setText(this.label.getText());
 	}
 }

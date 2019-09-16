@@ -50,7 +50,7 @@ public class PageTalent extends PagePanel {
 	private PageTalent() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		
@@ -104,7 +104,7 @@ public class PageTalent extends PagePanel {
 			}
 		}
 		
-		this.maxTalent = new JCustomButton("Mettre tous les talents au niveau maximum");
+		this.maxTalent = new JCustomButton(this.label[11]);
 		this.maxTalent.addActionListener(e -> {
 			setMaxCBoxTalent();
 		});
@@ -236,12 +236,22 @@ public class PageTalent extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 6);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 6);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
 		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 6);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
+		}
+		
+		this.maxTalent.updateText();
 	}
 	
 	public void updateListTalent() {

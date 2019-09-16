@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
 import fr.vlik.gfbuilder.Consts;
@@ -12,6 +13,7 @@ import fr.vlik.gfbuilder.MainFrame;
 public class JCustomRadioButton extends JRadioButton {
 	
 	private static final long serialVersionUID = 1L;
+	private JLabel label;
 	
 	public JCustomRadioButton() {
 		super();
@@ -20,8 +22,10 @@ public class JCustomRadioButton extends JRadioButton {
 		setVoidUI();
 	}
 	
-	public JCustomRadioButton(String text, String iconOn, String iconOff) {
-		super(text);
+	public JCustomRadioButton(JLabel label, String iconOn, String iconOff) {
+		super();
+		this.label = label;
+		updateText();
 		
 		setIconUI(iconOn, iconOff);
 		setVoidUI();
@@ -35,7 +39,7 @@ public class JCustomRadioButton extends JRadioButton {
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + iconOn + ".png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOn + ".png");
+			System.out.println("Image non chargï¿½ : " + iconOn + ".png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + iconOn + ".png");
 		}
@@ -43,7 +47,7 @@ public class JCustomRadioButton extends JRadioButton {
 		try {
 			this.setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + iconOff + ".png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOff + ".png");
+			System.out.println("Image non chargï¿½ : " + iconOff + ".png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + iconOff + ".png");
 		}
@@ -54,5 +58,9 @@ public class JCustomRadioButton extends JRadioButton {
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
+	}
+	
+	public void updateText() {
+		setText(this.label.getText());
 	}
 }

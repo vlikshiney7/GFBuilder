@@ -48,10 +48,10 @@ public class PageCostume extends PagePanel {
 	private PageCostume() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JCustomRadioButton(this.label[i+5].getText(), "radio11", "radioOff"));
+			this.costWeapon.add(new JCustomRadioButton(this.label[i+5], "radio11", "radioOff"));
 			this.costWeapon.get(i).setBackground(Consts.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Consts.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
@@ -67,7 +67,7 @@ public class PageCostume extends PagePanel {
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
 				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i).add(new JCustomRadioButton(this.label[j+9].getText(), "radio1" + j, "radioOff"));
+				this.costQuality.get(i).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
 				this.costQuality.get(i).get(j).setBackground(Consts.UIColor[1]);
 				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(e -> {
@@ -108,10 +108,10 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < 2; i++) {
 			if(i == 0) {
-				this.checkBoxRunway.add(new JCustomCheckBox(this.label[14].getText()));
+				this.checkBoxRunway.add(new JCustomCheckBox(this.label[14]));
 				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[0]));
 			} else {
-				this.checkBoxRunway.add(new JCustomCheckBox(this.label[18].getText()));
+				this.checkBoxRunway.add(new JCustomCheckBox(this.label[18]));
 				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 			}
 			
@@ -132,7 +132,7 @@ public class PageCostume extends PagePanel {
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
 				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i+2).add(new JCustomRadioButton(this.label[j+9].getText(), "radio1" + j, "radioOff"));
+				this.costQuality.get(i+2).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
 				this.costQuality.get(i+2).get(j).setBackground(Consts.UIColor[1]);
 				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(e -> {
@@ -188,10 +188,10 @@ public class PageCostume extends PagePanel {
 			
 			for(int j = 0; j < 2; j++) {
 				if(j == 0) {
-					this.checkBoxRunway.add(new JCustomCheckBox(this.label[i+15].getText()));
+					this.checkBoxRunway.add(new JCustomCheckBox(this.label[i+15]));
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[i+1]));
 				} else {
-					this.checkBoxRunway.add(new JCustomCheckBox(this.label[18].getText()));
+					this.checkBoxRunway.add(new JCustomCheckBox(this.label[18]));
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 				}
 				
@@ -406,11 +406,33 @@ public class PageCostume extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 5);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 5);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 5);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
+		}
+		
+		for(JCustomRadioButton button : this.costWeapon) {
+			button.updateText();
+		}
+		
+		for(int i = 0; i < this.costQuality.size(); i++) {
+			for(JCustomRadioButton button : this.costQuality.get(i)) {
+				button.updateText();
+			}
+		}
+		
+		for(JCustomCheckBox checkBox : this.checkBoxRunway) {
+			checkBox.updateText();
 		}
 	}
 	

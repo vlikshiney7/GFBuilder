@@ -47,7 +47,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private PageGeneral() {
 		super(new GridLayout(3, 2, 10, 10), Consts.UIColor[2]);
-		setLabel();
+		setLabel(Language.FR);
 		
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleData(0));
 		this.grade.setFont(new Font("Open Sans", Font.PLAIN, 12));
@@ -274,11 +274,19 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 0);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 0);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 0);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	

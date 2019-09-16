@@ -6,22 +6,15 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import javax.imageio.ImageIO;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextPane;
 import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
@@ -29,81 +22,48 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.Effect.TypeEffect;
+import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.gfbuilder.page.*;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
 import fr.vlik.uidesign.*;
 
 public class MainFrame extends JFrame {
+	
 	private static MainFrame INSTANCE = new MainFrame();
 	private static final long serialVersionUID = 1L;
-	private JFrame main;
-	private ArrayList<ArrayList<ArrayList<String>>> fr_en = new ArrayList<ArrayList<ArrayList<String>>>(2);
-	private ArrayList<ArrayList<JLabel>> allLabel = new ArrayList<ArrayList<JLabel>>();
 	
+	private String[] tabPanelText;
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
-	private ArrayList<JPanel> mainPage = new ArrayList<JPanel>();
+	
+	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
-	private JTextPane parameter = new JTextPane();
+	private long start = System.currentTimeMillis();
 	
-	private long start = Calendar.getInstance().getTimeInMillis();
 	
+	public static MainFrame getInstance() {
+		return MainFrame.INSTANCE;
+	}
 	
 	private MainFrame() {
+		super("Grand Fantasia Builder");
 		setCustomUI();
 		
-		this.main = new JFrame("Grand Fantasia Builder");
 		try {
-			this.main.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/itemIcon.png")));
+			this.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/itemIcon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		this.main.setSize(1240, 800);
-		this.main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.main.getContentPane().setLayout(new BorderLayout());
-		this.main.setVisible(true);
 		
-		System.out.println("Début swing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.setSize(1250, 750);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new BorderLayout());
+		this.setVisible(true);
 		
-		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/trad.txt"), "UTF-8"));
-			String line = reader.readLine();
-			this.fr_en.add(new ArrayList<ArrayList<String>>());
-			this.fr_en.add(new ArrayList<ArrayList<String>>());
-			int lineCount = 0;
-			while(line != null) {
-				this.fr_en.get(0).add(new ArrayList<String>());
-				this.fr_en.get(1).add(new ArrayList<String>());
-				String[] lineSplit = line.split("/");
-				for(int i = 0; i < lineSplit.length; i++) {
-					String[] language = lineSplit[i].split(",");
-					this.fr_en.get(0).get(lineCount).add(language[0]);
-					this.fr_en.get(1).get(lineCount).add(language[1]);
-				}
-				lineCount++;
-				line = reader.readLine();
-			}
-			reader.close();
-			
-			reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/credit.txt"), "UTF-8"));
-			line = reader.readLine();
-			
-			for(int i = 0; i < 2; i++) {
-				this.fr_en.get(i).add(new ArrayList<String>());
-				while(!line.equals("/")) {
-					this.fr_en.get(i).get(this.fr_en.get(i).size()-1).add(line);
-					line = reader.readLine();
-				}
-				line = reader.readLine();
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		System.out.println("Début swing : " + (System.currentTimeMillis() - this.start));
+		
 		
 		/****************************************/
 		/*		****	   MENU		  	****	*/
@@ -114,53 +74,23 @@ public class MainFrame extends JFrame {
 		menu.setBackground(Consts.UIColor[0]);
 		menu.setLayout(new GridLayout(14, 1, 0, 0));
 		
-		for(int i = 0; i < this.fr_en.get(0).size()-1; i++) {
-			if(i == 0) {
-				for(int j = 0; j < this.fr_en.get(0).get(i).size(); j++) {
-					JCustomTabPane tabPane = new JCustomTabPane(this.fr_en.get(0).get(i).get(j));
-					tabPane.setBackground(Consts.UIColor[0]);
-					tabPane.setBorder(null);
-					tabPane.setFocusPainted(false);
-					tabPane.setFont(new Font("Open Sans", Font.PLAIN, 24));
-					tabPane.setForeground(Consts.FontColor[0]);
-					tabPane.setPressedBackgroundColor(Consts.UIColor[1]);
-					tabPane.setHoverBackgroundColor(Consts.UIColor[2]);
-					tabPane.setPreferredSize(new Dimension(160, 0));
-					int id = j;
-					tabPane.addActionListener(new ActionListener() {
-						@Override
-						public void actionPerformed(ActionEvent e) {
-							MainFrame.this.updateTabPane(id);
-						}
-					});
-					
-					this.tabPaneMenu.add(tabPane);
-					menu.add(tabPane);
-				}
-				
-			} else {
-				this.allLabel.add(new ArrayList<JLabel>());
-				for(int j = 0; j < this.fr_en.get(0).get(i).size(); j++) {
-					JLabel label = new JLabel(this.fr_en.get(0).get(i).get(j));
-					label.setFont(new Font("Open Sans", Font.BOLD, 16));
-					label.setForeground(Consts.FontColor[0]);
-					label.setAlignmentX(CENTER_ALIGNMENT);
-					
-					this.allLabel.get(i-1).add(label);
-				}
-			}
-		}
 		
-		this.tabPaneMenu.get(0).setFont(new Font("Open Sans", Font.BOLD, 24));
-		this.tabPaneMenu.get(0).setSelected(true);
+		this.tabPanelText = Lang.getDataPane(Language.FR);
+		
+		for(int i = 0; i < this.tabPanelText.length; i++) {
+			this.tabPaneMenu.add(new JCustomTabPane(this.tabPanelText[i]));
+			int id = i;
+			this.tabPaneMenu.get(i).addActionListener(e -> {
+				updateTabPane(id);
+			});
+			
+			menu.add(this.tabPaneMenu.get(i));
+		}
 		
 		this.language = new JCustomTabPane("fr", "en");
 		this.language.setSelected(true);
-		this.language.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				updateLanguage();
-			}
+		this.language.addActionListener(e -> {
+			updateLanguage();
 		});
 		
 		menu.add(this.language);
@@ -169,74 +99,46 @@ public class MainFrame extends JFrame {
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
 		
-		System.out.println("Chargement Page : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		System.out.println("Chargement Page : " + (System.currentTimeMillis() - this.start));
 		
-		this.mainPage.add(PageGeneral.getInstance());
-		System.out.println("Fin General : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageGeneral.getInstance());
+		System.out.println("Fin General : " + (System.currentTimeMillis() - this.start));
 		
-		this.mainPage.add(PageWeapon.getInstance());
-		System.out.println("Fin Weapon : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageWeapon.getInstance());
+		System.out.println("Fin Weapon : " + (System.currentTimeMillis() - this.start));
 		
-		this.mainPage.add(PageArmor.getInstance());
-		System.out.println("Fin Armor : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageArmor.getInstance());
+		System.out.println("Fin Armor : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageCapeRing.getInstance());
-		System.out.println("Fin CapeRing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageCapeRing.getInstance());
+		System.out.println("Fin CapeRing : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageMount.getInstance());
-		System.out.println("Fin Mount : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageMount.getInstance());
+		System.out.println("Fin Mount : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageCostume.getInstance());
-		System.out.println("Fin Costume : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageCostume.getInstance());
+		System.out.println("Fin Costume : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageTalent.getInstance());
-		System.out.println("Fin Talent : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageTalent.getInstance());
+		System.out.println("Fin Talent : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageSpeciality.getInstance());
-		System.out.println("Fin Speciality : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageSpeciality.getInstance());
+		System.out.println("Fin Speciality : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageSkill.getInstance());
-		System.out.println("Fin Skill : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageSkill.getInstance());
+		System.out.println("Fin Skill : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageSprite.getInstance());
-		System.out.println("Fin Sprite : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageSprite.getInstance());
+		System.out.println("Fin Sprite : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageBuff.getInstance());
-		System.out.println("Fin Buff : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		this.pages.add(PageBuff.getInstance());
+		System.out.println("Fin Buff : " + (System.currentTimeMillis() - this.start));
 
-		this.mainPage.add(PageOther.getInstance());
-		System.out.println("Fin Other : " + (Calendar.getInstance().getTimeInMillis() - this.start));
-		
-		
-		/****************************************/
-		/*				 PAGE 13				*/
-		/****************************************/
-		int page = 12;
-		
-		String buildCredit = "";
-		for(int i = 0; i < this.fr_en.get(0).get(this.fr_en.get(0).size()-1).size(); i++) {
-			buildCredit += this.fr_en.get(0).get(this.fr_en.get(0).size()-1).get(i) + "\n";
-		}
-		
-		this.parameter.setEditable(false);
-		this.parameter.setText(buildCredit);
-		this.parameter.setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.parameter.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.parameter.setBackground(Consts.UIColor[1]);
-		this.parameter.setForeground(Consts.FontColor[0]);
-		
-		JPanel page13 = new JPanel();
-		page13.setLayout(new BoxLayout(page13, BoxLayout.Y_AXIS));
-		page13.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page13.setBackground(Consts.UIColor[1]);
-		page13.add(this.allLabel.get(page).get(0));
-		page13.add(Box.createVerticalStrut(10));
-		this.allLabel.get(page).get(1).setFont(new Font("Open Sans", Font.BOLD, 14));
-		page13.add(this.allLabel.get(page).get(1));
-		page13.add(Box.createVerticalStrut(5));
-		page13.add(this.parameter);
-		
-		this.mainPage.add(page13);
+		this.pages.add(PageOther.getInstance());
+		System.out.println("Fin Other : " + (System.currentTimeMillis() - this.start));
+
+		this.pages.add(PageOption.getInstance());
+		System.out.println("Fin Option : " + (System.currentTimeMillis() - this.start));
 		
 		
 		JPanel content = new JPanel();
@@ -248,8 +150,8 @@ public class MainFrame extends JFrame {
 		scrollContent.getVerticalScrollBar().setUnitIncrement(10);
 		scrollContent.getHorizontalScrollBar().setUnitIncrement(10);
 		
-		for(int i = 0; i < this.mainPage.size(); i++) {
-			content.add(this.mainPage.get(i));
+		for(int i = 0; i < this.pages.size(); i++) {
+			content.add(this.pages.get(i));
 		}
 		
 		/****************************************/
@@ -304,16 +206,17 @@ public class MainFrame extends JFrame {
 		scrollStats.setBorder(null);
 		scrollStats.getVerticalScrollBar().setUnitIncrement(10);
 		
-		this.main.add(menu, BorderLayout.WEST);
-		this.main.add(scrollContent, BorderLayout.CENTER);
-		this.main.add(scrollStats, BorderLayout.EAST);
+		this.add(menu, BorderLayout.WEST);
+		this.add(scrollContent, BorderLayout.CENTER);
+		this.add(scrollStats, BorderLayout.EAST);
+		
 		
 		updateTabPane(0);
 		updateStat();
 		
-		System.out.println("Fin swing : " + (Calendar.getInstance().getTimeInMillis() - this.start));
+		System.out.println("Fin swing : " + (System.currentTimeMillis() - this.start));
 	}
-	
+
 	private void setCustomUI() {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -337,7 +240,7 @@ public class MainFrame extends JFrame {
 		
 		Build build = new Build(coefReinca, weaponType);
 		
-		for(JPanel page : this.mainPage) {
+		for(JPanel page : this.pages) {
 			if(page instanceof PagePanel) {
 				build.addEffect(((PagePanel) page).getEffects());
 			}
@@ -366,10 +269,6 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
-	public static MainFrame getInstance() {
-		return MainFrame.INSTANCE;
-	}
-	
 	public static void main(String[] args) {
 		
 		SwingUtilities.invokeLater(new Runnable() {
@@ -384,11 +283,11 @@ public class MainFrame extends JFrame {
 	public void updateTabPane(int index) {
 		for(int i = 0; i < this.tabPaneMenu.size(); i++) {
 			if(i != index) {
-				this.mainPage.get(i).setVisible(false);
+				this.pages.get(i).setVisible(false);
 				this.tabPaneMenu.get(i).setFont(new Font("Open Sans", Font.PLAIN, 24));
 				this.tabPaneMenu.get(i).setSelected(false);
 			} else {
-				this.mainPage.get(i).setVisible(true);
+				this.pages.get(i).setVisible(true);
 				this.tabPaneMenu.get(i).setFont(new Font("Open Sans", Font.BOLD, 24));
 				this.tabPaneMenu.get(i).setSelected(true);
 			}
@@ -396,44 +295,26 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void updateLanguage() {
+		Language lang = this.language.isSelected() ? Language.FR : Language.EN;
+		CustomListCellRenderer.setLang(lang);
+		
 		if(this.language.isSelected()) {
 			this.language.setIcon(this.language.getSelectedIcon());
-			for(int i = 0; i < this.fr_en.get(0).size()-1; i++) {
-				if(i == 0) {
-					for(int j = 0; j < this.fr_en.get(0).get(i).size(); j++) {
-						this.tabPaneMenu.get(j).setText(this.fr_en.get(0).get(i).get(j));
-					}
-				} else {
-					for(int j = 0; j < this.fr_en.get(0).get(i).size(); j++) {
-						this.allLabel.get(i-1).get(j).setText(this.fr_en.get(0).get(i).get(j));
-					}
-				}
-			}
-			
-			String buildCredit = "";
-			for(int i = 0; i < this.fr_en.get(0).get(this.fr_en.get(0).size()-1).size(); i++) {
-				buildCredit += this.fr_en.get(0).get(this.fr_en.get(0).size()-1).get(i) + "\n";
-			}
-			this.parameter.setText(buildCredit);
 		} else {
 			this.language.setIcon(this.language.getDisabledIcon());
-			for(int i = 0; i < this.fr_en.get(1).size()-1; i++) {
-				if(i == 0) {
-					for(int j = 0; j < this.fr_en.get(1).get(i).size(); j++) {
-						this.tabPaneMenu.get(j).setText(this.fr_en.get(1).get(i).get(j));
-					}
-				} else {
-					for(int j = 0; j < this.fr_en.get(1).get(i).size(); j++) {
-						this.allLabel.get(i-1).get(j).setText(this.fr_en.get(1).get(i).get(j));
-					}
-				}
+		}
+		
+		this.tabPanelText = Lang.getDataPane(lang);
+		for(int i = 0; i < this.tabPanelText.length; i++) {
+			this.tabPaneMenu.get(i).setText(tabPanelText[i]);
+		}
+		
+		for(JPanel page : this.pages) {
+			if(page instanceof PagePanel) {
+				((PagePanel) page).updateLanguage(lang);
+			} else if(page instanceof PageOption) {
+				((PageOption) page).updateLanguage(lang);
 			}
-			
-			String buildCredit = "";
-			for(int i = 0; i < this.fr_en.get(1).get(this.fr_en.get(1).size()-1).size(); i++) {
-				buildCredit += this.fr_en.get(1).get(this.fr_en.get(1).size()-1).get(i) + "\n";
-			}
-			this.parameter.setText(buildCredit);
 		}
 	}
 }

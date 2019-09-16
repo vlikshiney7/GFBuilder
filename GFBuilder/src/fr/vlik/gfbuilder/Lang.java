@@ -94,7 +94,13 @@ public class Lang {
 		return Lang.dataPane[lang.index];
 	}
 	
-	public static String[] getDataCredit(Language lang) {
-		return Lang.dataCredit[lang.index];
+	public static String getDataCredit(Language lang) {
+		StringBuilder str = new StringBuilder();
+		for(String s : Lang.dataCredit[lang.index]) {
+			str.append(s);
+			str.append("\n");
+		}
+		
+		return str.toString();
 	}
 }

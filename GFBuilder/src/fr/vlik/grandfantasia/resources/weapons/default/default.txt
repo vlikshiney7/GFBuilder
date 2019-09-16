@@ -1,0 +1,2 @@
+Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/0novice
+Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/0novice

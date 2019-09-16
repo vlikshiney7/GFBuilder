@@ -41,7 +41,7 @@ public class PageSkill extends PagePanel {
 	private PageSkill() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		for(int i = 0; i < 5; i++) {
 			this.skillNatif.add(new JCustomLabel());
@@ -156,11 +156,19 @@ public class PageSkill extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 8);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 8);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 8);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	

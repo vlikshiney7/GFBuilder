@@ -62,6 +62,7 @@ public final class Weapon extends Equipment {
 		RELIQUE(11), BATON(12),
 		LAME(13), CLE(14),
 		BOUCLIER(15),
+		DEFAULT(16),
 		NONE(-1);
 		
 		public final int index;
@@ -211,7 +212,7 @@ public final class Weapon extends Equipment {
 	}
 
 	public static void loadData() {
-		String[] weaponFile = { "epee1M", "marteau1M", "hache1M", "epee2M", "marteau2M", "hache2M", "meca1M", "meca2M", "arc", "gun", "canon", "relique", "baton", "lame", "cle", "bouclier" };
+		String[] weaponFile = { "epee1M", "marteau1M", "hache1M", "epee2M", "marteau2M", "hache2M", "meca1M", "meca2M", "arc", "gun", "canon", "relique", "baton", "lame", "cle", "bouclier", "default" };
 		
 		ArrayList<ArrayList<Weapon>> list = new ArrayList<ArrayList<Weapon>>();
 		
@@ -278,9 +279,9 @@ public final class Weapon extends Equipment {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weaponType = null;
 		switch (idList) {
-			case 0 : weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13 };	break;
-			case 1 : weaponType = new int[] { 0, 1, 2, 6, 15 };					break;
-			case 2 : weaponType = new int[] { 8, 9, 10, 11, 14 };				break;
+			case 0 : weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };	break;
+			case 1 : weaponType = new int[] { 0, 1, 2, 6, 15, 16 };					break;
+			case 2 : weaponType = new int[] { 8, 9, 10, 11, 14 };					break;
 		}
 		
 		result.add(Weapon.data[0][0]);

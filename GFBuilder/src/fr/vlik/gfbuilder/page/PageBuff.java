@@ -60,7 +60,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private PageBuff() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		for(int i = 0; i < 6; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
@@ -227,7 +227,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			JPanel nucleus = new JPanel();
 			nucleus.setBackground(Consts.UIColor[1]);
 			this.label[i+1].setFont(new Font("Open Sans", Font.PLAIN, 14));
-			this.label[i+1].setPreferredSize(new Dimension(55, 20));
+			this.label[i+1].setPreferredSize(new Dimension(60, 20));
 			nucleus.add(this.label[i+1]);
 			this.nucleus.get(i).setPreferredSize(new Dimension(185, 36));
 			nucleus.add(this.nucleus.get(i));
@@ -357,11 +357,19 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 10);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 10);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 10);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	

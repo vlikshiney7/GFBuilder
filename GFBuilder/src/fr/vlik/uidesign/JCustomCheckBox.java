@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 
 import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.MainFrame;
@@ -12,14 +13,17 @@ import fr.vlik.gfbuilder.MainFrame;
 public class JCustomCheckBox extends JCheckBox {
 	
 	private static final long serialVersionUID = 1L;
+	private JLabel label;
 	
-	public JCustomCheckBox(String text) {
-		super(text);
+	public JCustomCheckBox(JLabel label) {
+		super();
+		this.label = label;
+		updateText();
 		
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/checkOn.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : checkOn.png");
+			System.out.println("Image non chargï¿½ : checkOn.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : checkOn.png");
 		}
@@ -27,7 +31,7 @@ public class JCustomCheckBox extends JCheckBox {
 		try {
 			this.setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/checkOff.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : checkOff.png");
+			System.out.println("Image non chargï¿½ : checkOff.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : checkOff.png");
 		}
@@ -40,5 +44,9 @@ public class JCustomCheckBox extends JCheckBox {
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
+	}
+	
+	public void updateText() {
+		setText(this.label.getText());
 	}
 }

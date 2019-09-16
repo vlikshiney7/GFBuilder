@@ -38,7 +38,7 @@ public class PageOther extends PagePanel {
 	private PageOther() {
 		super(null, Consts.UIColor[2]);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel();
+		setLabel(Language.FR);
 		
 		this.bague = new JCustomComboBox<Bague>(Bague.getData());
 		this.bague.setFont(new Font("Open Sans", Font.PLAIN, 12));
@@ -110,11 +110,19 @@ public class PageOther extends PagePanel {
 	}
 
 	@Override
-	protected void setLabel() {
-		String[] getter = Lang.getDataLabel(Language.FR, 11);
+	protected void setLabel(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 11);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
+		}
+	}
+	
+	@Override
+	public void updateLanguage(Language lang) {
+		String[] getter = Lang.getDataLabel(lang, 11);
+		for(int i = 0; i < getter.length; i++) {
+			this.label[i].setText(getter[i]);
 		}
 	}
 	

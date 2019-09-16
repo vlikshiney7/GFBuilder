@@ -73,7 +73,7 @@ Force Brute/5/170/-1/7/AtkM,true,4/AtkD,true,8/ESQ,true,5/DefP,true,4/Toucher,fa
 Gardien des Secrets/5/66/-1/0
 Gardien du Royaume de Saphaël/5/0/-1/2/PV,true,5/AtkM,true,2,false,12
 Génie de Freyja/5/31/-1/2/AtkM,true,4/VitComp,false,5
-Gladiateur de l'Épreuve sans fin/5/31/-1/4/DefP,true,6/DefM,true,6/Toucher,false,9/ESQ,false,6
+Gladiateur de l'Épreuve sans fin/5/31/-1/4/DefP,true,6/DefM,true,6/Toucher,false,9/ESQ,true,6
 Golem-Tanker/5/31/-1/3/ESQ,false,5/DefP,true,4/DefM,true,4
 Grand Amiral de la Marine/5/183/-1/2/VitAtk,false,10/Toucher,false,-8
 Héraut de Smulca/5/1/-1/2/DegStdHa,false,2/PV,true,-2

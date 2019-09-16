@@ -87,5 +87,3 @@ Marteau Acéré/0,1,4,5/13/1/true/false/false/2,0,0/Atk,false,189,true/AtkM,fals
 Marteau de Bois Renforcé/0,1,4,5/10/1/true/false/false/2,0,0/Atk,false,151,true/AtkM,false,87,true/8sprite
 Maillet de Bois des Sprites/0,1,4,5/8/2/false/false/false/3,0,0/Atk,false,152,true/AtkM,false,88,true/INT,false,2,true/8sprite
 Marteau de Bois/0,1,4,5/6/1/false/false/false/2,0,0/Atk,false,105,true/AtkM,false,60,true/8sprite
-Épée de Fer/0,1,2,3,4,5,6,7,8,9,10,11/4/1/false/false/false/1,0,0/Atk,false,72,true/0novice
-Épée de Bronze du Néophyte/0,1,2,3,4,5,6,7,8,9,10,11/0/1/false/false/false/1,0,0/Atk,false,53,true/0novice
