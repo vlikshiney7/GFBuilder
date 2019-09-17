@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Map;
 
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
@@ -22,7 +23,7 @@ public class Enchantment {
 	public static final int[] ArcGunCanCle6 = { 24, 25, 26, 27, 28, 29 };
 	public static final int[] BatonLame6 = { 24, 25, 26, 27, 28, 14, 29 };
 	public static final int[] Rel6 = { 24, 25, 26, 27, 28, 16 };
-	public static final int[] Bou6 = { 24, 25, 26, 27, 28 };
+	public static final int[] Bou6 = { 24, 25, 26, 27, 28, 30 };
 	
 	public static final int[] Armor45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20 };
 	public static final int[] Armor6 = { 24, 25, 26, 27, 28, 6 };
@@ -30,6 +31,7 @@ public class Enchantment {
 	public static final int[] CapeRing = { 24, 25, 26, 27, 28 };
 	
 	private static Enchantment[] data;
+	private static ArrayList<ArrayList<Map<Quality, Map<Integer, Integer>>>> value;
 	static {
 		loadData();
 	}

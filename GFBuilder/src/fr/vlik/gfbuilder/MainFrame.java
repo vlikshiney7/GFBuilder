@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -40,7 +42,7 @@ public class MainFrame extends JFrame {
 	
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
-	private long start = System.currentTimeMillis();
+	private Instant start = Instant.now();
 	
 	
 	public static MainFrame getInstance() {
@@ -62,7 +64,7 @@ public class MainFrame extends JFrame {
 		this.setLayout(new BorderLayout());
 		this.setVisible(true);
 		
-		System.out.println("Début swing : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Début swing : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		
 		/****************************************/
@@ -99,46 +101,46 @@ public class MainFrame extends JFrame {
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
 		
-		System.out.println("Chargement Page : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Chargement Page : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		this.pages.add(PageGeneral.getInstance());
-		System.out.println("Fin General : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin General : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		this.pages.add(PageWeapon.getInstance());
-		System.out.println("Fin Weapon : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Weapon : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		this.pages.add(PageArmor.getInstance());
-		System.out.println("Fin Armor : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Armor : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageCapeRing.getInstance());
-		System.out.println("Fin CapeRing : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin CapeRing : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageMount.getInstance());
-		System.out.println("Fin Mount : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Mount : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageCostume.getInstance());
-		System.out.println("Fin Costume : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Costume : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageTalent.getInstance());
-		System.out.println("Fin Talent : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Talent : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageSpeciality.getInstance());
-		System.out.println("Fin Speciality : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Speciality : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageSkill.getInstance());
-		System.out.println("Fin Skill : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Skill : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageSprite.getInstance());
-		System.out.println("Fin Sprite : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Sprite : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageBuff.getInstance());
-		System.out.println("Fin Buff : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Buff : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageOther.getInstance());
-		System.out.println("Fin Other : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Other : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		this.pages.add(PageOption.getInstance());
-		System.out.println("Fin Option : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin Option : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		
 		JPanel content = new JPanel();
@@ -214,7 +216,7 @@ public class MainFrame extends JFrame {
 		updateTabPane(0);
 		updateStat();
 		
-		System.out.println("Fin swing : " + (System.currentTimeMillis() - this.start));
+		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
 	}
 
 	private void setCustomUI() {

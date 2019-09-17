@@ -40,17 +40,6 @@ ENCHANT 2M ORANGE
 28 --> +6
 63 --> +15
 
-ENCHANT 1M GOLD
-60 --> +11
-65 --> +14
-70 --> +15
-80 --> +16
-95 --> +19 +20
-100 -> +20 +21
-
-ENCHANT 2M GOLD
-80 --> +33
-
 ENCHANT 1M VIO
 85 --> +18
 
@@ -60,11 +49,6 @@ ORANGE 50 --> (5)
 ORANGE 70 --> +4 (8)
 ORANGE 75 --> +5
 ORANGE 95 --> +7
-GOLD 80 --> +8 (16)
-GOLD 100 -> +10 (20)
-VIO 80 --> +9 (18)
-VIO 90 --> +10 (19)
-VIO 100 -> +11 (21)
 
 
 **Qualité Orange**
@@ -77,29 +61,29 @@ Tout lvl
 
 **Qualité Gold**
 **FCE VIT INT VOL AGI**
-1 main : 65 75 80
-2 main : 80
-ArcGunCanon : 80 90
-Clé : 60 65 70 75 85 90 100
-Relique : 75 80 85 90 95
+Relique : 75 90 95
+Clé : 85 100
 Bouclier : 50 60 70 75 80 85 90 95
+**Précision**
+1 main : 95
+Clé : 60 65 70 75 80 85 100
+ArcGunCanon : 75
+2 main : 60 80 95
+**Parade**
+Bouclier : 70 75 80 85 90 95 100
 
 **Qualité Violet**
 **FCE VIT INT VOL AGI**
 1 main : 85
-2 main : 90 95
-ArcGunCanon : 75 80 90 95 100
+Relique : 90 95
 Clé : 70 75 85 90 95 100
-Relique : 80 85 90 95
+ArcGunCanon : 75 80 90 95 100
 Bouclier : 75 80 85 90 95 100
-
-
-
-
-
-
-
-
-
-
-
+2 main : 90
+**Précision**
+1 main : 90
+Clé : 70 75 80 85 90 95 100
+ArcGunCanon : 75 80 85 90 95 100
+2 main : 95 100
+**Parade**
+Bouclier : 70 75 80 85 95 100
