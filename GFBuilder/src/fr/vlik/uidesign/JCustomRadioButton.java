@@ -39,7 +39,7 @@ public class JCustomRadioButton extends JRadioButton {
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + iconOn + ".png"))));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + iconOn + ".png");
+			System.out.println("Image non chargé : " + iconOn + ".png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + iconOn + ".png");
 		}
@@ -47,7 +47,7 @@ public class JCustomRadioButton extends JRadioButton {
 		try {
 			this.setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + iconOff + ".png"))));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + iconOff + ".png");
+			System.out.println("Image non chargé : " + iconOff + ".png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + iconOff + ".png");
 		}

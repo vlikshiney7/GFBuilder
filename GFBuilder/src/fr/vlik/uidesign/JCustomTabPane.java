@@ -43,7 +43,7 @@ public class JCustomTabPane extends JToggleButton {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + icon1 + ".png"));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + icon1);
+			System.out.println("Image non chargé : " + icon1);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + icon1);
 		}
@@ -54,7 +54,7 @@ public class JCustomTabPane extends JToggleButton {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + icon2 + ".png"));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + icon2);
+			System.out.println("Image non chargé : " + icon2);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + icon2);
 		}

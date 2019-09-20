@@ -116,45 +116,28 @@ public final class Armor extends Equipment {
 			return;
 		}
 		
-		for(Effect e : enchant.getEffects()) {
-			int ordinal = e.getType().ordinal();
-			if(ordinal < 5) {
-				int doubleValue = idArmor == 1 || idArmor == 2 ? 2 : 1;
-				if(this.quality == Quality.PURPLE) {
-					boolean found = false;
-					for(Effect get : this.effects) {
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(((this.lvl-1)/10 +2) * doubleValue);
-							found = true;
-							break;
-						}
-					}
-					if(!found) {
-						e.addEnchantValue(((this.lvl-1)/10 +1) * doubleValue);
-						this.effects.add(e);
-					}
-				} else if(this.quality == Quality.GOLD) {
-					boolean found = false;
-					for(Effect get : this.effects) {
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(((this.lvl-1)/10 +1) * doubleValue);
-							found = true;
-							break;
-						}
-					}
-					if(!found) {
-						e.addEnchantValue(((this.lvl-1)/10 +1) * doubleValue);
-						this.effects.add(e);
-					}
-				} else if(this.quality == Quality.ORANGE) {
-					
-				}
-			} else if(ordinal == 19) {
-				
-			} else if(ordinal == 59) {
-				
-			} else {
+		if(enchant.isFixValue()) {
+			for(Effect e : enchant.getEffects()) {
 				this.effects.add(e);
+			}
+		} else {
+			for(Effect e : enchant.getEffects()) {
+				int value = Enchantment.getValue(this, e.getType(), idArmor);
+				boolean found = false;
+				
+				for(Effect get : this.effects) {
+					if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+						get.addEnchantValue(value);
+						
+						found = true;
+						break;
+					}
+				}
+				
+				if(!found) {
+					e.addEnchantValue(value);
+					this.effects.add(e);
+				}
 			}
 		}
 	}

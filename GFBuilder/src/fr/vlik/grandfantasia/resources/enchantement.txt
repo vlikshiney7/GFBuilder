@@ -4,7 +4,7 @@ de la Foudre/true/1/Foudre,false,3
 du Feu/true/1/Feu,false,3
 de la Glace/true/1/Glace,false,3
 de la Nature/true/1/Nature,false,3
-d'Esquive/true/1/ESQ,false,4
+d'Esquive/false/1/ESQ,false,0
 du Sprint/true/1/Depla,false,2
 du Sarcasme/true/1/MEN,false,2
 de la Surveillance/true/1/MEN,false,-2
@@ -27,5 +27,5 @@ de Vitesse/false/1/VIT,false,0
 d'Intelligence/false/1/INT,false,0
 de Volonté/false/1/VOL,false,0
 d'Agilité/false/1/AGI,false,0
-de Précision/false/1/Toucher,true,0
+de Précision/false/1/Toucher,false,0
 de Parade/false/1/Parade,false,0

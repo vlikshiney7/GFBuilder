@@ -119,64 +119,29 @@ public final class Weapon extends Equipment {
 			return;
 		}
 		
-		for(Effect e : enchant.getEffects()) {
-			int ordinal = e.getType().ordinal();
-			if(ordinal < 5) {
-				if(this.quality == Quality.PURPLE) {
-					boolean found = false;
-					for(Effect get : this.effects) {
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							if(this.type == WeaponType.EPEE2M || this.type == WeaponType.MARTEAU2M || this.type == WeaponType.HACHE2M
-									|| this.type == WeaponType.MECA2M || this.type == WeaponType.BATON || this.type == WeaponType.LAME) {								
-								get.addEnchantValue(this.lvl / 5 * 2 + 3);
-							} else {
-								get.addEnchantValue(this.lvl / 5 + 1);
-							}
-							found = true;
-							break;
-						}
-					}
-					if(!found) {
-						if(this.type == WeaponType.EPEE2M || this.type == WeaponType.MARTEAU2M || this.type == WeaponType.HACHE2M
-								|| this.type == WeaponType.MECA2M || this.type == WeaponType.BATON || this.type == WeaponType.LAME) {								
-							e.addEnchantValue(this.lvl / 5 * 2 + 3);
-						} else {
-							e.addEnchantValue(this.lvl / 5 + 1);
-						}
-						this.effects.add(e);
-					}
-				} else if(this.quality == Quality.GOLD) {
-					boolean found = false;
-					for(Effect get : this.effects) {
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							if(this.type == WeaponType.EPEE2M || this.type == WeaponType.MARTEAU2M || this.type == WeaponType.HACHE2M
-									|| this.type == WeaponType.MECA2M || this.type == WeaponType.BATON || this.type == WeaponType.LAME) {								
-								get.addEnchantValue(this.lvl / 5 * 2 + 1);
-							} else {
-								get.addEnchantValue(this.lvl / 5 + 1);
-							}
-							found = true;
-							break;
-						}
-					}
-					if(!found) {
-						if(this.type == WeaponType.EPEE2M || this.type == WeaponType.MARTEAU2M || this.type == WeaponType.HACHE2M
-								|| this.type == WeaponType.MECA2M || this.type == WeaponType.BATON || this.type == WeaponType.LAME) {								
-							e.addEnchantValue(this.lvl / 5 * 2 + 1);
-						} else {
-							e.addEnchantValue(this.lvl / 5 + 1);
-						}
-						this.effects.add(e);
-					}
-				} else if(this.quality == Quality.ORANGE) {
-					
-				}
-			} else if(ordinal == 19) {
-				
-			} else if(ordinal == 59) {
-				
-			} else {
+		if(enchant.isFixValue()) {
+			for(Effect e : enchant.getEffects()) {
 				this.effects.add(e);
+			}
+		} else {
+			for(Effect e : enchant.getEffects()) {
+				int value = Enchantment.getValue(this, e.getType());
+				boolean found = false;
+				
+				for(Effect get : this.effects) {
+					if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+						get.addEnchantValue(value);
+						
+						found = true;
+						break;
+					}
+				}
+				
+				if(!found) {
+					e.addEnchantValue(value);
+					System.out.println(e.getValue());
+					this.effects.add(e);
+				}
 			}
 		}
 	}

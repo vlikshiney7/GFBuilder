@@ -83,25 +83,28 @@ public final class Ring extends Equipment {
 			return;
 		}
 		
-		for(Effect e : enchant.getEffects()) {
-			int ordinal = e.getType().ordinal();
-			if(ordinal < 5) {
-				if(this.quality == Quality.GOLD) {
-					boolean found = false;
-					for(Effect get : this.effects) {
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue((this.lvl-1)/10 +1);
-							found = true;
-							break;
-						}
-					}
-					if(!found) {
-						e.addEnchantValue((this.lvl-1)/10 +1);
-						this.effects.add(e);
+		if(enchant.isFixValue()) {
+			for(Effect e : enchant.getEffects()) {
+				this.effects.add(e);
+			}
+		} else {
+			for(Effect e : enchant.getEffects()) {
+				int value = Enchantment.getValue(this, e.getType());
+				boolean found = false;
+				
+				for(Effect get : this.effects) {
+					if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+						get.addEnchantValue(value);
+						
+						found = true;
+						break;
 					}
 				}
-			} else {
-				this.effects.add(e);
+				
+				if(!found) {
+					e.addEnchantValue(value);
+					this.effects.add(e);
+				}
 			}
 		}
 	}

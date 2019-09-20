@@ -23,7 +23,7 @@ public class JCustomCheckBox extends JCheckBox {
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/checkOn.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : checkOn.png");
+			System.out.println("Image non chargé : checkOn.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : checkOn.png");
 		}
@@ -31,7 +31,7 @@ public class JCustomCheckBox extends JCheckBox {
 		try {
 			this.setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/checkOff.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : checkOff.png");
+			System.out.println("Image non chargé : checkOff.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : checkOff.png");
 		}
