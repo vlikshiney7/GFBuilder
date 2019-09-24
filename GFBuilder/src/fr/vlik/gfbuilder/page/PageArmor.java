@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
@@ -26,7 +25,7 @@ import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomTextPane;
@@ -52,17 +51,15 @@ public class PageArmor extends PagePanel {
 	}
 
 	public PageArmor() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		for(int i = 0; i < 5; i++) {
+			int id = i;
+			
 			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false);
 			this.armor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
-			this.armor.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.armor.get(i).setRenderer(new CustomListCellRenderer());
-			
-			int id = i;
 			this.armor.get(i).addActionListener(e -> {				
 				updateXpStuff(id);
 				updateDetails(id);
@@ -75,8 +72,6 @@ public class PageArmor extends PagePanel {
 			
 			/* ENCHANTEMENT */
 			this.enchant.add(new JCustomComboBox<Enchantment>());
-			this.enchant.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.enchant.get(i).setRenderer(new CustomListCellRenderer());
 			this.enchant.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -86,8 +81,6 @@ public class PageArmor extends PagePanel {
 			/* FORTIF */
 			String nameFortif[] = { "+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20" };
 			this.fortif.add(new JCustomComboBox<String>(nameFortif));
-			this.fortif.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.fortif.get(i).setRenderer(new CustomListCellRenderer());
 			this.fortif.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -100,7 +93,6 @@ public class PageArmor extends PagePanel {
 			this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 			
 			if(i == 0) {
-				this.pearl.get(i).setRenderer(new CustomListCellRenderer());
 				this.pearl.get(i).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -108,8 +100,6 @@ public class PageArmor extends PagePanel {
 				this.pearl.get(i).setVisible(false);
 			} else if(i == 1) {
 				this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
-				this.pearl.get(i).setRenderer(new CustomListCellRenderer());
-				this.pearl.get(i+1).setRenderer(new CustomListCellRenderer());
 				this.pearl.get(i).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -121,7 +111,6 @@ public class PageArmor extends PagePanel {
 				this.pearl.get(i).setVisible(false);
 				this.pearl.get(i+1).setVisible(false);
 			} else {
-				this.pearl.get(i+1).setRenderer(new CustomListCellRenderer());
 				this.pearl.get(i+1).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -138,7 +127,6 @@ public class PageArmor extends PagePanel {
 			
 			for(int j = 0; j < 2; j++) {
 				this.effectXpStuff.add(new JCustomComboBox<String>(tmp));
-				this.effectXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
 				this.effectXpStuff.get(i*2+j).addActionListener(e -> {
 					updateLvlXpStuff(id);
 					
@@ -149,7 +137,6 @@ public class PageArmor extends PagePanel {
 				
 				int duo = i*2+j;
 				this.lvlXpStuff.add(new JCustomComboBox<String>());
-				this.lvlXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
 				this.lvlXpStuff.get(i*2+j).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
@@ -281,14 +268,14 @@ public class PageArmor extends PagePanel {
 		for(int i = 0; i < 5; i++) {
 			JPanel descArmor = new JPanel();
 			descArmor.setLayout(new BoxLayout(descArmor, BoxLayout.X_AXIS));
-			descArmor.setBackground(Consts.UIColor[1]);
+			descArmor.setBackground(Design.UIColor[1]);
 			descArmor.add(this.armor.get(i));
 			descArmor.add(this.enchant.get(i));
 			descArmor.add(this.fortif.get(i));
 			
 			JPanel pearlArmor = new JPanel();
 			pearlArmor.setLayout(new BoxLayout(pearlArmor, BoxLayout.Y_AXIS));
-			pearlArmor.setBackground(Consts.UIColor[1]);
+			pearlArmor.setBackground(Design.UIColor[1]);
 			if(i == 0) {
 				pearlArmor.add(this.pearl.get(i));
 				pearlArmor.add(Box.createVerticalStrut(3));
@@ -303,12 +290,12 @@ public class PageArmor extends PagePanel {
 			}
 			
 			JPanel xpArmor = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpArmor.setBackground(Consts.UIColor[1]);
+			xpArmor.setBackground(Design.UIColor[1]);
 			this.label[i+5].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			xpArmor.add(this.label[i+5]);
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Consts.UIColor[1]);
+				xp.setBackground(Design.UIColor[1]);
 				xp.add(this.effectXpStuff.get(i*2+j));
 				xp.add(this.lvlXpStuff.get(i*2+j));
 				xpArmor.add(xp);
@@ -317,7 +304,7 @@ public class PageArmor extends PagePanel {
 			JPanel elemI = new JPanel();
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Consts.UIColor[1]);
+			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i]);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descArmor);

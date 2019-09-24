@@ -20,7 +20,6 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
@@ -28,7 +27,7 @@ import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Nucleus;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -58,13 +57,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 
 	private PageBuff() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		for(int i = 0; i < 6; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
-			this.nucleus.get(i).setRenderer(new CustomListCellRenderer());
 			this.nucleus.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -106,8 +104,6 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		this.listGuildBuff = new JCustomList<GuildBuff>(GuildBuff.getData());
-		this.listGuildBuff.setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.listGuildBuff.setCellRenderer(new CustomListCellRenderer());
 		this.listGuildBuff.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -148,8 +144,6 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		this.listStone = new JCustomList<Nucleus>(Nucleus.getData(6));
-		this.listStone.setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.listStone.setCellRenderer(new CustomListCellRenderer());
 		this.listStone.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -218,14 +212,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		JPanel page11Elem1 = new JPanel();
 		page11Elem1.setLayout(new BoxLayout(page11Elem1, BoxLayout.Y_AXIS));
 		page11Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem1.setBackground(Consts.UIColor[1]);
+		page11Elem1.setBackground(Design.UIColor[1]);
 		page11Elem1.add(this.label[0]);
 		page11Elem1.add(Box.createVerticalStrut(10));
 		
 		
 		for(int i = 0; i < 6; i++) {
 			JPanel nucleus = new JPanel();
-			nucleus.setBackground(Consts.UIColor[1]);
+			nucleus.setBackground(Design.UIColor[1]);
 			this.label[i+1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			this.label[i+1].setPreferredSize(new Dimension(60, 20));
 			nucleus.add(this.label[i+1]);
@@ -242,7 +236,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		JPanel energies = new JPanel(new GridLayout(6, 1, 5, 5));
-		energies.setBackground(Consts.UIColor[1]);
+		energies.setBackground(Design.UIColor[1]);
 		
 		for(int i = 0; i < 6; i++) {
 			
@@ -250,7 +244,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			labelEnergy.setPreferredSize(new Dimension(120, 32));
 			
 			JPanel panelEnergy = new JPanel();
-			panelEnergy.setBackground(Consts.UIColor[1]);
+			panelEnergy.setBackground(Design.UIColor[1]);
 			panelEnergy.add(labelEnergy);
 			panelEnergy.add(this.energy.get(i));
 			
@@ -260,14 +254,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		JPanel page11Elem2 = new JPanel();
 		page11Elem2.setLayout(new BoxLayout(page11Elem2, BoxLayout.Y_AXIS));
 		page11Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem2.setBackground(Consts.UIColor[1]);
+		page11Elem2.setBackground(Design.UIColor[1]);
 		page11Elem2.add(this.label[7]);
 		page11Elem2.add(Box.createVerticalStrut(10));
 		page11Elem2.add(energies);
 		
 		
 		JPanel page11Inter1 = new JPanel(new GridLayout(1, 2, 10, 10));
-		page11Inter1.setBackground(Consts.UIColor[2]);
+		page11Inter1.setBackground(Design.UIColor[2]);
 		page11Inter1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Inter1.add(page11Elem1);
 		page11Inter1.add(page11Elem2);
@@ -275,14 +269,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		JPanel blocBuffGuild = new JPanel();
 		blocBuffGuild.setLayout(new BoxLayout(blocBuffGuild, BoxLayout.Y_AXIS));
-		blocBuffGuild.setBackground(Consts.UIColor[1]);
+		blocBuffGuild.setBackground(Design.UIColor[1]);
 		this.label[9].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		blocBuffGuild.add(this.label[9]);
 		blocBuffGuild.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 4; i++) {
 			JPanel lineBuff = new JPanel();
-			lineBuff.setBackground(Consts.UIColor[1]);
+			lineBuff.setBackground(Design.UIColor[1]);
 			
 			lineBuff.add(this.guildBuffUsed.get(i));
 			lineBuff.add(this.cross.get(i));
@@ -298,7 +292,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		JPanel page11Elem3 = new JPanel();
 		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem3.setBackground(Consts.UIColor[1]);
+		page11Elem3.setBackground(Design.UIColor[1]);
 		this.label[8].setAlignmentX(LEFT_ALIGNMENT);
 		page11Elem3.add(this.label[8]);
 		page11Elem3.add(Box.createVerticalStrut(10));
@@ -312,14 +306,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		JPanel blocStone = new JPanel();
 		blocStone.setLayout(new BoxLayout(blocStone, BoxLayout.Y_AXIS));
-		blocStone.setBackground(Consts.UIColor[1]);
+		blocStone.setBackground(Design.UIColor[1]);
 		this.label[12].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		blocStone.add(this.label[12]);
 		blocStone.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 3; i++) {
 			JPanel lineStone = new JPanel();
-			lineStone.setBackground(Consts.UIColor[1]);
+			lineStone.setBackground(Design.UIColor[1]);
 			
 			lineStone.add(this.stoneUsed.get(i));
 			lineStone.add(this.cross.get(i+4));
@@ -333,7 +327,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		JPanel page11Elem4 = new JPanel();
 		page11Elem4.setLayout(new BoxLayout(page11Elem4, BoxLayout.Y_AXIS));
 		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem4.setBackground(Consts.UIColor[1]);
+		page11Elem4.setBackground(Design.UIColor[1]);
 		this.label[11].setAlignmentX(LEFT_ALIGNMENT);
 		page11Elem4.add(this.label[11]);
 		page11Elem4.add(Box.createVerticalStrut(10));
@@ -345,13 +339,13 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem4.add(this.listStone);
 		
 		JPanel page11Inter2 = new JPanel(new GridLayout(1, 2, 10, 10));
-		page11Inter2.setBackground(Consts.UIColor[2]);
+		page11Inter2.setBackground(Design.UIColor[2]);
 		page11Inter2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Inter2.add(page11Elem3);
 		page11Inter2.add(page11Elem4);
 		
 		
-		this.setBackground(Consts.UIColor[1]);
+		this.setBackground(Design.UIColor[1]);
 		this.add(page11Inter1);
 		this.add(page11Inter2);
 	}

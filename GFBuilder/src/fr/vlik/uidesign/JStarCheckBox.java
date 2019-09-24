@@ -6,7 +6,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.MainFrame;
 
 public class JStarCheckBox extends JCheckBox {
@@ -36,7 +35,7 @@ public class JStarCheckBox extends JCheckBox {
 	}
 	
 	public void setVoidUI() {
-		this.setBackground(Consts.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);

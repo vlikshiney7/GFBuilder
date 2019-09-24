@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -10,14 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 
@@ -36,13 +34,11 @@ public class PageOther extends PagePanel {
 	}
 
 	private PageOther() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		this.bague = new JCustomComboBox<Bague>(Bague.getData());
-		this.bague.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.bague.setRenderer(new CustomListCellRenderer());
 		this.bague.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -51,8 +47,6 @@ public class PageOther extends PagePanel {
 		
 		Anima[] tabAnima = Anima.getData(PageGeneral.getInstance().getLvl());
 		this.anima = new JCustomComboBox<Anima>(tabAnima);
-		this.anima.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.anima.setRenderer(new CustomListCellRenderer());
 		this.anima.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -85,7 +79,7 @@ public class PageOther extends PagePanel {
 		JPanel page12Elem1 = new JPanel();
 		page12Elem1.setLayout(new BoxLayout(page12Elem1, BoxLayout.Y_AXIS));
 		page12Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page12Elem1.setBackground(Consts.UIColor[1]);
+		page12Elem1.setBackground(Design.UIColor[1]);
 		page12Elem1.add(this.label[0]);
 		page12Elem1.add(Box.createVerticalStrut(10));
 		page12Elem1.add(this.bague);
@@ -96,7 +90,7 @@ public class PageOther extends PagePanel {
 		JPanel page12Elem2 = new JPanel();
 		page12Elem2.setLayout(new BoxLayout(page12Elem2, BoxLayout.Y_AXIS));
 		page12Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page12Elem2.setBackground(Consts.UIColor[1]);
+		page12Elem2.setBackground(Design.UIColor[1]);
 		page12Elem2.add(this.label[1]);
 		page12Elem2.add(Box.createVerticalStrut(10));
 		page12Elem2.add(this.anima);

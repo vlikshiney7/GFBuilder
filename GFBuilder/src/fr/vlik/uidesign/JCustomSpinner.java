@@ -10,8 +10,6 @@ import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.LineBorder;
 
-import fr.vlik.gfbuilder.Consts;
-
 public class JCustomSpinner extends JSpinner {
 
 	private static final long serialVersionUID = 1L;
@@ -31,8 +29,8 @@ public class JCustomSpinner extends JSpinner {
 	private void setBlackUI() {
 		for(Component c : this.getEditor().getComponents()) {
 			c.setFont(new Font("Open Sans", Font.BOLD, 14));
-			c.setBackground(Consts.UIColor[0]);
-			c.setForeground(Consts.FontColor[0]);
+			c.setBackground(Design.UIColor[0]);
+			c.setForeground(Design.FontColor[0]);
 		}
 		
 		this.setBorder(new LineBorder(new Color(199, 199, 199), 2));

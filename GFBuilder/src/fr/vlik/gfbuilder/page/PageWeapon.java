@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
@@ -20,15 +19,19 @@ import fr.vlik.gfbuilder.Util;
 import fr.vlik.gfbuilder.Effect.TypeEffect;
 import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Bullet;
+import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.Quality;
+import fr.vlik.grandfantasia.RedWeapon;
 import fr.vlik.grandfantasia.Weapon;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JCustomSlider;
 
 public class PageWeapon extends PagePanel {
 
@@ -44,6 +47,12 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(6);
 	
+	private ArrayList<JCustomComboBox<String>> redFortif = new ArrayList<JCustomComboBox<String>>(3);
+	private ArrayList<JCustomComboBox<Enchantment>> redEnchant = new ArrayList<JCustomComboBox<Enchantment>>(9);
+	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(9);
+	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(3);
+	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>();
+	
 	private WeaponType[] weaponType = new WeaponType[3];
 	
 	private JPanel showAndHide;
@@ -54,17 +63,15 @@ public class PageWeapon extends PagePanel {
 	}
 
 	public PageWeapon() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		for(int i = 0; i < 3; i++) {
+			int id = i;
+			
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false, null);
 			this.weapon.add(new JCustomComboBox<Weapon>(tabWeapon));
-			this.weapon.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.weapon.get(i).setRenderer(new CustomListCellRenderer());
-			
-			int id = i;
 			this.weapon.get(i).addActionListener(e -> {
 				updateXpStuff(id);
 				updateDetails(id);
@@ -78,8 +85,6 @@ public class PageWeapon extends PagePanel {
 			
 			/* ENCHANTEMENT */
 			this.enchant.add(new JCustomComboBox<Enchantment>());
-			this.enchant.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.enchant.get(i).setRenderer(new CustomListCellRenderer());
 			this.enchant.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -87,15 +92,65 @@ public class PageWeapon extends PagePanel {
 			this.enchant.get(i).setVisible(false);
 			
 			/* FORTIF */
-			String nameFortif[] = { "+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20" };
+			String[] nameFortif = { "+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20" };
 			this.fortif.add(new JCustomComboBox<String>(nameFortif));
-			this.fortif.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.fortif.get(i).setRenderer(new CustomListCellRenderer());
 			this.fortif.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
 			this.fortif.get(i).setVisible(false);
+			
+			/* RED FORTIF */
+			String[] redFortif = { "+0",
+					"+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10",
+					"+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20",
+					"+21", "+22", "+23", "+24", "+25", "+26", "+27", "+28", "+29", "+30",
+					"+31", "+32", "+33", "+34", "+35", "+36", "+37", "+38", "+39", "+40",
+					"+41", "+42", "+43", "+44", "+45", "+46", "+47", "+48", "+49", "+50"
+			};
+			this.redFortif.add(new JCustomComboBox<String>(redFortif));
+			this.redFortif.get(i).addActionListener(e -> {
+				updateValueFortif(id);
+				
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+			this.redFortif.get(i).setVisible(false);
+			
+			/* RED ENCHANT */
+			for(int j = 0; j < 3; j++) {
+				int idRed = i*3+j;
+				Enchantment[] red = Enchantment.getWeaponRedEnchant(WeaponType.NONE, null, null);
+				this.redEnchant.add(new JCustomComboBox<Enchantment>(red));
+				this.redEnchant.get(i*3+j).addActionListener(e -> {
+					updateRedLvlEnchant(idRed);
+					updateRedEnchant(idRed);
+					
+					setEffects();
+					MainFrame.getInstance().updateStat();
+				});
+				this.redEnchant.get(i*3+j).setVisible(false);
+				
+				this.redLvlEnchant.add(new JCustomComboBox<Integer>());
+				this.redLvlEnchant.get(i*3+j).addActionListener(e -> {
+					setEffects();
+					MainFrame.getInstance().updateStat();
+				});
+				this.redLvlEnchant.get(i*3+j).setVisible(false);
+			}
+			
+			/* VALUE FORTIF */
+			this.valueFortif.add(new JCustomSlider(0.0, 1.0, 0.1));
+			this.valueFortif.get(i).addChangeListener(e -> {
+				updateTooltipFortif(id);
+				
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+			this.valueFortif.get(i).setVisible(false);
+			
+			this.labelValue.add(new JCustomLabel());
+			this.labelValue.get(i).setVisible(false);
 			
 			/* PEARL */
 			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i).getQuality());
@@ -103,7 +158,6 @@ public class PageWeapon extends PagePanel {
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
 					this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
-					this.pearl.get(j).setRenderer(new CustomListCellRenderer());
 					this.pearl.get(j).addActionListener(e -> {
 						setEffects();
 						MainFrame.getInstance().updateStat();
@@ -113,7 +167,6 @@ public class PageWeapon extends PagePanel {
 			} else {
 				for(int j = 0; j < 3; j++) {
 					this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
-					this.pearl.get(3*(i+1)+j).setRenderer(new CustomListCellRenderer());
 					this.pearl.get(3*(i+1)+j).addActionListener(e -> {
 						setEffects();
 						MainFrame.getInstance().updateStat();
@@ -125,7 +178,6 @@ public class PageWeapon extends PagePanel {
 			/* XP STUFF */
 			for(int j = 0; j < 2; j++) {
 				this.effectXpStuff.add(new JCustomComboBox<String>(new String[] {"Rien"}));
-				this.effectXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
 				this.effectXpStuff.get(i*2+j).addActionListener(e -> {
 					updateLvlXpStuff(id);
 					
@@ -136,7 +188,6 @@ public class PageWeapon extends PagePanel {
 				
 				int duo = i*2+j;
 				this.lvlXpStuff.add(new JCustomComboBox<String>());
-				this.lvlXpStuff.get(i*2+j).setRenderer(new CustomListCellRenderer());
 				this.lvlXpStuff.get(i*2+j).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
@@ -149,8 +200,6 @@ public class PageWeapon extends PagePanel {
 		
 		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl());
 		this.bullet = new JCustomComboBox<Bullet>(tabBullet);
-		this.bullet.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.bullet.setRenderer(new CustomListCellRenderer());
 		this.bullet.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -179,6 +228,17 @@ public class PageWeapon extends PagePanel {
 	public String getFortif(int id) {
 		return this.fortif.get(id).getSelectedItem();
 	}
+	
+	public Enchantment getRedEnchantment(int id) {
+		return this.redEnchant.get(id).getSelectedItem();
+	}
+	
+	public int getRedLvlEnchant(int id) {
+		if(this.redLvlEnchant.get(id).getItemCount() == 0) {
+			return 0;
+		}
+		return this.redLvlEnchant.get(id).getSelectedItem();
+	}
 
 	public Pearl getPearl(int id) {
 		return this.pearl.get(id).getSelectedItem();
@@ -202,9 +262,33 @@ public class PageWeapon extends PagePanel {
 		
 		Weapon[] weapons = new Weapon[3];
 		for(int i = 0; i < weapons.length; i++) {
-			weapons[i] = new Weapon(this.getWeapon(i));
+			if(this.getWeapon(i).getQuality() == Quality.RED) {
+				weapons[i] = new RedWeapon((RedWeapon) this.getWeapon(i));
+			} else {
+				weapons[i] = new Weapon(this.getWeapon(i));
+			}
+			
 			weapons[i].addEnchant(this.getEnchantment(i));
-			weapons[i].addFortif(this.fortif.get(i).getSelectedIndex());
+			
+			if(weapons[i] instanceof RedWeapon) {
+				int lvlFortif = this.redFortif.get(i).getSelectedIndex();
+				
+				
+				if(lvlFortif != 0) {
+					((RedWeapon) weapons[i]).addFortif(this.valueFortif.get(i).getDoubleValue());
+					list.addAll(((RedWeapon) weapons[i]).getStarEffects(lvlFortif/10));
+				}
+				
+				for(int j = 0; j < 3; j++) {
+					if(this.redEnchant.get(i*3+j).getSelectedIndex() != 0) {
+						for(Effect e : this.getRedEnchantment(i*3+j).getEffects()) {
+							list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+						}
+					}
+				}
+			} else {
+				weapons[i].addFortif(this.fortif.get(i).getSelectedIndex());
+			}
 		}
 		
 		if(!weapons[0].getName().equals("Rien") && !weapons[1].getName().equals("Rien")) {
@@ -259,14 +343,31 @@ public class PageWeapon extends PagePanel {
 		for(int i = 0; i < 3; i++) {
 			JPanel descWeapon = new JPanel();
 			descWeapon.setLayout(new BoxLayout(descWeapon, BoxLayout.X_AXIS));
-			descWeapon.setBackground(Consts.UIColor[1]);
+			descWeapon.setBackground(Design.UIColor[1]);
 			descWeapon.add(this.weapon.get(i));
 			descWeapon.add(this.enchant.get(i));
 			descWeapon.add(this.fortif.get(i));
+			descWeapon.add(this.redFortif.get(i));
+			
+			JPanel enchantWeapon = new JPanel();
+			enchantWeapon.setLayout(new BoxLayout(enchantWeapon, BoxLayout.X_AXIS));
+			enchantWeapon.setBackground(Design.UIColor[1]);
+			for(int j = 0; j < 3; j++) {
+				enchantWeapon.add(Box.createHorizontalStrut(10));
+				enchantWeapon.add(this.redEnchant.get(i*3+j));
+				enchantWeapon.add(this.redLvlEnchant.get(i*3+j));
+			}
+			
+			JPanel fortifWeapon = new JPanel();
+			fortifWeapon.setLayout(new BoxLayout(fortifWeapon, BoxLayout.X_AXIS));
+			fortifWeapon.setBackground(Design.UIColor[1]);
+			fortifWeapon.add(this.valueFortif.get(i));
+			fortifWeapon.add(Box.createHorizontalStrut(5));
+			fortifWeapon.add(this.labelValue.get(i));
 			
 			JPanel pearlWeapon = new JPanel();
 			pearlWeapon.setLayout(new BoxLayout(pearlWeapon, BoxLayout.Y_AXIS));
-			pearlWeapon.setBackground(Consts.UIColor[1]);
+			pearlWeapon.setBackground(Design.UIColor[1]);
 			
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
@@ -281,12 +382,12 @@ public class PageWeapon extends PagePanel {
 			}
 			
 			JPanel xpWeapon = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpWeapon.setBackground(Consts.UIColor[1]);
+			xpWeapon.setBackground(Design.UIColor[1]);
 			this.label[i+3].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			xpWeapon.add(this.label[i+3]);
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Consts.UIColor[1]);
+				xp.setBackground(Design.UIColor[1]);
 				xp.add(this.effectXpStuff.get(i*2+j));
 				xp.add(this.lvlXpStuff.get(i*2+j));
 				xpWeapon.add(xp);
@@ -295,10 +396,14 @@ public class PageWeapon extends PagePanel {
 			JPanel elemI = new JPanel();
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Consts.UIColor[1]);
+			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i]);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descWeapon);
+			elemI.add(Box.createVerticalStrut(2));
+			elemI.add(enchantWeapon);
+			elemI.add(Box.createVerticalStrut(2));
+			elemI.add(fortifWeapon);
 			elemI.add(Box.createVerticalStrut(5));
 			elemI.add(pearlWeapon);
 			elemI.add(Box.createVerticalStrut(2));
@@ -316,7 +421,7 @@ public class PageWeapon extends PagePanel {
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[6]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(this.bullet);
@@ -364,6 +469,7 @@ public class PageWeapon extends PagePanel {
 				weaponType(i);
 				
 				this.fortif.get(i).setSelectedIndex(0);
+				this.redFortif.get(i).setSelectedIndex(0);
 				this.pearl.get(i).setSelectedIndex(0);
 				this.pearl.get(i+1).setSelectedIndex(0);
 				this.pearl.get(i+2).setSelectedIndex(0);
@@ -380,7 +486,31 @@ public class PageWeapon extends PagePanel {
 	
 	private void updateDetails(int id) {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
-			this.fortif.get(id).setVisible(true);
+			if(this.getWeapon(id).getQuality() == Quality.RED) {
+				this.fortif.get(id).setVisible(false);
+				this.redFortif.get(id).setVisible(true);
+				
+				for(int i = 0; i < 3; i++) {
+					this.redEnchant.get(id*3+i).setVisible(true);
+				}
+				
+				if(this.redFortif.get(id).getSelectedIndex() != 0) {
+					this.valueFortif.get(id).setVisible(true);
+					this.labelValue.get(id).setVisible(true);
+				} else {
+					this.valueFortif.get(id).setVisible(false);
+					this.labelValue.get(id).setVisible(false);
+				}
+			} else {
+				this.fortif.get(id).setVisible(true);
+				this.redFortif.get(id).setVisible(false);
+				this.valueFortif.get(id).setVisible(false);
+				this.labelValue.get(id).setVisible(false);
+				
+				for(int i = 0; i < 3; i++) {
+					this.redEnchant.get(id*3+i).setVisible(false);
+				}
+			}
 			
 			if(id == 0) {
 				this.pearl.get(0).setVisible(true);
@@ -393,6 +523,9 @@ public class PageWeapon extends PagePanel {
 			this.pearl.get(3*(id+1)+2).setVisible(true);
 		} else {
 			this.fortif.get(id).setVisible(false);
+			this.redFortif.get(id).setVisible(false);
+			this.valueFortif.get(id).setVisible(false);
+			this.labelValue.get(id).setVisible(false);
 			
 			if(id == 0) {
 				for(int i = 0; i < 3; i++) {
@@ -405,7 +538,6 @@ public class PageWeapon extends PagePanel {
 				this.pearl.get(3*(id+1)+i).setVisible(false);
 				this.pearl.get(3*(id+1)+i).setSelectedIndex(0);
 			}
-			
 		}
 	}
 	
@@ -416,7 +548,7 @@ public class PageWeapon extends PagePanel {
 				if(weaponType == 16) {
 					weaponType = 0;
 				}
-				System.out.println(weaponType);
+				
 				String[] tmp = new String[XpStuff.getDataWeapon()[weaponType].length +1];
 				tmp[0] = "Rien";
 				for(int i = 0; i < tmp.length-1; i++) {
@@ -464,18 +596,42 @@ public class PageWeapon extends PagePanel {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
 			Weapon weapon = this.getWeapon(id);
 			
-			if(weapon.isEnchantable()) {
-				Enchantment[] tabEnchant = Enchantment.getPossibleWeaponEnchant(weapon.getQuality(), weapon.getType());
-				Enchantment memory = this.getEnchantment(id);
+			if(weapon.getQuality() == Quality.RED) {
+				Enchantment[] tabRed = Enchantment.getWeaponRedEnchant(this.getWeapon(id).getType(), null, null);
 				
-				this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-				this.enchant.get(id).setSelectedItem(memory);
-				this.enchant.get(id).setVisible(true);
-			} else {
+				for(int i = 0; i < 3; i++) {
+					Enchantment memory = this.getRedEnchantment(id*3+i);
+					
+					this.redEnchant.get(id*3+i).setModel(new DefaultComboBoxModel<Enchantment>(tabRed));
+					this.redEnchant.get(id*3+i).setSelectedItem(memory);
+					this.redEnchant.get(id*3+i).setVisible(true);
+				}
+				
 				this.enchant.get(id).setVisible(false);
+			} else {
+				if(weapon.isEnchantable()) {
+					Enchantment[] tabEnchant = Enchantment.getPossibleWeaponEnchant(weapon.getQuality(), weapon.getType());
+					Enchantment memory = this.getEnchantment(id);
+					
+					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+					this.enchant.get(id).setSelectedItem(memory);
+					this.enchant.get(id).setVisible(true);
+				} else {
+					this.enchant.get(id).setVisible(false);
+				}
+				
+				for(int i = 0; i < 3; i++) {
+					this.redEnchant.get(id*3+i).setVisible(false);
+					this.redLvlEnchant.get(id*3+i).setVisible(false);
+				}
 			}
 		} else {
 			this.enchant.get(id).setVisible(false);
+			
+			for(int i = 0; i < 3; i++) {
+				this.redEnchant.get(id*3+i).setVisible(false);
+				this.redLvlEnchant.get(id*3+i).setVisible(false);
+			}
 		}
 	}
 	
@@ -531,7 +687,7 @@ public class PageWeapon extends PagePanel {
 			int keepEnchant = this.enchant.get(0).getSelectedIndex();
 			
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade.getGrade(), lvl, reinca, choice);
-			Weapon memory = (Weapon) this.weapon.get(0).getSelectedItem();
+			Weapon memory = this.getWeapon(0);
 			
 			this.weapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
 			this.weapon.get(0).setSelectedItem(memory);
@@ -539,7 +695,9 @@ public class PageWeapon extends PagePanel {
 			this.enchant.get(0).setSelectedIndex(keepEnchant);
 		} else if(choice.getType() == WeaponType.RELIQUE) {
 			this.fortif.get(id).setVisible(false);
+			this.redFortif.get(id).setVisible(false);
 			this.fortif.get(id).setSelectedIndex(0);
+			this.redFortif.get(id).setSelectedIndex(0);
 		}
 	}
 	
@@ -589,5 +747,95 @@ public class PageWeapon extends PagePanel {
 		for(int i = 0; i < tmp.length; i++) tmp[i] = "" + (i+1);
 		this.lvlXpStuff.get(indexPair).add(new JComboBox<String>(tmp));
 		Util.setMemoryInList(this.lvlXpStuff, indexPair, tmp);
+	}
+	
+	private void updateValueFortif(int id) {
+		int fortif = this.redFortif.get(id).getSelectedIndex();
+		
+		double min = Consts.coefRedFortifMin[fortif]*100;
+		double max = Consts.coefRedFortifMax[fortif]*100;
+		double middle = (max - min) / 2 + min;
+		
+		this.valueFortif.get(id).setDoubleMinimum(min);
+		this.valueFortif.get(id).setDoubleMaximum(max);
+		this.valueFortif.get(id).setDoubleValue(middle);
+		
+		if(fortif == 0) {
+			this.valueFortif.get(id).setVisible(false);
+			this.labelValue.get(id).setVisible(false);
+		} else {
+			this.valueFortif.get(id).setVisible(true);
+			this.labelValue.get(id).setVisible(true);
+		}
+	}
+	
+	private void updateTooltipFortif(int id) {
+		Weapon weapon = this.getWeapon(id);
+		double current = this.valueFortif.get(id).getDoubleValue() - 100;
+		current = current / 100 +1;
+		
+		String tooltip = "";
+		
+		for(Effect e : weapon.getEffects()) {
+			if(e.isPercent()) {
+				continue;
+			}
+			
+			if(e.getType().ordinal() < 5 || e.getType().ordinal() > 9) {
+				continue;
+			}
+			
+			tooltip += e.toString() + " +" + ((int) (e.getValue() * current - e.getValue())) + "\n";
+		}
+		
+		this.labelValue.get(id).setText(tooltip);
+	}
+	
+	private void updateRedEnchant(int idRed) {
+		int ignore1;
+		int ignore2;
+		
+		if(idRed % 3 == 0) {
+			ignore1 = idRed + 1;
+			ignore2 = idRed + 2;
+		} else if(idRed % 3 == 1) {
+			ignore1 = idRed - 1;
+			ignore2 = idRed + 1;
+		} else {
+			ignore1 = idRed - 2;
+			ignore2 = idRed - 1;
+		}
+		
+		Enchantment choice = this.getRedEnchantment(idRed);
+		Enchantment memory1 = this.getRedEnchantment(ignore1);
+		Enchantment memory2 = this.getRedEnchantment(ignore2);
+		
+		Enchantment[] tabRed1 = Enchantment.getWeaponRedEnchant(this.getWeapon(idRed/3).getType(), choice, memory2);
+		Enchantment[] tabRed2 = Enchantment.getWeaponRedEnchant(this.getWeapon(idRed/3).getType(), choice, memory1);
+		
+		this.redEnchant.get(ignore1).setModel(new DefaultComboBoxModel<Enchantment>(tabRed1));
+		this.redEnchant.get(ignore1).setSelectedItem(memory1);
+		
+		this.redEnchant.get(ignore2).setModel(new DefaultComboBoxModel<Enchantment>(tabRed2));
+		this.redEnchant.get(ignore2).setSelectedItem(memory2);
+	}
+	
+	private void updateRedLvlEnchant(int id) {
+		if(this.redEnchant.get(id).getSelectedIndex() != 0) {
+			Enchantment red = this.getRedEnchantment(id);
+			Integer[] nbLvl = new Integer[red.getNbLvl()];
+			
+			for(int i = 0; i < nbLvl.length; i++) {
+				nbLvl[i] = i+1;
+			}
+			
+			int memory = this.getRedLvlEnchant(id);
+			
+			this.redLvlEnchant.get(id).setModel(new DefaultComboBoxModel<Integer>(nbLvl));
+			this.redLvlEnchant.get(id).setSelectedItem(memory);
+			this.redLvlEnchant.get(id).setVisible(true);
+		} else {
+			this.redLvlEnchant.get(id).setVisible(false);
+		}
 	}
 }

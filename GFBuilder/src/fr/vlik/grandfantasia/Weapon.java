@@ -9,13 +9,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
-public final class Weapon extends Equipment {
+public class Weapon extends Equipment {
 	
 	public static Weapon[][] data;
 	static {
@@ -88,6 +86,10 @@ public final class Weapon extends Equipment {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
+		if(path == null) {
+			path = "null.png";
+		}
+		
 		try {
 			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + quality.index + ".png"));
 		} catch (IOException e) {
@@ -97,7 +99,7 @@ public final class Weapon extends Equipment {
 		try {
 			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/weapons/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargé : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -205,23 +207,51 @@ public final class Weapon extends Equipment {
 					
 					String[] effectSplit = lineSplit[7].split(",");
 					
-					assert lineSplit.length == Integer.parseInt(effectSplit[0]) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
-							: weaponFile[i] + " line " + (list.get(i+1).size() + 1);
-					
 					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
 					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 						effects.add(new Effect(lineSplit[j+8]));
 					
 					ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
-					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
+					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
 						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+					}
 					
-					Weapon weapon = new Weapon(
-							lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
-							 WeaponType.values()[i], Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects, bonusXP
-							 );
-					
-					list.get(i+1).add(weapon);
+					if(quality == Quality.RED) {
+						int indexToStar = 8 + Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])+Integer.parseInt(effectSplit[2]);
+						String[] starEffectSplit = lineSplit[indexToStar].split(",");
+						
+						ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
+						int decal = 0;
+						
+						for(int j = 0; j < starEffectSplit.length; j++) {
+							ArrayList<Effect> oneStarEffects = new ArrayList<Effect>();
+							for(int k = 0; k < Integer.parseInt(starEffectSplit[j]); k++) {
+								oneStarEffects.add(new Effect(lineSplit[indexToStar+2+decal]));
+							}
+							
+							decal += Integer.parseInt(starEffectSplit[j]);
+							starEffects.add(oneStarEffects);
+						}
+						
+						RedWeapon red = new RedWeapon(
+								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
+								WeaponType.values()[i], Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects, bonusXP,
+								starEffects
+								);
+						
+						list.get(i+1).add(red);
+						
+					} else {
+						assert lineSplit.length == Integer.parseInt(effectSplit[0]) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
+								: weaponFile[i] + " line " + (list.get(i+1).size() + 1);
+						
+						Weapon weapon = new Weapon(
+								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
+								WeaponType.values()[i], Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects, bonusXP
+								);
+						
+						list.get(i+1).add(weapon);
+					}
 					
 					line = reader.readLine();
 				}

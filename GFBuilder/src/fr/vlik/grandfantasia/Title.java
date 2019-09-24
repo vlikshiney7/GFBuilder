@@ -6,10 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Title {

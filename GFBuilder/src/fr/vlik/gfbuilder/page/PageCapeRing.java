@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
@@ -26,7 +25,7 @@ import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Ring;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomTextPane;
@@ -51,14 +50,12 @@ public class PageCapeRing extends PagePanel {
 	}
 	
 	private PageCapeRing() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
-		this.cape.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.cape.setRenderer(new CustomListCellRenderer());
 		this.cape.addActionListener(e -> {
 			updateXpStuff(0);
 			updateEnchant(0);
@@ -69,8 +66,6 @@ public class PageCapeRing extends PagePanel {
 		
 		/* ENCHANTEMENT */
 		this.enchant.add(new JCustomComboBox<Enchantment>());
-		this.enchant.get(0).setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.enchant.get(0).setRenderer(new CustomListCellRenderer());
 		this.enchant.get(0).addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -85,7 +80,6 @@ public class PageCapeRing extends PagePanel {
 		}
 		for(int i = 0; i < 2; i++) {
 			this.effectXpStuff.add(new JCustomComboBox<String>(tmp));
-			this.effectXpStuff.get(i).setRenderer(new CustomListCellRenderer());
 			this.effectXpStuff.get(i).addActionListener(e -> {
 				updateLvlXpStuff(0);
 				
@@ -96,7 +90,6 @@ public class PageCapeRing extends PagePanel {
 			
 			int duo = i;
 			this.lvlXpStuff.add(new JCustomComboBox<String>());
-			this.lvlXpStuff.get(i).setRenderer(new CustomListCellRenderer());
 			this.lvlXpStuff.get(i).addActionListener(e -> {
 				updateMaxLvlValue(duo);
 				
@@ -109,11 +102,9 @@ public class PageCapeRing extends PagePanel {
 		
 		Ring[] tabRing = Ring.getPossibleRing(PageGeneral.getInstance().getLvl(), null);
 		for(int i = 0; i < 2; i++) {
-			this.ring.add(new JCustomComboBox<Ring>(new DefaultComboBoxModel<Ring>(tabRing)));
-			this.ring.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.ring.get(i).setRenderer(new CustomListCellRenderer());
-			
 			int id = i;
+			
+			this.ring.add(new JCustomComboBox<Ring>(new DefaultComboBoxModel<Ring>(tabRing)));
 			this.ring.get(i).addActionListener(e -> {
 				updateXpStuff(id+1);
 				updateEnchant(id+1);
@@ -125,8 +116,6 @@ public class PageCapeRing extends PagePanel {
 			
 			/* ENCHANTEMENT */
 			this.enchant.add(new JCustomComboBox<Enchantment>());
-			this.enchant.get(i+1).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.enchant.get(i+1).setRenderer(new CustomListCellRenderer());
 			this.enchant.get(i+1).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -141,7 +130,6 @@ public class PageCapeRing extends PagePanel {
 			}
 			for(int j = 0; j < 2; j++) {
 				this.effectXpStuff.add(new JCustomComboBox<String>(tmp));
-				this.effectXpStuff.get(i*2+j+2).setRenderer(new CustomListCellRenderer());
 				this.effectXpStuff.get(i*2+j+2).addActionListener(e -> {
 					updateLvlXpStuff(id+1);
 					
@@ -152,7 +140,6 @@ public class PageCapeRing extends PagePanel {
 				
 				int duo = i*2+j+2;
 				this.lvlXpStuff.add(new JCustomComboBox<String>());
-				this.lvlXpStuff.get(i*2+j+2).setRenderer(new CustomListCellRenderer());
 				this.lvlXpStuff.get(i*2+j+2).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
@@ -280,17 +267,17 @@ public class PageCapeRing extends PagePanel {
 	protected void createPanel() {
 		JPanel descCape = new JPanel();
 		descCape.setLayout(new BoxLayout(descCape, BoxLayout.X_AXIS));
-		descCape.setBackground(Consts.UIColor[1]);
+		descCape.setBackground(Design.UIColor[1]);
 		descCape.add(this.cape);
 		descCape.add(this.enchant.get(0));
 		
 		JPanel xpCape = new JPanel(new GridLayout(1, 3, 10, 3));
-		xpCape.setBackground(Consts.UIColor[1]);
+		xpCape.setBackground(Design.UIColor[1]);
 		this.label[1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		xpCape.add(this.label[1]);
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-			xp.setBackground(Consts.UIColor[1]);
+			xp.setBackground(Design.UIColor[1]);
 			xp.add(this.effectXpStuff.get(i));
 			xp.add(this.lvlXpStuff.get(i));
 			xpCape.add(xp);
@@ -299,7 +286,7 @@ public class PageCapeRing extends PagePanel {
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(descCape);
@@ -313,17 +300,17 @@ public class PageCapeRing extends PagePanel {
 		for(int i = 0; i < 2; i++) {
 			JPanel descRing = new JPanel();
 			descRing.setLayout(new BoxLayout(descRing, BoxLayout.X_AXIS));
-			descRing.setBackground(Consts.UIColor[1]);
+			descRing.setBackground(Design.UIColor[1]);
 			descRing.add(this.ring.get(i));
 			descRing.add(this.enchant.get(i+1));
 			
 			JPanel xpRing = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpRing.setBackground(Consts.UIColor[1]);
+			xpRing.setBackground(Design.UIColor[1]);
 			this.label[i+4].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			xpRing.add(this.label[i+4]);
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Consts.UIColor[1]);
+				xp.setBackground(Design.UIColor[1]);
 				xp.add(this.effectXpStuff.get(i*2+j+2));
 				xp.add(this.lvlXpStuff.get(i*2+j+2));
 				xpRing.add(xp);
@@ -332,7 +319,7 @@ public class PageCapeRing extends PagePanel {
 			JPanel elemI = new JPanel();
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Consts.UIColor[1]);
+			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i+2]);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descRing);

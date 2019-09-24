@@ -4,9 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public abstract class Equipment {
@@ -85,7 +83,7 @@ public abstract class Equipment {
 			return true;
 		}
 		
-		for(GradeName element : grades) {
+		for(GradeName element : this.grades) {
 			if(element == grade) {
 				return true;
 			}

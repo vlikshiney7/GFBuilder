@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.MainFrame;
 
 public class JCustomRadioButton extends JRadioButton {
@@ -54,7 +53,7 @@ public class JCustomRadioButton extends JRadioButton {
 	}
 	
 	public void setVoidUI() {
-		this.setBackground(Consts.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);

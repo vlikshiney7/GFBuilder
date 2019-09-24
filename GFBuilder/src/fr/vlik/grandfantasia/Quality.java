@@ -1,4 +1,4 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.grandfantasia;
 
 public enum Quality {
 	GREY(0), WHITE(1),

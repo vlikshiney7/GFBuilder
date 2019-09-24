@@ -11,17 +11,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Quality;
 import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Costume;
 import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.Costume.CostType;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -46,14 +46,14 @@ public class PageCostume extends PagePanel {
 	}
 	
 	private PageCostume() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		for(int i = 0; i < 2; i++) {
 			this.costWeapon.add(new JCustomRadioButton(this.label[i+5], "radio11", "radioOff"));
-			this.costWeapon.get(i).setBackground(Consts.UIColor[1]);
-			this.costWeapon.get(i).setForeground(Consts.FontColor[0]);
+			this.costWeapon.get(i).setBackground(Design.UIColor[1]);
+			this.costWeapon.get(i).setForeground(Design.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
 				updateWeaponCost();
 				
@@ -68,7 +68,7 @@ public class PageCostume extends PagePanel {
 			for(int j = 0; j < 5; j++) {
 				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
-				this.costQuality.get(i).get(j).setBackground(Consts.UIColor[1]);
+				this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
 				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(e -> {
 					updateCostume(id);
@@ -79,8 +79,6 @@ public class PageCostume extends PagePanel {
 			}
 			
 			this.costume.add(new JCustomComboBox<Costume>());
-			this.costume.get(i).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.costume.get(i).setRenderer(new CustomListCellRenderer());
 			this.costume.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -89,7 +87,6 @@ public class PageCostume extends PagePanel {
 			
 			if(i == 0) {
 				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getWeaponCostPearl()));
-				this.costPearl.get(i).setRenderer(new CustomListCellRenderer());
 				this.costPearl.get(i).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -98,7 +95,6 @@ public class PageCostume extends PagePanel {
 			}
 			
 			this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getWeaponCostPearl()));
-			this.costPearl.get(i+1).setRenderer(new CustomListCellRenderer());
 			this.costPearl.get(i+1).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -115,8 +111,8 @@ public class PageCostume extends PagePanel {
 				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 			}
 			
-			this.checkBoxRunway.get(i).setBackground(Consts.UIColor[1]);
-			this.checkBoxRunway.get(i).setForeground(Consts.FontColor[0]);
+			this.checkBoxRunway.get(i).setBackground(Design.UIColor[1]);
+			this.checkBoxRunway.get(i).setForeground(Design.FontColor[0]);
 			
 			int id = i;
 			this.checkBoxRunway.get(i).addActionListener(e -> {
@@ -133,7 +129,7 @@ public class PageCostume extends PagePanel {
 				int id = i+2;
 				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i+2).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
-				this.costQuality.get(i+2).get(j).setBackground(Consts.UIColor[1]);
+				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);
 				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(e -> {
 					updateCostume(id);
@@ -144,8 +140,6 @@ public class PageCostume extends PagePanel {
 			}
 			
 			this.costume.add(new JCustomComboBox<Costume>());
-			this.costume.get(i+2).setFont(new Font("Open Sans", Font.PLAIN, 12));
-			this.costume.get(i+2).setRenderer(new CustomListCellRenderer());
 			this.costume.get(i+2).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -154,7 +148,6 @@ public class PageCostume extends PagePanel {
 			
 			if(i == 0) {
 				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+3).setRenderer(new CustomListCellRenderer());
 				this.costPearl.get(i+3).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -162,7 +155,6 @@ public class PageCostume extends PagePanel {
 				this.costPearl.get(i+3).setVisible(false);
 			} else if(i == 1) {
 				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+3).setRenderer(new CustomListCellRenderer());
 				this.costPearl.get(i+3).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -170,7 +162,6 @@ public class PageCostume extends PagePanel {
 				this.costPearl.get(i+3).setVisible(false);
 				
 				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+4).setRenderer(new CustomListCellRenderer());
 				this.costPearl.get(i+4).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -178,7 +169,6 @@ public class PageCostume extends PagePanel {
 				this.costPearl.get(i+4).setVisible(false);
 			} else {
 				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+4).setRenderer(new CustomListCellRenderer());
 				this.costPearl.get(i+4).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -195,8 +185,8 @@ public class PageCostume extends PagePanel {
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 				}
 				
-				this.checkBoxRunway.get(i*2+j+2).setBackground(Consts.UIColor[1]);
-				this.checkBoxRunway.get(i*2+j+2).setForeground(Consts.FontColor[0]);
+				this.checkBoxRunway.get(i*2+j+2).setBackground(Design.UIColor[1]);
+				this.checkBoxRunway.get(i*2+j+2).setForeground(Design.FontColor[0]);
 				
 				int id = i*2+j+2;
 				this.checkBoxRunway.get(i*2+j+2).addActionListener(e -> {
@@ -279,7 +269,7 @@ public class PageCostume extends PagePanel {
 		JPanel costGroupPanel = new JPanel();
 		ButtonGroup costGroup = new ButtonGroup();
 		
-		costGroupPanel.setBackground(Consts.UIColor[1]);
+		costGroupPanel.setBackground(Design.UIColor[1]);
 		this.label[4].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		costGroupPanel.add(this.label[4]);
 		
@@ -291,11 +281,11 @@ public class PageCostume extends PagePanel {
 		
 		JPanel sectionCost = new JPanel();
 		sectionCost.setLayout(new BoxLayout(sectionCost, BoxLayout.Y_AXIS));
-		sectionCost.setBackground(Consts.UIColor[1]);
+		sectionCost.setBackground(Design.UIColor[1]);
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Consts.UIColor[1]);
+			currentQualityPanel.setBackground(Design.UIColor[1]);
 			this.label[i+7].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			currentQualityPanel.add(this.label[i+7]);
 			
@@ -307,7 +297,7 @@ public class PageCostume extends PagePanel {
 			
 			JPanel itemCost = new JPanel();
 			itemCost.setLayout(new BoxLayout(itemCost, BoxLayout.Y_AXIS));
-			itemCost.setBackground(Consts.UIColor[1]);
+			itemCost.setBackground(Design.UIColor[1]);
 			itemCost.add(Box.createVerticalStrut(10));
 			itemCost.add(currentQualityPanel);
 			itemCost.add(Box.createVerticalStrut(3));
@@ -327,7 +317,7 @@ public class PageCostume extends PagePanel {
 		}
 		
 		JPanel runway = new JPanel();
-		runway.setBackground(Consts.UIColor[1]);
+		runway.setBackground(Design.UIColor[1]);
 		
 		for(int i = 0; i < 2; i++) {
 			runway.add(this.checkBoxRunway.get(i));
@@ -338,7 +328,7 @@ public class PageCostume extends PagePanel {
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(costGroupPanel);
@@ -351,7 +341,7 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < 3; i++) {
 			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Consts.UIColor[1]);
+			currentQualityPanel.setBackground(Design.UIColor[1]);
 			ButtonGroup currentQuality = new ButtonGroup();
 			
 			for(int j = 0; j < 5; j++) {
@@ -360,7 +350,7 @@ public class PageCostume extends PagePanel {
 			}
 			
 			JPanel runwayPanel = new JPanel();
-			runwayPanel.setBackground(Consts.UIColor[1]);
+			runwayPanel.setBackground(Design.UIColor[1]);
 			
 			for(int j = 0; j < 2; j++) {
 				runwayPanel.add(this.checkBoxRunway.get(i*2+j+2));
@@ -370,7 +360,7 @@ public class PageCostume extends PagePanel {
 			JPanel elemI = new JPanel();
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Consts.UIColor[1]);
+			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i+1]);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(currentQualityPanel);

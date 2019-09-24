@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
@@ -19,7 +18,7 @@ import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 
@@ -39,7 +38,7 @@ public class PageSkill extends PagePanel {
 	}
 
 	private PageSkill() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
@@ -50,7 +49,6 @@ public class PageSkill extends PagePanel {
 		
 		for(int i = 0; i < 2; i++) {
 			this.skillProgress.add(new JCustomComboBox<Skill>());
-			this.skillProgress.get(i).setRenderer(new CustomListCellRenderer());
 			this.skillProgress.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -61,7 +59,6 @@ public class PageSkill extends PagePanel {
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.proSkill = new JCustomComboBox<ProSkill>(tabProSkill);
-		this.proSkill.setRenderer(new CustomListCellRenderer());
 		this.proSkill.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -107,13 +104,13 @@ public class PageSkill extends PagePanel {
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
 		elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 5; i++) {
 			JPanel skill = new JPanel();
-			skill.setBackground(Consts.UIColor[1]);
+			skill.setBackground(Design.UIColor[1]);
 			skill.add(this.skillNatif.get(i));
 			
 			elem1.add(skill);
@@ -127,7 +124,7 @@ public class PageSkill extends PagePanel {
 		JPanel elem2 = new JPanel();
 		elem2.setLayout(new BoxLayout(elem2, BoxLayout.Y_AXIS));
 		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem2.setBackground(Consts.UIColor[1]);
+		elem2.setBackground(Design.UIColor[1]);
 		elem2.add(this.label[1]);
 		elem2.add(Box.createVerticalStrut(10));
 		
@@ -137,7 +134,7 @@ public class PageSkill extends PagePanel {
 		this.showAndHide.add(elem2);
 		
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.setBackground(Consts.UIColor[2]);
+		this.setBackground(Design.UIColor[2]);
 		this.add(elem1);
 		this.add(Box.createVerticalStrut(10));
 		this.add(elem2);

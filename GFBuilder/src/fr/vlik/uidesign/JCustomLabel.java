@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Energy;
@@ -22,6 +21,7 @@ public class JCustomLabel extends JLabel {
 	
 	public JCustomLabel() {
 		super();
+		this.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		setBlackUI();
 	}
 	
@@ -99,14 +99,14 @@ public class JCustomLabel extends JLabel {
 	}
 	
 	public void setBlackUI() {
-		this.setForeground(Consts.FontColor[0]);
+		this.setForeground(Design.FontColor[0]);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 14));
 	}
 	
 	public static JLabel getSimpleLabel(String text) {
 		JLabel label = new JLabel(text);
 		label.setFont(new Font("Open Sans", Font.BOLD, 16));
-		label.setForeground(Consts.FontColor[0]);
+		label.setForeground(Design.FontColor[0]);
 		label.setAlignmentX(CENTER_ALIGNMENT);
 		
 		return label;

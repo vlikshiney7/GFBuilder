@@ -9,9 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;
 
 public class PageOption extends JPanel {
@@ -36,11 +36,11 @@ public class PageOption extends JPanel {
 		this.parameter.setText(Lang.getDataCredit(Language.FR));
 		this.parameter.setFont(new Font("Open Sans", Font.PLAIN, 14));
 		this.parameter.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.parameter.setBackground(Consts.UIColor[1]);
-		this.parameter.setForeground(Consts.FontColor[0]);
+		this.parameter.setBackground(Design.UIColor[1]);
+		this.parameter.setForeground(Design.FontColor[0]);
 		
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.setBackground(Consts.UIColor[1]);
+		this.setBackground(Design.UIColor[1]);
 		this.add(this.label[0]);
 		this.add(Box.createVerticalStrut(10));
 		this.label[1].setFont(new Font("Open Sans", Font.BOLD, 14));

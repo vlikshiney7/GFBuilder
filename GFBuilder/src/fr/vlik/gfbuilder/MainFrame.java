@@ -17,7 +17,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
@@ -73,7 +72,7 @@ public class MainFrame extends JFrame {
 		
 		JPanel menu = new JPanel();
 		menu.setPreferredSize(new Dimension(200, 0));
-		menu.setBackground(Consts.UIColor[0]);
+		menu.setBackground(Design.UIColor[0]);
 		menu.setLayout(new GridLayout(14, 1, 0, 0));
 		
 		
@@ -145,7 +144,7 @@ public class MainFrame extends JFrame {
 		
 		JPanel content = new JPanel();
 		content.setBorder(new EmptyBorder(20, 20, 20, 20));
-		content.setBackground(Consts.UIColor[2]);
+		content.setBackground(Design.UIColor[2]);
 		
 		JScrollPane scrollContent = new JScrollPane(content, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollContent.setBorder(null);
@@ -162,7 +161,7 @@ public class MainFrame extends JFrame {
 		
 		JPanel stats = new JPanel();
 		stats.setLayout(new BoxLayout(stats, BoxLayout.Y_AXIS));
-		stats.setBackground(Consts.UIColor[1]);
+		stats.setBackground(Design.UIColor[1]);
 		
 		int[] section = new int[] { 5, 3, 5, 6, 3 };
 		int ordinal = 0;
@@ -171,11 +170,11 @@ public class MainFrame extends JFrame {
 			JPanel blocStat = new JPanel();
 			blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
 			blocStat.setBorder(new EmptyBorder(5, 5, 5, 5));
-			blocStat.setBackground(Consts.UIColor[0]);
+			blocStat.setBackground(Design.UIColor[0]);
 			
 			for(int j = 0; j < section[i]; j++) {
 				this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
-				this.valueStat.get(ordinal).setForeground(Consts.FontColor[0]);
+				this.valueStat.get(ordinal).setForeground(Design.FontColor[0]);
 				this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
 				this.valueStat.get(ordinal).setPreferredSize(new Dimension(140, 20));
 				
@@ -190,12 +189,12 @@ public class MainFrame extends JFrame {
 		JPanel blocStat = new JPanel();
 		blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
 		blocStat.setBorder(new EmptyBorder(5, 5, 5, 5));
-		blocStat.setBackground(Consts.UIColor[0]);
+		blocStat.setBackground(Design.UIColor[0]);
 		
 		while(ordinal < TypeEffect.values().length) {
 			this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
 			this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
-			this.valueStat.get(ordinal).setForeground(Consts.FontColor[0]);
+			this.valueStat.get(ordinal).setForeground(Design.FontColor[0]);
 			
 			blocStat.add(this.valueStat.get(ordinal));
 			
@@ -226,9 +225,9 @@ public class MainFrame extends JFrame {
 			System.err.println("WARNING: Look and feel code failed");
 		}
 		
-		UIManager.put("ToolTip.border", new LineBorder(Consts.UIColor[1], 2));
-		UIManager.put("ToolTip.background", Consts.UIColor[0]);
-		UIManager.put("ToolTip.foreground", Consts.UIColor[3]);
+		UIManager.put("ToolTip.border", new LineBorder(Design.UIColor[1], 2));
+		UIManager.put("ToolTip.background", Design.UIColor[0]);
+		UIManager.put("ToolTip.foreground", Design.UIColor[3]);
 		
 		ToolTipManager.sharedInstance().setInitialDelay(500);
 	    ToolTipManager.sharedInstance().setDismissDelay(30000);
@@ -272,14 +271,14 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		
+		/*
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
 			public void run() {
 				MainFrame.getInstance();
 			}
-		});
+		});*/
 	}
 	
 	public void updateTabPane(int index) {

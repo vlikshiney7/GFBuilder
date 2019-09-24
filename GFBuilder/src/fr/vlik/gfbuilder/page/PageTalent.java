@@ -16,7 +16,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
@@ -24,7 +23,7 @@ import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Talent;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -48,7 +47,7 @@ public class PageTalent extends PagePanel {
 	}
 
 	private PageTalent() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
@@ -61,7 +60,7 @@ public class PageTalent extends PagePanel {
 				try {
 					this.radioTalent.add(new ArrayList<JCustomRadioButton>());
 					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossTalent.png")))));
-					this.radioTalent.get(i*4+j).get(0).setBackground(Consts.UIColor[0]);
+					this.radioTalent.get(i*4+j).get(0).setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(0).addActionListener(e -> {
 						updateSelectedTalent(id);
 						updateCombiTalent();
@@ -74,6 +73,8 @@ public class PageTalent extends PagePanel {
 				}
 				
 				for(int k = 0; k < 3; k++) {
+					int idIn = i*12+j*3+k;
+					
 					Talent[] currentTalent = new Talent[tabTalent.get(i*12+j*3+k).size() + 1];
 					currentTalent[0] = new Talent();
 					for(int l = 0; l < currentTalent.length-1; l++) {
@@ -81,8 +82,6 @@ public class PageTalent extends PagePanel {
 					}
 					
 					this.talent.add(new JCustomComboBox<Talent>(currentTalent));
-					this.talent.get(i*12+j*3+k).setRenderer(new CustomListCellRenderer(i));
-					int idIn = i*12+j*3+k;
 					this.talent.get(i*12+j*3+k).addActionListener(e -> {
 						updateRadioTalent(idIn);
 						updateCombiTalent();
@@ -92,7 +91,7 @@ public class PageTalent extends PagePanel {
 					});
 					
 					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(Talent.getData()[PageGeneral.getInstance().getGrade().getGrade().index][i*12+j*3+k].getIcon())));
-					this.radioTalent.get(i*4+j).get(k+1).setBackground(Consts.UIColor[0]);
+					this.radioTalent.get(i*4+j).get(k+1).setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).addActionListener(e -> {
 						updateSelectedTalent(id);
 						updateCombiTalent();
@@ -139,7 +138,7 @@ public class PageTalent extends PagePanel {
 		JPanel chosenTalent = new JPanel();
 		chosenTalent.setLayout(new GridLayout(3, 3));
 		chosenTalent.setMaximumSize(new Dimension(108, 108));
-		chosenTalent.setBackground(Consts.UIColor[0]);
+		chosenTalent.setBackground(Design.UIColor[0]);
 		
 		int[] orderTalent = { 5, 0, 4, 1, 8, 2, 7, 3, 6 };
 		for(int i = 0; i < orderTalent.length; i++) {
@@ -157,7 +156,7 @@ public class PageTalent extends PagePanel {
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(chosenTalent);
@@ -170,28 +169,28 @@ public class PageTalent extends PagePanel {
 		
 		
 		JPanel elem2 = new JPanel(new GridLayout(1,2, 10, 10));
-		elem2.setBackground(Consts.UIColor[2]);
+		elem2.setBackground(Design.UIColor[2]);
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel colTalent = new JPanel();
 			colTalent.setLayout(new BoxLayout(colTalent, BoxLayout.Y_AXIS));
 			colTalent.setBorder(new EmptyBorder(10, 10, 10, 10));
-			colTalent.setBackground(Consts.UIColor[1]);
+			colTalent.setBackground(Design.UIColor[1]);
 			colTalent.add(this.label[i+1]);
 			colTalent.add(Box.createVerticalStrut(10));
 			
 			JPanel blocTalent = new JPanel(new GridLayout(4, 1, 10, 10));
-			blocTalent.setBackground(Consts.UIColor[1]);
+			blocTalent.setBackground(Design.UIColor[1]);
 			
 			for(int j = 0; j < 4; j++) {
 				JPanel lineTalent = new JPanel(new GridLayout(1, 4, 5, 5));
-				lineTalent.setBackground(Consts.UIColor[0]);
+				lineTalent.setBackground(Design.UIColor[0]);
 				lineTalent.add(this.radioTalent.get(i*4+j).get(0));
 				
 				for(int k = 0; k < 3; k++) {
 					JPanel singleTalent = new JPanel();
 					singleTalent.setLayout(new BoxLayout(singleTalent, BoxLayout.Y_AXIS));
-					singleTalent.setBackground(Consts.UIColor[0]);
+					singleTalent.setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).setAlignmentX(CENTER_ALIGNMENT);
 					singleTalent.add(this.radioTalent.get(i*4+j).get(k+1));
 					singleTalent.add(Box.createVerticalStrut(5));
@@ -208,7 +207,7 @@ public class PageTalent extends PagePanel {
 				JPanel subtitle = new JPanel();
 				subtitle.setLayout(new BoxLayout(subtitle, BoxLayout.Y_AXIS));
 				subtitle.setBorder(new EmptyBorder(5, 5, 5, 5));
-				subtitle.setBackground(Consts.UIColor[0]);
+				subtitle.setBackground(Design.UIColor[0]);
 				this.label[i*4+j+3].setFont(new Font("Open Sans", Font.PLAIN, 14));
 				subtitle.add(this.label[i*4+j+3]);
 				subtitle.add(lineTalent);
@@ -227,7 +226,7 @@ public class PageTalent extends PagePanel {
 		this.add(Box.createVerticalStrut(10));
 		
 		JPanel elem3 = new JPanel(new GridLayout(1, 1));
-		elem3.setBackground(Consts.UIColor[1]);
+		elem3.setBackground(Design.UIColor[1]);
 		elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.maxTalent.setMinimumSize(new Dimension(0, 30));
 		elem3.add(maxTalent);

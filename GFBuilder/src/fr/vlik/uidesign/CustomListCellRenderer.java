@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Archive;
@@ -17,6 +16,7 @@ import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Buff;
 import fr.vlik.grandfantasia.Bullet;
+import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Costume;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Equipment;
@@ -78,7 +78,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			Grade grade = (Grade) value;
 			renderer.setIcon(new ImageIcon(grade.getIcon()));
 			renderer.setText(grade.getName(lang.index));
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 		} else if(value instanceof Title) {
 			Title title = (Title) value;
 			renderer.setText(title.getName());
@@ -87,7 +87,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		} else if(value instanceof Yggdrasil) {
 			Yggdrasil yggdrasil = (Yggdrasil) value;
 			renderer.setText(yggdrasil.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 			renderer.setToolTipText(yggdrasil.getTooltip());
 		} else if(value instanceof Genki) {
 			Genki genki = (Genki) value;
@@ -138,30 +138,30 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			Skill skill = (Skill) value;
 			renderer.setIcon(new ImageIcon(skill.getIcon()));
 			renderer.setText("Lvl " + skill.getLvl()[0] + " - " + skill.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 			renderer.setToolTipText(skill.getTooltip(0));
 		} else if(value instanceof ProSkill) {
 			ProSkill proSkill = (ProSkill) value;
 			renderer.setIcon(new ImageIcon(proSkill.getIcon()));
 			renderer.setText("Lvl " + proSkill.getLvl() + " - " + proSkill.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 			renderer.setToolTipText(proSkill.getTooltip(0));
 		} else if(value instanceof Blason) {
 			Blason blason = (Blason) value;
 			renderer.setIcon(new ImageIcon(blason.getIcon()));
 			renderer.setText("Lvl " + blason.getLvl() + " - " + blason.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 			renderer.setToolTipText(blason.getTooltip());
 		} else if(value instanceof GuildBuff) {
 			GuildBuff guildBuff = (GuildBuff) value;
 			renderer.setIcon(new ImageIcon(guildBuff.getIcon()));
 			renderer.setText(guildBuff.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 			renderer.setToolTipText(guildBuff.getTooltip());
 		} else if(value instanceof Buff) {
 			Buff buff = (Buff) value;
 			renderer.setText(buff.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 			renderer.setToolTipText(buff.getTooltip());
 		} else if(value instanceof Bague) {
 			Bague bague = (Bague) value;
@@ -190,11 +190,11 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		} else if(value instanceof Enchantment) {
 			Enchantment enchant = (Enchantment) value;
 			renderer.setText(enchant.getName());
-			renderer.setForeground(Consts.FontColor[0]);
+			renderer.setForeground(Design.FontColor[0]);
 		}
 		
-		if (cellHasFocus || isSelected) renderer.setBackground(Consts.UIColor[1]);
-		else renderer.setBackground(Consts.UIColor[0]);
+		if (cellHasFocus || isSelected) renderer.setBackground(Design.UIColor[1]);
+		else renderer.setBackground(Design.UIColor[0]);
 		
 		return renderer;
 	}

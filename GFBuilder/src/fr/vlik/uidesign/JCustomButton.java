@@ -10,7 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.MainFrame;
 
 public class JCustomButton extends JButton{
@@ -55,15 +54,15 @@ public class JCustomButton extends JButton{
 	
 	public void setBlackUI() {
 		this.setUI((ButtonUI) BasicButtonUI.createUI(this));
-		this.setBackground(Consts.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 16));
-		this.setForeground(Consts.FontColor[0]);
+		this.setForeground(Design.FontColor[0]);
 	}
 	
 	public void setVoidUI() {
-		this.setBackground(Consts.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);

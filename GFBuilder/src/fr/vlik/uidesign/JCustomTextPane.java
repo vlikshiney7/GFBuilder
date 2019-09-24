@@ -5,8 +5,6 @@ import java.awt.Font;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
-
 public class JCustomTextPane extends JTextPane {
 	
 	private static final long serialVersionUID = 1L;
@@ -24,10 +22,10 @@ public class JCustomTextPane extends JTextPane {
 	}
 	
 	public void setBlackUI() {
-		this.setBackground(Consts.UIColor[1]);
+		this.setBackground(Design.UIColor[1]);
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.setEditable(false);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.setForeground(Consts.FontColor[0]);
+		this.setForeground(Design.FontColor[0]);
 	}
 }

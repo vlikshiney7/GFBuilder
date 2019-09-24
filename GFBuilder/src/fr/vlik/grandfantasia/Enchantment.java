@@ -10,53 +10,72 @@ import java.util.Map;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Effect.TypeEffect;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Quality;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
 
 public class Enchantment {
 	
-	public static final int[] EpMaHaMe45 = { 24, 25, 26, 27, 28, 8, 9, 10, 11, 14, 15, 21, 29 };
-	public static final int[] ArcGunCanCle45 = { 24, 25, 26, 27, 28, 8, 9, 10, 11, 15, 22, 29 };
-	public static final int[] BatonLame45 = { 24, 25, 26, 27, 28, 8, 9, 12, 13, 14, 15, 17, 19, 23, 29 };
-	public static final int[] Rel45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 7, 12, 13, 15, 16, 20, 23 };
-	public static final int[] Bou45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 15, 18, 19, 30 };
-	
-	public static final int[] EpMaHaMe6 = { 24, 25, 26, 27, 28, 29 };
-	public static final int[] ArcGunCanCle6 = { 24, 25, 26, 27, 28, 29 };
-	public static final int[] BatonLame6 = { 24, 25, 26, 27, 28, 14, 29 };
-	public static final int[] Rel6 = { 24, 25, 26, 27, 28, 16 };
-	public static final int[] Bou6 = { 24, 25, 26, 27, 28, 30 };
-	
-	public static final int[] Armor45 = { 24, 25, 26, 27, 28, 0, 1, 2, 3, 4, 5, 6, 7, 17, 18, 19, 20 };
-	public static final int[] Armor6 = { 24, 25, 26, 27, 28, 6 };
-	
-	public static final int[] CapeRing = { 24, 25, 26, 27, 28, 6 };
-	
 	private static Enchantment[] data;
+	private static Enchantment[] redData;
 	private static ArrayList<ArrayList<Map<Quality, Map<Integer, ArrayList<Integer>>>>> value = new ArrayList<ArrayList<Map<Quality, Map<Integer, ArrayList<Integer>>>>>();
 	static {
 		loadData();
 	}
 	
 	private String name;
+	private WeaponType[][] type;
+	private boolean[] armor;
+	private boolean capering;
 	private boolean fixValue;
+	private int nbLvl;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Enchantment() {
 		this.name = " ";
 	}
 	
-	public Enchantment(String name, boolean isFix, ArrayList<Effect> effects) {
+	public Enchantment(String name, WeaponType[][] type, boolean[] armor, boolean capering, boolean fixValue, ArrayList<Effect> effects) {
 		this.name = name;
+		this.type = type;
+		this.armor = armor;
+		this.capering = capering;
+		this.fixValue = fixValue;
 		this.effects = effects;
 	}
 	
+	public Enchantment(String name, WeaponType[] type, boolean armor, int nbLvl, ArrayList<Effect> effects) {
+		this.name = name;
+		this.type = new WeaponType[1][];
+		this.type[0] = type;
+		this.armor = new boolean[1];
+		this.armor[0] = armor;
+		this.nbLvl = nbLvl;
+		this.effects = effects;
+	}
+
 	public String getName() {
 		return this.name;
 	}
 	
+	public boolean isArmor(Quality quality) {
+		if(quality == Quality.ORANGE || quality == Quality.GOLD || quality == Quality.RED) {
+			return this.armor[0];
+		} else if(quality == Quality.PURPLE) {
+			return this.armor[1];
+		}
+		
+		return false;
+	}
+	
+	public boolean isCapeRing() {
+		return this.capering;
+	}
+	
 	public boolean isFixValue() {
 		return this.fixValue;
+	}
+	
+	public int getNbLvl() {
+		return this.nbLvl;
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -67,25 +86,98 @@ public class Enchantment {
 		return list;
 	}
 	
+	public boolean containType(WeaponType type, Quality quality) {
+		if(type == WeaponType.NONE) {
+			return false;
+		}
+		
+		if(quality == Quality.ORANGE || quality == Quality.GOLD || quality == Quality.RED) {
+			for(WeaponType element : this.type[0]) {
+				if(element == type) {
+					return true;
+				}
+			}
+		} else if(quality == Quality.PURPLE) {
+			for(WeaponType element : this.type[1]) {
+				if(element == type) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
 	public static void loadData() {
 		ArrayList<Enchantment> list = new ArrayList<Enchantment>();
+		ArrayList<Enchantment> redList = new ArrayList<Enchantment>();
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/enchantement.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
-			while (line != null) {
+			while (!line.equals("")) {
 				String[] lineSplit = line.split("/");
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
-					effects.add(new Effect(lineSplit[j+3]));
+				WeaponType[][] type = new WeaponType[2][];
+				for(int i = 0; i < 2; i++) {
+					String[] weaponType = lineSplit[i+1].split(",");
+					WeaponType[] byQuality = new WeaponType[weaponType.length];
+					
+					for(int j = 0; j < weaponType.length; j++) {
+						if(Integer.parseInt(weaponType[j]) == -1) {
+							byQuality[j] = WeaponType.values()[17];
+						} else {
+							byQuality[j] = WeaponType.values()[Integer.parseInt(weaponType[j])];
+						}
+					}
+					
+					type[i] = byQuality;
+				}
 				
-				list.add(new Enchantment(lineSplit[0], Boolean.parseBoolean(lineSplit[1]), effects));
+				String[] armorSplit = lineSplit[3].split(",");
+				boolean[] armor = new boolean[3];
+				for(int i = 0; i < 2; i++) {
+					armor[i] = Boolean.parseBoolean(armorSplit[i]);
+				}
+				
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[5]));
+				for(int j = 0; j < Integer.parseInt(lineSplit[5]); j++) {
+					effects.add(new Effect(lineSplit[j+6]));
+				}
+				
+				list.add(new Enchantment(lineSplit[0], type, armor, Boolean.parseBoolean(armorSplit[2]), Boolean.parseBoolean(lineSplit[4]), effects));
 				
 				line = reader.readLine();
 			}
+			
+			line = reader.readLine();
+			
+			while(line != null) {
+				String[] lineSplit = line.split("/");
+				
+				String[] weaponType = lineSplit[1].split(",");
+				WeaponType[] type = new WeaponType[weaponType.length];
+				
+				for(int j = 0; j < weaponType.length; j++) {
+					if(Integer.parseInt(weaponType[j]) == -1) {
+						type[j] = WeaponType.values()[17];
+					} else {
+						type[j] = WeaponType.values()[Integer.parseInt(weaponType[j])];
+					}
+				}
+				
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[4]));
+				for(int i = 0; i < Integer.parseInt(lineSplit[4]); i++) {
+					effects.add(new Effect(lineSplit[i+5]));
+				}
+				
+				redList.add(new Enchantment(lineSplit[0], type, Boolean.parseBoolean(lineSplit[2]), Integer.parseInt(lineSplit[3]), effects));
+				
+				line = reader.readLine();
+			}
+			
 		} catch (IOException e) {
 			System.out.println("Error with " + Enchantment.class.getClass().getSimpleName() + " class");
 		}
@@ -93,6 +185,11 @@ public class Enchantment {
 		Enchantment.data = new Enchantment[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			Enchantment.data[i] = list.get(i);
+		}
+		
+		Enchantment.redData = new Enchantment[redList.size()];
+		for(int i = 0; i < redData.length; i++) {
+			Enchantment.redData[i] = redList.get(i);
 		}
 		
 		
@@ -149,55 +246,9 @@ public class Enchantment {
 		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
 		result.add(new Enchantment());
 		
-		if(type.index < 8) {
-			if(quality == Quality.ORANGE || quality == Quality.GOLD) {
-				for(int index : Enchantment.EpMaHaMe45) {
-					result.add(Enchantment.data[index]);
-				}
-			} else if(quality == Quality.PURPLE) {
-				for(int index : Enchantment.EpMaHaMe6) {
-					result.add(Enchantment.data[index]);
-				}
-			}
-		} else if(type.index < 11 || type == WeaponType.CLE) {
-			if(quality == Quality.ORANGE || quality == Quality.GOLD) {
-				for(int index : Enchantment.ArcGunCanCle45) {
-					result.add(Enchantment.data[index]);
-				}
-			} else if(quality == Quality.PURPLE) {
-				for(int index : Enchantment.ArcGunCanCle6) {
-					result.add(Enchantment.data[index]);
-				}
-			}
-		} else if(type == WeaponType.RELIQUE) {
-			if(quality == Quality.ORANGE || quality == Quality.GOLD) {
-				for(int index : Enchantment.Rel45) {
-					result.add(Enchantment.data[index]);
-				}
-			} else if(quality == Quality.PURPLE) {
-				for(int index : Enchantment.Rel6) {
-					result.add(Enchantment.data[index]);
-				}
-			}
-		} else if(type == WeaponType.BATON || type == WeaponType.LAME) {
-			if(quality == Quality.ORANGE || quality == Quality.GOLD) {
-				for(int index : Enchantment.BatonLame45) {
-					result.add(Enchantment.data[index]);
-				}
-			} else if(quality == Quality.PURPLE) {
-				for(int index : Enchantment.BatonLame6) {
-					result.add(Enchantment.data[index]);
-				}
-			}
-		} else if(type == WeaponType.BOUCLIER) {
-			if(quality == Quality.ORANGE || quality == Quality.GOLD) {
-				for(int index : Enchantment.Bou45) {
-					result.add(Enchantment.data[index]);
-				}
-			} else if(quality == Quality.PURPLE) {
-				for(int index : Enchantment.Bou6) {
-					result.add(Enchantment.data[index]);
-				}
+		for(Enchantment enchant : Enchantment.data) {
+			if(enchant.containType(type, quality)) {
+				result.add(enchant);
 			}
 		}
 		
@@ -213,13 +264,9 @@ public class Enchantment {
 		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
 		result.add(new Enchantment());
 		
-		if(quality == Quality.ORANGE || quality == Quality.GOLD) {
-			for(int index : Enchantment.Armor45) {
-				result.add(Enchantment.data[index]);
-			}
-		} else if(quality == Quality.PURPLE) {
-			for(int index : Enchantment.Armor6) {
-				result.add(Enchantment.data[index]);
+		for(Enchantment enchant : Enchantment.data) {
+			if(enchant.isArmor(quality)) {
+				result.add(enchant);
 			}
 		}
 		
@@ -235,8 +282,62 @@ public class Enchantment {
 		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
 		result.add(new Enchantment());
 		
-		for(int index : Enchantment.CapeRing) {
-			result.add(Enchantment.data[index]);
+		for(Enchantment enchant : Enchantment.data) {
+			if(enchant.isCapeRing()) {
+				result.add(enchant);
+			}
+		}
+		
+		Enchantment[] cast = new Enchantment[result.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = result.get(i);
+		}
+		
+		return cast;
+	}
+	
+	public static Enchantment[] getWeaponRedEnchant(WeaponType type, Enchantment ignore1, Enchantment ignore2) {
+		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
+		result.add(new Enchantment());
+		
+		for(Enchantment enchant : Enchantment.redData) {
+			if(enchant.containType(type, Quality.RED)) {
+				result.add(enchant);
+			}
+		}
+		
+		if(ignore1 != null && !ignore1.equals(new Enchantment())) {
+			result.remove(ignore1);
+		}
+		
+		if(ignore2 != null && !ignore2.equals(new Enchantment())) {
+			result.remove(ignore2);
+		}
+		
+		Enchantment[] cast = new Enchantment[result.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = result.get(i);
+		}
+		
+		return cast;
+	}
+	
+	public static Enchantment[] getArmorRedEnchant(Enchantment ignore1, Enchantment ignore2) {
+		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
+		result.add(new Enchantment());
+		
+		for(Enchantment enchant : Enchantment.redData) {
+			if(enchant.isArmor(Quality.RED)) {
+				result.add(enchant);
+			}
+		}
+		
+		if(ignore1 != null && !ignore1.equals(new Enchantment())) {
+			result.remove(ignore1);
+		}
+		
+		if(ignore2 != null && !ignore2.equals(new Enchantment())) {
+			result.remove(ignore2);
 		}
 		
 		Enchantment[] cast = new Enchantment[result.size()];
@@ -264,6 +365,10 @@ public class Enchantment {
 				return Enchantment.value.get(3).get(0).get(quality).get(lvl).get(0);
 			}
 		} catch (NullPointerException e) {
+			System.out.println("Enchantment missing :\n"
+					+ "- Type : " + weaponType + "\n"
+					+ "- Quality : " + quality + "\n"
+					+ "- Effect : " + type + "\n");
 			return 0;
 		}
 		return 0;
@@ -286,6 +391,10 @@ public class Enchantment {
 				return Enchantment.value.get(2).get(0).get(quality).get(lvl).get(0);
 			}
 		} catch (NullPointerException e) {
+			System.out.println("Enchantment missing :\n"
+					+ "- Type : Armor\n"
+					+ "- Quality : " + quality + "\n"
+					+ "- Effect : " + type + "\n");
 			return 0;
 		}
 		return 0;
@@ -302,6 +411,10 @@ public class Enchantment {
 				return Enchantment.value.get(2).get(1).get(quality).get(lvl).get(0);
 			}
 		} catch (NullPointerException e) {
+			System.out.println("Enchantment missing :\n"
+					+ "- Type : Cape\n"
+					+ "- Quality : " + quality + "\n"
+					+ "- Effect : " + type + "\n");
 			return 0;
 		}
 		return 0;
@@ -318,8 +431,16 @@ public class Enchantment {
 				return Enchantment.value.get(2).get(1).get(quality).get(lvl).get(0);
 			}
 		} catch (NullPointerException e) {
+			System.out.println("Enchantment missing :\n"
+					+ "- Type : Ring\n"
+					+ "- Quality : " + quality + "\n"
+					+ "- Effect : " + type + "\n");
 			return 0;
 		}
 		return 0;
+	}
+	
+	public static Effect multiplyEffect(Effect effect, int lvl) {
+		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * lvl, effect.getWithReinca(), effect.getWithWeapon(), effect.getTransfert());
 	}
 }

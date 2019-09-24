@@ -13,14 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Speciality;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -43,7 +42,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	private PageSpeciality() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
@@ -56,7 +55,6 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
 				this.spePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
-				this.spePoint.get(numSpe).setRenderer(new CustomListCellRenderer());
 				this.spePoint.get(numSpe).addActionListener(e -> {
 					updateSpeElement();
 					updateSpePoint();
@@ -110,16 +108,16 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	@Override
 	protected void createPanel() {
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.setBackground(Consts.UIColor[1]);
+		this.setBackground(Design.UIColor[1]);
 		this.add(this.label[0]);
 		this.add(Box.createVerticalStrut(10));
 		
 		JPanel remain = new JPanel();
-		remain.setBackground(Consts.UIColor[1]);
+		remain.setBackground(Design.UIColor[1]);
 		this.label[1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		remain.add(this.label[1]);
 		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
-		this.nbSpePoint.setForeground(Consts.FontColor[0]);
+		this.nbSpePoint.setForeground(Design.FontColor[0]);
 		remain.add(this.nbSpePoint);
 		
 		this.add(remain);
@@ -127,9 +125,9 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		
 		
 		JPanel catSpe = new JPanel(new GridLayout(4, 1));
-		catSpe.setBackground(Consts.UIColor[1]);
+		catSpe.setBackground(Design.UIColor[1]);
 		JPanel gridSpe = new JPanel(new GridLayout(4, 6, 5, 5));
-		gridSpe.setBackground(Consts.UIColor[1]);
+		gridSpe.setBackground(Design.UIColor[1]);
 		
 		int numSpe = 0;
 		
@@ -144,7 +142,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 				panelSpe.setLayout(new BoxLayout(panelSpe, BoxLayout.Y_AXIS));
 				panelSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
 				panelSpe.setPreferredSize(new Dimension(46, 65));
-				panelSpe.setBackground(Consts.UIColor[0]);
+				panelSpe.setBackground(Design.UIColor[0]);
 				this.iconSpe.get(numSpe).setAlignmentX(CENTER_ALIGNMENT);
 				panelSpe.add(this.iconSpe.get(numSpe));
 				panelSpe.add(Box.createVerticalStrut(5));
@@ -156,13 +154,13 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			}
 			for(int j = k; j < 6; j++) {
 				JPanel voidPanel = new JPanel();
-				voidPanel.setBackground(Consts.UIColor[1]);
+				voidPanel.setBackground(Design.UIColor[1]);
 				gridSpe.add(voidPanel);
 			}
 		}
 		
 		JPanel elem1 = new JPanel();
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(catSpe);
 		elem1.add(Box.createHorizontalStrut(10));
 		elem1.add(gridSpe);

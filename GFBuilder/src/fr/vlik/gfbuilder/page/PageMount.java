@@ -13,18 +13,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Util;
 import fr.vlik.gfbuilder.Effect.TypeEffect;
 import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.Weapon.WeaponType;
-import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomRadioButton;
@@ -51,14 +51,12 @@ public class PageMount extends PagePanel {
 	}
 	
 	private PageMount() {
-		super(null, Consts.UIColor[2]);
+		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
 		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca() == 1);
 		this.mount = new JCustomComboBox<Mount>(tabMount);
-		this.mount.setFont(new Font("Open Sans", Font.PLAIN, 12));
-		this.mount.setRenderer(new CustomListCellRenderer());
 		this.mount.addActionListener(e -> {
 			updateXpStuff();
 			
@@ -73,7 +71,6 @@ public class PageMount extends PagePanel {
 		}
 		for(int i = 0; i < 2; i++) {
 			this.effectXpStuff.add(new JCustomComboBox<String>(tmp));
-			this.effectXpStuff.get(i).setRenderer(new CustomListCellRenderer());
 			this.effectXpStuff.get(i).addActionListener(e -> {
 				updateLvlXpStuff();
 
@@ -84,7 +81,6 @@ public class PageMount extends PagePanel {
 			
 			int duo = i;
 			this.lvlXpStuff.add(new JCustomComboBox<String>());
-			this.lvlXpStuff.get(i).setRenderer(new CustomListCellRenderer());
 			this.lvlXpStuff.get(i).addActionListener(e -> {
 				updateMaxLvlValue(duo);
 				
@@ -102,7 +98,7 @@ public class PageMount extends PagePanel {
 			for(int j = 0; j < 6; j++) {
 				this.label[i*7+j+3].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.qualityGenki.get(i).add(new JCustomRadioButton(this.label[i*7+j+3], "radio0" + j, "radioOff"));
-				this.qualityGenki.get(i).get(j).setBackground(Consts.UIColor[1]);
+				this.qualityGenki.get(i).get(j).setBackground(Design.UIColor[1]);
 				this.qualityGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
 				this.qualityGenki.get(i).get(j).addActionListener(e -> {
 					updateQualityGenki(id);
@@ -128,8 +124,6 @@ public class PageMount extends PagePanel {
 			}
 			
 			this.genki.add(new JCustomComboBox<Genki>());
-			
-			this.genki.get(i).setRenderer(new CustomListCellRenderer());
 			this.genki.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -194,12 +188,12 @@ public class PageMount extends PagePanel {
 	@Override
 	protected void createPanel() {
 		JPanel xpRide = new JPanel(new GridLayout(1, 3, 10, 3));
-		xpRide.setBackground(Consts.UIColor[1]);
+		xpRide.setBackground(Design.UIColor[1]);
 		this.label[1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		xpRide.add(this.label[1]);
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-			xp.setBackground(Consts.UIColor[1]);
+			xp.setBackground(Design.UIColor[1]);
 			xp.add(this.effectXpStuff.get(i));
 			xp.add(this.lvlXpStuff.get(i));
 			xpRide.add(xp);
@@ -208,7 +202,7 @@ public class PageMount extends PagePanel {
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Consts.UIColor[1]);
+		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(this.mount);
@@ -225,12 +219,12 @@ public class PageMount extends PagePanel {
 			JPanel starPanel = new JPanel();
 			ButtonGroup quality = new ButtonGroup();
 			
-			qualityPanel.setBackground(Consts.UIColor[1]);
-			qualityPanel.setForeground(Consts.FontColor[0]);
+			qualityPanel.setBackground(Design.UIColor[1]);
+			qualityPanel.setForeground(Design.FontColor[0]);
 			qualityPanel.setBorder(null);
 			
-			starPanel.setBackground(Consts.UIColor[1]);
-			starPanel.setForeground(Consts.FontColor[0]);
+			starPanel.setBackground(Design.UIColor[1]);
+			starPanel.setForeground(Design.FontColor[0]);
 			starPanel.setBorder(null);
 			
 			for(int j = 0; j < 6; j++) {
@@ -245,7 +239,7 @@ public class PageMount extends PagePanel {
 			JPanel page5ElemI = new JPanel();
 			page5ElemI.setLayout(new BoxLayout(page5ElemI, BoxLayout.Y_AXIS));
 			page5ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page5ElemI.setBackground(Consts.UIColor[1]);
+			page5ElemI.setBackground(Design.UIColor[1]);
 			page5ElemI.add(this.label[i*7+2]);
 			page5ElemI.add(Box.createVerticalStrut(10));
 			page5ElemI.add(qualityPanel);

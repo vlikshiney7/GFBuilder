@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Color;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 
@@ -9,6 +8,7 @@ import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.uidesign.Design;
 
 public abstract class PagePanel extends JPanel {
 	
@@ -17,10 +17,14 @@ public abstract class PagePanel extends JPanel {
 	protected ArrayList<Effect> effects;
 	protected JLabel[] label;
 	
+	public PagePanel() {
+		super();
+		this.setBackground(Design.UIColor[2]);
+	}
 	
-	public PagePanel(LayoutManager layout, Color color) {
+	public PagePanel(LayoutManager layout) {
 		super(layout);
-		this.setBackground(color);
+		this.setBackground(Design.UIColor[2]);
 	}
 
 	public ArrayList<Effect> getEffects() {

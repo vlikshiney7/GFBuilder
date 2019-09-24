@@ -9,10 +9,8 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public final class Armor extends Equipment {

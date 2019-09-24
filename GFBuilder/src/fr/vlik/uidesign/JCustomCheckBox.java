@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.MainFrame;
 
 public class JCustomCheckBox extends JCheckBox {
@@ -40,7 +39,7 @@ public class JCustomCheckBox extends JCheckBox {
 	}
 	
 	public void setVoidUI() {
-		this.setBackground(Consts.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);

@@ -11,7 +11,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
 
-import fr.vlik.gfbuilder.Consts;
 import fr.vlik.gfbuilder.MainFrame;
 
 public class JCustomTabPane extends JToggleButton {
@@ -24,16 +23,16 @@ public class JCustomTabPane extends JToggleButton {
 
 	public JCustomTabPane(String text) {
 		super(text);
-		this.setBackground(Consts.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		super.setContentAreaFilled(false);
-		this.setSelectedBackgroundColor(Consts.UIColor[1]);
+		this.setSelectedBackgroundColor(Design.UIColor[1]);
 		this.setFocusPainted(false);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 24));
-		this.setForeground(Consts.FontColor[0]);
-		this.setHoverBackgroundColor(Consts.UIColor[2]);
+		this.setForeground(Design.FontColor[0]);
+		this.setHoverBackgroundColor(Design.UIColor[2]);
 		this.setPreferredSize(new Dimension(160, 0));
-		this.setPressedBackgroundColor(Consts.UIColor[1]);
+		this.setPressedBackgroundColor(Design.UIColor[1]);
 	}
 	
 	public JCustomTabPane(String icon1, String icon2) {
@@ -61,10 +60,10 @@ public class JCustomTabPane extends JToggleButton {
 		
 		super.setDisabledIcon(new ImageIcon(object));
 		
-		super.setBackground(Consts.UIColor[0]);
-		this.setSelectedBackgroundColor(Consts.UIColor[0]);
-		this.setHoverBackgroundColor(Consts.UIColor[2]);
-		this.setPressedBackgroundColor(Consts.UIColor[1]);
+		super.setBackground(Design.UIColor[0]);
+		this.setSelectedBackgroundColor(Design.UIColor[0]);
+		this.setHoverBackgroundColor(Design.UIColor[2]);
+		this.setPressedBackgroundColor(Design.UIColor[1]);
 		super.setBorder(null);
 		super.setContentAreaFilled(false);
 		super.setFocusPainted(false);
