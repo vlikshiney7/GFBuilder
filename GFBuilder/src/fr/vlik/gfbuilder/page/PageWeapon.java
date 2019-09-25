@@ -51,7 +51,7 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<Enchantment>> redEnchant = new ArrayList<JCustomComboBox<Enchantment>>(9);
 	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(9);
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(3);
-	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>();
+	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>(3);
 	
 	private WeaponType[] weaponType = new WeaponType[3];
 	
@@ -92,8 +92,8 @@ public class PageWeapon extends PagePanel {
 			this.enchant.get(i).setVisible(false);
 			
 			/* FORTIF */
-			String[] nameFortif = { "+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20" };
-			this.fortif.add(new JCustomComboBox<String>(nameFortif));
+			String[] labelFortif = Util.setFortifFormat(20);
+			this.fortif.add(new JCustomComboBox<String>(labelFortif));
 			this.fortif.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -101,14 +101,8 @@ public class PageWeapon extends PagePanel {
 			this.fortif.get(i).setVisible(false);
 			
 			/* RED FORTIF */
-			String[] redFortif = { "+0",
-					"+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10",
-					"+11", "+12", "+13", "+14", "+15", "+16", "+17", "+18", "+19", "+20",
-					"+21", "+22", "+23", "+24", "+25", "+26", "+27", "+28", "+29", "+30",
-					"+31", "+32", "+33", "+34", "+35", "+36", "+37", "+38", "+39", "+40",
-					"+41", "+42", "+43", "+44", "+45", "+46", "+47", "+48", "+49", "+50"
-			};
-			this.redFortif.add(new JCustomComboBox<String>(redFortif));
+			labelFortif = Util.setFortifFormat(50);
+			this.redFortif.add(new JCustomComboBox<String>(labelFortif));
 			this.redFortif.get(i).addActionListener(e -> {
 				updateValueFortif(id);
 				

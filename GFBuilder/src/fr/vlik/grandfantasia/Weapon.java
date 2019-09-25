@@ -20,9 +20,9 @@ public class Weapon extends Equipment {
 		loadData();
 	}
 	
-	private WeaponType type;
-	private boolean uniqueEquip;
-	private boolean reinca;
+	protected WeaponType type;
+	protected boolean uniqueEquip;
+	protected boolean reinca;
 	
 	public Weapon() {
 		super("Rien", new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, new ArrayList<Effect>(), new ArrayList<Effect>());

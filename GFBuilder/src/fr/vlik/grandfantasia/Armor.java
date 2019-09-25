@@ -13,7 +13,7 @@ import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
-public final class Armor extends Equipment {
+public class Armor extends Equipment {
 	
 	public static Armor[][] data;
 	static {
@@ -186,31 +186,62 @@ public final class Armor extends Equipment {
 					
 					String[] effectSplit = lineSplit[7].split(",");
 					
-					assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
-							: armorFile[i] + " line " + (list.get(i+1).size() + 1);
-					
 					ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
 					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
 						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 					
-					if(Integer.parseInt(effectSplit[0]) > -1) {
+					if(quality == Quality.RED) {
 						ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
 						for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 							effects.add(new Effect(lineSplit[j+8]));
 						
-						Armor armor = new Armor(
-								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-								lineSplit[3], path, effects, bonusXP
-								);
-						list.get(i).add(armor);
-					} else {
-						MultiEffect effects = MultiEffect.getFromCode(lineSplit[8]);
+						int indexToStar = 8 + Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])+Integer.parseInt(effectSplit[2]);
+						String[] starEffectSplit = lineSplit[indexToStar].split(",");
 						
-						Armor armor = new Armor(
+						ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
+						int decal = 0;
+						
+						for(int j = 0; j < starEffectSplit.length; j++) {
+							ArrayList<Effect> oneStarEffects = new ArrayList<Effect>();
+							for(int k = 0; k < Integer.parseInt(starEffectSplit[j]); k++) {
+								oneStarEffects.add(new Effect(lineSplit[indexToStar+2+decal]));
+							}
+							
+							decal += Integer.parseInt(starEffectSplit[j]);
+							starEffects.add(oneStarEffects);
+						}
+						
+						RedArmor red = new RedArmor(
 								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-								lineSplit[3], path, effects, bonusXP
+								lineSplit[3], path, effects, bonusXP,
+								starEffects
 								);
-						list.get(i).add(armor);
+						
+						list.get(i+1).add(red);
+						
+					} else {
+						assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
+								: armorFile[i] + " line " + (list.get(i+1).size() + 1);
+						
+						if(Integer.parseInt(effectSplit[0]) > -1) {
+							ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+							for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
+								effects.add(new Effect(lineSplit[j+8]));
+							
+							Armor armor = new Armor(
+									lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+									lineSplit[3], path, effects, bonusXP
+									);
+							list.get(i).add(armor);
+						} else {
+							MultiEffect effects = MultiEffect.getFromCode(lineSplit[8]);
+							
+							Armor armor = new Armor(
+									lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+									lineSplit[3], path, effects, bonusXP
+									);
+							list.get(i).add(armor);
+						}
 					}
 					
 					line = reader.readLine();
