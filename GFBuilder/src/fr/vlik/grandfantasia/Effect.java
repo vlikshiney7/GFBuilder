@@ -1,6 +1,6 @@
-package fr.vlik.gfbuilder;
+package fr.vlik.grandfantasia;
 
-import fr.vlik.grandfantasia.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 
 public class Effect {
 	
@@ -95,7 +95,7 @@ public class Effect {
 		tooltip.append(this.isPercent ? "%" : "");
 		return tooltip;
 	}
-	
+	/*
 	public static enum TypeEffect {
 		FCE, VIT, INT, VOL, AGI, Atk, AtkD, AtkM, DefP, DefM,
 		TCCP, TCCM, ESQ, Sacre, Ombre, Foudre, Feu, Glace, Nature, Toucher,
@@ -106,7 +106,7 @@ public class Effect {
 		DegSacre, DegOmbre, DegFoudre, DegFeu, DegGlace, DegNature, IntComp, CostComp, ReloadComp, Parade,
 		DegStdEp, DegStdMa, DegStdHa, DegStd2Ep, DegStd2Ma, DegStd2Ha, DegStdArc, DegStdGun, DegStdBa, DegStdLa, DegAtkD, RDegAtkD, RegenPV, RegenPM, MEN,
 		BoostCraft, TimeCraft, HealD, HealR, Bullet, Reflect, Depla;
-	}
+	}*/
 	
 	@Override
 	public String toString() {
@@ -142,6 +142,32 @@ public class Effect {
 				default:			result += "";									break;
 			}
 		}
+		
+		return result;
+	}
+	
+	public String toString(Language lang) {
+		String result = "";
+		
+		if(lang == Language.FR) {
+			result = this.getType().fr;
+		} else {
+			result = this.getType().en;
+		}
+		
+		result += (this.getValue() < 0 ? " " : " +");
+		result += (int) this.getValue() + (this.isPercent ? "%" : "");
+		if(this.withWeapon != WeaponType.NONE) {
+			if(lang == Language.FR) {
+				result += " si équipé d'";
+				result += this.withWeapon.fr;
+			} else {
+				result += " if equip with ";
+				result += this.withWeapon.en;
+			}
+			
+		}
+		
 		return result;
 	}
 }

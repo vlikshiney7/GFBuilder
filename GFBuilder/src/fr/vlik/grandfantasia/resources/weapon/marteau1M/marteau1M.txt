@@ -77,13 +77,13 @@ Maillet du Poursuivant/0,1,4,5/28/4/true/true/false/6,0,0/Atk,false,598,true/Atk
 Poinçon de l'Ecaille Rouge/0,1/28/4/true/false/false/6,0,0/Atk,false,610,true/AtkM,false,350,true/FCE,false,5,true/VIT,false,10,true/Toucher,false,4/TCCM,false,1/28ora0
 Poing de Thor/0,1,4,5/28/3/false/false/false/4,0,0/Atk,false,683,true/AtkM,false,393,true/VIT,false,12,true/INT,false,8,true/38ora0
 Maillet à Corne des Sprites/0,1,4,5/24/2/false/false/false/3,0,0/Atk,false,430,true/AtkM,false,247,true/INT,false,4,true/96sprite
-Marteau de Combat/0,1,4,5/24/1/true/false/false/2,0,0/Atk,false,358,true/AtkM,false,206,true/24blanc
+Marteau de Combat/0,1,4,5/24/1/false/false/false/2,0,0/Atk,false,358,true/AtkM,false,206,true/24blanc
 Maillet à Corne/0,1,4,5/20/1/false/false/false/2,0,0/Atk,false,292,true/AtkM,false,168,true/96sprite
 Marteau Lunaire/0,1,4,5/18/4/true/true/false/5,0,0/Atk,false,365,true/AtkM,false,210,true/FCE,false,3,true/VIT,false,4,true/INT,false,2,true/18ora1
 Marteau d'Impulsion Enflammée/0,1/18/4/true/false/false/6,0,0/Atk,false,372,true/AtkM,false,215,true/FCE,false,4,true/VIT,false,5,true/Toucher,false,2/TCCM,false,1/18ora0
-Maillet de Fer/0,1,4,5/16/1/true/false/false/2,0,0/Atk,false,232,true/AtkM,false,133,true/16sprite
+Maillet de Fer/0,1,4,5/16/1/false/false/false/2,0,0/Atk,false,232,true/AtkM,false,133,true/16sprite
 Marteau de Bois des Sprites Renforcé/0,1,4,5/14/2/false/false/false/3,0,0/Atk,false,244,true/AtkM,false,140,true/INT,false,2,true/14sprite
-Marteau Acéré/0,1,4,5/13/1/true/false/false/2,0,0/Atk,false,189,true/AtkM,false,109,true/13sprite
-Marteau de Bois Renforcé/0,1,4,5/10/1/true/false/false/2,0,0/Atk,false,151,true/AtkM,false,87,true/8sprite
+Marteau Acéré/0,1,4,5/13/1/false/false/false/2,0,0/Atk,false,189,true/AtkM,false,109,true/13sprite
+Marteau de Bois Renforcé/0,1,4,5/10/1/false/false/false/2,0,0/Atk,false,151,true/AtkM,false,87,true/8sprite
 Maillet de Bois des Sprites/0,1,4,5/8/2/false/false/false/3,0,0/Atk,false,152,true/AtkM,false,88,true/INT,false,2,true/8sprite
 Marteau de Bois/0,1,4,5/6/1/false/false/false/2,0,0/Atk,false,105,true/AtkM,false,60,true/8sprite

@@ -5,11 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Buff {
 	
+	public static String PATH = Consts.RESOURCE + "sprite/";
 	private static Buff[] data;
 	static {
 		loadData();
@@ -50,7 +48,7 @@ public class Buff {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/sprites/isle.txt"), "UTF-8"));
+					Buff.class.getResourceAsStream(PATH + "isle.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

@@ -22,10 +22,10 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import fr.vlik.gfbuilder.Effect.TypeEffect;
-import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.gfbuilder.page.*;
-import fr.vlik.grandfantasia.Weapon.WeaponType;
+import fr.vlik.grandfantasia.Language;
+import fr.vlik.grandfantasia.TypeEffect;
+import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 import fr.vlik.uidesign.*;
 
 public class MainFrame extends JFrame {
@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 		setCustomUI();
 		
 		try {
-			this.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/itemIcon.png")));
+			this.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -174,9 +174,9 @@ public class MainFrame extends JFrame {
 			
 			for(int j = 0; j < section[i]; j++) {
 				this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
-				this.valueStat.get(ordinal).setForeground(Design.FontColor[0]);
+				this.valueStat.get(ordinal).setForeground(TypeEffect.values()[ordinal].color);
 				this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
-				this.valueStat.get(ordinal).setPreferredSize(new Dimension(140, 20));
+				this.valueStat.get(ordinal).setPreferredSize(new Dimension(180, 20));
 				
 				blocStat.add(this.valueStat.get(ordinal));
 				
@@ -258,9 +258,24 @@ public class MainFrame extends JFrame {
 		updateLabel(build.calculStatFromEffect());
 	}
 	
-	private void updateLabel(int[] allStats) {
+	private void updateLabel(double[] allStats) {
+		Language lang = this.language.isSelected() ? Language.FR : Language.EN;
+		
 		for(int i = 0; i < this.valueStat.size(); i++) {
-			this.valueStat.get(i).setText(TypeEffect.values()[i].name() + " : " + allStats[i]);
+			String langLabel;
+			if(lang == Language.FR) {
+				langLabel = TypeEffect.values()[i].abbrevFR;
+				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
+			} else {
+				langLabel = TypeEffect.values()[i].abbrevEN;
+				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
+			}
+			
+			if(TypeEffect.values()[i].max != -1 && allStats[i] > TypeEffect.values()[i].max) {
+				this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i] + " (" + TypeEffect.values()[i].max + ")");
+			} else {
+				this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i]);
+			}
 			
 			if(allStats[i] == 0 && i > 21) {
 				this.valueStat.get(i).setVisible(false);
@@ -317,5 +332,7 @@ public class MainFrame extends JFrame {
 				((PageOption) page).updateLanguage(lang);
 			}
 		}
+		
+		updateStat();
 	}
 }

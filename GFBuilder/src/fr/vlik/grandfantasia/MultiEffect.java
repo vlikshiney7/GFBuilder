@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Effect.TypeEffect;
-import fr.vlik.grandfantasia.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 
 public class MultiEffect {
 	
@@ -69,7 +66,7 @@ public class MultiEffect {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/multiEffect.txt"), "UTF-8"));
+					MultiEffect.class.getResourceAsStream(Consts.RESOURCE + "multiEffect.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

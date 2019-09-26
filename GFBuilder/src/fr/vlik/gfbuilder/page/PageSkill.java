@@ -10,14 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;

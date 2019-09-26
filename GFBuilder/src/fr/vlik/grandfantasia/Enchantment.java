@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.Effect.TypeEffect;
-import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipment.Armor;
+import fr.vlik.grandfantasia.equipment.Cape;
+import fr.vlik.grandfantasia.equipment.Ring;
+import fr.vlik.grandfantasia.equipment.Weapon;
+import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 
 public class Enchantment {
 	
@@ -114,7 +115,7 @@ public class Enchantment {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/enchantement.txt"), "UTF-8"));
+					Enchantment.class.getResourceAsStream(Consts.RESOURCE + "enchantement.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (!line.equals("")) {
@@ -195,7 +196,7 @@ public class Enchantment {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/noFixEnchant.txt"), "UTF-8"));
+					Enchantment.class.getResourceAsStream(Consts.RESOURCE + "noFixEnchant.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			
@@ -353,8 +354,8 @@ public class Enchantment {
 		Quality quality = weapon.getQuality();
 		WeaponType weaponType = weapon.getType();
 		
-		int[] indexStat = { 0, 0, 0, 5, 5, 5, 0, 5, 3, 3, 3, 1, 5, 5, 2, 4, 0 };
-		int[] indexPrecis = { 0, 0, 0, 3, 3, 3, 0, 3, 2, 2, 2, -1, 3, 3, 1, -1, 0 };
+		int[] indexStat = { 0, 0, 0, 4, 4, 4, 0, 4, 1, 1, 1, 2, 4, 4, 2, 3, 0 };
+		int[] indexPrecis = { 0, 0, 0, 3, 3, 3, 0, 3, 1, 1, 1, -1, 3, 3, 2, -1, 0 };
 		
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
@@ -367,6 +368,7 @@ public class Enchantment {
 		} catch (NullPointerException e) {
 			System.out.println("Enchantment missing :\n"
 					+ "- Type : " + weaponType + "\n"
+					+ "- Level : " + lvl + "\n"
 					+ "- Quality : " + quality + "\n"
 					+ "- Effect : " + type + "\n");
 			return 0;
@@ -380,7 +382,7 @@ public class Enchantment {
 		
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
-				ArrayList<Integer> getter = Enchantment.value.get(0).get(6).get(quality).get(lvl);
+				ArrayList<Integer> getter = Enchantment.value.get(0).get(5).get(quality).get(lvl);
 				if(getter.size() == 1) {
 					return getter.get(0);
 				} else {
@@ -393,6 +395,7 @@ public class Enchantment {
 		} catch (NullPointerException e) {
 			System.out.println("Enchantment missing :\n"
 					+ "- Type : Armor\n"
+					+ "- Level : " + lvl + "\n"
 					+ "- Quality : " + quality + "\n"
 					+ "- Effect : " + type + "\n");
 			return 0;
@@ -406,13 +409,14 @@ public class Enchantment {
 		
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
-				return Enchantment.value.get(0).get(7).get(quality).get(lvl).get(0);
+				return Enchantment.value.get(0).get(6).get(quality).get(lvl).get(0);
 			} else if(type == TypeEffect.ESQ) {
 				return Enchantment.value.get(2).get(1).get(quality).get(lvl).get(0);
 			}
 		} catch (NullPointerException e) {
 			System.out.println("Enchantment missing :\n"
 					+ "- Type : Cape\n"
+					+ "- Level : " + lvl + "\n"
 					+ "- Quality : " + quality + "\n"
 					+ "- Effect : " + type + "\n");
 			return 0;
@@ -426,13 +430,14 @@ public class Enchantment {
 		
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
-				return Enchantment.value.get(0).get(7).get(quality).get(lvl).get(0);
+				return Enchantment.value.get(0).get(6).get(quality).get(lvl).get(0);
 			} else if(type == TypeEffect.ESQ) {
 				return Enchantment.value.get(2).get(1).get(quality).get(lvl).get(0);
 			}
 		} catch (NullPointerException e) {
 			System.out.println("Enchantment missing :\n"
 					+ "- Type : Ring\n"
+					+ "- Level : " + lvl + "\n"
 					+ "- Quality : " + quality + "\n"
 					+ "- Effect : " + type + "\n");
 			return 0;

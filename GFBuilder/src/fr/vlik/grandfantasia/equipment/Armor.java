@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipment;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -9,12 +9,17 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.MultiEffect;
+import fr.vlik.grandfantasia.Quality;
+import fr.vlik.grandfantasia.RedArmor;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Armor extends Equipment {
 	
+	public static String PATH = Consts.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
 	public static Armor[][] data;
 	static {
 		loadData();
@@ -84,15 +89,15 @@ public class Armor extends Equipment {
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + quality.index + ".png"));
+			back = ImageIO.read(Armor.class.getResource(Consts.PATH32 + quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/armors/" + path));
+			object = ImageIO.read(Armor.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -168,7 +173,7 @@ public class Armor extends Equipment {
 		for(int i = 0; i < armorFile.length; i++) {
 			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/armors/" + armorFile[i] + "/" + armorFile[i] + ".txt"), "UTF-8"));
+						Armor.class.getResourceAsStream(PATH + armorFile[i] + "/" + armorFile[i] + ".txt"), "UTF-8"));
 			) {
 				list.add(new ArrayList<Armor>());
 				String line = reader.readLine();

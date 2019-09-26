@@ -10,7 +10,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
-import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.grandfantasia.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;
 

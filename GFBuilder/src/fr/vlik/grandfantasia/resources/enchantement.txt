@@ -32,15 +32,15 @@ de Parade/15/15/false,false,false/false/1/Parade,false,0
 
 Esquive/-1/true/10/1/ESQ,false,1
 Auto-guérison/-1/true/10/1/HealR,false,2
-Résistance/0/true/10/6/Sacre,false,1/Ombre,false,1/Foudre,false,1/Feu,false,1/Glace,false,1/Nature,false,1
+Résistance/-1/true/10/6/Sacre,false,1/Ombre,false,1/Foudre,false,1/Feu,false,1/Glace,false,1/Nature,false,1
 du Sacré/-1/true/10/1/Sacre,false,2
-Ténébreux/0/true/10/1/Ombre,false,2
+Ténébreux/-1/true/10/1/Ombre,false,2
 de la Nature/-1/true/10/1/Nature,false,2
 de la Foudre/-1/true/10/1/Foudre,false,2
 du Feu/-1/true/10/1/Feu,false,2
 de la Glace/-1/true/10/1/Glace,false,2
 de Vigueur/-1/true/10/1/PV,true,2
-d'Énergie/0/true/10/1/PM,true,2
+d'Énergie/-1/true/10/1/PM,true,2
 Blindé/-1/true/10/1/DefP,true,2
 de Purlock/-1/true/10/2/ReducP,false,1/ReducM,false,1
 de Molilada/-1/true/10/2/RTCCP,false,2/RTCCM,false,2

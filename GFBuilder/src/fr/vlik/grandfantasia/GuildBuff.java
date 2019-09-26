@@ -8,9 +8,6 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class GuildBuff extends Buff {
 	
 	private static GuildBuff[] data;
@@ -33,9 +30,9 @@ public class GuildBuff extends Buff {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/guild/" + path));
+			object = ImageIO.read(GuildBuff.class.getResource(Consts.RESOURCE + "guild/" + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -48,7 +45,7 @@ public class GuildBuff extends Buff {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/guild/guildBuff.txt"), "UTF-8"));
+					GuildBuff.class.getResourceAsStream(Consts.RESOURCE + "guild/guildBuff.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

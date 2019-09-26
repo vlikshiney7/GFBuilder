@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import fr.vlik.grandfantasia.Language;
+
 public class Lang {
 	
 	private static String[][][] dataLabel;
@@ -12,16 +14,6 @@ public class Lang {
 	private static String[][] dataCredit;
 	static {
 		loadData();
-	}
-	
-	public static enum Language {
-		FR(0), EN(1);
-		
-		public final int index;
-		 
-	    private Language(int index) {
-	        this.index = index;
-	    }
 	}
 	
 	public static void loadData() {

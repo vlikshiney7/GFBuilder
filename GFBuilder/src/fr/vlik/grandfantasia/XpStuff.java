@@ -5,9 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Effect.TypeEffect;
-
 public class XpStuff {
 	
 	private static XpStuff[][] dataWeapon;
@@ -45,13 +42,13 @@ public class XpStuff {
 		ArrayList<ArrayList<ArrayList<XpStuff>>> list = new ArrayList<ArrayList<ArrayList<XpStuff>>>();
 		int[] size = new int[] { 16, 5, 2, 1 };
 		int[] nbEffect = new int[] { 5, 5, 5, 14 };
-		String[] filesName = new String[] { "weapons/xp", "armors/xp", "capering/xp", "xpride" };
+		String[] filesName = new String[] { "weapon/xp", "armor/xp", "capering/xp", "xpride" };
 		
 		for(int i = 0; i < size.length; i++) {
 			list.add(new ArrayList<ArrayList<XpStuff>>());
 			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/" + filesName[i] + ".txt"), "UTF-8"));
+						XpStuff.class.getResourceAsStream(Consts.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
 			) {
 				String line = reader.readLine();
 				for(int j = 0; j < size[i]; j++) {

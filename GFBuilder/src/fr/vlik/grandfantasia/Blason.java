@@ -8,11 +8,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Blason {
 	
+	public static String PATH = Consts.RESOURCE + "sprite/";
 	private static Blason[] data;
 	static {
 		loadData();
@@ -77,7 +75,7 @@ public class Blason {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/sprites/" + path));
+			object = ImageIO.read(Blason.class.getResource(PATH + path));
 		} catch (IOException e) {
 			System.out.println("Image non charg� : " + path);
 		} catch (IllegalArgumentException e) {
@@ -102,7 +100,7 @@ public class Blason {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/sprites/blasons.txt"), "UTF-8"));
+					Blason.class.getResourceAsStream(PATH + "blasons.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

@@ -10,11 +10,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Nucleus {
 	
+	public static String PATH = Consts.RESOURCE + Nucleus.class.getSimpleName().toLowerCase() + "/";
 	private static Nucleus[][] data;
 	static {
 		loadData();
@@ -61,13 +59,13 @@ public class Nucleus {
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + quality + ".png"));
+			back = ImageIO.read(Nucleus.class.getResource(Consts.PATH32 + quality + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/nucleus/" + path));
+			object = ImageIO.read(Nucleus.class.getResource(PATH + path));
 		} catch (IOException e) {
 			System.out.println("Image non charg� : " + path);
 		} catch (IllegalArgumentException e) {
@@ -97,7 +95,7 @@ public class Nucleus {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/nucleus/nucleus.txt"), "UTF-8"));
+					Nucleus.class.getResourceAsStream(PATH + "nucleus.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while(line != null) {

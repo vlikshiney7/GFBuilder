@@ -2,8 +2,9 @@ package fr.vlik.gfbuilder;
 
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect.TypeEffect;
-import fr.vlik.grandfantasia.Weapon.WeaponType;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.TypeEffect;
+import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 
 public class Build {
 	
@@ -114,8 +115,8 @@ public class Build {
 		return result;
 	}
 	
-	public int[] calculStatFromEffect() {
-		int[] result = new int[TypeEffect.values().length];
+	public double[] calculStatFromEffect() {
+		double[] result = new double[TypeEffect.values().length];
 		int[] combinePoint = combineEffect(this.effectPoint);
 		int[] combinePercent = combineEffect(this.effectPercent);
 		

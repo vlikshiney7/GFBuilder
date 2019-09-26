@@ -10,11 +10,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Bague {
 	
+	public static String PATH = Consts.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
 	private static Bague[] data;
 	static {
 		loadData();
@@ -61,15 +59,15 @@ public class Bague {
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + this.quality.index + ".png"));
+			back = ImageIO.read(Bague.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/bague/" + path));
+			object = ImageIO.read(Bague.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -97,7 +95,7 @@ public class Bague {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/bague/bague.txt"), "UTF-8"));
+					Bague.class.getResourceAsStream(PATH + "bague.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

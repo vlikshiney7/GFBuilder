@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipment;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -9,12 +9,15 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public final class Cape extends Equipment {
 	
+	public static String PATH = Consts.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Cape[] data;
 	static {
 		loadData();
@@ -45,15 +48,15 @@ public final class Cape extends Equipment {
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + quality.index + ".png"));
+			back = ImageIO.read(Cape.class.getResource(Consts.PATH32 + quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/capering/cape/" + path));
+			object = ImageIO.read(Cape.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -106,7 +109,7 @@ public final class Cape extends Equipment {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/capering/cape/cape.txt"), "UTF-8"));
+					Cape.class.getResourceAsStream(PATH + "cape.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

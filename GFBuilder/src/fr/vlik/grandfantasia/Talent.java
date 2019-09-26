@@ -8,12 +8,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public final class Talent {
 	
+	public static String PATH = Consts.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
 	private static Talent[][] data;
 	static {
 		loadData();
@@ -68,9 +67,9 @@ public final class Talent {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/talent/" + path));
+			object = ImageIO.read(Talent.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -93,7 +92,7 @@ public final class Talent {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/talent/talent.txt"), "UTF-8"));
+					Talent.class.getResourceAsStream(PATH + "talent.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 12; i++) {

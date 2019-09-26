@@ -5,9 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Runway {
 	
 	public static final int[][] currentRunway = { {6, 7}, {4, 9}, {0, 3}, {1, 5}, {10, 8, 2} };
@@ -52,7 +49,7 @@ public class Runway {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/runway.txt"), "UTF-8"));
+					Runway.class.getResourceAsStream(Consts.RESOURCE + "runway.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

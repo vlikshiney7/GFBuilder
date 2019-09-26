@@ -8,11 +8,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Energy {
 	
+	public static String PATH = Consts.RESOURCE + Energy.class.getSimpleName().toLowerCase() + "/";
 	private static Energy[] data;
 	static {
 		loadData();
@@ -48,9 +46,9 @@ public class Energy {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/energy/" + path));
+			object = ImageIO.read(Energy.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -77,7 +75,7 @@ public class Energy {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/energy/energy.txt"), "UTF-8"));
+					Energy.class.getResourceAsStream(PATH + "energy.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

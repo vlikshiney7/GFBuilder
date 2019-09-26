@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
-import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Bague;
@@ -19,10 +18,10 @@ import fr.vlik.grandfantasia.Bullet;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Costume;
 import fr.vlik.grandfantasia.Enchantment;
-import fr.vlik.grandfantasia.Equipment;
 import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.GuildBuff;
+import fr.vlik.grandfantasia.Language;
 import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Pearl;
@@ -31,6 +30,7 @@ import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
+import fr.vlik.grandfantasia.equipment.Equipment;
 
 public class CustomListCellRenderer implements ListCellRenderer<Object> {
 	private static Language lang = Language.FR;
@@ -77,7 +77,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		} else if(value instanceof Grade) {
 			Grade grade = (Grade) value;
 			renderer.setIcon(new ImageIcon(grade.getIcon()));
-			renderer.setText(grade.getName(lang.index));
+			renderer.setText(grade.getName(lang));
 			renderer.setForeground(Design.FontColor[0]);
 		} else if(value instanceof Title) {
 			Title title = (Title) value;

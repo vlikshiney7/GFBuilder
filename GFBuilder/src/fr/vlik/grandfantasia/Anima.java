@@ -10,11 +10,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Anima {
 	
+	public static String PATH = Consts.RESOURCE + Anima.class.getSimpleName().toLowerCase() + "/";
 	private static Anima[] data;
 	static {
 		loadData();
@@ -84,15 +82,15 @@ public class Anima {
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + this.quality.index + ".png"));
+			back = ImageIO.read(Anima.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/anima/" + path));
+			object = ImageIO.read(Anima.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -120,7 +118,7 @@ public class Anima {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/anima/anima.txt"), "UTF-8"));
+					Anima.class.getResourceAsStream(PATH + "anima.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

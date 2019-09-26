@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import fr.vlik.gfbuilder.Effect;
 import fr.vlik.grandfantasia.CombiTalent;
+import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Nucleus;

@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public final class CombiTalent {
@@ -61,7 +59,7 @@ public final class CombiTalent {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/combi.txt"), "UTF-8"));
+					CombiTalent.class.getResourceAsStream(Consts.RESOURCE + "combi.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

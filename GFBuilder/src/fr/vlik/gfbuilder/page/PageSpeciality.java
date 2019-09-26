@@ -13,11 +13,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Lang.Language;
+import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Language;
 import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -141,7 +141,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 				JPanel panelSpe = new JPanel();
 				panelSpe.setLayout(new BoxLayout(panelSpe, BoxLayout.Y_AXIS));
 				panelSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
-				panelSpe.setPreferredSize(new Dimension(46, 65));
+				panelSpe.setPreferredSize(new Dimension(50, 65));
 				panelSpe.setBackground(Design.UIColor[0]);
 				this.iconSpe.get(numSpe).setAlignmentX(CENTER_ALIGNMENT);
 				panelSpe.add(this.iconSpe.get(numSpe));

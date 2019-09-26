@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Effect.TypeEffect;
-import fr.vlik.grandfantasia.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JStarCheckBox;
 
@@ -110,7 +107,7 @@ public class Genki {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/genki.txt"), "UTF-8"));
+					Genki.class.getResourceAsStream(Consts.RESOURCE + "genki.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 5; i++) list.add(new ArrayList<Genki>());

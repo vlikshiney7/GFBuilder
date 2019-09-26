@@ -5,25 +5,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Grade {
 	
+	public static String PATH = Consts.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
 	private static Grade[] data;
 	static {
 		loadData();
 	}
 	
-	private String[] name;
+	private Map<Language, String> name;
 	private GradeName grade;
 	private int lvlMin;
 	private int lvlMax;
 	private BufferedImage icon;
 	
-	public Grade(String[] name, GradeName grade, int lvlMin, int lvlMax, String path) {
+	public Grade(Map<Language, String> name, GradeName grade, int lvlMin, int lvlMax, String path) {
 		this.name = name;
 		this.grade = grade;
 		this.lvlMin = lvlMin;
@@ -47,8 +48,8 @@ public class Grade {
 	    }
 	}
 	
-	public String getName(int lang) {
-		return this.name[lang];
+	public String getName(Language lang) {
+		return this.name.get(lang);
 	}
 	
 	public GradeName getGrade() {
@@ -71,7 +72,7 @@ public class Grade {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/grade/" + path));
+			object = ImageIO.read(Grade.class.getResource(PATH + path));
 		} catch (IOException e) {
 			System.out.println("Image non charg� : " + path);
 		} catch (IllegalArgumentException e) {
@@ -86,7 +87,7 @@ public class Grade {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/grade/grade.txt"), "UTF-8"));
+					Grade.class.getResourceAsStream(PATH + "grade.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			
@@ -95,7 +96,12 @@ public class Grade {
 				String[] name = lineSplit[0].split(",");
 				String path =  lineSplit[lineSplit.length-1] + ".png";
 				
-				list.add(new Grade(name, GradeName.values()[Integer.parseInt(lineSplit[1])], Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), path));
+				Map<Language, String> lang = new HashMap<Language, String>();
+				for(int i = 0; i < name.length; i++) {
+					lang.put(Language.values()[i], name[i]);
+				}
+				
+				list.add(new Grade(lang, GradeName.values()[Integer.parseInt(lineSplit[1])], Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), path));
 				
 				line = reader.readLine();
 			}

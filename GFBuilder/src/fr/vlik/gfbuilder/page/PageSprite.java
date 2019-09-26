@@ -10,12 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Buff;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Language;
 import fr.vlik.grandfantasia.Blason.BlasonType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;

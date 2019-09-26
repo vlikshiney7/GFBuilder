@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Title {
@@ -73,7 +71,7 @@ public class Title {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/title.txt"), "UTF-8"));
+					Title.class.getResourceAsStream(Consts.RESOURCE + "title.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipment;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -9,12 +9,16 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Quality;
+import fr.vlik.grandfantasia.RedWeapon;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Weapon extends Equipment {
 	
+	public static String PATH = Consts.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
 	public static Weapon[][] data;
 	static {
 		loadData();
@@ -53,20 +57,24 @@ public class Weapon extends Equipment {
 	}
 	
 	public static enum WeaponType {
-		EPEE1M(0), MARTEAU1M(1), HACHE1M(2),
-		EPEE2M(3), MARTEAU2M(4), HACHE2M(5),
-		MECA1M(6), MECA2M(7),
-		ARC(8), GUN(9), CANON(10),
-		RELIQUE(11), BATON(12),
-		LAME(13), CLE(14),
-		BOUCLIER(15),
-		DEFAULT(16),
-		NONE(-1);
+		EPEE1M(0, "une épée une main", ""), MARTEAU1M(1, "un marteau une main", ""), HACHE1M(2, "une hache une main", ""),
+		EPEE2M(3, "une épée à deux mains", ""), MARTEAU2M(4, "un marteau à deux mains", ""), HACHE2M(5, "une hache à deux mains", ""),
+		MECA1M(6, "une arme mécanique une main", ""), MECA2M(7, "une arme mécanique à deux mains", ""),
+		ARC(8, "un arc", ""), GUN(9, "un pistolet", ""), CANON(10, "un canon", ""),
+		RELIQUE(11, "une relique", ""), BATON(12, "un bâton", ""),
+		LAME(13, "une lame", ""), CLE(14, "une clé", ""),
+		BOUCLIER(15, "un bouclier", ""),
+		DEFAULT(16, "un défaut", "default"),
+		NONE(-1, "un vide", "void");
 		
 		public final int index;
+		public final String fr;
+		public final String en;
 		 
-	    private WeaponType(int index) {
+	    private WeaponType(int index, String fr, String en) {
 	        this.index = index;
+	        this.fr = fr;
+	        this.en = en;
 	    }
 	}
 	
@@ -91,13 +99,13 @@ public class Weapon extends Equipment {
 		}
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/32-" + quality.index + ".png"));
+			back = ImageIO.read(Weapon.class.getResource(Consts.PATH32 + quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/weapons/" + path));
+			object = ImageIO.read(Weapon.class.getResource(PATH + path));
 		} catch (IOException e) {
 			System.out.println("Image non chargé : " + path);
 		} catch (IllegalArgumentException e) {
@@ -141,7 +149,6 @@ public class Weapon extends Equipment {
 				
 				if(!found) {
 					e.addEnchantValue(value);
-					System.out.println(e.getValue());
 					this.effects.add(e);
 				}
 			}
@@ -189,7 +196,7 @@ public class Weapon extends Equipment {
 		for(int i = 0; i < weaponFile.length; i++) {
 			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/weapons/" + weaponFile[i] + "/" + weaponFile[i] + ".txt"), "UTF-8"));
+						Weapon.class.getResourceAsStream(PATH + weaponFile[i] + "/" + weaponFile[i] + ".txt"), "UTF-8"));
 			) {
 				list.add(new ArrayList<Weapon>());
 				String line = reader.readLine();
@@ -242,7 +249,7 @@ public class Weapon extends Equipment {
 						list.get(i+1).add(red);
 						
 					} else {
-						assert lineSplit.length == Integer.parseInt(effectSplit[0]) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
+						assert (lineSplit.length == Integer.parseInt(effectSplit[0]) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9)
 								: weaponFile[i] + " line " + (list.get(i+1).size() + 1);
 						
 						Weapon weapon = new Weapon(

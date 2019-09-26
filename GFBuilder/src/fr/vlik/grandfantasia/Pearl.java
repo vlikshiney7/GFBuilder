@@ -10,11 +10,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Pearl {
 	
+	public static String PATH = Consts.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
 	private static Pearl[] dataWeapon;
 	private static Pearl[] dataArmor;
 	private static Pearl[] dataWeaponCost;
@@ -76,15 +74,15 @@ public class Pearl {
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/images/16-" + quality.index + ".png"));
+			back = ImageIO.read(Pearl.class.getResource(Consts.PATH16 + quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/pearls/" + path));
+			object = ImageIO.read(Pearl.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -109,13 +107,13 @@ public class Pearl {
 	
 	public static void loadData() {
 		ArrayList<ArrayList<Pearl>> list = new ArrayList<ArrayList<Pearl>>();
-		String[] filesName = { "weapons/pearl", "armors/pearl", "costumes/pearlWeapon", "costumes/pearlArmor" };
+		String[] filesName = { "weapon/pearl", "armor/pearl", "costume/pearlWeapon", "costume/pearlArmor" };
 		
 		for(int i = 0; i < filesName.length; i++) {
 			list.add(new ArrayList<Pearl>());
 			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/" + filesName[i] + ".txt"), "UTF-8"));
+						Pearl.class.getResourceAsStream(Consts.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
 			) {
 				String line = reader.readLine();
 				while (line != null) {

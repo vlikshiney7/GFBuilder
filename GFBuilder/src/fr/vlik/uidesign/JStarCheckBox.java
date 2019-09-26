@@ -18,7 +18,7 @@ public class JStarCheckBox extends JCheckBox {
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/starOn.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : starOn.png");
+			System.out.println("Image non chargée : starOn.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : starOn.png");
 		}
@@ -26,7 +26,7 @@ public class JStarCheckBox extends JCheckBox {
 		try {
 			this.setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/starOff.png"))));
 		} catch (IOException e) {
-			System.out.println("Image non chargé : starOff.png");
+			System.out.println("Image non chargée : starOff.png");
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : starOff.png");
 		}

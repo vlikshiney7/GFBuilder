@@ -8,11 +8,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
-
 public class Skill {
 	
+	public static String PATH = Consts.RESOURCE + Skill.class.getSimpleName().toLowerCase() + "/";
 	private static Skill[][] data;
 	static {
 		loadData();
@@ -76,7 +74,7 @@ public class Skill {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/skill/" + path));
+			object = ImageIO.read(Skill.class.getResource(PATH + path));
 		} catch (IOException e) {
 			System.out.println("Image non charg� : " + path);
 		} catch (IllegalArgumentException e) {
@@ -101,7 +99,7 @@ public class Skill {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/skill/skill.txt"), "UTF-8"));
+					Skill.class.getResourceAsStream(PATH + "skill.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			

@@ -11,12 +11,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Effect;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Lang.Language;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Costume;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Language;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Runway;

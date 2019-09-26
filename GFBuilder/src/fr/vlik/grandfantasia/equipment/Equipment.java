@@ -1,10 +1,12 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipment;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import fr.vlik.gfbuilder.Effect;
+import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public abstract class Equipment {

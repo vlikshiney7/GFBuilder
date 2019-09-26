@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Effect.TypeEffect;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Base {
@@ -19,7 +17,7 @@ public class Base {
 	public static void loadData() {
 		try(
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/base.txt"), "UTF-8"));
+					Base.class.getResourceAsStream(Consts.RESOURCE + "base.txt"), "UTF-8"));
 		) {
 			for(int i = 0; i < 5; i++) {
 				for(int j = 0; j < 12; j++) {

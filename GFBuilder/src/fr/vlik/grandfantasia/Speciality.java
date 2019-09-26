@@ -8,12 +8,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import fr.vlik.gfbuilder.Effect;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Speciality {
 	
+	public static String PATH = Consts.RESOURCE + Speciality.class.getSimpleName().toLowerCase() + "/";
 	private static Speciality[][] data;
 	static {
 		loadData();
@@ -54,9 +53,9 @@ public class Speciality {
 		BufferedImage object = null;
 		
 		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/speciality/" + path));
+			object = ImageIO.read(Speciality.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
@@ -83,7 +82,7 @@ public class Speciality {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/grandfantasia/resources/speciality/speciality.txt"), "UTF-8"));
+					Speciality.class.getResourceAsStream(PATH + "speciality.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 12; i++) {
