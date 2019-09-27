@@ -19,10 +19,10 @@ import fr.vlik.gfbuilder.Util;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Genki;
-import fr.vlik.grandfantasia.Language;
 import fr.vlik.grandfantasia.Mount;
-import fr.vlik.grandfantasia.TypeEffect;
 import fr.vlik.grandfantasia.XpStuff;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -177,7 +177,18 @@ public class PageMount extends PagePanel {
 		for(int i = 0; i < this.qualityGenki.size(); i++) {
 			if(!this.qualityGenki.get(i).get(0).isSelected()) {
 				Genki genki = new Genki(this.getGenki(i));
-				genki.addStarBonus(this.starGenki.get(i), i);
+				
+				int nbStar = 0;
+				
+				for(JStarCheckBox star : this.starGenki.get(i)) {
+					if(!star.isSelected()) {
+						break;
+					}
+					
+					nbStar++;
+				}
+				
+				genki.addStarBonus(nbStar, i);
 				list.addAll(genki.getEffects());
 			}
 		}
@@ -236,20 +247,20 @@ public class PageMount extends PagePanel {
 				starPanel.add(this.starGenki.get(i).get(j));
 			}
 			
-			JPanel page5ElemI = new JPanel();
-			page5ElemI.setLayout(new BoxLayout(page5ElemI, BoxLayout.Y_AXIS));
-			page5ElemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			page5ElemI.setBackground(Design.UIColor[1]);
-			page5ElemI.add(this.label[i*7+2]);
-			page5ElemI.add(Box.createVerticalStrut(10));
-			page5ElemI.add(qualityPanel);
-			page5ElemI.add(Box.createVerticalStrut(5));
-			page5ElemI.add(starPanel);
-			page5ElemI.add(Box.createVerticalStrut(5));
-			page5ElemI.add(this.genki.get(i));
+			JPanel elemI = new JPanel();
+			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
+			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
+			elemI.setBackground(Design.UIColor[1]);
+			elemI.add(this.label[i*7+2]);
+			elemI.add(Box.createVerticalStrut(10));
+			elemI.add(qualityPanel);
+			elemI.add(Box.createVerticalStrut(5));
+			elemI.add(starPanel);
+			elemI.add(Box.createVerticalStrut(5));
+			elemI.add(this.genki.get(i));
 			
 			this.add(Box.createVerticalStrut(10));
-			this.add(page5ElemI);
+			this.add(elemI);
 		}
 		
 		this.showAndHideXpStuff.setVisible(false);
@@ -377,13 +388,26 @@ public class PageMount extends PagePanel {
 	}
 	
 	private void updateQualityGenki(int id) {
-		int star = 0;
-		while(star < 5) {
-			if(!this.starGenki.get(id).get(star).isSelected()) break;
-			star++;
+		int nbStar = 0;
+		for(JStarCheckBox star : this.starGenki.get(id)) {
+			if(!star.isSelected()) {
+				break;
+			}
+			
+			nbStar++;
 		}
 		
-		Genki[] tabGenki = Genki.getPossibleGenki(this.qualityGenki.get(id), star);
+		int quality = 0;
+		for(JCustomRadioButton radio : this.qualityGenki.get(id)) {
+			if(radio.isSelected()) {
+				break;
+			}
+			
+			quality++;
+		}
+		
+		
+		Genki[] tabGenki = Genki.getPossibleGenki(quality, nbStar);
 		
 		if(tabGenki == null) {
 			for(int i = 0; i < this.starGenki.get(id).size(); i++) {
@@ -404,7 +428,16 @@ public class PageMount extends PagePanel {
 	}
 	
 	private void updateStarGenki(int id, int idCheck) {
-		Genki[] tabGenki = Genki.getPossibleGenki(this.qualityGenki.get(id), idCheck+1);
+		int quality = 0;
+		for(JCustomRadioButton radio : this.qualityGenki.get(id)) {
+			if(radio.isSelected()) {
+				break;
+			}
+			
+			quality++;
+		}
+		
+		Genki[] tabGenki = Genki.getPossibleGenki(quality, idCheck+1);
 		
 		for(int i = 0; i < this.starGenki.get(id).size(); i++) {
 			if(i <= idCheck) this.starGenki.get(id).get(i).setSelected(true);

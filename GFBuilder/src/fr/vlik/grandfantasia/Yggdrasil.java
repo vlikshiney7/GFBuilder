@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Yggdrasil {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Yggdrasil implements Writable {
 	
 	private static Yggdrasil[] data;
 	static {
@@ -31,6 +34,12 @@ public class Yggdrasil {
 		return effects;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

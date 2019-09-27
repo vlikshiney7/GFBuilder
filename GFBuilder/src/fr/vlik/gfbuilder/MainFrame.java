@@ -23,8 +23,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.page.*;
-import fr.vlik.grandfantasia.Language;
-import fr.vlik.grandfantasia.TypeEffect;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 import fr.vlik.uidesign.*;
 

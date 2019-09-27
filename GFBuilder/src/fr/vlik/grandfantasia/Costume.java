@@ -6,7 +6,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Costume {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Costume implements Colorable, Writable {
 	
 	public static String PATH = Consts.RESOURCE + Costume.class.getSimpleName().toLowerCase() + "/";
 	private static Costume[][] data;
@@ -62,6 +67,7 @@ public class Costume {
 		return this.type;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
@@ -74,6 +80,12 @@ public class Costume {
 		return list;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

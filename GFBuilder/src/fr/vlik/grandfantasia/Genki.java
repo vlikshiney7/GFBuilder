@@ -6,11 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
-import fr.vlik.uidesign.JCustomRadioButton;
-import fr.vlik.uidesign.JStarCheckBox;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class Genki {
+public class Genki implements Colorable, Writable {
 	
 	private static Genki[][] data;
 	static {
@@ -68,30 +71,31 @@ public class Genki {
 		return list;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
 
-	public void addStarBonus(ArrayList<JStarCheckBox> star, int idList) {
-		int nbStar = 0;
-		while(nbStar < 5) {
-			if(!star.get(nbStar).isSelected()) break;
-			nbStar++;
-		}
-		
+	public void addStarBonus(int nbStar, int id) {
 		if(nbStar == 3 || nbStar == 4) {
-			this.effects.add(new Effect(TypeEffect.Depla, false, 10 / (idList+1), false, WeaponType.NONE, null));
+			this.effects.add(new Effect(TypeEffect.Depla, false, 10 / (id+1), false, WeaponType.NONE, null));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (idList+1), false, WeaponType.NONE, null));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (id+1), false, WeaponType.NONE, null));
 			}
 		} else if(nbStar == 5) {
-			this.effects.add(new Effect(TypeEffect.Depla, false, 20 / (idList+1), false, WeaponType.NONE, null));
+			this.effects.add(new Effect(TypeEffect.Depla, false, 20 / (id+1), false, WeaponType.NONE, null));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (idList+1), false, WeaponType.NONE, null));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (id+1), false, WeaponType.NONE, null));
 			}
 		}
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {
@@ -141,22 +145,16 @@ public class Genki {
 		}
 	}
 	
-	public static Genki[] getPossibleGenki(ArrayList<JCustomRadioButton> quality, int star) {
+	public static Genki[] getPossibleGenki(int quality, int star) {
 		ArrayList<Genki> result = new ArrayList<Genki>();
 		
-		for(int i = 0; i < quality.size(); i++) {
-			if(quality.get(i).isSelected()) {
-				if(i == 0) {
-					return null;
-				}
-				
-				for(int j = 0; j < Genki.data[i-1].length; j++) {
-					if(Genki.data[i-1][j].getStar() == star) {
-						result.add(Genki.data[i-1][j]);
-					}
-				}
-				
-				break;
+		if(quality == 0) {
+			return null;
+		}
+		
+		for(int j = 0; j < Genki.data[quality-1].length; j++) {
+			if(Genki.data[quality-1][j].getStar() == star) {
+				result.add(Genki.data[quality-1][j]);
 			}
 		}
 		

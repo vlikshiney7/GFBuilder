@@ -1,6 +1,8 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.enums;
 
 import java.awt.Color;
+
+import fr.vlik.grandfantasia.Consts;
 
 public enum TypeEffect {
 

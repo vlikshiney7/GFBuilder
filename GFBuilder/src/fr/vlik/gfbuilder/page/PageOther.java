@@ -14,7 +14,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Effect;
-import fr.vlik.grandfantasia.Language;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;

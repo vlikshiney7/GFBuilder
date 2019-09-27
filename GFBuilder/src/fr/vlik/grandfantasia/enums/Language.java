@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.enums;
 
 public enum Language {
 	FR(0), EN(1);

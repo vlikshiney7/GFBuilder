@@ -17,7 +17,7 @@ import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Language;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;

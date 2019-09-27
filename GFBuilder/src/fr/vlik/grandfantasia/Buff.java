@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Buff {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Buff implements Writable {
 	
 	public static String PATH = Consts.RESOURCE + "sprite/";
 	private static Buff[] data;
@@ -13,7 +16,7 @@ public class Buff {
 		loadData();
 	}
 	
-	private String name;
+	protected String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Buff(String name, ArrayList<Effect> effects) {
@@ -33,6 +36,12 @@ public class Buff {
 		return list;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

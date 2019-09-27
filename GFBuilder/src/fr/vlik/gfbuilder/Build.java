@@ -3,7 +3,7 @@ package fr.vlik.gfbuilder;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Effect;
-import fr.vlik.grandfantasia.TypeEffect;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 
 public class Build {

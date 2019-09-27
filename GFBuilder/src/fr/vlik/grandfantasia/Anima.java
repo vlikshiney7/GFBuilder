@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Anima {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
+
+public class Anima implements FullRenderer {
 	
 	public static String PATH = Consts.RESOURCE + Anima.class.getSimpleName().toLowerCase() + "/";
 	private static Anima[] data;
@@ -49,6 +53,7 @@ public class Anima {
 		return this.quality;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -57,6 +62,7 @@ public class Anima {
 		return this.isMultiEffect;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
@@ -77,7 +83,8 @@ public class Anima {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
@@ -103,6 +110,12 @@ public class Anima {
 		return back;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

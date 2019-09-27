@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import fr.vlik.grandfantasia.enums.TypeEffect;
+
 public class XpStuff {
 	
 	private static XpStuff[][] dataWeapon;

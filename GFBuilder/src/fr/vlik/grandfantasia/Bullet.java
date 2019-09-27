@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Bullet {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
+
+public class Bullet implements FullRenderer {
 	
 	public static String PATH = Consts.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + "/";
 	private static Bullet[] data;
@@ -44,10 +48,12 @@ public class Bullet {
 		return this.quality;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
@@ -60,7 +66,8 @@ public class Bullet {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
@@ -86,6 +93,12 @@ public class Bullet {
 		return back;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

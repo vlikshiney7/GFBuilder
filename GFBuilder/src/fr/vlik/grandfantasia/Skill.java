@@ -8,7 +8,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Skill {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Skill implements Iconable, Writable {
 	
 	public static String PATH = Consts.RESOURCE + Skill.class.getSimpleName().toLowerCase() + "/";
 	private static Skill[][] data;
@@ -58,6 +62,7 @@ public class Skill {
 		return this.natif;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -70,18 +75,29 @@ public class Skill {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		
 		try {
 			object = ImageIO.read(Skill.class.getResource(PATH + path));
 		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
+			System.out.println("Image non chargée : " + path);
 		} catch (IllegalArgumentException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
 		return object;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl[0] + " - " + this.name;
+	}
+	
+	@Override
+	public String getTooltip() {
+		return getTooltip(0);
 	}
 	
 	public String getTooltip(int i) {

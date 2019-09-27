@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.vlik.grandfantasia.Effect;
-import fr.vlik.grandfantasia.Language;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 
 public abstract class PagePanel extends JPanel {

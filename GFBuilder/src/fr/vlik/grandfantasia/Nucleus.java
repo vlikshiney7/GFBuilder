@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Nucleus {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
+
+public class Nucleus implements FullRenderer {
 	
 	public static String PATH = Consts.RESOURCE + Nucleus.class.getSimpleName().toLowerCase() + "/";
 	private static Nucleus[][] data;
@@ -19,14 +23,14 @@ public class Nucleus {
 	}
 	
 	private String name;
-	private int quality;
+	private Quality quality;
 	private BufferedImage icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
-	public Nucleus(String name, int quality, String iconPath, ArrayList<Effect> effects) {
+	public Nucleus(String name, Quality quality, String iconPath, ArrayList<Effect> effects) {
 		this.name = name;
 		this.quality = quality;
-		this.icon = setIcon(iconPath, this.quality);
+		this.icon = setIcon(iconPath);
 		this.effects = effects;
 	}
 	
@@ -34,14 +38,16 @@ public class Nucleus {
 		return this.name;
 	}
 	
-	public int getQuality() {
+	public Quality getQuality() {
 		return this.quality;
 	}
 	
+	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality];
+		return Consts.itemColor[this.quality.index];
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.icon;
 	}
@@ -54,12 +60,13 @@ public class Nucleus {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path, int quality) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(Nucleus.class.getResource(Consts.PATH32 + quality + ".png"));
+			back = ImageIO.read(Nucleus.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -79,7 +86,13 @@ public class Nucleus {
 		
 		return back;
 	}
-
+	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {
@@ -107,11 +120,13 @@ public class Nucleus {
 					String[] lineSplit = line.split("/");
 					String path =  lineSplit[lineSplit.length-1] + ".png";
 					
+					Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
+					
 					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
 					for(int k = 0; k < Integer.parseInt(lineSplit[2]); k++)
 						effects.add(new Effect(lineSplit[k+3]));
 					
-					array.add(new Nucleus(lineSplit[0], Integer.parseInt(lineSplit[1]), path, effects));
+					array.add(new Nucleus(lineSplit[0], quality, path, effects));
 				}
 				list.add(array);
 				

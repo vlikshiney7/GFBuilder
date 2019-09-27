@@ -8,7 +8,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Blason {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Blason implements Iconable, Writable {
 	
 	public static String PATH = Consts.RESOURCE + "sprite/";
 	private static Blason[] data;
@@ -59,6 +63,7 @@ public class Blason {
 		return this.type;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -71,7 +76,8 @@ public class Blason {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		
 		try {
@@ -85,6 +91,12 @@ public class Blason {
 		return object;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

@@ -7,13 +7,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Armor;
 import fr.vlik.grandfantasia.equipment.Cape;
 import fr.vlik.grandfantasia.equipment.Ring;
 import fr.vlik.grandfantasia.equipment.Weapon;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class Enchantment {
+public class Enchantment implements Writable {
 	
 	private static Enchantment[] data;
 	private static Enchantment[] redData;
@@ -85,6 +89,24 @@ public class Enchantment {
 			list.add(new Effect(effect));
 		}
 		return list;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
+	public String getTooltip() {
+		StringBuilder tooltip = new StringBuilder("- Statistique -");
+		if(this.fixValue) {
+			for(Effect e : this.effects) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
+		}
+		
+		return "<html>" + tooltip + "</html>";
 	}
 	
 	public boolean containType(WeaponType type, Quality quality) {

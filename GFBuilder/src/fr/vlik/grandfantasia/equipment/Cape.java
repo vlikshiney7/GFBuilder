@@ -12,10 +12,10 @@ import javax.imageio.ImageIO;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
-import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Quality;
 
-public final class Cape extends Equipment {
+public class Cape extends Equipment {
 	
 	public static String PATH = Consts.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Cape[] data;
@@ -36,19 +36,20 @@ public final class Cape extends Equipment {
 		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
-		this.img = setIcon(iconPath, quality);
+		this.img = setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
 		return this.setCode;
 	}
 	
-	protected BufferedImage setIcon(String path, Quality quality) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(Cape.class.getResource(Consts.PATH32 + quality.index + ".png"));
+			back = ImageIO.read(Cape.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

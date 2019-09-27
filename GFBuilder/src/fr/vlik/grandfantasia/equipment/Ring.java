@@ -12,8 +12,8 @@ import javax.imageio.ImageIO;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
-import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Quality;
 
 public final class Ring extends Equipment {
 	
@@ -39,7 +39,7 @@ public final class Ring extends Equipment {
 		
 		this.setCode = setCode;
 		this.uniqueEquip = uniqueEquip;
-		this.img = setIcon(iconPath, quality);
+		this.img = setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
@@ -50,12 +50,13 @@ public final class Ring extends Equipment {
 		return this.uniqueEquip;
 	}
 	
-	protected BufferedImage setIcon(String path, Quality quality) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(Ring.class.getResource(Consts.PATH32 + quality.index + ".png"));
+			back = ImageIO.read(Ring.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

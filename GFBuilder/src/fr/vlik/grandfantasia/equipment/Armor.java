@@ -13,9 +13,9 @@ import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.MultiEffect;
-import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.RedArmor;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Quality;
 
 public class Armor extends Equipment {
 	
@@ -46,7 +46,7 @@ public class Armor extends Equipment {
 		this.setCode = setCode;
 		this.reinca = reinca;
 		this.isMultiEffect = false;
-		this.img = setIcon(iconPath, quality);
+		this.img = setIcon(iconPath);
 	}
 	
 	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
@@ -56,7 +56,7 @@ public class Armor extends Equipment {
 		this.reinca = reinca;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
-		this.img = setIcon(iconPath, quality);
+		this.img = setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
@@ -84,12 +84,13 @@ public class Armor extends Equipment {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	protected BufferedImage setIcon(String path, Quality quality) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(Armor.class.getResource(Consts.PATH32 + quality.index + ".png"));
+			back = ImageIO.read(Armor.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

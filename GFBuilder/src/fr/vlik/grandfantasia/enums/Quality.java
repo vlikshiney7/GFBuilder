@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.enums;
 
 public enum Quality {
 	GREY(0), WHITE(1),

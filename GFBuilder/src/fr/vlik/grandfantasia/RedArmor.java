@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipment.Armor;
 
 public class RedArmor extends Armor {

@@ -1,5 +1,7 @@
 package fr.vlik.grandfantasia;
 
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 
 public class Effect {

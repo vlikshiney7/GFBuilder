@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -9,9 +10,12 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
-public class Mount {
+public class Mount implements FullRenderer {
 	
 	public static String PATH = Consts.RESOURCE + Mount.class.getSimpleName().toLowerCase() + "/";
 	private static Mount[] data;
@@ -49,11 +53,18 @@ public class Mount {
 		return this.reinca;
 	}
 	
+	@Override
+	public Color getColor() {
+		return this.name.equals("Rien") ? Consts.itemColor[0] : Consts.itemColor[4];
+	}
+	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
@@ -79,6 +90,12 @@ public class Mount {
 		return back;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		

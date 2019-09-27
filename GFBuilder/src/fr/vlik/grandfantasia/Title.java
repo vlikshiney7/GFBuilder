@@ -7,8 +7,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class Title {
+public class Title implements Colorable, Writable {
 
 	private static Title[] data;
 	static {
@@ -52,10 +56,17 @@ public class Title {
 		return this.grade;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.titleColor[this.quality.index];
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

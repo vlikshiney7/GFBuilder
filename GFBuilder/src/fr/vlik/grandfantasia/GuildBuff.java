@@ -8,7 +8,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class GuildBuff extends Buff {
+import fr.vlik.grandfantasia.interfaces.Iconable;
+
+public class GuildBuff extends Buff implements Iconable {
 	
 	private static GuildBuff[] data;
 	static {
@@ -22,11 +24,13 @@ public class GuildBuff extends Buff {
 		this.img = setIcon(path);
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		
 		try {

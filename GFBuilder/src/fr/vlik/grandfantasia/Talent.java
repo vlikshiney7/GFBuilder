@@ -9,8 +9,11 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public final class Talent {
+public final class Talent implements Iconable, Writable {
 	
 	public static String PATH = Consts.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
 	private static Talent[][] data;
@@ -51,6 +54,7 @@ public final class Talent {
 		return this.lvl;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -63,7 +67,8 @@ public final class Talent {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		
 		try {
@@ -75,6 +80,16 @@ public final class Talent {
 		}
 		
 		return object;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl[0];
+	}
+	
+	@Override
+	public String getTooltip() {
+		return getTooltip(0);
 	}
 	
 	public String getTooltip(int i) {

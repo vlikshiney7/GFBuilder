@@ -21,8 +21,9 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Language;
 import fr.vlik.grandfantasia.Talent;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -54,6 +55,8 @@ public class PageTalent extends PagePanel {
 		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		
 		for(int i = 0; i < 2; i++) {
+			boolean ancestral = i == 1;
+			
 			for(int j = 0; j < 4; j++) {
 				
 				int id = i*4+j;
@@ -82,6 +85,7 @@ public class PageTalent extends PagePanel {
 					}
 					
 					this.talent.add(new JCustomComboBox<Talent>(currentTalent));
+					this.talent.get(i*12+j*3+k).setRenderer(new CustomListCellRenderer(ancestral));
 					this.talent.get(i*12+j*3+k).addActionListener(e -> {
 						updateRadioTalent(idIn);
 						updateCombiTalent();

@@ -9,8 +9,11 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class ProSkill {
+public class ProSkill implements Iconable, Writable {
 	
 	private static ProSkill[][] data;
 	static {
@@ -37,6 +40,7 @@ public class ProSkill {
 		return this.lvl;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -49,7 +53,8 @@ public class ProSkill {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		
 		try {
@@ -61,6 +66,16 @@ public class ProSkill {
 		}
 		
 		return object;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + this.name;
+	}
+	
+	@Override
+	public String getTooltip() {
+		return getTooltip(0);
 	}
 	
 	public String getTooltip(int i) {

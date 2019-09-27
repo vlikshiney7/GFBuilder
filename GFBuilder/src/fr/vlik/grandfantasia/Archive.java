@@ -6,7 +6,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Archive {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Archive implements Colorable, Writable {
 	
 	private static Archive[] data;
 	static {
@@ -31,6 +36,7 @@ public class Archive {
 		return this.quality;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
@@ -43,6 +49,12 @@ public class Archive {
 		return list;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

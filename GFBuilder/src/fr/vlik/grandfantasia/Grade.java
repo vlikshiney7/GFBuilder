@@ -10,7 +10,11 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-public class Grade {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
+public class Grade implements Iconable, Writable {
 	
 	public static String PATH = Consts.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
 	private static Grade[] data;
@@ -64,11 +68,13 @@ public class Grade {
 		return this.lvlMax;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.icon;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		
 		try {
@@ -80,6 +86,16 @@ public class Grade {
 		}
 		
 		return object;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name.get(lang);
+	}
+	
+	@Override
+	public String getTooltip() {
+		return this.lvlMin + " - " + this.lvlMax;
 	}
 	
 	public static void loadData() {

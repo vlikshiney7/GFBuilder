@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import fr.vlik.grandfantasia.Language;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class Lang {
 	

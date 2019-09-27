@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Pearl {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
+
+public class Pearl implements FullRenderer {
 	
 	public static String PATH = Consts.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
 	private static Pearl[] dataWeapon;
@@ -33,7 +37,7 @@ public class Pearl {
 		this.purpulOnly = purpulOnly;
 		this.cumulable = cumulable;
 		this.quality = quality;
-		this.img = setIcon(path, this.quality);
+		this.img = setIcon(path);
 		
 		for(int i = 0; i < effects.length; i++) {
 			this.effects.add(new Effect(effects[i]));
@@ -56,6 +60,7 @@ public class Pearl {
 		return this.cumulable;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -64,17 +69,18 @@ public class Pearl {
 		return this.effects;
 	}
 	
-	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
 	
-	private BufferedImage setIcon(String path, Quality quality) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
 		try {
-			back = ImageIO.read(Pearl.class.getResource(Consts.PATH16 + quality.index + ".png"));
+			back = ImageIO.read(Pearl.class.getResource(Consts.PATH16 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -95,6 +101,12 @@ public class Pearl {
 		return back;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

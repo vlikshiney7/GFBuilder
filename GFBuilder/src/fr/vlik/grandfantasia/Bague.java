@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Bague {
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
+
+public class Bague implements FullRenderer {
 	
 	public static String PATH = Consts.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
 	private static Bague[] data;
@@ -38,10 +42,12 @@ public class Bague {
 		return this.quality;
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
 	
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
@@ -54,7 +60,8 @@ public class Bague {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
@@ -80,6 +87,12 @@ public class Bague {
 		return back;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {

@@ -12,9 +12,9 @@ import javax.imageio.ImageIO;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
-import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.RedWeapon;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Quality;
 
 public class Weapon extends Equipment {
 	
@@ -34,7 +34,7 @@ public class Weapon extends Equipment {
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
 		this.reinca = false;
-		this.img = setIcon("null.png", Quality.GREY);
+		this.img = setIcon("null.png");
 	}
 	
 	public Weapon(Weapon weapon) {
@@ -53,7 +53,7 @@ public class Weapon extends Equipment {
 		this.type = type;
 		this.uniqueEquip = uniqueEquip;
 		this.reinca = reinca;
-		this.img = setIcon(iconPath, quality);
+		this.img = setIcon(iconPath);
 	}
 	
 	public static enum WeaponType {
@@ -90,7 +90,8 @@ public class Weapon extends Equipment {
 		return this.reinca;
 	}
 	
-	protected BufferedImage setIcon(String path, Quality quality) {
+	@Override
+	public BufferedImage setIcon(String path) {
 		BufferedImage back = null;
 		BufferedImage object = null;
 		
@@ -99,7 +100,7 @@ public class Weapon extends Equipment {
 		}
 		
 		try {
-			back = ImageIO.read(Weapon.class.getResource(Consts.PATH32 + quality.index + ".png"));
+			back = ImageIO.read(Weapon.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

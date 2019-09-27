@@ -6,10 +6,12 @@ import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
-import fr.vlik.grandfantasia.Quality;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
-public abstract class Equipment {
+public abstract class Equipment implements FullRenderer {
 	
 	protected String name;
 	protected GradeName[] grades;
@@ -55,11 +57,13 @@ public abstract class Equipment {
 	public boolean isEnchantable() {
 		return this.enchantable;
 	}
-	
+
+	@Override
 	public Color getColor() {
 		return Consts.itemColor[this.quality.index];
 	}
 	
+	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -115,6 +119,12 @@ public abstract class Equipment {
 		return b;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + this.name;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {
@@ -133,6 +143,4 @@ public abstract class Equipment {
 		
 		return "<html>" + tooltip + "</html>";
 	}
-	
-	abstract protected BufferedImage setIcon(String path, Quality quality);
 }
