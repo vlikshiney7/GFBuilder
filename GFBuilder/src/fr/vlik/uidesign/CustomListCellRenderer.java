@@ -52,6 +52,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			
 			if(value instanceof Writable) {
 				renderer.setText(((Writable) value).getInfo(lang));
+				renderer.setToolTipText(((Writable) value).getTooltip());
 			}
 		}
 		

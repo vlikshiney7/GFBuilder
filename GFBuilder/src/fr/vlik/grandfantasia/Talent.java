@@ -10,10 +10,9 @@ import javax.imageio.ImageIO;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public final class Talent implements Iconable, Writable {
+public final class Talent implements Writable {
 	
 	public static String PATH = Consts.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
 	private static Talent[][] data;
@@ -54,7 +53,6 @@ public final class Talent implements Iconable, Writable {
 		return this.lvl;
 	}
 	
-	@Override
 	public BufferedImage getIcon() {
 		return this.img;
 	}
@@ -67,7 +65,6 @@ public final class Talent implements Iconable, Writable {
 		return list;
 	}
 	
-	@Override
 	public BufferedImage setIcon(String path) {
 		BufferedImage object = null;
 		

@@ -58,7 +58,7 @@ public class MainFrame extends JFrame {
 			e.printStackTrace();
 		}
 		
-		this.setSize(1250, 750);
+		this.setSize(1300, 750);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		this.setVisible(true);
