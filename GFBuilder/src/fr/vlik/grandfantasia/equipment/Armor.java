@@ -13,7 +13,6 @@ import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.MultiEffect;
-import fr.vlik.grandfantasia.RedArmor;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Quality;
 
@@ -211,9 +210,9 @@ public class Armor extends Equipment {
 							ArrayList<Effect> oneStarEffects = new ArrayList<Effect>();
 							for(int k = 0; k < Integer.parseInt(starEffectSplit[j]); k++) {
 								oneStarEffects.add(new Effect(lineSplit[indexToStar+2+decal]));
+								decal++;
 							}
 							
-							decal += Integer.parseInt(starEffectSplit[j]);
 							starEffects.add(oneStarEffects);
 						}
 						
@@ -223,7 +222,7 @@ public class Armor extends Equipment {
 								starEffects
 								);
 						
-						list.get(i+1).add(red);
+						list.get(i).add(red);
 						
 					} else {
 						assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9

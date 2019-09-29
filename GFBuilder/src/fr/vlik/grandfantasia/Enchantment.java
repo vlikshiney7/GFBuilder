@@ -398,9 +398,9 @@ public class Enchantment implements Writable {
 		return 0;
 	}
 	
-	public static int getValue(Armor weapon, TypeEffect type, int id) {
-		int lvl = weapon.getLvl();
-		Quality quality = weapon.getQuality();
+	public static int getValue(Armor armor, TypeEffect type, int id) {
+		int lvl = armor.getLvl();
+		Quality quality = armor.getQuality();
 		
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
@@ -431,7 +431,12 @@ public class Enchantment implements Writable {
 		
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
-				return Enchantment.value.get(0).get(6).get(quality).get(lvl).get(0);
+				ArrayList<Integer> getter = Enchantment.value.get(0).get(5).get(quality).get(lvl);
+				if(getter.size() == 1) {
+					return getter.get(0);
+				} else {
+					return getter.get(1);
+				}
 			} else if(type == TypeEffect.ESQ) {
 				return Enchantment.value.get(2).get(1).get(quality).get(lvl).get(0);
 			}

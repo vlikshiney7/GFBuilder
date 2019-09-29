@@ -1,22 +1,23 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipment;
+
 import java.util.ArrayList;
 
+import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipment.Armor;
 
-public class RedArmor extends Armor {
+public class RedWeapon extends Weapon {
 	
 	private ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
 	
-	public RedArmor(RedArmor redArmor) {
-		super(redArmor);
+	public RedWeapon(RedWeapon redWeapon) {
+		super(redWeapon);
 		
-		this.starEffects = redArmor.getStarEffects();
+		this.starEffects = redWeapon.getStarEffects();
 	}
 	
-	public RedArmor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
-		super(name, grades, lvl, quality, enchantable, reinca, setCode, iconPath, effects, bonusXP);
+	public RedWeapon(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
+		super(name, grades, lvl, quality, enchantable, type, uniqueEquip, reinca, iconPath, effects, bonusXP);
 		
 		this.starEffects = starEffects;
 	}

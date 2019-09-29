@@ -14,6 +14,7 @@ Bâton des longues mémoires de Mosunk/4,5,6,7/95/4/false/false/false/9,0,0/Atk,
 Bâton Arracheur d'Âme/4,5,6,7/94/4/true/false/false/7,0,0/Atk,false,2983,true/AtkM,false,3167,true/VIT,false,49,true/INT,false,60,true/VOL,false,50,true/VitComp,false,20/AtkM,true,15/94pre
 Bâton Lanterne de Sprite/4,5,6,7/92/2/false/false/false/3,0,0/Atk,false,2486,true/AtkM,false,2639,true/VOL,false,53,true/30ora
 Bâton Fantôme de Sprite/4,5,6,7/91/2/false/false/false/3,0,0/Atk,false,2450,true/AtkM,false,2601,true/INT,false,53,true/91sprite
+Rafale de l'esprit de l'Apocalypse/4,5,6,7/90/7/false/false/false/6,0,0/Atk,false,4429,true/AtkM,false,4699,true/VIT,false,128,true/INT,false,188,true/VOL,false,152,true/Toucher,false,27/1,1,2,1,2/0,0,0,0,0/INT,false,10/INT,true,1/PV,true,5/PM,true,5/VitComp,false,5/DegP,false,3/DegM,false,3/90red
 Sceptre de Minas Tirith/4,5,6,7/90/6/true/false/false/6,0,0/Atk,false,3994,true/AtkM,false,4527,true/VIT,false,107,true/INT,false,156,true/VOL,false,127,true/Toucher,false,27/90vio
 Torche Maléfique de Daku Shunaida/4,5,6,7/90/5/true/false/false/7,0,0/Atk,false,3623,true/AtkM,false,3845,true/VIT,false,89,true/INT,false,120,true/VOL,false,103,true/Toucher,false,25/VitComp,false,15/90gold1
 Sceptre de Pureté d'Aeris/4,5,6,7/90/5/true/false/false/7,0,0/Atk,false,3623,true/AtkM,false,3845,true/VIT,false,116,true/INT,false,99,true/VOL,false,97,true/Toucher,false,25/AtkM,true,10/90gold0

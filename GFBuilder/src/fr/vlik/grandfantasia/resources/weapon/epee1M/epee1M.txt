@@ -9,7 +9,7 @@ Sacrelame victorieuse de Bodor/0,1,2,3/100/4/false/true/false/13,0,0/Atk,false,2
 Épée Courte Victorieuse/0,1,2,3/95/1/false/false/false/1,0,0/Atk,false,1662,true/95blanc
 Épée Féroce Mystique/0,1,2,3/94/4/true/true/false/5,0,0/Atk,false,2295,true/FCE,false,81,true/VIT,false,26,true/AGI,false,23,true/VitAtk,false,10/94pre
 Épée Brûlante de Sprite/0,1,2,3/91/2/false/false/false/2,0,0/Atk,false,1885,true/FCE,false,26,true/91sprite
-Serment du Chevalier/0,1,2,3/90/7/false/true/false/5,0,0/Atk,false,3406,true/FCE,false,154,true/VIT,false,54,true/AGI,false,64,true/Toucher,false,20/1,1,2,1,1/0,0,0,0,0/FCE,false,10/FCE,true,1/PV,true,5/PM,true,5/VitAtk,false,5/DegP,false,3/90red
+Serment du Chevalier/0,1,2,3/90/7/false/true/false/5,0,0/Atk,false,3406,true/FCE,false,154,true/VIT,false,54,true/AGI,false,64,true/Toucher,false,20/1,1,2,1,2/0,0,0,0,0/FCE,false,10/FCE,true,1/PV,true,5/PM,true,5/VitAtk,false,5/DegP,false,3/DegM,false,3/90red
 Epée du Roi Tenrô/0,1,2,3/90/6/true/true/false/5,0,0/Atk,false,3096,true/FCE,false,128,true/VIT,false,45,true/AGI,false,54,true/Toucher,false,20/90vio
 Équarrisseur de Zodd Nosferatu/0,1,2,3/90/5/true/true/false/5,0,0/Atk,false,2786,true/FCE,false,110,true/VIT,false,44,true/AGI,false,48,true/Toucher,false,18/90gold
 Lame Divine - Aile en Or/0,1,2,3/89/4/true/true/false/6,0,0/Atk,false,2136,true/FCE,false,72,true/VIT,false,22,true/AGI,false,26,true/Toucher,false,12/ESQ,false,8/89pre

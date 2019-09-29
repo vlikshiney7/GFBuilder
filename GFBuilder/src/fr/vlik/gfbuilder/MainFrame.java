@@ -272,9 +272,17 @@ public class MainFrame extends JFrame {
 			}
 			
 			if(TypeEffect.values()[i].max != -1 && allStats[i] > TypeEffect.values()[i].max) {
-				this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i] + " (" + TypeEffect.values()[i].max + ")");
+				if(TypeEffect.values()[i].entier) {
+					this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i] + " (" + TypeEffect.values()[i].max + ")");
+				} else {
+					this.valueStat.get(i).setText(langLabel + " : " + allStats[i] + " (" + TypeEffect.values()[i].max + ")");
+				}
 			} else {
-				this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i]);
+				if(TypeEffect.values()[i].entier) {
+					this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i]);
+				} else {
+					this.valueStat.get(i).setText(langLabel + " : " + allStats[i]);
+				}
 			}
 			
 			if(allStats[i] == 0 && i > 21) {

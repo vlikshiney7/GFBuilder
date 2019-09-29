@@ -12,7 +12,6 @@ import javax.imageio.ImageIO;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
-import fr.vlik.grandfantasia.RedWeapon;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Quality;
 
@@ -235,9 +234,9 @@ public class Weapon extends Equipment {
 							ArrayList<Effect> oneStarEffects = new ArrayList<Effect>();
 							for(int k = 0; k < Integer.parseInt(starEffectSplit[j]); k++) {
 								oneStarEffects.add(new Effect(lineSplit[indexToStar+2+decal]));
+								decal++;
 							}
 							
-							decal += Integer.parseInt(starEffectSplit[j]);
 							starEffects.add(oneStarEffects);
 						}
 						
