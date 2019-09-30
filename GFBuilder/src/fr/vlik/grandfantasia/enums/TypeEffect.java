@@ -109,7 +109,7 @@ public enum TypeEffect {
 	TimeCraft("Temps de Récolte/Craft", "", "Temps Craft", "", -1, true, Consts.EffectColor[0]),
 	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Consts.EffectColor[0]),
 	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Consts.EffectColor[0]),
-	Bullet("", "", "", "", -1, true, Consts.EffectColor[0]),
+	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Consts.EffectColor[0]),
 	Reflect("Dégât Renvoyé", "", "Deg Renvoyé", "", -1, true, Consts.EffectColor[0]);
 	
 	public final String fr;

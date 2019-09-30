@@ -449,4 +449,98 @@ public class PageMount extends PagePanel {
 		this.genki.get(id).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
 		this.genki.get(id).setSelectedIndex(memory);
 	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[11];
+		
+		int index = 0;
+		
+		config[index++] = this.mount.getSelectedIndex();
+		
+		for(ArrayList<JCustomRadioButton> buttons : this.qualityGenki) {
+			int select = 5;
+			
+			while(select > 0) {
+				if(buttons.get(select).isSelected()) {
+					break;
+				}
+				
+				select--;
+			}
+			
+			config[index++] = select;
+		}
+		
+		for(ArrayList<JStarCheckBox> buttons : this.starGenki) {
+			int select = 4;
+			
+			while(select > 0) {
+				if(buttons.get(select).isSelected()) {
+					break;
+				}
+				
+				select--;
+			}
+			
+			config[index++] = select;
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			config[index++] = this.genki.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		}
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		this.mount.setSelectedIndex(config[index++]);
+		
+		for(ArrayList<JCustomRadioButton> buttons : this.qualityGenki) {
+			for(int i = 0; i < buttons.size(); i++) {
+				if(i == config[index]) {
+					buttons.get(i).setSelected(true);
+				} else {
+					buttons.get(i).setSelected(false);
+				}
+			}
+			
+			index++;
+		}
+		
+		for(ArrayList<JStarCheckBox> buttons : this.starGenki) {
+			for(int i = 0; i < buttons.size(); i++) {
+				if(i == config[index]) {
+					buttons.get(i).setSelected(true);
+				} else {
+					buttons.get(i).setSelected(false);
+				}
+			}
+			
+			index++;
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			this.genki.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+	}
 }

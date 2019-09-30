@@ -469,4 +469,35 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		this.listStone.setModel(new DefaultComboBoxModel<Nucleus>(Nucleus.getData(stoneName)));
 	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[12];
+		
+		int index = 0;
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.nucleus.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.energy.get(i).getIntValue();
+		}
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+
+		for(int i = 0; i < 6; i++) {
+			this.nucleus.get(i).setSelectedIndex(config[index++]);
+		}
+
+		for(int i = 0; i < 6; i++) {
+			this.energy.get(i).setValue(config[index++]);
+		}
+		
+	}
 }

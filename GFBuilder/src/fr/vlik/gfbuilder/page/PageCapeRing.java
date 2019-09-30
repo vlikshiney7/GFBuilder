@@ -517,4 +517,54 @@ public class PageCapeRing extends PagePanel {
 		this.ring.get(other).setModel(new DefaultComboBoxModel<Ring>(tabRing));
 		this.ring.get(other).setSelectedItem(memory);
 	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[18];
+		
+		int index = 0;
+		
+		config[index++] = this.cape.getSelectedIndex();
+		
+		for(int i = 0; i < 2; i++) {
+			config[index++] = this.ring.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			config[index++] = this.enchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		}
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		this.cape.setSelectedIndex(config[index++]);
+		
+		for(int i = 0; i < 2; i++) {
+			this.ring.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			this.enchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+	}
 }

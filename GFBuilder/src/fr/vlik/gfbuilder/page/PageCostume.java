@@ -33,10 +33,10 @@ public class PageCostume extends PagePanel {
 	private static PageCostume INSTANCE = new PageCostume();
 	
 	private ArrayList<JCustomRadioButton> costWeapon = new ArrayList<JCustomRadioButton>(2);
-	private ArrayList<JCustomCheckBox> checkBoxRunway = new ArrayList<JCustomCheckBox>(8);
 	private ArrayList<ArrayList<JCustomRadioButton>> costQuality = new ArrayList<ArrayList<JCustomRadioButton>>(5);
 	private ArrayList<JCustomComboBox<Costume>> costume = new ArrayList<JCustomComboBox<Costume>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> costPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
+	private ArrayList<JCustomCheckBox> checkBoxRunway = new ArrayList<JCustomCheckBox>(8);
 	
 	private JPanel showAndHide;
 	private ArrayList<JPanel> showAndHideRunway = new ArrayList<JPanel>(4);
@@ -558,6 +558,90 @@ public class PageCostume extends PagePanel {
 		
 		if(this.checkBoxRunway.get(index).isSelected()) {
 			this.checkBoxRunway.get(indexPair).setSelected(false);
+		}
+	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[27];
+		
+		int index = 0;
+		
+		int select = 1;
+		
+		while(select > 0) {
+			if(this.costWeapon.get(select).isSelected()) {
+				break;
+			}
+			
+			select--;
+		}
+		
+		config[index++] = select;
+		
+		for(ArrayList<JCustomRadioButton> buttons : this.costQuality) {
+			select = 4;
+			
+			while(select > 0) {
+				if(buttons.get(select).isSelected()) {
+					break;
+				}
+				
+				select--;
+			}
+			
+			config[index++] = select;
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			config[index++] = this.costume.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 7; i++) {
+			config[index++] = this.costPearl.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 8; i++) {
+			config[index++] = this.checkBoxRunway.get(i).isSelected() ? 1 : 0;
+		}
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		for(int i = 0; i < this.costWeapon.size(); i++) {
+			if(i == config[index]) {
+				this.costWeapon.get(i).setSelected(true);
+			} else {
+				this.costWeapon.get(i).setSelected(false);
+			}
+		}
+		
+		for(ArrayList<JCustomRadioButton> buttons : this.costQuality) {
+			for(int i = 0; i < buttons.size(); i++) {
+				if(i == config[index]) {
+					buttons.get(i).setSelected(true);
+				} else {
+					buttons.get(i).setSelected(false);
+				}
+			}
+			
+			index++;
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			this.costume.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 7; i++) {
+			this.costPearl.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 8; i++) {
+			this.checkBoxRunway.get(i).setSelected(config[index++] == 0 ? false : true);
 		}
 	}
 }

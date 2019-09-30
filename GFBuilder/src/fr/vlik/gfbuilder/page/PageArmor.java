@@ -365,6 +365,7 @@ public class PageArmor extends PagePanel {
 			descArmor.add(this.armor.get(i));
 			descArmor.add(this.enchant.get(i));
 			descArmor.add(this.fortif.get(i));
+			descArmor.add(this.redFortif.get(i));
 			
 			JPanel enchantArmor = new JPanel();
 			enchantArmor.setLayout(new BoxLayout(enchantArmor, BoxLayout.X_AXIS));
@@ -385,6 +386,7 @@ public class PageArmor extends PagePanel {
 			JPanel pearlArmor = new JPanel();
 			pearlArmor.setLayout(new BoxLayout(pearlArmor, BoxLayout.Y_AXIS));
 			pearlArmor.setBackground(Design.UIColor[1]);
+			
 			if(i == 0) {
 				pearlArmor.add(this.pearl.get(i));
 				pearlArmor.add(Box.createVerticalStrut(3));
@@ -486,7 +488,32 @@ public class PageArmor extends PagePanel {
 	
 	private void updateDetails(int id) {
 		if(this.armor.get(id).getSelectedIndex() != 0) {
-			this.fortif.get(id).setVisible(true);
+			if(this.getArmor(id).getQuality() == Quality.RED) {
+				this.fortif.get(id).setVisible(false);
+				this.redFortif.get(id).setVisible(true);
+				
+				for(int i = 0; i < 3; i++) {
+					this.redEnchant.get(id*3+i).setVisible(true);
+				}
+				
+				if(this.redFortif.get(id).getSelectedIndex() != 0) {
+					this.valueFortif.get(id).setVisible(true);
+					this.labelValue.get(id).setVisible(true);
+				} else {
+					this.valueFortif.get(id).setVisible(false);
+					this.labelValue.get(id).setVisible(false);
+				}
+			} else {
+				this.fortif.get(id).setVisible(true);
+				this.redFortif.get(id).setVisible(false);
+				this.valueFortif.get(id).setVisible(false);
+				this.labelValue.get(id).setVisible(false);
+
+				for(int i = 0; i < 3; i++) {
+					this.redEnchant.get(id*3+i).setVisible(false);
+				}
+			}
+			
 			if (id == 0) {
 				this.pearl.get(id).setVisible(true);
 			} else if (id == 1) {
@@ -495,9 +522,12 @@ public class PageArmor extends PagePanel {
 			} else {
 				this.pearl.get(id+1).setVisible(true);
 			}
-		}
-		else {
+		} else {
 			this.fortif.get(id).setVisible(false);
+			this.redFortif.get(id).setVisible(false);
+			this.valueFortif.get(id).setVisible(false);
+			this.labelValue.get(id).setVisible(false);
+			
 			if (id == 0) {
 				this.pearl.get(id).setVisible(false);
 				this.pearl.get(id).setSelectedIndex(0);
@@ -557,18 +587,42 @@ public class PageArmor extends PagePanel {
 		if(this.armor.get(id).getSelectedIndex() != 0) {
 			Armor armor = this.getArmor(id);
 			
-			if(armor.isEnchantable()) {
-				Enchantment[] tabEnchant = Enchantment.getPossibleArmorEnchant(armor.getQuality());
-				Enchantment memory = this.getEnchantment(id);
+			if(armor.getQuality() == Quality.RED) {
+				Enchantment[] tabRed = Enchantment.getArmorRedEnchant(null, null);
 				
-				this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-				this.enchant.get(id).setSelectedItem(memory);
-				this.enchant.get(id).setVisible(true);
-			} else {
+				for(int i = 0; i < 3; i++) {
+					Enchantment memory = this.getRedEnchantment(id*3+i);
+					
+					this.redEnchant.get(id*3+i).setModel(new DefaultComboBoxModel<Enchantment>(tabRed));
+					this.redEnchant.get(id*3+i).setSelectedItem(memory);
+					this.redEnchant.get(id*3+i).setVisible(true);
+				}
+				
 				this.enchant.get(id).setVisible(false);
+			} else {
+				if(armor.isEnchantable()) {
+					Enchantment[] tabEnchant = Enchantment.getPossibleArmorEnchant(armor.getQuality());
+					Enchantment memory = this.getEnchantment(id);
+					
+					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+					this.enchant.get(id).setSelectedItem(memory);
+					this.enchant.get(id).setVisible(true);
+				} else {
+					this.enchant.get(id).setVisible(false);
+				}
+				
+				for(int i = 0; i < 3; i++) {
+					this.redEnchant.get(id*3+i).setVisible(false);
+					this.redLvlEnchant.get(id*3+i).setVisible(false);
+				}
 			}
 		} else {
 			this.enchant.get(id).setVisible(false);
+
+			for(int i = 0; i < 3; i++) {
+				this.redEnchant.get(id*3+i).setVisible(false);
+				this.redLvlEnchant.get(id*3+i).setVisible(false);
+			}
 		}
 	}
 	
@@ -654,10 +708,10 @@ public class PageArmor extends PagePanel {
 				continue;
 			}
 			
-			tooltip += e.toString() + " +" + ((int) (e.getValue() * current - e.getValue())) + "\n";
+			tooltip += e.toString() + " +" + ((int) (e.getValue() * current - e.getValue())) + "<br>";
 		}
 		
-		this.labelValue.get(id).setText(tooltip);
+		this.labelValue.get(id).setText("<html>" + tooltip + "</html>");
 	}
 	
 	private void updateRedEnchant(int idRed) {
@@ -705,6 +759,100 @@ public class PageArmor extends PagePanel {
 			this.redLvlEnchant.get(id).setVisible(true);
 		} else {
 			this.redLvlEnchant.get(id).setVisible(false);
+		}
+	}
+	
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[81];
+		
+		int index = 0;
+		
+		for(int i = 0; i < 5; i++) {
+			config[index++] = this.armor.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			config[index++] = this.enchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			config[index++] = this.fortif.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.pearl.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			config[index++] = this.redFortif.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 15; i++) {
+			config[index++] = this.redEnchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 15; i++) {
+			config[index++] = this.redLvlEnchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			config[index++] = this.valueFortif.get(i).getValue();
+		}
+		
+		return config;
+	}
+	
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		for(int i = 0; i < 5; i++) {
+			this.armor.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			this.enchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			this.fortif.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			this.pearl.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			this.redFortif.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 15; i++) {
+			this.redEnchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 15; i++) {
+			this.redLvlEnchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			 this.valueFortif.get(i).setValue(config[index++]);
 		}
 	}
 }

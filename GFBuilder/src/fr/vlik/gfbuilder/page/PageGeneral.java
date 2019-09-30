@@ -332,4 +332,28 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			return 1;
 		}
 	}
+	
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[6];
+		
+		config[0] = this.grade.getSelectedIndex();
+		config[1] = this.getLvl();
+		config[2] = this.reinca.getSelectedIndex();
+		config[3] = this.title.getSelectedIndex();
+		config[4] = this.yggdra.getSelectedIndex();
+		config[5] = this.archive.getSelectedIndex();
+		
+		return config;
+	}
+	
+	@Override
+	public void setConfig(int[] config) {
+		this.grade.setSelectedIndex(config[0]);
+		this.lvl.setValue(config[1]);
+		this.reinca.setSelectedIndex(config[2]);
+		this.title.setSelectedIndex(config[3]);
+		this.yggdra.setSelectedIndex(config[4]);
+		this.archive.setSelectedIndex(config[5]);
+	}
 }

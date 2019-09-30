@@ -779,10 +779,10 @@ public class PageWeapon extends PagePanel {
 				continue;
 			}
 			
-			tooltip += e.toString() + " +" + ((int) (e.getValue() * current - e.getValue())) + "\n";
+			tooltip += e.toString() + " +" + ((int) (e.getValue() * current - e.getValue())) + "<br>";
 		}
 		
-		this.labelValue.get(id).setText(tooltip);
+		this.labelValue.get(id).setText("<html>" + tooltip + "</html>");
 	}
 	
 	private void updateRedEnchant(int idRed) {
@@ -830,6 +830,104 @@ public class PageWeapon extends PagePanel {
 			this.redLvlEnchant.get(id).setVisible(true);
 		} else {
 			this.redLvlEnchant.get(id).setVisible(false);
+		}
+	}
+	
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[58];
+		
+		int index = 0;
+		
+		for(int i = 0; i < 3; i++) {
+			config[index++] = this.weapon.get(i).getSelectedIndex();
+		}
+		
+		config[index++] = this.bullet.getSelectedIndex();
+		
+		for(int i = 0; i < 3; i++) {
+			config[index++] = this.enchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			config[index++] = this.fortif.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 12; i++) {
+			config[index++] = this.pearl.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			config[index++] = this.redFortif.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 9; i++) {
+			config[index++] = this.redEnchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 9; i++) {
+			config[index++] = this.redLvlEnchant.get(i).getSelectedIndex();
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			config[index++] = this.valueFortif.get(i).getValue();
+		}
+		
+		return config;
+	}
+	
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		for(int i = 0; i < 3; i++) {
+			this.weapon.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		this.bullet.setSelectedIndex(config[index++]);
+		
+		for(int i = 0; i < 3; i++) {
+			this.enchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			this.fortif.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 12; i++) {
+			this.pearl.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 6; i++) {
+			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			this.redFortif.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 9; i++) {
+			this.redEnchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 9; i++) {
+			this.redLvlEnchant.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			 this.valueFortif.get(i).setValue(config[index++]);
 		}
 	}
 }

@@ -139,4 +139,30 @@ public class PageSprite extends PagePanel {
 			this.blason.get(i).setSelectedItem(memory);
 		}
 	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[3];
+		
+		int index = 0;
+		
+		for(int i = 0; i < 2; i++) {
+			config[index++] = this.blason.get(i).getSelectedIndex();
+		}
+		
+		config[index++] = this.isleBuff.getSelectedIndex();
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		for(int i = 0; i < 2; i++) {
+			this.blason.get(i).setSelectedIndex(config[index++]);
+		}
+		
+		this.isleBuff.setSelectedIndex(config[index++]);
+	}
 }

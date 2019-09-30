@@ -441,4 +441,26 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			} else break;
 		}
 	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[20];
+		
+		int index = 0;
+		
+		for(int i = 0; i < 24; i++) {
+			config[index++] = this.spePoint.get(i).getSelectedIndex();
+		}
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		for(int i = 0; i < 24; i++) {
+			this.spePoint.get(i).setSelectedIndex(config[index++]);
+		}
+	}
 }

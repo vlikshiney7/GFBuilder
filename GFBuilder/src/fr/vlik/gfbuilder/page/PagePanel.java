@@ -38,4 +38,8 @@ public abstract class PagePanel extends JPanel {
 	abstract protected void setLabel(Language lang);
 	
 	abstract public void updateLanguage(Language lang);
+	
+	abstract public int[] getConfig();
+	
+	abstract public void setConfig(int[] config);
 }

@@ -36,7 +36,7 @@ public class PageTalent extends PagePanel {
 	private static PageTalent INSTANCE = new PageTalent();
 	
 	private JLabel[] tabChosenTalent = new JLabel[9];
-	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(32);
+	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(8);
 	private ArrayList<JCustomComboBox<Talent>> talent = new ArrayList<JCustomComboBox<Talent>>(24);
 	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent());
 	private JCustomButton maxTalent;
@@ -340,6 +340,55 @@ public class PageTalent extends PagePanel {
 			if(talent.isVisible()) {
 				talent.setSelectedIndex(talent.getItemCount()-1);
 			} else break;
+		}
+	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[32];
+		
+		int index = 0;
+		
+		for(ArrayList<JCustomRadioButton> buttons : this.radioTalent) {
+			int select = 3;
+			
+			while(select > 0) {
+				if(buttons.get(select).isSelected()) {
+					break;
+				}
+				
+				select--;
+			}
+			
+			config[index++] = select;
+		}
+		
+		
+		for(int i = 0; i < 24; i++) {
+			config[index++] = this.talent.get(i).getSelectedIndex();
+		}
+		
+		return config;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		for(ArrayList<JCustomRadioButton> buttons : this.radioTalent) {
+			for(int i = 0; i < buttons.size(); i++) {
+				if(i == config[index]) {
+					buttons.get(i).setSelected(true);
+				} else {
+					buttons.get(i).setSelected(false);
+				}
+			}
+			
+			index++;
+		}
+		
+		for(int i = 0; i < 24; i++) {
+			this.talent.get(i).setSelectedIndex(config[index++]);
 		}
 	}
 }

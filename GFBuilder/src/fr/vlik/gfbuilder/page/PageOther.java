@@ -149,4 +149,26 @@ public class PageOther extends PagePanel {
 			this.anima.setSelectedIndex(0);
 		}
 	}
+
+	@Override
+	public int[] getConfig() {
+		int[] config = new int[2];
+		
+		int index = 0;
+		
+		config[index++] = this.bague.getSelectedIndex();
+		
+		config[index++] = this.anima.getSelectedIndex();
+		
+		return null;
+	}
+
+	@Override
+	public void setConfig(int[] config) {
+		int index = 0;
+		
+		this.bague.setSelectedIndex(config[index++]);
+		
+		this.anima.setSelectedIndex(config[index++]);
+	}
 }
