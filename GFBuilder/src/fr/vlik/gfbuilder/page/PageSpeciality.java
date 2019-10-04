@@ -448,7 +448,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		
 		int index = 0;
 		
-		for(int i = 0; i < 24; i++) {
+		for(int i = 0; i < 20; i++) {
 			config[index++] = this.spePoint.get(i).getSelectedIndex();
 		}
 		
@@ -459,7 +459,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	public void setConfig(int[] config) {
 		int index = 0;
 		
-		for(int i = 0; i < 24; i++) {
+		for(int i = 0; i < 20; i++) {
 			this.spePoint.get(i).setSelectedIndex(config[index++]);
 		}
 	}

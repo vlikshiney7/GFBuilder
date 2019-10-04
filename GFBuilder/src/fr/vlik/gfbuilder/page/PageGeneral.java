@@ -349,8 +349,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void setConfig(int[] config) {
-		this.grade.setSelectedIndex(config[0]);
 		this.lvl.setValue(config[1]);
+		this.grade.setSelectedIndex(config[0]);
 		this.reinca.setSelectedIndex(config[2]);
 		this.title.setSelectedIndex(config[3]);
 		this.yggdra.setSelectedIndex(config[4]);

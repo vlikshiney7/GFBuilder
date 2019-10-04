@@ -1,25 +1,42 @@
 package fr.vlik.gfbuilder.page;
 
+import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import fr.vlik.gfbuilder.Lang;
+import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JCustomTextField;
 
 public class PageOption extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static PageOption INSTANCE = new PageOption();
 	
+	private JCustomButton save;
 	private JTextPane parameter = new JTextPane();
+	
+	private JFrame windowSave;
+	private JCustomTextField askName;
+	private JCustomButton submit;
 	
 	private JLabel[] label;
 	
@@ -30,7 +47,13 @@ public class PageOption extends JPanel {
 	private PageOption() {
 		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		this.setBackground(Design.UIColor[2]);
 		setLabel(Language.FR);
+		
+		this.save = new JCustomButton(this.label[0]);
+		this.save.addActionListener(e -> {
+			popup();
+		});
 		
 		this.parameter.setEditable(false);
 		this.parameter.setText(Lang.getDataCredit(Language.FR));
@@ -39,16 +62,91 @@ public class PageOption extends JPanel {
 		this.parameter.setBackground(Design.UIColor[1]);
 		this.parameter.setForeground(Design.FontColor[0]);
 		
-		this.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.setBackground(Design.UIColor[1]);
-		this.add(this.label[0]);
-		this.add(Box.createVerticalStrut(10));
-		this.label[1].setFont(new Font("Open Sans", Font.BOLD, 14));
-		this.add(this.label[1]);
-		this.add(Box.createVerticalStrut(5));
-		this.add(this.parameter);
+		
+		this.windowSave = new JFrame();
+		this.windowSave.setLayout(new BorderLayout());
+		
+		try {
+			this.windowSave.setIconImage(ImageIO.read(PageOption.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		this.windowSave.setSize(400, 180);
+		this.windowSave.setResizable(false);
+		this.windowSave.setLocationRelativeTo(null);
+		this.windowSave.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.windowSave.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent we) {
+				MainFrame.getInstance().setEnabled(true);
+				MainFrame.getInstance().toFront();
+			}
+		});
+		
+		this.askName = new JCustomTextField();
+		this.askName.getDocument().addDocumentListener(new DocumentListener() {
+			public void changedUpdate(DocumentEvent e) {
+				checkValidity();
+			}
+			public void removeUpdate(DocumentEvent e) {
+				checkValidity();
+			}
+			public void insertUpdate(DocumentEvent e) {
+				checkValidity();
+			}
+		});
+		
+		this.submit = new JCustomButton(this.label[4]);
+		this.submit.addActionListener(e -> {
+			addSaveConfig();
+		});
+		this.submit.setAlignmentX(CENTER_ALIGNMENT);
+		
+		createPanel();
 	}
 	
+	protected void createPanel() {
+		JPanel savePanel = new JPanel();
+		savePanel.setBackground(Design.UIColor[1]);
+		savePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		savePanel.add(this.save);
+		
+		JPanel creditPanel = new JPanel();
+		creditPanel.setLayout(new BoxLayout(creditPanel, BoxLayout.Y_AXIS));
+		creditPanel.setBackground(Design.UIColor[1]);
+		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		creditPanel.add(this.label[1]);
+		creditPanel.add(Box.createVerticalStrut(10));
+		this.label[2].setFont(new Font("Open Sans", Font.BOLD, 14));
+		creditPanel.add(this.label[2]);
+		creditPanel.add(Box.createVerticalStrut(5));
+		creditPanel.add(this.parameter);
+		
+		this.setBorder(new EmptyBorder(10, 10, 10, 10));
+		this.add(savePanel);
+		this.add(Box.createVerticalStrut(10));
+		this.add(creditPanel);
+		
+		
+		JPanel pageSave = new JPanel();
+		pageSave.setLayout(new BoxLayout(pageSave, BoxLayout.Y_AXIS));
+		pageSave.setBackground(Design.UIColor[2]);
+		pageSave.setBorder(new EmptyBorder(10, 10, 10, 10));
+		
+		pageSave.add(this.label[3]);
+		pageSave.add(Box.createVerticalStrut(10));
+		pageSave.add(this.askName);
+		pageSave.add(Box.createVerticalStrut(10));
+		pageSave.add(this.submit);
+		pageSave.add(Box.createVerticalStrut(5));
+		this.label[5].setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.label[5].setForeground(Design.FontColor[1]);
+		pageSave.add(this.label[5]);
+		
+		this.windowSave.add(pageSave);
+	}
+
 	protected void setLabel(Language lang) {
 		String[] getter = Lang.getDataLabel(lang, 12);
 		this.label = new JLabel[getter.length];
@@ -63,6 +161,45 @@ public class PageOption extends JPanel {
 			this.label[i].setText(getter[i]);
 		}
 		
+		this.save.updateText();
 		this.parameter.setText(Lang.getDataCredit(lang));
+	}
+	
+	private void popup() {
+		MainFrame.getInstance().setEnabled(false);
+		
+		this.submit.setVisible(false);
+		this.label[5].setVisible(true);
+		
+		this.askName.requestFocus();
+		this.windowSave.setVisible(true);
+	}
+	
+	private void checkValidity() {
+		if(this.askName.getText().equals("")) {
+			this.submit.setVisible(false);
+			this.label[5].setVisible(true);
+			return;
+		}
+		
+		for(SaveConfig config : SaveConfig.data) {
+			if(this.askName.getText().equals(config.getName())) {
+				this.submit.setVisible(false);
+				this.label[5].setVisible(true);
+				return;
+			}
+		}
+		
+		this.submit.setVisible(true);
+		this.label[5].setVisible(false);
+	}
+	
+	private void addSaveConfig() {
+		SaveConfig.writeData(this.askName.getText());
+		
+		this.windowSave.setVisible(false);
+		
+		MainFrame.getInstance().setEnabled(true);
+		MainFrame.getInstance().toFront();
 	}
 }

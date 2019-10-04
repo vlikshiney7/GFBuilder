@@ -61,6 +61,7 @@ public class MainFrame extends JFrame {
 		this.setSize(1300, 750);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
+		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 		
 		System.out.println("Début swing : " + Duration.between(this.start, Instant.now()).toMillis());
@@ -217,6 +218,10 @@ public class MainFrame extends JFrame {
 		
 		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
 	}
+	
+	public ArrayList<JPanel> getPages() {
+		return this.pages;
+	}
 
 	private void setCustomUI() {
 		try {
@@ -294,14 +299,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		/*
-		SwingUtilities.invokeLater(new Runnable() {
-
-			@Override
-			public void run() {
-				MainFrame.getInstance();
-			}
-		});*/
+		SaveConfig.setSave("qsdfghjkl");
 	}
 	
 	public void updateTabPane(int index) {

@@ -33,6 +33,7 @@ public class JCustomSpinner extends JSpinner {
 			c.setForeground(Design.FontColor[0]);
 		}
 		
+		this.putClientProperty("caretWidth", 2);
 		this.setBorder(new LineBorder(new Color(199, 199, 199), 2));
 		((JSpinner.DefaultEditor) this.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
 	}

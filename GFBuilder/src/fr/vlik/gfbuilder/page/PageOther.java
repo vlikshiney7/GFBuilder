@@ -160,7 +160,7 @@ public class PageOther extends PagePanel {
 		
 		config[index++] = this.anima.getSelectedIndex();
 		
-		return null;
+		return config;
 	}
 
 	@Override

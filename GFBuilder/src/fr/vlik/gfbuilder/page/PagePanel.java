@@ -41,5 +41,5 @@ public abstract class PagePanel extends JPanel {
 	
 	abstract public int[] getConfig();
 	
-	abstract public void setConfig(int[] config);
+	abstract public void setConfig(int[] config) throws IllegalArgumentException;
 }
