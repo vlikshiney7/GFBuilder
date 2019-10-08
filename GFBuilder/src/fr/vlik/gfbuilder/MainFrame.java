@@ -299,7 +299,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		SaveConfig.setSave("qsdfghjkl");
+		PageOption.getInstance().setSave("Arca WB no XP");
 	}
 	
 	public void updateTabPane(int index) {

@@ -615,17 +615,22 @@ public class PageCostume extends PagePanel {
 		for(int i = 0; i < this.costWeapon.size(); i++) {
 			if(i == config[index]) {
 				this.costWeapon.get(i).setSelected(true);
+				updateWeaponCost();
 			} else {
 				this.costWeapon.get(i).setSelected(false);
 			}
 		}
 		
-		for(ArrayList<JCustomRadioButton> buttons : this.costQuality) {
-			for(int i = 0; i < buttons.size(); i++) {
-				if(i == config[index]) {
-					buttons.get(i).setSelected(true);
+		index++;
+		
+		for(int i = 0; i < 5; i++) {
+			ArrayList<JCustomRadioButton> buttons = this.costQuality.get(i);
+			for(int j = 0; j < buttons.size(); j++) {
+				if(j == config[index]) {
+					buttons.get(j).setSelected(true);
+					updateCostume(i);
 				} else {
-					buttons.get(i).setSelected(false);
+					buttons.get(j).setSelected(false);
 				}
 			}
 			

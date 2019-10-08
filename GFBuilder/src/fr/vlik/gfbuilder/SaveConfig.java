@@ -2,18 +2,18 @@ package fr.vlik.gfbuilder;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PagePanel;
 
 public class SaveConfig {
 	
-	private static final String PATH = "/fr/vlik/gfbuilder/";
 	public static SaveConfig[] data;
 	public static String CURRENT_SAVE;
 	static {
@@ -50,8 +50,7 @@ public class SaveConfig {
 		ArrayList<SaveConfig> list = new ArrayList<SaveConfig>();
 		
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					SaveConfig.class.getResourceAsStream(PATH + "save.gfb"), "UTF-8"));
+			BufferedReader reader = new BufferedReader(new FileReader("save.gfb"));
 		) {
 			String line = reader.readLine();
 			
@@ -60,7 +59,6 @@ public class SaveConfig {
 				int[][] config = new int[12][];
 				
 				for(int i = 0; i < 12; i++) {
-					System.out.println(line);
 					line = reader.readLine();
 					String[] lineSplit = line.split("/");
 					
@@ -76,12 +74,37 @@ public class SaveConfig {
 				list.add(new SaveConfig(save, config));
 			}
 		} catch (IOException e) {
+			writeDefaultData();
 			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 		}
 		
 		SaveConfig.data = new SaveConfig[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			data[i] = list.get(i);
+		}
+	}
+	
+	public static void writeDefaultData() {
+		int[][] config = new int[11][];
+		int[] nbCase = new int[] { 58, 81, 18, 11, 26, 32, 20, 3, 3, 12, 2 };
+		
+		try (
+			BufferedWriter writer = new BufferedWriter(new FileWriter("save.gfb", true));
+		) {
+			writer.append("Novice\n");
+			writer.append("0/1/0/0/0/0/\n");
+			
+			for(int i = 0; i < config.length; i++) {
+				for(int j = 0; j < nbCase[i]; j++) {
+					writer.append("0/");
+				}
+				
+				writer.append("\n");
+			}
+			
+			writer.flush();
+		} catch (IOException e) {
+			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 		}
 	}
 	
@@ -96,7 +119,7 @@ public class SaveConfig {
 		}
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter(SaveConfig.class.getClass().getResource(PATH + "save.gfb").getPath(), true));
+			BufferedWriter writer = new BufferedWriter(new FileWriter("save.gfb", true));
 		) {
 			writer.append(name + "\n");
 			
@@ -110,29 +133,23 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			e.printStackTrace();
 			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 		}
+		
+		loadData();
 	}
 	
 	public static void setDefault() {
-		setSave("Novice");
+		PageOption.getInstance().setSave("Novice");
 	}
 	
-	public static void setSave(String name) {
-		boolean set = false;
-		
+	public static SaveConfig getSave(String name) {
 		for(SaveConfig save : SaveConfig.data) {
 			if(name.equals(save.getName())) {
-				save.setConfig();
-				set = true;
-				System.out.println("Save " + save.getName() + " loaded");
-				break;
+				return save;
 			}
 		}
 		
-		if(!set) {
-			System.out.println("Erreur, save not found");
-		}
+		return null;
 	}
 }

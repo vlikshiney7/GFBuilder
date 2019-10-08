@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
+import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.enums.Language;
@@ -108,6 +109,8 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 					renderer.setForeground(Consts.itemColor[3]);
 				}
 			}
+		} else if(value instanceof SaveConfig) {
+			renderer.setText(((SaveConfig) value).getName());
 		}
 		
 		if (cellHasFocus || isSelected) {

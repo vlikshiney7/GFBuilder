@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,6 +25,7 @@ import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
+import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomTextField;
 
@@ -31,7 +34,8 @@ public class PageOption extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static PageOption INSTANCE = new PageOption();
 	
-	private JCustomButton save;
+	private JCustomComboBox<SaveConfig> save;
+	private JCustomButton newSave;
 	private JTextPane parameter = new JTextPane();
 	
 	private JFrame windowSave;
@@ -50,8 +54,15 @@ public class PageOption extends JPanel {
 		this.setBackground(Design.UIColor[2]);
 		setLabel(Language.FR);
 		
-		this.save = new JCustomButton(this.label[0]);
+		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.data);
 		this.save.addActionListener(e -> {
+			updateSave();
+			
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.newSave = new JCustomButton(this.label[1]);
+		this.newSave.addActionListener(e -> {
 			popup();
 		});
 		
@@ -97,7 +108,7 @@ public class PageOption extends JPanel {
 			}
 		});
 		
-		this.submit = new JCustomButton(this.label[4]);
+		this.submit = new JCustomButton(this.label[5]);
 		this.submit.addActionListener(e -> {
 			addSaveConfig();
 		});
@@ -106,20 +117,43 @@ public class PageOption extends JPanel {
 		createPanel();
 	}
 	
+	public SaveConfig getSave() {
+		return this.save.getSelectedItem();
+	}
+	
+	public void setSave(String name) {
+		boolean set = false;
+		
+		for(SaveConfig save : SaveConfig.data) {
+			if(name.equals(save.getName())) {
+				this.save.setSelectedItem(save);
+				set = true;
+				System.out.println("Save " + save.getName() + " loaded");
+				break;
+			}
+		}
+		
+		if(!set) {
+			System.out.println("Error, save not found");
+		}
+	}
+	
 	protected void createPanel() {
-		JPanel savePanel = new JPanel();
+		JPanel savePanel = new JPanel(new GridLayout(1, 3, 10, 10));
 		savePanel.setBackground(Design.UIColor[1]);
 		savePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		savePanel.add(this.label[0]);
 		savePanel.add(this.save);
+		savePanel.add(this.newSave);
 		
 		JPanel creditPanel = new JPanel();
 		creditPanel.setLayout(new BoxLayout(creditPanel, BoxLayout.Y_AXIS));
 		creditPanel.setBackground(Design.UIColor[1]);
 		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		creditPanel.add(this.label[1]);
-		creditPanel.add(Box.createVerticalStrut(10));
-		this.label[2].setFont(new Font("Open Sans", Font.BOLD, 14));
 		creditPanel.add(this.label[2]);
+		creditPanel.add(Box.createVerticalStrut(10));
+		this.label[3].setFont(new Font("Open Sans", Font.BOLD, 14));
+		creditPanel.add(this.label[3]);
 		creditPanel.add(Box.createVerticalStrut(5));
 		creditPanel.add(this.parameter);
 		
@@ -134,15 +168,15 @@ public class PageOption extends JPanel {
 		pageSave.setBackground(Design.UIColor[2]);
 		pageSave.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		pageSave.add(this.label[3]);
+		pageSave.add(this.label[4]);
 		pageSave.add(Box.createVerticalStrut(10));
 		pageSave.add(this.askName);
 		pageSave.add(Box.createVerticalStrut(10));
 		pageSave.add(this.submit);
 		pageSave.add(Box.createVerticalStrut(5));
-		this.label[5].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.label[5].setForeground(Design.FontColor[1]);
-		pageSave.add(this.label[5]);
+		this.label[6].setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.label[6].setForeground(Design.FontColor[1]);
+		pageSave.add(this.label[6]);
 		
 		this.windowSave.add(pageSave);
 	}
@@ -161,15 +195,19 @@ public class PageOption extends JPanel {
 			this.label[i].setText(getter[i]);
 		}
 		
-		this.save.updateText();
+		this.newSave.updateText();
 		this.parameter.setText(Lang.getDataCredit(lang));
+	}
+	
+	private void updateSave() {
+		this.getSave().setConfig();
 	}
 	
 	private void popup() {
 		MainFrame.getInstance().setEnabled(false);
 		
 		this.submit.setVisible(false);
-		this.label[5].setVisible(true);
+		this.label[6].setVisible(true);
 		
 		this.askName.requestFocus();
 		this.windowSave.setVisible(true);
@@ -178,20 +216,20 @@ public class PageOption extends JPanel {
 	private void checkValidity() {
 		if(this.askName.getText().equals("")) {
 			this.submit.setVisible(false);
-			this.label[5].setVisible(true);
+			this.label[6].setVisible(true);
 			return;
 		}
 		
 		for(SaveConfig config : SaveConfig.data) {
 			if(this.askName.getText().equals(config.getName())) {
 				this.submit.setVisible(false);
-				this.label[5].setVisible(true);
+				this.label[6].setVisible(true);
 				return;
 			}
 		}
 		
 		this.submit.setVisible(true);
-		this.label[5].setVisible(false);
+		this.label[6].setVisible(false);
 	}
 	
 	private void addSaveConfig() {
@@ -199,7 +237,10 @@ public class PageOption extends JPanel {
 		
 		this.windowSave.setVisible(false);
 		
-		MainFrame.getInstance().setEnabled(true);
+		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.data));
+		this.save.setSelectedItem(SaveConfig.getSave(this.askName.getText()));
+		
 		MainFrame.getInstance().toFront();
+		MainFrame.getInstance().setEnabled(true);
 	}
 }

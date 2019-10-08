@@ -439,15 +439,23 @@ public class PageMount extends PagePanel {
 		
 		Genki[] tabGenki = Genki.getPossibleGenki(quality, idCheck+1);
 		
-		for(int i = 0; i < this.starGenki.get(id).size(); i++) {
-			if(i <= idCheck) this.starGenki.get(id).get(i).setSelected(true);
-			else this.starGenki.get(id).get(i).setSelected(false);
+		if(tabGenki != null) {
+			
+			for(int i = 0; i < this.starGenki.get(id).size(); i++) {
+				if(i <= idCheck) {
+					this.starGenki.get(id).get(i).setSelected(true);
+				} else {
+					this.starGenki.get(id).get(i).setSelected(false);
+				}
+			}
+			
+			int memory = this.genki.get(id).getSelectedIndex();
+			
+			this.genki.get(id).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
+			this.genki.get(id).setSelectedIndex(memory);
+		} else {
+			this.genki.get(id).setModel(new DefaultComboBoxModel<Genki>());
 		}
-		
-		int memory = this.genki.get(id).getSelectedIndex();
-		
-		this.genki.get(id).setModel(new DefaultComboBoxModel<Genki>(tabGenki));
-		this.genki.get(id).setSelectedIndex(memory);
 	}
 
 	@Override
@@ -507,24 +515,30 @@ public class PageMount extends PagePanel {
 		
 		this.mount.setSelectedIndex(config[index++]);
 		
-		for(ArrayList<JCustomRadioButton> buttons : this.qualityGenki) {
-			for(int i = 0; i < buttons.size(); i++) {
-				if(i == config[index]) {
-					buttons.get(i).setSelected(true);
+		for(int i = 0; i < 2; i++) {
+			ArrayList<JCustomRadioButton> buttons = this.qualityGenki.get(i);
+			for(int j = 0; j < buttons.size(); j++) {
+				if(j == config[index]) {
+					buttons.get(j).setSelected(true);
+					updateQualityGenki(i);
+					setEffects();
 				} else {
-					buttons.get(i).setSelected(false);
+					buttons.get(j).setSelected(false);
 				}
 			}
 			
 			index++;
 		}
 		
-		for(ArrayList<JStarCheckBox> buttons : this.starGenki) {
-			for(int i = 0; i < buttons.size(); i++) {
-				if(i == config[index]) {
-					buttons.get(i).setSelected(true);
+		for(int i = 0; i < 2; i++) {
+			ArrayList<JStarCheckBox> buttons = this.starGenki.get(i);
+			for(int j = 0; j < buttons.size(); j++) {
+				if(j == config[index]) {
+					buttons.get(j).setSelected(true);
+					updateStarGenki(i, j);
+					setEffects();
 				} else {
-					buttons.get(i).setSelected(false);
+					buttons.get(j).setSelected(false);
 				}
 			}
 			
