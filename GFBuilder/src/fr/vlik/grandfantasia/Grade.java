@@ -17,7 +17,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class Grade implements Iconable, Writable {
 	
 	public static String PATH = Consts.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
-	private static Grade[] data;
+	public static Grade[] data;
 	static {
 		loadData();
 	}

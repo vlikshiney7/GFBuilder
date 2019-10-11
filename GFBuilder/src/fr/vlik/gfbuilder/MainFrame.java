@@ -37,6 +37,7 @@ public class MainFrame extends JFrame {
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	
+	private JPanel overlay;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
@@ -143,18 +144,28 @@ public class MainFrame extends JFrame {
 		System.out.println("Fin Option : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		
-		JPanel content = new JPanel();
-		content.setBorder(new EmptyBorder(20, 20, 20, 20));
-		content.setBackground(Design.UIColor[2]);
+		JPanel allPages = new JPanel();
+		allPages.setBorder(new EmptyBorder(20, 20, 20, 20));
+		allPages.setBackground(Design.UIColor[2]);
 		
-		JScrollPane scrollContent = new JScrollPane(content, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		JScrollPane scrollContent = new JScrollPane(allPages, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollContent.setBorder(null);
 		scrollContent.getVerticalScrollBar().setUnitIncrement(10);
 		scrollContent.getHorizontalScrollBar().setUnitIncrement(10);
 		
 		for(int i = 0; i < this.pages.size(); i++) {
-			content.add(this.pages.get(i));
+			allPages.add(this.pages.get(i));
 		}
+		
+		
+		this.overlay = Overlay.getInstance();
+		this.add(JCustomLabel.getSimpleLabel(PageOption.getInstance().getSave().getName()));
+		
+		JPanel content = new JPanel();
+		content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+		content.setBackground(Design.UIColor[2]);
+		content.add(this.overlay);
+		content.add(scrollContent);
 		
 		/****************************************/
 		/*		****	   STATS	  	****	*/
@@ -209,7 +220,7 @@ public class MainFrame extends JFrame {
 		scrollStats.getVerticalScrollBar().setUnitIncrement(10);
 		
 		this.add(menu, BorderLayout.WEST);
-		this.add(scrollContent, BorderLayout.CENTER);
+		this.add(content, BorderLayout.CENTER);
 		this.add(scrollStats, BorderLayout.EAST);
 		
 		
@@ -299,7 +310,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		PageOption.getInstance().setSave("Arca WB no XP");
+		PageOption.getInstance().setSave("Arcaniste Full DPS");
 	}
 	
 	public void updateTabPane(int index) {

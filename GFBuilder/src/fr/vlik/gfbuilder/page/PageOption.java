@@ -21,6 +21,7 @@ import javax.swing.event.DocumentListener;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
@@ -57,6 +58,8 @@ public class PageOption extends JPanel {
 		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.data);
 		this.save.addActionListener(e -> {
 			updateSave();
+			
+			Overlay.getInstance().setNameSave(this.getSave().getName());
 			
 			MainFrame.getInstance().updateStat();
 		});
@@ -235,12 +238,12 @@ public class PageOption extends JPanel {
 	private void addSaveConfig() {
 		SaveConfig.writeData(this.askName.getText());
 		
-		this.windowSave.setVisible(false);
 		
 		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.data));
 		this.save.setSelectedItem(SaveConfig.getSave(this.askName.getText()));
 		
 		MainFrame.getInstance().toFront();
 		MainFrame.getInstance().setEnabled(true);
+		this.windowSave.setVisible(false);
 	}
 }

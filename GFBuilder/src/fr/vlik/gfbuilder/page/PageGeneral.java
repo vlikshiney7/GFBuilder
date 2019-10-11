@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Base;
 import fr.vlik.grandfantasia.Consts;
@@ -59,6 +60,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageTalent.getInstance().updateListTalent();
 			PageSpeciality.getInstance().updateListSpe();
 			
+			Overlay.getInstance().setGrade(this.getGrade());
+			
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
@@ -80,6 +83,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageBuff.getInstance().updateEnergy();
 			PageOther.getInstance().updateBague();
 			PageOther.getInstance().updateAnima();
+			
+			Overlay.getInstance().setLvl(this.getLvl());
 			
 			setEffects();
 			MainFrame.getInstance().updateStat();
