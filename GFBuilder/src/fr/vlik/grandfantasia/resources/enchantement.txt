@@ -12,7 +12,7 @@ de la Mort/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false/true/1/DCCP,false,8
 des Mortels/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false/true/1/TCCP,false,2
 de l'Amplification/11,12,13,14/-1/false,false,false/true/1/DCCM,false,8
 d'Explosion Énergétique/11,12,13,14/-1/false,false,false/true/1/TCCM,false,2
-d'Absorption Énergétique/0,1,2,3,4,5,6,7,12,13/12,13/false,false,false/true/0
+d'Absorption Énergétique/0,1,2,3,4,5,6,7,12,13/3,4,5,7,12,13/false,false,false/true/0
 de Soif Sanguine/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/-1/false,false,false/true/1/RegenCB,false,3
 de Tempérance/11,14/11,14/false,false,false/true/1/CostComp,false,-6
 de Coordination/12,13/-1/true,false,false/true/2/RTCCP,false,3/RTCCM,false,3

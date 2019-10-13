@@ -29,18 +29,18 @@ public enum TypeEffect {
 	PV("Point de Vie", "", "PV", "", -1, true, Consts.EffectColor[2]),
 	PM("Point de Mana", "", "PM", "", -1, true, Consts.EffectColor[4]),
 	
-	DegP("Dégât Physique", "", "DEG P", "", -1, true, Consts.EffectColor[0]), 
-	DegM("Dégât Magique", "", "DEG M", "", -1, true, Consts.EffectColor[0]), 
+	DegP("Dégât Physique", "", "Deg Phys", "", -1, true, Consts.EffectColor[0]), 
+	DegM("Dégât Magique", "", "Deg Mag", "", -1, true, Consts.EffectColor[0]), 
 	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "", -1, true, Consts.EffectColor[0]),
 	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "", -1, true, Consts.EffectColor[0]),
 	
-	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", -1, true, Consts.EffectColor[0]),
-	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", -1, true, Consts.EffectColor[0]),
+	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", 100, true, Consts.EffectColor[0]),
+	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", 100, true, Consts.EffectColor[0]),
 	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Consts.EffectColor[0]),
 	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Consts.EffectColor[0]),
 	
-	DCCP("Dégât Coup Critique Physique", "", "Deg Crit Phys", "", -1, true, Consts.EffectColor[0]),
-	DCCM("Dégât Coup Critique Magique", "", "Deg Crit Mag", "", -1, true, Consts.EffectColor[0]),
+	DCCP("Dégât Coup Critique Physique", "", "Deg Crit Phys", "", 150, true, Consts.EffectColor[0]),
+	DCCM("Dégât Coup Critique Magique", "", "Deg Crit Mag", "", 150, true, Consts.EffectColor[0]),
 	RDCCP("Réduction Dégât Coup Critique Physique", "", "Red Dg Crt Ph", "", -1, true, Consts.EffectColor[0]),
 	RDCCM("Réduction Dégât Coup Critique Magique", "", "Red Dg Crt Mg", "", -1, true, Consts.EffectColor[0]),
 	RTCCP("Réduction Taux Coup Critique Physique", "", "Red Tx Crt Ph", "", -1, true, Consts.EffectColor[0]),
@@ -49,7 +49,7 @@ public enum TypeEffect {
 	VitAtk("Vitesse d'Attaque Mêlée", "", "Vit Atk Mel", "", -1, true, Consts.EffectColor[0]),
 	VitAtkD("Vitesse d'Attaque Distance", "", "Vit Atk Dist", "", -1, true, Consts.EffectColor[0]),
 	VitAtkM("Vitesse d'Attaque Magique", "", "Vit Atk Mag", "", -1, true, Consts.EffectColor[0]),
-	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", -1, true, Consts.EffectColor[0]),
+	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", 80, true, Consts.EffectColor[0]),
 	Depla("Vitesse de Déplacement", "", "Vit Depla", "", -1, true, Consts.EffectColor[0]),
 	
 	ReducAtk("Réduction d'Attaque Mêlée", "", "Reduc Atq Mel", "", -1, true, Consts.EffectColor[0]),
@@ -66,11 +66,12 @@ public enum TypeEffect {
 	DegGlace("Dégât Glace", "", "Deg Glace", "", -1, true, Consts.EffectColor[0]),
 	DegNature("Dégât Nature", "", "Deg Nature", "", -1, true, Consts.EffectColor[0]),
 	
-	XP("Bonus d'Expérience", "", "XP", "", -1, true, Consts.EffectColor[0]),
-	Loot("Bonus de Butin", "", "Butin", "", -1, true, Consts.EffectColor[0]),
+	XP("Bonus d'Expérience", "", "XP", "", 500, true, Consts.EffectColor[0]),
+	Loot("Bonus de Butin", "", "Butin", "", 300, true, Consts.EffectColor[0]),
 	
+	DegDuo("Dégât Deux Armes", "", "Deg 2 Armes", "", -1, true, Consts.EffectColor[0]),
 	RegenCB("Régénération Coup Standard", "", "Regen Coup Std", "", -1, true, Consts.EffectColor[0]),
-	
+
 	DegStdEp("Dégât Standard à l'Épée", "", "Deg Std Ep 1M", "", -1, true, Consts.EffectColor[0]),
 	DegStdMa("Dégât Standard au Maillet", "", "Deg Std Ma 1M", "", -1, true, Consts.EffectColor[0]),
 	DegStdHa("Dégât Standard à la Hache", "", "Deg Std Ha 1M", "", -1, true, Consts.EffectColor[0]),
@@ -81,6 +82,17 @@ public enum TypeEffect {
 	DegStdGun("Dégât Standard au Pistolet", "", "Deg Std Gun", "", -1, true, Consts.EffectColor[0]),
 	DegStdBa("Dégât Standard au Bâton", "", "Deg Std Bat", "", -1, true, Consts.EffectColor[0]),
 	DegStdLa("Dégât Standard à la Lame", "", "Deg Std Lame", "", -1, true, Consts.EffectColor[0]),
+
+	DegEp("Dégât à l'Épée", "", "Deg Ep 1M", "", -1, true, Consts.EffectColor[0]),
+	DegMa("Dégât au Maillet", "", "Deg Ma 1M", "", -1, true, Consts.EffectColor[0]),
+	DegHa("Dégât à la Hache", "", "Deg Ha 1M", "", -1, true, Consts.EffectColor[0]),
+	Deg2Ep("Dégât à l'Épée 2 Main", "", "Deg Ep 2M", "", -1, true, Consts.EffectColor[0]),
+	Deg2Ma("Dégât au Maillet 2 Main", "", "Deg Ma 2M", "", -1, true, Consts.EffectColor[0]),
+	Deg2Ha("Dégât à la Hache 2 Main", "", "Deg Ha 2M", "", -1, true, Consts.EffectColor[0]),
+	DegArc("Dégât à l'Arc", "", "Deg Arc", "", -1, true, Consts.EffectColor[0]),
+	DegGun("Dégât au Pistolet", "", "Deg Gun", "", -1, true, Consts.EffectColor[0]),
+	DegBa("Dégât au Bâton", "", "Deg Bat", "", -1, true, Consts.EffectColor[0]),
+	DegLa("Dégât à la Lame", "", "Deg Lame", "", -1, true, Consts.EffectColor[0]),
 	
 	DegBeteP("Dégât Physique sur Bête", "", "Deg Phys Bete", "", -1, true, Consts.EffectColor[0]),
 	DegPlanteP("Dégât Physique sur Plante", "", "Deg Phys Plante", "", -1, true, Consts.EffectColor[0]),
@@ -105,8 +117,8 @@ public enum TypeEffect {
 	RegenPV("Régénération de Point de Vie", "", "Regen PV", "", -1, true, Consts.EffectColor[0]),
 	RegenPM("Régénération de Point de Mana", "", "Regen PM", "", -1, true, Consts.EffectColor[0]),
 	MEN("Menace", "", "Menace", "", -1, true, Consts.EffectColor[0]),
-	BoostCraft("Chance de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Consts.EffectColor[0]),
-	TimeCraft("Temps de Récolte/Craft", "", "Temps Craft", "", -1, true, Consts.EffectColor[0]),
+	BoostCraft("Taux de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Consts.EffectColor[0]),
+	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Consts.EffectColor[0]),
 	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Consts.EffectColor[0]),
 	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Consts.EffectColor[0]),
 	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Consts.EffectColor[0]),

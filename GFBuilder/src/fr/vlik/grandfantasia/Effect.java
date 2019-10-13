@@ -112,16 +112,7 @@ public class Effect {
 	
 	@Override
 	public String toString() {
-		String[] enumName = { "FCE", "VIT", "INT", "VOL", "AGI", "Attaque Physique", "Attaque Distance", "Attaque Magique", "Défense Physique", "Défense Magique",
-				"Taux Critique Physique", "Taux Critique Magique", "ESQ", "Résistance Sacré", "Résistance Ombre", "Résistance Foudre", "Résistance Feu", "Résistance Glace", "Résistance Nature", "Toucher",
-				"PV", "PM", "Dégât Physique", "Dégât Magique", "Réduction Physique", "Réduction Magique", "Pénétration Physique", "Pénétration Magique", "Réduction Pénétration Physique", "Réduction Pénétration Magique",
-				"Dégât Critique Physique", "Dégât Critique Magique", "Réduction Dégât Critique Physique", "Réduction Dégât Critique Magique", "Réduction Taux Critique Physique", "Réduction Taux Critique Magique", "Vitesse d'attaque", "Vitesse d'attaque à distance", "Vitesse d'attaque magique", "Incantation",
-				"XP", "Taux de Butin", "Régénération Coup Blanc", "Dégât Physique sur Bête", "Dégât Physique sur Plante", "Dégât Physique sur Humanoïde", "Dégât Physique sur Élémentaire", "Dégât Physique sur Mécanique", "Dégât Physique sur Mort", "Dégât Physique sur Démon",
-				"Dégât Magique sur Bête", "Dégât Magique sur Plante", "Dégât Magique sur Humanoïde", "Dégât Magique sur Élémentaire", "Dégât Magique sur Mécanique", "Dégât Magique sur Mort", "Dégât Magique sur Démon", "Dégât Physique Subit", "Dégât Distance Subit", "Dégât Magique Subit",
-				"Dégât Sacré", "Dégât Ombre", "Dégât Foudre", "Dégât Feu", "Dégât Glace", "Dégât Nature", "Interruption Compétence", "Coût Compétence", "Rechargement Compétence", "Parade",
-				"Dégât Standard Épée", "Dégât Standard Marteau", "Dégât Standard Hache", "Dégât Standard Épée 2 Mains", "Dégât Standard Marteau 2 Mains", "Dégât Standard Hache 2 Mains", "Dégât Standard Arc", "Dégât Standard Gun", "Dégât Standard Bâton", "Dégât Standard Lame", "Dégât Attaque Distance", "Réduction Dégât Attaque Distance", "Régénération PV Assis", "Régénération PM Assis", "Menace",
-				"Taux de réussite de Craft", "Temps de récolte/entraînement/craft", "Soin donné", "Soin reçu", "Bonus d'Attaque à Distance", "Reflect", "Vitesse de Déplacement" };
-		String result = enumName[this.getType().ordinal()] + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
+		String result = this.getType().fr + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
 		if(this.withWeapon != WeaponType.NONE) {
 			result += " si équipé ";
 			switch (this.withWeapon) {

@@ -5,10 +5,10 @@ Casque,Helmet/Plastron,Breastplate/Jambière,Legging/Gantelet,Gauntlet/Botte,Boo
 Cape,Cape/XP Cape,Cape Exp/Anneau 1,Ring 1/Anneau 2,Ring 2/XP Anneau,Ring Exp/XP Anneau,Ring Exp/Aucun set actif,No active set
 Monture,Mount/XP Monture,Mount Exp/Monture enchantée,Mount enchantment/Rien,Nothing/Blanc,White/Vert,Green/Bleu,Blue/Orange,Orange/Jaune,Yellow/Trône enchanté,Throne enchantment/Rien,Nothing/Blanc,White/Vert,Green/Bleu,Blue/Orange,Orange/Jaune,Yellow
 Armes,Weapons/Tête,Head/Tenue,Body/Dos,Back/Type d'armes,Weapons type/Armes 1 main,1 hand weapons/Arme 2 mains,2 hands weapon/Arme 1,Weapon 1/Arme 2,Weapon 2/Rien,Nothing/Blanc,White/Vert,Green/Bleu,Blue/Jaune,Yellow/Runway Arme,Weapon Runway/Runway Tête,Head Runway/Runway Tenue,Body Runway/Runway Dos,Back Runway/Runway Nouveauté,New Runway
-Combinaison bonus,Bonus combination/Talents,Talents/Ancestraux,Ancestral/Terrestres,Earth/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Terrestres,Earth/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Mettre tous les talents au maximum,Set all talents to maximum
-Spécialité,Speciality/Points restants : ,Remaining points: /Maître,Master/Mythique,Mythical/Légendaire,Legendary/Ultime,Ultimate/Mettre toutes les spécialités à 10,Set all speciality to 10
+Combinaison bonus,Bonus combination/Talents,Talents/Ancestraux,Ancestral/Terrestres,Earth/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Terrestres,Earth/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Tout mettre au minimum,Set all to minimum/Tout mettre au maximum,Set all to maximum
+Spécialité,Speciality/Points restants : ,Remaining points: /Maître,Master/Mythique,Mythical/Légendaire,Legendary/Ultime,Ultimate/Tout mettre à 0,Set all to 0/Tout mettre à 10,Set all to 10
 Compétences passives,Passive skills/Énergie professionnelle,Professional energy
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination
 Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Énergies,Energy/Buff de guilde,Guild buff/Actif,Active/Inactif,Inactive/Pierre permanente,Permanent stone/Actif,Active/Inactif,Inactive
 Bague de mariage,Wedding ring/Anima,Anima
-Charger,Load/Sauvegarder,Save/Crédit,Credit/Version : 0.6.2,Version: 0.6.2/Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé,Empty name or already exist
+Charger,Load/Sauvegarder,Save/Crédit,Credit/Version : 0.6.3,Version: 0.6.3/Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé,Empty name or already exist

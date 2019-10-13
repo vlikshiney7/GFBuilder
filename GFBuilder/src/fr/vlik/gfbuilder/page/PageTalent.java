@@ -39,6 +39,8 @@ public class PageTalent extends PagePanel {
 	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(8);
 	private ArrayList<JCustomComboBox<Talent>> talent = new ArrayList<JCustomComboBox<Talent>>(24);
 	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent());
+	
+	private JCustomButton reinitTalent;
 	private JCustomButton maxTalent;
 	
 	private ArrayList<JPanel> showAndHideTalent = new ArrayList<JPanel>();
@@ -106,8 +108,13 @@ public class PageTalent extends PagePanel {
 				}
 			}
 		}
-		
-		this.maxTalent = new JCustomButton(this.label[11]);
+
+		this.reinitTalent = new JCustomButton(this.label[11]);
+		this.reinitTalent.addActionListener(e -> {
+			setMinCBoxTalent();
+		});
+
+		this.maxTalent = new JCustomButton(this.label[12]);
 		this.maxTalent.addActionListener(e -> {
 			setMaxCBoxTalent();
 		});
@@ -229,15 +236,21 @@ public class PageTalent extends PagePanel {
 		this.add(elem2);
 		this.add(Box.createVerticalStrut(10));
 		
-		JPanel elem3 = new JPanel(new GridLayout(1, 1));
-		elem3.setBackground(Design.UIColor[1]);
-		elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
+		
+		this.reinitTalent.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.reinitTalent.setMinimumSize(new Dimension(0, 30));
+		
+		this.maxTalent.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.maxTalent.setMinimumSize(new Dimension(0, 30));
-		elem3.add(maxTalent);
+		
+		JPanel elem3 = new JPanel(new GridLayout(1, 2, 10, 5));
+		elem3.setBackground(Design.UIColor[2]);
+		elem3.add(this.reinitTalent);
+		elem3.add(this.maxTalent);
 		
 		this.add(elem3);
 	}
-
+	
 	@Override
 	protected void setLabel(Language lang) {
 		String[] getter = Lang.getDataLabel(lang, 6);
@@ -335,6 +348,14 @@ public class PageTalent extends PagePanel {
 		}
 	}
 	
+	private void setMinCBoxTalent() {
+		for(JCustomComboBox<Talent> talent : this.talent) {
+			if(talent.isVisible()) {
+				talent.setSelectedIndex(0);
+			} else break;
+		}
+	}
+	
 	private void setMaxCBoxTalent() {
 		for(JCustomComboBox<Talent> talent : this.talent) {
 			if(talent.isVisible()) {
@@ -342,7 +363,7 @@ public class PageTalent extends PagePanel {
 			} else break;
 		}
 	}
-
+	
 	@Override
 	public int[] getConfig() {
 		int[] config = new int[32];

@@ -1,3 +1,55 @@
 Rien/-1/0,0,0
+Fierté pétrifiante/100vio0/0,0,0
+Seigneur Arlong/90vio0/0,0,0
+Belliqueux d'Aiolia/80vio0/0,0,0
+Puissante de Khal Drogo/100gold0/3,1,1/FCE,false,60/Toucher,false,20/DegDuo,false,40/DegHa,false,20/AGI,false,60
+Sanguinaire Kenpachi/90gold0/2,2,2/FCE,false,30/Toucher,false,30/TCCP,false,35/VIT,false,25/RTCCP,false,17/VitAtk,false,23
+Vengeance de Mordred/80gold0/2,2,1/DefP,true,20/FCE,false,30/TCCP,false,10/VIT,false,10/DCCP,false,40
+Héros Bestial/100pve0/2,2,1/Toucher,false,10/VitAtk,false,20/FCE,false,40/VIT,false,15/DefP,true,15
+Explorateur Fondue/95pve0/2,2,1/FCE,false,40/ESQ,false,15/Toucher,false,10/TCCP,false,5/AGI,false,30
+Feu Fanatique/90pve0/2,3,2/FCE,false,25/Toucher,false,20/ReducP,false,15/ReducM,false,15/DCCP,false,30/VIT,false,25/TCCP,false,25
+Âme de l'Ours Terrifiant/85pve0/2,3,1/MEN,false,-10/FCE,false,21/ReducP,false,10/ReducM,false,10/VIT,false,21/DefP,true,10
+Furie du Maître/80pve0/2,1,1/Toucher,false,20/FCE,false,30/TCCP,false,10/DCCP,false,30
+Fureur du Berserker/75pve0/2,2,2/PM,true,20/VIT,false,14/Toucher,false,20/VitAtk,false,20/FCE,false,21/TCCP,false,10
+Guerrier Suprême/70pve0/2,3,1/Toucher,false,20/DefP,true,10/VIT,false,21/ReducP,false,10/ReducM,false,10/ESQ,false,8
+Boucher de Saphaël/65pve0/0,2,1/FCE,false,14/DCCP,false,50/Toucher,false,10
+Marquis de l'ombre/60pve0/0,2,0/FCE,false,14/TCCP,false,5
+Destructrice à Lame d'Acier/50pve0/2,1,0/FCE,false,8/VIT,false,3/TCCP,false,10
+Guerrier robuste/40pve0/0,1,0/FCE,false,7
+Officier tactique/30pve0/1,1,0/FCE,false,4/MEN,false,-20
+Garde d'Elite/20pve0/1,0,0/VIT,false,2
+Apostat/100pvp0/3,2,2/RTCCP,false,38/RTCCM,false,38/FCE,false,60/Glace,false,85/ReducP,false,30/PV,true,35/PeneP,false,15
+Courroux Sanguinaire/95pvp0/3,2,1/RTCCP,false,35/RTCCM,false,35/FCE,false,35/Glace,false,80/ReducP,false,25/PV,true,30
+Gladiateur du Hokuto/85pvp0/3,3,1/RTCCP,false,32/RTCCM,false,32/FCE,false,38/Glace,false,80/ReducP,false,20/CostComp,false,-80/PV,true,27
+Empereur de la destruction (Reforgé)/75pvp0R/3,3,1/RTCCP,false,33/RTCCM,false,33/FCE,false,40/Glace,false,83/ReducP,false,22/CostComp,false,-77/PV,true,28
+Puissance d'Héraclès/75pvp0/3,3,1/RTCCP,false,30/RTCCM,false,30/FCE,false,36/Glace,false,75/ReducP,false,20/CostComp,false,-70/PV,true,25
+Stratégie de Sun Tzu (Reforgée)/65pvp0R/3,2,1/RTCCP,false,28/RTCCM,false,28/FCE,false,31/Glace,false,66/ReducP,false,17/PV,true,22
+Stratégie de Sun Tzu/65pvp0/3,2,1/RTCCP,false,25/RTCCM,false,25/FCE,false,28/Glace,false,60/ReducP,false,15/PV,true,20
+Roi Diabolique (Reforgée)/55pvp0R/3,1,1/RTCCP,false,33/RTCCM,false,33/FCE,false,25/Glace,false,55/PV,true,11
+Roi Diabolique/55pvp0/3,1,1/RTCCP,false,30/RTCCM,false,30/FCE,false,22/Glace,false,50/PV,true,10
+Général Diabolique (Reforgé)/45pvp0R/3,1,1/RTCCP,false,22/RTCCM,false,22/FCE,false,17/Glace,false,34/PV,true,8
+Général Diabolique/45pvp0/3,1,1/RTCCP,false,20/RTCCM,false,20/FCE,false,15/Glace,false,30/PV,true,7
+Hurlement de Conan (Reforgé)/25pvp0R/3,1,1/RTCCP,false,17/RTCCM,false,17/FCE,false,10/Glace,false,22/PV,true,8
+Défense de Lancelot (Reforgé)/25pvp1R/4,1,2/VIT,false,10/FCE,false,4/RTCCP,false,17/RTCCM,false,17/Ombre,false,22/PV,true,6/Parade,false,12
+Hurlement de Conan/25pvp0/3,1,1/RTCCP,false,15/RTCCM,false,15/FCE,false,8/Glace,false,20/PV,true,7
+Défense de Lancelot/25pvp1/4,1,2/VIT,false,8/FCE,false,3/RTCCP,false,15/RTCCM,false,15/Ombre,false,20/PV,true,5/Parade,false,10
+Dieu de la Guerre/80nucleus0/1,1,0/RDegAtkD,false,25/VIT,false,28
+Armée Sanguinaire/70nucleus0/1,0,2/AGI,false,18/TCCP,false,35/DefP,true,15
+Marquis du Chaos/60nucleus0/0,1,0/VIT,false,22
+Hurlement Divin/80lingot0/1,0,1/AGI,false,30/PV,true,15
+Soif de Mort/70lingot0/1,1,1/Depla,false,5/PV,true,10/VIT,false,20
+Marquis de Destruction/60lingot0/0,2,1/TCCP,false,35/Depla,false,5/DefP,true,12
+Rage du Minotaure/80gvg0/4,3,0/RTCCP,false,27/RTCCM,false,27/FCE,false,22/VIT,false,7/Ombre,false,65/ReducP,false,12/ReducM,false,12
+Conquête d'Attila/70gvg0/4,3,0/RTCCP,false,25/RTCCM,false,25/FCE,false,20/VIT,false,5/Ombre,false,60/ReducP,false,10/ReducM,false,10
+Évolution du Destructeur (Réincarné)/100evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Destructeur/100evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Ravageur (Réincarné)/90evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Ravageur/90evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Gladiateur (Réincarné)/75evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Gladiateur/75evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Berserker (Réincarné)/60evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Berserker/60evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Guerrier (Réincarné)/30evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Guerrier/30evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
 Enchantée d'Elminster/100gold6/3,1,1/INT,false,60/PM,true,10/AtkM,true,15,false,12/MEN,false,-18/DCCM,false,20
 Fourvoyé/100pvp6/1,4,3/INT,false,60/RTCCP,false,35/RTCCM,false,35/Toucher,true,35/ESQ,false,35/VitComp,false,40/ReducP,false,30/PeneM,false,15

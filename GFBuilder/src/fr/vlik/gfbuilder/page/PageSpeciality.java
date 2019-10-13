@@ -33,6 +33,8 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	private JLabel nbSpePoint = new JLabel("1145");
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
 	private ArrayList<JCustomComboBox<Integer>> spePoint = new ArrayList<JCustomComboBox<Integer>>(20);
+	
+	private JCustomButton reinitSpe;
 	private JCustomButton maxSpe;
 	
 	private ArrayList<Effect> convertEffects;
@@ -72,9 +74,14 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		this.maxSpe = new JCustomButton(this.label[6]);
+		this.reinitSpe = new JCustomButton(this.label[6]);
+		this.reinitSpe.addActionListener(e -> {
+			setMinSpe();
+		});
+		
+		this.maxSpe = new JCustomButton(this.label[7]);
 		this.maxSpe.addActionListener(e -> {
-			setMaxCBoxSpe();
+			setMaxSpe();
 		});
 		
 		createPanel();
@@ -166,14 +173,23 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		elem1.add(gridSpe);
 		
 		this.add(elem1);
+		this.add(Box.createVerticalStrut(5));
+		
+		
+		this.reinitSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.reinitSpe.setMinimumSize(new Dimension(0, 30));
 		
 		this.maxSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.maxSpe.setMinimumSize(new Dimension(0, 30));
-		this.maxSpe.setAlignmentX(CENTER_ALIGNMENT);
 		
-		this.add(maxSpe);
+		JPanel elem2 = new JPanel(new GridLayout(1, 2, 10, 5));
+		elem2.setBackground(Design.UIColor[1]);
+		elem2.add(this.reinitSpe);
+		elem2.add(this.maxSpe);
+		
+		this.add(elem2);
 	}
-
+	
 	@Override
 	protected void setLabel(Language lang) {
 		String[] getter = Lang.getDataLabel(lang, 7);
@@ -190,6 +206,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			this.label[i].setText(getter[i]);
 		}
 		
+		this.reinitSpe.updateText();
 		this.maxSpe.updateText();
 	}
 	
@@ -428,12 +445,16 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		}
 	}
 	
-	private void setMaxCBoxSpe() {
+	private void setMinSpe() {
 		for(JComboBox<Integer> speciality : this.spePoint) {
 			if(speciality.isVisible()) {
 				speciality.setSelectedIndex(0);
 			} else break;
 		}
+	}
+	
+	private void setMaxSpe() {
+		setMinSpe();
 		
 		for(JComboBox<Integer> speciality : this.spePoint) {
 			if(speciality.isVisible()) {
@@ -458,6 +479,8 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	@Override
 	public void setConfig(int[] config) {
 		int index = 0;
+		
+		setMinSpe();
 		
 		for(int i = 0; i < 20; i++) {
 			this.spePoint.get(i).setSelectedIndex(config[index++]);
