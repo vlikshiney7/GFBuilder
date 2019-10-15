@@ -15,6 +15,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.ProSkill;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
@@ -172,6 +173,7 @@ public class PageSkill extends PagePanel {
 	public void updateSkill() {
 		GradeName grade = PageGeneral.getInstance().getGrade().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
@@ -224,7 +226,7 @@ public class PageSkill extends PagePanel {
 			if(skill.getLvl()[i] <= lvl) lvlSkill.add(new Skill(skill, i));
 		}
 		
-		if(lvlSkill.size() > 1 && PageGeneral.getInstance().getReinca() == 1) {
+		if(lvlSkill.size() > 1 && reinca.getLvl() > 0) {
 			Skill[] tabSkill = new Skill[lvlSkill.size()];
 			for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
 			
@@ -247,13 +249,13 @@ public class PageSkill extends PagePanel {
 	}
 	
 	public void updateSkillReinca() {
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		if(this.skillProgress.get(1).getItemCount() == 0) {
 			updateSkill();
 		}
 		
-		if(reinca && this.skillProgress.get(1).getItemCount() > 1) {
+		if(reinca.getLvl() > 0 && this.skillProgress.get(1).getItemCount() > 1) {
 			this.skillProgress.get(1).setVisible(true);
 		} else {
 			this.skillProgress.get(1).setVisible(false);

@@ -21,6 +21,7 @@ import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -70,7 +71,7 @@ public class PageWeapon extends PagePanel {
 		for(int i = 0; i < 3; i++) {
 			int id = i;
 			
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false, null);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), null);
 			this.weapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.weapon.get(i).addActionListener(e -> {
 				updateXpStuff(id);
@@ -447,10 +448,10 @@ public class PageWeapon extends PagePanel {
 	public void updateWeapon() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade.getGrade(), lvl, reinca, null);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade, lvl, reinca, null);
 			Weapon memory = this.getWeapon(i);
 			
 			this.weapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -632,7 +633,7 @@ public class PageWeapon extends PagePanel {
 	private void weaponType(int id) {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		Weapon choice = this.getWeapon(id);
 		if(id == 0) {
@@ -640,7 +641,7 @@ public class PageWeapon extends PagePanel {
 			
 			if(choice.getType() == WeaponType.EPEE2M || choice.getType() == WeaponType.MARTEAU2M || choice.getType() == WeaponType.HACHE2M
 					|| choice.getType() == WeaponType.MECA2M || choice.getType() == WeaponType.BATON || choice.getType() == WeaponType.LAME) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade.getGrade(), lvl, reinca, null);
+				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null);
 				Weapon memory = this.getWeapon(0);
 				
 				this.weapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -656,7 +657,7 @@ public class PageWeapon extends PagePanel {
 				this.showAndHide.setVisible(false);
 			} else if(choice.getType() == WeaponType.EPEE1M || choice.getType() == WeaponType.MARTEAU1M || choice.getType() == WeaponType.HACHE1M
 					|| choice.getType() == WeaponType.MECA1M || choice.getType() == WeaponType.DEFAULT) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade.getGrade(), lvl, reinca, choice);
+				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade, lvl, reinca, choice);
 				Weapon memory = this.getWeapon(1);
 				
 				this.weapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -680,7 +681,7 @@ public class PageWeapon extends PagePanel {
 		} else if(id == 1) {
 			int keepEnchant = this.enchant.get(0).getSelectedIndex();
 			
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade.getGrade(), lvl, reinca, choice);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, choice);
 			Weapon memory = this.getWeapon(0);
 			
 			this.weapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));

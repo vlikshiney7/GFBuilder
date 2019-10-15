@@ -26,6 +26,7 @@ import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Nucleus;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -368,7 +369,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	public void updateNucleus() {
-		if(PageGeneral.getInstance().getReinca() == 0) {
+		if(PageGeneral.getInstance().getReinca().getLvl() == 0) {
 			this.showAndHide.setVisible(false);
 			this.nucleus.get(1).setSelectedIndex(0);
 		} else {
@@ -378,11 +379,11 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	
 	public void updateEnergy() {
 		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < this.energy.size(); i++) {
 			int memory = (int) this.energy.get(i).getIntValue();
-			if(!reinca) {
+			if(reinca.getLvl() == 0) {
 				if(memory > lvl*2) memory = lvl*2;
 				this.energy.get(i).setModel(new SpinnerNumberModel(memory, 0, lvl*2, 1));
 			} else {

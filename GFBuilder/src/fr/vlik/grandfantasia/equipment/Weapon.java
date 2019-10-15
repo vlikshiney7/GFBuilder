@@ -12,7 +12,9 @@ import javax.imageio.ImageIO;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Quality;
 
 public class Weapon extends Equipment {
@@ -277,7 +279,7 @@ public class Weapon extends Equipment {
 		}
 	}
 	
-	public static Weapon[] getPossibleWeapon(int idList, GradeName grade, int lvl, boolean reinca, Weapon toIgnore) {
+	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weaponType = null;
 		switch (idList) {
@@ -290,7 +292,7 @@ public class Weapon extends Equipment {
 		for(int i = 0; i < weaponType.length; i++) {
 			Weapon[] oneWeaponType = Weapon.data[weaponType[i]+1];
 			for(int j = 0; j < oneWeaponType.length; j++) {
-				if(!oneWeaponType[j].containGrade(grade)) {
+				if(!oneWeaponType[j].containGrade(grade.getGrade())) {
 					continue;
 				}
 				
@@ -298,7 +300,7 @@ public class Weapon extends Equipment {
 					if(!oneWeaponType[j].isReinca()) {
 						result.add(oneWeaponType[j]);
 					} else {
-						if(reinca) {
+						if(reinca.getLvl() > 0) {
 							result.add(oneWeaponType[j]);
 						}
 					}

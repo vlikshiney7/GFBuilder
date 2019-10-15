@@ -12,7 +12,9 @@ import javax.imageio.ImageIO;
 import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.MultiEffect;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Quality;
 
@@ -266,18 +268,18 @@ public class Armor extends Equipment {
 		}
 	}
 	
-	public static Armor[] getPossibleArmor(int idList, GradeName grade, int lvl, boolean reinca) {
+	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {
 		ArrayList<Armor> result = new ArrayList<Armor>();
 		
 		for(Armor armor : Armor.data[idList]) {
-			if(armor.getLvl() <= lvl && armor.containGrade(grade)) {
+			if(armor.getLvl() <= lvl && armor.containGrade(grade.getGrade())) {
 				if(!armor.isReinca()) {
 					if(armor.isMultiEffect()) {
 						armor.setEffects(lvl);
 					}
 					result.add(armor);
 				} else {
-					if(reinca) {
+					if(reinca.getLvl() > 0) {
 						if(armor.isMultiEffect()) {
 							armor.setEffects(lvl);
 						}

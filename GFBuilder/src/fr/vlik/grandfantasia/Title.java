@@ -113,10 +113,10 @@ public class Title implements Colorable, Writable {
 		}
 	}
 	
-	public static Title[] getPossibleData(GradeName grade, int lvl, boolean reinca) {
+	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
-		if(reinca) {
+		if(reinca.getLvl() > 0) {
 			lvl += 100;
 			for(int i = 0; i < Title.data.length; i++) {
 				if(Title.data[i].getLvl() <= lvl

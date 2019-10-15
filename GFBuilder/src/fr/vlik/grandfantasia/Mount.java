@@ -132,10 +132,10 @@ public class Mount implements FullRenderer {
 		}
 	}
 	
-	public static Mount[] getPossibleMount(int lvl, boolean reinca) {
+	public static Mount[] getPossibleMount(int lvl, Reinca reinca) {
 		ArrayList<Mount> result = new ArrayList<Mount>();
 		
-		if(reinca) {
+		if(reinca.getLvl() > 0) {
 			for(Mount mount : Mount.data) {
 				if(mount.getLvl() <= lvl) {
 					result.add(mount);

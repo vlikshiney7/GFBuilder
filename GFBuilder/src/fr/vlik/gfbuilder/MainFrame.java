@@ -248,11 +248,9 @@ public class MainFrame extends JFrame {
 		ToolTipManager.sharedInstance().setInitialDelay(500);
 	    ToolTipManager.sharedInstance().setDismissDelay(30000);
 	}
-
+	
 	public void updateStat() {
-		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
-		double coefReinca = PageGeneral.getCoefReinca(lvl, reinca);
+		double coefReinca = PageGeneral.getInstance().getReinca().getCoef();
 		WeaponType[] weaponType = PageWeapon.getInstance().getWeaponType();
 		
 		Build build = new Build(coefReinca, weaponType);

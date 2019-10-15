@@ -14,12 +14,12 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Base;
-import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
@@ -34,7 +34,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private JCustomComboBox<Grade> grade;
 	private JCustomSpinner lvl;
-	private JCustomComboBox<String> reinca;
+	private JCustomComboBox<Reinca> reinca;
 	private JCustomComboBox<Title> title;
 	private JCustomComboBox<Yggdrasil> yggdra;
 	private JCustomComboBox<Archive> archive;
@@ -75,6 +75,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageWeapon.getInstance().updateWeapon();
 			PageArmor.getInstance().updateArmor();
 			PageCapeRing.getInstance().updateCapeRing();
+			updateReinca();
 			updateTitle();
 			PageMount.getInstance().updateMount();
 			PageTalent.getInstance().updateTalent();
@@ -91,7 +92,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		});
 		
 		
-		this.reinca = new JCustomComboBox<String>(new String[] { "Aucune", "Niveau 1" });
+		this.reinca = new JCustomComboBox<Reinca>(Reinca.getPossibleData(1));
 		this.reinca.addActionListener(e -> {
 			PageSkill.getInstance().updateSkillReinca();
 			PageWeapon.getInstance().updateWeapon();
@@ -104,12 +105,14 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageOther.getInstance().updateBague();
 			PageOther.getInstance().updateAnima();
 			
+			Overlay.getInstance().setReinca(this.getReinca());
+			
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
 		
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), false);
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca());
 		this.title = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
 		this.title.addActionListener(e -> {
 			setEffects();
@@ -147,8 +150,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		return this.title.getSelectedItem();
 	}
 	
-	public int getReinca() {
-		return this.reinca.getSelectedIndex();
+	public Reinca getReinca() {
+		return this.reinca.getSelectedItem();
 	}
 	
 	public Yggdrasil getYggdrasil() {
@@ -165,7 +168,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		for(int i = 0; i < 5; i++) {
 			int value = Base.getBase(i, this.getGrade().getGrade(), this.getLvl());
-			value = (int) Math.floor(value * PageGeneral.getCoefReinca(this.getLvl(), this.getReinca() == 1));
+			value = (int) Math.floor(value * this.getReinca().getCoef());
 			list.add(new Effect(Base.getEffect(i), false, value, false, WeaponType.NONE, null));
 		}
 		
@@ -310,32 +313,20 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.grade.setSelectedItem(memory);
 	}
 	
-	private void updateTitle() {
-		boolean reinca = this.getReinca() == 1;
+	private void updateReinca() {
+		Reinca[] tabReinca = Reinca.getPossibleData(this.getLvl());
+		int memory = this.reinca.getSelectedIndex();
 		
-		Title tabTitle[] = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), reinca);
+		this.reinca.setModel(new DefaultComboBoxModel<Reinca>(tabReinca));
+		this.reinca.setSelectedIndex(memory);
+	}
+	
+	private void updateTitle() {
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca());
 		Title memory = this.getTitle();
 		
 		this.title.setModel(new DefaultComboBoxModel<Title>(tabTitle));
 		this.title.setSelectedItem(memory);
-	}
-	
-	public static double getCoefReinca(int lvl, boolean reinca) {
-		if(reinca) {
-			if(lvl < 66) {
-				return Consts.coefReinca[1];
-			} else if(lvl < 86) {
-				return Consts.coefReinca[2];
-			} else if(lvl < 91) {
-				return Consts.coefReinca[3];
-			} else if(lvl < 100) {
-				return Consts.coefReinca[4];
-			} else {
-				return Consts.coefReinca[5];
-			}
-		} else {
-			return 1;
-		}
 	}
 	
 	@Override

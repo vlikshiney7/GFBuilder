@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;
 
@@ -19,7 +20,7 @@ public class Overlay extends JPanel {
 	
 	private JLabel iconGrade = new JLabel();
 	private JLabel lvl = new JLabel();
-	//private JLabel iconReinca = new JLabel();
+	private JLabel iconReinca = new JLabel();
 	private JLabel nameSave;
 	
 	public static Overlay getInstance() {
@@ -34,8 +35,8 @@ public class Overlay extends JPanel {
 		this.setAlignmentX(LEFT_ALIGNMENT);
 		
 		this.iconGrade.setIcon(new ImageIcon(Grade.data[0].getIcon()));
-		this.lvl  = JCustomLabel.getSimpleLabel("1");
-		
+		this.lvl = JCustomLabel.getSimpleLabel("1");
+		this.iconReinca.setIcon(new ImageIcon(Reinca.getData()[0].getIcon()));
 		this.nameSave = JCustomLabel.getSimpleLabel("Novice");
 		
 		createPanel();
@@ -49,8 +50,8 @@ public class Overlay extends JPanel {
 		this.lvl.setText("" + lvl);
 	}
 
-	public void setReinca(Object reinca) {
-		
+	public void setReinca(Reinca reinca) {
+		this.iconReinca.setIcon(new ImageIcon(reinca.getIcon()));
 	}
 
 	public void setNameSave(String nameSave) {
@@ -61,6 +62,8 @@ public class Overlay extends JPanel {
 		this.add(this.iconGrade);
 		this.add(Box.createHorizontalStrut(5));
 		this.add(this.lvl);
+		this.add(Box.createHorizontalStrut(5));
+		this.add(this.iconReinca);
 		this.add(Box.createHorizontalStrut(5));
 		this.add(JCustomLabel.getSimpleLabel("-"));
 		this.add(Box.createHorizontalStrut(5));

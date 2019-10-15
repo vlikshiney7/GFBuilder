@@ -18,7 +18,7 @@ Assassin,Assassin/3/31/65/2-3
 Clerc,Cleric/4/31/65/2-4
 Sage,Sage/5/31/65/2-5
 Sorcier,Wizard/6/31/65/2-6
-N�écromancien,Necromancer/7/31/65/2-7
+Nécromancien,Necromancer/7/31/65/2-7
 Métalleux,Engineer/8/31/65/2-8
 Démolisseur,Demolitionist/9/31/65/2-9
 Spatiodériveur,Void Runner/10/31/65/2-10

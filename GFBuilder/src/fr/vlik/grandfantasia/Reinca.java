@@ -14,50 +14,36 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class Grade implements Iconable, Writable {
+public class Reinca implements Iconable, Writable {
 	
-	public static String PATH = Consts.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
-	public static Grade[] data;
+	public static String PATH = Consts.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + "/";
+	public static Reinca[] data;
 	static {
 		loadData();
 	}
 	
 	private Map<Language, String> name;
-	private GradeName grade;
+	private double coef;
 	private int lvlMin;
 	private int lvlMax;
+	private int lvl;
 	private BufferedImage icon;
 	
-	public Grade(Map<Language, String> name, GradeName grade, int lvlMin, int lvlMax, String path) {
+	public Reinca(Map<Language, String> name, double coef, int lvlMin, int lvlMax, int lvl, String path) {
 		this.name = name;
-		this.grade = grade;
+		this.coef = coef;
 		this.lvlMin = lvlMin;
 		this.lvlMax = lvlMax;
+		this.lvl = lvl;
 		this.icon = setIcon(path);
-	}
-	
-	public static enum GradeName {
-		BERSERKER(0), PALADIN(1),
-		RANGER(2), ASSASSIN(3),
-		CLERC(4), SAGE(5),
-		SORCIER(6), NECROMANCIEN(7),
-		METALLEUX(8), DEMOLISSEUR(9),
-		SPATIODERIVEUR(10), CHRONODERIVEUR(11),
-		NONE(-1);
-		
-		public final int index;
-		 
-	    private GradeName(int index) {
-	        this.index = index;
-	    }
 	}
 	
 	public String getName(Language lang) {
 		return this.name.get(lang);
 	}
 	
-	public GradeName getGrade() {
-		return this.grade;
+	public double getCoef() {
+		return this.coef;
 	}
 	
 	public int getLvlMin() {
@@ -66,6 +52,10 @@ public class Grade implements Iconable, Writable {
 	
 	public int getLvlMax() {
 		return this.lvlMax;
+	}
+	
+	public int getLvl() {
+		return this.lvl;
 	}
 	
 	@Override
@@ -95,18 +85,23 @@ public class Grade implements Iconable, Writable {
 	
 	@Override
 	public String getTooltip() {
-		return this.lvlMin + " - " + this.lvlMax;
+		StringBuilder tooltip = new StringBuilder("Coef :");
+		tooltip.append("<br>");
+		tooltip.append(this.coef);
+		tooltip.append("<br>");
+		tooltip.append("Lvl : " + this.lvlMin + " - " + this.lvlMax);
+		
+		return "<html>" + tooltip + "</html>";
 	}
 	
-	public static void loadData() {
-		ArrayList<Grade> list = new ArrayList<Grade>();
+	private static void loadData() {
+		ArrayList<Reinca> list = new ArrayList<Reinca>();
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Grade.class.getResourceAsStream(PATH + "grade.txt"), "UTF-8"));
+					Reinca.class.getResourceAsStream(PATH + "reinca.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
-			
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				String[] name = lineSplit[0].split(",");
@@ -117,36 +112,37 @@ public class Grade implements Iconable, Writable {
 					lang.put(Language.values()[i], name[i]);
 				}
 				
-				list.add(new Grade(lang, GradeName.values()[Integer.parseInt(lineSplit[1])], Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), path));
+				
+				list.add(new Reinca(lang, Double.parseDouble(lineSplit[1]), Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), Integer.parseInt(lineSplit[4]), path));
 				
 				line = reader.readLine();
 			}
 		} catch (IOException e) {
-			System.out.println("Error with " + Grade.class.getClass().getSimpleName() + " class");
+			System.out.println("Error with " + Anima.class.getClass().getSimpleName() + " class");
 		}
 		
-		Grade.data = new Grade[list.size()];
+		Reinca.data = new Reinca[list.size()];
 		for(int i = 0; i < data.length; i++) {
 			data[i] = list.get(i);
 		}
 	}
 	
-	public static Grade[] getData() {
-		return Grade.data;
+	public static Reinca[] getData() {
+		return Reinca.data;
 	}
-	
-	public static Grade[] getPossibleData(int lvl) {
-		ArrayList<Grade> result = new ArrayList<Grade>();
+
+	public static Reinca[] getPossibleData(int lvl) {
+		ArrayList<Reinca> result = new ArrayList<Reinca>();
 		
-		for(Grade grade : Grade.data) {
-			if(grade.getLvlMin() <= lvl
-					&& grade.getLvlMax() >= lvl) {
+		for(Reinca reinca : Reinca.data) {
+			if(reinca.getLvlMin() <= lvl
+					&& reinca.getLvlMax() >= lvl) {
 				
-				result.add(grade);
+				result.add(reinca);
 			}
 		}
 		
-		Grade[] cast = new Grade[result.size()];
+		Reinca[] cast = new Reinca[result.size()];
 		for(int i = 0; i < cast.length; i++) {
 			cast[i] = result.get(i);
 		}

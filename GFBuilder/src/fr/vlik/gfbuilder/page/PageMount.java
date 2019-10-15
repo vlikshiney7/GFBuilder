@@ -20,6 +20,7 @@ import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Mount;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -55,7 +56,7 @@ public class PageMount extends PagePanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
-		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca() == 1);
+		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 		this.mount = new JCustomComboBox<Mount>(tabMount);
 		this.mount.addActionListener(e -> {
 			updateXpStuff();
@@ -299,7 +300,7 @@ public class PageMount extends PagePanel {
 	
 	public void updateMount() {
 		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		Mount tabMount[] = Mount.getPossibleMount(lvl, reinca);
 		Mount memory = this.getMount();

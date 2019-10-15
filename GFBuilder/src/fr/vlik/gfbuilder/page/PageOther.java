@@ -14,6 +14,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -121,10 +122,10 @@ public class PageOther extends PagePanel {
 	}
 	
 	public void updateBague() {
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		if(reinca || lvl >= 20) {
+		if(reinca.getLvl() > 0 || lvl >= 20) {
 			this.showAndHide.get(0).setVisible(true);
 		} else {
 			this.showAndHide.get(0).setVisible(false);
@@ -133,7 +134,7 @@ public class PageOther extends PagePanel {
 	}
 	
 	public void updateAnima() {
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		Anima[] tabAnima = Anima.getData(lvl);
@@ -142,7 +143,7 @@ public class PageOther extends PagePanel {
 		this.anima.setModel(new DefaultComboBoxModel<Anima>(tabAnima));
 		this.anima.setSelectedIndex(memory);
 		
-		if(reinca && lvl >= 10) {
+		if(reinca.getLvl() > 0 && lvl >= 10) {
 			this.showAndHide.get(1).setVisible(true);
 		} else {
 			this.showAndHide.get(1).setVisible(false);

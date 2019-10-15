@@ -91,28 +91,16 @@ public class Effect {
 	}
 	
 	public StringBuilder getTooltip() {
-		StringBuilder tooltip = new StringBuilder(this.type.toString());
+		StringBuilder tooltip = new StringBuilder(this.type.fr);
 		tooltip.append(this.value > 0 ? " +" : " ");
 		tooltip.append((int) this.value);
 		tooltip.append(this.isPercent ? "%" : "");
 		return tooltip;
 	}
-	/*
-	public static enum TypeEffect {
-		FCE, VIT, INT, VOL, AGI, Atk, AtkD, AtkM, DefP, DefM,
-		TCCP, TCCM, ESQ, Sacre, Ombre, Foudre, Feu, Glace, Nature, Toucher,
-		PV, PM, DegP, DegM, ReducP, ReducM, PeneP, PeneM, ReducPeneP, ReducPeneM,
-		DCCP, DCCM, RDCCP, RDCCM, RTCCP, RTCCM, VitAtk, VitAtkD, VitAtkM, VitComp,
-		XP, Loot, RegenCB, DegBeteP, DegPlanteP, DegHumaP, DegElemP, DegMecaP, DegMortP, DegDemonP,
-		DegBeteM, DegPlanteM, DegHumaM, DegElemM, DegMecaM, DegMortM, DegDemonM, ReducAtk, ReducAtkD, ReducAtkM,
-		DegSacre, DegOmbre, DegFoudre, DegFeu, DegGlace, DegNature, IntComp, CostComp, ReloadComp, Parade,
-		DegStdEp, DegStdMa, DegStdHa, DegStd2Ep, DegStd2Ma, DegStd2Ha, DegStdArc, DegStdGun, DegStdBa, DegStdLa, DegAtkD, RDegAtkD, RegenPV, RegenPM, MEN,
-		BoostCraft, TimeCraft, HealD, HealR, Bullet, Reflect, Depla;
-	}*/
 	
 	@Override
 	public String toString() {
-		String result = this.getType().fr + (this.getValue() < 0 ? " " : " +") + (int)this.getValue() + (this.isPercent ? "%" :"");
+		String result = this.getType().fr + (this.getValue() < 0 ? " " : " +") + (int) this.getValue() + (this.isPercent ? "%" :"");
 		if(this.withWeapon != WeaponType.NONE) {
 			result += " si équipé ";
 			switch (this.withWeapon) {

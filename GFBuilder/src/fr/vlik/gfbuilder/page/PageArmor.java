@@ -21,6 +21,7 @@ import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -68,7 +69,7 @@ public class PageArmor extends PagePanel {
 		for(int i = 0; i < 5; i++) {
 			int id = i;
 			
-			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl(), false);
+			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 			this.armor.add(new JCustomComboBox<Armor>(new DefaultComboBoxModel<Armor>(tabArmor)));
 			this.armor.get(i).addActionListener(e -> {				
 				updateXpStuff(id);
@@ -461,10 +462,10 @@ public class PageArmor extends PagePanel {
 	public void updateArmor() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < 5; i++) {
-			Armor[] tabArmor = Armor.getPossibleArmor(i, grade.getGrade(), lvl, reinca);
+			Armor[] tabArmor = Armor.getPossibleArmor(i, grade, lvl, reinca);
 			Armor memory = this.getArmor(i);
 			
 			this.armor.get(i).setModel(new DefaultComboBoxModel<Armor>(tabArmor));

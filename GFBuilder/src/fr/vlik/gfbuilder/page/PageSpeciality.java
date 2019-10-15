@@ -17,6 +17,7 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
@@ -335,7 +336,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	private void updateSpeElement() {
 		int lvl = PageGeneral.getInstance().getLvl();
-		boolean reinca = PageGeneral.getInstance().getReinca() == 1;
+		Reinca reinca = PageGeneral.getInstance().getReinca();
 		int nb10sup = 0;
 		int nb15sup = 0;
 		
@@ -348,7 +349,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		if(!reinca) {
+		if(reinca.getLvl() == 0) {
 			if(lvl < 91) {
 				if(nb10sup < 2) {
 					rescaleSpeComboBox(16);
