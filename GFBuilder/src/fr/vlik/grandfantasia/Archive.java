@@ -38,7 +38,7 @@ public class Archive implements Colorable, Writable {
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -70,7 +70,7 @@ public class Archive implements Colorable, Writable {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Archive.class.getResourceAsStream(Consts.RESOURCE + "archive.txt"), "UTF-8"));				
+					Archive.class.getResourceAsStream(Tools.RESOURCE + "archive.txt"), "UTF-8"));				
 		) {
 			String line = reader.readLine();
 			while (line != null) {

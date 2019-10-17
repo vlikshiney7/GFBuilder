@@ -14,7 +14,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public final class Talent implements Writable {
 	
-	public static String PATH = Consts.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
 	private static Talent[][] data;
 	static {
 		loadData();

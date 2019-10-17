@@ -1,14 +1,13 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -16,7 +15,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Bague implements FullRenderer {
 	
-	public static String PATH = Consts.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
 	private static Bague[] data;
 	static {
 		loadData();
@@ -24,13 +23,13 @@ public class Bague implements FullRenderer {
 	
 	private String name;
 	private Quality quality;
-	private BufferedImage img;
+	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Bague(String name, Quality quality, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.quality = quality;
-		this.img = setIcon(path);
+		setIcon(path);
 		this.effects = effects;
 	}
 	
@@ -43,13 +42,13 @@ public class Bague implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -61,30 +60,17 @@ public class Bague implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Bague.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Bague.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Bague.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Bague.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	@Override

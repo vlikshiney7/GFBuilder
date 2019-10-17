@@ -1,12 +1,12 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
@@ -14,7 +14,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class Skill implements Iconable, Writable {
 	
-	public static String PATH = Consts.RESOURCE + Skill.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Skill.class.getSimpleName().toLowerCase() + "/";
 	private static Skill[][] data;
 	static {
 		loadData();
@@ -23,14 +23,14 @@ public class Skill implements Iconable, Writable {
 	private String name;
 	private int[] lvl;
 	private boolean natif;
-	private BufferedImage img;
+	private Icon icon;
 	private ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>();
 	
 	public Skill(String name, int[] lvl, boolean natif, String iconPath, ArrayList<ArrayList<Effect>> effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.natif = natif;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 		this.effects = effects;
 	}
 	
@@ -38,7 +38,7 @@ public class Skill implements Iconable, Writable {
 		this.name = name;
 		this.lvl = new int[] { 0 };
 		this.natif = false;
-		this.img = setIcon("32-7.png");
+		setIcon("32-7.png");
 		this.effects.add(new ArrayList<Effect>(1));
 	}
 	
@@ -46,7 +46,7 @@ public class Skill implements Iconable, Writable {
 		this.name = skill.getName() + " " + (index+1);
 		this.lvl = new int[] { skill.getLvl()[index] };
 		this.natif = skill.getNatif();
-		this.img = skill.getIcon();
+		this.icon = skill.getIcon();
 		this.effects.add(skill.getEffects(index));
 	}
 	
@@ -63,8 +63,8 @@ public class Skill implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	public ArrayList<Effect> getEffects(int i) {
@@ -76,18 +76,16 @@ public class Skill implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon object = null;
 		
 		try {
-			object = ImageIO.read(Skill.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Skill.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		return object;
+		this.icon = object;
 	}
 	
 	@Override

@@ -1,10 +1,11 @@
 package fr.vlik.grandfantasia.equipment;
 
 import java.awt.Color;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import fr.vlik.grandfantasia.Consts;
+import javax.swing.Icon;
+
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
@@ -18,7 +19,7 @@ public abstract class Equipment implements FullRenderer {
 	protected int lvl;
 	protected Quality quality;
 	protected boolean enchantable;
-	protected BufferedImage img;
+	protected Icon icon;
 	protected ArrayList<Effect> effects = new ArrayList<Effect>();
 	protected ArrayList<Effect> bonusXP = new ArrayList<Effect>();
 	
@@ -60,12 +61,12 @@ public abstract class Equipment implements FullRenderer {
 
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	public ArrayList<Effect> getEffects() {

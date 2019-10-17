@@ -58,7 +58,7 @@ public class Title implements Colorable, Writable {
 	
 	@Override
 	public Color getColor() {
-		return Consts.titleColor[this.quality.index];
+		return Tools.titleColor[this.quality.index];
 	}
 	
 	@Override
@@ -82,7 +82,7 @@ public class Title implements Colorable, Writable {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Title.class.getResourceAsStream(Consts.RESOURCE + "title.txt"), "UTF-8"));
+					Title.class.getResourceAsStream(Tools.RESOURCE + "title.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

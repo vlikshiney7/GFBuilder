@@ -12,7 +12,7 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Speciality {
 	
-	public static String PATH = Consts.RESOURCE + Speciality.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Speciality.class.getSimpleName().toLowerCase() + "/";
 	private static Speciality[][] data;
 	static {
 		loadData();

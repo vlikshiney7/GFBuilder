@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,7 +7,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
@@ -16,7 +16,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class Grade implements Iconable, Writable {
 	
-	public static String PATH = Consts.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
 	public static Grade[] data;
 	static {
 		loadData();
@@ -26,14 +26,14 @@ public class Grade implements Iconable, Writable {
 	private GradeName grade;
 	private int lvlMin;
 	private int lvlMax;
-	private BufferedImage icon;
+	private Icon icon;
 	
 	public Grade(Map<Language, String> name, GradeName grade, int lvlMin, int lvlMax, String path) {
 		this.name = name;
 		this.grade = grade;
 		this.lvlMin = lvlMin;
 		this.lvlMax = lvlMax;
-		this.icon = setIcon(path);
+		setIcon(path);
 	}
 	
 	public static enum GradeName {
@@ -69,23 +69,21 @@ public class Grade implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
+	public Icon getIcon() {
 		return this.icon;
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon object = null;
 		
 		try {
-			object = ImageIO.read(Grade.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Grade.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		return object;
+		this.icon = object;
 	}
 	
 	@Override

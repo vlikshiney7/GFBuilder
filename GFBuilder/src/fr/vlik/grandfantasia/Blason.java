@@ -1,12 +1,12 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
@@ -14,7 +14,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class Blason implements Iconable, Writable {
 	
-	public static String PATH = Consts.RESOURCE + "sprite/";
+	public static String PATH = Tools.RESOURCE + "sprite/";
 	private static Blason[] data;
 	static {
 		loadData();
@@ -23,21 +23,21 @@ public class Blason implements Iconable, Writable {
 	private String name;
 	private int lvl;
 	private BlasonType type;
-	private BufferedImage img;
+	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Blason() {
 		this.name = "Rien";
 		this.lvl = 0;
 		this.type = BlasonType.OFFENSIVE;
-		this.img = setIcon("32-7.png");
+		setIcon("32-7.png");
 	}
 	
 	public Blason(String name, int lvl, BlasonType type, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.type = type;
-		this.img = setIcon(type == BlasonType.OFFENSIVE ? "atk.png" : "def.png");
+		setIcon(type == BlasonType.OFFENSIVE ? "atk.png" : "def.png");
 		this.effects = effects;
 	}
 	
@@ -64,8 +64,8 @@ public class Blason implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -77,18 +77,16 @@ public class Blason implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon object = null;
 		
 		try {
-			object = ImageIO.read(Blason.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Blason.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		return object;
+		this.icon = object;
 	}
 	
 	@Override

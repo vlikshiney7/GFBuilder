@@ -1,14 +1,13 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -16,7 +15,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Pearl implements FullRenderer {
 	
-	public static String PATH = Consts.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
 	private static Pearl[] dataWeapon;
 	private static Pearl[] dataArmor;
 	private static Pearl[] dataWeaponCost;
@@ -29,7 +28,7 @@ public class Pearl implements FullRenderer {
 	private Quality quality;
 	private boolean purpulOnly;
 	private boolean cumulable;
-	private BufferedImage img;
+	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Pearl(String name, Quality quality, boolean purpulOnly, boolean cumulable, String path, String[] effects) {
@@ -37,7 +36,7 @@ public class Pearl implements FullRenderer {
 		this.purpulOnly = purpulOnly;
 		this.cumulable = cumulable;
 		this.quality = quality;
-		this.img = setIcon(path);
+		setIcon(path);
 		
 		for(int i = 0; i < effects.length; i++) {
 			this.effects.add(new Effect(effects[i]));
@@ -61,8 +60,8 @@ public class Pearl implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 
 	public ArrayList<Effect> getEffects() {
@@ -71,34 +70,21 @@ public class Pearl implements FullRenderer {
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH16 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Pearl.class.getResource(Consts.PATH16 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Pearl.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Pearl.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	@Override
@@ -125,7 +111,7 @@ public class Pearl implements FullRenderer {
 			list.add(new ArrayList<Pearl>());
 			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						Pearl.class.getResourceAsStream(Consts.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
+						Pearl.class.getResourceAsStream(Tools.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
 			) {
 				String line = reader.readLine();
 				while (line != null) {

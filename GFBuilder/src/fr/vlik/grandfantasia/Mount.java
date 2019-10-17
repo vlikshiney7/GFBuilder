@@ -1,14 +1,13 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -17,7 +16,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Mount implements FullRenderer {
 	
-	public static String PATH = Consts.RESOURCE + Mount.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Mount.class.getSimpleName().toLowerCase() + "/";
 	private static Mount[] data;
 	static {
 		loadData();
@@ -27,14 +26,14 @@ public class Mount implements FullRenderer {
 	private int lvl;
 	private Effect depla;
 	private boolean reinca;
-	private BufferedImage img;
+	private Icon icon;
 	
 	public Mount(String name, int lvl, int depla, boolean reinca, String path) {
 		this.name = name;
 		this.lvl = lvl;
 		this.depla = new Effect(TypeEffect.Depla, false, depla, false, WeaponType.NONE, null);
 		this.reinca = reinca;
-		this.img = setIcon(path);
+		setIcon(path);
 	}
 	
 	public String getName() {
@@ -55,39 +54,26 @@ public class Mount implements FullRenderer {
 	
 	@Override
 	public Color getColor() {
-		return this.name.equals("Rien") ? Consts.itemColor[0] : Consts.itemColor[4];
+		return this.name.equals("Rien") ? Tools.itemColor[0] : Tools.itemColor[4];
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Mount.class.getResource(Tools.PATH32 + "4.png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Mount.class.getResource(Consts.PATH32 + "4.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Mount.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Mount.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	@Override

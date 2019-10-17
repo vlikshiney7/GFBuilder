@@ -50,7 +50,7 @@ public class XpStuff {
 			list.add(new ArrayList<ArrayList<XpStuff>>());
 			try (
 				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						XpStuff.class.getResourceAsStream(Consts.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
+						XpStuff.class.getResourceAsStream(Tools.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
 			) {
 				String line = reader.readLine();
 				for(int j = 0; j < size[i]; j++) {

@@ -137,7 +137,7 @@ public class Enchantment implements Writable {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Enchantment.class.getResourceAsStream(Consts.RESOURCE + "enchantement.txt"), "UTF-8"));
+					Enchantment.class.getResourceAsStream(Tools.RESOURCE + "enchantement.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (!line.equals("")) {
@@ -218,7 +218,7 @@ public class Enchantment implements Writable {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Enchantment.class.getResourceAsStream(Consts.RESOURCE + "noFixEnchant.txt"), "UTF-8"));
+					Enchantment.class.getResourceAsStream(Tools.RESOURCE + "noFixEnchant.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			

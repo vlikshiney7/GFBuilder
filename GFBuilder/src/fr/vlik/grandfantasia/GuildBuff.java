@@ -1,12 +1,12 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.interfaces.Iconable;
 
@@ -17,31 +17,29 @@ public class GuildBuff extends Buff implements Iconable {
 		loadData();
 	}
 	
-	private BufferedImage img;
+	private Icon icon;
 
 	public GuildBuff(String name, String path, ArrayList<Effect> effects) {
 		super(name, effects);
-		this.img = setIcon(path);
+		setIcon(path);
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon object = null;
 		
 		try {
-			object = ImageIO.read(GuildBuff.class.getResource(Consts.RESOURCE + "guild/" + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(GuildBuff.class.getResource(Tools.RESOURCE + "guild/" + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		return object;
+		this.icon = object;
 	}
 	
 	public static void loadData() {
@@ -49,7 +47,7 @@ public class GuildBuff extends Buff implements Iconable {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					GuildBuff.class.getResourceAsStream(Consts.RESOURCE + "guild/guildBuff.txt"), "UTF-8"));
+					GuildBuff.class.getResourceAsStream(Tools.RESOURCE + "guild/guildBuff.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

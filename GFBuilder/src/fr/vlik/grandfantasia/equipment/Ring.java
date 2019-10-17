@@ -1,23 +1,21 @@
 package fr.vlik.grandfantasia.equipment;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
 
 public final class Ring extends Equipment {
 	
-	public static String PATH = Consts.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
 	private static Ring[] data;
 	static {
 		loadData();
@@ -31,7 +29,7 @@ public final class Ring extends Equipment {
 		
 		this.setCode = ring.getSetCode();
 		this.uniqueEquip = ring.isUniqueEquip();
-		this.img = ring.getIcon();
+		this.icon = ring.getIcon();
 	}
 	
 	public Ring(String name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
@@ -39,7 +37,7 @@ public final class Ring extends Equipment {
 		
 		this.setCode = setCode;
 		this.uniqueEquip = uniqueEquip;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
@@ -51,30 +49,17 @@ public final class Ring extends Equipment {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
-		
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
+				
 		try {
-			back = ImageIO.read(Ring.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Ring.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Ring.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	public void addEnchant(Enchantment enchant) {

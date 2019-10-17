@@ -1,23 +1,21 @@
 package fr.vlik.grandfantasia.equipment;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
 
 public class Cape extends Equipment {
 	
-	public static String PATH = Consts.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Cape[] data;
 	static {
 		loadData();
@@ -29,14 +27,14 @@ public class Cape extends Equipment {
 		super(cape.getName(), cape.getGrades(), cape.getLvl(), cape.getQuality(), cape.isEnchantable(), cape.getEffects(), cape.getBonusXP());
 		
 		this.setCode = cape.getSetCode();
-		this.img = cape.getIcon();
+		this.icon = cape.getIcon();
 	}
 	
 	public Cape(String name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
@@ -44,30 +42,17 @@ public class Cape extends Equipment {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Cape.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Cape.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Cape.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Cape.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	public void addEnchant(Enchantment enchant) {

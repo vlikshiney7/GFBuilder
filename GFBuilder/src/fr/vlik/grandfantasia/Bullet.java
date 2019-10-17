@@ -8,7 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -16,7 +17,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Bullet implements FullRenderer {
 	
-	public static String PATH = Consts.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + "/";
 	private static Bullet[] data;
 	static {
 		loadData();
@@ -25,14 +26,14 @@ public class Bullet implements FullRenderer {
 	private String name;
 	private int lvl;
 	private Quality quality;
-	private BufferedImage img;
+	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Bullet(String name, int lvl, Quality quality, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.quality = quality;
-		this.img = setIcon(path);
+		setIcon(path);
 		this.effects = effects;
 	}
 	
@@ -49,13 +50,13 @@ public class Bullet implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -67,30 +68,25 @@ public class Bullet implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Bullet.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Bullet.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Bullet.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Bullet.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
 		if(object != null) {
-			g.drawImage(object, 0, 0, null);
+			Graphics g = new BufferedImage(back.getIconWidth(), back.getIconHeight(), BufferedImage.TYPE_INT_ARGB).createGraphics();
+			back.paintIcon(null, g, 0, 0);
+			back.setImageObserver(object.getImageObserver());
+			back.paintIcon(null, g, 0, 0);
+			g.dispose();
 		}
 		
-		return back;
+		this.icon = back;
 	}
 	
 	@Override

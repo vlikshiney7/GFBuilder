@@ -13,7 +13,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class Costume implements Colorable, Writable {
 	
-	public static String PATH = Consts.RESOURCE + Costume.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Costume.class.getSimpleName().toLowerCase() + "/";
 	private static Costume[][] data;
 	static {
 		loadData();
@@ -69,7 +69,7 @@ public class Costume implements Colorable, Writable {
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	public ArrayList<Effect> getEffects() {

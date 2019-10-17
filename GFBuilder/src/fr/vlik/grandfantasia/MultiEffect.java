@@ -67,7 +67,7 @@ public class MultiEffect {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MultiEffect.class.getResourceAsStream(Consts.RESOURCE + "multiEffect.txt"), "UTF-8"));
+					MultiEffect.class.getResourceAsStream(Tools.RESOURCE + "multiEffect.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

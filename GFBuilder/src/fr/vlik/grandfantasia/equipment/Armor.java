@@ -1,26 +1,24 @@
 package fr.vlik.grandfantasia.equipment;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
 
 public class Armor extends Equipment {
 	
-	public static String PATH = Consts.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
 	public static Armor[][] data;
 	static {
 		loadData();
@@ -38,7 +36,7 @@ public class Armor extends Equipment {
 		this.reinca = armor.isReinca();
 		this.isMultiEffect = armor.isMultiEffect();
 		this.multiEffects = armor.getMultiEffect();
-		this.img = armor.getIcon();
+		this.icon = armor.getIcon();
 	}
 	
 	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
@@ -47,7 +45,7 @@ public class Armor extends Equipment {
 		this.setCode = setCode;
 		this.reinca = reinca;
 		this.isMultiEffect = false;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 	}
 	
 	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
@@ -57,7 +55,7 @@ public class Armor extends Equipment {
 		this.reinca = reinca;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
@@ -86,30 +84,17 @@ public class Armor extends Equipment {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Armor.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Armor.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Armor.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Armor.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	public void addEnchant(Enchantment enchant, int idArmor) {
@@ -148,7 +133,7 @@ public class Armor extends Equipment {
 	}
 
 	public void addFortif(int value) {
-		double coefFortif = Consts.coefFortif[value];
+		double coefFortif = Tools.coefFortif[value];
 		
 		for(Effect effect : this.effects) {
 			if(effect.isPercent()) {

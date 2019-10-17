@@ -73,7 +73,7 @@ public class Genki implements Colorable, Writable {
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 
 	public void addStarBonus(int nbStar, int id) {
@@ -111,7 +111,7 @@ public class Genki implements Colorable, Writable {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Genki.class.getResourceAsStream(Consts.RESOURCE + "genki.txt"), "UTF-8"));
+					Genki.class.getResourceAsStream(Tools.RESOURCE + "genki.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			for(int i = 0; i < 5; i++) list.add(new ArrayList<Genki>());

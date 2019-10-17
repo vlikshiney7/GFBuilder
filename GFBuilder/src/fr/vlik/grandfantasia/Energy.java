@@ -1,16 +1,18 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
-public class Energy {
+import fr.vlik.grandfantasia.interfaces.Iconable;
+
+public class Energy implements Iconable {
 	
-	public static String PATH = Consts.RESOURCE + Energy.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Energy.class.getSimpleName().toLowerCase() + "/";
 	private static Energy[] data;
 	static {
 		loadData();
@@ -18,19 +20,20 @@ public class Energy {
 	
 	private String name;
 	private ArrayList<Effect> effects = new ArrayList<Effect>(2);
-	private BufferedImage icon;
+	private Icon icon;
 	
 	public Energy (String name, String iconPath, ArrayList<Effect> effects) {
 		this.name = name;
 		this.effects = effects;
-		this.icon = setIcon(iconPath);
+		setIcon(iconPath);
 	}
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public BufferedImage getIcon() {
+	@Override
+	public Icon getIcon() {
 		return this.icon;
 	}
 	
@@ -42,18 +45,16 @@ public class Energy {
 		return list;
 	}
 	
-	private BufferedImage setIcon(String path) {
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon object = null;
 		
 		try {
-			object = ImageIO.read(Energy.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Energy.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		return object;
+		this.icon = object;
 	}
 	
 	public String getTooltip() {

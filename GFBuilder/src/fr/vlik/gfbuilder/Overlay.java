@@ -3,7 +3,6 @@ package fr.vlik.gfbuilder;
 import java.awt.Dimension;
 
 import javax.swing.Box;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -34,16 +33,16 @@ public class Overlay extends JPanel {
 		this.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setAlignmentX(LEFT_ALIGNMENT);
 		
-		this.iconGrade.setIcon(new ImageIcon(Grade.data[0].getIcon()));
+		this.iconGrade.setIcon(Grade.data[0].getIcon());
 		this.lvl = JCustomLabel.getSimpleLabel("1");
-		this.iconReinca.setIcon(new ImageIcon(Reinca.getData()[0].getIcon()));
+		this.iconReinca.setIcon(Reinca.getData()[0].getIcon());
 		this.nameSave = JCustomLabel.getSimpleLabel("Novice");
 		
 		createPanel();
 	}
 
 	public void setGrade(Grade grade) {
-		this.iconGrade.setIcon(new ImageIcon(grade.getIcon()));
+		this.iconGrade.setIcon(grade.getIcon());
 	}
 
 	public void setLvl(int lvl) {
@@ -51,7 +50,7 @@ public class Overlay extends JPanel {
 	}
 
 	public void setReinca(Reinca reinca) {
-		this.iconReinca.setIcon(new ImageIcon(reinca.getIcon()));
+		this.iconReinca.setIcon(reinca.getIcon());
 	}
 
 	public void setNameSave(String nameSave) {

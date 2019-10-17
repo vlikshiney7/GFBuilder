@@ -49,7 +49,7 @@ public class Runway {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Runway.class.getResourceAsStream(Consts.RESOURCE + "runway.txt"), "UTF-8"));
+					Runway.class.getResourceAsStream(Tools.RESOURCE + "runway.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

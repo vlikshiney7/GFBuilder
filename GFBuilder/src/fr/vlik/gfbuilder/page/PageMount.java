@@ -8,15 +8,13 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Util;
-import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Mount;
@@ -41,8 +39,8 @@ public class PageMount extends PagePanel {
 	private ArrayList<ArrayList<JStarCheckBox>> starGenki = new ArrayList<ArrayList<JStarCheckBox>>(2);
 	private ArrayList<JCustomComboBox<Genki>> genki = new ArrayList<JCustomComboBox<Genki>>(2);
 	
-	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(2);
-	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(2);
+	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(2);
+	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(2);
 
 	private JPanel showAndHideXpStuff;
 	private JPanel showAndHide;
@@ -65,13 +63,13 @@ public class PageMount extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		String[] tmp = new String[XpStuff.getDataMount().length +1];
-		tmp[0] = "Rien";
+		TypeEffect[] tmp = new TypeEffect[XpStuff.getDataMount().length +1];
+		tmp[0] = TypeEffect.NONE;
 		for(int i = 0; i < tmp.length-1; i++) {
-			tmp[i+1] = XpStuff.getDataMount()[i].getType().name();
+			tmp[i+1] = XpStuff.getDataMount()[i].getType();
 		}
 		for(int i = 0; i < 2; i++) {
-			this.effectXpStuff.add(new JCustomComboBox<String>(tmp));
+			this.effectXpStuff.add(new JCustomComboBox<TypeEffect>(tmp));
 			this.effectXpStuff.get(i).addActionListener(e -> {
 				updateLvlXpStuff();
 
@@ -81,7 +79,7 @@ public class PageMount extends PagePanel {
 			this.effectXpStuff.get(i).setVisible(false);
 			
 			int duo = i;
-			this.lvlXpStuff.add(new JCustomComboBox<String>());
+			this.lvlXpStuff.add(new JCustomComboBox<Integer>());
 			this.lvlXpStuff.get(i).addActionListener(e -> {
 				updateMaxLvlValue(duo);
 				
@@ -100,7 +98,7 @@ public class PageMount extends PagePanel {
 				this.label[i*7+j+3].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.qualityGenki.get(i).add(new JCustomRadioButton(this.label[i*7+j+3], "radio0" + j, "radioOff"));
 				this.qualityGenki.get(i).get(j).setBackground(Design.UIColor[1]);
-				this.qualityGenki.get(i).get(j).setForeground(Consts.itemColor[j]);
+				this.qualityGenki.get(i).get(j).setForeground(Tools.itemColor[j]);
 				this.qualityGenki.get(i).get(j).addActionListener(e -> {
 					updateQualityGenki(id);
 					
@@ -144,11 +142,11 @@ public class PageMount extends PagePanel {
 		return this.genki.get(id).getSelectedItem();
 	}
 	
-	public String getEffectXpStuff(int id) {
+	public TypeEffect getEffectXpStuff(int id) {
 		return this.effectXpStuff.get(id).getSelectedItem();
 	}
 
-	public String getLvlXpStuff(int id) {
+	public Integer getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 
@@ -160,11 +158,11 @@ public class PageMount extends PagePanel {
 		list.add(mount.getDepla());
 		
 		for(int i = 0; i < 2; i++) {
-			if(!this.lvlXpStuff.get(i).isVisible() || this.effectXpStuff.get(i).getSelectedIndex() == 0) {
+			if(!this.lvlXpStuff.get(i).isVisible() || this.getEffectXpStuff(i) == TypeEffect.NONE) {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.getEffectXpStuff(i).toString());
+			TypeEffect type = this.getEffectXpStuff(i);
 			double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 			
 			if(mount.getName().equals("Loup Spectral de Combat")) {
@@ -342,26 +340,36 @@ public class PageMount extends PagePanel {
 	}
 	
 	private void updateLvlXpStuff() {
-		if(this.getEffectXpStuff(0).toString().equals("Rien") || this.getEffectXpStuff(1).toString().equals("Rien")
-				|| this.getEffectXpStuff(0).toString().equals(this.getEffectXpStuff(1).toString())) {
+		if(this.getEffectXpStuff(0) == TypeEffect.NONE || this.getEffectXpStuff(1) == TypeEffect.NONE
+				|| this.getEffectXpStuff(0) == this.getEffectXpStuff(1)) {
+
 			this.lvlXpStuff.get(0).setVisible(false);
 			this.lvlXpStuff.get(1).setVisible(false);
-			Util.setMemoryInList(this.lvlXpStuff.get(0), null);
-			Util.setMemoryInList(this.lvlXpStuff.get(1), null);
-		} else {
-			String[] tmp = new String[XpStuff.getDataMount()[this.effectXpStuff.get(0).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = "" + (i+1);
-			}
-			this.lvlXpStuff.get(0).add(new JCustomComboBox<String>(tmp));
-			Util.setMemoryInList(this.lvlXpStuff, 0, tmp);
 			
-			tmp = new String[XpStuff.getDataMount()[this.effectXpStuff.get(1).getSelectedIndex()-1].getLvlValue().size()];
+			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<Integer>());
+		} else {
+			Integer[] tmp = new Integer[XpStuff.getDataMount()[this.effectXpStuff.get(0).getSelectedIndex()-1].getLvlValue().size()];
 			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = "" + (i+1);
+				tmp[i] = i+1;
 			}
-			this.lvlXpStuff.get(1).add(new JCustomComboBox<String>(tmp));
-			Util.setMemoryInList(this.lvlXpStuff, 1, tmp);
+			
+			Integer memory = this.lvlXpStuff.get(0).getSelectedItem();
+			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<Integer>(tmp));
+			if(memory != null) {
+				this.lvlXpStuff.get(0).setSelectedIndex(memory);
+			}
+			
+			tmp = new Integer[XpStuff.getDataMount()[this.effectXpStuff.get(1).getSelectedIndex()-1].getLvlValue().size()];
+			for(int i = 0; i < tmp.length; i++) {
+				tmp[i] = i+1;
+			}
+			
+			memory = this.lvlXpStuff.get(1).getSelectedItem();
+			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<Integer>(tmp));
+			if(memory != null) {
+				this.lvlXpStuff.get(1).setSelectedIndex(memory);
+			}
 			
 			this.lvlXpStuff.get(0).setVisible(true);
 			this.lvlXpStuff.get(1).setVisible(true);
@@ -371,21 +379,22 @@ public class PageMount extends PagePanel {
 	private void updateMaxLvlValue(int index) {
 		int indexPair = (index % 2 == 0) ? index + 1 : index -1;
 		
-		if(this.effectXpStuff.get(index).getSelectedIndex() == 0
-				|| this.effectXpStuff.get(indexPair).getSelectedIndex() == 0
-				|| this.effectXpStuff.get(index).getSelectedIndex() == this.effectXpStuff.get(indexPair).getSelectedIndex())
+		if(this.getEffectXpStuff(index) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
+				|| this.effectXpStuff.get(index).getSelectedIndex() == this.effectXpStuff.get(indexPair).getSelectedIndex()) {
 			return;
+		}
 		
 		int currentLvl = this.lvlXpStuff.get(index).getSelectedIndex()+1;
 		int sizePair = XpStuff.getDataMount()[this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
 		
-		String[] tmp = new String[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
+		Integer[] tmp = new Integer[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
 		for(int i = 0; i < tmp.length; i++) {
-			tmp[i] = "" + (i+1);
+			tmp[i] = i+1;
 		}
 		
-		this.lvlXpStuff.get(indexPair).add(new JComboBox<String>(tmp));
-		Util.setMemoryInList(this.lvlXpStuff, indexPair, tmp);
+		Integer memory = this.lvlXpStuff.get(indexPair).getSelectedItem();
+		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
+		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
 	
 	private void updateQualityGenki(int id) {

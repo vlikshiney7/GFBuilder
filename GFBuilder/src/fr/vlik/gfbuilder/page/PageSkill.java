@@ -260,6 +260,8 @@ public class PageSkill extends PagePanel {
 		} else {
 			this.skillProgress.get(1).setVisible(false);
 		}
+		
+		setEffects();
 	}
 	
 	public void updateProSkill() {

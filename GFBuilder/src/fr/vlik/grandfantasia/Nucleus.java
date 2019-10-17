@@ -1,14 +1,13 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -16,7 +15,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Nucleus implements FullRenderer {
 	
-	public static String PATH = Consts.RESOURCE + Nucleus.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Nucleus.class.getSimpleName().toLowerCase() + "/";
 	private static Nucleus[][] data;
 	static {
 		loadData();
@@ -24,13 +23,13 @@ public class Nucleus implements FullRenderer {
 	
 	private String name;
 	private Quality quality;
-	private BufferedImage icon;
+	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Nucleus(String name, Quality quality, String iconPath, ArrayList<Effect> effects) {
 		this.name = name;
 		this.quality = quality;
-		this.icon = setIcon(iconPath);
+		setIcon(iconPath);
 		this.effects = effects;
 	}
 	
@@ -44,11 +43,11 @@ public class Nucleus implements FullRenderer {
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
+	public Icon getIcon() {
 		return this.icon;
 	}
 	
@@ -61,30 +60,17 @@ public class Nucleus implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Nucleus.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Nucleus.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Nucleus.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non charg� : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Nucleus.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	@Override

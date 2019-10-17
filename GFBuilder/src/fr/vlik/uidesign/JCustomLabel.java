@@ -3,7 +3,6 @@ package fr.vlik.uidesign;
 import java.awt.Font;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import fr.vlik.grandfantasia.CombiTalent;
@@ -28,18 +27,19 @@ public class JCustomLabel extends JLabel {
 	public JCustomLabel(Object object) {
 		super();
 		setBlackUI();
+		
 		if(object instanceof Nucleus) {
 			Nucleus nucleus = (Nucleus) object;
 			
 			this.setText(nucleus.getName());
-			this.setIcon(new ImageIcon(nucleus.getIcon()));
+			this.setIcon(nucleus.getIcon());
 			this.setToolTipText(nucleus.getTooltip());
 			this.effects = nucleus.getEffects();
 		} else if(object instanceof Energy) {
 			Energy energy = (Energy) object;
 			
 			this.setText(energy.getName());
-			this.setIcon(new ImageIcon(energy.getIcon()));
+			this.setIcon(energy.getIcon());
 			this.setToolTipText(energy.getTooltip());
 			this.effects = energy.getEffects();
 		} else if(object instanceof CombiTalent) {
@@ -64,7 +64,7 @@ public class JCustomLabel extends JLabel {
 			Nucleus nucleus = (Nucleus) object;
 			
 			this.setText(nucleus.getName());
-			this.setIcon(new ImageIcon(nucleus.getIcon()));
+			this.setIcon(nucleus.getIcon());
 			this.setToolTipText(nucleus.getTooltip());
 			this.effects = nucleus.getEffects();
 		} else if(object instanceof CombiTalent) {
@@ -77,7 +77,7 @@ public class JCustomLabel extends JLabel {
 			GuildBuff guildBuff = (GuildBuff) object;
 			
 			this.setText(guildBuff.getName());
-			this.setIcon(new ImageIcon(guildBuff.getIcon()));
+			this.setIcon(guildBuff.getIcon());
 			this.setToolTipText(guildBuff.getTooltip());
 			this.effects = guildBuff.getEffects();
 		}
@@ -85,7 +85,7 @@ public class JCustomLabel extends JLabel {
 	
 	public void setObject(Skill skill, int maxLvlIndex) {
 		this.setText("Lvl " + skill.getLvl()[maxLvlIndex] + " - " + skill.getName() + (skill.getLvl().length == 1 ? "" : " " + (maxLvlIndex+1)));
-		this.setIcon(new ImageIcon(skill.getIcon()));
+		this.setIcon(skill.getIcon());
 		this.setToolTipText(skill.getTooltip(maxLvlIndex));
 		this.effects = skill.getEffects(maxLvlIndex);
 	}

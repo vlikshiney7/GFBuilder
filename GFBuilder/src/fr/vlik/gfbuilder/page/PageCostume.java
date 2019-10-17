@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Costume;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Pearl;
@@ -69,7 +69,7 @@ public class PageCostume extends PagePanel {
 				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
 				this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
-				this.costQuality.get(i).get(j).setForeground(Consts.costColor[j]);
+				this.costQuality.get(i).get(j).setForeground(Tools.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(e -> {
 					updateCostume(id);
 
@@ -130,7 +130,7 @@ public class PageCostume extends PagePanel {
 				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i+2).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
 				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);
-				this.costQuality.get(i+2).get(j).setForeground(Consts.costColor[j]);
+				this.costQuality.get(i+2).get(j).setForeground(Tools.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(e -> {
 					updateCostume(id);
 					

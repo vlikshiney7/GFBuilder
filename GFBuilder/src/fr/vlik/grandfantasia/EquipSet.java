@@ -132,7 +132,7 @@ public class EquipSet {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					EquipSet.class.getResourceAsStream(Consts.RESOURCE + "armor/set.txt"), "UTF-8"));
+					EquipSet.class.getResourceAsStream(Tools.RESOURCE + "armor/set.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

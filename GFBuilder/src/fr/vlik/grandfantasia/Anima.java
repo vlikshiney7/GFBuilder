@@ -1,14 +1,13 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -16,7 +15,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Anima implements FullRenderer {
 	
-	public static String PATH = Consts.RESOURCE + Anima.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Anima.class.getSimpleName().toLowerCase() + "/";
 	private static Anima[] data;
 	static {
 		loadData();
@@ -24,7 +23,7 @@ public class Anima implements FullRenderer {
 	
 	private String name;
 	private Quality quality;
-	private BufferedImage img;
+	private Icon icon;
 	private boolean isMultiEffect;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	private MultiEffect multiEffects;
@@ -32,17 +31,17 @@ public class Anima implements FullRenderer {
 	public Anima(String name, Quality quality, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.quality = quality;
-		this.img = setIcon(path);
 		this.isMultiEffect = false;
 		this.effects = effects;
+		setIcon(path);
 	}
 	
 	public Anima(String name, Quality quality, String path, MultiEffect effects) {
 		this.name = name;
 		this.quality = quality;
-		this.img = setIcon(path);
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
+		setIcon(path);
 	}
 	
 	public String getName() {
@@ -54,8 +53,8 @@ public class Anima implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	public boolean isMultiEffect() {
@@ -64,7 +63,7 @@ public class Anima implements FullRenderer {
 	
 	@Override
 	public Color getColor() {
-		return Consts.itemColor[this.quality.index];
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -84,30 +83,17 @@ public class Anima implements FullRenderer {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Anima.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		try {
-			back = ImageIO.read(Anima.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Anima.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Anima.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	@Override

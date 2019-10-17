@@ -1,10 +1,10 @@
 package fr.vlik.grandfantasia.interfaces;
 
-import java.awt.image.BufferedImage;
+import javax.swing.Icon;
 
 public interface Iconable {
 	
-	public BufferedImage getIcon();
+	public Icon getIcon();
 	
-	public BufferedImage setIcon(String path);
+	public void setIcon(String path);
 }

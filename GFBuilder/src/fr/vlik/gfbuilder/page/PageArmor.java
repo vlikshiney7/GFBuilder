@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -15,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Util;
-import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
@@ -46,8 +45,8 @@ public class PageArmor extends PagePanel {
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
 	private ArrayList<JCustomComboBox<String>> fortif = new ArrayList<JCustomComboBox<String>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(6);
-	private ArrayList<JCustomComboBox<String>> effectXpStuff = new ArrayList<JCustomComboBox<String>>(10);
-	private ArrayList<JCustomComboBox<String>> lvlXpStuff = new ArrayList<JCustomComboBox<String>>(10);
+	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(10);
+	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(10);
 	
 	private ArrayList<JCustomComboBox<String>> redFortif = new ArrayList<JCustomComboBox<String>>(5);
 	private ArrayList<JCustomComboBox<Enchantment>> redEnchant = new ArrayList<JCustomComboBox<Enchantment>>(15);
@@ -177,14 +176,14 @@ public class PageArmor extends PagePanel {
 			}
 			
 			/* XP STUFF */
-			String[] tmp = new String[XpStuff.getDataArmor()[i].length +1];
-			tmp[0] = "Rien";
-			for(int j = 0; j < tmp.length-1; j++) {
-				tmp[j+1] = XpStuff.getDataArmor()[i][j].getType().name();
+			TypeEffect[] tabEffect = new TypeEffect[XpStuff.getDataArmor()[i].length +1];
+			tabEffect[0] = TypeEffect.NONE;
+			for(int j = 0; j < tabEffect.length-1; j++) {
+				tabEffect[j+1] = XpStuff.getDataArmor()[i][j].getType();
 			}
 			
 			for(int j = 0; j < 2; j++) {
-				this.effectXpStuff.add(new JCustomComboBox<String>(tmp));
+				this.effectXpStuff.add(new JCustomComboBox<TypeEffect>(tabEffect));
 				this.effectXpStuff.get(i*2+j).addActionListener(e -> {
 					updateLvlXpStuff(id);
 					
@@ -194,7 +193,7 @@ public class PageArmor extends PagePanel {
 				this.effectXpStuff.get(i*2+j).setVisible(false);
 				
 				int duo = i*2+j;
-				this.lvlXpStuff.add(new JCustomComboBox<String>());
+				this.lvlXpStuff.add(new JCustomComboBox<Integer>());
 				this.lvlXpStuff.get(i*2+j).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
@@ -242,11 +241,11 @@ public class PageArmor extends PagePanel {
 		return this.pearl.get(id).getSelectedItem();
 	}
 
-	public String getEffectXpStuff(int id) {
+	public TypeEffect getEffectXpStuff(int id) {
 		return this.effectXpStuff.get(id).getSelectedItem();
 	}
 
-	public String getLvlXpStuff(int id) {
+	public Integer getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 
@@ -288,18 +287,18 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < 10; i++) {
-			if(!this.lvlXpStuff.get(i).isVisible() || this.effectXpStuff.get(i).getSelectedIndex() == 0) {
+			if(!this.lvlXpStuff.get(i).isVisible() || this.getEffectXpStuff(i) == TypeEffect.NONE) {
 				continue;
 			}
 			
-			TypeEffect type = TypeEffect.valueOf(this.getEffectXpStuff(i).toString());
+			TypeEffect type = this.getEffectXpStuff(i);
 			double valueXpStuff = XpStuff.getDataArmor()[i/2][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 			
 			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
 		}
 		
 		for(int i = 0; i < 5; i++) {
-			if(!(this.effectXpStuff.get(i*2).getSelectedIndex() == 0) && !(this.effectXpStuff.get(i*2+1).getSelectedIndex() == 0)
+			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
 					&& this.effectXpStuff.get(i*2).getSelectedIndex() != this.effectXpStuff.get(i*2+1).getSelectedIndex()) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(lvlXpStuff >= armors[i].getLvl()) {
@@ -472,7 +471,9 @@ public class PageArmor extends PagePanel {
 			this.armor.get(i).setSelectedItem(memory);
 			
 			if(!this.armor.get(i).getSelectedItem().equals(memory)) {
+				updateXpStuff(i);
 				updateDetails(i);
+				updateEnchant(i);
 				
 				this.fortif.get(i).setSelectedIndex(0);
 				if(i == 0) {
@@ -628,26 +629,36 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updateLvlXpStuff(int id) {
-		if(this.getEffectXpStuff(id*2).toString().equals("Rien") || this.getEffectXpStuff(id*2+1).toString().equals("Rien")
-				|| this.getEffectXpStuff(id*2).toString().equals(this.getEffectXpStuff(id*2+1).toString())) {
+		if(this.getEffectXpStuff(id*2) == TypeEffect.NONE || this.getEffectXpStuff(id*2+1) == TypeEffect.NONE
+				|| this.getEffectXpStuff(id*2) == this.getEffectXpStuff(id*2+1)) {
+			
 			this.lvlXpStuff.get(id*2).setVisible(false);
 			this.lvlXpStuff.get(id*2+1).setVisible(false);
-			Util.setMemoryInList(this.lvlXpStuff.get(id*2), null);
-			Util.setMemoryInList(this.lvlXpStuff.get(id*2+1), null);
-		} else {
-			String[] tmp = new String[XpStuff.getDataArmor()[id][this.effectXpStuff.get(id*2).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = "" + (i+1);
-			}
-			this.lvlXpStuff.get(id*2).add(new JCustomComboBox<String>(tmp));
-			Util.setMemoryInList(this.lvlXpStuff, id*2, tmp);
 			
-			tmp = new String[XpStuff.getDataArmor()[id][this.effectXpStuff.get(id*2+1).getSelectedIndex()-1].getLvlValue().size()];
+			this.lvlXpStuff.get(id*2).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<Integer>());
+		} else {
+			Integer[] tmp = new Integer[XpStuff.getDataArmor()[id][this.effectXpStuff.get(id*2).getSelectedIndex()-1].getLvlValue().size()];
 			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = "" + (i+1);
+				tmp[i] = i+1;
 			}
-			this.lvlXpStuff.get(id*2+1).add(new JCustomComboBox<String>(tmp));
-			Util.setMemoryInList(this.lvlXpStuff, id*2+1, tmp);
+			
+			Integer memory = this.lvlXpStuff.get(id*2).getSelectedItem();
+			this.lvlXpStuff.get(id*2).setModel(new DefaultComboBoxModel<Integer>(tmp));
+			if(memory != null) {
+				this.lvlXpStuff.get(id*2).setSelectedIndex(memory);
+			}
+			
+			tmp = new Integer[XpStuff.getDataArmor()[id][this.effectXpStuff.get(id*2+1).getSelectedIndex()-1].getLvlValue().size()];
+			for(int i = 0; i < tmp.length; i++) {
+				tmp[i] = i+1;
+			}
+			
+			memory = this.lvlXpStuff.get(id*2+1).getSelectedItem();
+			this.lvlXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<Integer>(tmp));
+			if(memory != null) {
+				this.lvlXpStuff.get(id*2+1).setSelectedIndex(memory);
+			}
 			
 			this.lvlXpStuff.get(id*2).setVisible(true);
 			this.lvlXpStuff.get(id*2+1).setVisible(true);
@@ -657,27 +668,31 @@ public class PageArmor extends PagePanel {
 	private void updateMaxLvlValue(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.effectXpStuff.get(id).getSelectedIndex() == 0
-				|| this.effectXpStuff.get(indexPair).getSelectedIndex() == 0
-				|| this.effectXpStuff.get(id).getSelectedIndex() == this.effectXpStuff.get(indexPair).getSelectedIndex())
+		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
+				|| this.effectXpStuff.get(id).getSelectedIndex() == this.effectXpStuff.get(indexPair).getSelectedIndex()) {
 			return;
+		}
 		
 		int currentLvl = this.lvlXpStuff.get(id).getSelectedIndex()+1;
 		
 		int sizePair = XpStuff.getDataArmor()[id/2][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
 		
 		
-		String[] tmp = new String[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
-		for(int i = 0; i < tmp.length; i++) tmp[i] = "" + (i+1);
-		this.lvlXpStuff.get(indexPair).add(new JComboBox<String>(tmp));
-		Util.setMemoryInList(this.lvlXpStuff, indexPair, tmp);
+		Integer[] tmp = new Integer[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
+		for(int i = 0; i < tmp.length; i++) {
+			tmp[i] = i+1;
+		}
+		
+		Integer memory = this.lvlXpStuff.get(indexPair).getSelectedItem();
+		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
+		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
 	
 	private void updateValueFortif(int id) {
 		int fortif = this.redFortif.get(id).getSelectedIndex();
 		
-		double min = Consts.coefRedFortifMin[fortif]*100;
-		double max = Consts.coefRedFortifMax[fortif]*100;
+		double min = Tools.coefRedFortifMin[fortif]*100;
+		double max = Tools.coefRedFortifMax[fortif]*100;
 		double middle = (max - min) / 2 + min;
 		
 		this.valueFortif.get(id).setDoubleMinimum(min);

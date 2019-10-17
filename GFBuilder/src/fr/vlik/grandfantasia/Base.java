@@ -18,7 +18,7 @@ public class Base {
 	public static void loadData() {
 		try(
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Base.class.getResourceAsStream(Consts.RESOURCE + "base.txt"), "UTF-8"));
+					Base.class.getResourceAsStream(Tools.RESOURCE + "base.txt"), "UTF-8"));
 		) {
 			for(int i = 0; i < 5; i++) {
 				for(int j = 0; j < 12; j++) {

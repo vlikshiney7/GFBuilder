@@ -1,12 +1,12 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
@@ -22,13 +22,13 @@ public class ProSkill implements Iconable, Writable {
 	
 	private String name;
 	private int lvl;
-	private BufferedImage img;
+	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public ProSkill(String name, int lvl, String iconPath, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 		this.effects = effects;
 	}
 	
@@ -41,8 +41,8 @@ public class ProSkill implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 	
 	public ArrayList<Effect> getEffects() {
@@ -54,18 +54,16 @@ public class ProSkill implements Iconable, Writable {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon object = null;
 		
 		try {
-			object = ImageIO.read(ProSkill.class.getResource(Consts.RESOURCE + "pro/" + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(ProSkill.class.getResource(Tools.RESOURCE + "pro/" + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		return object;
+		this.icon = object;
 	}
 	
 	@Override
@@ -92,7 +90,7 @@ public class ProSkill implements Iconable, Writable {
 		ArrayList<ArrayList<ProSkill>> list = new ArrayList<ArrayList<ProSkill>>();
 		 try (
 			 BufferedReader reader = new BufferedReader(new InputStreamReader(
-					 ProSkill.class.getResourceAsStream(Consts.RESOURCE + "pro/pro.txt"), "UTF-8"));
+					 ProSkill.class.getResourceAsStream(Tools.RESOURCE + "pro/pro.txt"), "UTF-8"));
 		 ) {
 			String line = reader.readLine();
 			

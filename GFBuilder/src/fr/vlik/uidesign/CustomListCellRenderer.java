@@ -4,13 +4,12 @@ import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.DefaultListCellRenderer;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
 import fr.vlik.gfbuilder.SaveConfig;
-import fr.vlik.grandfantasia.Consts;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
@@ -37,7 +36,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		if(value instanceof FullRenderer) {
 			FullRenderer full = (FullRenderer) value;
 			renderer.setForeground(full.getColor());
-			renderer.setIcon(new ImageIcon(full.getIcon()));
+			renderer.setIcon(full.getIcon());
 			renderer.setText(full.getInfo(lang));
 			renderer.setToolTipText(full.getTooltip());
 		} else {
@@ -48,7 +47,7 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			}
 			
 			if(value instanceof Iconable) {
-				renderer.setIcon(new ImageIcon(((Iconable) value).getIcon()));
+				renderer.setIcon(((Iconable) value).getIcon());
 			}
 			
 			if(value instanceof Writable) {
@@ -62,22 +61,22 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 			renderer.setText(object);
 			
 			if(object.equals("Niveau 1")) {
-				renderer.setForeground(Consts.reincaColor[1]);
+				renderer.setForeground(Tools.reincaColor[1]);
 			} else if(object.equals("Aucune")) {
-				renderer.setForeground(Consts.reincaColor[0]);
+				renderer.setForeground(Tools.reincaColor[0]);
 			} else if(object.matches("^\\+.*")) {
 				if(index <= 7) {
-					renderer.setForeground(Consts.itemColor[1]);
+					renderer.setForeground(Tools.itemColor[1]);
 				} else if(index <= 10) {
-					renderer.setForeground(Consts.itemColor[2]);
+					renderer.setForeground(Tools.itemColor[2]);
 				} else if(index <= 13) {
-					renderer.setForeground(Consts.itemColor[3]);
+					renderer.setForeground(Tools.itemColor[3]);
 				} else if(index <= 15) {
-					renderer.setForeground(Consts.itemColor[2]);
+					renderer.setForeground(Tools.itemColor[2]);
 				} else if(index <= 18) {
-					renderer.setForeground(Consts.titleColor[7]);
+					renderer.setForeground(Tools.titleColor[7]);
 				} else {
-					renderer.setForeground(Consts.itemColor[3]);
+					renderer.setForeground(Tools.itemColor[3]);
 				}
 			} else {
 				index++;
@@ -86,27 +85,27 @@ public class CustomListCellRenderer implements ListCellRenderer<Object> {
 		} else if(value instanceof Integer) {
 			renderer.setText(value.toString());
 			if(index > 15)
-				renderer.setForeground(Consts.speColor[2]);
+				renderer.setForeground(Tools.speColor[2]);
 			else if(index > 10)
-				renderer.setForeground(Consts.speColor[1]);
+				renderer.setForeground(Tools.speColor[1]);
 			else
-				renderer.setForeground(Consts.speColor[0]);
+				renderer.setForeground(Tools.speColor[0]);
 		} else if(value instanceof Talent) {
 			if(!ancestral) {
 				if(index == 0) {
-					renderer.setForeground(Consts.itemColor[0]);
+					renderer.setForeground(Tools.itemColor[0]);
 				} else if(index == 1) {
-					renderer.setForeground(Consts.itemColor[1]);
+					renderer.setForeground(Tools.itemColor[1]);
 				} else if(index == 2) {
-					renderer.setForeground(Consts.itemColor[2]);
+					renderer.setForeground(Tools.itemColor[2]);
 				} else {
-					renderer.setForeground(Consts.itemColor[3]);
+					renderer.setForeground(Tools.itemColor[3]);
 				}
 			} else {
 				if(index == 0) {
-					renderer.setForeground(Consts.itemColor[0]);
+					renderer.setForeground(Tools.itemColor[0]);
 				} else {
-					renderer.setForeground(Consts.itemColor[3]);
+					renderer.setForeground(Tools.itemColor[3]);
 				}
 			}
 		} else if(value instanceof SaveConfig) {

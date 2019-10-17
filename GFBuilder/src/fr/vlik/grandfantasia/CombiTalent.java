@@ -59,7 +59,7 @@ public final class CombiTalent {
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					CombiTalent.class.getResourceAsStream(Consts.RESOURCE + "combi.txt"), "UTF-8"));
+					CombiTalent.class.getResourceAsStream(Tools.RESOURCE + "combi.txt"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

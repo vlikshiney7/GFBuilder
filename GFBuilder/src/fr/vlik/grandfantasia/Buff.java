@@ -10,7 +10,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class Buff implements Writable {
 	
-	public static String PATH = Consts.RESOURCE + "sprite/";
+	public static String PATH = Tools.RESOURCE + "sprite/";
 	private static Buff[] data;
 	static {
 		loadData();

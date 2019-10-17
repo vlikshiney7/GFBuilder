@@ -1,25 +1,23 @@
 package fr.vlik.grandfantasia.equipment;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Consts;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
 
 public class Weapon extends Equipment {
 	
-	public static String PATH = Consts.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
+	public static String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
 	public static Weapon[][] data;
 	static {
 		loadData();
@@ -35,7 +33,7 @@ public class Weapon extends Equipment {
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
 		this.reinca = false;
-		this.img = setIcon("null.png");
+		setIcon("null.png");
 	}
 	
 	public Weapon(Weapon weapon) {
@@ -44,7 +42,7 @@ public class Weapon extends Equipment {
 		this.type = weapon.getType();
 		this.uniqueEquip = weapon.isUniqueEquip();
 		this.reinca = weapon.isReinca();
-		this.img = weapon.getIcon();
+		this.icon = weapon.getIcon();
 		this.effects = weapon.getEffects();
 	}
 	
@@ -54,7 +52,7 @@ public class Weapon extends Equipment {
 		this.type = type;
 		this.uniqueEquip = uniqueEquip;
 		this.reinca = reinca;
-		this.img = setIcon(iconPath);
+		setIcon(iconPath);
 	}
 	
 	public static enum WeaponType {
@@ -92,34 +90,21 @@ public class Weapon extends Equipment {
 	}
 	
 	@Override
-	public BufferedImage setIcon(String path) {
-		BufferedImage back = null;
-		BufferedImage object = null;
+	public void setIcon(String path) {
+		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = null;
 		
 		if(path == null) {
 			path = "null.png";
 		}
 		
 		try {
-			back = ImageIO.read(Weapon.class.getResource(Consts.PATH32 + this.quality.index + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			object = ImageIO.read(Weapon.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + path);
-		} catch (IllegalArgumentException e) {
+			object = new ImageIcon(Weapon.class.getResource(PATH + path));
+		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		Graphics g = back.getGraphics();
-		if(object != null) {
-			g.drawImage(object, 0, 0, null);
-		}
-		
-		return back;
+		this.icon = Tools.constructIcon(back, object);
 	}
 	
 	public void addEnchant(Enchantment enchant) {
@@ -158,7 +143,7 @@ public class Weapon extends Equipment {
 	}
 	
 	public void addFortif(int value) {
-		double coefFortif = Consts.coefFortif[value];
+		double coefFortif = Tools.coefFortif[value];
 		
 		for(Effect effect : this.effects) {
 			if(effect.isPercent()) {
