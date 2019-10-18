@@ -14,7 +14,7 @@ import fr.vlik.gfbuilder.page.PagePanel;
 
 public class SaveConfig {
 	
-	public static SaveConfig[] data;
+	public static ArrayList<SaveConfig> data;
 	public static String CURRENT_SAVE;
 	static {
 		loadData();
@@ -31,6 +31,10 @@ public class SaveConfig {
 	public String getName() {
 		return this.name;
 	}
+	
+	public int[][] getIndexSelector() {
+		return this.indexSelector;
+	}
 
 	public void setConfig() {
 		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
@@ -46,8 +50,18 @@ public class SaveConfig {
 		}
 	}
 	
+	public void overrideConfig() {
+		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
+		
+		for(int i = 0; i < this.indexSelector.length; i++) {
+			if(pages.get(i) instanceof PagePanel) {
+				this.indexSelector[i] = ((PagePanel) pages.get(i)).getConfig();
+			}
+		}
+	}
+	
 	private static void loadData() {
-		ArrayList<SaveConfig> list = new ArrayList<SaveConfig>();
+		SaveConfig.data = new ArrayList<SaveConfig>();
 		
 		try (
 			BufferedReader reader = new BufferedReader(new FileReader("save.gfb"));
@@ -71,41 +85,25 @@ public class SaveConfig {
 				}
 				line = reader.readLine();
 				
-				list.add(new SaveConfig(save, config));
+				data.add(new SaveConfig(save, config));
 			}
 		} catch (IOException e) {
-			writeDefaultData();
+			data.add(writeDefaultData());
 			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
-		}
-		
-		SaveConfig.data = new SaveConfig[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
 		}
 	}
 	
-	public static void writeDefaultData() {
+	public static SaveConfig writeDefaultData() {
 		int[][] config = new int[11][];
 		int[] nbCase = new int[] { 58, 81, 18, 11, 26, 32, 20, 3, 3, 12, 2 };
 		
-		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter("save.gfb", true));
-		) {
-			writer.append("Novice\n");
-			writer.append("0/1/0/0/0/0/\n");
-			
-			for(int i = 0; i < config.length; i++) {
-				for(int j = 0; j < nbCase[i]; j++) {
-					writer.append("0/");
-				}
-				
-				writer.append("\n");
-			}
-			
-			writer.flush();
-		} catch (IOException e) {
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+		config[0] = new int[] { 0, 1, 0, 0, 0, 0 };
+		
+		for(int i = 1; i < config.length; i++) {
+			config[i] = new int[nbCase[i-1]];
 		}
+		
+		return new SaveConfig("Novice", config);
 	}
 	
 	public static void writeData(String name) {
@@ -118,17 +116,26 @@ public class SaveConfig {
 			}
 		}
 		
+		SaveConfig.data.add(new SaveConfig(name, config));
+	}
+	
+	public static void writeAllData() {
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter("save.gfb", true));
+			BufferedWriter writer = new BufferedWriter(new FileWriter("save.gfb", false));
 		) {
-			writer.append(name + "\n");
-			
-			for(int i = 0; i < config.length; i++) {
-				for(int j = 0; j < config[i].length; j++) {
-					writer.append(config[i][j] + "/");
-				}
+			for(SaveConfig save : SaveConfig.data) {
 				
-				writer.append("\n");
+				writer.append(save.getName() + "\n");
+				
+				int[][] index = save.getIndexSelector();
+				
+				for(int i = 0; i < index.length; i++) {
+					for(int j = 0; j < index[i].length; j++) {
+						writer.append(index[i][j] + "/");
+					}
+					
+					writer.append("\n");
+				}
 			}
 			
 			writer.flush();
@@ -136,7 +143,6 @@ public class SaveConfig {
 			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 		}
 		
-		loadData();
 	}
 	
 	public static void setDefault() {
@@ -151,5 +157,14 @@ public class SaveConfig {
 		}
 		
 		return null;
+	}
+	
+	public static SaveConfig[] getData() {
+		SaveConfig[] result = new SaveConfig[SaveConfig.data.size()];
+		for(int i = 0; i < result.length; i++) {
+			result[i] = SaveConfig.data.get(i);
+		}
+		
+		return result;
 	}
 }

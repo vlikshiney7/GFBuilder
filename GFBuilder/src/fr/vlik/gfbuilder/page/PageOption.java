@@ -36,6 +36,7 @@ public class PageOption extends JPanel {
 	private static PageOption INSTANCE = new PageOption();
 	
 	private JCustomComboBox<SaveConfig> save;
+	private JCustomButton currentSave;
 	private JCustomButton newSave;
 	private JTextPane parameter = new JTextPane();
 	
@@ -55,7 +56,7 @@ public class PageOption extends JPanel {
 		this.setBackground(Design.UIColor[2]);
 		setLabel(Language.FR);
 		
-		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.data);
+		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.getData());
 		this.save.addActionListener(e -> {
 			updateSave();
 			
@@ -64,7 +65,12 @@ public class PageOption extends JPanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.newSave = new JCustomButton(this.label[1]);
+		this.currentSave = new JCustomButton(this.label[1]);
+		this.currentSave.addActionListener(e -> {
+			overrideSave();
+		});
+		
+		this.newSave = new JCustomButton(this.label[2]);
 		this.newSave.addActionListener(e -> {
 			popup();
 		});
@@ -111,7 +117,7 @@ public class PageOption extends JPanel {
 			}
 		});
 		
-		this.submit = new JCustomButton(this.label[5]);
+		this.submit = new JCustomButton(this.label[6]);
 		this.submit.addActionListener(e -> {
 			addSaveConfig();
 		});
@@ -142,21 +148,22 @@ public class PageOption extends JPanel {
 	}
 	
 	protected void createPanel() {
-		JPanel savePanel = new JPanel(new GridLayout(1, 3, 10, 10));
+		JPanel savePanel = new JPanel(new GridLayout(1, 4, 10, 10));
 		savePanel.setBackground(Design.UIColor[1]);
 		savePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		savePanel.add(this.label[0]);
 		savePanel.add(this.save);
+		savePanel.add(this.currentSave);
 		savePanel.add(this.newSave);
 		
 		JPanel creditPanel = new JPanel();
 		creditPanel.setLayout(new BoxLayout(creditPanel, BoxLayout.Y_AXIS));
 		creditPanel.setBackground(Design.UIColor[1]);
 		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		creditPanel.add(this.label[2]);
-		creditPanel.add(Box.createVerticalStrut(10));
-		this.label[3].setFont(new Font("Open Sans", Font.BOLD, 14));
 		creditPanel.add(this.label[3]);
+		creditPanel.add(Box.createVerticalStrut(10));
+		this.label[4].setFont(new Font("Open Sans", Font.BOLD, 14));
+		creditPanel.add(this.label[4]);
 		creditPanel.add(Box.createVerticalStrut(5));
 		creditPanel.add(this.parameter);
 		
@@ -171,15 +178,15 @@ public class PageOption extends JPanel {
 		pageSave.setBackground(Design.UIColor[2]);
 		pageSave.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		pageSave.add(this.label[4]);
+		pageSave.add(this.label[5]);
 		pageSave.add(Box.createVerticalStrut(10));
 		pageSave.add(this.askName);
 		pageSave.add(Box.createVerticalStrut(10));
 		pageSave.add(this.submit);
 		pageSave.add(Box.createVerticalStrut(5));
-		this.label[6].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.label[6].setForeground(Design.FontColor[1]);
-		pageSave.add(this.label[6]);
+		this.label[7].setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.label[7].setForeground(Design.FontColor[1]);
+		pageSave.add(this.label[7]);
 		
 		this.windowSave.add(pageSave);
 	}
@@ -206,11 +213,15 @@ public class PageOption extends JPanel {
 		this.getSave().setConfig();
 	}
 	
+	private void overrideSave() {
+		this.getSave().overrideConfig();
+	}
+	
 	private void popup() {
 		MainFrame.getInstance().setEnabled(false);
 		
 		this.submit.setVisible(false);
-		this.label[6].setVisible(true);
+		this.label[7].setVisible(true);
 		
 		this.askName.requestFocus();
 		this.windowSave.setVisible(true);
@@ -219,27 +230,27 @@ public class PageOption extends JPanel {
 	private void checkValidity() {
 		if(this.askName.getText().equals("")) {
 			this.submit.setVisible(false);
-			this.label[6].setVisible(true);
+			this.label[7].setVisible(true);
 			return;
 		}
 		
 		for(SaveConfig config : SaveConfig.data) {
 			if(this.askName.getText().equals(config.getName())) {
 				this.submit.setVisible(false);
-				this.label[6].setVisible(true);
+				this.label[7].setVisible(true);
 				return;
 			}
 		}
 		
 		this.submit.setVisible(true);
-		this.label[6].setVisible(false);
+		this.label[7].setVisible(false);
 	}
 	
 	private void addSaveConfig() {
 		SaveConfig.writeData(this.askName.getText());
 		
 		
-		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.data));
+		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.getData()));
 		this.save.setSelectedItem(SaveConfig.getSave(this.askName.getText()));
 		
 		MainFrame.getInstance().toFront();

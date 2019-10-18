@@ -6,6 +6,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
@@ -62,6 +64,7 @@ public class MainFrame extends JFrame {
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
+	private boolean unlock = false;
 	
 	
 	public static MainFrame getInstance() {
@@ -80,7 +83,17 @@ public class MainFrame extends JFrame {
 		
 		this.setSize(1325, 750);
 		this.setMinimumSize(new Dimension(780, 470));
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new WindowAdapter() {
+			
+			@Override
+			public void windowClosing(WindowEvent event) {
+				if(unlock) {
+					SaveConfig.writeAllData();
+				}
+				System.exit(0);
+			}
+		});
 		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
@@ -179,7 +192,6 @@ public class MainFrame extends JFrame {
 		
 		
 		this.overlay = Overlay.getInstance();
-		this.add(JCustomLabel.getSimpleLabel(PageOption.getInstance().getSave().getName()));
 		
 		JPanel content = new JPanel();
 		content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
@@ -294,6 +306,8 @@ public class MainFrame extends JFrame {
 		updateStat();
 		
 		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
+		
+		this.unlock = true;
 	}
 	
 	public ArrayList<JPanel> getPages() {
