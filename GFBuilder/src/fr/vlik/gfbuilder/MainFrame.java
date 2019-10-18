@@ -22,11 +22,29 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import fr.vlik.gfbuilder.page.*;
+import fr.vlik.gfbuilder.page.AdditionalEffect;
+import fr.vlik.gfbuilder.page.ConvertEffect;
+import fr.vlik.gfbuilder.page.PageArmor;
+import fr.vlik.gfbuilder.page.PageBuff;
+import fr.vlik.gfbuilder.page.PageCapeRing;
+import fr.vlik.gfbuilder.page.PageCostume;
+import fr.vlik.gfbuilder.page.PageGeneral;
+import fr.vlik.gfbuilder.page.PageMount;
+import fr.vlik.gfbuilder.page.PageOption;
+import fr.vlik.gfbuilder.page.PageOther;
+import fr.vlik.gfbuilder.page.PagePanel;
+import fr.vlik.gfbuilder.page.PageSkill;
+import fr.vlik.gfbuilder.page.PageSpeciality;
+import fr.vlik.gfbuilder.page.PageSprite;
+import fr.vlik.gfbuilder.page.PageTalent;
+import fr.vlik.gfbuilder.page.PageWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
-import fr.vlik.uidesign.*;
+import fr.vlik.uidesign.CustomListCellRenderer;
+import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JCustomTabPane;
 
 public class MainFrame extends JFrame {
 	
@@ -40,6 +58,7 @@ public class MainFrame extends JFrame {
 	private JPanel overlay;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
+	private ArrayList<JLabel> labelStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
@@ -59,7 +78,8 @@ public class MainFrame extends JFrame {
 			e.printStackTrace();
 		}
 		
-		this.setSize(1300, 750);
+		this.setSize(1325, 750);
+		this.setMinimumSize(new Dimension(780, 470));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
@@ -175,43 +195,88 @@ public class MainFrame extends JFrame {
 		stats.setLayout(new BoxLayout(stats, BoxLayout.Y_AXIS));
 		stats.setBackground(Design.UIColor[1]);
 		
+		int sizeStat = 210;
 		int[] section = new int[] { 5, 3, 5, 6, 3 };
+		int[] widthName = new int[] { 90, 90, 90, 130, 130, 130 };
 		int ordinal = 0;
 		
 		for(int i = 0; i < section.length; i++) {
 			JPanel blocStat = new JPanel();
 			blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
-			blocStat.setBorder(new EmptyBorder(5, 5, 5, 5));
-			blocStat.setBackground(Design.UIColor[0]);
+			blocStat.setBorder(new EmptyBorder(10, 10, 0, 27));
+			blocStat.setBackground(Design.UIColor[1]);
+			blocStat.setSize(new Dimension(sizeStat, 25));
+			
+			blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
 			
 			for(int j = 0; j < section[i]; j++) {
-				this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
-				this.valueStat.get(ordinal).setForeground(TypeEffect.values()[ordinal].color);
-				this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
-				this.valueStat.get(ordinal).setPreferredSize(new Dimension(180, 20));
+				JPanel inline = new JPanel();
+				inline.setLayout(new BoxLayout(inline, BoxLayout.X_AXIS));
+				inline.setSize(new Dimension(sizeStat, 25));
+				inline.setBorder(new EmptyBorder(0, 0, 0, 0));
+				inline.setOpaque(false);
+				inline.setAlignmentX(LEFT_ALIGNMENT);
 				
-				blocStat.add(this.valueStat.get(ordinal));
+				JLabel name = JCustomLabel.getStatLabel(widthName[i], 10, 0);
+				name.setText(TypeEffect.values()[ordinal].abbrevFR);
+				name.setForeground(TypeEffect.values()[ordinal].color);
+				this.labelStat.add(name);
+				
+				JLabel stat = JCustomLabel.getStatLabel(sizeStat - widthName[i], 0, 10);
+				stat.setText("0");
+				stat.setForeground(TypeEffect.values()[ordinal].color);
+				stat.setHorizontalAlignment(JLabel.RIGHT);
+				this.valueStat.add(stat);
+				
+				inline.add(name);
+				inline.add(stat);
+				
+				blocStat.add(inline);
 				
 				ordinal++;
 			}
+			
+			blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
 			
 			stats.add(blocStat);
 		}
 		
 		JPanel blocStat = new JPanel();
 		blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
-		blocStat.setBorder(new EmptyBorder(5, 5, 5, 5));
-		blocStat.setBackground(Design.UIColor[0]);
+		blocStat.setBorder(new EmptyBorder(10, 10, 10, 10));
+		blocStat.setBackground(Design.UIColor[1]);
+		blocStat.setSize(new Dimension(sizeStat, 25));
+		
+		blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
 		
 		while(ordinal < TypeEffect.values().length) {
-			this.valueStat.add(new JLabel(TypeEffect.values()[ordinal].name() + " : 0"));
-			this.valueStat.get(ordinal).setFont(new Font("Open Sans", Font.PLAIN, 16));
-			this.valueStat.get(ordinal).setForeground(Design.FontColor[0]);
+			JPanel inline = new JPanel();
+			inline.setLayout(new BoxLayout(inline, BoxLayout.X_AXIS));
+			inline.setSize(new Dimension(sizeStat, 25));
+			inline.setBorder(new EmptyBorder(0, 0, 0, 0));
+			inline.setOpaque(false);
+			inline.setAlignmentX(LEFT_ALIGNMENT);
 			
-			blocStat.add(this.valueStat.get(ordinal));
+			JLabel name = JCustomLabel.getStatLabel(widthName[5], 10, 0);
+			name.setText(TypeEffect.values()[ordinal].abbrevFR);
+			name.setForeground(TypeEffect.values()[ordinal].color);
+			this.labelStat.add(name);
+			
+			JLabel stat = JCustomLabel.getStatLabel(sizeStat - widthName[5], 0, 10);
+			stat.setText("0");
+			stat.setForeground(TypeEffect.values()[ordinal].color);
+			stat.setHorizontalAlignment(JLabel.RIGHT);
+			this.valueStat.add(stat);
+			
+			inline.add(name);
+			inline.add(stat);
+			
+			blocStat.add(inline);
 			
 			ordinal++;
 		}
+		
+		blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
 		
 		stats.add(blocStat);
 		
@@ -225,6 +290,7 @@ public class MainFrame extends JFrame {
 		
 		
 		updateTabPane(0);
+		updateLanguage();
 		updateStat();
 		
 		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
@@ -273,35 +339,26 @@ public class MainFrame extends JFrame {
 	}
 	
 	private void updateLabel(double[] allStats) {
-		Language lang = this.language.isSelected() ? Language.FR : Language.EN;
-		
 		for(int i = 0; i < this.valueStat.size(); i++) {
-			String langLabel;
-			if(lang == Language.FR) {
-				langLabel = TypeEffect.values()[i].abbrevFR;
-				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
-			} else {
-				langLabel = TypeEffect.values()[i].abbrevEN;
-				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
-			}
-			
 			if(TypeEffect.values()[i].max != -1 && allStats[i] > TypeEffect.values()[i].max) {
 				if(TypeEffect.values()[i].entier) {
-					this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i] + " (" + TypeEffect.values()[i].max + ")");
+					this.valueStat.get(i).setText((int) allStats[i] + " (" + TypeEffect.values()[i].max + ")");
 				} else {
-					this.valueStat.get(i).setText(langLabel + " : " + allStats[i] + " (" + TypeEffect.values()[i].max + ")");
+					this.valueStat.get(i).setText(allStats[i] + " (" + TypeEffect.values()[i].max + ")");
 				}
 			} else {
 				if(TypeEffect.values()[i].entier) {
-					this.valueStat.get(i).setText(langLabel + " : " + (int) allStats[i]);
+					this.valueStat.get(i).setText("" + (int) allStats[i]);
 				} else {
-					this.valueStat.get(i).setText(langLabel + " : " + allStats[i]);
+					this.valueStat.get(i).setText("" + allStats[i]);
 				}
 			}
 			
 			if(allStats[i] == 0 && i > 21) {
+				this.labelStat.get(i).setVisible(false);
 				this.valueStat.get(i).setVisible(false);
 			} else {
+				this.labelStat.get(i).setVisible(true);
 				this.valueStat.get(i).setVisible(true);
 			}
 		}
@@ -348,6 +405,18 @@ public class MainFrame extends JFrame {
 			}
 		}
 		
-		updateStat();
+		if(lang == Language.FR) {
+			for(int i = 0; i < this.valueStat.size(); i++) {
+				this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevFR);
+				this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
+				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
+			}
+		} else {
+			for(int i = 0; i < this.valueStat.size(); i++) {
+				this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevEN);
+				this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].en);
+				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
+			}
+		}
 	}
 }

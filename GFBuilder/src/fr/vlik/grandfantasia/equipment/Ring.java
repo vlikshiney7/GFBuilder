@@ -59,7 +59,7 @@ public final class Ring extends Equipment {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		this.icon = Tools.constructIcon(back, object);
+		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	public void addEnchant(Enchantment enchant) {

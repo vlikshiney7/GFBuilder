@@ -13,20 +13,24 @@ public enum TypeEffect implements Colorable, Writable {
 	INT("Intelligence", "Intelligence", "INT", "INT", 9999, true, Tools.EffectColor[3]),
 	VOL("Volonté", "Will", "VOL", "WIL", 9999, true, Tools.EffectColor[4]),
 	AGI("Agilité", "Agility", "AGI", "AGI", 9999, true, Tools.EffectColor[5]),
+	
 	Atk("Attaque", "Attack", "ATQ", "ATK", 60000, true, Tools.EffectColor[1]),
 	AtkD("Attaque à Distance", "Range Attack", "ATQ D.", "R-ATK", 60000, true, Tools.EffectColor[5]),
 	AtkM("Attaque Magique", "Magic Attack", "ATQ M.", "M-ATK", 60000, true, Tools.EffectColor[3]),
+	
 	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, true, Tools.EffectColor[2]),
 	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, true, Tools.EffectColor[4]),
 	TCCP("Taux Coup Critique Physique", "Chance of Physical Critical Hit", "TCCP", "", 100, false, Tools.EffectColor[5]),
 	TCCM("Taux Coup Critique Magique", "Chance of Magical Critical Hit", "TCCM", "", 100, false, Tools.EffectColor[3]),
 	ESQ("Esquive", "", "ESQ", "", -1, true, Tools.EffectColor[5]),
+	
 	Sacre("Résistance Sacré", "", "Res Sacré", "", -1, true, Tools.EffectColor[0]),
 	Ombre("Résistance Ombre", "", "Res Ombre", "", -1, true, Tools.EffectColor[0]),
 	Foudre("Résistance Foudre", "", "Res Foudre", "", -1, true, Tools.EffectColor[0]),
 	Feu("Résistance Feu", "", "Res Feu", "", -1, true, Tools.EffectColor[0]),
 	Glace("Résistance Glace", "", "Res Glace", "", -1, true, Tools.EffectColor[0]),
 	Nature("Résistance Nature", "", "Res Nature", "", -1, true, Tools.EffectColor[0]),
+	
 	Toucher("Toucher", "", "Toucher", "", -1, true, Tools.EffectColor[0]),
 	PV("Point de Vie", "", "PV", "", -1, true, Tools.EffectColor[2]),
 	PM("Point de Mana", "", "PM", "", -1, true, Tools.EffectColor[4]),

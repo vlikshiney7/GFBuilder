@@ -84,7 +84,7 @@ public class Pearl implements FullRenderer {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		this.icon = Tools.constructIcon(back, object);
+		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override

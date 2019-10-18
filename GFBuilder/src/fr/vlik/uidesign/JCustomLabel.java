@@ -1,9 +1,11 @@
 package fr.vlik.uidesign;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
+import javax.swing.border.EmptyBorder;
 
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Effect;
@@ -108,6 +110,27 @@ public class JCustomLabel extends JLabel {
 		label.setFont(new Font("Open Sans", Font.BOLD, 16));
 		label.setForeground(Design.FontColor[0]);
 		label.setAlignmentX(CENTER_ALIGNMENT);
+		
+		return label;
+	}
+	
+	public static JLabel getStatLabel(int size, int left, int right) {
+		JLabel label = new JLabel();
+		label.setFont(new Font("Open Sans", Font.BOLD, 16));
+		label.setBackground(Design.UIColor[0]);
+		label.setForeground(Design.FontColor[0]);
+		label.setBorder(new EmptyBorder(0, left, 0, right));
+		label.setMaximumSize(new Dimension(size, 25));
+		label.setOpaque(true);
+		
+		return label;
+	}
+	
+	public static JLabel getEmptyLabel(int width, int height) {
+		JLabel label = new JLabel();
+		label.setBackground(Design.UIColor[0]);
+		label.setBorder(new EmptyBorder(width, height, 0, 0));
+		label.setOpaque(true);
 		
 		return label;
 	}

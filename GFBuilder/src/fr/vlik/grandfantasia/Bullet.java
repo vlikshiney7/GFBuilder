@@ -1,8 +1,6 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -78,15 +76,7 @@ public class Bullet implements FullRenderer {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		if(object != null) {
-			Graphics g = new BufferedImage(back.getIconWidth(), back.getIconHeight(), BufferedImage.TYPE_INT_ARGB).createGraphics();
-			back.paintIcon(null, g, 0, 0);
-			back.setImageObserver(object.getImageObserver());
-			back.paintIcon(null, g, 0, 0);
-			g.dispose();
-		}
-		
-		this.icon = back;
+		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override

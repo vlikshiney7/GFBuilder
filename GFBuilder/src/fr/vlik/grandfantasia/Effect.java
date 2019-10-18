@@ -91,7 +91,7 @@ public class Effect {
 	}
 	
 	public StringBuilder getTooltip() {
-		StringBuilder tooltip = new StringBuilder(this.type.fr);
+		StringBuilder tooltip = new StringBuilder(this.type.abbrevFR);
 		tooltip.append(this.value > 0 ? " +" : " ");
 		tooltip.append((int) this.value);
 		tooltip.append(this.isPercent ? "%" : "");

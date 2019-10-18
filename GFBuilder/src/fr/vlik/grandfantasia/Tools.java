@@ -28,11 +28,8 @@ public class Tools {
 		BufferedImage result = new BufferedImage(back.getIconWidth(), back.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
 		Graphics g = result.createGraphics();
 		g.drawImage(back.getImage(), 0, 0, null);
-		
-		if(front != null) {
-			g.drawImage(front.getImage(), 0, 0, null);
-			g.dispose();
-		}
+		g.drawImage(front.getImage(), 0, 0, null);
+		g.dispose();
 		
 		return new ImageIcon(result);
 	}
