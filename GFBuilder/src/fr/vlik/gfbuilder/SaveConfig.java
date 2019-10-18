@@ -68,7 +68,7 @@ public class SaveConfig {
 		) {
 			String line = reader.readLine();
 			
-			while (line != null && !line.equals("")) {
+			while (line != null) {
 				String save = line;
 				int[][] config = new int[12][];
 				
@@ -94,7 +94,7 @@ public class SaveConfig {
 	}
 	
 	public static SaveConfig writeDefaultData() {
-		int[][] config = new int[11][];
+		int[][] config = new int[12][];
 		int[] nbCase = new int[] { 58, 81, 18, 11, 26, 32, 20, 3, 3, 12, 2 };
 		
 		config[0] = new int[] { 0, 1, 0, 0, 0, 0 };
