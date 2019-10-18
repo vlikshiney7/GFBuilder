@@ -32,8 +32,8 @@ public enum TypeEffect implements Colorable, Writable {
 	Nature("Résistance Nature", "", "Res Nature", "", -1, true, Tools.EffectColor[0]),
 	
 	Toucher("Toucher", "", "Toucher", "", -1, true, Tools.EffectColor[0]),
-	PV("Point de Vie", "", "PV", "", -1, true, Tools.EffectColor[2]),
-	PM("Point de Mana", "", "PM", "", -1, true, Tools.EffectColor[4]),
+	PV("Points de Vie", "Health Points", "PV", "HP", -1, true, Tools.EffectColor[2]),
+	PM("Points de Mana", "Mana Points", "PM", "MP", -1, true, Tools.EffectColor[4]),
 	
 	DegP("Dégât Physique", "", "Deg Phys", "", -1, true, Tools.EffectColor[0]), 
 	DegM("Dégât Magique", "", "Deg Mag", "", -1, true, Tools.EffectColor[0]), 

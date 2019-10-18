@@ -68,7 +68,7 @@ public class SaveConfig {
 		) {
 			String line = reader.readLine();
 			
-			while (line != null) {
+			while (line != null && !line.equals("")) {
 				String save = line;
 				int[][] config = new int[12][];
 				
