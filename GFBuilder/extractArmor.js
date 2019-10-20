@@ -73,4 +73,4 @@ for(var i = 0; i < effectName.length; i++) {
 }
 
 // Tiare enchantée d'Elminster/6/100/100gold6/5/true/5,0,0/VIT,false,25,true/INT,false,31,true/VOL,false,16,true/DefP,false,614,true/DefM,false,778,true/100gold6
-console.log(name + "/" + idClasses + "/" + lvl + "/XXX/" + color + "/" + enchant + "/" + reinca + "/" + count + ",0,0/" + effects);
+console.log(name + "/" + idClasses + "/" + lvl + "/-1/" + color + "/" + enchant + "/" + reinca + "/" + count + ",0,0/" + effects);

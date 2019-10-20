@@ -2,6 +2,15 @@ Rien/-1/0,0,0
 Fierté pétrifiante/100vio0/0,0,0
 Seigneur Arlong/90vio0/0,0,0
 Belliqueux d'Aiolia/80vio0/0,0,0
+Résistance suprême de Tarot/100tarot0/3,0,2/VIT,false,60/TCCP,false,10/DCCP,false,15/AGI,false,35/FCE,false,40
+Tarot Roue de la fortune/100tarot1/2,1,1/VIT,false,60/VitComp,false,15/AtkM,true,15/INT,false,75
+Tarot Mort/100tarot2/4,1,3/VIT,false,70/Depla,false,12/DefP,true,20/DefM,true,20/MEN,false,20/RTCCP,false,15/RTCCM,false,15/VOL,false,55
+Tarot - Force/95tarot0/2,0,1/VIT,false,50/TCCP,false,15/AGI,false,55
+Tarot - Zodiaque/95tarot1/2,1,1/VIT,false,50/TCCM,false,15/VitComp,false,15/INT,false,55
+Tarot - Lune/95tarot2/3,1,2/VIT,false,50/Depla,false,8/DefP,true,25/MEN,false,35/VOL,false,55/DefM,true,20
+Amant Tarot/90tarot0/2,3,2/FCE,false,50/ESQ,false,35/VIT,false,50/DefP,true,15/DefM,true,15/RTCCP,false,25/RTCCM,false,25
+Démon Tarot/90tarot1/2,2,3/INT,false,50/VOL,false,50/VIT,false,50/AtkM,true,10/TCCP,false,20/DCCM,false,20/VitComp,false,25
+Ermite Tarot/90tarot2/2,2,3/AGI,false,50/Toucher,false,35/FCE,false,50/Atk,true,10/TCCP,false,20/DCCP,false,20/VitAtk,false,25
 Puissante de Khal Drogo/100gold0/3,1,1/FCE,false,60/Toucher,false,20/DegDuo,false,40/DegHa,false,20/AGI,false,60
 Sanguinaire Kenpachi/90gold0/2,2,2/FCE,false,30/Toucher,false,30/TCCP,false,35/VIT,false,25/RTCCP,false,17/VitAtk,false,23
 Vengeance de Mordred/80gold0/2,2,1/DefP,true,20/FCE,false,30/TCCP,false,10/VIT,false,10/DCCP,false,40

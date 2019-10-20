@@ -1,3 +1,89 @@
 Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/false/0,0,0/null
+Jambières de l'Apostat/0/100/100pvp0/4/false/false/7,0,0/DefP,false,917,true/DefM,false,653,true/FCE,false,36,true/VIT,false,48,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp0
+Jambières de Fierté pétrifiante/0/97/100vio0/6/true/false/5,0,0/DefP,false,1022,true/DefM,false,763,true/FCE,false,60,true/VIT,false,64,true/AGI,false,56,true/100vio0
+Route de Résistance suprême de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/97/100tarot0/5/true/false/5,0,0/DefP,false,962,true/DefM,false,685,true/FCE,false,62,true/VIT,false,46,true/AGI,false,36,true/100tarot0
+Gloire de Roue de la fortune de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/97/100tarot1/5/true/false/5,0,0/DefP,false,882,true/DefM,false,838,true/VIT,false,49,true/INT,false,51,true/VOL,false,44,true/100tarot1
+Queue de serpent de Sombre présage de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/97/100tarot2/5/true/false/5,0,0/DefP,false,802,true/DefM,false,762,true/FCE,false,35,true/VIT,false,47,true/AGI,false,62,true/100tarot2
+Pantalon puissant de Khal Drogo/0/97/100gold0/5/true/false/5,0,0/DefP,false,962,true/DefM,false,685,true/FCE,false,61,true/VIT,false,47,true/AGI,false,36,true/100gold0
+Pantalon de Héros Bestial/0/97/100pve0/4/true/false/5,0,0/DefP,false,872,true/DefM,false,621,true/FCE,false,34,true/VIT,false,30,true/AGI,false,20,true/100pve0
+Pantalon Bestial de Sprite/0,1/96/-1/2/false/false/3,0,0/DefP,false,821,true/DefM,false,585,true/VIT,false,28,true/100pve0
+Jambières de Courroux Sanguinaire/0/95/95pvp0/4/false/false/7,0,0/DefP,false,859,true/DefM,false,612,true/FCE,false,30,true/VIT,false,42,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/95pvp0
+Jambières Feu de Météore/0/95/-1/1/false/false/2,0,0/DefP,false,723,true/DefM,false,535,true/50pve0
+Jambières de Force Tarot/0,1,2,3,4,5,6,7,8,9,10,11/92/95tarot0/5/true/false/5,0,0/DefP,false,927,true/DefM,false,661,true/FCE,false,58,true/VIT,false,45,true/AGI,false,23,true/95tarot0
+Jambières Zodiaque Tarot/0,1,2,3,4,5,6,7,8,9,10,11/92/95tarot1/5/true/false/5,0,0/DefP,false,696,true/DefM,false,881,true/VIT,false,48,true/INT,false,46,true/VOL,false,42,true/95tarot1
+Jambières clair de lune Tarot/0,1,2,3,4,5,6,7,8,9,10,11/92/95tarot2/5/true/false/5,0,0/DefP,false,946,true/DefM,false,648,true/FCE,false,45,true/VIT,false,58,true/VOL,false,23,true/95tarot2
+Jambières d'Explorateur Fondues/0/92/95pve0/4/true/false/5,0,0/DefP,false,840,true/DefM,false,599,true/FCE,false,32,true/VIT,false,28,true/AGI,false,18,true/95pve0
+Pantalon Pourpre de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,791,true/DefM,false,564,true/VIT,false,26,true/60pve0
+Jambières de la Sentinelle des Enfers/0/88/-1/1/false/false/2,0,0/DefP,false,704,true/DefM,false,519,true/80pve0
+Jambières du Seigneur Arlong/0/87/90vio0/6/true/false/5,0,0/DefP,false,953,true/DefM,false,708,true/FCE,false,53,true/VIT,false,57,true/AGI,false,50,true/90vio0
+Jambières du Sanguinaire Kenpachi/0/87/90gold0/5/true/false/5,0,0/DefP,false,893,true/DefM,false,636,true/FCE,false,42,true/VIT,false,46,true/AGI,false,40,true/90gold0
+Romance de l'Amant Tarot/0,1,2,3,4,5,6,7,8,9,10,11/87/90tarot0/5/true/false/5,0,0/DefP,false,893,true/DefM,false,636,true/FCE,false,50,true/VIT,false,40,true/AGI,false,38,true/90tarot0
+Os Empoisonnés du Démon Tarot/0,1,2,3,4,5,6,7,8,9,10,11/87/90tarot1/5/true/false/5,0,0/DefP,false,669,true/DefM,false,848,true/VIT,false,41,true/INT,false,49,true/VOL,false,38,true/90tarot1
+Silence de l'Ermite Tarot/0,1,2,3,4,5,6,7,8,9,10,11/87/90tarot2/5/true/false/5,0,0/DefP,false,744,true/DefM,false,707,true/FCE,false,40,true/VIT,false,47,true/AGI,false,41,true/90tarot2
+Jambières du Feu Fanatique/0/87/90pve0/4/true/false/5,0,0/DefP,false,809,true/DefM,false,576,true/FCE,false,25,true/VIT,false,25,true/AGI,false,22,true/90pve0
+Jambières du Sprite Inquisiteur/0,1/86/-1/2/false/false/3,0,0/DefP,false,761,true/DefM,false,542,true/VIT,false,24,true/85pve0
+Jambières de Gladiateur du Hokuto/0/85/85pvp0/4/false/false/7,0,0/DefP,false,796,true/DefM,false,567,true/FCE,false,28,true/VIT,false,38,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/85pvp0
+Jambières d'Orgueil/0/83/-1/1/false/false/2,0,0/DefP,false,654,true/DefM,false,478,true/76bleu0
+Jambières de l'Âme de l'Ours Terrifiant/0/82/85pve0/4/true/false/5,0,0/DefP,false,776,true/DefM,false,553,true/FCE,false,23,true/VIT,false,23,true/AGI,false,20,true/85pve0
+Jambières du Sprite Sombre/0,1/81/-1/2/false/false/3,0,0/DefP,false,730,true/DefM,false,520,true/VIT,false,22,true/80pve0
+Pantalon du Dieu de la Guerre/0/80/80nucleus0/4/true/false/5,0,0/DefP,false,764,true/DefM,false,544,true/FCE,false,18,true/VIT,false,20,true/AGI,false,22,true/80nucleus0
+Jambières du Hurlement Divin/0/80/80lingot0/4/true/false/5,0,0/DefP,false,764,true/DefM,false,544,true/FCE,false,20,true/VIT,false,22,true/AGI,false,18,true/80pve0
+Jambières de la Rage du Minotaure/0/80/80gvg0/3/false/false/6,0,0/DefP,false,804,true/DefM,false,572,true/FCE,false,40,true/VIT,false,28,true/PV,false,660/PM,false,430,/80gvg0
+Jambières belliqueuses d'Aiolia/0/77/80vio0/6/true/false/5,0,0/DefP,false,889,true/DefM,false,655,true/FCE,false,50,true/VIT,false,52,true/AGI,false,48,true/80vio0
+Jambières de Vengeance de Mordred/0/77/80gold0/5/true/false/5,0,0/DefP,false,822,true/DefM,false,586,true/FCE,false,40,true/VIT,false,42,true/AGI,false,38,true/80gold0
+Jambières de la Furie du Maître/0/77/80pve0/4/true/false/5,0,0/DefP,false,744,true/DefM,false,530,true/FCE,false,20,true/VIT,false,22,true/AGI,false,18,true/80pve0
+Jambières du Soleil Levant/0/76/-1/3/false/false/6,0,0/DefP,false,776,true/DefM,false,553,true/FCE,false,46,true/VIT,false,22,true/PV,false,450/PM,false,350/76bleu0
+Jambières du Pontife des Sprites/0,1/76/-1/2/false/false/3,0,0/DefP,false,699,true/DefM,false,498,true/VIT,false,20,true/70pve0
+Cnémides de Puissance d'Héraclès (Reforgées)/0/75/75pvp0R/4/false/true/7,0,0/DefP,false,804,true/DefM,false,573,true/FCE,false,26,true/VIT,false,35,true/ESQ,false,2/ReducPeneP,false,2/ReducPeneM,false,2/80nucleus0
+Cnémides de Puissance d'Héraclès/0/75/75pvp0/4/false/false/7,0,0/DefP,false,731,true/DefM,false,521,true/FCE,false,22,true/VIT,false,32,true/ESQ,false,2/ReducPeneP,false,2/ReducPeneM,false,2/80nucleus0
+Jambières de Fureur du Berserker/0/72/75pve0/4/true/false/5,0,0/DefP,false,712,true/DefM,false,507,true/FCE,false,16,true/VIT,false,18,true/AGI,false,20,true/75pve0
+Cuissardes Gravées d'Altesse/0,1/71/-1/2/false/false/3,0,0/DefP,false,668,true/DefM,false,476,true/VIT,false,18,true/71vert0
+Jambières de l'Armée Sanguinaire/0/70/70nucleus0/4/true/false/5,0,0/DefP,false,698,true/DefM,false,498,true/FCE,false,16,true/VIT,false,18,true/AGI,false,14,true/70nucleus0
+Jambières de Soif de Mort/0/70/70lingot0/4/true/false/5,0,0/DefP,false,698,true/DefM,false,498,true/FCE,false,20,true/VIT,false,10,true/AGI,false,18,true/70pve0
+Cuissardes de Conquête d'Attila/0/70/70gvg0/3/false/false/6,0,0/DefP,false,735,true/DefM,false,524,true/FCE,false,35,true/VIT,false,25,true/PV,false,400/PM,false,300,/70gvg0
+Cuissardes du Sang Bouillant/0/68/-1/3/false/false/6,0,0/DefP,false,721,true/DefM,false,514,true/FCE,false,40,true/VIT,false,20,true/PV,false,400/PM,false,300/70evo0
+Jambières du Guerrier Suprême/0/67/70pve0/4/true/false/5,0,0/DefP,false,678,true/DefM,false,484,true/FCE,false,18,true/VIT,false,14,true/AGI,false,16,true/70pve0
+Cuissardes Ornées d'Aristocrate/0,1/66/-1/2/false/false/3,0,0/DefP,false,636,true/DefM,false,454,true/VIT,false,16,true/71vert0
+Genouillères de Stratégie de Sun Tzu (Reforgées)/0/65/65pvp0R/4/false/true/7,0,0/DefP,false,732,true/DefM,false,521,true/FCE,false,18,true/VIT,false,31,true/ESQ,false,2/ReducPeneP,false,1/ReducPeneM,false,1/65pvp0
+Genouillères de Stratégie de Sun Tzu/0/65/65pvp0/4/false/false/7,0,0/DefP,false,665,true/DefM,false,474,true/FCE,false,14,true/VIT,false,28,true/ESQ,false,2/ReducPeneP,false,1/ReducPeneM,false,1/65pvp0
+Jambières du Boucher de Saphaël/0/62/65pve0/4/true/false/5,0,0/DefP,false,645,true/DefM,false,460,true/FCE,false,14,true/VIT,false,16,true/AGI,false,12,true/95pve0
+Protège-Tibias du Lourd Mercenaire des Sprites/0,1/61/-1/2/false/false/3,0,0/DefP,false,605,true/DefM,false,431,true/VIT,false,14,true/100pve0
+Jambières du Marquis du Chaos/0/60/60nucleus0/4/true/false/5,0,0/DefP,false,632,true/DefM,false,450,true/FCE,false,14,true/VIT,false,14,true/VOL,false,8,true/65pvp0
+Jambières du Marquis de Destruction/0/60/60lingot0/4/true/false/5,0,0/DefP,false,632,true/DefM,false,450,true/FCE,false,16,true/VIT,false,12,true/VOL,false,8,true/95pve0
+Jambes Ficelées de la Bête Démoniaque/0/60/-1/3/false/false/6,0,0/DefP,false,678,true/DefM,false,483,true/FCE,false,32,true/AGI,false,20,true/PV,false,400/PM,false,200/100pve0
+Jambe du Marquis de l'ombre/0/57/60pve0/4/true/false/5,0,0/DefP,false,612,true/DefM,false,436,true/FCE,false,16,true/VIT,false,12,true/VOL,false,8,true/60pve0
+Jambières de Combat de Muca/0,1/57/-1/3/false/false/6,0,0/DefP,false,663,true/DefM,false,472,true/VIT,false,24,true/AGI,false,20,true/PV,false,470/PM,false,130/100pve0
+Jambières du Roi Diabolique (Reforgées)/0/55/55pvp0R/4/false/true/5,0,0/DefP,false,701,true/DefM,false,495,true/FCE,false,13,true/VIT,false,27,true/ESQ,false,1/65pvp0
+Pantalon Renforcé du Roi Diabolique/0/55/55pvp0/4/false/false/5,0,0/DefP,false,637,true/DefM,false,450,true/FCE,false,12,true/VIT,false,24,true/ESQ,false,1/65pvp0
+Genouillères du Régent des Sprites/0,1/54/-1/2/false/false/3,0,0/DefP,false,559,true/DefM,false,399,true/VIT,false,10,true/60pve0
+Protège-Tibia du Régent/0,1/51/-1/1/false/false/1,0,0/DefP,false,503,true/60pve0
+Pantalon Destructeur à Lame d'Acier/0/47/50pve0/4/true/false/5,0,0/DefP,false,544,true/DefM,false,388,true/FCE,false,10,true/VIT,false,10,true/AGI,false,10,true/50pve0
+Jambe du Guerrier aux Os Noirs/0/44/-1/3/false/false/6,0,0/DefP,false,552,true/DefM,false,393,true/FCE,false,10,true/AGI,false,18,true/PV,false,120/PM,false,180/100pve0
+Genouillères à Lame d'Acier des Sprites/0,1/44/-1/2/false/false/3,0,0/DefP,false,496,true/DefM,false,354,true/FCE,false,8,true/100pve0
+Pantalon Armés du Général Diabolique (Reforgé)/0/43/45pvp0R/4/false/true/5,0,0/DefP,false,590,true/DefM,false,416,true/FCE,false,10,true/VIT,false,17,true/ESQ,false,1/80nucleus0
+Pantalon Armés du Général Diabolique/0/43/45pvp0/4/false/false/5,0,0/DefP,false,536,true/DefM,false,378,true/FCE,false,9,true/VIT,false,15,true/ESQ,false,1/80nucleus0
+Jambières du Cri du Berserque/0/41/-1/2/false/false/3,0,0/DefP,false,477,true/DefM,false,340,true/FCE,false,8,true/50pve0
+Genouillères à Lame d'Acier/0,1/41/-1/1/false/false/1,0,0/DefP,false,445,true/100pve0
+Pantalon du Guerrier robuste/0/37/40pve0/4/true/false/4,0,0/DefP,false,476,true/DefM,false,339,true/FCE,false,12,true/VIT,false,8,true/60pve0
+Protège-Tibia Endurci des Sprites/0,1/34/-1/2/false/false/3,0,0/DefP,false,431,true/DefM,false,307,true/VIT,false,6,true/34vert0
+Genouillères Endurcies/0,1/31/-1/1/false/false/1,0,0/DefP,false,383,true/34vert0
+Jupe du Guerrier Courageux/0,1/28/-1/3/false/false/4,0,0/DefP,false,433,true/DefM,false,317,true/VIT,false,11,true/AGI,false,9,true/30pve0
+Jambières en Acier Renforcé/0,1/28/-1/1/false/false/1,0,0/DefP,false,356,true/30pve0
+Pantalon de l'Officier tactique/0,1/27/30pve0/4/true/false/5,0,0/DefP,false,403,true/DefM,false,287,true/FCE,false,8,true/VIT,false,7,true/AGI,false,3,true/30pve0
+Pantalon de l'Officier tactique/0,1/27/-1/3/false/false/4,0,0/DefP,false,425,true/DefM,false,303,true/FCE,false,8,true/VIT,false,12,true/30pve0
+Cuissardes du Hurlement de Conan (Reforgé)/0,1/25/25pvp0R/4/false/true/5,0,0/DefP,false,493,true/DefM,false,351,true/FCE,false,8,true/VIT,false,13,true/ESQ,false,1/100pve0
+Cuissardes de Défense de Lancelot (Reforgé)/0,1/25/20pvp1R/4/false/true/5,0,0/DefP,false,503,true/DefM,false,345,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,1/100pve0
+Cuissardes du Hurlement de Conan/0,1/25/25pvp0/4/false/false/5,0,0/DefP,false,448,true/DefM,false,319,true/FCE,false,7,true/VIT,false,11,true/ESQ,false,1/100pve0
+Cuissardes de Défense de Lancelot/0,1/25/25pvp1/4/false/false/5,0,0/DefP,false,457,true/DefM,false,313,true/FCE,false,6,true/VIT,false,12,true/ESQ,false,1/100pve0
+Jupe Stratégique des Sprites/0,1/24/-1/2/false/false/3,0,0/DefP,false,360,true/DefM,false,256,true/FCE,false,4,true/30pve0
+Genouillères de Défense/0,1/22/-1/1/false/false/1,0,0/DefP,false,315,true/100pve0
+Jupe Stratégique/0,1/21/-1/1/false/false/1,0,0/DefP,false,314,true/30pve0
+Pantalon du Garde d'Elite/0,1/17/20pve0/4/true/false/5,0,0/DefP,false,313,true/DefM,false,223,true/FCE,false,5,true/VIT,false,5,true/AGI,false,2,true/100pve0
+Jupe de Combat/0,1/16/-1/1/false/false/1,0,0/DefP,false,271,true/100pve0
+Jupe du Garde des Sprites/0,1/14/-1/2/false/false/3,0,0/DefP,false,279,true/DefM,false,199,true/FCE,false,2,true/100pve0
+Jupe du Garde/0,1/11/-1/1/false/false/1,0,0/DefP,false,235,true/100pve0
+Jupe du Gladiateur/0,1/10/-1/1/false/false/1,0,0/DefP,false,222,true/7vert0
+Éclatante Jupe de Cuir/0,1/8/-1/1/false/false/2,0,0/DefP,false,210,true/DefM,false,149,true/7vert0
+Pantalon renforcé des Sprites/0,1/7/-1/2/false/false/3,0,0/DefP,false,213,true/DefM,false,151,true/FCE,false,2,true/7vert0
 Jambières du Fourvoyé/6/100/100pvp6/4/false/false/7,0,0/VIT,false,48,true/INT,false,36,true/DefP,false,701,true/DefM,false,853,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp6
 Pantalon enchanté d'Elminster/6/97/100gold6/5/true/false/5,0,0/VIT,false,52,true/INT,false,44,true/VOL,false,48,true/DefP,false,721,true/DefM,false,914,true/100gold6
