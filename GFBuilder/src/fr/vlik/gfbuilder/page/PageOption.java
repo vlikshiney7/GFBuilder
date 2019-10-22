@@ -63,11 +63,15 @@ public class PageOption extends JPanel {
 			Overlay.getInstance().setNameSave(this.getSave().getName());
 			
 			MainFrame.getInstance().updateStat();
+			
+			Overlay.getInstance().setSave(true);
 		});
 		
 		this.currentSave = new JCustomButton(this.label[1]);
 		this.currentSave.addActionListener(e -> {
 			overrideSave();
+			
+			Overlay.getInstance().setSave(true);
 		});
 		
 		this.newSave = new JCustomButton(this.label[2]);
@@ -205,6 +209,7 @@ public class PageOption extends JPanel {
 			this.label[i].setText(getter[i]);
 		}
 		
+		this.currentSave.updateText();
 		this.newSave.updateText();
 		this.parameter.setText(Lang.getDataCredit(lang));
 	}
@@ -213,11 +218,11 @@ public class PageOption extends JPanel {
 		this.getSave().setConfig();
 	}
 	
-	private void overrideSave() {
+	public void overrideSave() {
 		this.getSave().overrideConfig();
 	}
 	
-	private void popup() {
+	public void popup() {
 		MainFrame.getInstance().setEnabled(false);
 		
 		this.submit.setVisible(false);

@@ -148,15 +148,15 @@ public class Build {
 		result[12] = Math.floor((Math.floor((result[4] + 5) / 10) + combinePoint[12]) * (combinePercent[12] / 100 +1));
 		
 		/* RES + TOUCHER */
-		for(int i = 0; i < 7; i++) {
+		for(int i = 0; i < 6; i++) {
 			result[i+13] = Math.floor(combinePoint[i+13] * (combinePercent[i+13] / 100 +1));
 		}
 		
 		/* PV PM */
-		result[20] = Math.floor((Math.round(result[1] * 40) + 100 + combinePoint[20]) * (combinePercent[20] / 100 +1));
-		result[21] = Math.floor((Math.round(result[3] * 20) + 50 + combinePoint[21]) * (combinePercent[21] / 100 +1));
+		result[19] = Math.floor((Math.round(result[1] * 40) + 100 + combinePoint[19]) * (combinePercent[19] / 100 +1));
+		result[20] = Math.floor((Math.round(result[3] * 20) + 50 + combinePoint[20]) * (combinePercent[20] / 100 +1));
 		
-		for(int i = 22; i < result.length; i++) {
+		for(int i = 21; i < result.length; i++) {
 			result[i] = Math.floor(combinePoint[i] * (combinePercent[i] / 100 +1));
 		}
 		

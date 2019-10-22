@@ -24,53 +24,53 @@ public enum TypeEffect implements Colorable, Writable {
 	TCCM("Taux Coup Critique Magique", "Chance of Magical Critical Hit", "TCCM", "", 100, false, Tools.EffectColor[3]),
 	ESQ("Esquive", "", "ESQ", "", -1, true, Tools.EffectColor[5]),
 	
-	Sacre("Résistance Sacré", "", "Res Sacré", "", -1, true, Tools.EffectColor[0]),
-	Ombre("Résistance Ombre", "", "Res Ombre", "", -1, true, Tools.EffectColor[0]),
-	Foudre("Résistance Foudre", "", "Res Foudre", "", -1, true, Tools.EffectColor[0]),
-	Feu("Résistance Feu", "", "Res Feu", "", -1, true, Tools.EffectColor[0]),
-	Glace("Résistance Glace", "", "Res Glace", "", -1, true, Tools.EffectColor[0]),
-	Nature("Résistance Nature", "", "Res Nature", "", -1, true, Tools.EffectColor[0]),
+	Sacre("Résistance Sacré", "", "Res Sacré", "", -1, true, Tools.EffectColor[7]),
+	Ombre("Résistance Ombre", "", "Res Ombre", "", -1, true, Tools.EffectColor[8]),
+	Foudre("Résistance Foudre", "", "Res Foudre", "", -1, true, Tools.EffectColor[9]),
+	Feu("Résistance Feu", "", "Res Feu", "", -1, true, Tools.EffectColor[10]),
+	Glace("Résistance Glace", "", "Res Glace", "", -1, true, Tools.EffectColor[11]),
+	Nature("Résistance Nature", "", "Res Nature", "", -1, true, Tools.EffectColor[12]),
 	
-	Toucher("Toucher", "", "Toucher", "", -1, true, Tools.EffectColor[0]),
 	PV("Points de Vie", "Health Points", "PV", "HP", -1, true, Tools.EffectColor[2]),
 	PM("Points de Mana", "Mana Points", "PM", "MP", -1, true, Tools.EffectColor[4]),
+	Toucher("Toucher", "", "Toucher", "", -1, true, Tools.EffectColor[11]),
 	
-	DegP("Dégât Physique", "", "Deg Phys", "", -1, true, Tools.EffectColor[0]), 
-	DegM("Dégât Magique", "", "Deg Mag", "", -1, true, Tools.EffectColor[0]), 
-	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "", -1, true, Tools.EffectColor[0]),
-	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "", -1, true, Tools.EffectColor[0]),
+	DegP("Dégât Physique", "", "Deg Phys", "", -1, true, Tools.EffectColor[10]), 
+	DegM("Dégât Magique", "", "Deg Mag", "", -1, true, Tools.EffectColor[11]), 
+	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "", -1, true, Tools.EffectColor[10]),
+	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "", -1, true, Tools.EffectColor[11]),
 	
-	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", 100, true, Tools.EffectColor[0]),
-	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", 100, true, Tools.EffectColor[0]),
-	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Tools.EffectColor[0]),
-	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Tools.EffectColor[0]),
+	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", 100, true, Tools.EffectColor[10]),
+	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", 100, true, Tools.EffectColor[11]),
+	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Tools.EffectColor[10]),
+	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Tools.EffectColor[11]),
 	
-	DCCP("Dégât Coup Critique Physique", "", "Deg Crit Phys", "", 150, true, Tools.EffectColor[0]),
-	DCCM("Dégât Coup Critique Magique", "", "Deg Crit Mag", "", 150, true, Tools.EffectColor[0]),
-	RDCCP("Réduction Dégât Coup Critique Physique", "", "Red Dg Crt Ph", "", -1, true, Tools.EffectColor[0]),
-	RDCCM("Réduction Dégât Coup Critique Magique", "", "Red Dg Crt Mg", "", -1, true, Tools.EffectColor[0]),
-	RTCCP("Réduction Taux Coup Critique Physique", "", "Red Tx Crt Ph", "", -1, true, Tools.EffectColor[0]),
-	RTCCM("Réduction Taux Coup Critique Magique", "", "Red Tx Crt Mg", "", -1, true, Tools.EffectColor[0]),
+	DCCP("Dégât Coup Critique Physique", "", "Deg Crit Phys", "", 150, true, Tools.EffectColor[10]),
+	DCCM("Dégât Coup Critique Magique", "", "Deg Crit Mag", "", 150, true, Tools.EffectColor[11]),
+	RDCCP("Réduction Dégât Coup Critique Physique", "", "Red Dg Crt Ph", "", -1, true, Tools.EffectColor[10]),
+	RDCCM("Réduction Dégât Coup Critique Magique", "", "Red Dg Crt Mg", "", -1, true, Tools.EffectColor[11]),
+	RTCCP("Réduction Taux Coup Critique Physique", "", "Red Tx Crt Ph", "", -1, true, Tools.EffectColor[10]),
+	RTCCM("Réduction Taux Coup Critique Magique", "", "Red Tx Crt Mg", "", -1, true, Tools.EffectColor[11]),
 	
-	VitAtk("Vitesse d'Attaque Mêlée", "", "Vit Atk Mel", "", -1, true, Tools.EffectColor[0]),
-	VitAtkD("Vitesse d'Attaque Distance", "", "Vit Atk Dist", "", -1, true, Tools.EffectColor[0]),
-	VitAtkM("Vitesse d'Attaque Magique", "", "Vit Atk Mag", "", -1, true, Tools.EffectColor[0]),
-	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", 80, true, Tools.EffectColor[0]),
+	VitAtk("Vitesse d'Attaque Mêlée", "", "Vit Atk Mel", "", -1, true, Tools.EffectColor[10]),
+	VitAtkD("Vitesse d'Attaque Distance", "", "Vit Atk Dist", "", -1, true, Tools.EffectColor[7]),
+	VitAtkM("Vitesse d'Attaque Magique", "", "Vit Atk Mag", "", -1, true, Tools.EffectColor[11]),
+	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", 100, true, Tools.EffectColor[0]),
 	Depla("Vitesse de Déplacement", "", "Vit Depla", "", -1, true, Tools.EffectColor[0]),
 	
-	ReducAtk("Réduction d'Attaque Mêlée", "", "Reduc Atq Mel", "", -1, true, Tools.EffectColor[0]),
-	ReducAtkD("Réduction d'Attaque Distance", "", "Reduc Atq Dist", "", -1, true, Tools.EffectColor[0]),
-	ReducAtkM("Réduction d'Attaque Magique", "", "Reduc Atq Mag", "", -1, true, Tools.EffectColor[0]),
+	ReducAtk("Réduction d'Attaque Mêlée", "", "Reduc Atq Mel", "", -1, true, Tools.EffectColor[10]),
+	ReducAtkD("Réduction d'Attaque Distance", "", "Reduc Atq Dist", "", -1, true, Tools.EffectColor[7]),
+	ReducAtkM("Réduction d'Attaque Magique", "", "Reduc Atq Mag", "", -1, true, Tools.EffectColor[11]),
 	
-	DegAtkD("Dégât d'Attaque Distance", "", "Dg Atq Dist", "", -1, true, Tools.EffectColor[0]),
-	RDegAtkD("Réduction de Dégât d'Attaque Distance", "", "Red Dg Dist", "", -1, true, Tools.EffectColor[0]),
+	DegAtkD("Dégât d'Attaque Distance", "", "Dg Atq Dist", "", -1, true, Tools.EffectColor[7]),
+	RDegAtkD("Réduction de Dégât d'Attaque Distance", "", "Red Dg Dist", "", -1, true, Tools.EffectColor[7]),
 	
-	DegSacre("Dégât Sacré", "", "Deg Sacre", "", -1, true, Tools.EffectColor[0]),
-	DegOmbre("Dégât Ombre", "", "Deg Ombre", "", -1, true, Tools.EffectColor[0]),
-	DegFoudre("Dégât Foudre", "", "Deg Foudre", "", -1, true, Tools.EffectColor[0]),
-	DegFeu("Dégât Feu", "", "Deg Feu", "", -1, true, Tools.EffectColor[0]),
-	DegGlace("Dégât Glace", "", "Deg Glace", "", -1, true, Tools.EffectColor[0]),
-	DegNature("Dégât Nature", "", "Deg Nature", "", -1, true, Tools.EffectColor[0]),
+	DegSacre("Dégât Sacré", "", "Deg Sacre", "", -1, true, Tools.EffectColor[7]),
+	DegOmbre("Dégât Ombre", "", "Deg Ombre", "", -1, true, Tools.EffectColor[8]),
+	DegFoudre("Dégât Foudre", "", "Deg Foudre", "", -1, true, Tools.EffectColor[9]),
+	DegFeu("Dégât Feu", "", "Deg Feu", "", -1, true, Tools.EffectColor[10]),
+	DegGlace("Dégât Glace", "", "Deg Glace", "", -1, true, Tools.EffectColor[11]),
+	DegNature("Dégât Nature", "", "Deg Nature", "", -1, true, Tools.EffectColor[12]),
 	
 	XP("Bonus d'Expérience", "", "XP", "", 500, true, Tools.EffectColor[0]),
 	Loot("Bonus de Butin", "", "Butin", "", 300, true, Tools.EffectColor[0]),
@@ -127,7 +127,7 @@ public enum TypeEffect implements Colorable, Writable {
 	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Tools.EffectColor[0]),
 	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Tools.EffectColor[0]),
 	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Tools.EffectColor[0]),
-	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Tools.EffectColor[0]),
+	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Tools.EffectColor[7]),
 	Reflect("Dégât Renvoyé", "", "Deg Renvoyé", "", -1, true, Tools.EffectColor[0]),
 	
 	NONE("Aucun", "None", "Aucun", "None", -1, true, Tools.EffectColor[6]);
@@ -162,6 +162,6 @@ public enum TypeEffect implements Colorable, Writable {
 
 	@Override
 	public String getTooltip() {
-		return this.abbrevFR;
+		return this.fr;
 	}
 }

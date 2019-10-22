@@ -17,6 +17,9 @@ public class Overlay extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static Overlay INSTANCE = new Overlay();
 	
+	private String currentName;
+	private boolean save = true;
+	
 	private JLabel iconGrade = new JLabel();
 	private JLabel lvl = new JLabel();
 	private JLabel iconReinca = new JLabel();
@@ -40,6 +43,16 @@ public class Overlay extends JPanel {
 		
 		createPanel();
 	}
+	
+	public void setCurrentName(String nameSave) {
+		this.currentName = nameSave;
+	}
+	
+	public void setSave(boolean save) {
+		this.save = save;
+		
+		this.nameSave.setText(this.currentName + (this.save ? "" : " *"));
+	}
 
 	public void setGrade(Grade grade) {
 		this.iconGrade.setIcon(grade.getIcon());
@@ -54,7 +67,9 @@ public class Overlay extends JPanel {
 	}
 
 	public void setNameSave(String nameSave) {
-		this.nameSave.setText(nameSave);
+		setCurrentName(nameSave);
+		
+		this.nameSave.setText(this.currentName + (this.save ? "" : " *"));
 	}
 	
 	private void createPanel() {

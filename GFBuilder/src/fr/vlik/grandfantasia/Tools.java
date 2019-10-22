@@ -22,7 +22,7 @@ public class Tools {
 	public static final Color[] costColor = { new Color(147, 147, 147), new Color(255, 255, 255), new Color(111, 225, 28), new Color(33, 171, 235), new Color(234, 225, 0) };
 	public static final Color[] speColor = { new Color(255, 255, 255), new Color(111, 225, 28), new Color(234, 225, 0) };
 	
-	public static final Color[] EffectColor = { new Color(215, 221, 222), new Color(235, 0, 0), new Color(91, 205, 8), new Color(13, 151, 215), new Color(232, 0, 216), new Color(214, 205, 0), new Color(147, 147, 147) };
+	public static final Color[] EffectColor = { new Color(215, 221, 222), new Color(235, 0, 0), new Color(91, 205, 8), new Color(13, 151, 215), new Color(232, 0, 216), new Color(214, 205, 0), new Color(147, 147, 147), new Color(255, 255, 100), new Color(150, 100, 150), new Color(100, 100, 255), new Color(255, 100, 100), new Color(113, 251, 255), new Color(191, 255, 108) };
 	
 	public static Icon constructIcon(ImageIcon back, ImageIcon front) {
 		BufferedImage result = new BufferedImage(back.getIconWidth(), back.getIconHeight(), BufferedImage.TYPE_INT_ARGB);

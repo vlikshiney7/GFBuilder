@@ -6,6 +6,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -14,11 +16,14 @@ import java.time.Instant;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
 import javax.swing.BoxLayout;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.KeyStroke;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
@@ -300,14 +305,37 @@ public class MainFrame extends JFrame {
 		this.add(content, BorderLayout.CENTER);
 		this.add(scrollStats, BorderLayout.EAST);
 		
-		
 		updateTabPane(0);
 		updateLanguage();
 		updateStat();
 		
-		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
+		
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_MASK), "save");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.SHIFT_MASK | KeyEvent.CTRL_MASK), "saveAs");
+		
+		this.getRootPane().getActionMap().put("save", new AbstractAction() {
+			private static final long serialVersionUID = 1L;
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PageOption.getInstance().popup();
+			}
+		});
+		
+		this.getRootPane().getActionMap().put("saveAs", new AbstractAction() {
+			private static final long serialVersionUID = 1L;
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				PageOption.getInstance().overrideSave();
+				
+				Overlay.getInstance().setSave(true);
+			}
+		});
 		
 		this.unlock = true;
+		
+		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
 	}
 	
 	public ArrayList<JPanel> getPages() {
@@ -376,6 +404,8 @@ public class MainFrame extends JFrame {
 				this.valueStat.get(i).setVisible(true);
 			}
 		}
+		
+		Overlay.getInstance().setSave(false);
 	}
 	
 	public static void main(String[] args) {

@@ -266,7 +266,8 @@ public class PageTalent extends PagePanel {
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
-		
+
+		this.reinitTalent.updateText();
 		this.maxTalent.updateText();
 	}
 	
