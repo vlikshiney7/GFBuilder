@@ -44,6 +44,10 @@ public class Overlay extends JPanel {
 		createPanel();
 	}
 	
+	public boolean isSave() {
+		return this.save;
+	}
+	
 	public void setCurrentName(String nameSave) {
 		this.currentName = nameSave;
 	}

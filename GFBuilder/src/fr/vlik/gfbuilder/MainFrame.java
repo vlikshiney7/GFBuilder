@@ -29,6 +29,8 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import fr.vlik.gfbuilder.frame.FrameSaveAs;
+import fr.vlik.gfbuilder.frame.FrameSaveOnQuit;
 import fr.vlik.gfbuilder.page.AdditionalEffect;
 import fr.vlik.gfbuilder.page.ConvertEffect;
 import fr.vlik.gfbuilder.page.PageArmor;
@@ -94,6 +96,12 @@ public class MainFrame extends JFrame {
 			@Override
 			public void windowClosing(WindowEvent event) {
 				if(unlock) {
+					if(!Overlay.getInstance().isSave()) {
+						FrameSaveOnQuit.getInstance().popup();
+						return;
+					}
+					
+					
 					SaveConfig.writeAllData();
 				}
 				System.exit(0);
@@ -318,7 +326,9 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PageOption.getInstance().popup();
+				PageOption.getInstance().overrideSave();
+				
+				Overlay.getInstance().setSave(true);
 			}
 		});
 		
@@ -327,9 +337,7 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				PageOption.getInstance().overrideSave();
-				
-				Overlay.getInstance().setSave(true);
+				FrameSaveAs.getInstance().popup();
 			}
 		});
 		
@@ -448,6 +456,9 @@ public class MainFrame extends JFrame {
 				((PageOption) page).updateLanguage(lang);
 			}
 		}
+
+		FrameSaveAs.getInstance().updateLanguage(lang);
+		FrameSaveOnQuit.getInstance().updateLanguage(lang);
 		
 		if(lang == Language.FR) {
 			for(int i = 0; i < this.valueStat.size(); i++) {
