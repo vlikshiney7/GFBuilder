@@ -11,11 +11,13 @@ import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PagePanel;
+import fr.vlik.uidesign.JCustomButton;
 
-public class SaveConfig {
+public class SaveConfig extends JCustomButton {
 	
-	public static ArrayList<SaveConfig> data;
-	public static String CURRENT_SAVE;
+	private static final long serialVersionUID = 1L;
+	private static final String SAVE_FILE_NAME = "save1.0.gfb";
+	private static ArrayList<SaveConfig> data;
 	static {
 		loadData();
 	}
@@ -26,6 +28,10 @@ public class SaveConfig {
 	public SaveConfig(String name, int[][] tabConfig) {
 		this.name = name;
 		this.indexSelector = tabConfig;
+		
+		this.addActionListener(e -> {
+			
+		});
 	}
 	
 	public String getName() {
@@ -36,7 +42,7 @@ public class SaveConfig {
 		return this.indexSelector;
 	}
 
-	public void setConfig() {
+	public void applyConfig() {
 		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
 		
 		for(int i = 0; i < this.indexSelector.length; i++) {
@@ -48,6 +54,9 @@ public class SaveConfig {
 				}
 			}
 		}
+		
+		Overlay.getInstance().setNameSave(this.name);
+		Overlay.getInstance().setSave(true);
 	}
 	
 	public void overrideConfig() {
@@ -58,14 +67,17 @@ public class SaveConfig {
 				this.indexSelector[i] = ((PagePanel) pages.get(i)).getConfig();
 			}
 		}
+		
+		writeAllData();
 	}
 	
 	private static void loadData() {
 		SaveConfig.data = new ArrayList<SaveConfig>();
 		
 		try (
-			BufferedReader reader = new BufferedReader(new FileReader("save.gfb"));
+			BufferedReader reader = new BufferedReader(new FileReader(SAVE_FILE_NAME));
 		) {
+			Overlay.getInstance().setCurrentName(reader.readLine());;
 			String line = reader.readLine();
 			
 			while (line != null) {
@@ -103,6 +115,7 @@ public class SaveConfig {
 			config[i] = new int[nbCase[i-1]];
 		}
 		
+		Overlay.getInstance().setCurrentName("Novice");
 		return new SaveConfig("Novice", config);
 	}
 	
@@ -121,8 +134,11 @@ public class SaveConfig {
 	
 	public static void writeAllData() {
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter("save.gfb", false));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FILE_NAME, false));
 		) {
+			writer.append(Overlay.getInstance().getCurrentName() + "\n");
+			
+			
 			for(SaveConfig save : SaveConfig.data) {
 				
 				writer.append(save.getName() + "\n");
@@ -166,5 +182,9 @@ public class SaveConfig {
 		}
 		
 		return result;
+	}
+	
+	public static void deleteData(SaveConfig delete) {
+		SaveConfig.data.remove(delete);
 	}
 }

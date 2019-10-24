@@ -132,7 +132,7 @@ public class FrameSaveAs extends JFrame {
 			return;
 		}
 		
-		for(SaveConfig config : SaveConfig.data) {
+		for(SaveConfig config : SaveConfig.getData()) {
 			if(this.askName.getText().equals(config.getName())) {
 				this.submit.setVisible(false);
 				this.label[2].setVisible(true);

@@ -1,34 +1,34 @@
-du Sacré/11,14,15/-1/true,false,false/true/1/Sacre,false,3
-de l'Ombre/11,14,15/-1/true,false,false/true/1/Ombre,false,3
-de la Foudre/11,14,15/-1/true,false,false/true/1/Foudre,false,3
-du Feu/11,14,15/-1/true,false,false/true/1/Feu,false,3
-de la Glace/11,14,15/-1/true,false,false/true/1/Glace,false,3
-de la Nature/11,14,15/-1/true,false,false/true/1/Nature,false,3
-d'Esquive/-1/-1/true,true,true/false/1/ESQ,false,0
-du Sprint/11,14/-1/true,false,false/true/1/Depla,false,2
-du Sarcasme/0,1,2,3,4,5,6,7,8,9,10,12,13/-1/false,false,false/true/1/MEN,false,2
-de la Surveillance/0,1,2,3,4,5,6,7,8,9,10,12,13/-1/false,false,false/true/1/MEN,false,-2
-de la Mort/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false/true/1/DCCP,false,8
-des Mortels/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false/true/1/TCCP,false,2
-de l'Amplification/11,12,13,14/-1/false,false,false/true/1/DCCM,false,8
-d'Explosion Énergétique/11,12,13,14/-1/false,false,false/true/1/TCCM,false,2
-d'Absorption Énergétique/0,1,2,3,4,5,6,7,12,13/3,4,5,7,12,13/false,false,false/true/0
-de Soif Sanguine/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/-1/false,false,false/true/1/RegenCB,false,3
-de Tempérance/11,14/11,14/false,false,false/true/1/CostComp,false,-6
-de Coordination/12,13/-1/true,false,false/true/2/RTCCP,false,3/RTCCM,false,3
-de la Détermination/15/-1/true,false,false/true/2/RDCCP,false,10/RDCCM,false,10
-du Bonheur Pur/12,13,15/-1/true,false,false/true/2/ReducP,false,1/ReducM,false,1
-d'Adversité/11,14/-1/true,false,true/true/1/Reflect,false,10
-Sans Tâche/0,1,2,3,4,5,6,7/-1/false,false,false/true/1/VitAtk,false,4
-de Réflexe/8,9,10/-1/false,false,false/true/1/VitAtkD,false,5
-de Parole/11,12,13,14/-1/false,false,false/true/1/VitComp,false,3
 de Force/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true/false/1/FCE,false,0
 de Vitesse/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true/false/1/VIT,false,0
 d'Intelligence/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true/false/1/INT,false,0
 de Volonté/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true/false/1/VOL,false,0
 d'Agilité/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true/false/1/AGI,false,0
 de Précision/0,1,2,3,4,5,6,7,8,9,10,12,13/0,1,2,3,4,5,6,7,8,9,10,12,13/false,false,false/false/1/Toucher,false,0
+d'Esquive/-1/-1/true,true,true/false/1/ESQ,false,0
+du Sprint/11,14/-1/true,false,false/true/1/Depla,false,2
+d'Absorption Énergétique/0,1,2,3,4,5,6,7,12,13/3,4,5,7,12,13/false,false,false/true/0
+de Tempérance/11,14/11,14/false,false,false/true/1/CostComp,false,-6
+du Bonheur Pur/12,13,15/-1/true,false,false/true/2/ReducP,false,1/ReducM,false,1
+Sans Tâche/0,1,2,3,4,5,6,7/-1/false,false,false/true/1/VitAtk,false,4
+de Réflexe/8,9,10/-1/false,false,false/true/1/VitAtkD,false,5
+du Sarcasme/0,1,2,3,4,5,6,7,8,9,10,12,13/-1/false,false,false/true/1/MEN,false,2
+de la Surveillance/0,1,2,3,4,5,6,7,8,9,10,12,13/-1/false,false,false/true/1/MEN,false,-2
+de Parole/11,12,13,14/-1/false,false,false/true/1/VitComp,false,3
 de Parade/15/15/false,false,false/false/1/Parade,false,0
+de Soif Sanguine/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/-1/false,false,false/true/1/RegenCB,false,3
+de Coordination/12,13/-1/true,false,false/true/2/RTCCP,false,3/RTCCM,false,3
+de la Détermination/15/-1/true,false,false/true/2/RDCCP,false,10/RDCCM,false,10
+des Mortels/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false/true/1/TCCP,false,2
+d'Explosion Énergétique/11,12,13,14/-1/false,false,false/true/1/TCCM,false,2
+de la Mort/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false/true/1/DCCP,false,8
+de l'Amplification/11,12,13,14/-1/false,false,false/true/1/DCCM,false,8
+d'Adversité/11,14/-1/true,false,true/true/1/Reflect,false,10
+du Sacré/11,14,15/-1/true,false,false/true/1/Sacre,false,3
+de l'Ombre/11,14,15/-1/true,false,false/true/1/Ombre,false,3
+de la Foudre/11,14,15/-1/true,false,false/true/1/Foudre,false,3
+du Feu/11,14,15/-1/true,false,false/true/1/Feu,false,3
+de la Glace/11,14,15/-1/true,false,false/true/1/Glace,false,3
+de la Nature/11,14,15/-1/true,false,false/true/1/Nature,false,3
 
 Esquive/-1/true/10/1/ESQ,false,1
 Auto-guérison/-1/true/10/1/HealR,false,2

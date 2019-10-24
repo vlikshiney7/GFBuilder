@@ -417,7 +417,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		PageOption.getInstance().setSave("Arcaniste Full DPS");
+		PageOption.getInstance().setSave(Overlay.getInstance().getCurrentName());
 	}
 	
 	public void updateTabPane(int index) {

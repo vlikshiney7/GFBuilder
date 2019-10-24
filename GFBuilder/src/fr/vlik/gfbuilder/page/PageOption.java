@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -12,10 +13,10 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
+import fr.vlik.gfbuilder.frame.FrameSaveLoading;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -46,13 +47,7 @@ public class PageOption extends JPanel {
 		
 		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.getData());
 		this.save.addActionListener(e -> {
-			updateSave();
-			
-			Overlay.getInstance().setNameSave(this.getSave().getName());
-			
-			MainFrame.getInstance().updateStat();
-			
-			Overlay.getInstance().setSave(true);
+			FrameSaveLoading.getInstance().popup();
 		});
 		
 		this.currentSave = new JCustomButton(this.label[1]);
@@ -85,9 +80,15 @@ public class PageOption extends JPanel {
 	public void setSave(String name) {
 		boolean set = false;
 		
-		for(SaveConfig save : SaveConfig.data) {
+		for(SaveConfig save : SaveConfig.getData()) {
 			if(name.equals(save.getName())) {
+				ActionListener action = this.save.getActionListeners()[0];
+				this.save.removeActionListener(action);
 				this.save.setSelectedItem(save);
+				this.save.addActionListener(action);
+				
+				save.applyConfig();
+				
 				set = true;
 				System.out.println("Save " + save.getName() + " loaded");
 				break;
@@ -144,16 +145,22 @@ public class PageOption extends JPanel {
 		this.parameter.setText(Lang.getDataCredit(lang));
 	}
 	
-	private void updateSave() {
-		this.getSave().setConfig();
+	public void updateSave() {
+		this.getSave().applyConfig();
 	}
 	
 	public void overrideSave() {
-		this.getSave().overrideConfig();
+		if(!Overlay.getInstance().isSave())	{
+			this.getSave().overrideConfig();
+		}
+	}
+	
+	public void refreshSave() {
+		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.getData()));
 	}
 	
 	public void refreshSave(String nameSave) {
-		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.getData()));
+		refreshSave();
 		this.save.setSelectedItem(SaveConfig.getSave(nameSave));
 	}
 }
