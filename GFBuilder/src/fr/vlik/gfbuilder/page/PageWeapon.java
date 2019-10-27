@@ -943,5 +943,9 @@ public class PageWeapon extends PagePanel {
 		for(int i = 0; i < 3; i++) {
 			 this.valueFortif.get(i).setValue(config[index++]);
 		}
+		
+		for(int i = 0; i < 3; i++) {
+			updateDetails(i);
+		}
 	}
 }

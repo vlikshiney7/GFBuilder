@@ -13,7 +13,7 @@ Jambières de Force Tarot/0,1,2,3,4,5,6,7,8,9,10,11/92/95tarot0/5/true/false/5,0
 Jambières Zodiaque Tarot/0,1,2,3,4,5,6,7,8,9,10,11/92/95tarot1/5/true/false/5,0,0/DefP,false,696,true/DefM,false,881,true/VIT,false,48,true/INT,false,46,true/VOL,false,42,true/95tarot1
 Jambières clair de lune Tarot/0,1,2,3,4,5,6,7,8,9,10,11/92/95tarot2/5/true/false/5,0,0/DefP,false,946,true/DefM,false,648,true/FCE,false,45,true/VIT,false,58,true/VOL,false,23,true/95tarot2
 Jambières d'Explorateur Fondues/0/92/95pve0/4/true/false/5,0,0/DefP,false,840,true/DefM,false,599,true/FCE,false,32,true/VIT,false,28,true/AGI,false,18,true/95pve0
-Jambières évolutives du Destructeur (Réincarné)/0/91/100evo0R/3/false/false/-1,0,0/100evo0R-2/65pvp0
+Jambières évolutives du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-2/65pvp0
 Jambières évolutives du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-2/65pvp0
 Pantalon Pourpre de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,791,true/DefM,false,564,true/VIT,false,26,true/60pve0
 Jambières de la Sentinelle des Enfers/0/88/-1/1/false/false/2,0,0/DefP,false,704,true/DefM,false,519,true/80pve0
@@ -34,7 +34,7 @@ Jambières de la Rage du Minotaure/0/80/80gvg0/3/false/false/6,0,0/DefP,false,80
 Jambières belliqueuses d'Aiolia/0/77/80vio0/6/true/false/5,0,0/DefP,false,889,true/DefM,false,655,true/FCE,false,50,true/VIT,false,52,true/AGI,false,48,true/80vio0
 Jambières de Vengeance de Mordred/0/77/80gold0/5/true/false/5,0,0/DefP,false,822,true/DefM,false,586,true/FCE,false,40,true/VIT,false,42,true/AGI,false,38,true/80gold0
 Jambières de la Furie du Maître/0/77/80pve0/4/true/false/5,0,0/DefP,false,744,true/DefM,false,530,true/FCE,false,20,true/VIT,false,22,true/AGI,false,18,true/80pve0
-Guêtres évolutives du Ravageur (Réincarné)/0/76/90evo0R/3/false/false/-1,0,0/90evo0R-2/70nucleus0
+Guêtres évolutives du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/90evo0R-2/70nucleus0
 Jambières évolutives du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-2/70nucleus0
 Jambières du Soleil Levant/0/76/-1/3/false/false/6,0,0/DefP,false,776,true/DefM,false,553,true/FCE,false,46,true/VIT,false,22,true/PV,false,450/PM,false,350/76bleu0
 Jambières du Pontife des Sprites/0,1/76/-1/2/false/false/3,0,0/DefP,false,699,true/DefM,false,498,true/VIT,false,20,true/70pve0
@@ -45,14 +45,14 @@ Cuissardes Gravées d'Altesse/0,1/71/-1/2/false/false/3,0,0/DefP,false,668,true/
 Jambières de l'Armée Sanguinaire/0/70/70nucleus0/4/true/false/5,0,0/DefP,false,698,true/DefM,false,498,true/FCE,false,16,true/VIT,false,18,true/AGI,false,14,true/70nucleus0
 Jambières de Soif de Mort/0/70/70lingot0/4/true/false/5,0,0/DefP,false,698,true/DefM,false,498,true/FCE,false,20,true/VIT,false,10,true/AGI,false,18,true/70pve0
 Cuissardes de Conquête d'Attila/0/70/70gvg0/3/false/false/6,0,0/DefP,false,735,true/DefM,false,524,true/FCE,false,35,true/VIT,false,25,true/PV,false,400/PM,false,300,/70gvg0
-Cuissardes du Sang Bouillant/0/68/-1/3/false/false/6,0,0/DefP,false,721,true/DefM,false,514,true/FCE,false,40,true/VIT,false,20,true/PV,false,400/PM,false,300/70evo0
+Cuissardes du Sang Bouillant/0/68/-1/3/false/false/6,0,0/DefP,false,721,true/DefM,false,514,true/FCE,false,40,true/VIT,false,20,true/PV,false,400/PM,false,300/75evo0
 Jambières du Guerrier Suprême/0/67/70pve0/4/true/false/5,0,0/DefP,false,678,true/DefM,false,484,true/FCE,false,18,true/VIT,false,14,true/AGI,false,16,true/70pve0
 Cuissardes Ornées d'Aristocrate/0,1/66/-1/2/false/false/3,0,0/DefP,false,636,true/DefM,false,454,true/VIT,false,16,true/71vert0
 Genouillères de Stratégie de Sun Tzu (Reforgées)/0/65/65pvp0R/4/false/true/7,0,0/DefP,false,732,true/DefM,false,521,true/FCE,false,18,true/VIT,false,31,true/ESQ,false,2/ReducPeneP,false,1/ReducPeneM,false,1/65pvp0
 Genouillères de Stratégie de Sun Tzu/0/65/65pvp0/4/false/false/7,0,0/DefP,false,665,true/DefM,false,474,true/FCE,false,14,true/VIT,false,28,true/ESQ,false,2/ReducPeneP,false,1/ReducPeneM,false,1/65pvp0
 Jambières du Boucher de Saphaël/0/62/65pve0/4/true/false/5,0,0/DefP,false,645,true/DefM,false,460,true/FCE,false,14,true/VIT,false,16,true/AGI,false,12,true/95pve0
-Jambières évolutives du Gladiateur (Réincarné)/0/61/75evo0R/3/false/false/-1,0,0/75evo0R-2/70evo0
-Jambières Évolutives du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-2/70evo0
+Jambières évolutives du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0/75evo0R-2/75evo0
+Jambières Évolutives du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-2/75evo0
 Protège-Tibias du Lourd Mercenaire des Sprites/0,1/61/-1/2/false/false/3,0,0/DefP,false,605,true/DefM,false,431,true/VIT,false,14,true/100pve0
 Jambières du Marquis du Chaos/0/60/60nucleus0/4/true/false/5,0,0/DefP,false,632,true/DefM,false,450,true/FCE,false,14,true/VIT,false,14,true/VOL,false,8,true/65pvp0
 Jambières du Marquis de Destruction/0/60/60lingot0/4/true/false/5,0,0/DefP,false,632,true/DefM,false,450,true/FCE,false,16,true/VIT,false,12,true/VOL,false,8,true/95pve0
@@ -72,7 +72,7 @@ Jambières du Cri du Berserque/0/41/-1/2/false/false/3,0,0/DefP,false,477,true/D
 Genouillères à Lame d'Acier/0,1/41/-1/1/false/false/1,0,0/DefP,false,445,true/100pve0
 Pantalon du Guerrier robuste/0/37/40pve0/4/true/false/4,0,0/DefP,false,476,true/DefM,false,339,true/FCE,false,12,true/VIT,false,8,true/60pve0
 Protège-Tibia Endurci des Sprites/0,1/34/-1/2/false/false/3,0,0/DefP,false,431,true/DefM,false,307,true/VIT,false,6,true/34vert0
-Jambières évolutives du Berserker (Réincarné)/0/31/60evo0R/3/false/false/-1,0,0/60evo0R-2/100pve0
+Jambières évolutives du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-2/100pve0
 Jambières Évolutives du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-2/100pve0
 Genouillères Endurcies/0,1/31/-1/1/false/false/1,0,0/DefP,false,383,true/34vert0
 Jupe du Guerrier Courageux/0,1/28/-1/3/false/false/4,0,0/DefP,false,433,true/DefM,false,317,true/VIT,false,11,true/AGI,false,9,true/30pve0
@@ -93,7 +93,7 @@ Jupe du Garde/0,1/11/-1/1/false/false/1,0,0/DefP,false,235,true/100pve0
 Jupe du Gladiateur/0,1/10/-1/1/false/false/1,0,0/DefP,false,222,true/7vert0
 Éclatante Jupe de Cuir/0,1/8/-1/1/false/false/2,0,0/DefP,false,210,true/DefM,false,149,true/7vert0
 Pantalon renforcé des Sprites/0,1/7/-1/2/false/false/3,0,0/DefP,false,213,true/DefM,false,151,true/FCE,false,2,true/7vert0
-Jambières évolutives du Guerrier (Réincarné)/0/6/30evo0R/3/false/false/-1,0,0/30evo0R-2/30pve0
-Jambières Évolutives du Guerrier/0/6/30evo0/3/false/false/-1,0,0/30evo0-2/30pve0
+Jambières évolutives du Guerrier (Réincarné)/0,1/6/30evo0R/3/false/true/-1,0,0/30evo0R-2/30pve0
+Jambières Évolutives du Guerrier/0,1/6/30evo0/3/false/false/-1,0,0/30evo0-2/30pve0
 Jambières du Fourvoyé/6/100/100pvp6/4/false/false/7,0,0/VIT,false,48,true/INT,false,36,true/DefP,false,701,true/DefM,false,853,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp6
 Pantalon enchanté d'Elminster/6/97/100gold6/5/true/false/5,0,0/VIT,false,52,true/INT,false,44,true/VOL,false,48,true/DefP,false,721,true/DefM,false,914,true/100gold6

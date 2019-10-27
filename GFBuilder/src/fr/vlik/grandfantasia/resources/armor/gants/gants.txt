@@ -1,3 +1,99 @@
 Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/false/0,0,0/null
+Gantelets de l'Apostat/0/100/100pvp0/4/false/false/7,0,0/DefP,false,462,true/DefM,false,329,true/FCE,false,17,true/VIT,false,34,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp0
+Gants de Fierté pétrifiante/0/98/100vio0/6/true/false/5,0,0/DefP,false,511,true/DefM,false,381,true/FCE,false,36,true/VIT,false,29,true/VOL,false,25,true/100vio0
+Gants puissants de Khal Drogo/0/98/100gold0/5/true/false/5,0,0/DefP,false,484,true/DefM,false,345,true/FCE,false,33,true/VIT,false,23,true/VOL,false,16,true/100gold0
+Maîtrise de Résistance suprême de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/98/100tarot0/5/true/false/5,0,0/DefP,false,484,true/DefM,false,345,true/FCE,false,34,true/VIT,false,21,true/VOL,false,17,true/100tarot0
+Grosse griffe de Roue de la fortune de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/98/100tarot1/5/true/false/5,0,0/DefP,false,444,true/DefM,false,422,true/VIT,false,15,true/INT,false,34,true/VOL,false,23,true/100tarot1
+Faux mortelle de Sombre présage de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/98/100tarot2/5/true/false/5,0,0/DefP,false,404,true/DefM,false,384,true/FCE,false,18,true/VIT,false,22,true/AGI,false,36,true/100tarot2
+Gants de Héros Bestial/0/98/100pve0/4/true/false/5,0,0/DefP,false,439,true/DefM,false,313,true/FCE,false,17,true/VIT,false,14,true/VOL,false,11,true/100pve0
+Gants Bestiaux de Sprite/0,1/96/-1/2/false/false/3,0,0/DefP,false,411,true/DefM,false,293,true/FCE,false,14,true/37bleu0
+Gants de Courroux Sanguinaire/0/95/95pvp0/4/false/false/7,0,0/DefP,false,430,true/DefM,false,306,true/FCE,false,13,true/VIT,false,26,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/95pvp0
+Gants Feu de Météore/0/95/-1/1/false/false/2,0,0/DefP,false,364,true/DefM,false,269,true/50pve0
+Gantelets de Force Tarot/0,1,2,3,4,5,6,7,8,9,10,11/93/95tarot0/5/true/false/5,0,0/DefP,false,467,true/DefM,false,333,true/FCE,false,32,true/VIT,false,20,true/VOL,false,16,true/95tarot0
+Gantelets Zodiaque Tarot/0,1,2,3,4,5,6,7,8,9,10,11/93/95tarot1/5/true/false/5,0,0/DefP,false,350,true/DefM,false,444,true/VIT,false,14,true/INT,false,32,true/VOL,false,22,true/95tarot1
+Gantelets clair de lune Tarot/0,1,2,3,4,5,6,7,8,9,10,11/93/95tarot2/5/true/false/5,0,0/DefP,false,477,true/DefM,false,326,true/FCE,false,20,true/VIT,false,32,true/INT,false,16,true/95tarot2
+Gants d'Explorateur Fondus/0/93/95pve0/4/true/false/5,0,0/DefP,false,423,true/DefM,false,302,true/FCE,false,16,true/VIT,false,13,true/VOL,false,10,true/95pve0
+Gantelets évolutifs du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-3/65pvp0
+Gantelets évolutifs du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-3/65pvp0
+Gants Pourpres de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,396,true/DefM,false,282,true/FCE,false,13,true/60evo0
+Gants de la Sentinelle des Enfers/0/89/-1/1/false/false/2,0,0/DefP,false,354,true/DefM,false,261,true/80pve0
+Poings du Seigneur Arlong/0/88/90vio0/6/true/false/5,0,0/DefP,false,476,true/DefM,false,353,true/FCE,false,32,true/VIT,false,26,true/VOL,false,22,true/90vio0
+Brassards du Sanguinaire Kenpachi/0/88/90gold0/5/true/false/5,0,0/DefP,false,450,true/DefM,false,320,true/FCE,false,27,true/VIT,false,21,true/VOL,false,16,true/90gold0
+Choix de l'Amant Tarot/0,1,2,3,4,5,6,7,8,9,10,11/88/90tarot0/5/true/false/5,0,0/DefP,false,450,true/DefM,false,320,true/FCE,false,23,true/VIT,false,20,true/VOL,false,21,true/90tarot0
+Frisson du Démon Tarot/0,1,2,3,4,5,6,7,8,9,10,11/88/90tarot1/5/true/false/5,0,0/DefP,false,337,true/DefM,false,427,true/VIT,false,21,true/INT,false,23,true/VOL,false,20,true/90tarot1
+Griffe de l'Ermite Tarot/0,1,2,3,4,5,6,7,8,9,10,11/88/90tarot2/5/true/false/5,0,0/DefP,false,375,true/DefM,false,356,true/FCE,false,25,true/VIT,false,23,true/VOL,false,16,true/90tarot2
+Protèges-poignet du Feu Fanatique/0/88/90pve0/4/true/false/5,0,0/DefP,false,408,true/DefM,false,290,true/FCE,false,16,true/VIT,false,13,true/VOL,false,7,true/90pve0
+Gants de la Bombe Atomique/0/86/-1/3/false/false/6,0,0/DefP,false,422,true/DefM,false,301,true/FCE,false,19,true/VOL,false,19,true/PV,false,375/PM,false,575/86bleu0
+Gants du Sprite Inquisiteur/0,1/86/-1/2/false/false/3,0,0/DefP,false,380,true/DefM,false,271,true/FCE,false,12,true/85pve0
+Gants de Gladiateur du Hokuto/0/85/85pvp0/4/false/false/7,0,0/DefP,false,398,true/DefM,false,283,true/FCE,false,11,true/VIT,false,22,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/85pvp0
+Gants d'Orgueil/0/84/-1/1/false/false/2,0,0/DefP,false,342,true/DefM,false,251,true/86bleu0
+Gantelets de l'Âme de l'Ours Terrifiant/0/83/85pve0/4/true/false/5,0,0/DefP,false,391,true/DefM,false,279,true/FCE,false,15,true/VIT,false,12,true/VOL,false,6,true/85pve0
+Gantelets du Soleil Levant/0/82/-1/3/false/false/6,0,0/DefP,false,408,true/DefM,false,291,true/FCE,false,18,true/VOL,false,18,true/PV,false,350/PM,false,550/86bleu0
+Gants du Sprite Sombre/0,1/81/-1/2/false/false/3,0,0/DefP,false,365,true/DefM,false,260,true/FCE,false,11,true/80pve0
+Gantelets du Dieu de la Guerre/0/80/80nucleus0/4/true/false/5,0,0/DefP,false,382,true/DefM,false,272,true/FCE,false,10,true/VOL,false,10,true/AGI,false,10,true/80nucleus0
+Brassières du Hurlement Divin/0/80/80lingot0/4/true/false/5,0,0/DefP,false,382,true/DefM,false,272,true/FCE,false,15,true/VIT,false,10,true/VOL,false,5,true/80pve0
+Gants de la Rage du Minotaure/0/80/80gvg0/3/false/false/6,0,0/DefP,false,402,true/DefM,false,286,true/FCE,false,22,true/VIT,false,12,true/PV,false,660/PM,false,380/80gvg0
+Poings belliqueux d'Aiolia/0/78/80vio0/6/true/false/5,0,0/DefP,false,445,true/DefM,false,327,true/FCE,false,30,true/VIT,false,25,true/VOL,false,20,true/80vio0
+Gantelets de Vengeance de Mordred/0/78/80gold0/5/true/false/5,0,0/DefP,false,415,true/DefM,false,295,true/FCE,false,25,true/VIT,false,20,true/VOL,false,15,true/80gold0
+Gants de la Furie du Maître/0/78/78pve0/4/true/false/5,0,0/DefP,false,375,true/DefM,false,267,true/FCE,false,15,true/VIT,false,10,true/VOL,false,5,true/80pve0
+Brassards évolutifs du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/90evo0R-3/70nucleus0
+Brassards évolutifs du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-3/70nucleus0
+Gantelets du Guerrier des Forêts/0/76/-1/3/false/false/6,0,0/DefP,false,388,true/DefM,false,277,true/FCE,false,17,true/VOL,false,17,true/PV,false,300/PM,false,500/86bleu0
+Gants du Pontife des Sprites/0,1/76/-1/2/false/false/3,0,0/DefP,false,350,true/DefM,false,249,true/FCE,false,10,true/70pve0
+Brassards de Puissance d'Héraclès (Reforgés)/0/75/75pvp0R/4/false/true/7,0,0/DefP,false,403,true/DefM,false,287,true/FCE,false,11,true/VIT,false,20,true/ESQ,false,2/ReducPeneP,false,2/ReducPeneM,false,2/80nucleus0
+Brassards de Puissance d'Héraclès/0/75/75pvp0/4/false/false/7,0,0/DefP,false,366,true/DefM,false,261,true/FCE,false,9,true/VIT,false,18,true/ESQ,false,2/ReducPeneP,false,2/ReducPeneM,false,2/80nucleus0
+Gants de Fureur du Berserker/0/73/75pve0/4/true/false/5,0,0/DefP,false,359,true/DefM,false,256,true/FCE,false,9,true/VOL,false,9,true/AGI,false,9,true/75pve0
+Gantelets Gravées d'Altesse/0,1/71/-1/2/false/false/3,0,0/DefP,false,334,true/DefM,false,238,true/FCE,false,9,true/71vert0
+Gantelets de l'Armée Sanguinaire/0/70/70nucleus0/4/true/false/5,0,0/DefP,false,349,true/DefM,false,249,true/FCE,false,11,true/VIT,false,8,true/AGI,false,5,true/70nucleus0
+Gantelets de Soif de Mort/0/70/70lingot0/4/true/false/5,0,0/DefP,false,349,true/DefM,false,249,true/FCE,false,8,true/VOL,false,8,true/AGI,false,8,true/70pve0
+Gants de Conquête d'Attila/0/70/70gvg0/3/false/false/6,0,0/DefP,false,368,true/DefM,false,262,true/FCE,false,20,true/VIT,false,10,true/PV,false,400/PM,false,250/70gvg0
+Moufles d'Ours des Cavernes/0/70/-1/3/false/false/6,0,0/DefP,false,368,true/DefM,false,262,true/FCE,false,20,true/VOL,false,10,true/PV,false,200/PM,false,500/75evo0
+Gantelets Fourrés/0/69/-1/1/false/false/2,0,0/DefP,false,304,true/DefM,false,220,true/70nucleus0
+Gants du Guerrier Suprême/0/68/70pve0/4/true/false/5,0,0/DefP,false,343,true/DefM,false,244,true/FCE,false,8,true/VOL,false,8,true/AGI,false,8,true/70pve0
+Gantelets Ornés d'Aristocrate/0,1/66/-1/2/false/false/3,0,0/DefP,false,318,true/DefM,false,227,true/FCE,false,8,true/71vert0
+Gantelets de Stratégie de Sun Tzu (Reforgés)/0/65/65pvp0R/4/false/true/7,0,0/DefP,false,366,true/DefM,false,261,true/FCE,false,9,true/VIT,false,16,true/ESQ,false,2/ReducPeneP,false,1/ReducPeneM,false,1/65pvp0
+Gantelets de Stratégie de Sun Tzu/0/65/65pvp0/4/false/false/7,0,0/DefP,false,333,true/DefM,false,237,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,2/ReducPeneP,false,1/ReducPeneM,false,1/65pvp0
+Main Armée du Boucher de Saphaël/0/63/65pve0/4/true/false/5,0,0/DefP,false,326,true/DefM,false,232,true/FCE,false,10,true/VIT,false,7,true/AGI,false,4,true/95pve0
+Brassards évolutifs du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0/75evo0R-3/75evo0
+Gantelets Évolutifs du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-3/75evo0
+Gants du Lourd Mercenaire des Sprites/0,1/61/-1/2/false/false/3,0,0/DefP,false,302,true/DefM,false,215,true/FCE,false,7,true/25pvp1
+Gantelets du Marquis du Chaos/0/60/60nucleus0/4/true/false/4,0,0/DefP,false,316,true/DefM,false,225,true/FCE,false,8,true/VIT,false,10,true/65pvp0
+Gants du Marquis de Destruction/0/60/60lingot0/4/true/false/4,0,0/DefP,false,316,true/DefM,false,225,true/FCE,false,13,true/VIT,false,5,true/95pve0
+Main Symbolique de la Bête Démoniaque/0/60/-1/3/false/false/6,0,0/DefP,false,340,true/DefM,false,242,true/FCE,false,15,true/VIT,false,11,true/PV,false,400/PM,false,150/60evo0
+Main du Marquis de l'ombre/0/58/60pve0/4/true/false/4,0,0/DefP,false,309,true/DefM,false,220,true/FCE,false,11,true/VIT,false,4,true/60pve0
+Gants du Roi Diabolique (Reforgés)/0/55/55pvp0R/4/false/true/5,0,0/DefP,false,353,true/DefM,false,248,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,1/65pvp0
+Gants du Roi Diabolique/0/55/55pvp0/4/false/false/5,0,0/DefP,false,321,true/DefM,false,225,true/FCE,false,6,true/VIT,false,12,true/ESQ,false,1/65pvp0
+Gantelet du Régent des Sprites/0,1/55/-1/2/false/false/3,0,0/DefP,false,283,true/DefM,false,202,true/VIT,false,5,true/60evo0
+Main du Commandeur de l'Enfer/0/53/-1/3/false/false/6,0,0/DefP,false,308,true/DefM,false,219,true/FCE,false,9,true/VIT,false,9,true/PV,false,300/PM,false,100/60pve0
+Protège-Coudes du Découpeur/0/53/-1/2/false/false/3,0,0/DefP,false,276,true/DefM,false,197,true/FCE,false,5,true/25pvp1
+Gantelet du Régent/0,1/52/-1/1/false/false/1,0,0/DefP,false,254,true/60evo0
+Main Destructrice à Lame d'Acier/0/48/50pve0/4/true/false/4,0,0/DefP,false,275,true/DefM,false,196,true/FCE,false,8,true/VIT,false,5,true/50pve0
+Epaulettes Romeo/0,1/48/-1/3/false/false/6,0,0/DefP,false,298,true/DefM,false,213,true/VIT,false,9,true/AGI,false,9,true/PV,false,350/PM,false,50/50pve0
+Gantelet à Lame d'Acier des Sprites/0,1/45/-1/2/false/false/3,0,0/DefP,false,251,true/DefM,false,179,true/FCE,false,4,true/37bleu0
+Gants du Général Diabolique (Reforgé)/0/42/45pvp0R/4/false/true/5,0,0/DefP,false,297,true/DefM,false,208,true/FCE,false,5,true/VIT,false,9,true/ESQ,false,1/80nucleus0
+Gants du Général Diabolique/0/42/45pvp0/4/false/false/5,0,0/DefP,false,270,true/DefM,false,189,true/FCE,false,4,true/VIT,false,8,true/ESQ,false,1/80nucleus0
+Gants à Lame d'Acier/0,1/42/-1/1/false/false/1,0,0/DefP,false,225,true/37bleu0
+Main du Guerrier robuste/0/38/40pve0/4/true/false/4,0,0/DefP,false,242,true/DefM,false,172,true/FCE,false,6,true/VIT,false,4,true/100pve0
+Main du Feu Ardent/0/37/-1/3/false/false/6,0,0/DefP,false,251,true/DefM,false,179,true/FCE,false,8,true/AGI,false,6,true/PV,false,180/PM,false,70/37bleu0
+Gantelets Endurcis des Sprites/0,1/35/-1/2/false/false/3,0,0/DefP,false,219,true/DefM,false,156,true/VIT,false,3,true/50pve0
+Gantelets de Fer Spéciaux du Forgeron/0,1/32/-1/2/false/false/3,0,0/DefP,false,214,true/DefM,false,153,true/FCE,false,3,true/50pve0
+Gantelets Endurcis/0,1/32/-1/1/false/false/1,0,0/DefP,false,195,true/50pve0
+Poing de Fer évolutif du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-3/60evo0
+Poing de Fer Évolutif du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-3/60evo0
+Main de l'Officier tactique/0,1/28/30pve0/4/true/false/4,0,0/DefP,false,205,true/DefM,false,146,true/FCE,false,5,true/VIT,false,3,true/60pve0
+Gants du Hurlement de Conan (Reforgé)/0,1/25/25pvp0R/4/false/true/5,0,0/DefP,false,242,true/DefM,false,173,true/FCE,false,4,true/VIT,false,7,true/ESQ,false,1/100pve0
+Gants de Défense de Lancelot (Reforgé)/0,1/25/25pvp1R/4/false/true/5,0,0/DefP,false,248,true/DefM,false,170,true/FCE,false,3,true/VIT,false,8,true/ESQ,false,1/25pvp1
+Gants du Hurlement de Conan/0,1/25/25pvp0/4/false/false/5,0,0/DefP,false,220,true/DefM,false,157,true/FCE,false,3,true/VIT,false,6,true/ESQ,false,1/100pve0
+Gants de Défense de Lancelot/0,1/25/25pvp1/4/false/false/5,0,0/DefP,false,225,true/DefM,false,154,true/FCE,false,2,true/VIT,false,7,true/ESQ,false,1/25pvp1
+Gants Stratégiques des Sprites/0,1/25/-1/2/false/false/3,0,0/DefP,false,183,true/DefM,false,131,true/VIT,false,2,true/25vert0
+Gantelets de Fer du Juste/0,1/22/-1/2/false/false/3,0,0/DefP,false,172,true/DefM,false,123,true/VIT,false,2,true/25vert0
+Gantelets Stratégiques/0,1/22/-1/1/false/false/1,0,0/DefP,false,160,true/25vert0
+Main du Garde d'Elite/0,1/18/20pve0/4/true/false/4,0,0/DefP,false,165,true/DefM,false,118,true/FCE,false,3,true/VIT,false,2,true/100pve0
+Gants du Garde des Sprites/0,1/15/-1/2/false/false/3,0,0/DefP,false,144,true/DefM,false,103,true/VIT,false,1,true/25pvp1
+Gantelets d'Élite/0,1/15/-1/1/false/false/2,0,0/DefP,false,136,true/DefM,false,96,true/25pvp1
+Gantelets du Garde/0,1/12/-1/1/false/false/1,0,0/DefP,false,121,true/25pvp1
+Gants renforcés des Sprites/0,1/8/-1/2/false/false/3,0,0/DefP,false,111,true/DefM,false,79,true/VIT,false,1,true/25vert0
+Gantelets évolutifs du Guerrier (Réincarné)/0,1/6/30evo0R/3/false/true/-1,0,0/30evo0R-3/60pve0
+Gantelets Évolutifs du Guerrier/0,1/6/30evo0/3/false/false/-1,0,0/30evo0-3/60pve0
 Gants du Fourvoyé/6/100/100pvp6/4/false/false/7,0,0/VIT,false,34,true/INT,false,17,true/DefP,false,353,true/DefM,false,430,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp6
 Gants enchantés d'Elminster/6/98/100gold6/5/true/false/5,0,0/VIT,false,16,true/INT,false,33,true/VOL,false,23,true/DefP,false,363,true/DefM,false,460,true/100gold6
