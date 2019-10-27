@@ -1,10 +1,10 @@
 Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/false/0,0,0/null
 Jambières de l'Apostat/0/100/100pvp0/4/false/false/7,0,0/DefP,false,917,true/DefM,false,653,true/FCE,false,36,true/VIT,false,48,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/100pvp0
 Jambières de Fierté pétrifiante/0/97/100vio0/6/true/false/5,0,0/DefP,false,1022,true/DefM,false,763,true/FCE,false,60,true/VIT,false,64,true/AGI,false,56,true/100vio0
+Pantalon puissant de Khal Drogo/0/97/100gold0/5/true/false/5,0,0/DefP,false,962,true/DefM,false,685,true/FCE,false,61,true/VIT,false,47,true/AGI,false,36,true/100gold0
 Route de Résistance suprême de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/97/100tarot0/5/true/false/5,0,0/DefP,false,962,true/DefM,false,685,true/FCE,false,62,true/VIT,false,46,true/AGI,false,36,true/100tarot0
 Gloire de Roue de la fortune de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/97/100tarot1/5/true/false/5,0,0/DefP,false,882,true/DefM,false,838,true/VIT,false,49,true/INT,false,51,true/VOL,false,44,true/100tarot1
 Queue de serpent de Sombre présage de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/97/100tarot2/5/true/false/5,0,0/DefP,false,802,true/DefM,false,762,true/FCE,false,35,true/VIT,false,47,true/AGI,false,62,true/100tarot2
-Pantalon puissant de Khal Drogo/0/97/100gold0/5/true/false/5,0,0/DefP,false,962,true/DefM,false,685,true/FCE,false,61,true/VIT,false,47,true/AGI,false,36,true/100gold0
 Pantalon de Héros Bestial/0/97/100pve0/4/true/false/5,0,0/DefP,false,872,true/DefM,false,621,true/FCE,false,34,true/VIT,false,30,true/AGI,false,20,true/100pve0
 Pantalon Bestial de Sprite/0,1/96/-1/2/false/false/3,0,0/DefP,false,821,true/DefM,false,585,true/VIT,false,28,true/100pve0
 Jambières de Courroux Sanguinaire/0/95/95pvp0/4/false/false/7,0,0/DefP,false,859,true/DefM,false,612,true/FCE,false,30,true/VIT,false,42,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/95pvp0

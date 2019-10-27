@@ -213,7 +213,7 @@ public class Armor extends Equipment {
 						
 					} else {
 						assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
-								: armorFile[i] + " line " + (list.get(i+1).size() + 1);
+								: armorFile[i] + " line " + (list.get(i).size() + 1);
 						
 						if(Integer.parseInt(effectSplit[0]) > -1) {
 							ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
