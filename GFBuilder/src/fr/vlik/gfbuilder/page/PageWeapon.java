@@ -36,6 +36,7 @@ import fr.vlik.uidesign.JCustomSlider;
 public class PageWeapon extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageWeapon INSTANCE = new PageWeapon();
 	
 	private ArrayList<JCustomComboBox<Weapon>> weapon = new ArrayList<JCustomComboBox<Weapon>>(3);
@@ -429,7 +430,7 @@ public class PageWeapon extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 1);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -438,7 +439,7 @@ public class PageWeapon extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 1);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -467,6 +468,8 @@ public class PageWeapon extends PagePanel {
 				this.pearl.get(i*3).setSelectedIndex(0);
 				this.pearl.get(i*3+1).setSelectedIndex(0);
 				this.pearl.get(i*3+2).setSelectedIndex(0);
+				
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}
 		
@@ -476,6 +479,9 @@ public class PageWeapon extends PagePanel {
 		this.bullet.setModel(new DefaultComboBoxModel<Bullet>(tabBullet));
 		this.bullet.setSelectedItem(memory);
 		
+		if(!this.getBullet().equals(memory)) {
+			MainFrame.getInstance().setRedPane(NUM_PAGE);
+		}
 	}
 	
 	private void updateDetails(int id) {

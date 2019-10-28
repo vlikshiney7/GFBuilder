@@ -65,6 +65,7 @@ public class MainFrame extends JFrame {
 	private JCustomTabPane language;
 	
 	private JPanel overlay;
+	private static int nbPages = 0;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
 	private ArrayList<JLabel> labelStat = new ArrayList<JLabel>(TypeEffect.values().length);
@@ -416,6 +417,14 @@ public class MainFrame extends JFrame {
 		Overlay.getInstance().setSave(false);
 	}
 	
+	public static int getNumPage() {
+		return nbPages++;
+	}
+	
+	public void setRedPane(int page) {
+		this.tabPaneMenu.get(page).setBackground(Design.UIColor[4]);
+	}
+	
 	public static void main(String[] args) {
 		PageOption.getInstance().setSave(Overlay.getInstance().getCurrentName());
 	}
@@ -429,6 +438,7 @@ public class MainFrame extends JFrame {
 			} else {
 				this.pages.get(i).setVisible(true);
 				this.tabPaneMenu.get(i).setFont(new Font("Open Sans", Font.BOLD, 24));
+				this.tabPaneMenu.get(i).setBackground(Design.UIColor[0]);
 				this.tabPaneMenu.get(i).setSelected(true);
 			}
 		}

@@ -33,6 +33,7 @@ import fr.vlik.uidesign.JCustomRadioButton;
 public class PageTalent extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageTalent INSTANCE = new PageTalent();
 	
 	private JLabel[] tabChosenTalent = new JLabel[9];
@@ -253,7 +254,7 @@ public class PageTalent extends PagePanel {
 	
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 6);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -262,7 +263,7 @@ public class PageTalent extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 6);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -278,7 +279,9 @@ public class PageTalent extends PagePanel {
 		for(int i = 0; i < listTalent.size(); i++) {
 			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
 			tabTalent[0] = new Talent();
-			for(int j = 0; j < tabTalent.length-1; j++) tabTalent[j+1] = listTalent.get(i).get(j);
+			for(int j = 0; j < tabTalent.length-1; j++) {
+				tabTalent[j+1] = listTalent.get(i).get(j);
+			}
 			
 			this.radioTalent.get(i/3).get((i%3)+1).setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][i].getIcon()));
 			this.talent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));

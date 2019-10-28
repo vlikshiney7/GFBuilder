@@ -31,6 +31,7 @@ import fr.vlik.uidesign.JCustomTextPane;
 public class PageCapeRing extends PagePanel {
 	
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageCapeRing INSTANCE = new PageCapeRing();
 	
 	private JCustomComboBox<Cape> cape;
@@ -339,7 +340,7 @@ public class PageCapeRing extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 3);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -348,7 +349,7 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 3);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -364,9 +365,11 @@ public class PageCapeRing extends PagePanel {
 		this.cape.setModel(new DefaultComboBoxModel<Cape>(tabCape));
 		this.cape.setSelectedItem(memoryCape);
 		
-		if(!this.cape.getSelectedItem().equals(memoryCape)) {
+		if(!this.getCape().equals(memoryCape)) {
 			updateXpStuff(0);
 			updateEnchant(0);
+			
+			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -376,9 +379,11 @@ public class PageCapeRing extends PagePanel {
 			this.ring.get(i).setModel(new DefaultComboBoxModel<Ring>(tabRing));
 			this.ring.get(i).setSelectedItem(memory);
 			
-			if(!this.ring.get(i).getSelectedItem().equals(memoryCape)) {
+			if(!this.getRing(i).equals(memory)) {
 				updateXpStuff(i+1);
 				updateEnchant(i+1);
+				
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}
 	}

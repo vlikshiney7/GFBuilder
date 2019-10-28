@@ -24,6 +24,7 @@ import fr.vlik.uidesign.JCustomLabel;
 public class PageSprite extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageSprite INSTANCE = new PageSprite();
 	
 	private ArrayList<JCustomComboBox<Blason>> blason = new ArrayList<JCustomComboBox<Blason>>(2);
@@ -115,7 +116,7 @@ public class PageSprite extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 9);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -124,7 +125,7 @@ public class PageSprite extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 9);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -137,6 +138,10 @@ public class PageSprite extends PagePanel {
 			
 			this.blason.get(i).setModel(new DefaultComboBoxModel<Blason>(tabBlason));
 			this.blason.get(i).setSelectedItem(memory);
+			
+			if(!this.getBlason(i).equals(memory)) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
+			}
 		}
 	}
 

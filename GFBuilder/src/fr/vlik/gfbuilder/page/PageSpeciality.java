@@ -28,6 +28,7 @@ import fr.vlik.uidesign.JCustomLabel;
 public class PageSpeciality extends PagePanel implements ConvertEffect {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageSpeciality INSTANCE = new PageSpeciality();
 	
 	private Speciality[] tabSpeciality;
@@ -193,7 +194,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 7);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -202,7 +203,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 7);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}

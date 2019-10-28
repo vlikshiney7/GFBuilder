@@ -38,6 +38,7 @@ import fr.vlik.uidesign.JCustomSpinner;
 public class PageBuff extends PagePanel implements AdditionalEffect {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageBuff INSTANCE = new PageBuff();
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
@@ -353,7 +354,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 10);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -362,7 +363,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 10);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -382,12 +383,19 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < this.energy.size(); i++) {
-			int memory = (int) this.energy.get(i).getIntValue();
+			int memory = this.energy.get(i).getIntValue();
 			if(reinca.getLvl() == 0) {
-				if(memory > lvl*2) memory = lvl*2;
+				if(memory > lvl*2) {
+					memory = lvl*2;
+				}
+				
 				this.energy.get(i).setModel(new SpinnerNumberModel(memory, 0, lvl*2, 1));
 			} else {
 				this.energy.get(i).setModel(new SpinnerNumberModel(memory, 0, 200, 1));
+			}
+			
+			if(this.energy.get(i).getIntValue() != memory) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}
 	}

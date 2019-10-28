@@ -26,6 +26,7 @@ import fr.vlik.uidesign.JCustomLabel;
 public class PageSkill extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageSkill INSTANCE = new PageSkill();
 	
 	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
@@ -155,7 +156,7 @@ public class PageSkill extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 8);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -164,7 +165,7 @@ public class PageSkill extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 8);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -213,7 +214,13 @@ public class PageSkill extends PagePanel {
 				this.skillProgress.get(0).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
 				this.skillProgress.get(0).setSelectedItem(memory);
 				this.skillProgress.get(0).setVisible(true);
-				if(this.skillProgress.get(0).getSelectedIndex() == -1) this.skillProgress.get(0).setSelectedIndex(0);
+				if(this.skillProgress.get(0).getSelectedIndex() == -1) {
+					this.skillProgress.get(0).setSelectedIndex(0);
+				}
+				
+				if(!this.getSkill(0).equals(memory)) {
+					MainFrame.getInstance().setRedPane(NUM_PAGE);
+				}
 			}
 		}
 		
@@ -234,7 +241,14 @@ public class PageSkill extends PagePanel {
 			this.skillProgress.get(1).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
 			this.skillProgress.get(1).setSelectedItem(memory);
 			this.skillProgress.get(1).setVisible(true);
-			if(this.skillProgress.get(1).getSelectedIndex() == -1) this.skillProgress.get(1).setSelectedIndex(0);
+			
+			if(this.skillProgress.get(1).getSelectedIndex() == -1) {
+				this.skillProgress.get(1).setSelectedIndex(0);
+			}
+			
+			if(!this.getSkill(1).equals(memory)) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
+			}
 		} else {
 			this.skillProgress.get(1).setVisible(false);
 		}
@@ -280,6 +294,10 @@ public class PageSkill extends PagePanel {
 		
 		if(memory != null) {
 			this.proSkill.setSelectedItem(memory);
+			
+			if(this.getProSkill().equals(memory)) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
+			}
 		}
 		
 		if(this.proSkill.getSelectedIndex() == -1 && tabProSkill.length > 0) {

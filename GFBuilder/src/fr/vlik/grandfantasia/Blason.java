@@ -90,6 +90,27 @@ public class Blason implements Iconable, Writable {
 	}
 	
 	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		
+		if(obj == null) {
+			return false;
+		}
+		
+		if (!(obj instanceof Blason)) {
+			return false;
+		}
+		
+		Blason equip = (Blason) obj;
+		boolean b = this.name.equals(equip.name)
+				&& this.lvl == equip.lvl;
+		
+		return b;
+	}
+	
+	@Override
 	public String getInfo(Language lang) {
 		return "Lvl " + this.lvl + " - " + this.name;
 	}

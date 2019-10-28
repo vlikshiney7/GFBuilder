@@ -13,6 +13,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
+import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
@@ -26,6 +27,7 @@ import fr.vlik.uidesign.JCustomLabel;
 public class PageOption extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final PageOption INSTANCE = new PageOption();
 	
 	private JCustomComboBox<SaveConfig> save;
@@ -127,7 +129,7 @@ public class PageOption extends JPanel {
 	}
 
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 12);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -135,7 +137,7 @@ public class PageOption extends JPanel {
 	}
 	
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 12);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}

@@ -30,6 +30,7 @@ import fr.vlik.uidesign.JCustomSpinner;
 public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageGeneral INSTANCE = new PageGeneral();
 	
 	private JCustomComboBox<Grade> grade;
@@ -272,7 +273,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 0);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -281,7 +282,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 0);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}

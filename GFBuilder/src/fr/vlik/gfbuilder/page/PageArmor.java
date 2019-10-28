@@ -37,6 +37,7 @@ import fr.vlik.uidesign.JCustomTextPane;
 public class PageArmor extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
+	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageArmor INSTANCE = new PageArmor();
 	
 	private ArrayList<JCustomComboBox<Armor>> armor = new ArrayList<JCustomComboBox<Armor>>(5);
@@ -443,7 +444,7 @@ public class PageArmor extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 2);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
@@ -452,7 +453,7 @@ public class PageArmor extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 2);
+		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
 		}
@@ -470,7 +471,7 @@ public class PageArmor extends PagePanel {
 			this.armor.get(i).setModel(new DefaultComboBoxModel<Armor>(tabArmor));
 			this.armor.get(i).setSelectedItem(memory);
 			
-			if(!this.armor.get(i).getSelectedItem().equals(memory)) {
+			if(!this.getArmor(i).equals(memory)) {
 				updateXpStuff(i);
 				updateDetails(i);
 				updateEnchant(i);
@@ -484,6 +485,8 @@ public class PageArmor extends PagePanel {
 				} else {
 					this.pearl.get(i+1).setSelectedIndex(0);
 				}
+				
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}
 	}
