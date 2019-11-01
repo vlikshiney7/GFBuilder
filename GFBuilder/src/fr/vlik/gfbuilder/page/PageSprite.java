@@ -144,7 +144,7 @@ public class PageSprite extends PagePanel {
 			}
 		}
 	}
-
+	
 	@Override
 	public int[] getConfig() {
 		int[] config = new int[3];

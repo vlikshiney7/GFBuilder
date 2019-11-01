@@ -295,7 +295,7 @@ public class PageSkill extends PagePanel {
 		if(memory != null) {
 			this.proSkill.setSelectedItem(memory);
 			
-			if(this.getProSkill().equals(memory)) {
+			if(this.getProSkill() != null && this.getProSkill().equals(memory)) {
 				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}

@@ -4,20 +4,20 @@ Maître dans l'Usage de la Hache/45/1/DegStdHa,false,1.5/0-2
 Confession Brutable/45/2/DegHumaP,false,50/DegHumaP,true,1/0-3
 Armes à Vacillement/45/1/VitAtk,false,1/0-4
 Tatouage Ardent/45/1/Feu,false,3/0-5
-/60/0/0-6
-/60/0/0-7
-/60/0/0-8
-/60/0/0-9
-/75/0/0-10
-/75/0/0-11
-/75/0/0-12
-/75/0/0-13
-/75/0/0-14
-/75/0/0-15
-/91/0/0-16
-/91/0/0-17
-/91/0/0-18
-/91/0/0-19
+Détection de Défaut/60/1/Toucher,false,1/0-6
+Cœur Féroce/60/1/AGI,false,9/0-7
+Volonté Tenace/60/2/RTCCP,false,2/RTCCM,false,2/0-8
+Forme Rapide/60/1/DegDuo,false,1.5/0-9
+Carrure de Fer/75/1/DefP,true,1/0-10
+Peau Lumineuse/75/1/DefM,true,1/0-11
+Ombre Sanguinaire/75/1/ESQ,false,1/0-12
+Figure de Proue/75/1/Parade,false,1/0-13
+Exploration du Cerveau/75/1/PM,true,1/0-14
+Assaut/75/3/Deg2Ep,false,1/Deg2Ma,false,1/Deg2Ha,false,1/0-15
+Endurence/91/1/RDCCP,false,1/0-16
+La réponse/91/1/VitAtk,false,1/0-17
+Abus de faiblesse/91/1/DCCP,false,1/0-18
+Bain de sang/91/1/RegenCB,false,0.5/0-19
 
 /45/0/1-0
 /45/0/1-1

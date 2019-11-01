@@ -11,7 +11,7 @@ Compétences passives,Passive skills/Énergie professionnelle,Professional energ
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination
 Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Énergies,Energy/Buff de guilde,Guild buff/Actif,Active/Inactif,Inactive/Pierre permanente,Permanent stone/Actif,Active/Inactif,Inactive
 Bague de mariage,Wedding ring/Anima,Anima
-Charger,Load/Sauvegarder,Save/Sauv. sous...,Save as.../Crédit,Credit/Version : 0.7.0,Version: 0.7.0
+Charger,Load/Sauvegarder,Save/Sauv. sous...,Save as.../Crédit,Credit/Version : 0.7.1,Version: 0.7.1
 Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé,Empty name or already exist
 Quitter sans sauvegarder ?,Quit without save ?/Sauvegarder,Save/Quitter,Leave/Annuler,Cancel
 Choisir l'action,Choose action/Charger,Load/Supprimer,Delete/Annuler,Cancel

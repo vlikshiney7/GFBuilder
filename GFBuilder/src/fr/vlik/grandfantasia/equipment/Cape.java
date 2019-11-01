@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -22,6 +23,8 @@ public class Cape extends Equipment {
 	}
 
 	private String setCode;
+	private boolean isMultiEffect;
+	private MultiEffect multiEffects;
 	
 	public Cape(Cape cape) {
 		super(cape.getName(), cape.getGrades(), cape.getLvl(), cape.getQuality(), cape.isEnchantable(), cape.getEffects(), cape.getBonusXP());
@@ -34,11 +37,37 @@ public class Cape extends Equipment {
 		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
+		this.isMultiEffect = false;
+		setIcon(iconPath);
+	}
+	
+	public Cape(String name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
+		super(name, grades, lvl, quality, canEnchant, new ArrayList<Effect>(), bonusXP);
+		
+		this.setCode = setCode;
+		this.isMultiEffect = true;
+		this.multiEffects = effects;
 		setIcon(iconPath);
 	}
 	
 	public String getSetCode() {
 		return this.setCode;
+	}
+	
+	public boolean isMultiEffect() {
+		return this.isMultiEffect;
+	}
+	
+	public MultiEffect getMultiEffect() {
+		return this.isMultiEffect ? new MultiEffect(this.multiEffects.getCode(), this.multiEffects.getLvlMin(), this.multiEffects.getEffects()) : null;
+	}
+	
+	public void setEffects(int lvl) {
+		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
+	}
+	
+	public ArrayList<Effect> getMultiEffects(int lvl) {
+		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
 	@Override
@@ -112,20 +141,31 @@ public class Cape extends Equipment {
 				
 				String[] effectSplit = lineSplit[6].split(",");
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
-				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-					effects.add(new Effect(lineSplit[j+7]));
-				
 				ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
 				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
 					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 				
-				
-				Cape cape = new Cape(
-						lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]),
-						lineSplit[3], path, effects, bonusXP
-						);
-				list.add(cape);
+				if(Integer.parseInt(effectSplit[0]) > -1) {
+					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
+						effects.add(new Effect(lineSplit[j+7]));
+					
+					Cape cape = new Cape(
+							lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]),
+							lineSplit[3], path, effects, bonusXP
+							);
+					
+					list.add(cape);
+				} else {
+					MultiEffect effects = MultiEffect.getFromCode(lineSplit[7]);
+					
+					Cape cape = new Cape(
+							lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]),
+							lineSplit[3], path, effects, bonusXP
+							);
+					
+					list.add(cape);
+				}
 				
 				line = reader.readLine();
 			}
@@ -144,6 +184,9 @@ public class Cape extends Equipment {
 		
 		for(Cape cape : Cape.data) {
 			if(cape.getLvl() <= lvl && cape.containGrade(grade)) {
+				if(cape.isMultiEffect()) {
+					cape.setEffects(lvl);
+				}
 				result.add(cape);
 			}
 		}

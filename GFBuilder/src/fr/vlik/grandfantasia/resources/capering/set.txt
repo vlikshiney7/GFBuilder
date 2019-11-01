@@ -1,0 +1,6 @@
+Rien/-1/0,0
+Set de la Gloire Meurtrière/tdb0/2,0/FCE,false,60/VIT,false,60
+Set du Dragon Émeraude/tdb1/2,0/AGI,false,60/VIT,false,60
+Set de la Foi Ancestrale/tdb2/4,0/VOL,false,60/VIT,false,60/HealD,false,20/HealR,false,20
+Set du Squelette Maudit/tdb3/3,0/INT,false,60/VIT,false,60/VitComp,false,20
+Set du Champion/tdb4/6,0/FCE,false,20/AGI,false,20/INT,false,20/VIT,false,60/RTCCP,false,15/RTCCM,false,15

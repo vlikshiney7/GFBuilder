@@ -12,7 +12,8 @@ import fr.vlik.grandfantasia.equipment.Ring;
 
 public class EquipSet {
 	
-	private static EquipSet[] data;
+	private static EquipSet[] dataArmor;
+	private static EquipSet[] dataCapeRing;
 	static {
 		loadData();
 	}
@@ -33,13 +34,28 @@ public class EquipSet {
 		for(int i = 0; i < with3.length; i++) {
 			this.with3.add(new Effect(with3[i]));
 		}
+		
 		for(int i = 0; i < with4.length; i++) {
 			this.with4.add(new Effect(with4[i]));
 		}
+		
 		for(int i = 0; i < with5.length; i++) {
 			this.with5.add(new Effect(with5[i]));
 		}
+	}
+	
+	public EquipSet(String name, String code, String[] with2, String[] with3) {
+		this.name = name;
+		this.code = code;
+		this.nbCurrentUsed = 0;
 		
+		for(int i = 0; i < with2.length; i++) {
+			this.with3.add(new Effect(with2[i]));
+		}
+		
+		for(int i = 0; i < with3.length; i++) {
+			this.with4.add(new Effect(with3[i]));
+		}
 	}
 	
 	public EquipSet(Armor[] armors) {
@@ -47,12 +63,12 @@ public class EquipSet {
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
 		
-		for(int i = 0; i < EquipSet.data.length; i++) {
-			if(EquipSet.data[i].getCode().equals(this.code)) {
-				this.name = EquipSet.data[i].getName();
-				this.with3 = EquipSet.data[i].getWith3();
-				this.with4 = EquipSet.data[i].getWith4();
-				this.with5 = EquipSet.data[i].getWith5();
+		for(int i = 0; i < EquipSet.dataArmor.length; i++) {
+			if(EquipSet.dataArmor[i].getCode().equals(this.code)) {
+				this.name = EquipSet.dataArmor[i].getName();
+				this.with3 = EquipSet.dataArmor[i].getWith3();
+				this.with4 = EquipSet.dataArmor[i].getWith4();
+				this.with5 = EquipSet.dataArmor[i].getWith5();
 				break;
 			}
 		}
@@ -63,11 +79,11 @@ public class EquipSet {
 		String equipCode[] = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
-		for(int i = 0; i < EquipSet.data.length; i++) {
-			if(EquipSet.data[i].getCode().equals(this.code)) {
-				this.name = EquipSet.data[i].getName();
-				this.with2 = EquipSet.data[i].getWith2();
-				this.with3 = EquipSet.data[i].getWith3();
+		for(int i = 0; i < EquipSet.dataCapeRing.length; i++) {
+			if(EquipSet.dataCapeRing[i].getCode().equals(this.code)) {
+				this.name = EquipSet.dataCapeRing[i].getName();
+				this.with2 = EquipSet.dataCapeRing[i].getWith2();
+				this.with3 = EquipSet.dataCapeRing[i].getWith3();
 				break;
 			}
 		}
@@ -128,24 +144,36 @@ public class EquipSet {
 	}
 	
 	public static void loadData() {
-		ArrayList<EquipSet> list = new ArrayList<EquipSet>();
+		ArrayList<ArrayList<EquipSet>> list = new ArrayList<ArrayList<EquipSet>>();
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					EquipSet.class.getResourceAsStream(Tools.RESOURCE + "armor/set.txt"), "UTF-8"));
 		) {
+			list.add(new ArrayList<EquipSet>());
+			
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				String[] nbBonus = lineSplit[2].split(",");
+				
 				String[] with3 = new String[Integer.parseInt(nbBonus[0])];
 				String[] with4 = new String[Integer.parseInt(nbBonus[1])];
 				String[] with5 = new String[Integer.parseInt(nbBonus[2])];
-				for(int i = 0; i < with3.length; i++) with3[i] = lineSplit[i+3];
-				for(int i = 0; i < with4.length; i++) with4[i] = lineSplit[i+3+with3.length];
-				for(int i = 0; i < with5.length; i++) with5[i] = lineSplit[i+3+with3.length+with4.length];
 				
-				list.add(new EquipSet(lineSplit[0], lineSplit[1], with3, with4, with5));
+				for(int i = 0; i < with3.length; i++) {
+					with3[i] = lineSplit[i+3];
+				}
+				
+				for(int i = 0; i < with4.length; i++) {
+					with4[i] = lineSplit[i+3 + with3.length];
+				}
+				
+				for(int i = 0; i < with5.length; i++) {
+					with5[i] = lineSplit[i+3 + with3.length + with4.length];
+				}
+				
+				list.get(0).add(new EquipSet(lineSplit[0], lineSplit[1], with3, with4, with5));
 				
 				line = reader.readLine();
 			}
@@ -153,13 +181,52 @@ public class EquipSet {
 			System.out.println("Error with " + EquipSet.class.getClass().getSimpleName() + " class");
 		}
 		
-		EquipSet.data = new EquipSet[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
+		try (
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					EquipSet.class.getResourceAsStream(Tools.RESOURCE + "capering/set.txt"), "UTF-8"));
+		) {
+			list.add(new ArrayList<EquipSet>());
+			
+			String line = reader.readLine();
+			while (line != null) {
+				String[] lineSplit = line.split("/");
+				String[] nbBonus = lineSplit[2].split(",");
+				
+				String[] with2 = new String[Integer.parseInt(nbBonus[0])];
+				String[] with3 = new String[Integer.parseInt(nbBonus[1])];
+				
+				for(int i = 0; i < with2.length; i++) {
+					with2[i] = lineSplit[i+3];
+				}
+				
+				for(int i = 0; i < with3.length; i++) {
+					with3[i] = lineSplit[i+3 + with2.length];
+				}
+				
+				list.get(1).add(new EquipSet(lineSplit[0], lineSplit[1], with2, with3));
+				
+				line = reader.readLine();
+			}
+		} catch (IOException e) {
+			System.out.println("Error with " + EquipSet.class.getClass().getSimpleName() + " class");
+		}
+		
+		EquipSet.dataArmor = new EquipSet[list.get(0).size()];
+		for(int i = 0; i < dataArmor.length; i++) {
+			dataArmor[i] = list.get(0).get(i);
+		}
+		
+		EquipSet.dataCapeRing = new EquipSet[list.get(1).size()];
+		for(int i = 0; i < dataCapeRing.length; i++) {
+			dataCapeRing[i] = list.get(1).get(i);
 		}
 	}
 	
-	public static EquipSet[] getData() {
-		return EquipSet.data;
+	public static EquipSet[] getDataArmor() {
+		return EquipSet.dataArmor;
+	}
+	
+	public static EquipSet[] getDataCapeRing() {
+		return EquipSet.dataCapeRing;
 	}
 }
