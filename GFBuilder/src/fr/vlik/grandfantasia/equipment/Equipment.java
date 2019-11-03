@@ -115,7 +115,9 @@ public abstract class Equipment implements FullRenderer {
 		
 		Equipment equip = (Equipment) obj;
 		boolean b = this.name.equals(equip.name)
-				&& this.lvl == equip.lvl;
+				&& this.lvl == equip.lvl
+				&& this.quality == equip.quality
+				&& this.effects.size() == equip.effects.size();
 		
 		return b;
 	}

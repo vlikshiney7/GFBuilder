@@ -20,13 +20,13 @@ public class EquipSet {
 	
 	private String name;
 	private String code;
-	private final int nbCurrentUsed;
+	private int nbCurrentUsed;
 	private ArrayList<Effect> with2 = new ArrayList<Effect>();
 	private ArrayList<Effect> with3 = new ArrayList<Effect>();
 	private ArrayList<Effect> with4 = new ArrayList<Effect>();
 	private ArrayList<Effect> with5 = new ArrayList<Effect>();
 	
-	public EquipSet(String name, String code, String[] with3, String[] with4, String[] with5) {
+	private EquipSet(String name, String code, String[] with3, String[] with4, String[] with5) {
 		this.name = name;
 		this.code = code;
 		this.nbCurrentUsed = 0;
@@ -44,17 +44,17 @@ public class EquipSet {
 		}
 	}
 	
-	public EquipSet(String name, String code, String[] with2, String[] with3) {
+	private EquipSet(String name, String code, String[] with2, String[] with3) {
 		this.name = name;
 		this.code = code;
 		this.nbCurrentUsed = 0;
 		
 		for(int i = 0; i < with2.length; i++) {
-			this.with3.add(new Effect(with2[i]));
+			this.with2.add(new Effect(with2[i]));
 		}
 		
 		for(int i = 0; i < with3.length; i++) {
-			this.with4.add(new Effect(with3[i]));
+			this.with3.add(new Effect(with3[i]));
 		}
 	}
 	
@@ -79,6 +79,10 @@ public class EquipSet {
 		String equipCode[] = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
+		if(rings[0].getName().equals(rings[1].getName())) {
+			this.nbCurrentUsed--;
+		}
+		
 		for(int i = 0; i < EquipSet.dataCapeRing.length; i++) {
 			if(EquipSet.dataCapeRing[i].getCode().equals(this.code)) {
 				this.name = EquipSet.dataCapeRing[i].getName();

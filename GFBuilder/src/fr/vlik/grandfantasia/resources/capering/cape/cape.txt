@@ -28,6 +28,7 @@ Cape d'Orties/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/0,0,0/tdb1
 Cape de Bénédiction Divine/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/0,0,0/tdb2
 Cape des Dieux/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/0,0,0/tdb3
 Cape de l'Extrême/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/0,0,0/tdb4
+Cape du guide de la bête divine/0,1,2,3,4,5,6,7,8,9,10,11/80/80sombre/3/false/4,0,0/DefP,false,123,true/DefM,false,117,true/PV,false,640/PM,false,320/red2
 Cape du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/2,0,0/DefP,false,76,true/DefM,false,69,true/black1
 Cape de la Dynastie de Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/2,0,0/DefP,false,84,true/DefM,false,80,true/green2
 Cape Charmante de Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/80/-1/3/false/1,0,0/DefP,false,110,true/red2
@@ -36,6 +37,7 @@ Cape de Courage de Meshuga/0,1/70/-1/5/true/5,0,0/DefP,false,125,true/DefM,false
 Cape de la Fureur d'Envie/0,1/70/-1/5/true/5,0,0/DefP,false,125,true/DefM,false,90,true/FCE,false,50,true/VIT,false,33,true/AGI,false,29,true/red2
 Cape du Mental d'Envie/0,1/70/-1/5/true/5,0,0/DefP,false,125,true/DefM,false,90,true/FCE,false,37,true/VIT,false,50,true/AGI,false,25,true/red1
 Cape du Courageux Combattant/0,1/70/-1/3/false/6,0,0/DefP,false,120,true/DefM,false,88,true/FCE,false,40,true/VIT,false,20,true/PV,false,430/PM,false,220/red1
+Cape lumicloche du gardien/0,1,2,3,4,5,6,7,8,9,10,11/70/70sombre/3/false/4,0,0/DefP,false,112,true/DefM,false,107,true/PV,false,560/PM,false,280/red2
 Cape de l'Âme du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/70/-1/3/false/-1,0,0/cape70/black1
 Cape Céleste du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/70/-1/3/false/2,0,0/DefP,false,77,true/DefM,false,73,true/green2
 Cape du Roi des Lapins Gélatineux/0,1,2,3,4,5,6,7,8,9,10,11/70/-1/3/false/1,0,0/DefP,false,101,true/red2
@@ -45,23 +47,27 @@ Manteau du Preneur de Vie/0,1/63/-1/3/false/6,0,0/DefP,false,114,true/DefM,false
 Cape Tricotée du Courage/0,1/60/-1/5/true/5,0,0/DefP,false,116,true/DefM,false,83,true/FCE,false,44,true/VIT,false,25,true/AGI,false,19,true/red2
 Cape Tricotée de l'Esprit Combattant/0,1/60/-1/5/true/5,0,0/DefP,false,116,true/DefM,false,83,true/FCE,false,29,true/VIT,false,44,true/AGI,false,15,true/red1
 Habit du Sauveur/0,1/60/-1/3/false/6,0,0/DefP,false,111,true/DefM,false,79,true/VIT,false,22,true/AGI,false,22,true/PV,false,500/PM,false,100/red2
+Cape divine de la lignée interdite/0,1,2,3,4,5,6,7,8,9,10,11/60/60sombre/3/false/4,0,0/DefP,false,102,true/DefM,false,97,true/PV,false,480/PM,false,240/red2
+Cape Démoniaque de Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/60/-1/3/false/2,0,0/DefP,false,64,true/DefM,false,63,true/black1
 Cape du Gélapin Saint/0,1,2,3,4,5,6,7,8,9,10,11/60/-1/3/false/2,0,0/DefP,false,70,true/DefM,false,66,true/green2
 Cape d'Arès du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/60/-1/3/false/1,0,0/DefP,false,92,true/red2
-Cape Démoniaque de Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/60/-1/3/false/2,0,0/DefP,false,64,true/DefM,false,63,true/black1
 Cape du Chevalier Céleste/0,1/55/-1/3/false/5,0,0/DefP,false,105,true/DefM,false,75,true/VIT,false,20,true/VOL,false,16,true/PV,false,450/black2
+Cape de peau de lion de l'étranger/0,1,2,3,4,5,6,7,8,9,10,11/50/50sombre/3/false/4,0,0/DefP,false,91,true/DefM,false,86,true/PV,false,400/PM,false,200/red2
+Cape d'Esprit du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/50/-1/3/false/2,0,0/DefP,false,64,true/DefM,false,63,true/black1
 Cape Divine du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/50/-1/3/false/2,0,0/DefP,false,64,true/DefM,false,63,true/green2
 Cape de l'Âme Guerrière du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/50/-1/3/false/1,0,0/DefP,false,83,true/red2
-Cape d'Esprit du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/50/-1/3/false/2,0,0/DefP,false,64,true/DefM,false,63,true/black1
 Cape du Fort Inébranlable/0,1/47/-1/3/false/6,0,0/DefP,false,96,true/DefM,false,68,true/FCE,false,16,true/VIT,false,20,true/PV,false,400/PM,false,50/red2
 Cape Luisante de Sang/0,1/47/-1/2/false/3,0,0/DefP,false,86,true/DefM,false,61,true/FCE,false,10,true/red2
+Mystérieuse cape de silence/0,1,2,3,4,5,6,7,8,9,10,11/40/40sombre/3/false/4,0,0/DefP,false,80,true/DefM,false,76,true/PV,false,320/PM,false,160/red2
+Cape Démoniaque du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/40/-1/3/false/2,0,0/DefP,false,56,true/DefM,false,53,true/black1
 Cape Sacrée du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/40/-1/3/false/2,0,0/DefP,false,56,true/DefM,false,53,true/green2
 Cape de Combat Féroce du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/40/-1/3/false/1,0,0/DefP,false,74,true/red2
-Cape Démoniaque du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/40/-1/3/false/2,0,0/DefP,false,56,true/DefM,false,53,true/black1
 Habit du Chevalier de Haut Vol/0,1/39/-1/3/false/6,0,0/DefP,false,86,true/DefM,false,61,true/FCE,false,16,true/VIT,false,12,true/PV,false,200/PM,false,100/black2
 Cape du Guerrier Royal/0,1/39/-1/2/false/3,0,0/DefP,false,77,true/DefM,false,55,true/FCE,false,8,true/black2
+Marque de vitesse cape d'invisibilité/0,1,2,3,4,5,6,7,8,9,10,11/30/30sombre/3/false/4,0,0/DefP,false,69,true/DefM,false,65,true/PV,false,220/PM,false,120/red2
+Cape Corrompue du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/30/-1/3/false/2,0,0/DefP,false,47,true/DefM,false,45,true/black1
 Cape Magique du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/30/-1/3/false/2,0,0/DefP,false,47,true/DefM,false,45,true/green2
 Cape de Bataille du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/30/-1/3/false/1,0,0/DefP,false,63,true/red2
-Cape Corrompue du Sprite Sombre/0,1,2,3,4,5,6,7,8,9,10,11/30/-1/3/false/2,0,0/DefP,false,47,true/DefM,false,45,true/black1
 Cape de Mana du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/20/-1/3/false/2,0,0/DefP,false,40,true/DefM,false,39,true/green2
 Cape de Vie du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/20/-1/3/false/1,0,0/DefP,false,54,true/red2
 Cape des Grandes Profondeurs/6,7/90/-1/5/true/5,0,0/DefP,false,161,true/DefM,false,164,true/VIT,false,51,true/INT,false,59,true/VOL,false,49,true/purple2

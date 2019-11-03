@@ -258,6 +258,7 @@ Roi des Pirates/3/86/-1/4/FCE,false,4/INT,false,4/Depla,false,5/Loot,false,5
 Roi des porcs/3/15/-1/2/DefP,true,10/Depla,false,-5
 Seigneur du Cristal/3/31/-1/1/PM,false,300
 Singe de mon coeur/3/15/-1/2/ReducPeneP,false,5/Depla,false,-5
+Super Citrouille vertueuse/3/15/-1/7/Sacre,false,5/Feu,false,5/Foudre,false,5/Glace,false,5/Nature,false,5/Ombre,false,5/Depla,false,2
 Supérieur du Centurion/3/79/-1/4/INT,false,4/Depla,false,3/DegPlanteM,true,3/DegPlanteM,false,20
 Supernova/3/67/-1/3/AGI,false,3/TCCP,false,-2/TCCM,false,-2
 Tisseur de marées/3/15/-1/3/VitAtk,false,3/VitAtkD,false,3/VitComp,false,3
