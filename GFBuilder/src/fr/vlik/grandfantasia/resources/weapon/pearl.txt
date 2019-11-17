@@ -1,6 +1,241 @@
 Rien/0/false/true/0/null
-Perle de Résonance d'Aggravation Magique 5/3/false/true/1/DCCM,false,10/purple1
-Perle de Résonance d'Aggravation Physique 5/3/false/true/1/DCCP,false,10/purple1
-Pierre runique des Arcanes spéciale/2/false/false/1/AtkM,true,4/black1
-Pierre runique des Arcanes antique/3/false/false/1/AtkM,true,6/orange1
-Pierre runique d'Occultisme antique/3/false/false/1/DCCM,false,10/orange1
+Pierre runique corrompue vindicatrice/5/true/false/1/PeneM,false,10/yellow2
+Pierre runique d'Attaque supérieure/5/true/false/0/yellow2
+Pierre runique d'enchevêtrement vindicatrice/5/true/false/2/ReducPeneP,false,20/ReducPeneM,false,20/yellow2
+Pierre runique d'Enfermement/5/true/false/0/yellow2
+Pierre runique d'Éruption supérieure/5/true/false/1/DCCP,false,20/yellow2
+Pierre runique d'Estompement supérieure/5/true/false/1/MEN,false,-30/yellow2
+Pierre runique d'Harmonie supérieure/5/true/false/1/TCCM,false,12/yellow2
+Pierre runique d'Incantation supérieure/5/true/false/1/VitComp,false,12/yellow2
+Pierre runique d'Occultisme supérieure/5/true/false/1/DCCM,false,20/yellow2
+Pierre runique d'Occultisme vindicatrice/5/true/false/1/ReducPtsM,false,200/yellow2
+Pierre runique de Brèche/5/true/false/0/yellow2
+Pierre runique de brèche vindicatrice/5/true/false/0/yellow2
+Pierre runique de Brutalité/5/true/false/0/yellow2
+Pierre runique de cage vindicatrice/5/true/false/1/ReducPtsP,false,100/yellow2
+Pierre runique de Contrôle supérieure/5/true/false/1/TCCP,false,12/yellow2
+Pierre runique de Force supérieure/5/true/false/1/Atk,true,12/yellow2
+Pierre runique de Fusion/5/true/false/0/yellow2
+Pierre runique de Magie/5/true/false/0/yellow2
+Pierre runique de magie vindicatrice/5/true/false/1/IntComp,false,-15/yellow2
+Pierre runique de Menace supérieure/5/true/false/1/MEN,false,30/yellow2
+Pierre runique de Métamorphose/5/true/false/0/yellow2
+Pierre runique de métamorphose vindicatrice/5/true/false/0/yellow2
+Pierre runique de Précision/5/true/false/0/yellow2
+Pierre runique de précision vindicatrice/5/true/false/1/CostComp,false,-10/yellow2
+Pierre runique de sceau vindicateur/5/true/false/1/HealR,false,10/yellow2
+Pierre runique de Stagnation/5/true/false/0/yellow2
+Pierre runique de Visée supérieure/5/true/false/1/AtkD,true,12/yellow2
+Pierre runique des Arcanes supérieure/5/true/false/1/AtkM,true,12/yellow2
+Pierre runique des limbes vindicatrices/5/true/false/1/HealD,false,10/yellow2
+Pierre runique rouillée vindicatrice/5/true/false/2/PeneP,false,20/ReducPtsM,false,200/yellow2
+Pierre runique d'Attaque dimensionnelle/4/true/false/0/purple2
+Pierre runique d'Éruption dimensionnelle/4/true/false/1/DCCP,false,18/purple2
+Pierre runique d'Estompement dimensionnelle/4/true/false/1/MEN,false,-28/purple2
+Pierre runique d'Harmonie dimensionnelle/4/true/false/1/TCCM,false,14/purple2
+Pierre runique d'Incantation dimensionnelle/4/true/false/1/VitComp,false,14/purple2
+Pierre runique d'Occultisme dimensionnelle/4/true/false/1/DCCM,false,18/purple2
+Pierre runique d'Occultisme royale/4/true/false/0/black2
+Pierre runique de brèche royale/4/true/false/0/black2
+Pierre runique de cage royale/4/true/false/0/black2
+Pierre runique de Contrôle dimensionnelle/4/true/false/1/TCCP,false,14/purple2
+Pierre runique de Force dimensionnelle/4/true/false/1/Atk,true,14/purple2
+Pierre runique de magie royale/4/true/false/0/black2
+Pierre runique de Menace dimensionnelle/4/true/false/1/MEN,false,28/purple2
+Pierre runique de métamorphose royale/4/true/false/0/black2
+Pierre runique de précision royale/4/true/false/0/black2
+Pierre runique de Visée dimensionnelle/4/true/false/1/AtkD,true,14/purple2
+Pierre runique des Arcanes dimensionnelle/4/true/false/1/AtkM,true,14/purple2
+Pierre runique des limbes royales/4/true/false/0/black2
+Pierre runique du sceau royal/4/true/false/0/black2
+Joyau de résonance d'Exorcisme/3/false/true/0/red2
+Joyau de Résonance d'Oxydoréduction/3/false/true/0/red2
+Joyau de Résonance de Décomposition/3/false/true/0/red2
+Joyau de Résonance des Lacs gelés/3/false/true/0/white2
+Joyau de résonance des Moissonneurs/3/false/true/0/red2
+Joyau de résonance des Nimbes sacrées/3/false/true/0/yellow2
+Joyau de Résonance des Nuits éternelles/3/false/true/0/black2
+Joyau de Résonance des Origines du monde/3/false/true/0/red2
+Joyau de Résonance des Ouragans/3/false/true/0/green2
+Joyau de Résonance des Regards éteints/3/false/true/0/red2
+Joyau de Résonance des Traqueurs/3/false/true/0/red2
+Joyau de Résonance du Ciel rebelle/3/false/true/0/blue2
+Joyau de Résonance du Sprite de Feu/3/false/true/0/orange2
+Perle de Résonance d'Aggravation Magique 5/3/false/true/1/DCCM,false,10/purple2
+Perle de Résonance d'Aggravation Magique 4/3/false/true/1/DCCM,false,8/purple2
+Perle de Résonance d'Aggravation Magique 4/3/false/true/1/DCCM,false,6/purple2
+Perle de Résonance d'Aggravation Magique 3/3/false/true/1/DCCM,false,5/purple2
+Perle de Résonance d'Aggravation Physique 5/3/false/true/1/DCCP,false,10/purple2
+Perle de Résonance d'Aggravation Physique 4/3/false/true/1/DCCP,false,8/purple2
+Perle de Résonance d'Aggravation Physique 4/3/false/true/1/DCCP,false,6/purple2
+Perle de Résonance d'Aggravation Physique 3/3/false/true/1/DCCP,false,5/purple2
+Perle de Résonance d'Amplitude Magique 5/3/false/true/1/TCCM,false,1.8/purple2
+Perle de Résonance d'Amplitude Magique 4/3/false/true/1/TCCM,false,1.2/purple2
+Perle de Résonance d'Amplitude Magique 3/3/false/true/1/TCCM,false,1.5/purple2
+Perle de Résonance d'Amplitude Magique 3/3/false/true/1/TCCM,false,1/purple2
+Perle de Résonance d'Amplitude Physique 5/3/false/true/1/TCCP,false,1.8/purple2
+Perle de Résonance d'Amplitude Physique 4/3/false/true/1/TCCP,false,1.2/purple2
+Perle de Résonance d'Amplitude Physique 3/3/false/true/1/TCCP,false,1.5/purple2
+Perle de Résonance d'Amplitude Physique 3/3/false/true/1/TCCP,false,1/purple2
+Perle de Résonance d'Optimisation Magique 5/3/false/true/2/TCCM,false,0.9/DCCM,false,5/purple2
+Perle de Résonance d'Optimisation Magique 4/3/false/true/2/TCCM,false,0.5/DCCM,false,4/purple2
+Perle de Résonance d'Optimisation Magique 3/3/false/true/2/TCCM,false,0.7/DCCM,false,4/purple2
+Perle de Résonance d'Optimisation Magique 3/3/false/true/2/TCCM,false,0.5/DCCM,false,3/purple2
+Perle de Résonance d'Optimisation Physique 5/3/false/true/2/TCCP,false,0.9/DCCP,false,5/purple2
+Perle de Résonance d'Optimisation Physique 4/3/false/true/2/TCCP,false,0.5/DCCP,false,4/purple2
+Perle de Résonance d'Optimisation Physique 3/3/false/true/2/TCCP,false,0.7/DCCP,false,4/purple2
+Perle de Résonance d'Optimisation Physique 3/3/false/true/2/TCCP,false,0.5/DCCP,false,3/purple2
+Perle de Résonance de l'Éradicateur d'Humanoïdes/3/false/true/0/red2
+Perle de Résonance de l'Éradicateur d'Humanoïdes 4/3/false/true/0/red2
+Perle de Résonance de l'Éradicateur d'Humanoïdes 3/3/false/true/0/red2
+Perle de Résonance de l'Éradicateur d'Humanoïdes 2/3/false/true/0/red2
+Perle de Résonance de l'Exorciste de Démons/3/false/true/0/red2
+Perle de Résonance de l'Exorciste de Démons 4/3/false/true/0/red2
+Perle de Résonance de l'Exorciste de Démons 3/3/false/true/0/red2
+Perle de Résonance de l'Exorciste de Démons 2/3/false/true/0/red2
+Perle de Résonance du Briseur d'Élémentaires/3/false/true/0/red2
+Perle de Résonance du Briseur d'Élémentaires 4/3/false/true/0/red2
+Perle de Résonance du Briseur d'Élémentaires 3/3/false/true/0/red2
+Perle de Résonance du Briseur d'Élémentaires 2/3/false/true/0/red2
+Perle de Résonance du Chasseur de Bête/3/false/true/0/red2
+Perle de Résonance du Chasseur de Bêtes 4/3/false/true/0/red2
+Perle de Résonance du Chasseur de Bêtes 3/3/false/true/0/red2
+Perle de Résonance du Chasseur de Bêtes 2/3/false/true/0/red2
+Perle de Résonance du Faucheur de Plantes 5/3/false/true/0/red2
+Perle de Résonance du Faucheur de Plantes 4/3/false/true/0/red2
+Perle de Résonance du Faucheur de Plantes 3/3/false/true/0/red2
+Perle de Résonance du Faucheur de Plantes 2/3/false/true/0/red2
+Perle de Résonance du Fusionneur de Métal/3/false/true/0/red2
+Perle de Résonance du Fusionneur de Métal 4/3/false/true/0/red2
+Perle de Résonance du Fusionneur de Métal 3/3/false/true/0/red2
+Perle de Résonance du Fusionneur de Métal 2/3/false/true/0/red2
+Perle de Résonance du Purificateur de Morts-Vivants/3/false/true/0/red2
+Perle de Résonance du Purificateur de Morts-Vivants 4/3/false/true/0/red2
+Perle de Résonance du Purificateur de Morts-Vivants 3/3/false/true/0/red2
+Perle de Résonance du Purificateur de Morts-Vivants 2/3/false/true/0/red2
+Perle de Résonance Foudroyante/3/false/true/0/blue2
+Perle de Résonance Foudroyante 4/3/false/true/0/blue2
+Perle de Résonance Foudroyante 3/3/false/true/0/blue2
+Perle de Résonance Foudroyante 2/3/false/true/0/blue2
+Perle de Résonance Glacée/3/false/true/0/white2
+Perle de Résonance Glacée 4/3/false/true/0/white2
+Perle de Résonance Glacée 3/3/false/true/0/white2
+Perle de Résonance Glacée 2/3/false/true/0/white2
+Perle de Résonance Incendiaire/3/false/true/0/orange2
+Perle de Résonance Incendiaire 4/3/false/true/0/white2
+Perle de Résonance Incendiaire 3/3/false/true/0/orange2
+Perle de Résonance Incendiaire 2/3/false/true/0/orange2
+Perle de Résonance Lumineuse 4/3/false/true/0/yellow2
+Perle de Résonance Lumineuse 3/3/false/true/0/yellow2
+Perle de Résonance Lumineuse 2/3/false/true/0/yellow2
+Perle de Résonance Naturelle/3/false/true/0/green2
+Perle de Résonance Naturelle 4/3/false/true/0/white2
+Perle de Résonance Naturelle 3/3/false/true/0/green2
+Perle de Résonance Naturelle 2/3/false/true/0/green2
+Perle de Résonance Sacrée/3/false/true/0/yellow2
+Perle de Résonance Sombre/3/false/true/0/black2
+Perle de Résonance Sombre 4/3/false/true/0/green2
+Perle de Résonance Sombre 3/3/false/true/0/black2
+Perle de Résonance Sombre 2/3/false/true/0/black2
+Pierre runique d'attaque - Expert/3/true/false/0/green2
+Pierre runique d'Attaque antique/3/false/false/0/orange2
+Pierre runique d'Attaque intermédiaire/3/true/false/0/blue2
+Pierre runique d'attaque standard/3/true/false/0/white2
+Pierre runique d'éruption - Expert/3/true/false/1/DCCP,false,13/green2
+Pierre runique d'Éruption antique/3/false/false/1/DCCP,false,10/orange2
+Pierre runique d'Éruption intermédiaire/3/true/false/1/DCCP,false,15/blue2
+Pierre runique d'éruption standard/3/true/false/1/DCCP,false,14/white2
+Pierre runique d'estompement - Expert/3/true/false/1/MEN,false,-23/green2
+Pierre runique d'Estompement antique/3/false/false/1/MEN,false,-20/orange2
+Pierre runique d'Estompement intermédiaire/3/true/false/1/MEN,false,-25/blue2
+Pierre runique d'estompement standard/3/true/false/1/MEN,false,-24/white2
+Pierre runique d'harmonie - Expert/3/true/false/1/TCCM,false,9/green2
+Pierre runique d'Harmonie antique/3/false/false/1/TCCM,false,6/orange2
+Pierre runique d'Harmonie intermédiaire/3/true/false/1/TCCM,false,10/blue2
+Pierre runique d'harmonie standard/3/true/false/1/TCCM,false,10/white2
+Pierre runique d'incantation - Expert/3/true/false/1/VitComp,false,9/green2
+Pierre runique d'Incantation antique/3/false/false/1/VitComp,false,6/orange2
+Pierre runique d'Incantation intermédiaire/3/true/false/1/VitComp,false,10/blue2
+Pierre runique d'incantation standard/3/true/false/1/VitComp,false,10/white2
+Pierre runique d'occultisme - Expert/3/true/false/1/DCCM,false,13/green2
+Pierre runique d'Occultisme antique/3/false/false/1/DCCM,false,10/orange2
+Pierre runique d'Occultisme intermédiaire/3/true/false/1/DCCM,false,15/blue2
+Pierre runique d'occultisme standard/3/true/false/1/DCCM,false,14/white2
+Pierre runique de contrôle - Expert/3/true/false/1/TCCP,false,9/green2
+Pierre runique de Contrôle antique/3/false/false/1/TCCP,false,6/orange2
+Pierre runique de Contrôle intermédiaire/3/true/false/1/TCCP,false,10/blue2
+Pierre runique de contrôle standard/3/true/false/1/TCCP,false,10/white2
+Pierre runique de force - Expert/3/true/false/1/Atk,true,9/green2
+Pierre runique de Force antique/3/false/false/1/Atk,true,6/orange2
+Pierre runique de Force intermédiaire/3/true/false/1/Atk,true,10/blue2
+Pierre runique de force standard/3/true/false/1/Atk,true,10/white2
+Pierre runique de menace - Expert/3/true/false/1/MEN,false,23/green2
+Pierre runique de Menace antique/3/false/false/1/MEN,false,20/orange2
+Pierre runique de Menace intermédiaire/3/true/false/1/MEN,false,25/blue2
+Pierre runique de menace standard/3/true/false/1/MEN,false,24/white2
+Pierre runique de visée - Expert/3/true/false/1/AtkD,true,9/green2
+Pierre runique de Visée antique/3/false/false/1/AtkD,true,6/orange2
+Pierre runique de Visée intermédiaire/3/true/false/1/AtkD,true,10/blue2
+Pierre runique de visée standard/3/true/false/1/AtkD,true,10/white2
+Pierre runique des arcanes - Expert/3/true/false/1/AtkM,true,9/green2
+Pierre runique des Arcanes antique/3/false/false/1/AtkM,true,6/orange2
+Pierre runique des Arcanes intermédiaire/3/true/false/1/AtkM,true,10/blue2
+Pierre runique des arcanes standard/3/true/false/1/AtkM,true,10/white2
+Perle de Résonance d'Aggravation Magique 2/2/false/true/1/DCCM,false,3/purple1
+Perle de Résonance d'Aggravation Physique 2/2/false/true/1/DCCP,false,3/purple1
+Perle de Résonance d'Amplitude Magique 2/2/false/true/1/TCCM,false,0.7/purple1
+Perle de Résonance d'Amplitude Physique 2/2/false/true/1/TCCP,false,0.7/purple1
+Perle de Résonance d'Optimisation Magique 2/2/false/true/2/TCCM,false,0.3/DCCM,false,2/purple1
+Perle de Résonance d'Optimisation Physique 2/2/false/true/2/TCCP,false,0.3/DCCP,false,2/purple1
+Perle de Résonance de l'Éradicateur d'Humanoïdes 1/2/false/true/0/red1
+Perle de Résonance de l'Exorciste de Démons 1/2/false/true/0/red1
+Perle de Résonance du Briseur d'Élémentaires 1/2/false/true/0/red1
+Perle de Résonance du Chasseur de Bêtes 1/2/false/true/0/red1
+Perle de Résonance du Faucheur de Plantes 1/2/false/true/0/red1
+Perle de Résonance du Fusionneur de Métal 1/2/false/true/0/red1
+Perle de Résonance du Purificateur de Morts-Vivants 1/2/false/true/0/red1
+Perle de Résonance Foudroyante 1/2/false/true/0/blue1
+Perle de Résonance Glacée 1/2/false/true/0/white1
+Perle de Résonance Incendiaire 1/2/false/true/0/orange1
+Perle de Résonance Lumineuse 1/2/false/true/0/yellow1
+Perle de Résonance Naturelle 1/2/false/true/0/green1
+Perle de Résonance Sombre 1/2/false/true/0/black1
+Pierre runique d'Attaque du débutant/2/true/false/0/green2
+Pierre runique d'Attaque spéciale/2/false/false/0/black2
+Pierre runique d'Éruption du débutant/2/true/false/1/DCCP,false,11/green2
+Pierre runique d'Éruption spéciale/2/false/false/1/DCCP,false,8/black2
+Pierre runique d'Estompement du débutant/2/true/false/1/MEN,false,-20/green2
+Pierre runique d'Estompement spéciale/2/false/false/1/MEN,false,-18/black2
+Pierre runique d'Harmonie du débutant/2/true/false/1/TCCM,false,8/green2
+Pierre runique d'Harmonie spéciale/2/false/false/1/TCCM,false,4/black2
+Pierre runique d'Incantation du débutant/2/true/false/1/VitComp,false,8/green2
+Pierre runique d'Incantation spéciale/2/false/false/1/VitComp,false,4/black2
+Pierre runique d'Occultisme du débutant/2/true/false/1/DCCM,false,11/green2
+Pierre runique d'Occultisme spéciale/2/false/false/1/DCCM,false,8/black2
+Pierre runique de Contrôle du débutant/2/true/false/1/TCCP,false,8/green2
+Pierre runique de Contrôle spéciale/2/false/false/1/TCCP,false,4/black2
+Pierre runique de Force du débutant/2/true/false/1/Atk,true,8/green2
+Pierre runique de Force spéciale/2/false/false/1/Atk,true,4/black2
+Pierre runique de Menace du débutant/2/true/false/1/MEN,false,20/green2
+Pierre runique de Menace spéciale/2/false/false/1/MEN,false,18/black2
+Pierre runique de Visée du débutant/2/true/false/1/AtkD,true,8/green2
+Pierre runique de Visée spéciale/2/false/false/1/AtkD,true,4/black2
+Pierre runique des Arcanes du débutant/2/true/false/1/AtkM,true,8/green2
+Pierre runique des Arcanes spéciale/2/false/false/1/AtkM,true,4/black2
+Perle de Résonance d'Aggravation Magique 1/1/false/true/1/DCCM,false,2/purple0
+Perle de Résonance d'Aggravation Physique 1/1/false/true/1/DCCP,false,2/purple0
+Perle de Résonance d'Amplitude Magique 1/1/false/true/1/TCCM,false,0.5/purple0
+Perle de Résonance d'Amplitude Physique 1/1/false/true/1/TCCP,false,0.5/purple0
+Perle de Résonance d'Optimisation Magique 1/1/false/true/2/TCCM,false,0.2/DCCM,false,1/purple0
+Perle de Résonance d'Optimisation Physique 1/1/false/true/2/TCCP,false,0.2/DCCP,false,1/purple0
+Pierre runique d'Attaque standard/1/true/false/0/white2
+Pierre runique d'Éruption standard/1/true/false/1/DCCP,false,8/white2
+Pierre runique d'Estompement standard/1/true/false/1/MEN,false,-15/white2
+Pierre runique d'Harmonie standard/1/true/false/1/TCCM,false,6/white2
+Pierre runique d'Incantation standard/1/true/false/1/VitComp,false,6/white2
+Pierre runique d'Occultisme standard/1/true/false/1/DCCM,false,8/white2
+Pierre runique de Contrôle standard/1/true/false/1/TCCP,false,6/white2
+Pierre runique de Force standard/1/true/false/1/Atk,true,6/white2
+Pierre runique de Menace standard/1/true/false/1/MEN,false,15/white2
+Pierre runique de Visée standard/1/true/false/1/AtkD,true,6/white2
+Pierre runique des Arcanes standard/1/true/false/1/AtkM,true,6/white2

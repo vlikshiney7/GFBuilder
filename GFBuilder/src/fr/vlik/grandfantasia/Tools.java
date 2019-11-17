@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 public class Tools {
 	public static final String RESOURCE = "/fr/vlik/grandfantasia/resources/";
 	public static final String PATH32 = "/fr/vlik/grandfantasia/resources/default/32-";
+	public static final String PATH24 = "/fr/vlik/grandfantasia/resources/default/24-";
 	public static final String PATH16 = "/fr/vlik/grandfantasia/resources/default/16-";
 	
 	public static final double[] coefFortif = { 1, 1.03, 1.06, 1.09, 1.12, 1.15, 1.18, 1.21, 1.24, 1.27, 1.31, 1.35, 1.39, 1.45, 1.51, 1.61, 1.67, 1.73, 1.83, 1.88, 1.98};

@@ -64,6 +64,9 @@ public enum TypeEffect implements Colorable, Writable {
 	
 	DegAtkD("Dégât d'Attaque Distance", "", "Dg Atq Dist", "", -1, true, Tools.EffectColor[7]),
 	RDegAtkD("Réduction de Dégât d'Attaque Distance", "", "Red Dg Dist", "", -1, true, Tools.EffectColor[7]),
+
+	ReducPtsP("Réduction Point Phyique", "", "Red Pts Phys", "", -1, true, Tools.EffectColor[10]),
+	ReducPtsM("Réduction Point Magique", "", "Red Pts Mag", "", -1, true, Tools.EffectColor[11]),
 	
 	DegSacre("Dégât Sacré", "", "Deg Sacre", "", -1, true, Tools.EffectColor[7]),
 	DegOmbre("Dégât Ombre", "", "Deg Ombre", "", -1, true, Tools.EffectColor[8]),

@@ -75,7 +75,7 @@ public class Pearl implements FullRenderer {
 	
 	@Override
 	public void setIcon(String path) {
-		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH16 + this.quality.index + ".png"));
+		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH24 + this.quality.index + ".png"));
 		ImageIcon object = null;
 		
 		try {
@@ -85,6 +85,37 @@ public class Pearl implements FullRenderer {
 		}
 		
 		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		
+		if(obj == null) {
+			return false;
+		}
+		
+		if (!(obj instanceof Pearl)) {
+			return false;
+		}
+		
+		Pearl pearl = (Pearl) obj;
+		boolean b = this.name.equals(pearl.name)
+				&& this.quality == pearl.quality;
+		
+		if(b && this.effects.size() == pearl.effects.size()) {
+			for(int i = 0; i < this.effects.size(); i++) {
+				if(!this.effects.get(i).equals(pearl.getEffects().get(i))) {
+					return false;
+				}
+			}
+		} else {
+			return false;
+		}
+		
+		return b;
 	}
 	
 	@Override

@@ -1,5 +1,5 @@
 Rien/0/false/true/0/null
-Joyau de Rayonnance Anéantisseur de Pitié/3/false/true/2/VIT,false,8,true/ESQ,false,2/black2
-Joyau de Rayonnance Anéantisseur d'Esprits Maléfiques/3/false/true/2/AGI,false,10,true/ESQ,false,2/blue2
-Joyau de Rayonnance Anéantisseur de Sagesse/3/false/true/2/VIT,false,4,true/INT,false,9,true/blue2
-Joyau de Rayonnance Anéantisseur d'Atômes/3/false/true/2/INT,false,9,true/VOL,false,6,true/green2
+Joyau de Rayonnance Anéantisseur de Pitié/3/false/true/2/VIT,false,8,true/ESQ,false,2/black4
+Joyau de Rayonnance Anéantisseur d'Esprits Maléfiques/3/false/true/2/AGI,false,10,true/ESQ,false,2/blue4
+Joyau de Rayonnance Anéantisseur de Sagesse/3/false/true/2/VIT,false,4,true/INT,false,9,true/blue4
+Joyau de Rayonnance Anéantisseur d'Atômes/3/false/true/2/INT,false,9,true/VOL,false,6,true/green4
