@@ -51,7 +51,7 @@ public class Pearl implements FullRenderer {
 		return this.quality;
 	}
 
-	public boolean isPurpulOnly() {
+	public boolean isPurpleOnly() {
 		return this.purpulOnly;
 	}
 	
@@ -190,7 +190,7 @@ public class Pearl implements FullRenderer {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
 		for(int i = 0; i < Pearl.dataWeapon.length; i++) {
-			if(Pearl.dataWeapon[i].isPurpulOnly()) {
+			if(Pearl.dataWeapon[i].isPurpleOnly()) {
 				if(quality == Quality.PURPLE) {
 					result.add(Pearl.dataWeapon[i]);
 				}
@@ -211,7 +211,7 @@ public class Pearl implements FullRenderer {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
 		for(int i = 0; i < Pearl.dataArmor.length; i++) {
-			if(Pearl.dataArmor[i].isPurpulOnly()) {
+			if(Pearl.dataArmor[i].isPurpleOnly()) {
 				if(quality == Quality.PURPLE) {
 					result.add(Pearl.dataArmor[i]);
 				}

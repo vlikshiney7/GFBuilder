@@ -563,7 +563,7 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updatePearl(int id) {
-		Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getPearl(id).getQuality());
+		Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(id).getQuality());
 		
 		if(id == 0) {
 			Pearl memory = this.getPearl(id);
