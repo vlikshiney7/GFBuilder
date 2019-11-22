@@ -1,7 +1,6 @@
 Rien/0/false/true/0/null
 Pierre runique corrompue vindicatrice/5/true/false/1/PeneM,false,10/yellow2
 Pierre runique d'Attaque supérieure/5/true/false/0/yellow2
-Pierre runique d'enchevêtrement vindicatrice/5/true/false/2/ReducPeneP,false,20/ReducPeneM,false,20/yellow2
 Pierre runique d'Enfermement/5/true/false/0/yellow2
 Pierre runique d'Éruption supérieure/5/true/false/1/DCCP,false,20/yellow2
 Pierre runique d'Estompement supérieure/5/true/false/1/MEN,false,-30/yellow2

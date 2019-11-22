@@ -16,7 +16,7 @@ import fr.vlik.uidesign.JCustomButton;
 public class SaveConfig extends JCustomButton {
 	
 	private static final long serialVersionUID = 1L;
-	private static final String SAVE_FILE_NAME = "save1.0.gfb";
+	private static final String SAVE_FILE_NAME = "save1.1.gfb";
 	private static ArrayList<SaveConfig> data;
 	static {
 		loadData();
@@ -107,7 +107,7 @@ public class SaveConfig extends JCustomButton {
 	
 	public static SaveConfig writeDefaultData() {
 		int[][] config = new int[12][];
-		int[] nbCase = new int[] { 58, 81, 18, 11, 26, 32, 20, 3, 3, 12, 2 };
+		int[] nbCase = new int[] { 58, 81, 18, 11, 26, 32, 20, 3, 3, 12, 3 };
 		
 		config[0] = new int[] { 0, 1, 0, 0, 0, 0 };
 		

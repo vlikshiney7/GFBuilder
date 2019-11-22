@@ -36,3 +36,9 @@ Armure Glacée d'Ilannia/1/Glace,false,50/10-2
 Pouvoir interdimensionnelle d'Eugénie/0/11-0
 Contre-Attaque Interdimensionnelle d'Eugénie/0/11-1
 Arrivée Interdimensionnelle d'Eugénie/0/11-2
+
+Inactif/0/32-0
+Conflit Conjugal/2/PV,false,9/PM,false,9/love0
+Feux Éteint/3/DefP,true,2/DefM,true,2/ESQ,false,2/love1
+Douce Compagnie/3/Atk,true,2/AtkM,true,2/Toucher,false,2/love2
+Étreinte sauvage/6/PV,true,9/PM,true,9/Atk,true,9/AtkM,true,9/DefP,true,9/DefM,true,9/love3

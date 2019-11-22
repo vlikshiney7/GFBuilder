@@ -151,6 +151,8 @@ public class Pearl implements FullRenderer {
 					
 					Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 					
+					System.out.println(line);
+					
 					String[] effects = new String[Integer.parseInt(lineSplit[4])];
 					for(int j = 0; j < effects.length; j++) effects[j] = lineSplit[j+5];
 					

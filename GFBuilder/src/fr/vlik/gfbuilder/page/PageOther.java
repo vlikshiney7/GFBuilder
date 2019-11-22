@@ -13,6 +13,7 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
+import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
@@ -27,6 +28,7 @@ public class PageOther extends PagePanel {
 	private static PageOther INSTANCE = new PageOther();
 	
 	private JCustomComboBox<Bague> bague = new JCustomComboBox<Bague>();
+	private JCustomComboBox<BuffIcon> loveCo = new JCustomComboBox<BuffIcon>();
 	private JCustomComboBox<Anima> anima = new JCustomComboBox<Anima>();
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
@@ -46,6 +48,12 @@ public class PageOther extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
+		this.loveCo = new JCustomComboBox<BuffIcon>(BuffIcon.getDataLove());
+		this.loveCo.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
 		
 		Anima[] tabAnima = Anima.getData(PageGeneral.getInstance().getLvl());
 		this.anima = new JCustomComboBox<Anima>(tabAnima);
@@ -61,7 +69,11 @@ public class PageOther extends PagePanel {
 	public Bague getBague() {
 		return this.bague.getSelectedItem();
 	}
-
+	
+	public BuffIcon getLoveCo() {
+		return this.loveCo.getSelectedItem();
+	}
+	
 	public Anima getAnima() {
 		return this.anima.getSelectedItem();
 	}
@@ -71,6 +83,7 @@ public class PageOther extends PagePanel {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		list.addAll(this.getBague().getEffects());
+		list.addAll(this.getLoveCo().getEffects());
 		list.addAll(this.getAnima().getEffects());
 		
 		this.effects = list;
@@ -85,6 +98,10 @@ public class PageOther extends PagePanel {
 		page12Elem1.add(this.label[0]);
 		page12Elem1.add(Box.createVerticalStrut(10));
 		page12Elem1.add(this.bague);
+		page12Elem1.add(Box.createVerticalStrut(15));
+		page12Elem1.add(this.label[1]);
+		page12Elem1.add(Box.createVerticalStrut(10));
+		page12Elem1.add(this.loveCo);
 		
 		this.showAndHide.add(page12Elem1);
 		
@@ -93,7 +110,7 @@ public class PageOther extends PagePanel {
 		page12Elem2.setLayout(new BoxLayout(page12Elem2, BoxLayout.Y_AXIS));
 		page12Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page12Elem2.setBackground(Design.UIColor[1]);
-		page12Elem2.add(this.label[1]);
+		page12Elem2.add(this.label[2]);
 		page12Elem2.add(Box.createVerticalStrut(10));
 		page12Elem2.add(this.anima);
 		
@@ -122,20 +139,26 @@ public class PageOther extends PagePanel {
 		}
 	}
 	
-	public void updateBague() {
+	public void updateMarried() {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		Bague memory = this.getBague();
+		Bague memoryBague = this.getBague();
+		BuffIcon memoryLoveCo = this.getLoveCo();
 		
 		if(reinca.getLvl() > 0 || lvl >= 20) {
 			this.showAndHide.get(0).setVisible(true);
 		} else {
 			this.showAndHide.get(0).setVisible(false);
 			this.bague.setSelectedIndex(0);
+			this.loveCo.setSelectedIndex(0);
 		}
 		
-		if(!this.getBague().equals(memory)) {
+		if(!this.getBague().equals(memoryBague)) {
+			MainFrame.getInstance().setRedPane(NUM_PAGE);
+		}
+
+		if(!this.getLoveCo().equals(memoryLoveCo)) {
 			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
@@ -164,11 +187,13 @@ public class PageOther extends PagePanel {
 
 	@Override
 	public int[] getConfig() {
-		int[] config = new int[2];
+		int[] config = new int[3];
 		
 		int index = 0;
 		
 		config[index++] = this.bague.getSelectedIndex();
+		
+		config[index++] = this.loveCo.getSelectedIndex();
 		
 		config[index++] = this.anima.getSelectedIndex();
 		
@@ -180,6 +205,8 @@ public class PageOther extends PagePanel {
 		int index = 0;
 		
 		this.bague.setSelectedIndex(config[index++]);
+		
+		this.loveCo.setSelectedIndex(config[index++]);
 		
 		this.anima.setSelectedIndex(config[index++]);
 	}

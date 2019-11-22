@@ -24,7 +24,7 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.GuildBuff;
+import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
@@ -44,7 +44,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
 	private ArrayList<JCustomLabel> guildBuffUsed = new ArrayList<JCustomLabel>(4);
-	private JCustomList<GuildBuff> listGuildBuff;
+	private JCustomList<BuffIcon> listGuildBuff;
 	private ArrayList<JCustomLabel> stoneUsed = new ArrayList<JCustomLabel>(3);
 	private JCustomList<Nucleus> listStone;
 	
@@ -105,7 +105,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			this.cross.get(i).setVisible(false);
 		}
 		
-		this.listGuildBuff = new JCustomList<GuildBuff>(GuildBuff.getData());
+		this.listGuildBuff = new JCustomList<BuffIcon>(BuffIcon.getDataGuild());
 		this.listGuildBuff.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -401,7 +401,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	private void updateGuildBuff(int idList) {
-		GuildBuff choice = (GuildBuff) this.listGuildBuff.getSelectedValue();
+		BuffIcon choice = (BuffIcon) this.listGuildBuff.getSelectedValue();
 		
 		int slot = 0;
 		while(slot < 4 && this.guildBuffUsed.get(slot).isVisible()) slot++;
@@ -441,8 +441,8 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		GuildBuff[] tabGuildBuff = GuildBuff.getListGuildBuff(guildBuffName);
-		this.listGuildBuff.setModel(new DefaultComboBoxModel<GuildBuff>(tabGuildBuff));
+		BuffIcon[] tabGuildBuff = BuffIcon.getListGuildBuff(guildBuffName);
+		this.listGuildBuff.setModel(new DefaultComboBoxModel<BuffIcon>(tabGuildBuff));
 	}
 	
 	private void updateStoneBuff() {

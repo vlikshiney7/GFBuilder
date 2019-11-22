@@ -83,7 +83,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageSpeciality.getInstance().updateSpe();
 			PageSprite.getInstance().updateBlason();
 			PageBuff.getInstance().updateEnergy();
-			PageOther.getInstance().updateBague();
+			PageOther.getInstance().updateMarried();
 			PageOther.getInstance().updateAnima();
 			
 			Overlay.getInstance().setLvl(this.getLvl());
@@ -103,7 +103,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageSpeciality.getInstance().updateSpe();
 			PageBuff.getInstance().updateNucleus();
 			PageBuff.getInstance().updateEnergy();
-			PageOther.getInstance().updateBague();
+			PageOther.getInstance().updateMarried();
 			PageOther.getInstance().updateAnima();
 			
 			Overlay.getInstance().setReinca(this.getReinca());

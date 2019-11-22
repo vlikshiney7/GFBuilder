@@ -1,4 +1,5 @@
 Rien/0/false/true/0/null
+Pierre runique d'enchevêtrement vindicatrice/5/true/false/2/ReducPeneP,false,20/ReducPeneM,false,20/yellow2
 Pierre runique d'Endurance Supérieure/5/true/false/2/PV,true,18/Sacre,false,100/purple1
 Pierre runique d'Ingénierie Supérieure/5/true/false/2/ESQ,false,18/Foudre,false,100/purple1
 Pierre runique de Défense Supérieure/5/true/false/2/RTCCP,false,15/Nature,false,100/purple1

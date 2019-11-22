@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.GuildBuff;
+import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Skill;
 
@@ -75,13 +75,13 @@ public class JCustomLabel extends JLabel {
 			this.setText(combiTalent.getName());
 			this.setToolTipText(combiTalent.getTooltip());
 			this.effects = combiTalent.getEffects();
-		} else if(object instanceof GuildBuff) {
-			GuildBuff guildBuff = (GuildBuff) object;
+		} else if(object instanceof BuffIcon) {
+			BuffIcon buffIcon = (BuffIcon) object;
 			
-			this.setText(guildBuff.getName());
-			this.setIcon(guildBuff.getIcon());
-			this.setToolTipText(guildBuff.getTooltip());
-			this.effects = guildBuff.getEffects();
+			this.setText(buffIcon.getName());
+			this.setIcon(buffIcon.getIcon());
+			this.setToolTipText(buffIcon.getTooltip());
+			this.effects = buffIcon.getEffects();
 		}
 	}
 	

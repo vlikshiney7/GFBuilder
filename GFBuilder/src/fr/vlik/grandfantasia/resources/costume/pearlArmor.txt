@@ -1,5 +1,66 @@
 Rien/0/false/true/0/null
-Joyau de Rayonnance Anéantisseur de Pitié/3/false/true/2/VIT,false,8,true/ESQ,false,2/black4
-Joyau de Rayonnance Anéantisseur d'Esprits Maléfiques/3/false/true/2/AGI,false,10,true/ESQ,false,2/blue4
-Joyau de Rayonnance Anéantisseur de Sagesse/3/false/true/2/VIT,false,4,true/INT,false,9,true/blue4
+Gemme Brillante Radieuse/3/false/true/2/VIT,false,6,true/Sacre,false,8/yellow3
+Gemme des Neiges Radieuse/3/false/true/2/VIT,false,6,true/Glace,false,8/cyan3
+Gemme du Néant Radieuse/3/false/true/2/VIT,false,6,true/Ombre,false,8/black3
+Gemme Éclair Radieuse/3/false/true/2/VIT,false,6,true/Foudre,false,8/blue3
+Gemme Féroce Radieuse/3/false/true/2/VIT,false,6,true/Feu,false,8/orange3
+Gemme Tourbillon Radieuse/3/false/true/2/VIT,false,6,true/Nature,false,8/green3
 Joyau de Rayonnance Anéantisseur d'Atômes/3/false/true/2/INT,false,9,true/VOL,false,6,true/green4
+Joyau de Rayonnance Anéantisseur d'Esprits Maléfiques/3/false/true/2/AGI,false,10,true/ESQ,false,2/cyan4
+Joyau de Rayonnance Anéantisseur de Bêtes/3/false/true/2/FCE,false,9,true/AGI,false,4,true/yellow4
+Joyau de Rayonnance Anéantisseur de Machines/3/false/true/2/VIT,false,4,true/AGI,false,9,true/yellow4
+Joyau de Rayonnance Anéantisseur de Pitié/3/false/true/2/VIT,false,8,true/ESQ,false,2/black4
+Joyau de Rayonnance Anéantisseur de Plantes/3/false/true/2/FCE,false,9,true/VIT,false,4,true/black4
+Joyau de Rayonnance Anéantisseur de Sagesse/3/false/true/2/VIT,false,4,true/INT,false,9,true/cyan4
+Joyau de Résonance Affaiblisseur d'Élémentaires/3/false/true/1/INT,false,4,true/turquoise3
+Joyau de Résonance Affaiblisseur d'Humains/3/false/true/1/VOL,false,4,true/turquoise3
+Joyau de Résonance Affaiblisseur de Bêtes/3/false/true/1/FCE,false,4,true/turquoise3
+Joyau de Résonance Affaiblisseur de Démons/3/false/true/1/VIT,false,2,true/turquoise3
+Joyau de Résonance Affaiblisseur de Métaux/3/false/true/2/FCE,false,3,true/AGI,false,1,true/turquoise3
+Joyau de Résonance Affaiblisseur de Morts/3/false/true/2/INT,false,2,true/VOL,false,2,true/turquoise3
+Joyau de Résonance Anéantisseur d'Élémentaires/3/false/true/2/INT,false,7,true/VOL,false,4,true/green4
+Joyau de Résonance Anéantisseur d'Humains/3/false/true/2/VIT,false,2,true/INT,false,7,true/cyan4
+Joyau de Résonance Anéantisseur de Bêtes/3/false/true/2/FCE,false,7,true/AGI,false,2,true/yellow4
+Joyau de Résonance Anéantisseur de Démons/3/false/true/2/AGI,false,8,true/ESQ,false,1/cyan4
+Joyau de Résonance Anéantisseur de Métaux/3/false/true/2/VIT,false,2,true/AGI,false,7,true/yellow4
+Joyau de Résonance Anéantisseur de Morts/3/false/true/2/VIT,false,6,true/ESQ,false,1/black4
+Joyau de Résonance Anéantisseur de Plantes/3/false/true/2/FCE,false,7,true/VIT,false,2,true/black4
+Joyau de Résonance Combatteur d'Élémentaires/3/false/true/1/INT,false,6,true/turquoise4
+Joyau de Résonance Combatteur d'Humains/3/false/true/1/VOL,false,6,true/turquoise4
+Joyau de Résonance Combatteur de Bêtes/3/false/true/1/FCE,false,6,true/turquoise4
+Joyau de Résonance Combatteur de Démons/3/false/true/1/VIT,false,3,true/turquoise4
+Joyau de Résonance Combatteur de Métaux/3/false/true/2/FCE,false,4,true/AGI,false,2,true/turquoise4
+Joyau de Résonance Combatteur de Morts/3/false/true/2/INT,false,4,true/VOL,false,2,true/turquoise4
+Joyau de Résonance Combatteur de Plantes/3/false/true/1/AGI,false,6,true/turquoise4
+Joyau de Résonance d'Émeraude/3/false/true/1/Nature,false,4/green4
+Joyau de Résonance d'Ewan/3/false/true/2/VIT,false,4,true/Ombre,false,6/black3
+Joyau de Résonance d'Illania/3/false/true/2/VIT,false,4,true/Glace,false,6/cyan3
+Joyau de Résonance d'Opale/3/false/true/1/Foudre,false,4/blue4
+Joyau de Résonance de Affaiblisseur de Plantes/3/false/true/1/AGI,false,4,true/turquoise3
+Joyau de Résonance de Babama/3/false/true/2/VIT,false,4,true/Sacre,false,6/yellow3
+Joyau de Résonance de Bonne Alice/3/false/true/2/VIT,false,4,true/Nature,false,6/green3
+Joyau de Résonance de Diamant/3/false/true/1/Sacre,false,4/yellow4
+Joyau de Résonance de Perle Noire/3/false/true/1/Ombre,false,4/black4
+Joyau de Résonance de Quill/3/false/true/2/VIT,false,4,true/Foudre,false,6/blue3
+Joyau de Résonance de Rubis/3/false/true/1/Feu,false,4/orange4
+Joyau de Résonance de Saphir/3/false/true/1/Glace,false,4/cyan4
+Joyau de Résonance de Siropas/3/false/true/2/VIT,false,4,true/Feu,false,6/orange3
+Joyau de Résonance des Sprites de l'Aube/3/false/true/2/VIT,false,2,true/Sacre,false,4/yellow3
+Joyau de Résonance des Sprites de l'Ombre/3/false/true/2/VIT,false,2,true/Ombre,false,4/black3
+Joyau de Résonance des Sprites de la Foudre/3/false/true/2/VIT,false,2,true/Foudre,false,4/blue3
+Joyau de Résonance des Sprites de la Nature/3/false/true/2/VIT,false,2,true/Nature,false,4/green3
+Joyau de Résonance des Sprites des Flammes/3/false/true/2/VIT,false,2,true/Feu,false,4/orange3
+Joyau de Résonance des Sprites des Glaces/3/false/true/2/VIT,false,2,true/Glace,false,4/cyan3
+Joyau de Résonance de l'Appel des Bêtes/2/false/true/1/FCE,false,2,true/turquoise4
+Joyau de Résonance de l'Appel des Démons/2/false/true/1/VIT,false,1,true/turquoise4
+Joyau de Résonance de l'Appel des Élémentaires/2/false/true/1/INT,false,2,true/turquoise4
+Joyau de Résonance de l'Appel des Humains/2/false/true/1/VOL,false,2,true/turquoise4
+Joyau de Résonance de l'Appel des Métaux/2/false/true/2/FCE,false,1,true/AGI,false,1,true/turquoise4
+Joyau de Résonance de l'Appel des Morts/2/false/true/2/INT,false,1,true/VOL,false,1,true/turquoise4
+Joyau de Résonance de l'Appel des Plantes/2/false/true/1/AGI,false,2,true/turquoise4
+Joyau de Résonance de l'Éclat de l'Aube/2/false/true/1/Sacre,false,2/yellow3
+Joyau de Résonance de l'Éther Brumeux/2/false/true/1/Ombre,false,2/black3
+Joyau de Résonance de la Douceur Estivale/2/false/true/1/Nature,false,2/green3
+Joyau de Résonance des Flammes du Brasier/2/false/true/1/Feu,false,2/orange3
+Joyau de Résonance du Givre du Matin/2/false/true/1/Glace,false,2/cyan3
+Joyau de Résonance Électrique Pur/2/false/true/1/Foudre,false,2/blue3
