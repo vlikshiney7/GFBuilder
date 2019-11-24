@@ -264,12 +264,14 @@ public class Weapon extends Equipment {
 		}
 	}
 	
-	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore) {
+	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weaponType = null;
 		switch (idList) {
 			case 0 : weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };	break;
-			case 1 : weaponType = new int[] { 0, 1, 2, 6, 15, 16 };					break;
+			case 1 : 
+				weaponType = doubleWeapon ? new int[] { 0, 1, 2, 6, 15, 16 } : new int[] { 15 };
+				break;
 			case 2 : weaponType = new int[] { 8, 9, 10, 11, 14 };					break;
 		}
 		

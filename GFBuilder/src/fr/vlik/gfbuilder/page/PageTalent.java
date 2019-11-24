@@ -127,7 +127,11 @@ public class PageTalent extends PagePanel {
 	public Talent getTalent(int id) {
 		return this.talent.get(id).getSelectedItem();
 	}
-
+	
+	public ArrayList<JCustomRadioButton> getRadioButton(int index) {
+		return this.radioTalent.get(index);
+	}
+	
 	@Override
 	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();

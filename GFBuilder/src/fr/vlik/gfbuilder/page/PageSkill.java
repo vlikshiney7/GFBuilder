@@ -260,6 +260,8 @@ public class PageSkill extends PagePanel {
 		if(!isProgressUpdate) {
 			this.skillProgress.get(0).setVisible(false);
 		}
+
+		setEffects();
 	}
 	
 	public void updateSkillReinca() {
@@ -304,7 +306,7 @@ public class PageSkill extends PagePanel {
 			this.proSkill.setSelectedIndex(0);
 		}
 	}
-
+	
 	@Override
 	public int[] getConfig() {
 		int[] config = new int[3];

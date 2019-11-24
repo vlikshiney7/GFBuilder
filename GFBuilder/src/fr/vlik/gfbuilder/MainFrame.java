@@ -370,6 +370,10 @@ public class MainFrame extends JFrame {
 		double coefReinca = PageGeneral.getInstance().getReinca().getCoef();
 		WeaponType[] weaponType = PageWeapon.getInstance().getWeaponType();
 		
+		if(PageWeapon.getInstance().isDoubleWeapon() != Util.allowedDoubleWeapon()) {
+			PageWeapon.getInstance().applyDoubleWeapon(!PageWeapon.getInstance().isDoubleWeapon());
+		}
+		
 		Build build = new Build(coefReinca, weaponType);
 		
 		for(JPanel page : this.pages) {

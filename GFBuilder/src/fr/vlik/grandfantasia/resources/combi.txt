@@ -1,4 +1,19 @@
-0
+15
+Tank Lourd/1,1,1,1/2/ReducP,false,3/DefP,true,7
+Tank de Lumière/1,2,1,1/2/ESQ,false,10/DefM,true,5
+Général/2,2,3,2/2/Toucher,false,4/Atk,true,5
+Forgeron/3,3,2,3/2/TCCP,false,3/DefP,true,7
+Samouraï du Vent/1,2,2/2/VitAtk,false,10/Toucher,false,15
+Guerrier du Vent/1,3,2/2/Depla,false,8/ESQ,false,10
+Guerriers des Massacres/2,3,1/2/DCCP,false,15/Atk,true,4
+Capitaine d'Application de la Loi/3,2,1/2/CostComp,false,-15/DefM,true,8
+Désorganisateur de Champ de Bataille/3,1,3/2/DefP,true,8/DefM,true,8
+Mercenaire de Combat/1,1/2/ESQ,false,8/VitAtk,false,10
+Guerrier à l'Epée Géante/1,3/2/Toucher,false,12/ESQ,false,5
+Guerrier à la Hache de Bataille/2,1/1/DCCP,false,30
+Guerrier à la Hache Lumineuse/2,2/2/TCCP,false,2/Toucher,false,5
+Disciple/3,2/2/AtkM,true,10/VitComp,false,15
+Guerrier au Maillet Géant/3,3/1/DefM,true,20
 0
 0
 0

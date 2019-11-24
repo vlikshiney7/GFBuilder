@@ -55,6 +55,7 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>(3);
 	
 	private WeaponType[] weaponType = new WeaponType[3];
+	private boolean doubleWeapon = false;
 	
 	private JPanel showAndHide;
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
@@ -71,7 +72,7 @@ public class PageWeapon extends PagePanel {
 		for(int i = 0; i < 3; i++) {
 			int id = i;
 			
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), null);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), null, false);
 			this.weapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.weapon.get(i).addActionListener(e -> {
 				updateXpStuff(id);
@@ -250,7 +251,16 @@ public class PageWeapon extends PagePanel {
 	public WeaponType[] getWeaponType() {
 		return this.weaponType;
 	}
-
+	
+	public boolean isDoubleWeapon() {
+		return this.doubleWeapon;
+	}
+	
+	public void applyDoubleWeapon(boolean doubleWeapon) {
+		this.doubleWeapon = doubleWeapon;
+		updateWeapon();
+	}
+	
 	@Override
 	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
@@ -451,7 +461,7 @@ public class PageWeapon extends PagePanel {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade, lvl, reinca, null);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade, lvl, reinca, null, this.doubleWeapon);
 			Weapon memory = this.getWeapon(i);
 			
 			this.weapon.get(i).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -646,7 +656,7 @@ public class PageWeapon extends PagePanel {
 			
 			if(choice.getType() == WeaponType.EPEE2M || choice.getType() == WeaponType.MARTEAU2M || choice.getType() == WeaponType.HACHE2M
 					|| choice.getType() == WeaponType.MECA2M || choice.getType() == WeaponType.BATON || choice.getType() == WeaponType.LAME) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null);
+				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null, this.doubleWeapon);
 				Weapon memory = this.getWeapon(0);
 				
 				this.weapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -662,7 +672,7 @@ public class PageWeapon extends PagePanel {
 				this.showAndHide.setVisible(false);
 			} else if(choice.getType() == WeaponType.EPEE1M || choice.getType() == WeaponType.MARTEAU1M || choice.getType() == WeaponType.HACHE1M
 					|| choice.getType() == WeaponType.MECA1M || choice.getType() == WeaponType.DEFAULT) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade, lvl, reinca, choice);
+				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade, lvl, reinca, choice, this.doubleWeapon);
 				Weapon memory = this.getWeapon(1);
 				
 				this.weapon.get(1).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));
@@ -686,7 +696,7 @@ public class PageWeapon extends PagePanel {
 		} else if(id == 1) {
 			int keepEnchant = this.enchant.get(0).getSelectedIndex();
 			
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, choice);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, choice, this.doubleWeapon);
 			Weapon memory = this.getWeapon(0);
 			
 			this.weapon.get(0).setModel(new DefaultComboBoxModel<Weapon>(tabWeapon));

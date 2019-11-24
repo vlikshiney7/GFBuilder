@@ -60,7 +60,7 @@ Star des Gladiateurs/6/21/-1/3/DefP,true,3/DefM,true,3/ESQ,false,-2
 Braconnier suprême/5/96/-1/4/Atk,true,3/AtkD,true,3/AtkM,true,3/Depla,false,15
 Consul de Mosunk/5/1/-1/2/DegStdBa,false,2/PV,true,-2
 Cupidon Amoureux/5/5/-1/0
-Défenseur des Glaces d'Ilannia/5/1/-1/4/DegStd2Ha,false,2/Toucher,false,5/DegGlace,false,50/PV,true,-5
+Défenseur des Glaces d'Ilannia/5/1/-1/4/DegStdHa2M,false,2/Toucher,false,5/DegGlace,false,50/PV,true,-5
 Délégué de Quayle/5/1/-1/4/DegStdEp,false,2/Toucher,false,5/DegFoudre,false,50/PV,true,-5
 Diplomate de Siropas/5/1/-1/4/DegStdMa,false,2/Toucher,false,5/DegFeu,false,50/PV,true,-5
 Dompteur de WorldBoss/5/170/-1/7/AtkM,true,4/AtkD,true,8/ESQ,true,5/DefP,true,4/Toucher,false,9/VitAtk,false,8/VitComp,false,8

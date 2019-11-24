@@ -147,7 +147,7 @@ public class Build {
 		/* ESQ */
 		result[12] = Math.floor((Math.floor((result[4] + 5) / 10) + combinePoint[12]) * (combinePercent[12] / 100 +1));
 		
-		/* RES + TOUCHER */
+		/* RES */
 		for(int i = 0; i < 6; i++) {
 			result[i+13] = Math.floor(combinePoint[i+13] * (combinePercent[i+13] / 100 +1));
 		}
@@ -171,7 +171,7 @@ public class Build {
 		double[] combine = new double[TypeEffect.values().length];
 		
 		for(Effect e : effects) {
-			combine[e.getType().ordinal()] += e.getWithReinca() ? Math.round((e.getValue())*coefReinca) : e.getValue();
+			combine[e.getType().ordinal()] += e.getWithReinca() ? Math.round((e.getValue())*this.coefReinca) : e.getValue();
 		}
 		
 		return combine;

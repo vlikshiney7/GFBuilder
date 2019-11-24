@@ -1,40 +1,40 @@
-/6,14,31,61,86,91/0/0-0
-/6,14,31,61,86,91/0/0-1
-/6,14,31,61,86,91/0/0-2
-/16,28,46,66,86,91/0/0-3
-/16,28,46,66,86,91/0/0-4
-/16,28,46,66,86,91/0/0-5
-/31,41,50,69,86,91/0/0-6
-/31,41,50,69,86,91/0/0-7
-/31,41,50,69,86,91/0/0-8
-/46,50,54,72,86,91/0/0-9
-/46,50,54,72,86,91/0/0-10
-/46,50,54,72,86,91/0/0-11
-/66,80,91/0/0-12
-/66,80,91/0/0-13
-/66,80,91/0/0-14
-/70,83,93/0/0-15
-/70,83,93/0/0-16
-/70,83,93/0/0-17
-/73,87,97/0/0-18
-/73,87,97/0/0-19
-/73,87,97/0/0-20
-/77,90,100/0/0-21
-/77,90,100/0/0-22
-/77,90,100/0/0-23
+Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
+Spécialité Hache/6,14,31,61,86,91/2/DegHa,false,6/TCCP,false,1/DegHa,false,8/TCCP,false,2/DegHa,false,10/TCCP,false,3/DegHa,false,11/TCCP,false,4/DegHa,false,12/TCCP,false,5/DegHa,false,13/TCCP,false,6/0-1
+Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,10/DegMa,false,10/DegMa,false,14/DegMa,false,16/0-2
+Vie Tenace/16,28,46,66,86,91/2/PV,true,5/RTCCP,false,5/PV,true,6/RTCCP,false,7/PV,true,7/RTCCP,false,9/PV,true,8/RTCCP,false,10/PV,true,9/RTCCP,false,11/PV,true,10/RTCCP,false,12/0-3
+Spécialité Armes à une Main/16,28,46,66,86,91/4/DegEp,false,4/DegHa,false,4/DegMa,false,4/VitAtk,false,15/DegEp,false,6/DegHa,false,6/DegMa,false,6/VitAtk,false,20/DegEp,false,8/DegHa,false,8/DegMa,false,8/VitAtk,false,25/DegEp,false,9/DegHa,false,9/DegMa,false,9/VitAtk,false,27/DegEp,false,10/DegHa,false,10/DegMa,false,10/VitAtk,false,29/DegEp,false,11/DegHa,false,11/DegMa,false,11/VitAtk,false,31/0-4
+Spécialité Armes à deux Mains/16,28,46,66,86,91/3/DegEp2M,false,4/DegHa2M,false,4/DegMa2M,false,4/DegEp2M,false,7/DegHa2M,false,7/DegMa2M,false,7/DegEp2M,false,10/DegHa2M,false,10/DegMa2M,false,10/DegEp2M,false,12/DegHa2M,false,12/DegMa2M,false,12/DegEp2M,false,14/DegHa2M,false,14/DegMa2M,false,14/DegEp2M,false,16/DegHa2M,false,16/DegMa2M,false,16/0-5
+Peau Rêche et Chair Dure/31,41,50,69,86,91/2/ReducP,false,8/NONE,false,0/ReducP,false,13/NONE,false,0/ReducP,false,18/NONE,false,0/ReducP,false,18/DefP,true,5/ReducP,false,18/DefP,true,8/ReducP,false,18/DefP,true,11/0-6
+Posture Délicate/31,41,50,69,86,91/2/RDCCP,false,10/ESQ,false,5/RDCCP,false,15/ESQ,false,8/RDCCP,false,20/ESQ,false,11/RDCCP,false,30/ESQ,false,12/RDCCP,false,40/ESQ,false,13/RDCCP,false,50/ESQ,false,14/0-7
+Ambidextrie/31,41,50,69,86,91/1/DegDuo,false,20/DegDuo,false,25/DegDuo,false,30/DegDuo,false,32/DegDuo,false,34/DegDuo,false,36/0-8
+Aura d'Exécration/46,50,54,72,86,91/1/MEN,false,15/MEN,false,30/MEN,false,45/MEN,false,55/MEN,false,65/MEN,false,75/0-9
+Coup Fulgurant/46,50,54,72,86,91/1/TCC1M,false,3/TCC1M,false,6/TCC1M,false,9/TCC1M,false,11/TCC1M,false,13/TCC1M,false,15/0-10
+Attaque Maniaque/46,50,54,72,86,91/2/TCC2M,false,2/DCC2M,false,15/TCC2M,false,4/DCC2M,false,20/TCC2M,false,6/DCC2M,false,25/TCC2M,false,7/DCC2M,false,30/TCC2M,false,8/DCC2M,false,35/TCC2M,false,9/DCC2M,false,40/0-11
+Posture Foudroyante/66,80,91/2/Foudre,false,10/AGI,false,20/Foudre,false,10/AGI,false,30/Foudre,false,20/AGI,false,40/0-12
+Parade Salvatrice/66,80,91/2/RTCCP,false,5/RDCCP,false,15/RTCCP,false,6/RDCCP,false,15/RTCCP,false,7/RDCCP,false,15/0-13
+Rupture Magique/66,80,91/1/RDCCM,false,12/RDCCM,false,15/RDCCM,false,18/0-14
+Règne du Feu/70,83,93/2/Feu,false,30/FCE,false,12/Feu,false,30/FCE,false,15/Feu,false,40/FCE,false,18/0-15
+Bouclier Expert/70,83,93/2/Parade,false,5/RTCCP,false,10/Parade,false,5/RTCCP,false,12/Parade,false,5/RTCCP,false,14/0-16
+Barrière Magique/70,83,93/1/ReducM,false,8/ReducM,false,10/ReducM,false,12/0-17
+Entraînement Martial/73,87,97/2/FCE,false,10/VIT,false,10/FCE,false,15/VIT,false,10/FCE,false,20/VIT,false,15/0-18
+Entraînement d'Athlète/73,87,97/2/VIT,false,5/AGI,false,30/VIT,false,10/AGI,false,30/VIT,false,15/AGI,false,35/0-19
+Combat Absolu/73,87,97/2/FCE,false,20/VOL,false,10/FCE,false,25/VOL,false,10/FCE,false,30/VOL,false,15/0-20
+Danse du Sabre/77,90,100/0/0-21
+Secousses en Chaîne/77,90,100/0/0-22
+Sublimation de la Destinée/77,90,100/1/FCE,false,10/FCE,false,10/FCE,false,15/0-23
 
-/6,14,31,61,86,91/0/0-0
-/6,14,31,61,86,91/0/0-1
-/6,14,31,61,86,91/0/0-2
-/16,28,46,66,86,91/0/0-3
-/16,28,46,66,86,91/0/0-4
-/16,28,46,66,86,91/0/0-5
+Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
+Spécialité Hache/6,14,31,61,86,91/2/DegHa,false,6/TCCP,false,1/DegHa,false,8/TCCP,false,2/DegHa,false,10/TCCP,false,3/DegHa,false,11/TCCP,false,4/DegHa,false,12/TCCP,false,5/DegHa,false,13/TCCP,false,6/0-1
+Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,10/DegMa,false,10/DegMa,false,14/DegMa,false,16/0-2
+Vie Tenace/16,28,46,66,86,91/2/PV,true,5/RTCCP,false,5/PV,true,6/RTCCP,false,7/PV,true,7/RTCCP,false,9/PV,true,8/RTCCP,false,10/PV,true,9/RTCCP,false,11/PV,true,10/RTCCP,false,12/0-3
+Spécialité Armes à une Main/16,28,46,66,86,91/4/DegEp,false,4/DegHa,false,4/DegMa,false,4/VitAtk,false,15/DegEp,false,6/DegHa,false,6/DegMa,false,6/VitAtk,false,20/DegEp,false,8/DegHa,false,8/DegMa,false,8/VitAtk,false,25/DegEp,false,9/DegHa,false,9/DegMa,false,9/VitAtk,false,27/DegEp,false,10/DegHa,false,10/DegMa,false,10/VitAtk,false,29/DegEp,false,11/DegHa,false,11/DegMa,false,11/VitAtk,false,31/0-4
+Spécialité Armes à deux Mains/16,28,46,66,86,91/3/DegEp2M,false,4/DegHa2M,false,4/DegMa2M,false,4/DegEp2M,false,7/DegHa2M,false,7/DegMa2M,false,7/DegEp2M,false,10/DegHa2M,false,10/DegMa2M,false,10/DegEp2M,false,12/DegHa2M,false,12/DegMa2M,false,12/DegEp2M,false,14/DegHa2M,false,14/DegMa2M,false,14/DegEp2M,false,16/DegHa2M,false,16/DegMa2M,false,16/0-5
 /31,41,50,69,86,91/0/1-6
-/31,41,50,69,86,91/0/0-6
-/31,41,50,69,86,91/0/0-7
+Peau Rêche et Chair Dure/31,41,50,69,86,91/2/ReducP,false,8/NONE,false,0/ReducP,false,13/NONE,false,0/ReducP,false,18/NONE,false,0/ReducP,false,18/DefP,true,5/ReducP,false,18/DefP,true,8/ReducP,false,18/DefP,true,11/0-6
+Posture Délicate/31,41,50,69,86,91/2/RDCCP,false,10/ESQ,false,5/RDCCP,false,15/ESQ,false,8/RDCCP,false,20/ESQ,false,11/RDCCP,false,30/ESQ,false,12/RDCCP,false,40/ESQ,false,13/RDCCP,false,50/ESQ,false,14/0-7
 /46,50,54,72,86,91/0/1-9
 /46,50,54,72,86,91/0/1-10
-/46,50,54,72,86,91/0/0-9
+Aura d'Exécration/46,50,54,72,86,91/1/MEN,false,15/MEN,false,30/MEN,false,45/MEN,false,55/MEN,false,65/MEN,false,75/0-9
 /66,80,91/0/1-12
 /66,80,91/0/1-13
 /66,80,91/0/1-14
@@ -48,7 +48,7 @@
 /77,90,100/0/1-22
 /77,90,100/0/1-23
 
-/6,14,31,61,86,91/0/0-0
+Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
 /6,14,31,61,86,91/0/2-1
 /6,14,31,61,86,91/0/2-2
 /16,28,46,66,86,91/0/2-3
@@ -73,7 +73,7 @@
 /77,90,100/0/0-20
 /77,90,100/0/2-23
 
-/6,14,31,61,86,91/0/0-0
+Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
 /6,14,31,61,86,91/0/2-1
 /6,14,31,61,86,91/0/2-2
 /16,28,46,66,86,91/0/2-3
@@ -98,10 +98,10 @@
 /77,90,100/0/2-12
 /77,90,100/0/2-16
 
-/6,14,31,61,86,91/0/0-2
+Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,10/DegMa,false,10/DegMa,false,14/DegMa,false,16/0-2
 /6,14,31,61,86,91/0/4-1
 /6,14,31,61,86,91/0/4-2
-/16,28,46,66,86,91/0/0-3
+Vie Tenace/16,28,46,66,86,91/2/PV,true,5/RTCCP,false,5/PV,true,6/RTCCP,false,7/PV,true,7/RTCCP,false,9/PV,true,8/RTCCP,false,10/PV,true,9/RTCCP,false,11/PV,true,10/RTCCP,false,12/0-3
 /16,28,46,66,86,91/0/4-4
 /16,28,46,66,86,91/0/4-5
 /31,41,50,69,86,91/0/1-6
@@ -123,10 +123,10 @@
 /77,90,100/0/3-21
 /77,90,100/0/1-18
 
-/6,14,31,61,86,91/0/0-2
+Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,10/DegMa,false,10/DegMa,false,14/DegMa,false,16/0-2
 /6,14,31,61,86,91/0/4-1
 /6,14,31,61,86,91/0/4-2
-/16,28,46,66,86,91/0/0-3
+Vie Tenace/16,28,46,66,86,91/2/PV,true,5/RTCCP,false,5/PV,true,6/RTCCP,false,7/PV,true,7/RTCCP,false,9/PV,true,8/RTCCP,false,10/PV,true,9/RTCCP,false,11/PV,true,10/RTCCP,false,12/0-3
 /16,28,46,66,86,91/0/4-4
 /16,28,46,66,86,91/0/4-5
 /31,41,50,69,86,91/0/5-6

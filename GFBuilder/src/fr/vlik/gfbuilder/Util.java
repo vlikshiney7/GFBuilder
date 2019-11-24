@@ -1,5 +1,11 @@
 package fr.vlik.gfbuilder;
 
+import fr.vlik.gfbuilder.page.PageGeneral;
+import fr.vlik.gfbuilder.page.PageTalent;
+import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Talent;
+import fr.vlik.grandfantasia.Grade.GradeName;
+
 public class Util {
 	
 	public static String[] setFortifFormat(int nb) {
@@ -10,5 +16,23 @@ public class Util {
 		}
 		
 		return result;
+	}
+	
+	public static boolean allowedDoubleWeapon() {
+		Grade grade = PageGeneral.getInstance().getGrade();
+		int lvl = PageGeneral.getInstance().getLvl();
+		
+		if(grade.getGrade() == GradeName.METALLEUX || grade.getGrade() == GradeName.DEMOLISSEUR) {
+			return lvl >= 31;
+		} else if(grade.getGrade() == GradeName.RANGER || grade.getGrade() == GradeName.ASSASSIN) {
+			return lvl >= 16;
+		} else if(grade.getGrade() == GradeName.BERSERKER && lvl > 31) {
+			if(PageTalent.getInstance().getRadioButton(2).get(3).isSelected()) {
+				Talent talent = PageTalent.getInstance().getTalent(8);
+				return talent.getLvl()[0] > 0;
+			}
+		}
+		
+		return false;
 	}
 }
