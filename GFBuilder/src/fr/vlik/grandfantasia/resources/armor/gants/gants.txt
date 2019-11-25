@@ -17,6 +17,7 @@ Gantelets évolutifs du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,
 Gantelets évolutifs du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-3/65pvp0
 Gants Pourpres de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,396,true/DefM,false,282,true/FCE,false,13,true/60evo0
 Gants de la Sentinelle des Enfers/0/89/-1/1/false/false/2,0,0/DefP,false,354,true/DefM,false,261,true/80pve0
+Poings du Tremblement de terre/0/88/90red0/7/false/false/5,0,0/DefP,false,498,true/DefM,false,369,true/FCE,false,39,true/VIT,false,31,true/VOL,false,26,true/1,2,2,4,0/0,0,0,0,0/FCE,false,6/PV,false,400/PM,false,400/PV,true,2/TCCP,false,1/FCE,false,10/VIT,false,10/AGI,false,10/DCCP,false,2/90red0
 Poings du Seigneur Arlong/0/88/90vio0/6/true/false/5,0,0/DefP,false,476,true/DefM,false,353,true/FCE,false,32,true/VIT,false,26,true/VOL,false,22,true/90vio0
 Brassards du Sanguinaire Kenpachi/0/88/90gold0/5/true/false/5,0,0/DefP,false,450,true/DefM,false,320,true/FCE,false,27,true/VIT,false,21,true/VOL,false,16,true/90gold0
 Choix de l'Amant Tarot/0,1,2,3,4,5,6,7,8,9,10,11/88/90tarot0/5/true/false/5,0,0/DefP,false,450,true/DefM,false,320,true/FCE,false,23,true/VIT,false,20,true/VOL,false,21,true/90tarot0

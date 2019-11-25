@@ -1,4 +1,5 @@
 Rien/-1/0,0,0
+Tremblement de terre du roi de la bataille/90red0/0,0,0
 Fierté pétrifiante/100vio0/0,0,0
 Seigneur Arlong/90vio0/0,0,0
 Belliqueux d'Aiolia/80vio0/0,0,0

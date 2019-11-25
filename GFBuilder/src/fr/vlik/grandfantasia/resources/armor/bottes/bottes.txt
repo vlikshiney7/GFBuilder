@@ -16,6 +16,7 @@ Bottes d'Explorateur Fondues/0/93/95pve0/4/true/false/5,0,0/DefP,false,494,true/
 Bottes Pourpres de Sprite/0,1/92/-1/2/false/false/3,0,0/DefP,false,465,true/DefM,false,331,true/AGI,false,13,true/60pve0
 Bottes évolutives du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-4/65pvp0
 Bottes évolutives du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-4/65pvp0
+Bottes du Tremblement de terre/0/88/90red0/7/false/false/5,0,0/DefP,false,581,true/DefM,false,431,true/FCE,false,31,true/VIT,false,40,true/AGI,false,25,true/1,2,2,1,1/0,0,0,0,0/FCE,false,6/PV,false,400/PM,false,400/PV,true,2/TCCP,false,1/Depla,false,7/PV,true,20/90red0
 Bottes du Seigneur Arlong/0/88/90vio0/6/true/false/5,0,0/DefP,false,556,true/DefM,false,413,true/FCE,false,26,true/VIT,false,33,true/AGI,false,21,true/90vio0
 Bottes du sanguinaire Kenpachi/0/88/90gold0/5/true/false/5,0,0/DefP,false,525,true/DefM,false,374,true/FCE,false,23,true/VIT,false,25,true/AGI,false,16,true/90gold0
 Adieux de l'Amant Tarot/0,1,2,3,4,5,6,7,8,9,10,11/88/90tarot0/5/true/false/5,0,0/DefP,false,525,true/DefM,false,374,true/FCE,false,22,true/VIT,false,20,true/AGI,false,22,true/90tarot0

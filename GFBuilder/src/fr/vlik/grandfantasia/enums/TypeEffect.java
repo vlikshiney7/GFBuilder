@@ -79,6 +79,7 @@ public enum TypeEffect implements Colorable, Writable {
 	Loot("Bonus de Butin", "", "Butin", "", 300, true, Tools.EffectColor[0]),
 	
 	DegDuo("Dégât Deux Armes", "", "Deg 2 Armes", "", -1, true, Tools.EffectColor[0]),
+	VitAtkDuo("Vitesse d'Attaque à Deux Armes", "", "Vit Atk 2 Ar", "", -1, true, Tools.EffectColor[0]),
 	TCC1M("Taux Critique Arme 1 Main", "", "Taux Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	TCC2M("Taux Critique Arme 2 Main", "", "Taux Crit 2M", "", -1, true, Tools.EffectColor[0]),
 	DCC1M("Dégât Critique Arme 1 Main", "", "Deg Crit 1M", "", -1, true, Tools.EffectColor[0]),
@@ -127,8 +128,8 @@ public enum TypeEffect implements Colorable, Writable {
 	ReloadComp("Rechargement de Compétence", "", "Recharge Comp", "", -1, false, Tools.EffectColor[0]),
 	Parade("Parade", "", "Parade", "", -1, true, Tools.EffectColor[0]),
 	
-	RegenPV("Régénération de Point de Vie", "", "Regen PV", "", -1, true, Tools.EffectColor[0]),
-	RegenPM("Régénération de Point de Mana", "", "Regen PM", "", -1, true, Tools.EffectColor[0]),
+	RegenPV("Régénération de Point de Vie Assis", "", "Regen PV", "", -1, true, Tools.EffectColor[0]),
+	RegenPM("Régénération de Point de Mana Assis", "", "Regen PM", "", -1, true, Tools.EffectColor[0]),
 	MEN("Menace", "", "Menace", "", -1, true, Tools.EffectColor[0]),
 	BoostCraft("Taux de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Tools.EffectColor[0]),
 	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Tools.EffectColor[0]),

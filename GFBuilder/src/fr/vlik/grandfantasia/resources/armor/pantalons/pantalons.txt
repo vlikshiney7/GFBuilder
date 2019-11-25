@@ -17,6 +17,7 @@ Jambières évolutives du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-
 Jambières évolutives du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-2/65pvp0
 Pantalon Pourpre de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,791,true/DefM,false,564,true/VIT,false,26,true/60pve0
 Jambières de la Sentinelle des Enfers/0/88/-1/1/false/false/2,0,0/DefP,false,704,true/DefM,false,519,true/80pve0
+Armure du Tremblement de terre/0/87/90red0/7/false/false/5,0,0/DefP,false,996,true/DefM,false,739,true/FCE,false,63,true/VIT,false,69,true/AGI,false,60,true/1,2,2,4,2/0,0,0,0,0/FCE,false,6/PV,false,400/PM,false,400/PV,true,2/TCCP,false,1/FCE,false,10/VIT,false,10/AGI,false,10/DCCP,false,2/RDCCP,false,5/RDCCM,false,5/90red0
 Jambières du Seigneur Arlong/0/87/90vio0/6/true/false/5,0,0/DefP,false,953,true/DefM,false,708,true/FCE,false,53,true/VIT,false,57,true/AGI,false,50,true/90vio0
 Jambières du Sanguinaire Kenpachi/0/87/90gold0/5/true/false/5,0,0/DefP,false,893,true/DefM,false,636,true/FCE,false,42,true/VIT,false,46,true/AGI,false,40,true/90gold0
 Romance de l'Amant Tarot/0,1,2,3,4,5,6,7,8,9,10,11/87/90tarot0/5/true/false/5,0,0/DefP,false,893,true/DefM,false,636,true/FCE,false,50,true/VIT,false,40,true/AGI,false,38,true/90tarot0
