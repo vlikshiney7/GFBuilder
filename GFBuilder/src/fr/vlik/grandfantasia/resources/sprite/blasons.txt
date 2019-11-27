@@ -13,7 +13,7 @@ Gardien de la Glace 4/100/1/3/Glace,false,23/INT,false,35/PM,true,6
 Gardien de la Nature 4/100/1/3/Nature,false,23/AGI,false,40/PM,true,6
 Gardien de la Nuit 4/100/1/3/Ombre,false,23/FCE,false,40/PM,true,6
 Gardien du Feu 4/100/1/3/Feu,false,23/Depla,false,6/PM,true,6
-Hymne du Dieu de la Guerre 6/100/0/2/Atk,true,16/Toucher,false,10
+Hymne du Dieu de la Guerre 6/100/0/3/Atk,true,16/AtkD,true,16/Toucher,false,10
 Maître des Doubles Lames 4/100/0/2/VitAtkDuo,false,3/DegDuo,false,3
 Morceau du Promeneur du Vent 2/100/1/2/ESQ,false,16/Depla,false,4
 Rugissement Furieux 6/100/0/2/DCCP,false,22/TCCP,false,8
@@ -37,7 +37,7 @@ Gardien de la Glace 3/95/1/3/Glace,false,23/INT,false,35/PM,true,6
 Gardien de la Nature 3/95/1/3/Nature,false,23/AGI,false,40/PM,true,6
 Gardien de la Nuit 3/95/1/3/Ombre,false,23/FCE,false,40/PM,true,6
 Gardien du Feu 3/95/1/3/Feu,false,23/Depla,false,6/PM,true,6
-Hymne du Dieu de la Guerre 5/95/0/2/Atk,true,14/Toucher,false,8
+Hymne du Dieu de la Guerre 5/95/0/3/Atk,true,14/AtkD,true,14/Toucher,false,8
 Maître des Doubles Lames 3/95/0/2/VitAtkDuo,false,3/DegDuo,false,3
 Morceau du Promeneur du Vent/95/1/2/ESQ,false,13/Depla,false,2
 Rugissement Furieux 5/95/0/2/DCCP,false,20/TCCP,false,6
@@ -86,7 +86,7 @@ Chant de la Déesse de la Lune 4/80/0/0
 Charme Printanier 4/80/1/2/Nature,false,21/AGI,false,40
 Concerto du Mur de Lumière 4/80/1/2/DefM,true,12/VitComp,false,6
 Fanfare du Dieu du Feu 4/80/1/2/Feu,false,21/Depla,false,6
-Hymne du Dieu de la Guerre 4/80/0/2/Atk,true,12/Toucher,false,6
+Hymne du Dieu de la Guerre 4/80/0/3/Atk,true,12/AtkD,true,12/Toucher,false,6
 Mélodie de la Marche du Vent 4/80/1/2/ESQ,false,11/VitAtk,false,6
 Murmure de Méditation 4/80/0/1/RegenPM,false,120
 Rhapsodie de Titan 4/80/1/2/DefP,true,12/Parade,false,4
@@ -103,7 +103,7 @@ Chant de la Déesse de la Lune 3/75/0/0
 Charme Printanier 3/75/1/2/Nature,false,21/AGI,false,30
 Concerto du Mur de Lumière 3/75/1/2/DefM,true,12/VitComp,false,5
 Fanfare du Dieu du Feu 3/75/1/2/Feu,false,21/Depla,false,5
-Hymne du Dieu de la Guerre 3/75/0/2/Atk,true,12/Toucher,false,5
+Hymne du Dieu de la Guerre 3/75/0/3/Atk,true,12/AtkD,true,12/Toucher,false,5
 Mélodie de la Marche du Vent 3/75/1/2/ESQ,false,10/VitAtk,false,5
 Murmure de Méditation 3/75/0/1/RegenPM,false,110
 Rhapsodie de Titan 3/75/1/2/DefP,true,12/Parade,false,3
@@ -120,7 +120,7 @@ Chant de la Déesse de la Lune 2/68/0/0
 Charme Printanier 2/68/1/2/Nature,false,21/AGI,false,20
 Concerto du Mur de Lumière 2/68/1/2/DefM,true,12/VitComp,false,4
 Fanfare du Dieu du Feu 2/68/1/2/Feu,false,21/Depla,false,4
-Hymne du Dieu de la Guerre 2/68/0/2/Atk,true,12/Toucher,false,4
+Hymne du Dieu de la Guerre 2/68/0/3/Atk,true,12/AtkD,true,12/Toucher,false,4
 Mélodie de la Marche du Vent 2/68/1/2/ESQ,false,10/VitAtk,false,4
 Murmure de Méditation 2/68/0/1/RegenPM,false,100
 Rhapsodie de Titan 2/68/1/2/DefP,true,12/Parade,false,2
@@ -137,7 +137,7 @@ Chant de la Déesse de la Lune 1/61/0/0
 Charme Printanier 1/61/1/2/Nature,false,21/AGI,false,10
 Concerto du Mur de Lumière 1/61/1/2/DefM,true,12/VitComp,false,3
 Fanfare du Dieu du Feu 1/61/1/2/Feu,false,21/Depla,false,3
-Hymne du Dieu de la Guerre 1/61/0/2/Atk,true,12/Toucher,false,3
+Hymne du Dieu de la Guerre 1/61/0/3/Atk,true,12/AtkD,true,12/Toucher,false,3
 Mélodie de la Marche du Vent 1/61/1/2/ESQ,false,10/VitAtk,false,3
 Murmure de Méditation 1/61/0/1/RegenPM,false,90
 Rhapsodie de Titan 1/61/1/2/DefP,true,12/Parade,false,1
@@ -156,7 +156,7 @@ Bénédiction de Méditation renforcée 3/55/0/1/RegenPM,false,80
 Bénédiction de Repos renforcée 3/55/0/1/RegenPV,false,80
 Bénédiction magique renforcée 3/55/0/1/AtkM,true,12
 Chant d'Acier renforcé 3/55/1/1/DefP,true,12
-Chant de l'Esprit Guerrier renforcé 3/55/0/1/Atk,true,12
+Chant de l'Esprit Guerrier renforcé 3/55/0/2/Atk,true,12/AtkD,true,12
 Chant de Vie renforcé 3/55/0/0
 Chant du Miracle renforcées 3/55/0/0
 Protection à l'Eclair renforcée 3/55/1/1/Foudre,false,21
@@ -173,7 +173,7 @@ Bénédiction de Méditation renforcée 2/53/0/1/RegenPM,false,70
 Bénédiction de Repos renforcée 2/53/0/1/RegenPV,false,70
 Bénédiction magique renforcée 2/53/0/1/AtkM,true,11
 Chant d'Acier renforcé 2/53/1/1/DefP,true,11
-Chant de l'Esprit Guerrier renforcé 2/53/0/1/Atk,true,11
+Chant de l'Esprit Guerrier renforcé 2/53/0/2/Atk,true,11/AtkD,true,11
 Chant de Vie renforcé 2/53/0/0
 Chant du Miracle renforcées 2/53/0/0
 Protection à l'Eclair renforcée 2/53/1/1/Foudre,false,18
@@ -190,7 +190,7 @@ Bénédiction de Méditation renforcée 1/51/0/1/RegenPM,false,60
 Bénédiction de Repos renforcée 1/51/0/1/RegenPV,false,60
 Bénédiction magique renforcée 1/51/0/1/AtkM,true,10
 Chant d'Acier renforcé 1/51/1/1/DefP,true,10
-Chant de l'Esprit Guerrier renforcé 1/51/0/1/Atk,true,10
+Chant de l'Esprit Guerrier renforcé 1/51/0/2/Atk,true,10/AtkD,true,10
 Chant de Vie renforcé 1/51/0/0
 Chant du Miracle renforcées 1/51/0/0
 Protection à l'Eclair renforcée 1/51/1/1/Foudre,false,15
@@ -207,7 +207,7 @@ Bénédiction de Méditation 3/41/0/1/RegenPM,false,50
 Bénédiction de Repos 3/41/0/1/RegenPV,false,50
 Bénédiction magique 3/41/0/1/AtkM,true,9
 Chant d'Acier 3/41/1/1/DefP,true,9
-Chant de l'Esprit Guerrier 3/41/0/1/Atk,true,9
+Chant de l'Esprit Guerrier 3/41/0/2/Atk,true,9/AtkD,true,9
 Chant de Vie 3/41/0/0
 Chant du Miracle 3/41/0/0
 Protection à l'Eclair 3/41/1/1/Foudre,false,12
@@ -224,7 +224,7 @@ Bénédiction de Méditation 2/31/0/1/RegenPM,false,40
 Bénédiction de Repos 2/31/0/1/RegenPV,false,40
 Bénédiction magique 2/31/0/1/AtkM,true,8
 Chant d'Acier 2/31/1/1/DefP,true,8
-Chant de l'Esprit Guerrier 2/31/0/1/Atk,true,8
+Chant de l'Esprit Guerrier 2/31/0/2/Atk,true,8/AtkD,true,8
 Chant de Vie 2/31/0/0
 Chant du Miracle 2/31/0/0
 Protection à l'Eclair 2/31/1/1/Foudre,false,9
@@ -241,7 +241,7 @@ Bénédiction de Méditation 1/21/0/1/RegenPM,false,30
 Bénédiction de Repos 1/21/0/1/RegenPV,false,30
 Bénédiction magique 1/21/0/1/AtkM,true,7
 Chant d'Acier 1/21/1/1/DefP,true,7
-Chant de l'Esprit Guerrier 1/21/0/1/Atk,true,7
+Chant de l'Esprit Guerrier 1/21/0/2/Atk,true,7/AtkD,true,7
 Chant de Vie 1/21/0/0
 Chant du Miracle 1/21/0/0
 Protection à l'Eclair 1/21/1/1/Foudre,false,6
@@ -250,19 +250,19 @@ Protection aux Flammes 1/21/1/1/Feu,false,6
 Protection Divine 1/21/1/1/Sacre,false,6
 Protection naturelle 1/21/1/1/Nature,false,6
 Protection Ténèbres 1/21/1/1/Ombre,false,6
-Art de l'encouragement 3/15/0/1/Atk,true,6
+Art de l'encouragement 3/15/0/2/Atk,true,6/AtkD,true,6
 Art de l'Esquive 3/15/1/1/ESQ,false,4
 Art de l'inspiration 3/15/0/1/AtkM,true,6
 Art de la guérison 3/15/0/0
 Art de la Protection 3/15/1/1/DefP,true,6
 Art des Boucliers Magiques 3/15/1/1/DefM,true,6
-Art de l'encouragement 2/8/0/1/Atk,true,4
+Art de l'encouragement 2/8/0/2/Atk,true,4/AtkD,true,4
 Art de l'Esquive 2/8/1/1/ESQ,false,3
 Art de l'inspiration 2/8/0/1/AtkM,true,4
 Art de la guérison 2/8/0/0
 Art de la Protection 2/8/1/1/DefP,true,4
 Art des Boucliers Magiques 2/8/1/1/DefM,true,4
-Art de l'encouragement 1/0/0/1/Atk,true,2
+Art de l'encouragement 1/0/0/2/Atk,true,2/AtkD,true,2
 Art de l'Esquive 1/0/1/1/ESQ,false,2
 Art de l'inspiration 1/0/0/1/AtkM,true,2
 Art de la guérison 1/0/0/0

@@ -1,1 +1,82 @@
-Flamberge fascinante draconienne/0,1,2/100/5/true/false/false/6,0,0/Atk,false,6725,true/FCE,false,134,true/VIT,false,114,true/AGI,false,227,true/FCE,false,120/Toucher,false,15/100gold
+Griffe double du Tigre Enragé sans âme/0,1,2/100/6/true/false/false/5,0,0/Atk,false,7507,true/FCE,false,140,true/VIT,false,121,true/AGI,false,239,true/Toucher,false,20/100vio
+Flamberge fascinante draconienne/0,1,2/100/5/true/false/false/5,0,0/Atk,false,6725,true/FCE,false,134,true/VIT,false,114,true/AGI,false,227,true/FCE,false,120/100gold
+Rapière majestueuse de Siropas/0,1,2/100/4/false/false/false/8,0,0/Atk,false,5978,true/FCE,false,57,true/VIT,false,57,true/AGI,false,81,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Feu,false,40/100pvp
+Épée Géante Griffe de Griffon/0,1,2/100/4/true/false/false/6,0,0/Atk,false,5230,true/FCE,false,60,true/VIT,false,32,true/AGI,false,136,true/FCE,false,100/Toucher,false,10/100pre
+Claymore Crochue de Sprite/0,1,2/97/2/false/false/false/2,0,0/Atk,false,4306,true/FCE,false,57,true/50pre
+Épée du Dragon Tectonique/0,1,2/95/6/true/false/false/5,0,0/Atk,false,7016,true/FCE,false,109,true/VIT,false,115,true/AGI,false,186,true/Toucher,false,20/95vio
+Épée amazone d'Edolas/0,1,2/95/5/true/false/false/5,0,0/Atk,false,6284,true/FCE,false,112,true/VIT,false,100,true/AGI,false,198,true/DegP,false,15/95gold
+Lame de Puissance de Siropas/0,1,2/95/4/false/false/false/8,0,0/Atk,false,4887,true/FCE,false,45,true/VIT,false,45,true/AGI,false,69,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Feu,false,40/95pvp
+Épée à 2 mains Dragonicide/0,1,2/95/4/true/false/false/5,0,0/Atk,false,4887,true/FCE,false,52,true/VIT,false,28,true/AGI,false,80,true/DegP,false,10/95pre
+Lame du Sommet/0,1,2/95/1/false/false/false/1,0,0/Atk,false,3491,true/20ora
+Claymore Barbare de Sprite/0,1,2/92/2/false/false/false/2,0,0/Atk,false,4015,true/FCE,false,53,true/92sprite
+Saber Doré d'Arthur/0,1,2/90/6/true/false/false/5,0,0/Atk,false,6533,true/FCE,false,104,true/VIT,false,110,true/AGI,false,176,true/Toucher,false,20/90vio
+Zangetsu des Flammes de l'Enfer/0,1,2/90/5/true/false/false/7,0,0/Atk,false,5852,true/FCE,false,85,true/VIT,false,95,true/AGI,false,132,true/Toucher,false,18/AtkD,true,10/Depla,false,10/90gold
+Seigneur Mech - Balayage d'Acier/0,1,2/90/4/true/false/false/6,0,0/Atk,false,4551,true/FCE,false,40,true/VIT,false,45,true/AGI,false,62,true/Toucher,false,12/VitAtkD,false,10/90pre
+Épée Géante Exotique/0,1,2/89/1/false/false/false/1,0,0/Atk,false,3204,true/80pre
+Dague du Vent Sauvage/0,1,2/87/3/false/false/false/4,0,0/Atk,false,4974,true/FCE,false,74,true/AGI,false,74,true/Toucher,false,15/87bleu
+Épée Hérétique des Sprites/0,1,2,3/87/2/false/false/false/3,0,0/Atk,false,3674,true/AGI,false,49,true/Toucher,false,10/85pre
+Calibur Noire/0,1,2/85/6/true/false/false/5,0,0/Atk,false,6060,true/FCE,false,98,true/VIT,false,105,true/AGI,false,167,true/Toucher,false,18/85vio
+Claymore de la Rancoeur de Zabuza/0,1,2/85/5/true/false/false/7,0,0/Atk,false,5429,true/FCE,false,61,true/VIT,false,87,true/AGI,false,148,true/Toucher,false,18/AtkD,true,10/Depla,false,10/85gold
+Lame d'Omnislash/0,1,2/85/4/false/false/false/8,0,0/Atk,false,4222,true/FCE,false,37,true/VIT,false,37,true/AGI,false,61,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Feu,false,40/85pvp
+Esprit du Tueur de Rois/0,1,2/85/4/true/false/false/7,0,0/Atk,false,4222,true/FCE,false,35,true/VIT,false,42,true/AGI,false,58,true/Toucher,false,12/AtkD,true,10/Depla,false,10/85pre
+Grand Sabre en Saphir/0,1,2/84/1/false/false/false/1,0,0/Atk,false,2969,true/87bleu
+Épée des Ténèbres de Sprite/0,1,2/82/2/false/false/false/3,0,0/Atk,false,3452,true/AGI,false,45,true/Toucher,false,10/80pre
+Lame Assoiffée de Sang/0,1,2/81/3/false/false/false/3,0,0/Atk,false,4530,true/FCE,false,70,true/AGI,false,70,true/81bleu
+Epée Fatale de Siegfried/0,1,2/80/6/true/false/false/5,0,0/Atk,false,5598,true/FCE,false,91,true/VIT,false,99,true/AGI,false,160,true/Toucher,false,18/80vio
+Anduril/0,1,2/80/5/true/false/false/7,0,0/Atk,false,5013,true/FCE,false,122,true/VIT,false,85,true/AGI,false,73,true/Toucher,false,18/AtkD,true,10/Depla,false,10/80gold
+Dévoreuse de l'Ombre/0,1,2/80/4/true/false/false/7,0,0/Atk,false,3899,true/FCE,false,39,true/VIT,false,39,true/AGI,false,45,true/Toucher,false,14/Depla,false,10/AtkD,true,10/80pre
+Lame Céleste Imprégnée/0,1,2/80/3/false/false/false/5,0,0/Atk,false,4456,true/FCE,false,88,true/VIT,false,44,true/Toucher,false,10/Toucher,false,10/69ora
+Épée Géante du Démon/0,1,2/77/3/false/false/false/4,0,0/Atk,false,4240,true/FCE,false,66,true/AGI,false,66,true/Toucher,false,14/81bleu
+Prophétie de l'Empereur/0,1,2/77/2/false/false/false/3,0,0/Atk,false,3180,true/AGI,false,41,true/Toucher,false,12/67pre
+Bénédiction Divine/0,1,2/75/6/true/false/false/5,0,0/Atk,false,5144,true/FCE,false,145,true/VIT,false,100,true/AGI,false,85,true/Toucher,false,18/75vio
+Épée Sacrée de l'Espoir/0,1,2/75/5/true/false/false/5,0,0/Atk,false,4608,true/FCE,false,116,true/VIT,false,80,true/AGI,false,68,true/Toucher,false,18/75gold
+Triomphe du Conquérant/0,1,2/75/4/true/false/false/5,0,0/Atk,false,3584,true/FCE,false,30,true/VIT,false,37,true/AGI,false,44,true/Toucher,false,12/75pre
+Épée du Dragon des Sprites à deux mains/0,1,2/72/2/false/false/false/3,0,0/Atk,false,2914,true/AGI,false,37,true/Toucher,false,10/60ora
+Saigneur d'Ébène/0,1,2/70/6/true/false/false/5,0,0/Atk,false,4703,true/FCE,false,135,true/VIT,false,94,true/AGI,false,81,true/Toucher,false,18/70vio
+Nuit Éternelle/0,1,2/70/5/true/false/false/6,0,0/Atk,false,4212,true/FCE,false,108,true/VIT,false,75,true/AGI,false,65,true/Toucher,false,18/MEN,false,-30/70gold
+Claymore des Abysses/0,1,2/70/3/false/false/false/4,0,0/Atk,false,3744,true/FCE,false,80,true/VIT,false,36,true/Toucher,false,10/70gvg
+Flamberge Resplendissante/0,1,2/69/4/true/false/false/6,0,0/Atk,false,3216,true/FCE,false,25,true/VIT,false,25,true/AGI,false,49,true/Toucher,false,15/TCCP,false,8/69ora
+Grande Claymore/0,1,2/69/1/false/false/false/1,0,0/Atk,false,2297,true/69blanc
+Grande Épée de Justice/0,1,2/67/4/true/false/false/6,0,0/Atk,false,3095,true/FCE,false,23,true/VIT,false,33,true/AGI,false,43,true/Toucher,false,12/MEN,false,-30/67pre
+Lame des Cadavres Ensanglantés/0,1,2/65/5/true/false/false/7,0,0/Atk,false,3827,true/FCE,false,40,true/VIT,false,76,true/AGI,false,116,true/Toucher,false,18/ESQ,false,12/AtkD,true,10/65gold
+Lame Rouge Géante/0,1,2/64/4/true/false/false/7,0,0/Atk,false,2918,true/FCE,false,17,true/VIT,false,30,true/AGI,false,40,true/Toucher,false,10/ESQ,false,12/AtkD,true,10/64pre
+Lame d'Ambre et de Jade/0,1,2/62/2/false/false/false/2,0,0/Atk,false,2400,true/VIT,false,29,true/50pre
+Lame Destructrice Géante de Siropas/0,1,2/60/5/true/false/false/5,0,0/Atk,false,3451,true/FCE,false,40,true/VIT,false,60,true/AGI,false,100,true/Toucher,false,15/95gold
+Lame de l'Expédition de Siropas (Reforgée)/0,1,2/60/4/false/false/true/6,0,0/Atk,false,2970,true/FCE,false,11,true/VIT,false,45,true/AGI,false,23,true/Toucher,false,9/TCCP,false,5/60pvp
+Lame de l'Expédition de Siropas/0,1,2/60/4/false/false/false/6,0,0/Atk,false,2700,true/FCE,false,9,true/VIT,false,40,true/AGI,false,20,true/Toucher,false,8/TCCP,false,5/60pvp
+Lame des Ténèbres Infinies/0,1,2/60/4/true/false/false/5,0,0/Atk,false,2684,true/FCE,false,20,true/AGI,false,38,true/Toucher,false,8/Depla,false,10/60ora
+Lame Géante Infinie de Siropas/0,1,2/60/4/true/false/false/5,0,0/Atk,false,2700,true/FCE,false,40,true/AGI,false,18,true/Toucher,false,8/Feu,false,15/95pre
+Épée Froide de Pluto/0,1,2/60/3/false/false/false/4,0,0/Atk,false,3067,true/FCE,false,51,true/INT,false,41,true/Toucher,false,10/60bleu
+Épée des Sprites de Combat Forgée/0,1,2/56/2/false/false/false/3,0,0/Atk,false,2106,true/FCE,false,25,true/Toucher,false,6/92sprite
+Griffe du Dragon Enragé/0,1,2/55/3/false/false/false/4,0,0/Atk,false,2744,true/INT,false,32,true/AGI,false,44,true/Toucher,false,8/95pre
+Épée de Combat Forgée/0,1,2/52/1/false/false/false/1,0,0/Atk,false,1597,true/32vert
+Armageddon des Dieux/0,1,2/50/5/true/false/false/8,0,0/Atk,false,2734,true/FCE,false,38,true/VIT,false,38,true/AGI,false,76,true/Toucher,false,8/Sacre,false,10/ESQ,false,5/AtkD,true,10/50gold
+Totem de l'épée Destructrice d'Ares/0,1,2/50/4/true/false/false/4,0,0/Atk,false,2127,true/FCE,false,19,true/AGI,false,29,true/Toucher,false,6/50ora
+Crépuscule Divin/0,1,2/50/4/true/false/false/8,0,0/Atk,false,2166,true/FCE,false,21,true/VIT,false,15,true/AGI,false,21,true/Toucher,false,6/Sacre,false,10/ESQ,false,5/AtkD,true,10/50pre
+Épée Mortelle, emblème du Roi des Enfers/0,1,2/50/3/false/false/false/4,0,0/Atk,false,2430,true/FCE,false,41,true/VIT,false,35,true/Toucher,false,8/30ora
+Couteau Bestial de Cristal Bleu/0,1,2/48/2/false/false/false/3,0,0/Atk,false,1732,true/AGI,false,21,true/Toucher,false,4/36sprite
+Scie en Os de Dragon/0,1,2/47/3/false/false/false/3,0,0/Atk,false,2248,true/FCE,false,57,true/Toucher,false,8/47bleu
+Épée Géante des Sprites du Désert/0,1,2/46/2/false/false/false/3,0,0/Atk,false,1642,true/FCE,false,21,true/Toucher,false,4/46sprite
+Lame des Gardes de Fer de Siropas (Reforgé)/0,1,2/45/4/true/false/true/6,0,0/Atk,false,2068,true/FCE,false,6,true/VIT,false,28,true/AGI,false,17,true/Toucher,false,7/TCCP,false,3/45pvp
+Lame des Gardes de Fer de Siropas/0,1,2/45/4/true/false/false/6,0,0/Atk,false,1880,true/FCE,false,5,true/VIT,false,25,true/AGI,false,15,true/Toucher,false,6/TCCP,false,3/45pvp
+Épée Géante du Désert/0,1,2/42/1/false/false/false/1,0,0/Atk,false,1221,true/47bleu
+Lame d'Argent Ancestrale/0,1,2/40/4/true/false/false/11,0,0/Atk,false,1609,true/FCE,false,14,true/AGI,false,24,true/Toucher,false,4/Sacre,false,10/Ombre,false,10/Foudre,false,10/Feu,false,10/Glace,false,10/Nature,false,10/Depla,false,15/40ora1
+Enchevêtrement de la Flamme/0,1,2/40/4/true/false/false/5,0,0/Atk,false,1647,true/FCE,false,12,true/VIT,false,15,true/AGI,false,18,true/Toucher,false,4/40ora0
+Lame d'Argent Magique Renforcée/0,1,2/40/3/false/false/false/4,0,0/Atk,false,1838,true/FCE,false,31,true/VIT,false,27,true/Toucher,false,6/50pre
+Épée Brise-Coeur/0,1,2/39/3/false/false/false/4,0,0/Atk,false,1782,true/FCE,false,24,true/AGI,false,34,true/Toucher,false,6/39bleu
+Épée des Sprites du Sceau/0,1,2/36/2/false/false/false/3,0,0/Atk,false,1212,true/FCE,false,17,true/Toucher,false,2/36sprite
+Épée Géante de la Flamme Bleue/0,1,2/32/2/false/false/false/2,0,0/Atk,false,1051,true/FCE,false,13,true/32sprite
+Épée Estampée/0,1,2/32/1/false/false/false/1,0,0/Atk,false,876,true/32blanc
+Épée géante du Champion réincarné/0,1/31/3/false/false/true/3,0,0/Atk,false,1298,true/FCE,false,25,true/AGI,false,17,true/16sprite
+Garde d'Acier Ancestral/0,1,2/31/3/false/false/false/2,0,0/Atk,false,1349,true/VIT,false,32,true/31bleu
+Lame Géante du Tueur Diabolique/0,1,2/30/4/true/false/false/4,0,0/Atk,false,1135,true/FCE,false,11,true/AGI,false,17,true/VIT,false,10/30ora
+Épée des Sprites de l'Âme/0,1,2/26/2/false/false/false/2,0,0/Atk,false,823,true/FCE,false,13,true/26sprite
+Épée Tranchante/0,1,2/26/1/true/false/false/1,0,0/Atk,false,686,true/26blanc
+Épée de l'Âme/0,1,2/22/1/false/false/false/1,0,0/Atk,false,568,true/26sprite
+Épée Œil de la Foi Géante/0,1,2/20/4/true/false/false/3,0,0/Atk,false,717,true/FCE,false,7,true/AGI,false,11,true/20ora
+Grande Épée Fracassante/0,1,2/18/1/true/false/false/1,0,0/Atk,false,458,true/18blanc
+Lourde Épée Géante des Sprites/0,1,2/16/2/false/false/false/2,0,0/Atk,false,486,true/FCE,false,9,true/16sprite
+Large Épée Géante/0,1,2/12/1/true/false/false/1,0,0/Atk,false,308,true/12blanc
+Épée Géante des Sprites/0,1,2/10/2/false/false/false/2,0,0/Atk,false,316,true/FCE,false,5,true/16sprite
+Épée à Deux Mains du Brave de Siwa/0,1/6/3/false/false/false/2,0,0/Atk,false,486,true/FCE,false,9,true/16sprite
+Épée Géante/0,1,2/6/1/true/false/false/1,0,0/Atk,false,184,true/6blanc
