@@ -29,7 +29,8 @@ public class Enchantment implements Writable {
 	private String name;
 	private WeaponType[][] type;
 	private boolean[] armor;
-	private boolean capering;
+	private boolean cape;
+	private boolean ring;
 	private boolean fixValue;
 	private int nbLvl;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
@@ -38,11 +39,12 @@ public class Enchantment implements Writable {
 		this.name = " ";
 	}
 	
-	public Enchantment(String name, WeaponType[][] type, boolean[] armor, boolean capering, boolean fixValue, ArrayList<Effect> effects) {
+	public Enchantment(String name, WeaponType[][] type, boolean[] armor, boolean cape, boolean ring, boolean fixValue, ArrayList<Effect> effects) {
 		this.name = name;
 		this.type = type;
 		this.armor = armor;
-		this.capering = capering;
+		this.cape = cape;
+		this.ring = ring;
 		this.fixValue = fixValue;
 		this.effects = effects;
 	}
@@ -71,8 +73,12 @@ public class Enchantment implements Writable {
 		return false;
 	}
 	
-	public boolean isCapeRing() {
-		return this.capering;
+	public boolean isCape() {
+		return this.cape;
+	}
+	
+	public boolean isRing() {
+		return this.ring;
 	}
 	
 	public boolean isFixValue() {
@@ -160,7 +166,7 @@ public class Enchantment implements Writable {
 				}
 				
 				String[] armorSplit = lineSplit[3].split(",");
-				boolean[] armor = new boolean[3];
+				boolean[] armor = new boolean[2];
 				for(int i = 0; i < 2; i++) {
 					armor[i] = Boolean.parseBoolean(armorSplit[i]);
 				}
@@ -170,7 +176,7 @@ public class Enchantment implements Writable {
 					effects.add(new Effect(lineSplit[j+6]));
 				}
 				
-				list.add(new Enchantment(lineSplit[0], type, armor, Boolean.parseBoolean(armorSplit[2]), Boolean.parseBoolean(lineSplit[4]), effects));
+				list.add(new Enchantment(lineSplit[0], type, armor, Boolean.parseBoolean(armorSplit[2]), Boolean.parseBoolean(armorSplit[3]), Boolean.parseBoolean(lineSplit[4]), effects));
 				
 				line = reader.readLine();
 			}
@@ -301,12 +307,30 @@ public class Enchantment implements Writable {
 		return cast;
 	}
 	
-	public static Enchantment[] getPossibleCapeRingEnchant() {
+	public static Enchantment[] getPossibleCapeEnchant() {
 		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
 		result.add(new Enchantment());
 		
 		for(Enchantment enchant : Enchantment.data) {
-			if(enchant.isCapeRing()) {
+			if(enchant.isCape()) {
+				result.add(enchant);
+			}
+		}
+		
+		Enchantment[] cast = new Enchantment[result.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = result.get(i);
+		}
+		
+		return cast;
+	}
+	
+	public static Enchantment[] getPossibleRingEnchant() {
+		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
+		result.add(new Enchantment());
+		
+		for(Enchantment enchant : Enchantment.data) {
+			if(enchant.isRing()) {
 				result.add(enchant);
 			}
 		}
@@ -458,6 +482,8 @@ public class Enchantment implements Writable {
 		try {
 			if(type == TypeEffect.FCE || type == TypeEffect.VIT || type == TypeEffect.INT || type == TypeEffect.VOL || type == TypeEffect.AGI) {
 				return Enchantment.value.get(0).get(6).get(quality).get(lvl).get(0);
+			} else if(type == TypeEffect.Toucher) {
+				return Enchantment.value.get(1).get(4).get(quality).get(lvl).get(0);
 			} else if(type == TypeEffect.ESQ) {
 				return Enchantment.value.get(2).get(1).get(quality).get(lvl).get(0);
 			}

@@ -65,7 +65,7 @@ Enchevêtrement de la Flamme/0,1,2/40/4/true/false/false/5,0,0/Atk,false,1647,tr
 Lame d'Argent Magique Renforcée/0,1,2/40/3/false/false/false/4,0,0/Atk,false,1838,true/FCE,false,31,true/VIT,false,27,true/Toucher,false,6/50pre
 Épée Brise-Coeur/0,1,2/39/3/false/false/false/4,0,0/Atk,false,1782,true/FCE,false,24,true/AGI,false,34,true/Toucher,false,6/39bleu
 Épée des Sprites du Sceau/0,1,2/36/2/false/false/false/3,0,0/Atk,false,1212,true/FCE,false,17,true/Toucher,false,2/36sprite
-Épée Géante de la Flamme Bleue/0,1,2/32/2/false/false/false/2,0,0/Atk,false,1051,true/FCE,false,13,true/32sprite
+Épée Géante de la Flamme Bleue/0,1,2/32/2/false/false/false/2,0,0/Atk,false,1051,true/FCE,false,13,true/32vert
 Épée Estampée/0,1,2/32/1/false/false/false/1,0,0/Atk,false,876,true/32blanc
 Épée géante du Champion réincarné/0,1/31/3/false/false/true/3,0,0/Atk,false,1298,true/FCE,false,25,true/AGI,false,17,true/16sprite
 Garde d'Acier Ancestral/0,1,2/31/3/false/false/false/2,0,0/Atk,false,1349,true/VIT,false,32,true/31bleu
