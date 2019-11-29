@@ -33,10 +33,10 @@ Colère de la Reine des Océans/0,1/75/5/true/false/false/6,0,0/Atk,false,5926,t
 Rugissement Terrible/0,1/75/4/true/false/false/6,0,0/Atk,false,4609,true/FCE,false,50,true/VIT,false,40,true/AGI,false,21,true/Toucher,false,12/RegenCB,false,15/75pre
 Hache en Or des Sprites à deux mains/0,1/72/2/false/false/false/3,0,0/Atk,false,3745,true/FCE,false,37,true/Toucher,false,10/60ora
 Hache de Lune Noire/0,1/70/6/true/false/false/5,0,0/Atk,false,6018,true/FCE,false,150,true/VIT,false,88,true/AGI,false,72,true/Toucher,false,18/70vio
-Lame de l'Aile du Démon/0,1/70/5/true/false/false/7,0,0/Atk,false,5416,true/FCE,false,120,true/VIT,false,70,true/AGI,false,58,true/Toucher,false,18/Reflect,false,40/Depla,false,15/70gold
+Lame de l'Aile du Démon/0,1/70/5/true/false/false/8,0,0/Atk,false,5416,true/FCE,false,120,true/VIT,false,70,true/AGI,false,58,true/Toucher,false,18/ReflectP,false,40/ReflectM,false,40/Depla,false,15/70gold
 Courroux Royal/0,1/70/3/false/false/false/4,0,0/Atk,false,4814,true/FCE,false,86,true/VIT,false,30,true/Toucher,false,10/70gvg
 Grande Hache de Barbare/0,1/69/4/true/false/false/6,0,0/Atk,false,4134,true/FCE,false,46,true/VIT,false,33,true/AGI,false,20,true/Toucher,false,15/DCCP,false,55/69ora
-Longue Vouge de Cérémonie/0,1/67/4/true/false/false/7,0,0/Atk,false,3980,true/FCE,false,33,true/VIT,false,43,true/AGI,false,23,true/Toucher,false,12/Reflect,false,40/Depla,false,15/67pre
+Longue Vouge de Cérémonie/0,1/67/4/true/false/false/8,0,0/Atk,false,3980,true/FCE,false,33,true/VIT,false,43,true/AGI,false,23,true/Toucher,false,12/ReflectP,false,40/ReflectM,false,40/Depla,false,15/67pre
 Hallebarde Lourde/0,1/67/1/true/false/false/1,0,0/Atk,false,2843,true/67blanc
 Raum Infini/0,1/65/5/true/false/false/5,0,0/Atk,false,4919,true/FCE,false,116,true/VIT,false,28,true/AGI,false,88,true/Toucher,false,18/65gold
 Hallebarde Azuréenne/0,1/64/4/true/false/false/5,0,0/Atk,false,3751,true/FCE,false,40,true/VIT,false,30,true/AGI,false,17,true/Toucher,false,10/64pre

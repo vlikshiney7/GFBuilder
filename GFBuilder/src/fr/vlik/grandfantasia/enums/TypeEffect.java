@@ -136,7 +136,8 @@ public enum TypeEffect implements Colorable, Writable {
 	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Tools.EffectColor[0]),
 	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Tools.EffectColor[0]),
 	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Tools.EffectColor[7]),
-	Reflect("Dégât Renvoyé", "", "Deg Renvoyé", "", -1, true, Tools.EffectColor[0]),
+	ReflectP("Dégât Physique Renvoyé", "", "Deg Phys Refl", "", -1, true, Tools.EffectColor[10]),
+	ReflectM("Dégât Magique Renvoyé", "", "Deg Mag Refl", "", -1, true, Tools.EffectColor[11]),
 	
 	NONE("Aucun", "None", "Aucun", "None", -1, true, Tools.EffectColor[6]);
 	
