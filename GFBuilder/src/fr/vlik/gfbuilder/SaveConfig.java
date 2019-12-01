@@ -45,10 +45,12 @@ public class SaveConfig extends JCustomButton {
 	public void applyConfig() {
 		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
 		
-		for(int i = 0; i < this.indexSelector.length; i++) {
-			if(pages.get(i) instanceof PagePanel) {
+		int[] orderLoading = { 0, 6, 7, 8, 1, 2, 3, 4, 5, 9, 10, 11 };
+		
+		for(int i = 0; i < orderLoading.length; i++) {
+			if(pages.get(orderLoading[i]) instanceof PagePanel) {
 				try {
-					((PagePanel) pages.get(i)).setConfig(this.indexSelector[i]);
+					((PagePanel) pages.get(orderLoading[i])).setConfig(this.indexSelector[orderLoading[i]]);
 				} catch (IllegalArgumentException e) {
 					System.out.println("Out of range");
 				}

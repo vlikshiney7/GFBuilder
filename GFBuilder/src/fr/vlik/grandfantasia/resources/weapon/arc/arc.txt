@@ -1,5 +1,5 @@
 Arc divin de palombe brillante/0,2,3/100/6/true/false/false/5,0,0/AtkD,false,4270,true/FCE,false,38,true/VIT,false,61,true/AGI,false,121,true/Toucher,false,20/100vio
-Arc démoniaque de Serah Farron/0,2,3/100/5/true/false/false/6,0,0/AtkD,false,3843,true/FCE,false,31,true/VIT,false,43,true/AGI,false,94,true/PV,true,10/Atk,true,20/100gold
+Arc démoniaque de Serah Farron/0,2,3/100/5/true/false/false/7,0,0/AtkD,false,3843,true/FCE,false,31,true/VIT,false,43,true/AGI,false,94,true/PV,true,10/Atk,true,20/AtkD,true,20/100gold
 Arc tempétueux de Quill/0,2,3/100/4/false/false/false/8,0,0/AtkD,false,3397,true/FCE,false,34,true/VIT,false,32,true/AGI,false,30,true/Toucher,false,12/TCCP,false,10/DCCP,false,5/Foudre,false,40/100pvp
 Arc Œil de Faucon/0,2,3/99/4/true/false/false/6,0,0/AtkD,false,2950,true/FCE,false,18,true/VIT,false,30,true/AGI,false,36,true/PV,true,10/Atk,true,20/99pre
 Arc Long Hélicide de Sprite/0,2,3/96/2/false/false/false/2,0,0/AtkD,false,2428,true/AGI,false,28,true/96sprite
