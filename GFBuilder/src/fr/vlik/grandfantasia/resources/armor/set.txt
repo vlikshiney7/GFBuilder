@@ -1,8 +1,12 @@
 Rien/-1/0,0,0
 Tremblement de terre du roi de la bataille/90red0/0,0,0
+Hymne de l'Honneur et du Triomphe/90red1/0,0,0
 Fierté pétrifiante/100vio0/0,0,0
+Immortalité du damné/100vio1/0,0,0
 Seigneur Arlong/90vio0/0,0,0
+Templier Résolu/90vio1/0,0,0
 Belliqueux d'Aiolia/80vio0/0,0,0
+Défenseur Voldo/80vio1/0,0,0
 Résistance suprême de Tarot/100tarot0/3,0,2/VIT,false,60/TCCP,false,10/DCCP,false,15/AGI,false,35/FCE,false,40
 Tarot Roue de la fortune/100tarot1/2,1,1/VIT,false,60/VitComp,false,15/AtkM,true,15/INT,false,75
 Tarot Mort/100tarot2/4,1,3/VIT,false,70/Depla,false,12/DefP,true,20/DefM,true,20/MEN,false,20/RTCCP,false,15/RTCCM,false,15/VOL,false,55
@@ -13,52 +17,93 @@ Amant Tarot/90tarot0/2,3,2/FCE,false,50/ESQ,false,35/VIT,false,50/DefP,true,15/D
 Démon Tarot/90tarot1/2,2,3/INT,false,50/VOL,false,50/VIT,false,50/AtkM,true,10/TCCP,false,20/DCCM,false,20/VitComp,false,25
 Ermite Tarot/90tarot2/2,2,3/AGI,false,50/Toucher,false,35/FCE,false,50/Atk,true,10/TCCP,false,20/DCCP,false,20/VitAtk,false,25
 Puissante de Khal Drogo/100gold0/3,1,1/FCE,false,60/Toucher,false,20/DegDuo,false,40/DegHa,false,20/AGI,false,60
+Épique de Brienne/100gold1/3,3,7/VIT,false,60/DegP,false,18/Parade,false,30/ReducP,false,15/ReducM,false,15/MEN,false,30/VOL,false,60/Sacre,false,15/Ombre,false,15/Foudre,false,15/Feu,false,15/Glace,false,15/Nature,false,15
 Sanguinaire Kenpachi/90gold0/2,2,2/FCE,false,30/Toucher,false,30/TCCP,false,35/VIT,false,25/RTCCP,false,17/VitAtk,false,23
+Vertueux Parsifal/90gold1/2,2,1/VIT,false,30/MEN,false,42/FCE,false,25/VitAtk,false,23/Parade,false,10
 Vengeance de Mordred/80gold0/2,2,1/DefP,true,20/FCE,false,30/TCCP,false,10/VIT,false,10/DCCP,false,40
+Châtiment de Baldur/80gold1/2,2,0/Toucher,false,25/VIT,false,20/VitAtk,false,20/Parade,false,10
 Héros Bestial/100pve0/2,2,1/Toucher,false,10/VitAtk,false,20/FCE,false,40/VIT,false,15/DefP,true,15
+Plume Verte/100pve1/2,2,1/PV,true,10/DefP,true,20/VOL,false,20/Ombre,false,20/MEN,false,20
 Explorateur Fondue/95pve0/2,2,1/FCE,false,40/ESQ,false,15/Toucher,false,10/TCCP,false,5/AGI,false,30
+Chevalier Béni/95pve1/2,2,2/VIT,false,40/DegP,false,20/Parade,false,20/MEN,false,20/FCE,false,30/Toucher,false,5
 Feu Fanatique/90pve0/2,3,2/FCE,false,25/Toucher,false,20/ReducP,false,15/ReducM,false,15/DCCP,false,30/VIT,false,25/TCCP,false,25
+Ailes Divines/90pve1/2,2,1/VIT,false,25/DefP,true,10/FCE,false,21/MEN,false,40/VitAtk,false,20
 Âme de l'Ours Terrifiant/85pve0/2,3,1/MEN,false,-10/FCE,false,21/ReducP,false,10/ReducM,false,10/VIT,false,21/DefP,true,10
+Âme du Lion Glorieux/85pve1/3,2,0/Parade,false,5/Toucher,false,20/VIT,false,21/MEN,false,20/Depla,false,5
 Furie du Maître/80pve0/2,1,1/Toucher,false,20/FCE,false,30/TCCP,false,10/DCCP,false,30
+Colère Divine/80pve1/2,1,0/Toucher,false,20/FCE,false,21/VitAtk,false,20
 Fureur du Berserker/75pve0/2,2,2/PM,true,20/VIT,false,14/Toucher,false,20/VitAtk,false,20/FCE,false,21/TCCP,false,10
+Guerrier Céleste/75pve1/2,2,1/VIT,false,14/Parade,false,10/MEN,false,45/FCE,false,21/PM,true,20
 Guerrier Suprême/70pve0/2,3,1/Toucher,false,20/DefP,true,10/VIT,false,21/ReducP,false,10/ReducM,false,10/ESQ,false,8
+Pureté du Paladin/70pve1/2,2,1/Toucher,false,15/VOL,false,21/TCCP,false,10/DCCP,false,70/CostComp,false,-60
 Boucher de Saphaël/65pve0/0,2,1/FCE,false,14/DCCP,false,50/Toucher,false,10
+Chevalier de l'Eclipse Blanche/65pve1/2,0,0/FCE,false,10/Parade,false,10
 Marquis de l'ombre/60pve0/0,2,0/FCE,false,14/TCCP,false,5
+Duc Impérial/60pve1/0,2,1/VIT,false,14/PV,true,5/MEN,false,45
 Destructrice à Lame d'Acier/50pve0/2,1,0/FCE,false,8/VIT,false,3/TCCP,false,10
+Destructeur/50pve1/0,0,2/MEN,false,35/VIT,false,11
 Guerrier robuste/40pve0/0,1,0/FCE,false,7
+Chevalier du Fort/40pve1/0,1,2/VIT,false,7/Parade,false,10/MEN,false,25
 Officier tactique/30pve0/1,1,0/FCE,false,4/MEN,false,-20
 Garde d'Elite/20pve0/1,0,0/VIT,false,2
 Apostat/100pvp0/3,2,2/RTCCP,false,38/RTCCM,false,38/FCE,false,60/Glace,false,85/ReducP,false,30/PV,true,35/PeneP,false,15
+Gardien éclairé/100pvp1/4,2,3/VIT,false,35/FCE,false,25/RTCCP,false,38/RTCCM,false,38/Ombre,false,85/PV,true,20/PV,true,15/Parade,false,30/PeneP,false,15
 Courroux Sanguinaire/95pvp0/3,2,1/RTCCP,false,35/RTCCM,false,35/FCE,false,35/Glace,false,80/ReducP,false,25/PV,true,30
+Bouclier du Monde Encyclique/95pvp1/4,2,2/VIT,false,30/FCE,false,20/RTCCP,false,35/RTCCM,false,35/Ombre,false,80/PV,true,17/PV,true,12/Parade,false,25
 Gladiateur du Hokuto/85pvp0/3,3,1/RTCCP,false,32/RTCCM,false,32/FCE,false,38/Glace,false,80/ReducP,false,20/CostComp,false,-80/PV,true,27
+Vindicateur Shichibukai/85pvp1/4,3,0/RTCCP,false,30/RTCCM,false,30/VIT,false,25/FCE,false,15/Ombre,false,75/PV,true,17/Parade,false,20
 Empereur de la destruction (Reforgé)/75pvp0R/3,3,1/RTCCP,false,33/RTCCM,false,33/FCE,false,40/Glace,false,83/ReducP,false,22/CostComp,false,-77/PV,true,28
 Puissance d'Héraclès/75pvp0/3,3,1/RTCCP,false,30/RTCCM,false,30/FCE,false,36/Glace,false,75/ReducP,false,20/CostComp,false,-70/PV,true,25
+Défense infinie (Reforgé)/75pvp1R/4,3,0/RTCCP,false,33/RTCCM,false,33/VIT,false,25/FCE,false,14/Ombre,false,77/PV,true,17/Parade,false,22
+Ardeur de Zatoichi/75pvp1/4,3,0/RTCCP,false,30/RTCCM,false,30/VIT,false,23/FCE,false,13/Ombre,false,70/PV,true,15/Parade,false,20
 Stratégie de Sun Tzu (Reforgée)/65pvp0R/3,2,1/RTCCP,false,28/RTCCM,false,28/FCE,false,31/Glace,false,66/ReducP,false,17/PV,true,22
 Stratégie de Sun Tzu/65pvp0/3,2,1/RTCCP,false,25/RTCCM,false,25/FCE,false,28/Glace,false,60/ReducP,false,15/PV,true,20
+Vertu de Galahad (Reforgé)/65pvp1R/4,3,0/RTCCP,false,28/RTCCM,false,28/VIT,false,20/FCE,false,11/Ombre,false,66/Parade,false,17/PV,true,12
+Vertu de Galahad/65pvp1/4,3,0/RTCCP,false,25/RTCCM,false,25/VIT,false,18/FCE,false,10/Ombre,false,60/Parade,false,15/PV,true,10
 Roi Diabolique (Reforgée)/55pvp0R/3,1,1/RTCCP,false,33/RTCCM,false,33/FCE,false,25/Glace,false,55/PV,true,11
-Roi Diabolique/55pvp0/3,1,1/RTCCP,false,30/RTCCM,false,30/FCE,false,22/Glace,false,50/PV,true,10
+Roi du mal/55pvp0/3,1,1/RTCCP,false,30/RTCCM,false,30/FCE,false,22/Glace,false,50/PV,true,10
+Défense absolue (Reforgée)/55pvp1R/4,1,2/VIT,false,17/FCE,false,8/RTCCP,false,33/RTCCM,false,33/Ombre,false,55/PV,true,9/Parade,false,17
+Défense absolue/55pvp1/4,1,2/VIT,false,15/FCE,false,7/RTCCP,false,30/RTCCM,false,30/Ombre,false,50/PV,true,8/Parade,false,15
 Général Diabolique (Reforgé)/45pvp0R/3,1,1/RTCCP,false,22/RTCCM,false,22/FCE,false,17/Glace,false,34/PV,true,8
 Général Diabolique/45pvp0/3,1,1/RTCCP,false,20/RTCCM,false,20/FCE,false,15/Glace,false,30/PV,true,7
+Défense Parfaite (Reforgé)/45pvp1R/4,1,2/VIT,false,12/FCE,false,7/RTCCP,false,22/RTCCM,false,22/Ombre,false,34/PV,true,5/Parade,false,12
+Défense parfaite/45pvp1/4,1,2/VIT,false,10/FCE,false,5/RTCCP,false,20/RTCCM,false,20/Ombre,false,30/PV,true,5/Parade,false,10
 Hurlement de Conan (Reforgé)/25pvp0R/3,1,1/RTCCP,false,17/RTCCM,false,17/FCE,false,10/Glace,false,22/PV,true,8
 Défense de Lancelot (Reforgé)/25pvp1R/4,1,2/VIT,false,10/FCE,false,4/RTCCP,false,17/RTCCM,false,17/Ombre,false,22/PV,true,6/Parade,false,12
 Hurlement de Conan/25pvp0/3,1,1/RTCCP,false,15/RTCCM,false,15/FCE,false,8/Glace,false,20/PV,true,7
 Défense de Lancelot/25pvp1/4,1,2/VIT,false,8/FCE,false,3/RTCCP,false,15/RTCCM,false,15/Ombre,false,20/PV,true,5/Parade,false,10
 Dieu de la Guerre/80nucleus0/1,1,0/RDegAtkD,false,25/VIT,false,28
+Thaumaturge Exalté/80nucleus1/1,1,1/AGI,false,21/TCCP,false,8/VitComp,false,8
 Armée Sanguinaire/70nucleus0/1,0,2/AGI,false,18/TCCP,false,35/DefP,true,15
+Licorne Céleste/70nucleus1/3,1,1/Sacre,false,60/FCE,false,21/TCCP,false,5/ReducAtkD,false,70/Depla,false,15
 Marquis du Chaos/60nucleus0/0,1,0/VIT,false,22
+Juge Impérial/60nucleus1/1,1,2/Toucher,false,20/Depla,false,10/TCCP,false,22/AGI,false,22
 Hurlement Divin/80lingot0/1,0,1/AGI,false,30/PV,true,15
+Voix de la Création/80lingot1/1,1,1/FCE,false,21/Depla,false,10/VitAtk,false,10
 Soif de Mort/70lingot0/1,1,1/Depla,false,5/PV,true,10/VIT,false,20
+Chevalier des Saints/70lingot1/8,0,1/Sacre,false,60/Ombre,false,60/Foudre,false,60/Feu,false,60/Glace,false,60/Nature,false,60/AGI,false,21/VitAtk,false,10/TCCP,false,22
 Marquis de Destruction/60lingot0/0,2,1/TCCP,false,35/Depla,false,5/DefP,true,12
+Gardien Impérial/60lingot1/2,1,3/TCCP,false,30/AGI,false,10/VitAtk,false,10/Atk,true,10/FCE,false,18/MEN,false,10
 Rage du Minotaure/80gvg0/4,3,0/RTCCP,false,27/RTCCM,false,27/FCE,false,22/VIT,false,7/Ombre,false,65/ReducP,false,12/ReducM,false,12
+Force des Titans/80gvg1/3,3,0/Glace,false,65/VIT,false,22/VOL,false,7/RTCCP,false,27/RTCCM,false,27/PV,true,17
 Conquête d'Attila/70gvg0/4,3,0/RTCCP,false,25/RTCCM,false,25/FCE,false,20/VIT,false,5/Ombre,false,60/ReducP,false,10/ReducM,false,10
+Noblesse de Siegfried/70gvg1/3,3,0/Glace,false,60/VIT,false,20/VOL,false,5/RTCCP,false,25/RTCCM,false,25/PV,true,15
 Évolution du Destructeur (Réincarné)/100evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
 Évolution du Destructeur/100evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Croisé (Réincarné)/100evo1R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Croisé/100evo1/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
 Évolution du Ravageur (Réincarné)/90evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
 Évolution du Ravageur/90evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Templier (Réincarné)/90evo1R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Templier/90evo1/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
 Évolution du Gladiateur (Réincarné)/75evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
 Évolution du Gladiateur/75evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Vindicateur (Réincarné)/75evo1R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Vindicateur/75evo1/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
 Évolution du Berserker (Réincarné)/60evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
 Évolution du Berserker/60evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
+Évolution du Paladin (Réincarné)/60evo1R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
+Évolution du Paladin/60evo1/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
 Évolution du Guerrier (Réincarné)/30evo0R/1,1,1/Loot,false,18/XP,false,30/Depla,false,24
 Évolution du Guerrier/30evo0/1,1,1/Loot,false,15/XP,false,25/Depla,false,20
 Enchantée d'Elminster/100gold6/3,1,1/INT,false,60/PM,true,10/AtkM,true,15,false,12/MEN,false,-18/DCCM,false,20

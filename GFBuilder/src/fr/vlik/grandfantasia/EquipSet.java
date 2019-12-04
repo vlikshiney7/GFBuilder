@@ -165,6 +165,9 @@ public class EquipSet {
 				String[] with4 = new String[Integer.parseInt(nbBonus[1])];
 				String[] with5 = new String[Integer.parseInt(nbBonus[2])];
 				
+				assert ((with3.length + with4.length + with5.length) == (lineSplit.length - 3))
+						: "Set armor line " + (list.get(0).size() + 1);
+				
 				for(int i = 0; i < with3.length; i++) {
 					with3[i] = lineSplit[i+3];
 				}
@@ -198,6 +201,9 @@ public class EquipSet {
 				
 				String[] with2 = new String[Integer.parseInt(nbBonus[0])];
 				String[] with3 = new String[Integer.parseInt(nbBonus[1])];
+				
+				assert ((with2.length + with3.length) == (lineSplit.length - 3))
+						: "Set capering line " + (list.get(1).size() + 1);
 				
 				for(int i = 0; i < with2.length; i++) {
 					with2[i] = lineSplit[i+3];

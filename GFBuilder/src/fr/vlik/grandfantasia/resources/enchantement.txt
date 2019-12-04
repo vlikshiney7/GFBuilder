@@ -1,8 +1,8 @@
-de Force/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/FCE,false,0
-de Vitesse/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/VIT,false,0
-d'Intelligence/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/INT,false,0
-de Volonté/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/VOL,false,0
-d'Agilité/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/AGI,false,0
+de Force/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/FCE,false,0,true
+de Vitesse/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/VIT,false,0,true
+d'Intelligence/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/INT,false,0,true
+de Volonté/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/VOL,false,0,true
+d'Agilité/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/true,true,true,false/false/1/AGI,false,0,true
 de Précision/0,1,2,3,4,5,6,7,8,9,10,12,13/0,1,2,3,4,5,6,7,8,9,10,12,13/false,false,false,true/false/1/Toucher,false,0
 d'Esquive/-1/-1/true,true,true,true/false/1/ESQ,false,0
 du Sprint/11,14/-1/true,false,false,false/true/1/Depla,false,2
