@@ -127,6 +127,7 @@ public enum TypeEffect implements Colorable, Writable {
 	CostComp("Coût de Compétence", "", "Coût Comp", "", -1, true, Tools.EffectColor[0]),
 	ReloadComp("Rechargement de Compétence", "", "Recharge Comp", "", -1, false, Tools.EffectColor[0]),
 	Parade("Parade", "", "Parade", "", -1, true, Tools.EffectColor[0]),
+	RParade("Dégât Parés", "", "Reduc Parade", "", -1, true, Tools.EffectColor[0]),
 	
 	RegenPV("Régénération de Point de Vie Assis", "", "Regen PV", "", -1, true, Tools.EffectColor[0]),
 	RegenPM("Régénération de Point de Mana Assis", "", "Regen PM", "", -1, true, Tools.EffectColor[0]),

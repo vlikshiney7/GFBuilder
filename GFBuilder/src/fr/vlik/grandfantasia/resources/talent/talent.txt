@@ -29,15 +29,15 @@ Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,
 Vie Tenace/16,28,46,66,86,91/2/PV,true,5/RTCCP,false,5/PV,true,6/RTCCP,false,7/PV,true,7/RTCCP,false,9/PV,true,8/RTCCP,false,10/PV,true,9/RTCCP,false,11/PV,true,10/RTCCP,false,12/0-3
 Spécialité Armes à une Main/16,28,46,66,86,91/4/DegEp,false,4/DegHa,false,4/DegMa,false,4/VitAtk,false,15/DegEp,false,6/DegHa,false,6/DegMa,false,6/VitAtk,false,20/DegEp,false,8/DegHa,false,8/DegMa,false,8/VitAtk,false,25/DegEp,false,9/DegHa,false,9/DegMa,false,9/VitAtk,false,27/DegEp,false,10/DegHa,false,10/DegMa,false,10/VitAtk,false,29/DegEp,false,11/DegHa,false,11/DegMa,false,11/VitAtk,false,31/0-4
 Spécialité Armes à deux Mains/16,28,46,66,86,91/3/DegEp2M,false,4/DegHa2M,false,4/DegMa2M,false,4/DegEp2M,false,7/DegHa2M,false,7/DegMa2M,false,7/DegEp2M,false,10/DegHa2M,false,10/DegMa2M,false,10/DegEp2M,false,12/DegHa2M,false,12/DegMa2M,false,12/DegEp2M,false,14/DegHa2M,false,14/DegMa2M,false,14/DegEp2M,false,16/DegHa2M,false,16/DegMa2M,false,16/0-5
-/31,41,50,69,86,91/0/1-6
+Spécialité Bouclier/31,41,50,69,86,91/2/Parade,false,3/IntComp,false,-20/Parade,false,6/IntComp,false,-25/Parade,false,9/IntComp,false,-30/Parade,false,11/IntComp,false,-35/Parade,false,13/IntComp,false,-40/Parade,false,15/IntComp,false,-45/1-6
 Peau Rêche et Chair Dure/31,41,50,69,86,91/2/ReducP,false,8/NONE,false,0/ReducP,false,13/NONE,false,0/ReducP,false,18/NONE,false,0/ReducP,false,18/DefP,true,5/ReducP,false,18/DefP,true,8/ReducP,false,18/DefP,true,11/0-6
 Posture Délicate/31,41,50,69,86,91/2/RDCCP,false,10/ESQ,false,5/RDCCP,false,15/ESQ,false,8/RDCCP,false,20/ESQ,false,11/RDCCP,false,30/ESQ,false,12/RDCCP,false,40/ESQ,false,13/RDCCP,false,50/ESQ,false,14/0-7
-/46,50,54,72,86,91/0/1-9
-/46,50,54,72,86,91/0/1-10
+Parade Puissante/46,50,54,72,86,91/1/RParade,false,10/RParade,false,12/RParade,false,14/RParade,false,15/RParade,false,16/RParade,false,17/1-9
+Volonté de Fer/46,50,54,72,86,91/2/ReducM,false,14/VitComp,false,20/ReducM,false,18/VitComp,false,30/ReducM,false,22/VitComp,false,40/ReducM,false,23/VitComp,false,50/ReducM,false,24/VitComp,false,60/ReducM,false,25/VitComp,false,70/1-10
 Aura d'Exécration/46,50,54,72,86,91/1/MEN,false,15/MEN,false,30/MEN,false,45/MEN,false,55/MEN,false,65/MEN,false,75/0-9
-/66,80,91/0/1-12
-/66,80,91/0/1-13
-/66,80,91/0/1-14
+Esquive Magique/66,80,91/2/RTCCM,false,5/Depla,false,5/RTCCM,false,5/Depla,false,6/RTCCM,false,6/Depla,false,7/1-12
+Destruction Mortelle/66,80,91/2/TCCP,false,5/Toucher,false,10/TCCP,false,6/Toucher,false,10/TCCP,false,7/Toucher,false,12/1-13
+Dégâts Puissants/66,80,91/1/DCCP,false,15/DCCP,false,18/DCCP,false,21/1-14
 /70,83,93/0/1-15
 /70,83,93/0/0-19
 /70,83,93/0/1-17
@@ -104,7 +104,7 @@ Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,
 Vie Tenace/16,28,46,66,86,91/2/PV,true,5/RTCCP,false,5/PV,true,6/RTCCP,false,7/PV,true,7/RTCCP,false,9/PV,true,8/RTCCP,false,10/PV,true,9/RTCCP,false,11/PV,true,10/RTCCP,false,12/0-3
 /16,28,46,66,86,91/0/4-4
 /16,28,46,66,86,91/0/4-5
-/31,41,50,69,86,91/0/1-6
+Spécialité Bouclier/31,41,50,69,86,91/2/Parade,false,3/IntComp,false,-20/Parade,false,6/IntComp,false,-25/Parade,false,9/IntComp,false,-30/Parade,false,11/IntComp,false,-35/Parade,false,13/IntComp,false,-40/Parade,false,15/IntComp,false,-45/1-6
 /31,41,50,69,86,91/0/4-7
 /31,41,50,69,86,91/0/4-8
 /46,50,54,72,86,91/0/4-9
