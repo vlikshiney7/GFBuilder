@@ -145,7 +145,7 @@ public class Build {
 		result[11] = Math.floor((Math.floor((Math.min(result[2], 2646) + 14 ) / 28) + 5 + combinePoint[11]) * (combinePercent[11] / 100 +1));
 		
 		/* ESQ */
-		result[12] = Math.floor((Math.floor((result[4] + 5) / 10) + combinePoint[12]) * (combinePercent[12] / 100 +1));
+		result[12] = Math.floor(Math.floor((result[4] + 5) / 10) * (combinePercent[12] / 100 +1)) + combinePoint[12];
 		
 		/* RES */
 		for(int i = 0; i < 6; i++) {
