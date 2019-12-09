@@ -38,15 +38,15 @@ Aura d'Exécration/46,50,54,72,86,91/1/MEN,false,15/MEN,false,30/MEN,false,45/ME
 Esquive Magique/66,80,91/2/RTCCM,false,5/Depla,false,5/RTCCM,false,5/Depla,false,6/RTCCM,false,6/Depla,false,7/1-12
 Destruction Mortelle/66,80,91/2/TCCP,false,5/Toucher,false,10/TCCP,false,6/Toucher,false,10/TCCP,false,7/Toucher,false,12/1-13
 Dégâts Puissants/66,80,91/1/DCCP,false,15/DCCP,false,18/DCCP,false,21/1-14
-/70,83,93/0/1-15
-/70,83,93/0/0-19
-/70,83,93/0/1-17
-/73,87,97/0/1-18
-/73,87,97/0/1-19
-/73,87,97/0/1-20
-/77,90,100/0/0-18
-/77,90,100/0/1-22
-/77,90,100/0/1-23
+Règne de Glace/70,83,93/2/Glace,false,20/ReducM,false,4/Glace,false,20/ReducM,false,5/Glace,false,30/ReducM,false,6/1-15
+Création de Menace/70,83,93/2/MEN,false,10/VitAtk,false,8/MEN,false,12/VitAtk,false,8/MEN,false,14/VitAtk,false,10/0-19
+Fureur Décuplée/70,83,93/2/Parade,false,3/FCE,false,25/Parade,false,3/FCE,false,30/Parade,false,4/FCE,false,35/1-17
+Vérité Fondamentale/73,87,97/0/1-18
+Enchaînement Obscur/73,87,97/1/Ombre,false,20/Ombre,false,20/Ombre,false,30/1-19
+Bataille Lumineuse/73,87,97/2/Sacre,false,20/DegP,false,5/Sacre,false,20/DegP,false,6/Sacre,false,30/DegP,false,7/1-20
+Garde Spéciale/77,90,100/2/RParade,false,2/VIT,false,10/RParade,false,4/VIT,false,15/RParade,false,6/VIT,false,20/0-18
+Sublimation du Sacré/77,90,100/1/Ombre,false,20/Ombre,false,20/Ombre,false,30/1-22
+Gloire Sacrée/77,90,100/0/1-23
 
 Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
 /6,14,31,61,86,91/0/2-1
