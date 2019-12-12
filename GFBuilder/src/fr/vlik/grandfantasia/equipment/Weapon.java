@@ -164,7 +164,7 @@ public class Weapon extends Equipment {
 				continue;
 			}
 			
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 7) {
 				continue;
 			}
 			

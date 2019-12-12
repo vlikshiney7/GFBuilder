@@ -22,7 +22,7 @@ Jambières d'Explorateur Fondues/0/92/95pve0/4/true/false/5,0,0/DefP,false,840,t
 Pantalon de Chevalier Béni/1/92/95pve1/4/true/false/5,0,0/DefP,false,1009,true/DefM,false,689,true/FCE,false,28,true/VIT,false,32,true/VOL,false,18,true/100pve0
 Jambières évolutives du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-2/65pvp0
 Jambières évolutives du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-2/65pvp0
-Jambières évolutives du Croisé (Réincarné)/1/91/100evo1R/3/false/false/-1,0,0/100evo1R-2/100pve1
+Jambières évolutives du Croisé (Réincarné)/1/91/100evo1R/3/false/true/-1,0,0/100evo1R-2/100pve1
 Jambières évolutives du Croisé/1/91/100evo1/3/false/false/-1,0,0/100evo1-2/100pve1
 Pantalon Pourpre de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,791,true/DefM,false,564,true/VIT,false,26,true/60pve0
 Jambières de la Sentinelle des Enfers/0/88/-1/1/false/false/2,0,0/DefP,false,704,true/DefM,false,519,true/80pve0
@@ -60,7 +60,7 @@ Jambières de Colère Divine/1/77/80pve1/4/true/false/5,0,0/DefP,false,759,true/
 Jambières du Mur de Fer/1/77/-1/3/false/false/6,0,0/DefP,false,799,true/DefM,false,547,true/FCE,false,23,true/VIT,false,45,true/PV,false,350/PM,false,450/77bleu1
 Guêtres évolutives du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/90evo0R-2/70nucleus0
 Jambières évolutives du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-2/70nucleus0
-Jambières évolutives du Templier (Réincarné)/1/76/90evo1R/3/false/false/-1,0,0/90evo1R-2/70nucleus1
+Jambières évolutives du Templier (Réincarné)/1/76/90evo1R/3/false/true/-1,0,0/90evo1R-2/70nucleus1
 Jambières évolutives de Templier/1/76/90evo1/3/false/false/-1,0,0/90evo1-2/70nucleus1
 Jambières du Soleil Levant/0/76/-1/3/false/false/6,0,0/DefP,false,776,true/DefM,false,553,true/FCE,false,46,true/VIT,false,22,true/PV,false,450/PM,false,350/76bleu0
 Jambières du Pontife des Sprites/0,1/76/-1/2/false/false/3,0,0/DefP,false,699,true/DefM,false,498,true/VIT,false,20,true/70pve0
@@ -91,7 +91,7 @@ Jambières du Boucher de Saphaël/0/62/65pve0/4/true/false/5,0,0/DefP,false,645,
 Leggings du Chevalier de l'Eclipse Blanche/1/62/65pve1/4/true/false/5,0,0/DefP,false,658,true/DefM,false,451,true/FCE,false,14,true/VIT,false,18,true/VOL,false,10,true/71vert0
 Jambières évolutives du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0/75evo0R-2/75evo0
 Jambières Évolutives du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-2/75evo0
-Jambières évolutives du Vindicateur (Réincarné)/1/61/75evo1R/3/false/false/-1,0,0/75evo1R-2/75evo1
+Jambières évolutives du Vindicateur (Réincarné)/1/61/75evo1R/3/false/true/-1,0,0/75evo1R-2/75evo1
 Jambières Évolutives du Vindicateur/1/61/75evo1/3/false/false/-1,0,0/75evo1-2/75evo1
 Protège-Tibias du Lourd Mercenaire des Sprites/0,1/61/-1/2/false/false/3,0,0/DefP,false,605,true/DefM,false,431,true/VIT,false,14,true/100pve0
 Jambières du Marquis du Chaos/0/60/60nucleus0/4/true/false/5,0,0/DefP,false,632,true/DefM,false,450,true/FCE,false,14,true/VIT,false,14,true/VOL,false,8,true/65pvp0
@@ -126,7 +126,7 @@ Genouillères du Chevalier du Fort/1/37/40pve1/4/true/false/5,0,0/DefP,false,471
 Protège-Tibia Endurci des Sprites/0,1/34/-1/2/false/false/3,0,0/DefP,false,431,true/DefM,false,307,true/VIT,false,6,true/34vert0
 Jambières évolutives du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-2/100pve0
 Jambières Évolutives du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-2/100pve0
-Jambières évolutives du Paladin (Réincarné)/1/31/60evo1R/3/false/false/-1,0,0/60evo1R-2/100pve0
+Jambières évolutives du Paladin (Réincarné)/1/31/60evo1R/3/false/true/-1,0,0/60evo1R-2/100pve0
 Jambières Évolutives du Paladin/1/31/60evo1/3/false/false/-1,0,0/60evo1-2/100pve0
 Genouillères Endurcies/0,1/31/-1/1/false/false/1,0,0/DefP,false,383,true/34vert0
 Jupe du Guerrier Courageux/0,1/28/-1/3/false/false/4,0,0/DefP,false,433,true/DefM,false,317,true/VIT,false,11,true/AGI,false,9,true/30pve0

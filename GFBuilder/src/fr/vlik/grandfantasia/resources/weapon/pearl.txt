@@ -227,14 +227,14 @@ Perle de Résonance d'Amplitude Magique 1/1/false/true/1/TCCM,false,0.5/purple0
 Perle de Résonance d'Amplitude Physique 1/1/false/true/1/TCCP,false,0.5/purple0
 Perle de Résonance d'Optimisation Magique 1/1/false/true/2/TCCM,false,0.2/DCCM,false,1/purple0
 Perle de Résonance d'Optimisation Physique 1/1/false/true/2/TCCP,false,0.2/DCCP,false,1/purple0
-Pierre runique d'Attaque standard/1/true/false/0/white2
-Pierre runique d'Éruption standard/1/true/false/1/DCCP,false,8/white2
-Pierre runique d'Estompement standard/1/true/false/1/MEN,false,-15/white2
-Pierre runique d'Harmonie standard/1/true/false/1/TCCM,false,6/white2
-Pierre runique d'Incantation standard/1/true/false/1/VitComp,false,6/white2
-Pierre runique d'Occultisme standard/1/true/false/1/DCCM,false,8/white2
-Pierre runique de Contrôle standard/1/true/false/1/TCCP,false,6/white2
-Pierre runique de Force standard/1/true/false/1/Atk,true,6/white2
-Pierre runique de Menace standard/1/true/false/1/MEN,false,15/white2
-Pierre runique de Visée standard/1/true/false/1/AtkD,true,6/white2
-Pierre runique des Arcanes standard/1/true/false/1/AtkM,true,6/white2
+Pierre runique d'Attaque standard /1/true/false/0/white2
+Pierre runique d'Éruption standard /1/true/false/1/DCCP,false,8/white2
+Pierre runique d'Estompement standard /1/true/false/1/MEN,false,-15/white2
+Pierre runique d'Harmonie standard /1/true/false/1/TCCM,false,6/white2
+Pierre runique d'Incantation standard /1/true/false/1/VitComp,false,6/white2
+Pierre runique d'Occultisme standard /1/true/false/1/DCCM,false,8/white2
+Pierre runique de Contrôle standard /1/true/false/1/TCCP,false,6/white2
+Pierre runique de Force standard /1/true/false/1/Atk,true,6/white2
+Pierre runique de Menace standard /1/true/false/1/MEN,false,15/white2
+Pierre runique de Visée standard /1/true/false/1/AtkD,true,6/white2
+Pierre runique des Arcanes standard /1/true/false/1/AtkM,true,6/white2

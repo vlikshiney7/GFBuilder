@@ -59,7 +59,7 @@ Bague du Garde Aguerri/80/-1/3/false/true/6,0,0/DefM,false,530,true/FCE,false,18
 Bague de Mornelune/80/-1/3/false/true/5,0,0/DefM,false,530,true/FCE,false,13,true/AGI,false,17,true/Foudre,false,21/DegP,false,5/tdb5
 Bague d'Os Réptilienne/80/-1/3/false/true/5,0,0/DefM,false,530,true/INT,false,15,true/VOL,false,15,true/Glace,false,21/DegM,false,5/tdb1
 Anneau du Démoniste Sombre/80/-1/3/false/true/6,0,0/DefM,false,530,true/INT,false,18,true/VOL,false,12,true/Nature,false,21/ReducP,false,5/ReducM,false,5/gt8
-Anneau du Démoniste Sombre/80/-1/3/false/true/4,0,0/DefM,false,535,true/VIT,false,17,true/INT,false,11,true/Ombre,false,21/sombre1
+Anneau du Démoniste Sombre /80/-1/3/false/true/4,0,0/DefM,false,535,true/VIT,false,17,true/INT,false,11,true/Ombre,false,21/sombre1
 Anneau de Fureur Incontrôlable/78/-1/5/true/true/6,0,0/DefM,false,561,true/FCE,false,21,true/VIT,false,17,true/AGI,false,14,true/DCCP,false,2/Foudre,false,27/messager0
 Anneau d'Infinie Sagesse/78/-1/5/true/true/6,0,0/DefM,false,561,true/VIT,false,17,true/INT,false,15,true/VOL,false,20,true/DCCM,false,2/Nature,false,27/tdb8
 Chaîne de l'Esprit Scellé/78/-1/3/false/false/4,0,0/DefM,false,521,true/FCE,false,15,true/VIT,false,15,true/Foudre,false,21/tdb3

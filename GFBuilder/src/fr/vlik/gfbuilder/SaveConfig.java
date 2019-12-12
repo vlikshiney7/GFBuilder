@@ -41,7 +41,7 @@ public class SaveConfig extends JCustomButton {
 	public int[][] getIndexSelector() {
 		return this.indexSelector;
 	}
-
+	
 	public void applyConfig() {
 		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
 		

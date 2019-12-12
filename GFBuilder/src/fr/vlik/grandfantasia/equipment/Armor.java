@@ -164,8 +164,6 @@ public class Armor extends Equipment {
 				list.add(new ArrayList<Armor>());
 				String line = reader.readLine();
 				while (line != null) {
-					System.out.println(line);
-					
 					String[] lineSplit = line.split("/");
 					String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
 					

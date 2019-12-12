@@ -93,7 +93,6 @@ Perle de Résonance Naturelle/3/false/true/2/VIT,false,8,true/Nature,false,8/gre
 Perle de Résonance Naturelle 4/3/false/true/2/VIT,false,6,true/Nature,false,6/white2
 Perle de Résonance Naturelle 3/3/false/true/1/Nature,false,6/green2
 Perle de Résonance Naturelle 2/3/false/true/1/Nature,false,4/green2
-Perle de Résonance Naturelle 1/2/false/true/1/Nature,false,2/green1
 Perle de Résonance Sacrée/3/false/true/2/VIT,false,8,true/Sacre,false,8/yellow2
 Perle de Résonance Sombre/3/false/true/2/VIT,false,8,true/Ombre,false,8/black2
 Perle de Résonance Sombre 4/3/false/true/2/VIT,false,6,true/Ombre,false,6/black2
@@ -154,6 +153,7 @@ Perle de Résonance Foudroyante 1/2/false/true/1/Foudre,false,2/blue1
 Perle de Résonance Glacée 1/2/false/true/1/Glace,false,2/white1
 Perle de Résonance Incendiaire 1/2/false/true/1/Feu,false,2/orange1
 Perle de Résonance Lumineuse 1/2/false/true/1/Sacre,false,2/yellow1
+Perle de Résonance Naturelle 1/2/false/true/1/Nature,false,2/green1
 Perle de Résonance Sombre 1/2/false/true/1/Ombre,false,2/black1
 Pierre runique d'Endurance du Débutant/2/true/false/2/PV,true,10/Sacre,false,100/yellow1
 Pierre runique d'endurance spéciale/2/false/false/2/PV,true,7/Sacre,false,100/black2

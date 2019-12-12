@@ -6,7 +6,7 @@ Endurance au combat/true/16/1/RegenPV,false,20/0-1
 4
 Défense experte/true/6/1/ReducP,false,10/0-0
 Endurance au combat/true/16/1/RegenPV,false,20/0-1
-Évolution en paladin/true/31/1/DefP,false,500/31-1
+Évolution en paladin/true/31/3/DefP,false,500/PV,false,800/PM,false,400/31-1
 Âme Invincible/false/86,89,92,95,98/3/FCE,false,50/VIT,false,30/DefP,true,6/FCE,false,55/VIT,false,35/DefP,true,8/FCE,false,60/VIT,false,40/DefP,true,10/FCE,false,65/VIT,false,45/DefP,true,12/FCE,false,70/VIT,false,50/DefP,true,14/86-0
 4
 Tireur d'élite/true/6/1/VitAtkD,false,30/1-0

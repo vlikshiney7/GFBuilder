@@ -296,7 +296,8 @@ public class PageWeapon extends PagePanel {
 			}
 		}
 		
-		if(!weapons[0].getName().equals("Rien") && !weapons[1].getName().equals("Rien")) {
+		if( (weaponType[0] == WeaponType.EPEE1M || weaponType[0] == WeaponType.MARTEAU1M || weaponType[0] == WeaponType.HACHE1M || weaponType[0] == WeaponType.MECA1M)
+				&& (weaponType[1] == WeaponType.EPEE1M || weaponType[1] == WeaponType.MARTEAU1M || weaponType[1] == WeaponType.HACHE1M || weaponType[1] == WeaponType.MECA1M) ) {
 			weapons[0].doubleWeapon();
 			weapons[1].doubleWeapon();
 		}

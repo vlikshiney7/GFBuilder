@@ -23,7 +23,7 @@ Bottes de Chevalier Béni/1/93/95pve1/4/true/false/5,0,0/DefP,false,593,true/Def
 Bottes Pourpres de Sprite/0,1/92/-1/2/false/false/3,0,0/DefP,false,465,true/DefM,false,331,true/AGI,false,13,true/60pve0
 Bottes évolutives du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-4/65pvp0
 Bottes évolutives du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-4/65pvp0
-Bottes évolutives du Croisé (Réincarné)/1/91/100evo1R/3/false/false/-1,0,0/100evo1R-4/100pve1
+Bottes évolutives du Croisé (Réincarné)/1/91/100evo1R/3/false/true/-1,0,0/100evo1R-4/100pve1
 Bottes évolutives du Croisé/1/91/100evo1/3/false/false/-1,0,0/100evo1-4/100pve1
 Bottes du Tremblement de terre/0/88/90red0/7/false/false/5,0,0/DefP,false,581,true/DefM,false,431,true/FCE,false,31,true/VIT,false,40,true/AGI,false,25,true/1,2,2,1,1/0,0,0,0,0/FCE,false,6/PV,false,400/PM,false,400/PV,true,2/TCCP,false,1/Depla,false,7/PV,true,20/90red0
 Bottes du Seigneur Arlong/0/88/90vio0/6/true/false/5,0,0/DefP,false,556,true/DefM,false,413,true/FCE,false,26,true/VIT,false,33,true/AGI,false,21,true/90vio0
@@ -65,7 +65,7 @@ Bottes du Dragon Vert/0/78/-1/3/false/false/6,0,0/DefP,false,461,true/DefM,false
 Bottes du Pontife des Sprites/0,1/77/-1/2/false/false/3,0,0/DefP,false,411,true/DefM,false,293,true/FCE,false,10,true/70pve0
 Bottes évolutives du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/90evo0R-4/70nucleus0
 Bottes évolutives du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-4/70nucleus0
-Bottes évolutives de Templier (Réincarné)/1/76/90evo1R/3/false/false/-1,0,0/90evo1R-4/70nucleus1
+Bottes évolutives de Templier (Réincarné)/1/76/90evo1R/3/false/true/-1,0,0/90evo1R-4/70nucleus1
 Bottes évolutives de Templier/1/76/90evo1/3/false/false/-1,0,0/90evo1-4/70nucleus1
 Bottes de Cristaux de Glace/1/76/-1/3/false/false/6,0,0/DefP,false,462,true/DefM,false,317,true/FCE,false,16,true/VIT,false,18,true/PV,false,400/PM,false,400/86bleu1
 Cothurnes de Puissance d'Héraclès (Reforgés)/0/75/75pvp0R/4/false/true/7,0,0/DefP,false,469,true/DefM,false,334,true/FCE,false,11,true/VIT,false,20,true/ESQ,false,2/ReducPeneP,false,2/ReducPeneM,false,2/80nucleus0
@@ -97,7 +97,7 @@ Bottes Blindées du Chevalier de l'Eclipse Blanche/1/63/65pve1/4/true/false/5,0,
 Bottes Blindées du Lourd Mercenaire des Sprites/0,1/62/-1/2/false/false/3,0,0/DefP,false,356,true/DefM,false,254,true/AGI,false,7,true/62vert0
 Bottes évolutives du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0/75evo0R-4/75evo0
 Bottes Évolutives du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-4/75evo0
-Bottes évolutives du Vindicateur (Réincarné)/1/61/75evo1R/3/false/false/-1,0,0/75evo1R-4/75evo1
+Bottes évolutives du Vindicateur (Réincarné)/1/61/75evo1R/3/false/true/-1,0,0/75evo1R-4/75evo1
 Bottes Évolutives du Vindicateur/1/61/75evo1/3/false/false/-1,0,0/75evo1-4/75evo1
 Bottes du Marquis du Chaos/0/60/60nucleus/4/true/false/4,0,0/DefP,false,369,true/DefM,false,263,true/VIT,false,11,true/VOL,false,7,true/65pvp0
 Bottes du Marquis de Destruction/0/60/60lingot0/4/true/false/4,0,0/DefP,false,369,true/DefM,false,263,true/VIT,false,7,true/VOL,false,11,true/95pve0
@@ -132,7 +132,7 @@ Bottes Blindées Endurcies des Sprites/0,1/36/-1/2/false/false/3,0,0/DefP,false,
 Bottes Blindées Endurcies/0,1/33/-1/1/false/false/1,0,0/DefP,false,230,true/60evo0
 Bottes évolutives du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-4/60evo0
 Bottes Évolutives du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-4/60evo0
-Bottes évolutives du Paladin (Réincarné)/1/31/60evo1R/3/false/false/-1,0,0/60evo1R-4/62vert0
+Bottes évolutives du Paladin (Réincarné)/1/31/60evo1R/3/false/true/-1,0,0/60evo1R-4/62vert0
 Bottes Évolutives du Paladin/1/31/60evo1/3/false/false/-1,0,0/60evo1-4/62vert0
 Bottes Blindées du Guerrier Courageux/0,1/30/-1/3/false/false/4,0,0/DefP,false,262,true/DefM,false,191,true/VIT,false,6,true/AGI,false,4,true/30bleu0
 Bottes de l'Officier tactique/0,1/29/30pve0/4/true/false/4,0,0/DefP,false,244,true/DefM,false,174,true/VIT,false,4,true/AGI,false,4,true/30pve0

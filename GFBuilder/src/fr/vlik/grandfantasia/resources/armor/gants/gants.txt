@@ -23,7 +23,7 @@ Gants d'Explorateur Fondus/0/93/95pve0/4/true/false/5,0,0/DefP,false,423,true/De
 Gants de Chevalier Béni/1/93/95pve1/4/true/false/5,0,0/DefP,false,508,true/DefM,false,347,true/FCE,false,13,true/VIT,false,16,true/INT,false,10,true/25pvp1
 Gantelets évolutifs du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-3/65pvp0
 Gantelets évolutifs du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-3/65pvp0
-Gantelets évolutifs du Croisé (Réincarné)/1/91/100evo1R/3/false/false/-1,0,0/100evo1R-3/100pve1
+Gantelets évolutifs du Croisé (Réincarné)/1/91/100evo1R/3/false/true/-1,0,0/100evo1R-3/100pve1
 Gantelets évolutifs du Croisé/1/91/100evo1/3/false/false/-1,0,0/100evo1-3/100pve1
 Gants Pourpres de Sprite/0,1/91/-1/2/false/false/3,0,0/DefP,false,396,true/DefM,false,282,true/FCE,false,13,true/60evo0
 Gants de la Sentinelle des Enfers/0/89/-1/1/false/false/2,0,0/DefP,false,354,true/DefM,false,261,true/80pve0
@@ -65,7 +65,7 @@ Gants de Colère Divine/1/78/80pve1/4/true/false/5,0,0/DefP,false,383,true/DefM,
 Gantelets du Chevalier de la Lune d'Argent/1/78/-1/3/false/false/6,0,0/DefP,false,403,true/DefM,false,275,true/VIT,false,18,true/VOL,false,16,true/PV,false,400/PM,false,400/88bleu1
 Brassards évolutifs du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/90evo0R-3/70nucleus0
 Brassards évolutifs du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-3/70nucleus0
-Gants évolutifs du Templier (Réincarné)/1/76/90evo1R/3/false/false/-1,0,0/90evo1R-3/70nucleus1
+Gants évolutifs du Templier (Réincarné)/1/76/90evo1R/3/false/true/-1,0,0/90evo1R-3/70nucleus1
 Gants évolutifs de Templier/1/76/90evo1/3/false/false/-1,0,0/90evo1-3/70nucleus1
 Gantelets du Guerrier des Forêts/0/76/-1/3/false/false/6,0,0/DefP,false,388,true/DefM,false,277,true/FCE,false,17,true/VOL,false,17,true/PV,false,300/PM,false,500/86bleu0
 Gants du Pontife des Sprites/0,1/76/-1/2/false/false/3,0,0/DefP,false,350,true/DefM,false,249,true/FCE,false,10,true/70pve0
@@ -97,7 +97,7 @@ Main Armée du Boucher de Saphaël/0/63/65pve0/4/true/false/5,0,0/DefP,false,326
 Protège-Mains du Chevalier de l'Eclipse Blanche/1/63/65pve1/4/true/false/5,0,0/DefP,false,333,true/DefM,false,227,true/FCE,false,9,true/VIT,false,7,true/VOL,false,5,true/71vert0
 Brassards évolutifs du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0/75evo0R-3/75evo0
 Gantelets Évolutifs du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-3/75evo0
-Gantelets évolutifs du Vindicateur (Réincarné)/1/61/75evo1R/3/false/false/-1,0,0/75evo1R-3/75evo1
+Gantelets évolutifs du Vindicateur (Réincarné)/1/61/75evo1R/3/false/true/-1,0,0/75evo1R-3/75evo1
 Gantelets Évolutifs du Vindicateur/1/61/75evo1/3/false/false/-1,0,0/75evo1-3/75evo1
 Gants du Lourd Mercenaire des Sprites/0,1/61/-1/2/false/false/3,0,0/DefP,false,302,true/DefM,false,215,true/FCE,false,7,true/25pvp1
 Gantelets du Marquis du Chaos/0/60/60nucleus0/4/true/false/4,0,0/DefP,false,316,true/DefM,false,225,true/FCE,false,8,true/VIT,false,10,true/65pvp0
@@ -136,7 +136,7 @@ Gantelets de Fer Spéciaux du Forgeron/0,1/32/-1/2/false/false/3,0,0/DefP,false,
 Gantelets Endurcis/0,1/32/-1/1/false/false/1,0,0/DefP,false,195,true/50pve0
 Poing de Fer évolutif du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-3/60evo0
 Poing de Fer Évolutif du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-3/60evo0
-Gantelets évolutifs du Paladin (Réincarné)/1/31/60evo1R/3/false/false/-1,0,0/60evo1R-3/25pvp1
+Gantelets évolutifs du Paladin (Réincarné)/1/31/60evo1R/3/false/true/-1,0,0/60evo1R-3/25pvp1
 Gantelets Évolutifs du Paladin/1/31/60evo1/3/false/false/-1,0,0/60evo1-3/25pvp1
 Main de l'Officier tactique/0,1/28/30pve0/4/true/false/4,0,0/DefP,false,205,true/DefM,false,146,true/FCE,false,5,true/VIT,false,3,true/60pve0
 Gants du Hurlement de Conan (Reforgé)/0,1/25/25pvp0R/4/false/true/5,0,0/DefP,false,242,true/DefM,false,173,true/FCE,false,4,true/VIT,false,7,true/ESQ,false,1/100pve0
