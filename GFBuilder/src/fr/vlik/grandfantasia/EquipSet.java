@@ -6,11 +6,14 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipment.Armor;
 import fr.vlik.grandfantasia.equipment.Cape;
 import fr.vlik.grandfantasia.equipment.Ring;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class EquipSet {
+public class EquipSet implements Writable {
 	
 	private static EquipSet[] dataArmor;
 	private static EquipSet[] dataCapeRing;
@@ -25,6 +28,12 @@ public class EquipSet {
 	private ArrayList<Effect> with3 = new ArrayList<Effect>();
 	private ArrayList<Effect> with4 = new ArrayList<Effect>();
 	private ArrayList<Effect> with5 = new ArrayList<Effect>();
+	
+	public EquipSet() {
+		this.name = "Rien";
+		this.code = "-1";
+		this.nbCurrentUsed = 0;
+	}
 	
 	private EquipSet(String name, String code, String[] with3, String[] with4, String[] with5) {
 		this.name = name;
@@ -145,6 +154,44 @@ public class EquipSet {
 		this.code = currentCode;
 		
 		return max_count;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+
+	@Override
+	public String getTooltip() {
+		StringBuilder tooltip = new StringBuilder();
+		
+		tooltip.append("3 pièces :");
+		for(Effect e : this.with3) {
+			if(e.getType() != TypeEffect.NONE) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
+		}
+		
+		tooltip.append("<br><br>");
+		tooltip.append("4 pièces :");
+		for(Effect e : this.with4) {
+			if(e.getType() != TypeEffect.NONE) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
+		}
+		
+		tooltip.append("<br><br>");
+		tooltip.append("5 pièces :");
+		for(Effect e : this.with5) {
+			if(e.getType() != TypeEffect.NONE) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
+		}
+		
+		return "<html>" + tooltip + "</html>";
 	}
 	
 	public static void loadData() {

@@ -3,6 +3,9 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -14,13 +17,13 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Util;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -40,6 +43,8 @@ public class PageArmor extends PagePanel {
 	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static PageArmor INSTANCE = new PageArmor();
 	
+	private JCustomComboBox<EquipSet> shortcutSet = new JCustomComboBox<EquipSet>();
+	
 	private ArrayList<JCustomComboBox<Armor>> armor = new ArrayList<JCustomComboBox<Armor>>(5);
 	private JCustomTextPane armorSetInfo;
 	
@@ -55,6 +60,7 @@ public class PageArmor extends PagePanel {
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(5);
 	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>(5);
 	
+	private JPanel showAndHide = new JPanel();
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(5);
 	
 	public static PageArmor getInstance() {
@@ -66,6 +72,11 @@ public class PageArmor extends PagePanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabel(Language.FR);
 		
+		this.shortcutSet = new JCustomComboBox<EquipSet>(new EquipSet[] {});
+		this.shortcutSet.addActionListener(e -> {
+			applySet();
+		});
+		
 		for(int i = 0; i < 5; i++) {
 			int id = i;
 			
@@ -76,6 +87,8 @@ public class PageArmor extends PagePanel {
 				updateDetails(id);
 				updatePearl(id);
 				updateEnchant(id);
+				
+				updateShortcutSet();
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -209,6 +222,10 @@ public class PageArmor extends PagePanel {
 		
 		createPanel();
 		setEffects();
+	}
+	
+	public EquipSet getShortcutSet() {
+		return this.shortcutSet.getSelectedItem();
 	}
 	
 	public Armor getArmor(int id) {
@@ -359,6 +376,17 @@ public class PageArmor extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
+		
+		this.showAndHide.setLayout(new BoxLayout(this.showAndHide, BoxLayout.Y_AXIS));
+		this.showAndHide.setBorder(new EmptyBorder(10, 10, 10, 10));
+		this.showAndHide.setBackground(Design.UIColor[1]);
+		this.showAndHide.add(this.label[0]);
+		this.showAndHide.add(Box.createVerticalStrut(10));
+		this.showAndHide.add(this.shortcutSet);
+		this.showAndHide.setVisible(false);
+		
+		this.add(showAndHide);
+		
 		for(int i = 0; i < 5; i++) {
 			JPanel descArmor = new JPanel();
 			descArmor.setLayout(new BoxLayout(descArmor, BoxLayout.X_AXIS));
@@ -403,8 +431,8 @@ public class PageArmor extends PagePanel {
 			
 			JPanel xpArmor = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpArmor.setBackground(Design.UIColor[1]);
-			this.label[i+5].setFont(new Font("Open Sans", Font.PLAIN, 14));
-			xpArmor.add(this.label[i+5]);
+			this.label[i+6].setFont(new Font("Open Sans", Font.PLAIN, 14));
+			xpArmor.add(this.label[i+6]);
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Design.UIColor[1]);
@@ -417,7 +445,7 @@ public class PageArmor extends PagePanel {
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.label[i]);
+			elemI.add(this.label[i+1]);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descArmor);
 			elemI.add(Box.createVerticalStrut(2));
@@ -431,10 +459,11 @@ public class PageArmor extends PagePanel {
 			
 			this.showAndHideXpStuff.add(xpArmor);	
 			
-			this.add(elemI);
 			this.add(Box.createVerticalStrut(10));
+			this.add(elemI);
 		}
 		
+		this.add(Box.createVerticalStrut(10));
 		this.add(this.armorSetInfo);
 		
 		for(JPanel panel : this.showAndHideXpStuff) {
@@ -779,6 +808,60 @@ public class PageArmor extends PagePanel {
 		} else {
 			this.redLvlEnchant.get(id).setVisible(false);
 		}
+	}
+	
+	private void updateShortcutSet() {
+		Set<String> setCode = new LinkedHashSet<String>();
+		setCode.add("-1");
+		
+		for(int i = 0; i < 5; i++) {
+			Armor armor = this.getArmor(i);
+			setCode.add(armor.getSetCode());
+		}
+		
+		EquipSet[] tabEquip = new EquipSet[setCode.size()];
+		
+		int indexTab = 0;
+		Iterator<String> it = setCode.iterator();
+		
+		while(it.hasNext()) {
+			String currentCode = it.next();
+			
+			for(EquipSet equipSet : EquipSet.getDataArmor()) {
+				if(equipSet.getCode().equals(currentCode)) {
+					tabEquip[indexTab] = equipSet;
+				}
+			}
+			
+			indexTab++;
+		}
+		
+		if(tabEquip.length == 1) {
+			this.showAndHide.setVisible(false);
+		} else {
+			this.shortcutSet.setModel(new DefaultComboBoxModel<EquipSet>(tabEquip));
+			this.showAndHide.setVisible(true);
+		}
+	}
+	
+	private void applySet() {
+		EquipSet equipSet = this.getShortcutSet();
+		
+		if(equipSet.getCode().equals("-1")) {
+			return;
+		}
+		
+		for(int i = 0; i < 5; i++) {
+			JCustomComboBox<Armor> piece = this.armor.get(i);
+			
+			for(int j = 0; j < piece.getItemCount(); j++) {
+				if(piece.getItemAt(j).getSetCode().equals(equipSet.getCode())) {
+					piece.setSelectedIndex(j);
+				}
+			}
+		}
+		
+		this.shortcutSet.setSelectedItem(equipSet);
 	}
 	
 	@Override

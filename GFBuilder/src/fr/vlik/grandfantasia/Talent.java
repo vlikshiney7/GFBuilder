@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 public final class Talent implements Writable {
@@ -92,8 +93,10 @@ public final class Talent implements Writable {
 	public String getTooltip(int i) {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects.get(i)) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+			if(e.getType() != TypeEffect.NONE) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";
