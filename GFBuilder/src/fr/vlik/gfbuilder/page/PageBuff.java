@@ -7,6 +7,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.Box;
@@ -39,6 +41,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "BUFF";
 	private static PageBuff INSTANCE = new PageBuff();
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
@@ -478,35 +481,51 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		this.listStone.setModel(new DefaultComboBoxModel<Nucleus>(Nucleus.getData(stoneName)));
 	}
+	
+	@Override
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
 
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[12];
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		for(int i = 0; i < 6; i++) {
-			config[index++] = this.nucleus.get(i).getSelectedIndex();
+		for(int i = 0; i < this.nucleus.size(); i++) {
+			config.put("Nucleus" + i, this.getNucleus(i).getName());
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			config[index++] = this.energy.get(i).getIntValue();
+		for(int i = 0; i < this.energy.size(); i++) {
+			config.put("Energy" + i, "" + this.energy.get(i).getIntValue());
+		}
+		
+		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
+			config.put("GuildBuff" + i, this.guildBuffUsed.get(i).getText());
+		}
+		
+		for(int i = 0; i < this.stoneUsed.size(); i++) {
+			config.put("Stone" + i, this.stoneUsed.get(i).getText());
 		}
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-
-		for(int i = 0; i < 6; i++) {
-			this.nucleus.get(i).setSelectedIndex(config[index++]);
+	public void setConfig(Map<String, String> config, Language lang) {
+		for(int i = 0; i < this.nucleus.size(); i++) {
+			this.nucleus.get(i).setSelectedItem(Nucleus.get(config.get("Nucleus" + i), i));
 		}
 
-		for(int i = 0; i < 6; i++) {
-			this.energy.get(i).setValue(config[index++]);
+		for(int i = 0; i < this.energy.size(); i++) {
+			this.energy.get(i).setValue(Integer.valueOf(config.get("Energy" + i)));
 		}
 		
+		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
+			this.guildBuffUsed.get(i).setObject(BuffIcon.getGuild(config.get("GuildBuff" + i)));
+		}
+		
+		for(int i = 0; i < this.stoneUsed.size(); i++) {
+			this.stoneUsed.get(i).setObject(Nucleus.get(config.get("Stone" + i), 6));
+		}
 	}
 }

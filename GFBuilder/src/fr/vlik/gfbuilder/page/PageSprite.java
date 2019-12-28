@@ -2,6 +2,8 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -25,6 +27,7 @@ public class PageSprite extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "SPRITE";
 	private static PageSprite INSTANCE = new PageSprite();
 	
 	private ArrayList<JCustomComboBox<Blason>> blason = new ArrayList<JCustomComboBox<Blason>>(2);
@@ -146,28 +149,34 @@ public class PageSprite extends PagePanel {
 	}
 	
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[3];
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
+	
+	@Override
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		for(int i = 0; i < 2; i++) {
-			config[index++] = this.blason.get(i).getSelectedIndex();
+		for(int i = 0; i < this.blason.size(); i++) {
+			config.put("Blason" + i, this.getBlason(i).getName());
 		}
 		
-		config[index++] = this.isleBuff.getSelectedIndex();
+		config.put("Isle", this.getIsleBuff().getName());
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
-		for(int i = 0; i < 2; i++) {
-			this.blason.get(i).setSelectedIndex(config[index++]);
+	public void setConfig(Map<String, String> config, Language lang) {
+		for(int i = 0; i < this.blason.size(); i++) {
+			Blason blason = Blason.get(config.get("Blason" + i));
+			if(blason == null) {
+				this.blason.get(i).setSelectedIndex(0);
+			} else {
+				this.blason.get(i).setSelectedItem(Blason.get(config.get("Blason" + i)));
+			}
 		}
 		
-		this.isleBuff.setSelectedIndex(config[index++]);
+		this.isleBuff.setSelectedItem(Buff.get(config.get("Isle")));
 	}
 }

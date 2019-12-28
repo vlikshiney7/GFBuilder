@@ -40,8 +40,8 @@ public enum TypeEffect implements Colorable, Writable {
 	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "", -1, true, Tools.EffectColor[11]),
 	
-	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", 100, true, Tools.EffectColor[10]),
-	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", 100, true, Tools.EffectColor[11]),
+	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", 103, true, Tools.EffectColor[10]),
+	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", 103, true, Tools.EffectColor[11]),
 	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Tools.EffectColor[11]),
 	
@@ -56,7 +56,7 @@ public enum TypeEffect implements Colorable, Writable {
 	VitAtkD("Vitesse d'Attaque Distance", "", "Vit Atk Dist", "", -1, true, Tools.EffectColor[7]),
 	VitAtkM("Vitesse d'Attaque Magique", "", "Vit Atk Mag", "", -1, true, Tools.EffectColor[11]),
 	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", 100, false, Tools.EffectColor[0]),
-	Depla("Vitesse de Déplacement", "", "Vit Depla", "", -1, false, Tools.EffectColor[0]),
+	Depla("Vitesse de Déplacement", "", "Vit Depla", "", 200, false, Tools.EffectColor[0]),
 	
 	ReducAtk("Réduction d'Attaque Mêlée", "", "Reduc Atq Mel", "", -1, true, Tools.EffectColor[10]),
 	ReducAtkD("Réduction d'Attaque Distance", "", "Reduc Atq Dist", "", -1, true, Tools.EffectColor[7]),
@@ -75,8 +75,8 @@ public enum TypeEffect implements Colorable, Writable {
 	DegGlace("Dégât Glace", "", "Deg Glace", "", -1, true, Tools.EffectColor[11]),
 	DegNature("Dégât Nature", "", "Deg Nature", "", -1, true, Tools.EffectColor[12]),
 	
-	XP("Bonus d'Expérience", "", "XP", "", 500, true, Tools.EffectColor[0]),
-	Loot("Bonus de Butin", "", "Butin", "", 300, true, Tools.EffectColor[0]),
+	XP("Bonus d'Expérience", "", "XP", "", 400, true, Tools.EffectColor[0]),
+	Loot("Bonus de Butin", "", "Butin", "", 200, true, Tools.EffectColor[0]),
 	
 	DegDuo("Dégât Deux Armes", "", "Deg 2 Armes", "", -1, true, Tools.EffectColor[0]),
 	VitAtkDuo("Vitesse d'Attaque à Deux Armes", "", "Vit Atk 2 Ar", "", -1, true, Tools.EffectColor[0]),
@@ -173,5 +173,15 @@ public enum TypeEffect implements Colorable, Writable {
 	@Override
 	public String getTooltip() {
 		return this.fr;
+	}
+	
+	public static TypeEffect get(String name, Language lang) {
+		for(TypeEffect type : TypeEffect.values()) {
+			if(type.getInfo(lang).equals(name)) {
+				return type;
+			}
+		}
+		
+		return null;
 	}
 }

@@ -118,6 +118,16 @@ public class Mount implements FullRenderer {
 		}
 	}
 	
+	public static Mount get(String name) {
+		for(Mount mount : Mount.data) {
+			if(mount.getName().equals(name)) {
+				return mount;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Mount[] getPossibleMount(int lvl, Reinca reinca) {
 		ArrayList<Mount> result = new ArrayList<Mount>();
 		

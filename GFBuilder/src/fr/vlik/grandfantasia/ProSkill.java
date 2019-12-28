@@ -128,6 +128,18 @@ public class ProSkill implements Iconable, Writable {
 		}
 	}
 	
+	public static ProSkill get(String name) {
+		for(ProSkill[] grade : ProSkill.data) {
+			for(ProSkill proSkill : grade) {
+				if(proSkill.getName().equals(name)) {
+					return proSkill;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
 	public static ProSkill[] getPossibleProSkill(GradeName grade, int lvl) {
 		ArrayList<ProSkill> result = new ArrayList<ProSkill>();
 		

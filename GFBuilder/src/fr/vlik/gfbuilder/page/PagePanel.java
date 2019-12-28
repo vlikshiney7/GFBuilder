@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.LayoutManager;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -39,7 +40,9 @@ public abstract class PagePanel extends JPanel {
 	
 	abstract public void updateLanguage(Language lang);
 	
-	abstract public int[] getConfig();
+	abstract public String getSaveName();
 	
-	abstract public void setConfig(int[] config) throws IllegalArgumentException;
+	abstract public Map<String, String> getConfig(Language lang);
+	
+	abstract public void setConfig(Map<String, String> config, Language lang) throws IllegalArgumentException;
 }

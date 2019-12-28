@@ -2,6 +2,8 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
@@ -16,10 +18,10 @@ import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Base;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Title;
-import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Title;
+import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
@@ -31,6 +33,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "GENERAL";
 	private static PageGeneral INSTANCE = new PageGeneral();
 	
 	private JCustomComboBox<Grade> grade;
@@ -331,26 +334,31 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[6];
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
+	
+	@Override
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		config[0] = this.grade.getSelectedIndex();
-		config[1] = this.getLvl();
-		config[2] = this.reinca.getSelectedIndex();
-		config[3] = this.title.getSelectedIndex();
-		config[4] = this.yggdra.getSelectedIndex();
-		config[5] = this.archive.getSelectedIndex();
+		config.put("Grade", this.getGrade().getName(lang));
+		config.put("Lvl", "" + this.getLvl());
+		config.put("Rebirth", this.getReinca().getName(lang));
+		config.put("Title", this.getTitle().getName());
+		config.put("Yggdrasil", this.getYggdrasil().getName());
+		config.put("Archive", this.getArchive().getName());
 		
 		return config;
 	}
 	
 	@Override
-	public void setConfig(int[] config) {
-		this.lvl.setValue(config[1]);
-		this.grade.setSelectedIndex(config[0]);
-		this.reinca.setSelectedIndex(config[2]);
-		this.title.setSelectedIndex(config[3]);
-		this.yggdra.setSelectedIndex(config[4]);
-		this.archive.setSelectedIndex(config[5]);
+	public void setConfig(Map<String, String> config, Language lang) {
+		this.lvl.setValue(Integer.valueOf(config.get("Lvl")));
+		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
+		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
+		this.reinca.setSelectedItem(Title.get(config.get("Title")));
+		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil")));
+		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
 	}
 }

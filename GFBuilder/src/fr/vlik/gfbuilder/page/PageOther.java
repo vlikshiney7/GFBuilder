@@ -1,6 +1,8 @@
 package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -25,6 +27,7 @@ public class PageOther extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "OTHER";
 	private static PageOther INSTANCE = new PageOther();
 	
 	private JCustomComboBox<Bague> bague = new JCustomComboBox<Bague>();
@@ -184,30 +187,27 @@ public class PageOther extends PagePanel {
 			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
+	
+	@Override
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
 
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[3];
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		config[index++] = this.bague.getSelectedIndex();
-		
-		config[index++] = this.loveCo.getSelectedIndex();
-		
-		config[index++] = this.anima.getSelectedIndex();
+		config.put("Bague", this.getBague().getName());
+		config.put("LoveBuff", this.getLoveCo().getName());
+		config.put("Anima", this.getAnima().getName());
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
-		this.bague.setSelectedIndex(config[index++]);
-		
-		this.loveCo.setSelectedIndex(config[index++]);
-		
-		this.anima.setSelectedIndex(config[index++]);
+	public void setConfig(Map<String, String> config, Language lang) {
+		this.bague.setSelectedItem(Bague.get(config.get("Bague")));
+		this.loveCo.setSelectedItem(BuffIcon.getLove(config.get("LoveBuff")));
+		this.anima.setSelectedItem(Anima.get(config.get("Anima")));
 	}
 }

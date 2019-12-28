@@ -124,4 +124,14 @@ public class Bague implements FullRenderer {
 	public static Bague[] getData() {
 		return Bague.data;
 	}
+	
+	public static Bague get(String name) {
+		for(Bague bague : Bague.data) {
+			if(bague.getName().equals(name)) {
+				return bague;
+			}
+		}
+		
+		return null;
+	}
 }

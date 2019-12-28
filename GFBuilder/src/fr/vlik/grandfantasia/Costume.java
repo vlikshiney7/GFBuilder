@@ -137,6 +137,20 @@ public class Costume implements Colorable, Writable {
 		}
 	}
 	
+	public static Costume get(String name, int quality) {
+		if(quality == 0) {
+			return null;
+		}
+		
+		for(Costume costume : Costume.data[quality-1]) {
+			if(costume.getName().equals(name)) {
+				return costume;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Costume[] getPossibleCostume(Quality quality, CostType type) {
 		if(quality == Quality.GREY) return null;
 		

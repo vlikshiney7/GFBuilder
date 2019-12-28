@@ -186,6 +186,42 @@ public class Pearl implements FullRenderer {
 		}
 	}
 	
+	public static Pearl getWeapon(String name) {
+		for(Pearl pearl : Pearl.dataWeapon) {
+			if(pearl.getName().equals(name)) {
+				return pearl;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Pearl getArmor(String name) {
+		for(Pearl pearl : Pearl.dataArmor) {
+			if(pearl.getName().equals(name)) {
+				return pearl;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Pearl getCost(String name) {
+		for(Pearl pearl : Pearl.dataWeaponCost) {
+			if(pearl.getName().equals(name)) {
+				return pearl;
+			}
+		}
+		
+		for(Pearl pearl : Pearl.dataArmorCost) {
+			if(pearl.getName().equals(name)) {
+				return pearl;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Pearl[] getPossibleWeaponPearl(Quality quality) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		

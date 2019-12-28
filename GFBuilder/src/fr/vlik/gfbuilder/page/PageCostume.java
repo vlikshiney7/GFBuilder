@@ -2,6 +2,8 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -13,12 +15,12 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Costume;
+import fr.vlik.grandfantasia.Costume.CostType;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Runway;
-import fr.vlik.grandfantasia.Costume.CostType;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.uidesign.Design;
@@ -31,6 +33,7 @@ public class PageCostume extends PagePanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "COSTUME";
 	private static PageCostume INSTANCE = new PageCostume();
 	
 	private ArrayList<JCustomRadioButton> costWeapon = new ArrayList<JCustomRadioButton>(2);
@@ -561,15 +564,17 @@ public class PageCostume extends PagePanel {
 			this.checkBoxRunway.get(indexPair).setSelected(false);
 		}
 	}
+	
+	@Override
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
 
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[27];
-		
-		int index = 0;
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
 		int select = 1;
-		
 		while(select > 0) {
 			if(this.costWeapon.get(select).isSelected()) {
 				break;
@@ -578,9 +583,10 @@ public class PageCostume extends PagePanel {
 			select--;
 		}
 		
-		config[index++] = select;
+		config.put("1or2Hand", "" + select);
 		
-		for(ArrayList<JCustomRadioButton> buttons : this.costQuality) {
+		for(int i = 0; i < this.costQuality.size(); i++) {
+			ArrayList<JCustomRadioButton> buttons = this.costQuality.get(i);
 			select = 4;
 			
 			while(select > 0) {
@@ -591,30 +597,30 @@ public class PageCostume extends PagePanel {
 				select--;
 			}
 			
-			config[index++] = select;
+			config.put("CostQuality" + i, "" + select);
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			config[index++] = this.costume.get(i).getSelectedIndex();
+		for(int i = 0; i < this.costume.size(); i++) {
+			String value = this.getCostume(i) != null ? this.getCostume(i).getName() : "";
+			config.put("Costume" + i, value);
 		}
 		
-		for(int i = 0; i < 7; i++) {
-			config[index++] = this.costPearl.get(i).getSelectedIndex();
+		for(int i = 0; i < this.costPearl.size(); i++) {
+			config.put("Pearl" + i, this.getCostPearl(i).getName());
 		}
 		
-		for(int i = 0; i < 8; i++) {
-			config[index++] = this.checkBoxRunway.get(i).isSelected() ? 1 : 0;
+		for(int i = 0; i < this.checkBoxRunway.size(); i++) {
+			config.put("CheckboxRunway" + i, "" + (this.checkBoxRunway.get(i).isSelected() ? true : false));
 		}
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
+	public void setConfig(Map<String, String> config, Language lang) {
+		int hand = Integer.valueOf(config.get("1or2Hand"));
 		for(int i = 0; i < this.costWeapon.size(); i++) {
-			if(i == config[index]) {
+			if(i == hand) {
 				this.costWeapon.get(i).setSelected(true);
 				updateWeaponCost();
 			} else {
@@ -622,32 +628,30 @@ public class PageCostume extends PagePanel {
 			}
 		}
 		
-		index++;
-		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < this.costQuality.size(); i++) {
 			ArrayList<JCustomRadioButton> buttons = this.costQuality.get(i);
+			int select = Integer.valueOf(config.get("CostQuality" + i));
+			
 			for(int j = 0; j < buttons.size(); j++) {
-				if(j == config[index]) {
+				if(j == select) {
 					buttons.get(j).setSelected(true);
 					updateCostume(i);
 				} else {
 					buttons.get(j).setSelected(false);
 				}
 			}
-			
-			index++;
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			this.costume.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.costume.size(); i++) {
+			this.costume.get(i).setSelectedItem(Costume.get(config.get("Costume" + i), Integer.valueOf(config.get("CostQuality" + i))));
 		}
 		
-		for(int i = 0; i < 7; i++) {
-			this.costPearl.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.costPearl.size(); i++) {
+			this.costPearl.get(i).setSelectedItem(Pearl.getCost(config.get("Pearl" + i)));
 		}
 		
-		for(int i = 0; i < 8; i++) {
-			this.checkBoxRunway.get(i).setSelected(config[index++] == 0 ? false : true);
+		for(int i = 0; i < this.checkBoxRunway.size(); i++) {
+			this.checkBoxRunway.get(i).setSelected(Boolean.valueOf(config.get("CheckboxRunway" + i)));
 		}
 	}
 }

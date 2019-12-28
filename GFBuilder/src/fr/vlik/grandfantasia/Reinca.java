@@ -133,6 +133,16 @@ public class Reinca implements FullRenderer {
 	public static Reinca[] getData() {
 		return Reinca.data;
 	}
+	
+	public static Reinca get(String name, Language lang) {
+		for(Reinca reinca : Reinca.data) {
+			if(reinca.getName(lang).equals(name)) {
+				return reinca;
+			}
+		}
+		
+		return null;
+	}
 
 	public static Reinca[] getPossibleData(int lvl) {
 		ArrayList<Reinca> result = new ArrayList<Reinca>();

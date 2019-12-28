@@ -160,6 +160,16 @@ public class Nucleus implements FullRenderer {
 		return cast;
 	}
 	
+	public static Nucleus get(String name, int list) {
+		for(Nucleus nucleus : Nucleus.data[list]) {
+			if(nucleus.getName().equals(name)) {
+				return nucleus;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Nucleus[] getData(int idList) {
 		return Nucleus.data[idList];
 	}

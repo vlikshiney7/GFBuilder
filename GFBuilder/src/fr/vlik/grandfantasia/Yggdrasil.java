@@ -106,4 +106,14 @@ public class Yggdrasil implements Writable, Iconable {
 	public static Yggdrasil[] getData() {
 		return Yggdrasil.data;
 	}
+	
+	public static Yggdrasil get(String name) {
+		for(Yggdrasil yggdrasil : Yggdrasil.data) {
+			if(yggdrasil.getName().equals(name)) {
+				return yggdrasil;
+			}
+		}
+		
+		return null;
+	}
 }

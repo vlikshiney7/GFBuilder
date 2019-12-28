@@ -54,6 +54,11 @@ public class PageOption extends JPanel {
 		
 		this.currentSave = new JCustomButton(this.label[1]);
 		this.currentSave.addActionListener(e -> {
+			if(!SaveConfig.fileExist()) {
+				FrameSaveAs.getInstance().popup();
+				return;
+			}
+			
 			overrideSave();
 			
 			Overlay.getInstance().setSave(true);
@@ -70,7 +75,6 @@ public class PageOption extends JPanel {
 		this.parameter.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.parameter.setBackground(Design.UIColor[1]);
 		this.parameter.setForeground(Design.FontColor[0]);
-		
 		
 		createPanel();
 	}

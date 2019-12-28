@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
@@ -66,6 +67,8 @@ public class MainFrame extends JFrame {
 	
 	private JPanel overlay;
 	private static int nbPages = 0;
+	private JScrollPane scrollContent;
+	private Point valueScroll;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
 	private ArrayList<JLabel> labelStat = new ArrayList<JLabel>(TypeEffect.values().length);
@@ -101,9 +104,6 @@ public class MainFrame extends JFrame {
 						FrameSaveOnQuit.getInstance().popup();
 						return;
 					}
-					
-					
-					SaveConfig.writeAllData();
 				}
 				System.exit(0);
 			}
@@ -195,10 +195,10 @@ public class MainFrame extends JFrame {
 		allPages.setBorder(new EmptyBorder(20, 20, 20, 20));
 		allPages.setBackground(Design.UIColor[2]);
 		
-		JScrollPane scrollContent = new JScrollPane(allPages, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		scrollContent.setBorder(null);
-		scrollContent.getVerticalScrollBar().setUnitIncrement(10);
-		scrollContent.getHorizontalScrollBar().setUnitIncrement(10);
+		this.scrollContent = new JScrollPane(allPages, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		this.scrollContent.setBorder(null);
+		this.scrollContent.getVerticalScrollBar().setUnitIncrement(10);
+		this.scrollContent.getHorizontalScrollBar().setUnitIncrement(10);
 		
 		for(int i = 0; i < this.pages.size(); i++) {
 			allPages.add(this.pages.get(i));
@@ -211,7 +211,7 @@ public class MainFrame extends JFrame {
 		content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
 		content.setBackground(Design.UIColor[2]);
 		content.add(this.overlay);
-		content.add(scrollContent);
+		content.add(this.scrollContent);
 		
 		/****************************************/
 		/*		****	   STATS	  	****	*/
@@ -327,6 +327,11 @@ public class MainFrame extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				if(!SaveConfig.fileExist()) {
+					FrameSaveAs.getInstance().popup();
+					return;
+				}
+				
 				PageOption.getInstance().overrideSave();
 				
 				Overlay.getInstance().setSave(true);
@@ -391,6 +396,8 @@ public class MainFrame extends JFrame {
 		}
 		
 		updateLabel(build.calculStatFromEffect());
+		
+		applyScroll();
 	}
 	
 	private void updateLabel(double[] allStats) {
@@ -425,6 +432,16 @@ public class MainFrame extends JFrame {
 		return nbPages++;
 	}
 	
+	public void keepScroll() {
+		this.valueScroll = this.scrollContent.getViewport().getViewPosition();
+	}
+	
+	public void applyScroll() {
+		if(this.valueScroll != null) {
+			this.scrollContent.getViewport().setViewPosition(this.valueScroll);
+		}
+	}
+	
 	public void setRedPane(int page) {
 		this.tabPaneMenu.get(page).setBackground(Design.UIColor[4]);
 	}
@@ -448,8 +465,12 @@ public class MainFrame extends JFrame {
 		}
 	}
 	
+	public Language getLanguage() {
+		return this.language.isSelected() ? Language.FR : Language.EN;
+	}
+	
 	public void updateLanguage() {
-		Language lang = this.language.isSelected() ? Language.FR : Language.EN;
+		Language lang = getLanguage();
 		CustomListCellRenderer.setLang(lang);
 		
 		if(this.language.isSelected()) {

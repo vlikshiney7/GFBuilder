@@ -3,6 +3,8 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -14,11 +16,11 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Genki;
 import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -33,6 +35,7 @@ public class PageMount extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "MOUNT";
 	private static PageMount INSTANCE = new PageMount();
 	
 	private JCustomComboBox<Mount> mount;
@@ -472,16 +475,20 @@ public class PageMount extends PagePanel {
 			this.genki.get(id).setModel(new DefaultComboBoxModel<Genki>());
 		}
 	}
+	
+	@Override
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
 
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[11];
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
+		config.put("Mount", this.getMount().getName());
 		
-		config[index++] = this.mount.getSelectedIndex();
-		
-		for(ArrayList<JCustomRadioButton> buttons : this.qualityGenki) {
+		for(int i = 0; i < this.qualityGenki.size(); i++) {
+			ArrayList<JCustomRadioButton> buttons = this.qualityGenki.get(i);
 			int select = 5;
 			
 			while(select > 0) {
@@ -492,10 +499,12 @@ public class PageMount extends PagePanel {
 				select--;
 			}
 			
-			config[index++] = select;
+			config.put("QualityGenki" + i, "" + select);
 		}
 		
-		for(ArrayList<JStarCheckBox> buttons : this.starGenki) {
+		
+		for(int i = 0; i < this.starGenki.size(); i++) {
+			ArrayList<JStarCheckBox> buttons = this.starGenki.get(i);
 			int select = 4;
 			
 			while(select > 0) {
@@ -506,34 +515,36 @@ public class PageMount extends PagePanel {
 				select--;
 			}
 			
-			config[index++] = select;
+			config.put("StarGenki" + i, "" + select);
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			config[index++] = this.genki.get(i).getSelectedIndex();
+		for(int i = 0; i < this.genki.size(); i++) {
+			String value = this.getGenki(i) != null ? this.getGenki(i).getName() : "";
+			config.put("Genki" + i, value);
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		for(int i = 0; i < this.effectXpStuff.size(); i++) {
+			config.put("EffectXpStuff" + i, this.getEffectXpStuff(i).getInfo(lang));
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			String value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).toString() : "0";
+			config.put("LvlXpStuff" + i, value);
 		}
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
+	public void setConfig(Map<String, String> config, Language lang) {
+		this.mount.setSelectedItem(Mount.get(config.get("Mount")));
 		
-		this.mount.setSelectedIndex(config[index++]);
-		
-		for(int i = 0; i < 2; i++) {
+		for(int i = 0; i < this.qualityGenki.size(); i++) {
 			ArrayList<JCustomRadioButton> buttons = this.qualityGenki.get(i);
+			int select = Integer.valueOf(config.get("QualityGenki" + i));
+			
 			for(int j = 0; j < buttons.size(); j++) {
-				if(j == config[index]) {
+				if(j == select) {
 					buttons.get(j).setSelected(true);
 					updateQualityGenki(i);
 					setEffects();
@@ -541,14 +552,14 @@ public class PageMount extends PagePanel {
 					buttons.get(j).setSelected(false);
 				}
 			}
-			
-			index++;
 		}
 		
-		for(int i = 0; i < 2; i++) {
+		for(int i = 0; i < this.starGenki.size(); i++) {
 			ArrayList<JStarCheckBox> buttons = this.starGenki.get(i);
+			int select = Integer.valueOf(config.get("StarGenki" + i));
+			
 			for(int j = 0; j < buttons.size(); j++) {
-				if(j == config[index]) {
+				if(j == select) {
 					buttons.get(j).setSelected(true);
 					updateStarGenki(i, j);
 					setEffects();
@@ -556,20 +567,18 @@ public class PageMount extends PagePanel {
 					buttons.get(j).setSelected(false);
 				}
 			}
-			
-			index++;
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			this.genki.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.genki.size(); i++) {
+			this.genki.get(i).setSelectedItem(Genki.get(config.get("Genki"), Integer.valueOf(config.get("QualityGenki" + i))));
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.effectXpStuff.size(); i++) {
+			this.effectXpStuff.get(i).setSelectedItem(TypeEffect.get(config.get("EffectXpStuff" + i), lang));
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			this.lvlXpStuff.get(i).setSelectedItem(config.get("LvlXpStuff" + i));
 		}
 	}
 }

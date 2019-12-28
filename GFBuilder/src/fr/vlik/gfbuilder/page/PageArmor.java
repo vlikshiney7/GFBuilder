@@ -3,8 +3,10 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 import javax.swing.Box;
@@ -41,6 +43,7 @@ public class PageArmor extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "ARMOR";
 	private static PageArmor INSTANCE = new PageArmor();
 	
 	private JCustomComboBox<EquipSet> shortcutSet = new JCustomComboBox<EquipSet>();
@@ -247,6 +250,10 @@ public class PageArmor extends PagePanel {
 	public Enchantment getRedEnchantment(int id) {
 		return this.redEnchant.get(id).getSelectedItem();
 	}
+
+	public String getRedFortif(int id) {
+		return this.redFortif.get(id).getSelectedItem();
+	}
 	
 	public int getRedLvlEnchant(int id) {
 		if(this.redLvlEnchant.get(id).getItemCount() == 0) {
@@ -269,6 +276,12 @@ public class PageArmor extends PagePanel {
 
 	@Override
 	protected void setEffects() {
+		try {
+			MainFrame.getInstance().keepScroll();
+		} catch (NullPointerException e) {
+			System.out.println("Scrolling fail");
+		}
+		
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Armor[] armors = new Armor[5];
@@ -793,8 +806,8 @@ public class PageArmor extends PagePanel {
 	
 	private void updateRedLvlEnchant(int id) {
 		if(this.redEnchant.get(id).getSelectedIndex() != 0) {
-			Enchantment red = this.getRedEnchantment(id);
-			Integer[] nbLvl = new Integer[red.getNbLvl()];
+			int nbLvlEnchant = this.getRedEnchantment(id) != null ? this.getRedEnchantment(id).getNbLvl() : 0;
+			Integer[] nbLvl = new Integer[nbLvlEnchant];
 			
 			for(int i = 0; i < nbLvl.length; i++) {
 				nbLvl[i] = i+1;
@@ -865,96 +878,99 @@ public class PageArmor extends PagePanel {
 	}
 	
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[81];
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
+	
+	@Override
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		for(int i = 0; i < 5; i++) {
-			config[index++] = this.armor.get(i).getSelectedIndex();
+		for(int i = 0; i < this.armor.size(); i++) {
+			config.put("Armor" + i, this.getArmor(i).getName());
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			config[index++] = this.enchant.get(i).getSelectedIndex();
+		for(int i = 0; i < this.enchant.size(); i++) {
+			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName() : "";
+			config.put("Enchantment" + i, value);
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			config[index++] = this.fortif.get(i).getSelectedIndex();
+		for(int i = 0; i < this.fortif.size(); i++) {
+			config.put("Fortif" + i, this.getFortif(i));
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			config[index++] = this.pearl.get(i).getSelectedIndex();
+		for(int i = 0; i < this.pearl.size(); i++) {
+			config.put("Pearl" + i, this.getPearl(i).getName());
 		}
 		
-		for(int i = 0; i < 10; i++) {
-			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		for(int i = 0; i < this.effectXpStuff.size(); i++) {
+			config.put("EffectXpStuff" + i, this.getEffectXpStuff(i).getInfo(lang));
 		}
 		
-		for(int i = 0; i < 10; i++) {
-			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			String value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).toString() : "0";
+			config.put("LvlXpStuff" + i, value);
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			config[index++] = this.redFortif.get(i).getSelectedIndex();
+		for(int i = 0; i < this.redFortif.size(); i++) {
+			config.put("RedFortif" + i, this.getRedFortif(i));
 		}
 		
-		for(int i = 0; i < 15; i++) {
-			config[index++] = this.redEnchant.get(i).getSelectedIndex();
+		for(int i = 0; i < this.redEnchant.size(); i++) {
+			config.put("RedEnchantment" + i, this.getRedEnchantment(i).getName());
 		}
-		
-		for(int i = 0; i < 15; i++) {
-			config[index++] = this.redLvlEnchant.get(i).getSelectedIndex();
+
+		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
+			config.put("RedLvlEnchantment" + i, "" + this.getRedLvlEnchant(i));
 		}
-		
-		for(int i = 0; i < 5; i++) {
-			config[index++] = this.valueFortif.get(i).getValue();
+
+		for(int i = 0; i < this.valueFortif.size(); i++) {
+			config.put("ValueFortif" + i, "" + this.valueFortif.get(i).getValue());
 		}
 		
 		return config;
 	}
 	
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
-		for(int i = 0; i < 5; i++) {
-			this.armor.get(i).setSelectedIndex(config[index++]);
+	public void setConfig(Map<String, String> config, Language lang) {
+		for(int i = 0; i < this.armor.size(); i++) {
+			this.armor.get(i).setSelectedItem(Armor.get(config.get("Armor" + i), i));
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			this.enchant.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.enchant.size(); i++) {
+			this.enchant.get(i).setSelectedItem(Enchantment.get(config.get("Enchantment" + i)));
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			this.fortif.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.fortif.size(); i++) {
+			this.fortif.get(i).setSelectedItem(config.get("Fortif" + i));
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			this.pearl.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.pearl.size(); i++) {
+			this.pearl.get(i).setSelectedItem(Pearl.getWeapon(config.get("Pearl" + i)));
 		}
 		
-		for(int i = 0; i < 10; i++) {
-			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.effectXpStuff.size(); i++) {
+			this.effectXpStuff.get(i).setSelectedItem(TypeEffect.get(config.get("EffectXpStuff" + i), lang));
 		}
 		
-		for(int i = 0; i < 10; i++) {
-			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			this.lvlXpStuff.get(i).setSelectedItem(config.get("LvlXpStuff" + i));
 		}
 		
-		for(int i = 0; i < 5; i++) {
-			this.redFortif.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.redFortif.size(); i++) {
+			this.redFortif.get(i).setSelectedItem(config.get("RedFortif" + i));
 		}
 		
-		for(int i = 0; i < 15; i++) {
-			this.redEnchant.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.redEnchant.size(); i++) {
+			this.redEnchant.get(i).setSelectedItem(Enchantment.getRed(config.get("RedEnchantment" + i)));
 		}
-		
-		for(int i = 0; i < 15; i++) {
-			this.redLvlEnchant.get(i).setSelectedIndex(config[index++]);
+
+		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
+			this.redLvlEnchant.get(i).setSelectedItem(config.get("RedLvlEnchantment" + i));
 		}
-		
-		for(int i = 0; i < 5; i++) {
-			 this.valueFortif.get(i).setValue(config[index++]);
+
+		for(int i = 0; i < this.valueFortif.size(); i++) {
+			this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));
 		}
 	}
 }

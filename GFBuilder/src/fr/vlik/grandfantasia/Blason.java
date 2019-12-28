@@ -157,6 +157,16 @@ public class Blason implements Iconable, Writable {
 		}
 	}
 	
+	public static Blason get(String name) {
+		for(Blason blason : Blason.data) {
+			if(blason.getName().equals(name)) {
+				return blason;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Blason[] getPossibleBlason(int lvl, BlasonType type) {
 		ArrayList<Blason> result = new ArrayList<Blason>();
 		

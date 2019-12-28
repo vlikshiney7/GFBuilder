@@ -3,6 +3,8 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -32,6 +34,7 @@ public class PageCapeRing extends PagePanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "CAPERING";
 	private static PageCapeRing INSTANCE = new PageCapeRing();
 	
 	private JCustomComboBox<Cape> cape;
@@ -552,54 +555,57 @@ public class PageCapeRing extends PagePanel {
 		this.ring.get(other).setModel(new DefaultComboBoxModel<Ring>(tabRing));
 		this.ring.get(other).setSelectedItem(memory);
 	}
+	
+	@Override
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
 
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[18];
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
+		config.put("Cape", this.getCape().getName());
 		
-		config[index++] = this.cape.getSelectedIndex();
-		
-		for(int i = 0; i < 2; i++) {
-			config[index++] = this.ring.get(i).getSelectedIndex();
+		for(int i = 0; i < this.ring.size(); i++) {
+			config.put("Ring" + i, this.getRing(i).getName());
 		}
 		
-		for(int i = 0; i < 3; i++) {
-			config[index++] = this.enchant.get(i).getSelectedIndex();
+		for(int i = 0; i < this.enchant.size(); i++) {
+			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName() : "";
+			config.put("Enchantment" + i, value);
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			config[index++] = this.effectXpStuff.get(i).getSelectedIndex();
+		for(int i = 0; i < this.effectXpStuff.size(); i++) {
+			config.put("EffectXpStuff" + i, this.getEffectXpStuff(i).getInfo(lang));
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			config[index++] = this.lvlXpStuff.get(i).getSelectedIndex();
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			String value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).toString() : "0";
+			config.put("LvlXpStuff" + i, value);
 		}
 		
 		return config;
 	}
 	
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
+	public void setConfig(Map<String, String> config, Language lang) {
+		this.cape.setSelectedItem(Cape.get(config.get("Cape")));
 		
-		this.cape.setSelectedIndex(config[index++]);
-		
-		for(int i = 0; i < 2; i++) {
-			this.ring.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.ring.size(); i++) {
+			this.ring.get(i).setSelectedItem(Ring.get(config.get("Ring" + i)));
 		}
 		
-		for(int i = 0; i < 3; i++) {
-			this.enchant.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.enchant.size(); i++) {
+			this.enchant.get(i).setSelectedItem(Enchantment.get(config.get("Enchantment" + i)));
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			this.effectXpStuff.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.effectXpStuff.size(); i++) {
+			this.effectXpStuff.get(i).setSelectedItem(TypeEffect.get(config.get("EffectXpStuff" + i), lang));
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			this.lvlXpStuff.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			this.lvlXpStuff.get(i).setSelectedItem(config.get("LvlXpStuff" + i));
 		}
 	}
 }

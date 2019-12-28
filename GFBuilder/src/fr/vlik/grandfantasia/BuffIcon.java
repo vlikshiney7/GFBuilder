@@ -122,6 +122,26 @@ public class BuffIcon extends Buff implements Iconable {
 		return cast;
 	}
 	
+	public static BuffIcon getGuild(String name) {
+		for(BuffIcon buff : BuffIcon.dataGuild) {
+			if(buff.getName().equals(name)) {
+				return buff;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static BuffIcon getLove(String name) {
+		for(BuffIcon buff : BuffIcon.dataLove) {
+			if(buff.getName().equals(name)) {
+				return buff;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static BuffIcon[] getDataGuild() {
 		return BuffIcon.dataGuild;
 	}

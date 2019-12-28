@@ -159,4 +159,14 @@ public class Anima implements FullRenderer {
 		
 		return Anima.data;
 	}
+	
+	public static Anima get(String name) {
+		for(Anima anima : Anima.data) {
+			if(anima.getName().equals(name)) {
+				return anima;
+			}
+		}
+		
+		return null;
+	}
 }

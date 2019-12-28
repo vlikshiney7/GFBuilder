@@ -140,6 +140,16 @@ public final class Ring extends Equipment {
 		}
 	}
 	
+	public static Ring get(String name) {
+		for(Ring ring : Ring.data) {
+			if(ring.getName().equals(name)) {
+				return ring;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Ring[] getPossibleRing(int lvl, Ring toIgnore) {
 		ArrayList<Ring> result = new ArrayList<Ring>();
 		

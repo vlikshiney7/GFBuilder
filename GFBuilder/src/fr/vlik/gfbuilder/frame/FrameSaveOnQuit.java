@@ -15,7 +15,6 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
@@ -122,7 +121,6 @@ public class FrameSaveOnQuit extends JFrame {
 	}
 	
 	public void end() {
-		SaveConfig.writeAllData();
 		this.setVisible(false);
 		System.exit(0);
 	}

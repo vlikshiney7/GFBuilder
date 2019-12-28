@@ -2,6 +2,8 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -27,6 +29,7 @@ public class PageSkill extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "SKILL";
 	private static PageSkill INSTANCE = new PageSkill();
 	
 	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
@@ -308,28 +311,30 @@ public class PageSkill extends PagePanel {
 	}
 	
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[3];
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
+	
+	@Override
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		for(int i = 0; i < 2; i++) {
-			config[index++] = this.skillProgress.get(i).getSelectedIndex();
+		for(int i = 0; i < this.skillProgress.size(); i++) {
+			config.put("LvlSkill" + i, "" + this.skillProgress.get(i).getSelectedIndex());
 		}
 		
-		config[index++] = this.proSkill.getSelectedIndex();
+		String value = this.getProSkill() != null ? this.getProSkill().getName() : "";
+		config.put("ProSkill", "" + value);
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
-		for(int i = 0; i < 2; i++) {
-			this.skillProgress.get(i).setSelectedIndex(config[index++]);
+	public void setConfig(Map<String, String> config, Language lang) {
+		for(int i = 0; i < this.skillProgress.size(); i++) {
+			this.skillProgress.get(i).setSelectedIndex(Integer.valueOf(config.get("LvlSkill" + i)));
 		}
 		
-		this.proSkill.setSelectedIndex(config[index++]);
+		this.proSkill.setSelectedItem(ProSkill.get(config.get("ProSkill")));
 	}
 }

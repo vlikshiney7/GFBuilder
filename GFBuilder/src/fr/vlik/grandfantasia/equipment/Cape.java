@@ -179,6 +179,16 @@ public class Cape extends Equipment {
 		}
 	}
 	
+	public static Cape get(String name) {
+		for(Cape cape : Cape.data) {
+			if(cape.getName().equals(name)) {
+				return cape;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Cape[] getPossibleCape(GradeName grade, int lvl) {
 		ArrayList<Cape> result = new ArrayList<Cape>();
 		

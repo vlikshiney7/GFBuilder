@@ -264,6 +264,18 @@ public class Weapon extends Equipment {
 		}
 	}
 	
+	public static Weapon get(String name) {
+		for(Weapon[] type : Weapon.data) {
+			for(Weapon weapon : type) {
+				if(weapon.getName().equals(name)) {
+					return weapon;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weaponType = null;

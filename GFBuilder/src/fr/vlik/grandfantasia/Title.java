@@ -113,6 +113,16 @@ public class Title implements Colorable, Writable {
 		}
 	}
 	
+	public static Title get(String name) {
+		for(Title title : Title.data) {
+			if(title.getName().equals(name)) {
+				return title;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		

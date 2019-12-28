@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.Box;
@@ -34,6 +36,7 @@ public class PageTalent extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "TALENT";
 	private static PageTalent INSTANCE = new PageTalent();
 	
 	private JLabel[] tabChosenTalent = new JLabel[9];
@@ -373,12 +376,16 @@ public class PageTalent extends PagePanel {
 	}
 	
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[32];
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
+	
+	@Override
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		for(ArrayList<JCustomRadioButton> buttons : this.radioTalent) {
+		for(int i = 0; i < this.radioTalent.size(); i++) {
+			ArrayList<JCustomRadioButton> buttons = this.radioTalent.get(i);
 			int select = 3;
 			
 			while(select > 0) {
@@ -389,35 +396,33 @@ public class PageTalent extends PagePanel {
 				select--;
 			}
 			
-			config[index++] = select;
+			config.put("TalentSelect" + i, "" + select);
 		}
 		
-		
-		for(int i = 0; i < 24; i++) {
-			config[index++] = this.talent.get(i).getSelectedIndex();
+		for(int i = 0; i < this.talent.size(); i++) {
+			config.put("TalentLvl" + i, "" + this.talent.get(i).getSelectedIndex());
 		}
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
-		for(ArrayList<JCustomRadioButton> buttons : this.radioTalent) {
-			for(int i = 0; i < buttons.size(); i++) {
-				if(i == config[index]) {
-					buttons.get(i).setSelected(true);
+	public void setConfig(Map<String, String> config, Language lang) {
+		for(int i = 0; i < this.radioTalent.size(); i++) {
+			ArrayList<JCustomRadioButton> buttons = this.radioTalent.get(i);
+			int select = Integer.valueOf(config.get("TalentSelect" + i));
+			
+			for(int j = 0; j < buttons.size(); j++) {
+				if(j == select) {
+					buttons.get(j).setSelected(true);
 				} else {
-					buttons.get(i).setSelected(false);
+					buttons.get(j).setSelected(false);
 				}
 			}
-			
-			index++;
 		}
 		
-		for(int i = 0; i < 24; i++) {
-			this.talent.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.talent.size(); i++) {
+			this.talent.get(i).setSelectedIndex(Integer.valueOf(config.get("TalentLvl" + i)));
 		}
 	}
 }

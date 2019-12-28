@@ -99,4 +99,14 @@ public class Archive implements Colorable, Writable {
 	public static Archive[] getData() {
 		return Archive.data;
 	}
+	
+	public static Archive get(String name) {
+		for(Archive archive : Archive.data) {
+			if(archive.getName().equals(name)) {
+				return archive;
+			}
+		}
+		
+		return null;
+	}
 }

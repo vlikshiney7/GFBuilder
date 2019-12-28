@@ -133,6 +133,16 @@ public class Grade implements Iconable, Writable {
 		return Grade.data;
 	}
 	
+	public static Grade get(String name, Language lang) {
+		for(Grade grade : Grade.data) {
+			if(grade.getName(lang).equals(name)) {
+				return grade;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Grade[] getPossibleData(int lvl) {
 		ArrayList<Grade> result = new ArrayList<Grade>();
 		

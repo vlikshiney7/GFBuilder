@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -29,6 +31,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
+	private static final String SAVE_NAME = "SPECIALITY";
 	private static PageSpeciality INSTANCE = new PageSpeciality();
 	
 	private Speciality[] tabSpeciality;
@@ -464,28 +467,29 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			} else break;
 		}
 	}
+	
+	@Override
+	public String getSaveName() {
+		return SAVE_NAME;
+	}
 
 	@Override
-	public int[] getConfig() {
-		int[] config = new int[20];
+	public Map<String, String> getConfig(Language lang) {
+		Map<String, String> config = new HashMap<String, String>();
 		
-		int index = 0;
-		
-		for(int i = 0; i < 20; i++) {
-			config[index++] = this.spePoint.get(i).getSelectedIndex();
+		for(int i = 0; i < this.spePoint.size(); i++) {
+			config.put("LvlSpeciality" + i, "" + this.spePoint.get(i).getSelectedIndex());
 		}
 		
 		return config;
 	}
 
 	@Override
-	public void setConfig(int[] config) {
-		int index = 0;
-		
+	public void setConfig(Map<String, String> config, Language lang) {
 		setMinSpe();
 		
-		for(int i = 0; i < 20; i++) {
-			this.spePoint.get(i).setSelectedIndex(config[index++]);
+		for(int i = 0; i < this.spePoint.size(); i++) {
+			this.spePoint.get(i).setSelectedIndex(Integer.valueOf(config.get("LvlSpeciality" + i)));
 		}
 	}
 }

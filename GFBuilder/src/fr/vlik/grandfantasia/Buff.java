@@ -84,4 +84,14 @@ public class Buff implements Writable {
 	public static Buff[] getData() {
 		return Buff.data;
 	}
+	
+	public static Buff get(String name) {
+		for(Buff buff : Buff.data) {
+			if(buff.getName().equals(name)) {
+				return buff;
+			}
+		}
+		
+		return null;
+	}
 }

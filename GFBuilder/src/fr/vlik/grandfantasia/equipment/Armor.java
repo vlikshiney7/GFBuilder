@@ -252,6 +252,16 @@ public class Armor extends Equipment {
 		}
 	}
 	
+	public static Armor get(String name, int list) {
+		for(Armor armor : Armor.data[list]) {
+			if(armor.getName().equals(name)) {
+				return armor;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {
 		ArrayList<Armor> result = new ArrayList<Armor>();
 		

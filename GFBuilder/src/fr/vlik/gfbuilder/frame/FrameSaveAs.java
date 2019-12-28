@@ -18,6 +18,7 @@ import javax.swing.event.DocumentListener;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
@@ -121,12 +122,13 @@ public class FrameSaveAs extends JFrame {
 		this.submit.setVisible(false);
 		this.label[2].setVisible(true);
 		
+		this.askName.setText(Overlay.getInstance().getSaveDefaultName());
 		this.askName.requestFocus();
 		this.setVisible(true);
 	}
 	
 	private void checkValidity() {
-		if(this.askName.getText().equals("")) {
+		if(this.askName.getText().equals("") || this.askName.getText().matches(".*[\\/\\\\\\*\\?\"<>\\|:].*")) {
 			this.submit.setVisible(false);
 			this.label[2].setVisible(true);
 			return;
@@ -145,7 +147,7 @@ public class FrameSaveAs extends JFrame {
 	}
 	
 	private void addSaveConfig() {
-		SaveConfig.writeData(this.askName.getText());
+		SaveConfig.writeData(this.askName.getText(), MainFrame.getInstance().getLanguage());
 		
 		PageOption.getInstance().refreshSave(this.askName.getText());
 		

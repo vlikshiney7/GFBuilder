@@ -289,6 +289,26 @@ public class Enchantment implements Writable {
 		return cast;
 	}
 	
+	public static Enchantment get(String name) {
+		for(Enchantment enchant : Enchantment.data) {
+			if(enchant.getName().equals(name)) {
+				return enchant;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Enchantment getRed(String name) {
+		for(Enchantment enchant : Enchantment.redData) {
+			if(enchant.getName().equals(name)) {
+				return enchant;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Enchantment[] getPossibleArmorEnchant(Quality quality) {
 		ArrayList<Enchantment> result = new ArrayList<Enchantment>();
 		result.add(new Enchantment());

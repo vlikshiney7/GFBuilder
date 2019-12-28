@@ -128,6 +128,16 @@ public class Bullet implements FullRenderer {
 		}
 	}
 	
+	public static Bullet get(String name) {
+		for(Bullet bullet : Bullet.data) {
+			if(bullet.getName().equals(name)) {
+				return bullet;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Bullet[] getPossibleBullet(int lvl) {
 		ArrayList<Bullet> result = new ArrayList<Bullet>();
 		

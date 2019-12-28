@@ -145,6 +145,20 @@ public class Genki implements Colorable, Writable {
 		}
 	}
 	
+	public static Genki get(String name, int quality) {
+		if(quality == 0) {
+			return null;
+		}
+		
+		for(Genki mount : Genki.data[quality-1]) {
+			if(mount.getName().equals(name)) {
+				return mount;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static Genki[] getPossibleGenki(int quality, int star) {
 		ArrayList<Genki> result = new ArrayList<Genki>();
 		
