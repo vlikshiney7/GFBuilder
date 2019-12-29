@@ -12,7 +12,6 @@ import java.util.Map;
 
 import javax.swing.JPanel;
 
-import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PagePanel;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.JCustomButton;
@@ -22,7 +21,7 @@ public class SaveConfig extends JCustomButton {
 	private static final long serialVersionUID = 1L;
 	//private static final String SAVE_FILE_NAME = "save1.1.gfb";
 	private static final String SAVE_FOLDER_NAME = "GFBuilderSave";
-	private static final String EXTENTION = ".gfb";
+	private static final String EXTENSION = ".gfb";
 	private static ArrayList<SaveConfig> data;
 	static {
 		loadData();
@@ -66,6 +65,7 @@ public class SaveConfig extends JCustomButton {
 				try {
 					PagePanel page = (PagePanel) pages.get(orderLoading[i]);
 					page.setConfig(this.getValuesFromPage(page.getSaveName()), this.lang);
+					page.setEffects();
 				} catch (IllegalArgumentException e) {
 					System.out.println("Out of range");
 				}
@@ -89,7 +89,7 @@ public class SaveConfig extends JCustomButton {
 		}
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FOLDER_NAME + File.separator + this.name + EXTENTION, false));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FOLDER_NAME + File.separator + this.name + EXTENSION, false));
 		) {
 			writer.append(this.name + "/" + this.lang.name() + "\n");
 			
@@ -219,7 +219,7 @@ public class SaveConfig extends JCustomButton {
 		SaveConfig.data.add(save);
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FOLDER_NAME + File.separator + name + EXTENTION, false));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false));
 		) {
 			writer.append(name + "/" + lang.name() + "\n");
 			
@@ -292,7 +292,7 @@ public class SaveConfig extends JCustomButton {
 	public static void deleteData(SaveConfig delete) {
 		SaveConfig.data.remove(delete);
 		
-		File remove = new File(SAVE_FOLDER_NAME + File.separator + delete.getName() + EXTENTION);
+		File remove = new File(SAVE_FOLDER_NAME + File.separator + delete.getName() + EXTENSION);
 		
 		if(remove.exists()) {
 			remove.delete();
@@ -300,7 +300,7 @@ public class SaveConfig extends JCustomButton {
 	}
 	
 	public static boolean fileExist() {
-		File file = new File(SAVE_FOLDER_NAME + File.separator + Overlay.getInstance().getName() + EXTENTION);
+		File file = new File(SAVE_FOLDER_NAME + File.separator + Overlay.getInstance().getCurrentName() + EXTENSION);
 		return file.exists();
 	}
 }

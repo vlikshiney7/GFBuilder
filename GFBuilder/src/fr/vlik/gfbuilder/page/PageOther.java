@@ -82,7 +82,7 @@ public class PageOther extends PagePanel {
 	}
 
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		list.addAll(this.getBague().getEffects());
@@ -206,8 +206,25 @@ public class PageOther extends PagePanel {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		this.bague.setSelectedItem(Bague.get(config.get("Bague")));
-		this.loveCo.setSelectedItem(BuffIcon.getLove(config.get("LoveBuff")));
-		this.anima.setSelectedItem(Anima.get(config.get("Anima")));
+		Bague bague = Bague.get(config.get("Bague"));
+		if(bague == null) {
+			this.bague.setSelectedIndex(0);
+		} else {
+			this.bague.setSelectedItem(Bague.get(config.get("Bague")));
+		}
+		
+		BuffIcon loveCo = BuffIcon.getLove(config.get("LoveBuff"));
+		if(loveCo == null) {
+			this.loveCo.setSelectedIndex(0);
+		} else {
+			this.loveCo.setSelectedItem(BuffIcon.getLove(config.get("LoveBuff")));
+		}
+		
+		Anima anima = Anima.get(config.get("Anima"));
+		if(anima == null) {
+			this.anima.setSelectedIndex(0);
+		} else {
+			this.anima.setSelectedItem(Anima.get(config.get("Anima")));
+		}
 	}
 }

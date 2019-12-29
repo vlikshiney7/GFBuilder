@@ -167,7 +167,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < 5; i++) {
@@ -357,7 +357,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.lvl.setValue(Integer.valueOf(config.get("Lvl")));
 		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
 		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
-		this.reinca.setSelectedItem(Title.get(config.get("Title")));
+		this.title.setSelectedItem(Title.get(config.get("Title")));
 		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil")));
 		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
 	}

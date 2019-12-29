@@ -155,7 +155,7 @@ public class PageMount extends PagePanel {
 	}
 
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Mount mount = this.getMount();
@@ -537,7 +537,12 @@ public class PageMount extends PagePanel {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		this.mount.setSelectedItem(Mount.get(config.get("Mount")));
+		Mount mount = Mount.get(config.get("Mount"));
+		if(mount == null) {
+			this.mount.setSelectedIndex(0);
+		} else {
+			this.mount.setSelectedItem(mount);
+		}
 		
 		for(int i = 0; i < this.qualityGenki.size(); i++) {
 			ArrayList<JCustomRadioButton> buttons = this.qualityGenki.get(i);
@@ -570,7 +575,7 @@ public class PageMount extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.genki.size(); i++) {
-			this.genki.get(i).setSelectedItem(Genki.get(config.get("Genki"), Integer.valueOf(config.get("QualityGenki" + i))));
+			this.genki.get(i).setSelectedItem(Genki.get(config.get("Genki" + i), Integer.valueOf(config.get("QualityGenki" + i))));
 		}
 		
 		for(int i = 0; i < this.effectXpStuff.size(); i++) {
@@ -578,7 +583,7 @@ public class PageMount extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(config.get("LvlXpStuff" + i));
+			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
 		}
 	}
 }

@@ -17,7 +17,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
-import fr.vlik.gfbuilder.frame.FrameSaveLoading;
+import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -49,7 +49,9 @@ public class PageOption extends JPanel {
 		
 		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.getData());
 		this.save.addActionListener(e -> {
-			FrameSaveLoading.getInstance().popup();
+			if(!FrameSaveLoader.isBlocked()) {
+				FrameSaveLoader.getInstance().popup();
+			}
 		});
 		
 		this.currentSave = new JCustomButton(this.label[1]);

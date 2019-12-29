@@ -99,7 +99,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		ArrayList<Effect> convert = new ArrayList<Effect>();
 		

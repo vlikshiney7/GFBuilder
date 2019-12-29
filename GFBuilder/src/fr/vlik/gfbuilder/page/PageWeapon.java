@@ -269,7 +269,7 @@ public class PageWeapon extends PagePanel {
 	}
 	
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Weapon[] weapons = new Weapon[3];
@@ -913,7 +913,12 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
-			config.put("RedEnchantment" + i, this.getRedEnchantment(i).getName());
+			Enchantment enchant = this.getRedEnchantment(i);
+			if(enchant == null) {
+				config.put("RedEnchantment" + i, "");
+			} else {
+				config.put("RedEnchantment" + i, this.getRedEnchantment(i).getName());
+			}
 		}
 
 		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
@@ -930,21 +935,41 @@ public class PageWeapon extends PagePanel {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.weapon.size(); i++) {
-			this.weapon.get(i).setSelectedItem(Weapon.get(config.get("Weapon" + i)));
+			Weapon weapon = Weapon.get(config.get("Weapon" + i));
+			if(weapon == null) {
+				this.weapon.get(i).setSelectedIndex(0);
+			} else {
+				this.weapon.get(i).setSelectedItem(weapon);
+			}
 		}
 		
-		this.bullet.setSelectedItem(Bullet.get(config.get("Bullet")));
+		Bullet bullet = Bullet.get(config.get("Bullet"));
+		if(bullet == null) {
+			this.bullet.setSelectedIndex(0);
+		} else {
+			this.bullet.setSelectedItem(bullet);
+		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
 			this.enchant.get(i).setSelectedItem(Enchantment.get(config.get("Enchantment" + i)));
 		}
 		
 		for(int i = 0; i < this.fortif.size(); i++) {
-			this.fortif.get(i).setSelectedItem(config.get("Fortif" + i));
+			String fortif = config.get("Fortif" + i);
+			if(fortif == null) {
+				this.fortif.get(i).setSelectedIndex(0);
+			} else {
+				this.fortif.get(i).setSelectedItem(fortif);
+			}
 		}
 		
 		for(int i = 0; i < this.pearl.size(); i++) {
-			this.pearl.get(i).setSelectedItem(Pearl.getWeapon(config.get("Pearl" + i)));
+			Pearl pearl = Pearl.getWeapon(config.get("Pearl" + i));
+			if(pearl == null) {
+				this.pearl.get(i).setSelectedIndex(0);
+			} else {
+				this.pearl.get(i).setSelectedItem(pearl);
+			}
 		}
 		
 		for(int i = 0; i < this.effectXpStuff.size(); i++) {
@@ -952,11 +977,16 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(config.get("LvlXpStuff" + i));
+			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
-			this.redFortif.get(i).setSelectedItem(config.get("RedFortif" + i));
+			String redFortif = config.get("RedFortif" + i);
+			if(redFortif == null) {
+				this.redFortif.get(i).setSelectedIndex(0);
+			} else {
+				this.redFortif.get(i).setSelectedItem(redFortif);
+			}
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {

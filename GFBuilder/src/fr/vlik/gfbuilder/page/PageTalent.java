@@ -136,7 +136,7 @@ public class PageTalent extends PagePanel {
 	}
 	
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.radioTalent.size(); i++) {

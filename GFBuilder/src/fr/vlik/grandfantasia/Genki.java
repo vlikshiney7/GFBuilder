@@ -150,9 +150,9 @@ public class Genki implements Colorable, Writable {
 			return null;
 		}
 		
-		for(Genki mount : Genki.data[quality-1]) {
-			if(mount.getName().equals(name)) {
-				return mount;
+		for(Genki genki : Genki.data[quality-1]) {
+			if(genki.getName().equals(name)) {
+				return genki;
 			}
 		}
 		

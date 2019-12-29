@@ -82,7 +82,7 @@ public class PageSkill extends PagePanel {
 	}
 
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
@@ -92,7 +92,7 @@ public class PageSkill extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.skillProgress.size(); i++) {
-			if(this.skillProgress.get(i).isVisible()) {
+			if(this.skillProgress.get(i).isVisible() && this.getSkill(i) != null) {
 				list.addAll(this.getSkill(i).getEffects(0));
 			}
 		}

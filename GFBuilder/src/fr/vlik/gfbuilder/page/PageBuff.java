@@ -172,7 +172,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
@@ -513,7 +513,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.nucleus.size(); i++) {
-			this.nucleus.get(i).setSelectedItem(Nucleus.get(config.get("Nucleus" + i), i));
+			Nucleus nucleus = Nucleus.get(config.get("Nucleus" + i), i);
+			if(nucleus == null) {
+				this.nucleus.get(i).setSelectedIndex(0);
+			} else {
+				this.nucleus.get(i).setSelectedItem(nucleus);
+			}
 		}
 
 		for(int i = 0; i < this.energy.size(); i++) {

@@ -23,10 +23,11 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomLabel;
 
-public class FrameSaveLoading extends JFrame {
+public class FrameSaveLoader extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
-	private static final FrameSaveLoading INSTANCE = new FrameSaveLoading();
+	private static final FrameSaveLoader INSTANCE = new FrameSaveLoader();
+	private static boolean blocker = false;
 	
 	private JCustomButton load;
 	private JCustomButton delete;
@@ -34,11 +35,11 @@ public class FrameSaveLoading extends JFrame {
 	
 	private JLabel[] label;
 	
-	public static FrameSaveLoading getInstance() {
+	public static FrameSaveLoader getInstance() {
 		return INSTANCE;
 	}
 	
-	private FrameSaveLoading() {
+	private FrameSaveLoader() {
 		this.setLayout(new BorderLayout());
 		setLabel(Language.FR);
 		
@@ -130,5 +131,13 @@ public class FrameSaveLoading extends JFrame {
 		MainFrame.getInstance().toFront();
 		MainFrame.getInstance().setEnabled(true);
 		this.setVisible(false);
+	}
+	
+	public static boolean isBlocked() {
+		return blocker;
+	}
+	
+	public static void setBlocker(boolean enabled) {
+		blocker = enabled;
 	}
 }

@@ -70,7 +70,7 @@ public class PageSprite extends PagePanel {
 	}
 
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.blason.size(); i++) {
@@ -177,6 +177,11 @@ public class PageSprite extends PagePanel {
 			}
 		}
 		
-		this.isleBuff.setSelectedItem(Buff.get(config.get("Isle")));
+		Buff isle = Buff.get(config.get("Isle"));
+		if(isle == null) {
+			this.isleBuff.setSelectedIndex(0);
+		} else {
+			this.isleBuff.setSelectedItem(isle);
+		}
 	}
 }

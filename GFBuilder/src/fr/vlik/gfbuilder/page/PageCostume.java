@@ -219,7 +219,7 @@ public class PageCostume extends PagePanel {
 	}
 
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		if(this.costWeapon.get(0).isSelected()) {
@@ -647,7 +647,11 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.costPearl.size(); i++) {
-			this.costPearl.get(i).setSelectedItem(Pearl.getCost(config.get("Pearl" + i)));
+			if(i < 2) {
+				this.costPearl.get(i).setSelectedItem(Pearl.getWeaponCost(config.get("Pearl" + i)));
+			} else {
+				this.costPearl.get(i).setSelectedItem(Pearl.getArmorCost(config.get("Pearl" + i)));
+			}
 		}
 		
 		for(int i = 0; i < this.checkBoxRunway.size(); i++) {

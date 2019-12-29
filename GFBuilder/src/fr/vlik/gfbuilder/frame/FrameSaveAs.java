@@ -78,7 +78,7 @@ public class FrameSaveAs extends JFrame {
 		
 		this.submit = new JCustomButton(this.label[1]);
 		this.submit.addActionListener(e -> {
-			addSaveConfig();
+			createSaveConfig();
 		});
 		this.submit.setAlignmentX(CENTER_ALIGNMENT);
 		
@@ -146,10 +146,16 @@ public class FrameSaveAs extends JFrame {
 		this.label[2].setVisible(false);
 	}
 	
-	private void addSaveConfig() {
+	private void createSaveConfig() {
 		SaveConfig.writeData(this.askName.getText(), MainFrame.getInstance().getLanguage());
 		
+		FrameSaveLoader.setBlocker(true);
 		PageOption.getInstance().refreshSave(this.askName.getText());
+		FrameSaveLoader.setBlocker(false);
+		
+		PageOption.getInstance().updateSave();
+		MainFrame.getInstance().updateStat();
+		Overlay.getInstance().setSave(true);
 		
 		MainFrame.getInstance().toFront();
 		MainFrame.getInstance().setEnabled(true);

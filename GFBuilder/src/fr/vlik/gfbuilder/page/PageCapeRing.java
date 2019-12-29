@@ -183,7 +183,7 @@ public class PageCapeRing extends PagePanel {
 	}
 
 	@Override
-	protected void setEffects() {
+	public void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Cape cape = new Cape(this.getCape());
@@ -590,10 +590,20 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		this.cape.setSelectedItem(Cape.get(config.get("Cape")));
+		Cape cape = Cape.get(config.get("Cape"));
+		if(cape == null) {
+			this.cape.setSelectedIndex(0);
+		} else {
+			this.cape.setSelectedItem(cape);
+		}
 		
 		for(int i = 0; i < this.ring.size(); i++) {
-			this.ring.get(i).setSelectedItem(Ring.get(config.get("Ring" + i)));
+			Ring ring = Ring.get(config.get("Ring" + i));
+			if(cape == null) {
+				this.ring.get(i).setSelectedIndex(0);
+			} else {
+				this.ring.get(i).setSelectedItem(ring);
+			}
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
@@ -605,7 +615,7 @@ public class PageCapeRing extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(config.get("LvlXpStuff" + i));
+			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
 		}
 	}
 }

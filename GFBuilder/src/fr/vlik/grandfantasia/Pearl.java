@@ -206,13 +206,17 @@ public class Pearl implements FullRenderer {
 		return null;
 	}
 	
-	public static Pearl getCost(String name) {
+	public static Pearl getWeaponCost(String name) {
 		for(Pearl pearl : Pearl.dataWeaponCost) {
 			if(pearl.getName().equals(name)) {
 				return pearl;
 			}
 		}
 		
+		return null;
+	}
+	
+	public static Pearl getArmorCost(String name) {
 		for(Pearl pearl : Pearl.dataArmorCost) {
 			if(pearl.getName().equals(name)) {
 				return pearl;
