@@ -82,7 +82,7 @@ public class PageOther extends PagePanel {
 	}
 
 	@Override
-	public void setEffects() {
+	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		list.addAll(this.getBague().getEffects());

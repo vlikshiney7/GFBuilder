@@ -32,7 +32,7 @@ public abstract class PagePanel extends JPanel {
 		return this.effects;
 	}
 	
-	abstract public void setEffects();
+	abstract protected void setEffects();
 	
 	abstract protected void createPanel();
 	

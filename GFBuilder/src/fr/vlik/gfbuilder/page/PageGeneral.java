@@ -167,7 +167,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	public void setEffects() {
+	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < 5; i++) {

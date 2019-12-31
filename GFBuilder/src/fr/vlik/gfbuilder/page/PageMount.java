@@ -155,7 +155,7 @@ public class PageMount extends PagePanel {
 	}
 
 	@Override
-	public void setEffects() {
+	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Mount mount = this.getMount();
@@ -365,7 +365,7 @@ public class PageMount extends PagePanel {
 			Integer memory = this.lvlXpStuff.get(0).getSelectedItem();
 			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<Integer>(tmp));
 			if(memory != null) {
-				this.lvlXpStuff.get(0).setSelectedIndex(memory);
+				this.lvlXpStuff.get(0).setSelectedItem(memory);
 			}
 			
 			tmp = new Integer[XpStuff.getDataMount()[this.effectXpStuff.get(1).getSelectedIndex()-1].getLvlValue().size()];
@@ -376,7 +376,7 @@ public class PageMount extends PagePanel {
 			memory = this.lvlXpStuff.get(1).getSelectedItem();
 			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<Integer>(tmp));
 			if(memory != null) {
-				this.lvlXpStuff.get(1).setSelectedIndex(memory);
+				this.lvlXpStuff.get(1).setSelectedItem(memory);
 			}
 			
 			this.lvlXpStuff.get(0).setVisible(true);
@@ -384,15 +384,15 @@ public class PageMount extends PagePanel {
 		}
 	}
 	
-	private void updateMaxLvlValue(int index) {
-		int indexPair = (index % 2 == 0) ? index + 1 : index -1;
+	private void updateMaxLvlValue(int id) {
+		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getEffectXpStuff(index) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.effectXpStuff.get(index).getSelectedIndex() == this.effectXpStuff.get(indexPair).getSelectedIndex()) {
+		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
+				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
 			return;
 		}
 		
-		int currentLvl = this.lvlXpStuff.get(index).getSelectedIndex()+1;
+		int currentLvl = this.lvlXpStuff.get(id).getSelectedIndex()+1;
 		int sizePair = XpStuff.getDataMount()[this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
 		
 		Integer[] tmp = new Integer[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
@@ -400,7 +400,7 @@ public class PageMount extends PagePanel {
 			tmp[i] = i+1;
 		}
 		
-		Integer memory = this.lvlXpStuff.get(indexPair).getSelectedItem();
+		Integer memory = this.getLvlXpStuff(indexPair);
 		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
 		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}

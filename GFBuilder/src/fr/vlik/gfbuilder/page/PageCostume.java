@@ -219,7 +219,7 @@ public class PageCostume extends PagePanel {
 	}
 
 	@Override
-	public void setEffects() {
+	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		if(this.costWeapon.get(0).isSelected()) {
@@ -657,5 +657,7 @@ public class PageCostume extends PagePanel {
 		for(int i = 0; i < this.checkBoxRunway.size(); i++) {
 			this.checkBoxRunway.get(i).setSelected(Boolean.valueOf(config.get("CheckboxRunway" + i)));
 		}
+		
+		setEffects();
 	}
 }

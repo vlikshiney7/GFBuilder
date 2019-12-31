@@ -112,10 +112,8 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		this.listGuildBuff.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent evt) {
-				JCustomList<?> list = (JCustomList<?>)evt.getSource();
-				
-		        if (evt.getClickCount() == 2) {
-		        	updateGuildBuff(list.getSelectedIndex());
+				if (evt.getClickCount() == 2) {
+		        	updateGuildBuff();
 		        	
 		        	setEffects();
 		        	MainFrame.getInstance().updateStat();
@@ -172,7 +170,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	public void setEffects() {
+	protected void setEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
@@ -228,7 +226,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			this.label[i+1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			this.label[i+1].setPreferredSize(new Dimension(60, 20));
 			nucleus.add(this.label[i+1]);
-			this.nucleus.get(i).setPreferredSize(new Dimension(185, 36));
+			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
 			nucleus.add(this.nucleus.get(i));
 			nucleus.add(Box.createVerticalStrut(5));
 			
@@ -403,7 +401,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 	}
 	
-	private void updateGuildBuff(int idList) {
+	private void updateGuildBuff() {
 		BuffIcon choice = (BuffIcon) this.listGuildBuff.getSelectedValue();
 		
 		int slot = 0;
@@ -526,11 +524,23 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			this.guildBuffUsed.get(i).setObject(BuffIcon.getGuild(config.get("GuildBuff" + i)));
+			for(int j = 0; j < this.listGuildBuff.getModel().getSize(); j++) {
+				if(this.listGuildBuff.getModel().getElementAt(j).getName().equals(config.get("GuildBuff" + i))) {
+					this.listGuildBuff.setSelectedIndex(j);
+					updateGuildBuff();
+				}
+			}
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {
-			this.stoneUsed.get(i).setObject(Nucleus.get(config.get("Stone" + i), 6));
+			for(int j = 0; j < this.listStone.getModel().getSize(); j++) {
+				if(this.listStone.getModel().getElementAt(j).getName().equals(config.get("Stone" + i))) {
+					this.listStone.setSelectedIndex(j);
+					updateStoneBuff();
+				}
+			}
 		}
+		
+		setEffects();
 	}
 }

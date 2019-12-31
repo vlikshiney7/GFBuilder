@@ -65,7 +65,6 @@ public class SaveConfig extends JCustomButton {
 				try {
 					PagePanel page = (PagePanel) pages.get(orderLoading[i]);
 					page.setConfig(this.getValuesFromPage(page.getSaveName()), this.lang);
-					page.setEffects();
 				} catch (IllegalArgumentException e) {
 					System.out.println("Out of range");
 				}

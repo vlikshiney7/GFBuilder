@@ -200,24 +200,25 @@ public class PageArmor extends PagePanel {
 			}
 			
 			for(int j = 0; j < 2; j++) {
+				int duo = i*2+j;
+				
 				this.effectXpStuff.add(new JCustomComboBox<TypeEffect>(tabEffect));
-				this.effectXpStuff.get(i*2+j).addActionListener(e -> {
-					updateLvlXpStuff(id);
+				this.effectXpStuff.get(duo).addActionListener(e -> {
+					updateLvlXpStuff(duo);
 					
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.effectXpStuff.get(i*2+j).setVisible(false);
+				this.effectXpStuff.get(duo).setVisible(false);
 				
-				int duo = i*2+j;
 				this.lvlXpStuff.add(new JCustomComboBox<Integer>());
-				this.lvlXpStuff.get(i*2+j).addActionListener(e -> {
+				this.lvlXpStuff.get(duo).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.lvlXpStuff.get(i*2+j).setVisible(false);
+				this.lvlXpStuff.get(duo).setVisible(false);
 			}
 		}
 		
@@ -275,7 +276,7 @@ public class PageArmor extends PagePanel {
 	}
 
 	@Override
-	public void setEffects() {
+	protected void setEffects() {
 		try {
 			MainFrame.getInstance().keepScroll();
 		} catch (NullPointerException e) {
@@ -674,39 +675,41 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updateLvlXpStuff(int id) {
-		if(this.getEffectXpStuff(id*2) == TypeEffect.NONE || this.getEffectXpStuff(id*2+1) == TypeEffect.NONE
-				|| this.getEffectXpStuff(id*2) == this.getEffectXpStuff(id*2+1)) {
+		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
+		
+		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
+				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
 			
-			this.lvlXpStuff.get(id*2).setVisible(false);
-			this.lvlXpStuff.get(id*2+1).setVisible(false);
+			this.lvlXpStuff.get(id).setVisible(false);
+			this.lvlXpStuff.get(indexPair).setVisible(false);
 			
-			this.lvlXpStuff.get(id*2).setModel(new DefaultComboBoxModel<Integer>());
-			this.lvlXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>());
 		} else {
-			Integer[] tmp = new Integer[XpStuff.getDataArmor()[id][this.effectXpStuff.get(id*2).getSelectedIndex()-1].getLvlValue().size()];
+			Integer[] tmp = new Integer[XpStuff.getDataArmor()[id/2][this.effectXpStuff.get(id).getSelectedIndex()-1].getLvlValue().size()];
 			for(int i = 0; i < tmp.length; i++) {
 				tmp[i] = i+1;
 			}
 			
-			Integer memory = this.lvlXpStuff.get(id*2).getSelectedItem();
-			this.lvlXpStuff.get(id*2).setModel(new DefaultComboBoxModel<Integer>(tmp));
+			Integer memory = this.getLvlXpStuff(id);
+			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<Integer>(tmp));
 			if(memory != null) {
-				this.lvlXpStuff.get(id*2).setSelectedIndex(memory);
+				this.lvlXpStuff.get(id).setSelectedItem(memory);
 			}
 			
-			tmp = new Integer[XpStuff.getDataArmor()[id][this.effectXpStuff.get(id*2+1).getSelectedIndex()-1].getLvlValue().size()];
+			tmp = new Integer[XpStuff.getDataArmor()[id/2][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size()];
 			for(int i = 0; i < tmp.length; i++) {
 				tmp[i] = i+1;
 			}
 			
-			memory = this.lvlXpStuff.get(id*2+1).getSelectedItem();
-			this.lvlXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<Integer>(tmp));
+			memory = this.getLvlXpStuff(indexPair);
+			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
 			if(memory != null) {
-				this.lvlXpStuff.get(id*2+1).setSelectedIndex(memory);
+				this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 			}
 			
-			this.lvlXpStuff.get(id*2).setVisible(true);
-			this.lvlXpStuff.get(id*2+1).setVisible(true);
+			this.lvlXpStuff.get(id).setVisible(true);
+			this.lvlXpStuff.get(indexPair).setVisible(true);
 		}
 	}
 	
@@ -714,7 +717,7 @@ public class PageArmor extends PagePanel {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
 		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.effectXpStuff.get(id).getSelectedIndex() == this.effectXpStuff.get(indexPair).getSelectedIndex()) {
+				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
 			return;
 		}
 		
@@ -728,7 +731,7 @@ public class PageArmor extends PagePanel {
 			tmp[i] = i+1;
 		}
 		
-		Integer memory = this.lvlXpStuff.get(indexPair).getSelectedItem();
+		Integer memory = this.getLvlXpStuff(indexPair);
 		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
 		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
@@ -917,12 +920,8 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
-			Enchantment enchant = this.getRedEnchantment(i);
-			if(enchant == null) {
-				config.put("RedEnchantment" + i, "");
-			} else {
-				config.put("RedEnchantment" + i, this.getRedEnchantment(i).getName());
-			}
+			String value = this.getRedEnchantment(i) != null ? this.getRedEnchantment(i).getName() : "";
+			config.put("RedEnchantment" + i, value);
 		}
 
 		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
@@ -996,6 +995,10 @@ public class PageArmor extends PagePanel {
 
 		for(int i = 0; i < this.valueFortif.size(); i++) {
 			this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));
+		}
+		
+		for(int i = 0; i < this.armor.size(); i++) {
+			updateEnchant(i);
 		}
 	}
 }
