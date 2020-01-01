@@ -133,7 +133,7 @@ public class PageOption extends JPanel {
 		this.add(Box.createVerticalStrut(10));
 		this.add(creditPanel);
 	}
-
+	
 	protected void setLabel(Language lang) {
 		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		this.label = new JLabel[getter.length];

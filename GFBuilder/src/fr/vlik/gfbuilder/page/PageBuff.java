@@ -3,8 +3,6 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,16 +15,14 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
@@ -34,11 +30,10 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
-import fr.vlik.uidesign.JCustomList;
 import fr.vlik.uidesign.JCustomSpinner;
 
 public class PageBuff extends PagePanel implements AdditionalEffect {
-
+	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "BUFF";
@@ -47,9 +42,9 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
 	private ArrayList<JCustomLabel> guildBuffUsed = new ArrayList<JCustomLabel>(4);
-	private JCustomList<BuffIcon> listGuildBuff;
+	private JCustomComboBox<BuffIcon> guildBuff;
 	private ArrayList<JCustomLabel> stoneUsed = new ArrayList<JCustomLabel>(3);
-	private JCustomList<Nucleus> listStone;
+	private JCustomComboBox<Nucleus> stone;
 	
 	private ArrayList<Effect> additionalEffects;
 	
@@ -60,7 +55,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	public static PageBuff getInstance() {
 		return INSTANCE;
 	}
-
+	
 	private PageBuff() {
 		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -86,7 +81,10 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		for(int i = 0; i < 4; i++) {
 			this.guildBuffUsed.add(new JCustomLabel());
-			this.guildBuffUsed.get(i).setAlignmentX(LEFT_ALIGNMENT);
+			this.guildBuffUsed.get(i).setBackground(Design.UIColor[0]);
+			this.guildBuffUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
+			this.guildBuffUsed.get(i).setMaximumSize(new Dimension(350, 32));
+			this.guildBuffUsed.get(i).setOpaque(true);
 			this.guildBuffUsed.get(i).setVisible(false);
 			
 			int id = i;
@@ -96,7 +94,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			this.remove.get(i).setAlignmentX(RIGHT_ALIGNMENT);
+			
 			this.remove.get(i).addActionListener(e -> {
 				removeGuildBuff(id);
 				
@@ -105,28 +103,29 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			});
 			
 			this.cross.add(this.remove.get(i));
+			this.cross.get(i).setBackground(Design.UIColor[0]);
+			this.cross.get(i).setBorder(new EmptyBorder(0, 0, 0, 5));
+			this.cross.get(i).setMaximumSize(new Dimension(15, 32));
+			this.cross.get(i).setOpaque(true);
 			this.cross.get(i).setVisible(false);
 		}
 		
-		this.listGuildBuff = new JCustomList<BuffIcon>(BuffIcon.getDataGuild());
-		this.listGuildBuff.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent evt) {
-				if (evt.getClickCount() == 2) {
-		        	updateGuildBuff();
-		        	
-		        	setEffects();
-		        	MainFrame.getInstance().updateStat();
-		        }
-		    }
+		this.guildBuff = new JCustomComboBox<BuffIcon>(BuffIcon.getDataGuild());
+		this.guildBuff.setMaximumSize(new Dimension(320, 36));
+		this.guildBuff.addActionListener(e -> {
+			updateGuildBuff();
+        	
+        	setEffects();
+        	MainFrame.getInstance().updateStat();
 		});
-		this.listGuildBuff.setAlignmentX(LEFT_ALIGNMENT);
-		this.listGuildBuff.setMaximumSize(new Dimension(500, 100));
 		
 		
 		for(int i = 0; i < 3; i++) {
 			this.stoneUsed.add(new JCustomLabel());
-			this.stoneUsed.get(i).setAlignmentX(LEFT_ALIGNMENT);
+			this.stoneUsed.get(i).setBackground(Design.UIColor[0]);
+			this.stoneUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
+			this.stoneUsed.get(i).setMaximumSize(new Dimension(300, 32));
+			this.stoneUsed.get(i).setOpaque(true);
 			this.stoneUsed.get(i).setVisible(false);
 			
 			int id = i;
@@ -135,7 +134,6 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			this.remove.get(i+4).setAlignmentX(RIGHT_ALIGNMENT);
 			this.remove.get(i+4).addActionListener(e -> {
 				removeStoneBuff(id);
 				
@@ -143,22 +141,21 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 				MainFrame.getInstance().updateStat();
 			});
 			this.cross.add(this.remove.get(i+4));
+			this.cross.get(i+4).setBackground(Design.UIColor[0]);
+			this.cross.get(i+4).setBorder(new EmptyBorder(0, 0, 0, 5));
+			this.cross.get(i+4).setMaximumSize(new Dimension(15, 32));
+			this.cross.get(i+4).setOpaque(true);
 			this.cross.get(i+4).setVisible(false);
 		}
 		
-		this.listStone = new JCustomList<Nucleus>(Nucleus.getData(6));
-		this.listStone.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent evt) {
-				if (evt.getClickCount() == 2) {
-		        	updateStoneBuff();
-		        	
-		        	setEffects();
-		        	MainFrame.getInstance().updateStat();
-		        }
-		    }
+		this.stone = new JCustomComboBox<Nucleus>(Nucleus.getData(6));
+		this.stone.setMaximumSize(new Dimension(280, 36));
+		this.stone.addActionListener(e -> {
+			updateStoneBuff();
+        	
+        	setEffects();
+        	MainFrame.getInstance().updateStat();
 		});
-		this.listStone.setAlignmentX(LEFT_ALIGNMENT);
 		
 		createPanel();
 		setEffects();
@@ -167,6 +164,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	
 	public Nucleus getNucleus(int id) {
 		return this.nucleus.get(id).getSelectedItem();
+	}
+	
+	public BuffIcon getGuildBuff() {
+		return this.guildBuff.getSelectedItem();
+	}
+	
+	public Nucleus getStone() {
+		return this.stone.getSelectedItem();
 	}
 	
 	@Override
@@ -273,54 +278,58 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		JPanel blocBuffGuild = new JPanel();
 		blocBuffGuild.setLayout(new BoxLayout(blocBuffGuild, BoxLayout.Y_AXIS));
 		blocBuffGuild.setBackground(Design.UIColor[1]);
-		this.label[9].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		blocBuffGuild.add(this.label[9]);
 		blocBuffGuild.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 4; i++) {
 			JPanel lineBuff = new JPanel();
-			lineBuff.setBackground(Design.UIColor[1]);
+			lineBuff.setLayout(new BoxLayout(lineBuff, BoxLayout.X_AXIS));
+			lineBuff.setBorder(new EmptyBorder(0, 0, 0, 0));
+			lineBuff.setOpaque(false);
 			
+			lineBuff.setBackground(Design.UIColor[0]);
+			
+			this.guildBuffUsed.get(i).setMaximumSize(new Dimension(365, 32));
 			lineBuff.add(this.guildBuffUsed.get(i));
+			this.cross.get(i).setMaximumSize(new Dimension(15, 32));
+			this.cross.get(i).setHorizontalAlignment(JLabel.RIGHT);
 			lineBuff.add(this.cross.get(i));
-			lineBuff.setAlignmentX(LEFT_ALIGNMENT);
 			
 			blocBuffGuild.add(lineBuff);
 			blocBuffGuild.add(Box.createVerticalStrut(3));
 		}
 		
 		
-		JScrollPane scrollList = new JScrollPane(this.listGuildBuff, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		
 		JPanel page11Elem3 = new JPanel();
 		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem3.setBackground(Design.UIColor[1]);
-		this.label[8].setAlignmentX(LEFT_ALIGNMENT);
 		page11Elem3.add(this.label[8]);
 		page11Elem3.add(Box.createVerticalStrut(10));
 		page11Elem3.add(blocBuffGuild);
 		page11Elem3.add(Box.createVerticalStrut(10));
-		this.label[10].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		page11Elem3.add(this.label[10]);
+		this.label[9].setFont(new Font("Open Sans", Font.PLAIN, 14));
+		page11Elem3.add(this.label[9]);
 		page11Elem3.add(Box.createVerticalStrut(5));
-		page11Elem3.add(scrollList);
+		page11Elem3.add(this.guildBuff);
 		
 		
 		JPanel blocStone = new JPanel();
 		blocStone.setLayout(new BoxLayout(blocStone, BoxLayout.Y_AXIS));
 		blocStone.setBackground(Design.UIColor[1]);
-		this.label[12].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		blocStone.add(this.label[12]);
 		blocStone.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 3; i++) {
 			JPanel lineStone = new JPanel();
-			lineStone.setBackground(Design.UIColor[1]);
+			lineStone.setLayout(new BoxLayout(lineStone, BoxLayout.X_AXIS));
+			lineStone.setBackground(Design.UIColor[0]);
+			lineStone.setBorder(new EmptyBorder(0, 0, 0, 0));
+			lineStone.setOpaque(false);
 			
+			this.stoneUsed.get(i).setMaximumSize(new Dimension(365, 32));
 			lineStone.add(this.stoneUsed.get(i));
+			this.cross.get(i+4).setMaximumSize(new Dimension(15, 32));
+			this.cross.get(i+4).setHorizontalAlignment(JLabel.RIGHT);
 			lineStone.add(this.cross.get(i+4));
-			lineStone.setAlignmentX(LEFT_ALIGNMENT);
 			
 			blocStone.add(lineStone);
 			blocStone.add(Box.createVerticalStrut(3));
@@ -331,15 +340,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem4.setLayout(new BoxLayout(page11Elem4, BoxLayout.Y_AXIS));
 		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem4.setBackground(Design.UIColor[1]);
-		this.label[11].setAlignmentX(LEFT_ALIGNMENT);
-		page11Elem4.add(this.label[11]);
+		page11Elem4.add(this.label[10]);
 		page11Elem4.add(Box.createVerticalStrut(10));
 		page11Elem4.add(blocStone);
 		page11Elem4.add(Box.createVerticalStrut(10));
-		this.label[13].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		page11Elem4.add(this.label[13]);
+		this.label[11].setFont(new Font("Open Sans", Font.PLAIN, 14));
+		page11Elem4.add(this.label[11]);
 		page11Elem4.add(Box.createVerticalStrut(5));
-		page11Elem4.add(this.listStone);
+		page11Elem4.add(this.stone);
 		
 		JPanel page11Inter2 = new JPanel(new GridLayout(1, 2, 10, 10));
 		page11Inter2.setBackground(Design.UIColor[2]);
@@ -402,10 +410,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	private void updateGuildBuff() {
-		BuffIcon choice = (BuffIcon) this.listGuildBuff.getSelectedValue();
+		BuffIcon choice = this.getGuildBuff();
 		
 		int slot = 0;
-		while(slot < 4 && this.guildBuffUsed.get(slot).isVisible()) slot++;
+		while(slot < 4 && this.guildBuffUsed.get(slot).isVisible()) {
+			slot++;
+		}
 		
 		if(slot == 4) {
 			for(int i = 0; i < 3; i++) {
@@ -443,11 +453,11 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		BuffIcon[] tabGuildBuff = BuffIcon.getListGuildBuff(guildBuffName);
-		this.listGuildBuff.setModel(new DefaultComboBoxModel<BuffIcon>(tabGuildBuff));
+		this.guildBuff.setModel(new DefaultComboBoxModel<BuffIcon>(tabGuildBuff));
 	}
 	
 	private void updateStoneBuff() {
-		Nucleus choice = (Nucleus) this.listStone.getSelectedValue();
+		Nucleus choice = this.getStone();
 		
 		int slot = 0;
 		while(slot < 3 && this.stoneUsed.get(slot).isVisible()) {
@@ -477,7 +487,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		this.listStone.setModel(new DefaultComboBoxModel<Nucleus>(Nucleus.getData(stoneName)));
+		this.stone.setModel(new DefaultComboBoxModel<Nucleus>(Nucleus.getData(stoneName)));
 	}
 	
 	@Override
@@ -507,7 +517,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		return config;
 	}
-
+	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.nucleus.size(); i++) {
@@ -518,27 +528,17 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 				this.nucleus.get(i).setSelectedItem(nucleus);
 			}
 		}
-
+		
 		for(int i = 0; i < this.energy.size(); i++) {
 			this.energy.get(i).setValue(Integer.valueOf(config.get("Energy" + i)));
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			for(int j = 0; j < this.listGuildBuff.getModel().getSize(); j++) {
-				if(this.listGuildBuff.getModel().getElementAt(j).getName().equals(config.get("GuildBuff" + i))) {
-					this.listGuildBuff.setSelectedIndex(j);
-					updateGuildBuff();
-				}
-			}
+			this.guildBuff.setSelectedItem(BuffIcon.getGuild(config.get("GuildBuff" + i)));
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {
-			for(int j = 0; j < this.listStone.getModel().getSize(); j++) {
-				if(this.listStone.getModel().getElementAt(j).getName().equals(config.get("Stone" + i))) {
-					this.listStone.setSelectedIndex(j);
-					updateStoneBuff();
-				}
-			}
+			this.stone.setSelectedItem(Nucleus.get(config.get("Stone" + i), 6));
 		}
 		
 		setEffects();
