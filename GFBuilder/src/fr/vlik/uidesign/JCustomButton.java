@@ -1,6 +1,9 @@
 package fr.vlik.uidesign;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -11,21 +14,38 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
-public class JCustomButton extends JButton{
+public class JCustomButton extends JButton {
 	
 	private static final long serialVersionUID = 1L;
 	private JLabel label;
+	
+	private Color hoverBackgroundColor;
+	private Color pressedBackgroundColor;
 
 	public JCustomButton() {
-		super();
 		setBlackUI();
 	}
 	
 	public JCustomButton(JLabel label) {
-		super();
 		this.label = label;
 		this.setSize(100, 40);
 		updateText();
+		
+		this.setBackground(Design.GREY_COLOR[0]);
+		this.setHoverBackgroundColor(Design.GREY_COLOR[1]);
+		this.setPressedBackgroundColor(Design.GREY_COLOR[2]);
+		
+		setBlackUI();
+	}
+	
+	public JCustomButton(JLabel label, Color[] color) {
+		this.label = label;
+		this.setSize(100, 40);
+		updateText();
+		
+		this.setBackground(color[0]);
+		this.setHoverBackgroundColor(color[1]);
+		this.setPressedBackgroundColor(color[2]);
 		
 		setBlackUI();
 	}
@@ -54,9 +74,9 @@ public class JCustomButton extends JButton{
 	
 	public void setBlackUI() {
 		this.setUI((ButtonUI) BasicButtonUI.createUI(this));
-		this.setBackground(Design.UIColor[0]);
 		this.setBorder(new EmptyBorder(5, 10, 5, 10));
 		this.setBorderPainted(false);
+		this.setContentAreaFilled(false);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 16));
 		this.setForeground(Design.FontColor[0]);
 	}
@@ -66,9 +86,39 @@ public class JCustomButton extends JButton{
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
+		this.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	}
 	
 	public void updateText() {
-		setText(this.label.getText());
+		this.setText(this.label.getText());
+	}
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		if (getModel().isPressed()) {
+			g.setColor(this.pressedBackgroundColor);
+		} else if (getModel().isRollover()) {
+			g.setColor(this.hoverBackgroundColor);
+		} else {
+			g.setColor(getBackground());
+		}
+		g.fillRect(0, 0, getWidth(), getHeight());
+		super.paintComponent(g);
+	}
+	
+	public Color getHoverBackgroundColor() {
+		return this.hoverBackgroundColor;
+	}
+
+	public void setHoverBackgroundColor(Color hoverBackgroundColor) {
+		this.hoverBackgroundColor = hoverBackgroundColor;
+	}
+
+	public Color getPressedBackgroundColor() {
+		return this.pressedBackgroundColor;
+	}
+
+	public void setPressedBackgroundColor(Color pressedBackgroundColor) {
+		this.pressedBackgroundColor = pressedBackgroundColor;
 	}
 }

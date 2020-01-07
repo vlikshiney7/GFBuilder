@@ -76,7 +76,7 @@ public class FrameSaveAs extends JFrame {
 			}
 		});
 		
-		this.submit = new JCustomButton(this.label[1]);
+		this.submit = new JCustomButton(this.label[1], Design.GREEN_COLOR);
 		this.submit.addActionListener(e -> {
 			createSaveConfig();
 		});

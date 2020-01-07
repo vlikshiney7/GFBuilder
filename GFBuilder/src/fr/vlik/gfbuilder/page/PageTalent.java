@@ -113,12 +113,12 @@ public class PageTalent extends PagePanel {
 			}
 		}
 
-		this.reinitTalent = new JCustomButton(this.label[11]);
+		this.reinitTalent = new JCustomButton(this.label[11], Design.RED_COLOR);
 		this.reinitTalent.addActionListener(e -> {
 			setMinCBoxTalent();
 		});
 
-		this.maxTalent = new JCustomButton(this.label[12]);
+		this.maxTalent = new JCustomButton(this.label[12], Design.GREEN_COLOR);
 		this.maxTalent.addActionListener(e -> {
 			setMaxCBoxTalent();
 		});

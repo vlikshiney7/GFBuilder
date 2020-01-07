@@ -18,6 +18,7 @@ import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
 import fr.vlik.gfbuilder.frame.FrameSaveLoader;
+import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -31,8 +32,9 @@ public class PageOption extends JPanel {
 	private static final PageOption INSTANCE = new PageOption();
 	
 	private JCustomComboBox<SaveConfig> save;
-	private JCustomButton currentSave;
 	private JCustomButton newSave;
+	private JCustomButton currentSave;
+	private JCustomButton saveAs;
 	private JTextPane parameter = new JTextPane();
 	
 	private JLabel[] label;
@@ -54,7 +56,23 @@ public class PageOption extends JPanel {
 			}
 		});
 		
-		this.currentSave = new JCustomButton(this.label[1]);
+		this.newSave = new JCustomButton(this.label[1], Design.YELLOW_COLOR);
+		this.newSave.setToolTipText("Ctrl + N");
+		this.newSave.addActionListener(e -> {
+			if(!SaveConfig.fileExist()) {
+				return;
+			}
+			
+			if(!Overlay.getInstance().isSave()) {
+				FrameSaveOnNew.getInstance().popup();
+			} else {
+				Overlay.getInstance().setNameSave(SaveConfig.DEFAULT_NAME);
+				Overlay.getInstance().setSave(false);
+			}
+		});
+		
+		this.currentSave = new JCustomButton(this.label[2], Design.GREEN_COLOR);
+		this.currentSave.setToolTipText("Ctrl + S");
 		this.currentSave.addActionListener(e -> {
 			if(!SaveConfig.fileExist()) {
 				FrameSaveAs.getInstance().popup();
@@ -66,8 +84,9 @@ public class PageOption extends JPanel {
 			Overlay.getInstance().setSave(true);
 		});
 		
-		this.newSave = new JCustomButton(this.label[2]);
-		this.newSave.addActionListener(e -> {
+		this.saveAs = new JCustomButton(this.label[3], Design.GREEN_COLOR);
+		this.saveAs.setToolTipText("Ctrl + Shift + S");
+		this.saveAs.addActionListener(e -> {
 			FrameSaveAs.getInstance().popup();
 		});
 		
@@ -109,22 +128,33 @@ public class PageOption extends JPanel {
 	}
 	
 	protected void createPanel() {
-		JPanel savePanel = new JPanel(new GridLayout(1, 4, 10, 10));
+		JPanel savePanel = new JPanel(new GridLayout(2, 1, 10, 10));
 		savePanel.setBackground(Design.UIColor[1]);
 		savePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		savePanel.add(this.label[0]);
-		savePanel.add(this.save);
-		savePanel.add(this.currentSave);
-		savePanel.add(this.newSave);
+		
+		JPanel inline1 = new JPanel(new GridLayout(1, 3, 10, 0));
+		inline1.setBackground(Design.UIColor[1]);
+		inline1.add(this.label[0]);
+		inline1.add(this.save);
+		inline1.add(new JLabel());
+		
+		JPanel inline2 = new JPanel(new GridLayout(1, 3, 10, 0));
+		inline2.setBackground(Design.UIColor[1]);
+		inline2.add(this.newSave);
+		inline2.add(this.currentSave);
+		inline2.add(this.saveAs);
+		
+		savePanel.add(inline1);
+		savePanel.add(inline2);
 		
 		JPanel creditPanel = new JPanel();
 		creditPanel.setLayout(new BoxLayout(creditPanel, BoxLayout.Y_AXIS));
 		creditPanel.setBackground(Design.UIColor[1]);
 		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		creditPanel.add(this.label[3]);
-		creditPanel.add(Box.createVerticalStrut(10));
-		this.label[4].setFont(new Font("Open Sans", Font.BOLD, 14));
 		creditPanel.add(this.label[4]);
+		creditPanel.add(Box.createVerticalStrut(10));
+		this.label[5].setFont(new Font("Open Sans", Font.BOLD, 14));
+		creditPanel.add(this.label[5]);
 		creditPanel.add(Box.createVerticalStrut(5));
 		creditPanel.add(this.parameter);
 		
@@ -148,8 +178,9 @@ public class PageOption extends JPanel {
 			this.label[i].setText(getter[i]);
 		}
 		
-		this.currentSave.updateText();
 		this.newSave.updateText();
+		this.currentSave.updateText();
+		this.saveAs.updateText();
 		this.parameter.setText(Lang.getDataCredit(lang));
 	}
 	

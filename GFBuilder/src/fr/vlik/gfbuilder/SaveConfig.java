@@ -19,9 +19,9 @@ import fr.vlik.uidesign.JCustomButton;
 public class SaveConfig extends JCustomButton {
 	
 	private static final long serialVersionUID = 1L;
-	//private static final String SAVE_FILE_NAME = "save1.1.gfb";
 	private static final String SAVE_FOLDER_NAME = "GFBuilderSave";
 	private static final String EXTENSION = ".gfb";
+	public static final String DEFAULT_NAME = "New build *";
 	private static ArrayList<SaveConfig> data;
 	static {
 		loadData();
@@ -145,67 +145,15 @@ public class SaveConfig extends JCustomButton {
 		}
 		
 		if(SaveConfig.data.isEmpty()) {
-			Overlay.getInstance().setCurrentName("New build");
+			Overlay.getInstance().setNameSave(DEFAULT_NAME);
 			Overlay.getInstance().setSave(false);
 		}
-		
-		/*
-		try (
-			BufferedReader reader = new BufferedReader(new FileReader(SAVE_FILE_NAME));
-		) {
-			Overlay.getInstance().setCurrentName(reader.readLine());;
-			String line = reader.readLine();
-			
-			while (line != null) {
-				String save = line;
-				int[][] config = new int[12][];
-				
-				for(int i = 0; i < 12; i++) {
-					line = reader.readLine();
-					String[] lineSplit = line.split("/");
-					
-					int[] page = new int[lineSplit.length];
-					for(int j = 0; j < page.length; j++) {
-						page[j] = Integer.parseInt(lineSplit[j]);
-					}
-					
-					config[i] = page;
-				}
-				line = reader.readLine();
-				
-				data.add(new SaveConfig(save, config));
-			}
-		} catch (IOException e) {
-			data.add(writeDefaultData());
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
-		}*/
 	}
-	/*
-	public static SaveConfig writeDefaultData() {
-		int[][] config = new int[12][];
-		int[] nbCase = new int[] { 58, 81, 18, 11, 26, 32, 20, 3, 3, 12, 3 };
-		
-		config[0] = new int[] { 0, 1, 0, 0, 0, 0 };
-		
-		for(int i = 1; i < config.length; i++) {
-			config[i] = new int[nbCase[i-1]];
-		}
-		
-		Overlay.getInstance().setCurrentName("Novice");
-		return new SaveConfig("Novice", config);
-	}*/
 	
 	public static void writeData(String name, Language lang) {
 		Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
 		
-		//int[][] config = new int[12][];
 		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
-		
-		/*for(int i = 0; i < config.length; i++) {
-			if(pages.get(i) instanceof PagePanel) {
-				config[i] = ((PagePanel) pages.get(i)).getConfig();
-			}
-		}*/
 		
 		for(JPanel panel : pages) {
 			if(panel instanceof PagePanel) {
@@ -235,39 +183,6 @@ public class SaveConfig extends JCustomButton {
 			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 		}
 	}
-	/*
-	public static void writeAllData() {
-		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FILE_NAME, false));
-		) {
-			writer.append(Overlay.getInstance().getCurrentName() + "\n");
-			
-			
-			for(SaveConfig save : SaveConfig.data) {
-				
-				writer.append(save.getName() + "\n");
-				
-				int[][] index = save.getIndexSelector();
-				
-				for(int i = 0; i < index.length; i++) {
-					for(int j = 0; j < index[i].length; j++) {
-						writer.append(index[i][j] + "/");
-					}
-					
-					writer.append("\n");
-				}
-			}
-			
-			writer.flush();
-		} catch (IOException e) {
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
-		}
-		
-	}*/
-	/*
-	public static void setDefault() {
-		PageOption.getInstance().setSave("Novice");
-	}*/
 	
 	public static SaveConfig getSave(String name) {
 		for(SaveConfig save : SaveConfig.data) {

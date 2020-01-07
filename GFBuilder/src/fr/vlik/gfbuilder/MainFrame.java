@@ -31,6 +31,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
+import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
 import fr.vlik.gfbuilder.frame.FrameSaveOnQuit;
 import fr.vlik.gfbuilder.page.AdditionalEffect;
 import fr.vlik.gfbuilder.page.ConvertEffect;
@@ -319,8 +320,27 @@ public class MainFrame extends JFrame {
 		updateStat();
 		
 		
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_MASK), "newFile");
 		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_MASK), "save");
 		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.SHIFT_MASK | KeyEvent.CTRL_MASK), "saveAs");
+		
+		this.getRootPane().getActionMap().put("newFile", new AbstractAction() {
+			private static final long serialVersionUID = 1L;
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(!SaveConfig.fileExist()) {
+					return;
+				}
+				
+				if(!Overlay.getInstance().isSave()) {
+					FrameSaveOnNew.getInstance().popup();
+				} else {
+					Overlay.getInstance().setNameSave(SaveConfig.DEFAULT_NAME);
+					Overlay.getInstance().setSave(false);
+				}
+			}
+		});
 		
 		this.getRootPane().getActionMap().put("save", new AbstractAction() {
 			private static final long serialVersionUID = 1L;
@@ -493,6 +513,7 @@ public class MainFrame extends JFrame {
 		}
 
 		FrameSaveAs.getInstance().updateLanguage(lang);
+		FrameSaveOnNew.getInstance().updateLanguage(lang);
 		FrameSaveOnQuit.getInstance().updateLanguage(lang);
 		
 		if(lang == Language.FR) {

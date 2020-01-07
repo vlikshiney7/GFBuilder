@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder;
 import java.awt.Dimension;
 
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,13 +19,13 @@ public class Overlay extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static Overlay INSTANCE = new Overlay();
 	
-	private String currentName;
 	private boolean save = true;
 	
 	private JLabel iconGrade = new JLabel();
 	private JLabel lvl = new JLabel();
 	private JLabel iconReinca = new JLabel();
 	private JLabel nameSave;
+	private JLabel iconSave = new JLabel();
 	
 	public static Overlay getInstance() {
 		return INSTANCE;
@@ -32,17 +33,15 @@ public class Overlay extends JPanel {
 	
 	private Overlay() {
 		super();
-		this.setMaximumSize(new Dimension(300, 30));
+		this.setMaximumSize(new Dimension(400, 30));
 		this.setBackground(Design.UIColor[0]);
 		this.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setAlignmentX(LEFT_ALIGNMENT);
 		
-		this.currentName = "New build";
-		
 		this.setGrade(Grade.data[0]);
 		this.lvl = JCustomLabel.getSimpleLabel("1");
 		this.setReinca(Reinca.getData()[0]);
-		this.nameSave = JCustomLabel.getSimpleLabel("New build");
+		this.nameSave = JCustomLabel.getSimpleLabel(SaveConfig.DEFAULT_NAME);
 		
 		createPanel();
 	}
@@ -56,17 +55,17 @@ public class Overlay extends JPanel {
 	}
 	
 	public String getCurrentName() {
-		return this.currentName;
-	}
-	
-	public void setCurrentName(String nameSave) {
-		this.currentName = nameSave;
+		return this.nameSave.getText();
 	}
 	
 	public void setSave(boolean save) {
 		this.save = save;
 		
-		this.nameSave.setText(this.currentName + (this.save ? "" : " *"));
+		if(save) {
+			this.iconSave.setIcon(new ImageIcon(Overlay.class.getResource("/fr/vlik/uidesign/images/save.png")));
+		} else {
+			this.iconSave.setIcon(new ImageIcon(Overlay.class.getResource("/fr/vlik/uidesign/images/notSave.png")));
+		}
 	}
 
 	public void setGrade(Grade grade) {
@@ -84,11 +83,9 @@ public class Overlay extends JPanel {
 		this.iconReinca.setName(reinca.getName(lang));
 		this.iconReinca.setIcon(reinca.getIcon());
 	}
-
+	
 	public void setNameSave(String nameSave) {
-		setCurrentName(nameSave);
-		
-		this.nameSave.setText(this.currentName + (this.save ? "" : " *"));
+		this.nameSave.setText(nameSave);
 	}
 	
 	private void createPanel() {
@@ -101,5 +98,7 @@ public class Overlay extends JPanel {
 		this.add(JCustomLabel.getSimpleLabel("-"));
 		this.add(Box.createHorizontalStrut(5));
 		this.add(this.nameSave);
+		this.add(Box.createHorizontalStrut(5));
+		this.add(this.iconSave);
 	}
 }

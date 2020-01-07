@@ -79,12 +79,12 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		this.reinitSpe = new JCustomButton(this.label[6]);
+		this.reinitSpe = new JCustomButton(this.label[6], Design.RED_COLOR);
 		this.reinitSpe.addActionListener(e -> {
 			setMinSpe();
 		});
 		
-		this.maxSpe = new JCustomButton(this.label[7]);
+		this.maxSpe = new JCustomButton(this.label[7], Design.GREEN_COLOR);
 		this.maxSpe.addActionListener(e -> {
 			setMaxSpe();
 		});

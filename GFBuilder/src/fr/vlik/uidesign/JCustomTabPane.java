@@ -83,11 +83,7 @@ public class JCustomTabPane extends JToggleButton {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		super.paintComponent(g);
 	}
-
-	@Override
-	public void setContentAreaFilled(boolean b) {
-	}
-
+	
 	public Color getSelectedBackgroundColor() {
 		return this.selectedBackgroundColor;
 	}

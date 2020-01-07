@@ -61,7 +61,7 @@ public class FrameSaveLoader extends JFrame {
 			}
 		});
 		
-		this.load = new JCustomButton(this.label[1]);
+		this.load = new JCustomButton(this.label[1], Design.GREEN_COLOR);
 		this.load.addActionListener(e -> {
 			PageOption.getInstance().updateSave();
 			MainFrame.getInstance().updateStat();
@@ -70,7 +70,7 @@ public class FrameSaveLoader extends JFrame {
 			close();
 		});
 		
-		this.delete = new JCustomButton(this.label[2]);
+		this.delete = new JCustomButton(this.label[2], Design.RED_COLOR);
 		this.delete.addActionListener(e -> {
 			SaveConfig.deleteData(PageOption.getInstance().getSave());
 			PageOption.getInstance().refreshSave();
@@ -78,7 +78,7 @@ public class FrameSaveLoader extends JFrame {
 			close();
 		});
 		
-		this.cancel = new JCustomButton(this.label[3]);
+		this.cancel = new JCustomButton(this.label[3], Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> {
 			close();
 		});
