@@ -37,11 +37,11 @@ public enum TypeEffect implements Colorable, Writable {
 	
 	DegP("Dégât Physique", "", "Deg Phys", "", -1, true, Tools.EffectColor[10]), 
 	DegM("Dégât Magique", "", "Deg Mag", "", -1, true, Tools.EffectColor[11]), 
-	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "", -1, true, Tools.EffectColor[10]),
-	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "", -1, true, Tools.EffectColor[11]),
+	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "Phys Reduc", -1, true, Tools.EffectColor[10]),
+	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "Mag Reduc", -1, true, Tools.EffectColor[11]),
 	
-	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "", 103, true, Tools.EffectColor[10]),
-	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "", 103, true, Tools.EffectColor[11]),
+	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "Phys Pene", 100, true, Tools.EffectColor[10]),
+	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "Mag Pene", 100, true, Tools.EffectColor[11]),
 	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Tools.EffectColor[11]),
 	

@@ -198,7 +198,7 @@ public class PageWeapon extends PagePanel {
 			}
 		}
 		
-		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl());
+		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 		this.bullet = new JCustomComboBox<Bullet>(tabBullet);
 		this.bullet.addActionListener(e -> {
 			setEffects();
@@ -492,7 +492,7 @@ public class PageWeapon extends PagePanel {
 			}
 		}
 		
-		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl);
+		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl, reinca);
 		Bullet memory = this.getBullet();
 		
 		this.bullet.setModel(new DefaultComboBoxModel<Bullet>(tabBullet));

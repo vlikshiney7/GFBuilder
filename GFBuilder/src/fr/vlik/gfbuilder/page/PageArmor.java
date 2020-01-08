@@ -49,6 +49,7 @@ public class PageArmor extends PagePanel {
 	private JCustomComboBox<EquipSet> shortcutSet = new JCustomComboBox<EquipSet>();
 	
 	private ArrayList<JCustomComboBox<Armor>> armor = new ArrayList<JCustomComboBox<Armor>>(5);
+	private EquipSet equipSet;
 	private JCustomTextPane armorSetInfo;
 	
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
@@ -236,6 +237,10 @@ public class PageArmor extends PagePanel {
 		return this.armor.get(id).getSelectedItem();
 	}
 	
+	public EquipSet getEquipSet() {
+		return this.equipSet;
+	}
+	
 	public JCustomTextPane getArmorSetInfo() {
 		return this.armorSetInfo;
 	}
@@ -277,12 +282,6 @@ public class PageArmor extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		try {
-			MainFrame.getInstance().keepScroll();
-		} catch (NullPointerException e) {
-			System.out.println("Scrolling fail");
-		}
-		
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Armor[] armors = new Armor[5];
@@ -351,30 +350,35 @@ public class PageArmor extends PagePanel {
 		}
 		
 		EquipSet armorSet = new EquipSet(armors);
-		if(armorSet.getNbCurrentUsed() >= 3 && !armorSet.getName().equals("Rien")) {
-			list.addAll(armorSet.getWith3());
-			
-			String setInfo = armorSet.getName() + "\n";
-			
-			setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < armorSet.getWith3().size(); i++) {
-				setInfo += "\t- " + armorSet.getWith3().get(i).toString() + "\n";
+		
+		if(!armorSet.equals(this.equipSet)) {
+			if(armorSet.getNbCurrentUsed() >= 3 && !armorSet.getName().equals("Rien")) {
+				list.addAll(armorSet.getWith3());
+				
+				String setInfo = armorSet.getName() + "\n";
+				
+				setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
+				for(int i = 0; i < armorSet.getWith3().size(); i++) {
+					setInfo += "\t- " + armorSet.getWith3().get(i).toString() + "\n";
+				}
+				
+				setInfo += "4 pièces équipées " + (armorSet.getNbCurrentUsed() >= 4 ? "(Actif) " : "") + ":\n";
+				for(int i = 0; i < armorSet.getWith4().size(); i++) {
+					setInfo += "\t- " + armorSet.getWith4().get(i).toString() + "\n";
+				}
+				
+				setInfo += "5 pièces équipées " + (armorSet.getNbCurrentUsed() >= 5 ? "(Actif) " : "") + ":\n";
+				for(int i = 0; i < armorSet.getWith5().size(); i++) {
+					setInfo += "\t- " + armorSet.getWith5().get(i).toString() + "\n";
+				}
+				
+				this.armorSetInfo.setText(setInfo);
+				this.armorSetInfo.setVisible(true);
+				
+				this.equipSet = armorSet;
+			} else {
+				this.armorSetInfo.setVisible(false);
 			}
-			
-			setInfo += "4 pièces équipées " + (armorSet.getNbCurrentUsed() >= 4 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < armorSet.getWith4().size(); i++) {
-				setInfo += "\t- " + armorSet.getWith4().get(i).toString() + "\n";
-			}
-			
-			setInfo += "5 pièces équipées " + (armorSet.getNbCurrentUsed() >= 5 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < armorSet.getWith5().size(); i++) {
-				setInfo += "\t- " + armorSet.getWith5().get(i).toString() + "\n";
-			}
-			
-			this.armorSetInfo.setText(setInfo);
-			this.armorSetInfo.setVisible(true);
-		} else {
-			this.armorSetInfo.setVisible(false);
 		}
 		
 		if(armorSet.getNbCurrentUsed() >= 4) {

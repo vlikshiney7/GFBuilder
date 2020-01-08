@@ -194,6 +194,28 @@ public class EquipSet implements Writable {
 		return "<html>" + tooltip + "</html>";
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		
+		if(obj == null) {
+			return false;
+		}
+		
+		if (!(obj instanceof EquipSet)) {
+			return false;
+		}
+		
+		EquipSet set = (EquipSet) obj;
+		boolean b = this.name.equals(set.name)
+				&& this.code == set.code
+				&& this.nbCurrentUsed == set.nbCurrentUsed;
+		
+		return b;
+	}
+	
 	public static void loadData() {
 		ArrayList<ArrayList<EquipSet>> list = new ArrayList<ArrayList<EquipSet>>();
 		

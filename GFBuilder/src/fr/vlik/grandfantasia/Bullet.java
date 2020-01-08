@@ -24,13 +24,15 @@ public class Bullet implements FullRenderer {
 	private String name;
 	private int lvl;
 	private Quality quality;
+	private boolean reinca;
 	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
-	public Bullet(String name, int lvl, Quality quality, String path, ArrayList<Effect> effects) {
+	public Bullet(String name, int lvl, Quality quality, boolean reinca, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.quality = quality;
+		this.reinca = reinca;
 		setIcon(path);
 		this.effects = effects;
 	}
@@ -45,6 +47,10 @@ public class Bullet implements FullRenderer {
 	
 	public Quality getQuality() {
 		return this.quality;
+	}
+	
+	public boolean isReinca() {
+		return this.reinca;
 	}
 	
 	@Override
@@ -109,11 +115,11 @@ public class Bullet implements FullRenderer {
 				
 				Quality quality = Quality.values()[Integer.parseInt(lineSplit[2])];
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[3]));
-				for(int i = 0; i < Integer.parseInt(lineSplit[3]); i++)
-					effects.add(new Effect(lineSplit[i+4]));
+				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[4]));
+				for(int i = 0; i < Integer.parseInt(lineSplit[4]); i++)
+					effects.add(new Effect(lineSplit[i+5]));
 				
-				Bullet bullet = new Bullet(lineSplit[0], Integer.parseInt(lineSplit[1]), quality, path, effects);
+				Bullet bullet = new Bullet(lineSplit[0], Integer.parseInt(lineSplit[1]), quality, Boolean.parseBoolean(lineSplit[3]), path, effects);
 				list.add(bullet);
 				
 				line = reader.readLine();
@@ -138,11 +144,19 @@ public class Bullet implements FullRenderer {
 		return null;
 	}
 	
-	public static Bullet[] getPossibleBullet(int lvl) {
+	public static Bullet[] getPossibleBullet(int lvl, Reinca reinca) {
 		ArrayList<Bullet> result = new ArrayList<Bullet>();
 		
 		for(Bullet bullet : Bullet.data) {
-			if(bullet.getLvl() <= lvl) result.add(bullet);
+			if(bullet.getLvl() <= lvl) {
+				if(!bullet.isReinca()) {
+					result.add(bullet);
+				} else {
+					if(reinca.getLvl() > 0) {
+						result.add(bullet);
+					}
+				}
+			}
 		}
 		
 		Bullet[] cast = new Bullet[result.size()];

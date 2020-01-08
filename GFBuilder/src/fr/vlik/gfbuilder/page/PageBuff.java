@@ -459,6 +459,10 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private void updateStoneBuff() {
 		Nucleus choice = this.getStone();
 		
+		if(choice == null) {
+			return;
+		}
+		
 		int slot = 0;
 		while(slot < 3 && this.stoneUsed.get(slot).isVisible()) {
 			slot++;

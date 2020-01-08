@@ -5,8 +5,8 @@ package fr.vlik.gfbuilder;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
@@ -23,6 +23,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import javax.swing.ToolTipManager;
@@ -31,6 +32,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
+import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
 import fr.vlik.gfbuilder.frame.FrameSaveOnQuit;
 import fr.vlik.gfbuilder.page.AdditionalEffect;
@@ -69,7 +71,6 @@ public class MainFrame extends JFrame {
 	private JPanel overlay;
 	private static int nbPages = 0;
 	private JScrollPane scrollContent;
-	private Point valueScroll;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
 	private ArrayList<JLabel> labelStat = new ArrayList<JLabel>(TypeEffect.values().length);
@@ -97,7 +98,6 @@ public class MainFrame extends JFrame {
 		this.setMinimumSize(new Dimension(780, 470));
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
-			
 			@Override
 			public void windowClosing(WindowEvent event) {
 				if(unlock) {
@@ -109,8 +109,22 @@ public class MainFrame extends JFrame {
 				System.exit(0);
 			}
 		});
-		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
+		
+		JPanel progressPanel = new JPanel();
+		progressPanel.setLayout(new GridBagLayout());
+		progressPanel.setBackground(Design.UIColor[1]);
+		progressPanel.setSize(1325, 750);
+		
+		JProgressBar progress = new JProgressBar(0, 16);
+		progress.setFont(new Font("Open Sans", Font.BOLD, 16));
+		progress.setPreferredSize(new Dimension(600, 50));
+		progress.setStringPainted(true);
+		progress.setValue(0);
+		progress.setString("Loading texts & pane menu");
+		
+		progressPanel.add(progress);
+		this.add(progressPanel);
 		this.setVisible(true);
 		
 		System.out.println("Début swing : " + Duration.between(this.start, Instant.now()).toMillis());
@@ -152,45 +166,73 @@ public class MainFrame extends JFrame {
 		
 		System.out.println("Chargement Page : " + Duration.between(this.start, Instant.now()).toMillis());
 		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Genenal Page");
 		this.pages.add(PageGeneral.getInstance());
 		System.out.println("Fin General : " + Duration.between(this.start, Instant.now()).toMillis());
 		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Weapon Page");
 		this.pages.add(PageWeapon.getInstance());
 		System.out.println("Fin Weapon : " + Duration.between(this.start, Instant.now()).toMillis());
 		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Armor Page");
 		this.pages.add(PageArmor.getInstance());
 		System.out.println("Fin Armor : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Cape&Ring Page");
 		this.pages.add(PageCapeRing.getInstance());
 		System.out.println("Fin CapeRing : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Mount Page");
 		this.pages.add(PageMount.getInstance());
 		System.out.println("Fin Mount : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Costume Page");
 		this.pages.add(PageCostume.getInstance());
 		System.out.println("Fin Costume : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Talent Page");
 		this.pages.add(PageTalent.getInstance());
 		System.out.println("Fin Talent : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Speciality Page");
 		this.pages.add(PageSpeciality.getInstance());
 		System.out.println("Fin Speciality : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Skill Page");
 		this.pages.add(PageSkill.getInstance());
 		System.out.println("Fin Skill : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Sprite Page");
 		this.pages.add(PageSprite.getInstance());
 		System.out.println("Fin Sprite : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Buff Page");
 		this.pages.add(PageBuff.getInstance());
 		System.out.println("Fin Buff : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Other Page");
 		this.pages.add(PageOther.getInstance());
 		System.out.println("Fin Other : " + Duration.between(this.start, Instant.now()).toMillis());
 
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Option Page");
 		this.pages.add(PageOption.getInstance());
 		System.out.println("Fin Option : " + Duration.between(this.start, Instant.now()).toMillis());
 		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Pages Display");
 		
 		JPanel allPages = new JPanel();
 		allPages.setBorder(new EmptyBorder(20, 20, 20, 20));
@@ -213,6 +255,9 @@ public class MainFrame extends JFrame {
 		content.setBackground(Design.UIColor[2]);
 		content.add(this.overlay);
 		content.add(this.scrollContent);
+		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Stats Display");
 		
 		/****************************************/
 		/*		****	   STATS	  	****	*/
@@ -311,6 +356,11 @@ public class MainFrame extends JFrame {
 		scrollStats.setBorder(null);
 		scrollStats.getVerticalScrollBar().setUnitIncrement(10);
 		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading finished");
+		
+		this.getContentPane().removeAll();
+		this.setLayout(new BorderLayout());
 		this.add(menu, BorderLayout.WEST);
 		this.add(content, BorderLayout.CENTER);
 		this.add(scrollStats, BorderLayout.EAST);
@@ -387,6 +437,10 @@ public class MainFrame extends JFrame {
 		UIManager.put("ToolTip.background", Design.UIColor[0]);
 		UIManager.put("ToolTip.foreground", Design.UIColor[3]);
 		
+		UIManager.put("ProgressBar.foreground", Design.GREEN_COLOR[1]);
+		UIManager.put("ProgressBar.selectionBackground", Design.GREEN_COLOR[1]);
+		UIManager.put("ProgressBar.selectionForeground", Design.FontColor[0]);
+		
 		ToolTipManager.sharedInstance().setInitialDelay(500);
 	    ToolTipManager.sharedInstance().setDismissDelay(30000);
 	}
@@ -416,8 +470,6 @@ public class MainFrame extends JFrame {
 		}
 		
 		updateLabel(build.calculStatFromEffect());
-		
-		applyScroll();
 	}
 	
 	private void updateLabel(double[] allStats) {
@@ -450,16 +502,6 @@ public class MainFrame extends JFrame {
 	
 	public static int getNumPage() {
 		return nbPages++;
-	}
-	
-	public void keepScroll() {
-		this.valueScroll = this.scrollContent.getViewport().getViewPosition();
-	}
-	
-	public void applyScroll() {
-		if(this.valueScroll != null) {
-			this.scrollContent.getViewport().setViewPosition(this.valueScroll);
-		}
 	}
 	
 	public void setRedPane(int page) {
@@ -511,7 +553,8 @@ public class MainFrame extends JFrame {
 				((PageOption) page).updateLanguage(lang);
 			}
 		}
-
+		
+		FrameSaveLoader.getInstance().updateLanguage(lang);
 		FrameSaveAs.getInstance().updateLanguage(lang);
 		FrameSaveOnNew.getInstance().updateLanguage(lang);
 		FrameSaveOnQuit.getInstance().updateLanguage(lang);
