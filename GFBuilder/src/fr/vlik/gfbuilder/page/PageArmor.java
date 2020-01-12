@@ -812,9 +812,8 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updateRedLvlEnchant(int id) {
-		if(this.redEnchant.get(id).getSelectedIndex() != 0) {
-			int nbLvlEnchant = this.getRedEnchantment(id) != null ? this.getRedEnchantment(id).getNbLvl() : 0;
-			Integer[] nbLvl = new Integer[nbLvlEnchant];
+		if(this.getRedEnchantment(id) != null) {
+			Integer[] nbLvl = new Integer[this.getRedEnchantment(id).getNbLvl()];
 			
 			for(int i = 0; i < nbLvl.length; i++) {
 				nbLvl[i] = i+1;

@@ -9,6 +9,7 @@ Hache de Guerre d'Assassin de Smulca/0,1/95/4/false/true/false/9,0,0/Atk,false,3
 Hachette de Foudre/0,1/95/1/false/false/false/1,0,0/Atk,false,2327,true/18ora1
 Hache Affûtée de la Désolation/0,1/94/4/true/true/false/5,0,0/Atk,false,3213,true/FCE,false,40,true/VIT,false,12,true/AGI,false,26,true/AGI,false,35/94pre
 Hache Érable de Sprite/0,1/91/2/false/false/false/2,0,0/Atk,false,2639,true/FCE,false,26,true/91sprite
+Hache-âme brise-ciel/0,1/90/7/false/true/false/5,0,0/Atk,false,4767,true/FCE,false,92,true/VIT,false,80,true/AGI,false,56,true/Toucher,false,20/1,1,2,1,1/0,0,0,0,0/FCE,false,10/FCE,true,1/PV,true,5/PM,true,5/VitAtk,false,5/DegHa,false,3/90red
 Briseur du Gotei 13/0,1/90/6/true/true/false/5,0,0/Atk,false,4334,true/FCE,false,76,true/VIT,false,67,true/AGI,false,47,true/Toucher,false,20/90vio
 Décapiteur Funeste du Roi Squelette/0,1/90/5/true/true/false/6,0,0/Atk,false,3901,true/FCE,false,60,true/VIT,false,50,true/AGI,false,42,true/Toucher,false,18/TCCP,false,12/90gold
 Poison Douloureux - Damnation/0,1/89/4/true/true/false/6,0,0/Atk,false,2990,true/FCE,false,28,true/VIT,false,24,true/AGI,false,20,true/Toucher,false,12/TCCP,false,10/89pre

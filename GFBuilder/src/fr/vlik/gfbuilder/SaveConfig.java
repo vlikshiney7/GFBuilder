@@ -3,9 +3,11 @@ package fr.vlik.gfbuilder;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -88,7 +90,7 @@ public class SaveConfig extends JCustomButton {
 		}
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FOLDER_NAME + File.separator + this.name + EXTENSION, false));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.name + EXTENSION, false), "UTF-8"));
 		) {
 			writer.append(this.name + "/" + this.lang.name() + "\n");
 			
@@ -117,7 +119,7 @@ public class SaveConfig extends JCustomButton {
 		
 		for(File file : folder.listFiles()) {
 			try (
-				BufferedReader reader = new BufferedReader(new FileReader(file));
+				BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 			) {
 				Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
 				
@@ -166,7 +168,7 @@ public class SaveConfig extends JCustomButton {
 		SaveConfig.data.add(save);
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false), "UTF-8"));
 		) {
 			writer.append(name + "/" + lang.name() + "\n");
 			

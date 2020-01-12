@@ -9,6 +9,7 @@ Marteau de Colère de Jundo/0,1,4,5/95/4/false/true/false/14,0,0/Atk,false,2793,
 Maillet de Fer Hérissé/0,1,4,5/95/1/false/false/false/2,0,0/Atk,false,1995,true/AtkM,false,1147,true/28ora0
 Massue d'Ogre/0,1,4,5/94/4/true/true/false/6,0,0/Atk,false,2754,true/AtkM,false,1584,true/FCE,false,32,true/VIT,false,20,true/INT,false,26,true/ESQ,false,8/94pre
 Crucifix de Sprite/0,1,4,5/91/2/false/false/false/3,0,0/Atk,false,2262,true/AtkM,false,1301,true/FCE,false,26,true/91sprite
+Maillets de Guerre du Proverbe/0,1,4,5/90/7/false/true/false/6,0,0/Atk,false,4088,true/AtkM,false,2350,true/FCE,false,78,true/VIT,false,72,true/INT,false,78,true/Toucher,false,20/1,1,2,1,1/0,0,0,0,0/INT,false,10/INT,true,1/PV,true,5/PM,true,5/VitAtk,false,5/IntComp,false,-15/90red
 Masse lumineuse de Syrius/0,1,4,5/90/6/true/true/false/6,0,0/Atk,false,3715,true/AtkM,false,2121,true/FCE,false,65,true/VIT,false,60,true/INT,false,65,true/Toucher,false,20/90vio
 Briseur de Crânes d'Ifrit/0,1,4,5/90/5/true/true/false/7,0,0/Atk,false,3344,true/AtkM,false,1923,true/FCE,false,52,true/VIT,false,50,true/INT,false,50,true/Toucher,false,18/IntComp,false,-20/90gold
 Ancien Marteau Magique - Seigneur des Bêtes/0,1,4,5/89/4/true/true/false/7,0,0/Atk,false,2563,true/AtkM,false,1474,true/FCE,false,24,true/VIT,false,24,true/INT,false,24,true/Toucher,false,12/VitComp,false,10/89pre

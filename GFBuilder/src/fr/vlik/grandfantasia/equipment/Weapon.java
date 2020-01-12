@@ -187,8 +187,7 @@ public class Weapon extends Equipment {
 			) {
 				list.add(new ArrayList<Weapon>());
 				String line = reader.readLine();
-				while (line != null) {
-					String[] lineSplit = line.split("/");
+				while (line != null) {String[] lineSplit = line.split("/");
 					String path =  weaponFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
 					
 					String classes[] = lineSplit[1].split(",");

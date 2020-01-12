@@ -294,8 +294,12 @@ public class PageWeapon extends PagePanel {
 				
 				for(int j = 0; j < 3; j++) {
 					if(this.redEnchant.get(i*3+j).getSelectedIndex() != 0) {
-						for(Effect e : this.getRedEnchantment(i*3+j).getEffects()) {
-							list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+						Enchantment red = this.getRedEnchantment(i*3+j);
+						
+						if(red != null) {
+							for(Effect e : red.getEffects()) {
+								list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+							}
 						}
 					}
 				}
@@ -595,7 +599,7 @@ public class PageWeapon extends PagePanel {
 		Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(id).getQuality());
 		
 		if(id == 0) {
-			for(int i = 0; i < 3; i++) {
+			for(int i = 0; i < 6; i++) {
 				Pearl memory = this.getPearl(id*3+i);
 				
 				this.pearl.get(id*3+i).setModel(new DefaultComboBoxModel<Pearl>(tabPearl));
@@ -856,9 +860,8 @@ public class PageWeapon extends PagePanel {
 	}
 	
 	private void updateRedLvlEnchant(int id) {
-		if(this.redEnchant.get(id).getSelectedIndex() != 0) {
-			int nbLvlEnchant = this.getRedEnchantment(id) != null ? this.getRedEnchantment(id).getNbLvl() : 0;
-			Integer[] nbLvl = new Integer[nbLvlEnchant];
+		if(this.getRedEnchantment(id) != null) {
+			Integer[] nbLvl = new Integer[this.getRedEnchantment(id).getNbLvl()];
 			
 			for(int i = 0; i < nbLvl.length; i++) {
 				nbLvl[i] = i+1;
