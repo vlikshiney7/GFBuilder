@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,6 +17,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class Blason implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + "sprite/";
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Blason[] data;
 	static {
 		loadData();
@@ -30,14 +33,14 @@ public class Blason implements Iconable, Writable {
 		this.name = "Rien";
 		this.lvl = 0;
 		this.type = BlasonType.OFFENSIVE;
-		setIcon("32-7.png");
+		this.icon = setIcon("32-7");
 	}
 	
 	public Blason(String name, int lvl, BlasonType type, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.type = type;
-		setIcon(type == BlasonType.OFFENSIVE ? "atk.png" : "def.png");
+		this.icon = setIcon(type == BlasonType.OFFENSIVE ? "atk" : "def");
 		this.effects = effects;
 	}
 	
@@ -77,16 +80,16 @@ public class Blason implements Iconable, Writable {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(Blason.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(Blason.class.getResource(PATH + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	@Override

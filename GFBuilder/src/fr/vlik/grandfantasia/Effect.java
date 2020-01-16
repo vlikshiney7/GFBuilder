@@ -2,7 +2,7 @@ package fr.vlik.grandfantasia;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 
 public class Effect {
 	
@@ -13,12 +13,25 @@ public class Effect {
 	private WeaponType withWeapon = WeaponType.NONE;
 	private TypeEffect transfert = null;
 	
-	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon, TypeEffect transfert) {
+
+	public Effect(TypeEffect type, boolean isPercent, double value) {
 		this.type = type;
 		this.isPercent = isPercent;
 		this.value = value;
+	}
+
+	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca) {
+		this(type, isPercent, value);
 		this.withReinca = withReinca;
+	}
+	
+	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon) {
+		this(type, isPercent, value, withReinca);
 		this.withWeapon = withWeapon;
+	}
+	
+	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon, TypeEffect transfert) {
+		this(type, isPercent, value, withReinca, withWeapon);
 		this.transfert = transfert;
 	}
 	
@@ -28,6 +41,7 @@ public class Effect {
 		this.value = effect.getValue();
 		this.withReinca = effect.getWithReinca();
 		this.withWeapon = effect.getWithWeapon();
+		this.transfert = effect.getTransfert();
 	}
 	
 	public Effect(String parsing) {

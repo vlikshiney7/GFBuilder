@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,6 +17,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class Skill implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + Skill.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Skill[][] data;
 	static {
 		loadData();
@@ -26,11 +29,11 @@ public class Skill implements Iconable, Writable {
 	private Icon icon;
 	private ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>();
 	
-	public Skill(String name, int[] lvl, boolean natif, String iconPath, ArrayList<ArrayList<Effect>> effects) {
+	public Skill(String name, int[] lvl, boolean natif, String path, ArrayList<ArrayList<Effect>> effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.natif = natif;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 		this.effects = effects;
 	}
 	
@@ -38,7 +41,7 @@ public class Skill implements Iconable, Writable {
 		this.name = name;
 		this.lvl = new int[] { 0 };
 		this.natif = false;
-		setIcon("32-7.png");
+		this.icon = setIcon("32-7");
 		this.effects.add(new ArrayList<Effect>(1));
 	}
 	
@@ -76,16 +79,16 @@ public class Skill implements Iconable, Writable {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(Skill.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(Skill.class.getResource(PATH + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	@Override
@@ -125,7 +128,7 @@ public class Skill implements Iconable, Writable {
 				line = reader.readLine();
 				for(int i = 0; i < lineSplitInfo; i++) {
 					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1] + ".png";
+					String path =  lineSplit[lineSplit.length-1];
 					String[] lvlSkill = lineSplit[2].split(",");
 					int[] lvl = new int[lvlSkill.length];
 					

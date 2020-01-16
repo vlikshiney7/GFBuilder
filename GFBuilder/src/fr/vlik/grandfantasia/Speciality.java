@@ -1,18 +1,21 @@
 package fr.vlik.grandfantasia;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
 
 public class Speciality {
 	
 	public static String PATH = Tools.RESOURCE + Speciality.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Speciality[][] data;
 	static {
 		loadData();
@@ -21,12 +24,12 @@ public class Speciality {
 	private String name;
 	private int lvl;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
-	BufferedImage img;
+	private Icon icon;
 	
-	public Speciality(String name, int lvl, String iconPath, String[] effects) {
+	public Speciality(String name, int lvl, String path, String[] effects) {
 		this.name = name;
 		this.lvl = lvl;
-		this.img = setIcon(iconPath);
+		this.icon = setIcon(path);
 		
 		for(int i = 0; i < effects.length; i++) {
 			this.effects.add(new Effect(effects[i]));
@@ -41,26 +44,24 @@ public class Speciality {
 		return this.lvl;
 	}
 	
-	public BufferedImage getIcon() {
-		return this.img;
+	public Icon getIcon() {
+		return this.icon;
 	}
 
 	public ArrayList<Effect> getEffects() {
 		return this.effects;
 	}
 	
-	private BufferedImage setIcon(String path) {
-		BufferedImage object = null;
-		
-		try {
-			object = ImageIO.read(Speciality.class.getResource(PATH + path));
-		} catch (IOException e) {
-			System.out.println("Image non chargée : " + path);
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + path);
+	private Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(Speciality.class.getResource(PATH + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		return object;
+		return ICONS.get(path);
 	}
 	
 	public String getTooltip() {
@@ -89,7 +90,7 @@ public class Speciality {
 				list.add(new ArrayList<Speciality>());
 				for(int j = 0; j < 20; j++) {
 					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1] + ".png";
+					String path =  lineSplit[lineSplit.length-1];
 					String[] effects = new String[Integer.parseInt(lineSplit[2])];
 					for(int k = 0; k < effects.length; k++) effects[k] = lineSplit[k+3];
 					

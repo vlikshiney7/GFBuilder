@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -13,6 +15,7 @@ import fr.vlik.grandfantasia.interfaces.Iconable;
 public class Energy implements Iconable {
 	
 	public static String PATH = Tools.RESOURCE + Energy.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Energy[] data;
 	static {
 		loadData();
@@ -22,10 +25,10 @@ public class Energy implements Iconable {
 	private ArrayList<Effect> effects = new ArrayList<Effect>(2);
 	private Icon icon;
 	
-	public Energy (String name, String iconPath, ArrayList<Effect> effects) {
+	public Energy (String name, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.effects = effects;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
 	public String getName() {
@@ -45,16 +48,16 @@ public class Energy implements Iconable {
 		return list;
 	}
 	
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(Energy.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(Energy.class.getResource(PATH + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	public String getTooltip() {
@@ -81,7 +84,7 @@ public class Energy implements Iconable {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
 				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)

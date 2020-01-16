@@ -5,18 +5,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Anima;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
 
 public class Mount implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Mount.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Mount[] data;
 	static {
 		loadData();
@@ -33,7 +37,7 @@ public class Mount implements FullRenderer {
 		this.lvl = lvl;
 		this.depla = new Effect(TypeEffect.Depla, false, depla, false, WeaponType.NONE, null);
 		this.reinca = reinca;
-		setIcon(path);
+		this.icon = setIcon(path);
 	}
 	
 	public String getName() {
@@ -63,17 +67,20 @@ public class Mount implements FullRenderer {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon back = new ImageIcon(Mount.class.getResource(Tools.PATH32 + "4.png"));
-		ImageIcon object = null;
+	public Icon setIcon(String path) {
+		ImageIcon back = new ImageIcon(Anima.class.getResource(Tools.PATH32 + "4.png"));
+		ImageIcon object = ICONS.get(path);
 		
-		try {
-			object = new ImageIcon(Mount.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(object == null) {
+			try {
+				object = new ImageIcon(Anima.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override
@@ -102,7 +109,7 @@ public class Mount implements FullRenderer {
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				list.add(new Mount(lineSplit[0], Integer.parseInt(lineSplit[1]), Integer.parseInt(lineSplit[2]), Boolean.parseBoolean(lineSplit[3]), path));
 				

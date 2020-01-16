@@ -1,6 +1,0 @@
-Aucun,None/1/1/100/0/none
-Niveau 1 - Éval 1,Level 1 - Eval 1/1.045/1/65/1/lvl1
-Niveau 1 - Éval 2,Level 1 - Eval 2/1.08/66/85/1/lvl1
-Niveau 1 - Éval 3,Level 1 - Eval 3/1.12/86/90/1/lvl1
-Niveau 1 - Éval 4,Level 1 - Eval 4/1.16/91/99/1/lvl1
-Niveau 1 - Éval 5,Level 1 - Eval 5/1.2/100/100/1/lvl1

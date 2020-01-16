@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,6 +17,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class Yggdrasil implements Writable, Iconable {
 	
 	public static String PATH = Tools.RESOURCE + Yggdrasil.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Yggdrasil[] data;
 	static {
 		loadData();
@@ -26,7 +29,7 @@ public class Yggdrasil implements Writable, Iconable {
 	
 	public Yggdrasil(String name, String path, String[] effects) {
 		this.name = name;
-		setIcon(path);
+		this.icon = setIcon(path);
 		
 		for(int i = 0; i < effects.length; i++) {
 			this.effects.add(new Effect(effects[i]));
@@ -63,16 +66,16 @@ public class Yggdrasil implements Writable, Iconable {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(Yggdrasil.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(Yggdrasil.class.getResource(PATH + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	public static void loadData() {
@@ -85,7 +88,7 @@ public class Yggdrasil implements Writable, Iconable {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				String[] effects = new String[Integer.parseInt(lineSplit[1])];
 				for(int i = 0; i < effects.length; i++) effects[i] = lineSplit[i+2];
 				

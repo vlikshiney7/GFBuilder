@@ -1,14 +1,18 @@
-package fr.vlik.grandfantasia.equipment;
+package fr.vlik.grandfantasia.equipable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.MultiEffect;
@@ -19,6 +23,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 public class Armor extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Armor[][] data;
 	static {
 		loadData();
@@ -39,23 +44,23 @@ public class Armor extends Equipment {
 		this.icon = armor.getIcon();
 	}
 	
-	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.reinca = reinca;
 		this.isMultiEffect = false;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
-	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
+	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, new ArrayList<Effect>(), bonusXP);
 		
 		this.setCode = setCode;
 		this.reinca = reinca;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
 	public String getSetCode() {
@@ -83,17 +88,24 @@ public class Armor extends Equipment {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon back = new ImageIcon(Armor.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
-		ImageIcon object = null;
+	public Icon setIcon(String path) {
+		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon object = ICONS.get(path);
 		
-		try {
-			object = new ImageIcon(Armor.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(path == null) {
+			path = "null";
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		if(object == null) {
+			try {
+				object = new ImageIcon(Weapon.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
+		}
+		
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	public void addEnchant(Enchantment enchant, int idArmor) {
@@ -131,9 +143,7 @@ public class Armor extends Equipment {
 		}
 	}
 
-	public void addFortif(int value) {
-		double coefFortif = Tools.coefFortif[value];
-		
+	public void addFortif(Fortification fortif) {
 		for(Effect effect : this.effects) {
 			if(effect.isPercent()) {
 				continue;
@@ -147,7 +157,7 @@ public class Armor extends Equipment {
 				continue;
 			}
 			
-			effect.addFortifValue(coefFortif);
+			effect.addFortifValue(fortif.getCoef());
 		}
 	}
 	
@@ -165,7 +175,7 @@ public class Armor extends Equipment {
 				String line = reader.readLine();
 				while (line != null) {
 					String[] lineSplit = line.split("/");
-					String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
+					String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1];
 					
 					String classes[] = lineSplit[1].split(",");
 					GradeName[] grades = new GradeName[classes.length];

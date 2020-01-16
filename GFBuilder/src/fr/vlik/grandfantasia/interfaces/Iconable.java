@@ -6,5 +6,5 @@ public interface Iconable {
 	
 	public Icon getIcon();
 	
-	public void setIcon(String path);
+	public Icon setIcon(String path);
 }

@@ -34,7 +34,7 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		this.setForeground(Design.FontColor[0]);
-		this.setOpaque(false);
+		this.setOpaque(false);	
 	}
 	
 	@SuppressWarnings("unchecked")

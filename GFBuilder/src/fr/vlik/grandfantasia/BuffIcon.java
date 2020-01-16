@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -12,6 +14,7 @@ import fr.vlik.grandfantasia.interfaces.Iconable;
 
 public class BuffIcon extends Buff implements Iconable {
 	
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static BuffIcon[] dataGuild;
 	private static BuffIcon[] dataLove;
 	static {
@@ -22,7 +25,7 @@ public class BuffIcon extends Buff implements Iconable {
 
 	public BuffIcon(String name, String path, ArrayList<Effect> effects) {
 		super(name, effects);
-		setIcon(path);
+		this.icon = setIcon("bufficon/" + path);
 	}
 	
 	@Override
@@ -31,16 +34,16 @@ public class BuffIcon extends Buff implements Iconable {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(BuffIcon.class.getResource(Tools.RESOURCE + "bufficon/" + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(BuffIcon.class.getResource(Tools.RESOURCE + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	public static void loadData() {
@@ -55,7 +58,7 @@ public class BuffIcon extends Buff implements Iconable {
 			while (!line.equals("")) {
 				String[] lineSplit = line.split("/");
 				
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
 				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
@@ -71,7 +74,7 @@ public class BuffIcon extends Buff implements Iconable {
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
 				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)

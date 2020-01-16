@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 
 public class Build {
 	

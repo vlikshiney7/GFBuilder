@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,6 +17,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class ProSkill implements Iconable, Writable {
 	
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static ProSkill[][] data;
 	static {
 		loadData();
@@ -25,10 +28,10 @@ public class ProSkill implements Iconable, Writable {
 	private Icon icon;
 	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
-	public ProSkill(String name, int lvl, String iconPath, ArrayList<Effect> effects) {
+	public ProSkill(String name, int lvl, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.lvl = lvl;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 		this.effects = effects;
 	}
 	
@@ -54,16 +57,16 @@ public class ProSkill implements Iconable, Writable {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(ProSkill.class.getResource(Tools.RESOURCE + "pro/" + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(ProSkill.class.getResource(Tools.RESOURCE + "pro/" + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	@Override
@@ -98,7 +101,7 @@ public class ProSkill implements Iconable, Writable {
 				ArrayList<ProSkill> skills = new ArrayList<ProSkill>(9);
 				for(int j = 0; j < 9; j++) {
 					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1] + ".png";
+					String path =  lineSplit[lineSplit.length-1];
 					
 					String[] effectSplit = lineSplit[2].split(",");
 					

@@ -3,6 +3,7 @@ package fr.vlik.uidesign;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -30,7 +31,7 @@ public class JCustomRadioButton extends JRadioButton {
 		setVoidUI();
 	}
 	
-	public JCustomRadioButton(ImageIcon icon) {
+	public JCustomRadioButton(Icon icon) {
 		super(icon);
 	}
 

@@ -1,22 +1,26 @@
-package fr.vlik.grandfantasia.equipment;
+package fr.vlik.grandfantasia.equipable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
-import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
 
 public class Cape extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Cape[] data;
 	static {
 		loadData();
@@ -33,21 +37,21 @@ public class Cape extends Equipment {
 		this.icon = cape.getIcon();
 	}
 	
-	public Cape(String name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Cape(String name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.isMultiEffect = false;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
-	public Cape(String name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String iconPath, MultiEffect effects, ArrayList<Effect> bonusXP) {
+	public Cape(String name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, canEnchant, new ArrayList<Effect>(), bonusXP);
 		
 		this.setCode = setCode;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
 	public String getSetCode() {
@@ -71,17 +75,20 @@ public class Cape extends Equipment {
 	}
 	
 	@Override
-	public void setIcon(String path) {
+	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Cape.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
-		ImageIcon object = null;
+		ImageIcon object = ICONS.get(path);
 		
-		try {
-			object = new ImageIcon(Cape.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(object == null) {
+			try {
+				object = new ImageIcon(Cape.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	public void addEnchant(Enchantment enchant) {
@@ -129,7 +136,7 @@ public class Cape extends Equipment {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				String classes[] = lineSplit[1].split(",");
 				GradeName[] grades = new GradeName[classes.length];

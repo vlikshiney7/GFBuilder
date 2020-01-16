@@ -79,6 +79,8 @@ public class JCustomButton extends JButton {
 		this.setContentAreaFilled(false);
 		this.setFont(new Font("Open Sans", Font.PLAIN, 16));
 		this.setForeground(Design.FontColor[0]);
+		
+		
 	}
 	
 	public void setVoidUI() {

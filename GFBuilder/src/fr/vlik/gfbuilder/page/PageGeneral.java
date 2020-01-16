@@ -23,7 +23,7 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;

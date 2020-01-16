@@ -10,11 +10,11 @@ import java.util.Map;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Armor;
-import fr.vlik.grandfantasia.equipment.Cape;
-import fr.vlik.grandfantasia.equipment.Ring;
-import fr.vlik.grandfantasia.equipment.Weapon;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.Cape;
+import fr.vlik.grandfantasia.equipable.Ring;
+import fr.vlik.grandfantasia.equipable.Weapon;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class Enchantment implements Writable {

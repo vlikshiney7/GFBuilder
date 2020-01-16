@@ -9,7 +9,6 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -71,7 +70,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 				});
 				this.spePoint.get(numSpe).setVisible(false);
 				
-				this.iconSpe.add(new JLabel(new ImageIcon(this.tabSpeciality[numSpe].getIcon())));
+				this.iconSpe.add(new JLabel(this.tabSpeciality[numSpe].getIcon()));
 				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getTooltip());
 				this.iconSpe.get(numSpe).setVisible(false);
 				
@@ -220,7 +219,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		this.tabSpeciality = Speciality.getData(grade.getGrade());
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
-			this.iconSpe.get(i).setIcon(new ImageIcon(this.tabSpeciality[i].getIcon()));
+			this.iconSpe.get(i).setIcon(this.tabSpeciality[i].getIcon());
 			this.iconSpe.get(i).setToolTipText(this.tabSpeciality[i].getTooltip());
 			this.spePoint.get(i).setSelectedIndex(0);
 		}

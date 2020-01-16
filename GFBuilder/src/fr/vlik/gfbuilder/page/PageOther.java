@@ -13,12 +13,12 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Anima;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.equipable.Anima;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -197,7 +197,7 @@ public class PageOther extends PagePanel {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		config.put("Bague", this.getBague().getName());
+		config.put("Bague", this.getBague().getName(lang));
 		config.put("LoveBuff", this.getLoveCo().getName());
 		config.put("Anima", this.getAnima().getName());
 		
@@ -206,11 +206,11 @@ public class PageOther extends PagePanel {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		Bague bague = Bague.get(config.get("Bague"));
+		Bague bague = Bague.get(config.get("Bague"), lang);
 		if(bague == null) {
 			this.bague.setSelectedIndex(0);
 		} else {
-			this.bague.setSelectedItem(Bague.get(config.get("Bague")));
+			this.bague.setSelectedItem(Bague.get(config.get("Bague"), lang));
 		}
 		
 		BuffIcon loveCo = BuffIcon.getLove(config.get("LoveBuff"));

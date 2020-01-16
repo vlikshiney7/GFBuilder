@@ -1,14 +1,18 @@
-package fr.vlik.grandfantasia.equipment;
+package fr.vlik.grandfantasia.equipable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Reinca;
@@ -18,6 +22,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 public class Weapon extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Weapon[][] data;
 	static {
 		loadData();
@@ -33,7 +38,7 @@ public class Weapon extends Equipment {
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
 		this.reinca = false;
-		setIcon("null.png");
+		this.icon = setIcon("null");
 	}
 	
 	public Weapon(Weapon weapon) {
@@ -46,13 +51,13 @@ public class Weapon extends Equipment {
 		this.effects = weapon.getEffects();
 	}
 	
-	public Weapon(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Weapon(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
 		this.uniqueEquip = uniqueEquip;
 		this.reinca = reinca;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
 	public static enum WeaponType {
@@ -90,21 +95,24 @@ public class Weapon extends Equipment {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
-		ImageIcon object = null;
+	public Icon setIcon(String path) {
+		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + this.quality.index + Tools.PNG));
+		ImageIcon object = ICONS.get(path);
 		
 		if(path == null) {
-			path = "null.png";
+			path = "null";
 		}
 		
-		try {
-			object = new ImageIcon(Weapon.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(object == null) {
+			try {
+				object = new ImageIcon(Weapon.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	public void addEnchant(Enchantment enchant) {
@@ -142,9 +150,7 @@ public class Weapon extends Equipment {
 		}
 	}
 	
-	public void addFortif(int value) {
-		double coefFortif = Tools.coefFortif[value];
-		
+	public void addFortif(Fortification fortif) {
 		for(Effect effect : this.effects) {
 			if(effect.isPercent()) {
 				continue;
@@ -154,7 +160,7 @@ public class Weapon extends Equipment {
 				continue;
 			}
 			
-			effect.addFortifValue(coefFortif);
+			effect.addFortifValue(fortif.getCoef());
 		}
 	}
 	
@@ -188,7 +194,7 @@ public class Weapon extends Equipment {
 				list.add(new ArrayList<Weapon>());
 				String line = reader.readLine();
 				while (line != null) {String[] lineSplit = line.split("/");
-					String path =  weaponFile[i] + "/" + lineSplit[lineSplit.length-1] + ".png";
+					String path =  weaponFile[i] + "/" + lineSplit[lineSplit.length-1];
 					
 					String classes[] = lineSplit[1].split(",");
 					GradeName[] grades = new GradeName[classes.length];

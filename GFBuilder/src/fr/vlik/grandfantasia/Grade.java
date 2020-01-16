@@ -17,6 +17,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class Grade implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	public static Grade[] data;
 	static {
 		loadData();
@@ -33,7 +34,7 @@ public class Grade implements Iconable, Writable {
 		this.grade = grade;
 		this.lvlMin = lvlMin;
 		this.lvlMax = lvlMax;
-		setIcon(path);
+		this.icon = setIcon(path);
 	}
 	
 	public static enum GradeName {
@@ -74,16 +75,16 @@ public class Grade implements Iconable, Writable {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon object = null;
-		
-		try {
-			object = new ImageIcon(Grade.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+	public Icon setIcon(String path) {
+		if(ICONS.get(path) == null) {
+			try {
+				ICONS.put(path, new ImageIcon(Grade.class.getResource(PATH + path + Tools.PNG)));
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = object;
+		return ICONS.get(path);
 	}
 	
 	@Override
@@ -108,7 +109,7 @@ public class Grade implements Iconable, Writable {
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				String[] name = lineSplit[0].split(",");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				Map<Language, String> lang = new HashMap<Language, String>();
 				for(int i = 0; i < name.length; i++) {

@@ -100,7 +100,7 @@ public class PageTalent extends PagePanel {
 						MainFrame.getInstance().updateStat();
 					});
 					
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(Talent.getData()[PageGeneral.getInstance().getGrade().getGrade().index][i*12+j*3+k].getIcon())));
+					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(Talent.getData()[PageGeneral.getInstance().getGrade().getGrade().index][i*12+j*3+k].getIcon()));
 					this.radioTalent.get(i*4+j).get(k+1).setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).addActionListener(e -> {
 						updateSelectedTalent(id);
@@ -290,7 +290,7 @@ public class PageTalent extends PagePanel {
 				tabTalent[j+1] = listTalent.get(i).get(j);
 			}
 			
-			this.radioTalent.get(i/3).get((i%3)+1).setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][i].getIcon()));
+			this.radioTalent.get(i/3).get((i%3)+1).setIcon(Talent.getData()[grade.getGrade().index][i].getIcon());
 			this.talent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));
 		}
 	}
@@ -325,7 +325,7 @@ public class PageTalent extends PagePanel {
 				if(i == 0 || this.talent.get(index*3+i-1).getSelectedIndex() == 0) {
 					this.tabChosenTalent[index].setIcon(new ImageIcon());
 				} else {
-					this.tabChosenTalent[index].setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][index*3+i-1].getIcon()));
+					this.tabChosenTalent[index].setIcon(Talent.getData()[grade.getGrade().index][index*3+i-1].getIcon());
 				}
 			}
 		}
@@ -354,7 +354,7 @@ public class PageTalent extends PagePanel {
 				this.radioTalent.get(index/3).get(0).setSelected(true);
 				this.tabChosenTalent[index/3].setIcon(new ImageIcon());
 			} else {
-				this.tabChosenTalent[index/3].setIcon(new ImageIcon(Talent.getData()[grade.getGrade().index][index].getIcon()));
+				this.tabChosenTalent[index/3].setIcon(Talent.getData()[grade.getGrade().index][index].getIcon());
 			}
 		}
 	}

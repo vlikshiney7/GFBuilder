@@ -1,10 +1,8 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -18,23 +16,23 @@ public class Bague implements FullRenderer {
 	public static String PATH = Tools.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
 	private static Bague[] data;
 	static {
-		loadData();
+		Bague.data = Loader.getBague();
 	}
 	
-	private String name;
-	private Quality quality;
-	private Icon icon;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private final Map<Language, String> name;
+	private final Quality quality;
+	private final Icon icon;
+	private final ArrayList<Effect> effects;
 	
-	public Bague(String name, Quality quality, String path, ArrayList<Effect> effects) {
+	public Bague(Map<Language, String> name, Quality quality, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.quality = quality;
-		setIcon(path);
+		this.icon = setIcon(path);
 		this.effects = effects;
 	}
 	
-	public String getName() {
-		return this.name;
+	public String getName(Language lang) {
+		return this.name.get(lang);
 	}
 	
 	public Quality getQuality() {
@@ -60,22 +58,22 @@ public class Bague implements FullRenderer {
 	}
 	
 	@Override
-	public void setIcon(String path) {
+	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Bague.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
 		ImageIcon object = null;
 		
 		try {
-			object = new ImageIcon(Bague.class.getResource(PATH + path));
+			object = new ImageIcon(Bague.class.getResource(PATH + path + Tools.PNG));
 		} catch (NullPointerException e) {
 			System.out.println("Image introuvable : " + path);
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override
 	public String getInfo(Language lang) {
-		return this.name;
+		return this.name.get(lang);
 	}
 	
 	@Override
@@ -89,45 +87,13 @@ public class Bague implements FullRenderer {
 		return "<html>" + tooltip + "</html>";
 	}
 	
-	public static void loadData() {
-		ArrayList<Bague> list = new ArrayList<Bague>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Bague.class.getResourceAsStream(PATH + "bague.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
-				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
-				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
-					effects.add(new Effect(lineSplit[j+3]));
-				
-				list.add(new Bague(lineSplit[0], quality, path, effects));
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Bague.class.getClass().getSimpleName() + " class");
-		}
-		
-		Bague.data = new Bague[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
-	}
-	
 	public static Bague[] getData() {
 		return Bague.data;
 	}
 	
-	public static Bague get(String name) {
+	public static Bague get(String name, Language lang) {
 		for(Bague bague : Bague.data) {
-			if(bague.getName().equals(name)) {
+			if(bague.getName(lang).equals(name)) {
 				return bague;
 			}
 		}

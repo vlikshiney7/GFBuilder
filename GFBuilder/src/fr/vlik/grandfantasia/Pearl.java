@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -16,6 +18,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 public class Pearl implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Pearl[] dataWeapon;
 	private static Pearl[] dataArmor;
 	private static Pearl[] dataWeaponCost;
@@ -36,7 +39,7 @@ public class Pearl implements FullRenderer {
 		this.purpulOnly = purpulOnly;
 		this.cumulable = cumulable;
 		this.quality = quality;
-		setIcon(path);
+		this.icon = setIcon(path);
 		
 		for(int i = 0; i < effects.length; i++) {
 			this.effects.add(new Effect(effects[i]));
@@ -74,17 +77,20 @@ public class Pearl implements FullRenderer {
 	}
 	
 	@Override
-	public void setIcon(String path) {
-		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH24 + this.quality.index + ".png"));
-		ImageIcon object = null;
+	public Icon setIcon(String path) {
+		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH24 + this.quality.index + Tools.PNG));
+		ImageIcon object = ICONS.get(path);
 		
-		try {
-			object = new ImageIcon(Pearl.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(object == null) {
+			try {
+				object = new ImageIcon(Pearl.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override
@@ -147,7 +153,7 @@ public class Pearl implements FullRenderer {
 				String line = reader.readLine();
 				while (line != null) {
 					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1] + ".png";
+					String path =  lineSplit[lineSplit.length-1];
 					
 					Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 					

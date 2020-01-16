@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 
 public class MultiEffect {
 	

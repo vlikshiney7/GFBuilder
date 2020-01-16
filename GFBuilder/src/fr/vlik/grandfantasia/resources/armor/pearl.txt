@@ -62,8 +62,8 @@ Perle de Résonance du Chasseur de Bête/3/false/true/2/FCE,false,11,true/AGI,fa
 Perle de Résonance du Chasseur de Bêtes 4/3/false/true/2/FCE,false,9,true/AGI,false,2,true/red2
 Perle de Résonance du Chasseur de Bêtes 3/3/false/true/1/FCE,false,9,true/red2
 Perle de Résonance du Chasseur de Bêtes 2/3/false/true/1/FCE,false,6,true/red2
-Perle de Résonance du Faucheur de Plantes 5/3/false/true/2/AGI,false,11,true/VIT,false,3,true/red2
-Perle de Résonance du Faucheur de Plantes 4/3/false/true/2/AGI,false,9,true/VIT,false,2,true/red2
+Perle de Résonance du Faucheur de Plantes 5/3/false/true/2/FCE,false,11,true/VIT,false,3,true/red2
+Perle de Résonance du Faucheur de Plantes 4/3/false/true/2/FCE,false,9,true/VIT,false,2,true/red2
 Perle de Résonance du Faucheur de Plantes 3/3/false/true/1/AGI,false,9,true/red2
 Perle de Résonance du Faucheur de Plantes 2/3/false/true/1/AGI,false,6,true/red2
 Perle de Résonance du Fusionneur de Métal/3/false/true/2/VIT,false,4,true/AGI,false,11,true/red2

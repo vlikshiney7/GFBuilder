@@ -8,9 +8,9 @@ import java.util.Arrays;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Armor;
-import fr.vlik.grandfantasia.equipment.Cape;
-import fr.vlik.grandfantasia.equipment.Ring;
+import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.Cape;
+import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class EquipSet implements Writable {

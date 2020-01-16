@@ -1,14 +1,19 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipable;
 
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.MultiEffect;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
@@ -16,6 +21,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 public class Anima implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Anima.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Anima[] data;
 	static {
 		loadData();
@@ -33,7 +39,7 @@ public class Anima implements FullRenderer {
 		this.quality = quality;
 		this.isMultiEffect = false;
 		this.effects = effects;
-		setIcon(path);
+		this.icon = setIcon(path);
 	}
 	
 	public Anima(String name, Quality quality, String path, MultiEffect effects) {
@@ -41,7 +47,7 @@ public class Anima implements FullRenderer {
 		this.quality = quality;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
-		setIcon(path);
+		this.icon = setIcon(path);
 	}
 	
 	public String getName() {
@@ -83,17 +89,20 @@ public class Anima implements FullRenderer {
 	}
 	
 	@Override
-	public void setIcon(String path) {
+	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Anima.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
-		ImageIcon object = null;
+		ImageIcon object = ICONS.get(path);
 		
-		try {
-			object = new ImageIcon(Anima.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(object == null) {
+			try {
+				object = new ImageIcon(Anima.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override
@@ -122,7 +131,7 @@ public class Anima implements FullRenderer {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 				

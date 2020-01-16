@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -16,6 +18,7 @@ import fr.vlik.grandfantasia.interfaces.FullRenderer;
 public class Bullet implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Bullet[] data;
 	static {
 		loadData();
@@ -33,7 +36,7 @@ public class Bullet implements FullRenderer {
 		this.lvl = lvl;
 		this.quality = quality;
 		this.reinca = reinca;
-		setIcon(path);
+		this.icon = setIcon(path);
 		this.effects = effects;
 	}
 	
@@ -72,17 +75,20 @@ public class Bullet implements FullRenderer {
 	}
 	
 	@Override
-	public void setIcon(String path) {
+	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Bullet.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
-		ImageIcon object = null;
+		ImageIcon object = ICONS.get(path);
 		
-		try {
-			object = new ImageIcon(Bullet.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		if(object == null) {
+			try {
+				object = new ImageIcon(Bullet.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	@Override
@@ -111,7 +117,7 @@ public class Bullet implements FullRenderer {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				Quality quality = Quality.values()[Integer.parseInt(lineSplit[2])];
 				

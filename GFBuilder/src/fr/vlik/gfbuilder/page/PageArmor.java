@@ -18,21 +18,21 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.gfbuilder.Util;
 import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
+import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipment.Armor;
-import fr.vlik.grandfantasia.equipment.RedArmor;
-import fr.vlik.grandfantasia.equipment.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.RedArmor;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -53,12 +53,12 @@ public class PageArmor extends PagePanel {
 	private JCustomTextPane armorSetInfo;
 	
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
-	private ArrayList<JCustomComboBox<String>> fortif = new ArrayList<JCustomComboBox<String>>(5);
+	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(6);
 	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(10);
 	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(10);
 	
-	private ArrayList<JCustomComboBox<String>> redFortif = new ArrayList<JCustomComboBox<String>>(5);
+	private ArrayList<JCustomComboBox<RedFortification>> redFortif = new ArrayList<JCustomComboBox<RedFortification>>(5);
 	private ArrayList<JCustomComboBox<Enchantment>> redEnchant = new ArrayList<JCustomComboBox<Enchantment>>(15);
 	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(15);
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(5);
@@ -107,8 +107,7 @@ public class PageArmor extends PagePanel {
 			this.enchant.get(i).setVisible(false);
 			
 			/* FORTIF */
-			String[] labelFortif = Util.setFortifFormat(20);
-			this.fortif.add(new JCustomComboBox<String>(labelFortif));
+			this.fortif.add(new JCustomComboBox<Fortification>(Fortification.getData()));
 			this.fortif.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -116,8 +115,7 @@ public class PageArmor extends PagePanel {
 			this.fortif.get(i).setVisible(false);
 			
 			/* RED FORTIF */
-			labelFortif = Util.setFortifFormat(50);
-			this.redFortif.add(new JCustomComboBox<String>(labelFortif));
+			this.redFortif.add(new JCustomComboBox<RedFortification>(RedFortification.getData()));
 			this.redFortif.get(i).addActionListener(e -> {
 				updateValueFortif(id);
 				
@@ -249,7 +247,7 @@ public class PageArmor extends PagePanel {
 		return this.enchant.get(id).getSelectedItem();
 	}
 
-	public String getFortif(int id) {
+	public Fortification getFortif(int id) {
 		return this.fortif.get(id).getSelectedItem();
 	}
 	
@@ -257,7 +255,7 @@ public class PageArmor extends PagePanel {
 		return this.redEnchant.get(id).getSelectedItem();
 	}
 
-	public String getRedFortif(int id) {
+	public RedFortification getRedFortif(int id) {
 		return this.redFortif.get(id).getSelectedItem();
 	}
 	
@@ -295,12 +293,11 @@ public class PageArmor extends PagePanel {
 			armors[i].addEnchant(this.getEnchantment(i), i);
 			
 			if(armors[i] instanceof RedArmor) {
-				int lvlFortif = this.redFortif.get(i).getSelectedIndex();
+				RedFortification fortif = this.getRedFortif(i);
 				
-				
-				if(lvlFortif != 0) {
+				if(fortif.getCoef() != 1) {
 					((RedArmor) armors[i]).addFortif(this.valueFortif.get(i).getDoubleValue());
-					list.addAll(((RedArmor) armors[i]).getStarEffects(lvlFortif/10));
+					list.addAll(((RedArmor) armors[i]).getStarEffects(fortif.getStar()));
 				}
 				
 				for(int j = 0; j < 3; j++) {
@@ -311,7 +308,7 @@ public class PageArmor extends PagePanel {
 					}
 				}
 			} else {
-				armors[i].addFortif(this.fortif.get(i).getSelectedIndex());
+				armors[i].addFortif(this.getFortif(i));
 			}
 			
 			list.addAll(armors[i].getEffects());
@@ -741,17 +738,13 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updateValueFortif(int id) {
-		int fortif = this.redFortif.get(id).getSelectedIndex();
+		RedFortification fortif = this.getRedFortif(id);
 		
-		double min = Tools.coefRedFortifMin[fortif]*100;
-		double max = Tools.coefRedFortifMax[fortif]*100;
-		double middle = (max - min) / 2 + min;
+		this.valueFortif.get(id).setDoubleMinimum(fortif.getCoefMin()*100);
+		this.valueFortif.get(id).setDoubleMaximum(fortif.getCoefMax()*100);
+		this.valueFortif.get(id).setDoubleValue(fortif.getCoef()*100);
 		
-		this.valueFortif.get(id).setDoubleMinimum(min);
-		this.valueFortif.get(id).setDoubleMaximum(max);
-		this.valueFortif.get(id).setDoubleValue(middle);
-		
-		if(fortif == 0) {
+		if(fortif.getCoef() == 1) {
 			this.valueFortif.get(id).setVisible(false);
 			this.labelValue.get(id).setVisible(false);
 		} else {
@@ -902,7 +895,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.fortif.size(); i++) {
-			config.put("Fortif" + i, this.getFortif(i));
+			config.put("Fortif" + i, this.getFortif(i).getName());
 		}
 		
 		for(int i = 0; i < this.pearl.size(); i++) {
@@ -919,7 +912,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
-			config.put("RedFortif" + i, this.getRedFortif(i));
+			config.put("RedFortif" + i, this.getRedFortif(i).getName());
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
@@ -954,7 +947,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.fortif.size(); i++) {
-			String fortif = config.get("Fortif" + i);
+			Fortification fortif = Fortification.get(config.get("Fortif" + i));
 			if(fortif == null) {
 				this.fortif.get(i).setSelectedIndex(0);
 			} else {
@@ -980,7 +973,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
-			String redFortif = config.get("RedFortif" + i);
+			RedFortification redFortif = RedFortification.get(config.get("RedFortif" + i));
 			if(redFortif == null) {
 				this.redFortif.get(i).setSelectedIndex(0);
 			} else {

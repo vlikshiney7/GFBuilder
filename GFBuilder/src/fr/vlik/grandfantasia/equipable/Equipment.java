@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia.equipment;
+package fr.vlik.grandfantasia.equipable;
 
 import java.awt.Color;
 import java.util.ArrayList;

@@ -1,10 +1,13 @@
-package fr.vlik.grandfantasia.equipment;
+package fr.vlik.grandfantasia.equipable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Effect;
@@ -16,6 +19,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 public final class Ring extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Ring[] data;
 	static {
 		loadData();
@@ -32,12 +36,12 @@ public final class Ring extends Equipment {
 		this.icon = ring.getIcon();
 	}
 	
-	public Ring(String name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Ring(String name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, new GradeName[] { GradeName.NONE } , lvl, quality, enchantable, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.uniqueEquip = uniqueEquip;
-		setIcon(iconPath);
+		this.icon = setIcon(path);
 	}
 	
 	public String getSetCode() {
@@ -49,17 +53,20 @@ public final class Ring extends Equipment {
 	}
 	
 	@Override
-	public void setIcon(String path) {
+	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
-		ImageIcon object = null;
-				
-		try {
-			object = new ImageIcon(Ring.class.getResource(PATH + path));
-		} catch (NullPointerException e) {
-			System.out.println("Image introuvable : " + path);
+		ImageIcon object = ICONS.get(path);
+		
+		if(object == null) {
+			try {
+				object = new ImageIcon(Ring.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
 		}
 		
-		this.icon = (object != null) ? Tools.constructIcon(back, object) : back;
+		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
 	public void addEnchant(Enchantment enchant) {
@@ -107,7 +114,7 @@ public final class Ring extends Equipment {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1] + ".png";
+				String path =  lineSplit[lineSplit.length-1];
 				
 				Quality quality = Quality.values()[Integer.parseInt(lineSplit[3])];
 				
