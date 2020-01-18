@@ -74,7 +74,7 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 			else
 				renderer.setForeground(Tools.speColor[0]);
 		} else if(value instanceof Talent) {
-			if(!ancestral) {
+			if(!this.ancestral) {
 				if(index == 0) {
 					renderer.setForeground(Tools.itemColor[0]);
 				} else if(index == 1) {

@@ -14,6 +14,7 @@ import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.equipable.Weapon;
+import fr.vlik.grandfantasia.equipable.Armor.ArmorType;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
@@ -442,7 +443,7 @@ public class Enchantment implements Writable {
 		return 0;
 	}
 	
-	public static int getValue(Armor armor, TypeEffect type, int id) {
+	public static int getValue(Armor armor, TypeEffect type) {
 		int lvl = armor.getLvl();
 		Quality quality = armor.getQuality();
 		
@@ -452,7 +453,7 @@ public class Enchantment implements Writable {
 				if(getter.size() == 1) {
 					return getter.get(0);
 				} else {
-					int typeArmor = id == 0 || id == 3 || id == 4 ? 0 : 1;
+					int typeArmor = armor.getType() == ArmorType.CASQUE || armor.getType() == ArmorType.GANT || armor.getType() == ArmorType.BOTTE ? 0 : 1;
 					return getter.get(typeArmor);
 				}
 			} else if(type == TypeEffect.ESQ) {

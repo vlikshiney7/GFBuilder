@@ -29,6 +29,7 @@ public class Armor extends Equipment {
 		loadData();
 	}
 	
+	private ArmorType type;
 	private String setCode;
 	private boolean reinca;
 	private boolean isMultiEffect;
@@ -37,6 +38,7 @@ public class Armor extends Equipment {
 	public Armor(Armor armor) {
 		super(armor.getName(), armor.getGrades(), armor.getLvl(), armor.getQuality(), armor.isEnchantable(), armor.getEffects(), armor.getBonusXP());
 		
+		this.type = armor.getType();
 		this.setCode = armor.getSetCode();
 		this.reinca = armor.isReinca();
 		this.isMultiEffect = armor.isMultiEffect();
@@ -44,23 +46,47 @@ public class Armor extends Equipment {
 		this.icon = armor.getIcon();
 	}
 	
-	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
+		this.type = type;
 		this.setCode = setCode;
 		this.reinca = reinca;
 		this.isMultiEffect = false;
 		this.icon = setIcon(path);
 	}
 	
-	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
+	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, new ArrayList<Effect>(), bonusXP);
 		
+		this.type = type;
 		this.setCode = setCode;
 		this.reinca = reinca;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
 		this.icon = setIcon(path);
+	}
+	
+	public static enum ArmorType {
+		CASQUE(0, "casque", "helmet"),
+		PLASTRON(1, "plastron", "breastplate"),
+		JAMBIERE(2, "jambière", "legging"),
+		GANT(3, "gantelet", "gauntlet"),
+		BOTTE(4, "botte", "boot");
+		
+		public final int index;
+		public final String fr;
+		public final String en;
+		 
+	    private ArmorType(int index, String fr, String en) {
+	        this.index = index;
+	        this.fr = fr;
+	        this.en = en;
+	    }
+	}
+	
+	public ArmorType getType() {
+		return this.type;
 	}
 	
 	public String getSetCode() {
@@ -108,7 +134,7 @@ public class Armor extends Equipment {
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
-	public void addEnchant(Enchantment enchant, int idArmor) {
+	public void addEnchant(Enchantment enchant) {
 		if(enchant == null) {
 			return;
 		}
@@ -123,7 +149,7 @@ public class Armor extends Equipment {
 			}
 		} else {
 			for(Effect e : enchant.getEffects()) {
-				int value = Enchantment.getValue(this, e.getType(), idArmor);
+				int value = Enchantment.getValue(this, e.getType());
 				boolean found = false;
 				
 				for(Effect get : this.effects) {
@@ -214,7 +240,7 @@ public class Armor extends Equipment {
 						
 						RedArmor red = new RedArmor(
 								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-								lineSplit[3], path, effects, bonusXP,
+								ArmorType.values()[i], lineSplit[3], path, effects, bonusXP,
 								starEffects
 								);
 						
@@ -231,7 +257,7 @@ public class Armor extends Equipment {
 							
 							Armor armor = new Armor(
 									lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-									lineSplit[3], path, effects, bonusXP
+									ArmorType.values()[i], lineSplit[3], path, effects, bonusXP
 									);
 							list.get(i).add(armor);
 						} else {
@@ -239,7 +265,7 @@ public class Armor extends Equipment {
 							
 							Armor armor = new Armor(
 									lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-									lineSplit[3], path, effects, bonusXP
+									ArmorType.values()[i], lineSplit[3], path, effects, bonusXP
 									);
 							list.get(i).add(armor);
 						}

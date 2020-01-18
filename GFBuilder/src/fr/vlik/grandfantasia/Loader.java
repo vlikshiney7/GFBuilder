@@ -90,7 +90,7 @@ public class Loader {
 				new RedFortification("+40", RedFortification.LEVEL[4], 2.25, 2, 2.5, 4),
 				new RedFortification("+41", RedFortification.LEVEL[5], 2.315, 2.05, 2.58, 4),
 				new RedFortification("+42", RedFortification.LEVEL[5], 2.38, 2.1, 2.66, 4),
-				//--------------------------------------------------------------------------
+				//---------------------------------------------------------------------------
 				new RedFortification("+43", RedFortification.LEVEL[5], 2.445, 2.15, 2.74, 4),
 				new RedFortification("+44", RedFortification.LEVEL[5], 2.51, 2.2, 2.82, 4),
 				new RedFortification("+45", RedFortification.LEVEL[5], 2.575, 2.25, 2.9, 4),
@@ -101,7 +101,7 @@ public class Loader {
 				new RedFortification("+50", RedFortification.LEVEL[5], 2.9, 2.5, 3.3, 5)
 		};
 	}
-
+	
 	public static Bague[] getBague() {
 		return new Bague[] {
 				new Bague(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", new ArrayList<Effect>()),
@@ -124,6 +124,30 @@ public class Loader {
 					add(new Effect(TypeEffect.Atk, false, 20, true));
 					add(new Effect(TypeEffect.AtkD, false, 20, true));
 					add(new Effect(TypeEffect.AtkM, false, 20, true));
+				}})
+		};
+	}
+
+	public static Energy[] getEnergy() {
+		return new Energy[] {
+				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Écarlate"); put(Language.EN, "Crimson"); }}, "red", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.PV, false, 24));
+				}}),
+				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Indigo"); put(Language.EN, "Azure"); }}, "blue", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.PM, false, 10));
+				}}),
+				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Citrus"); }}, "orange", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.Atk, false, 13));
+					add(new Effect(TypeEffect.AtkD, false, 10));
+				}}),
+				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Violette"); put(Language.EN, "Violet"); }}, "purple", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.AtkM, false, 10));
+				}}),
+				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Émeraude"); put(Language.EN, "Emerald"); }}, "green", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.DefP, false, 6));
+				}}),
+				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Rose"); put(Language.EN, "Peach"); }}, "pink", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.DefM, false, 5));
 				}})
 		};
 	}

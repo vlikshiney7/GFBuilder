@@ -1,3 +1,0 @@
-Rien/0/0/null
-Bague Magique/3/8/FCE,false,3,true/VIT,false,3,true/INT,false,3,true/VOL,false,3,true/AGI,false,3,true/Atk,false,10,true/AtkD,false,10,true/AtkM,false,10,true/blue
-Bague Magique 5 carats/5/8/FCE,false,10,true/VIT,false,10,true/INT,false,10,true/VOL,false,10,true/AGI,false,10,true/Atk,false,20,true/AtkD,false,20,true/AtkM,false,20,true/gold

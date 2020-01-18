@@ -93,6 +93,7 @@ Achevez le tour 60 du Pandemonium./4/86/-1/5/FCE,false,15/INT,false,15/VIT,false
 Âme de Mégatron/4/186/8/4/VIT,false,30/PV,false,500/Depla,false,5/DefM,true,3
 Analyseur du Pays Arc-en-Ciel/4/91/-1/4/AtkM,true,2/PV,true,4/VitComp,false,5/Depla,false,5
 Athée de Carso/4/0/-1/4/PV,false,1000/PM,false,1000/DefP,true,5/DefM,true,5
+Bourreau du chaos spatio-temporel/4/31/-1/4/PeneP,false,7/PeneM,false,7/ESQ,true,10/Depla,false,18
 Briseur de Dimension déformée/4/96/-1/3/ESQ,true,10/DefP,true,-7/DefM,true,-7
 Champion en 10 Rounds de Pandemonium/4/61/-1/2/VOL,false,5/ESQ,true,-3
 Champion en 20 Rounds de Pandemonium/4/61/-1/2/INT,false,5/TCCM,false,-3
@@ -206,6 +207,7 @@ Gardien de la Baie Bleue/3/0/-1/0
 Gardien de la Tombe du Roi/3/56/-1/2/VitComp,false,10/PV,true,-10
 Gardien du Campement Sylvestre/3/0/-1/0
 Général du Cristal/3/31/-1/1/PV,false,200
+Gardien du dîner de la Veille du Nouvel An/3/15/-1/7/DefP,true,2/DefM,true,2/FCE,true,3/VIT,true,3/INT,true,3/VOL,true,3/AGI,true,3
 Général Psychique/3/15/-1/0
 Goûteur de chocolat/3/15/-1/0
 Grand Conquérant de Saphaël/3/15/-1/3/XP,false,5/Loot,false,5/Depla,false,5

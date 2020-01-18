@@ -42,7 +42,7 @@ public class PageTalent extends PagePanel {
 	private JLabel[] tabChosenTalent = new JLabel[9];
 	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(8);
 	private ArrayList<JCustomComboBox<Talent>> talent = new ArrayList<JCustomComboBox<Talent>>(24);
-	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent());
+	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent(), Language.FR);
 	
 	private JCustomButton reinitTalent;
 	private JCustomButton maxTalent;

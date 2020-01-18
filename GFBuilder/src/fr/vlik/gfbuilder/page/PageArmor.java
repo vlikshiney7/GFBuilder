@@ -290,7 +290,7 @@ public class PageArmor extends PagePanel {
 				armors[i] = new Armor(this.getArmor(i));
 			}
 			
-			armors[i].addEnchant(this.getEnchantment(i), i);
+			armors[i].addEnchant(this.getEnchantment(i));
 			
 			if(armors[i] instanceof RedArmor) {
 				RedFortification fortif = this.getRedFortif(i);

@@ -13,6 +13,7 @@ import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Skill;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class JCustomLabel extends JLabel {
 	
@@ -26,7 +27,7 @@ public class JCustomLabel extends JLabel {
 		setBlackUI();
 	}
 	
-	public JCustomLabel(Object object) {
+	public JCustomLabel(Object object, Language lang) {
 		super();
 		setBlackUI();
 		
@@ -40,7 +41,7 @@ public class JCustomLabel extends JLabel {
 		} else if(object instanceof Energy) {
 			Energy energy = (Energy) object;
 			
-			this.setText(energy.getName());
+			this.setText(energy.getName(lang));
 			this.setIcon(energy.getIcon());
 			this.setToolTipText(energy.getTooltip());
 			this.effects = energy.getEffects();

@@ -40,6 +40,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private static PageBuff INSTANCE = new PageBuff();
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
+	private ArrayList<JCustomLabel> labelEnergy = new ArrayList<JCustomLabel>(6);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
 	private ArrayList<JCustomLabel> guildBuffUsed = new ArrayList<JCustomLabel>(4);
 	private JCustomComboBox<BuffIcon> guildBuff;
@@ -71,6 +72,9 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		for(int i = 0; i < 6; i++) {
+			this.labelEnergy.add(new JCustomLabel(Energy.getData()[i], Language.FR));
+			this.labelEnergy.get(i).setPreferredSize(new Dimension(120, 32));
+			
 			this.energy.add(new JCustomSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
 			this.energy.get(i).addChangeListener(e -> {
 				setAdditionalEffects();
@@ -247,13 +251,9 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		energies.setBackground(Design.UIColor[1]);
 		
 		for(int i = 0; i < 6; i++) {
-			
-			JCustomLabel labelEnergy = new JCustomLabel(Energy.getData()[i]);
-			labelEnergy.setPreferredSize(new Dimension(120, 32));
-			
 			JPanel panelEnergy = new JPanel();
 			panelEnergy.setBackground(Design.UIColor[1]);
-			panelEnergy.add(labelEnergy);
+			panelEnergy.add(this.labelEnergy.get(i));
 			panelEnergy.add(this.energy.get(i));
 			
 			energies.add(panelEnergy);
@@ -375,6 +375,10 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
 		for(int i = 0; i < getter.length; i++) {
 			this.label[i].setText(getter[i]);
+		}
+		
+		for(int i = 0; i < this.labelEnergy.size(); i++) {
+			this.labelEnergy.get(i).setText(Energy.getData()[i].getName(lang));
 		}
 	}
 	

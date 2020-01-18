@@ -269,7 +269,7 @@ public class MainFrame extends JFrame {
 		
 		int sizeStat = 210;
 		int[] section = new int[] { 5, 3, 5, 6, 3 };
-		int[] widthName = new int[] { 90, 90, 90, 130, 130, 130 };
+		int[] widthName = new int[] { 80, 80, 80, 130, 130, 130 };
 		int ordinal = 0;
 		
 		for(int i = 0; i < section.length; i++) {

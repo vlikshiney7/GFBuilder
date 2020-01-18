@@ -52,27 +52,30 @@ Dents-de-sabre Enragé Suprême/40/100/false/038
 Dragon améthyste de combat/40/100/false/102
 Loup des ténèbres/40/100/false/021
 Dragon doré impérial/40/100/false/200
-Fléau de l'ombre/40/100/false/039
+Fléau de l'ombre/40/100/false/260
 Dragon infernal/40/100/false/201
 Monture Loup Lotus rouge/40/100/false/022
-Étalon enflammé de combat/40/100/false
-Écureuil de Guerre/40/100/false
-Voiture rapide de combat/40/100/false
-Dragon ardent de combat/40/100/false
-Loup de Combat de la Flamme mystique/40/100/false
-Renne du Père Noël féroce de combat/40/100/false
-Monture de Combat Otto des Abîmes/40/100/false
-Monture de Combat Lion Céleste/40/100/false
-Loup de Combat de la Flamme opaline/40/100/false
-Étalon de guerre de Morgoth/40/75/false
-Félin de l'Aria Nocturne/40/75/false
-Goldo-Lion de Guerre/40/100/false
-Dragon des ombres/40/100/false
-Dragon mécanique de combat/40/100/false
-Cheval de Guerre des Flammes Sombres/40/100/false
-Kurama à Neuf Queues de Bataille/40/100/false
-Licorne Cosmique de combat/40/100/false
-Alpaga Étincelant de combat/40/100/false
+Étalon enflammé de combat/40/100/false/191
+Écureuil de Guerre/40/100/false/210
+Voiture rapide de combat/40/100/false/220
+Dragon ardent de combat/40/100/false/202
+Loup de Combat de la Flamme mystique/40/100/false/023
+Renne du Père Noël féroce de combat/40/100/false/240
+Monture de Combat Otto des Abîmes/40/100/false/024
+Monture de Combat Lion Céleste/40/100/false/073
+Loup de Combat de la Flamme opaline/40/100/false/025
+Étalon de guerre de Morgoth/40/75/false/192
+Félin de l'Aria Nocturne/40/75/false/230
+Goldo-Lion de Guerre/40/100/false/074
+Voiture de sport de l'Ombre écarlate/40/75/false/221
+Dragon des ombres/40/100/false/203
+Fléau de l'ombre la panthère/40/75/false/261
+Airwin de combat/40/75/false/222
+Dragon mécanique de combat/40/100/false/204
+Cheval de Guerre des Flammes Sombres/40/100/false/193
+Kurama à Neuf Queues de Bataille/40/100/false/026
+Licorne Cosmique de combat/40/100/false/194
+Alpaga Étincelant de combat/40/100/false/250
 Vilain pingoin de combat/40/100/false
 Félin flamboyant de combat/40/100/false
 Fantôme d'Hattori/40/0/false

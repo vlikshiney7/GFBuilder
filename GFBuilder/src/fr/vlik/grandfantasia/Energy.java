@@ -1,38 +1,35 @@
 package fr.vlik.grandfantasia;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class Energy implements Iconable {
+public class Energy implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + Energy.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Energy[] data;
 	static {
-		loadData();
+		data = Loader.getEnergy();
 	}
 	
-	private String name;
-	private ArrayList<Effect> effects = new ArrayList<Effect>(2);
-	private Icon icon;
+	private final Map<Language, String> name;
+	private final ArrayList<Effect> effects;
+	private final Icon icon;
 	
-	public Energy (String name, String path, ArrayList<Effect> effects) {
+	public Energy (Map<Language, String> name, String path, ArrayList<Effect> effects) {
 		this.name = name;
 		this.effects = effects;
 		this.icon = setIcon(path);
 	}
 	
-	public String getName() {
-		return this.name;
+	public String getName(Language lang) {
+		return this.name.get(lang);
 	}
 	
 	@Override
@@ -49,17 +46,23 @@ public class Energy implements Iconable {
 	}
 	
 	public Icon setIcon(String path) {
-		if(ICONS.get(path) == null) {
-			try {
-				ICONS.put(path, new ImageIcon(Energy.class.getResource(PATH + path + Tools.PNG)));
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		ImageIcon object = null;
+		
+		try {
+			object =  new ImageIcon(Energy.class.getResource(PATH + path + Tools.PNG));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return ICONS.get(path);
+		return object;
 	}
 	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name.get(lang);
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
 		for(Effect e : this.effects) {
@@ -72,36 +75,6 @@ public class Energy implements Iconable {
 	
 	public static Effect multiplyEffect(Effect effect, int point) {
 		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * point, effect.getWithReinca(), effect.getWithWeapon(), null);
-	}
-	
-	public static void loadData() {
-		ArrayList<Energy> list = new ArrayList<Energy>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Energy.class.getResourceAsStream(PATH + "energy.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1];
-				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
-					effects.add(new Effect(lineSplit[j+2]));
-				
-				list.add(new Energy(lineSplit[0], path, effects));
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Energy.class.getClass().getSimpleName() + " class");
-		}
-		
-		Energy.data = new Energy[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
 	}
 	
 	public static Energy[] getData() {
