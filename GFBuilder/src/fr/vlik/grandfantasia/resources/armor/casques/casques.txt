@@ -1,136 +1,204 @@
 Rien/0,1,2,3,4,5,6,7,8,9,10,11/0/-1/0/false/false/0,0,0/null
 Casque de Fierté pétrifiante/0/100/100vio0/6/true/false/5,0,0/DefP,false,851,true/DefM,false,636,true/FCE,false,35,true/VIT,false,30,true/AGI,false,25,true/100vio0
 Casque d'Immortalité du damné/1/100/100vio1/6/true/false/5,0,0/DefP,false,1026,true/DefM,false,729,true/FCE,false,29,true/VIT,false,33,true/VOL,false,28,true/100vio1
+Masque d'Orage de l'ombre/3/100/100vio3/6/true/false/5,0,0/DefP,false,704,true/DefM,false,685,true/FCE,false,34,true/VIT,false,29,true/AGI,false,27,true/100vio3
 Casque puissant de Khal Drogo/0/100/100gold0/5/true/false/5,0,0/DefP,false,819,true/DefM,false,583,true/FCE,false,31,true/VIT,false,25,true/AGI,false,16,true/100gold0
 Casque épique de Brienne/1/100/100gold1/5/true/false/5,0,0/DefP,false,983,true/DefM,false,671,true/FCE,false,26,true/VIT,false,30,true/VOL,false,16,true/100gold1
+Masque furtif de Minato/3/100/100gold3/5/true/false/5,0,0/DefP,false,682,true/DefM,false,648,true/FCE,false,29,true/VIT,false,27,true/AGI,false,16,true/100gold3
 Couronne de Résistance suprême de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/100/100tarot0/5/true/false/5,0,0/DefP,false,819,true/DefM,false,583,true/FCE,false,32,true/VIT,false,25,true/AGI,false,19,true/100tarot0
 Piste de Roue de la fortune de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/100/100tarot1/5/true/false/5,0,0/DefP,false,751,true/DefM,false,713,true/VIT,false,24,true/INT,false,35,true/VOL,false,17,true/100tarot1
 Masque de Sombre présage de Tarot/0,1,2,3,4,5,6,7,8,9,10,11/100/100tarot2/5/true/false/5,0,0/DefP,false,682,true/DefM,false,648,true/FCE,false,16,true/VIT,false,27,true/AGI,false,33,true/100tarot2
 Heaume de l'Apostat/0/100/100pvp0/4/false/false/7,0,0/DefP,false,781,true/DefM,false,556,true/FCE,false,17,true/VIT,false,34,true/ESQ,false,8/ReducPeneP,false,7/ReducPeneM,false,7/100pvp0
 Heaume du Gardien éclairé/1/100/100pvp1/4/false/false/7,0,0/DefP,false,937,true/DefM,false,640,true/FCE,false,17,true/VIT,false,34,true/ESQ,false,8/ReducPeneP,false,7/ReducPeneM,false,7/100pvp1
+Masque de l'Assassin scarifié/3/100/100pvp3/4/false/false/7,0,0/DefP,false,651,true/DefM,false,618,true/FCE,false,17,true/VIT,false,34,true/ESQ,false,8/ReducPeneP,false,7/ReducPeneM,false,7/100pvp3
 Casque de Héros Bestial/0/100/100pve0/4/true/false/5,0,0/DefP,false,743,true/DefM,false,529,true/FCE,false,27,true/VIT,false,16,true/AGI,false,9,true/100pve0
 Casque à Plume Verte/1/100/100pve1/4/true/false/5,0,0/DefP,false,891,true/DefM,false,608,true/FCE,false,15,true/VIT,false,17,true/VOL,false,10,true/100pve1
+Masque du Bourreau Fantôme/3/100/100pve3/4/true/false/5,0,0/DefP,false,619,true/DefM,false,588,true/FCE,false,16,true/VIT,false,14,true/AGI,false,12,true/100pve3
 Tiare de Force Tarot/0,1,2,3,4,5,6,7,8,9,10,11/95/95tarot0/5/true/false/5,0,0/DefP,false,790,true/DefM,false,563,true/FCE,false,28,true/VIT,false,23,true/AGI,false,17,true/95tarot0
 Tiare Zodiaque Tarot/0,1,2,3,4,5,6,7,8,9,10,11/95/95tarot1/5/true/false/5,0,0/DefP,false,593,true/DefM,false,751,true/VIT,false,21,true/INT,false,32,true/VOL,false,15,true/95tarot1
 Broche clair de lune Tarot/0,1,2,3,4,5,6,7,8,9,10,11/95/95tarot2/5/true/false/5,0,0/DefP,false,806,true/DefM,false,552,true/FCE,false,25,true/VIT,false,29,true/VOL,false,14,true/95tarot2
 Casque de Courroux Sanguinaire/0/95/95pvp0/4/false/false/7,0,0/DefP,false,716,true/DefM,false,510,true/FCE,false,13,true/VIT,false,26,true/ESQ,false,6/ReducPeneP,false,6/ReducPeneM,false,6/95pvp0
 Casque de Bouclier du Monde Encyclique/1/95/95pvp1/4/false/false/7,0,0/DefP,false,859,true/DefM,false,587,true/FCE,false,13,true/VIT,false,26,true/ESQ,false,6/ReducPeneP,false,6/ReducPeneM,false,6/95pvp1
+Protège-Visage de Samouraï Fantôme/3/95/95pvp3/4/false/false/7,0,0/DefP,false,597,true/DefM,false,567,true/FCE,false,13,true/VIT,false,26,true/ESQ,false,6/ReducPeneP,false,6/ReducPeneM,false,6/95pvp3
 Casque d'Explorateur Fondu/0/95/95pve0/4/true/false/5,0,0/DefP,false,716,true/DefM,false,510,true/FCE,false,16,true/VIT,false,15,true/AGI,false,8,true/95pve0
 Casque de Chevalier Béni/1/95/95pve1/4/true/false/5,0,0/DefP,false,859,true/DefM,false,587,true/FCE,false,14,true/VIT,false,16,true/VOL,false,9,true/25pvp1
+Masque de Ninja Démoniaque/3/95/95pve3/4/true/false/5,0,0/DefP,false,597,true/DefM,false,567,true/FCE,false,15,true/VIT,false,13,true/AGI,false,11,true/95pve3
 Casque Feu de Météore/0/95/-1/1/false/false/2,0,0/DefP,false,615,true/DefM,false,456,true/40pve0
 ​Casque du Précipice/1/95/-1/1/false/false/4,0,0/DefP,false,627,true/DefM,false,447,true/ESQ,false,5/DCCP,false,13/25pvp1
+Masque de l'Ombre Sereine/3/95/-1/1/false/false/4,0,0/DefP,false,512,true/DefM,false,507,true/ESQ,false,5/DCCP,false,13/65pve3
 Heaume évolutif du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0,0/100evo0R-0/65pvp0
 Heaume évolutif de Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-0/65pvp0
 Heaume évolutif du Croisé (Réincarné)/1/91/100evo1R/3/false/true/-1,0,0/100evo1R-0/100pve1
 Heaume évolutif du Croisé/1/91/100evo1/3/false/false/-1,0,0/100evo1-0/100pve1
+Masque évolutif du Kage (Réincarné)/3/91/100evo3R/3/false/true/-1,0,0/100evo3R-0/100pve3
+Masque évolutif du Kage/3/91/100evo3/3/false/false/-1,0,0/100evo3-0/100pve3
 Casque du Tremblement de terre/0/90/90red0/7/false/false/5,0,0/DefP,false,830,true/DefM,false,616,true/FCE,false,37,true/VIT,false,31,true/AGI,false,28,true/1,2,2,4,2/0,0,0,0,0/FCE,false,6/PV,false,400/PM,false,400/PV,true,2/TCCP,false,1/FCE,false,10/VIT,false,10/AGI,false,10/DCCP,false,2/ReducPeneP,false,5/ReducPeneM,false,5/90red0
 Heaume du Seigneur Arlong/0/90/90vio0/6/true/false/5,0,0/DefP,false,794,true/DefM,false,590,true/FCE,false,30,true/VIT,false,26,true/AGI,false,24,true/90vio0
 Casque du Templier Résolu/1/90/90vio1/6/true/false/5,0,0/DefP,false,810,true/DefM,false,578,true/FCE,false,26,true/VIT,false,29,true/VOL,false,25,true/90vio1
+Chapeau de l'Assault des Kage/3/90/90vio3/6/true/false/5,0,0/DefP,false,659,true/DefM,false,636,true/FCE,false,30,true/VIT,false,26,true/AGI,false,24,true/90vio3
 Casque du Sanguinaire Kenpachi/0/90/90gold0/5/true/false/5,0,0/DefP,false,761,true/DefM,false,542,true/FCE,false,23,true/VIT,false,21,true/AGI,false,20,true/90gold0
 Casque du Vertueux de Parsifal/1/90/90gold1/5/true/false/5,0,0/DefP,false,776,true/DefM,false,532,true/FCE,false,21,true/VIT,false,23,true/VOL,false,20,true/90gold1
+Casque de Furtivité du CP9/3/90/90gold3/5/true/false/5,0,0/DefP,false,634,true/DefM,false,603,true/FCE,false,24,true/VIT,false,21,true/AGI,false,19,true/90gold3
 Baiser de l'Amant Tarot/0,1,2,3,4,5,6,7,8,9,10,11/90/90tarot0/5/true/false/5,0,0/DefP,false,761,true/DefM,false,542,true/FCE,false,21,true/VIT,false,27,true/VOL,false,16,true/90tarot0
 Murmure du Démon Tarot/0,1,2,3,4,5,6,7,8,9,10,11/90/90tarot1/5/true/false/5,0,0/DefP,false,571,true/DefM,false,723,true/VIT,false,19,true/INT,false,29,true/VOL,false,16,true/90tarot1
 Masque de l'Ermite Tarot/0,1,2,3,4,5,6,7,8,9,10,11/90/90tarot2/5/true/false/5,0,0/DefP,false,634,true/DefM,false,603,true/FCE,false,28,true/VIT,false,21,true/VOL,false,15,true/90tarot2
 Casque du Feu Fanatique/0/90/90pve0/4/true/false/5,0,0/DefP,false,690,true/DefM,false,491,true/FCE,false,13,true/VIT,false,12,true/AGI,false,11,true/90pve0
 Casque aux Ailes Divines/1/90/90pve1/4/true/false/5,0,0/DefP,false,704,true/DefM,false,481,true/FCE,false,13,true/VIT,false,12,true/VOL,false,11,true/90pve1
+Casque des Ombres Éphémères/3/90/90pve3/4/true/false/5,0,0/DefP,false,575,true/DefM,false,546,true/FCE,false,14,true/VIT,false,12,true/AGI,false,10,true/90pve3
 Casque du Gladiateur des Neiges/0/87/-1/3/false/false/5,0,0/DefP,false,709,true/DefM,false,505,true/FCE,false,19,true/VIT,false,19,true/PV,false,950/87bleu0
+Masque du Ninja Véloce/3/87/-1/3/false/false/6,0,0/DefP,false,591,true/DefM,false,561,true/FCE,false,20,true/AGI,false,18,true/PV,false,575/PM,false,375/87bleu3
 Casque du Cavalier Bestial/1/86/-1/3/false/false/6,0,0/DefP,false,717,true/DefM,false,491,true/FCE,false,17,true/VIT,false,21,true/PV,false,625/PM,false,325/86bleu1
 Casque de la Sentinelle des Enfers/0/86/-1/1/false/false/2,0,0/DefP,false,578,true/DefM,false,426,true/80pve0
 Casque du Gardien du Sanctuaire/1/86/-1/1/false/false/2,0,0/DefP,false,590,true/DefM,false,418,true/80pve1
+Masque du Garde Silencieux/3/86/-1/1/false/false/2,0,0/DefP,false,482,true/DefM,false,473,true/80pve3
 Casque de Gladiateur du Hokuto/0/85/85pvp0/4/false/false/7,0,0/DefP,false,663,true/DefM,false,472,true/FCE,false,11,true/VIT,false,22,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/85pvp0
 Casque du Vindicateur Shichibukai/1/85/85pvp1/4/false/false/7,0,0/DefP,false,676,true/DefM,false,463,true/FCE,false,11,true/VIT,false,22,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/85pvp1
+Masque du Ninja de Konoha/3/85/85pvp3/4/false/false/7,0,0/DefP,false,553,true/DefM,false,525,true/FCE,false,11,true/VIT,false,22,true/ESQ,false,6/ReducPeneP,false,5/ReducPeneM,false,5/85pvp3
 Heaume de l'Âme de l'Ours Terrifiant/0/85/85pve0/4/true/false/5,0,0/DefP,false,663,true/DefM,false,472,true/FCE,false,12,true/VIT,false,11,true/AGI,false,10,true/85pve0
 Heaume de l'Âme du Lion Glorieux/1/85/85pve1/4/true/false/5,0,0/DefP,false,676,true/DefM,false,463,true/FCE,false,12,true/VIT,false,11,true/VOL,false,10,true/85pve1
+Plume de l'Âme de la Panthère Ténébreuse/3/85/85pve3/4/true/false/5,0,0/DefP,false,553,true/DefM,false,525,true/FCE,false,13,true/VIT,false,11,true/AGI,false,9,true/85pve3
 Casque d'Orgueil/0/81/-1/1/false/false/2,0,0/DefP,false,558,true/DefM,false,408,true/87bleu0
 Heaume du Silence Sacré/1/81/-1/1/false/false/2,0,0/DefP,false,569,true/DefM,false,400,true/86bleu1
+Masque du Serpent d'Émeraude/3/81/-1/1/false/false/2,0,0/DefP,false,465,true/DefM,false,454,true/87bleu3
 Casque belliqueux d'Aiolia/0/80/80vio0/6/true/false/5,0,0/DefP,false,741,true/DefM,false,546,true/FCE,false,26,true/VIT,false,25,true/AGI,false,24,true/80vio0
 Heaume du Défenseur Voldo/1/80/80vio1/6/true/false/5,0,0/DefP,false,756,true/DefM,false,535,true/FCE,false,25,true/VIT,false,26,true/VOL,false,24,true/80vio1
+Chapeau du Chasseur des Ombres/3/80/80vio3/6/true/false/5,0,0/DefP,false,613,true/DefM,false,586,true/FCE,false,27,true/VIT,false,25,true/AGI,false,23,true/80vio3
 Casque de Vengeance de Mordred/0/80/80gold0/5/true/false/5,0,0/DefP,false,703,true/DefM,false,501,true/FCE,false,21,true/VIT,false,20,true/AGI,false,19,true/80gold0
 Heaume du Châtiment de Baldur/1/80/80gold1/5/true/false/5,0,0/DefP,false,717,true/DefM,false,491,true/FCE,false,20,true/VIT,false,21,true/VOL,false,19,true/80gold1
+Masque des Ombres de Loki/3/80/80gold3/5/true/false/5,0,0/DefP,false,586,true/DefM,false,556,true/FCE,false,22,true/VIT,false,20,true/AGI,false,18,true/80gold3
 Heaume du Dieu de la Guerre/0/80/80nucleus0/4/true/false/5,0,0/DefP,false,636,true/DefM,false,453,true/FCE,false,10,true/VIT,false,10,true/AGI,false,10,true/80nucleus0
 Heaume du Thaumaturge Exalté/1/80/80nucleus1/4/true/false/5,0,0/DefP,false,649,true/DefM,false,444,true/FCE,false,10,true/VIT,false,10,true/INT,false,10,true/100pve1
+Masque de la Vision Nocturne/3/80/80nucleus3/4/true/false/5,0,0/DefP,false,530,true/DefM,false,504,true/VIT,false,10,true/VOL,false,8,true/AGI,false,12,true/95pve3
 Casque du Hurlement Divin/0/80/80lingot0/4/true/false/5,0,0/DefP,false,636,true/DefM,false,453,true/FCE,false,11,true/VIT,false,10,true/AGI,false,9,true/80pve0
 Casque de Voix de la Création/1/80/80lingot1/4/true/false/5,0,0/DefP,false,649,true/DefM,false,444,true/FCE,false,10,true/VIT,false,11,true/VOL,false,9,true/80pve1
+Masque de l'Ombre de Terreur/3/80/80lingot3/4/true/false/5,0,0/DefP,false,530,true/DefM,false,504,true/FCE,false,12,true/VIT,false,10,true/AGI,false,8,true/80pve3
 Casque de la Furie du Maître/0/80/80pve0/4/true/false/5,0,0/DefP,false,636,true/DefM,false,453,true/FCE,false,11,true/VIT,false,10,true/AGI,false,9,true/80pve0
 Casque de Colère Divine/1/80/80pve1/4/true/false/5,0,0/DefP,false,649,true/DefM,false,444,true/FCE,false,10,true/VIT,false,11,true/VOL,false,9,true/80pve1
+Masque du 6ème Sens Ninja/3/80/80pve3/4/true/false/5,0,0/DefP,false,530,true/DefM,false,504,true/FCE,false,12,true/VIT,false,10,true/AGI,false,8,true/80pve3
 Casque de la Rage du Minotaure/0/80/80gvg0/3/false/false/6,0,0/DefP,false,670,true/DefM,false,477,true/FCE,false,17,true/VOL,false,17,true/PV,false,710/PM,false,330/80gvg0
 Casque de la Force des Titans/1/80/80gvg1/3/false/false/6,0,0/DefP,false,683,true/DefM,false,467,true/VIT,false,17,true/VOL,false,17,true/PV,false,810/PM,false,230/80gvg1
+Masque de la Frénésie du Lycan/3/80/80gvg3/3/false/false/6,0,0/DefP,false,558,true/DefM,false,530,true/FCE,false,12,true/AGI,false,22,true/PV,false,610/PM,false,430/80gvg3
 Casque de Bataille des Forêts/0/77/-1/3/false/false/5,0,0/DefP,false,653,true/DefM,false,465,true/FCE,false,17,true/VIT,false,17,true/PV,false,800/87bleu0
+Masque Assassin des Ténèbres/3/77/-1/3/false/false/6,0,0/DefP,false,544,true/DefM,false,517,true/FCE,false,18,true/AGI,false,16,true/PV,false,500/PM,false,300/87bleu3
 Heaume évolutif du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/90evo0R-0/70nucleus0
 Heaume évolutif du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-0/70nucleus0
 Heaume évolutif du Templier (Réincarné)/1/76/90evo1R/3/false/true/-1,0,0/90evo1R-0/70nucleus1
 Heaume évolutif de Templier/1/76/90evo1/3/false/false/-1,0,0/90evo1R-0/70nucleus1
+Masque évolutif du Shinobi (Réincarné)/3/76/90evo3R/3/false/true/-1,0,0/90evo3R-0/70nucleus3
+Masque évolutif du Shinobi/3/76/90evo3/3/false/false/-1,0,0/90evo3-0/70nucleus3
 Casque de Bataille Céleste/1/76/-1/3/false/false/6,0,0/DefP,false,660,true/DefM,false,452,true/FCE,false,15,true/VIT,false,19,true/PV,false,550/PM,false,250/86bleu1
 Casque de Puissance d'Héraclès (Reforgé)/0/75/75pvp0R/4/false/true/7,0,0/DefP,false,670,true/DefM,false,477,true/FCE,false,11,true/VIT,false,20,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/80nucleus0
 Casque de Puissance d'Héraclès/0/75/75pvp0/4/false/false/7,0,0/DefP,false,609,true/DefM,false,434,true/FCE,false,9,true/VIT,false,18,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/80nucleus0
 Kabuto d'Ardeur de Zatoichi (Reforgé)/1/75/75pvp1R/4/false/true/7,0,0/DefP,false,683,true/DefM,false,468,true/FCE,false,11,true/VIT,false,20,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/100pve1
 Kabuto d'Ardeur de Zatoichi/1/75/75pvp1/4/false/false/7,0,0/DefP,false,621,true/DefM,false,425,true/FCE,false,9,true/VIT,false,18,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/100pve1
+Masque de Fourberie de Lucrezia (Reforgé)/3/75/75pvp3R/4/false/true/7,0,0/DefP,false,559,true/DefM,false,530,true/FCE,false,11,true/VIT,false,20,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/95pve3
+Masque de Fourberie de Lucrezia/3/75/75pvp3/4/false/false/7,0,0/DefP,false,508,true/DefM,false,482,true/FCE,false,9,true/VIT,false,18,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/95pve3
 Casque de Fureur du Berserker/0/75/75pve0/4/true/false/5,0,0/DefP,false,609,true/DefM,false,434,true/FCE,false,9,true/VIT,false,9,true/AGI,false,9,true/75pve0
 Heaume du Guerrier Céleste/1/75/75pve1/4/true/false/5,0,0/DefP,false,621,true/DefM,false,425,true/FCE,false,9,true/VIT,false,9,true/INT,false,9,true/75pve1
+Casque d'Ombre Embrasée/3/75/75pve3/4/true/false/5,0,0/DefP,false,508,true/DefM,false,482,true/VIT,false,9,true/VOL,false,7,true/AGI,false,11,true/75pve3
 Heaume de l'Armée Sanguinaire/0/70/70nucleus0/4/true/false/5,0,0/DefP,false,582,true/DefM,false,415,true/FCE,false,11,true/VIT,false,8,true/AGI,false,5,true/70nucleus0
 Heaume de la Licorne Céleste/1/70/70nucleus1/4/true/false/5,0,0/DefP,false,594,true/DefM,false,407,true/FCE,false,8,true/VIT,false,10,true/VOL,false,6,true/70nucleus1
+Masque des Crocs du Cobra/3/70/70nucleus3/4/true/false/5,0,0/DefP,false,485,true/DefM,false,461,true/FCE,false,10,true/VIT,false,8,true/AGI,false,6,true/70nucleus3
 Casque de Soif de Mort/0/70/70lingot0/4/true/false/5,0,0/DefP,false,582,true/DefM,false,415,true/FCE,false,8,true/VIT,false,8,true/AGI,false,8,true/70pve0
 Heaume du Chevalier des Saints/1/70/70lingot1/4/true/false/5,0,0/DefP,false,594,true/DefM,false,407,true/FCE,false,7,true/VIT,false,10,true/VOL,false,7,true/70pve1
+Masque de l'Ombre Diabolique/3/70/70lingot3/4/true/false/5,0,0/DefP,false,485,true/DefM,false,461,true/FCE,false,10,true/VIT,false,6,true/AGI,false,8,true/70pve3
 Casque du Guerrier Suprême/0/70/70pve0/4/true/false/5,0,0/DefP,false,582,true/DefM,false,415,true/FCE,false,8,true/VIT,false,8,true/AGI,false,8,true/70pve0
 Heaume de Pureté du Paladin/1/70/70pve1/4/true/false/5,0,0/DefP,false,594,true/DefM,false,407,true/FCE,false,8,true/VIT,false,8,true/VOL,false,8,true/70pve1
+Masque de Rigueur d'al Sabah/3/70/70pve3/4/true/false/5,0,0/DefP,false,485,true/DefM,false,461,true/FCE,false,10,true/VIT,false,6,true/AGI,false,8,true/70pve3
 Heaume de Conquête d'Attila/0/70/70gvg0/3/false/false/6,0,0/DefP,false,613,true/DefM,false,436,true/FCE,false,15,true/VOL,false,15,true/PV,false,450/PM,false,200/70gvg0
 Casque de Noblesse de Siegfried/1/70/70gvg1/3/false/false/6,0,0/DefP,false,625,true/DefM,false,427,true/VIT,false,15,true/VOL,false,15,true/PV,false,550/PM,false,100/70gvg1
+Coiffe du Dragon Sombre Atma/3/70/70gvg3/3/false/false/6,0,0/DefP,false,511,true/DefM,false,485,true/FCE,false,10,true/AGI,false,20,true/PV,false,350/PM,false,300/70gvg3
 Heaume du Guerrier Démon/0/66/-1/3/false/false/5,0,0/DefP,false,590,true/DefM,false,420,true/FCE,false,15,true/VIT,false,15,true/PV,false,700/75evo0
 Heaume du Chevalier Céleste/1/66/-1/3/false/false/6,0,0/DefP,false,602,true/DefM,false,412,true/FCE,false,10,true/VIT,false,20,true/PV,false,500/PM,false,200/75evo1
+Masque d'Homme de l'Ombre/3/66/-1/3/false/false/6,0,0/DefP,false,491,true/DefM,false,467,true/FCE,false,15,true/AGI,false,15,true/PV,false,450/PM,false,250/75evo3
 Cimier de Bronze/0/66/-1/1/false/false/2,0,0/DefP,false,493,true/DefM,false,356,true/70nucleus0
 Heaume de Guetteur/1/66/-1/1/false/false/2,0,0/DefP,false,503,true/DefM,false,349,true/70nucleus1
+Cagoule Rubiconde/3/66/-1/1/false/false/2,0,0/DefP,false,411,true/DefM,false,396,true/70nucleus3
 Visière de Stratégie de Sun Tzu (Reforgée)/0/65/65pvp0R/4/false/true/7,0,0/DefP,false,609,true/DefM,false,435,true/FCE,false,8,true/VIT,false,16,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/65pvp0
 Visière de Stratégie de Sun Tzu/0/65/65pvp0/4/false/false/7,0,0/DefP,false,554,true/DefM,false,395,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/65pvp0
 Casque de Vertu de Galahad (Reforgé)/1/65/65pvp1R/4/false/true/7,0,0/DefP,false,622,true/DefM,false,426,true/FCE,false,9,true/VIT,false,16,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/65pvp1
 Heaume de Vertu de Galahad/1/65/65pvp1/4/false/false/7,0,0/DefP,false,565,true/DefM,false,387,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/65pvp1
+Cagoule de Sabotage de Fawkes (Reforgée)/3/65/65pvp3R/4/false/true/7,0,0/DefP,false,508,true/DefM,false,483,true/FCE,false,9,true/VIT,false,16,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/100pve3
+Cagoule de Sabotage de Fawkes/3/65/65pvp3/4/false/false/7,0,0/DefP,false,462,true/DefM,false,439,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,4/ReducPeneP,false,3/ReducPeneM,false,3/100pve3
 Masque du Boucher de Saphaël/0/65/65pve0/4/true/false/5,0,0/DefP,false,554,true/DefM,false,395,true/FCE,false,10,true/VIT,false,7,true/AGI,false,4,true/95pve0
 Casque du Chevalier de l'Eclipse Blanche/1/65/65pve1/4/true/false/5,0,0/DefP,false,565,true/DefM,false,387,true/FCE,false,7,true/VIT,false,9,true/VOL,false,5,true/65pve1
+Masque de l'Assassin à la Lame Cachée/3/65/65pve3/4/true/false/5,0,0/DefP,false,462,true/DefM,false,439,true/FCE,false,9,true/VIT,false,7,true/AGI,false,5,true/65pve3
 Heaume évolutif du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0/75evo0R-0/75evo0
 Couronne Évolutive du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-0/75evo0
 Heaume évolutif du Vindicateur (Réincarné)/1/61/75evo1R/3/false/true/-1,0,0/75evo1R-0/75evo1
 Heaume Évolutif du Vindicateur/1/61/75evo1/3/false/false/-1,0,0/75evo1R-0/75evo1
+Masque évolutif du Ninja (Réincarné)/3/61/75evo3R/3/false/true/-1,0,0/75evo3R-0/75evo3
+Cagoule Évolutive du Ninja/3/61/75evo3/3/false/false/-1,0,0/75evo3-0/75evo3
 Casque du Marquis du Chaos/0/60/60nucleus0/4/true/false/4,0,0/DefP,false,527,true/DefM,false,375,true/FCE,false,6,true/VIT,false,12,true/65pvp0
 Heaume du Juge Impérial/1/60/60nucleus1/4/true/false/4,0,0/DefP,false,538,true/DefM,false,368,true/FCE,false,14,true/AGI,false,4,true/65pve1
+Masque du Samourai du Poison/3/60/60nucleus3/4/true/false/4,0,0/DefP,false,439,true/DefM,false,417,true/FCE,false,11,true/AGI,false,7,true/100pve3
 Heaume du Marquis de Destruction/0/60/60lingot0/4/true/false/4,0,0/DefP,false,527,true/DefM,false,375,true/FCE,false,11,true/VIT,false,7,true/95pve0
 Heaume du Gardien Impérial/1/60/60lingot1/4/true/false/4,0,0/DefP,false,538,true/DefM,false,368,true/VIT,false,11,true/AGI,false,7,true/100pve1
+Masque du Samourai du Tonnerre/3/60/60lingot3/4/true/false/4,0,0/DefP,false,439,true/DefM,false,417,true/FCE,false,7,true/AGI,false,11,true/65pve3
 Visage assoiffé de sang de la Bête Démoniaque/0/60/-1/3/false/false/5,0,0/DefP,false,565,true/DefM,false,403,true/FCE,false,16,true/VIT,false,10,true/PV,false,450/60pve0
 Casque Héroïque du Noble/1/60/-1/3/false/false/5,0,0/DefP,false,565,true/DefM,false,403,true/FCE,false,13,true/VIT,false,13,true/PV,false,550/25pvp1
+Regard Fantômatique de Brume Noire/3/60/-1/3/false/false/6,0,0/DefP,false,471,true/DefM,false,448,true/FCE,false,20,true/AGI,false,6,true/PV,false,350/PM,false,200/40pve3
 Casque du Marquis de l'ombre/0/59/60pve0/4/true/false/4,0,0/DefP,false,521,true/DefM,false,371,true/FCE,false,9,true/VIT,false,6,true/60pve0
 Couronne du Duc Impérial/1/59/60pve1/4/true/false/4,0,0/DefP,false,521,true/DefM,false,371,true/VIT,false,9,true/AGI,false,6,true/25pvp1
+Masque de Protection du Samouraï Fantôme/3/59/60pve3/4/true/false/4,0,0/DefP,false,434,true/DefM,false,412,true/FCE,false,6,true/AGI,false,9,true/60pve3
 Heaume de l'Assoiffé de Sang/0/58/-1/2/false/false/3,0,0/DefP,false,488,true/DefM,false,348,true/FCE,false,6,true/50pve0
 Casque du Chevalier Céleste/1/58/-1/2/false/false/3,0,0/DefP,false,502,true/DefM,false,358,true/VIT,false,6,true/40pve1
+Chapeau de Boucher du Bourreau/3/58/-1/2/false/false/3,0,0/DefP,false,407,true/DefM,false,386,true/AGI,false,6,true/25pvp2
 Casque du Roi Diabolique (Reforgé)/0/55/55pvp0R/4/false/true/5,0,0/DefP,false,585,true/DefM,false,413,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,2/65pvp0
 Casque du Roi Diabolique/0/55/55pvp0/4/false/false/5,0,0/DefP,false,532,true/DefM,false,375,true/FCE,false,6,true/VIT,false,12,true/ESQ,false,2/65pvp0
 Casque de Défense absolue (Reforgé)/1/55/55pvp1R/4/false/true/5,0,0/DefP,false,580,true/DefM,false,418,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,2/65pvp1
 Casque de Défense Complète/1/55/55pvp1/4/false/false/5,0,0/DefP,false,527,true/DefM,false,380,true/FCE,false,6,true/VIT,false,12,true/ESQ,false,2/65pvp1
+Masque du Combattant de l'Enfer (Reforgé)/3/55/55pvp3R/4/false/true/5,0,0/DefP,false,483,true/DefM,false,464,true/FCE,false,7,true/VIT,false,14,true/ESQ,false,2/100pve3
+Masque du Combattant de l'Enfer/3/55/55pvp3/4/false/false/5,0,0/DefP,false,439,true/DefM,false,422,true/FCE,false,6,true/VIT,false,12,true/ESQ,false,2/100pve3
 Casque Destructeur à Lame d'Acier/0/51/50pve0/4/true/false/4,0,0/DefP,false,475,true/DefM,false,339,true/FCE,false,8,true/VIT,false,5,true/50pve0
 Casque du Destructeur/1/51/50pve1/4/true/false/4,0,0/DefP,false,475,true/DefM,false,339,true/FCE,false,5,true/VIT,false,8,true/50pve1
+Chapeau du Royaume Ciselé/3/51/50pve3/4/true/false/4,0,0/DefP,false,396,true/DefM,false,376,true/INT,false,5,true/AGI,false,8,true/25pvp2
 Casque il de Lion/0/50/-1/2/false/false/3,0,0/DefP,false,444,true/DefM,false,89,true/FCE,false,5,true/50vert0
 Casque Fermé du Paladin/1/50/-1/2/false/false/3,0,0/DefP,false,457,true/DefM,false,326,true/VIT,false,5,true/25pvp1
+Visière du Fantôme Tueur/3/50/-1/2/false/false/3,0,0/DefP,false,370,true/DefM,false,352,true/AGI,false,5,true/40pve3
 Casque du Général Diabolique (Reforgé)/0/45/45pvp0R/4/false/true/5,0,0/DefP,false,492,true/DefM,false,347,true/FCE,false,6,true/VIT,false,8,true/ESQ,false,2/80nucleus0
 Casque du Général Diabolique/0/45/45pvp0/4/false/false/5,0,0/DefP,false,447,true/DefM,false,315,true/FCE,false,5,true/VIT,false,7,true/ESQ,false,2/80nucleus0
 Casque de Défense Parfaite (Reforgé)/1/45/45pvp1R/4/false/true/5,0,0/DefP,false,487,true/DefM,false,352,true/FCE,false,5,true/VIT,false,9,true/ESQ,false,2/100pve1
 Casque de Défense Parfaite/1/45/45pvp1/4/false/false/5,0,0/DefP,false,442,true/DefM,false,320,true/FCE,false,4,true/VIT,false,8,true/ESQ,false,2/100pve1
+Masque du Combattant au Lion Bleu (Reforgé)/3/45/45pvp3R/4/false/true/5,0,0/DefP,false,406,true/DefM,false,391,true/FCE,false,5,true/VIT,false,9,true/ESQ,false,2/95pve3
+Masque du Combattant au Lion Bleu/3/45/45pvp3/4/false/false/5,0,0/DefP,false,369,true/DefM,false,355,true/FCE,false,4,true/VIT,false,8,true/ESQ,false,2/95pve3
 Tête du Guerrier aux Os Noirs/0/42/-1/3/false/false/5,0,0/DefP,false,448,true/DefM,false,319,true/FCE,false,10,true/AGI,false,4,true/PV,false,150/30pve0
 Casque de la Sentinelle du Templier/1/42/-1/3/false/false/6,0,0/DefP,false,461,true/DefM,false,328,true/VIT,false,8,true/VOL,false,6,true/PV,false,200/PM,false,50/25pvp1
+Casque Fermé de l'Arracheur d'Âme/3/42/-1/3/false/false/6,0,0/DefP,false,374,true/DefM,false,355,true/FCE,false,5,true/AGI,false,9,true/PV,false,180/PM,false,70/60pve3
+Coiffe Militaire de l'Officier des Affaires Spéciales/3/42/-1/1/false/false/2,0,0/DefP,false,317,true/DefM,false,300,true/18vert
 Casque du Guerrier robuste/0/41/40pve0/4/true/false/4,0,0/DefP,false,420,true/DefM,false,299,true/FCE,false,4,true/VIT,false,6,true/40pve0
 Casque du Chevalier du Fort/1/41/40pve1/4/true/false/4,0,0/DefP,false,420,true/DefM,false,299,true/FCE,false,6,true/VIT,false,4,true/40pve1
+Chapeau d'Embuscade/3/41/40pve3/4/true/false/4,0,0/DefP,false,350,true/DefM,false,332,true/FCE,false,3,true/AGI,false,7,true/40pve3
 Casque Militaire à Cornes/0/34/-1/2/false/false/3,0,0/DefP,false,359,true/DefM,false,72,true/VIT,false,3,true/40pve0
 Casque Militaire de Lumière Sacrée/1/34/-1/2/false/false/3,0,0/DefP,false,370,true/DefM,false,263,true/INT,false,3,true/25pvp1
+Masque d'Assassin/3/34/-1/2/false/false/3,0,0/DefP,false,299,true/DefM,false,284,true/AGI,false,3,true/40pve3
 Casque de l'Officier tactique/0,1/31/30pve0/4/true/false/4,0,0/DefP,false,361,true/DefM,false,257,true/FCE,false,5,true/VIT,false,3,true/30pve0
+Chapeau du Chasseur de Vent/2,3/31/30pve2/4/true/false/4,0,0/DefP,false,301,true/DefM,false,286,true/FCE,false,3,true/AGI,false,5,true/30pve2
 Heaume évolutif du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-0/60pve0
 Heaume Évolutif du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-0/60pve0
 Heaume évolutif du Paladin (Réincarné)/1/31/60evo1R/3/false/true/-1,0,0/60evo1R-0/25pvp1
 Heaume Évolutif du Paladin/1/31/60evo1/3/false/false/-1,0,0/60evo1-0/25pvp1
+Masque évolutif de l'Assassin (Réincarné)/3/31/60evo3R/3/false/true/-1,0,0/60evo3R-0/40pve3
+Masque Évolutif de l'Assassin/3/31/60evo3/3/false/false/-1,0,0/60evo3-0/40pve3
 Casque du Guerrier Courageux/0,1/26/-1/3/false/false/4,0,0/DefP,false,347,true/DefM,false,254,true/VIT,false,6,true/AGI,false,4,true/26bleu0
+Halo du Vent Céleste/2,3/26/-1/3/false/false/4,0,0/DefP,false,297,true/DefM,false,272,true/VIT,false,3,true/AGI,false,7,true/30pve2
 Casque du Commandant/0,1/26/-1/1/false/false/2,0,0/DefP,false,294,true/DefM,false,209,true/30pve0
+Diadème Ombre de Lune/2,3/26/-1/1/false/false/2,0,0/DefP,false,245,true/DefM,false,233,true/30pve2
 Casque du Hurlement de Conan (Reforgé)/0,1/25/25pvp0R/4/false/true/5,0,0/DefP,false,424,true/DefM,false,302,true/FCE,false,5,true/VIT,false,6,true/ESQ,false,2/100pve0
 Heaume de Défense de Lancelot (Reforgé)/0,1/25/25pvp1R/4/false/true/5,0,0/DefP,false,433,true/DefM,false,296,true/FCE,false,4,true/VIT,false,7,true/ESQ,false,2/25pvp1
 Heaume du Hurlement de Conan/0,1/25/25pvp0/4/false/false/5,0,0/DefP,false,385,true/DefM,false,274,true/FCE,false,4,true/VIT,false,5,true/ESQ,false,2/100pve0
 Heaume de Défense de Lancelot/0,1/25/25pvp1/4/false/false/5,0,0/DefP,false,393,true/DefM,false,269,true/FCE,false,3,true/VIT,false,6,true/ESQ,false,2/25pvp1
+Chapeau de Précision de Sogeking (Reforgé)/2,3/25/25pvp2R/4/false/true/5,0,0/DefP,false,360,true/DefM,false,329,true/VIT,false,6,true/AGI,false,5,true/ESQ,false,2/25pvp2
+Masque d'Ombre de Kakashi (Reforgé)/2,3/25/25pvp3R/4/false/true/5,0,0/DefP,false,354,true/DefM,false,336,true/FCE,false,4,true/VIT,false,7,true/ESQ,false,2/40pve3
+Chapeau de Précision de Sogeking/2,3/25/25pvp2/4/false/false/5,0,0/DefP,false,327,true/DefM,false,299,true/VIT,false,5,true/AGI,false,4,true/ESQ,false,2/25pvp2
+Masque d'Ombre de Kakashi/2,3/25/25pvp3/4/false/false/5,0,0/DefP,false,321,true/DefM,false,305,true/FCE,false,3,true/VIT,false,6,true/ESQ,false,2/40pve3
 Casque du Garde d'Elite/0,1/21/20pve0/4/true/false/4,0,0/DefP,false,296,true/DefM,false,211,true/FCE,false,3,true/VIT,false,2,true/100pve0
+Chapeau du Chasseur de la Jungle/2,3/21/20pve2/4/true/false/4,0,0/DefP,false,247,true/DefM,false,235,true/FCE,false,2,true/AGI,false,3,true/25pvp2
 Casque de Combat/0,1/18/-1/2/false/false/3,0,0/DefP,false,261,true/DefM,false,186,true/VIT,false,2,true/100pve0
+Coiffe Militaire de l'Archer/2,3/18/-1/2/false/false/3,0,0/DefP,false,217,true/DefM,false,206,true/AGI,false,2,true/18vert
 Heaume évolutif du Guerrier (Réincarné)/0,1/6/30evo0R/3/false/true/-1,0,0/30evo0R-0/30pve0
 Heaume Évolutif du Guerrier/0,1/6/30evo0/3/false/false/-1,0,0/30evo0-0/30pve0
+Couronne évolutive de l'Archer (Réincarné)/2,3/6/30evo2R/3/false/true/-1,0,0/30evo2R-0/30pve2
+Couronne Évolutive de l'Archer/2,3/6/30evo2/3/false/false/-1,0,0/30evo2-0/30pve2
 Tiare enchantée d'Elminster/6/100/100gold6/5/true/false/5,0,0/DefP,false,614,true/DefM,false,778,true/VIT,false,25,true/INT,false,31,true/VOL,false,16,true/100gold6
 Casque du Fourvoyé/6/100/100pvp6/4/false/false/7,0,0/DefP,false,597,true/DefM,false,726,true/VIT,false,34,true/INT,false,17,true/ESQ,false,8/ReducPeneP,false,7/ReducPeneM,false,7/100pvp6

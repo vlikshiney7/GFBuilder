@@ -88,7 +88,7 @@ public class EquipSet implements Writable {
 		String equipCode[] = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
-		if(rings[0].getName().equals(rings[1].getName())) {
+		if(rings[0].getName().trim().equals(rings[1].getName().trim())) {
 			this.nbCurrentUsed--;
 		}
 		

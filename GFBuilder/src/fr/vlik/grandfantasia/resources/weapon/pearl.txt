@@ -27,7 +27,7 @@ Pierre runique de Stagnation/5/true/false/0/yellow2
 Pierre runique de Visée supérieure/5/true/false/1/AtkD,true,12/yellow2
 Pierre runique des Arcanes supérieure/5/true/false/1/AtkM,true,12/yellow2
 Pierre runique des limbes vindicatrices/5/true/false/1/HealD,false,10/yellow2
-Pierre runique rouillée vindicatrice/5/true/false/2/PeneP,false,20/ReducPtsM,false,200/yellow2
+Pierre runique rouillée vindicatrice/5/true/false/2/PeneP,false,10/ReducPtsM,false,200/yellow2
 Pierre runique d'Attaque dimensionnelle/4/true/false/0/purple2
 Pierre runique d'Éruption dimensionnelle/4/true/false/1/DCCP,false,18/purple2
 Pierre runique d'Estompement dimensionnelle/4/true/false/1/MEN,false,-28/purple2

@@ -14,16 +14,16 @@ Anneau du Squelette/90/tdb3/5/false/false/4,0,0/DefM,false,584,true/INT,false,26
 Bénédiction des Anciens/90/tdb2/5/false/false/4,0,0/DefM,false,630,true/INT,false,25,true/VOL,false,25,true/Glace,false,20/tdb7
 ​Malédiction du Hasard/90/tdb3/5/false/false/4,0,0/DefM,false,630,true/INT,false,28,true/VOL,false,22,true/Nature,false,20/tdb8
 Bravoure du Champion/90/tdb4/5/false/false/5,0,0/DefM,false,669,true/FCE,false,17,true/INT,false,17,true/AGI,false,17,true/Ombre,false,25/tdb9
-Anneau du Gladiateur/90/tdb0/4/false/false/4,0,0/DefM,false,584,true/FCE,false,26,true/VIT,false,20,true/Feu,false,30/tdb0
-Anneau du Dragon/90/tdb1/4/false/false/4,0,0/DefM,false,584,true/FCE,false,21,true/AGI,false,25,true/Foudre,false,30/tdb1
-Foi divine/90/tdb2/4/false/false/4,0,0/DefM,false,584,true/INT,false,23,true/VOL,false,23,true/Glace,false,30/tdb2
-Anneau du Squelette/90/tdb3/4/false/false/4,0,0/DefM,false,584,true/INT,false,26,true/VOL,false,20,true/Nature,false,30/tdb3
-Écusson de Puissance/90/tdb4/4/false/false/5,0,0/DefM,false,669,true/FCE,false,15,true/INT,false,15,true/AGI,false,15,true/Ombre,false,25/tdb4
-Œil pourpre/90/tdb0/4/false/false/4,0,0/DefM,false,630,true/FCE,false,28,true/VIT,false,22,true/Feu,false,20/tdb5
-Œil d'émeraude/90/tdb1/4/false/false/4,0,0/DefM,false,630,true/FCE,false,23,true/AGI,false,27,true/Foudre,false,20/tdb6
-Bénédiction des Anciens/90/tdb2/4/false/false/4,0,0/DefM,false,630,true/INT,false,25,true/VOL,false,25,true/Glace,false,20/tdb7
-Malédiction du Hasard/90/tdb3/4/false/false/4,0,0/DefM,false,630,true/INT,false,28,true/VOL,false,22,true/Nature,false,20/tdb8
-Bravoure du Champion/90/tdb4/4/false/false/5,0,0/DefM,false,669,true/FCE,false,17,true/INT,false,17,true/AGI,false,17,true/Ombre,false,25/tdb9
+Anneau du Gladiateur /90/tdb0/4/false/false/4,0,0/DefM,false,584,true/FCE,false,26,true/VIT,false,20,true/Feu,false,30/tdb0
+Anneau du Dragon /90/tdb1/4/false/false/4,0,0/DefM,false,584,true/FCE,false,21,true/AGI,false,25,true/Foudre,false,30/tdb1
+Foi divine /90/tdb2/4/false/false/4,0,0/DefM,false,584,true/INT,false,23,true/VOL,false,23,true/Glace,false,30/tdb2
+Anneau du Squelette /90/tdb3/4/false/false/4,0,0/DefM,false,584,true/INT,false,26,true/VOL,false,20,true/Nature,false,30/tdb3
+Écusson de Puissance /90/tdb4/4/false/false/5,0,0/DefM,false,669,true/FCE,false,15,true/INT,false,15,true/AGI,false,15,true/Ombre,false,25/tdb4
+Œil pourpre /90/tdb0/4/false/false/4,0,0/DefM,false,630,true/FCE,false,28,true/VIT,false,22,true/Feu,false,20/tdb5
+Œil d'émeraude /90/tdb1/4/false/false/4,0,0/DefM,false,630,true/FCE,false,23,true/AGI,false,27,true/Foudre,false,20/tdb6
+Bénédiction des Anciens /90/tdb2/4/false/false/4,0,0/DefM,false,630,true/INT,false,25,true/VOL,false,25,true/Glace,false,20/tdb7
+Malédiction du Hasard /90/tdb3/4/false/false/4,0,0/DefM,false,630,true/INT,false,28,true/VOL,false,22,true/Nature,false,20/tdb8
+Bravoure du Champion /90/tdb4/4/false/false/5,0,0/DefM,false,669,true/FCE,false,17,true/INT,false,17,true/AGI,false,17,true/Ombre,false,25/tdb9
 Chevalière Martiale de Désintégration/90/-1/4/false/true/4,0,0/DefM,false,541,true/VIT,false,18,true/VOL,false,9,true/Feu,false,17/gt2
 Chevalière Méditative des Trois Royaumes/90/-1/4/false/true/4,0,0/DefM,false,541,true/VIT,false,18,true/VOL,false,9,true/Feu,false,17/gt3
 Collier de l'Âme Noire/90/-1/3/false/false/3,0,0/DefM,false,585,true/VIT,false,20,true/Ombre,false,22/tdb3
