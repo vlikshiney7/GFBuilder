@@ -19,6 +19,7 @@ Armure de Bouclier du Monde Encyclique/1/95/95pvp1/4/false/false/7,0,0/DefP,fals
 Armure de Samouraï Fantôme/3/95/95pvp3/4/false/false/7,0,0/DefP,false,776,true/DefM,false,737,true/FCE,false,30,true/VIT,false,42,true/ESQ,false,6/ReducPeneP,false,7/ReducPeneM,false,7/95pvp3
 Armure Feu de Météore/0/95/-1/1/false/false/4,0,0/DefP,false,794,true/DefM,false,589,true/ESQ,false,6/TCCP,false,2.3/47vert0
 Armure du Précipice/1/95/-1/1/false/false/4,0,0/DefP,false,810,true/DefM,false,577,true/ESQ,false,6/DCCP,false,18/25pvp1
+Plastron de l'Ombre Sereine/3/95/-1/1/false/false/4,0,0/DefP,false,662,true/DefM,false,654,true/ESQ,false,6/DCCP,false,13/65pve3
 Plastron de Force Tarot/0,1,2,3,4,5,6,7,8,9,10,11/94/95tarot0/5/true/false/5,0,0/DefP,false,1019,true/DefM,false,726,true/FCE,false,55,true/VIT,false,49,true/AGI,false,32,true/95tarot0
 Plastron Zodiaque Tarot/0,1,2,3,4,5,6,7,8,9,10,11/94/95tarot1/5/true/false/5,0,0/DefP,false,765,true/DefM,false,969,true/VIT,false,51,true/INT,false,50,true/VOL,false,35,true/95tarot1
 Plastron clair de lune Tarot/0,1,2,3,4,5,6,7,8,9,10,11/94/95tarot2/5/true/false/5,0,0/DefP,false,1040,true/DefM,false,712,true/FCE,false,49,true/VIT,false,55,true/INT,false,32,true/95tarot2
@@ -29,7 +30,7 @@ Cuirasse évolutive du Destructeur (Réincarné)/0/91/100evo0R/3/false/true/-1,0
 Cuirasse évolutive du Destructeur/0/91/100evo0/3/false/false/-1,0,0/100evo0-1/65pvp0
 Cuirasse évolutive du Croisé (Réincarné)/1/91/100evo1R/3/false/true/-1,0,0/100evo1R-1/100pve1
 Cuirasse évolutive du Croisé/1/91/100evo1/3/false/false/-1,0,0/100evo1-1/100pve1
-Cuirasse évolutive du Kage (Réincarné)/3/91/100evo3R/3/false/false/-1,0,0/100evo3R-1/100pve3
+Cuirasse évolutive du Kage (Réincarné)/3/91/100evo3R/3/false/true/-1,0,0/100evo3R-1/100pve3
 Cuirasse évolutive du Kage/3/91/100evo3/3/false/false/-1,0,0/100evo3-1/100pve3
 Armure du Tremblement de terre/0/89/90red0/7/false/false/5,0,0/DefP,false,1078,true/DefM,false,800,true/FCE,false,74,true/VIT,false,63,true/AGI,false,55,true/1,2,2,4,0/0,0,0,0,0/FCE,false,6/PV,false,400/PM,false,400/PV,true,2/TCCP,false,1/FCE,false,10/VIT,false,10/AGI,false,10/DCCP,false,2/90red0
 Armure du Seigneur Arlong/0/89/90vio0/6/true/false/5,0,0/DefP,false,1032,true/DefM,false,767,true/FCE,false,61,true/VIT,false,53,true/AGI,false,46,true/90vio0
@@ -46,6 +47,7 @@ Armure aux Ailes Divines/1/89/90pve1/4/true/false/5,0,0/DefP,false,908,true/DefM
 Armure des Ombres Éphémères/3/89/90pve3/4/true/false/5,0,0/DefP,false,742,true/DefM,false,704,true/FCE,false,28,true/VIT,false,24,true/AGI,false,20,true/90pve3
 Armure de la Sentinelle des Enfers/0/87/-1/1/false/false/2,0,0/DefP,false,757,true/DefM,false,558,true/80pve0
 Armure du Gardien du Sanctuaire/1/87/-1/1/false/false/2,0,0/DefP,false,772,true/DefM,false,547,true/80pve1
+Armure du Garde Silencieux/3/87/-1/1/false/false/2,0,0/DefP,false,631,true/DefM,false,620,true/80pve3
 Armure de Gladiateur du Hokuto/0/85/85pvp0/4/false/false/7,0,0/DefP,false,862,true/DefM,false,614,true/FCE,false,28,true/VIT,false,38,true/ESQ,false,6/ReducPeneP,false,6/ReducPeneM,false,6/85pvp0
 Armure du Vindicateur Shichibukai/1/85/85pvp1/4/false/false/7,0,0/DefP,false,879,true/DefM,false,602,true/FCE,false,28,true/VIT,false,38,true/ESQ,false,6/ReducPeneP,false,6/ReducPeneM,false,6/85pvp1
 Armure du Ninja de Konoha/3/85/85pvp3/4/false/false/7,0,0/DefP,false,718,true/DefM,false,683,true/FCE,false,28,true/VIT,false,38,true/ESQ,false,6/ReducPeneP,false,6/ReducPeneM,false,6/85pvp3
@@ -53,6 +55,7 @@ Armure de l'Âme de l'Ours Terrifiant/0/84/85pve0/4/true/false/5,0,0/DefP,false,
 Armure de l'Âme du Lion Glorieux/1/84/85pve1/4/true/false/5,0,0/DefP,false,872,true/DefM,false,597,true/FCE,false,26,true/VIT,false,25,true/INT,false,15,true/85pve1
 Veste de l'Âme de la Panthère Ténébreuse/3/84/85pve3/4/true/false/5,0,0/DefP,false,713,true/DefM,false,677,true/FCE,false,26,true/VIT,false,22,true/AGI,false,18,true/85pve3
 Armure d'Orgueil/0/82/-1/1/false/false/2,0,0/DefP,false,730,true/DefM,false,535,true/76bleu0
+Veste du Serpent d'Émeraude/3/82/-1/1/false/false/2,0,0/DefP,false,608,true/DefM,false,595,true/76bleu3
 Armure de Plaques du Silence Sacré/1/82/-1/1/false/false/2,0,0/DefP,false,744,true/DefM,false,524,true/77bleu1
 Armure du Dieu de la Guerre/0/80/80nucleus0/4/true/false/5,0,0/DefP,false,827,true/DefM,false,589,true/FCE,false,18,true/VIT,false,20,true/AGI,false,22,true/80nucleus0
 Armure du Thaumaturge Exalté/1/80/80nucleus1/4/true/false/5,0,0/DefP,false,844,true/DefM,false,577,true/FCE,false,24,true/VIT,false,20,true/VOL,false,16,true/100pve1
@@ -62,6 +65,7 @@ Armure de Voix de la Création/1/80/80lingot1/4/true/false/5,0,0/DefP,false,844,
 Veste de l'Ombre de Terreur/3/80/80lingot3/4/true/false/5,0,0/DefP,false,689,true/DefM,false,655,true/FCE,false,24,true/VIT,false,21,true/AGI,false,15,true/80pve3
 Armure de la Rage du Minotaure/0/80/80gvg0/3/false/false/6,0,0/DefP,false,870,true/DefM,false,620,true/FCE,false,44,true/VIT,false,24,true/PV,false,750/PM,false,340/80gvg0
 Armure de la Force des Titans/1/80/80gvg1/3/false/false/6,0,0/DefP,false,887,true/DefM,false,608,true/FCE,false,24,true/VIT,false,44,true/PV,false,770/PM,false,320/80gvg1
+Armure de la Frénésie du Lycan/3/80/80gvg3/3/false/false/6,0,0/DefP,false,725,true/DefM,false,689,true/FCE,false,34,true/VIT,false,34,true/PV,false,710/PM,false,330/80gvg3
 Armure belliqueuse d'Aiolia/0/79/80vio0/6/true/false/5,0,0/DefP,false,963,true/DefM,false,710,true/FCE,false,55,true/VIT,false,50,true/AGI,false,45,true/80vio0
 Armure du Défenseur Voldo/1/79/80vio1/6/true/false/5,0,0/DefP,false,982,true/DefM,false,696,true/FCE,false,53,true/VIT,false,54,true/INT,false,43,true/80vio1
 Tunique du Chasseur des Ombres/3/79/80vio3/6/true/false/5,0,0/DefP,false,797,true/DefM,false,762,true/FCE,false,54,true/VIT,false,51,true/AGI,false,45,true/80vio3
@@ -76,9 +80,10 @@ Cuirasse évolutive du Ravageur (Réincarné)/0/76/90evo0R/3/false/true/-1,0,0/9
 Cuirasse évolutive du Ravageur/0/76/90evo0/3/false/false/-1,0,0/90evo0-1/70nucleus0
 Plastron évolutif du Templier (Réincarné)/1/76/90evo1R/3/false/true/-1,0,0/90evo1R-1/70nucleus1
 Plastron évolutif de Templier/1/76/90evo1/3/false/false/-1,0,0/90evo1-1/70nucleus1
-Plastron évolutif du Shinobi (Réincarné)/3/76/90evo3R/3/false/false/-1,0,0/90evo3R-1/70nucleus3
+Plastron évolutif du Shinobi (Réincarné)/3/76/90evo3R/3/false/true/-1,0,0/90evo3R-1/70nucleus3
 Plastron évolutif du Shinobi/3/76/90evo3/3/false/false/-1,0,0/90evo3-1/70nucleus3
 Armure du Soleil Levant/0/76/-1/3/false/false/6,0,0/DefP,false,841,true/DefM,false,599,true/FCE,false,46,true/VIT,false,22,true/PV,false,550/PM,false,250/76bleu0
+Haut-de-Corps de l'Ombre Assassine/3/76/-1/3/false/false/6,0,0/DefP,false,701,true/DefM,false,666,true/FCE,false,46,true/VIT,false,22,true/PV,false,550/PM,false,250/76bleu3
 Cuirasse de Puissance d'Héraclès (Reforgé)/0/75/75pvp0R/4/false/true/7,0,0/DefP,false,871,true/DefM,false,620,true/FCE,false,26,true/VIT,false,35,true/ESQ,false,4/ReducPeneP,false,5/ReducPeneM,false,5/80nucleus0
 Cuirasse de Puissance d'Héraclès/0/75/75pvp0/4/false/false/7,0,0/DefP,false,792,true/DefM,false,564,true/FCE,false,22,true/VIT,false,32,true/ESQ,false,4/ReducPeneP,false,5/ReducPeneM,false,5/80nucleus0
 Do-maru d'Ardeur de Zatoichi (Reforgé)/1/75/75pvp1R/4/false/true/7,0,0/DefP,false,889,true/DefM,false,608,true/FCE,false,26,true/VIT,false,35,true/ESQ,false,4/ReducPeneP,false,5/ReducPeneM,false,5/100pve1
@@ -96,13 +101,16 @@ Cotte de Mailles du Chevalier des Saints/1/70/70lingot1/4/true/false/5,0,0/DefP,
 Tunique de l'Ombre Diabolique/3/70/70lingot3/4/true/false/5,0,0/DefP,false,631,true/DefM,false,599,true/VIT,false,20,true/VOL,false,12,true/AGI,false,16,true/70pve3
 Cotte de Conquête d'Attila/0/70/70gvg0/3/false/false/6,0,0/DefP,false,796,true/DefM,false,567,true/FCE,false,40,true/VIT,false,20,true/PV,false,490/PM,false,210/70gvg0
 Plastron de Noblesse de Siegfried/1/70/70gvg1/3/false/false/6,0,0/DefP,false,812,true/DefM,false,556,true/FCE,false,20,true/VIT,false,40,true/PV,false,510/PM,false,190/70gvg1
+Tunique du Dragon Sombre Atma/3/70/70gvg3/3/false/false/6,0,0/DefP,false,664,true/DefM,false,631,true/FCE,false,30,true/VIT,false,30,true/PV,false,450/PM,false,200/70gvg3
 Plastron du Guerrier Suprême/0/69/70pve0/4/true/false/5,0,0/DefP,false,749,true/DefM,false,534,true/FCE,false,18,true/VIT,false,14,true/AGI,false,16,true/70pve0
 Plastron de Pureté du Paladin/1/69/70pve1/4/true/false/5,0,0/DefP,false,764,true/DefM,false,523,true/FCE,false,16,true/VIT,false,20,true/INT,false,12,true/70pve1
 Plastron de Rigueur d'al Sabah/3/69/70pve3/4/true/false/5,0,0/DefP,false,625,true/DefM,false,593,true/VIT,false,20,true/VOL,false,12,true/AGI,false,16,true/70pve3
 Cuirasse à Cornes/0/67/-1/1/false/false/2,0,0/DefP,false,647,true/DefM,false,468,true/70nucleus0
 Haubert Solide/1/67/-1/1/false/false/2,0,0/DefP,false,660,true/DefM,false,459,true/70nucleus1
+Casaque Vermeille/3/67/-1/1/false/false/2,0,0/DefP,false,539,true/DefM,false,520,true/70nucleus3
 Cuirasse de la Fièvre des Batailles/0/66/-1/3/false/false/6,0,0/DefP,false,766,true/DefM,false,546,true/FCE,false,40,true/VIT,false,20,true/PV,false,500/PM,false,200/75evo0
 Plastron du Maître de Guerre/1/66/-1/3/false/false/5,0,0/DefP,false,781,true/DefM,false,535,true/FCE,false,20,true/VIT,false,40,true/PV,false,700/75evo1
+Casaque de la Terre d'Elsa/3/66/-1/3/false/false/6,0,0/DefP,false,639,true/DefM,false,607,true/FCE,false,40,true/VIT,false,20,true/PV,false,500/PM,false,200/75evo3
 Armure de Stratégie de Sun Tzu (Reforgée)/0/65/65pvp0R/4/false/true/7,0,0/DefP,false,793,true/DefM,false,565,true/FCE,false,18,true/VIT,false,31,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/65pvp0
 Plastron de Stratégie de Sun Tzu/0/65/65pvp0/4/false/false/7,0,0/DefP,false,721,true/DefM,false,514,true/FCE,false,14,true/VIT,false,28,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/65pvp0
 Harnois de Vertu de Galahad (Reforgé)/1/65/65pvp1R/4/false/true/7,0,0/DefP,false,809,true/DefM,false,554,true/FCE,false,18,true/VIT,false,31,true/ESQ,false,4/ReducPeneP,false,4/ReducPeneM,false,4/65pvp1
@@ -116,7 +124,7 @@ Cuirasse évolutive du Gladiateur (Réincarné)/0/61/75evo0R/3/false/true/-1,0,0
 Cuirasse Évolutive du Gladiateur/0/61/75evo0/3/false/false/-1,0,0/75evo0-1/75evo0
 Plastron évolutif du Vindicateur (Réincarné)/1/61/75evo1R/3/false/true/-1,0,0/75evo1R-1/75evo1
 Plastron Évolutif du Vindicateur/1/61/75evo1/3/false/false/-1,0,0/75evo1-1/75evo1
-Cuirasse évolutive du Ninja (Réincarné)/3/61/75evo3R/3/false/false/-1,0,0/75evo3R-1/75evo3
+Cuirasse évolutive du Ninja (Réincarné)/3/61/75evo3R/3/false/true/-1,0,0/75evo3R-1/75evo3
 Casaque Évolutive du Ninja/3/61/75evo3/3/false/false/-1,0,0/75evo3-1/75evo3
 Cotte du Marquis du Chaos/0/60/60nucleus0/4/true/false/5,0,0/DefP,false,685,true/DefM,false,488,true/FCE,false,10,true/VIT,false,16,true/VOL,false,10,true/65pvp0
 Armure du Juge Impérial/1/60/60nucleus1/4/true/false/5,0,0/DefP,false,699,true/DefM,false,478,true/FCE,false,20,true/VIT,false,12,true/AGI,false,4,true/65pve1
@@ -126,6 +134,7 @@ Armure du Gardien Impérial/1/60/60lingot1/4/true/false/5,0,0/DefP,false,699,tru
 Veste du Samourai du Tonnerre/3/60/60lingot3/4/true/false/5,0,0/DefP,false,570,true/DefM,false,542,true/FCE,false,12,true/VOL,false,7,true/AGI,false,17,true/65pve3
 Casque Veineux de la Bête Démoniaque/0/60/-1/3/false/false/6,0,0/DefP,false,735,true/DefM,false,524,true/FCE,false,22,true/VIT,false,30,true/PV,false,490/PM,false,110/60bleu0
 Bouclier Gardien du Noble/1/60/-1/3/false/false/6,0,0/DefP,false,735,true/DefM,false,524,true/FCE,false,20,true/VIT,false,32,true/PV,false,510/PM,false,90/60pve0
+Corps de Brume Noire/3/60/-1/3/false/false/6,0,0/DefP,false,613,true/DefM,false,582,true/FCE,false,26,true/VIT,false,26,true/PV,false,450/PM,false,150/50pve0
 Vêtement du Marquis de l'ombre/0/59/60pve0/4/true/false/5,0,0/DefP,false,677,true/DefM,false,483,true/FCE,false,12,true/VIT,false,12,true/VOL,false,12,true/60pve0
 Armure du Duc Impérial/1/59/60pve1/4/true/false/5,0,0/DefP,false,677,true/DefM,false,483,true/FCE,false,12,true/VIT,false,20,true/AGI,false,4,true/25pvp1
 Chemise du Samouraï Fantôme/3/59/60pve3/4/true/false/5,0,0/DefP,false,564,true/DefM,false,536,true/FCE,false,12,true/VOL,false,7,true/AGI,false,17,true/50pve0
@@ -137,11 +146,13 @@ Armure du Combattant de l'Enfer (Reforgée)/3/55/55pvp3R/4/false/true/5,0,0/DefP
 Armure du Combattant de l'Enfer/3/55/55pvp3/4/false/false/5,0,0/DefP,false,570,true/DefM,false,547,true/FCE,false,12,true/VIT,false,24,true/ESQ,false,2/100pve3
 Armure du Commandeur de l'Enfer/0/51/-1/3/false/false/5,0,0/DefP,false,651,true/DefM,false,464,true/FCE,false,20,true/VIT,false,16,true/PV,false,450/60pve0
 Armure de l'Aîné Reconnu/1/51/-1/3/false/false/6,0,0/DefP,false,651,true/DefM,false,464,true/FCE,false,14,true/VIT,false,22,true/PV,false,300/PM,false,150/60pve0
+Armure Mystique/3/51/-1/3/false/false/6,0,0/DefP,false,543,true/DefM,false,515,true/FCE,false,8,true/AGI,false,28,true/PV,false,250/PM,false,200/60bleu0
 Armure Destructrice à Lame d'Acier/0/50/50pve0/4/true/false/5,0,0/DefP,false,610,true/DefM,false,435,true/FCE,false,10,true/VIT,false,10,true/AGI,false,10,true/50pve0
 Armure du Destructeur/1/50/50pve1/4/true/false/4,0,0/DefP,false,610,true/DefM,false,435,true/FCE,false,10,true/VIT,false,15,true/60pve0
 Manteau du Royaume Ciselé/3/50/50pve3/4/true/false/5,0,0/DefP,false,509,true/DefM,false,483,true/VIT,false,10,true/INT,false,5,true/AGI,false,15,true/50pve3
 Plastron Oeil de Lion/0/47/-1/2/false/false/3,0,0/DefP,false,558,true/DefM,false,397,true/FCE,false,10,true/47vert0
 Armure Métallique du Paladin/1/47/-1/2/false/false/3,0,0/DefP,false,574,true/DefM,false,409,true/VIT,false,10,true/40pve1
+Vêtements moulants du Fantôme Tueur/3/47/-1/2/false/false/3,0,0/DefP,false,465,true/DefM,false,441,true/AGI,false,10,true/50pve3
 Armure du Général Diabolique (Reforgé)/0/44/45pvp0R/4/false/true/5,0,0/DefP,false,638,true/DefM,false,451,true/FCE,false,10,true/VIT,false,17,true/ESQ,false,2/80nucleus0
 Armure du Général Diabolique/0/44/45pvp0/4/false/false/5,0,0/DefP,false,580,true/DefM,false,410,true/FCE,false,9,true/VIT,false,15,true/ESQ,false,2/80nucleus0
 Armure de Défense Parfaite (Reforgé)/1/44/45pvp1R/4/false/true/5,0,0/DefP,false,633,true/DefM,false,457,true/FCE,false,8,true/VIT,false,19,true/ESQ,false,2/100pve1
@@ -153,16 +164,19 @@ Armure du Chevalier de la Ville Fortifiée/1/40/40pve1/4/true/false/5,0,0/DefP,f
 Manteau d'Embuscade/3/40/40pve3/4/true/false/4,0,0/DefP,false,449,true/DefM,false,426,true/FCE,false,6,true/AGI,false,14,true/30pve0
 Armure du Feu Ardent/0/35/-1/3/false/false/4,0,0/DefP,false,528,true/DefM,false,376,true/FCE,false,14,true/AGI,false,6,true/60pve0
 Armure de la Lumière Violette/1/35/-1/3/false/false/4,0,0/DefP,false,528,true/DefM,false,376,true/FCE,false,10,true/VIT,false,10,true/40pve1
+Chemise Militaire Spéciale/3/35/-1/3/false/false/4,0,0/DefP,false,440,true/DefM,false,418,true/FCE,false,5,true/VIT,false,15,true/60pve2
 Cuirasse évolutive du Berserker (Réincarné)/0/31/60evo0R/3/false/true/-1,0,0/60evo0R-1/60bleu0
 Cuirasse Évolutive du Berserker/0/31/60evo0/3/false/false/-1,0,0/60evo0-1/60bleu0
 Plastron Évolutif du Paladin (Réincarné)/1/31/60evo1R/3/false/true/-1,0,0/60evo1R-1/60pve0
 Plastron Évolutif du Paladin/1/31/60evo1/3/false/false/-1,0,0/60evo1-1/60pve0
-Cuirasse évolutive de l'Assassin (Réincarné)/3/31/60evo3R/3/false/false/-1,0,0/60evo3R-1/50pve0
+Cuirasse évolutive de l'Assassin (Réincarné)/3/31/60evo3R/3/false/true/-1,0,0/60evo3R-1/50pve0
 Cuirasse Évolutive de l'Assassin/3/31/60evo3/3/false/false/-1,0,0/60evo3-1/50pve0
 Uniforme de l'Officier tactique/0,1/30/30pve0/4/true/false/5,0,0/DefP,false,461,true/DefM,false,329,true/FCE,false,6,true/VIT,false,6,true/AGI,false,6,true/30pve0
 Vêtement du Chasseur de Vent/2,3/30/30pve2/4/true/false/5,0,0/DefP,false,385,true/DefM,false,365,true/FCE,false,6,true/VIT,false,6,true/AGI,false,6,true/30pve2
 Armure en Acier Renforcé/0,1/28/-1/1/false/false/1,0,0/DefP,false,385,true/30pve0
+Robe Légère du Sniper/2,3/28/-1/1/false/false/1,0,0/DefP,false,321,true/27vert2
 Plastron de Cuir/0,1/27/-1/2/false/false/3,0,0/DefP,false,413,true/DefM,false,295,true/VIT,false,6,true/30pve0
+Manteau de Cuir du Baigneur Lunaire/2,3/27/-1/2/false/false/3,0,0/DefP,false,345,true/DefM,false,327,true/AGI,false,6,true/27vert2
 Armure du Hurlement de Conan (Reforgé)/0,1/25/25pvp0R/4/false/true/5,0,0/DefP,false,543,true/DefM,false,387,true/FCE,false,8,true/VIT,false,13,true/ESQ,false,2/100pve0
 Armure de Défense de Lancelot (Reforgé)/0,1/25/25pvp1R/4/false/true/5,0,0/DefP,false,554,true/DefM,false,379,true/FCE,false,6,true/VIT,false,15,true/ESQ,false,2/25pvp1
 Armure du Hurlement de Conan/0,1/25/25pvp0/4/false/false/5,0,0/DefP,false,493,true/DefM,false,351,true/FCE,false,7,true/VIT,false,11,true/ESQ,false,2/100pve0
@@ -172,18 +186,26 @@ Armure d'Ombre de Kakashi (Reforgé)/2,3/25/25pvp3R/4/false/true/6,0,0/DefP,fals
 Armure de Précision de Sogeking/2,3/25/25pvp2/4/false/false/5,0,0/DefP,false,419,true/DefM,false,382,true/VIT,false,9,true/AGI,false,9,true/ESQ,false,2/25pvp2
 Armure d'Ombre de Kakashi/2,3/25/25pvp3/4/false/false/6,0,0/DefP,false,411,true/DefM,false,390,true/FCE,false,6,true/VIT,false,9,true/AGI,false,3,true/ESQ,false,2/30pve0
 Plastron de Défense/0,1/22/-1/1/false/false/1,0,0/DefP,false,341,true/100pve0
+Léger blouson d'éclaireur/2,3/22/-1/1/false/false/1,0,0/DefP,false,284,true/25pvp2
 Armure du Garde d'Elite/0,1/20/20pve0/4/true/false/5,0,0/DefP,false,376,true/DefM,false,268,true/FCE,false,4,true/VIT,false,4,true/AGI,false,4,true/100pve0
 Gilet du Chasseur de la Jungle/2,3/20/20pve2/4/true/false/5,0,0/DefP,false,314,true/DefM,false,298,true/FCE,false,4,true/VIT,false,4,true/AGI,false,4,true/25pvp2
 Plastron de Fer du Juste/0,1/19/-1/2/false/false/3,0,0/DefP,false,348,true/DefM,false,248,true/VIT,false,4,true/30pve0
+Combinaison de Cuir de la Sentinelle/2,3/19/-1/2/false/false/3,0,0/DefP,false,290,true/DefM,false,275,true/AGI,false,4,true/27vert2
 Plastron de l'Avant-Garde/0,1/19/-1/1/false/false/2,0,0/DefP,false,328,true/DefM,false,233,true/100pve0
+Cuir de Licorne/2,3/19/-1/1/false/false/2,0,0/DefP,false,273,true/DefM,false,259,true/25pvp2
 Chemise de Protection au Combat/0,1/16/-1/1/false/false/1,0,0/DefP,false,293,true/100pve0
+Vêtements Ajustés de Forêt/2,3/16/-1/1/false/false/1,0,0/DefP,false,244,true/16blanc2
 Armure du Protecteur/0,1/13/-1/2/false/false/3,0,0/DefP,false,293,true/DefM,false,209,true/VIT,false,2,true/13vert0
+Armure Dure du Protecteur/2,3/13/-1/2/false/false/3,0,0/DefP,false,244,true/DefM,false,232,true/AGI,false,2,true/13vert2
 Cuirasse d'Élite/0,1/13/-1/1/false/false/2,0,0/DefP,false,276,true/DefM,false,196,true/30pve0
-Tunique du Gladiateur/0,1/10/-1/1/false/false/1,0,0/DefP,false,240,true/10blanc
+Manteau de Cuir de la Concentration/2,3/13/-1/1/false/false/2,0,0/DefP,false,230,true/DefM,false,218,true/100pve0
+Tunique du Gladiateur/0,1/10/-1/1/false/false/1,0,0/DefP,false,240,true/10blanc0
+Vêtements Ajustés du Chasseur/2,3/10/-1/1/false/false/1,0,0/DefP,false,200,true/10blanc2
 Chemise de Défense Courageuse/0,1/7/-1/2/false/false/3,0,0/DefP,false,230,true/DefM,false,164,true/VIT,false,2,true/13vert0
+Délicat Maillot Moulant/2,3/7/-1/2/false/false/3,0,0/DefP,false,192,true/DefM,false,183,true/AGI,false,2,true/13vert2
 Plastron évolutif du Guerrier (Réincarné)/0/6/30evo0R/3/false/true/-1,0,0/30evo0R-1/30pve0
 Cuirasse Évolutive du Guerrier/0/6/30evo0/3/false/false/-1,0,0/30evo0-1/30pve0
-Veste évolutive de l'Archer (Réincarné)/2,3/6/30evo2R/3/false/false/-1,0,0/30evo2R-1/30pve2
+Veste évolutive de l'Archer (Réincarné)/2,3/6/30evo2R/3/false/true/-1,0,0/30evo2R-1/30pve2
 Manteau Évolutif de l'Archer/2,3/6/30evo2/3/false/false/-1,0,0/30evo2-1/30pve2
 Robe du Fourvoyé/6/100/100pvp6/4/false/false/7,0,0/VIT,false,48,true/INT,false,36,true/DefP,false,771,true/DefM,false,938,true/ESQ,false,8/ReducPeneP,false,8/ReducPeneM,false,8/100pvp6
 Cape des Étoiles de l'enfer/6/99/-1/6/true/false/5,0,0/VIT,false,65,true/INT,false,60,true/VOL,false,55,true/DefP,false,828,true/DefM,false,1047,true/100vio6

@@ -350,8 +350,6 @@ public class PageArmor extends PagePanel {
 		
 		if(!armorSet.equals(this.equipSet)) {
 			if(armorSet.getNbCurrentUsed() >= 3 && !armorSet.getName().equals("Rien")) {
-				list.addAll(armorSet.getWith3());
-				
 				String setInfo = armorSet.getName() + "\n";
 				
 				setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
@@ -378,12 +376,16 @@ public class PageArmor extends PagePanel {
 			}
 		}
 		
-		if(armorSet.getNbCurrentUsed() >= 4) {
-			list.addAll(armorSet.getWith4());
-		}
-		
-		if(armorSet.getNbCurrentUsed() == 5) {
-			list.addAll(armorSet.getWith5());
+		if(armorSet.getNbCurrentUsed() >= 3) {
+			list.addAll(armorSet.getWith3());
+			
+			if(armorSet.getNbCurrentUsed() >= 4) {
+				list.addAll(armorSet.getWith4());
+				
+				if(armorSet.getNbCurrentUsed() == 5) {
+					list.addAll(armorSet.getWith5());
+				}
+			}
 		}
 		
 		this.effects = list;
