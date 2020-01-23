@@ -61,26 +61,26 @@ Hardiesse/91/2/RDCCP,false,1.5/VOL,false,5/1-19
 /91/0/2-18
 /91/0/2-19
 
-/45/0/3-0
-/45/0/3-1
-/45/0/3-2
-/45/0/3-3
-/45/0/3-4
-/45/0/3-5
-/60/0/3-6
-/60/0/3-7
-/60/0/3-8
-/60/0/3-9
-/75/0/3-10
-/75/0/3-11
-/75/0/3-12
-/75/0/3-13
-/75/0/3-14
-/75/0/3-15
-/91/0/3-16
-/91/0/3-17
-/91/0/3-18
-/91/0/3-19
+Vivacité Tourbillonnante/45/1/Depla,false,1.5/3-0
+Aussi Lent qu'une Fôret/45/1/Toucher,false,1/3-1
+Rapine Ardente/45/1/TCCP,false,1/3-2
+Inébranlable comme une Montagne/45/1/ESQ,false,2/3-3
+Mise au Point/45/1/CostComp,false,3/3-4
+Position Accroupie/45/1/MEN,false,-1/3-5
+Cœur du Combattant/60/2/AGI,false,5/FCE,false,4/3-6
+Démon de Boucher/60/2/DegDemonP,false,80/DegDemonP,true,1/3-7
+Maître de Kendo/60/1/DegStdEp,false,1.5/3-8
+Main du Revers de l'Ombre/60/1/VitAtk,false,1/3-9
+Entraînement de Spartiate/75/2/PV,true,1/VIT,false,3/3-10
+Volonté du Survivant/75/1/DefP,true,1.5/3-11
+Regard Perçant/75/1/DefM,true,1/3-12
+Protection du Visage/75/1/ReducP,false,1/3-13
+Attaque aux Tripes/75/1/DCCP,false,1.5/3-14
+Bouquet Final/75/1/DegDuo,false,1.2/3-15
+Art des couteaux fusants/91/1/VitAtkDuo,false,1/3-16
+Puissante taillade/91/1/DegEp,false,1.5/3-17
+Raffinement de l'esprit/91/1/PM,true,1/3-18
+Puissance de l'ombre/91/2/FCE,false,6/VIT,false,3/3-19
 
 /45/0/4-0
 /45/0/4-1

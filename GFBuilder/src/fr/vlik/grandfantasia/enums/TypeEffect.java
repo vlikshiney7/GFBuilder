@@ -45,8 +45,8 @@ public enum TypeEffect implements Colorable, Writable {
 	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Tools.EffectColor[11]),
 	
-	DCCP("Dégât Coup Critique Physique", "", "Deg Crit Phys", "", 150, true, Tools.EffectColor[10]),
-	DCCM("Dégât Coup Critique Magique", "", "Deg Crit Mag", "", 150, true, Tools.EffectColor[11]),
+	DCCP("Dégât Coup Critique Physique", "", "Deg Crit Phys", "", 150, false, Tools.EffectColor[10]),
+	DCCM("Dégât Coup Critique Magique", "", "Deg Crit Mag", "", 150, false, Tools.EffectColor[11]),
 	RDCCP("Réduction Dégât Coup Critique Physique", "", "Red Dg Crt Ph", "", -1, false, Tools.EffectColor[10]),
 	RDCCM("Réduction Dégât Coup Critique Magique", "", "Red Dg Crt Mg", "", -1, false, Tools.EffectColor[11]),
 	RTCCP("Réduction Taux Coup Critique Physique", "", "Red Tx Crt Ph", "", -1, true, Tools.EffectColor[10]),
@@ -78,7 +78,7 @@ public enum TypeEffect implements Colorable, Writable {
 	XP("Bonus d'Expérience", "", "XP", "", 400, true, Tools.EffectColor[0]),
 	Loot("Bonus de Butin", "", "Butin", "", 200, true, Tools.EffectColor[0]),
 	
-	DegDuo("Dégât Deux Armes", "", "Deg 2 Armes", "", -1, true, Tools.EffectColor[0]),
+	DegDuo("Dégât Deux Armes", "", "Deg 2 Armes", "", -1, false, Tools.EffectColor[0]),
 	VitAtkDuo("Vitesse d'Attaque à Deux Armes", "", "Vit Atk 2 Ar", "", -1, true, Tools.EffectColor[0]),
 	TCC1M("Taux Critique Arme 1 Main", "", "Taux Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	TCC2M("Taux Critique Arme 2 Main", "", "Taux Crit 2M", "", -1, true, Tools.EffectColor[0]),

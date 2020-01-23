@@ -92,7 +92,10 @@ public class Speciality {
 					String[] lineSplit = line.split("/");
 					String path =  lineSplit[lineSplit.length-1];
 					String[] effects = new String[Integer.parseInt(lineSplit[2])];
-					for(int k = 0; k < effects.length; k++) effects[k] = lineSplit[k+3];
+					
+					for(int k = 0; k < effects.length; k++) {
+						effects[k] = lineSplit[k+3];
+					}
 					
 					list.get(i).add(new Speciality(lineSplit[0], Integer.parseInt(lineSplit[1]), path, effects));
 					
