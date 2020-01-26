@@ -19,7 +19,7 @@ Tarot - Zodiaque/95tarot1/2,1,1/VIT,false,50/TCCM,false,15/VitComp,false,15/INT,
 Tarot - Lune/95tarot2/3,1,2/VIT,false,50/Depla,false,8/DefP,true,25/MEN,false,35/VOL,false,55/DefM,true,20
 Amant Tarot/90tarot0/2,3,2/FCE,false,50/ESQ,false,35/VIT,false,50/DefP,true,15/DefM,true,15/RTCCP,false,25/RTCCM,false,25
 Démon Tarot/90tarot1/2,2,3/INT,false,50/VOL,false,50/VIT,false,50/AtkM,true,10/TCCP,false,20/DCCM,false,20/VitComp,false,25
-Ermite Tarot/90tarot2/2,2,3/AGI,false,50/Toucher,false,35/FCE,false,50/Atk,true,10/TCCP,false,20/DCCP,false,20/VitAtk,false,25
+Ermite Tarot/90tarot2/2,3,3/AGI,false,50/Toucher,false,35/FCE,false,50/Atk,true,10/AtkD,true,10/TCCP,false,20/DCCP,false,20/VitAtk,false,25
 Puissante de Khal Drogo/100gold0/3,1,1/FCE,false,60/Toucher,false,20/DegDuo,false,40/DegHa,false,20/AGI,false,60
 Épique de Brienne/100gold1/3,3,7/VIT,false,60/DegP,false,18/Parade,false,30/ReducP,false,15/ReducM,false,15/MEN,false,30/VOL,false,60/Sacre,false,15/Ombre,false,15/Foudre,false,15/Feu,false,15/Glace,false,15/Nature,false,15
 Furtif de Kakashi/100gold3/3,0,2/FCE,false,40/AGI,false,30/VitAtkDuo,false,35/DegP,false,20/MEN,false,-40

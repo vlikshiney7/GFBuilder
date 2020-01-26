@@ -23,7 +23,6 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -173,7 +172,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		for(int i = 0; i < 5; i++) {
 			int value = Base.getBase(i, this.getGrade().getGrade(), this.getLvl());
 			value = (int) Math.floor(value * this.getReinca().getCoef());
-			list.add(new Effect(Base.getEffect(i), false, value, false, WeaponType.NONE, null));
+			list.add(new Effect(Base.getEffect(i), false, value, false));
 		}
 		
 		list.addAll(this.getTitle().getEffects());

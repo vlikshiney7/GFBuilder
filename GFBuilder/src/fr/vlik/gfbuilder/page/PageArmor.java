@@ -314,20 +314,23 @@ public class PageArmor extends PagePanel {
 			list.addAll(armors[i].getEffects());
 		}
 		
-		for(int i = 0; i < 10; i++) {
-			if(!this.lvlXpStuff.get(i).isVisible() || this.getEffectXpStuff(i) == TypeEffect.NONE) {
+		for(int i = 0; i < 5; i++) {
+			if(this.getEffectXpStuff(i*2) == TypeEffect.NONE || this.getEffectXpStuff(i*2+1) == TypeEffect.NONE
+				|| this.getEffectXpStuff(i*2) == this.getEffectXpStuff(i*2+1)) {
 				continue;
 			}
 			
-			TypeEffect type = this.getEffectXpStuff(i);
-			double valueXpStuff = XpStuff.getDataArmor()[i/2][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
-			
-			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+			for(int j = 0; j < 2; j++) {
+				TypeEffect type = this.getEffectXpStuff(i*2+j);
+				double valueXpStuff = XpStuff.getDataArmor()[i][this.effectXpStuff.get(i*2+j).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i*2+j).getSelectedIndex());
+				
+				list.add(new Effect(type, false, valueXpStuff, true));
+			}
 		}
 		
 		for(int i = 0; i < 5; i++) {
 			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
-					&& this.effectXpStuff.get(i*2).getSelectedIndex() != this.effectXpStuff.get(i*2+1).getSelectedIndex()) {
+					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(lvlXpStuff >= armors[i].getLvl()) {
 					list.addAll(armors[i].getBonusXP());

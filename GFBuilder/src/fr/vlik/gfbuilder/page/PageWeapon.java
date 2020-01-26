@@ -272,14 +272,13 @@ public class PageWeapon extends PagePanel {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
 		Weapon[] weapons = new Weapon[3];
+		
 		for(int i = 0; i < weapons.length; i++) {
 			if(this.getWeapon(i).getQuality() == Quality.RED) {
 				weapons[i] = new RedWeapon((RedWeapon) this.getWeapon(i));
 			} else {
 				weapons[i] = new Weapon(this.getWeapon(i));
 			}
-			
-			weapons[i].addEnchant(this.getEnchantment(i));
 			
 			if(weapons[i] instanceof RedWeapon) {
 				RedFortification fortif = this.getRedFortif(i);
@@ -301,35 +300,62 @@ public class PageWeapon extends PagePanel {
 					}
 				}
 			} else {
+				weapons[i].addEnchant(this.getEnchantment(i));
 				weapons[i].addFortif(this.getFortif(i));
 			}
 		}
 		
+		boolean duoWeapon = false;
+		
+		if( (weaponType[0] == WeaponType.EPEE1M || weaponType[0] == WeaponType.MARTEAU1M || weaponType[0] == WeaponType.HACHE1M || weaponType[0] == WeaponType.MECA1M)
+				&& (weaponType[1] == WeaponType.EPEE1M || weaponType[1] == WeaponType.MARTEAU1M || weaponType[1] == WeaponType.HACHE1M || weaponType[1] == WeaponType.MECA1M) ) {
+			/*weapons[0].doubleWeapon();
+			weapons[1].doubleWeapon();*/
+			duoWeapon = true;
+			
+			Weapon.doubleWeapon(weapons[0], weapons[1]);
+		}
+		
+		/*
 		if( (weaponType[0] == WeaponType.EPEE1M || weaponType[0] == WeaponType.MARTEAU1M || weaponType[0] == WeaponType.HACHE1M || weaponType[0] == WeaponType.MECA1M)
 				&& (weaponType[1] == WeaponType.EPEE1M || weaponType[1] == WeaponType.MARTEAU1M || weaponType[1] == WeaponType.HACHE1M || weaponType[1] == WeaponType.MECA1M) ) {
 			weapons[0].doubleWeapon();
 			weapons[1].doubleWeapon();
-		}
+			
+			Weapon.doubleWeapon(weapons[0], weapons[1]);
+		}*/
 		
 		for(int i = 0; i < weapons.length; i++) {
 			list.addAll(weapons[i].getEffects());
 		}
 		
-		for(int i = 0; i < 6; i++) {
-			if(!this.lvlXpStuff.get(i).isVisible() || this.getEffectXpStuff(i) == TypeEffect.NONE) {
+		for(int i = 0; i < 3; i++) {
+			if(this.getEffectXpStuff(i*2) == TypeEffect.NONE || this.getEffectXpStuff(i*2+1) == TypeEffect.NONE
+				|| this.getEffectXpStuff(i*2) == this.getEffectXpStuff(i*2+1)) {
 				continue;
 			}
 			
-			TypeEffect type = this.getEffectXpStuff(i);
-			int idListXp = weapons[i/2].getType().index;
-			double valueXpStuff = XpStuff.getDataWeapon()[idListXp][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
-			
-			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+			for(int j = 0; j < 2; j++) {
+				TypeEffect type = this.getEffectXpStuff(i*2+j);
+				int idListXp = weapons[i].getType().index;
+				
+				if(idListXp == -1) {
+					break;
+				}
+				
+				double valueXpStuff = XpStuff.getDataWeapon()[idListXp][this.effectXpStuff.get(i*2+j).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i*2+j).getSelectedIndex());
+				
+				if(duoWeapon && (type == TypeEffect.Atk || type == TypeEffect.AtkD || type == TypeEffect.AtkM)) {
+					list.add(new Effect(type, false, valueXpStuff * 0.75, true));
+				} else {
+					list.add(new Effect(type, false, valueXpStuff, true));
+				}
+			}
 		}
 		
 		for(int i = 0; i < 3; i++) {
 			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
-					&& this.effectXpStuff.get(i*2).getSelectedIndex() != this.effectXpStuff.get(i*2+1).getSelectedIndex()) {
+					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(lvlXpStuff >= weapons[i].getLvl()) {
 					list.addAll(weapons[i].getBonusXP());

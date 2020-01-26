@@ -18,6 +18,7 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 
 public class Weapon extends Equipment {
 	
@@ -164,17 +165,20 @@ public class Weapon extends Equipment {
 		}
 	}
 	
-	public void doubleWeapon() {
-		for(Effect effect : this.effects) {
-			if(effect.isPercent()) {
-				continue;
+	private void reduceEffect(TypeEffect type, double coef) {
+		for(Effect e : this.effects) {
+			if(!e.isPercent() && e.getType() == type) {
+				e.reduceCoef(coef);
 			}
-			
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 7) {
-				continue;
-			}
-			
-			effect.reduceAtkValue();
+		}
+	}
+	
+	public static void doubleWeapon(Weapon weap1, Weapon weap2) {
+		TypeEffect[] atks = new TypeEffect[] { TypeEffect.Atk, TypeEffect.AtkD, TypeEffect.AtkM };
+		
+		for(TypeEffect type : atks) {
+			weap1.reduceEffect(type, 0.75);
+			weap2.reduceEffect(type, 0.75);
 		}
 	}
 

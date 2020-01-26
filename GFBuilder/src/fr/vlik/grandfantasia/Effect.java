@@ -100,8 +100,8 @@ public class Effect {
 		this.value = this.value + value;
 	}
 	
-	public void reduceAtkValue() {
-		this.value = (int) (this.value * 0.75);
+	public void reduceCoef(double coef) {
+		this.value = (int) (this.value * coef);
 	}
 	
 	public StringBuilder getTooltip() {

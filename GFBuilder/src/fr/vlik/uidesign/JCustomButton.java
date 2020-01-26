@@ -1,7 +1,6 @@
 package fr.vlik.uidesign;
 
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.io.IOException;
@@ -88,7 +87,6 @@ public class JCustomButton extends JButton {
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
-		this.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	}
 	
 	public void updateText() {

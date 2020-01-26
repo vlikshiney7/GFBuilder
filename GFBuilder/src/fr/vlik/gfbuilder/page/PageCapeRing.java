@@ -24,7 +24,6 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -191,16 +190,16 @@ public class PageCapeRing extends PagePanel {
 		cape.addEnchant(this.getEnchantment(0));
 		list.addAll(cape.getEffects());
 		
-		for(int i = 0; i < 2; i++) {
-			if(!this.lvlXpStuff.get(i).isVisible() || this.getEffectXpStuff(i) == TypeEffect.NONE) {
-				continue;
+		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE
+				&& this.getEffectXpStuff(0) != this.getEffectXpStuff(1)) {
+			for(int i = 0; i < 2; i++) {
+				TypeEffect type = this.getEffectXpStuff(i);
+				double valueXpStuff = XpStuff.getDataCapeRing()[0][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
+				
+				list.add(new Effect(type, false, valueXpStuff, true));
 			}
-			
-			TypeEffect type = this.getEffectXpStuff(i);
-			double valueXpStuff = XpStuff.getDataCapeRing()[0][this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
-			
-			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
 		}
+		
 		
 		Ring[] rings = new Ring[2];
 		for(int i = 0; i < rings.length; i++) {
@@ -209,20 +208,24 @@ public class PageCapeRing extends PagePanel {
 			list.addAll(rings[i].getEffects());
 		}
 		
-		for(int i = 0; i < 4; i++) {
-			if(!this.lvlXpStuff.get(i+2).isVisible() || this.getEffectXpStuff(i+2) == TypeEffect.NONE) {
+		for(int i = 0; i < 2; i++) {
+			if(this.getEffectXpStuff(i*2+2) == TypeEffect.NONE || this.getEffectXpStuff(i*2+3) == TypeEffect.NONE
+				|| this.getEffectXpStuff(i*2+2) == this.getEffectXpStuff(i*2+3)) {
 				continue;
 			}
 			
-			TypeEffect type = this.getEffectXpStuff(i+2);
-			double valueXpStuff = XpStuff.getDataCapeRing()[1][this.effectXpStuff.get(i+2).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i+2).getSelectedIndex());
-			
-			list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+			for(int j = 0; j < 2; j++) {
+				TypeEffect type = this.getEffectXpStuff(i*2+j+2);
+				double valueXpStuff = XpStuff.getDataCapeRing()[1][this.effectXpStuff.get(i*2+j+2).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i*2+j+2).getSelectedIndex());
+				
+				list.add(new Effect(type, false, valueXpStuff, true));
+			}
 		}
+		
 		
 		for(int i = 0; i < 3; i++) {
 			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
-					&& this.effectXpStuff.get(i*2).getSelectedIndex() != this.effectXpStuff.get(i*2+1).getSelectedIndex()) {
+					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(i == 0) {
 					if(lvlXpStuff >= cape.getLvl()) {

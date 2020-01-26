@@ -161,18 +161,17 @@ public class PageMount extends PagePanel {
 		Mount mount = this.getMount();
 		list.add(mount.getDepla());
 		
-		for(int i = 0; i < 2; i++) {
-			if(!this.lvlXpStuff.get(i).isVisible() || this.getEffectXpStuff(i) == TypeEffect.NONE) {
-				continue;
-			}
-			
-			TypeEffect type = this.getEffectXpStuff(i);
-			double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
-			
-			if(mount.getName().equals("Loup Spectral de Combat")) {
-				list.add(new Effect(type, false, valueXpStuff/2, true, WeaponType.NONE, null));
-			} else {
-				list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE
+				&& this.getEffectXpStuff(0) != this.getEffectXpStuff(1)) {
+			for(int i = 0; i < 2; i++) {
+				TypeEffect type = this.getEffectXpStuff(i);
+				double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
+				
+				if(mount.getName().equals("Loup Spectral de Combat")) {
+					list.add(new Effect(type, false, valueXpStuff/2, true, WeaponType.NONE, null));
+				} else {
+					list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+				}
 			}
 		}
 		
