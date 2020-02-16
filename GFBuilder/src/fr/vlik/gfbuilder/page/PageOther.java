@@ -15,10 +15,10 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.BuffIcon;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.equipable.Anima;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -83,7 +83,7 @@ public class PageOther extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		list.addAll(this.getBague().getEffects());
 		list.addAll(this.getLoveCo().getEffects());

@@ -15,7 +15,6 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.Tools;
@@ -23,6 +22,8 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipable.Costume;
 import fr.vlik.grandfantasia.equipable.Costume.CostType;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -220,7 +221,7 @@ public class PageCostume extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		if(this.costWeapon.get(0).isSelected()) {
 			for(int i = 0; i < 2; i++) {

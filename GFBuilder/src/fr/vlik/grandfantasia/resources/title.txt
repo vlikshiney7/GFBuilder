@@ -15,7 +15,7 @@ Force de la Nature/8/1/-1/6/FCE,false,10/VIT,false,10/INT,false,10/VOL,false,10/
 Force Titanesque/8/1/-1/2/DefP,true,7/DefM,true,7
 Génie Surdoué/8/1/-1/4/XP,false,10/Loot,false,10/VitAtk,false,10/VitComp,false,10
 Grâce Divine/8/1/-1/4/XP,false,20/PV,true,5/PM,true,5/Depla,false,10
-Hakuna MataSprite/8/1/-1/3/RDCCP,false,8/RDCCM,false,8/ESQ,true,5
+Hakuna MataSprite/8/1/-1/3/ReducP,false,8/ReducM,false,8/ESQ,true,5
 Héritage d'Ezio/8/1/-1/2/ESQ,true,5/Depla,false,5
 Hors-la-loi/8/20/-1/0
 Insulaire Populaire/8/15/-1/4/DefP,true,2/DefM,true,2/ReducP,false,2/ReducM,false,2

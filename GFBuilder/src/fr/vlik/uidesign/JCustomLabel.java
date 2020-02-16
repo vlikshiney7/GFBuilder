@@ -8,12 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.grandfantasia.CombiTalent;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class JCustomLabel extends JLabel {
 	

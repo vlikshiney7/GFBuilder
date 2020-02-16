@@ -10,15 +10,20 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Loader;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Weapon extends Equipment {
 	
@@ -26,6 +31,7 @@ public class Weapon extends Equipment {
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Weapon[][] data;
 	static {
+		Weapon.data = Loader.getWeapon();
 		loadData();
 	}
 	
@@ -33,8 +39,9 @@ public class Weapon extends Equipment {
 	protected boolean uniqueEquip;
 	protected boolean reinca;
 	
+	@SuppressWarnings("serial")
 	public Weapon() {
-		super("Rien", new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, new ArrayList<Effect>(), new ArrayList<Effect>());
+		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, new ArrayList<Calculable>(), new ArrayList<Effect>());
 		
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
@@ -43,7 +50,7 @@ public class Weapon extends Equipment {
 	}
 	
 	public Weapon(Weapon weapon) {
-		super(weapon.getName(), weapon.getGrades(), weapon.getLvl(), weapon.getQuality(), weapon.isEnchantable(), weapon.getEffects(), weapon.getBonusXP());
+		super(weapon.getMap(), weapon.getGrades(), weapon.getLvl(), weapon.getQuality(), weapon.isEnchantable(), weapon.getEffects(), weapon.getBonusXP());
 		
 		this.type = weapon.getType();
 		this.uniqueEquip = weapon.isUniqueEquip();
@@ -52,7 +59,7 @@ public class Weapon extends Equipment {
 		this.effects = weapon.getEffects();
 	}
 	
-	public Weapon(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
@@ -134,12 +141,16 @@ public class Weapon extends Equipment {
 				int value = Enchantment.getValue(this, e.getType());
 				boolean found = false;
 				
-				for(Effect get : this.effects) {
-					if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-						get.addEnchantValue(value);
+				for(Calculable calculable : this.effects) {
+					if(calculable instanceof Effect) {
+						Effect get = (Effect) calculable;
 						
-						found = true;
-						break;
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							get.addEnchantValue(value);
+							
+							found = true;
+							break;
+						}
 					}
 				}
 				
@@ -152,25 +163,126 @@ public class Weapon extends Equipment {
 	}
 	
 	public void addFortif(Fortification fortif) {
-		for(Effect effect : this.effects) {
-			if(effect.isPercent()) {
-				continue;
+		for(Calculable calculable : this.effects) {
+			if(calculable instanceof Effect) {
+				Effect effect = (Effect) calculable;
+				
+				if(effect.isPercent()) {
+					continue;
+				}
+				
+				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+					continue;
+				}
+				
+				effect.addFortifValue(fortif.getCoef());
 			}
-			
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-				continue;
-			}
-			
-			effect.addFortifValue(fortif.getCoef());
 		}
 	}
 	
 	private void reduceEffect(TypeEffect type, double coef) {
-		for(Effect e : this.effects) {
-			if(!e.isPercent() && e.getType() == type) {
-				e.reduceCoef(coef);
+		for(Calculable calculable : this.effects) {
+			if(calculable instanceof Effect) {
+				Effect effect = (Effect) calculable;
+				if(!effect.isPercent() && effect.getType() == type) {
+					effect.reduceCoef(coef);
+				}
 			}
 		}
+	}
+	
+	public String toCode(String path) {
+		String code = "new Weapon(new HashMap<Language, String>() {{ ";
+		code += "put(Language.FR, \"" + this.name.get(Language.FR) + "\"); }},\n";
+		
+		code += "new GradeName[] { ";
+		for(GradeName grade : this.grades) {
+			code += "GradeName." + grade + ", ";
+		}
+		code += "},\n";
+		
+		code += this.lvl +", ";
+		code += "Quality." + this.quality + ", ";
+		code += this.enchantable + ", ";
+		code += "WeaponType." + this.type + ", ";
+		code += this.uniqueEquip + ", ";
+		code += this.reinca + ", ";
+		code += "\"" + path + "\", ";
+		code += "new ArrayList<Calculable>() {{\n";
+		
+		for(Calculable c : this.effects) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				code += "\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+				
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
+				}
+				
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
+				}
+				
+				if(!e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
+				}
+				
+				code += "));\n";
+			} else if(c instanceof StaticEffect) {
+				StaticEffect s = (StaticEffect) c;
+				
+				code += "\tadd(new StaticEffect(TypeStaticEffect." + s.getType() + ", " + s.getTaux() + "));\n";
+			} else if(c instanceof Proc) {
+				Proc p = (Proc) c;
+				
+				code += "add(new Proc(" + p.getTaux() + ", Activation." + p.getActivation() + ", " + p.getTime();
+				if(p.getCumul() <= 1) {
+					code += ", " + p.getCumul();
+				}
+				code += ", new ArrayList<Calculable>() {{";
+				
+				for(Calculable in : p.getEffects()) {
+					if(in instanceof Effect) {
+						Effect e = (Effect) in;
+						code += "\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+						
+						if(e.getTransfert() != null) {
+							code += ", " + e.getWithReinca();
+							code += ", WeaponType." + e.getWithWeapon();
+							code += ", TypeEffect." + e.getTransfert();
+							continue;
+						}
+						
+						if(e.getWithWeapon() != WeaponType.NONE) {
+							code += ", " + e.getWithReinca();
+							code += ", WeaponType." + e.getWithWeapon();
+							continue;
+						}
+						
+						if(!e.getWithReinca()) {
+							code += ", " + e.getWithReinca();
+						}
+						
+						code += "));\n";
+					} else if(in instanceof StaticEffect) {
+						StaticEffect s = (StaticEffect) in;
+						
+						code += "\tadd(new StaticEffect(TypeStaticEffect." + s.getType() + ", " + s.getTaux() + "));\n";
+					}
+				}
+				
+				code += "}}));";
+			}
+		}
+		
+		code += "}}, new ArrayList<Effect>() ),";
+		
+		return code;
 	}
 	
 	public static void doubleWeapon(Weapon weap1, Weapon weap2) {
@@ -185,10 +297,9 @@ public class Weapon extends Equipment {
 	public static void loadData() {
 		String[] weaponFile = { "epee1M", "marteau1M", "hache1M", "epee2M", "marteau2M", "hache2M", "meca1M", "meca2M", "arc", "gun", "canon", "relique", "baton", "lame", "cle", "bouclier", "default" };
 		
-		ArrayList<ArrayList<Weapon>> list = new ArrayList<ArrayList<Weapon>>();
+		int toCode = 0;
 		
-		list.add(new ArrayList<Weapon>());
-		list.get(0).add(new Weapon());
+		ArrayList<ArrayList<Weapon>> list = new ArrayList<ArrayList<Weapon>>();
 		
 		for(int i = 0; i < weaponFile.length; i++) {
 			try (
@@ -200,6 +311,9 @@ public class Weapon extends Equipment {
 				while (line != null) {String[] lineSplit = line.split("/");
 					String path =  weaponFile[i] + "/" + lineSplit[lineSplit.length-1];
 					
+					Map<Language, String> names = new HashMap<Language, String>();
+					names.put(Language.FR, lineSplit[0]);
+					
 					String classes[] = lineSplit[1].split(",");
 					GradeName[] grades = new GradeName[classes.length];
 					for(int j = 0; j < classes.length; j++) {
@@ -210,7 +324,7 @@ public class Weapon extends Equipment {
 					
 					String[] effectSplit = lineSplit[7].split(",");
 					
-					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+					ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
 					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 						effects.add(new Effect(lineSplit[j+8]));
 					
@@ -223,11 +337,11 @@ public class Weapon extends Equipment {
 						int indexToStar = 8 + Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])+Integer.parseInt(effectSplit[2]);
 						String[] starEffectSplit = lineSplit[indexToStar].split(",");
 						
-						ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
+						ArrayList<ArrayList<Calculable>> starEffects = new ArrayList<ArrayList<Calculable>>();
 						int decal = 0;
 						
 						for(int j = 0; j < starEffectSplit.length; j++) {
-							ArrayList<Effect> oneStarEffects = new ArrayList<Effect>();
+							ArrayList<Calculable> oneStarEffects = new ArrayList<Calculable>();
 							for(int k = 0; k < Integer.parseInt(starEffectSplit[j]); k++) {
 								oneStarEffects.add(new Effect(lineSplit[indexToStar+2+decal]));
 								decal++;
@@ -237,23 +351,28 @@ public class Weapon extends Equipment {
 						}
 						
 						RedWeapon red = new RedWeapon(
-								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
+								names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
 								WeaponType.values()[i], Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects, bonusXP,
 								starEffects
 								);
 						
-						list.get(i+1).add(red);
+						list.get(i).add(red);
 						
 					} else {
 						assert (lineSplit.length == Integer.parseInt(effectSplit[0]) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9)
-								: weaponFile[i] + " line " + (list.get(i+1).size() + 1);
+								: weaponFile[i] + " line " + (list.get(i).size() + 1);
 						
 						Weapon weapon = new Weapon(
-								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
+								names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[4]),
 								WeaponType.values()[i], Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]), path, effects, bonusXP
-								);
+							);
 						
-						list.get(i+1).add(weapon);
+						list.get(i).add(weapon);
+						
+						if(toCode < 10) {
+							System.out.println(weapon.toCode(path));
+							toCode++;
+						}
 					}
 					
 					line = reader.readLine();
@@ -263,20 +382,38 @@ public class Weapon extends Equipment {
 			}
 		}
 		
-		Weapon.data = new Weapon[list.size()][];
-		for(int i = 0; i < data.length; i++) {
+		Weapon[][] cast = new Weapon[list.size()][];
+		for(int i = 0; i < cast.length; i++) {
 			Weapon[] weaponType = new Weapon[list.get(i).size()];
 			for(int j = 0; j < list.get(i).size(); j++) {
 				weaponType[j] = list.get(i).get(j);				
 			}
-			Weapon.data[i] = weaponType;
+			cast[i] = weaponType;
 		}
+		
+		Weapon[][] fusion = new Weapon[data.length][];
+		for(int i = 0; i < fusion.length; i++) {
+			Weapon[] w = new Weapon[data[i].length + cast[i].length];
+			
+			int j = 0;
+			for(; j < data[i].length; j++) {
+				w[j] = data[i][j];
+			}
+			
+			for(; j < data[i].length + cast[i].length; j++) {
+				w[j] = cast[i][j-data[i].length];
+			}
+			
+			fusion[i] = w;
+		}
+		
+		Weapon.data = fusion;
 	}
 	
-	public static Weapon get(String name) {
+	public static Weapon get(String name, Language lang) {
 		for(Weapon[] type : Weapon.data) {
 			for(Weapon weapon : type) {
-				if(weapon.getName().equals(name)) {
+				if(weapon.getName(lang).equals(name)) {
 					return weapon;
 				}
 			}
@@ -289,16 +426,20 @@ public class Weapon extends Equipment {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
 		int[] weaponType = null;
 		switch (idList) {
-			case 0 : weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };	break;
+			case 0 :
+				weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };
+				break;
 			case 1 : 
 				weaponType = doubleWeapon ? new int[] { 0, 1, 2, 6, 15, 16 } : new int[] { 15 };
 				break;
-			case 2 : weaponType = new int[] { 8, 9, 10, 11, 14 };					break;
+			case 2 :
+				weaponType = new int[] { 8, 9, 10, 11, 14 };
+				break;
 		}
 		
-		result.add(Weapon.data[0][0]);
+		result.add(new Weapon());
 		for(int i = 0; i < weaponType.length; i++) {
-			Weapon[] oneWeaponType = Weapon.data[weaponType[i]+1];
+			Weapon[] oneWeaponType = Weapon.data[weaponType[i]];
 			for(int j = 0; j < oneWeaponType.length; j++) {
 				if(!oneWeaponType[j].containGrade(grade.getGrade())) {
 					continue;

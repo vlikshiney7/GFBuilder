@@ -7,15 +7,15 @@ import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
 
 public abstract class PagePanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected ArrayList<Effect> effects;
+	protected ArrayList<Calculable> effects;
 	protected JLabel[] label;
 	
 	public PagePanel() {
@@ -28,7 +28,7 @@ public abstract class PagePanel extends JPanel {
 		this.setBackground(Design.UIColor[2]);
 	}
 
-	public ArrayList<Effect> getEffects() {
+	public ArrayList<Calculable> getEffects() {
 		return this.effects;
 	}
 	

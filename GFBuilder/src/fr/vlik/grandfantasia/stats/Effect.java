@@ -1,10 +1,10 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 
-public class Effect {
+public class Effect implements Calculable {
 	
 	private TypeEffect type;
 	private boolean isPercent;
@@ -104,12 +104,13 @@ public class Effect {
 		this.value = (int) (this.value * coef);
 	}
 	
-	public StringBuilder getTooltip() {
+	@Override
+	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder(this.type.abbrevFR);
 		tooltip.append(this.value > 0 ? " +" : " ");
 		tooltip.append((int) this.value);
 		tooltip.append(this.isPercent ? "%" : "");
-		return tooltip;
+		return "<li>" + tooltip + "</li>";
 	}
 	
 	@Override

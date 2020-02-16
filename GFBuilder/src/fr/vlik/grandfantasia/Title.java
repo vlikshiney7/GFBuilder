@@ -11,6 +11,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Title implements Colorable, Writable {
 

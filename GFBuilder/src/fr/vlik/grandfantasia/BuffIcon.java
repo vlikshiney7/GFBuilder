@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class BuffIcon extends Buff implements Iconable {
 	

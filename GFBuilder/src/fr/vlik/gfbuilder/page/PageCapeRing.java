@@ -15,7 +15,6 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Grade;
@@ -24,6 +23,8 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -184,7 +185,7 @@ public class PageCapeRing extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		Cape cape = new Cape(this.getCape());
 		cape.addEnchant(this.getEnchantment(0));
@@ -571,10 +572,10 @@ public class PageCapeRing extends PagePanel {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		config.put("Cape", this.getCape().getName());
+		config.put("Cape", this.getCape().getName(Language.FR));
 		
 		for(int i = 0; i < this.ring.size(); i++) {
-			config.put("Ring" + i, this.getRing(i).getName());
+			config.put("Ring" + i, this.getRing(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
@@ -596,7 +597,7 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		Cape cape = Cape.get(config.get("Cape"));
+		Cape cape = Cape.get(config.get("Cape"), Language.FR);
 		if(cape == null) {
 			this.cape.setSelectedIndex(0);
 		} else {
@@ -604,7 +605,7 @@ public class PageCapeRing extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.ring.size(); i++) {
-			Ring ring = Ring.get(config.get("Ring" + i));
+			Ring ring = Ring.get(config.get("Ring" + i), Language.FR);
 			if(cape == null) {
 				this.ring.get(i).setSelectedIndex(0);
 			} else {

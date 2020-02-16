@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Buff implements Writable {
 	

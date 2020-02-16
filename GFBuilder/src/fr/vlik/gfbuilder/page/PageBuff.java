@@ -21,11 +21,12 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.BuffIcon;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -180,7 +181,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			list.addAll(this.getNucleus(i).getEffects());

@@ -1,14 +1,19 @@
 package fr.vlik.grandfantasia.equipable;
 
 import java.util.ArrayList;
+import java.util.Map;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class RedWeapon extends Weapon {
 	
-	private ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
+	private ArrayList<ArrayList<Calculable>> starEffects = new ArrayList<ArrayList<Calculable>>();
 	
 	public RedWeapon(RedWeapon redWeapon) {
 		super(redWeapon);
@@ -16,31 +21,43 @@ public class RedWeapon extends Weapon {
 		this.starEffects = redWeapon.getStarEffects();
 	}
 	
-	public RedWeapon(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
+	public RedWeapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Calculable>> starEffects) {
 		super(name, grades, lvl, quality, enchantable, type, uniqueEquip, reinca, iconPath, effects, bonusXP);
 		
 		this.starEffects = starEffects;
 	}
 	
-	public ArrayList<ArrayList<Effect>> getStarEffects() {
-		ArrayList<ArrayList<Effect>> list = new ArrayList<ArrayList<Effect>>();
+	public ArrayList<ArrayList<Calculable>> getStarEffects() {
+		ArrayList<ArrayList<Calculable>> list = new ArrayList<ArrayList<Calculable>>();
 		
 		for(int i = 0; i < this.starEffects.size(); i++) {
-			list.add(new ArrayList<Effect>());
-			for(Effect effect : this.starEffects.get(i)) {
-				list.get(i).add(new Effect(effect));
+			list.add(new ArrayList<Calculable>());
+			for(Calculable c : this.starEffects.get(i)) {
+				if(c instanceof Effect) {
+					list.get(i).add(new Effect((Effect)c));
+				} else if(c instanceof Proc) {
+					list.get(i).add(new Proc((Proc)c));
+				} else if(c instanceof StaticEffect) {
+					list.get(i).add(new StaticEffect((StaticEffect)c));
+				}
 			}
 		}
 		
 		return list;
 	}
 	
-	public ArrayList<Effect> getStarEffects(int nbStar) {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+	public ArrayList<Calculable> getStarEffects(int nbStar) {
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < nbStar; i++) {
-			for(Effect effect : this.starEffects.get(i)) {
-				list.add(new Effect(effect));
+			for(Calculable c : this.starEffects.get(i)) {
+				if(c instanceof Effect) {
+					list.add(new Effect((Effect)c));
+				} else if(c instanceof Proc) {
+					list.add(new Proc((Proc)c));
+				} else if(c instanceof StaticEffect) {
+					list.add(new StaticEffect((StaticEffect)c));
+				}
 			}
 		}
 		
@@ -50,16 +67,20 @@ public class RedWeapon extends Weapon {
 	public void addFortif(double value) {
 		double coefFortif = (value - 100) / 100 + 1;
 		
-		for(Effect effect : this.effects) {
-			if(effect.isPercent()) {
-				continue;
+		for(Calculable calculable : this.effects) {
+			if(calculable instanceof Effect) {
+				Effect effect = (Effect) calculable;
+				
+				if(effect.isPercent()) {
+					continue;
+				}
+				
+				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+					continue;
+				}
+				
+				effect.addFortifValue(coefFortif);
 			}
-			
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-				continue;
-			}
-			
-			effect.addFortifValue(coefFortif);
 		}
 	}
 }

@@ -2,9 +2,11 @@ package fr.vlik.gfbuilder;
 
 import java.util.ArrayList;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
 
 public class Build {
 	
@@ -61,21 +63,45 @@ public class Build {
 		return list;
 	}
 	
-	public void addEffect(Effect e) {
-		if(containIdWeapon(e.getWithWeapon())) {
-			if(e.isPercent())	this.effectPercent.add(e);
-			else				this.effectPoint.add(e);
+	public void addEffect(Calculable c) {
+		if(c instanceof Effect) {
+			Effect e = (Effect) c;
+			
+			if(containIdWeapon(e.getWithWeapon())) {
+				if(e.isPercent()) {
+					this.effectPercent.add(e);
+				} else {
+					this.effectPoint.add(e);
+				}
+			}
+		} else if(c instanceof Proc) {
+			Proc p = (Proc) c;
+			
+			for(Calculable calculable : p.getEffects()) {
+				if(calculable instanceof Effect) {
+					Effect e = (Effect) calculable;
+					
+					if(containIdWeapon(e.getWithWeapon())) {
+						if(e.isPercent()) {
+							this.effectPercent.add(e);
+						} else {
+							this.effectPoint.add(e);
+						}
+					}
+				}
+			}
+			
 		}
 	}
 
-	public void addEffect(Effect[] effects) {
-		for(Effect e : effects) {
+	public void addEffect(Calculable[] effects) {
+		for(Calculable e : effects) {
 			addEffect(e);
 		}
 	}
 	
-	public void addEffect(ArrayList<Effect> effects) {
-		for(Effect e : effects) {
+	public void addEffect(ArrayList<Calculable> effects) {
+		for(Calculable e : effects) {
 			addEffect(e);
 		}
 	}

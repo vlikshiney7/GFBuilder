@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import fr.vlik.grandfantasia.stats.Effect;
+
 public class Runway {
 	
 	public static final int[][] currentRunway = { {6, 7}, {4, 9}, {0, 3}, {1, 5}, {10, 8, 2} };

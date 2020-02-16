@@ -2,34 +2,38 @@ package fr.vlik.grandfantasia.equipable;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Icon;
 
-import fr.vlik.grandfantasia.Tools;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public abstract class Equipment implements FullRenderer {
 	
-	protected String name;
+	protected Map<Language, String> name;
 	protected GradeName[] grades;
 	protected int lvl;
 	protected Quality quality;
 	protected boolean enchantable;
 	protected Icon icon;
-	protected ArrayList<Effect> effects = new ArrayList<Effect>();
+	protected ArrayList<Calculable> effects = new ArrayList<Calculable>();
 	protected ArrayList<Effect> bonusXP = new ArrayList<Effect>();
 	
+	@SuppressWarnings("serial")
 	public Equipment() {
-		this.name = "Rien";
+		this.name = new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }};
 		this.grades = new GradeName[] {	GradeName.NONE };
 		this.lvl = 0;
 	}
 	
-	public Equipment(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
 		this.name = name;
 		this.grades = grades;
 		this.lvl = lvl;
@@ -39,8 +43,12 @@ public abstract class Equipment implements FullRenderer {
 		this.bonusXP = bonusXP;
 	}
 	
-	public String getName() {
+	protected Map<Language, String> getMap() {
 		return this.name;
+	}
+	
+	public String getName(Language lang) {
+		return this.name.get(lang);
 	}
 	
 	public GradeName[] getGrades() {
@@ -69,10 +77,12 @@ public abstract class Equipment implements FullRenderer {
 		return this.icon;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public ArrayList<Calculable> getEffects() {
+		ArrayList<Calculable> list = new ArrayList<Calculable>(this.effects.size());
+		for(Calculable effect : this.effects) {
+			if(effect instanceof Effect) {
+				list.add(new Effect((Effect)effect));
+			}
 		}
 		return list;
 	}
@@ -124,24 +134,27 @@ public abstract class Equipment implements FullRenderer {
 	
 	@Override
 	public String getInfo(Language lang) {
-		return "Lvl " + this.lvl + " - " + this.name;
+		if(this.name.get(lang) == null) {
+			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
+		}
+		return "Lvl " + this.lvl + " - " + this.name.get(lang);
 	}
 	
 	@Override
 	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
+		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
+		for(Calculable e : this.effects) {
 			tooltip.append(e.getTooltip());
 		}
+		tooltip.append("</ul>");
 		
 		if(this.bonusXP.size() != 0) {
-			tooltip.append("<br><br>");
-			tooltip.append("Bonus XP Stuff lvl " + this.lvl);
+			tooltip.append("<br>");
+			tooltip.append("<ul><b>Bonus XP Stuff lvl " + this.lvl + "</b>");
 			for(Effect e : this.bonusXP) {
-				tooltip.append("<br>");
 				tooltip.append(e.getTooltip());
 			}
+			tooltip.append("</ul>");
 		}
 		
 		return "<html>" + tooltip + "</html>";

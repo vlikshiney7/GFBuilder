@@ -16,6 +16,7 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Anima;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Mount implements FullRenderer {
 	

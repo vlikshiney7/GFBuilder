@@ -10,7 +10,6 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
@@ -18,7 +17,10 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Armor extends Equipment {
 	
@@ -36,7 +38,7 @@ public class Armor extends Equipment {
 	private MultiEffect multiEffects;
 	
 	public Armor(Armor armor) {
-		super(armor.getName(), armor.getGrades(), armor.getLvl(), armor.getQuality(), armor.isEnchantable(), armor.getEffects(), armor.getBonusXP());
+		super(armor.getMap(), armor.getGrades(), armor.getLvl(), armor.getQuality(), armor.isEnchantable(), armor.getEffects(), armor.getBonusXP());
 		
 		this.type = armor.getType();
 		this.setCode = armor.getSetCode();
@@ -46,7 +48,7 @@ public class Armor extends Equipment {
 		this.icon = armor.getIcon();
 	}
 	
-	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, ArrayList<Effect> effects, ArrayList<Effect> bonusXP) {
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
@@ -56,8 +58,8 @@ public class Armor extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public Armor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
-		super(name, grades, lvl, quality, enchantable, new ArrayList<Effect>(), bonusXP);
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
+		super(name, grades, lvl, quality, enchantable, new ArrayList<Calculable>(), bonusXP);
 		
 		this.type = type;
 		this.setCode = setCode;
@@ -109,7 +111,7 @@ public class Armor extends Equipment {
 		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	public ArrayList<Effect> getMultiEffects(int lvl) {
+	public ArrayList<Calculable> getMultiEffects(int lvl) {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
@@ -152,12 +154,16 @@ public class Armor extends Equipment {
 				int value = Enchantment.getValue(this, e.getType());
 				boolean found = false;
 				
-				for(Effect get : this.effects) {
-					if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-						get.addEnchantValue(value);
+				for(Calculable calculable : this.effects) {
+					if(calculable instanceof Effect) {
+						Effect get = (Effect) calculable;
 						
-						found = true;
-						break;
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							get.addEnchantValue(value);
+							
+							found = true;
+							break;
+						}
 					}
 				}
 				
@@ -170,20 +176,24 @@ public class Armor extends Equipment {
 	}
 
 	public void addFortif(Fortification fortif) {
-		for(Effect effect : this.effects) {
-			if(effect.isPercent()) {
-				continue;
+		for(Calculable calculable : this.effects) {
+			if(calculable instanceof Effect) {
+				Effect effect = (Effect) calculable;
+				
+				if(effect.isPercent()) {
+					continue;
+				}
+				
+				if(!effect.getWithReinca()) {
+					continue;
+				}
+				
+				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+					continue;
+				}
+				
+				effect.addFortifValue(fortif.getCoef());
 			}
-			
-			if(!effect.getWithReinca()) {
-				continue;
-			}
-			
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-				continue;
-			}
-			
-			effect.addFortifValue(fortif.getCoef());
 		}
 	}
 	
@@ -209,6 +219,9 @@ public class Armor extends Equipment {
 						grades[j] = GradeName.values()[Integer.parseInt(classes[j])];
 					}
 					
+					Map<Language, String> names = new HashMap<Language, String>();
+					names.put(Language.FR, lineSplit[0]);
+					
 					Quality quality = Quality.values()[Integer.parseInt(lineSplit[4])];
 					
 					String[] effectSplit = lineSplit[7].split(",");
@@ -218,7 +231,7 @@ public class Armor extends Equipment {
 						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 					
 					if(quality == Quality.RED) {
-						ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+						ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
 						for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 							effects.add(new Effect(lineSplit[j+8]));
 						
@@ -239,7 +252,7 @@ public class Armor extends Equipment {
 						}
 						
 						RedArmor red = new RedArmor(
-								lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+								names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
 								ArmorType.values()[i], lineSplit[3], path, effects, bonusXP,
 								starEffects
 								);
@@ -251,12 +264,12 @@ public class Armor extends Equipment {
 								: armorFile[i] + " line " + (list.get(i).size() + 1);
 						
 						if(Integer.parseInt(effectSplit[0]) > -1) {
-							ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
+							ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
 							for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 								effects.add(new Effect(lineSplit[j+8]));
 							
 							Armor armor = new Armor(
-									lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+									names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
 									ArmorType.values()[i], lineSplit[3], path, effects, bonusXP
 									);
 							list.get(i).add(armor);
@@ -264,7 +277,7 @@ public class Armor extends Equipment {
 							MultiEffect effects = MultiEffect.getFromCode(lineSplit[8]);
 							
 							Armor armor = new Armor(
-									lineSplit[0], grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
+									names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
 									ArmorType.values()[i], lineSplit[3], path, effects, bonusXP
 									);
 							list.get(i).add(armor);
@@ -288,9 +301,9 @@ public class Armor extends Equipment {
 		}
 	}
 	
-	public static Armor get(String name, int list) {
+	public static Armor get(String name, Language lang, int list) {
 		for(Armor armor : Armor.data[list]) {
-			if(armor.getName().equals(name)) {
+			if(armor.getName(lang).equals(name)) {
 				return armor;
 			}
 		}

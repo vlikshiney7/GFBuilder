@@ -12,6 +12,7 @@ import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class EquipSet implements Writable {
 	
@@ -88,7 +89,7 @@ public class EquipSet implements Writable {
 		String equipCode[] = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
-		if(rings[0].getName().trim().equals(rings[1].getName().trim())) {
+		if(rings[0].getName(Language.FR).trim().equals(rings[1].getName(Language.FR).trim())) {
 			this.nbCurrentUsed--;
 		}
 		

@@ -17,6 +17,7 @@ import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.equipable.Armor.ArmorType;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Enchantment implements Writable {
 	

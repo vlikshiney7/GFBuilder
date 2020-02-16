@@ -16,13 +16,14 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Base;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -167,7 +168,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < 5; i++) {
 			int value = Base.getBase(i, this.getGrade().getGrade(), this.getLvl());

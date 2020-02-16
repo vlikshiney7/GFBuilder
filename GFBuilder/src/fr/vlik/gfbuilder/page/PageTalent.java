@@ -21,10 +21,10 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.CombiTalent;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -137,7 +137,7 @@ public class PageTalent extends PagePanel {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.radioTalent.size(); i++) {
 			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {

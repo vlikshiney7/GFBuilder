@@ -18,7 +18,6 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Fortification;
@@ -33,6 +32,8 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.RedArmor;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -280,7 +281,7 @@ public class PageArmor extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		Armor[] armors = new Armor[5];
 		for(int i = 0; i < armors.length; i++) {
@@ -765,16 +766,20 @@ public class PageArmor extends PagePanel {
 		
 		String tooltip = "";
 		
-		for(Effect e : armor.getEffects()) {
-			if(e.isPercent()) {
-				continue;
+		for(Calculable calculable : armor.getEffects()) {
+			if(calculable instanceof Effect) {
+				Effect effect = (Effect) calculable;
+				
+				if(effect.isPercent()) {
+					continue;
+				}
+				
+				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+					continue;
+				}
+				
+				tooltip += effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>";
 			}
-			
-			if(e.getType().ordinal() < 5 || e.getType().ordinal() > 9) {
-				continue;
-			}
-			
-			tooltip += e.toString() + " +" + ((int) (e.getValue() * current - e.getValue())) + "<br>";
 		}
 		
 		this.labelValue.get(id).setText("<html>" + tooltip + "</html>");
@@ -891,7 +896,7 @@ public class PageArmor extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.armor.size(); i++) {
-			config.put("Armor" + i, this.getArmor(i).getName());
+			config.put("Armor" + i, this.getArmor(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
@@ -939,7 +944,7 @@ public class PageArmor extends PagePanel {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.armor.size(); i++) {
-			Armor armor = Armor.get(config.get("Armor" + i), i);
+			Armor armor = Armor.get(config.get("Armor" + i), Language.FR, i);
 			if(armor == null) {
 				this.armor.get(i).setSelectedIndex(0);
 			} else {

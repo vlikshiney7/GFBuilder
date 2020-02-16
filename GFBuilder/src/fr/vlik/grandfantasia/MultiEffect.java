@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class MultiEffect {
 	
@@ -53,9 +55,9 @@ public class MultiEffect {
 		return list;
 	}
 	
-	public ArrayList<Effect> getEffectsFromLvl(int lvl) {
+	public ArrayList<Calculable> getEffectsFromLvl(int lvl) {
 		int index = lvl > this.lvlMax ? this.lvlMax - this.lvlMin : lvl - this.lvlMin;
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.get(index).size());
+		ArrayList<Calculable> list = new ArrayList<Calculable>(this.effects.get(index).size());
 		for(Effect effect : this.effects.get(index)) {
 			list.add(new Effect(effect));
 		}

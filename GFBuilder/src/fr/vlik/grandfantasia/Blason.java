@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Blason implements Iconable, Writable {
 	

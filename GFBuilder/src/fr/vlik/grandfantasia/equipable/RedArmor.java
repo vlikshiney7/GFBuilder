@@ -1,9 +1,12 @@
 package fr.vlik.grandfantasia.equipable;
 import java.util.ArrayList;
+import java.util.Map;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class RedArmor extends Armor {
 	
@@ -15,7 +18,7 @@ public class RedArmor extends Armor {
 		this.starEffects = redArmor.getStarEffects();
 	}
 	
-	public RedArmor(String name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String iconPath, ArrayList<Effect> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
+	public RedArmor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String iconPath, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
 		super(name, grades, lvl, quality, enchantable, reinca, type, setCode, iconPath, effects, bonusXP);
 		
 		this.starEffects = starEffects;
@@ -49,16 +52,20 @@ public class RedArmor extends Armor {
 	public void addFortif(double value) {
 		double coefFortif = (value - 100) / 100 + 1;
 		
-		for(Effect effect : this.effects) {
-			if(effect.isPercent()) {
-				continue;
+		for(Calculable calculable : this.effects) {
+			if(calculable instanceof Effect) {
+				Effect effect = (Effect) calculable;
+				
+				if(effect.isPercent()) {
+					continue;
+				}
+				
+				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+					continue;
+				}
+				
+				effect.addFortifValue(coefFortif);
 			}
-			
-			if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-				continue;
-			}
-			
-			effect.addFortifValue(coefFortif);
 		}
 	}
 }

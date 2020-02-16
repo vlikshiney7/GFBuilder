@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Nucleus implements FullRenderer {
 	

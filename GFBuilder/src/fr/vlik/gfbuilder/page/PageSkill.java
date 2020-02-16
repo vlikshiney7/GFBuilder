@@ -14,13 +14,13 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Skill;
-import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -83,7 +83,7 @@ public class PageSkill extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {

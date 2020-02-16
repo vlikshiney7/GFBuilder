@@ -567,9 +567,16 @@ public class MainFrame extends JFrame {
 			}
 		} else {
 			for(int i = 0; i < this.valueStat.size(); i++) {
-				this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevEN);
-				this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].en);
-				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
+				if(TypeEffect.values()[i].abbrevEN.equals("")) {
+					this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevFR);
+					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
+					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
+				} else {
+					this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevEN);
+					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].en);
+					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
+				}
+				
 			}
 		}
 	}

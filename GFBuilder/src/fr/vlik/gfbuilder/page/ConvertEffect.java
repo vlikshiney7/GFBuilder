@@ -2,7 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
 
-import fr.vlik.grandfantasia.Effect;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public interface ConvertEffect {
 	

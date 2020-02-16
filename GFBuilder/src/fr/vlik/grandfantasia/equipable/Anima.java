@@ -11,12 +11,13 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Effect;
 import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 
 public class Anima implements FullRenderer {
 	
@@ -31,10 +32,10 @@ public class Anima implements FullRenderer {
 	private Quality quality;
 	private Icon icon;
 	private boolean isMultiEffect;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private ArrayList<Calculable> effects = new ArrayList<Calculable>();
 	private MultiEffect multiEffects;
 	
-	public Anima(String name, Quality quality, String path, ArrayList<Effect> effects) {
+	public Anima(String name, Quality quality, String path, ArrayList<Calculable> effects) {
 		this.name = name;
 		this.quality = quality;
 		this.isMultiEffect = false;
@@ -72,10 +73,12 @@ public class Anima implements FullRenderer {
 		return Tools.itemColor[this.quality.index];
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public ArrayList<Calculable> getEffects() {
+		ArrayList<Calculable> list = new ArrayList<Calculable>(this.effects.size());
+		for(Calculable effect : this.effects) {
+			if(effect instanceof Effect) {
+				list.add(new Effect((Effect)effect));
+			}
 		}
 		return list;
 	}
@@ -84,7 +87,7 @@ public class Anima implements FullRenderer {
 		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	public ArrayList<Effect> getMultiEffects(int lvl) {
+	public ArrayList<Calculable> getMultiEffects(int lvl) {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
@@ -113,7 +116,7 @@ public class Anima implements FullRenderer {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
+		for(Calculable e : this.effects) {
 			tooltip.append("<br>");
 			tooltip.append(e.getTooltip());
 		}
@@ -136,7 +139,7 @@ public class Anima implements FullRenderer {
 				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 				
 				if(Integer.parseInt(lineSplit[2]) > -1) {
-					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
+					ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(lineSplit[2]));
 					for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
 						effects.add(new Effect(lineSplit[j+3]));
 					
