@@ -3,23 +3,29 @@ package fr.vlik.uidesign;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 
+import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Iconable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class JCustomLabel extends JLabel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Map<Language, String> lang = new HashMap<Language, String>();
+	private ArrayList<Effect> effects;
 	
 	public JCustomLabel() {
 		super();
@@ -28,30 +34,46 @@ public class JCustomLabel extends JLabel {
 	}
 	
 	public JCustomLabel(Object object, Language lang) {
-		super();
+		this(object);
 		setBlackUI();
+		
+		if(object instanceof Writable) {
+			Writable info = (Writable) object;
+			this.lang.put(Language.FR, info.getInfo(Language.FR));
+			this.lang.put(Language.EN, info.getInfo(Language.EN).equals("") ? info.getInfo(Language.FR) : info.getInfo(Language.EN));
+			this.updateText(lang);
+			
+			this.setToolTipText(info.getTooltip());
+		}
+		
+		if(object instanceof Iconable) {
+			Iconable icon = (Iconable) object;
+			this.setIcon(icon.getIcon());
+		}
+		
+		if(object instanceof Colorable) {
+			Colorable color = (Colorable) object;
+			this.setForeground(color.getColor());
+		}
+	}
+	
+	private JCustomLabel(Object object) {
+		super();
 		
 		if(object instanceof Nucleus) {
 			Nucleus nucleus = (Nucleus) object;
-			
-			this.setText(nucleus.getName());
-			this.setIcon(nucleus.getIcon());
-			this.setToolTipText(nucleus.getTooltip());
 			this.effects = nucleus.getEffects();
 		} else if(object instanceof Energy) {
 			Energy energy = (Energy) object;
-			
-			this.setText(energy.getName(lang));
-			this.setIcon(energy.getIcon());
-			this.setToolTipText(energy.getTooltip());
 			this.effects = energy.getEffects();
 		} else if(object instanceof CombiTalent) {
 			CombiTalent combiTalent = (CombiTalent) object;
-			
-			this.setText(combiTalent.getName());
-			this.setToolTipText(combiTalent.getTooltip());
 			this.effects = combiTalent.getEffects();
 		}
+	}
+	
+	public void updateText(Language lang) {
+		this.setText(this.lang.get(lang));
 	}
 	
 	public void setObject(Object object) {
@@ -125,6 +147,14 @@ public class JCustomLabel extends JLabel {
 		label.setOpaque(true);
 		
 		return label;
+	}
+	
+	public void toStatLabel(int size, int left, int right) {
+		this.setFont(new Font("Open Sans", Font.BOLD, 16));
+		this.setBackground(Design.UIColor[0]);
+		this.setBorder(new EmptyBorder(0, left, 0, right));
+		this.setMaximumSize(new Dimension(size, 25));
+		this.setOpaque(true);
 	}
 	
 	public static JLabel getEmptyLabel(int width, int height) {

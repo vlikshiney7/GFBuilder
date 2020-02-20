@@ -73,7 +73,7 @@ public class MainFrame extends JFrame {
 	private JScrollPane scrollContent;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
-	private ArrayList<JLabel> labelStat = new ArrayList<JLabel>(TypeEffect.values().length);
+	private ArrayList<JCustomLabel> labelStat = new ArrayList<JCustomLabel>(TypeEffect.values().length);
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
@@ -289,9 +289,9 @@ public class MainFrame extends JFrame {
 				inline.setOpaque(false);
 				inline.setAlignmentX(LEFT_ALIGNMENT);
 				
-				JLabel name = JCustomLabel.getStatLabel(widthName[i], 10, 0);
-				name.setText(TypeEffect.values()[ordinal].abbrevFR);
-				name.setForeground(TypeEffect.values()[ordinal].color);
+				JCustomLabel name = new JCustomLabel(TypeEffect.values()[ordinal], Language.FR);
+				name.toStatLabel(widthName[i], 10, 0);
+				
 				this.labelStat.add(name);
 				
 				JLabel stat = JCustomLabel.getStatLabel(sizeStat - widthName[i], 0, 10);
@@ -329,9 +329,9 @@ public class MainFrame extends JFrame {
 			inline.setOpaque(false);
 			inline.setAlignmentX(LEFT_ALIGNMENT);
 			
-			JLabel name = JCustomLabel.getStatLabel(widthName[5], 10, 0);
-			name.setText(TypeEffect.values()[ordinal].abbrevFR);
-			name.setForeground(TypeEffect.values()[ordinal].color);
+			JCustomLabel name = new JCustomLabel(TypeEffect.values()[ordinal], Language.FR);
+			name.toStatLabel(widthName[5], 10, 0);
+			
 			this.labelStat.add(name);
 			
 			JLabel stat = JCustomLabel.getStatLabel(sizeStat - widthName[5], 0, 10);
@@ -509,6 +509,9 @@ public class MainFrame extends JFrame {
 	}
 	
 	public static void main(String[] args) {
+		if(args.length > 0) {
+			MainFrame.getInstance().setTitle(args[0]);
+		}
 		PageOption.getInstance().setSave(Overlay.getInstance().getCurrentName());
 	}
 	
@@ -561,18 +564,18 @@ public class MainFrame extends JFrame {
 		
 		if(lang == Language.FR) {
 			for(int i = 0; i < this.valueStat.size(); i++) {
-				this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevFR);
+				this.labelStat.get(i).updateText(lang);
 				this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
 				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
 			}
 		} else {
 			for(int i = 0; i < this.valueStat.size(); i++) {
-				if(TypeEffect.values()[i].abbrevEN.equals("")) {
-					this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevFR);
+				this.labelStat.get(i).updateText(lang);
+				
+				if(TypeEffect.values()[i].en.equals("")) {
 					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
 					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
 				} else {
-					this.labelStat.get(i).setText(TypeEffect.values()[i].abbrevEN);
 					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].en);
 					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
 				}
