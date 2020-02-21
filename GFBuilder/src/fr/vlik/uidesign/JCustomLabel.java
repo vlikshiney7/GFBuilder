@@ -33,6 +33,10 @@ public class JCustomLabel extends JLabel {
 		setBlackUI();
 	}
 	
+	public JCustomLabel(Map<Language, String> lang) {
+		this.lang = lang;
+	}
+	
 	public JCustomLabel(Object object, Language lang) {
 		this(object);
 		setBlackUI();

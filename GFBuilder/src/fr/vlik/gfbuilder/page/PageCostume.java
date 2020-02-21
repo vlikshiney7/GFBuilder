@@ -56,7 +56,12 @@ public class PageCostume extends PagePanel {
 		setLabel(Language.FR);
 		
 		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JCustomRadioButton(this.label[i+5], "radio11", "radioOff"));
+			Map<Language, String> label = new HashMap<Language, String>();
+			label.put(Language.FR, "Armes 1 main");
+			label.put(Language.EN, "Arme 2 mains");
+			
+			JCustomLabel hand = new JCustomLabel(label);
+			this.costWeapon.add(new JCustomRadioButton(hand, "radio11", "radioOff"));
 			this.costWeapon.get(i).setBackground(Design.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Design.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
@@ -71,8 +76,9 @@ public class PageCostume extends PagePanel {
 			int id = i;
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
-				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
+				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
+				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
+				this.costQuality.get(i).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
 				this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
 				this.costQuality.get(i).get(j).setForeground(Tools.costColor[j]);
 				this.costQuality.get(i).get(j).addActionListener(e -> {
@@ -132,8 +138,10 @@ public class PageCostume extends PagePanel {
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
-				this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i+2).add(new JCustomRadioButton(this.label[j+9], "radio1" + j, "radioOff"));
+				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
+				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
+				//this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
+				this.costQuality.get(i+2).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
 				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);
 				this.costQuality.get(i+2).get(j).setForeground(Tools.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(e -> {
@@ -417,12 +425,12 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(JCustomRadioButton button : this.costWeapon) {
-			button.updateText();
+			button.updateText(lang);
 		}
 		
 		for(int i = 0; i < this.costQuality.size(); i++) {
 			for(JCustomRadioButton button : this.costQuality.get(i)) {
-				button.updateText();
+				button.updateText(lang);
 			}
 		}
 		

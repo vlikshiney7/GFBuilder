@@ -18,9 +18,9 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Genki;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
@@ -100,10 +100,12 @@ public class PageMount extends PagePanel {
 			this.qualityGenki.add(new ArrayList<JCustomRadioButton>(6));
 			
 			for(int j = 0; j < 6; j++) {
-				this.label[i*7+j+3].setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.qualityGenki.get(i).add(new JCustomRadioButton(this.label[i*7+j+3], "radio0" + j, "radioOff"));
+				//this.label[i*7+j+3].setFont(new Font("Open Sans", Font.PLAIN, 12));
+				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
+				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
+				this.qualityGenki.get(i).add(new JCustomRadioButton(quality, "radio0" + j, "radioOff"));
 				this.qualityGenki.get(i).get(j).setBackground(Design.UIColor[1]);
-				this.qualityGenki.get(i).get(j).setForeground(Tools.itemColor[j]);
+				//this.qualityGenki.get(i).get(j).setForeground(Tools.itemColor[j]);
 				this.qualityGenki.get(i).get(j).addActionListener(e -> {
 					updateQualityGenki(id);
 					
@@ -295,7 +297,7 @@ public class PageMount extends PagePanel {
 		
 		for(int i = 0; i < this.qualityGenki.size(); i++) {
 			for(JCustomRadioButton button : this.qualityGenki.get(i)) {
-				button.updateText();
+				button.updateText(lang);
 			}
 		}
 	}

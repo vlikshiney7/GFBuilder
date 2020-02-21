@@ -5,15 +5,15 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class JCustomRadioButton extends JRadioButton {
 	
 	private static final long serialVersionUID = 1L;
-	private JLabel label;
+	private JCustomLabel label;
 	
 	public JCustomRadioButton() {
 		super();
@@ -22,10 +22,10 @@ public class JCustomRadioButton extends JRadioButton {
 		setVoidUI();
 	}
 	
-	public JCustomRadioButton(JLabel label, String iconOn, String iconOff) {
+	public JCustomRadioButton(JCustomLabel label, String iconOn, String iconOff) {
 		super();
 		this.label = label;
-		updateText();
+		updateText(Language.FR);
 		
 		setIconUI(iconOn, iconOff);
 		setVoidUI();
@@ -60,7 +60,8 @@ public class JCustomRadioButton extends JRadioButton {
 		this.setContentAreaFilled(false);
 	}
 	
-	public void updateText() {
-		setText(this.label.getText());
+	public void updateText(Language lang) {
+		this.label.updateText(lang);
+		this.setText(this.label.getText());
 	}
 }

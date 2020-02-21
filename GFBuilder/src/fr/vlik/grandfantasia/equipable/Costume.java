@@ -15,7 +15,8 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Costume implements Colorable, Writable {
 	
-	public static String PATH = Tools.RESOURCE + Costume.class.getSimpleName().toLowerCase() + "/";
+	public static final String PATH = Tools.RESOURCE + Costume.class.getSimpleName().toLowerCase() + "/";
+	public static final Quality[] ORDER_QUALITY = new Quality[] { Quality.GREY, Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.GOLD };
 	private static Costume[][] data;
 	static {
 		loadData();
