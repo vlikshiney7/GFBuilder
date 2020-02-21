@@ -12,17 +12,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class JCustomTabPane extends JToggleButton {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private JCustomLabel label;
 	private Color selectedBackgroundColor;
 	private Color hoverBackgroundColor;
 	private Color pressedBackgroundColor;
 
-	public JCustomTabPane(String text) {
-		super(text);
+	public JCustomTabPane(JCustomLabel label) {
+		this.label = label;
+		
 		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
 		super.setContentAreaFilled(false);
@@ -106,5 +109,10 @@ public class JCustomTabPane extends JToggleButton {
 
 	public void setPressedBackgroundColor(Color pressedBackgroundColor) {
 		this.pressedBackgroundColor = pressedBackgroundColor;
+	}
+	
+	public void updateText(Language lang) {
+		this.label.updateText(lang);
+		this.setText(this.label.getText());
 	}
 }

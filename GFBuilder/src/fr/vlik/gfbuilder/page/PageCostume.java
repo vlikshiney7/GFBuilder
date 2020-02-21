@@ -9,7 +9,6 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -214,6 +213,7 @@ public class PageCostume extends PagePanel {
 		this.costWeapon.get(0).setSelected(false);
 		this.costWeapon.get(1).setSelected(true);
 		
+		updateLanguage(Language.FR);
 		createPanel();
 		updateWeaponCost();
 		setEffects();
@@ -410,18 +410,13 @@ public class PageCostume extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
+		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 		
 		for(JCustomRadioButton button : this.costWeapon) {

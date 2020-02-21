@@ -25,7 +25,6 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
 
 public class PageSpeciality extends PagePanel implements ConvertEffect {
 
@@ -89,6 +88,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			setMaxSpe();
 		});
 		
+		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
 	}
@@ -197,18 +197,13 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
+		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 		
 		this.reinitSpe.updateText();

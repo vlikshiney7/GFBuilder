@@ -37,7 +37,7 @@ public class PageOption extends JPanel {
 	private JCustomButton saveAs;
 	private JTextPane parameter = new JTextPane();
 	
-	private JLabel[] label;
+	private JCustomLabel[] label;
 	
 	public static PageOption getInstance() {
 		return INSTANCE;
@@ -97,6 +97,7 @@ public class PageOption extends JPanel {
 		this.parameter.setBackground(Design.UIColor[1]);
 		this.parameter.setForeground(Design.FontColor[0]);
 		
+		updateLanguage(Language.FR);
 		createPanel();
 	}
 	
@@ -165,17 +166,12 @@ public class PageOption extends JPanel {
 	}
 	
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
+		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 		
 		this.newSave.updateText();

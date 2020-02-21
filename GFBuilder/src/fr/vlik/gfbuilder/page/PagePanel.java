@@ -4,19 +4,19 @@ import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.Map;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomLabel;
 
 public abstract class PagePanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
 	protected ArrayList<Calculable> effects;
-	protected JLabel[] label;
+	protected JCustomLabel[] label;
 	
 	public PagePanel() {
 		super();

@@ -1,12 +1,16 @@
 package fr.vlik.gfbuilder;
 
+import java.awt.Font;
+
 import fr.vlik.gfbuilder.page.PageGeneral;
 import fr.vlik.gfbuilder.page.PageTalent;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Talent;
 
 public class Util {
+	
+	public static final Font TITLE = new Font("Open Sans", Font.BOLD, 14);
 	
 	public static String[] setFortifFormat(int nb) {
 		String[] result = new String[nb+1];

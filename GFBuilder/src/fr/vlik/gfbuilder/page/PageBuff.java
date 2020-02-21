@@ -162,6 +162,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
         	MainFrame.getInstance().updateStat();
 		});
 		
+		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
 		setAdditionalEffects();
@@ -364,18 +365,13 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
+		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 		
 		for(int i = 0; i < this.labelEnergy.size(); i++) {

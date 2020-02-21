@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
 
+import fr.vlik.gfbuilder.Util;
 import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Energy;
@@ -29,12 +30,13 @@ public class JCustomLabel extends JLabel {
 	
 	public JCustomLabel() {
 		super();
-		this.setFont(new Font("Open Sans", Font.PLAIN, 12));
 		setBlackUI();
+		this.setFont(Util.TITLE);
 	}
 	
 	public JCustomLabel(Map<Language, String> lang) {
 		this.lang = lang;
+		setBlackUI();
 	}
 	
 	public JCustomLabel(Object object, Language lang) {

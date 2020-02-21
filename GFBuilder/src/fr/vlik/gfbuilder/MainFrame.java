@@ -64,7 +64,7 @@ public class MainFrame extends JFrame {
 	private static MainFrame INSTANCE = new MainFrame();
 	private static final long serialVersionUID = 1L;
 	
-	private String[] tabPanelText;
+	//private String[] tabPanelText;
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	
@@ -140,10 +140,10 @@ public class MainFrame extends JFrame {
 		menu.setLayout(new GridLayout(14, 1, 0, 0));
 		
 		
-		this.tabPanelText = Lang.getDataPane(Language.FR);
+		//this.tabPanelText = Lang.getDataPane();
 		
-		for(int i = 0; i < this.tabPanelText.length; i++) {
-			this.tabPaneMenu.add(new JCustomTabPane(this.tabPanelText[i]));
+		for(int i = 0; i < Lang.getDataPane().length; i++) {
+			this.tabPaneMenu.add(new JCustomTabPane(Lang.getDataPane()[i]));
 			int id = i;
 			this.tabPaneMenu.get(i).addActionListener(e -> {
 				updateTabPane(id);
@@ -544,9 +544,8 @@ public class MainFrame extends JFrame {
 			this.language.setIcon(this.language.getDisabledIcon());
 		}
 		
-		this.tabPanelText = Lang.getDataPane(lang);
-		for(int i = 0; i < this.tabPanelText.length; i++) {
-			this.tabPaneMenu.get(i).setText(tabPanelText[i]);
+		for(int i = 0; i < this.tabPaneMenu.size(); i++) {
+			this.tabPaneMenu.get(i).updateText(lang);
 		}
 		
 		for(JPanel page : this.pages) {

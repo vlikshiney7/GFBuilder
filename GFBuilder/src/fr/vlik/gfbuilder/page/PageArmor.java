@@ -12,7 +12,6 @@ import java.util.Set;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -224,6 +223,7 @@ public class PageArmor extends PagePanel {
 		
 		this.armorSetInfo = new JCustomTextPane();
 		
+		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
 	}
@@ -494,18 +494,13 @@ public class PageArmor extends PagePanel {
 
 	@Override
 	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
+		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, NUM_PAGE);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 	}
 	

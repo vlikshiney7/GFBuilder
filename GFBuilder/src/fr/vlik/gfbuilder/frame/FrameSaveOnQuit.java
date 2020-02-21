@@ -9,7 +9,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -30,7 +29,7 @@ public class FrameSaveOnQuit extends JFrame {
 	private JCustomButton leave;
 	private JCustomButton cancel;
 	
-	private JLabel[] label;
+	private JCustomLabel[] label;
 	
 	public static FrameSaveOnQuit getInstance() {
 		return INSTANCE;
@@ -38,7 +37,7 @@ public class FrameSaveOnQuit extends JFrame {
 	
 	private FrameSaveOnQuit() {
 		this.setLayout(new BorderLayout());
-		setLabel(Language.FR);
+		this.label = Lang.getDataLabel(14);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveOnQuit.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
@@ -76,6 +75,8 @@ public class FrameSaveOnQuit extends JFrame {
 			this.setVisible(false);
 		});
 		
+		updateLanguage(Language.FR);
+		
 		JPanel pageQuit = new JPanel();
 		pageQuit.setLayout(new BoxLayout(pageQuit, BoxLayout.Y_AXIS));
 		pageQuit.setBackground(Design.UIColor[2]);
@@ -96,18 +97,9 @@ public class FrameSaveOnQuit extends JFrame {
 		this.add(pageQuit);
 	}
 	
-	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 14);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
-	}
-	
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 14);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 		
 		this.save.updateText();

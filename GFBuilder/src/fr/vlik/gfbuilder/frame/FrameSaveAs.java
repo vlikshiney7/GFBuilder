@@ -10,7 +10,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
@@ -35,7 +34,7 @@ public class FrameSaveAs extends JFrame {
 	private JCustomTextField askName;
 	private JCustomButton submit;
 	
-	private JLabel[] label;
+	private JCustomLabel[] label;
 	
 	public static FrameSaveAs getInstance() {
 		return INSTANCE;
@@ -43,7 +42,7 @@ public class FrameSaveAs extends JFrame {
 	
 	private FrameSaveAs() {
 		this.setLayout(new BorderLayout());
-		setLabel(Language.FR);
+		this.label = Lang.getDataLabel(13);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveAs.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
@@ -82,6 +81,7 @@ public class FrameSaveAs extends JFrame {
 		});
 		this.submit.setAlignmentX(CENTER_ALIGNMENT);
 		
+		updateLanguage(Language.FR);
 		
 		JPanel pageSave = new JPanel();
 		pageSave.setLayout(new BoxLayout(pageSave, BoxLayout.Y_AXIS));
@@ -101,18 +101,9 @@ public class FrameSaveAs extends JFrame {
 		this.add(pageSave);
 	}
 	
-	protected void setLabel(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 13);
-		this.label = new JLabel[getter.length];
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i] = JCustomLabel.getSimpleLabel(getter[i]);
-		}
-	}
-	
 	public void updateLanguage(Language lang) {
-		String[] getter = Lang.getDataLabel(lang, 13);
-		for(int i = 0; i < getter.length; i++) {
-			this.label[i].setText(getter[i]);
+		for(int i = 0; i < this.label.length; i++) {
+			this.label[i].updateText(lang);
 		}
 	}
 	
