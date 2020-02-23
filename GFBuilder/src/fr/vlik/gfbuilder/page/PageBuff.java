@@ -543,7 +543,10 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			this.guildBuff.setSelectedItem(BuffIcon.getGuild(config.get("GuildBuff" + i)));
+			BuffIcon buffGuild = BuffIcon.getGuild(config.get("GuildBuff" + i));
+			if(buffGuild != null) {
+				this.guildBuff.setSelectedItem(buffGuild);
+			}
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {

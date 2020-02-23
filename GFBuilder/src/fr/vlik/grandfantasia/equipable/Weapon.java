@@ -228,7 +228,7 @@ public class Weapon extends Equipment {
 					continue;
 				}
 				
-				if(!e.getWithReinca()) {
+				if(e.getWithReinca()) {
 					code += ", " + e.getWithReinca();
 				}
 				
@@ -281,6 +281,8 @@ public class Weapon extends Equipment {
 		}
 		
 		code += "}}, new ArrayList<Effect>() ),";
+		
+		code = code.replace(".0)", ")");
 		
 		return code;
 	}
