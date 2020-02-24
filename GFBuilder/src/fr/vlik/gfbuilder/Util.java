@@ -10,7 +10,7 @@ import fr.vlik.grandfantasia.Talent;
 
 public class Util {
 	
-	public static final Font TITLE = new Font("Open Sans", Font.BOLD, 14);
+	public static final Font TITLE = new Font("Open Sans", Font.BOLD, 16);
 	
 	public static String[] setFortifFormat(int nb) {
 		String[] result = new String[nb+1];

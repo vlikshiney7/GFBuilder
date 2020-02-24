@@ -31,12 +31,13 @@ public class JCustomLabel extends JLabel {
 	public JCustomLabel() {
 		super();
 		setBlackUI();
-		this.setFont(Util.TITLE);
 	}
 	
 	public JCustomLabel(Map<Language, String> lang) {
 		this.lang = lang;
 		setBlackUI();
+		this.setFont(Util.TITLE); // TODO faire en sorte que ce soit supprimé
+		this.setAlignmentX(CENTER_ALIGNMENT);
 	}
 	
 	public JCustomLabel(Object object, Language lang) {

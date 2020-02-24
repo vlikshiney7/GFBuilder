@@ -25,6 +25,8 @@ public class JCustomRadioButton extends JRadioButton {
 	public JCustomRadioButton(JCustomLabel label, String iconOn, String iconOff) {
 		super();
 		this.label = label;
+		this.setFont(this.label.getFont());
+		this.setForeground(this.label.getForeground());
 		updateText(Language.FR);
 		
 		setIconUI(iconOn, iconOff);
@@ -34,7 +36,7 @@ public class JCustomRadioButton extends JRadioButton {
 	public JCustomRadioButton(Icon icon) {
 		super(icon);
 	}
-
+	
 	public void setIconUI(String iconOn, String iconOff) {
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + iconOn + ".png"))));
