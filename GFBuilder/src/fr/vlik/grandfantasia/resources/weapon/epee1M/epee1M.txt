@@ -1,13 +1,3 @@
-Katanas du Givre/0,1,2,3/86/1/false/false/false/1,0,0/Atk,false,1458,true/79pre
-Epée de Cendre d'Amaterasu/0,1,2,3/85/6/true/true/false/5,0,0/Atk,false,2872,true/FCE,false,119,true/VIT,false,43,true/AGI,false,52,true/Toucher,false,18/85vio
-Zanpakuto Enflammé du Dragon/0,1,2,3/85/5/true/true/false/5,0,0/Atk,false,2585,true/FCE,false,99,true/VIT,false,45,true/AGI,false,50,true/Toucher,false,18/85gold
-Lame Glaciale d'Hitsugaya/0,1,2,3/85/4/false/true/false/8,0,0/Atk,false,2010,true/FCE,false,28,true/VIT,false,18,true/AGI,false,20,true/Toucher,false,12/TCCP,false,8/DCCP,false,10/Nature,false,40/85pvp
-Lave du Volcan du Dragon/0,1,2,3/84/4/true/true/false/5,0,0/Atk,false,1980,true/FCE,false,72,true/VIT,false,20,true/AGI,false,24,true/Toucher,false,12/84pre
-Épée d'Assaut Inébranlable/0,1,2,3/81/3/false/false/false/3,0,0/Atk,false,2157,true/FCE,false,34,true/AGI,false,34,true/81bleu
-Épée de Glace Brûlante de Sprite/0,1,2,3/81/2/false/false/false/3,0,0/Atk,false,1618,true/AGI,false,22,true/Toucher,false,10/79pre
-Lame Torturée/0,1,2,3/81/1/false/false/false/1,0,0/Atk,false,1348,true/86bleu
-Epée Ikazuchi Jumeaux/0,1,2,3/80/6/true/true/false/5,0,0/Atk,false,2653,true/FCE,false,95,true/VIT,false,34,true/AGI,false,41,true/Toucher,false,18/80vio
-Vierge Immaculée/0,1,2,3/80/5/true/true/false/6,0,0/Atk,false,2387,true/FCE,false,67,true/VIT,false,27,true/AGI,false,42,true/Toucher,false,18/FCE,false,50/80gold
 Sombre Sournoiserie/0,1,2,3/80/3/false/true/false/4,0,0/Atk,false,2122,true/FCE,false,44,true/VIT,false,20,true/Toucher,false,10/80gvg
 Invincible Tyrannie/0,1,2,3/79/4/true/true/false/6,0,0/Atk,false,1827,true/FCE,false,18,true/VIT,false,18,true/AGI,false,24,true/Toucher,false,14/FCE,false,50/79pre
 Double Lame du Levant/0,1,2,3/76/3/false/false/false/4,0,0/Atk,false,1984,true/FCE,false,32,true/AGI,false,32,true/Toucher,false,14/81bleu

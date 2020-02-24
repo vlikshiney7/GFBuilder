@@ -648,17 +648,13 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < this.costume.size(); i++) {
 			Costume costume = Costume.get(config.get("Costume" + i), Integer.valueOf(config.get("CostQuality" + i)));
-			if(costume == null) {
-				this.costume.get(i).setSelectedIndex(0);
-			} else {
+			
+			if(costume != null) {
 				this.costume.get(i).setSelectedItem(costume);
 			}
-			
-			this.costume.get(i).setSelectedItem(Costume.get(config.get("Costume" + i), Integer.valueOf(config.get("CostQuality" + i))));
 		}
 		
 		for(int i = 0; i < this.costPearl.size(); i++) {
-			
 			if(i < 2) {
 				Pearl pearl = Pearl.getWeaponCost(config.get("Pearl" + i));
 				
