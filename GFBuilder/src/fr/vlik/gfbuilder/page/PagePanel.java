@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.swing.JPanel;
 
+import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
@@ -18,14 +19,16 @@ public abstract class PagePanel extends JPanel {
 	protected ArrayList<Calculable> effects;
 	protected JCustomLabel[] label;
 	
-	public PagePanel() {
+	public PagePanel(int caseTabLabel) {
 		super();
 		this.setBackground(Design.UIColor[2]);
+		this.label = Lang.getDataLabel(caseTabLabel);
 	}
 	
-	public PagePanel(LayoutManager layout) {
+	public PagePanel(LayoutManager layout, int caseTabLabel) {
 		super(layout);
 		this.setBackground(Design.UIColor[2]);
+		this.label = Lang.getDataLabel(caseTabLabel);
 	}
 
 	public ArrayList<Calculable> getEffects() {
@@ -35,8 +38,6 @@ public abstract class PagePanel extends JPanel {
 	abstract protected void setEffects();
 	
 	abstract protected void createPanel();
-	
-	abstract protected void setLabel(Language lang);
 	
 	abstract public void updateLanguage(Language lang);
 	

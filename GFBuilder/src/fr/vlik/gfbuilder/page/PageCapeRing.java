@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +11,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
@@ -50,9 +48,8 @@ public class PageCapeRing extends PagePanel {
 	}
 	
 	private PageCapeRing() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
@@ -279,8 +276,9 @@ public class PageCapeRing extends PagePanel {
 		
 		JPanel xpCape = new JPanel(new GridLayout(1, 3, 10, 3));
 		xpCape.setBackground(Design.UIColor[1]);
-		this.label[1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		xpCape.add(this.label[1]);
+		this.label[1].setFont(Design.SUBTITLE);
+		
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 			xp.setBackground(Design.UIColor[1]);
@@ -294,6 +292,7 @@ public class PageCapeRing extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(descCape);
 		elem1.add(Box.createVerticalStrut(5));
@@ -312,8 +311,9 @@ public class PageCapeRing extends PagePanel {
 			
 			JPanel xpRing = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpRing.setBackground(Design.UIColor[1]);
-			this.label[i+4].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			xpRing.add(this.label[i+4]);
+			this.label[i+4].setFont(Design.SUBTITLE);
+			
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Design.UIColor[1]);
@@ -327,6 +327,7 @@ public class PageCapeRing extends PagePanel {
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i+2]);
+			this.label[i+2].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descRing);
 			elemI.add(Box.createVerticalStrut(5));
@@ -343,11 +344,6 @@ public class PageCapeRing extends PagePanel {
 		for(JPanel panel : this.showAndHideXpStuff) {
 			panel.setVisible(false);
 		}
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

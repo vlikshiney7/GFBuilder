@@ -10,7 +10,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Bague;
 import fr.vlik.grandfantasia.BuffIcon;
@@ -39,9 +38,8 @@ public class PageOther extends PagePanel {
 	}
 
 	private PageOther() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		this.bague = new JCustomComboBox<Bague>(Bague.getData());
 		this.bague.addActionListener(e -> {
@@ -98,10 +96,12 @@ public class PageOther extends PagePanel {
 		page12Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page12Elem1.setBackground(Design.UIColor[1]);
 		page12Elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		page12Elem1.add(Box.createVerticalStrut(10));
 		page12Elem1.add(this.bague);
 		page12Elem1.add(Box.createVerticalStrut(15));
 		page12Elem1.add(this.label[1]);
+		this.label[1].setFont(Design.TITLE);
 		page12Elem1.add(Box.createVerticalStrut(10));
 		page12Elem1.add(this.loveCo);
 		
@@ -113,6 +113,7 @@ public class PageOther extends PagePanel {
 		page12Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page12Elem2.setBackground(Design.UIColor[1]);
 		page12Elem2.add(this.label[2]);
+		this.label[2].setFont(Design.TITLE);
 		page12Elem2.add(Box.createVerticalStrut(10));
 		page12Elem2.add(this.anima);
 		
@@ -122,11 +123,6 @@ public class PageOther extends PagePanel {
 		this.add(page12Elem1);
 		this.add(Box.createVerticalStrut(10));
 		this.add(page12Elem2);
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

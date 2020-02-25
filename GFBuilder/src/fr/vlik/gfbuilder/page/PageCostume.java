@@ -12,7 +12,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Runway;
@@ -50,9 +49,8 @@ public class PageCostume extends PagePanel {
 	}
 	
 	private PageCostume() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		for(int i = 0; i < 2; i++) {
 			Map<Language, String> label = new HashMap<Language, String>();
@@ -138,8 +136,7 @@ public class PageCostume extends PagePanel {
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
 				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
-				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
-				//this.label[j+9].setFont(new Font("Open Sans", Font.PLAIN, 12));
+				quality.setFont(Design.TEXT);
 				this.costQuality.get(i+2).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
 				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);
 				this.costQuality.get(i+2).get(j).setForeground(Tools.costColor[j]);
@@ -283,8 +280,8 @@ public class PageCostume extends PagePanel {
 		ButtonGroup costGroup = new ButtonGroup();
 		
 		costGroupPanel.setBackground(Design.UIColor[1]);
-		this.label[4].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		costGroupPanel.add(this.label[4]);
+		this.label[4].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
 			
@@ -299,8 +296,8 @@ public class PageCostume extends PagePanel {
 		for(int i = 0; i < 2; i++) {
 			JPanel currentQualityPanel = new JPanel();
 			currentQualityPanel.setBackground(Design.UIColor[1]);
-			this.label[i+7].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			currentQualityPanel.add(this.label[i+7]);
+			this.label[i+7].setFont(Design.SUBTITLE);
 			
 			ButtonGroup currentQuality = new ButtonGroup();
 			for(int j = 0; j < 5; j++) {
@@ -343,6 +340,7 @@ public class PageCostume extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(costGroupPanel);
 		elem1.add(Box.createVerticalStrut(3));
@@ -375,6 +373,7 @@ public class PageCostume extends PagePanel {
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i+1]);
+			this.label[i+1].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(currentQualityPanel);
 			elemI.add(Box.createVerticalStrut(3));
@@ -406,11 +405,6 @@ public class PageCostume extends PagePanel {
 		for(JPanel panel : this.showAndHideRunway) {
 			panel.setVisible(false);
 		}
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

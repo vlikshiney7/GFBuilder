@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.grandfantasia.Archive;
@@ -48,8 +47,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	private PageGeneral() {
-		super(new GridLayout(3, 2, 10, 10));
-		setLabel(Language.FR);
+		super(new GridLayout(3, 2, 10, 10), NUM_PAGE);
 		
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleData(0));
 		this.grade.addActionListener(e -> {
@@ -201,6 +199,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		JPanel panelTitle1 = new JPanel();
 		panelTitle1.setBackground(Design.UIColor[1]);
 		panelTitle1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		
 		elem1.add(panelTitle1);
 		elem1.add(this.grade);
@@ -213,6 +212,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		JPanel panelTitle2 = new JPanel();
 		panelTitle2.setBackground(Design.UIColor[1]);
 		panelTitle2.add(this.label[1]);
+		this.label[1].setFont(Design.TITLE);
 		
 		elem2.add(panelTitle2);
 		elem2.add(this.lvl);
@@ -225,6 +225,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		JPanel panelTitle3 = new JPanel();
 		panelTitle3.setBackground(Design.UIColor[1]);
 		panelTitle3.add(this.label[2]);
+		this.label[2].setFont(Design.TITLE);
 		
 		elem3.add(panelTitle3);
 		elem3.add(this.reinca);
@@ -237,6 +238,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		JPanel panelTitle4 = new JPanel();
 		panelTitle4.setBackground(Design.UIColor[1]);
 		panelTitle4.add(this.label[3]);
+		this.label[3].setFont(Design.TITLE);
 		
 		elem4.add(panelTitle4);
 		elem4.add(this.title);
@@ -249,6 +251,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		JPanel panelTitle5 = new JPanel();
 		panelTitle5.setBackground(Design.UIColor[1]);
 		panelTitle5.add(this.label[4]);
+		this.label[4].setFont(Design.TITLE);
 		
 		elem5.add(panelTitle5);
 		elem5.add(this.yggdra);
@@ -261,6 +264,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		JPanel panelTitle6 = new JPanel();
 		panelTitle6.setBackground(Design.UIColor[1]);
 		panelTitle6.add(this.label[5]);
+		this.label[5].setFont(Design.TITLE);
 		
 		elem6.add(panelTitle6);
 		elem6.add(this.archive);
@@ -271,11 +275,6 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.add(elem4);
 		this.add(elem5);
 		this.add(elem6);
-	}
-	
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

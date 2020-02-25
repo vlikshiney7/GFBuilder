@@ -1,7 +1,6 @@
 package fr.vlik.gfbuilder.page;
 
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Grade;
@@ -54,9 +52,8 @@ public class PageTalent extends PagePanel {
 	}
 
 	private PageTalent() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		
@@ -178,6 +175,7 @@ public class PageTalent extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(chosenTalent);
 		elem1.add(Box.createVerticalStrut(5));
@@ -197,6 +195,7 @@ public class PageTalent extends PagePanel {
 			colTalent.setBorder(new EmptyBorder(10, 10, 10, 10));
 			colTalent.setBackground(Design.UIColor[1]);
 			colTalent.add(this.label[i+1]);
+			this.label[i+1].setFont(Design.TITLE);
 			colTalent.add(Box.createVerticalStrut(10));
 			
 			JPanel blocTalent = new JPanel(new GridLayout(4, 1, 10, 10));
@@ -228,8 +227,8 @@ public class PageTalent extends PagePanel {
 				subtitle.setLayout(new BoxLayout(subtitle, BoxLayout.Y_AXIS));
 				subtitle.setBorder(new EmptyBorder(5, 5, 5, 5));
 				subtitle.setBackground(Design.UIColor[0]);
-				this.label[i*4+j+3].setFont(new Font("Open Sans", Font.PLAIN, 14));
 				subtitle.add(this.label[i*4+j+3]);
+				this.label[i*4+j+3].setFont(Design.SUBTITLE);
 				subtitle.add(lineTalent);
 				
 				this.showAndHideTalent.add(subtitle);
@@ -261,18 +260,13 @@ public class PageTalent extends PagePanel {
 	}
 	
 	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
-	}
-	
-	@Override
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
 		}
-
-		this.reinitTalent.updateText();
-		this.maxTalent.updateText();
+		
+		this.reinitTalent.updateText(lang);
+		this.maxTalent.updateText(lang);
 	}
 	
 	public void updateListTalent() {

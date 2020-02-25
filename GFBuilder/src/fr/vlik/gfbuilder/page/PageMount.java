@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +12,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Mount;
 import fr.vlik.grandfantasia.Reinca;
@@ -54,9 +52,8 @@ public class PageMount extends PagePanel {
 	}
 	
 	private PageMount() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 		this.mount = new JCustomComboBox<Mount>(tabMount);
@@ -99,12 +96,11 @@ public class PageMount extends PagePanel {
 			this.qualityGenki.add(new ArrayList<JCustomRadioButton>(6));
 			
 			for(int j = 0; j < 6; j++) {
-				//this.label[i*7+j+3].setFont(new Font("Open Sans", Font.PLAIN, 12));
 				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
-				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
+				quality.setFont(Design.TEXT);
+				
 				this.qualityGenki.get(i).add(new JCustomRadioButton(quality, "radio0" + j, "radioOff"));
 				this.qualityGenki.get(i).get(j).setBackground(Design.UIColor[1]);
-				//this.qualityGenki.get(i).get(j).setForeground(Tools.itemColor[j]);
 				this.qualityGenki.get(i).get(j).addActionListener(e -> {
 					updateQualityGenki(id);
 					
@@ -205,8 +201,9 @@ public class PageMount extends PagePanel {
 	protected void createPanel() {
 		JPanel xpRide = new JPanel(new GridLayout(1, 3, 10, 3));
 		xpRide.setBackground(Design.UIColor[1]);
-		this.label[1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		xpRide.add(this.label[1]);
+		this.label[1].setFont(Design.SUBTITLE);
+		
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 			xp.setBackground(Design.UIColor[1]);
@@ -220,6 +217,7 @@ public class PageMount extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(this.mount);
 		elem1.add(Box.createVerticalStrut(5));
@@ -257,6 +255,7 @@ public class PageMount extends PagePanel {
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i*7+2]);
+			this.label[i*7+2].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(qualityPanel);
 			elemI.add(Box.createVerticalStrut(5));
@@ -277,11 +276,6 @@ public class PageMount extends PagePanel {
 			star.get(0).setSelected(true);
 		}
 		
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

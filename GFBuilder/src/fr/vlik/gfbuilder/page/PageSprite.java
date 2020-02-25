@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +10,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Blason.BlasonType;
@@ -36,9 +34,8 @@ public class PageSprite extends PagePanel {
 	}
 
 	private PageSprite() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
@@ -88,14 +85,15 @@ public class PageSprite extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel panelBlason = new JPanel();
 			panelBlason.setLayout(new BoxLayout(panelBlason, BoxLayout.Y_AXIS));
 			panelBlason.setBackground(Design.UIColor[1]);
-			this.label[i+1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			panelBlason.add(this.label[i+1]);
+			this.label[i+1].setFont(Design.SUBTITLE);
 			panelBlason.add(Box.createVerticalStrut(3));
 			panelBlason.add(this.blason.get(i));
 			panelBlason.add(Box.createVerticalStrut(5));
@@ -108,17 +106,13 @@ public class PageSprite extends PagePanel {
 		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem2.setBackground(Design.UIColor[1]);
 		elem2.add(this.label[3]);
+		this.label[3].setFont(Design.TITLE);
 		elem2.add(Box.createVerticalStrut(10));
 		elem2.add(this.isleBuff);
 		
 		this.add(elem1);
 		this.add(Box.createVerticalStrut(10));
 		this.add(elem2);
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

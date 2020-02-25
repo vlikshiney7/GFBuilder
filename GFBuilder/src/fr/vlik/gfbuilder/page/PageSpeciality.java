@@ -14,7 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Reinca;
@@ -48,9 +47,8 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	private PageSpeciality() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		this.tabSpeciality = Speciality.getData(PageGeneral.getInstance().getGrade().getGrade());
 		
@@ -122,12 +120,13 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.setBackground(Design.UIColor[1]);
 		this.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		this.add(Box.createVerticalStrut(10));
 		
 		JPanel remain = new JPanel();
 		remain.setBackground(Design.UIColor[1]);
-		this.label[1].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		remain.add(this.label[1]);
+		this.label[1].setFont(Design.SUBTITLE);
 		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
 		this.nbSpePoint.setForeground(Design.FontColor[0]);
 		remain.add(this.nbSpePoint);
@@ -144,9 +143,9 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		int numSpe = 0;
 		
 		for(int i = 0; i < 4; i++) {
-			this.label[i+2].setFont(new Font("Open Sans", Font.PLAIN, 14));
-			this.label[i+2].setPreferredSize(new Dimension(76, 70));
 			catSpe.add(this.label[i+2]);
+			this.label[i+2].setFont(Design.SUBTITLE);
+			this.label[i+2].setPreferredSize(new Dimension(76, 70));
 			
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
@@ -196,18 +195,13 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
-	}
-	
-	@Override
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
 		}
 		
-		this.reinitSpe.updateText();
-		this.maxSpe.updateText();
+		this.reinitSpe.updateText(lang);
+		this.maxSpe.updateText(lang);
 	}
 	
 	public void updateListSpe() {

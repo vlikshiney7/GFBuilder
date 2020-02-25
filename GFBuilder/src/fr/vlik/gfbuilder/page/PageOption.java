@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 
@@ -47,7 +46,7 @@ public class PageOption extends JPanel {
 		super();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setBackground(Design.UIColor[2]);
-		setLabel(Language.FR);
+		this.label = Lang.getDataLabel(NUM_PAGE);
 		
 		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.getData());
 		this.save.addActionListener(e -> {
@@ -92,7 +91,7 @@ public class PageOption extends JPanel {
 		
 		this.parameter.setEditable(false);
 		this.parameter.setText(Lang.getDataCredit(Language.FR));
-		this.parameter.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.parameter.setFont(Design.SUBTITLE);
 		this.parameter.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.parameter.setBackground(Design.UIColor[1]);
 		this.parameter.setForeground(Design.FontColor[0]);
@@ -136,6 +135,7 @@ public class PageOption extends JPanel {
 		JPanel inline1 = new JPanel(new GridLayout(1, 3, 10, 0));
 		inline1.setBackground(Design.UIColor[1]);
 		inline1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		inline1.add(this.save);
 		inline1.add(new JLabel());
 		
@@ -153,9 +153,10 @@ public class PageOption extends JPanel {
 		creditPanel.setBackground(Design.UIColor[1]);
 		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 		creditPanel.add(this.label[4]);
+		this.label[4].setFont(Design.TITLE);
 		creditPanel.add(Box.createVerticalStrut(10));
-		this.label[5].setFont(new Font("Open Sans", Font.BOLD, 14));
 		creditPanel.add(this.label[5]);
+		this.label[5].setFont(Design.SUBTITLE);
 		creditPanel.add(Box.createVerticalStrut(5));
 		creditPanel.add(this.parameter);
 		
@@ -165,18 +166,14 @@ public class PageOption extends JPanel {
 		this.add(creditPanel);
 	}
 	
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
-	}
-	
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
 		}
 		
-		this.newSave.updateText();
-		this.currentSave.updateText();
-		this.saveAs.updateText();
+		this.newSave.updateText(lang);
+		this.currentSave.updateText(lang);
+		this.saveAs.updateText(lang);
 		this.parameter.setText(Lang.getDataCredit(lang));
 	}
 	

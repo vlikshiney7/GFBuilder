@@ -90,6 +90,7 @@ public class FrameSaveLoader extends JFrame {
 		pageLoad.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
 		pageLoad.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		
 		JPanel buttons = new JPanel(new GridLayout(1, 3, 10, 10));
 		buttons.setBackground(Design.UIColor[2]);
@@ -109,9 +110,9 @@ public class FrameSaveLoader extends JFrame {
 			this.label[i].updateText(lang);
 		}
 		
-		this.load.updateText();
-		this.delete.updateText();
-		this.cancel.updateText();
+		this.load.updateText(lang);
+		this.delete.updateText(lang);
+		this.cancel.updateText(lang);
 	}
 	
 	public void popup() {

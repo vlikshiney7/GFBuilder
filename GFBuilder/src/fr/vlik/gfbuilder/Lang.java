@@ -15,30 +15,22 @@ public class Lang {
 	private static JCustomLabel[] dataPane;
 	private static JCustomLabel[][] dataLabel;
 	
-	//private static String[][][] dataLabel;
-	//private static String[][] dataPane;
 	private static String[][] dataCredit;
 	static {
 		loadData();
 	}
 	
 	public static void loadData() {
-		ArrayList<ArrayList<ArrayList<String>>> list = new ArrayList<ArrayList<ArrayList<String>>>();
-		
-		ArrayList<ArrayList<JCustomLabel>> list2 = new ArrayList<ArrayList<JCustomLabel>>();
+		ArrayList<ArrayList<JCustomLabel>> list = new ArrayList<ArrayList<JCustomLabel>>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/trad.txt"), "UTF-8"));
 			String line = reader.readLine();
-			list.add(new ArrayList<ArrayList<String>>());
-			list.add(new ArrayList<ArrayList<String>>());
 			
 			int lineCount = 0;
 			while(line != null) {
-				list.get(0).add(new ArrayList<String>());
-				list.get(1).add(new ArrayList<String>());
-				list2.add(new ArrayList<JCustomLabel>());
+				list.add(new ArrayList<JCustomLabel>());
 				
 				String[] lineSplit = line.split("/");
 				
@@ -49,10 +41,7 @@ public class Lang {
 					lang.put(Language.FR, trad[0]);
 					lang.put(Language.EN, trad[1]);
 					
-					list.get(0).get(lineCount).add(trad[0]);
-					list.get(1).get(lineCount).add(trad[1]);
-					
-					list2.get(lineCount).add(new JCustomLabel(lang));
+					list.get(lineCount).add(new JCustomLabel(lang));
 				}
 				lineCount++;
 				line = reader.readLine();
@@ -83,19 +72,19 @@ public class Lang {
 			System.out.println("Error with " + Lang.class.getClass().getSimpleName() + " class, File credit.txt");
 		}
 		
-		Lang.dataLabel = new JCustomLabel[list2.size()-1][];
-		Lang.dataPane = new JCustomLabel[list2.get(0).size()];
+		Lang.dataLabel = new JCustomLabel[list.size()-1][];
+		Lang.dataPane = new JCustomLabel[list.get(0).size()];
 		Lang.dataCredit = new String[credit.size()][credit.get(0).size()];
 		
-		for(int i = 0; i < list2.size(); i++) {
+		for(int i = 0; i < list.size(); i++) {
 			if(i == 0) {
-				for(int j = 0; j < list2.get(i).size(); j++) {
-					Lang.dataPane[j] = list2.get(i).get(j);
+				for(int j = 0; j < list.get(i).size(); j++) {
+					Lang.dataPane[j] = list.get(i).get(j);
 				}
 			} else {
-				JCustomLabel[] pageOrFrame = new JCustomLabel[list2.get(i).size()];
-				for(int j = 0; j < list2.get(i).size(); j++) {
-					pageOrFrame[j] = list2.get(i).get(j);
+				JCustomLabel[] pageOrFrame = new JCustomLabel[list.get(i).size()];
+				for(int j = 0; j < list.get(i).size(); j++) {
+					pageOrFrame[j] = list.get(i).get(j);
 				}
 				
 				Lang.dataLabel[i-1] = pageOrFrame;

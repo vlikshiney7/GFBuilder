@@ -1,7 +1,6 @@
 package fr.vlik.gfbuilder.page;
 
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.BuffIcon;
 import fr.vlik.grandfantasia.Energy;
@@ -59,9 +57,8 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	private PageBuff() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		for(int i = 0; i < 6; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
@@ -228,15 +225,16 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem1.setBackground(Design.UIColor[1]);
 		page11Elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		page11Elem1.add(Box.createVerticalStrut(10));
 		
 		
 		for(int i = 0; i < 6; i++) {
 			JPanel nucleus = new JPanel();
 			nucleus.setBackground(Design.UIColor[1]);
-			this.label[i+1].setFont(new Font("Open Sans", Font.PLAIN, 14));
-			this.label[i+1].setPreferredSize(new Dimension(60, 20));
 			nucleus.add(this.label[i+1]);
+			this.label[i+1].setFont(Design.SUBTITLE);
+			this.label[i+1].setPreferredSize(new Dimension(60, 20));
 			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
 			nucleus.add(this.nucleus.get(i));
 			nucleus.add(Box.createVerticalStrut(5));
@@ -266,6 +264,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem2.setBackground(Design.UIColor[1]);
 		page11Elem2.add(this.label[7]);
+		this.label[7].setFont(Design.TITLE);
 		page11Elem2.add(Box.createVerticalStrut(10));
 		page11Elem2.add(energies);
 		
@@ -306,11 +305,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem3.setBackground(Design.UIColor[1]);
 		page11Elem3.add(this.label[8]);
+		this.label[8].setFont(Design.TITLE);
 		page11Elem3.add(Box.createVerticalStrut(10));
 		page11Elem3.add(blocBuffGuild);
 		page11Elem3.add(Box.createVerticalStrut(10));
-		this.label[9].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		page11Elem3.add(this.label[9]);
+		this.label[9].setFont(Design.SUBTITLE);
 		page11Elem3.add(Box.createVerticalStrut(5));
 		page11Elem3.add(this.guildBuff);
 		
@@ -343,11 +343,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem4.setBackground(Design.UIColor[1]);
 		page11Elem4.add(this.label[10]);
+		this.label[10].setFont(Design.TITLE);
 		page11Elem4.add(Box.createVerticalStrut(10));
 		page11Elem4.add(blocStone);
 		page11Elem4.add(Box.createVerticalStrut(10));
-		this.label[11].setFont(new Font("Open Sans", Font.PLAIN, 14));
 		page11Elem4.add(this.label[11]);
+		this.label[11].setFont(Design.SUBTITLE);
 		page11Elem4.add(Box.createVerticalStrut(5));
 		page11Elem4.add(this.stone);
 		
@@ -362,11 +363,6 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		this.add(page11Inter1);
 		this.add(page11Inter2);
 	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
-	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
@@ -375,7 +371,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		for(int i = 0; i < this.labelEnergy.size(); i++) {
-			this.labelEnergy.get(i).setText(Energy.getData()[i].getName(lang));
+			this.labelEnergy.get(i).updateText(lang);
 		}
 	}
 	

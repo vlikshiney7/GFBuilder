@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +11,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Bullet;
 import fr.vlik.grandfantasia.Enchantment;
@@ -68,9 +66,8 @@ public class PageWeapon extends PagePanel {
 	}
 
 	public PageWeapon() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		for(int i = 0; i < 3; i++) {
 			int id = i;
@@ -310,21 +307,10 @@ public class PageWeapon extends PagePanel {
 		
 		if( (weaponType[0] == WeaponType.EPEE1M || weaponType[0] == WeaponType.MARTEAU1M || weaponType[0] == WeaponType.HACHE1M || weaponType[0] == WeaponType.MECA1M)
 				&& (weaponType[1] == WeaponType.EPEE1M || weaponType[1] == WeaponType.MARTEAU1M || weaponType[1] == WeaponType.HACHE1M || weaponType[1] == WeaponType.MECA1M) ) {
-			/*weapons[0].doubleWeapon();
-			weapons[1].doubleWeapon();*/
 			duoWeapon = true;
 			
 			Weapon.doubleWeapon(weapons[0], weapons[1]);
 		}
-		
-		/*
-		if( (weaponType[0] == WeaponType.EPEE1M || weaponType[0] == WeaponType.MARTEAU1M || weaponType[0] == WeaponType.HACHE1M || weaponType[0] == WeaponType.MECA1M)
-				&& (weaponType[1] == WeaponType.EPEE1M || weaponType[1] == WeaponType.MARTEAU1M || weaponType[1] == WeaponType.HACHE1M || weaponType[1] == WeaponType.MECA1M) ) {
-			weapons[0].doubleWeapon();
-			weapons[1].doubleWeapon();
-			
-			Weapon.doubleWeapon(weapons[0], weapons[1]);
-		}*/
 		
 		for(int i = 0; i < weapons.length; i++) {
 			list.addAll(weapons[i].getEffects());
@@ -425,8 +411,9 @@ public class PageWeapon extends PagePanel {
 			
 			JPanel xpWeapon = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpWeapon.setBackground(Design.UIColor[1]);
-			this.label[i+3].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			xpWeapon.add(this.label[i+3]);
+			this.label[i+3].setFont(Design.SUBTITLE);
+			
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Design.UIColor[1]);
@@ -440,6 +427,7 @@ public class PageWeapon extends PagePanel {
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i]);
+			this.label[i].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descWeapon);
 			elemI.add(Box.createVerticalStrut(2));
@@ -465,6 +453,7 @@ public class PageWeapon extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[6]);
+		this.label[6].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(this.bullet);
 		
@@ -473,11 +462,6 @@ public class PageWeapon extends PagePanel {
 		for(JPanel panel : this.showAndHideXpStuff) {
 			panel.setVisible(false);
 		}
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

@@ -1,7 +1,6 @@
 package fr.vlik.gfbuilder.frame;
 
 import java.awt.BorderLayout;
-import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
@@ -89,14 +88,15 @@ public class FrameSaveAs extends JFrame {
 		pageSave.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
 		pageSave.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		pageSave.add(Box.createVerticalStrut(10));
 		pageSave.add(this.askName);
 		pageSave.add(Box.createVerticalStrut(10));
 		pageSave.add(this.submit);
 		pageSave.add(Box.createVerticalStrut(5));
-		this.label[2].setFont(new Font("Open Sans", Font.PLAIN, 14));
-		this.label[2].setForeground(Design.FontColor[1]);
 		pageSave.add(this.label[2]);
+		this.label[2].setFont(Design.SUBTITLE);
+		this.label[2].setForeground(Design.FontColor[1]);
 		
 		this.add(pageSave);
 	}

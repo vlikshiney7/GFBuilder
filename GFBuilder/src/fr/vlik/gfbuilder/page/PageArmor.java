@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +14,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
@@ -72,9 +70,8 @@ public class PageArmor extends PagePanel {
 	}
 
 	public PageArmor() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		this.shortcutSet = new JCustomComboBox<EquipSet>(new EquipSet[] {});
 		this.shortcutSet.addActionListener(e -> {
@@ -402,6 +399,7 @@ public class PageArmor extends PagePanel {
 		this.showAndHide.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.showAndHide.setBackground(Design.UIColor[1]);
 		this.showAndHide.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		this.showAndHide.add(Box.createVerticalStrut(10));
 		this.showAndHide.add(this.shortcutSet);
 		this.showAndHide.setVisible(false);
@@ -452,8 +450,9 @@ public class PageArmor extends PagePanel {
 			
 			JPanel xpArmor = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpArmor.setBackground(Design.UIColor[1]);
-			this.label[i+6].setFont(new Font("Open Sans", Font.PLAIN, 14));
 			xpArmor.add(this.label[i+6]);
+			this.label[i+6].setFont(Design.SUBTITLE);
+			
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Design.UIColor[1]);
@@ -467,6 +466,7 @@ public class PageArmor extends PagePanel {
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
 			elemI.add(this.label[i+1]);
+			this.label[i+1].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descArmor);
 			elemI.add(Box.createVerticalStrut(2));
@@ -490,11 +490,6 @@ public class PageArmor extends PagePanel {
 		for(JPanel panel : this.showAndHideXpStuff) {
 			panel.setVisible(false);
 		}
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

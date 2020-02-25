@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
@@ -43,9 +42,8 @@ public class PageSkill extends PagePanel {
 	}
 
 	private PageSkill() {
-		super();
+		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setLabel(Language.FR);
 		
 		for(int i = 0; i < 5; i++) {
 			this.skillNatif.add(new JCustomLabel());
@@ -112,6 +110,7 @@ public class PageSkill extends PagePanel {
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
 		elem1.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 5; i++) {
@@ -132,6 +131,7 @@ public class PageSkill extends PagePanel {
 		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem2.setBackground(Design.UIColor[1]);
 		elem2.add(this.label[1]);
+		this.label[1].setFont(Design.TITLE);
 		elem2.add(Box.createVerticalStrut(10));
 		
 		elem2.add(this.proSkill);
@@ -156,11 +156,6 @@ public class PageSkill extends PagePanel {
 		for(JPanel panel : this.showAndHide) {
 			panel.setVisible(false);
 		}
-	}
-
-	@Override
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(NUM_PAGE);
 	}
 	
 	@Override

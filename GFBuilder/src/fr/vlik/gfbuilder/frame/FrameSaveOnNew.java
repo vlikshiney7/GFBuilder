@@ -92,6 +92,7 @@ public class FrameSaveOnNew extends JFrame {
 		pageNew.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
 		pageNew.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		
 		JPanel buttons = new JPanel(new GridLayout(1, 3, 10, 10));
 		buttons.setBackground(Design.UIColor[2]);
@@ -106,19 +107,14 @@ public class FrameSaveOnNew extends JFrame {
 		this.add(pageNew);
 	}
 	
-	protected void setLabel(Language lang) {
-		this.label = Lang.getDataLabel(16);
-		updateLanguage(lang);
-	}
-	
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
 		}
 		
-		this.save.updateText();
-		this.notSave.updateText();
-		this.cancel.updateText();
+		this.save.updateText(lang);
+		this.notSave.updateText(lang);
+		this.cancel.updateText(lang);
 	}
 	
 	public void popup() {

@@ -83,6 +83,7 @@ public class FrameSaveOnQuit extends JFrame {
 		pageQuit.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
 		pageQuit.add(this.label[0]);
+		this.label[0].setFont(Design.TITLE);
 		
 		JPanel buttons = new JPanel(new GridLayout(1, 3, 10, 10));
 		buttons.setBackground(Design.UIColor[2]);
@@ -102,9 +103,9 @@ public class FrameSaveOnQuit extends JFrame {
 			this.label[i].updateText(lang);
 		}
 		
-		this.save.updateText();
-		this.leave.updateText();
-		this.cancel.updateText();
+		this.save.updateText(lang);
+		this.leave.updateText(lang);
+		this.cancel.updateText(lang);
 	}
 	
 	public void popup() {
