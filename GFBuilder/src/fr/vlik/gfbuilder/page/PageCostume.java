@@ -53,12 +53,7 @@ public class PageCostume extends PagePanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		for(int i = 0; i < 2; i++) {
-			Map<Language, String> label = new HashMap<Language, String>();
-			label.put(Language.FR, "Armes 1 main");
-			label.put(Language.EN, "Arme 2 mains");
-			
-			JCustomLabel hand = new JCustomLabel(label);
-			this.costWeapon.add(new JCustomRadioButton(hand, "radio11", "radioOff"));
+			this.costWeapon.add(new JCustomRadioButton(this.label[i+5], "radio11", "radioOff"));
 			this.costWeapon.get(i).setBackground(Design.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Design.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
@@ -112,10 +107,10 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < 2; i++) {
 			if(i == 0) {
-				this.checkBoxRunway.add(new JCustomCheckBox(this.label[14]));
+				this.checkBoxRunway.add(new JCustomCheckBox(this.label[9]));
 				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[0]));
 			} else {
-				this.checkBoxRunway.add(new JCustomCheckBox(this.label[18]));
+				this.checkBoxRunway.add(new JCustomCheckBox(this.label[13]));
 				this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 			}
 			
@@ -187,10 +182,10 @@ public class PageCostume extends PagePanel {
 			
 			for(int j = 0; j < 2; j++) {
 				if(j == 0) {
-					this.checkBoxRunway.add(new JCustomCheckBox(this.label[i+15]));
+					this.checkBoxRunway.add(new JCustomCheckBox(this.label[i+10]));
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[i+1]));
 				} else {
-					this.checkBoxRunway.add(new JCustomCheckBox(this.label[18]));
+					this.checkBoxRunway.add(new JCustomCheckBox(this.label[13]));
 					this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 				}
 				
@@ -424,7 +419,7 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(JCustomCheckBox checkBox : this.checkBoxRunway) {
-			checkBox.updateText();
+			checkBox.updateText(lang);
 		}
 	}
 	

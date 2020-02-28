@@ -254,8 +254,8 @@ public class PageMount extends PagePanel {
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.label[i*7+2]);
-			this.label[i*7+2].setFont(Design.TITLE);
+			elemI.add(this.label[i+2]);
+			this.label[i+2].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(qualityPanel);
 			elemI.add(Box.createVerticalStrut(5));

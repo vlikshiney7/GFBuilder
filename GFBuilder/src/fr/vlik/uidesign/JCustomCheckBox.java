@@ -5,19 +5,18 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
-import javax.swing.JLabel;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class JCustomCheckBox extends JCheckBox {
 	
 	private static final long serialVersionUID = 1L;
-	private JLabel label;
+	private JCustomLabel label;
 	
-	public JCustomCheckBox(JLabel label) {
+	public JCustomCheckBox(JCustomLabel label) {
 		super();
 		this.label = label;
-		updateText();
 		
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/checkOn.png"))));
@@ -45,7 +44,8 @@ public class JCustomCheckBox extends JCheckBox {
 		this.setContentAreaFilled(false);
 	}
 	
-	public void updateText() {
-		setText(this.label.getText());
+	public void updateText(Language lang) {
+		this.label.updateText(lang);
+		this.setText(this.label.getText());
 	}
 }
