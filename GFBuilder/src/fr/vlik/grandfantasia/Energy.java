@@ -14,10 +14,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 public class Energy implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + Energy.class.getSimpleName().toLowerCase() + "/";
-	private static Energy[] data;
-	static {
-		data = Loader.getEnergy();
-	}
+	private static Energy[] data = Loader.getEnergy();
 	
 	private final Map<Language, String> name;
 	private final ArrayList<Effect> effects;

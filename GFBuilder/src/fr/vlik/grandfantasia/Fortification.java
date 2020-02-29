@@ -9,10 +9,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class Fortification implements Colorable, Writable {
 	
 	static final Color[] LEVEL = new Color[] { new Color(147, 147, 147), new Color(255, 255, 255), new Color(111, 225, 28), new Color(33, 171, 235), new Color(254, 60, 88) };
-	private static Fortification[] data;
-	static {
-		Fortification.data = Loader.getFortification();
-	}
+	private static Fortification[] data = Loader.getFortification();
 	
 	private final String name;
 	private final Color display;

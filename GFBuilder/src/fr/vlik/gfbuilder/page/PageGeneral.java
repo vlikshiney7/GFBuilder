@@ -339,7 +339,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		config.put("Lvl", "" + this.getLvl());
 		config.put("Rebirth", this.getReinca().getName(lang));
 		config.put("Title", this.getTitle().getName());
-		config.put("Yggdrasil", this.getYggdrasil().getName());
+		config.put("Yggdrasil", this.getYggdrasil().getName(lang));
 		config.put("Archive", this.getArchive().getName());
 		
 		return config;
@@ -351,7 +351,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
 		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
 		this.title.setSelectedItem(Title.get(config.get("Title")));
-		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil")));
+		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
 		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
 	}
 }

@@ -41,7 +41,7 @@ public class Weapon extends Equipment {
 	
 	@SuppressWarnings("serial")
 	public Weapon() {
-		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, new ArrayList<Calculable>(), new ArrayList<Effect>());
+		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, new ArrayList<Calculable>(), new ArrayList<Calculable>());
 		
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
@@ -59,7 +59,7 @@ public class Weapon extends Equipment {
 		this.effects = weapon.getEffects();
 	}
 	
-	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
+	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
@@ -280,9 +280,10 @@ public class Weapon extends Equipment {
 			}
 		}
 		
-		code += "}}, new ArrayList<Effect>() ),";
+		code += "}}, new ArrayList<Calculable>() ),";
 		
 		code = code.replace(".0)", ")");
+		code = code.replace(".0,", ",");
 		
 		return code;
 	}
@@ -330,7 +331,7 @@ public class Weapon extends Equipment {
 					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 						effects.add(new Effect(lineSplit[j+8]));
 					
-					ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+					ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
 					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
 						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 					}

@@ -1,23 +1,3 @@
-Sombre Sournoiserie/0,1,2,3/80/3/false/true/false/4,0,0/Atk,false,2122,true/FCE,false,44,true/VIT,false,20,true/Toucher,false,10/80gvg
-Invincible Tyrannie/0,1,2,3/79/4/true/true/false/6,0,0/Atk,false,1827,true/FCE,false,18,true/VIT,false,18,true/AGI,false,24,true/Toucher,false,14/FCE,false,50/79pre
-Double Lame du Levant/0,1,2,3/76/3/false/false/false/4,0,0/Atk,false,1984,true/FCE,false,32,true/AGI,false,32,true/Toucher,false,14/81bleu
-Tribu Engloutie/0,1,2,3/76/2/false/false/false/3,0,0/Atk,false,1488,true/AGI,false,20,true/Toucher,false,12/66pre
-Rapière d'Empereur Déchu/0,1,2,3/75/6/true/true/false/5,0,0/Atk,false,2438,true/FCE,false,80,true/VIT,false,30,true/AGI,false,50,true/Toucher,false,18/75vio
-Épée Royale de la Providence/0,1,2,3/75/5/true/true/false/5,0,0/Atk,false,2194,true/FCE,false,64,true/VIT,false,24,true/AGI,false,40,true/Toucher,false,18/75gold
-Châtiment de l'Empereur/0,1,2,3/74/4/true/true/false/5,0,0/Atk,false,1677,true/FCE,false,17,true/VIT,false,17,true/AGI,false,20,true/Toucher,false,12/74pre
-Grand Sabre Elsaien/0,1,2,3/72/3/false/false/false/4,0,0/Atk,false,1850,true/FCE,false,30,true/AGI,false,30,true/Toucher,false,12/80gvg
-Lame Pourpre des Sprites/0,1,2,3/71/2/false/false/false/3,0,0/Atk,false,1362,true/AGI,false,18,true/Toucher,false,10/65ora
-Lame des Limbes Profondes/0,1,2,3/70/6/true/true/false/5,0,0/Atk,false,2229,true/FCE,false,75,true/VIT,false,27,true/AGI,false,48,true/Toucher,false,18/70vio
-Empereur Déchu/0,1,2,3/70/5/true/true/false/7,0,0/Atk,false,2005,true/FCE,false,60,true/VIT,false,22,true/AGI,false,38,true/Toucher,false,18/RegenCB,false,30/CostComp,false,-45/70gold
-Lame d'Acier Noir/0,1,2,3/70/3/false/true/false/4,0,0/Atk,false,1782,true/FCE,false,40,true/VIT,false,16,true/Toucher,false,10/70gvg
-Sabre en Écailles de Dragon Rouge/1,2,3/68/4/true/true/false/6,0,0/Atk,false,1502,true/FCE,false,10,true/VIT,false,20,true/AGI,false,18,true/Toucher,false,12/TCCP,false,7/68ora
-Glaive à Lame Cruelle/0,1,2,3/66/4/true/true/false/7,0,0/Atk,false,1446,true/FCE,false,20,true/VIT,false,18,true/AGI,false,10,true/Toucher,false,12/RegenCB,false,30/CostComp,false,-45/66pre
-Lame Rituelle de Décapitation/0,1,2,3/66/3/false/false/false/4,0,0/Atk,false,1653,true/FCE,false,28,true/AGI,false,28,true/Toucher,false,12/80gvg
-Machette Ciselée/0,1,2,3/66/1/false/false/false/1,0,0/Atk,false,1033,true/80gvg
-Épée de la Justice de l'Empereur/0,1,2,3/65/5/true/true/false/5,0,0/Atk,false,1822,true/FCE,false,55,true/VIT,false,17,true/AGI,false,40,true/Toucher,false,18/95gold
-Épée Conquérante du Chevalier Noir/0,1,2,3/65/4/true/false/false/6,0,0/Atk,false,1417,true/FCE,false,20,true/VIT,false,10,true/AGI,false,12,true/Toucher,false,12/TCCP,false,6/65ora
-Épée de la Vérité de l'Empereur/0,1,2,3/63/4/true/true/false/5,0,0/Atk,false,1361,true/FCE,false,20,true/VIT,false,12,true/AGI,false,10,true/Toucher,false,10/63pre
-Épée en Os de Dragon Originel/0,1,2,3/63/3/false/false/false/4,0,0/Atk,false,1555,true/FCE,false,32,true/VIT,false,20,true/Toucher,false,10/44sprite
 Dague Violette Sauvage/0,1,2,3/61/3/false/false/false/4,0,0/Atk,false,1493,true/VIT,false,30,true/AGI,false,22,true/Toucher,false,10/34sprite
 Épée de Pierre de Cristal Sanglante des Sprites/0,1,2,3/61/2/false/false/false/2,0,0/Atk,false,1120,true/VIT,false,14,true/38ora2
 Lame de l'Eternité de Bodor/0,1,2,3/60/5/true/true/false/5,0,0/Atk,false,1643,true/FCE,false,34,true/VIT,false,14,true/AGI,false,48,true/Toucher,false,15/60gold

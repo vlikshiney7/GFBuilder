@@ -8,6 +8,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
+import fr.vlik.grandfantasia.equipable.Bague;
 import fr.vlik.grandfantasia.equipable.RedWeapon;
 import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
@@ -31,6 +32,111 @@ public class Loader {
 		};
 	}
 	
+	public static Yggdrasil[] getYggdrasil() {
+		return new Yggdrasil[] {
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "0 - Aucun"); put(Language.EN, "0 - None"); }}, "null", new ArrayList<Effect>()),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "1 - Alice"); put(Language.EN, "1 - Alice"); }}, "boss1", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, false, 15));
+					add(new Effect(TypeEffect.VIT, false, 15));
+					add(new Effect(TypeEffect.INT, false, 15));
+					add(new Effect(TypeEffect.VOL, false, 15));
+					add(new Effect(TypeEffect.AGI, false, 15));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "2 - Ronto"); put(Language.EN, "2 - Ronto"); }}, "boss2", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, false, 15));
+					add(new Effect(TypeEffect.VIT, false, 15));
+					add(new Effect(TypeEffect.INT, false, 15));
+					add(new Effect(TypeEffect.VOL, false, 15));
+					add(new Effect(TypeEffect.AGI, false, 15));
+					add(new Effect(TypeEffect.XP, false, 5));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "3 - Bodor"); put(Language.EN, "3 - Bodor"); }}, "boss3", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, false, 15));
+					add(new Effect(TypeEffect.VIT, false, 15));
+					add(new Effect(TypeEffect.INT, false, 15));
+					add(new Effect(TypeEffect.VOL, false, 15));
+					add(new Effect(TypeEffect.AGI, false, 15));
+					add(new Effect(TypeEffect.XP, false, 5));
+					add(new Effect(TypeEffect.DegP, false, 3));
+					add(new Effect(TypeEffect.DegM, false, 3));
+					add(new Effect(TypeEffect.PeneP, false, 3));
+					add(new Effect(TypeEffect.PeneM, false, 3));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "4 - Smulca"); put(Language.EN, "4 - Smulca"); }}, "boss4", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, true, 5));
+					add(new Effect(TypeEffect.VIT, true, 5));
+					add(new Effect(TypeEffect.INT, true, 5));
+					add(new Effect(TypeEffect.VOL, true, 5));
+					add(new Effect(TypeEffect.AGI, true, 5));
+					add(new Effect(TypeEffect.XP, false, 5));
+					add(new Effect(TypeEffect.DegP, false, 3));
+					add(new Effect(TypeEffect.DegM, false, 3));
+					add(new Effect(TypeEffect.PeneP, false, 3));
+					add(new Effect(TypeEffect.PeneM, false, 3));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "5 - Ewan"); put(Language.EN, "5 - Ewan"); }}, "boss5", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, true, 5));
+					add(new Effect(TypeEffect.VIT, true, 5));
+					add(new Effect(TypeEffect.INT, true, 5));
+					add(new Effect(TypeEffect.VOL, true, 5));
+					add(new Effect(TypeEffect.AGI, true, 5));
+					add(new Effect(TypeEffect.XP, false, 8));
+					add(new Effect(TypeEffect.DegP, false, 3));
+					add(new Effect(TypeEffect.DegM, false, 3));
+					add(new Effect(TypeEffect.PeneP, false, 3));
+					add(new Effect(TypeEffect.PeneM, false, 3));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "6 - Bahadolo"); put(Language.EN, "6 - Bahadolo"); }}, "boss6", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, true, 5));
+					add(new Effect(TypeEffect.VIT, true, 5));
+					add(new Effect(TypeEffect.INT, true, 5));
+					add(new Effect(TypeEffect.VOL, true, 5));
+					add(new Effect(TypeEffect.AGI, true, 5));
+					add(new Effect(TypeEffect.XP, false, 8));
+					add(new Effect(TypeEffect.DegP, false, 5));
+					add(new Effect(TypeEffect.DegM, false, 5));
+					add(new Effect(TypeEffect.PeneP, false, 5));
+					add(new Effect(TypeEffect.PeneM, false, 5));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "7 - Quill"); put(Language.EN, "7 - Quill"); }}, "boss7", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, true, 10));
+					add(new Effect(TypeEffect.VIT, true, 10));
+					add(new Effect(TypeEffect.INT, true, 10));
+					add(new Effect(TypeEffect.VOL, true, 10));
+					add(new Effect(TypeEffect.AGI, true, 10));
+					add(new Effect(TypeEffect.XP, false, 8));
+					add(new Effect(TypeEffect.DegP, false, 5));
+					add(new Effect(TypeEffect.DegM, false, 5));
+					add(new Effect(TypeEffect.PeneP, false, 5));
+					add(new Effect(TypeEffect.PeneM, false, 5));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "8 - Mosunk"); put(Language.EN, "8 - Mosunk"); }}, "boss8", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, true, 10));
+					add(new Effect(TypeEffect.VIT, true, 10));
+					add(new Effect(TypeEffect.INT, true, 10));
+					add(new Effect(TypeEffect.VOL, true, 10));
+					add(new Effect(TypeEffect.AGI, true, 10));
+					add(new Effect(TypeEffect.XP, false, 11));
+					add(new Effect(TypeEffect.DegP, false, 5));
+					add(new Effect(TypeEffect.DegM, false, 5));
+					add(new Effect(TypeEffect.PeneP, false, 5));
+					add(new Effect(TypeEffect.PeneM, false, 5));
+				}}),
+				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "9 - Jundo"); put(Language.EN, "9 - Jundo"); }}, "boss9", new ArrayList<Effect>() {{
+					add(new Effect(TypeEffect.FCE, true, 10));
+					add(new Effect(TypeEffect.VIT, true, 10));
+					add(new Effect(TypeEffect.INT, true, 10));
+					add(new Effect(TypeEffect.VOL, true, 10));
+					add(new Effect(TypeEffect.AGI, true, 10));
+					add(new Effect(TypeEffect.XP, false, 11));
+					add(new Effect(TypeEffect.DegP, false, 7));
+					add(new Effect(TypeEffect.DegM, false, 7));
+					add(new Effect(TypeEffect.PeneP, false, 7));
+					add(new Effect(TypeEffect.PeneM, false, 7));
+				}})
+		};
+	}
+	
 	public static Weapon[][] getWeapon() {
 		return new Weapon[][] {
 			new Weapon[] {
@@ -42,7 +148,7 @@ public class Loader {
 								add(new Effect(TypeEffect.VIT, false, 71, true));
 								add(new Effect(TypeEffect.AGI, false, 49, true));
 								add(new Effect(TypeEffect.Toucher, false, 20));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Croc de Chauve-souris"); put(Language.EN, "Murderous Slasher"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							100, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/100gold", new ArrayList<Calculable>() {{
@@ -56,7 +162,7 @@ public class Loader {
 									add(new Effect(TypeEffect.VitAtk, false, 25));
 									add(new Effect(TypeEffect.ESQ, false, 25));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sacrelame victorieuse de Bodor"); put(Language.EN, "Bodor's Victorious Blade"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							100, Quality.ORANGE, false, WeaponType.EPEE1M, true, false, "epee1M/100pvp", new ArrayList<Calculable>() {{
@@ -77,7 +183,7 @@ public class Loader {
 									add(new Effect(TypeEffect.Depla, false, 1));
 									add(new Effect(TypeEffect.Toucher, false, 1));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Croc de Vipère"); put(Language.EN, "Viper Fang Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							99, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/99pre", new ArrayList<Calculable>() {{
@@ -90,13 +196,13 @@ public class Loader {
 									add(new Effect(TypeEffect.VitAtk, false, 20));
 									add(new Effect(TypeEffect.ESQ, false, 20));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Courte Toxique de Sprite"); put(Language.EN, "Sprite's Poisoned Shortsword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							96, Quality.GREEN, false, WeaponType.EPEE1M, false, false, "epee1M/38ora2", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 2023, true));
 								add(new Effect(TypeEffect.FCE, false, 28, true));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée du Jugement Éternel"); put(Language.EN, "Judgment Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							95, Quality.PURPLE, true, WeaponType.EPEE1M, true, false, "epee1M/95vio", new ArrayList<Calculable>() {{
@@ -105,7 +211,7 @@ public class Loader {
 								add(new Effect(TypeEffect.VIT, false, 50, true));
 								add(new Effect(TypeEffect.AGI, false, 59, true));
 								add(new Effect(TypeEffect.Toucher, false, 20));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée buster de Zack"); put(Language.EN, "Holy Avenger"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							95, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/95gold", new ArrayList<Calculable>() {{
@@ -119,7 +225,7 @@ public class Loader {
 									add(new Effect(TypeEffect.ESQ, false, 15));
 									add(new Effect(TypeEffect.TCCP, false, 15));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Berimaru Ardente de Bodor"); put(Language.EN, "Bodor - Blazing Blade"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							95, Quality.ORANGE, false, WeaponType.EPEE1M, true, false, "epee1M/95pvp", new ArrayList<Calculable>() {{
@@ -134,12 +240,12 @@ public class Loader {
 								add(new Proc(100, Activation.Attack, 2, 10, new ArrayList<Calculable>() {{
 									add(new Effect(TypeEffect.Depla, false, 1));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Courte Victorieuse"); put(Language.EN, "Victory Short Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							95, Quality.WHITE, false, WeaponType.EPEE1M, false, false, "epee1M/95blanc", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 1662, true));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Féroce Mystique"); put(Language.EN, "Mystical Fiery Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							94, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/94pre", new ArrayList<Calculable>() {{
@@ -152,13 +258,13 @@ public class Loader {
 									add(new Effect(TypeEffect.ESQ, false, 10));
 									add(new Effect(TypeEffect.TCCP, false, 10));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Brûlante de Sprite"); put(Language.EN, "Sprite's Burning Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							91, Quality.GREEN, false, WeaponType.EPEE1M, false, false, "epee1M/91sprite", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 1885, true));
 								add(new Effect(TypeEffect.FCE, false, 26, true));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new RedWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Serment du Chevalier"); put(Language.EN, "Trial Knight's Oath"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							90, Quality.RED, false, WeaponType.EPEE1M, true, false, "epee1M/90red", new ArrayList<Calculable>() {{
@@ -168,7 +274,7 @@ public class Loader {
 								add(new Effect(TypeEffect.AGI, false, 64, true));
 								add(new Effect(TypeEffect.Toucher, false, 20));
 							}},
-							new ArrayList<Effect>(),
+							new ArrayList<Calculable>(),
 							new ArrayList<ArrayList<Calculable>>() {{
 								add(new ArrayList<Calculable>() {{
 									add(new Effect(TypeEffect.FCE, false, 10));
@@ -195,7 +301,7 @@ public class Loader {
 								add(new Effect(TypeEffect.VIT, false, 45, true));
 								add(new Effect(TypeEffect.AGI, false, 54, true));
 								add(new Effect(TypeEffect.Toucher, false, 20));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Équarrisseur de Zodd Nosferatu"); put(Language.EN, "Soul: Cut"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							90, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/90gold", new ArrayList<Calculable>() {{
@@ -211,7 +317,7 @@ public class Loader {
 									add(new Effect(TypeEffect.DefP, true, -10));
 									add(new Effect(TypeEffect.DefM, true, -10));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Divine - Aile en Or"); put(Language.EN, "Divine Blade - Golden Wing"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							89, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/89pre", new ArrayList<Calculable>() {{
@@ -225,7 +331,7 @@ public class Loader {
 									add(new Effect(TypeEffect.DegEp, false, 25));
 									add(new Effect(TypeEffect.VitAtk, false, 10));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Bleue enflammée"); put(Language.EN, "Burning Cobalt Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							86, Quality.BLUE, false, WeaponType.EPEE1M, false, false, "epee1M/86bleu", new ArrayList<Calculable>() {{
@@ -233,19 +339,19 @@ public class Loader {
 								add(new Effect(TypeEffect.FCE, false, 36, true));
 								add(new Effect(TypeEffect.AGI, false, 36, true));
 								add(new Effect(TypeEffect.Toucher, false, 15));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Gelée des Sprites"); put(Language.EN, "Sprite's Frost Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							86, Quality.GREEN, false, WeaponType.EPEE1M, false, false, "epee1M/84pre", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 1750, true));
 								add(new Effect(TypeEffect.AGI, false, 24, true));
 								add(new Effect(TypeEffect.Toucher, false, 10));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Katanas du Givre"); put(Language.EN, "Frost Twin Blades"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							86, Quality.WHITE, false, WeaponType.EPEE1M, false, false, "epee1M/79pre", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 1458, true));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Epée de Cendre d'Amaterasu"); put(Language.EN, "Dragon's Mark Flame"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							85, Quality.PURPLE, true, WeaponType.EPEE1M, true, false, "epee1M/85vio", new ArrayList<Calculable>() {{
@@ -254,7 +360,7 @@ public class Loader {
 								add(new Effect(TypeEffect.VIT, false, 43, true));
 								add(new Effect(TypeEffect.AGI, false, 52, true));
 								add(new Effect(TypeEffect.Toucher, false, 18));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Zanpakuto Enflammé du Dragon"); put(Language.EN, "Dragonbane Dark Rock"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							85, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/85gold", new ArrayList<Calculable>() {{
@@ -266,9 +372,9 @@ public class Loader {
 								add(new StaticEffect(TypeStaticEffect.x2Skill, 25));
 								add(new Proc(10, Activation.Attack, 5, 5, new ArrayList<Calculable>() {{
 									add(new StaticEffect(TypeStaticEffect.Poisse, 10));
-									add(new StaticEffect(TypeStaticEffect.ProcT0L85Q5, -1));
+									add(new StaticEffect(TypeStaticEffect.ProcT0L85Q5));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Glaciale d'Hitsugaya"); put(Language.EN, "Bodor - Icefrost Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							85, Quality.ORANGE, false, WeaponType.EPEE1M, true, false, "epee1M/85pvp", new ArrayList<Calculable>() {{
@@ -280,7 +386,7 @@ public class Loader {
 								add(new Effect(TypeEffect.TCCP, false, 8));
 								add(new Effect(TypeEffect.DCCP, false, 10));
 								add(new Effect(TypeEffect.Nature, false, 40));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lave du Volcan du Dragon"); put(Language.EN, "Dragonblade Lava"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							84, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/84pre", new ArrayList<Calculable>() {{
@@ -292,28 +398,28 @@ public class Loader {
 								add(new StaticEffect(TypeStaticEffect.x2Skill, 25));
 								add(new Proc(10, Activation.Attack, 5, 5, new ArrayList<Calculable>() {{
 									add(new StaticEffect(TypeStaticEffect.Poisse, 10));
-									add(new StaticEffect(TypeStaticEffect.ProcT0L85Q5, -1));
+									add(new StaticEffect(TypeStaticEffect.ProcT0L85Q5));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée d'Assaut Inébranlable"); put(Language.EN, "Breakthrough Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							81, Quality.BLUE, false, WeaponType.EPEE1M, false, false, "epee1M/81bleu", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 2157, true));
 								add(new Effect(TypeEffect.FCE, false, 34, true));
 								add(new Effect(TypeEffect.AGI, false, 34, true));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée de Glace Brûlante de Sprite"); put(Language.EN, "Sprite's Flaming Ice Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							81, Quality.GREEN, false, WeaponType.EPEE1M, false, false, "epee1M/79pre", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 1618, true));
 								add(new Effect(TypeEffect.AGI, false, 22, true));
 								add(new Effect(TypeEffect.Toucher, false, 10));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Torturée"); put(Language.EN, "Darklock Sword"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							81, Quality.WHITE, false, WeaponType.EPEE1M, false, false, "epee1M/86bleu", new ArrayList<Calculable>() {{
 								add(new Effect(TypeEffect.Atk, false, 1348, true));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Epée Ikazuchi Jumeaux"); put(Language.EN, "Electric Gnash"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							80, Quality.PURPLE, true, WeaponType.EPEE1M, true, false, "epee1M/80vio", new ArrayList<Calculable>() {{
@@ -322,7 +428,7 @@ public class Loader {
 								add(new Effect(TypeEffect.VIT, false, 34, true));
 								add(new Effect(TypeEffect.AGI, false, 41, true));
 								add(new Effect(TypeEffect.Toucher, false, 18));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
 					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Vierge Immaculée"); put(Language.EN, "Absolute Tyrant - Ice Lord"); }},
 							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
 							80, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/80gold", new ArrayList<Calculable>() {{
@@ -333,10 +439,209 @@ public class Loader {
 								add(new Effect(TypeEffect.Toucher, false, 18));
 								add(new Effect(TypeEffect.FCE, false, 50));
 								add(new Proc(15, Activation.Attack, 8, new ArrayList<Calculable>() {{
-									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N0, -1));
-									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N1, -1));
+									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N0));
+									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N1));
 								}}));
-							}}, new ArrayList<Effect>() ),
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sombre Sournoiserie"); put(Language.EN, "Shadowheart Stinger"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							80, Quality.BLUE, false, WeaponType.EPEE1M, true, false, "epee1M/80gvg", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 2122, true));
+								add(new Effect(TypeEffect.FCE, false, 44, true));
+								add(new Effect(TypeEffect.VIT, false, 20, true));
+								add(new Effect(TypeEffect.Toucher, false, 10));
+								add(new Proc(10, Activation.Attack, 4.5, new ArrayList<Calculable>() {{
+									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q3));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Invincible Tyrannie"); put(Language.EN, "Unbeatable Tyrant - Icebound"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							79, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/79pre", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1827, true));
+								add(new Effect(TypeEffect.FCE, false, 18, true));
+								add(new Effect(TypeEffect.VIT, false, 18, true));
+								add(new Effect(TypeEffect.AGI, false, 24, true));
+								add(new Effect(TypeEffect.Toucher, false, 14));
+								add(new Effect(TypeEffect.FCE, false, 50));
+								add(new Proc(15, Activation.Attack, 8, new ArrayList<Calculable>() {{
+									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N0));
+									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N1));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Double Lame du Levant"); put(Language.EN, "Sunset Double Blade"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							76, Quality.BLUE, false, WeaponType.EPEE1M, false, false, "epee1M/81bleu", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1984, true));
+								add(new Effect(TypeEffect.FCE, false, 32, true));
+								add(new Effect(TypeEffect.AGI, false, 32, true));
+								add(new Effect(TypeEffect.Toucher, false, 14));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Tribu Engloutie"); put(Language.EN, "Sunken Lost Tribe"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							76, Quality.GREEN, false, WeaponType.EPEE1M, false, false, "epee1M/66pre", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1488, true));
+								add(new Effect(TypeEffect.AGI, false, 20, true));
+								add(new Effect(TypeEffect.Toucher, false, 12));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rapière d'Empereur Déchu"); put(Language.EN, "Emperor's Sword of Northern Light"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							75, Quality.PURPLE, true, WeaponType.EPEE1M, true, false, "epee1M/75vio", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 2438, true));
+								add(new Effect(TypeEffect.FCE, false, 80, true));
+								add(new Effect(TypeEffect.VIT, false, 30, true));
+								add(new Effect(TypeEffect.AGI, false, 50, true));
+								add(new Effect(TypeEffect.Toucher, false, 18));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Royale de la Providence"); put(Language.EN, "Royal Sword - Holy Salvation"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							75, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/75gold", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 2194, true));
+								add(new Effect(TypeEffect.FCE, false, 64, true));
+								add(new Effect(TypeEffect.VIT, false, 24, true));
+								add(new Effect(TypeEffect.AGI, false, 40, true));
+								add(new Effect(TypeEffect.Toucher, false, 18));
+								add(new Proc(5, Activation.Attack, 5, new ArrayList<Calculable>() {{
+									add(new Effect(TypeEffect.TCCP, false, 100));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de l'Empereur"); put(Language.EN, "Emperor's Sword - Ruthless Sanction"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							74, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/74pre", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1677, true));
+								add(new Effect(TypeEffect.FCE, false, 17, true));
+								add(new Effect(TypeEffect.VIT, false, 17, true));
+								add(new Effect(TypeEffect.AGI, false, 20, true));
+								add(new Effect(TypeEffect.Toucher, false, 12));
+								add(new Proc(5, Activation.Attack, 5, new ArrayList<Calculable>() {{
+									add(new Effect(TypeEffect.TCCP, false, 100));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Grand Sabre Elsaien"); put(Language.EN, "Sword of Monster Bone"); }},
+									new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+									72, Quality.BLUE, false, WeaponType.EPEE1M, false, false, "epee1M/80gvg", new ArrayList<Calculable>() {{
+										add(new Effect(TypeEffect.Atk, false, 1850, true));
+										add(new Effect(TypeEffect.FCE, false, 30, true));
+										add(new Effect(TypeEffect.AGI, false, 30, true));
+										add(new Effect(TypeEffect.Toucher, false, 12));
+									}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Pourpre des Sprites"); put(Language.EN, "Sprite Purple Edge Sword"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							71, Quality.GREEN, false, WeaponType.EPEE1M, false, false, "epee1M/65ora", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1362, true));
+								add(new Effect(TypeEffect.AGI, false, 18, true));
+								add(new Effect(TypeEffect.Toucher, false, 10));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame des Limbes Profondes"); put(Language.EN, "Galactic Sword of Destruction"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							70, Quality.PURPLE, true, WeaponType.EPEE1M, true, false, "epee1M/70vio", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 2229, true));
+								add(new Effect(TypeEffect.FCE, false, 75, true));
+								add(new Effect(TypeEffect.VIT, false, 27, true));
+								add(new Effect(TypeEffect.AGI, false, 48, true));
+								add(new Effect(TypeEffect.Toucher, false, 18));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Empereur Déchu"); put(Language.EN, "Fallen Emperor - Dark Night"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							70, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/70gold", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 2005, true));
+								add(new Effect(TypeEffect.FCE, false, 60, true));
+								add(new Effect(TypeEffect.VIT, false, 22, true));
+								add(new Effect(TypeEffect.AGI, false, 38, true));
+								add(new Effect(TypeEffect.Toucher, false, 18));
+								add(new Effect(TypeEffect.RegenCB, false, 30));
+								add(new Effect(TypeEffect.CostComp, false, -45));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame d'Acier Noir"); put(Language.EN, "Silent Headhunter"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							70, Quality.BLUE, false, WeaponType.EPEE1M, true, false, "epee1M/70gvg", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1782, true));
+								add(new Effect(TypeEffect.FCE, false, 40, true));
+								add(new Effect(TypeEffect.VIT, false, 16, true));
+								add(new Effect(TypeEffect.Toucher, false, 10));
+								add(new Proc(10, Activation.Attack, 3, new ArrayList<Calculable>() {{
+									add(new StaticEffect(TypeStaticEffect.ProcT0L70Q3));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sabre en Écailles de Dragon Rouge"); put(Language.EN, "Bodor's Lunatic Blade"); }},
+							new GradeName[] { GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							68, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/68ora", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1502, true));
+								add(new Effect(TypeEffect.FCE, false, 10, true));
+								add(new Effect(TypeEffect.VIT, false, 20, true));
+								add(new Effect(TypeEffect.AGI, false, 18, true));
+								add(new Effect(TypeEffect.Toucher, false, 12));
+								add(new Effect(TypeEffect.TCCP, false, 7));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Glaive à Lame Cruelle"); put(Language.EN, "Fallen Emperor - Merciless"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							66, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/66pre", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1446, true));
+								add(new Effect(TypeEffect.FCE, false, 20, true));
+								add(new Effect(TypeEffect.VIT, false, 18, true));
+								add(new Effect(TypeEffect.AGI, false, 10, true));
+								add(new Effect(TypeEffect.Toucher, false, 12));
+								add(new Effect(TypeEffect.RegenCB, false, 30));
+								add(new Effect(TypeEffect.CostComp, false, -45));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Rituelle de Décapitation"); put(Language.EN, "Beheading Blade"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							66, Quality.BLUE, false, WeaponType.EPEE1M, false, false, "epee1M/80gvg", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1653, true));
+								add(new Effect(TypeEffect.FCE, false, 28, true));
+								add(new Effect(TypeEffect.AGI, false, 28, true));
+								add(new Effect(TypeEffect.Toucher, false, 12));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Machette Ciselée"); put(Language.EN, "Northern Bandit's Sword"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							66, Quality.WHITE, false, WeaponType.EPEE1M, false, false, "epee1M/80gvg", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1033, true));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée de la Justice de l'Empereur"); put(Language.EN, "Grandleon"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							65, Quality.GOLD, true, WeaponType.EPEE1M, true, false, "epee1M/95gold", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1822, true));
+								add(new Effect(TypeEffect.FCE, false, 55, true));
+								add(new Effect(TypeEffect.VIT, false, 17, true));
+								add(new Effect(TypeEffect.AGI, false, 40, true));
+								add(new Effect(TypeEffect.Toucher, false, 18));
+								add(new Proc(15, Activation.Attack, 10, new ArrayList<Calculable>() {{
+									add(new Effect(TypeEffect.TCCP, false, 20));
+									add(new Effect(TypeEffect.Depla, false, 20));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Conquérante du Chevalier Noir"); put(Language.EN, "Black Knight's Crusade Sword"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							65, Quality.ORANGE, true, WeaponType.EPEE1M, false, false, "epee1M/65ora", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1417, true));
+								add(new Effect(TypeEffect.FCE, false, 20, true));
+								add(new Effect(TypeEffect.VIT, false, 10, true));
+								add(new Effect(TypeEffect.AGI, false, 12, true));
+								add(new Effect(TypeEffect.Toucher, false, 12));
+								add(new Effect(TypeEffect.TCCP, false, 6));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée de la Vérité de l'Empereur"); put(Language.EN, "Emperor's Sword of Truth"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							63, Quality.ORANGE, true, WeaponType.EPEE1M, true, false, "epee1M/63pre", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1361, true));
+								add(new Effect(TypeEffect.FCE, false, 20, true));
+								add(new Effect(TypeEffect.VIT, false, 12, true));
+								add(new Effect(TypeEffect.AGI, false, 10, true));
+								add(new Effect(TypeEffect.Toucher, false, 10));
+								add(new Proc(15, Activation.Attack, 10, new ArrayList<Calculable>() {{
+									add(new Effect(TypeEffect.TCCP, false, 20));
+									add(new Effect(TypeEffect.Depla, false, 20));
+								}}));
+							}}, new ArrayList<Calculable>() ),
+					new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée en Os de Dragon Originel"); put(Language.EN, "Original Dragonbone Sword"); }},
+							new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+							63, Quality.BLUE, false, WeaponType.EPEE1M, false, false, "epee1M/44sprite", new ArrayList<Calculable>() {{
+								add(new Effect(TypeEffect.Atk, false, 1555, true));
+								add(new Effect(TypeEffect.FCE, false, 32, true));
+								add(new Effect(TypeEffect.VIT, false, 20, true));
+								add(new Effect(TypeEffect.Toucher, false, 10));
+							}}, new ArrayList<Calculable>() ),
+					
+					
 					},
 			new Weapon[] {
 					

@@ -48,7 +48,7 @@ public class Armor extends Equipment {
 		this.icon = armor.getIcon();
 	}
 	
-	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
@@ -58,7 +58,7 @@ public class Armor extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, ArrayList<Calculable> bonusXP) {
 		super(name, grades, lvl, quality, enchantable, new ArrayList<Calculable>(), bonusXP);
 		
 		this.type = type;
@@ -226,7 +226,7 @@ public class Armor extends Equipment {
 					
 					String[] effectSplit = lineSplit[7].split(",");
 					
-					ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+					ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
 					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
 						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 					
