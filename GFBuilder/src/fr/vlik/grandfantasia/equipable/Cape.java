@@ -39,7 +39,7 @@ public class Cape extends Equipment {
 		this.icon = cape.getIcon();
 	}
 	
-	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
 		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
@@ -47,7 +47,7 @@ public class Cape extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, MultiEffect effects, ArrayList<Effect> bonusXP) {
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, MultiEffect effects, ArrayList<Calculable> bonusXP) {
 		super(name, grades, lvl, quality, canEnchant, new ArrayList<Calculable>(), bonusXP);
 		
 		this.setCode = setCode;
@@ -157,7 +157,7 @@ public class Cape extends Equipment {
 				
 				String[] effectSplit = lineSplit[6].split(",");
 				
-				ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+				ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
 				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
 					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 				

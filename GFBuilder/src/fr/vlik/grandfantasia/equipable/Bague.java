@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.equipable;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -7,6 +7,8 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import fr.vlik.grandfantasia.Loader;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
@@ -15,10 +17,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 public class Bague implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
-	private static Bague[] data;
-	static {
-		Bague.data = Loader.getBague();
-	}
+	private static Bague[] data = Loader.getBague();
 	
 	private final Map<Language, String> name;
 	private final Quality quality;

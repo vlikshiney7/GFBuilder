@@ -7,18 +7,18 @@ public class Proc implements Calculable {
 	private ArrayList<Calculable> effects = new ArrayList<Calculable>();
 	private Activation activation;
 	private int taux;
-	private int time;
+	private double time;
 	private int cumul = 1;
 	
 	
-	public Proc(int taux, Activation activation, int time, ArrayList<Calculable> effects) {
+	public Proc(int taux, Activation activation, double time, ArrayList<Calculable> effects) {
 		this.taux = taux;
 		this.activation = activation;
 		this.time = time;
 		this.effects = effects;
 	}
 	
-	public Proc(int taux, Activation activation, int time, int cumul, ArrayList<Calculable> effects) {
+	public Proc(int taux, Activation activation, double time, int cumul, ArrayList<Calculable> effects) {
 		this(taux, activation, time, effects);
 		this.cumul = cumul;
 	}
@@ -54,7 +54,7 @@ public class Proc implements Calculable {
 		return this.activation;
 	}
 	
-	public int getTime() {
+	public double getTime() {
 		return this.time;
 	}
 	

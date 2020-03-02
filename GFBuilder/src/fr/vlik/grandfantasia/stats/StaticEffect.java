@@ -5,8 +5,12 @@ import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 public class StaticEffect implements Calculable {
 	
 	private TypeStaticEffect type;
-	private int taux;
+	private int taux = -1;
 	
+	
+	public StaticEffect(TypeStaticEffect type) {
+		this.type = type;
+	}
 	
 	public StaticEffect(TypeStaticEffect type, int taux) {
 		this.type = type;

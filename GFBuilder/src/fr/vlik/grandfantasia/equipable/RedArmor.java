@@ -18,7 +18,7 @@ public class RedArmor extends Armor {
 		this.starEffects = redArmor.getStarEffects();
 	}
 	
-	public RedArmor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String iconPath, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
+	public RedArmor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String iconPath, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
 		super(name, grades, lvl, quality, enchantable, reinca, type, setCode, iconPath, effects, bonusXP);
 		
 		this.starEffects = starEffects;

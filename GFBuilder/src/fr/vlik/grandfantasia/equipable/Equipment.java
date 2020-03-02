@@ -24,7 +24,7 @@ public abstract class Equipment implements FullRenderer {
 	protected boolean enchantable;
 	protected Icon icon;
 	protected ArrayList<Calculable> effects = new ArrayList<Calculable>();
-	protected ArrayList<Effect> bonusXP = new ArrayList<Effect>();
+	protected ArrayList<Calculable> bonusXP = new ArrayList<Calculable>();
 	
 	@SuppressWarnings("serial")
 	public Equipment() {
@@ -33,7 +33,7 @@ public abstract class Equipment implements FullRenderer {
 		this.lvl = 0;
 	}
 	
-	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
+	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
 		this.name = name;
 		this.grades = grades;
 		this.lvl = lvl;
@@ -87,10 +87,12 @@ public abstract class Equipment implements FullRenderer {
 		return list;
 	}
 	
-	public ArrayList<Effect> getBonusXP() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.bonusXP.size());
-		for(Effect effect : this.bonusXP) {
-			list.add(new Effect(effect));
+	public ArrayList<Calculable> getBonusXP() {
+		ArrayList<Calculable> list = new ArrayList<Calculable>(this.bonusXP.size());
+		for(Calculable effect : this.bonusXP) {
+			if(effect instanceof Effect) {
+				list.add(new Effect((Effect)effect));
+			}
 		}
 		return list;
 	}
@@ -151,7 +153,7 @@ public abstract class Equipment implements FullRenderer {
 		if(this.bonusXP.size() != 0) {
 			tooltip.append("<br>");
 			tooltip.append("<ul><b>Bonus XP Stuff lvl " + this.lvl + "</b>");
-			for(Effect e : this.bonusXP) {
+			for(Calculable e : this.bonusXP) {
 				tooltip.append(e.getTooltip());
 			}
 			tooltip.append("</ul>");

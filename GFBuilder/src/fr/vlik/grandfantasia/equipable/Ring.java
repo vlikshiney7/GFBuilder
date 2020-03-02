@@ -38,7 +38,7 @@ public final class Ring extends Equipment {
 		this.icon = ring.getIcon();
 	}
 	
-	public Ring(Map<Language, String> name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String path, ArrayList<Calculable> effects, ArrayList<Effect> bonusXP) {
+	public Ring(Map<Language, String> name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
 		super(name, new GradeName[] { GradeName.NONE } , lvl, quality, enchantable, effects, bonusXP);
 		
 		this.setCode = setCode;
@@ -133,7 +133,7 @@ public final class Ring extends Equipment {
 				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
 					effects.add(new Effect(lineSplit[j+7]));
 				
-				ArrayList<Effect> bonusXP = new ArrayList<Effect>(Integer.parseInt(effectSplit[2]));
+				ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
 				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
 					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
 				

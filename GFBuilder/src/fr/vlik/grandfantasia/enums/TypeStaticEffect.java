@@ -12,13 +12,17 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	x3STD("Dégât x3 sur Coup Standard", "Damage x3 in standard hit", "DEG x3 STD", "DAM x3 STD", Tools.EffectColor[10]),
 	x2Skill("Dégât x2", "Damage x2", "DEG x2", "DAM x2", Tools.EffectColor[7]),
 	x3Skill("Dégât x3", "Damage x3", "DEG x3", "DAM x3", Tools.EffectColor[10]),
+	
 	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", Tools.EffectColor[8]),
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
 	
 	ProcT0L85Q5("Défense Physique -100", "Physical défense -100", "DÉF -100", "DEF -100", Tools.EffectColor[0]),
 	ProcT0L80Q5N0("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
-	ProcT0L80Q5N1("VOL de l'ennemi -180", "Opponent WIL -180", "VOL -180", "WIL -180", Tools.EffectColor[0]);
+	ProcT0L80Q5N1("VOL de l'ennemi -180", "Opponent WIL -180", "VOL -180", "WIL -180", Tools.EffectColor[0]),
+	ProcT0L80Q3("Déplacement de l'ennemi -30%", "Opponent speed -30%", "Dépla -30%", "Speed -30%", Tools.EffectColor[0]),
+	ProcT0L70Q3("Compétences bloquées", "Skills blocked", "Anti Compétences", "Anti Skills", Tools.EffectColor[0]),
+	;
 	
 	public final String fr;
 	public final String en;
