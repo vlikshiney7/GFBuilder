@@ -13,14 +13,18 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Loader;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Armor extends Equipment {
 	
@@ -28,6 +32,7 @@ public class Armor extends Equipment {
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Armor[][] data;
 	static {
+		Armor.data = Loader.getArmor();
 		loadData();
 	}
 	
@@ -197,6 +202,102 @@ public class Armor extends Equipment {
 		}
 	}
 	
+	public String toCode(String path) {
+		String code = "new Weapon(new HashMap<Language, String>() {{ ";
+		code += "put(Language.FR, \"" + this.name.get(Language.FR) + "\"); }},\n";
+		
+		code += "new GradeName[] { ";
+		for(GradeName grade : this.grades) {
+			code += "GradeName." + grade + ", ";
+		}
+		code += "},\n";
+		
+		code += this.lvl +", ";
+		code += "Quality." + this.quality + ", ";
+		code += this.enchantable + ", ";
+		code += "WeaponType." + this.type + ", ";
+		//code += this.uniqueEquip + ", ";
+		code += this.reinca + ", ";
+		code += "\"" + path + "\", ";
+		code += "new ArrayList<Calculable>() {{\n";
+		
+		for(Calculable c : this.effects) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				code += "\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+				
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
+				}
+				
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
+				}
+				
+				if(e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
+				}
+				
+				code += "));\n";
+			} else if(c instanceof StaticEffect) {
+				StaticEffect s = (StaticEffect) c;
+				
+				code += "\tadd(new StaticEffect(TypeStaticEffect." + s.getType() + ", " + s.getTaux() + "));\n";
+			} else if(c instanceof Proc) {
+				Proc p = (Proc) c;
+				
+				code += "add(new Proc(" + p.getTaux() + ", Activation." + p.getActivation() + ", " + p.getTime();
+				if(p.getCumul() <= 1) {
+					code += ", " + p.getCumul();
+				}
+				code += ", new ArrayList<Calculable>() {{";
+				
+				for(Calculable in : p.getEffects()) {
+					if(in instanceof Effect) {
+						Effect e = (Effect) in;
+						code += "\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+						
+						if(e.getTransfert() != null) {
+							code += ", " + e.getWithReinca();
+							code += ", WeaponType." + e.getWithWeapon();
+							code += ", TypeEffect." + e.getTransfert();
+							continue;
+						}
+						
+						if(e.getWithWeapon() != WeaponType.NONE) {
+							code += ", " + e.getWithReinca();
+							code += ", WeaponType." + e.getWithWeapon();
+							continue;
+						}
+						
+						if(!e.getWithReinca()) {
+							code += ", " + e.getWithReinca();
+						}
+						
+						code += "));\n";
+					} else if(in instanceof StaticEffect) {
+						StaticEffect s = (StaticEffect) in;
+						
+						code += "\tadd(new StaticEffect(TypeStaticEffect." + s.getType() + ", " + s.getTaux() + "));\n";
+					}
+				}
+				
+				code += "}}));";
+			}
+		}
+		
+		code += "}}, new ArrayList<Effect>() ),";
+		
+		code = code.replace(".0)", ")");
+		
+		return code;
+	}
+	
 	public static void loadData() {
 		String[] armorFile = { "casques", "torses", "pantalons", "gants", "bottes" };
 		
@@ -291,14 +392,32 @@ public class Armor extends Equipment {
 			}
 		}
 		
-		Armor.data = new Armor[list.size()][];
-		for(int i = 0; i < data.length; i++) {
+		Armor[][] cast = new Armor[list.size()][];
+		for(int i = 0; i < cast.length; i++) {
 			Armor[] armorPiece = new Armor[list.get(i).size()];
 			for(int j = 0; j < list.get(i).size(); j++) {
 				armorPiece[j] = list.get(i).get(j);				
 			}
-			Armor.data[i] = armorPiece;
+			cast[i] = armorPiece;
 		}
+		
+		Armor[][] fusion = new Armor[data.length][];
+		for(int i = 0; i < fusion.length; i++) {
+			Armor[] w = new Armor[data[i].length + cast[i].length];
+			
+			int j = 0;
+			for(; j < data[i].length; j++) {
+				w[j] = data[i][j];
+			}
+			
+			for(; j < data[i].length + cast[i].length; j++) {
+				w[j] = cast[i][j-data[i].length];
+			}
+			
+			fusion[i] = w;
+		}
+		
+		Armor.data = fusion;
 	}
 	
 	public static Armor get(String name, Language lang, int list) {

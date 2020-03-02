@@ -8,14 +8,16 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
+import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.Armor.ArmorType;
 import fr.vlik.grandfantasia.equipable.RedWeapon;
 import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 @SuppressWarnings("serial")
 public class Loader {
@@ -337,9 +339,6 @@ public class Loader {
 									add(new StaticEffect(TypeStaticEffect.ProcT0L80Q5N1, -1));
 								}}));
 							}}, new ArrayList<Effect>() ),
-					},
-			new Weapon[] {
-					
 			},
 			new Weapon[] {
 					
@@ -384,6 +383,33 @@ public class Loader {
 					
 			},
 			new Weapon[] {
+					
+			},
+			new Weapon[] {
+					
+			}
+		};
+	}
+	
+	public static Armor[][] getArmor() {
+		return new Armor[][] {
+			new Armor[] {
+					new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fierté pétrifiante"); put(Language.EN, ""); }},
+							new GradeName[] { GradeName.BERSERKER }, 100, Quality.PURPLE, true, false,
+							ArmorType.CASQUE, "100vio0", "100vio0", new ArrayList<Calculable>() {{
+								
+							}}, new ArrayList<Effect>() ),
+			},
+			new Armor[] {
+					
+			},
+			new Armor[] {
+					
+			},
+			new Armor[] {
+					
+			},
+			new Armor[] {
 					
 			}
 		};
