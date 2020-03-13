@@ -185,7 +185,9 @@ public class PageCapeRing extends PagePanel {
 		
 		Cape cape = new Cape(this.getCape());
 		cape.addEnchant(this.getEnchantment(0));
-		list.addAll(cape.getEffects());
+		for(Calculable c : cape.getEffects()) {
+			list.add(c);
+		}
 		
 		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE
 				&& this.getEffectXpStuff(0) != this.getEffectXpStuff(1)) {
@@ -202,7 +204,9 @@ public class PageCapeRing extends PagePanel {
 		for(int i = 0; i < rings.length; i++) {
 			rings[i] = new Ring(this.getRing(i));
 			rings[i].addEnchant(this.getEnchantment(i+1));
-			list.addAll(rings[i].getEffects());
+			for(Calculable c : rings[i].getEffects()) {
+				list.add(c);
+			}
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -226,11 +230,15 @@ public class PageCapeRing extends PagePanel {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(i == 0) {
 					if(lvlXpStuff >= cape.getLvl()) {
-						list.addAll(cape.getBonusXP());
+						for(Calculable c : cape.getBonusXP()) {
+							list.add(c);
+						}
 					}
 				} else {
 					if(lvlXpStuff >= rings[i-1].getLvl()) {
-						list.addAll(rings[i-1].getBonusXP());
+						for(Calculable c : rings[i-1].getBonusXP()) {
+							list.add(c);
+						}
 					}
 				}
 			}

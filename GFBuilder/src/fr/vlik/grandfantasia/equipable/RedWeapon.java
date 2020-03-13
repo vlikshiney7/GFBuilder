@@ -21,7 +21,7 @@ public class RedWeapon extends Weapon {
 		this.starEffects = redWeapon.getStarEffects();
 	}
 	
-	public RedWeapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP, ArrayList<ArrayList<Calculable>> starEffects) {
+	public RedWeapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, Calculable[] effects, Calculable[] bonusXP, ArrayList<ArrayList<Calculable>> starEffects) {
 		super(name, grades, lvl, quality, enchantable, type, uniqueEquip, reinca, iconPath, effects, bonusXP);
 		
 		this.starEffects = starEffects;

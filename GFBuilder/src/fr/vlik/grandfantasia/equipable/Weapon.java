@@ -14,12 +14,12 @@ import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Loader;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
@@ -41,7 +41,7 @@ public class Weapon extends Equipment {
 	
 	@SuppressWarnings("serial")
 	public Weapon() {
-		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, new ArrayList<Calculable>(), new ArrayList<Calculable>());
+		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, null, null);
 		
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
@@ -59,7 +59,7 @@ public class Weapon extends Equipment {
 		this.effects = weapon.getEffects();
 	}
 	
-	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
+	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, Calculable[] effects, Calculable[] bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
@@ -77,7 +77,7 @@ public class Weapon extends Equipment {
 		LAME(13, "une lame", ""), CLE(14, "une clé", ""),
 		BOUCLIER(15, "un bouclier", ""),
 		DEFAULT(16, "un défaut", "default"),
-		NONE(-1, "un vide", "void");
+		NONE(-1, "vide", "void");
 		
 		public final int index;
 		public final String fr;
@@ -133,9 +133,17 @@ public class Weapon extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			for(Effect e : enchant.getEffects()) {
-				this.effects.add(e);
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			
+			for(int i = 0; i < this.effects.length; i++) {
+				newTab[i] = this.effects[i];
 			}
+			
+			for(int i = 0; i < enchant.getEffects().size(); i++) {
+				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			}
+			
+			this.effects = newTab;
 		} else {
 			for(Effect e : enchant.getEffects()) {
 				int value = Enchantment.getValue(this, e.getType());
@@ -156,13 +164,26 @@ public class Weapon extends Equipment {
 				
 				if(!found) {
 					e.addEnchantValue(value);
-					this.effects.add(e);
+					
+					Calculable[] newTab = new Calculable[this.effects.length + 1];
+					
+					for(int i = 0; i < this.effects.length; i++) {
+						newTab[i] = this.effects[i];
+					}
+					
+					newTab[this.effects.length] = e;
+					
+					this.effects = newTab;
 				}
 			}
 		}
 	}
 	
 	public void addFortif(Fortification fortif) {
+		if(this.effects == null) {
+			return;
+		}
+		
 		for(Calculable calculable : this.effects) {
 			if(calculable instanceof Effect) {
 				Effect effect = (Effect) calculable;
@@ -327,13 +348,14 @@ public class Weapon extends Equipment {
 					
 					String[] effectSplit = lineSplit[7].split(",");
 					
-					ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
-					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-						effects.add(new Effect(lineSplit[j+8]));
+					Calculable[] effects = new Calculable[Integer.parseInt(effectSplit[0])];
+					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++) {
+						effects[j] = new Effect(lineSplit[j+8]);
+					}
 					
-					ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
+					Calculable[] bonusXP = new Calculable[Integer.parseInt(effectSplit[2])];
 					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
-						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+						bonusXP[j] = new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]);
 					}
 					
 					if(quality == Quality.RED) {
@@ -373,7 +395,7 @@ public class Weapon extends Equipment {
 						list.get(i).add(weapon);
 						
 						if(toCode < 10) {
-							System.out.println(weapon.toCode(path));
+							//System.out.println(weapon.toCode(path));
 							toCode++;
 						}
 					}

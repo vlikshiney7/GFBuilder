@@ -5,10 +5,11 @@ import java.awt.Color;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.Loader;
 
 public class Fortification implements Colorable, Writable {
 	
-	static final Color[] LEVEL = new Color[] { new Color(147, 147, 147), new Color(255, 255, 255), new Color(111, 225, 28), new Color(33, 171, 235), new Color(254, 60, 88) };
+	public static final Color[] LEVEL = new Color[] { new Color(147, 147, 147), new Color(255, 255, 255), new Color(111, 225, 28), new Color(33, 171, 235), new Color(254, 60, 88) };
 	private static Fortification[] data = Loader.getFortification();
 	
 	private final String name;

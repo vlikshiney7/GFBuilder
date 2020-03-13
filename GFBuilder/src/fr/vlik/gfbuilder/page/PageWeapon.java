@@ -313,7 +313,11 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < weapons.length; i++) {
-			list.addAll(weapons[i].getEffects());
+			if(weapons[i].getEffects() != null) {
+				for(Calculable c : weapons[i].getEffects()) {
+					list.add(c);
+				}
+			}
 		}
 		
 		for(int i = 0; i < 3; i++) {
@@ -345,7 +349,9 @@ public class PageWeapon extends PagePanel {
 					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(lvlXpStuff >= weapons[i].getLvl()) {
-					list.addAll(weapons[i].getBonusXP());
+					for(Calculable c : weapons[i].getBonusXP()) {
+						list.add(c);
+					}
 				}
 			}
 		}

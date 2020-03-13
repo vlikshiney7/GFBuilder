@@ -38,7 +38,7 @@ public final class Ring extends Equipment {
 		this.icon = ring.getIcon();
 	}
 	
-	public Ring(Map<Language, String> name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
+	public Ring(Map<Language, String> name, int lvl, Quality quality, boolean enchantable, String setCode, boolean uniqueEquip, String path, Calculable[] effects, Calculable[] bonusXP) {
 		super(name, new GradeName[] { GradeName.NONE } , lvl, quality, enchantable, effects, bonusXP);
 		
 		this.setCode = setCode;
@@ -81,9 +81,17 @@ public final class Ring extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			for(Effect e : enchant.getEffects()) {
-				this.effects.add(e);
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			
+			for(int i = 0; i < this.effects.length; i++) {
+				newTab[i] = this.effects[i];
 			}
+			
+			for(int i = 0; i < enchant.getEffects().size(); i++) {
+				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			}
+			
+			this.effects = newTab;
 		} else {
 			for(Effect e : enchant.getEffects()) {
 				int value = Enchantment.getValue(this, e.getType());
@@ -104,7 +112,16 @@ public final class Ring extends Equipment {
 				
 				if(!found) {
 					e.addEnchantValue(value);
-					this.effects.add(e);
+					
+					Calculable[] newTab = new Calculable[this.effects.length + 1];
+					
+					for(int i = 0; i < this.effects.length; i++) {
+						newTab[i] = this.effects[i];
+					}
+					
+					newTab[this.effects.length] = e;
+					
+					this.effects = newTab;
 				}
 			}
 		}
@@ -129,13 +146,15 @@ public final class Ring extends Equipment {
 				
 				String[] effectSplit = lineSplit[6].split(",");
 				
-				ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
-				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-					effects.add(new Effect(lineSplit[j+7]));
+				Calculable[] effects = new Calculable[Integer.parseInt(effectSplit[0])];
+				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++) {
+					effects[j] = new Effect(lineSplit[j+7]);
+				}
 				
-				ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
-				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
-					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+				Calculable[] bonusXP = new Calculable[Integer.parseInt(effectSplit[2])];
+				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
+					bonusXP[j] = new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]);
+				}
 				
 				
 				Ring ring = new Ring(
