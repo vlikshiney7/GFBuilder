@@ -32,7 +32,7 @@ public class Proc implements Calculable {
 	}
 	
 	public static enum Activation {
-		Attack(0, "en attaquant", "attacking"), 
+		Attack(0, "en attaquant", "attacking"),
 		Attacked(1, "quand attaqué", "when attacked");
 		
 		public final int index;
