@@ -20,12 +20,12 @@ public class MultiEffect {
 	private String code;
 	private int lvlMin;
 	private int lvlMax;
-	private ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>();
+	private Effect[][] effects;
 	
-	public MultiEffect(String code, int lvlMin, ArrayList<ArrayList<Effect>> effects) {
+	public MultiEffect(String code, int lvlMin, Effect[][] effects) {
 		this.code = code;
 		this.lvlMin = lvlMin;
-		this.lvlMax = lvlMin + effects.size() - 1;
+		this.lvlMax = lvlMin + effects.length - 1;
 		this.effects = effects;
 	}
 	
@@ -41,28 +41,72 @@ public class MultiEffect {
 		return this.lvlMax;
 	}
 	
-	public ArrayList<ArrayList<Effect>> getEffects() {
-		ArrayList<ArrayList<Effect>> list = new ArrayList<ArrayList<Effect>>(this.effects.size());
+	public Effect[][] getEffects() {
+		Effect[][] tabs = new Effect[this.effects.length][];
 		
-		for(int i = 0; i < list.size(); i++) {
-			list.add(new ArrayList<Effect>(effects.get(i).size()));
+		for(int i = 0; i < tabs.length; i++) {
+			Effect[] tab = new Effect[this.effects[i].length];
 			
-			for(Effect effect : effects.get(i)) {
-				list.get(i).add(new Effect(effect));
+			for(int j = 0; j < tab.length; j++) {
+				tab[j] = this.effects[i][j];
 			}
+			
+			tabs[i] = tab;
 		}
 		
-		return list;
+		return tabs;
 	}
 	
-	public ArrayList<Calculable> getEffectsFromLvl(int lvl) {
+	public Calculable[] getEffectsFromLvl(int lvl) {
 		int index = lvl > this.lvlMax ? this.lvlMax - this.lvlMin : lvl - this.lvlMin;
-		ArrayList<Calculable> list = new ArrayList<Calculable>(this.effects.get(index).size());
-		for(Effect effect : this.effects.get(index)) {
-			list.add(new Effect(effect));
+		
+		Calculable[] tab = new Calculable[this.effects[index].length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = this.effects[index][i];
 		}
-		return list;
+		
+		return tab;
 	}
+	/*
+	public String toCode() {
+		String code = "new MultiEffect(\"";
+		code += this.code + "\", ";
+		code += this.lvlMin + ", ";
+		code += "new ArrayList<ArrayList<Effect>>() {{\n";
+		
+		for(ArrayList<Effect> array : this.effects) {
+			code += "\tadd(new ArrayList<Effect>() {{\n";
+			
+			for(Effect e : array) {
+				code += "\t\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+				
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
+				}
+				
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
+				}
+				
+				if(e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
+				}
+				
+				code += "));\n";
+			}
+			
+			code += "\t}});\n";
+		}
+		
+		code += "}})";
+		
+		return code;
+	}*/
 	
 	public static void loadData() {
 		ArrayList<MultiEffect> list = new ArrayList<MultiEffect>();
@@ -74,10 +118,10 @@ public class MultiEffect {
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineInfoSplit = line.split("/");
-				ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>(Integer.parseInt(lineInfoSplit[3]));
+				Effect[][] effects = new Effect[Integer.parseInt(lineInfoSplit[3])][];
 				
 				for(int i = 0; i < Integer.parseInt(lineInfoSplit[3]); i++) {
-					effects.add(new ArrayList<Effect>(Integer.parseInt(lineInfoSplit[1])));
+					effects[i] = new Effect[Integer.parseInt(lineInfoSplit[1])];
 				}
 				
 				for(int i = 0; i < Integer.parseInt(lineInfoSplit[1]); i++) {
@@ -97,7 +141,7 @@ public class MultiEffect {
 					}
 					
 					for(int j = 0; j < values.length; j++) {
-						effects.get(j).add(new Effect(typeEffect, isPercent, Double.parseDouble(values[j]), isReinca, withWeapon, null));
+						effects[j][i] = new Effect(typeEffect, isPercent, Double.parseDouble(values[j]), isReinca, withWeapon);
 					}
 				}
 				

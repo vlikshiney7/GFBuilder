@@ -84,7 +84,9 @@ public class PageOther extends PagePanel {
 		
 		list.addAll(this.getBague().getEffects());
 		list.addAll(this.getLoveCo().getEffects());
-		list.addAll(this.getAnima().getEffects());
+		for(Calculable c : this.getAnima().getEffects()) {
+			list.add(c);
+		}
 		
 		this.effects = list;
 	}

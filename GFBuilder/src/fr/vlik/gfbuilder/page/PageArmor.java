@@ -309,7 +309,11 @@ public class PageArmor extends PagePanel {
 				armors[i].addFortif(this.getFortif(i));
 			}
 			
-			list.addAll(armors[i].getEffects());
+			if(armors[i].getEffects() != null) {
+				for(Calculable c : armors[i].getEffects()) {
+					list.add(c);
+				}
+			}
 		}
 		
 		for(int i = 0; i < 5; i++) {
@@ -331,7 +335,9 @@ public class PageArmor extends PagePanel {
 					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(lvlXpStuff >= armors[i].getLvl()) {
-					list.addAll(armors[i].getBonusXP());
+					for(Calculable c : armors[i].getBonusXP()) {
+						list.add(c);
+					}
 				}
 			}
 		}

@@ -32,10 +32,10 @@ public class Anima implements FullRenderer {
 	private Quality quality;
 	private Icon icon;
 	private boolean isMultiEffect;
-	private ArrayList<Calculable> effects = new ArrayList<Calculable>();
+	private Calculable[] effects;
 	private MultiEffect multiEffects;
 	
-	public Anima(String name, Quality quality, String path, ArrayList<Calculable> effects) {
+	public Anima(String name, Quality quality, String path, Calculable[] effects) {
 		this.name = name;
 		this.quality = quality;
 		this.isMultiEffect = false;
@@ -73,21 +73,24 @@ public class Anima implements FullRenderer {
 		return Tools.itemColor[this.quality.index];
 	}
 	
-	public ArrayList<Calculable> getEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>(this.effects.size());
-		for(Calculable effect : this.effects) {
-			if(effect instanceof Effect) {
-				list.add(new Effect((Effect)effect));
-			}
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = this.effects[i];
+		}
+		
+		return tab;
 	}
 	
 	public void setEffects(int lvl) {
 		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	public ArrayList<Calculable> getMultiEffects(int lvl) {
+	public Calculable[] getMultiEffects(int lvl) {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
@@ -139,9 +142,10 @@ public class Anima implements FullRenderer {
 				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 				
 				if(Integer.parseInt(lineSplit[2]) > -1) {
-					ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(lineSplit[2]));
-					for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
-						effects.add(new Effect(lineSplit[j+3]));
+					Calculable[] effects = new Calculable[Integer.parseInt(lineSplit[2])];
+					for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++) {
+						effects[j] = new Effect(lineSplit[j+3]);
+					}
 					
 					list.add(new Anima(lineSplit[0], quality, path, effects));
 				} else {

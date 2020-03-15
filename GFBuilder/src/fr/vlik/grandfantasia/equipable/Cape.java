@@ -39,7 +39,7 @@ public class Cape extends Equipment {
 		this.icon = cape.getIcon();
 	}
 	
-	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, Calculable[] effects, Calculable[] bonusXP) {
 		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
 		
 		this.setCode = setCode;
@@ -47,8 +47,8 @@ public class Cape extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, MultiEffect effects, ArrayList<Calculable> bonusXP) {
-		super(name, grades, lvl, quality, canEnchant, new ArrayList<Calculable>(), bonusXP);
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, MultiEffect effects, Calculable[] bonusXP) {
+		super(name, grades, lvl, quality, canEnchant, null, bonusXP);
 		
 		this.setCode = setCode;
 		this.isMultiEffect = true;
@@ -72,7 +72,7 @@ public class Cape extends Equipment {
 		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	public ArrayList<Calculable> getMultiEffects(int lvl) {
+	public Calculable[] getMultiEffects(int lvl) {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
@@ -103,9 +103,17 @@ public class Cape extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			for(Effect e : enchant.getEffects()) {
-				this.effects.add(e);
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			
+			for(int i = 0; i < this.effects.length; i++) {
+				newTab[i] = this.effects[i];
 			}
+			
+			for(int i = 0; i < enchant.getEffects().size(); i++) {
+				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			}
+			
+			this.effects = newTab;
 		} else {
 			for(Effect e : enchant.getEffects()) {
 				int value = Enchantment.getValue(this, e.getType());
@@ -126,7 +134,16 @@ public class Cape extends Equipment {
 				
 				if(!found) {
 					e.addEnchantValue(value);
-					this.effects.add(e);
+					
+					Calculable[] newTab = new Calculable[this.effects.length + 1];
+					
+					for(int i = 0; i < this.effects.length; i++) {
+						newTab[i] = this.effects[i];
+					}
+					
+					newTab[this.effects.length] = e;
+					
+					this.effects = newTab;
 				}
 			}
 		}
@@ -157,14 +174,17 @@ public class Cape extends Equipment {
 				
 				String[] effectSplit = lineSplit[6].split(",");
 				
-				ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
-				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
-					bonusXP.add(new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
+				Calculable[] bonusXP = new Calculable[Integer.parseInt(effectSplit[2])];
+				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
+					bonusXP[j] = new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]);
+				}
+				
 				
 				if(Integer.parseInt(effectSplit[0]) > -1) {
-					ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
-					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-						effects.add(new Effect(lineSplit[j+7]));
+					Calculable[] effects = new Calculable[Integer.parseInt(effectSplit[0])];
+					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++) {
+						effects[j] = new Effect(lineSplit[j+7]);
+					}
 					
 					Cape cape = new Cape(
 							names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]),

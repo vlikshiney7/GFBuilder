@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia.equipable;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +16,7 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -26,16 +24,24 @@ public class Armor extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	public static Armor[][] data;
-	static {
-		loadData();
-	}
+	public static Armor[][] data = Loader.getArmor();
 	
 	private ArmorType type;
 	private String setCode;
 	private boolean reinca;
 	private boolean isMultiEffect;
 	private MultiEffect multiEffects;
+	
+	@SuppressWarnings("serial")
+	public Armor() {
+		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, null, null);
+		
+		this.type = ArmorType.NONE;
+		this.setCode = "-1";
+		this.reinca = false;
+		this.isMultiEffect = false;
+		this.icon = setIcon("null");
+	}
 	
 	public Armor(Armor armor) {
 		super(armor.getMap(), armor.getGrades(), armor.getLvl(), armor.getQuality(), armor.isEnchantable(), armor.getEffects(), armor.getBonusXP());
@@ -48,7 +54,7 @@ public class Armor extends Equipment {
 		this.icon = armor.getIcon();
 	}
 	
-	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, ArrayList<Calculable> effects, ArrayList<Calculable> bonusXP) {
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, Calculable[] effects, Calculable[] bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.type = type;
@@ -58,8 +64,8 @@ public class Armor extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, ArrayList<Calculable> bonusXP) {
-		super(name, grades, lvl, quality, enchantable, new ArrayList<Calculable>(), bonusXP);
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, MultiEffect effects, Calculable[] bonusXP) {
+		super(name, grades, lvl, quality, enchantable, null, bonusXP);
 		
 		this.type = type;
 		this.setCode = setCode;
@@ -74,7 +80,8 @@ public class Armor extends Equipment {
 		PLASTRON(1, "plastron", "breastplate"),
 		JAMBIERE(2, "jambière", "legging"),
 		GANT(3, "gantelet", "gauntlet"),
-		BOTTE(4, "botte", "boot");
+		BOTTE(4, "botte", "boot"),
+		NONE(-1, "vide", "void");
 		
 		public final int index;
 		public final String fr;
@@ -111,7 +118,7 @@ public class Armor extends Equipment {
 		this.effects = this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
-	public ArrayList<Calculable> getMultiEffects(int lvl) {
+	public Calculable[] getMultiEffects(int lvl) {
 		return this.multiEffects.getEffectsFromLvl(lvl);
 	}
 	
@@ -146,9 +153,17 @@ public class Armor extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			for(Effect e : enchant.getEffects()) {
-				this.effects.add(e);
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			
+			for(int i = 0; i < this.effects.length; i++) {
+				newTab[i] = this.effects[i];
 			}
+			
+			for(int i = 0; i < enchant.getEffects().size(); i++) {
+				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			}
+			
+			this.effects = newTab;
 		} else {
 			for(Effect e : enchant.getEffects()) {
 				int value = Enchantment.getValue(this, e.getType());
@@ -169,13 +184,26 @@ public class Armor extends Equipment {
 				
 				if(!found) {
 					e.addEnchantValue(value);
-					this.effects.add(e);
+					
+					Calculable[] newTab = new Calculable[this.effects.length + 1];
+					
+					for(int i = 0; i < this.effects.length; i++) {
+						newTab[i] = this.effects[i];
+					}
+					
+					newTab[this.effects.length] = e;
+					
+					this.effects = newTab;
 				}
 			}
 		}
 	}
 
 	public void addFortif(Fortification fortif) {
+		if(this.effects == null) {
+			return;
+		}
+		
 		for(Calculable calculable : this.effects) {
 			if(calculable instanceof Effect) {
 				Effect effect = (Effect) calculable;
@@ -197,110 +225,6 @@ public class Armor extends Equipment {
 		}
 	}
 	
-	public static void loadData() {
-		String[] armorFile = { "casques", "torses", "pantalons", "gants", "bottes" };
-		
-		ArrayList<ArrayList<Armor>> list = new ArrayList<ArrayList<Armor>>();
-		
-		for(int i = 0; i < armorFile.length; i++) {
-			try (
-				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						Armor.class.getResourceAsStream(PATH + armorFile[i] + "/" + armorFile[i] + ".txt"), "UTF-8"));
-			) {
-				list.add(new ArrayList<Armor>());
-				String line = reader.readLine();
-				while (line != null) {
-					String[] lineSplit = line.split("/");
-					String path =  armorFile[i] + "/" + lineSplit[lineSplit.length-1];
-					
-					String classes[] = lineSplit[1].split(",");
-					GradeName[] grades = new GradeName[classes.length];
-					for(int j = 0; j < classes.length; j++) {
-						grades[j] = GradeName.values()[Integer.parseInt(classes[j])];
-					}
-					
-					Map<Language, String> names = new HashMap<Language, String>();
-					names.put(Language.FR, lineSplit[0]);
-					
-					Quality quality = Quality.values()[Integer.parseInt(lineSplit[4])];
-					
-					String[] effectSplit = lineSplit[7].split(",");
-					
-					ArrayList<Calculable> bonusXP = new ArrayList<Calculable>(Integer.parseInt(effectSplit[2]));
-					for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++)
-						bonusXP.add(new Effect(lineSplit[j+8+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]));
-					
-					if(quality == Quality.RED) {
-						ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
-						for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-							effects.add(new Effect(lineSplit[j+8]));
-						
-						int indexToStar = 8 + Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])+Integer.parseInt(effectSplit[2]);
-						String[] starEffectSplit = lineSplit[indexToStar].split(",");
-						
-						ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
-						int decal = 0;
-						
-						for(int j = 0; j < starEffectSplit.length; j++) {
-							ArrayList<Effect> oneStarEffects = new ArrayList<Effect>();
-							for(int k = 0; k < Integer.parseInt(starEffectSplit[j]); k++) {
-								oneStarEffects.add(new Effect(lineSplit[indexToStar+2+decal]));
-								decal++;
-							}
-							
-							starEffects.add(oneStarEffects);
-						}
-						
-						RedArmor red = new RedArmor(
-								names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-								ArmorType.values()[i], lineSplit[3], path, effects, bonusXP,
-								starEffects
-								);
-						
-						list.get(i).add(red);
-						
-					} else {
-						assert lineSplit.length == Math.abs(Integer.parseInt(effectSplit[0])) + Integer.parseInt(effectSplit[1]) + Integer.parseInt(effectSplit[2]) + 9
-								: armorFile[i] + " line " + (list.get(i).size() + 1);
-						
-						if(Integer.parseInt(effectSplit[0]) > -1) {
-							ArrayList<Calculable> effects = new ArrayList<Calculable>(Integer.parseInt(effectSplit[0]));
-							for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++)
-								effects.add(new Effect(lineSplit[j+8]));
-							
-							Armor armor = new Armor(
-									names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-									ArmorType.values()[i], lineSplit[3], path, effects, bonusXP
-									);
-							list.get(i).add(armor);
-						} else {
-							MultiEffect effects = MultiEffect.getFromCode(lineSplit[8]);
-							
-							Armor armor = new Armor(
-									names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]), Boolean.parseBoolean(lineSplit[6]),
-									ArmorType.values()[i], lineSplit[3], path, effects, bonusXP
-									);
-							list.get(i).add(armor);
-						}
-					}
-					
-					line = reader.readLine();
-				}
-			} catch (IOException e) {
-				System.out.println("Error with " + Armor.class.getClass().getSimpleName() + " class");
-			}
-		}
-		
-		Armor.data = new Armor[list.size()][];
-		for(int i = 0; i < data.length; i++) {
-			Armor[] armorPiece = new Armor[list.get(i).size()];
-			for(int j = 0; j < list.get(i).size(); j++) {
-				armorPiece[j] = list.get(i).get(j);				
-			}
-			Armor.data[i] = armorPiece;
-		}
-	}
-	
 	public static Armor get(String name, Language lang, int list) {
 		for(Armor armor : Armor.data[list]) {
 			if(armor.getName(lang).equals(name)) {
@@ -313,6 +237,8 @@ public class Armor extends Equipment {
 	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {
 		ArrayList<Armor> result = new ArrayList<Armor>();
+		
+		result.add(new Armor());
 		
 		for(Armor armor : Armor.data[idList]) {
 			if(armor.getLvl() <= lvl && armor.containGrade(grade.getGrade())) {
