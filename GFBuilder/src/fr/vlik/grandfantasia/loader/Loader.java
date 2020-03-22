@@ -26,7 +26,7 @@ import fr.vlik.grandfantasia.stats.StaticEffect;
 
 @SuppressWarnings("serial")
 public class Loader {
-
+	
 	public static Reinca[] getReinca() {
 		return new Reinca[] {
 				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, 1, 1, 100, 0, "none"),
@@ -1093,7 +1093,6 @@ public class Loader {
 				new Fortification("+20", Fortification.LEVEL[3], 1.98)
 		};
 	}
-	
 	
 	public static RedFortification[] getRedFortification() {
 		return new RedFortification[] {

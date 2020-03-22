@@ -335,8 +335,10 @@ public class PageArmor extends PagePanel {
 					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(lvlXpStuff >= armors[i].getLvl()) {
-					for(Calculable c : armors[i].getBonusXP()) {
-						list.add(c);
+					if(armors[i].getBonusXP() != null) {
+						for(Calculable c : armors[i].getBonusXP()) {
+							list.add(c);
+						}
 					}
 				}
 			}
@@ -762,19 +764,21 @@ public class PageArmor extends PagePanel {
 		
 		String tooltip = "";
 		
-		for(Calculable calculable : armor.getEffects()) {
-			if(calculable instanceof Effect) {
-				Effect effect = (Effect) calculable;
-				
-				if(effect.isPercent()) {
-					continue;
+		if(armor.getEffects() != null) {
+			for(Calculable calculable : armor.getEffects()) {
+				if(calculable instanceof Effect) {
+					Effect effect = (Effect) calculable;
+					
+					if(effect.isPercent()) {
+						continue;
+					}
+					
+					if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+						continue;
+					}
+					
+					tooltip += effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>";
 				}
-				
-				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-					continue;
-				}
-				
-				tooltip += effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>";
 			}
 		}
 		

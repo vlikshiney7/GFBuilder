@@ -820,19 +820,21 @@ public class PageWeapon extends PagePanel {
 		
 		String tooltip = "";
 		
-		for(Calculable calculable : weapon.getEffects()) {
-			if(calculable instanceof Effect) {
-				Effect effect = (Effect) calculable;
-				
-				if(effect.isPercent()) {
-					continue;
+		if(weapon.getEffects() != null) {
+			for(Calculable calculable : weapon.getEffects()) {
+				if(calculable instanceof Effect) {
+					Effect effect = (Effect) calculable;
+					
+					if(effect.isPercent()) {
+						continue;
+					}
+					
+					if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
+						continue;
+					}
+					
+					tooltip += effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>";
 				}
-				
-				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-					continue;
-				}
-				
-				tooltip += effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>";
 			}
 		}
 		

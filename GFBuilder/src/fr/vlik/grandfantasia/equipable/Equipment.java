@@ -12,6 +12,9 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public abstract class Equipment implements FullRenderer {
 	
@@ -82,7 +85,13 @@ public abstract class Equipment implements FullRenderer {
 		
 		Calculable[] tab = new Calculable[this.effects.length];
 		for(int i = 0; i < tab.length; i++) {
-			tab[i] = this.effects[i];
+			if(this.effects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.effects[i]);
+			} else if(this.effects[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) this.effects[i]);
+			} else if(this.effects[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) this.effects[i]);
+			}
 		}
 		
 		return tab;

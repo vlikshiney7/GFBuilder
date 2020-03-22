@@ -52,25 +52,67 @@ for(var i = 0; i < getCells.length; i++) {
 for(var i = 0; i < effectName.length; i++) {
 	var key = effectName[i][0];
 	if(key == "ATQ") {
-		effects += "Atk,false," + effectName[i][1] + ",true/";
+		effects += "\t\tnew Effect(TypeEffect.Atk, false, " + effectName[i][1] + ", true),\n";
 		count++;
 	} else if (key == "ATQ D.") {
-		effects += "AtkD,false," + effectName[i][1] + ",true/";
+		effects += "\t\tnew Effect(TypeEffect.AtkD, false, " + effectName[i][1] + ", true),\n";
 		count++;
 	} else if (key == "ATQ M.") {
-		effects += "AtkM,false," + effectName[i][1] + ",true/";
+		effects += "\t\tnew Effect(TypeEffect.AtkM, false, " + effectName[i][1] + ", true),\n";
 		count++;
 	} else if (key == "DÉF") {
-		effects += "DefP,false," + effectName[i][1] + ",true/";
+		effects += "\t\tnew Effect(TypeEffect.DefP, false, " + effectName[i][1] + ", true),\n";
 		count++;
 	} else if (key == "DÉF M.") {
-		effects += "DefM,false," + effectName[i][1] + ",true/";
+		effects += "\t\tnew Effect(TypeEffect.DefM, false, " + effectName[i][1] + ", true),\n";
 		count++;
 	} else if (key == "FCE" || key == "VIT" || key == "INT" || key == "VOL" || key == "AGI") {
-		effects += key + ",false," + effectName[i][1] + ",true/";
+		effects += "\t\tnew Effect(TypeEffect." + key + ", false, " + effectName[i][1] + ", true),\n";
 		count++;
 	}
 }
 
 // Tiare enchantée d'Elminster/6/100/100gold6/5/true/5,0,0/VIT,false,25,true/INT,false,31,true/VOL,false,16,true/DefP,false,614,true/DefM,false,778,true/100gold6
-console.log(name + "/" + idClasses + "/" + lvl + "/-1/" + color + "/" + enchant + "/" + reinca + "/" + count + ",0,0/" + effects);
+//console.log(name + "/" + idClasses + "/" + lvl + "/-1/" + color + "/" + enchant + "/" + reinca + "/" + count + ",0,0/" + effects);
+
+var gradeNameCorrespondance = new Array();
+gradeNameCorrespondance[0] = "BERSERKER";
+gradeNameCorrespondance[1] = "PALADIN";
+gradeNameCorrespondance[2] = "RANGER";
+gradeNameCorrespondance[3] = "ASSASSIN";
+gradeNameCorrespondance[4] = "CLERC";
+gradeNameCorrespondance[5] = "SAGE";
+gradeNameCorrespondance[6] = "SORCIER";
+gradeNameCorrespondance[7] = "NECROMANCIEN";
+gradeNameCorrespondance[8] = "METALLEUX";
+gradeNameCorrespondance[9] = "DEMOLISSEUR";
+gradeNameCorrespondance[10] = "SPATIODERIVEUR";
+gradeNameCorrespondance[11] = "CHRONODERIVEUR";
+
+var colorCorrespondance = new Array();
+colorCorrespondance[0] = "GREY";
+colorCorrespondance[1] = "WHITE";
+colorCorrespondance[2] = "GREEN";
+colorCorrespondance[3] = "BLUE";
+colorCorrespondance[4] = "ORANGE";
+colorCorrespondance[5] = "GOLD";
+colorCorrespondance[6] = "PURPLE";
+colorCorrespondance[7] = "RED";
+
+
+var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+result += "\tnew GradeName[] { ";
+
+idClasses = idClasses.split(",");
+
+for(var i = 0; i < idClasses.length; i++) {
+	result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
+}
+
+result += "}, " + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", " + reinca + ",\n";
+
+result += "\tArmorType.BOTTE, \"CODEARMOR\", \"bottes/ICONPATH\", new Calculable[] {\n";
+result += effects;
+result += "\t}, null ),\n";
+
+console.log(result);
