@@ -2009,7 +2009,6 @@ class LoaderHelmet {
 							new Effect(TypeEffect.PM, false, 258),
 						},
 					}), null ),
-				
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Marquis du Chaos"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 					ArmorType.CASQUE, "60nucleus0", "casques/65pvp0", new Calculable[] {

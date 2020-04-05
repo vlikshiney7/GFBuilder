@@ -38,42 +38,63 @@ var reinca = document.getElementsByClassName('color-red')[0];
 if(reinca == undefined) reinca = false;
 else reinca = reinca.innerHTML.match("Réincarnation") ? true : false;
 
+var pvp = false;
 var count = 0;
-var count2 = 0;
 var effects = "";
 var effectName = [];
 var getCells = document.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 for(var i = 0; i < getCells.length; i++) {
 	if(getCells[i].cells.length == 2) {
-		effectName[count2] = [ getCells[i].cells[0].innerText, getCells[i].cells[1].innerText ];
-		count2++;
+		effectName[count] = [ getCells[i].cells[0].innerText, getCells[i].cells[1].innerText ];
+		count++;
+	} else if(getCells[i].cells.length == 1) {
+		if(getCells[i].cells[0].innerText.match(/Esquive/)) {
+			effectName[count] = [ "ESQ", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+			pvp = true;
+		} else if(getCells[i].cells[0].innerText.match(/pénétration physique/)) {
+			effectName[count] = [ "RPeneP", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+			pvp = true;
+		} else if(getCells[i].cells[0].innerText.match(/pénétration magique/)) {
+			effectName[count] = [ "RPeneM", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+			pvp = true;
+		} else if(getCells[i].cells[0].innerText.match(/vie/)) {
+			effectName[count] = [ "PV", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+		} else if(getCells[i].cells[0].innerText.match(/Mana/)) {
+			effectName[count] = [ "PM", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+		}
 	}
 }
 for(var i = 0; i < effectName.length; i++) {
 	var key = effectName[i][0];
 	if(key == "ATQ") {
 		effects += "\t\tnew Effect(TypeEffect.Atk, false, " + effectName[i][1] + ", true),\n";
-		count++;
 	} else if (key == "ATQ D.") {
 		effects += "\t\tnew Effect(TypeEffect.AtkD, false, " + effectName[i][1] + ", true),\n";
-		count++;
 	} else if (key == "ATQ M.") {
 		effects += "\t\tnew Effect(TypeEffect.AtkM, false, " + effectName[i][1] + ", true),\n";
-		count++;
 	} else if (key == "DÉF") {
 		effects += "\t\tnew Effect(TypeEffect.DefP, false, " + effectName[i][1] + ", true),\n";
-		count++;
 	} else if (key == "DÉF M.") {
 		effects += "\t\tnew Effect(TypeEffect.DefM, false, " + effectName[i][1] + ", true),\n";
-		count++;
 	} else if (key == "FCE" || key == "VIT" || key == "INT" || key == "VOL" || key == "AGI") {
 		effects += "\t\tnew Effect(TypeEffect." + key + ", false, " + effectName[i][1] + ", true),\n";
-		count++;
+	} else if (key == "ESQ") {
+		effects += "\t\tnew Effect(TypeEffect.ESQ, false, " + effectName[i][1] + "),\n";
+	} else if (key == "RPeneP") {
+		effects += "\t\tnew Effect(TypeEffect.ReducPeneP, false, " + effectName[i][1] + "),\n";
+	} else if (key == "RPeneM") {
+		effects += "\t\tnew Effect(TypeEffect.ReducPeneM, false, " + effectName[i][1] + "),\n";
+	} else if (key == "PV") {
+		effects += "\t\tnew Effect(TypeEffect.PV, false, " + effectName[i][1] + "),\n";
+	} else if (key == "PM") {
+		effects += "\t\tnew Effect(TypeEffect.PM, false, " + effectName[i][1] + "),\n";
 	}
 }
-
-// Tiare enchantée d'Elminster/6/100/100gold6/5/true/5,0,0/VIT,false,25,true/INT,false,31,true/VOL,false,16,true/DefP,false,614,true/DefM,false,778,true/100gold6
-//console.log(name + "/" + idClasses + "/" + lvl + "/-1/" + color + "/" + enchant + "/" + reinca + "/" + count + ",0,0/" + effects);
 
 var gradeNameCorrespondance = new Array();
 gradeNameCorrespondance[0] = "BERSERKER";
@@ -99,6 +120,24 @@ colorCorrespondance[5] = "GOLD";
 colorCorrespondance[6] = "PURPLE";
 colorCorrespondance[7] = "RED";
 
+var pieceCorrespondance = new Array();
+pieceCorrespondance[1] = [ "CASQUE", "casques" ];
+pieceCorrespondance[2] = [ "PLASTRON", "torses" ];
+pieceCorrespondance[3] = [ "JAMBIERE", "pantalons" ];
+pieceCorrespondance[4] = [ "GANT", "gants" ];
+pieceCorrespondance[5] = [ "BOTTE", "bottes" ];
+
+
+if(colorCorrespondance[color] == "PURPLE" || colorCorrespondance[color] == "GOLD" || (colorCorrespondance[color] == "ORANGE" && !pvp)) {
+	enchant = true;
+}
+
+if(pvp) {
+	color = 4;
+}
+
+var idPiece = document.getElementsByTagName('tbody')[0].getElementsByTagName('a')[0].outerHTML.match(/[0-9]+/)[0];
+
 
 var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 result += "\tnew GradeName[] { ";
@@ -111,7 +150,7 @@ for(var i = 0; i < idClasses.length; i++) {
 
 result += "}, " + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", " + reinca + ",\n";
 
-result += "\tArmorType.BOTTE, \"CODEARMOR\", \"bottes/ICONPATH\", new Calculable[] {\n";
+result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"CODEARMOR\", \"" + pieceCorrespondance[idPiece][1] + "/ICONPATH\", new Calculable[] {\n";
 result += effects;
 result += "\t}, null ),\n";
 
