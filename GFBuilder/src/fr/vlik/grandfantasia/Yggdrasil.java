@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +20,9 @@ public class Yggdrasil implements Writable, Iconable {
 	
 	private Map<Language, String> name;
 	private Icon icon;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Effect[] effects;
 	
-	public Yggdrasil(Map<Language, String> name, String path, ArrayList<Effect> effects) {
+	public Yggdrasil(Map<Language, String> name, String path, Effect[] effects) {
 		this.name = name;
 		this.icon = setIcon(path);
 		this.effects = effects;
@@ -33,8 +32,17 @@ public class Yggdrasil implements Writable, Iconable {
 		return this.name.get(lang);
 	}
 
-	public ArrayList<Effect> getEffects() {
-		return effects;
+	public Effect[] getEffects() {
+		if(this.effects == null) {
+			return null;
+		}
+		
+		Effect[] tab = new Effect[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = new Effect(this.effects[i]);
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -49,10 +57,12 @@ public class Yggdrasil implements Writable, Iconable {
 	
 	@Override
 	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		StringBuilder tooltip = new StringBuilder("<b>Statistique</b>");
+		
+		if(this.effects != null) {
+			for(Effect e : this.effects) {
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";

@@ -105,6 +105,8 @@ public class FrameSaveAs extends JFrame {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
 		}
+		
+		this.submit.updateText(lang);
 	}
 	
 	public void popup() {

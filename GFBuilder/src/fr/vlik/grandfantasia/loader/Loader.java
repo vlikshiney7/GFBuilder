@@ -29,117 +29,117 @@ public class Loader {
 	
 	public static Reinca[] getReinca() {
 		return new Reinca[] {
-				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, 1, 1, 100, 0, "none"),
-				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 1"); put(Language.EN, "Level 1 - Eval 1"); }}, 1.045, 1, 65, 1, "lvl1"),
-				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 2"); put(Language.EN, "Level 1 - Eval 2"); }}, 1.08, 66, 85, 1, "lvl1"),
-				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 3"); put(Language.EN, "Level 1 - Eval 3"); }}, 1.12, 86, 90, 1, "lvl1"),
-				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 4"); put(Language.EN, "Level 1 - Eval 4"); }}, 1.16, 91, 99, 1, "lvl1"),
-				new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 5"); put(Language.EN, "Level 1 - Eval 5"); }}, 1.2, 100, 100, 1, "lvl1")
+			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, 1, 1, 100, 0, "none"),
+			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 1"); put(Language.EN, "Level 1 - Eval 1"); }}, 1.045, 1, 65, 1, "lvl1"),
+			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 2"); put(Language.EN, "Level 1 - Eval 2"); }}, 1.08, 66, 85, 1, "lvl1"),
+			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 3"); put(Language.EN, "Level 1 - Eval 3"); }}, 1.12, 86, 90, 1, "lvl1"),
+			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 4"); put(Language.EN, "Level 1 - Eval 4"); }}, 1.16, 91, 99, 1, "lvl1"),
+			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 5"); put(Language.EN, "Level 1 - Eval 5"); }}, 1.2, 100, 100, 1, "lvl1")
 		};
 	}
 	
 	public static Yggdrasil[] getYggdrasil() {
 		return new Yggdrasil[] {
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "0 - Aucun"); put(Language.EN, "0 - None"); }}, "null", new ArrayList<Effect>()),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "1 - Alice"); put(Language.EN, "1 - Alice"); }}, "boss1", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, false, 15));
-					add(new Effect(TypeEffect.VIT, false, 15));
-					add(new Effect(TypeEffect.INT, false, 15));
-					add(new Effect(TypeEffect.VOL, false, 15));
-					add(new Effect(TypeEffect.AGI, false, 15));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "2 - Ronto"); put(Language.EN, "2 - Ronto"); }}, "boss2", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, false, 15));
-					add(new Effect(TypeEffect.VIT, false, 15));
-					add(new Effect(TypeEffect.INT, false, 15));
-					add(new Effect(TypeEffect.VOL, false, 15));
-					add(new Effect(TypeEffect.AGI, false, 15));
-					add(new Effect(TypeEffect.XP, false, 5));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "3 - Bodor"); put(Language.EN, "3 - Bodor"); }}, "boss3", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, false, 15));
-					add(new Effect(TypeEffect.VIT, false, 15));
-					add(new Effect(TypeEffect.INT, false, 15));
-					add(new Effect(TypeEffect.VOL, false, 15));
-					add(new Effect(TypeEffect.AGI, false, 15));
-					add(new Effect(TypeEffect.XP, false, 5));
-					add(new Effect(TypeEffect.DegP, false, 3));
-					add(new Effect(TypeEffect.DegM, false, 3));
-					add(new Effect(TypeEffect.PeneP, false, 3));
-					add(new Effect(TypeEffect.PeneM, false, 3));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "4 - Smulca"); put(Language.EN, "4 - Smulca"); }}, "boss4", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, true, 5));
-					add(new Effect(TypeEffect.VIT, true, 5));
-					add(new Effect(TypeEffect.INT, true, 5));
-					add(new Effect(TypeEffect.VOL, true, 5));
-					add(new Effect(TypeEffect.AGI, true, 5));
-					add(new Effect(TypeEffect.XP, false, 5));
-					add(new Effect(TypeEffect.DegP, false, 3));
-					add(new Effect(TypeEffect.DegM, false, 3));
-					add(new Effect(TypeEffect.PeneP, false, 3));
-					add(new Effect(TypeEffect.PeneM, false, 3));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "5 - Ewan"); put(Language.EN, "5 - Ewan"); }}, "boss5", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, true, 5));
-					add(new Effect(TypeEffect.VIT, true, 5));
-					add(new Effect(TypeEffect.INT, true, 5));
-					add(new Effect(TypeEffect.VOL, true, 5));
-					add(new Effect(TypeEffect.AGI, true, 5));
-					add(new Effect(TypeEffect.XP, false, 8));
-					add(new Effect(TypeEffect.DegP, false, 3));
-					add(new Effect(TypeEffect.DegM, false, 3));
-					add(new Effect(TypeEffect.PeneP, false, 3));
-					add(new Effect(TypeEffect.PeneM, false, 3));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "6 - Bahadolo"); put(Language.EN, "6 - Bahadolo"); }}, "boss6", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, true, 5));
-					add(new Effect(TypeEffect.VIT, true, 5));
-					add(new Effect(TypeEffect.INT, true, 5));
-					add(new Effect(TypeEffect.VOL, true, 5));
-					add(new Effect(TypeEffect.AGI, true, 5));
-					add(new Effect(TypeEffect.XP, false, 8));
-					add(new Effect(TypeEffect.DegP, false, 5));
-					add(new Effect(TypeEffect.DegM, false, 5));
-					add(new Effect(TypeEffect.PeneP, false, 5));
-					add(new Effect(TypeEffect.PeneM, false, 5));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "7 - Quill"); put(Language.EN, "7 - Quill"); }}, "boss7", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, true, 10));
-					add(new Effect(TypeEffect.VIT, true, 10));
-					add(new Effect(TypeEffect.INT, true, 10));
-					add(new Effect(TypeEffect.VOL, true, 10));
-					add(new Effect(TypeEffect.AGI, true, 10));
-					add(new Effect(TypeEffect.XP, false, 8));
-					add(new Effect(TypeEffect.DegP, false, 5));
-					add(new Effect(TypeEffect.DegM, false, 5));
-					add(new Effect(TypeEffect.PeneP, false, 5));
-					add(new Effect(TypeEffect.PeneM, false, 5));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "8 - Mosunk"); put(Language.EN, "8 - Mosunk"); }}, "boss8", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, true, 10));
-					add(new Effect(TypeEffect.VIT, true, 10));
-					add(new Effect(TypeEffect.INT, true, 10));
-					add(new Effect(TypeEffect.VOL, true, 10));
-					add(new Effect(TypeEffect.AGI, true, 10));
-					add(new Effect(TypeEffect.XP, false, 11));
-					add(new Effect(TypeEffect.DegP, false, 5));
-					add(new Effect(TypeEffect.DegM, false, 5));
-					add(new Effect(TypeEffect.PeneP, false, 5));
-					add(new Effect(TypeEffect.PeneM, false, 5));
-				}}),
-				new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "9 - Jundo"); put(Language.EN, "9 - Jundo"); }}, "boss9", new ArrayList<Effect>() {{
-					add(new Effect(TypeEffect.FCE, true, 10));
-					add(new Effect(TypeEffect.VIT, true, 10));
-					add(new Effect(TypeEffect.INT, true, 10));
-					add(new Effect(TypeEffect.VOL, true, 10));
-					add(new Effect(TypeEffect.AGI, true, 10));
-					add(new Effect(TypeEffect.XP, false, 11));
-					add(new Effect(TypeEffect.DegP, false, 7));
-					add(new Effect(TypeEffect.DegM, false, 7));
-					add(new Effect(TypeEffect.PeneP, false, 7));
-					add(new Effect(TypeEffect.PeneM, false, 7));
-				}})
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "0 - Aucun"); put(Language.EN, "0 - None"); }}, "null", null),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "1 - Alice"); put(Language.EN, "1 - Alice"); }}, "boss1", new Effect[] {
+				new Effect(TypeEffect.FCE, false, 15),
+				new Effect(TypeEffect.VIT, false, 15),
+				new Effect(TypeEffect.INT, false, 15),
+				new Effect(TypeEffect.VOL, false, 15),
+				new Effect(TypeEffect.AGI, false, 15),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "2 - Ronto"); put(Language.EN, "2 - Ronto"); }}, "boss2", new Effect[] {
+				new Effect(TypeEffect.FCE, false, 15),
+				new Effect(TypeEffect.VIT, false, 15),
+				new Effect(TypeEffect.INT, false, 15),
+				new Effect(TypeEffect.VOL, false, 15),
+				new Effect(TypeEffect.AGI, false, 15),
+				new Effect(TypeEffect.XP, false, 5),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "3 - Bodor"); put(Language.EN, "3 - Bodor"); }}, "boss3", new Effect[] {
+				new Effect(TypeEffect.FCE, false, 15),
+				new Effect(TypeEffect.VIT, false, 15),
+				new Effect(TypeEffect.INT, false, 15),
+				new Effect(TypeEffect.VOL, false, 15),
+				new Effect(TypeEffect.AGI, false, 15),
+				new Effect(TypeEffect.XP, false, 5),
+				new Effect(TypeEffect.DegP, false, 3),
+				new Effect(TypeEffect.DegM, false, 3),
+				new Effect(TypeEffect.PeneP, false, 3),
+				new Effect(TypeEffect.PeneM, false, 3),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "4 - Smulca"); put(Language.EN, "4 - Smulca"); }}, "boss4", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 5),
+				new Effect(TypeEffect.VIT, true, 5),
+				new Effect(TypeEffect.INT, true, 5),
+				new Effect(TypeEffect.VOL, true, 5),
+				new Effect(TypeEffect.AGI, true, 5),
+				new Effect(TypeEffect.XP, false, 5),
+				new Effect(TypeEffect.DegP, false, 3),
+				new Effect(TypeEffect.DegM, false, 3),
+				new Effect(TypeEffect.PeneP, false, 3),
+				new Effect(TypeEffect.PeneM, false, 3),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "5 - Ewan"); put(Language.EN, "5 - Ewan"); }}, "boss5", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 5),
+				new Effect(TypeEffect.VIT, true, 5),
+				new Effect(TypeEffect.INT, true, 5),
+				new Effect(TypeEffect.VOL, true, 5),
+				new Effect(TypeEffect.AGI, true, 5),
+				new Effect(TypeEffect.XP, false, 8),
+				new Effect(TypeEffect.DegP, false, 3),
+				new Effect(TypeEffect.DegM, false, 3),
+				new Effect(TypeEffect.PeneP, false, 3),
+				new Effect(TypeEffect.PeneM, false, 3),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "6 - Bahadolo"); put(Language.EN, "6 - Bahadolo"); }}, "boss6", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 5),
+				new Effect(TypeEffect.VIT, true, 5),
+				new Effect(TypeEffect.INT, true, 5),
+				new Effect(TypeEffect.VOL, true, 5),
+				new Effect(TypeEffect.AGI, true, 5),
+				new Effect(TypeEffect.XP, false, 8),
+				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.DegM, false, 5),
+				new Effect(TypeEffect.PeneP, false, 5),
+				new Effect(TypeEffect.PeneM, false, 5),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "7 - Quill"); put(Language.EN, "7 - Quill"); }}, "boss7", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 10),
+				new Effect(TypeEffect.VIT, true, 10),
+				new Effect(TypeEffect.INT, true, 10),
+				new Effect(TypeEffect.VOL, true, 10),
+				new Effect(TypeEffect.AGI, true, 10),
+				new Effect(TypeEffect.XP, false, 8),
+				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.DegM, false, 5),
+				new Effect(TypeEffect.PeneP, false, 5),
+				new Effect(TypeEffect.PeneM, false, 5),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "8 - Mosunk"); put(Language.EN, "8 - Mosunk"); }}, "boss8", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 10),
+				new Effect(TypeEffect.VIT, true, 10),
+				new Effect(TypeEffect.INT, true, 10),
+				new Effect(TypeEffect.VOL, true, 10),
+				new Effect(TypeEffect.AGI, true, 10),
+				new Effect(TypeEffect.XP, false, 11),
+				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.DegM, false, 5),
+				new Effect(TypeEffect.PeneP, false, 5),
+				new Effect(TypeEffect.PeneM, false, 5),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "9 - Jundo"); put(Language.EN, "9 - Jundo"); }}, "boss9", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 10),
+				new Effect(TypeEffect.VIT, true, 10),
+				new Effect(TypeEffect.INT, true, 10),
+				new Effect(TypeEffect.VOL, true, 10),
+				new Effect(TypeEffect.AGI, true, 10),
+				new Effect(TypeEffect.XP, false, 11),
+				new Effect(TypeEffect.DegP, false, 7),
+				new Effect(TypeEffect.DegM, false, 7),
+				new Effect(TypeEffect.PeneP, false, 7),
+				new Effect(TypeEffect.PeneM, false, 7),
+			})
 		};
 	}
 	

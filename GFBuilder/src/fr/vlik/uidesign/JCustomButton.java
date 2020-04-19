@@ -117,5 +117,6 @@ public class JCustomButton extends JButton {
 	public void updateText(Language lang) {
 		this.label.updateText(lang);
 		this.setText(this.label.getText());
+		System.out.println(this.getText());
 	}
 }
