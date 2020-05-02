@@ -31,6 +31,8 @@ import fr.vlik.grandfantasia.equipable.RedArmor;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -362,18 +364,51 @@ public class PageArmor extends PagePanel {
 				String setInfo = armorSet.getName() + "\n";
 				
 				setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
-				for(int i = 0; i < armorSet.getWith3().size(); i++) {
-					setInfo += "\t- " + armorSet.getWith3().get(i).toString() + "\n";
+				if(armorSet.getWith3() != null) {
+					for(int i = 0; i < armorSet.getWith3().length; i++) {
+						if(armorSet.getWith3()[i] instanceof Effect) {
+							Effect e = (Effect) armorSet.getWith3()[i];
+							setInfo += "\t- " + e.toString(Language.FR) + "\n";
+						} else if(armorSet.getWith3()[i] instanceof StaticEffect) {
+							StaticEffect s = (StaticEffect) armorSet.getWith3()[i];
+							setInfo += "\t- " + s.toString(Language.FR) + "\n";
+						} else if(armorSet.getWith3()[i] instanceof Proc) {
+							Proc p = (Proc) armorSet.getWith3()[i];
+							setInfo += "\t- " + p.toString(Language.FR) + "\n";
+						}
+					}
 				}
 				
 				setInfo += "4 pièces équipées " + (armorSet.getNbCurrentUsed() >= 4 ? "(Actif) " : "") + ":\n";
-				for(int i = 0; i < armorSet.getWith4().size(); i++) {
-					setInfo += "\t- " + armorSet.getWith4().get(i).toString() + "\n";
+				if(armorSet.getWith4() != null) {
+					for(int i = 0; i < armorSet.getWith4().length; i++) {
+						if(armorSet.getWith4()[i] instanceof Effect) {
+							Effect e = (Effect) armorSet.getWith4()[i];
+							setInfo += "\t- " + e.toString(Language.FR) + "\n";
+						} else if(armorSet.getWith4()[i] instanceof StaticEffect) {
+							StaticEffect s = (StaticEffect) armorSet.getWith4()[i];
+							setInfo += "\t- " + s.toString(Language.FR) + "\n";
+						} else if(armorSet.getWith4()[i] instanceof Proc) {
+							Proc p = (Proc) armorSet.getWith4()[i];
+							setInfo += "\t- " + p.toString(Language.FR) + "\n";
+						}
+					}
 				}
 				
 				setInfo += "5 pièces équipées " + (armorSet.getNbCurrentUsed() >= 5 ? "(Actif) " : "") + ":\n";
-				for(int i = 0; i < armorSet.getWith5().size(); i++) {
-					setInfo += "\t- " + armorSet.getWith5().get(i).toString() + "\n";
+				if(armorSet.getWith5() != null) {
+					for(int i = 0; i < armorSet.getWith5().length; i++) {
+						if(armorSet.getWith5()[i] instanceof Effect) {
+							Effect e = (Effect) armorSet.getWith5()[i];
+							setInfo += "\t- " + e.toString(Language.FR) + "\n";
+						} else if(armorSet.getWith5()[i] instanceof StaticEffect) {
+							StaticEffect s = (StaticEffect) armorSet.getWith5()[i];
+							setInfo += "\t- " + s.toString(Language.FR) + "\n";
+						} else if(armorSet.getWith5()[i] instanceof Proc) {
+							Proc p = (Proc) armorSet.getWith5()[i];
+							setInfo += "\t- " + p.toString(Language.FR) + "\n";
+						}
+					}
 				}
 				
 				this.armorSetInfo.setText(setInfo);
@@ -386,13 +421,25 @@ public class PageArmor extends PagePanel {
 		}
 		
 		if(armorSet.getNbCurrentUsed() >= 3) {
-			list.addAll(armorSet.getWith3());
+			if(armorSet.getWith3() != null) {
+				for(Calculable c : armorSet.getWith3()) {
+					list.add(c);
+				}
+			}
 			
 			if(armorSet.getNbCurrentUsed() >= 4) {
-				list.addAll(armorSet.getWith4());
+				if(armorSet.getWith4() != null) {
+					for(Calculable c : armorSet.getWith4()) {
+						list.add(c);
+					}
+				}
 				
 				if(armorSet.getNbCurrentUsed() == 5) {
-					list.addAll(armorSet.getWith5());
+					if(armorSet.getWith5() != null) {
+						for(Calculable c : armorSet.getWith5()) {
+							list.add(c);
+						}
+					}
 				}
 			}
 		}

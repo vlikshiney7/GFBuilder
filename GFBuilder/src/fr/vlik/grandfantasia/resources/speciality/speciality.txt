@@ -166,26 +166,26 @@ Bâton gravé/91/1/AtkM,true,1,false,12/6-19
 /91/0/7-18
 /91/0/7-19
 
-/45/0/8-0
-/45/0/8-1
-/45/0/8-2
-/45/0/8-3
-/45/0/8-4
-/45/0/8-5
-/60/0/8-6
-/60/0/8-7
-/60/0/8-8
-/60/0/8-9
-/75/0/8-10
-/75/0/8-11
-/75/0/8-12
-/75/0/8-13
-/75/0/8-14
-/75/0/8-15
-/91/0/8-16
-/91/0/8-17
-/91/0/8-18
-/91/0/8-19
+Amélioration d'Imact/45/1/FCE,false,9/8-0
+Correction réticule/45/1/Toucher,false,1.5/8-1
+Choc de Surcadençage/45/1/TCCP,false,1.5/8-2
+Maître Arme mécanique/45/2/DegStdMeca,false,1.5/DegStdMeca2M,false,1.5/8-3
+Énergie à Neutrons/45/1/CostComp,false,-3/8-4
+Étude robotique/45/2/DegMecaP,false,50/DegMecaP,true,1/8-5
+Accélération Mécanique/60/1/VitAtk,false,1/8-6
+Transfert de Mouvement/60/1/Depla,false,1/8-7
+Lame de Phase/60/1/PeneP,false,1.5/8-8
+Maître d'Armes mécaniques doubles/60/1/DegStdMeca,false,1/8-9
+Coeur d'Acier/75/1/PV,true,2/8-10
+Armure de Coeur/75/1/DefP,true,1.5/8-11
+Volonté aggressive/75/2/ReducP,false,1.5/ReducM,false,1.5/8-12
+Bouclier à Neutrons/75/1/RTCCP,false,3/8-13
+Recherche Mécanique/75/2/FCE,false,5/VIT,false,4/8-14
+Amélioration d'Arme mécanique/75/1/DegStdMeca2M,false,1.5/8-15
+Transfert de Neutrons/91/1/VIT,false,3,false,-1,FCE/8-16
+Amplification de Phase/91/1/VitAtk,false,3,false,-1,TCCP/8-17
+Camouflage Optique/91/1/ESQ,false,2/8-18
+Puissance Nucléaire/91/1/DCCP,false,2/8-19
 
 /45/0/9-0
 /45/0/9-1

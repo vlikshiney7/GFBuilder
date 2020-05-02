@@ -151,10 +151,12 @@ public class Build {
 			result[i] = Math.floor(combinePoint[i] * (combinePercent[i] / 100 +1));
 		}
 		
-		/* CONVERSION */
+		/* CONVERSION BASE */
 		for(Effect e : this.effectConvert) {
-			double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
-			result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
+			if(e.getTransfert().ordinal() < 5) {
+				double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
+				result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
+			}
 		}
 		
 		/* Atk AtkD AtkM */
@@ -184,6 +186,14 @@ public class Build {
 		
 		for(int i = 21; i < result.length; i++) {
 			result[i] = Math.floor(combinePoint[i] * (combinePercent[i] / 100 +1));
+		}
+		
+		/* CONVERSION AUTRES */
+		for(Effect e : this.effectConvert) {
+			if(e.getTransfert().ordinal() >= 5) {
+				double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
+				result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
+			}
 		}
 		
 		for(Effect add : this.effectAdditional) {

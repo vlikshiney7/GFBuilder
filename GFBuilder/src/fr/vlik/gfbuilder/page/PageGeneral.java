@@ -356,7 +356,14 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
 		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
 		this.title.setSelectedItem(Title.get(config.get("Title")));
-		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
+		
+		Yggdrasil ygg = Yggdrasil.get(config.get("Yggdrasil"), lang);
+		if(ygg != null) {
+			this.yggdra.setSelectedItem(ygg);
+		} else {
+			this.yggdra.setSelectedIndex(0);
+		}
+		
 		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
 	}
 }

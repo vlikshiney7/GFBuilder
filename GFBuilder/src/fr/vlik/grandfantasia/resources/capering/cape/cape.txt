@@ -15,6 +15,7 @@ Capuche de Lumière Sacrée/0,1,2,3,4,5,6,7,8,9,10,11/90/tdb2/4/false/5,0,0/DefP
 Cape du Crâne Ancestral/0,1,2,3,4,5,6,7,8,9,10,11/90/tdb3/4/false/5,0,0/DefP,false,103,true/DefM,false,131,true/INT,false,25,true/VOL,false,25,true/AGI,false,22,true/tdb3
 Cape du Roi Sans Peur/0,1,2,3,4,5,6,7,8,9,10,11/90/tdb4/4/false/5,0,0/DefP,false,96,true/DefM,false,92,true/FCE,false,24,true/INT,false,24,true/AGI,false,24,true/tdb4
 Ailes de courage de garde/0,1/90/-1/3/false/6,0,0/DefP,false,145,true/DefM,false,103,true/FCE,false,50,true/VIT,false,26,true/PV,false,480/PM,false,270/red2
+Cape lunesang de l'infini/0,1,2,3,4,5,6,7,8,9,10,11/90/90sombre/3/false/4,0,0/DefP,false,133,true/DefM,false,126,true/PV,false,720/PM,false,360/red2
 Cape du palais Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/90/-1/3/false/2,0,0/DefP,false,91,true/DefM,false,87,true/green2
 Cape du Gélapin érudit/0,1,2,3,4,5,6,7,8,9,10,11/90/-1/3/false/1,0,0/DefP,false,119,true/red2
 Cape du Néant du Sprite sombre/0,1,2,3,4,5,6,7,8,9,10,11/90/-1/3/false/2,0,0/DefP,false,82,true/DefM,false,72,true/black1
@@ -70,5 +71,29 @@ Cape Magique du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/30/-1/3/false/2,0,0/DefP,fals
 Cape de Bataille du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/30/-1/3/false/1,0,0/DefP,false,63,true/red2
 Cape de Mana du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/20/-1/3/false/2,0,0/DefP,false,40,true/DefM,false,39,true/green2
 Cape de Vie du Gélapin/0,1,2,3,4,5,6,7,8,9,10,11/20/-1/3/false/1,0,0/DefP,false,54,true/red2
+Cape Fatale Sonique/2,3/90/-1/5/false/5,0,0/DefP,false,176,true/DefM,false,149,true/FCE,false,55,true/VIT,false,48,true/AGI,false,56,true/green1
+Divine : Cape du Vent Furtif/2,3/88/-1/5/false/5,0,0/DefP,false,144,true/DefM,false,117,true/FCE,false,43,true/VIT,false,38,true/AGI,false,47,true/green1
+Cape d'Agilité de Krang/2,3/80/-1/5/false/5,0,0/DefP,false,119,true/DefM,false,109,true/FCE,false,30,true/VIT,false,36,true/AGI,false,54,true/red2
+Cape Mortelle de Krang/2,3/80/-1/5/false/5,0,0/DefP,false,119,true/DefM,false,109,true/FCE,false,54,true/VIT,false,27,true/AGI,false,39,true/purple0
+Cape de Furtivité de Meshuga/2,3/70/-1/5/false/5,0,0/DefP,false,106,true/DefM,false,101,true/FCE,false,39,true/VIT,false,29,true/AGI,false,44,true/black1
+Cape de la Flèche d'Envie/2,3/70/-1/5/false/5,0,0/DefP,false,106,true/DefM,false,101,true/FCE,false,28,true/VIT,false,34,true/AGI,false,50,true/blue
+Cape de l'Ombre d'Envie/2,3/70/-1/5/false/5,0,0/DefP,false,106,true/DefM,false,101,true/FCE,false,50,true/VIT,false,25,true/AGI,false,37,true/red2
+Légère Cape Tricotée de l'Alchimiste/2,3/60/-1/5/false/5,0,0/DefP,false,97,true/DefM,false,92,true/FCE,false,18,true/VIT,false,26,true/AGI,false,44,true/blue
+Cape Tricotée Mortelle de l'Alchimiste/2,3/60/-1/5/false/5,0,0/DefP,false,97,true/DefM,false,92,true/FCE,false,44,true/VIT,false,15,true/AGI,false,29,true/red2
+Cape Précision de sniper/2,3/100/-1/3/false/6,0,0/DefP,false,130,true/DefM,false,124,true/VIT,false,32,true/AGI,false,52,true/PV,false,400/PM,false,400/black2
+Aile d'éclat perçante/2,3/90/-1/3/false/6,0,0/DefP,false,121,true/DefM,false,115,true/VIT,false,28,true/AGI,false,48,true/PV,false,375/PM,false,375/black2
+Cape de Sténographe/2,3/87/-1/3/false/6,0,0/DefP,false,118,true/DefM,false,112,true/VIT,false,34,true/AGI,false,42,true/PV,false,450/PM,false,350/purple1
+Cape de l'Agilité des Dryades/2,3/82/-1/3/false/6,0,0/DefP,false,113,true/DefM,false,108,true/VIT,false,32,true/AGI,false,40,true/PV,false,425/PM,false,325/blue
+Cape des Grands Vents/2,3/80/-1/3/false/6,0,0/DefP,false,100,true/DefM,false,127,true/VIT,false,28,true/AGI,false,40,true/PV,false,400/PM,false,300/green2
+Manteau d'Agilité/2,3/77/-1/3/false/6,0,0/DefP,false,109,true/DefM,false,103,true/VIT,false,30,true/AGI,false,38,true/PV,false,400/PM,false,300/blue
+Cape du Voleur Agile/2,3/70/-1/3/false/6,0,0/DefP,false,96,true/DefM,false,112,true/VIT,false,20,true/AGI,false,40,true/PV,false,325/PM,false,325/green1
+Cape du Mandra d'Adresse/2,3/66/-1/3/false/6,0,0/DefP,false,98,true/DefM,false,93,true/VIT,false,25,true/AGI,false,35,true/PV,false,375/PM,false,275/green2
+Cape en Ecailles de Dragon Blanc/2,3/63/-1/3/false/6,0,0/DefP,false,100,true/DefM,false,105,true/FCE,false,28,true/AGI,false,28,true/PV,false,350/PM,false,250/blue
+Habit Aile de Lumière/2,3/60/-1/3/false/6,0,0/DefP,false,92,true/DefM,false,88,true/FCE,false,20,true/AGI,false,24,true/PV,false,400/PM,false,200/green2
+Cape du Voyageur Temporel/2,3/55/-1/3/false/6,0,0/DefP,false,87,true/DefM,false,83,true/INT,false,18,true/AGI,false,18,true/PV,false,420/PM,false,30/red2
+Habit Aile de Dragon/2,3/47/-1/3/false/6,0,0/DefP,false,80,true/DefM,false,76,true/VIT,false,15,true/AGI,false,21,true/PV,false,350/PM,false,100/red2
+Châle du Chant de la Nature/2,3/39/-1/3/false/6,0,0/DefP,false,72,true/DefM,false,68,true/FCE,false,18,true/AGI,false,10,true/PV,false,180/PM,false,120/blue
+Châle Elaboré de Chaînes/2,3/47/-1/2/false/3,0,0/DefP,false,72,true/DefM,false,68,true/VIT,false,10,true/red2
+Châle du Voyageur/2,3/39/-1/2/false/3,0,0/DefP,false,64,true/DefM,false,61,true/AGI,false,8,true/blue
 Cape des Grandes Profondeurs/6,7/90/-1/5/true/5,0,0/DefP,false,161,true/DefM,false,164,true/VIT,false,51,true/INT,false,59,true/VOL,false,49,true/purple2
 Cape du Savoir de Gargantua/6,7/80/-1/5/true/5,0,0/DefP,false,107,true/DefM,false,131,true/VIT,false,32,true/INT,false,56,true/VOL,false,32,true/purple1

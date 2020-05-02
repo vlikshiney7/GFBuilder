@@ -1,24 +1,24 @@
 package fr.vlik.grandfantasia.stats;
 
-import java.util.ArrayList;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class Proc implements Calculable {
 	
-	private ArrayList<Calculable> effects = new ArrayList<Calculable>();
+	private Calculable[] effects;
 	private Activation activation;
 	private int taux;
 	private double time;
 	private int cumul = 1;
 	
 	
-	public Proc(int taux, Activation activation, double time, ArrayList<Calculable> effects) {
+	public Proc(int taux, Activation activation, double time, Calculable[] effects) {
 		this.taux = taux;
 		this.activation = activation;
 		this.time = time;
 		this.effects = effects;
 	}
 	
-	public Proc(int taux, Activation activation, double time, int cumul, ArrayList<Calculable> effects) {
+	public Proc(int taux, Activation activation, double time, int cumul, Calculable[] effects) {
 		this(taux, activation, time, effects);
 		this.cumul = cumul;
 	}
@@ -62,12 +62,10 @@ public class Proc implements Calculable {
 		return this.cumul;
 	}
 	
-	public ArrayList<Calculable> getEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>(this.effects.size());
-		for(Calculable effect : this.effects) {
-			if(effect instanceof Effect) {
-				list.add(new Effect((Effect)effect));
-			}
+	public Calculable[] getEffects() {
+		Calculable[] list = new Calculable[this.effects.length];	
+		for(int i = 0; i < this.effects.length; i++) {
+			list[i] = this.effects[i];
 		}
 		return list;
 	}
@@ -79,7 +77,10 @@ public class Proc implements Calculable {
 		for(Calculable calculable : this.effects) {
 			tooltip.append(calculable.getTooltip());
 		}
-		tooltip.append("<li>Actif pendant " + this.time + "s</li>");
+		
+		if(this.time != 0) {
+			tooltip.append("<li>Actif pendant " + this.time + "s</li>");
+		}
 		
 		if(this.cumul > 1) {
 			tooltip.append("<li>Cumulable " + this.cumul + " fois</li>");
@@ -88,5 +89,53 @@ public class Proc implements Calculable {
 		tooltip.append("</ul>");
 		
 		return "<li>" + tooltip + "</li>";
+	}
+	
+	public String toString(Language lang) {
+		StringBuilder result = new StringBuilder();
+		
+		if(lang == Language.FR) {
+			result.append(this.taux + "% d'activer " + this.activation.fr + " :\n");
+			
+			for(Calculable calculable : this.effects) {
+				if(calculable instanceof Effect) {
+					Effect e = (Effect) calculable;
+					result.append("\t\t- " + e.toString(lang) + "\n");
+				} else if(calculable instanceof StaticEffect) {
+					StaticEffect s = (StaticEffect) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
+				}
+			}
+			
+			if(this.time != 0) {
+				result.append("\t\tActif pendant " + this.time + "s\n");
+			}
+			
+			if(this.cumul != 1) {
+				result.append("\t\tCumulable " + this.cumul + " fois\n");
+			}
+		} else {
+			result.append(this.taux + "% to activate " + this.activation.en + " :\n");
+			
+			for(Calculable calculable : this.effects) {
+				if(calculable instanceof Effect) {
+					Effect e = (Effect) calculable;
+					result.append("\t\t- " + e.toString(lang) + "\n");
+				} else if(calculable instanceof StaticEffect) {
+					StaticEffect s = (StaticEffect) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
+				}
+			}
+			
+			if(this.time != 0) {
+				result.append("\t\tActif for  " + this.time + "s\n");
+			}
+			
+			if(this.cumul != 1) {
+				result.append("\t\tStacks up to " + this.cumul + " times\n");
+			}
+		}
+		
+		return result.toString();
 	}
 }

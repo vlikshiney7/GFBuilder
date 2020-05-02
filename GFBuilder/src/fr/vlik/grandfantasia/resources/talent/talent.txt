@@ -49,11 +49,11 @@ Sublimation du Sacré/77,90,100/1/Ombre,false,20/Ombre,false,20/Ombre,false,30/1
 Gloire Sacrée/77,90,100/0/1-23
 
 Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
-/6,14,31,61,86,91/0/2-1
-/6,14,31,61,86,91/0/2-2
-/16,28,46,66,86,91/0/2-3
-/16,28,46,66,86,91/0/2-4
-/16,28,46,66,86,91/0/2-5
+Spécialité Tir/6,14,31,61,86,91/1/AtkD,true,6/AtkD,true,8/AtkD,true,10/AtkD,true,13/AtkD,true,16/AtkD,true,18/2-1
+Spécialité Sniper/6,14,31,61,86,91/1/TCCP,false,3/TCCP,false,6/TCCP,false,9/TCCP,false,11/TCCP,false,13/TCCP,false,15/2-2
+Réaction Réflexe/16,28,46,66,86,91/3/ESQ,false,6/ReducP,false,6/ReducM,false,6/ESQ,false,9/ReducP,false,8/ReducM,false,8/ESQ,false,12/ReducP,false,10/ReducM,false,10/ESQ,false,13/ReducP,false,12/ReducM,false,12/ESQ,false,14/ReducP,false,14/ReducM,false,14/ESQ,false,15/ReducP,false,16/ReducM,false,16/2-3
+Coup Critique Mortel/16,28,46,66,86,91/1/DCCP,false,15/DCCP,false,20/DCCP,false,25/DCCP,false,30/DCCP,false,35/DCCP,false,40/2-4
+Sprint/16,28,46,66,86,91/1/Depla,false,5/Depla,false,8/Depla,false,11/Depla,false,13/Depla,false,15/Depla,false,18/2-5
 /31,41,50,69,86,91/0/2-6
 /31,41,50,69,86,91/0/2-7
 /31,41,50,69,86,91/0/2-8
@@ -74,29 +74,29 @@ Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/De
 /77,90,100/0/2-23
 
 Spécialité Art de l'Épée/6,14,31,61,86,91/2/DegEp,false,6/Toucher,false,3/DegEp,false,8/Toucher,false,6/DegEp,false,10/Toucher,false,9/DegEp,false,11/Toucher,false,12/DegEp,false,12/Toucher,false,15/DegEp,false,13/Toucher,false,18/0-0
-/6,14,31,61,86,91/0/2-1
-/6,14,31,61,86,91/0/2-2
-/16,28,46,66,86,91/0/2-3
-/16,28,46,66,86,91/0/2-4
-/16,28,46,66,86,91/0/2-5
-/31,41,50,69,86,91/0/2-6
-/31,41,50,69,86,91/0/3-7
-/31,41,50,69,86,91/0/3-8
-/46,50,54,72,86,91/0/3-9
-/46,50,54,72,86,91/0/3-10
-/46,50,54,72,86,91/0/2-9
-/66,80,91/0/2-13
-/66,80,91/0/2-19
-/66,80,91/0/0-18
-/70,83,93/0/0-13
-/70,83,93/0/2-23
-/70,83,93/0/3-17
-/73,87,97/0/1-22
-/73,87,97/0/0-14
-/73,87,97/0/1-14
-/77,90,100/0/3-21
-/77,90,100/0/2-12
-/77,90,100/0/2-16
+Spécialité Tir/6,14,31,61,86,91/1/AtkD,true,6/AtkD,true,8/AtkD,true,10/AtkD,true,13/AtkD,true,16/AtkD,true,18/2-1
+Spécialité Sniper/6,14,31,61,86,91/1/TCCP,false,3/TCCP,false,6/TCCP,false,9/TCCP,false,11/TCCP,false,13/TCCP,false,15/2-2
+Réaction Réflexe/16,28,46,66,86,91/3/ESQ,false,6/ReducP,false,6/ReducM,false,6/ESQ,false,9/ReducP,false,8/ReducM,false,8/ESQ,false,12/ReducP,false,10/ReducM,false,10/ESQ,false,13/ReducP,false,12/ReducM,false,12/ESQ,false,14/ReducP,false,14/ReducM,false,14/ESQ,false,15/ReducP,false,16/ReducM,false,16/2-3
+Coup Critique Mortel/16,28,46,66,86,91/1/DCCP,false,15/DCCP,false,20/DCCP,false,25/DCCP,false,30/DCCP,false,35/DCCP,false,40/2-4
+Sprint/16,28,46,66,86,91/1/Depla,false,5/Depla,false,8/Depla,false,11/Depla,false,13/Depla,false,15/Depla,false,18/2-5
+Prémonition/31,41,50,69,86,91/2/RTCCP,false,8/RDCCP,false,15/RTCCP,false,13/RDCCP,false,25/RTCCP,false,18/RDCCP,false,35/RTCCP,false,23/RDCCP,false,45/RTCCP,false,28/RDCCP,false,55/RTCCP,false,32/RDCCP,false,65/2-6
+Coup Furtif/31,41,50,69,86,91/1/TCC1M,false,12/TCC1M,false,15/TCC1M,false,18/TCC1M,false,20/TCC1M,false,22/TCC1M,false,24/3-7
+Renforcement Démoniaque/31,41,50,69,86,91/0/3-8
+Lame Fatale/46,50,54,72,86,91/2/DCCP,false,30,false,0/TCCP,false,1/DCCP,false,40,false,0/TCCP,false,2/DCCP,false,50,false,0/TCCP,false,3/DCCP,false,55,false,0/TCCP,false,4/DCCP,false,60,false,0/TCCP,false,5/DCCP,false,65,false,0/TCCP,false,6/3-9
+Attaque fouettée/46,50,54,72,86,91/2/VitAtkDuo,false,15/DegDuo,false,5/VitAtkDuo,false,20/DegDuo,false,7/VitAtkDuo,false,25/DegDuo,false,9/VitAtkDuo,false,25/DegDuo,false,12/VitAtkDuo,false,25/DegDuo,false,15/VitAtkDuo,false,25/DegDuo,false,18/3-10
+Fuite Explosive Magique/46,50,54,72,86,91/2/RTCCM,false,6/ESQ,false,2/RTCCM,false,12/ESQ,false,5/RTCCM,false,18/ESQ,false,8/RTCCM,false,24/ESQ,false,10/RTCCM,false,30/ESQ,false,12/RTCCM,false,36/ESQ,false,14/2-9
+Expert en Lames Jumelles/66,80,91/2/DegDuo,false,10/FCE,false,5/DegDuo,false,12/FCE,false,10/DegDuo,false,15/FCE,false,15/2-13
+Combat Physique/66,80,91/2/VIT,false,10/Toucher,false,10/VIT,false,15/Toucher,false,10/VIT,false,20/Toucher,false,15/2-19
+Sublimation du Corps/66,80,91/2/PV,true,4/PM,true,10/PV,true,5/PM,true,10/PV,true,6/PM,true,12/0-18
+Protection de l'Ombre/70,83,93/2/MEN,false,-10/ESQ,false,15/MEN,false,-10/ESQ,false,18/MEN,false,-12/ESQ,false,21/0-13
+Maître Assassin/70,83,93/2/DCCP,false,20/FCE,false,15/DCCP,false,20/FCE,false,20/DCCP,false,20/FCE,false,25/2-23
+Esquive Fatale/70,83,93/2/RTCCP,false,5/RTCCM,false,5/RTCCP,false,6/RTCCM,false,6/RTCCP,false,7/RTCCM,false,7/3-17
+Avancée Furtive/73,87,97/2/Depla,false,5/AGI,false,40/Depla,false,5/AGI,false,45/Depla,false,5/AGI,false,50/1-22
+Loi du Talion/73,87,97/1/VIT,false,15/VIT,false,20/VIT,false,25/0-14
+Enchaînement Brutal/73,87,97/1/FCE,false,40/FCE,false,40/FCE,false,40/1-14
+Raid du K.O./77,90,100/1/ESQ,false,5/ESQ,false,8/ESQ,false,10/3-21
+Machine à Tuer/77,90,100/2/VitAtkDuo,false,5/TCCP,false,4/VitAtkDuo,false,10/TCCP,false,5/VitAtkDuo,false,15/TCCP,false,6/2-12
+Sublimation de l'Ombre/77,90,100/0/2-16
 
 Spécialité Maillet/6,14,31,61,86,91/1/DegMa,false,6/DegMa,false,8/DegMa,false,10/DegMa,false,10/DegMa,false,14/DegMa,false,16/0-2
 /6,14,31,61,86,91/0/4-1

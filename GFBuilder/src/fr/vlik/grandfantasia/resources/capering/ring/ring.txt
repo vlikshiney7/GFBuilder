@@ -26,6 +26,8 @@ Malédiction du Hasard /90/tdb3/4/false/false/4,0,0/DefM,false,630,true/INT,fals
 Bravoure du Champion /90/tdb4/4/false/false/5,0,0/DefM,false,669,true/FCE,false,17,true/INT,false,17,true/AGI,false,17,true/Ombre,false,25/tdb9
 Chevalière Martiale de Désintégration/90/-1/4/false/true/4,0,0/DefM,false,541,true/VIT,false,18,true/VOL,false,9,true/Feu,false,17/gt2
 Chevalière Méditative des Trois Royaumes/90/-1/4/false/true/4,0,0/DefM,false,541,true/VIT,false,18,true/VOL,false,9,true/Feu,false,17/gt3
+Collier scintillant lunesang/90/90sombre/3/false/true/5,0,0/DefM,false,574,true/FCE,false,12,true/INT,false,11,true/VOL,false,11,true/Ombre,false,22/sombre6
+Collier d'ombre lunesang/90/90sombre/3/false/true/5,0,0/DefM,false,574,true/VIT,false,11,true/INT,false,12,true/AGI,false,11,true/Ombre,false,22/sombre15
 Collier de l'Âme Noire/90/-1/3/false/false/3,0,0/DefM,false,585,true/VIT,false,20,true/Ombre,false,22/tdb3
 Défense de Mammouth Sacré/90/-1/1/false/false/2,0,0/DefM,false,441,true/PV,false,720/90blanc0
 Boucles d'Oreille de l'Ombre Lunaire/90/-1/1/false/false/2,0,0/DefM,false,441,true/PM,false,360/messager4

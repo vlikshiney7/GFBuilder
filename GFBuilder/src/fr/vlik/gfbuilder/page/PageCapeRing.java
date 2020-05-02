@@ -247,18 +247,22 @@ public class PageCapeRing extends PagePanel {
 		
 		EquipSet capeRingSet = new EquipSet(rings, cape);
 		if(capeRingSet.getNbCurrentUsed() >= 2 && !capeRingSet.getName().equals("Rien")) {
-			list.addAll(capeRingSet.getWith2());
+			if(capeRingSet.getWith2() != null) {
+				for(Calculable c : capeRingSet.getWith2()) {
+					list.add(c);
+				}
+			}
 			
 			String setInfo = capeRingSet.getName() + "\n";
 			
 			setInfo += "2 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 2 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < capeRingSet.getWith2().size(); i++) {
-				setInfo += "\t- " + capeRingSet.getWith2().get(i).toString() + "\n";
+			for(int i = 0; i < capeRingSet.getWith2().length; i++) {
+				setInfo += "\t- " + capeRingSet.getWith2()[i].toString() + "\n";
 			}
 			
 			setInfo += "3 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
-			for(int i = 0; i < capeRingSet.getWith3().size(); i++) {
-				setInfo += "\t- " + capeRingSet.getWith3().get(i).toString() + "\n";
+			for(int i = 0; i < capeRingSet.getWith3().length; i++) {
+				setInfo += "\t- " + capeRingSet.getWith3()[i].toString() + "\n";
 			}
 			
 			this.capeRingSetInfo.setText(setInfo);
@@ -268,7 +272,11 @@ public class PageCapeRing extends PagePanel {
 		}
 		
 		if(capeRingSet.getNbCurrentUsed() >= 3) {
-			list.addAll(capeRingSet.getWith3());
+			if(capeRingSet.getWith3() != null) {
+				for(Calculable c : capeRingSet.getWith3()) {
+					list.add(c);
+				}
+			}
 		}
 		
 		this.effects = list;

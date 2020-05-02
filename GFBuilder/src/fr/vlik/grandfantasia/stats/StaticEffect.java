@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia.stats;
 
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 
 public class StaticEffect implements Calculable {
@@ -40,5 +41,25 @@ public class StaticEffect implements Calculable {
 			tooltip.append(this.taux + "% " + this.type.abbrevFR);
 		}
 		return "<li>" + tooltip + "</li>";
+	}
+
+	public String toString(Language lang) {
+		String result;
+		
+		if(this.taux == -1) {
+			if(lang == Language.FR) {
+				result = this.getType().fr;
+			} else {
+				result = this.getType().en;
+			}
+		} else {
+			if(lang == Language.FR) {
+				result = this.taux + "% de " + this.getType().fr;
+			} else {
+				result = this.taux + "% de " + this.getType().en;
+			}
+		}
+		
+		return result;
 	}
 }

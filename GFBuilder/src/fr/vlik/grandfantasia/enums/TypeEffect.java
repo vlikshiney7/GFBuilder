@@ -7,7 +7,7 @@ import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 public enum TypeEffect implements Colorable, Writable {
-
+	
 	FCE("Force", "Strength", "FCE", "STR", 9999, true, Tools.EffectColor[1]),
 	VIT("Vitalité", "Vitality", "VIT", "VIT", 9999, true, Tools.EffectColor[2]),
 	INT("Intelligence", "Intelligence", "INT", "INT", 9999, true, Tools.EffectColor[3]),
@@ -33,7 +33,7 @@ public enum TypeEffect implements Colorable, Writable {
 	
 	PV("Points de Vie", "Health Points", "PV", "HP", -1, true, Tools.EffectColor[2]),
 	PM("Points de Mana", "Mana Points", "PM", "MP", -1, true, Tools.EffectColor[4]),
-	Toucher("Toucher", "", "Toucher", "", -1, true, Tools.EffectColor[11]),
+	Toucher("Toucher", "", "Toucher", "", -1, false, Tools.EffectColor[11]),
 	
 	DegP("Dégât Physique", "", "Deg Phys", "", -1, true, Tools.EffectColor[10]), 
 	DegM("Dégât Magique", "", "Deg Mag", "", -1, true, Tools.EffectColor[11]), 
@@ -67,6 +67,7 @@ public enum TypeEffect implements Colorable, Writable {
 
 	ReducPtsP("Réduction Point Phyique", "", "Red Pts Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducPtsM("Réduction Point Magique", "", "Red Pts Mag", "", -1, true, Tools.EffectColor[11]),
+	ReducComp("Réduction Compétence", "", "Reduc Comp", "", -1, true, Tools.EffectColor[0]),
 	
 	DegSacre("Dégât Sacré", "", "Deg Sacre", "", -1, true, Tools.EffectColor[7]),
 	DegOmbre("Dégât Ombre", "", "Deg Ombre", "", -1, true, Tools.EffectColor[8]),
@@ -85,13 +86,16 @@ public enum TypeEffect implements Colorable, Writable {
 	DCC1M("Dégât Critique Arme 1 Main", "", "Deg Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	DCC2M("Dégât Critique Arme 2 Main", "", "Deg Crit 2M", "", -1, true, Tools.EffectColor[0]),
 	RegenCB("Régénération Coup Standard", "", "Regen Coup Std", "", -1, false, Tools.EffectColor[0]),
-
+	
+	DegStd("Dégât Standard", "", "Deg Std", "", -1, true, Tools.EffectColor[0]),
 	DegStdEp("Dégât Standard à l'Épée", "", "Deg Std Ep 1M", "", -1, true, Tools.EffectColor[0]),
 	DegStdMa("Dégât Standard au Maillet", "", "Deg Std Ma 1M", "", -1, true, Tools.EffectColor[0]),
 	DegStdHa("Dégât Standard à la Hache", "", "Deg Std Ha 1M", "", -1, true, Tools.EffectColor[0]),
 	DegStdEp2M("Dégât Standard à l'Épée 2 Main", "", "Deg Std Ep 2M", "", -1, true, Tools.EffectColor[0]),
 	DegStdMa2M("Dégât Standard au Maillet 2 Main", "", "Deg Std Ma 2M", "", -1, true, Tools.EffectColor[0]),
 	DegStdHa2M("Dégât Standard à la Hache 2 Main", "", "Deg Std Ha 2M", "", -1, true, Tools.EffectColor[0]),
+	DegStdMeca("Dégât Standard à l'arme Mécanique", "", "Deg Std Mec 1M", "", -1, true, Tools.EffectColor[0]),
+	DegStdMeca2M("Dégât Standard à l'arme Mécanique 2 Main", "", "Deg Std Mec 2M", "", -1, true, Tools.EffectColor[0]),
 	DegStdArc("Dégât Standard à l'Arc", "", "Deg Std Arc", "", -1, true, Tools.EffectColor[0]),
 	DegStdGun("Dégât Standard au Pistolet", "", "Deg Std Gun", "", -1, true, Tools.EffectColor[0]),
 	DegStdBa("Dégât Standard au Bâton", "", "Deg Std Bat", "", -1, true, Tools.EffectColor[0]),

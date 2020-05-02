@@ -11,24 +11,30 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class EquipSet implements Writable {
 	
 	private static EquipSet[] dataArmor;
 	private static EquipSet[] dataCapeRing;
 	static {
+		dataArmor = Loader.getArmorSet();
 		loadData();
 	}
 	
 	private String name;
 	private String code;
 	private int nbCurrentUsed;
-	private ArrayList<Effect> with2 = new ArrayList<Effect>();
-	private ArrayList<Effect> with3 = new ArrayList<Effect>();
-	private ArrayList<Effect> with4 = new ArrayList<Effect>();
-	private ArrayList<Effect> with5 = new ArrayList<Effect>();
+	private Calculable[] with2;
+	private Calculable[] with3;
+	private Calculable[] with4;
+	private Calculable[] with5;
 	
 	public EquipSet() {
 		this.name = "Rien";
@@ -36,6 +42,26 @@ public class EquipSet implements Writable {
 		this.nbCurrentUsed = 0;
 	}
 	
+	public EquipSet(String name, String code, Calculable[] with3, Calculable[] with4, Calculable[] with5) {
+		this.name = name;
+		this.code = code;
+		this.nbCurrentUsed = 0;
+		
+		this.with3 = with3;
+		this.with4 = with4;
+		this.with5 = with5;
+	}
+	
+	public EquipSet(String name, String code, Calculable[] with2, Calculable[] with3) {
+		this.name = name;
+		this.code = code;
+		this.nbCurrentUsed = 0;
+		
+		this.with2 = with2;
+		this.with3 = with3;
+	}
+	
+	/*
 	private EquipSet(String name, String code, String[] with3, String[] with4, String[] with5) {
 		this.name = name;
 		this.code = code;
@@ -66,7 +92,7 @@ public class EquipSet implements Writable {
 		for(int i = 0; i < with3.length; i++) {
 			this.with3.add(new Effect(with3[i]));
 		}
-	}
+	}*/
 	
 	public EquipSet(Armor[] armors) {
 		String equipCode[] = { armors[0].getSetCode(), armors[1].getSetCode(), armors[2].getSetCode(), armors[3].getSetCode(), armors[4].getSetCode() };
@@ -82,7 +108,6 @@ public class EquipSet implements Writable {
 				break;
 			}
 		}
-		
 	}
 
 	public EquipSet(Ring[] rings, Cape cape) {
@@ -111,22 +136,82 @@ public class EquipSet implements Writable {
 		return this.code;
 	}
 	
-	public ArrayList<Effect> getWith2() {
-		return new ArrayList<Effect>(with2);
-	}
-
-	public ArrayList<Effect> getWith3() {
-		return new ArrayList<Effect>(with3);
+	public Calculable[] getWith2() {
+		if(this.with2 == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[this.with2.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.with2[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.with2[i]);
+			} else if(this.with2[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) this.with2[i]);
+			} else if(this.with2[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) this.with2[i]);
+			}
+		}
+		
+		return tab;
 	}
 	
-	public ArrayList<Effect> getWith4() {
-		return new ArrayList<Effect>(with4);
+	public Calculable[] getWith3() {
+		if(this.with3 == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[this.with3.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.with3[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.with3[i]);
+			} else if(this.with3[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) this.with3[i]);
+			} else if(this.with3[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) this.with3[i]);
+			}
+		}
+		
+		return tab;
 	}
 	
-	public ArrayList<Effect> getWith5() {
-		return new ArrayList<Effect>(with5);
+	public Calculable[] getWith4() {
+		if(this.with4 == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[this.with4.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.with4[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.with4[i]);
+			} else if(this.with4[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) this.with4[i]);
+			} else if(this.with4[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) this.with4[i]);
+			}
+		}
+		
+		return tab;
 	}
-
+	
+	public Calculable[] getWith5() {
+		if(this.with5 == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[this.with5.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.with5[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.with5[i]);
+			} else if(this.with5[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) this.with5[i]);
+			} else if(this.with5[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) this.with5[i]);
+			}
+		}
+		
+		return tab;
+	}
+	
 	public int getNbCurrentUsed() {
 		return this.nbCurrentUsed;
 	}
@@ -167,28 +252,43 @@ public class EquipSet implements Writable {
 		StringBuilder tooltip = new StringBuilder();
 		
 		tooltip.append("3 pièces :");
-		for(Effect e : this.with3) {
-			if(e.getType() != TypeEffect.NONE) {
-				tooltip.append("<br>");
-				tooltip.append(e.getTooltip());
+		if(this.with3 != null) {
+			for(Calculable c : this.with3) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					if(e.getType() != TypeEffect.NONE) {
+						tooltip.append("<br>");
+						tooltip.append(e.getTooltip());
+					}
+				}
 			}
 		}
 		
 		tooltip.append("<br><br>");
 		tooltip.append("4 pièces :");
-		for(Effect e : this.with4) {
-			if(e.getType() != TypeEffect.NONE) {
-				tooltip.append("<br>");
-				tooltip.append(e.getTooltip());
+		if(this.with4 != null) {
+			for(Calculable c : this.with4) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					if(e.getType() != TypeEffect.NONE) {
+						tooltip.append("<br>");
+						tooltip.append(e.getTooltip());
+					}
+				}
 			}
 		}
 		
 		tooltip.append("<br><br>");
 		tooltip.append("5 pièces :");
-		for(Effect e : this.with5) {
-			if(e.getType() != TypeEffect.NONE) {
-				tooltip.append("<br>");
-				tooltip.append(e.getTooltip());
+		if(this.with5 != null) {
+			for(Calculable c : this.with5) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					if(e.getType() != TypeEffect.NONE) {
+						tooltip.append("<br>");
+						tooltip.append(e.getTooltip());
+					}
+				}
 			}
 		}
 		
@@ -217,73 +317,130 @@ public class EquipSet implements Writable {
 		return b;
 	}
 	
-	public static void loadData() {
-		ArrayList<ArrayList<EquipSet>> list = new ArrayList<ArrayList<EquipSet>>();
+	public void toCode() {
+		String code = "new EquipSet(\"" + this.name + "\", \"" + this.code + "\",\n";
+		code += "\tnew Calculable[] {\n";
 		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					EquipSet.class.getResourceAsStream(Tools.RESOURCE + "armor/set.txt"), "UTF-8"));
-		) {
-			list.add(new ArrayList<EquipSet>());
-			
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String[] nbBonus = lineSplit[2].split(",");
+		for(Calculable c : this.with3) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				code += "\t\tnew Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
 				
-				String[] with3 = new String[Integer.parseInt(nbBonus[0])];
-				String[] with4 = new String[Integer.parseInt(nbBonus[1])];
-				String[] with5 = new String[Integer.parseInt(nbBonus[2])];
-				
-				assert ((with3.length + with4.length + with5.length) == (lineSplit.length - 3))
-						: "Set armor line " + (list.get(0).size() + 1);
-				
-				for(int i = 0; i < with3.length; i++) {
-					with3[i] = lineSplit[i+3];
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
 				}
 				
-				for(int i = 0; i < with4.length; i++) {
-					with4[i] = lineSplit[i+3 + with3.length];
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
 				}
 				
-				for(int i = 0; i < with5.length; i++) {
-					with5[i] = lineSplit[i+3 + with3.length + with4.length];
+				if(e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
 				}
 				
-				list.get(0).add(new EquipSet(lineSplit[0], lineSplit[1], with3, with4, with5));
-				
-				line = reader.readLine();
+				code += "),\n";
 			}
-		} catch (IOException e) {
-			System.out.println("Error with " + EquipSet.class.getClass().getSimpleName() + " class");
 		}
+		
+		code += "\t},\n";
+		
+		code += "\tnew Calculable[] {\n";
+		
+		for(Calculable c : this.with4) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				code += "\t\tnew Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+				
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
+				}
+				
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
+				}
+				
+				if(e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
+				}
+				
+				code += "),\n";
+			}
+		}
+		
+		code += "\t},\n";
+		
+		code += "\tnew Calculable[] {\n";
+		
+		for(Calculable c : this.with5) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				code += "\t\tnew Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+				
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
+				}
+				
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
+				}
+				
+				if(e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
+				}
+				
+				code += "),\n";
+			}
+		}
+		
+		code += "\t}\n";
+		
+		code += "),";
+		
+		System.out.println(code);
+	}
+	
+	public static void loadData() {
+		ArrayList<EquipSet> list = new ArrayList<EquipSet>();
 		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					EquipSet.class.getResourceAsStream(Tools.RESOURCE + "capering/set.txt"), "UTF-8"));
 		) {
-			list.add(new ArrayList<EquipSet>());
-			
 			String line = reader.readLine();
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				String[] nbBonus = lineSplit[2].split(",");
 				
-				String[] with2 = new String[Integer.parseInt(nbBonus[0])];
-				String[] with3 = new String[Integer.parseInt(nbBonus[1])];
+				Effect[] with2 = new Effect[Integer.parseInt(nbBonus[0])];
+				Effect[] with3 = new Effect[Integer.parseInt(nbBonus[1])];
 				
 				assert ((with2.length + with3.length) == (lineSplit.length - 3))
-						: "Set capering line " + (list.get(1).size() + 1);
+						: "Set capering line " + (list.size() + 1);
 				
-				for(int i = 0; i < with2.length; i++) {
-					with2[i] = lineSplit[i+3];
+				for(int j = 0; j < Integer.parseInt(nbBonus[0]); j++) {
+					with2[j] = new Effect(lineSplit[j+3]);
 				}
 				
-				for(int i = 0; i < with3.length; i++) {
-					with3[i] = lineSplit[i+3 + with2.length];
+				for(int j = 0; j < Integer.parseInt(nbBonus[1]); j++) {
+					with3[j] = new Effect(lineSplit[j+3] + with2.length);
 				}
 				
-				list.get(1).add(new EquipSet(lineSplit[0], lineSplit[1], with2, with3));
+				list.add(new EquipSet(lineSplit[0], lineSplit[1], with2, with3));
 				
 				line = reader.readLine();
 			}
@@ -291,14 +448,9 @@ public class EquipSet implements Writable {
 			System.out.println("Error with " + EquipSet.class.getClass().getSimpleName() + " class");
 		}
 		
-		EquipSet.dataArmor = new EquipSet[list.get(0).size()];
-		for(int i = 0; i < dataArmor.length; i++) {
-			dataArmor[i] = list.get(0).get(i);
-		}
-		
-		EquipSet.dataCapeRing = new EquipSet[list.get(1).size()];
+		EquipSet.dataCapeRing = new EquipSet[list.size()];
 		for(int i = 0; i < dataCapeRing.length; i++) {
-			dataCapeRing[i] = list.get(1).get(i);
+			dataCapeRing[i] = list.get(i);
 		}
 	}
 	
