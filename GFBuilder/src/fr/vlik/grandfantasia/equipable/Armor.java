@@ -32,9 +32,8 @@ public class Armor extends Equipment {
 	private boolean isMultiEffect;
 	private MultiEffect multiEffects;
 	
-	@SuppressWarnings("serial")
 	public Armor() {
-		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, null, null);
+		super();
 		
 		this.type = ArmorType.NONE;
 		this.setCode = "-1";

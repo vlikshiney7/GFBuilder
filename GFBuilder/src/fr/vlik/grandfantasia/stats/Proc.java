@@ -7,15 +7,19 @@ public class Proc implements Calculable {
 	private Calculable[] effects;
 	private Activation activation;
 	private int taux;
-	private double time;
+	private double time = 0;
 	private int cumul = 1;
 	
 	
-	public Proc(int taux, Activation activation, double time, Calculable[] effects) {
+	public Proc(int taux, Activation activation, Calculable[] effects) {
 		this.taux = taux;
 		this.activation = activation;
-		this.time = time;
 		this.effects = effects;
+	}
+	
+	public Proc(int taux, Activation activation, double time, Calculable[] effects) {
+		this(taux, activation, effects);
+		this.time = time;
 	}
 	
 	public Proc(int taux, Activation activation, double time, int cumul, Calculable[] effects) {

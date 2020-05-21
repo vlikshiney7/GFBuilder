@@ -185,8 +185,11 @@ public class PageCapeRing extends PagePanel {
 		
 		Cape cape = new Cape(this.getCape());
 		cape.addEnchant(this.getEnchantment(0));
-		for(Calculable c : cape.getEffects()) {
-			list.add(c);
+		
+		if(cape.getEffects() != null) {
+			for(Calculable c : cape.getEffects()) {
+				list.add(c);
+			}
 		}
 		
 		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE

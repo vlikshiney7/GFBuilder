@@ -20,11 +20,12 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Skill;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 
-public class PageSkill extends PagePanel {
+public class PageSkill extends PagePanel implements ConvertEffect {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -36,6 +37,8 @@ public class PageSkill extends PagePanel {
 	private JCustomComboBox<ProSkill> proSkill;
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
+	
+	private ArrayList<Effect> convertEffects;
 	
 	public static PageSkill getInstance() {
 		return INSTANCE;
@@ -79,14 +82,26 @@ public class PageSkill extends PagePanel {
 	public Skill getSkill(int id) {
 		return this.skillProgress.get(id).getSelectedItem();
 	}
+	
+	@Override
+	public ArrayList<Effect> getConvertEffects() {
+		return this.convertEffects;
+	}
 
 	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		ArrayList<Effect> convert = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {
-				list.addAll(this.skillNatif.get(i).getEffects());
+				for(Effect e : this.skillNatif.get(i).getEffects()) {
+					if(e.getTransfert() == null) {
+						list.add(e);
+					} else {
+						convert.add(e);
+					}
+				}
 			}
 		}
 		
@@ -101,6 +116,7 @@ public class PageSkill extends PagePanel {
 		}
 		
 		this.effects = list;
+		this.convertEffects = convert;
 	}
 
 	@Override

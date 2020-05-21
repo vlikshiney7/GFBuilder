@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia.equipable;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +13,8 @@ import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -25,12 +24,20 @@ public class Cape extends Equipment {
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Cape[] data;
 	static {
-		loadData();
+		data = Loader.getCape();
 	}
-
+	
 	private String setCode;
 	private boolean isMultiEffect;
 	private MultiEffect multiEffects;
+	
+	public Cape() {
+		super();
+		
+		this.setCode = "-1";
+		this.isMultiEffect = false;
+		this.icon = setIcon("null");
+	}
 	
 	public Cape(Cape cape) {
 		super(cape.getMap(), cape.getGrades(), cape.getLvl(), cape.getQuality(), cape.isEnchantable(), cape.getEffects(), cape.getBonusXP());
@@ -149,70 +156,54 @@ public class Cape extends Equipment {
 		}
 	}
 	
-	public static void loadData() {
-		ArrayList<Cape> list = new ArrayList<Cape>();
+	public void toCode(String path) {
+		String code = "new Cape(new HashMap<Language, String>() {{ put(Language.FR, \"" + this.name.get(Language.FR) + "\"); put(Language.EN, \"\"); }},\n";
 		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Cape.class.getResourceAsStream(PATH + "cape.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1];
+		code += "\tnew GradeName[] { ";
+		for(GradeName grade : this.grades) {
+			code += "GradeName." + grade + ", ";
+		}
+		code += "},\n";
+		
+		code += "\t" + this.lvl + ", ";
+		code += "Quality." + this.quality + ", ";
+		code += this.enchantable + ", ";
+		code += "\"" + this.setCode + "\", ";
+		code += "\"" + path + "\", ";
+		code += "new Calculable[] {\n";
+		
+		for(Calculable c : this.effects) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				code += "\t\tnew Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
 				
-				String classes[] = lineSplit[1].split(",");
-				GradeName[] grades = new GradeName[classes.length];
-				for(int j = 0; j < classes.length; j++) {
-					grades[j] = GradeName.values()[Integer.parseInt(classes[j])];
+				if(e.getTransfert() != null) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					code += ", TypeEffect." + e.getTransfert();
+					continue;
 				}
 				
-				Map<Language, String> names = new HashMap<Language, String>();
-				names.put(Language.FR, lineSplit[0]);
-				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[4])];
-				
-				String[] effectSplit = lineSplit[6].split(",");
-				
-				Calculable[] bonusXP = new Calculable[Integer.parseInt(effectSplit[2])];
-				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
-					bonusXP[j] = new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]);
+				if(e.getWithWeapon() != WeaponType.NONE) {
+					code += ", " + e.getWithReinca();
+					code += ", WeaponType." + e.getWithWeapon();
+					continue;
 				}
 				
-				
-				if(Integer.parseInt(effectSplit[0]) > -1) {
-					Calculable[] effects = new Calculable[Integer.parseInt(effectSplit[0])];
-					for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++) {
-						effects[j] = new Effect(lineSplit[j+7]);
-					}
-					
-					Cape cape = new Cape(
-							names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]),
-							lineSplit[3], path, effects, bonusXP
-							);
-					
-					list.add(cape);
-				} else {
-					MultiEffect effects = MultiEffect.getFromCode(lineSplit[7]);
-					
-					Cape cape = new Cape(
-							names, grades, Integer.parseInt(lineSplit[2]), quality, Boolean.parseBoolean(lineSplit[5]),
-							lineSplit[3], path, effects, bonusXP
-							);
-					
-					list.add(cape);
+				if(e.getWithReinca()) {
+					code += ", " + e.getWithReinca();
 				}
 				
-				line = reader.readLine();
+				code += "),\n";
 			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Cape.class.getClass().getSimpleName() + " class");
 		}
 		
-		Cape.data = new Cape[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
+		code += "\t}, null ),";
+		
+		code = code.replace(".0)", ")");
+		code = code.replace(".0,", ",");
+		
+		System.out.println(code);
 	}
 	
 	public static Cape get(String name, Language lang) {
@@ -227,6 +218,8 @@ public class Cape extends Equipment {
 	
 	public static Cape[] getPossibleCape(GradeName grade, int lvl) {
 		ArrayList<Cape> result = new ArrayList<Cape>();
+		
+		result.add(new Cape());
 		
 		for(Cape cape : Cape.data) {
 			if(cape.getLvl() <= lvl && cape.containGrade(grade)) {

@@ -32,6 +32,8 @@ public abstract class Equipment implements FullRenderer {
 		this.name = new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }};
 		this.grades = new GradeName[] {	GradeName.NONE };
 		this.lvl = 0;
+		this.quality = Quality.GREY;
+		this.enchantable = false;
 	}
 	
 	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, Calculable[] effects, Calculable[] bonusXP) {

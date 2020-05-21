@@ -7,6 +7,7 @@ import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class Build {
 	
@@ -67,11 +68,13 @@ public class Build {
 		if(c instanceof Effect) {
 			Effect e = (Effect) c;
 			
-			if(containIdWeapon(e.getWithWeapon())) {
-				if(e.isPercent()) {
-					this.effectPercent.add(e);
-				} else {
-					this.effectPoint.add(e);
+			if(e.getTarget() == Target.SELF) {
+				if(containIdWeapon(e.getWithWeapon())) {
+					if(e.isPercent()) {
+						this.effectPercent.add(e);
+					} else {
+						this.effectPoint.add(e);
+					}
 				}
 			}
 		} else if(c instanceof Proc) {
@@ -80,12 +83,13 @@ public class Build {
 			for(Calculable calculable : p.getEffects()) {
 				if(calculable instanceof Effect) {
 					Effect e = (Effect) calculable;
-					
-					if(containIdWeapon(e.getWithWeapon())) {
-						if(e.isPercent()) {
-							this.effectPercent.add(e);
-						} else {
-							this.effectPoint.add(e);
+					if(e.getTarget() == Target.SELF) {
+						if(containIdWeapon(e.getWithWeapon())) {
+							if(e.isPercent()) {
+								this.effectPercent.add(e);
+							} else {
+								this.effectPoint.add(e);
+							}
 						}
 					}
 				}
@@ -187,6 +191,10 @@ public class Build {
 		for(int i = 21; i < result.length; i++) {
 			result[i] = Math.floor(combinePoint[i] * (combinePercent[i] / 100 +1));
 		}
+
+		for(Effect add : this.effectAdditional) {
+			result[add.getType().ordinal()] += add.getValue();
+		}
 		
 		/* CONVERSION AUTRES */
 		for(Effect e : this.effectConvert) {
@@ -194,10 +202,6 @@ public class Build {
 				double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
 				result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
 			}
-		}
-		
-		for(Effect add : this.effectAdditional) {
-			result[add.getType().ordinal()] += add.getValue();
 		}
 		
 		return result;

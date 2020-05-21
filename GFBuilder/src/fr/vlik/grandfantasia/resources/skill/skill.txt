@@ -53,7 +53,7 @@ Résonance cristalline/true/6/0/5-0
 Cristal du Temps/false/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
 Noyau de Cristallisation de l'Espace/true/31/2/PeneP,false,5/PeneM,false,5/5-2
 Évolution en spatiodériveur/true/31/0/31-10
-Poids de l'univers/true/66/3/Depla,false,5/ReducP,false,5/ReducM,false,5/66-0
+Poids de l'univers/true/66/4/Depla,false,5/ReducP,false,5/ReducM,false,5/Atk,false,50,false,-1,AtkM/66-0
 5
 Résonance cristalline/true/6/0/5-0
 Cristal du Temps/false/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1

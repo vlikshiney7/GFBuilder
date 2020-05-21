@@ -15,85 +15,22 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	
 	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", Tools.EffectColor[8]),
 	Immobilisation("Immobilisation", "Immobilization", "Immobilisation", "Immobilization", Tools.EffectColor[8]),
-	NoSkill("Compétence bloqué", "Skill blocked", "Silence", "No skill", Tools.EffectColor[8]),
+	NoSkill("Compétences bloquées", "Skills blocked", "Silence", "Anti Skills", Tools.EffectColor[8]),
 	AntiItem("Objet bloqué", "Object blocked", "Anti Objet", "Anti Item", Tools.EffectColor[8]),
 	Stun("Étourdissement", "Stun", "Stun", "Stun", Tools.EffectColor[8]),
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
 	
-	DegSacre4000("4000 Dégâts Sacré sur attaque standard", "4000 Holy Damage with standard attack", "4000 Deg Sacre", "4000 Holy Dam", Tools.EffectColor[7]),
-	DegOmbre1500("1500 Dégâts Ombre sur attaque standard", "1500 Dark Damage with standard attack", "1500 Deg Ombre", "1500 Dark Dam", Tools.EffectColor[8]),
-	DegNature800("800 Dégâts Nature sur attaque physique", "800 Natural Damage with physical attack", "800 Deg Nature", "800 Natural Dam", Tools.EffectColor[12]),
-	DegNature716("716 Dégâts Nature sur attaque physique", "716 Natural Damage with physical attack", "716 Deg Nature", "716 Natural Dam", Tools.EffectColor[12]),
-	DegNature541("541 Dégâts Nature sur attaque physique", "541 Natural Damage with physical attack", "541 Deg Nature", "541 Natural Dam", Tools.EffectColor[12]),
-	DegFeu294("294 Dégâts Feu sur attaque physique", "294 Fire Damage with physical attack", "294 Deg Feu", "294 Fire Dam", Tools.EffectColor[10]),
-	
-	ProcT0L85Q5("Défense Physique -100", "Physical défense -100", "DÉF -100", "DEF -100", Tools.EffectColor[0]),
-	ProcT0L80Q5N0("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
-	ProcT0L80Q5N1("VOL de l'ennemi -180", "Opponent WIL -180", "VOL -180", "WIL -180", Tools.EffectColor[0]),
-	ProcT0L80Q3("Déplacement de l'ennemi -30%", "Opponent speed -30%", "Dépla -30%", "Speed -30%", Tools.EffectColor[0]),
-	ProcT0L70Q3("Compétences bloquées", "Skills blocked", "Anti Compétences", "Anti Skills", Tools.EffectColor[8]),
-	ProcT0L50Q5("Déplacement de l'ennemi -50%", "Opponent speed -50%", "Dépla -50%", "Speed -50%", Tools.EffectColor[0]),
+	ProcT0L80Q5("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
 	ProcT0L48Q4("Poison 4 : -200 PV chaque 2 secondes", "Poison 4 : -200 HP per 2 seconds", "-200 PV / 2s", "-200 HP / 2s", Tools.EffectColor[8]),
 	
-	ProcSetLune1("Vitesse d'attaque de l'ennemi -15%", "Opponent attack speed -15%", "Vit Atq -15%", "Atk Speed -15%", Tools.EffectColor[0]),
-	ProcSetLune2("Vitesse d'incantation de l'ennemi -10%", "Opponent cast speed -10%", "Vit Comp -10%", "Cast Speed -10%", Tools.EffectColor[0]),
-	ProcSetAmant("Contre 50% des dégâts", "Counter 50% of damage", "50% deg contrer", "50% dam countered", Tools.EffectColor[0]),
 	ProcSetEvo("Régénération de 10% PV", "Regeneration of 10% HP", "Regen 10% PV", "Regen 10% HP", Tools.EffectColor[0]),
-	
-	ProcSetC0PVP100N1("FCE de l'ennemi -200", "Opponent STR -200", "FCE -200", "STR -200", Tools.EffectColor[0]),
-	ProcSetC0PVP100N2("AGI de l'ennemi -200", "Opponent AGI -200", "AGI -200", "AGI -200", Tools.EffectColor[0]),
-	ProcSetC0PVP95N1("FCE de l'ennemi -175", "Opponent STR -175", "FCE -175", "STR -175", Tools.EffectColor[0]),
-	ProcSetC0PVP95N2("AGI de l'ennemi -175", "Opponent AGI -175", "AGI -175", "AGI -175", Tools.EffectColor[0]),
-	ProcSetC0PVP85N1("FCE de l'ennemi -150", "Opponent STR -150", "FCE -150", "STR -150", Tools.EffectColor[0]),
-	ProcSetC0PVP85N2("AGI de l'ennemi -150", "Opponent AGI -150", "AGI -150", "AGI -150", Tools.EffectColor[0]),
-	ProcSetC0PVP75N1("FCE de l'ennemi -165", "Opponent STR -165", "FCE -165", "STR -165", Tools.EffectColor[0]),
-	ProcSetC0PVP75N2("AGI de l'ennemi -165", "Opponent AGI -165", "AGI -165", "AGI -165", Tools.EffectColor[0]),
-	ProcSetC0PVP65RN1("FCE de l'ennemi -110", "Opponent STR -110", "FCE -110", "STR -110", Tools.EffectColor[0]),
-	ProcSetC0PVP65RN2("AGI de l'ennemi -110", "Opponent AGI -110", "AGI -110", "AGI -110", Tools.EffectColor[0]),
-	ProcSetC0PVP65N1("FCE de l'ennemi -100", "Opponent STR -100", "FCE -100", "STR -100", Tools.EffectColor[0]),
-	ProcSetC0PVP65N2("AGI de l'ennemi -100", "Opponent AGI -100", "AGI -100", "AGI -100", Tools.EffectColor[0]),
-	ProcSetC0PVP55RN1("FCE de l'ennemi -82", "Opponent STR -82", "FCE -82", "STR -82", Tools.EffectColor[0]),
-	ProcSetC0PVP55RN2("AGI de l'ennemi -82", "Opponent AGI -82", "AGI -82", "AGI -82", Tools.EffectColor[0]),
-	ProcSetC0PVP55N1("FCE de l'ennemi -50", "Opponent STR -50", "FCE -50", "STR -50", Tools.EffectColor[0]),
-	ProcSetC0PVP55N2("AGI de l'ennemi -50", "Opponent AGI -50", "AGI -50", "AGI -50", Tools.EffectColor[0]),
-	ProcSetC0PVP45N1("FCE de l'ennemi -55", "Opponent STR -55", "FCE -55", "STR -55", Tools.EffectColor[0]),
-	ProcSetC0PVP45N2("AGI de l'ennemi -55", "Opponent AGI -55", "AGI -55", "AGI -55", Tools.EffectColor[0]),
-	ProcSetC0PVP25RN1("FCE de l'ennemi -34", "Opponent STR -34", "FCE -34", "STR -34", Tools.EffectColor[0]),
-	ProcSetC0PVP25RN2("AGI de l'ennemi -34", "Opponent AGI -34", "AGI -34", "AGI -34", Tools.EffectColor[0]),
-	ProcSetC0PVP25N1("FCE de l'ennemi -30", "Opponent STR -30", "FCE -30", "STR -30", Tools.EffectColor[0]),
-	ProcSetC0PVP25N2("AGI de l'ennemi -30", "Opponent AGI -30", "AGI -30", "AGI -30", Tools.EffectColor[0]),
-	ProcSetC0Nuc80("Dégât de Nature +1100", "Natural damage +1100", "Deg Nature +1100", "Natural dam +1100", Tools.EffectColor[0]),
-	ProcSetC0Nuc70("Vitesse de déplacement de l'ennemi -30%", "Opponent speed -30%", "Vit dépla -30%", "Speed -30%", Tools.EffectColor[0]),
-	ProcSetC0Nuc60N1("VIT de l'ennemi -75", "Opponent VIT -75", "VIT -75", "VIT -75", Tools.EffectColor[0]),
-	ProcSetC0Nuc60N2("AGI de l'ennemi -75", "Opponent AGI -75", "AGI -75", "AGI -75", Tools.EffectColor[0]),
-	ProcSetC0Lin80("Dégât de Glace +1100", "Ice damage +1100", "Deg Glace +1100", "Ice dam +1100", Tools.EffectColor[0]),
-	ProcSetC0GVG70("INT de l'ennemi -100", "Opponent INT -100", "INT -100", "INT -100", Tools.EffectColor[0]),
-	
-	ProcSetC1PVE90N1("Dégât physique de l'ennemi -20%", "Opponent physical damage -20%", "Dégât phys -20%", "Phys dam -20%", Tools.EffectColor[0]),
-	ProcSetC1PVE90N2("Vitesse d'attaque de l'ennemi -20%", "Opponent attack speed -20%", "Vit Atk -20%", "Atk Speed -20%", Tools.EffectColor[0]),
-	ProcSetC1PVE90N3("Régénération de 2% PV par seconde", "Regeneration of 2% HP per second", "+2% PV / s", "+2% HP / s", Tools.EffectColor[0]),
-	ProcSetC1PVP100("Vitesse de déplacement de l'ennemi -50%", "Opponent speed -50%", "Vit dépla -50%", "Speed -50%", Tools.EffectColor[0]),
-	ProcSetC1PVP75("Vitesse de déplacement de l'ennemi -55%", "Opponent speed -55%", "Vit dépla -55%", "Speed -55%", Tools.EffectColor[0]),
-	ProcSetC1PVP25R("Vitesse de déplacement de l'ennemi -35%", "Opponent speed -35%", "Vit dépla -35%", "Speed -35%", Tools.EffectColor[0]),
-	ProcSetC1PVP25("Vitesse de déplacement de l'ennemi -30%", "Opponent speed -30%", "Vit dépla -30%", "Speed -30%", Tools.EffectColor[0]),
-	ProcSetC1Nuc80("Taux Critique Physique de l'ennemi -40%", "Opponent Chance Critical Hit -40%", "Tx Crit Phys -40%", "Ch Crit Hit -40%", Tools.EffectColor[0]),
-	ProcSetC1Lin80("Vitesse d'incantation de l'ennemi -40%", "Opponent cast speed -40%", "Vit Comp -40%", "Cast speed -40%", Tools.EffectColor[0]),
-	
-	ProcSetC2PVP25R("INT de l'ennemi -34", "Opponent INT -34", "INT -34", "INT -34", Tools.EffectColor[0]),
-	ProcSetC2PVP25("INT de l'ennemi -30", "Opponent INT -30", "INT -30", "INT -30", Tools.EffectColor[0]),
-	
-	ProcSetC3PVE90("Toucher de l'ennemi -30%", "Opponent hit -30%", "Toucher -30%", "Hit -30%", Tools.EffectColor[0]),
-	ProcSetC3Nuc80N1("Dégât de Foudre +1000", "Lightning damage +1000", "Deg Foudre +1000", "Lightning dam +1000", Tools.EffectColor[0]),
-	ProcSetC3Nuc80N2("VOL de l'ennemi -100", "Opponent WIL -100", "VOL -100", "WIL -100", Tools.EffectColor[0]),
-	ProcSetC3Nuc80N3("VIT de l'ennemi -50", "Opponent VIT -50", "VIT -50", "VIT -50", Tools.EffectColor[0]),
-	ProcSetC3Nuc70("Défense physique de l'ennemi -25%", "Opponent physical defense -25%", "Def phys -25%", "Phys def -25%", Tools.EffectColor[0]),
+	ProcSetC1PVE90("Régénération de 2% PV par seconde", "Regeneration of 2% HP per second", "+2% PV / s", "+2% HP / s", Tools.EffectColor[0]),
 	ProcSetC3Lin80("Régénération de 380 PV chaque 2 secondes", "Regeneration of 380 HP per 2 seconds", "+380 PV / 2s", "+380 HP / 2s", Tools.EffectColor[0]),
-	
-	ProcSetC8GOLD100("Contre 75% des dégâts", "Counter 75% of damage", "75% deg contrer", "75% dam countered", Tools.EffectColor[0]),
 	ProcSetC8GOLD90("-300 PV par seconde", "-300 HP per second", "-300 PV / s", "-300 HP / s", Tools.EffectColor[0]),
 	ProcSetC8GOLD80("Recharge des compétences de 1s", "Skills cooldown decrease by 1s", "Recharge comp 1s", "Reload skill 1s", Tools.EffectColor[0]),
-	
+	ProcSetC11GOLD100("Absorption de 1000 PM à l'ennemi", "1000 of opponent's PM absorbing", "Absorbe 1000 PM", "1000 MP absorbing", Tools.EffectColor[0]),
+	ProcSetC11PVP00("Rechargement des compétences de 1s sur critique reçu", "Skill cooldown reduction of 1s when receive critical hit", "Compétence -1s critique reçu", "-1s skill cooldown critical hit", Tools.EffectColor[0]),
 	
 	SkillC0N1("Durée de Fureur du Gladiateur +10s", "Warlord Fury duration +10s", "Fureur du Gladiateur +10s", "Warlord Fury +10s", Tools.EffectColor[0]),
 	SkillC0N2("Dégât de Choc Sismique +40%", "Ground Pulse Wave damage +40%", "Choc Sismique +40%", "Ground Pulse Wave +40%", Tools.EffectColor[0]),
@@ -189,15 +126,5 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	@Override
 	public String getTooltip() {
 		return this.fr;
-	}
-	
-	public static TypeStaticEffect get(String name, Language lang) {
-		for(TypeStaticEffect type : TypeStaticEffect.values()) {
-			if(type.getInfo(lang).equals(name)) {
-				return type;
-			}
-		}
-		
-		return null;
 	}
 }

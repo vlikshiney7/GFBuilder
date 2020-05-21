@@ -166,7 +166,7 @@ Bâton gravé/91/1/AtkM,true,1,false,12/6-19
 /91/0/7-18
 /91/0/7-19
 
-Amélioration d'Imact/45/1/FCE,false,9/8-0
+Amélioration d'Impact/45/1/FCE,false,9/8-0
 Correction réticule/45/1/Toucher,false,1.5/8-1
 Choc de Surcadençage/45/1/TCCP,false,1.5/8-2
 Maître Arme mécanique/45/2/DegStdMeca,false,1.5/DegStdMeca2M,false,1.5/8-3

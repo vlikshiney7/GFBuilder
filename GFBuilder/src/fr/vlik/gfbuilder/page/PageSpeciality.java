@@ -102,11 +102,11 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		ArrayList<Effect> convert = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
-			for(int j = 0; j < this.tabSpeciality[i].getEffects().size(); j++) {
-				if(this.tabSpeciality[i].getEffects().get(j).getTransfert() == null) {
-					list.add(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.spePoint.get(i).getSelectedIndex()));
+			for(Effect e : this.tabSpeciality[i].getEffects()) {
+				if(e.getTransfert() == null) {
+					list.add(Speciality.multiplyEffect(e, this.spePoint.get(i).getSelectedIndex()));
 				} else {
-					convert.add(Speciality.multiplyEffect(this.tabSpeciality[i].getEffects().get(j), this.spePoint.get(i).getSelectedIndex()));
+					convert.add(Speciality.multiplyEffect(e, this.spePoint.get(i).getSelectedIndex()));
 				}
 			}
 		}

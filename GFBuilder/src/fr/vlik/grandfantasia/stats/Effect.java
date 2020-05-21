@@ -5,14 +5,14 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 
 public class Effect implements Calculable {
-	
+
 	private TypeEffect type;
 	private boolean isPercent;
 	private double value;
 	private boolean withReinca = false;
 	private WeaponType withWeapon = WeaponType.NONE;
 	private TypeEffect transfert = null;
-	
+	private Target target = Target.SELF;
 
 	public Effect(TypeEffect type, boolean isPercent, double value) {
 		this.type = type;
@@ -33,6 +33,13 @@ public class Effect implements Calculable {
 	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon, TypeEffect transfert) {
 		this(type, isPercent, value, withReinca, withWeapon);
 		this.transfert = transfert;
+	}
+	
+	public Effect(TypeEffect type, boolean isPercent, double value, Target target) {
+		this.type = type;
+		this.isPercent = isPercent;
+		this.value = value;
+		this.target = target;
 	}
 	
 	public Effect(Effect effect) {
@@ -68,6 +75,20 @@ public class Effect implements Calculable {
 		}
 	}
 	
+	public enum Target {
+		
+		SELF("soi", "self"),
+		OPPONENT("ennemi", "opponent");
+		
+		public final String fr;
+		public final String en;
+		 
+	    private Target(String fr, String en) {
+	        this.fr = fr;
+	        this.en = en;
+	    }
+	}
+	
 	public TypeEffect getType() {
 		return this.type;
 	}
@@ -90,6 +111,10 @@ public class Effect implements Calculable {
 	
 	public TypeEffect getTransfert() {
 		return this.transfert;
+	}
+	
+	public Target getTarget() {
+		return this.target;
 	}
 
 	public void addFortifValue(double coef) {
@@ -145,14 +170,22 @@ public class Effect implements Calculable {
 	public String toString(Language lang) {
 		String result = "";
 		
-		if(lang == Language.FR) {
-			result = this.getType().fr;
-		} else {
-			result = this.getType().en;
+		if(this.target == Target.OPPONENT) {
+			if(lang == Language.FR) {
+				result += "Ennemi : ";
+			} else {
+				result += "Opponent: ";
+			}
 		}
 		
-		result += (this.getValue() < 0 ? " " : " +");
-		result += (int) this.getValue() + (this.isPercent ? "%" : "");
+		if(lang == Language.FR) {
+			result += this.type.fr;
+		} else {
+			result += this.type.en;
+		}
+		
+		result += (this.value < 0 ? " " : " +");
+		result += (int) this.value + (this.isPercent ? "%" : "");
 		if(this.withWeapon != WeaponType.NONE) {
 			if(lang == Language.FR) {
 				result += " si équipé d'";

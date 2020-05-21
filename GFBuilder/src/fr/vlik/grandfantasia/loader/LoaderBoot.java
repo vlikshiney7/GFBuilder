@@ -18,22 +18,37 @@ class LoaderBoot {
 	static Armor[] getBoot() {
 		Armor[] class1 = getGuerrier();
 		Armor[] class2 = getArcher();
+		Armor[] class3 = getPretre();
 		Armor[] class4 = getMage();
+		Armor[] class5 = getMeca();
+		Armor[] class6 = getVoyageur();
 		Armor[] classAll = getAll();
 		
-		Armor[] result = new Armor[class1.length + class2.length + class4.length + classAll.length];
+		Armor[] result = new Armor[class1.length + class2.length + class3.length + class4.length + class5.length + class6.length + classAll.length];
 		
 		int i = 0;
 		for(; i < class1.length; i++) {
 			result[i] = class1[i];
 		}
-		
+
 		for(int j = 0; j < class2.length; i++, j++) {
 			result[i] = class2[j];
+		}
+
+		for(int j = 0; j < class3.length; i++, j++) {
+			result[i] = class3[j];
 		}
 		
 		for(int j = 0; j < class4.length; i++, j++) {
 			result[i] = class4[j];
+		}
+
+		for(int j = 0; j < class5.length; i++, j++) {
+			result[i] = class5[j];
+		}
+		
+		for(int j = 0; j < class6.length; i++, j++) {
+			result[i] = class6[j];
 		}
 		
 		for(int j = 0; j < classAll.length; i++, j++) {
@@ -5873,12 +5888,30 @@ class LoaderBoot {
 		};
 	}
 
+	private static Armor[] getPretre() {
+		return new Armor[] {
+			
+		};
+	}
+	
 	private static Armor[] getMage() {
 		return new Armor[] {
 				
 		};
 	}
-
+	
+	private static Armor[] getMeca() {
+		return new Armor[] {
+			
+		};
+	}
+	
+	private static Armor[] getVoyageur() {
+		return new Armor[] {
+			
+		};
+	}
+	
 	private static Armor[] getAll() {
 		return new Armor[] {
 				

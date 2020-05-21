@@ -39,9 +39,8 @@ public class Weapon extends Equipment {
 	protected boolean uniqueEquip;
 	protected boolean reinca;
 	
-	@SuppressWarnings("serial")
 	public Weapon() {
-		super(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, new GradeName[] { GradeName.NONE }, 0, Quality.GREY, false, null, null);
+		super();
 		
 		this.type = WeaponType.NONE;
 		this.uniqueEquip = false;
