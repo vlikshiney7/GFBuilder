@@ -210,8 +210,10 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		ArrayList<Effect> additional = new ArrayList<Effect>();
 		
 		for(int i = 0; i < this.energy.size(); i++) {
-			for(Effect effect : Energy.getData()[i].getEffects()) {
-				additional.add(Energy.multiplyEffect(effect, Math.min(this.energy.get(i).getIntValue(), PageGeneral.getInstance().getLvl() *2)));
+			if(Energy.getData()[i].getEffects() != null) {
+				for(Effect effect : Energy.getData()[i].getEffects()) {
+					additional.add(Energy.multiplyEffect(effect, Math.min(this.energy.get(i).getIntValue(), PageGeneral.getInstance().getLvl() *2)));
+				}
 			}
 		}
 		

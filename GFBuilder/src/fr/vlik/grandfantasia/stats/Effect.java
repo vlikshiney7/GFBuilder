@@ -78,6 +78,7 @@ public class Effect implements Calculable {
 	public enum Target {
 		
 		SELF("soi", "self"),
+		ALLY("allié", "ally"),
 		OPPONENT("ennemi", "opponent");
 		
 		public final String fr;

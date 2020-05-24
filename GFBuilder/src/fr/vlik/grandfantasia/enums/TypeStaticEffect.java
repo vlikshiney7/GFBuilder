@@ -20,10 +20,14 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	Stun("Étourdissement", "Stun", "Stun", "Stun", Tools.EffectColor[8]),
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
+	Dispel("Suppression aléatoire d'un état négatif", "Auto dispel one random negative statut", "Dispel d'un malus", "Dispel one malus", Tools.EffectColor[0]),
 	
 	ProcT0L80Q5("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
 	ProcT0L48Q4("Poison 4 : -200 PV chaque 2 secondes", "Poison 4 : -200 HP per 2 seconds", "-200 PV / 2s", "-200 HP / 2s", Tools.EffectColor[8]),
 	
+	ProcSetTDB("4000 points de bouclier", "4000 points of shield", "4000 pts de bouclier", "4000 pts of shield", Tools.EffectColor[0]),
+	ProcSetSombre40("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),
+	ProcSetSombre30("Absorption de 150 PV à l'ennemi", "150 of opponent's HP absorbing", "Absorbe 150 PV", "150 HP absorbing", Tools.EffectColor[0]),
 	ProcSetEvo("Régénération de 10% PV", "Regeneration of 10% HP", "Regen 10% PV", "Regen 10% HP", Tools.EffectColor[0]),
 	ProcSetC1PVE90("Régénération de 2% PV par seconde", "Regeneration of 2% HP per second", "+2% PV / s", "+2% HP / s", Tools.EffectColor[0]),
 	ProcSetC3Lin80("Régénération de 380 PV chaque 2 secondes", "Regeneration of 380 HP per 2 seconds", "+380 PV / 2s", "+380 HP / 2s", Tools.EffectColor[0]),

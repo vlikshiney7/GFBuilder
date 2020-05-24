@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -18,10 +17,10 @@ public class Energy implements Iconable, Writable {
 	private static Energy[] data = Loader.getEnergy();
 	
 	private final Map<Language, String> name;
-	private final ArrayList<Effect> effects;
+	private final Effect[] effects;
 	private final Icon icon;
 	
-	public Energy (Map<Language, String> name, String path, ArrayList<Effect> effects) {
+	public Energy (Map<Language, String> name, String path, Effect[] effects) {
 		this.name = name;
 		this.effects = effects;
 		this.icon = setIcon(path);
@@ -36,12 +35,16 @@ public class Energy implements Iconable, Writable {
 		return this.icon;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Effect[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Effect[] tab = new Effect[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = new Effect(this.effects[i]);
+		}
+		return tab;
 	}
 	
 	public Icon setIcon(String path) {
@@ -64,9 +67,11 @@ public class Energy implements Iconable, Writable {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		if(this.effects != null) {
+			for(Effect e : this.effects) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";

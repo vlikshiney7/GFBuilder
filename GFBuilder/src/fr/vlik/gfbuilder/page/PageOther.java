@@ -17,6 +17,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.equipable.Anima;
 import fr.vlik.grandfantasia.equipable.Bague;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 
@@ -82,8 +83,14 @@ public class PageOther extends PagePanel {
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
-		list.addAll(this.getBague().getEffects());
+		if(this.getBague().getEffects() != null) {
+			for(Effect e : this.getBague().getEffects()) {
+				list.add(e);
+			}
+		}
+		
 		list.addAll(this.getLoveCo().getEffects());
+		
 		for(Calculable c : this.getAnima().getEffects()) {
 			list.add(c);
 		}

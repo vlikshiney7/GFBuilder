@@ -3243,4 +3243,163 @@ public class LoaderEquipSet {
 				}),
 		};
 	}
+	
+	static EquipSet[] getCapeRing() {
+		return new EquipSet[] {
+			new EquipSet("Rien", "-1", null, null),
+			new EquipSet("Set de la Gloire Meurtrière", "tdb0",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 60),
+					new Effect(TypeEffect.VIT, false, 60),
+					new Proc(5, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 50),
+					}),
+				},
+				new Calculable[] {
+					new Proc(5, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtkD, false, -40, Target.OPPONENT),
+						new Effect(TypeEffect.Depla, false, 50),
+						new Effect(TypeEffect.RDCCP, false, 35),
+					}),
+				}),
+			new EquipSet("Set du Dragon Émeraude", "tdb1",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 60),
+					new Effect(TypeEffect.AGI, false, 60),
+					new StaticEffect(TypeStaticEffect.x3Skill),
+				},
+				new Calculable[] {
+					new Proc(5, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
+						new Effect(TypeEffect.ESQ, false, -25, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Set de la Foi Ancestrale", "tdb2",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 60),
+					new Effect(TypeEffect.VOL, false, 60),
+					new Effect(TypeEffect.HealD, false, 20),
+					new Effect(TypeEffect.HealR, false, 20),
+				},
+				new Calculable[] {
+					new Proc(5, Activation.Attacked, 3, new Calculable[] {
+						new Effect(TypeEffect.MEN, false, 30),
+						new Effect(TypeEffect.Depla, false, 10),
+					}),
+				}),
+			new EquipSet("Set du Squelette Maudit", "tdb3",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 60),
+					new Effect(TypeEffect.INT, false, 60),
+					new Effect(TypeEffect.VitComp, false, 20),
+				},
+				new Calculable[] {
+					new Proc(5, Activation.Attacked, 3, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.ProcSetTDB),
+					}),
+				}),
+			new EquipSet("Set du Champion", "tdb4",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 20),
+					new Effect(TypeEffect.INT, false, 20),
+					new Effect(TypeEffect.AGI, false, 20),
+					new Effect(TypeEffect.VIT, false, 60),
+					new Effect(TypeEffect.RTCCP, false, 15),
+					new Effect(TypeEffect.RTCCM, false, 15),
+				},
+				new Calculable[] {
+					new Proc(5, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.Atk, true, -30, Target.OPPONENT),
+						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Danse de lunesang", "90sombre",
+				new Calculable[] {
+					new Proc(10, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 5),
+						new Effect(TypeEffect.Depla, false, 5),
+					}),
+				},
+				new Calculable[] {
+					new Proc(10, Activation.Attack, 5, new Calculable[] {
+						new Effect(TypeEffect.DCCP, false, 10),
+						new Effect(TypeEffect.DCCM, false, 10),
+					}),
+				}),
+			new EquipSet("Réminiscence de la bête divine", "80sombre",
+				new Calculable[] {
+					new Proc(50, Activation.Attacked, 5, 5, new Calculable[] {
+						new Effect(TypeEffect.RegenPV, false, 60),
+						new Effect(TypeEffect.RegenPM, false, 5),
+					}),
+				},
+				new Calculable[] {
+					new Proc(10, Activation.Attacked, 5, 10, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, 2),
+						new Effect(TypeEffect.VitComp, false, 2),
+					}),
+				}),
+			new EquipSet("Lumicloche du temps", "70sombre",
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -40),
+					new Effect(TypeEffect.CostComp, false, -15),
+				},
+				new Calculable[] {
+					new Proc(60, Activation.Attacked, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Dispel),
+					}),
+				}),
+			new EquipSet("Lignée interdite", "60sombre",
+				new Calculable[] {
+					new Proc(50, Activation.Attacked, 5, 3, new Calculable[] {
+						new Effect(TypeEffect.RegenPV, false, 40),
+						new Effect(TypeEffect.RegenPM, false, 5),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 10),
+					new Effect(TypeEffect.VitComp, false, 10),
+				}),
+			new EquipSet("Visiteur étranger", "50sombre",
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 5),
+					new Effect(TypeEffect.PM, true, 5),
+					new Effect(TypeEffect.DefP, true, 5),
+					new Effect(TypeEffect.DefM, true, 5),
+					new Effect(TypeEffect.DefP, true, 5, Target.ALLY),
+					new Effect(TypeEffect.DefM, true, 5, Target.ALLY),
+				},
+				new Calculable[] {
+					new Proc(10, Activation.Attacked, 6, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 12),
+					}),
+				}),
+			new EquipSet("Caché", "40sombre",
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 10),
+				},
+				new Calculable[] {
+					new Proc(65, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 30),
+						new Effect(TypeEffect.ReducM, false, 30),
+						new StaticEffect(TypeStaticEffect.ProcSetSombre40),
+						new Proc(100, Activation.Attacked, 5, new Calculable[] {
+							new Effect(TypeEffect.ESQ, false, 10),
+						}),
+					}),
+				}),
+			new EquipSet("Marque de vitesse", "30sombre",
+				new Calculable[] {
+					new Proc(100, Activation.Attacked, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.ProcSetSombre30),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 6),
+					new Effect(TypeEffect.VitComp, false, 6),
+				}),
+		};
+	}
 }

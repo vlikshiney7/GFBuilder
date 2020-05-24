@@ -31,6 +31,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
 import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
@@ -64,7 +65,6 @@ public class MainFrame extends JFrame {
 	private static MainFrame INSTANCE = new MainFrame();
 	private static final long serialVersionUID = 1L;
 	
-	//private String[] tabPanelText;
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	
@@ -163,6 +163,7 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
+		try {
 		
 		System.out.println("Chargement Page : " + Duration.between(this.start, Instant.now()).toMillis());
 		
@@ -258,6 +259,7 @@ public class MainFrame extends JFrame {
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Stats Display");
+		
 		
 		/****************************************/
 		/*		****	   STATS	  	****	*/
@@ -364,6 +366,10 @@ public class MainFrame extends JFrame {
 		this.add(menu, BorderLayout.WEST);
 		this.add(content, BorderLayout.CENTER);
 		this.add(scrollStats, BorderLayout.EAST);
+		
+		} catch (Exception e) {
+			new FrameError(e);
+		}
 		
 		updateTabPane(0);
 		updateLanguage();
@@ -508,13 +514,6 @@ public class MainFrame extends JFrame {
 		this.tabPaneMenu.get(page).setBackground(Design.UIColor[4]);
 	}
 	
-	public static void main(String[] args) {
-		if(args.length > 0) {
-			MainFrame.getInstance().setTitle(args[0]);
-		}
-		PageOption.getInstance().setSave(Overlay.getInstance().getCurrentName());
-	}
-	
 	public void updateTabPane(int index) {
 		for(int i = 0; i < this.tabPaneMenu.size(); i++) {
 			if(i != index) {
@@ -581,5 +580,12 @@ public class MainFrame extends JFrame {
 				
 			}
 		}
+	}
+	
+	public static void main(String[] args) {
+		if(args.length > 0) {
+			MainFrame.getInstance().setTitle(args[0]);
+		}
+		PageOption.getInstance().setSave(Overlay.getInstance().getCurrentName());
 	}
 }

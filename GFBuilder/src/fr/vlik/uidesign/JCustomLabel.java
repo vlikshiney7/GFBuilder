@@ -71,7 +71,12 @@ public class JCustomLabel extends JLabel {
 			this.effects = nucleus.getEffects();
 		} else if(object instanceof Energy) {
 			Energy energy = (Energy) object;
-			this.effects = energy.getEffects();
+			if(energy.getEffects() != null) {
+				this.effects = new ArrayList<Effect>(energy.getEffects().length);
+				for(int i = 0; i < energy.getEffects().length; i++) {
+					this.effects.add(energy.getEffects()[i]);
+				}
+			}
 		} else if(object instanceof CombiTalent) {
 			CombiTalent combiTalent = (CombiTalent) object;
 			this.effects = combiTalent.getEffects();

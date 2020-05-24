@@ -1,7 +1,6 @@
 package fr.vlik.grandfantasia.equipable;
 
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -22,9 +21,9 @@ public class Bague implements FullRenderer {
 	private final Map<Language, String> name;
 	private final Quality quality;
 	private final Icon icon;
-	private final ArrayList<Effect> effects;
+	private final Effect[] effects;
 	
-	public Bague(Map<Language, String> name, Quality quality, String path, ArrayList<Effect> effects) {
+	public Bague(Map<Language, String> name, Quality quality, String path, Effect[] effects) {
 		this.name = name;
 		this.quality = quality;
 		this.icon = setIcon(path);
@@ -49,12 +48,17 @@ public class Bague implements FullRenderer {
 		return Tools.itemColor[this.quality.index];
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Effect[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Effect[] tab = new Effect[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = new Effect(this.effects[i]);
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -79,9 +83,11 @@ public class Bague implements FullRenderer {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		if(this.effects != null) {
+			for(Effect e : this.effects) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";
