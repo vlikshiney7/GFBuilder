@@ -22,8 +22,6 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Weapon extends Equipment {
 	
@@ -213,38 +211,40 @@ public class Weapon extends Equipment {
 	
 	public String toCode(String path) {
 		String code = "new Weapon(new HashMap<Language, String>() {{ ";
-		code += "put(Language.FR, \"" + this.name.get(Language.FR) + "\"); }},\n";
+		code += "put(Language.FR, \"" + this.name.get(Language.FR) + "\"); put(Language.EN, \"\"); }},\n";
 		
-		code += "new GradeName[] { ";
+		code += "\tnew GradeName[] { ";
 		for(GradeName grade : this.grades) {
 			code += "GradeName." + grade + ", ";
 		}
 		code += "},\n";
 		
-		code += this.lvl +", ";
+		code += "\t" + this.lvl +", ";
 		code += "Quality." + this.quality + ", ";
 		code += this.enchantable + ", ";
 		code += "WeaponType." + this.type + ", ";
 		code += this.uniqueEquip + ", ";
 		code += this.reinca + ", ";
 		code += "\"" + path + "\", ";
-		code += "new ArrayList<Calculable>() {{\n";
+		code += "new Calculable[] {\n";
 		
 		for(Calculable c : this.effects) {
 			if(c instanceof Effect) {
 				Effect e = (Effect) c;
-				code += "\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
+				code += "\t\tnew Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
 				
 				if(e.getTransfert() != null) {
 					code += ", " + e.getWithReinca();
 					code += ", WeaponType." + e.getWithWeapon();
 					code += ", TypeEffect." + e.getTransfert();
+					code += "),\n";
 					continue;
 				}
 				
 				if(e.getWithWeapon() != WeaponType.NONE) {
 					code += ", " + e.getWithReinca();
 					code += ", WeaponType." + e.getWithWeapon();
+					code += "),\n";
 					continue;
 				}
 				
@@ -252,55 +252,11 @@ public class Weapon extends Equipment {
 					code += ", " + e.getWithReinca();
 				}
 				
-				code += "));\n";
-			} else if(c instanceof StaticEffect) {
-				StaticEffect s = (StaticEffect) c;
-				
-				code += "\tadd(new StaticEffect(TypeStaticEffect." + s.getType() + ", " + s.getTaux() + "));\n";
-			} else if(c instanceof Proc) {
-				Proc p = (Proc) c;
-				
-				code += "add(new Proc(" + p.getTaux() + ", Activation." + p.getActivation() + ", " + p.getTime();
-				if(p.getCumul() <= 1) {
-					code += ", " + p.getCumul();
-				}
-				code += ", new ArrayList<Calculable>() {{";
-				
-				for(Calculable in : p.getEffects()) {
-					if(in instanceof Effect) {
-						Effect e = (Effect) in;
-						code += "\tadd(new Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
-						
-						if(e.getTransfert() != null) {
-							code += ", " + e.getWithReinca();
-							code += ", WeaponType." + e.getWithWeapon();
-							code += ", TypeEffect." + e.getTransfert();
-							continue;
-						}
-						
-						if(e.getWithWeapon() != WeaponType.NONE) {
-							code += ", " + e.getWithReinca();
-							code += ", WeaponType." + e.getWithWeapon();
-							continue;
-						}
-						
-						if(!e.getWithReinca()) {
-							code += ", " + e.getWithReinca();
-						}
-						
-						code += "));\n";
-					} else if(in instanceof StaticEffect) {
-						StaticEffect s = (StaticEffect) in;
-						
-						code += "\tadd(new StaticEffect(TypeStaticEffect." + s.getType() + ", " + s.getTaux() + "));\n";
-					}
-				}
-				
-				code += "}}));";
+				code += "),\n";
 			}
 		}
 		
-		code += "}}, new ArrayList<Calculable>() ),";
+		code += "\t}, null ),";
 		
 		code = code.replace(".0)", ")");
 		code = code.replace(".0,", ",");
@@ -319,8 +275,6 @@ public class Weapon extends Equipment {
 
 	public static void loadData() {
 		String[] weaponFile = { "epee1M", "marteau1M", "hache1M", "epee2M", "marteau2M", "hache2M", "meca1M", "meca2M", "arc", "gun", "canon", "relique", "baton", "lame", "cle", "bouclier", "default" };
-		
-		int toCode = 0;
 		
 		ArrayList<ArrayList<Weapon>> list = new ArrayList<ArrayList<Weapon>>();
 		
@@ -393,9 +347,8 @@ public class Weapon extends Equipment {
 						
 						list.get(i).add(weapon);
 						
-						if(toCode < 10) {
-							//System.out.println(weapon.toCode(path));
-							toCode++;
+						if(i == 2) {
+							System.out.println(weapon.toCode(path));
 						}
 					}
 					

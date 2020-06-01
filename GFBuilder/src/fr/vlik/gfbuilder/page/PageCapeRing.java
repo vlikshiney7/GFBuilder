@@ -22,8 +22,6 @@ import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomTextPane;
@@ -263,32 +261,16 @@ public class PageCapeRing extends PagePanel {
 			setInfo += "2 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 2 ? "(Actif) " : "") + ":\n";
 			if(capeRingSet.getWith2() != null) {
 				for(int i = 0; i < capeRingSet.getWith2().length; i++) {
-					if(capeRingSet.getWith2()[i] instanceof Effect) {
-						Effect e = (Effect) capeRingSet.getWith2()[i];
-						setInfo += "\t- " + e.toString(Language.FR) + "\n";
-					} else if(capeRingSet.getWith2()[i] instanceof StaticEffect) {
-						StaticEffect s = (StaticEffect) capeRingSet.getWith2()[i];
-						setInfo += "\t- " + s.toString(Language.FR) + "\n";
-					} else if(capeRingSet.getWith2()[i] instanceof Proc) {
-						Proc p = (Proc) capeRingSet.getWith2()[i];
-						setInfo += "\t- " + p.toString(Language.FR) + "\n";
-					}
+					Calculable c = (Calculable) capeRingSet.getWith2()[i];
+					setInfo += "\t- " + c.toString(Language.FR) + "\n";
 				}
 			}
 			
 			setInfo += "3 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
 			if(capeRingSet.getWith3() != null) {
 				for(int i = 0; i < capeRingSet.getWith3().length; i++) {
-					if(capeRingSet.getWith3()[i] instanceof Effect) {
-						Effect e = (Effect) capeRingSet.getWith3()[i];
-						setInfo += "\t- " + e.toString(Language.FR) + "\n";
-					} else if(capeRingSet.getWith3()[i] instanceof StaticEffect) {
-						StaticEffect s = (StaticEffect) capeRingSet.getWith3()[i];
-						setInfo += "\t- " + s.toString(Language.FR) + "\n";
-					} else if(capeRingSet.getWith3()[i] instanceof Proc) {
-						Proc p = (Proc) capeRingSet.getWith3()[i];
-						setInfo += "\t- " + p.toString(Language.FR) + "\n";
-					}
+					Calculable c = (Calculable) capeRingSet.getWith3()[i];
+					setInfo += "\t- " + c.toString(Language.FR) + "\n";
 				}
 			}
 			

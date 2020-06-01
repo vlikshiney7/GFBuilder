@@ -12,6 +12,7 @@ import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.SkillEffect;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class EquipSet implements Writable {
@@ -21,7 +22,6 @@ public class EquipSet implements Writable {
 	static {
 		dataArmor = Loader.getArmorSet();
 		dataCapeRing = Loader.getCapeRingSet();
-		//loadData();
 	}
 	
 	private String name;
@@ -112,6 +112,8 @@ public class EquipSet implements Writable {
 				tab[i] = new Proc((Proc) this.with2[i]);
 			} else if(this.with2[i] instanceof StaticEffect) {
 				tab[i] = new StaticEffect((StaticEffect) this.with2[i]);
+			} else if(this.with2[i] instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) this.with2[i]);
 			}
 		}
 		
@@ -131,6 +133,8 @@ public class EquipSet implements Writable {
 				tab[i] = new Proc((Proc) this.with3[i]);
 			} else if(this.with3[i] instanceof StaticEffect) {
 				tab[i] = new StaticEffect((StaticEffect) this.with3[i]);
+			} else if(this.with3[i] instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) this.with3[i]);
 			}
 		}
 		
@@ -150,6 +154,8 @@ public class EquipSet implements Writable {
 				tab[i] = new Proc((Proc) this.with4[i]);
 			} else if(this.with4[i] instanceof StaticEffect) {
 				tab[i] = new StaticEffect((StaticEffect) this.with4[i]);
+			} else if(this.with4[i] instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) this.with4[i]);
 			}
 		}
 		
@@ -169,6 +175,8 @@ public class EquipSet implements Writable {
 				tab[i] = new Proc((Proc) this.with5[i]);
 			} else if(this.with5[i] instanceof StaticEffect) {
 				tab[i] = new StaticEffect((StaticEffect) this.with5[i]);
+			} else if(this.with5[i] instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) this.with5[i]);
 			}
 		}
 		
