@@ -2244,7 +2244,7 @@ public class LoaderEquipSet {
 			new EquipSet("Démon Frappe-pierre", "100vio8", null, null, null),
 			new EquipSet("Ailes Célestes Envoûtantes", "90vio8", null, null, null),
 			new EquipSet("Trépas de Glace et d'Étoiles", "80vio8", null, null, null),
-			new EquipSet("Général divin du centre de la Terre", "100gold",
+			new EquipSet("Général divin du centre de la Terre", "100gold8",
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 70),
 					new Effect(TypeEffect.DegStd, false, 15),
