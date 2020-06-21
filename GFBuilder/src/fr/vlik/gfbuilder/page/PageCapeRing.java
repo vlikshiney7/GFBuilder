@@ -207,8 +207,11 @@ public class PageCapeRing extends PagePanel {
 		for(int i = 0; i < rings.length; i++) {
 			rings[i] = new Ring(this.getRing(i));
 			rings[i].addEnchant(this.getEnchantment(i+1));
-			for(Calculable c : rings[i].getEffects()) {
-				list.add(c);
+			
+			if(rings[i].getEffects() != null) {
+				for(Calculable c : rings[i].getEffects()) {
+					list.add(c);
+				}
 			}
 		}
 		
@@ -232,13 +235,13 @@ public class PageCapeRing extends PagePanel {
 					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
 				if(i == 0) {
-					if(lvlXpStuff >= cape.getLvl()) {
+					if(lvlXpStuff >= cape.getLvl() && cape.getBonusXP() != null) {
 						for(Calculable c : cape.getBonusXP()) {
 							list.add(c);
 						}
 					}
 				} else {
-					if(lvlXpStuff >= rings[i-1].getLvl()) {
+					if(lvlXpStuff >= rings[i-1].getLvl() && rings[i-1].getBonusXP() != null) {
 						for(Calculable c : rings[i-1].getBonusXP()) {
 							list.add(c);
 						}
@@ -631,7 +634,7 @@ public class PageCapeRing extends PagePanel {
 		
 		for(int i = 0; i < this.ring.size(); i++) {
 			Ring ring = Ring.get(config.get("Ring" + i), Language.FR);
-			if(cape == null) {
+			if(ring == null) {
 				this.ring.get(i).setSelectedIndex(0);
 			} else {
 				this.ring.get(i).setSelectedItem(ring);

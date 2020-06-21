@@ -48,13 +48,18 @@ VIT +8% - Depla +15%/5/2/VIT,true,8/Depla,false,15/VITgold
 INT +10% - Depla +15%/5/2/INT,true,10/Depla,false,15/INTgold
 VOL +8% - Depla +15%/5/2/VOL,true,8/Depla,false,15/VOLgold
 AGI +10% - Depla +15%/5/2/AGI,true,10/Depla,false,15/AGIgold
-6
+11
 Rien/0/0/null
 FCE +12%/6/1/FCE,true,12/FCEpurple
 VIT +10%/6/1/VIT,true,10/VITpurple
 INT +12%/6/1/INT,true,12/INTpurple
 VOL +10%/6/1/VOL,true,10/VOLpurple
 AGI +12%/6/1/AGI,true,12/AGIpurple
+FCE +12% - Depla +10%/6/2/FCE,true,12/Depla,false,10/FCEpurple
+VIT +10% - Depla +10%/6/2/VIT,true,10/Depla,false,10/VITpurple
+INT +12% - Depla +10%/6/2/INT,true,12/Depla,false,10/INTpurple
+VOL +10% - Depla +10%/6/2/VOL,true,10/Depla,false,10/VOLpurple
+AGI +12% - Depla +10%/6/2/AGI,true,12/Depla,false,10/AGIpurple
 3
 Doctrines bien-aimées de Werther/1/2/RegenPM,false,250/VitAtk,false,5/doctrine
 Griffe de la Brute cristalline magique/1/2/DegP,false,5/VitAtk,false,5/griffe

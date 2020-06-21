@@ -234,7 +234,7 @@ public class PageCostume extends PagePanel {
 			if(!this.costQuality.get(0).get(0).isSelected()) {
 				Costume cost = this.getCostume(0);
 				for(Effect e : cost.getEffects()) {
-					list.add(new Effect(e.getType(), e.isPercent(), e.getValue()*2, e.getWithReinca(), e.getWithWeapon(), null));
+					list.add(new Effect(e.getType(), e.isPercent(), e.getValue()*2, e.getWithReinca()));
 				}
 			}
 		}

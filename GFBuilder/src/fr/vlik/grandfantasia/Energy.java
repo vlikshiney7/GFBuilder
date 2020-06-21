@@ -78,7 +78,9 @@ public class Energy implements Iconable, Writable {
 	}
 	
 	public static Effect multiplyEffect(Effect effect, int point) {
-		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * point, effect.getWithReinca(), effect.getWithWeapon(), null);
+		Effect copy = new Effect(effect);
+		copy.multiplyValue(point);
+		return copy;
 	}
 	
 	public static Energy[] getData() {

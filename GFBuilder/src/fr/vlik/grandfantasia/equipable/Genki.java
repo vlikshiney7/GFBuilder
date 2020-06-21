@@ -10,7 +10,6 @@ import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -80,14 +79,14 @@ public class Genki implements Colorable, Writable {
 
 	public void addStarBonus(int nbStar, int id) {
 		if(nbStar == 3 || nbStar == 4) {
-			this.effects.add(new Effect(TypeEffect.Depla, false, 10 / (id+1), false, WeaponType.NONE, null));
+			this.effects.add(new Effect(TypeEffect.Depla, false, 10 / (id+1)));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (id+1), false, WeaponType.NONE, null));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 4 / (id+1)));
 			}
 		} else if(nbStar == 5) {
-			this.effects.add(new Effect(TypeEffect.Depla, false, 20 / (id+1), false, WeaponType.NONE, null));
+			this.effects.add(new Effect(TypeEffect.Depla, false, 20 / (id+1)));
 			for(int i = 0; i < 5; i++) {
-				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (id+1), false, WeaponType.NONE, null));
+				this.effects.add(new Effect(TypeEffect.values()[i], true, 8 / (id+1)));
 			}
 		}
 	}

@@ -7,6 +7,8 @@ import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Speciality;
+import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -14,6 +16,7 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Bague;
 import fr.vlik.grandfantasia.equipable.Cape;
+import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -192,6 +195,10 @@ public class Loader {
 		return LoaderCape.getCape();
 	}
 	
+	public static Ring[] getRing() {
+		return LoaderRing.getRing();
+	}
+	
 	public static Fortification[] getFortification() {
 		return new Fortification[] {
 			new Fortification("+0", Fortification.LEVEL[0], 1),
@@ -272,6 +279,40 @@ public class Loader {
 			new RedFortification("+48", RedFortification.LEVEL[5], 2.77, 2.4, 3.14, 4),
 			new RedFortification("+49", RedFortification.LEVEL[5], 2.835, 2.45, 3.22, 4),
 			new RedFortification("+50", RedFortification.LEVEL[5], 2.9, 2.5, 3.3, 5)
+		};
+	}
+	
+	public static Talent[][] getTalent() {
+		return new Talent[][] {
+			LoaderTalent.getClass0(),
+			LoaderTalent.getClass1(),
+			LoaderTalent.getClass2(),
+			LoaderTalent.getClass3(),
+			LoaderTalent.getClass4(),
+			LoaderTalent.getClass5(),
+			LoaderTalent.getClass6(),
+			LoaderTalent.getClass7(),
+			LoaderTalent.getClass8(),
+			LoaderTalent.getClass9(),
+			LoaderTalent.getClass10(),
+			LoaderTalent.getClass11(),
+		};
+	}
+	
+	public static Speciality[][] getSpeciality() {
+		return new Speciality[][] {
+			LoaderSpeciality.getClass0(),
+			LoaderSpeciality.getClass1(),
+			LoaderSpeciality.getClass2(),
+			LoaderSpeciality.getClass3(),
+			LoaderSpeciality.getClass4(),
+			LoaderSpeciality.getClass5(),
+			LoaderSpeciality.getClass6(),
+			LoaderSpeciality.getClass7(),
+			LoaderSpeciality.getClass8(),
+			LoaderSpeciality.getClass9(),
+			LoaderSpeciality.getClass10(),
+			LoaderSpeciality.getClass11(),
 		};
 	}
 	

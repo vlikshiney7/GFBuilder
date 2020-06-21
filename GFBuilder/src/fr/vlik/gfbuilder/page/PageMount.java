@@ -20,7 +20,6 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Genki;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
@@ -167,9 +166,9 @@ public class PageMount extends PagePanel {
 				double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 				
 				if(mount.getName().equals("Loup Spectral de Combat")) {
-					list.add(new Effect(type, false, valueXpStuff/2, true, WeaponType.NONE, null));
+					list.add(new Effect(type, false, valueXpStuff/2, true));
 				} else {
-					list.add(new Effect(type, false, valueXpStuff, true, WeaponType.NONE, null));
+					list.add(new Effect(type, false, valueXpStuff, true));
 				}
 			}
 		}

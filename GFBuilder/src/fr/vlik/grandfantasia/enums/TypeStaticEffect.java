@@ -22,10 +22,23 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
 	Dispel("Suppression aléatoire d'un état négatif", "Auto dispel one random negative statut", "Dispel d'un malus", "Dispel one malus", Tools.EffectColor[0]),
+	Duo("Permet d'équiper 2 armes", "Allow to equip 2 weapons", "2 armes possible", "2 weapons allowed", Tools.EffectColor[0]),
 	
 	ProcT0N0("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
 	ProcT0N1("Poison 4 : -200 PV chaque 2 secondes", "Poison 4 : -200 HP per 2 seconds", "-200 PV / 2s", "-200 HP / 2s", Tools.EffectColor[8]),
 	ProcT1N0("Régénération de tout les PV et PM", "Restore all HP and MP", "Regen 100% PV/PM", "Regen 100% HP/MP", Tools.EffectColor[0]),
+	
+	ProcTDB0("PV de l'ennemi -700", "Opponent HP -700", "PV -700", "HP -700", Tools.EffectColor[0]),
+	ProcTDB0C("PV de l'ennemi -3000", "Opponent HP -3000", "PV -3000", "HP -3000", Tools.EffectColor[0]),
+	ProcTDB1C("PV de l'ennemi -1000", "Opponent HP -1000", "PV -1000", "HP -1000", Tools.EffectColor[0]),
+	ProcTDB3("PV de l'ennemi -500", "Opponent HP -500", "PV -500", "HP -500", Tools.EffectColor[0]),
+	ProcTDB3C("Régénération de 500 PV", "Restore 500 HP", "PV +500", "HP +500", Tools.EffectColor[0]),
+	ProcTDB4C("PV de l'ennemi -2000", "Opponent HP -2000", "PV -2000", "HP -2000", Tools.EffectColor[0]),
+	ProcTDB5C("Dégâts d'attaque +3000", "Attack damage +3000", "Dégât +3000", "Damage +3000", Tools.EffectColor[0]),
+	ProcTDB7C("5000 points de bouclier", "5000 points of shield", "5000 pts de bouclier", "5000 pts of shield", Tools.EffectColor[0]),
+	
+	ProcRingGvg80("Régénération de 250 PV/PM chaque 2 secondes", "Regeneration of 250 HP/MP per 2 seconds", "+250 PV/PM / 2s", "+250 HP/MP / 2s", Tools.EffectColor[0]),
+	ProcRingGvg70("Régénération de 30 PM chaque 5 secondes", "Regeneration of 30 MP per 5 seconds", "+30 PM / 5s", "+30 MP / 5s", Tools.EffectColor[0]),
 	
 	ProcSetTDB("4000 points de bouclier", "4000 points of shield", "4000 pts de bouclier", "4000 pts of shield", Tools.EffectColor[0]),
 	ProcSetSombre40("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),

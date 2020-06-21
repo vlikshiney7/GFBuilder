@@ -30,42 +30,85 @@ for(var i = 0; i < color.length; i++) {
 		break;
 	}
 }
-if(!(color > 0 && color < 7)) color = "   ";
+if(!(color > 0 && color < 7)) color = "undefined";
 
 var enchant = false;
 
 var count = 0;
-var count2 = 0;
 var effects = "";
 var effectName = [];
 var getCells = document.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 for(var i = 0; i < getCells.length; i++) {
 	if(getCells[i].cells.length == 2) {
-		effectName[count2] = [ getCells[i].cells[0].innerText, getCells[i].cells[1].innerText ];
-		count2++;
+		effectName[count] = [ getCells[i].cells[0].innerText, getCells[i].cells[1].innerText ];
+		count++;
+	} else if(getCells[i].cells.length == 1) {
+		if(getCells[i].cells[0].innerText.match(/vie/)) {
+			effectName[count] = [ "PV", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+		} else if(getCells[i].cells[0].innerText.match(/Mana/)) {
+			effectName[count] = [ "PM", getCells[i].cells[0].innerText.match(/[0-9]+/)[0] ];
+			count++;
+		}
 	}
 }
 for(var i = 0; i < effectName.length; i++) {
 	var key = effectName[i][0];
-	if(key == "ATQ") {
-		effects += "Atk,false," + effectName[i][1] + ",true/";
-		count++;
-	} else if (key == "ATQ D.") {
-		effects += "AtkD,false," + effectName[i][1] + ",true/";
-		count++;
-	} else if (key == "ATQ M.") {
-		effects += "AtkM,false," + effectName[i][1] + ",true/";
-		count++;
-	} else if (key == "DÉF") {
-		effects += "DefP,false," + effectName[i][1] + ",true/";
-		count++;
+	if(key == "DÉF") {
+		effects += "\t\tnew Effect(TypeEffect.DefP, false, " + effectName[i][1] + ", true),\n";
 	} else if (key == "DÉF M.") {
-		effects += "DefM,false," + effectName[i][1] + ",true/";
-		count++;
+		effects += "\t\tnew Effect(TypeEffect.DefM, false, " + effectName[i][1] + ", true),\n";
 	} else if (key == "FCE" || key == "VIT" || key == "INT" || key == "VOL" || key == "AGI") {
-		effects += key + ",false," + effectName[i][1] + ",true/";
-		count++;
+		effects += "\t\tnew Effect(TypeEffect." + key + ", false, " + effectName[i][1] + ", true),\n";
+	} else if (key == "PV") {
+		effects += "\t\tnew Effect(TypeEffect.PV, false, " + effectName[i][1] + "),\n";
+	} else if (key == "PM") {
+		effects += "\t\tnew Effect(TypeEffect.PM, false, " + effectName[i][1] + "),\n";
 	}
 }
 
-console.log(name + "/" + idClasses + "/" + lvl + "/-1/" + color + "/" + enchant + "/" + count + ",0,0/" + effects);
+var gradeNameCorrespondance = new Array();
+gradeNameCorrespondance[0] = "BERSERKER";
+gradeNameCorrespondance[1] = "PALADIN";
+gradeNameCorrespondance[2] = "RANGER";
+gradeNameCorrespondance[3] = "ASSASSIN";
+gradeNameCorrespondance[4] = "CLERC";
+gradeNameCorrespondance[5] = "SAGE";
+gradeNameCorrespondance[6] = "SORCIER";
+gradeNameCorrespondance[7] = "NECROMANCIEN";
+gradeNameCorrespondance[8] = "METALLEUX";
+gradeNameCorrespondance[9] = "DEMOLISSEUR";
+gradeNameCorrespondance[10] = "SPATIODERIVEUR";
+gradeNameCorrespondance[11] = "CHRONODERIVEUR";
+
+var colorCorrespondance = new Array();
+colorCorrespondance[0] = "GREY";
+colorCorrespondance[1] = "WHITE";
+colorCorrespondance[2] = "GREEN";
+colorCorrespondance[3] = "BLUE";
+colorCorrespondance[4] = "ORANGE";
+colorCorrespondance[5] = "GOLD";
+colorCorrespondance[6] = "PURPLE";
+colorCorrespondance[7] = "RED";
+
+
+if(colorCorrespondance[color] == "GOLD") {
+	enchant = true;
+}
+
+
+var result = "new Cape(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+result += "\tnew GradeName[] { ";
+
+idClasses = idClasses.split(",");
+
+for(var i = 0; i < idClasses.length; i++) {
+	result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
+}
+
+result += "},\n";
+result += "\t" + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", \"-1\", \"ICONPATH\", new Calculable[] {\n";
+result += effects;
+result += "\t}, null ),\n";
+
+console.log(result);

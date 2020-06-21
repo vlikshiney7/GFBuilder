@@ -9,6 +9,7 @@ public class Proc implements Calculable {
 	private int taux;
 	private double time = 0;
 	private int cumul = 1;
+	private TDB tdb = TDB.NONE;
 	
 	
 	public Proc(int taux, Activation activation, Calculable[] effects) {
@@ -27,6 +28,12 @@ public class Proc implements Calculable {
 		this.cumul = cumul;
 	}
 	
+	public Proc(Activation activation, int cumul, TDB tdb,  Calculable[] effects) {
+		this(100, activation, effects);
+		this.cumul = cumul;
+		this.tdb = tdb;
+	}
+	
 	public Proc(Proc proc) {
 		this.activation = proc.getActivation();
 		this.taux = proc.getTaux();
@@ -36,18 +43,20 @@ public class Proc implements Calculable {
 	}
 	
 	public static enum Activation {
-		Attack(0, "en attaquant", "attacking"),
-		Attacked(1, "quand attaqué", "when attacked");
+		Attack("en attaquant", "attacking"),
+		Attacked("quand attaqué", "when attacked");
 		
-		public final int index;
 		public final String fr;
 		public final String en;
 		
-	    private Activation(int index, String fr, String en) {
-	        this.index = index;
+	    private Activation(String fr, String en) {
 	        this.fr = fr;
 	        this.en = en;
 	    }
+	}
+	
+	public static enum TDB {
+		NONE,TDB;
 	}
 	
 	public int getTaux() {
@@ -66,6 +75,10 @@ public class Proc implements Calculable {
 		return this.cumul;
 	}
 	
+	public TDB getTDB() {
+		return this.tdb;
+	}
+	
 	public Calculable[] getEffects() {
 		Calculable[] list = new Calculable[this.effects.length];	
 		for(int i = 0; i < this.effects.length; i++) {
@@ -76,7 +89,14 @@ public class Proc implements Calculable {
 	
 	@Override
 	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder(this.taux + "% d'activer " + this.activation.fr + " :");
+		StringBuilder tooltip = new StringBuilder();
+		
+		if(this.tdb == TDB.TDB) {
+			tooltip.append("Après " + this.cumul + " cumul " + this.activation.fr + " :");
+		} else {
+			tooltip.append(this.taux + "% d'activer " + this.activation.fr + " :");
+		}
+		
 		tooltip.append("<ul>");
 		for(Calculable calculable : this.effects) {
 			tooltip.append(calculable.getTooltip());
@@ -86,7 +106,7 @@ public class Proc implements Calculable {
 			tooltip.append("<li>Actif pendant " + this.time + "s</li>");
 		}
 		
-		if(this.cumul > 1) {
+		if(this.cumul > 1 && this.tdb != TDB.TDB) {
 			tooltip.append("<li>Cumulable " + this.cumul + " fois</li>");
 		}
 		
@@ -99,7 +119,11 @@ public class Proc implements Calculable {
 		StringBuilder result = new StringBuilder();
 		
 		if(lang == Language.FR) {
-			result.append(this.taux + "% d'activer " + this.activation.fr + " :\n");
+			if(this.tdb == TDB.TDB) {
+				result.append("Après " + this.cumul + " cumul " + this.activation.fr + " :\n");
+			} else {
+				result.append(this.taux + "% d'activer " + this.activation.fr + " :\n");
+			}
 			
 			for(Calculable calculable : this.effects) {
 				if(calculable instanceof Effect) {
@@ -115,11 +139,15 @@ public class Proc implements Calculable {
 				result.append("\t\tActif pendant " + this.time + "s\n");
 			}
 			
-			if(this.cumul != 1) {
+			if(this.cumul != 1 && this.tdb != TDB.TDB) {
 				result.append("\t\tCumulable " + this.cumul + " fois\n");
 			}
 		} else {
-			result.append(this.taux + "% to activate " + this.activation.en + " :\n");
+			if(this.tdb == TDB.TDB) {
+				result.append("After " + this.cumul + " stacks " + this.activation.en + ":\n");
+			} else {
+				result.append(this.taux + "% to activate " + this.activation.en + ":\n");
+			}
 			
 			for(Calculable calculable : this.effects) {
 				if(calculable instanceof Effect) {
@@ -135,7 +163,7 @@ public class Proc implements Calculable {
 				result.append("\t\tActif for  " + this.time + "s\n");
 			}
 			
-			if(this.cumul != 1) {
+			if(this.cumul != 1 && this.tdb != TDB.TDB) {
 				result.append("\t\tStacks up to " + this.cumul + " times\n");
 			}
 		}

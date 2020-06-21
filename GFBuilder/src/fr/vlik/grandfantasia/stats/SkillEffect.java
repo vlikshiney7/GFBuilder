@@ -6,11 +6,11 @@ import fr.vlik.grandfantasia.enums.TypeSkillEffect;
 public class SkillEffect implements Calculable {
 	
 	private TypeSkillEffect skill;
-	private int value;
+	private double value;
 	private TypeValue type;
 	
 	
-	public SkillEffect(TypeSkillEffect skill, int value, TypeValue type) {
+	public SkillEffect(TypeSkillEffect skill, double value, TypeValue type) {
 		this.skill = skill;
 		this.value = value;
 		this.type = type;
@@ -25,6 +25,8 @@ public class SkillEffect implements Calculable {
 	public static enum TypeValue {
 		DAMAGE("Dégât", "damage"),
 		DURATION("Durée", "duration"),
+		HEAL("Soin", "heal"),
+		ESQ("Esquive", "evasion"),
 		NUMBER("Nombre", "number");
 		
 		public final String fr;
@@ -40,7 +42,7 @@ public class SkillEffect implements Calculable {
 		return this.skill;
 	}
 	
-	public int getValue() {
+	public double getValue() {
 		return this.value;
 	}
 	
@@ -55,7 +57,7 @@ public class SkillEffect implements Calculable {
 		tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
 		//tooltip.append("\"" + this.skill.en + "\" " + this.type.en + " +" + this.value);
 		
-		if(this.type == TypeValue.DAMAGE) {
+		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL) {
 			tooltip.append("%");
 		} else if(this.type == TypeValue.DURATION) {
 			tooltip.append("s");
@@ -70,7 +72,7 @@ public class SkillEffect implements Calculable {
 		if(lang == Language.FR) {
 			result.append(this.skill.fr + " +" + this.value);
 			
-			if(this.type == TypeValue.DAMAGE) {
+			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL) {
 				result.append("%");
 			} else if(this.type == TypeValue.DURATION) {
 				result.append("s");
@@ -78,7 +80,7 @@ public class SkillEffect implements Calculable {
 		} else {
 			result.append(this.skill.en + "+" + this.value);
 			
-			if(this.type == TypeValue.DAMAGE) {
+			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL) {
 				result.append("%");
 			} else if(this.type == TypeValue.DURATION) {
 				result.append("s");

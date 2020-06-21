@@ -199,6 +199,10 @@ public class Weapon extends Equipment {
 	}
 	
 	private void reduceEffect(TypeEffect type, double coef) {
+		if(this.effects == null) {
+			return;
+		}
+		
 		for(Calculable calculable : this.effects) {
 			if(calculable instanceof Effect) {
 				Effect effect = (Effect) calculable;
@@ -250,6 +254,7 @@ public class Weapon extends Equipment {
 				
 				if(e.getWithReinca()) {
 					code += ", " + e.getWithReinca();
+					
 				}
 				
 				code += "),\n";

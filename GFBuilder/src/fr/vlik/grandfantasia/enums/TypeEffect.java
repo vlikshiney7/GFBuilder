@@ -67,6 +67,7 @@ public enum TypeEffect implements Colorable, Writable {
 
 	ReducPtsP("Réduction Point Phyique", "", "Red Pts Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducPtsM("Réduction Point Magique", "", "Red Pts Mag", "", -1, true, Tools.EffectColor[11]),
+	ReducStd("Réduction Standard", "", "Reduc Std", "", -1, true, Tools.EffectColor[0]),
 	ReducComp("Réduction Compétence", "", "Reduc Comp", "", -1, true, Tools.EffectColor[0]),
 	
 	DegSacre("Dégât Sacré", "Holy Damage", "Deg Sacre", "Holy Dam", -1, true, Tools.EffectColor[7]),

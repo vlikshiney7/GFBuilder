@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia.equipable;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +12,7 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -22,16 +20,21 @@ public final class Ring extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	private static Ring[] data;
-	static {
-		loadData();
-	}
-
+	private static Ring[] data = Loader.getRing();
+	
 	private String setCode;
 	private boolean uniqueEquip;
 	
+	public Ring() {
+		super();
+		
+		this.setCode = "-1";
+		this.uniqueEquip = false;
+		this.icon = setIcon("null");
+	}
+	
 	public Ring(Ring ring) {
-		super(ring.getMap(), ring.getGrades(), ring.getLvl(), ring.getQuality(), ring.isEnchantable(), ring.getEffects(), ring.getBonusXP());
+		super(ring.getMap(), new GradeName[] { GradeName.NONE }, ring.getLvl(), ring.getQuality(), ring.isEnchantable(), ring.getEffects(), ring.getBonusXP());
 		
 		this.setCode = ring.getSetCode();
 		this.uniqueEquip = ring.isUniqueEquip();
@@ -127,54 +130,6 @@ public final class Ring extends Equipment {
 		}
 	}
 	
-	public static void loadData() {
-		ArrayList<Ring> list = new ArrayList<Ring>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Ring.class.getResourceAsStream(PATH + "ring.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String path =  lineSplit[lineSplit.length-1];
-				
-				Map<Language, String> names = new HashMap<Language, String>();
-				names.put(Language.FR, lineSplit[0]);
-				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[3])];
-				
-				String[] effectSplit = lineSplit[6].split(",");
-				
-				Calculable[] effects = new Calculable[Integer.parseInt(effectSplit[0])];
-				for(int j = 0; j < Integer.parseInt(effectSplit[0]); j++) {
-					effects[j] = new Effect(lineSplit[j+7]);
-				}
-				
-				Calculable[] bonusXP = new Calculable[Integer.parseInt(effectSplit[2])];
-				for(int j = 0; j < Integer.parseInt(effectSplit[2]); j++) {
-					bonusXP[j] = new Effect(lineSplit[j+7+Integer.parseInt(effectSplit[0])+Integer.parseInt(effectSplit[1])]);
-				}
-				
-				
-				Ring ring = new Ring(
-						names, Integer.parseInt(lineSplit[1]), quality, Boolean.parseBoolean(lineSplit[4]),
-						lineSplit[2], Boolean.parseBoolean(lineSplit[5]), path, effects, bonusXP
-						);
-				list.add(ring);
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Ring.class.getClass().getSimpleName() + " class");
-		}
-		
-		Ring.data = new Ring[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
-	}
-	
 	public static Ring get(String name, Language lang) {
 		for(Ring ring : Ring.data) {
 			if(ring.getName(lang).equals(name)) {
@@ -187,6 +142,8 @@ public final class Ring extends Equipment {
 	
 	public static Ring[] getPossibleRing(int lvl, Ring toIgnore) {
 		ArrayList<Ring> result = new ArrayList<Ring>();
+		
+		result.add(new Ring());
 		
 		for(Ring ring : Ring.data) {
 			if(ring.getLvl() <= lvl) {

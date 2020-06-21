@@ -30,8 +30,10 @@ public class Effect implements Calculable {
 		this.withWeapon = withWeapon;
 	}
 	
-	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon, TypeEffect transfert) {
-		this(type, isPercent, value, withReinca, withWeapon);
+	public Effect(TypeEffect type, double value, TypeEffect transfert) {
+		this.type = type;
+		this.isPercent = false;
+		this.value = value;
 		this.transfert = transfert;
 	}
 	
@@ -128,6 +130,10 @@ public class Effect implements Calculable {
 	
 	public void reduceCoef(double coef) {
 		this.value = (int) (this.value * coef);
+	}
+	
+	public void multiplyValue(int factor) {
+		this.value *= factor;
 	}
 	
 	@Override

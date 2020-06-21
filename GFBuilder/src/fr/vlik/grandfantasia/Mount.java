@@ -14,7 +14,6 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Anima;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -36,7 +35,7 @@ public class Mount implements FullRenderer {
 	public Mount(String name, int lvl, int depla, boolean reinca, String path) {
 		this.name = name;
 		this.lvl = lvl;
-		this.depla = new Effect(TypeEffect.Depla, false, depla, false, WeaponType.NONE, null);
+		this.depla = new Effect(TypeEffect.Depla, false, depla);
 		this.reinca = reinca;
 		this.icon = setIcon(path);
 	}

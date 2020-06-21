@@ -141,7 +141,12 @@ public class PageTalent extends PagePanel {
 			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {
 				if(this.radioTalent.get(i).get(j).isSelected() && j != 0 && this.talent.get(i*3+j-1).getSelectedIndex() != 0) {
 					Talent talent = this.getTalent(i*3+j-1);
-					list.addAll(talent.getEffects(0));
+					
+					if(talent.getEffects(0) != null) {
+						for(Calculable c : talent.getEffects(0)) {
+							list.add(c);
+						}
+					}
 				}
 			}
 		}

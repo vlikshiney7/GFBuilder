@@ -521,6 +521,8 @@ public class Enchantment implements Writable {
 	}
 	
 	public static Effect multiplyEffect(Effect effect, int lvl) {
-		return new Effect(effect.getType(), effect.isPercent(), effect.getValue() * lvl, effect.getWithReinca(), effect.getWithWeapon(), effect.getTransfert());
+		Effect copy = new Effect(effect);
+		copy.multiplyValue(lvl);
+		return copy;
 	}
 }
