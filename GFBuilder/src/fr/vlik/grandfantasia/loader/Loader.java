@@ -270,15 +270,15 @@ public class Loader {
 			new RedFortification("+40", RedFortification.LEVEL[4], 2.25, 2, 2.5, 4),
 			new RedFortification("+41", RedFortification.LEVEL[5], 2.315, 2.05, 2.58, 4),
 			new RedFortification("+42", RedFortification.LEVEL[5], 2.38, 2.1, 2.66, 4),
+			new RedFortification("+43", RedFortification.LEVEL[5], 2.45, 2.15, 2.75, 4),
 			//------- CONJECTURE ---------------------------------------------------------
-			new RedFortification("+43", RedFortification.LEVEL[5], 2.445, 2.15, 2.74, 4),
-			new RedFortification("+44", RedFortification.LEVEL[5], 2.51, 2.2, 2.82, 4),
-			new RedFortification("+45", RedFortification.LEVEL[5], 2.575, 2.25, 2.9, 4),
-			new RedFortification("+46", RedFortification.LEVEL[5], 2.64, 2.3, 2.98, 4),
-			new RedFortification("+47", RedFortification.LEVEL[5], 2.705, 2.35, 3.06, 4),
-			new RedFortification("+48", RedFortification.LEVEL[5], 2.77, 2.4, 3.14, 4),
-			new RedFortification("+49", RedFortification.LEVEL[5], 2.835, 2.45, 3.22, 4),
-			new RedFortification("+50", RedFortification.LEVEL[5], 2.9, 2.5, 3.3, 5)
+			new RedFortification("+44", RedFortification.LEVEL[5], 2.52, 2.2, 2.84, 4),
+			new RedFortification("+45", RedFortification.LEVEL[5], 2.59, 2.25, 2.93, 4),
+			new RedFortification("+46", RedFortification.LEVEL[5], 2.66, 2.3, 3.02, 4),
+			new RedFortification("+47", RedFortification.LEVEL[5], 2.73, 2.35, 3.11, 4),
+			new RedFortification("+48", RedFortification.LEVEL[5], 2.8, 2.4, 3.2, 4),
+			new RedFortification("+49", RedFortification.LEVEL[5], 2.875, 2.45, 3.3, 4),
+			new RedFortification("+50", RedFortification.LEVEL[5], 2.95, 2.5, 3.4, 5),
 		};
 	}
 	

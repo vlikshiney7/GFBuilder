@@ -22,6 +22,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
 	Dispel("Suppression aléatoire d'un état négatif", "Auto dispel one random negative statut", "Dispel d'un malus", "Dispel one malus", Tools.EffectColor[0]),
+	Block("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),
 	Duo("Permet d'équiper 2 armes", "Allow to equip 2 weapons", "2 armes possible", "2 weapons allowed", Tools.EffectColor[0]),
 	
 	ProcT0N0("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
@@ -41,7 +42,6 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	ProcRingGvg70("Régénération de 30 PM chaque 5 secondes", "Regeneration of 30 MP per 5 seconds", "+30 PM / 5s", "+30 MP / 5s", Tools.EffectColor[0]),
 	
 	ProcSetTDB("4000 points de bouclier", "4000 points of shield", "4000 pts de bouclier", "4000 pts of shield", Tools.EffectColor[0]),
-	ProcSetSombre40("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),
 	ProcSetSombre30("Absorption de 150 PV à l'ennemi", "150 of opponent's HP absorbing", "Absorbe 150 PV", "150 HP absorbing", Tools.EffectColor[0]),
 	ProcSetEvo("Régénération de 10% PV", "Regeneration of 10% HP", "Regen 10% PV", "Regen 10% HP", Tools.EffectColor[0]),
 	ProcSetC1PVE90("Régénération de 2% PV par seconde", "Regeneration of 2% HP per second", "+2% PV / s", "+2% HP / s", Tools.EffectColor[0]),
@@ -50,6 +50,10 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	ProcSetC8PVE100("Récupération de 1% PV et PM par seconde", "Recover HP and MP by 1% per second", "+1% PV et PM / s", "+1% HP and MP / s", Tools.EffectColor[0]),
 	ProcSetC9PVP25("Rechargement de la Frappe foudroyante", "Lightning Stab cooldown reset", "Frappe foudroyante rechargé", "Lightning Stab reset", Tools.EffectColor[0]),
 	ProcSetC11GOLD100("Absorption de 1000 PM à l'ennemi", "1000 of opponent's PM absorbing", "Absorbe 1000 PM", "1000 MP absorbing", Tools.EffectColor[0]),
+	
+	ProcTalentC8L1("Régénération de 3% PV", "Regeneration of 3% HP", "+3% PV", "+3% HP", Tools.EffectColor[0]),
+	ProcTalentC8L2("Régénération de 4% PV", "Regeneration of 4% HP", "+5% PV", "+4% HP", Tools.EffectColor[0]),
+	ProcTalentC8L3("Régénération de 5% PV", "Regeneration of 5% HP", "+5% PV", "+5% HP", Tools.EffectColor[0]),
 	
 	;
 	

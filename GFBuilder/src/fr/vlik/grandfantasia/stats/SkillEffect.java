@@ -26,6 +26,7 @@ public class SkillEffect implements Calculable {
 		DAMAGE("Dégât", "damage"),
 		DURATION("Durée", "duration"),
 		HEAL("Soin", "heal"),
+		MANA("Mana", "mana"),
 		ESQ("Esquive", "evasion"),
 		NUMBER("Nombre", "number");
 		
@@ -57,7 +58,7 @@ public class SkillEffect implements Calculable {
 		tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
 		//tooltip.append("\"" + this.skill.en + "\" " + this.type.en + " +" + this.value);
 		
-		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL) {
+		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA) {
 			tooltip.append("%");
 		} else if(this.type == TypeValue.DURATION) {
 			tooltip.append("s");
@@ -72,7 +73,7 @@ public class SkillEffect implements Calculable {
 		if(lang == Language.FR) {
 			result.append(this.skill.fr + " +" + this.value);
 			
-			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL) {
+			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA) {
 				result.append("%");
 			} else if(this.type == TypeValue.DURATION) {
 				result.append("s");
@@ -80,7 +81,7 @@ public class SkillEffect implements Calculable {
 		} else {
 			result.append(this.skill.en + "+" + this.value);
 			
-			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL) {
+			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA) {
 				result.append("%");
 			} else if(this.type == TypeValue.DURATION) {
 				result.append("s");

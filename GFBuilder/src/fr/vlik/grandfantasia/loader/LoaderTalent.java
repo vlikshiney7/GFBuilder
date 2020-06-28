@@ -12,6 +12,7 @@ import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.SkillEffect;
 import fr.vlik.grandfantasia.stats.SkillEffect.TypeValue;
 import fr.vlik.grandfantasia.stats.StaticEffect;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class LoaderTalent {
 	
@@ -3252,268 +3253,511 @@ public class LoaderTalent {
 	
 	static Talent[] getClass8() {
 		return new Talent[] {
-			new Talent("", new int[] { 6, 14, 31, 61, 86, 91 }, "8-0", new Calculable[][] {
+			new Talent("Ultra rapide", new int[] { 6, 14, 31, 61, 86, 91 }, "8-0", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 3),
+					new Effect(TypeEffect.Depla, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 6),
+					new Effect(TypeEffect.Depla, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 9),
+					new Effect(TypeEffect.Depla, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 12),
+					new Effect(TypeEffect.Depla, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 15),
+					new Effect(TypeEffect.Depla, false, 11),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 6, 14, 31, 61, 86, 91 }, "8-1", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 18),
+					new Effect(TypeEffect.Depla, false, 13),
 				},
 			}),
-			new Talent("", new int[] { 6, 14, 31, 61, 86, 91 }, "8-2", new Calculable[][] {
+			new Talent("Instrument de Précision", new int[] { 6, 14, 31, 61, 86, 91 }, "8-1", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 16, 28, 46, 66, 86, 91 }, "8-3", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 18),
 				},
 			}),
-			new Talent("", new int[] { 16, 28, 46, 66, 86, 91 }, "8-4", new Calculable[][] {
+			new Talent("Appareil d'Amélioration", new int[] { 6, 14, 31, 61, 86, 91 }, "8-2", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 11),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 16, 28, 46, 66, 86, 91 }, "8-5", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 13),
 				},
 			}),
-			new Talent("", new int[] { 31, 41, 50, 69, 86, 91 }, "8-6", new Calculable[][] {
+			new Talent("Spécialiste du Canon lourd", new int[] { 16, 28, 46, 66, 86, 91 }, "8-3", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 6),
+					new Effect(TypeEffect.VitAtk, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 8),
+					new Effect(TypeEffect.VitAtk, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 8),
+					new Effect(TypeEffect.VitAtk, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 9),
+					new Effect(TypeEffect.VitAtk, false, 11),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 10),
+					new Effect(TypeEffect.VitAtk, false, 13),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 31, 41, 50, 69, 86, 91 }, "8-7", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 11),
+					new Effect(TypeEffect.VitAtk, false, 15),
 				},
 			}),
-			new Talent("", new int[] { 31, 41, 50, 69, 86, 91 }, "8-8", new Calculable[][] {
+			new Talent("Spécialiste des Machines Légères", new int[] { 16, 28, 46, 66, 86, 91 }, "8-4", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 4),
+					new Effect(TypeEffect.VitAtk, false, 10),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 6),
+					new Effect(TypeEffect.VitAtk, false, 12),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 8),
+					new Effect(TypeEffect.VitAtk, false, 14),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 10),
+					new Effect(TypeEffect.VitAtk, false, 16),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 12),
+					new Effect(TypeEffect.VitAtk, false, 18),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 46, 50, 54, 72, 86, 91 }, "8-9", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 14),
+					new Effect(TypeEffect.VitAtk, false, 20),
 				},
 			}),
-			new Talent("", new int[] { 46, 50, 54, 72, 86, 91 }, "8-10", new Calculable[][] {
+			new Talent("Spécialiste des Machines Lourdes", new int[] { 16, 28, 46, 66, 86, 91 }, "8-5", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 5),
+					new Effect(TypeEffect.DCCP, false, 15),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 7),
+					new Effect(TypeEffect.DCCP, false, 18),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 9),
+					new Effect(TypeEffect.DCCP, false, 21),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 11),
+					new Effect(TypeEffect.DCCP, false, 24),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 13),
+					new Effect(TypeEffect.DCCP, false, 27),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 46, 50, 54, 72, 86, 91 }, "8-11", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 15),
+					new Effect(TypeEffect.DCCP, false, 30),
 				},
 			}),
-			new Talent("", new int[] { 66, 80, 91 }, "8-12", new Calculable[][] {
+			new Talent("Amplification Deux Armes", new int[] { 31, 41, 50, 69, 86, 91 }, "8-6", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 10),
+					new Effect(TypeEffect.TCCP, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 13),
+					new Effect(TypeEffect.TCCP, false, 4),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 66, 80, 91 }, "8-13", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 16),
+					new Effect(TypeEffect.TCCP, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 19),
+					new Effect(TypeEffect.TCCP, false, 6),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 66, 80, 91 }, "8-14", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 22),
+					new Effect(TypeEffect.TCCP, false, 7),
 				},
 				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 70, 83, 93 }, "8-15", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 25),
+					new Effect(TypeEffect.TCCP, false, 8),
 				},
 			}),
-			new Talent("", new int[] { 70, 83, 93 }, "8-16", new Calculable[][] {
+			new Talent("Amplification Armure", new int[] { 31, 41, 50, 69, 86, 91 }, "8-7", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 5),
+					new Effect(TypeEffect.RTCCM, false, 5),
+					new Effect(TypeEffect.RDCCP, false, 10),
+					new Effect(TypeEffect.RDCCM, false, 10),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 7),
+					new Effect(TypeEffect.RTCCM, false, 7),
+					new Effect(TypeEffect.RDCCP, false, 15),
+					new Effect(TypeEffect.RDCCM, false, 15),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 70, 83, 93 }, "8-17", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 9),
+					new Effect(TypeEffect.RTCCM, false, 9),
+					new Effect(TypeEffect.RDCCP, false, 20),
+					new Effect(TypeEffect.RDCCM, false, 20),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 73, 87, 97 }, "8-18", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 11),
+					new Effect(TypeEffect.RTCCM, false, 11),
+					new Effect(TypeEffect.RDCCP, false, 25),
+					new Effect(TypeEffect.RDCCM, false, 25),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 73, 87, 97 }, "8-19", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 13),
+					new Effect(TypeEffect.RTCCM, false, 13),
+					new Effect(TypeEffect.RDCCP, false, 30),
+					new Effect(TypeEffect.RDCCM, false, 30),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 73, 87, 97 }, "8-20", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 15),
+					new Effect(TypeEffect.RTCCM, false, 15),
+					new Effect(TypeEffect.RDCCP, false, 35),
+					new Effect(TypeEffect.RDCCM, false, 35),
 				},
 			}),
-			new Talent("", new int[] { 77, 90, 100 }, "8-21", new Calculable[][] {
+			new Talent("Amplification Psionique", new int[] { 31, 41, 50, 69, 86, 91 }, "8-8", new Calculable[][] {
 				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S6, 2, TypeValue.DURATION),
 				},
 				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S6, 3, TypeValue.DURATION),
 				},
 				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S6, 4, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S6, 5, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S6, 6, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S6, 7, TypeValue.DURATION),
 				},
 			}),
-			new Talent("", new int[] { 77, 90, 100 }, "8-22", new Calculable[][] {
+			new Talent("Amélioration Perforation", new int[] { 46, 50, 54, 72, 86, 91 }, "8-9", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 20),
 				},
 			}),
-			new Talent("", new int[] { 77, 90, 100 }, "8-23", new Calculable[][] {
+			new Talent("Amélioration Robotique", new int[] { 46, 50, 54, 72, 86, 91 }, "8-10", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 10),
+					new Effect(TypeEffect.ReducP, false, 6),
+					new Effect(TypeEffect.ReducM, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 20),
+					new Effect(TypeEffect.ReducP, false, 9),
+					new Effect(TypeEffect.ReducM, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 30),
+					new Effect(TypeEffect.ReducP, false, 12),
+					new Effect(TypeEffect.ReducM, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 40),
+					new Effect(TypeEffect.ReducP, false, 15),
+					new Effect(TypeEffect.ReducM, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 50),
+					new Effect(TypeEffect.ReducP, false, 18),
+					new Effect(TypeEffect.ReducM, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 60),
+					new Effect(TypeEffect.ReducP, false, 20),
+					new Effect(TypeEffect.ReducM, false, 20),
+				},
+			}),
+			new Talent("Amélioration Amortissement", new int[] { 46, 50, 54, 72, 86, 91 }, "8-11", new Calculable[][] {
+				new Calculable[] {
+					new Proc(20, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.5),
+					}),
+				},
+				new Calculable[] {
+					new Proc(22, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.6),
+					}),
+				},
+				new Calculable[] {
+					new Proc(24, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.7),
+					}),
+				},
+				new Calculable[] {
+					new Proc(26, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.8),
+					}),
+				},
+				new Calculable[] {
+					new Proc(28, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.9),
+					}),
+				},
+				new Calculable[] {
+					new Proc(30, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 1),
+					}),
+				},
+			}),
+			new Talent("Interférence de Précision", new int[] { 66, 80, 91 }, "8-12", new Calculable[][] {
+				new Calculable[] {
+					new Proc(100, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 20, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 25, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 30, Target.OPPONENT),
+					}),
+				},
+			}),
+			new Talent("Interférence de Défense", new int[] { 66, 80, 91 }, "8-13", new Calculable[][] {
+				new Calculable[] {
+					new Proc(100, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, 3, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, 4, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, 5, Target.OPPONENT),
+					}),
+				},
+			}),
+			new Talent("Interférence de Fission", new int[] { 66, 80, 91 }, "8-14", new Calculable[][] {
+				new Calculable[] {
+					new Proc(10, Activation.Attack, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Dispel),
+					}),
+				},
+				new Calculable[] {
+					new Proc(12, Activation.Attack, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Dispel),
+					}),
+				},
+				new Calculable[] {
+					new Proc(15, Activation.Attack, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Dispel),
+					}),
+				},
+			}),
+			new Talent("Pénétration Critique", new int[] { 70, 83, 93 }, "8-15", new Calculable[][] {
+				new Calculable[] {
+					new Proc(100, Activation.Crit, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 7),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Crit, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 8),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Crit, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 9),
+					}),
+				},
+			}),
+			new Talent("Défense Critique", new int[] { 70, 83, 93 }, "8-16", new Calculable[][] {
+				new Calculable[] {
+					new Proc(15, Activation.Crit, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Block),
+					}),
+				},
+				new Calculable[] {
+					new Proc(17, Activation.Crit, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Block),
+					}),
+				},
+				new Calculable[] {
+					new Proc(20, Activation.Crit, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Block),
+					}),
+				},
+			}),
+			new Talent("Régénération Critique", new int[] { 70, 83, 93 }, "8-17", new Calculable[][] {
+				new Calculable[] {
+					new Proc(100, Activation.Crited, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.ProcTalentC8L1),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Crited, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.ProcTalentC8L2),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Crited, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.ProcTalentC8L3),
+					}),
+				},
+			}),
+			new Talent("Modification du Démon", new int[] { 73, 87, 97 }, "8-18", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 15),
+					new StaticEffect(TypeStaticEffect.x2Skill, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 17),
+					new StaticEffect(TypeStaticEffect.x2Skill, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill, 15),
+				},
+			}),
+			new Talent("Modification Robotique", new int[] { 73, 87, 97 }, "8-19", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 15),
+					new Effect(TypeEffect.AGI, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 20),
+					new Effect(TypeEffect.AGI, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 25),
+					new Effect(TypeEffect.AGI, false, 20),
+				},
+			}),
+			new Talent("Modification Armure", new int[] { 73, 87, 97 }, "8-20", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 20),
+					new Effect(TypeEffect.Ombre, false, 20),
+					new Effect(TypeEffect.Foudre, false, 20),
+					new Effect(TypeEffect.Feu, false, 20),
+					new Effect(TypeEffect.Glace, false, 20),
+					new Effect(TypeEffect.Nature, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 30),
+					new Effect(TypeEffect.Ombre, false, 30),
+					new Effect(TypeEffect.Foudre, false, 30),
+					new Effect(TypeEffect.Feu, false, 30),
+					new Effect(TypeEffect.Glace, false, 30),
+					new Effect(TypeEffect.Nature, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 40),
+					new Effect(TypeEffect.Ombre, false, 40),
+					new Effect(TypeEffect.Foudre, false, 40),
+					new Effect(TypeEffect.Feu, false, 40),
+					new Effect(TypeEffect.Glace, false, 40),
+					new Effect(TypeEffect.Nature, false, 40),
+				},
+			}),
+			new Talent("Fureur Infinie", new int[] { 77, 90, 100 }, "8-21", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S7, 0.5, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S7, 0.7, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S7, 0.9, TypeValue.DURATION),
+				},
+			}),
+			new Talent("Régénération Infinie", new int[] { 77, 90, 100 }, "8-22", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S8, 5, TypeValue.HEAL),
+					new SkillEffect(TypeSkillEffect.Class8S8, 10, TypeValue.MANA),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S8, 6, TypeValue.HEAL),
+					new SkillEffect(TypeSkillEffect.Class8S8, 12, TypeValue.MANA),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class8S8, 7, TypeValue.HEAL),
+					new SkillEffect(TypeSkillEffect.Class8S8, 14, TypeValue.MANA),
+				},
+			}),
+			new Talent("Lacérations Infinies", new int[] { 77, 90, 100 }, "8-23", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 3),
+					new Effect(TypeEffect.TCCP, false, 3),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 5),
+					new Effect(TypeEffect.TCCP, false, 4),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegDuo, false, 7),
+					new Effect(TypeEffect.TCCP, false, 5),
 				},
 			}),
 		};
@@ -3521,130 +3765,208 @@ public class LoaderTalent {
 	
 	static Talent[] getClass9() {
 		return new Talent[] {
-			new Talent("", new int[] { 6, 14, 31, 61, 86, 91 }, "8-0", new Calculable[][] {
+			new Talent("Ultra rapide", new int[] { 6, 14, 31, 61, 86, 91 }, "8-0", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 3),
+					new Effect(TypeEffect.Depla, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 6),
+					new Effect(TypeEffect.Depla, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 9),
+					new Effect(TypeEffect.Depla, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 12),
+					new Effect(TypeEffect.Depla, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 15),
+					new Effect(TypeEffect.Depla, false, 11),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 6, 14, 31, 61, 86, 91 }, "8-1", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 18),
+					new Effect(TypeEffect.Depla, false, 13),
 				},
 			}),
-			new Talent("", new int[] { 6, 14, 31, 61, 86, 91 }, "8-2", new Calculable[][] {
+			new Talent("Instrument de Précision", new int[] { 6, 14, 31, 61, 86, 91 }, "8-1", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 16, 28, 46, 66, 86, 91 }, "8-3", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 18),
 				},
 			}),
-			new Talent("", new int[] { 16, 28, 46, 66, 86, 91 }, "8-4", new Calculable[][] {
+			new Talent("Appareil d'Amélioration", new int[] { 6, 14, 31, 61, 86, 91 }, "8-2", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 3),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 11),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 16, 28, 46, 66, 86, 91 }, "8-5", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 13),
 				},
 			}),
-			new Talent("", new int[] { 31, 41, 50, 69, 86, 91 }, "9-6", new Calculable[][] {
+			new Talent("Spécialiste du Canon lourd", new int[] { 16, 28, 46, 66, 86, 91 }, "8-3", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 6),
+					new Effect(TypeEffect.VitAtk, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 8),
+					new Effect(TypeEffect.VitAtk, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 8),
+					new Effect(TypeEffect.VitAtk, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 9),
+					new Effect(TypeEffect.VitAtk, false, 11),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 10),
+					new Effect(TypeEffect.VitAtk, false, 13),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent("", new int[] { 31, 41, 50, 69, 86, 91 }, "9-7", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 11),
+					new Effect(TypeEffect.VitAtk, false, 15),
 				},
 			}),
-			new Talent("", new int[] { 31, 41, 50, 69, 86, 91 }, "9-8", new Calculable[][] {
+			new Talent("Spécialiste des Machines Légères", new int[] { 16, 28, 46, 66, 86, 91 }, "8-4", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 4),
+					new Effect(TypeEffect.VitAtk, false, 10),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 6),
+					new Effect(TypeEffect.VitAtk, false, 12),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 8),
+					new Effect(TypeEffect.VitAtk, false, 14),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 10),
+					new Effect(TypeEffect.VitAtk, false, 16),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 12),
+					new Effect(TypeEffect.VitAtk, false, 18),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca, false, 14),
+					new Effect(TypeEffect.VitAtk, false, 20),
+				},
+			}),
+			new Talent("Spécialiste des Machines Lourdes", new int[] { 16, 28, 46, 66, 86, 91 }, "8-5", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 5),
+					new Effect(TypeEffect.DCCP, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 7),
+					new Effect(TypeEffect.DCCP, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 9),
+					new Effect(TypeEffect.DCCP, false, 21),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 11),
+					new Effect(TypeEffect.DCCP, false, 24),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 13),
+					new Effect(TypeEffect.DCCP, false, 27),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdMeca2M, false, 15),
+					new Effect(TypeEffect.DCCP, false, 30),
+				},
+			}),
+			new Talent("Explosion Améliorée", new int[] { 31, 41, 50, 69, 86, 91 }, "9-6", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 40),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 50),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 55),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 60),
+				},
+			}),
+			new Talent("Chargement Rapide", new int[] { 31, 41, 50, 69, 86, 91 }, "9-7", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 21),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 24),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 27),
+				},
+			}),
+			new Talent("Amplification Élémentaire", new int[] { 31, 41, 50, 69, 86, 91 }, "9-8", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class9S0, 2, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class9S0, 3, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class9S0, 4, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class9S0, 5, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class9S0, 6, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class9S0, 7, TypeValue.DURATION),
 				},
 			}),
 			new Talent("", new int[] { 46, 50, 54, 72, 86, 91 }, "9-9", new Calculable[][] {

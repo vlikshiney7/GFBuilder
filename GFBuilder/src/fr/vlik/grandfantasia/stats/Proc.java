@@ -44,7 +44,9 @@ public class Proc implements Calculable {
 	
 	public static enum Activation {
 		Attack("en attaquant", "attacking"),
-		Attacked("quand attaqué", "when attacked");
+		Attacked("quand attaqué", "when attacked"),
+		Crit("sur coup critique", "on critical hit"),
+		Crited("sur critique reçu", "on receive critical");
 		
 		public final String fr;
 		public final String en;

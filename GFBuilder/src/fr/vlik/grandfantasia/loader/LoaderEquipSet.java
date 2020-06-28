@@ -4179,7 +4179,7 @@ public class LoaderEquipSet {
 					new Proc(65, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 30),
 						new Effect(TypeEffect.ReducM, false, 30),
-						new StaticEffect(TypeStaticEffect.ProcSetSombre40),
+						new StaticEffect(TypeStaticEffect.Block),
 						new Proc(100, Activation.Attacked, 5, new Calculable[] {
 							new Effect(TypeEffect.ESQ, false, 10),
 						}),
