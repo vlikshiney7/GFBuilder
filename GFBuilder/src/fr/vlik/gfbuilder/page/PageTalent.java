@@ -150,7 +150,12 @@ public class PageTalent extends PagePanel {
 				}
 			}
 		}
-		list.addAll(this.combiTalent.getEffects());
+		
+		if(this.combiTalent.getEffects() != null) {
+			for(Calculable c : this.combiTalent.getEffects()) {
+				list.add(c);
+			}
+		}
 		
 		this.effects = list;
 	}

@@ -108,6 +108,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DCC1M("Dégât Critique Arme 1 Main", "", "Deg Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	DCC2M("Dégât Critique Arme 2 Main", "", "Deg Crit 2M", "", -1, true, Tools.EffectColor[0]),
 	RegenCB("Régénération Coup Standard", "", "Regen Coup Std", "", -1, false, Tools.EffectColor[0]),
+	RegenM("Régénération Magique", "", "Regen Coup Mag", "", -1, false, Tools.EffectColor[0]),
 	
 	DegStd("Dégât Standard", "", "Deg Std", "", -1, true, Tools.EffectColor[0]),
 	DegStdEp("Dégât Standard à l'Épée", "", "Deg Std Ep 1M", "", -1, true, Tools.EffectColor[0]),

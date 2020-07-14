@@ -24,7 +24,7 @@ public class BuffIcon extends Buff implements Iconable {
 	
 	private Icon icon;
 
-	public BuffIcon(String name, String path, ArrayList<Effect> effects) {
+	public BuffIcon(String name, String path, Effect[] effects) {
 		super(name, effects);
 		this.icon = setIcon("bufficon/" + path);
 	}
@@ -61,9 +61,9 @@ public class BuffIcon extends Buff implements Iconable {
 				
 				String path =  lineSplit[lineSplit.length-1];
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
+				Effect[] effects = new Effect[Integer.parseInt(lineSplit[1])];
 				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
-					effects.add(new Effect(lineSplit[j+2]));
+					effects[j] = new Effect(lineSplit[j+2]);
 				
 				guild.add(new BuffIcon(lineSplit[0], path, effects));
 				
@@ -77,9 +77,9 @@ public class BuffIcon extends Buff implements Iconable {
 				
 				String path =  lineSplit[lineSplit.length-1];
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
+				Effect[] effects = new Effect[Integer.parseInt(lineSplit[1])];
 				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
-					effects.add(new Effect(lineSplit[j+2]));
+					effects[j] = new Effect(lineSplit[j+2]);
 				
 				love.add(new BuffIcon(lineSplit[0], path, effects));
 				

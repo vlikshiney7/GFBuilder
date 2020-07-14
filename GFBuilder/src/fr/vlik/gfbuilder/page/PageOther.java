@@ -89,7 +89,11 @@ public class PageOther extends PagePanel {
 			}
 		}
 		
-		list.addAll(this.getLoveCo().getEffects());
+		if(this.getLoveCo().getEffects() != null) {
+			for(Effect e : this.getLoveCo().getEffects()) {
+				list.add(e);
+			}
+		}
 		
 		for(Calculable c : this.getAnima().getEffects()) {
 			list.add(c);

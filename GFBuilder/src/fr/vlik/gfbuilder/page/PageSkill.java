@@ -95,11 +95,18 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {
-				for(Effect e : this.skillNatif.get(i).getEffects()) {
-					if(e.getTransfert() == null) {
-						list.add(e);
-					} else {
-						convert.add(e);
+				if(this.skillNatif.get(i).getEffects() != null) {
+					for(Calculable c : this.skillNatif.get(i).getEffects()) {
+						if(c instanceof Effect) {
+							Effect e = (Effect) c;
+							if(e.getTransfert() == null) {
+								list.add(e);
+							} else {
+								convert.add(e);
+							}
+						} else {
+							list.add(c);
+						}
 					}
 				}
 			}
@@ -107,12 +114,21 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		
 		for(int i = 0; i < this.skillProgress.size(); i++) {
 			if(this.skillProgress.get(i).isVisible() && this.getSkill(i) != null) {
-				list.addAll(this.getSkill(i).getEffects(0));
+				if(this.getSkill(i).getEffects(0) != null) {
+					System.out.println(this.getSkill(i).getEffects(0).length);
+					for(Effect e : this.getSkill(i).getEffects(0)) {
+						list.add(e);
+					}
+				}
 			}
 		}
 		
 		if(this.showAndHide.get(1).isVisible()) {
-			list.addAll(this.getProSkill().getEffects());
+			if(this.getProSkill().getEffects() != null) {
+				for(Calculable c : this.getProSkill().getEffects()) {
+					list.add(c);
+				}
+			}
 		}
 		
 		this.effects = list;

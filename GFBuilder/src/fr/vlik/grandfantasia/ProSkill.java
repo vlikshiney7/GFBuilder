@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,22 +11,23 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class ProSkill implements Iconable, Writable {
 	
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	private static ProSkill[][] data;
-	static {
-		loadData();
-	}
+	private static ProSkill[][] data = Loader.getProSkill();
 	
 	private String name;
 	private int lvl;
 	private Icon icon;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Calculable[] effects;
 	
-	public ProSkill(String name, int lvl, String path, ArrayList<Effect> effects) {
+	public ProSkill(String name, int lvl, String path, Calculable[] effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.icon = setIcon(path);
@@ -49,12 +47,23 @@ public class ProSkill implements Iconable, Writable {
 		return this.icon;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.effects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.effects[i]);
+			} else if(this.effects[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) this.effects[i]);
+			} else if(this.effects[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) this.effects[i]);
+			}
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -81,55 +90,16 @@ public class ProSkill implements Iconable, Writable {
 	}
 	
 	public String getTooltip(int i) {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
+		
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				tooltip.append(e.getTooltip());
+			}
 		}
+		tooltip.append("</ul>");
 		
 		return "<html>" + tooltip + "</html>";
-	}
-	
-	public static void loadData() {
-		ArrayList<ArrayList<ProSkill>> list = new ArrayList<ArrayList<ProSkill>>();
-		 try (
-			 BufferedReader reader = new BufferedReader(new InputStreamReader(
-					 ProSkill.class.getResourceAsStream(Tools.RESOURCE + "pro/pro.txt"), "UTF-8"));
-		 ) {
-			String line = reader.readLine();
-			
-			for(int i = 0; i < 12; i++) {
-				ArrayList<ProSkill> skills = new ArrayList<ProSkill>(9);
-				for(int j = 0; j < 9; j++) {
-					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1];
-					
-					String[] effectSplit = lineSplit[2].split(",");
-					
-					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(effectSplit[0]));
-					for(int k = 0; k < Integer.parseInt(effectSplit[0]); k++)
-						effects.add(new Effect(lineSplit[k+3]));
-					
-					skills.add(new ProSkill(lineSplit[0], Integer.parseInt(lineSplit[1]), path, effects));
-					
-					line = reader.readLine();
-				}
-				
-				list.add(skills);
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + ProSkill.class.getClass().getSimpleName() + " class");
-		}
-		
-		ProSkill.data = new ProSkill[list.size()][];
-		for(int i = 0; i < data.length; i++) {
-			ProSkill[] proSkill = new ProSkill[list.get(i).size()];
-			for(int j = 0; j < list.get(i).size(); j++) {
-				proSkill[j] = list.get(i).get(j);				
-			}
-			ProSkill.data[i] = proSkill;
-		}
 	}
 	
 	public static ProSkill get(String name) {

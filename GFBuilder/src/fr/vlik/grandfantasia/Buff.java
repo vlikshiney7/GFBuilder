@@ -18,9 +18,9 @@ public class Buff implements Writable {
 	}
 	
 	protected String name;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Effect[] effects;
 	
-	public Buff(String name, ArrayList<Effect> effects) {
+	public Buff(String name, Effect[] effects) {
 		this.name = name;
 		this.effects = effects;
 	}
@@ -29,12 +29,17 @@ public class Buff implements Writable {
 		return this.name;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Effect[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Effect[] tab = new Effect[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = new Effect(this.effects[i]);
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -64,9 +69,9 @@ public class Buff implements Writable {
 			while (line != null) {
 				String[] lineSplit = line.split("/");
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
+				Effect[] effects = new Effect[Integer.parseInt(lineSplit[1])];
 				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
-					effects.add(new Effect(lineSplit[j+2]));
+					effects[j] = new Effect(lineSplit[j+2]);
 				
 				list.add(new Buff(lineSplit[0], effects));
 				

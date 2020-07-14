@@ -1,31 +1,25 @@
 package fr.vlik.grandfantasia;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public final class CombiTalent implements Writable {
 	
-	private static CombiTalent[][] data;
-	static {
-		loadData();
-	}
+	private static CombiTalent[][] data = Loader.getCombiTalent();
 	
 	private String name;
 	private int[] code;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Calculable[] effects;
 	
 	public CombiTalent() {
 		this.name = "";
 	}
 	
-	public CombiTalent(String name, int[] code, ArrayList<Effect> effects) {
+	public CombiTalent(String name, int[] code, Calculable[] effects) {
 		this.name = name;
 		this.code = code;
 		this.effects = effects;
@@ -39,12 +33,21 @@ public final class CombiTalent implements Writable {
 		return this.code;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.effects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.effects[i]);
+			} else {
+				tab[i] = this.effects[i];
+			}
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -55,53 +58,15 @@ public final class CombiTalent implements Writable {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";
-	}
-	
-	public static void loadData() {
-		ArrayList<ArrayList<CombiTalent>> list = new ArrayList<ArrayList<CombiTalent>>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					CombiTalent.class.getResourceAsStream(Tools.RESOURCE + "combi.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				int num = Integer.parseInt(line);
-				ArrayList<CombiTalent> currentList = new ArrayList<CombiTalent>(num);
-				for(int i = 0; i < num; i++) {
-					line = reader.readLine();
-					String[] lineSplit = line.split("/");
-					String code[] = lineSplit[1].split(",");
-					int codeSplit[] = new int[code.length];
-					for(int c = 0; c < code.length; c++) codeSplit[c] = Integer.parseInt(code[c]);
-					
-					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
-					for(int j = 0; j < Integer.parseInt(lineSplit[2]); j++)
-						effects.add(new Effect(lineSplit[j+3]));
-					
-					currentList.add(new CombiTalent(lineSplit[0], codeSplit, effects));
-				}
-				list.add(currentList);
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + CombiTalent.class.getClass().getSimpleName() + " class");
-		}
-		
-		CombiTalent.data = new CombiTalent[list.size()][];
-		for(int i = 0; i < data.length; i++) {
-			CombiTalent[] weaponType = new CombiTalent[list.get(i).size()];
-			for(int j = 0; j < list.get(i).size(); j++) {
-				weaponType[j] = list.get(i).get(j);				
-			}
-			CombiTalent.data[i] = weaponType;
-		}
 	}
 	
 	public static CombiTalent getCombiTalent(GradeName grade, int[] code) {

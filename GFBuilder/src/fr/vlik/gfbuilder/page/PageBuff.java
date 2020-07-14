@@ -182,18 +182,30 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
-			list.addAll(this.getNucleus(i).getEffects());
+			if(this.getNucleus(i).getEffects() != null) {
+				for(Effect e : this.getNucleus(i).getEffects()) {
+					list.add(e);
+				}
+			}
 		}
 		
 		for(JCustomLabel guild : this.guildBuffUsed) {
 			if(guild.isVisible()) {
-				list.addAll(guild.getEffects());
+				if(guild.getEffects() != null) {
+					for(Calculable e : guild.getEffects()) {
+						list.add(e);
+					}
+				}
 			}
 		}
 		
 		for(JCustomLabel stone : this.stoneUsed) {
 			if(stone.isVisible()) {
-				list.addAll(stone.getEffects());
+				if(stone.getEffects() != null) {
+					for(Calculable e : stone.getEffects()) {
+						list.add(e);
+					}
+				}
 			}
 		}
 		

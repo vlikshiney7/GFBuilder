@@ -2,9 +2,11 @@ package fr.vlik.grandfantasia.loader;
 
 import java.util.HashMap;
 
+import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Fortification;
+import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Speciality;
@@ -271,14 +273,14 @@ public class Loader {
 			new RedFortification("+41", RedFortification.LEVEL[5], 2.315, 2.05, 2.58, 4),
 			new RedFortification("+42", RedFortification.LEVEL[5], 2.38, 2.1, 2.66, 4),
 			new RedFortification("+43", RedFortification.LEVEL[5], 2.45, 2.15, 2.75, 4),
-			//------- CONJECTURE ---------------------------------------------------------
 			new RedFortification("+44", RedFortification.LEVEL[5], 2.52, 2.2, 2.84, 4),
-			new RedFortification("+45", RedFortification.LEVEL[5], 2.59, 2.25, 2.93, 4),
-			new RedFortification("+46", RedFortification.LEVEL[5], 2.66, 2.3, 3.02, 4),
-			new RedFortification("+47", RedFortification.LEVEL[5], 2.73, 2.35, 3.11, 4),
-			new RedFortification("+48", RedFortification.LEVEL[5], 2.8, 2.4, 3.2, 4),
-			new RedFortification("+49", RedFortification.LEVEL[5], 2.875, 2.45, 3.3, 4),
-			new RedFortification("+50", RedFortification.LEVEL[5], 2.95, 2.5, 3.4, 5),
+			new RedFortification("+45", RedFortification.LEVEL[5], 2.595, 2.25, 2.94, 4),
+			new RedFortification("+46", RedFortification.LEVEL[5], 2.67, 2.3, 3.04, 4),
+			new RedFortification("+47", RedFortification.LEVEL[5], 2.75, 2.35, 3.15, 4),
+			//------- CONJECTURE ---------------------------------------------------------
+			new RedFortification("+48", RedFortification.LEVEL[5], 2.83, 2.4, 3.26, 4),
+			new RedFortification("+49", RedFortification.LEVEL[5], 2.91, 2.45, 3.37, 4),
+			new RedFortification("+50", RedFortification.LEVEL[5], 2.99, 2.5, 3.48, 5),
 		};
 	}
 	
@@ -299,6 +301,23 @@ public class Loader {
 		};
 	}
 	
+	public static CombiTalent[][] getCombiTalent() {
+		return new CombiTalent[][] {
+			LoaderCombiTalent.getClass0(),
+			LoaderCombiTalent.getClass1(),
+			LoaderCombiTalent.getClass2(),
+			LoaderCombiTalent.getClass3(),
+			LoaderCombiTalent.getClass4(),
+			LoaderCombiTalent.getClass5(),
+			LoaderCombiTalent.getClass6(),
+			LoaderCombiTalent.getClass7(),
+			LoaderCombiTalent.getClass8(),
+			LoaderCombiTalent.getClass9(),
+			LoaderCombiTalent.getClass10(),
+			LoaderCombiTalent.getClass11(),
+		};
+	}
+	
 	public static Speciality[][] getSpeciality() {
 		return new Speciality[][] {
 			LoaderSpeciality.getClass0(),
@@ -313,6 +332,23 @@ public class Loader {
 			LoaderSpeciality.getClass9(),
 			LoaderSpeciality.getClass10(),
 			LoaderSpeciality.getClass11(),
+		};
+	}
+	
+	public static ProSkill[][] getProSkill() {
+		return new ProSkill[][] {
+			LoaderProSkill.getClass0(),
+			LoaderProSkill.getClass1(),
+			LoaderProSkill.getClass2(),
+			LoaderProSkill.getClass3(),
+			LoaderProSkill.getClass4(),
+			LoaderProSkill.getClass5(),
+			LoaderProSkill.getClass6(),
+			LoaderProSkill.getClass7(),
+			LoaderProSkill.getClass8(),
+			LoaderProSkill.getClass9(),
+			LoaderProSkill.getClass10(),
+			LoaderProSkill.getClass11(),
 		};
 	}
 	

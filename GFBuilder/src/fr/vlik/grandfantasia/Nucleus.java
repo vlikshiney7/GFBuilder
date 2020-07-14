@@ -28,9 +28,9 @@ public class Nucleus implements FullRenderer {
 	private String name;
 	private Quality quality;
 	private Icon icon;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Effect[] effects;
 	
-	public Nucleus(String name, Quality quality, String path, ArrayList<Effect> effects) {
+	public Nucleus(String name, Quality quality, String path, Effect[] effects) {
 		this.name = name;
 		this.quality = quality;
 		this.icon = setIcon(path);
@@ -55,12 +55,17 @@ public class Nucleus implements FullRenderer {
 		return this.icon;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Effect[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Effect[] tab = new Effect[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = new Effect(this.effects[i]);
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -115,9 +120,9 @@ public class Nucleus implements FullRenderer {
 					
 					Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
 					
-					ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[2]));
+					Effect[] effects = new Effect[Integer.parseInt(lineSplit[2])];
 					for(int k = 0; k < Integer.parseInt(lineSplit[2]); k++)
-						effects.add(new Effect(lineSplit[k+3]));
+						effects[k] = new Effect(lineSplit[k+3]);
 					
 					array.add(new Nucleus(lineSplit[0], quality, path, effects));
 				}

@@ -12,6 +12,8 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.Proc.TDB;
+import fr.vlik.grandfantasia.stats.RegenEffect;
+import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.Effect.Target;
 
@@ -72,7 +74,7 @@ public class LoaderRing {
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.ProcTDB3),
-						new StaticEffect(TypeStaticEffect.ProcTDB3C),
+						new RegenEffect(TypeEffect.PV, false, 500, TypeRegen.REGENERATION),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Écusson de Puissance"); put(Language.EN, ""); }},
@@ -691,7 +693,7 @@ public class LoaderRing {
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.ProcTDB3),
-						new StaticEffect(TypeStaticEffect.ProcTDB3C),
+						new RegenEffect(TypeEffect.PV, false, 500, TypeRegen.REGENERATION),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Blizzard"); put(Language.EN, ""); }},
@@ -810,7 +812,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.ReducP, false, 5),
 					new Effect(TypeEffect.ReducM, false, 5),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcRingGvg80),
+						new RegenEffect(TypeEffect.PV, false, 250, TypeRegen.REGENERATION, 2),
+						new RegenEffect(TypeEffect.PM, false, 250, TypeRegen.REGENERATION, 2),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Démoniste Sombre "); put(Language.EN, ""); }},
@@ -910,7 +913,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.Nature, false, 20),
-					new StaticEffect(TypeStaticEffect.ProcRingGvg70),
+					new RegenEffect(TypeEffect.PM, false, 30, TypeRegen.REGENERATION, 5),
 					new Proc(8, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, true, 10),
 					}),

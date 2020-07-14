@@ -28,9 +28,9 @@ public class Skill implements Iconable, Writable {
 	private int[] lvl;
 	private boolean natif;
 	private Icon icon;
-	private ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>();
+	private Effect[][] effects;
 	
-	public Skill(String name, int[] lvl, boolean natif, String path, ArrayList<ArrayList<Effect>> effects) {
+	public Skill(String name, int[] lvl, boolean natif, String path, Effect[][] effects) {
 		this.name = name;
 		this.lvl = lvl;
 		this.natif = natif;
@@ -43,7 +43,6 @@ public class Skill implements Iconable, Writable {
 		this.lvl = new int[] { 0 };
 		this.natif = false;
 		this.icon = setIcon("32-7");
-		this.effects.add(new ArrayList<Effect>(1));
 	}
 	
 	public Skill(Skill skill, int index) {
@@ -51,7 +50,8 @@ public class Skill implements Iconable, Writable {
 		this.lvl = new int[] { skill.getLvl()[index] };
 		this.natif = skill.getNatif();
 		this.icon = skill.getIcon();
-		this.effects.add(skill.getEffects(index));
+		this.effects = new Effect[1][];
+		this.effects[0] = skill.getEffects(index);
 	}
 	
 	public String getName() {
@@ -71,12 +71,19 @@ public class Skill implements Iconable, Writable {
 		return this.icon;
 	}
 	
-	public ArrayList<Effect> getEffects(int i) {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.get(i).size());
-		for(Effect effect : this.effects.get(i)) {
-			list.add(new Effect(effect));
+	public Effect[] getEffects(int i) {
+		if(this.effects == null || this.effects[i] == null) {
+			return null;
 		}
-		return list;
+		
+		Effect[] tab = new Effect[this.effects[i].length];
+		for(int j = 0; j < tab.length; j++) {
+			tab[j] = new Effect(this.effects[i][j]);
+		}
+		
+		System.out.println(tab.length);
+		
+		return tab;
 	}
 	
 	@Override
@@ -104,9 +111,12 @@ public class Skill implements Iconable, Writable {
 	
 	public String getTooltip(int i) {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects.get(i)) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		
+		if(this.effects != null && this.effects[i] != null) {
+			for(Effect e : this.effects[i]) {
+				tooltip.append("<br>");
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";
@@ -133,13 +143,13 @@ public class Skill implements Iconable, Writable {
 					String[] lvlSkill = lineSplit[2].split(",");
 					int[] lvl = new int[lvlSkill.length];
 					
-					ArrayList<ArrayList<Effect>> effects = new ArrayList<ArrayList<Effect>>(lvlSkill.length);
+					Effect[][] effects = new Effect[lvlSkill.length][];
 					for(int j = 0; j < lvlSkill.length; j++) {
 						int nbEffect = Integer.parseInt(lineSplit[3]);
-						effects.add(new ArrayList<Effect>(nbEffect));
+						effects[j] = new Effect[nbEffect];
 						lvl[j] = Integer.parseInt(lvlSkill[j]);
 						for(int k = 0; k < nbEffect; k++) {
-							effects.get(j).add(new Effect(lineSplit[j*nbEffect+k+4]));
+							effects[j][k] = new Effect(lineSplit[j*nbEffect+k+4]);
 						}
 					}
 					

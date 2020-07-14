@@ -16,6 +16,7 @@ import fr.vlik.grandfantasia.Blason.BlasonType;
 import fr.vlik.grandfantasia.Buff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 
@@ -73,7 +74,11 @@ public class PageSprite extends PagePanel {
 			list.addAll(this.getBlason(i).getEffects());
 		}
 		
-		list.addAll(this.getIsleBuff().getEffects());
+		if(this.getIsleBuff().getEffects() != null) {
+			for(Effect e : this.getIsleBuff().getEffects()) {
+				list.add(e);
+			}
+		}
 		
 		this.effects = list;
 	}

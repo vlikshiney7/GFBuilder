@@ -16,6 +16,8 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Effect.Target;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
+import fr.vlik.grandfantasia.stats.RegenEffect;
+import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 
 @SuppressWarnings("serial")
@@ -1116,7 +1118,8 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 15),
 					new Effect(TypeEffect.MEN, false, 20),
 					new Proc(1, Activation.Attacked, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcT1N0),
+						new RegenEffect(TypeEffect.PV, true, 100, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 100, TypeRegen.REGENERATION),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre de la Foi"); put(Language.EN, "Pontiff's Faith Scepter"); }},
@@ -1355,7 +1358,8 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Effect(TypeEffect.MEN, false, 20),
 					new Proc(1, Activation.Attacked, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcT1N0),
+						new RegenEffect(TypeEffect.PV, true, 100, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 100, TypeRegen.REGENERATION),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mains Destructrices du Maillet Magique"); put(Language.EN, "Crushing Fist Hammer"); }},

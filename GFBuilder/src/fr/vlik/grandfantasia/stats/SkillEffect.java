@@ -28,7 +28,9 @@ public class SkillEffect implements Calculable {
 		HEAL("Soin", "heal"),
 		MANA("Mana", "mana"),
 		ESQ("Esquive", "evasion"),
-		NUMBER("Nombre", "number");
+		NUMBER("Nombre", "number"),
+		PARA("Durée paralysie", "paralysis duration"),
+		FUFU("Mouvement non réduite", "no reduce movement");
 		
 		public final String fr;
 		public final String en;
@@ -55,10 +57,14 @@ public class SkillEffect implements Calculable {
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
-		tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
+		if(this.type == TypeValue.FUFU) {
+			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\"");
+		} else {
+			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
+		}
 		//tooltip.append("\"" + this.skill.en + "\" " + this.type.en + " +" + this.value);
 		
-		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA) {
+		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
 			tooltip.append("%");
 		} else if(this.type == TypeValue.DURATION) {
 			tooltip.append("s");
@@ -71,17 +77,25 @@ public class SkillEffect implements Calculable {
 		StringBuilder result = new StringBuilder();
 		
 		if(lang == Language.FR) {
-			result.append(this.skill.fr + " +" + this.value);
+			if(this.type == TypeValue.FUFU) {
+				result.append(this.type.fr + " de \"" + this.skill.fr + "\"");
+			} else {
+				result.append(this.skill.fr + " +" + this.value);
+			}
 			
-			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA) {
+			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
 				result.append("%");
 			} else if(this.type == TypeValue.DURATION) {
 				result.append("s");
 			}
 		} else {
-			result.append(this.skill.en + "+" + this.value);
+			if(this.type == TypeValue.FUFU) {
+				result.append(this.type.en + " of \"" + this.skill.en + "\"");
+			} else {
+				result.append(this.skill.en + " +" + this.value);
+			}
 			
-			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA) {
+			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
 				result.append("%");
 			} else if(this.type == TypeValue.DURATION) {
 				result.append("s");

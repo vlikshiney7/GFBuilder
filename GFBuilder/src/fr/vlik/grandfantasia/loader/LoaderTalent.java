@@ -8,7 +8,9 @@ import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
+import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.SkillEffect;
 import fr.vlik.grandfantasia.stats.SkillEffect.TypeValue;
 import fr.vlik.grandfantasia.stats.StaticEffect;
@@ -3653,17 +3655,17 @@ public class LoaderTalent {
 			new Talent("Régénération Critique", new int[] { 70, 83, 93 }, "8-17", new Calculable[][] {
 				new Calculable[] {
 					new Proc(100, Activation.Crited, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTalentC8L1),
+						new RegenEffect(TypeEffect.PV, true, 3, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Proc(100, Activation.Crited, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTalentC8L2),
+						new RegenEffect(TypeEffect.PV, true, 4, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Proc(100, Activation.Crited, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTalentC8L3),
+						new RegenEffect(TypeEffect.PV, true, 5, TypeRegen.REGENERATION),
 					}),
 				},
 			}),

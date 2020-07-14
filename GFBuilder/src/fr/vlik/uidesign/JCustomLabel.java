@@ -2,7 +2,6 @@ package fr.vlik.uidesign;
 
 import java.awt.Dimension;
 import java.awt.Font;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +17,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class JCustomLabel extends JLabel {
@@ -25,7 +25,7 @@ public class JCustomLabel extends JLabel {
 	private static final long serialVersionUID = 1L;
 	
 	private Map<Language, String> lang = new HashMap<Language, String>();
-	private ArrayList<Effect> effects;
+	private Calculable[] effects;
 	
 	public JCustomLabel() {
 		super();
@@ -71,12 +71,7 @@ public class JCustomLabel extends JLabel {
 			this.effects = nucleus.getEffects();
 		} else if(object instanceof Energy) {
 			Energy energy = (Energy) object;
-			if(energy.getEffects() != null) {
-				this.effects = new ArrayList<Effect>(energy.getEffects().length);
-				for(int i = 0; i < energy.getEffects().length; i++) {
-					this.effects.add(energy.getEffects()[i]);
-				}
-			}
+			this.effects = energy.getEffects();
 		} else if(object instanceof CombiTalent) {
 			CombiTalent combiTalent = (CombiTalent) object;
 			this.effects = combiTalent.getEffects();
@@ -126,12 +121,21 @@ public class JCustomLabel extends JLabel {
 		this.effects = skill.getEffects(maxLvlIndex);
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.effects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.effects[i]);
+			} else {
+				tab[i] = this.effects[i];
+			}
+		}
+		
+		return tab;
 	}
 	
 	public void setBlackUI() {
