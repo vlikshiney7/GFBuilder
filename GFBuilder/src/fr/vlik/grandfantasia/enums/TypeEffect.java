@@ -111,6 +111,7 @@ public enum TypeEffect implements Colorable, Writable {
 	RegenM("Régénération Magique", "", "Regen Coup Mag", "", -1, false, Tools.EffectColor[0]),
 	
 	DegStd("Dégât Standard", "", "Deg Std", "", -1, true, Tools.EffectColor[0]),
+	DegStdPts("Dégât Standard", "", "Deg Std", "", -1, true, Tools.EffectColor[0]),
 	DegStdEp("Dégât Standard à l'Épée", "", "Deg Std Ep 1M", "", -1, true, Tools.EffectColor[0]),
 	DegStdMa("Dégât Standard au Maillet", "", "Deg Std Ma 1M", "", -1, true, Tools.EffectColor[0]),
 	DegStdHa("Dégât Standard à la Hache", "", "Deg Std Ha 1M", "", -1, true, Tools.EffectColor[0]),
@@ -121,6 +122,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegStdMeca2M("Dégât Standard à l'arme Mécanique 2 Main", "", "Deg Std Mec 2M", "", -1, true, Tools.EffectColor[0]),
 	DegStdArc("Dégât Standard à l'Arc", "", "Deg Std Arc", "", -1, true, Tools.EffectColor[0]),
 	DegStdGun("Dégât Standard au Pistolet", "", "Deg Std Gun", "", -1, true, Tools.EffectColor[0]),
+	DegStdCanon("Dégât Standard au Canon", "", "Deg Std Canon", "", -1, true, Tools.EffectColor[0]),
 	DegStdBa("Dégât Standard au Bâton", "", "Deg Std Bat", "", -1, true, Tools.EffectColor[0]),
 	DegStdLa("Dégât Standard à la Lame", "", "Deg Std Lame", "", -1, true, Tools.EffectColor[0]),
 

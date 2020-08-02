@@ -115,7 +115,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		for(int i = 0; i < this.skillProgress.size(); i++) {
 			if(this.skillProgress.get(i).isVisible() && this.getSkill(i) != null) {
 				if(this.getSkill(i).getEffects(0) != null) {
-					System.out.println(this.getSkill(i).getEffects(0).length);
 					for(Effect e : this.getSkill(i).getEffects(0)) {
 						list.add(e);
 					}

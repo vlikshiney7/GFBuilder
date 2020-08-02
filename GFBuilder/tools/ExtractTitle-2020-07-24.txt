@@ -1,0 +1,2710 @@
+Éxécuteur du Devoir Divin ; BLUE ; 65
+INT +3 pts 
+DÉF -2 %
+
+Nettoyeur du Monstre de Boue ; GREEN ; 61
+Chance de vaincre les Élémentaires avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Élémentaires +20 pts
+
+Maître Tacticien ; GREEN ; 63
+Chance de vaincre les Humanoïdes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Humanoïdes +20 pts
+
+Prophète Visionnaire ; BLUE ; 63
+INT +3 pts
+Taux CRIT MAG +2 %
+
+Corsaire Indomptable ; BLUE ; 60
+VOL +1 pt
+
+Rouleur de Mécaniques ; ORANGE ; 63
+Toucher +10 % 
+PM -8 %
+
+Chevalier de l'Ordre du Gélapin ; WHITE ; 70
+
+Protecteur des Gélapins ; WHITE ; 60
+
+Sportif de l'Extrême ; P8TITLE ; 0
+
+Purificateur Fanatique ; BLUE ; 62
+FCE +3 pts
+DÉF -2 %
+
+Troubles de la nature ; BLUE ; 15
+Soins donnés et reçus +10 %
+
+Chasseur de la Tour des bêtes ; BLUE ; 0
+ATQ MÊL et DIST +7 %
+ATQ MAG +7 %
+VIT DÉP +7 %
+
+
+Général Psychique ; BLUE ; 15
+Les attaques normales ont 3 % de chance de causer des coups doubles.
+Les compétences ont 3 % de chance de causer des coups doubles.
+
+Protecteur de Baie ; BLUE ; 15
+Taux de Butin +5 %.
+PV max +500.
+PM Max +500.
+
+Grande bienveillance ; BLUE ; 15
+Soins reçus +5 %.
+Récupération de 15-20 PV toutes les 5 secondes.
+
+Assistant personnel ;  ; 0
+PV max +300.
+PM max +300.
+EXP acquise +2 %.
+
+Parfait fêtard ; BLUE ; 15
+Taux CRIT MAG +6 %.
+Taux CRIT PHY +6 %.
+
+Remède miracle ; BLUE ; 15
+Taux de Butin +5 %
+DÉF PHY +150 
+DÉF MAG +150 
+
+Goûteur de chocolat ; BLUE ; 15
+Les attaques normales ont 1 % de chance de causer des coups doubles.
+Les attaques normales ont 1 % de chance de causer des coups triples.
+
+Massacre au paradis ; ORANGE ; 0
+VIT ATQ DIST et MÊL +15 %
+VIT COMP Magique +15 %
+VIT DÉP +15 %.
+
+Le roi de la loterie ; BLUE ; 15
+VITA +5
+VOL +5
+Taux de Butin +3 %
+
+Collectionneur d'œufs de Pâques ; BLUE ; 15
+Taux de Butin +5 %
+DÉF PHY +3 %
+DÉF MAG +3 %.
+
+Ancien Messager des Sprites Légendaire ;  ; 0
+
+I believe I can fly ! ;  ; 0
+ESQ +1 %
+VIT DÉP +3 %
+
+Je suis le roi dindon ; BLUE ; 15
+Vous pouvez vous transformer en Roi des dindes de Thanksgiving
+Inutilisable pendant le combat. VIT DÉP -120 %
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Veilleur mystérieux ; BLUE ; 15
+VIT DÉP +5 %
+PV max +300
+PM max +300
+
+Jardinier d'élite ; BLUE ; 15
+Chance de vaincre les Plantes avec une ATQ PHY +10 %
+Dégâts spéciaux sur les Plantes avec l'attaque physique +100 pts
+Chance de battre les Plantes avec une attaque magique +10 %
+Dégâts spéciaux sur les Plantes avec l'attaque magique +100 pts
+
+Roi des porcs ; BLUE ; 15
+DÉF PHY +10 %
+VIT DÉP -5 %.
+
+Dompteur du domaine du chaos ; RED ; 70
+ATQ MÊL et DIST +3 %
+ATQ MAG +3 %
+VIT DÉP +5 %.
+
+Cœur vagabond ; BLUE ; 15
+DÉG PHY subis -5 %
+DÉG MAG subis -5 %
+Redonne automatiquement 10 PM toutes les 10 secondes.
+
+Maître Rédempteur ; ORANGE ; 85
+$15$ Draine 3 % des DÉG lors des attaques normales
+PV max +500.
+VIT DÉP +5 %.
+ATQ MAG +2 %.
+
+Gardien de Kansas Palembang ; GREEN ; 96
+VITA +7
+VOL +7
+Toucher +5 %
+VIT ATQ -3 %
+
+Évolution du gourou ; ORANGE ; 85
++80 pts de DÉG Sacré avec les ATQ MAG.
+PV max +500.
+VIT DÉP +5 %.
+ATQ MAG +2 %.
+
+Explorateurs de la Forêt lumineuse ; GREEN ; 93
+FCE +7
+AGI +7
+Taux de Butin +10 %
+Toucher -3 % 
+
+Veuve de glace et de feu ; BLUE ; 80
+RÉS Feu +50 pts
+RÉS Glace +50 pts.
+Au moment de l'attaque, + 5 % de chance d'ajouter
+1000 DÉG de feu ou de glace
+
+Roi de la Destruction ; GREEN ; 94
+FCE +8
+INT +6
+Taux critique +5%
+ESQ -5 %
+
+Pirate des 7 mers ; P8TITLE ; 0
+DÉG CRIT PHY +7 % 
+DÉG CRIT MAG +7 %
+ESQ +5 %
+Si touché, 1 % de chances de se transformer en pirate pendant 30 secondes avec une recharge de 30 minutes.  
+
+Fée terrestre ; BLUE ; 15
+PV max +500.
+PM Max +200
+
+Hakuna MataSprite ; P8TITLE ; 0
+DÉG CRIT PHY -8 % 
+ DÉG CRIT MAG -8 %
+ ESQ +5 %. Si touché, 1 % de chance de se transformer en lion pendant 30 secondes avec une recharge de 30 minutes.
+
+Jour de baptême ; BLUE ; 15
+VIT ATQ +5 %
+VIT ATQ DIST +5 %
+
+Amateur de Gâteau de Lune ; BLUE ; 15
+PM Max +200
+ATQ PHY +2 %
+ATQ MAG +2 %
+
+Irremplaçable ;  ; 0
+PV Max +5 %.
+VIT DÉP -1 %.
+
+Costumadier ; BLUE ; 15
+DÉF PHY +3 %,
+ DÉF MAG +2 %,
+ PV max +400
+
+
+Faisons la fête avec l'idole (Répét.) ; BLUE ; 15
+VIT DÉP +2 %
+VIT COMP +2 %
+PM max +300.
+
+Exterminateur d'insectes robots ; GREEN ; 90
+ATQ et ATQ M +3 %
+RÉS Foudre +5 %
+Toucher -3 % 
+
+GFWT 2016 - DO NOT USE ; GOLD ; 0
+ATQ MAG +4 %
+ATQ DIST +8 %
+ESQ +5 %
+DÉF +4 %
+Toucher +9 %
+VIT ATQ MÊL +8 %
+VIT COMP +8 % 
+
+Ami des Grayds ; GREEN ; 91
+PV max +300
+INT +8
+VOL +6
+VIT DÉP -5 %
+
+Roi de la friture ; BLUE ; 0
+DÉG CRIT MAG +3 %
+DÉG CRIT PHY +3 %
+ESQ +5 %.
+
+Roi des Ombres ; P8TITLE ; 0
+PRÉC +5 %
+ESQ +7 %
+DÉG CRIT PHY +5 % 
+DÉG CRIT MAG +5 %
+
+Singe de mon coeur ; BLUE ; 15
+Réduction pénétration physique +5 %
+VIT DÉP -5 %.
+
+Explorez les membres pour trouver les reliques de Technopolis. ; GREEN ; 89
+INT +7
+VOL +7
+Toucher +3 % 
+ESQ -3 %
+
+Amour Interdit ; BLUE ; 15
+ATQ PHY +2 %.
+ATQ MAG +2 %
+
+Bénédiction de Joline ; BLUE ; 15
+Toucher +3 %
+ESQ +1 %
+VIT DÉP +9 %
+Taux de Butin +5 %.
+
+Compagnon du lapin de Célébration Lunaire ; BLUE ; 15
+Soins reçus +5 %
+Récupération de 15-20 PV toutes les 5 secondes.
+
+Amitié Inter Espèce ; BLUE ; 71
+FCE +5 pts
+INT +5 pts
+VIT DÉP +6 % 
+Taux de Butin +6 %
+
+Guerriers combattant la Fuite d'essence ; WHITE ; 90
+Chance de vaincre les Mécaniques avec une ATQ PHY +3 %
+DÉG spéciaux par ATQ PHY contre les Mécaniques +30 pts
+
+Intoxication estivale ; BLUE ; 15
+PM Max +500.
+ESQ +5 %.
++100 PV à chaque fois que vous vous asseyez
+
+Assassin du Dirigeant ; GREEN ; 96
+Chance de vaincre les Humanoïdes avec une attaque physique +3 %
+Dégâts spéciaux par ATQ PHY contre les Humanoïdes +30 pts
+Chance de vaincre les Humanoïdes avec une ATQ MAG +3 %
+Dégâts spéciaux par ATQ MAG contre les Humanoïdes +30 pts
+
+Messager du 5e anniversaire ;  ; 0
+ESQ +5 %
+Toucher +5 %
+EXP acquise +5 %
+VIT DÉP +5%
+Taux de Butin +5 %
+
+Sauveur du Bassin fumant ; GREEN ; 0
+Chances de se transformer en insecte géant
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Migraine paternelle ; BLUE ; 15
+PM Max +500.
+PV max +500.
+ESQ +5 %.
+
+Libérateur de la Vallée de la lumière ; GREEN ; 0
+Chances de se transformer en gardien Grayd
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Qu'est-ce que l'amour ? ; BLUE ; 15
+VIT DÉP +5 %
+Régénération des PV et PM +250 quand vous êtes assis.
+
+Intercepteur de Dimension déformée ; ORANGE ; 96
+PV max +7 200.
+PM Max +7 200.
+RÉS Foudre +10 %.
+VIT DÉP +6 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N96 minimum
+
+Soulèvement des héros ;  ; 0
+PV max +300.
+PM max +300.
+VIT DÉP +5 %
+EXP acquise +5 %.
+
+Briseur de Dimension déformée ; ORANGE ; 0
+ESQ +10%
+Défense physique et Défense magique -7 %
+25 % de chances d'avoir +1 000 de DÉG Foudre supplémentaires à chaque attaque
+
+Retour des héros ;  ; 0
+VIT DÉP +5 %
+INT +5.
+VOL +5
+
+Pourfendeur des Scythes ; GREEN ; 90
+Chance de vaincre les Bêtes avec une ATQ PHY +3 %
+DÉG spéciaux par ATQ PHY contre les Bêtes +30 pts
+
+Trop Choux mais Mortels ; GREEN ; 93
+Chance de vaincre les Humanoïdes avec une ATQ PHY +3 %
+DÉG spéciaux par ATQ PHY contre les Humanoïdes +30 pts
+
+Ressusciteur du Port escarpé ; GREEN ; 0
+Chances de se transformer en Capitaine blindé du Kansas
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Bannissement des Créatures de la Quatrième Dimension ;  ; 0
+ESQ +5 %.
+Taux de Butin +5 %
+EXP acquise +5 %.
+
+Achevez le tour 60 du Pandemonium. ; ORANGE ; 86
+FCE +15
+INT +15
+VIT +15
+VIT ATQ -3 %
+VIT COMP -3 %
+
+Athée de Carso ; ORANGE ; 0
+PM Max +1 000.
+DÉF MAG +5 %.
+DÉF PHY +5 %
+
+Messager Cauchemar ; GREEN ; 86
+INT +3 pts
+AGI +3 pts
+VIT ATQ +3 % 
+Toucher -3 %
+
+Force Titanesque ; P8TITLE ; 0
+DÉF +7 %
+DÉF MAG +7 %
+Lorsque les PV du joueur sont inférieurs à 15 % : DÉF +100 %, DÉF MAG + 100 % et VIT DÉP +10 % pendant 10 sec. 
+Rechargement : 30 min
+
+
+Grand Manchot de Noël ; BLUE ; 15
+Vous vous transformez en un Grand Manchot de Noël
+Inutilisable pendant le combat. VIT DÉP -120 %
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Grand Maître tout Puissant ; WHITE ; 86
+VIT ATQ MÊL +14 % 
+VIT ATQ DIST +7 %
+
+Le Gardien du Futur ; BLUE ; 15
+PV max +300
++300 de PM Max pendant le temps imparti
+ATQ PHY +2 %
+ATQ MAG +2 %
+
+L'affliction du monstre ; BLUE ; 15
+RÉS Nature +10 %
+Taux CRIT MAG +2 %
+Chances de coup critique +2 %
+
+Le glas de la victoire à l'aube ; BLUE ; 15
+ESQ +8 %
+PM Max +5 %.
+VIT DÉP +3 %
+
+Héritage d'Ezio ; P8TITLE ; 0
+ESQ +5 %
+VIT DÉP +5 %
+Lors de l'ATQ, 1 % de chance de déclencher l'effet suivant :  VIT DÉP -25 % pendant 5 sec. Ennemi empoisonné pendant 12 sec. 
+(Perte de 2,5 % du total des PV toutes les 3 sec.)
+
+Appelez-moi le roi de la fête ; BLUE ; 15
+VITA +8
+Taux de Butin +8 %
+
+Jouer au plus bête ; GREEN ; 80
+VIT +3 pts
+VOL +3 pts
+Toucher +3 % 
+VIT DÉP -3 %
+
+Nounou d'Enfer ; GREEN ; 79
+INT +3 pts
+VOL +3 pts
+Toucher +3 % 
+VIT ATQ -3 %
+
+L'argent est roi ; BLUE ; 0
+PV max +500
++500 de PM Max
+Taux de Butin +10 %
+
+Gélapin prophète ; WHITE ; 90
+
+Détective Autodidacte ; GREEN ; 76
+VOL +3 pts
+AGI +3 pts
+VIT DÉP +3 % 
+VIT ATQ -3 %
+
+Gardien de l'amour ; BLUE ; 0
+PV max +300
++300 de PM Max pendant le temps imparti
+DÉF PHY +3 %
+DÉF MAG +3 %
+
+
+Gélapin héros ; WHITE ; 100
+
+Vous cherchez quelque chose ? ; BLUE ; 72
+ESQ +9 %
+
+Guerriers combattant Sire Fungus ; GREEN ; 93
+Chance de vaincre les Plantes avec une ATQ MAG +3 %
+DÉG spéciaux par ATQ MAG contre les Plantes +30 pts
+
+4e Dimension - Gardien sylvestre ; BLUE ; 15
+ATQ PHY +5 %
+ATQ MAG +5 %
+Les attaques normales ont 3 % de chance de causer des coups doubles.
+
+Ombres Chinoises ; GREEN ; 75
+FCE +3 pts
+AGI +3 pts
+VIT DÉP +3 % 
+Toucher -3 %
+
+Guerriers combattant Foudre rugissante ; GREEN ; 96
+Chance de battre les Éléments avec une attaque physique +3 %
+Dégâts spéciaux par ATQ PHY contre les Éléments +30 pts
+Chance de vaincre les Éléments avec une ATQ MAG +3 %
+Dégâts spéciaux par ATQ MAG contre les Éléments +30 pts
+
+Démolisseur à la rescousse ; BLUE ; 15
+DÉF PHY +8 %
+PV Max +5 %
+ESQ +3 %
+
+Maître en dissipation de désastres ; BLUE ; 83
+FCE+4
+VIT DÉP +3 %
+Chance de battre les Humanoïdes avec une ATQ PHY +3 %
+DÉG spéciaux par ATQ PHY contre les Humanoïdes +20 pts
+
+Disciple du Hokuto ; P8TITLE ; 0
+VIT +15 pts
+INT +15 pts
+VOL +15 pts
+AGI +15 pts
+ESQ +10 %
+
+Bien mal acquis ; BLUE ; 15
+PV Max +200
+Redonne automatiquement 5 PV toutes les 10 secondes.
+Redonne automatiquement 5 PM toutes les 10 secondes.
+
+Tueur de Déesse ; BLUE ; 80
+INT+4
+VIT DÉP +3 %
+Chance de vaincre les Démons avec une ATQ MAG +3 %
+DÉG spéciaux par ATQ MAG contre les Démons +20 pts
+
+Rage du Berserk ; P8TITLE ; 0
+PV +10 %
+CPT VOL PV +5 %
+VIT ATQ +8 %
+
+Supérieur du Centurion ; BLUE ; 79
+INT +4 pts
+VIT DÉP +3 %
+Chance de vaincre les Plantes avec une ATQ MAG +3 %
+DÉG spéciaux par ATQ MAG contre les Plantes +20 pts
+
+BANKAI ; P8TITLE ; 0
+ATQ DIST +5 %
+ATQ MAG +5 %
+Lors d'un CRIT PHY : ATQ MÊL +5 % et VIT ATQ MÊL +7 % pendant 10 sec.
+Lors d'un CRIT MAG : ATQ MAG +5 % et VIT COMP +7 % pendant 10 sec.
+
+Membre honoraire éternel Gélapin ; WHITE ; 95
+PV Max +400
+PM Max +400
+Réduction pénétration physique +5 %
+VIT DÉP +5 %
+
+Membre Spécial de l'Expédition Royale ; GREEN ; 86
+FCE +3 pts
+VOL +3 pts
+VIT ATQ +3 % 
+VIT DÉP -3 %
+
+Dernier Rempart ; P8TITLE ; 0
+DÉF MAG +5 %
+VIT +15 pts
+Quand le joueur est touché, 5 % de chance de ralentir la VIT DÉP de l'ennemi de 20 % pendant 5 sec.
+
+Citrouille sentinelle ; BLUE ; 15
+ESQ +5 %.
+PV max +3 %.
+
+Péché mignon du Roi Lapin malin ; BLUE ; 15
+Toucher +3 %
+Taux de Butin +3 %.
+VIT DÉP +1 %
+
+Chasseur du Monstrounet du Nouvel An ; BLUE ; 15
+PM Max +200
+DÉG PHY +2 % 
+DÉG MAG +2 %
+
+Gardien de l'Archipel Millénaire ; BLUE ; 15
+VIT DÉP +5 %
+VOL +3 %
+FCE +3 %
+
+Ambassadeur du Chocolat de l'Amour ; BLUE ; 15
+PV Max +200 
+DÉF PHY +2 %
+DÉF MAG +2 %
+
+Aujourd'hui, je n'ai pas de limites ; BLUE ; 0
+Vitesse de déplacement +5%
+Taux d'ESQ +3 %
+
+
+Vaincre les guerriers du cristal magique expérimental ; GREEN ; 0
+Chance de vaincre les Élémentaires avec une ATQ MAG +3 %
+Dégâts spéciaux sur les Éléments avec l'Attaque magique +30 pts
+
+Légende parmi les légendes ; BLUE ; 15
+Vous métamorphose temporairement en Ballon festif
+Déplacement et combat impossible. Disparaît si vous êtes attaqué.
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Révolution de Kaslow en Flammes ; ORANGE ; 0
+DÉF PHY +7 % 
+DÉF MAG +4 %
+ESQ -10 %
+
+Ravageur de la Fracture du Vide ; ORANGE ; 0
+Pénétration physique -5 %
+Pénétration magique -5 %
+
+Guerrier ayant vaincu Seigneur de la Forêt du Triste Sprite ; GREEN ; 78
+Chance de vaincre les Bêtes avec une ATQ MAG +3 %
+DÉG spéciaux par ATQ MAG contre les Bêtes +30 pts
+
+Âme de Galvatron ; ORANGE ; 85
+Taux CRIT +2 %.
+PV +500
+VIT DÉP +5 %
+ATQ PHY +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+La fin du monde ; ORANGE ; 0
+Soins donnés et reçus +10 %
+Toucher +10 %.
+VIT DÉP +18 %
+
+Guerrier ayant vaincu Gardien de Tombe Homme-bête ; GREEN ; 85
+Chance de vaincre les Démons avec une ATQ PHY +3 %
+DÉG par ATQ PHY contre les Démons +30 pts
+Chance de vaincre les Démons avec une ATQ MAG +3 %
+DÉG par ATQ MAG contre les Démons +30 pts
+
+À l'étouffée ! ; BLUE ; 17
+PV max +300 
+ATQ PHY +3 % 
+ATQ MAG +3 %
+
+Le miracle qu'est l'amour ; BLUE ; 15
+Toucher +5 %
+RÉS Sacré +10 %.
+
+Héraut de Cœur de Lion Embrasé ; ORANGE ; 85
+PV Max +6 000.
+PM Max +6 000.
+VIT DÉP +5 %
+Toucher +5 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Maître des Farces ; BLUE ; 15
+EXP acquise +10 %
+DÉF PHY +3 %
+DÉF MAG +3 %
+
+Lorsque l'aube se lève à nouveau ;  ; 0
+Soins reçus +5 %
+EXP acquise +5 %.
+VIT DÉP +5 %
+
+Guerrier ayant vaincu Griffe de l'Effroi ; GREEN ; 69
+Chance de vaincre les Bêtes avec une ATQ PHY +3 %
+DÉG spéciaux par ATQ PHY contre les Bêtes +30 pts
+
+Âme de Mégatron ; ORANGE ; 85
+VITA +30 pts.
+PV +500
+VIT DÉP +5 %
+DÉF MAG +3 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Un flot de bonne fortune ; BLUE ; 15
+PV max +300.
+PM max +300.
+Taux de Butin +5 %
+
+Protecteur du Camp Sauvage ; BLUE ; 0
+Possibilité d'être transformé en Cavalier Géant 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Bête et Naïf ; GREEN ; 83
+FCE +3 pts
+INT +3 pts
+VIT ATQ +3 % 
+VIT DÉP -3 %
+
+Gardien de la Baie Bleue ; BLUE ; 0
+Possibilité d'être transformé en Soldat Insecte Géant 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Ambassadeur de l'amour ; BLUE ; 15
+PV Max +200 pendant le temps imparti
+PM Max +200
+VIT DÉP +5 %
+Taux de Butin +5 %
+
+Embrouillé ; BLUE ; 15
+RÉS Nature +5 %
+ESQ +3 %
+VITA +3 %.
+
+Gardien du Campement Sylvestre ; BLUE ; 0
+Possibilité d'être transformé en Plante Géante 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Pilote de bateau-dragon estival ; BLUE ; 15
+PV Max +200 pendant le temps imparti
+VIT +5
+ESQ +3 %
+
+Maître farceur ; BLUE ; 15
+Vous métamorphose en Maître farceur
+Inutilisable pendant le combat. VIT DÉP -120 %
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Reboucheur de Faille Temporelle ;  ; 0
+Pénétration Physique et 
+Magique -2 %
+
+Récupérateur des Mines ; WHITE ; 0
+ESQ +15%
+EXP acquise +2 %
+DÉF PHY -8 %
+Défense magique -8 %
+
+Pourfendeur de célibat ; BLUE ; 15
+Taux de Butin +3 %
+Toucher +5 %
+
+Meilleur Gardien de But ; GREEN ; 0
+DÉF PHY +3 % 
+DÉF MAG +5 %
+ATQ PHY -3 % 
+ATQ MAG -3 %
+
+Seigneur du Sanctuaire de l'Abandon ; ORANGE ; 0
+VIT ATQ +20 %
+DÉG reçus +50 %.
+
+Super Citrouille vertueuse ; BLUE ; 15
+Ttes RÉS +5 % 
+VIT DÉP +2 %
+
+Assistant de Kuma ; GREEN ; 0
+Attaque +5 %
+DÉF +5 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N68 minimum
+
+Explorateur de la Frégate du Désespoir ; BLUE ; 95
+PV Max +6 000.
+PM Max +6 000.
+Taux de Butin +10 %.
+Toucher -5 %
+$12$Niveau 77 requis pour pouvoir bénéficier de l'effet.
+
+Ange de bienveillance ; BLUE ; 15
+PV max +3 % 
+PM max +3 %
+
+Réouverture de la Mine Effondrée ; WHITE ; 0
+Récupération de 10 PV et PM toutes les 5 secondes
+PV Max +5%
+PM Max +5%
+
+
+Brise-nuit ; BLUE ; 15
+ESQ +3 %
+RÉS Ombre +50
+Vos attaques ont 5 % de chances d'infliger 1000 DÉG Sacré supplémentaires
+
+Envahisseur Fou ; GREEN ; 0
+VIT ATQ MÊL +3 % 
+VIT ATQ DIST +3 % 
+DÉF PHY et DÉF MAG -3 %
+
+Sauveur du Sanctuaire ; ORANGE ; 0
+Menace -10 %
+VIT DÉP -2 %
+DÉG reçus +2 %.
+
+La tradition du maître des Cookies de Lune ; BLUE ; 15
+ATQ PHY +5 %
+ATQ MAG +5 %
+
+Héros des Mines Dimensionnelles ; GREEN ; 0
+PV max +300
+AGI +7
+VIT ATQ -5 %
+
+Les Soldes de Mayk ; BLUE ; 15
+PM Max +500
+ESQ +5 %
++100 PV lorsque vous êtes assis
+
+Merci Chef ;  ; 0
+PV Max +50 
+VIT DÉP +1 %
+
+Héros de la Crête Dimensionnelle ; GREEN ; 85
+VITA +8
+VOL +6
+Taux CRIT +10 %
+ESQ -10 %
+
+Vers la Route Légendaire ;  ; 0
+EXP acquise +5 %
+VIT DÉP +5 %.
+
+Membre Honoraire du Clan Infernal ; BLUE ; 15
+PM Max +200 
+ATQ PHY +2 %
+ATQ MAG +2 %
+
+Vaincre les guerriers du héros des Mauvais esprits ; GREEN ; 0
+Chance de vaincre les Humanoïdes avec une ATQ MAG +3 %
+Dégâts spéciaux sur les Humanoïdes avec l'Attaque magique +30 pts
+
+Supernova de Saphaël ;  ; 0
+ATQ PHY +5 %
+ATQ MAG +5 %
+EXP acquise +5 %
+Toucher +2 %
+
+Dominateur de Kaslow Bouillonnante ; ORANGE ; 0
+ATQ MÊL +8 %
+ATQ DIST +8 %
+ATQ MAG +4 %
+DÉF PHY +5 %
+DÉF MAG +5 %
+ESQ +5 %
+Toucher +10 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Héros des Côtes Dimensionnelles ; GREEN ; 76
+FCE +7
+VITA +7
+Vitesse de déplacement +3 %
+Toucher -3 %
+
+Vaincre les guerriers du général des Hommes-bêtes ; GREEN ; 0
+Chance de vaincre les Humanoïdes avec une attaque physique +3 %
+Dégâts spéciaux par ATQ PHY contre les Humanoïdes +30 pts
+Chance de vaincre les Humanoïdes avec une ATQ MAG +3 %
+Dégâts spéciaux par ATQ MAG contre les Humanoïdes +30 pts
+
+Rayon de lumière ; ORANGE ; 0
+VIT COMP +5 %
+VIT DÉP +5 %
+DÉF PHY -8 %
+Défense magique -8 %
+
+M. Mission Possible ; BLUE ; 15
+VIT ATQ +5 %
+VIT DÉP +3 %
+
+Inquisiteur de la Frégate du Désespoir ; ORANGE ; 0
+PV Max +6 000.
+PM Max +6 000.
+Taux de Butin +10 %.
+Toucher -5 %
+$12$Niveau 77 requis pour pouvoir bénéficier de l'effet.
+
+Un Brin d'Amour ; BLUE ; 15
+PV max +300
+VIT DÉP +5 %
+
+Passion durable ; GOLD ; 0
+DÉG CRIT MAG +9 %
+DÉG CRIT PHY +9 %
+Taux CRIT MAG +9 %
+Taux CRIT PHY +9 %
+
+Bourreau du chaos spatio-temporel ; ORANGE ; 0
+Pénétration Physique et Magique +7 %
+ESQ +10 %
+VIT DÉP +18 %
+
+Honorable compagnon ; BLUE ; 15
+Chance de battre les Humanoïdes avec une attaque physique +5 %
++50 points de dégâts spéciaux sur les Humanoïdes avec une attaque physique
+% de chance de battre les Humanoïdes avec une attaque magique +5 %
+Dégâts spéciaux sur les Humanoïdes avec l'Attaque magique +50 pts
+
+Maître de l'Œuf de Pâques Magique ; BLUE ; 17
+PV Max +200 
+DÉF PHY +2 % 
+DÉF MAG +2 %
+
+Hurler à la lune ; BLUE ; 15
+EXP acquise +10 %
+VIT DÉP +5 %
+
+Guerrier invincible ; BLUE ; 15
+FCE +2 %
+VITA +2 %
+INT +2 %
+VOL +2 %
+AGI +2 %
+
+Vétéran d'Élite ; P8TITLE ; 0
+ATQ PHY -5 %
+ATQ MAG -5 %
+VIT COMP +7 %
+VIT ATQ +7 %
+VIT ATQ MÊL +7 %
+
+Maître enivré ; BLUE ; 15
+ESQ +3 %
+Taux de Butin +5 %
+
+Gardien du dîner de la Veille du Nouvel An ; BLUE ; 999
+DÉF PHY +2 %
+DÉF MAG +2 %
+Boost de Capacité +3 %
+
+Béni soit l'amour ; BLUE ; 999
+VIT DÉP +1 % 
+Redonne 13 PV toutes les 10 s
+Restaure 14 PM toutes les 10 s
+
+Champion de l'Amour et de la Paix ; BLUE ; 15
+VIT DÉP +2 % 
+DÉF PHY +2 % 
+DÉF MAG +2 %
+
+Héros en Herbe ; BLUE ; 21
+PV max +300
+Toucher +3 %
+Taux d'ESQ +3 %
+
+Infaillible courage ;  ; 0
+ATQ PHY +3 %
+ATQ MAG +3 %
+VIT DÉP +5 %
+EXP acquise +5 %.
+
+Défenseur de fer -Quatrième Dimension ; GREEN ; 0
+Chance de devenir Agarma, le Vil'marée
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+9e anniversaire de Muse Girl ; BLUE ; 999
+PV Max +900
+PM Max +900.
+VOL +9
+
+Soutien des mines - Quatrième Dimension ; GREEN ; 0
+Chance de devenir Gadouillos, Boue Mangetout
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Représentant de la Douce nuit ; BLUE ; 15
+ATQ PHY +3 %
+ATQ MAG +3 %
+
+Adepte de l'Agent ; GREEN ; 0
+VIT DÉP +10 % 
+ATQ -3 % 
+DÉF -3 %
+
+Explorateur de l'Île Condamnée ; BLUE ; 100
+PV Max +10 %
+PM Max -15 %.
+*Effet du titre : Pionnier
+Quand les PV sont inférieurs à 20 %, l'attaque subie a 35 % de
+chance de réduire les PM à 0 et de restaurer tous les PV. 
+Recharge : 7 200 s.
+$12$Ne fonctionne qu'avec les compétences de Personnages de N88 minimum.
+
+Nouveau titre de serveur étranger 1 ; ORANGE ; 6
+ATQ MÉL et DIST +5 %
+ATQ MAG +5 %
+VIT DÉP +5 %
+DÉF PHY et DÉF MAG+3 %
+
+Pote avec Kuda ; GREEN ; 0
+VIT DÉP +3 % 
+ATQ +3 % 
+DÉF +3 %
+
+Aimer sans Regrets ; GREEN ; 85
+AGI +8
+INT +6 
+Chances de Taux CRIT +10 %
+ESQ +10%
+
+Nouveau titre de serveur étranger 2 ; ORANGE ; 6
+VIT ATQ +6 %
+VIT COMP +3 %
+Toucher +5 %
+PV max +3 %.
+PM max +3 %
+
+Tueur pourpre - Quatrième Dimension ; GREEN ; 0
+Chance de devenir Kutila, Vétéran
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Assaillant de Tour ; GREEN ; 0
+VIT DÉP +7 %
+
+Ami des sorcières ; BLUE ; 15
+ATQ PHY +3 %
+ATQ MAG +3 %
+PM Max +300
+
+Cette odeur de mai ; BLUE ; 999
+Chance de battre les Plantes avec une attaque physique +2 %
+ATQ PHY contre Plante +15
+Chance de battre les Plantes avec une attaque magique +2 %
+ATQ MAG contre Plante +15
+
+Bronzage Intégral ; P8TITLE ; 0
+
+Clair comme de l'Eau ; BLUE ; 15
+Rétablit 10 à 15 PV toutes les 10 sec. 
+Rétablit 10 à 15 PM toutes les 10 sec.
+
+Esprit de Thanksgiving ; BLUE ; 15
+PV Max +200
+DÉF PHY +2 %
+DÉF MAG +2 %
+
+Dose d'amour et de justice ; BLUE ; 0
+Transformation en bulles bleues.
+Inutilisable pendant le combat. Disparaît quand attaqué.
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Détective désigné ; BLUE ; 15
+RÉS Nature +5 %
+RÉS Foudre +5 %
+VIT DÉP +5 %
+
+Muraille Ultime ; P8TITLE ; 0
+MEN +10 %
+ESQ +7 %
+VIT DÉP +10 % 
+DÉF +7 %
+DÉF MAG +7 %
+
+Le gardien du plateau ; BLUE ; 15
+DÉF PHY +5 %.
+DÉF MAG +5 %.
+Ttes RÉS +1 %
+
+Service client d'Aeria Games ; P8TITLE ; 0
+
+Garde démoniaque ; BLUE ; 15
+Absorbe 2 % des DÉG ATQ STD pour soigner les PV de l'utilisateur.
+DÉG reçus +10 %
+
+Héros du Serveur Lune ;  ; 0
+
+Le gras c'est la vie ;  ; 0
+Taux de Butin +5 %
+PV max +3 %
+PM max +3 %
+
+Maître du Jour du Destin ; GOLD ; 0
+ATQ MAG +4 %
+ATQ DIST +8 %
+ESQ +5 %
+DÉF +4 %
+Toucher +9 %
+VIT ATQ MÊL +8 %
+VIT COMP +8 %
+$12$Niveau 70 requis pour pouvoir bénéficier de l'effet.
+
+Un messager chaleureux dans le froid ; BLUE ; 15
+ATQ PHY +3 %
+ATQ MAG +3 %
+Toucher +3 %
+
+Écrivain fantastique ; BLUE ; 999
+Chance de battre les Morts-Vivants avec une attaque physique +2 %
+ATQ PHY contre Mort-Vivant +15
+Chance de battre les Morts-Vivants avec une attaque magique +2 %
+ATQ MAG contre Mort-Vivant +15
+
+Héros des Âmes Nombreuses ;  ; 0
+
+Mystère ; P8TITLE ; 0
+
+Joueur de légende ; BLUE ; 999
+Transformation aléatoire en Jajar le Gélapin angélique, Lulhu le Gélapin démoniaque ou Gughu le Gélapin glouton
+Déplacement et combat impossible. Disparaît si vous êtes attaqué.
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Héros du Serveur Forêt ;  ; 0
+
+Ami des Sprites ;  ; 0
+VIT ATQ DIST et MÊL +5 %
+VIT COMP +5 %
+EXP acquise +5 %
+
+Jiminy Cricket ; P8TITLE ; 0
+
+Espoir verdoyant ; BLUE ; 15
+PV Max +5 %
+Rend 100 PV toutes les 3 secondes
+Rend 100 PM toutes les 3 secondes
+
+Héros du Serveur Arc-en-Ciel ;  ; 0
+
+Rêve de fer ;  ; 0
+VIT DÉP +4 %
+DÉF PHY +2 %
+DÉF MAG +2 %
+
+
+Miraculé des Sprites ; P8TITLE ; 0
+DÉG PHY +5 % 
+DÉG MAG +5 % 
+EXP Combat +20 % 
+Quand ses PV sont inférieurs à 20 %, le joueur a 30 % de chance de récupérer la totalité de ses PV et de perdre l'intégralité de ses PM.
+
+
+Oeil de faucon ; P8TITLE ; 0
+DÉG CRIT +5 %
+ATQ DIST +5 %
+Taux CRIT +5 %
+VIT ATQ +7 % 
+PV Max +5 %
+AGI +10
+
+Je vous aurai ! ; BLUE ; 999
+INT +1 %
+AGI +1 %
+VIT DÉP +1 %
+
+Super Pilote ; GREEN ; 0
+VIT DÉP +5 %
+
+Maître des Éléments ; P8TITLE ; 0
+DÉG CRIT MAG +5 %
+ATQ MAG +5 %
+Taux CRIT MAG +5 %
+VIT COMP +7 % 
+PM Max +5 %
+INT +10
+
+Maître d'Armes ; P8TITLE ; 0
+VIT COMP +10 %
+Toucher x2 +20 %
+DÉG Parés avec un bouclier +10 %
+PM -20
+
+Concierge de la Mine Écroulée ; WHITE ; 85
+PM Max +300
+INT +7
+VIT COMP -10 %
+
+Témoin du rituel de résurrection ; BLUE ; 999
+VITA +1 %
+VOL +1 %
+
+Chasseur de Primes ; P8TITLE ; 0
+MEN +10 % 
+Taux de Butin +7 %
+VIT DÉP +7 %
+DÉG CRIT PHY +7 %
+DÉG CRIT MAG +7 %
+
+Groupe de riposte du Temple Oublié ; GREEN ; 88
+VITA +6
+VOL +8
+Chances de Taux CRIT +10 %
+Esquive +5 %
+
+Héraut royal des Sprites ; BLUE ; 999
+PV max +3
+PM max +3 %
+
+Grand Manitou ; P8TITLE ; 0
+
+Secours Immédiats ; GREEN ; 0
+VIT DÉP +6 %
+
+Enfant du Soleil ; P8TITLE ; 0
+
+Grand Conquérant de Saphaël ; BLUE ; 15
+Taux de Butin +5 % 
+EXP Combat +5 % 
+VIT DÉP +5 %
+
+Dure Vérité ; GREEN ; 86
+FCE +5 pts
+AGI +5 pts
+VIT DÉP +3 % 
+Toucher +3 %
+
+Lanceur d'alerte ; GREEN ; 60
+FCE +7
+AGI +7
+INT +7
+VITA +7
+VOL +7
+VIT DÉP -7 %
+
+Soin Essentiel ; GREEN ; 86
+FCE +5 pts
+AGI +5 pts
+VIT DÉP +3 % 
+Toucher +3 %
+
+La lumière au bout du tunnel ; GREEN ; 91
+PV max +3 %
+PM max +3 %
+DÉF PHY +2 %
+DÉF MAG +2 %
+
+Braconnier suprême ; GOLD ; 96
+ATQ MÊL et DIST +3 %
+ATQ MAG +3 %
+VIT DÉP +15 %
+
+Défenseur de l'Eau Bénite ; GREEN ; 85
+FCE +7 pts
+INT +7 pts
+VIT DÉP +6 % 
+Taux de Butin +6 %
+
+Confiseur de l'amour ; WHITE ; 15
+ATQ PHY +5 %
+ATQ MAG +5 %
+Risque d'échec de compétence +5 %
+
+Génie Surdoué ; P8TITLE ; 0
+EXP Combat +10 % 
+Taux de Butin +10 %  
+VIT ATQ MÊL +10 % 
+VIT COMP +10 %
+
+Analyseur de Rêve ; GREEN ; 91
+INT +7 pts
+VIT DÉP +7 % 
+
+
+Messager de l'espoir ressuscité ; RED ; 31
+ATQ MÊL +4 %
+ATQ DIST +4 %
+ATQ MAG +4 %
+VOL +15
+VIT +15
+VIT DÉP +4 %
+
+Superhéros ; P8TITLE ; 0
+PV +5 %  
+PM +5 % 
+DÉG MAG reçus -5 % 
+DÉG PHY reçus -5 %
+
+Messager d'Eugénie ; GOLD ; 0
+Esquive +10 % 
+VIT DÉP +10 %
+
+Éternel ressuscité ; RED ; 31
+ATQ MÊL +5 %
+ATQ DIST +5 %
+ATQ MAG +5 %
+VOL +20
+VITA +20
+VIT DÉP +5 %
+
+Seigneur des Arcanes ; P8TITLE ; 0
+VIT COMP +10 % 
+PM +5 % 
+Taux CRIT PHY +3 % 
+Taux CRIT MAG +3 %
+
+Amitié de l'Apprentie Sorcière ; GREEN ; 89
+INT +5 pts
+VOL +5 pts
+Toucher +3 %
+VIT ATQ -3 %
+
+Le retour du fils des Sprites ; RED ; 31
+ATQ MÊL +2 %
+ATQ DIST +2 %
+ATQ MAG +3 %
+VOL +10
+VITA +10
+VIT DÉP +2 %
+
+Maître du Donjon ; P8TITLE ; 0
+ESQ +5 %
+VIT DÉP +10 % 
+Taux de Butin +20 %
+
+Protéger l'Enfant du Miracle ; GREEN ; 91
+VOL +7 pts
+AGI +7 pts
+VIT DÉP +7 % 
+VIT ATQ -3 %
+
+Gardien ressuscité ; RED ; 31
+ATQ MÊL +3 %
+ATQ DIST +3 %
+ATQ MAG +3 %
+VOL +12
+VITA +12
+VIT DÉP +3 %
+
+Nakama Pirate ; ORANGE ; 88
+PV Max +10 %
+PM Max -15 %.
+*Effet du titre : Pionnier
+Quand les PV sont inférieurs à 20 %, l'attaque subie a 35 % de
+chance de réduire les PM à 0 et de restaurer tous les PV. 
+Recharge : 7 200 s.
+$12$Ne fonctionne qu'avec les compétences de Personnages de N88 minimum.
+
+Avatar ; GREEN ; 79
+VITA +7
+INT +7
+VIT DÉP +7 %
+VIT ATQ -3 %
+
+Certificat d'Appréciation ; BLUE ; 0
+PV Max +6 % 
+PM Max +3 % 
+
+
+Inspiration ; GREEN ; 82
+VIT +5 pts
+AGI +5 pts 
+VIT ATQ +3 % 
+Toucher -3 %
+
+Maître du Destin ; GOLD ; 0
+PV +100 
+PM -100
+
+Faust ; GREEN ; 79
+FCE +6 pts
+VIT +6 pts 
+Toucher +6 % 
+VIT DÉP -3 %
+
+Manuel de foot ;  ; 0
+VIT DÉP +5 %
+
+Tenez bon ! ;  ; 0
+PM max +300
+Récupération de 10-15 PM toutes les 5 secondes.
+
+Cupidon Amoureux ; GOLD ; 5
+Transformation en Sprite Géant 
+Inutilisable pendant le combat. VIT DÉP -120 % 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Commandant ; GREEN ; 79
+FCE +7 
+VIT DÉP +6 %
+
+File au vent ; BLUE ; 15
+VIT DÉP +2 % toutes les 2 sec. Max 20 %.
+VIT DÉP -30 % quand attaqué.
+
+Fantastique ;  ; 0
+VIT ATQ +2 %
+VIT COMP +2 %
+
+Majin ; BLUE ; 0
+Taux de Butin +5 % 
+EXP Combat +5 %
+
+Maître Alchimiste ; BLUE ; 0
+Taux de Butin +5 % 
+EXP Combat +5 % 
+VIT DÉP +5 %
+
+Maître Gladiateur ; PURPLE ; 0
+Toucher +6 %
+DÉG CRIT PHY et MAG +6 %
+DÉF PHY et MAG +6 %
+ESQ +4 %
+
+Efficacité élevée ; BLUE ; 15
+Taux CRIT PHY +2 %
+Taux CRIT MAG +2 %
+
+Voyageur au Cœur Brisé ; BLUE ; 15
+PV Max +6 % 
+PM Max +3 %
+
+Gladiateur Champion ; PURPLE ; 0
+Toucher +4 % 
+DÉF PHY et DÉF MAG +4 % 
+ESQ +3 %
+
+Tisseur de marées ; BLUE ; 15
+VIT ATQ DIST et MÊL +3 %
+VIT COMP +3 %
+
+Le pacificateur ; BLUE ; 15
+PM Max +200
+DÉF PHY +2 %
+DÉF MAG +2 %
+
+Prière fervente ; GREEN ; 15
+Soin +2 %, DÉF PHY +2 %
+
+Marathonien ; BLUE ; 1
+PV +80 
+PM +80 
+VIT DÉP +4 %
+
+Roi Gladiateur ; PURPLE ; 0
+ATQ MÊL et ATQ DIST +8 % 
+ATQ MAG +8 % 
+Toucher +8 % 
+CRIT PHY et CRIT MAG +0,8 % 
+DÉF PHY et DÉF MAG +8 % 
+ESQ +5 %
+
+Plaisir sans fin ; BLUE ; 15
+PV Max +200
+ATQ MAG +2 %
+VIT COMP +2 %
+
+Été GF - Titre Souvenir 1 ; P8TITLE ; 0
+
+Entremetteur de Saphaël ; BLUE ; 15
+PV Max +200 
+ATQ PHY +2 % 
+ATQ MAG +2 %
+
+Champion X-Legend ; BLUE ; 15
+ATQ +1 %.
+ATQ MAG +1 %.
+VIT DÉP +5 %.
+
+Été GF - Titre Souvenir 2 ; P8TITLE ; 0
+
+Protecteur d'Eugénie ; ORANGE ; 91
+VIT ATQ MÊL et VIT ATQ DIST +5 % 
+PV Max +4 % 
+VIT DÉP +5 %
+
+Dieu de la bonne chair ; BLUE ; 15
+Taux CRIT PHY +5 %.
+Taux CRIT MAG +5 %.
+Taux CRIT subi +10 %.
+
+IMPACT Céleste - Titre Souvenir 1 ; P8TITLE ; 0
+
+Star des Gladiateurs ; PURPLE ; 0
+DÉF PHY et DÉF MAG +3 % 
+ESQ -2 %
+
+Titre du concours PvP 2015 ; GOLD ; 0
+ATQ MAG +4 % 
+ATQ DIST +8 % 
+ESQ +5 % 
+DÉF +4 % 
+Toucher +9 % 
+VIT ATQ MÊL +8 % 
+VIT COMP +8 % 
+
+IMPACT Céleste - Titre Souvenir 2 ; P8TITLE ; 0
+
+Gladiateur Émergeant ; PURPLE ; 0
+
+Invention géniale ; BLUE ; 15
+DÉF PHY +5 %.
+DÉF MAG +5 %.
+ATQ MÊL -2 %.
+ATQ DIST -2 %.
+ATQ MAG -2 %.
+
+La voie de la Forêt ; BLUE ; 15
+Taux de Butin +5 %
+VIT COMP +5 %
+
+Titre 8648 ; P8TITLE ; 0
+Aucun
+
+Défenseur du Plateau de l'Espoir ; GREEN ; 0
+Transformation en Miaoubline 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Lumière Divine ; GOLD ; 0
+VIT ATQ MÊL et VIT ATQ DIST +10 % 
+VIT COMP +10 % 
+VIT DÉP +15 %
+
+Feu Sacré ; P8TITLE ; 0
+DÉG CRIT PHY +5 % 
+DÉG CRIT MAG +5 % 
+Taux CRIT PHY +3 % 
+Taux CRIT MAG +3 %
+VIT DÉP +5 %
+
+Péninsule du Chagrin - Garde de Fer ; GREEN ; 0
+Transformation en Bête du Feu Éternel 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Flash ; BLUE ; 15
+PV Max +250
+PM max +250
+VIT DÉP +5 %
+
+Force de la Nature ; P8TITLE ; 0
+FCE +10 pts
+VIT +10 pts
+INT +10 pts
+VOL +10 pts
+AGI +10 pts
+ESQ +10 %
+
+Purificateur des Montagnes de Verre ; GREEN ; 0
+Transformation en Chevreuil Sauvage
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Mouton comblé ;  ; 0
+Taux CRIT PHY +3 %
+Taux CRIT PHY MAG +3 %
+VIT DÉP +4 %
+EXP acquise +5 %
+
+Contremaître de l'Île ; P8TITLE ; 0
+ATQ MÊL et ATQ DIST +3 % 
+ATQ MAG +3 %
+Toucher +3 % 
+DÉF MAG et DÉF PHY +3 % 
+PV Max +6 %
+
+Chasseur de Monstres - Champion ; PURPLE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +8 %
+Toucher +9 %
+ESQ +5 %
+
+Majordome de l'Île ; P8TITLE ; 0
+DÉF MAG et DÉF PHY +2 % 
+PV Max +4 %
+
+Chasseur de Monstres - Gladiateur ; PURPLE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +6 %
+Toucher +7 %
+ESQ +4 %
+
+Directeur de l'Île ; P8TITLE ; 0
+ATQ MÊL et ATQ DIST +5 % 
+ATQ MAG +5 % 
+Toucher +5 % 
+CRIT MAG et CRIT PHY +5 % 
+DÉF MAG et DÉF PHY +5 % 
+ESQ +5 % 
+PV Max +10 %
+
+Traqueur de Monstres ; BLUE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +7 %
+VIT DÉP +7 % 
+DÉF PHY et DÉF MAG -9 %
+
+Manager de l'Île ; P8TITLE ; 0
+ATQ MÊL et ATQ DIST +4 % 
+ATQ MAG +4 %
+Toucher +4 % 
+DÉF PHY et DÉF MAG +4 % 
+ESQ +4 % 
+PV Max +8 %
+
+Dompteur de Monstres ; BLUE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +10 %
+VIT DÉP +10 % 
+DÉF PHY et DÉF MAG -12 %
+
+Propriétaire Populaire de l'Île ; P8TITLE ; 0
+ATQ MÊL et ATQ DIST +3 % 
+ATQ MAG +3 %
+Toucher +3 % 
+DÉF MAG et DÉF PHY +3 % 
+DÉG reçus -3 %
+
+Chasseur de Monstres - Mercenaire ; PURPLE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +2 %
+Toucher +3 %
+ESQ +2 %
+
+Insulaire Populaire ; P8TITLE ; 0
+DÉF MAG et DÉF PHY +2 % 
+DÉG reçus -2 %
+
+Traqueur de Monstres - Champion ; PURPLE ; 0
+DÉG CRIT PHY et DÉG CRIT MAG +8 %
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +5 %
+Toucher +9 %
+
+Seigneur Populaire de l'Île ; P8TITLE ; 0
+ATQ MÊL et ATQ DIST +5 % 
+ATQ MAG +5 % 
+Toucher +5 % 
+CRIT MAG et CRIT PHY +5 % 
+DÉF MAG et DÉF PHY +5 % 
+ESQ +5 % 
+DÉG reçus -5 %
+
+Chasseur de Monstres - Élite ; PURPLE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +4 %
+Toucher +5 %
+ESQ +3 %
+
+Maître de l'Île Populaire ; P8TITLE ; 0
+ATQ MÊL et ATQ DIST +4 % 
+ATQ MAG +4 %
+Toucher +4 % 
+DÉF PHY et DÉF MAG +4 % 
+ESQ +4 % 
+DÉG reçus -4 %
+
+Sprite Express ; P8TITLE ; 0
+VIT ATQ +8 % 
+VIT ATQ MAG +8 % 
+VIT COMP +8 % 
+VIT DÉP +10 %
+
+Chasseur de Monstres ; BLUE ; 0
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +4 %
+VIT DÉP +4 %
+DÉF PHY et DÉF MAG -6 %
+
+Été GF - Titre Souvenir 5 ; P8TITLE ; 0
+
+Été GF - Titre Souvenir 3 ; P8TITLE ; 0
+
+Analyseur du Pays Arc-en-Ciel ; ORANGE ; 0
+ATQ MAG +2 %
+PM Max +4 %
+VIT COMP +5 % 
+VIT DÉP +5 %
+
+Maître-loup ;  ; 0
+Transformation possible en mouton ou en loup.
+*Cet effet prend fin si une autre métamorphose est utilisée.
+
+Été GF - Titre Souvenir 4 ; P8TITLE ; 0
+
+Gardien de l'Amour ;  ; 0
+Taux de Butin +3 %
+DÉF PHY +3 %
+DÉF MAG +3 %
+
+Cosméto-Poing ; BLUE ; 15
+VIT ATQ +4 %, VIT COMP +4 %
+
+
+Dompteur de Monstres - Élite ; PURPLE ; 0
+DÉG reçus -3 %
+DÉG CRIT PHY et DÉG CRIT MAG +6 %
+VIT DÉP +4 %
+
+Couple Béni par le Roi des Sprites ; PURPLE ; 0
+ATQ MÊL et ATQ DIST +3 % 
+ATQ MAG +3 %
+CRIT MAG et CRIT PHY +3 %
+
+Dompteur de Monstres - Mercenaire ; PURPLE ; 0
+DÉG reçus -2 %
+DÉG CRIT PHY et DÉG CRIT MAG +4 %
+VIT DÉP +2 %
+
+Stan Pas Trop Mal ; WHITE ; 0
+
+Dompteur de Monstres - Champion ; PURPLE ; 0
+Dégâts reçus -5 %
+DÉG CRIT PHY et DÉG CRIT MAG +10 %
+VIT DÉP +8 %
+
+Lien Éternel ; GOLD ; 20
+Rétablit 2 % des PV toutes les 10 sec.
+
+Dompteur de Monstres - Gladiateur ; PURPLE ; 0
+DÉG reçus -4 %
+DÉG CRIT PHY et DÉG CRIT MAG +8 %
+VIT DÉP +6 %
+
+Marche-Lune ; P8TITLE ; 0
+
+Gladiateur de l'Épreuve sans fin ; GOLD ; 0
+DÉF, DÉF MAG +6 % 
+Toucher +9 % 
+ESQ +6 %
+
+Illusion Lunaire ; P8TITLE ; 0
+
+Grâce Divine ; P8TITLE ; 0
+EXP +20 %
+PV +5 %
+PM Max +5 %
+VIT DÉP +10 %
+
+Étoile Élue ; P8TITLE ; 0
+
+Héros du Ratafia ; BLUE ; 15
+PV Max +200 
+DÉF PHY +2 %
+DÉF MAG +2 %
+
+Étoile Élue ; P8TITLE ; 0
+
+Super Lumière Divine sans fin ; GOLD ; 0
+VIT ATQ MÊL et VIT ATQ DIST +12 % 
+VIT COMP +12 % 
+VIT DÉP +18 %
+
+Traqueur de Monstres - Élite ; PURPLE ; 0
+DÉG CRIT PHY et DÉG CRIT MAG +4 %
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +3 %
+Toucher +5 %
+
+Amour Niais ; BLUE ; 20
+Taux de Butin +10 %
+
+Traqueur de Monstres - Mercenaire ; PURPLE ; 0
+DÉG CRIT PHY et DÉG CRIT MAG +2 %
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +2 %
+Toucher +3 %
+
+Amour Courtois ; BLUE ; 20
+ATQ MAG et ATQ PHY +2 %
+
+Traqueur de Monstres - Gladiateur ; PURPLE ; 0
+DÉG CRIT PHY et DÉG CRIT MAG +6 %
+VIT ATQ MÊL, ATQ DIST et ATQ MAG +4 %
+Toucher +7 %
+
+Amour pour Toujours ; BLUE ; 20
+EXP Combat +10 %
+
+Vainqueur de la Boue ; GREEN ; 80
+Chance de vaincre les Élémentaires avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Élémentaires +20 pts
+
+Cœur de Démon ; P8TITLE ; 0
+DÉG CRIT PHY +6 % 
+DÉG CRIT MAG +6 %
+DÉF +6 % 
+Déf MAG +6 % 
+Métamorphose : à chaque ATQ, 1 % de chance d'être transformé 
+en Démon Géant pendant 30 sec. Rechargement : 30 min.
+
+Vainqueur du Cyclope ; GREEN ; 85
+Chance de vaincre les Humanoïdes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Humanoïdes +20 pts
+
+Artiste du Coup Critique ; P8TITLE ; 0
+PV +7 %
+PM +7 %
+Bonus supplémentaires pendant 15 sec. pour un CRIT réussi :
+DÉG CRIT PHY +5 %
+DÉG CRIT MAG +5 %
+
+Amour Éternel ; P8TITLE ; 0
+EXP Combat +20 %
+ATQ +5 %
+ATQ DIST +5 %
+ATQ MAG +5%
+ESQ +5 pts
+
+Âme Évolutive ; P8TITLE ; 0
+EXP Combat +20 %
+Taux de Butin +20 %
+VIT DÉP +10 %
+
+Vainqueur de Nagranok ; GREEN ; 90
+Chance de vaincre les Mécaniques avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Mécaniques +20 pts
+
+Étoile de l'Ange de Noël ; BLUE ; 15
+PV Max +200 
+DÉF PHY +2 %
+DÉF MAG +2  %
+
+Vainqueur de Pazuzu ; GREEN ; 90
+Chance de vaincre les Morts-Vivants avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Morts-Vivants +20 pts
+
+Prince de Kaslow ; P8TITLE ; 0
+PV Max +3 % 
+PM Max +3 % 
+VIT ATQ MÊL +3 %  
+VIT ATQ DIST +3 %  
+VIT COMP +3 %
+
+Vainqueur du Gorille d'Acier ; GREEN ; 85
+Chance de vaincre les Mécaniques avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Mécaniques +20 pts
+
+Dieu de la Guerre ; P8TITLE ; 0
+DÉF +5 % 
+DÉF MAG+5 %
+Bonus supplémentaires pendant 15 sec. pour un CRIT PHY réussi :
+ATQ MÊL +5 %
+VIT ATQ MÊL +5 %
+Bonus supplémentaires pendant 15 sec. pour un CRIT MAG réussi :
+ATQ MAG +5 %
+VIT COMP +5 %
+
+Vainqueur du Crabe Géant ; GREEN ; 90
+Chance de vaincre les Bêtes avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Bêtes +20 pts
+
+Le Grand Sauveur ; BLUE ; 15
+VIT DÉP +5 % 
+Taux de Butin +5 %
+
+Élite de Clair de Lune ; P8TITLE ; 0
+
+Exterminateur d'Halloween ; BLUE ; 15
+Toucher +20 %
+DÉG Sacré pour l'ATQ PHY et l'ATQ MAG +200 pts
+
+Escapade de Clair de Lune ; P8TITLE ; 0
+
+Explorateur de la Mine ; WHITE ; 52
+ESQ +5 % 
+Toucher -3 %
+
+GF Grand Fantasia ; GOLD ; 0
+PV Max +4 % 
+PM Max +4 %
+Taux de Butin +4 % 
+EXP Combat +4 %
+
+Indiana Jones ; GREEN ; 55
+DÉF +5 % 
+ESQ -3 %
+
+Voyageur Temporel ; GREEN ; 62
+FCE +3 pts
+VIT +3 pts
+Toucher +3 % 
+VIT DÉP -3 %
+
+Messager des Sprites Instruit ; BLUE ; 0
+PV Max +4 % 
+PM Max +4 %
+
+Spéléologue ; GREEN ; 50
+ATQ MAG +5 % 
+DÉF -3 %
+
+Messager des Sprites en Entraînement ; WHITE ; 0
+
+Explorateur de la Gueule ; BLUE ; 70
+CRIT -10 % 
+DÉF -10 %
+
+Insecticide ; GREEN ; 64
+VIT +3 pts
+AGI +3 pts
+VIT ATQ +3 % 
+Toucher -3 %
+
+Explorateur de la Tombe ; BLUE ; 75
+VIT COMP +10 % 
+PV Max -10 %
+
+Explorateur de la Caverne ; GREEN ; 60
+Taux de Butin +10 %  
+VIT DÉP -5 %
+
+Expert du Défi ; BLUE ; 68
+FCE +4
+VIT DÉP +3 %
+Chance de battre les Bêtes avec une ATQ PHY +3 %
+DÉG spéciaux sur les Bêtes avec l'ATQ PHY +20 pts
+
+Explorateur du Temps ; BLUE ; 65
+ESQ +7 %  
+DÉF -5 %
+
+La Mode des Carapaces ; WHITE ; 70
+VIT +3 pts
+INT +3 pts
+VIT DÉP +3 % 
+VIT ATQ -3 %
+
+Roi des Sprites Sage ; GOLD ; 0
+ATQ MÊL et ATQ DIST +4 % 
+ATQ MAG +4 %
+Toucher +4 % 
+PV Max +8 %
+
+Spritophile ; ORANGE ; 0
+ESQ +3 % 
+DÉF PHY et DÉF MAG +3 % 
+PV Max +6 %
+
+Encyclopédie Sprite ; PURPLE ; 0
+ATQ MÊL et ATQ DIST +5 % 
+ATQ MAG +5 % 
+Toucher +5 % 
+CRIT PHY et CRIT MAG +5 %  
+DÉF PHY et DÉF MAG +5 % 
+ESQ +5 % 
+PV Max +10 %
+
+Vainqueur du Colonel ; GREEN ; 90
+Chance de vaincre les Bêtes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Bêtes +20 pts
+Chance de vaincre les Morts-Vivants avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Morts-Vivants +20 pts
+
+Vainqueur de Leonardo ; GREEN ; 90
+Chance de battre les Démons avec une ATQ PHY +2 %
++20 pts de DÉG spéciaux sur les Démons avec l'ATQ PHY
+Chance de battre les Humanoïdes avec une ATQ PHY +2 %
++20 pts de DÉG spéciaux sur les Humanoïdes avec l'ATQ PHY
+
+Vainqueur de Seymour ; GREEN ; 90
+Chance de vaincre les Plantes avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Plantes +20 pts
+
+Vainqueur de Ken ; GREEN ; 90
+Chance de vaincre les Humanoïdes avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Humanoïdes +20 pts
+
+Montagnard au Pied Sûr ; BLUE ; 67
+VOL +3 pts
+DÉF MAG +2 %
+
+Explorateur du Cauchemar du Marin ; GOLD ; 95
+MÊL +10 %
+Toucher -8 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N83 minimum.
+
+Observateur de la Côte des Naufrages ; ORANGE ; 69
+AGI +5 pts
+DÉG ATQ DIST -3 %
+
+Héritier de la Fournaise ; GREEN ; 0
+Possibilité d'être transformé en monstre de l'Arène de Feu
+Inutilisable pendant le combat. VIT DÉP -100 % 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Explorateur des Flammes ; ORANGE ; 90
+VIT ATQ MÊL +10 % 
+VIT ATQ DIST +3 % 
+PV Max -10 %
+
+Supernova ; BLUE ; 67
+AGI +3 pts
+CRIT -2 %
+
+Explorateur du Labyrinthe ; ORANGE ; 95
+Toucher DIST +10 % 
+DÉF -8 %
+
+Sauveur de la Terre d'Elsa ; ORANGE ; 73
+VOL +5 pts
+DÉF MAG -3 %
+
+Compagnon Ailé ; GREEN ; 81
+INT +7 pts
+VIT DÉP -4 %
+
+Héritier Légendaire ; ORANGE ; 72
+AGI +5 pts
+CRIT -3 %
+
+Destructeur de Preuve ; GREEN ; 81
+AGI +7 pts
+Toucher -4 %
+
+Professionnel de SOS Fantômes ; ORANGE ; 69
+FCE +5 pts
+Taux CRIT -3 %
+
+Disciple de Maître Nanco ; WHITE ; 31
+
+Héros des Terres du Nord ; ORANGE ; 71
+AGI +5 pts
+DÉG ATQ DIST -3 %
+
+Assistant du Garde de Kaslow ; GREEN ; 80
+FCE +7 pts
+VIT ATQ -4 %
+
+Explorateur de la Tour ; ORANGE ; 85
+MEN +10 % 
+PV Max -8 %
+
+Explorateur de la Cité ; BLUE ; 80
+DÉG CRIT PHY +10 % 
+ESQ -10 %
+
+Explorateur de la Forteresse ; ORANGE ; 85
+Toucher +10 % 
+PM -8 %
+
+Perturbateur Irritant ; P8TITLE ; 0
+
+Gros Blasé ; BLUE ; 84
+FCE+3
+VIT DÉP +2 %
+Chance de battre les Humanoïdes avec une ATQ PHY +1 %
+DÉG spéciaux par ATQ PHY contre les Humanoïdes +10 pts
+
+Meilleur Messager de Saphaël ; P8TITLE ; 0
+
+Sherlock Sprite ; GREEN ; 84
+AGI +3 pts
+VIT ATQ +2 %
+
+Bannisseur de l'Esprit d'Epée ; GREEN ; 71
+Chance de vaincre les Mécaniques avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Mécaniques +20 pts
+
+Expert de la Colère ; GREEN ; 82
+INT+3
+Chance de vaincre les Démons avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Démons +20 pts
+
+Défenseur des Glaces d'Ilannia ; GOLD ; 0
+DÉG ATQ STD Épée à deux mains +2 %
+Toucher +5 %
+DÉG Glace pour les CRIT PHY et CRIT MAG +50 pts 
+PV Max -5 %
+
+Mangeur d'Insectes ; GREEN ; 82
+RÉS Nature +2 %
+Chance de battre les Bêtes avec une ATQ PHY +2 % 
+DÉG spéciaux par ATQ PHY contre les Bêtes +15 pts
+
+Gourou des Sprites ; P8TITLE ; 0
+
+Messager du Vent ; GREEN ; 83
+INT +10 pts
+DÉF -50 % 
+VIT DÉP +10 %
+
+Amoureux des Sprites ; P8TITLE ; 0
+
+Grand Génie ; BLUE ; 86
+ESQ +7 %
+
+Ancêtre Vénérable ; P8TITLE ; 0
+
+Buveur sans Soif ; GREEN ; 85
+Possibilité d'être transformé en Gélapin des Sources 
+Inutilisable pendant le combat. VIT DÉP -120 % 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Fan des Sprites ; P8TITLE ; 0
+
+Super-Touriste ; GREEN ; 81
+ATQ MÊL -50 % 
+DÉF +2 % 
+VIT DÉP +10 %
+
+Preux Chevalier ; BLUE ; 81
+FCE +2 pts
+INT +2 pts
+VIT DÉP +1 %
+
+Spécialiste du Surimi ; GREEN ; 71
+Chance de vaincre les Bêtes avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Bêtes +20 pts
+
+Messager Exceptionnel ; GREEN ; 71
+FCE, INT, VOL et AGI + 2 pts
+
+Cortex Maximus ; WHITE ; 81
+INT +3 pts
+VIT DÉP +2 %
+
+Expert au Bras de Fer ; GREEN ; 66
+Chance de vaincre les Mécaniques avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Mécaniques +20 pts
+
+Disciple de Carso ; GREEN ; 80
+FCE +3 pts
+VIT DÉP +2 %
+
+Espoir de la Plaine ; WHITE ; 11
+
+Maître des Flammes Noires ; ORANGE ; 73
+VIT ATQ MÊL +10 % 
+VIT ATQ DIST +3 % 
+PV Max -10 %
+
+Ravageur ; ORANGE ; 85
+FCE +20
+PV +500
+VIT DÉP +5 %
+DÉF PHY +3 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Protecteur de la Forêt ; WHITE ; 11
+
+Gélapin Mon Amour ; P8TITLE ; 0
+
+Templier ; ORANGE ; 85
+PV max +3 %
+PV +500
+VIT DÉP +5 %
+DÉF PHY +3 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Troll Sauvage des Forums ; P8TITLE ; 0
+
+Demi de Mêlée ; BLUE ; 86
+VIT ATQ MÊL +12 % 
+VIT ATQ DIST +5 %
+
+Champion de l'Ile de Siwa ; WHITE ; 0
+
+Dieu Absolu du Web ; P8TITLE ; 0
+
+Roi des Pirates ; BLUE ; 86
+FCE +4 pts
+INT +4 pts
+VIT DÉP +5 % 
+Taux de Butin +5 %
+
+Disciple de la Lumière ; WHITE ; 24
+
+Spritophile Fanatique ; P8TITLE ; 0
+
+Maître Archimage ; ORANGE ; 85
+PM Max +5 %.
+PV +500
+VIT DÉP +5 %
+ATQ MAG +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Gardien de l'Héritage ; WHITE ; 24
+
+Esprit Supérieur ; P8TITLE ; 0
+
+Maître Shinigami ; ORANGE ; 85
+ATQ MAG +80 pts de DÉG Ombre
+PV +500
+VIT DÉP +5 %
+ATQ MAG +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Gardien des Mines ; WHITE ; 11
+
+Cendrillon aux Pied Nus ; P8TITLE ; 0
+
+Sniper ; ORANGE ; 85
+Taux de Butin +3 %.
+PV +500
+VIT DÉP +5 %
+ATQ PHY +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Défenseur du Plateau ; WHITE ; 24
+
+Petite Poupée ; P8TITLE ; 0
+
+Maître Shinobi ; ORANGE ; 85
+ESQ +2 %
+PV +500
+VIT DÉP +5 %
+ATQ PHY +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Forban Pirate ; BLUE ; 86
+Une chance de se transformer en Pirate.
+*Cet effet prend fin si une autre métamorphose est utilisée.
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Expert en Réseaux ; P8TITLE ; 0
+
+Mégère Pirate ; BLUE ; 86
+Chance de se transformer en Pirate (F).
+*Cet effet prend fin si une autre métamorphose est utilisée.
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Ami des Sprites ; P8TITLE ; 0
+
+Crapule Pirate ; BLUE ; 86
+Chance de se transformer en Gélapin Pirate
+*Cet effet prend fin si une autre métamorphose est utilisée.
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Explorateur de la Tour du Phénix ; ORANGE ; 68
+MEN +10 % 
+PV Max -8 %
+
+Maître du Temps ; GREEN ; 51
+ESQ +1 %
+
+*Festival d'Hiver* Médaille d'Argent du Travail en �Équipe ; P8TITLE ; 0
+
+Touriste des Îles ; WHITE ; 0
+
+Sentinelle de la Montagne ; GREEN ; 50
+INT +1 pt
+
+*Festival d'Hiver* Médaille de Bronze du Travail en �Équipe ; P8TITLE ; 0
+
+Roi des Duels ; PURPLE ; 0
+ATQ MÊL et ATQ DIST +5 % 
+ATQ MAG +5 % 
+Toucher +5% 
+CRIT PHY et CRIT MAG +5 % 
+DÉF PHY et DÉF MAG +5 % 
+ESQ +5 % 
+VIT DÉP +10 %
+
+Héros de la Tribu des Dragons ; GREEN ; 45
+DÉG ATQ DIST +1 %
+
+Sensei Zen ; ORANGE ; 72
+FCE +5 pts
+DÉF -3 %
+
+Expert Jardinier ; GREEN ; 15
+Chance de vaincre les Plantes avec 
+une ATQ PHY ou MAG +1 % 
+DÉG par ATQ PHY ou MAG contre les 
+Plantes +10 pts
+
+Combattant du Crime ; GREEN ; 46
+VOL +1 pt
+
+*Festival d'Hiver* Médaille d'Or du Travail en �Équipe ; P8TITLE ; 0
+
+Chasseur Élite ; GREEN ; 25
+Chance de vaincre les Bêtes avec une ATQ PHY ou MAG +1,5 %
+DÉG par ATQ PHY ou MAG contre les Bêtes +15 pts
+Chance de battre les Bêtes avec une Attaque Magique +1,5 %
+Dégâts spéciaux sur les Bêtes avec l'Attaque magique +15 pts
+
+Bourreau des Rebelles ; BLUE ; 57
+FCE +3 pts
+DÉF +2 %
+
+*Festival d'Hiver* Médaille d'Argent de la Gloire ; P8TITLE ; 0
+
+Célèbre Duelliste ; PURPLE ; 0
+DÉF PHY et DÉF MAG +2 % 
+VIT DÉP +4 %
+
+Maître du Dragon de Feu ; BLUE ; 56
+AGI +3 pts
+DÉG ATQ DIST -2 %
+
+*Festival d'Hiver* Médaille de Bronze de l'Honneur ; P8TITLE ; 0
+
+Combattant d'Élite ; BLUE ; 57
+FCE +3 pts
+Chance de CRIT PHY -2 %
+
+*Festival d'Hiver* Gage de Gratitude ; P8TITLE ; 0
+
+Maître des Duels ; PURPLE ; 0
+Toucher +4 % 
+CRIT PHY et CRIT MAG +4 % 
+DÉF PHY et DÉF MAG +4 % 
+ESQ +4 % 
+VIT DÉP +8 %
+
+Espoir de Gaïa ; BLUE ; 56
+VOL +3 pts
+ESQ -1 %
+
+*Festival d'Hiver* Médaille d'Or de la Suprématie ; P8TITLE ; 0
+
+Expert en Duels ; PURPLE ; 0
+Toucher +3 % 
+DÉF PHY et DÉF MAG +3 % 
+ESQ +3 % 
+VIT DÉP +6 %
+
+Vieux de la Vieille ; P8TITLE ; 0
+
+Shaman ; ORANGE ; 85
+DÉG MAG subis -80 pts
+PV +500
+VIT DÉP +5 %
+ATQ MAG +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Ami de l'Océan ; GREEN ; 38
+AGI +1 pt
+
+Messager au Cœur pur ; P8TITLE ; 0
+
+Dompteur de WorldBoss ; GOLD ; 0
+ATQ MAG +4 %
+ATQ DIST +8 %
+ESQ +5 %
+DÉF +4 %
+Toucher +9 %
+VIT ATQ MÊL +8 %
+VIT COMP +8 %
+$12$Niveau 70 requis pour pouvoir bénéficier de l'effet.
+
+Occultiste ; ORANGE ; 85
+DÉG PHY subis -50 pts
+PV +500
+VIT DÉP +5 %
+ATQ MAG +2 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N86 minimum
+
+Tueur de Vermine ; GREEN ; 38
+FCE +1 pt
+
+Apprenti Maître du Monde ; P8TITLE ; 0
+
+Ennemi des Pirates ; GREEN ; 38
+DÉF +1 %
+
+Fléau des Dragons ; GREEN ; 56
+Chance de vaincre les Démons avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Démons +20 pts
+
+Pourfendeur du Mal ; GREEN ; 76
+Chance de vaincre les Morts-Vivants avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Morts-Vivants +20 pts
+
+Ami des Gélapins ; WHITE ; 20
+
+Arracheur de Pétales ; GREEN ; 77
+Chance de vaincre les Plantes avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Plantes +20 pts
+
+Bûcheron Infatigable ; GREEN ; 46
+Chance de vaincre les Plantes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Plantes +20 pts
+
+Étoile Filante de Saphaël ; WHITE ; 0
+
+Champion en 45 Rounds du Pandemonium ; ORANGE ; 75
+FCE +7 pts
+INT +7 pts
+VIT DÉP -3 %
+
+Âme de Dragon Noir ; GREEN ; 51
+Chance de vaincre les Bêtes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Bêtes +20 pts
+
+Protecteur des Débutants ; P8TITLE ; 0
+
+Héros des Gélapins ; WHITE ; 50
+
+Lignée Royale ; P8TITLE ; 0
+
+Maître des Sprites ; WHITE ; 51
+FCE, INT, VOL et AGI + 1 pt
+
+Fan des Gélapins ; WHITE ; 30
+
+Aventurier Téméraire ; P8TITLE ; 0
+
+Groupie des Gélapins ; WHITE ; 40
+
+Rencontre Inévitable ; P8TITLE ; 0
+
+Chasseur de Démons ; GREEN ; 36
+Chance de vaincre les Élémentaires avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Élémentaires +20 pts
+
+*Festival d'Hiver* Héros de l'Hiver ; P8TITLE ; 0
+
+Golem-Tanker ; GOLD ; 0
+ESQ +5 % 
+DÉF PHY et DÉF MAG +4 %
+
+Tueur de Dragons ; GREEN ; 41
+Chance de vaincre les Morts-Vivants avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Morts-Vivants +20 pts
+
+Grand Fantastique ; P8TITLE ; 0
+
+Génie de Freyja ; GOLD ; 0
+ATQ MAG +4 %
+VIT COMP +5 %
+
+Illustre Messager des Sprites ; PURPLE ; 0
+
+*Festival d'Hiver* Porte-Bonheur ; P8TITLE ; 0
+
+Pêcheur de Piranhas ; GOLD ; 0
+ATQ MÊL et ATQ DIST +4 % 
+VIT ATQ MÊL et VIT ATQ DIST +4 %
+
+Dresseur de Lions ; GREEN ; 31
+Chance de vaincre les Démons avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Démons +20 pts
+
+Nomade du Désert ; GREEN ; 41
+INT +1 pt
+
+Cœur Généreux ; P8TITLE ; 0
+
+Infini ; BLUE ; 999
+VITA +5 %.
+
+Amoureux Ensorcelé ; BLUE ; 53
+VOL +1 pt
+
+Messager Ultime ; P8TITLE ; 0
+
+Messager de la Justice ; GREEN ; 20
+INT +1 pt
+
+Capitaine des Sept Mers ; P8TITLE ; 0
+
+À la rescousse du Sprite piégé ;  ; 0
+Participation au Défi chrono : Collecte des falaises
+Vous avez acquis la compétence « Tous à terre ! »
+
+Gardien de la Nature ; GREEN ; 20
+INT +1 pt
+
+Messager de l'Amour ; P8TITLE ; 0
+
+Explorateur Intrépide ; GREEN ; 0
+DÉG ATQ DIST +1 %
+
+Membre du Syndicat ; WHITE ; 0
+DÉF +1 %
+
+Copain des Sprites ; P8TITLE ; 0
+
+Inébranlable foi en l'amour ;  ; 0
+INT +2 %
+
+Étudiant de l'Académie ; WHITE ; 0
+VOL +1 pt
+
+Expert en Sprites ; P8TITLE ; 0
+
+Protecteur des Thermes ; WHITE ; 0
+
+Enfant de l'Océan ; P8TITLE ; 0
+
+Fléau des Moustiques ; GREEN ; 18
+INT +1 pt
+
+Citoyen de Poséidon ; P8TITLE ; 0
+
+Protecteur des Sprite ;  ; 0
+Participation au Défi chrono : Collecte précipitée
+PV Max +1 %
+
+Fakir Illuminé ; P8TITLE ; 0
+
+Baron par Alliance ; GREEN ; 0
+FCE +1 pt
+
+Fidèle aux Traditions ; P8TITLE ; 0
+
+Ingénieur Talentueux ; GREEN ; 60
+VIT DÉP +5 % 
+PV Max -45 %
+
+Japanese event title B ; P8TITLE ; 1
+
+Titre du tournoi PvP 2018 ; GOLD ; 0
+ATQ MAG +4 %
+ATQ DIST +8 %.
+ESQ +5 %
+DÉF +4 %
+Toucher +9 %
+VIT ATQ MÊL +8 %
+VIT COMP +8 %
+
+Hors-la-loi ; P8TITLE ; 20
+
+Modèle de Santé ; P8TITLE ; 0
+
+Grand Méchant Loup ; GREEN ; 60
+VIT DÉP +5 % 
+PV Max -45 %
+
+Caïd du Bac à Sable ; P8TITLE ; 0
+
+Geek Surdoué ; GREEN ; 60
+VIT DÉP +5 % 
+PV Max -45 %
+
+Japanese event title A ; P8TITLE ; 1
+
+Explorateur de la Caverne de la Prairie ; GREEN ; 20
+ATQ MAG +5 % 
+DÉF -3 %
+
+Tête Dure ; P8TITLE ; 0
+
+Prospecteur de la Mine Interdite ; WHITE ; 31
+ESQ +5 % 
+Toucher -3 %
+
+Fan des Sprites ; P8TITLE ; 0
+
+Chevalier à Plumes ; GREEN ; 60
+VIT DÉP +5 % 
+PV Max -45 %
+
+Minotaure du Dédale ; ORANGE ; 81
+VIT ATQ DIST +10 % 
+DÉF -8 %
+
+Dompteur de Loups Sauvages ; GREEN ; 60
+VIT DÉP +5 % 
+PV Max -45 %
+
+Gardien des Secrets ; GOLD ; 0
+Possibilité d'être transformé en Disciple 
+Inutilisable pendant le combat. VIT DÉP -120 % 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Ami du Père Noël ; P8TITLE ; 0
+
+Sprite dans l'Âme ; P8TITLE ; 0
+
+Éleveur de Poulets ; GREEN ; 60
+VIT DÉP +5 % 
+PV Max -45 %
+
+Grand Maître de Grand Fantasia ; P8TITLE ; 0
+
+Défenseur du Cristal ; BLUE ; 31
+PV +100 
+PM +100
+
+Tortue Ninja ; GREEN ; 83
+Chance de battre les Démons avec une ATQ PHY +2 %
++20 pts de DÉG spéciaux sur les Démons avec l'ATQ PHY
+Chance de battre les Humanoïdes avec une ATQ PHY +2 %
++20 pts de DÉG spéciaux sur les Humanoïdes avec l'ATQ PHY
+
+Chevalier du Cristal ; BLUE ; 31
+PM +200
+
+Président du Fanclub des Gélapins ; WHITE ; 80
+
+Écrivain Populaire ; BLUE ; 0
+VOL +1 pt
+
+Exterminateur d'Insectes ; GREEN ; 75
+Chance de vaincre les Humanoïdes avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Humanoïdes +20 pts
+
+Romantique Désespéré ; P8TITLE ; 0
+
+Trafiquant d'Ivoire ; GREEN ; 80
+Chance de vaincre les Bêtes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Bêtes +20 pts
+Chance de vaincre les Morts-Vivants avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Morts-Vivants +20 pts
+
+Général du Cristal ; BLUE ; 31
+PV +200
+
+Rêveur Impénitent ; P8TITLE ; 0
+
+Excavateur du Temple Déserté ; GREEN ; 36
+DÉF +5 % 
+ESQ -3 %
+
+Messager de l'Automne ; WHITE ; 0
+
+Dentiste de la Gueule Rugissante ; BLUE ; 50
+CRIT +10 % 
+DÉF -10 %
+
+Champion en 20 Rounds de Pandemonium ; ORANGE ; 61
+INT +5 pts
+Taux CRIT MAG -3 %
+
+Maître des Boules de neige ; BLUE ; 999
+DÉG Glace +87 pts par ATQ PHY
+
+Gardien de la Tombe du Roi ; BLUE ; 56
+VIT COMP +10 % 
+PV Max -10 %
+
+Champion en 30 Rounds de Pandemonium ; ORANGE ; 61
+INT +5 pts
+DÉF -3 %
+
+Conquérant de la Caverne de l'Écho ; GREEN ; 40
+Taux de Butin +10 %  
+VIT DÉP -5 %
+
+Survivant du Dédale ; GOLD ; 0
+Possibilité d'être transformé en créature effrayante
+Inutilisable pendant le combat. VIT DÉP -120 % 
+* Toute autre compétence de métamorphose annulera celle-ci
+
+Voyageur Temporel ; BLUE ; 46
+ESQ +7 %  
+DÉF -5 %
+
+Champion en 10 Rounds de Pandemonium ; ORANGE ; 61
+VOL +5 pts
+ESQ -3 %
+
+Ombre parmi les Ombres ; WHITE ; 0
+
+Maître en Arts Martiaux ; P8TITLE ; 0
+
+Noble chevalier de Kaslow ; WHITE ; 0
+
+Lecteur Insatiable ; WHITE ; 0
+
+Aeria Games ; P8TITLE ; 0
+
+Messager Corrompu ; WHITE ; 0
+
+AFK ; P8TITLE ; 0
+
+Seigneur du Cristal ; BLUE ; 99
+PM +300
+
+Grand Amiral de la Marine ; GOLD ; 83
+MÊL +10 %
+Toucher -8 %
+$12$Ne fonctionne qu'avec les compétences de Personnages de N83 minimum.
+
+Dieu du Cristal ; BLUE ; 99
+PV +300
+
+Héritier des Royaumes Sprites ; P8TITLE ; 0
+
+Ange du Paradis Perdu ; WHITE ; 0
+
+Chasseur de Gros Gibier ; WHITE ; 0
+
+Prince Protecteur de Kaslow ; P8TITLE ; 0
+
+Collectionneur Maniaque ; WHITE ; 0
+
+Archange de Saphaël ; P8TITLE ; 0
+
+Cœur de Pierre ; WHITE ; 0
+
+Maître des Arènes ; WHITE ; 0
+
+Enfant des Fleurs ; WHITE ; 0
+
+FreeKill ; P8TITLE ; 0
+
+Favori de Bahadolo ; GOLD ; 0
+DÉG ATQ STD Masse +2 %
+PV Max -2 %
+
+Héraut de Smulca ; GOLD ; 0
+DÉG ATQ STD Hache à 2 mains +2 %
+PV Max -2 %
+
+Vainqueur du Dragon spectral ; GREEN ; 70
+Chance de vaincre les Bêtes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Bêtes +20 pts
+
+Émissaire d'Ewan ; GOLD ; 0
+DÉG ATQ STD Hache +2 %
+Toucher +5 %
+DÉG Ombre pour les CRIT PHY et CRIT MAG +50 pts 
+PV Max -5 %
+
+Vainqueur du Feu ; GREEN ; 75
+Chance de vaincre les Démons avec une ATQ MAG +2 %
+DÉG spéciaux par ATQ MAG contre les Démons +20 pts
+
+Savant génial de Technopolis ; WHITE ; 0
+
+World Boss ; P8TITLE ; 0
+FCE +10 pts
+VITA +10 pts
+INT +10 pts
+VOL +10 pts
+AGI +10 pts
+EXP Combat +10 %
+
+Gardien du Royaume de Saphaël ; GOLD ; 0
+DÉG ATQ STD toute arme +2 %
+PV Max 5 %
+
+Yakuza Impitoyable ; P8TITLE ; 0
+
+Collectionneur de Pokémons ; P8TITLE ; 0
+
+Conseillé avisé d'Ilya ; WHITE ; 0
+
+World Boss ; P8TITLE ; 0
+
+Envoyé d'Alice ; GOLD ; 0
+DÉG ATQ STD Arc +2 %
+Toucher +5 %
+DÉG Nature pour les CRIT PHY et CRIT MAG +50 pts 
+PV Max -5 %
+
+Vainqueur du Dragon Zombie ; GREEN ; 60
+Chance de vaincre les Morts-Vivants avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Morts-Vivants +20 pts
+
+Porte-parole de Ronto ; GOLD ; 0
+DÉG ATQ STD Arme à feu +2 % 
+PV Max -2 %
+
+Vainqueur du Marécage ; GREEN ; 65
+Chance de vaincre les Plantes avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Plantes +20 pts
+
+Messager d'Élite ; WHITE ; 0
+
+Vainqueur du Lion ; GREEN ; 50
+Chance de vaincre les Démons avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Démons +20 pts
+
+Élu de Bodor ; GOLD ; 0
+Parade +5 % 
+PV Max -2 %
+
+Vainqueur du Démon ; GREEN ; 55
+Chance de vaincre les Élémentaires avec une ATQ PHY +2 %
+DÉG spéciaux par ATQ PHY contre les Élémentaires +20 pts
+
+Agent Double ; GREEN ; 62
+INT +1 pt
+
+Annonciateur de Mauvaises Nouvelles ; GREEN ; 62
+DÉG CRIT MAG +1 %
+
+Mandataire de Jundo ; GOLD ; 0
+Toucher +5 %
+DÉG Sacré pour les CRIT PHY et CRIT MAG +50 pts 
+PV Max -3 %
+
+Diplomate de Siropas ; GOLD ; 0
+DÉG ATQ STD Masse à 2 mains  +2 %
+Toucher +5 %
+DÉG Feu pour les CRIT PHY et CRIT MAG +50 pts 
+PV Max -5 %
+
+Délégué de Quayle ; GOLD ; 0
+DÉG ATQ STD Épée +2 %
+Toucher +5 %
+DÉG Foudre pour les CRIT PHY et CRIT MAG +50 pts 
+PV Max -5 %
+
+Consul de Mosunk ; GOLD ; 0
+DÉG ATQ STD Bâton +2 %
+PV Max -2 %
+
+Bienfaiteur de l'Île aux Trois Côtes ; GREEN ; 60
+AGI +1 pt
+
+Votre pire cauchemar ; GREEN ; 60
+ESQ +1 %
+
+Ambassadeur des Rois des Sprites ; WHITE ; 0
+
+Envoyé des Anciens ; BLUE ; 60
+DÉG CRIT PHY +10 % 
+ESQ -10 %
+

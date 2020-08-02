@@ -81,8 +81,6 @@ public class Skill implements Iconable, Writable {
 			tab[j] = new Effect(this.effects[i][j]);
 		}
 		
-		System.out.println(tab.length);
-		
 		return tab;
 	}
 	
