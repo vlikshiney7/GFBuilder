@@ -31,6 +31,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	ProcT0N1("Poison 4 : -200 PV chaque 2 secondes", "Poison 4 : -200 HP per 2 seconds", "-200 PV / 2s", "-200 HP / 2s", Tools.EffectColor[8]),
 	ProcT6N0("Brûlure 2 : -50 PV chaque 2 secondes", "Burn 2 : -50 HP per 2 seconds", "-50 PV / 2s", "-50 HP / 2s", Tools.EffectColor[8]),
 	ProcT10N0("-80 PV chaque 2 secondes", "-80 HP per 2 seconds", "-80 PV / 2s", "-80 HP / 2s", Tools.EffectColor[8]),
+	ProcT10N1("-40 PV chaque 2 secondes", "-40 HP per 2 seconds", "-40 PV / 2s", "-40 HP / 2s", Tools.EffectColor[8]),
 	
 	ProcTDB0("PV de l'ennemi -700", "Opponent HP -700", "PV -700", "HP -700", Tools.EffectColor[0]),
 	ProcTDB0C("PV de l'ennemi -3000", "Opponent HP -3000", "PV -3000", "HP -3000", Tools.EffectColor[0]),

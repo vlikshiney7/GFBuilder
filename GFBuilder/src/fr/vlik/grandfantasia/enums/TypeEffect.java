@@ -105,6 +105,7 @@ public enum TypeEffect implements Colorable, Writable {
 	VitAtkDuo("Vitesse d'Attaque à Deux Armes", "", "Vit Atk 2 Ar", "", -1, true, Tools.EffectColor[0]),
 	TCC1M("Taux Critique Arme 1 Main", "", "Taux Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	TCC2M("Taux Critique Arme 2 Main", "", "Taux Crit 2M", "", -1, true, Tools.EffectColor[0]),
+	TCCD("Taux Critique à Distance", "", "Taux Crit Dist", "", -1, true, Tools.EffectColor[0]),
 	DCC1M("Dégât Critique Arme 1 Main", "", "Deg Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	DCC2M("Dégât Critique Arme 2 Main", "", "Deg Crit 2M", "", -1, true, Tools.EffectColor[0]),
 	RegenCB("Régénération Coup Standard", "", "Regen Coup Std", "", -1, false, Tools.EffectColor[0]),

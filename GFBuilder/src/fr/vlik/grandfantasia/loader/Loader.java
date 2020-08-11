@@ -277,8 +277,8 @@ public class Loader {
 			new RedFortification("+45", RedFortification.LEVEL[5], 2.595, 2.25, 2.94, 4),
 			new RedFortification("+46", RedFortification.LEVEL[5], 2.67, 2.3, 3.04, 4),
 			new RedFortification("+47", RedFortification.LEVEL[5], 2.75, 2.35, 3.15, 4),
-			//------- CONJECTURE ---------------------------------------------------------
 			new RedFortification("+48", RedFortification.LEVEL[5], 2.83, 2.4, 3.26, 4),
+			//------- CONJECTURE ---------------------------------------------------------
 			new RedFortification("+49", RedFortification.LEVEL[5], 2.91, 2.45, 3.37, 4),
 			new RedFortification("+50", RedFortification.LEVEL[5], 2.99, 2.5, 3.48, 5),
 		};
