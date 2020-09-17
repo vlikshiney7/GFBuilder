@@ -31,6 +31,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import fr.vlik.gfbuilder.frame.FrameCreateCustom;
 import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
 import fr.vlik.gfbuilder.frame.FrameSaveLoader;
@@ -559,6 +560,7 @@ public class MainFrame extends JFrame {
 		FrameSaveAs.getInstance().updateLanguage(lang);
 		FrameSaveOnNew.getInstance().updateLanguage(lang);
 		FrameSaveOnQuit.getInstance().updateLanguage(lang);
+		FrameCreateCustom.getInstance().updateLanguage(lang);
 		
 		if(lang == Language.FR) {
 			for(int i = 0; i < this.valueStat.size(); i++) {

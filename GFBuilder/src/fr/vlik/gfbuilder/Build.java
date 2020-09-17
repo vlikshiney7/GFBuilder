@@ -6,7 +6,6 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class Build {
@@ -77,7 +76,7 @@ public class Build {
 					}
 				}
 			}
-		} else if(c instanceof Proc) {
+		}/* else if(c instanceof Proc) {
 			Proc p = (Proc) c;
 			
 			for(Calculable calculable : p.getEffects()) {
@@ -94,8 +93,7 @@ public class Build {
 					}
 				}
 			}
-			
-		}
+		}*/
 	}
 
 	public void addEffect(Calculable[] effects) {

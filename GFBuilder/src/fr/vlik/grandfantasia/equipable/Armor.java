@@ -25,6 +25,7 @@ public class Armor extends Equipment {
 	public static String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Armor[][] data = Loader.getArmor();
+	private static ArrayList<Armor> customData = new ArrayList<Armor>();
 	
 	private ArmorType type;
 	private String setCode;
@@ -71,6 +72,16 @@ public class Armor extends Equipment {
 		this.reinca = reinca;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
+		this.icon = setIcon(path);
+	}
+	
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, ArmorType type, String path, Calculable[] effects, String signature) {
+		super(name, grades, lvl, quality, effects, signature);
+		
+		this.type = type;
+		this.setCode = "-1";
+		this.reinca = false;
+		this.isMultiEffect = false;
 		this.icon = setIcon(path);
 	}
 	
@@ -152,47 +163,50 @@ public class Armor extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
 			
 			for(int i = 0; i < this.effects.length; i++) {
 				newTab[i] = this.effects[i];
 			}
 			
-			for(int i = 0; i < enchant.getEffects().size(); i++) {
-				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			for(int i = 0; i < enchant.getEffects().length; i++) {
+				newTab[this.effects.length + i] = enchant.getEffects()[i];
 			}
 			
 			this.effects = newTab;
 		} else {
-			for(Effect e : enchant.getEffects()) {
-				int value = Enchantment.getValue(this, e.getType());
-				boolean found = false;
-				
-				for(Calculable calculable : this.effects) {
-					if(calculable instanceof Effect) {
-						Effect get = (Effect) calculable;
-						
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(value);
+			for(Calculable c : enchant.getEffects()) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					int value = Enchantment.getValue(this, e.getType());
+					boolean found = false;
+					
+					for(Calculable calculable : this.effects) {
+						if(calculable instanceof Effect) {
+							Effect get = (Effect) calculable;
 							
-							found = true;
-							break;
+							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+								get.addEnchantValue(value);
+								
+								found = true;
+								break;
+							}
 						}
 					}
-				}
-				
-				if(!found) {
-					e.addEnchantValue(value);
 					
-					Calculable[] newTab = new Calculable[this.effects.length + 1];
-					
-					for(int i = 0; i < this.effects.length; i++) {
-						newTab[i] = this.effects[i];
+					if(!found) {
+						e.addEnchantValue(value);
+						
+						Calculable[] newTab = new Calculable[this.effects.length + 1];
+						
+						for(int i = 0; i < this.effects.length; i++) {
+							newTab[i] = this.effects[i];
+						}
+						
+						newTab[this.effects.length] = e;
+						
+						this.effects = newTab;
 					}
-					
-					newTab[this.effects.length] = e;
-					
-					this.effects = newTab;
 				}
 			}
 		}
@@ -224,6 +238,10 @@ public class Armor extends Equipment {
 		}
 	}
 	
+	public static void addCustom(Armor armor) {
+		Armor.customData.add(armor);
+	}
+	
 	public static Armor get(String name, Language lang, int list) {
 		for(Armor armor : Armor.data[list]) {
 			if(armor.getName(lang).equals(name)) {
@@ -232,6 +250,35 @@ public class Armor extends Equipment {
 		}
 		
 		return null;
+	}
+	
+	public static Armor getCustom(String name, Language lang) {
+		for(Armor armor : Armor.customData) {
+			if(armor.getName(lang).equals(name)) {
+				return armor;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Armor getCustom(String name, Quality quality, String signature) {
+		for(Armor armor : Armor.customData) {
+			if(armor.getName(Language.FR).equals(name) && armor.getQuality() == quality && armor.getSignature().equals(signature)) {
+				return armor;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Armor[] getCustomData() {
+		Armor[] cast = new Armor[customData.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = customData.get(i);
+		}
+		
+		return cast;
 	}
 	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {

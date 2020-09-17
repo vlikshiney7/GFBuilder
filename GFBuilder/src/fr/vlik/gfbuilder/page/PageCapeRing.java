@@ -12,11 +12,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.XpStuff;
+import fr.vlik.grandfantasia.custom.CustomCape;
+import fr.vlik.grandfantasia.custom.CustomRing;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
@@ -600,10 +604,18 @@ public class PageCapeRing extends PagePanel {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		config.put("Cape", this.getCape().getName(Language.FR));
+		if(this.getCape().isCustom()) {
+			config.put("Cape", "Custom::" + this.getCape().getName(Language.FR) + "::" + this.getCape().getQuality() + "::" + this.getCape().getSignature());
+		} else {
+			config.put("Cape", this.getCape().getName(Language.FR));
+		}
 		
 		for(int i = 0; i < this.ring.size(); i++) {
-			config.put("Ring" + i, this.getRing(i).getName(Language.FR));
+			if(this.getRing(i).isCustom()) {
+				config.put("Ring" + i, "Custom::" + this.getRing(i).getName(Language.FR) + "::" + this.getRing(i).getQuality() + "::" + this.getRing(i).getSignature());
+			} else {
+				config.put("Ring" + i, this.getRing(i).getName(Language.FR));
+			}
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
@@ -625,19 +637,77 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		Cape cape = Cape.get(config.get("Cape"), Language.FR);
-		if(cape == null) {
-			this.cape.setSelectedIndex(0);
+		Cape cape = null;
+		if(config.get("Cape") != null && config.get("Cape").startsWith("Custom")) {
+			String[] valueSplit = config.get("Cape").split("::");
+			
+			Quality quality = null;
+			try {
+				quality = Quality.valueOf(valueSplit[2]);
+			} catch (Exception e) {
+				this.cape.setSelectedIndex(0);
+			}
+			
+			if(quality != null) {
+				cape = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
+				
+				if(cape == null) {
+					if(CustomCape.constructCustom(valueSplit[1], quality, valueSplit[3])) {
+						SaveConfig.overrideCustom();
+						PageCapeRing.getInstance().updateCapeRing();
+						
+						cape = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
+						this.cape.setSelectedItem(cape);
+					}
+				} else {
+					this.cape.setSelectedItem(cape);
+				}
+			}
 		} else {
-			this.cape.setSelectedItem(cape);
+			cape = Cape.get(config.get("Cape"), Language.FR);
+			
+			if(cape == null) {
+				this.cape.setSelectedIndex(0);
+			} else {
+				this.cape.setSelectedItem(cape);
+			}
 		}
 		
 		for(int i = 0; i < this.ring.size(); i++) {
-			Ring ring = Ring.get(config.get("Ring" + i), Language.FR);
-			if(ring == null) {
-				this.ring.get(i).setSelectedIndex(0);
+			Ring ring = null;
+			if(config.get("Ring" + i) != null && config.get("Ring" + i).startsWith("Custom")) {
+				String[] valueSplit = config.get("Ring" + i).split("::");
+				
+				Quality quality = null;
+				try {
+					quality = Quality.valueOf(valueSplit[2]);
+				} catch (Exception e) {
+					this.ring.get(i).setSelectedIndex(0);
+				}
+				
+				if(quality != null) {
+					ring = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
+					
+					if(ring == null) {
+						if(CustomRing.constructCustom(valueSplit[1], quality, valueSplit[3])) {
+							SaveConfig.overrideCustom();
+							PageCapeRing.getInstance().updateCapeRing();
+							
+							ring = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
+							this.ring.get(i).setSelectedItem(ring);
+						}
+					} else {
+						this.ring.get(i).setSelectedItem(ring);
+					}
+				}
 			} else {
-				this.ring.get(i).setSelectedItem(ring);
+				ring = Ring.get(config.get("Ring" + i), Language.FR);
+				
+				if(ring == null) {
+					this.ring.get(i).setSelectedIndex(0);
+				} else {
+					this.ring.get(i).setSelectedItem(ring);
+				}
 			}
 		}
 		

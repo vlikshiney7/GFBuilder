@@ -11,21 +11,24 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.Armor.ArmorType;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.equipable.Weapon;
-import fr.vlik.grandfantasia.equipable.Armor.ArmorType;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class Enchantment implements Writable {
 	
 	private static Enchantment[] data;
 	private static Enchantment[] redData;
+	public final static Map<TypeEffect, String> retrieveName = loadRetrieveName();
 	private static ArrayList<ArrayList<Map<Quality, Map<Integer, ArrayList<Integer>>>>> value = new ArrayList<ArrayList<Map<Quality, Map<Integer, ArrayList<Integer>>>>>();
 	static {
 		loadData();
+		loadRetrieveName();
 	}
 	
 	private String name;
@@ -35,13 +38,13 @@ public class Enchantment implements Writable {
 	private boolean ring;
 	private boolean fixValue;
 	private int nbLvl;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Calculable[] effects;
 	
 	public Enchantment() {
 		this.name = " ";
 	}
 	
-	public Enchantment(String name, WeaponType[][] type, boolean[] armor, boolean cape, boolean ring, boolean fixValue, ArrayList<Effect> effects) {
+	public Enchantment(String name, WeaponType[][] type, boolean[] armor, boolean cape, boolean ring, boolean fixValue, Calculable[] effects) {
 		this.name = name;
 		this.type = type;
 		this.armor = armor;
@@ -51,13 +54,18 @@ public class Enchantment implements Writable {
 		this.effects = effects;
 	}
 	
-	public Enchantment(String name, WeaponType[] type, boolean armor, int nbLvl, ArrayList<Effect> effects) {
+	public Enchantment(String name, WeaponType[] type, boolean armor, int nbLvl, Calculable[] effects) {
 		this.name = name;
 		this.type = new WeaponType[1][];
 		this.type[0] = type;
 		this.armor = new boolean[1];
 		this.armor[0] = armor;
 		this.nbLvl = nbLvl;
+		this.effects = effects;
+	}
+	
+	public Enchantment(String name, Calculable[] effects) {
+		this.name = name;
 		this.effects = effects;
 	}
 
@@ -91,12 +99,21 @@ public class Enchantment implements Writable {
 		return this.nbLvl;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(this.effects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.effects[i]);
+			} else {
+				tab[i] = this.effects[i];
+			}
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -106,13 +123,13 @@ public class Enchantment implements Writable {
 	
 	@Override
 	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		if(this.fixValue) {
-			for(Effect e : this.effects) {
-				tooltip.append("<br>");
+		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
 				tooltip.append(e.getTooltip());
 			}
 		}
+		tooltip.append("</ul>");
 		
 		return "<html>" + tooltip + "</html>";
 	}
@@ -173,9 +190,9 @@ public class Enchantment implements Writable {
 					armor[i] = Boolean.parseBoolean(armorSplit[i]);
 				}
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[5]));
+				Calculable[] effects = new Calculable[Integer.parseInt(lineSplit[5])];
 				for(int j = 0; j < Integer.parseInt(lineSplit[5]); j++) {
-					effects.add(new Effect(lineSplit[j+6]));
+					effects[j] = new Effect(lineSplit[j+6]);
 				}
 				
 				list.add(new Enchantment(lineSplit[0], type, armor, Boolean.parseBoolean(armorSplit[2]), Boolean.parseBoolean(armorSplit[3]), Boolean.parseBoolean(lineSplit[4]), effects));
@@ -199,9 +216,9 @@ public class Enchantment implements Writable {
 					}
 				}
 				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[4]));
+				Calculable[] effects = new Calculable[Integer.parseInt(lineSplit[4])];
 				for(int i = 0; i < Integer.parseInt(lineSplit[4]); i++) {
-					effects.add(new Effect(lineSplit[i+5]));
+					effects[i] = new Effect(lineSplit[i+5]);
 				}
 				
 				redList.add(new Enchantment(lineSplit[0], type, Boolean.parseBoolean(lineSplit[2]), Integer.parseInt(lineSplit[3]), effects));
@@ -271,6 +288,21 @@ public class Enchantment implements Writable {
 		} catch (IOException e) {
 			System.out.println("Error with " + Enchantment.class.getClass().getSimpleName() + " class");
 		}
+	}
+	
+	private static Map<TypeEffect, String> loadRetrieveName() {
+		HashMap<TypeEffect, String> map = new HashMap<TypeEffect, String>();
+		
+		map.put(TypeEffect.FCE, "de Force");
+		map.put(TypeEffect.VIT, "de Vitalité");
+		map.put(TypeEffect.INT, "d'Intelligence");
+		map.put(TypeEffect.VOL, "de Volonté");
+		map.put(TypeEffect.AGI, "d'Agilité");
+		map.put(TypeEffect.Toucher, "de Précision");
+		map.put(TypeEffect.Parade, "de Parade");
+		map.put(TypeEffect.ESQ, "d'Esquive");
+		
+		return map;
 	}
 	
 	public static Enchantment[] getPossibleWeaponEnchant(Quality quality, WeaponType type) {

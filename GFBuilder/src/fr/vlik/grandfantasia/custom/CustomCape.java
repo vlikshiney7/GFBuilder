@@ -1,0 +1,224 @@
+package fr.vlik.grandfantasia.custom;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+import fr.vlik.grandfantasia.Enchantment;
+import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.equipable.Cape;
+import fr.vlik.grandfantasia.loader.CustomLoader;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
+
+public class CustomCape extends CustomEquipment {
+	
+	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
+	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	public static CustomCape[] data = CustomLoader.getCustomCape();
+	public static Enchantment[] capeEnchant = CustomLoader.getCapeEnchantment();
+	public final static double IncreaseValueGreen = 1.06;
+	public final static double IncreaseValueBlue = 1.18;
+	
+	public CustomCape(CustomCape cape) {
+		super(cape.getMap(), cape.getGrades(), cape.getLvl(), cape.getUnfixValue(), cape.getEffects());
+		
+		this.icon = cape.getIcon();
+		this.iconName = cape.getIconName();
+	}
+	
+	public CustomCape(Map<Language, String> name, GradeName[] grades, int lvl, Map<TypeEffect, Integer[]> unfixValue, String path, Calculable[] effects) {
+		super(name, grades, lvl, unfixValue, effects);
+		
+		this.icon = setIcon(path);
+	}
+	
+	@Override
+	public Icon setIcon(String path) {
+		ImageIcon back = new ImageIcon(CustomCape.class.getResource(Tools.PATH32 + Quality.WHITE.index + Tools.PNG));
+		ImageIcon object = ICONS.get(path);
+		
+		if(path == null) {
+			path = "null";
+		}
+		
+		if(object == null) {
+			try {
+				object = new ImageIcon(CustomCape.class.getResource(PATH + path + Tools.PNG));
+				ICONS.put(path, object);
+			} catch (NullPointerException e) {
+				System.out.println("Image introuvable : " + path);
+			}
+		}
+		
+		return (object != null) ? Tools.constructIcon(back, object) : back;
+	}
+	
+	public Cape transformToCape(Quality quality, Enchantment[] enchant) {
+		CustomCape newCustom = new CustomCape(this);
+		
+		Calculable[] tabEffects = newCustom.constructEffects(quality, enchant);
+		
+		Calculable[] mergeEffect = new Calculable[newCustom.getEffects().length + tabEffects.length];
+		
+		for(int i = 0; i < newCustom.getEffects().length; i++) {
+			if(quality == Quality.GREEN) {
+				if(newCustom.getEffects()[i] instanceof Effect) {
+					Effect e = (Effect) newCustom.getEffects()[i];
+					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
+						e.addFortifValue(CustomCape.IncreaseValueGreen);
+					}
+					
+					mergeEffect[i] = e;
+				} else {
+					mergeEffect[i] = newCustom.getEffects()[i];
+				}
+			} else if(quality == Quality.BLUE) {
+				if(newCustom.getEffects()[i] instanceof Effect) {
+					Effect e = (Effect) newCustom.getEffects()[i];
+					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
+						e.addFortifValue(CustomCape.IncreaseValueBlue);
+					}
+					
+					mergeEffect[i] = e;
+				} else {
+					mergeEffect[i] = newCustom.getEffects()[i];
+				}
+			} else {
+				mergeEffect[i] = newCustom.getEffects()[i];
+			}
+		}
+		
+		for(int i = 0; i < tabEffects.length; i++) {
+			mergeEffect[newCustom.getEffects().length + i] = tabEffects[i];
+		}
+		
+		return new Cape(newCustom.name, newCustom.grades, newCustom.lvl, quality, newCustom.iconName, mergeEffect, newCustom.signature);
+	}
+	
+	public static CustomCape get(String name, Language lang) {
+		for(CustomCape custom : CustomCape.data) {
+			if(custom.getName(lang).equals(name)) {
+				return custom;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static CustomCape[] getPossibleCape(Grade grade, int lvl) {
+		ArrayList<CustomCape> result = new ArrayList<CustomCape>();
+		
+		for(int i = 0; i < data.length; i++) {
+			CustomCape cape = data[i];
+			
+			if(cape.getLvl() == lvl && cape.containGrade(grade.getGrade())) {
+				result.add(cape);
+			}
+		}
+		
+		CustomCape[] cast = new CustomCape[result.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = result.get(i);
+		}
+		
+		return cast;
+	}
+	
+	public static Enchantment[] getEnchant(CustomEquipment equip, Quality quality) {
+		if(quality == Quality.WHITE) {
+			return null;
+		}
+		
+		Enchantment[] result = new Enchantment[1 + equip.getUnfixValue().size() + CustomCape.capeEnchant.length];
+		
+		result[0] = new Enchantment();
+		
+		int it = 0;
+		for(Entry<TypeEffect, Integer[]> entry : equip.getUnfixValue().entrySet()) {
+			if(quality == Quality.GREEN) {
+				result[it] = new Enchantment(Enchantment.retrieveName.get(entry.getKey()), new Calculable[] {
+					new Effect(entry.getKey(), false, entry.getValue()[0]),
+				});
+			} else if(quality == Quality.BLUE) {
+				result[it] = new Enchantment(Enchantment.retrieveName.get(entry.getKey()), new Calculable[] {
+					new Effect(entry.getKey(), false, entry.getValue()[1]),
+				});
+			}
+			
+			it++;
+		}
+		
+		for(int i = 0; i < capeEnchant.length; i++) {
+			result[it+i] = capeEnchant[i];
+		}
+		
+		return result;
+	}
+	
+	public static boolean constructCustom(String name, Quality quality, String enchants) {
+		CustomCape custom = CustomCape.get(name, Language.FR);
+		
+		if(custom == null) {
+			return false;
+		}
+		
+		String[] enchantSplit = enchants.split("/");
+		Enchantment[] tabEnchant = new Enchantment[6];
+		
+		if(quality == Quality.GREEN) {
+			Enchantment[] allEnchant = CustomCape.getEnchant(custom, quality);
+			
+			tabEnchant = new Enchantment[3];
+			
+			for(int i = 0; i < 3; i++) {
+				boolean found = false;
+				
+				for(Enchantment enchant : allEnchant) {
+					if(enchant.getName().equals(enchantSplit[i])) {
+						tabEnchant[i] = enchant;
+						found = true;
+					}
+				}
+				
+				if(!found) {
+					return false;
+				}
+			}
+		} else if(quality == Quality.BLUE) {
+			Enchantment[] allEnchant = CustomCape.getEnchant(custom, quality);
+			
+			tabEnchant = new Enchantment[6];
+			
+			for(int i = 0; i < 6; i++) {
+				boolean found = false;
+				
+				for(Enchantment enchant : allEnchant) {
+					if(enchant.getName().equals(enchantSplit[i])) {
+						tabEnchant[i] = enchant;
+						found = true;
+					}
+				}
+				
+				if(!found) {
+					return false;
+				}
+			}
+		}
+		
+		Cape cape = custom.transformToCape(quality, tabEnchant);
+		
+		Cape.addCustom(cape);
+		
+		return true;
+	}
+}

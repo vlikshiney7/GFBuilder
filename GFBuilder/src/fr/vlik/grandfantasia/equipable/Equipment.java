@@ -24,6 +24,8 @@ public abstract class Equipment implements FullRenderer {
 	protected Icon icon;
 	protected Calculable[] effects;
 	protected Calculable[] bonusXP;
+	protected boolean isCustom = false;
+	protected String signature = "";
 	
 	@SuppressWarnings("serial")
 	public Equipment() {
@@ -42,6 +44,18 @@ public abstract class Equipment implements FullRenderer {
 		this.enchantable = enchantable;
 		this.effects = effects;
 		this.bonusXP = bonusXP;
+	}
+	
+	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, Calculable[] effects, String signature) {
+		this.name = name;
+		this.grades = grades;
+		this.lvl = lvl;
+		this.quality = quality;
+		this.enchantable = false;
+		this.effects = effects;
+		
+		this.isCustom = true;
+		this.signature = signature;
 	}
 	
 	protected Map<Language, String> getMap() {
@@ -106,6 +120,14 @@ public abstract class Equipment implements FullRenderer {
 		}
 		
 		return tab;
+	}
+	
+	public boolean isCustom() {
+		return this.isCustom;
+	}
+	
+	public String getSignature() {
+		return this.signature;
 	}
 	
 	public boolean containGrade(GradeName grade) {

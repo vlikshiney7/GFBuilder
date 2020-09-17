@@ -18,7 +18,7 @@ public class JCustomRadioButton extends JRadioButton {
 	public JCustomRadioButton() {
 		super();
 		
-		setIconUI("radio1", "radioOff");
+		setIconUI("radio01", "radioOff");
 		setVoidUI();
 	}
 	

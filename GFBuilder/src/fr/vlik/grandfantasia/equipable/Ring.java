@@ -21,6 +21,7 @@ public final class Ring extends Equipment {
 	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Ring[] data = Loader.getRing();
+	private static ArrayList<Ring> customData = new ArrayList<Ring>();
 	
 	private String setCode;
 	private boolean uniqueEquip;
@@ -46,6 +47,14 @@ public final class Ring extends Equipment {
 		
 		this.setCode = setCode;
 		this.uniqueEquip = uniqueEquip;
+		this.icon = setIcon(path);
+	}
+	
+	public Ring(Map<Language, String> name, int lvl, Quality quality, String path, Calculable[] effects, String signature) {
+		super(name, new GradeName[] { GradeName.NONE } , lvl, quality, effects, signature);
+		
+		this.setCode = "-1";
+		this.uniqueEquip = false;
 		this.icon = setIcon(path);
 	}
 	
@@ -84,50 +93,57 @@ public final class Ring extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
 			
 			for(int i = 0; i < this.effects.length; i++) {
 				newTab[i] = this.effects[i];
 			}
 			
-			for(int i = 0; i < enchant.getEffects().size(); i++) {
-				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			for(int i = 0; i < enchant.getEffects().length; i++) {
+				newTab[this.effects.length + i] = enchant.getEffects()[i];
 			}
 			
 			this.effects = newTab;
 		} else {
-			for(Effect e : enchant.getEffects()) {
-				int value = Enchantment.getValue(this, e.getType());
-				boolean found = false;
-				
-				for(Calculable calculable : this.effects) {
-					if(calculable instanceof Effect) {
-						Effect get = (Effect) calculable;
+			for(Calculable c : enchant.getEffects()) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					int value = Enchantment.getValue(this, e.getType());
+					boolean found = false;
+					
+					for(Calculable calculable : this.effects) {
+						if(calculable instanceof Effect) {
+							Effect get = (Effect) calculable;
 							
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(value);
-							
-							found = true;
-							break;
+							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+								get.addEnchantValue(value);
+								
+								found = true;
+								break;
+							}
 						}
 					}
-				}
-				
-				if(!found) {
-					e.addEnchantValue(value);
 					
-					Calculable[] newTab = new Calculable[this.effects.length + 1];
-					
-					for(int i = 0; i < this.effects.length; i++) {
-						newTab[i] = this.effects[i];
+					if(!found) {
+						e.addEnchantValue(value);
+						
+						Calculable[] newTab = new Calculable[this.effects.length + 1];
+						
+						for(int i = 0; i < this.effects.length; i++) {
+							newTab[i] = this.effects[i];
+						}
+						
+						newTab[this.effects.length] = e;
+						
+						this.effects = newTab;
 					}
-					
-					newTab[this.effects.length] = e;
-					
-					this.effects = newTab;
 				}
 			}
 		}
+	}
+	
+	public static void addCustom(Ring cape) {
+		Ring.customData.add(cape);
 	}
 	
 	public static Ring get(String name, Language lang) {
@@ -138,6 +154,35 @@ public final class Ring extends Equipment {
 		}
 		
 		return null;
+	}
+	
+	public static Ring getCustom(String name, Language lang) {
+		for(Ring ring : Ring.customData) {
+			if(ring.getName(lang).equals(name)) {
+				return ring;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Ring getCustom(String name, Quality quality, String signature) {
+		for(Ring ring : Ring.customData) {
+			if(ring.getName(Language.FR).equals(name) && ring.getQuality() == quality && ring.getSignature().equals(signature)) {
+				return ring;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Ring[] getCustomData() {
+		Ring[] cast = new Ring[customData.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = customData.get(i);
+		}
+		
+		return cast;
 	}
 	
 	public static Ring[] getPossibleRing(int lvl, Ring toIgnore) {

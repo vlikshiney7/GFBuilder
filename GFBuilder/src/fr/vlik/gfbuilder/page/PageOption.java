@@ -15,6 +15,7 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
+import fr.vlik.gfbuilder.frame.FrameCreateCustom;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
 import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
@@ -34,6 +35,7 @@ public class PageOption extends JPanel {
 	private JCustomButton newSave;
 	private JCustomButton currentSave;
 	private JCustomButton saveAs;
+	private JCustomButton createCustom;
 	private JTextPane parameter = new JTextPane();
 	
 	private JCustomLabel[] label;
@@ -87,6 +89,11 @@ public class PageOption extends JPanel {
 		this.saveAs.setToolTipText("Ctrl + Shift + S");
 		this.saveAs.addActionListener(e -> {
 			FrameSaveAs.getInstance().popup();
+		});
+		
+		this.createCustom = new JCustomButton(this.label[4], Design.GREEN_COLOR);
+		this.createCustom.addActionListener(e -> {
+			FrameCreateCustom.getInstance().popup(0, PageGeneral.getInstance().getLvl());
 		});
 		
 		this.parameter.setEditable(false);
@@ -148,20 +155,28 @@ public class PageOption extends JPanel {
 		savePanel.add(inline1);
 		savePanel.add(inline2);
 		
+		JPanel equipPanel = new JPanel();
+		equipPanel.setLayout(new BoxLayout(equipPanel, BoxLayout.Y_AXIS));
+		equipPanel.setBackground(Design.UIColor[1]);
+		equipPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		equipPanel.add(this.createCustom);
+		
 		JPanel creditPanel = new JPanel();
 		creditPanel.setLayout(new BoxLayout(creditPanel, BoxLayout.Y_AXIS));
 		creditPanel.setBackground(Design.UIColor[1]);
 		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		creditPanel.add(this.label[4]);
-		this.label[4].setFont(Design.TITLE);
-		creditPanel.add(Box.createVerticalStrut(10));
 		creditPanel.add(this.label[5]);
-		this.label[5].setFont(Design.SUBTITLE);
+		this.label[5].setFont(Design.TITLE);
+		creditPanel.add(Box.createVerticalStrut(10));
+		creditPanel.add(this.label[6]);
+		this.label[6].setFont(Design.SUBTITLE);
 		creditPanel.add(Box.createVerticalStrut(5));
 		creditPanel.add(this.parameter);
 		
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.add(savePanel);
+		this.add(Box.createVerticalStrut(10));
+		this.add(equipPanel);
 		this.add(Box.createVerticalStrut(10));
 		this.add(creditPanel);
 	}
@@ -174,6 +189,7 @@ public class PageOption extends JPanel {
 		this.newSave.updateText(lang);
 		this.currentSave.updateText(lang);
 		this.saveAs.updateText(lang);
+		this.createCustom.updateText(lang);
 		this.parameter.setText(Lang.getDataCredit(lang));
 	}
 	

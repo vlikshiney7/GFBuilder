@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Fortification;
@@ -23,6 +24,7 @@ import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
+import fr.vlik.grandfantasia.custom.CustomArmor;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -300,8 +302,11 @@ public class PageArmor extends PagePanel {
 				
 				for(int j = 0; j < 3; j++) {
 					if(this.redEnchant.get(i*3+j).getSelectedIndex() != 0) {
-						for(Effect e : this.getRedEnchantment(i*3+j).getEffects()) {
-							list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+						for(Calculable c : this.getRedEnchantment(i*3+j).getEffects()) {
+							if(c instanceof Effect) {
+								Effect e = (Effect) c;
+								list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+							}
 						}
 					}
 				}
@@ -917,7 +922,11 @@ public class PageArmor extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.armor.size(); i++) {
-			config.put("Armor" + i, this.getArmor(i).getName(Language.FR));
+			if(this.getArmor(i).isCustom()) {
+				config.put("Armor" + i, "Custom::" + this.getArmor(i).getName(Language.FR) + "::" + this.getArmor(i).getQuality() + "::" + this.getArmor(i).getSignature());
+			} else {
+				config.put("Armor" + i, this.getArmor(i).getName(Language.FR));
+			}
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
@@ -965,11 +974,40 @@ public class PageArmor extends PagePanel {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.armor.size(); i++) {
-			Armor armor = Armor.get(config.get("Armor" + i), Language.FR, i);
-			if(armor == null) {
-				this.armor.get(i).setSelectedIndex(0);
+			Armor armor = null;
+			if(config.get("Armor" + i) != null && config.get("Armor" + i).startsWith("Custom")) {
+				String[] valueSplit = config.get("Armor" + i).split("::");
+				
+				Quality quality = null;
+				try {
+					quality = Quality.valueOf(valueSplit[2]);
+				} catch (Exception e) {
+					this.armor.get(i).setSelectedIndex(0);
+				}
+				
+				if(quality != null) {
+					armor = Armor.getCustom(valueSplit[1], quality, valueSplit[3]);
+					
+					if(armor == null) {
+						if(CustomArmor.constructCustom(valueSplit[1], quality, valueSplit[3])) {
+							SaveConfig.overrideCustom();
+							PageArmor.getInstance().updateArmor();
+							
+							armor = Armor.getCustom(valueSplit[1], quality, valueSplit[3]);
+							this.armor.get(i).setSelectedItem(armor);
+						}
+					} else {
+						this.armor.get(i).setSelectedItem(armor);
+					}
+				}
 			} else {
-				this.armor.get(i).setSelectedItem(armor);
+				armor = Armor.get(config.get("Armor" + i), Language.FR, i);
+				
+				if(armor == null) {
+					this.armor.get(i).setSelectedIndex(0);
+				} else {
+					this.armor.get(i).setSelectedItem(armor);
+				}
 			}
 		}
 		

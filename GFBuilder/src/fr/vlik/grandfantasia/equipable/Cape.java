@@ -23,6 +23,7 @@ public class Cape extends Equipment {
 	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Cape[] data;
+	private static ArrayList<Cape> customData = new ArrayList<Cape>();
 	static {
 		data = Loader.getCape();
 	}
@@ -46,20 +47,28 @@ public class Cape extends Equipment {
 		this.icon = cape.getIcon();
 	}
 	
-	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, Calculable[] effects, Calculable[] bonusXP) {
-		super(name, grades, lvl, quality, canEnchant, effects, bonusXP);
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, String setCode, String path, Calculable[] effects, Calculable[] bonusXP) {
+		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
 		this.setCode = setCode;
 		this.isMultiEffect = false;
 		this.icon = setIcon(path);
 	}
 	
-	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean canEnchant, String setCode, String path, MultiEffect effects, Calculable[] bonusXP) {
-		super(name, grades, lvl, quality, canEnchant, null, bonusXP);
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, String setCode, String path, MultiEffect effects, Calculable[] bonusXP) {
+		super(name, grades, lvl, quality, enchantable, null, bonusXP);
 		
 		this.setCode = setCode;
 		this.isMultiEffect = true;
 		this.multiEffects = effects;
+		this.icon = setIcon(path);
+	}
+	
+	public Cape(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, String path, Calculable[] effects, String signature) {
+		super(name, grades, lvl, quality, effects, signature);
+		
+		this.setCode = "-1";
+		this.isMultiEffect = false;
 		this.icon = setIcon(path);
 	}
 	
@@ -110,47 +119,50 @@ public class Cape extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
 			
 			for(int i = 0; i < this.effects.length; i++) {
 				newTab[i] = this.effects[i];
 			}
 			
-			for(int i = 0; i < enchant.getEffects().size(); i++) {
-				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			for(int i = 0; i < enchant.getEffects().length; i++) {
+				newTab[this.effects.length + i] = enchant.getEffects()[i];
 			}
 			
 			this.effects = newTab;
 		} else {
-			for(Effect e : enchant.getEffects()) {
-				int value = Enchantment.getValue(this, e.getType());
-				boolean found = false;
-				
-				for(Calculable calculable : this.effects) {
-					if(calculable instanceof Effect) {
-						Effect get = (Effect) calculable;
-						
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(value);
+			for(Calculable c : enchant.getEffects()) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					int value = Enchantment.getValue(this, e.getType());
+					boolean found = false;
+					
+					for(Calculable calculable : this.effects) {
+						if(calculable instanceof Effect) {
+							Effect get = (Effect) calculable;
 							
-							found = true;
-							break;
+							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+								get.addEnchantValue(value);
+								
+								found = true;
+								break;
+							}
 						}
 					}
-				}
-				
-				if(!found) {
-					e.addEnchantValue(value);
 					
-					Calculable[] newTab = new Calculable[this.effects.length + 1];
-					
-					for(int i = 0; i < this.effects.length; i++) {
-						newTab[i] = this.effects[i];
+					if(!found) {
+						e.addEnchantValue(value);
+						
+						Calculable[] newTab = new Calculable[this.effects.length + 1];
+						
+						for(int i = 0; i < this.effects.length; i++) {
+							newTab[i] = this.effects[i];
+						}
+						
+						newTab[this.effects.length] = e;
+						
+						this.effects = newTab;
 					}
-					
-					newTab[this.effects.length] = e;
-					
-					this.effects = newTab;
 				}
 			}
 		}
@@ -206,6 +218,10 @@ public class Cape extends Equipment {
 		System.out.println(code);
 	}
 	
+	public static void addCustom(Cape cape) {
+		Cape.customData.add(cape);
+	}
+	
 	public static Cape get(String name, Language lang) {
 		for(Cape cape : Cape.data) {
 			if(cape.getName(lang).equals(name)) {
@@ -214,6 +230,35 @@ public class Cape extends Equipment {
 		}
 		
 		return null;
+	}
+	
+	public static Cape getCustom(String name, Language lang) {
+		for(Cape cape : Cape.customData) {
+			if(cape.getName(lang).equals(name)) {
+				return cape;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Cape getCustom(String name, Quality quality, String signature) {
+		for(Cape cape : Cape.customData) {
+			if(cape.getName(Language.FR).equals(name) && cape.getQuality() == quality && cape.getSignature().equals(signature)) {
+				return cape;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Cape[] getCustomData() {
+		Cape[] cast = new Cape[customData.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = customData.get(i);
+		}
+		
+		return cast;
 	}
 	
 	public static Cape[] getPossibleCape(GradeName grade, int lvl) {

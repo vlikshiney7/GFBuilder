@@ -15,7 +15,16 @@ import java.util.Map;
 import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.page.PagePanel;
+import fr.vlik.grandfantasia.custom.CustomArmor;
+import fr.vlik.grandfantasia.custom.CustomCape;
+import fr.vlik.grandfantasia.custom.CustomRing;
+import fr.vlik.grandfantasia.custom.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.Cape;
+import fr.vlik.grandfantasia.equipable.Ring;
+import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.uidesign.JCustomButton;
 
 public class SaveConfig extends JCustomButton {
@@ -23,6 +32,7 @@ public class SaveConfig extends JCustomButton {
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_FOLDER_NAME = "GFBuilderSave";
 	private static final String EXTENSION = ".gfb";
+	private static final String CUSTOM_FILENAME = "CustomEquipmentCreation.gfbc";
 	public static final String DEFAULT_NAME = "New build *";
 	private static ArrayList<SaveConfig> data;
 	static {
@@ -118,37 +128,94 @@ public class SaveConfig extends JCustomButton {
 		}
 		
 		for(File file : folder.listFiles()) {
-			try (
-				BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-			) {
-				Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
-				
-				String[] header = reader.readLine().split("/");
-				String line = reader.readLine();
-				
-				String page = line;
-				
-				while(line != null) {
-					if(line.startsWith("\t")) {
-						String[] element = line.trim().split("=");
-						build.get(page).put(element[0], element.length != 1 ? element[1] : "");
-					} else {
-						page = line;
-						build.put(page, new HashMap<String, String>());
+			if(file.getName().endsWith(EXTENSION)) {
+				try (
+					BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+				) {
+					Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
+					
+					String[] header = reader.readLine().split("/");
+					String line = reader.readLine();
+					
+					String page = line;
+					
+					while(line != null) {
+						if(line.startsWith("\t")) {
+							String[] element = line.trim().split("=");
+							build.get(page).put(element[0], element.length != 1 ? element[1] : "");
+						} else {
+							page = line;
+							build.put(page, new HashMap<String, String>());
+						}
+						
+						line = reader.readLine();
 					}
 					
-					line = reader.readLine();
+					
+					// TODO A corriger, le header peut être null --> CRASH UTILISATEUR PREMIER LANCEMENT
+					SaveConfig.data.add(new SaveConfig(header[0], Language.valueOf(header[1]), build));
+				} catch (IOException e) {
+					System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 				}
-				
-				SaveConfig.data.add(new SaveConfig(header[0], Language.valueOf(header[1]), build));
-			} catch (IOException e) {
-				System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 			}
 		}
 		
 		if(SaveConfig.data.isEmpty()) {
 			Overlay.getInstance().setNameSave(DEFAULT_NAME);
 			Overlay.getInstance().setSave(false);
+		}
+		
+		try (
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME), "UTF-8"));
+		) {
+			String line = reader.readLine();
+			
+			while(line != null) {
+				
+				String[] lineSplit = line.split("::");
+				
+				Quality quality = null;
+				try {
+					quality = Quality.valueOf(lineSplit[2]);
+				} catch (Exception e) {
+					System.out.println("Ligne corrompu : " + line);
+				}
+				
+				if(lineSplit.length == 4 && quality != null) {
+				
+					switch (lineSplit[0]) {
+						case "Weapon":
+							if(!CustomWeapon.constructCustom(lineSplit[1], quality, lineSplit[3])) {
+								System.out.println("Ligne corrompu : " + line);
+							}
+							break;
+						case "Armor":
+							if(!CustomArmor.constructCustom(lineSplit[1], quality, lineSplit[3])) {
+								System.out.println("Ligne corrompu : " + line);
+							}
+							break;
+						case "Cape":
+							if(!CustomCape.constructCustom(lineSplit[1], quality, lineSplit[3])) {
+								System.out.println("Ligne corrompu : " + line);
+							}
+							break;
+						case "Ring":
+							if(!CustomRing.constructCustom(lineSplit[1], quality, lineSplit[3])) {
+								System.out.println("Ligne corrompu : " + line);
+							}
+							break;
+							
+						default:
+							System.out.println("Ligne corrompu : " + line);
+					}
+				}
+				
+				line = reader.readLine();
+			}
+			
+			SaveConfig.overrideCustom();
+		} catch (IOException e) {
+			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
 		}
 	}
 	
@@ -218,5 +285,31 @@ public class SaveConfig extends JCustomButton {
 	public static boolean fileExist() {
 		File file = new File(SAVE_FOLDER_NAME + File.separator + Overlay.getInstance().getCurrentName() + EXTENSION);
 		return file.exists();
+	}
+	
+	public static void overrideCustom() {
+		try (
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME, false), "UTF-8"));
+		) {
+			for(Weapon weapon : Weapon.getCustomData()) {
+				writer.append("Weapon::" + weapon.getName(Language.FR) + "::" + weapon.getQuality() + "::" + weapon.getSignature() + "\n");
+			}
+			
+			for(Armor armor : Armor.getCustomData()) {
+				writer.append("Armor::" + armor.getName(Language.FR) + "::" + armor.getQuality() + "::" + armor.getSignature() + "\n");
+			}
+			
+			for(Cape cape : Cape.getCustomData()) {
+				writer.append("Cape::" + cape.getName(Language.FR) + "::" + cape.getQuality() + "::" + cape.getSignature() + "\n");
+			}
+			
+			for(Ring ring : Ring.getCustomData()) {
+				writer.append("Ring::" + ring.getName(Language.FR) + "::" + ring.getQuality() + "::" + ring.getSignature() + "\n");
+			}
+			
+			writer.flush();
+		} catch (IOException e) {
+			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+		}
 	}
 }

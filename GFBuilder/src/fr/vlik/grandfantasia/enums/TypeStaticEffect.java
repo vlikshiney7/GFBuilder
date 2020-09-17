@@ -16,6 +16,8 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", Tools.EffectColor[8]),
 	Immobilisation("Immobilisation", "Immobilization", "Immobilisation", "Immobilization", Tools.EffectColor[8]),
 	NoSkill("Compétences bloquées", "Skills blocked", "Silence", "Anti Skills", Tools.EffectColor[8]),
+	NoPhys("Compétences physique bloquées", "Physical skills blocked", "Silence physique", "Anti Phys Skills", Tools.EffectColor[8]),
+	NoMag("Compétences magique bloquées", "Magical skills blocked", "Silence magique", "Anti Mag Skills", Tools.EffectColor[8]),
 	AntiItem("Objet bloqué", "Object blocked", "Anti Objet", "Anti Item", Tools.EffectColor[8]),
 	Stun("Étourdissement", "Stun", "Stun", "Stun", Tools.EffectColor[8]),
 	Push("Repousse l'ennemi", "Opponent push", "Push", "Push", Tools.EffectColor[8]),
@@ -25,7 +27,12 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	AntiHeal("Soin bloqué", "Heal blocked", "Anti Soin", "Anti Heal", Tools.EffectColor[8]),
 	Dispel("Suppression aléatoire d'un état négatif", "Auto dispel one random negative statut", "Dispel d'un malus", "Dispel one malus", Tools.EffectColor[0]),
 	Block("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),
+	Gel("Gel : PV et PM -20%", "Frost: HP and MP -20%", "PV/PM -20%", "HP/MP -20%", Tools.EffectColor[0]),
 	Duo("Permet d'équiper 2 armes", "Allow to equip 2 weapons", "2 armes possible", "2 weapons allowed", Tools.EffectColor[0]),
+	
+	Menace("-300 PV par seconde", "-300 HP per second", "-300 PV / s", "-300 HP / s", Tools.EffectColor[8]),
+	Massacre("-240 PM par seconde", "-240 MP per second", "-240 PM / s", "-240 MP / s", Tools.EffectColor[8]),
+	Conquete("-120 PM par seconde", "-120 MP per second", "-120 PM / s", "-120 MP / s", Tools.EffectColor[8]),
 	
 	ProcT0N0("PM de l'ennemi -3500 ~ -5000", "Opponent MP -3500 ~ -5000", "PM -3500 ~ -5000", "MP -3500 ~ -5000", Tools.EffectColor[0]),
 	ProcT0N1("Poison 4 : -200 PV chaque 2 secondes", "Poison 4 : -200 HP per 2 seconds", "-200 PV / 2s", "-200 HP / 2s", Tools.EffectColor[8]),

@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Bullet;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
@@ -20,6 +21,7 @@ import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
+import fr.vlik.grandfantasia.custom.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -291,8 +293,11 @@ public class PageWeapon extends PagePanel {
 						Enchantment red = this.getRedEnchantment(i*3+j);
 						
 						if(red != null) {
-							for(Effect e : red.getEffects()) {
-								list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+							for(Calculable c : red.getEffects()) {
+								if(c instanceof Effect) {
+									Effect e = (Effect) c;
+									list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+								}
 							}
 						}
 					}
@@ -898,7 +903,11 @@ public class PageWeapon extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.weapon.size(); i++) {
-			config.put("Weapon" + i, this.getWeapon(i).getName(lang));
+			if(this.getWeapon(i).isCustom()) {
+				config.put("Weapon" + i, "Custom::" + this.getWeapon(i).getName(Language.FR) + "::" + this.getWeapon(i).getQuality() + "::" + this.getWeapon(i).getSignature());
+			} else {
+				config.put("Weapon" + i, this.getWeapon(i).getName(lang));
+			}
 		}
 		
 		config.put("Bullet", this.getBullet().getName());
@@ -948,11 +957,40 @@ public class PageWeapon extends PagePanel {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.weapon.size(); i++) {
-			Weapon weapon = Weapon.get(config.get("Weapon" + i), Language.FR);
-			if(weapon == null) {
-				this.weapon.get(i).setSelectedIndex(0);
+			Weapon weapon = null;
+			if(config.get("Weapon" + i) != null && config.get("Weapon" + i).startsWith("Custom")) {
+				String[] valueSplit = config.get("Weapon" + i).split("::");
+				
+				Quality quality = null;
+				try {
+					quality = Quality.valueOf(valueSplit[2]);
+				} catch (Exception e) {
+					this.weapon.get(i).setSelectedIndex(0);
+				}
+				
+				if(quality != null) {
+					weapon = Weapon.getCustom(valueSplit[1], quality, valueSplit[3]);
+					
+					if(weapon == null) {
+						if(CustomWeapon.constructCustom(valueSplit[1], quality, valueSplit[3])) {
+							SaveConfig.overrideCustom();
+							PageWeapon.getInstance().updateWeapon();
+							
+							weapon = Weapon.getCustom(valueSplit[1], quality, valueSplit[3]);
+							this.weapon.get(i).setSelectedItem(weapon);
+						}
+					} else {
+						this.weapon.get(i).setSelectedItem(weapon);
+					}
+				}
 			} else {
-				this.weapon.get(i).setSelectedItem(weapon);
+				weapon = Weapon.get(config.get("Weapon" + i), Language.FR);
+				
+				if(weapon == null) {
+					this.weapon.get(i).setSelectedIndex(0);
+				} else {
+					this.weapon.get(i).setSelectedItem(weapon);
+				}
 			}
 		}
 		

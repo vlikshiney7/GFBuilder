@@ -27,7 +27,8 @@ public class Weapon extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	public static Weapon[][] data;
+	private static Weapon[][] data;
+	private static ArrayList<Weapon> customData = new ArrayList<Weapon>();
 	static {
 		Weapon.data = Loader.getWeapon();
 		loadData();
@@ -62,6 +63,15 @@ public class Weapon extends Equipment {
 		this.type = type;
 		this.uniqueEquip = uniqueEquip;
 		this.reinca = reinca;
+		this.icon = setIcon(path);
+	}
+	
+	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, WeaponType type, String path, Calculable[] effects, String signature) {
+		super(name, grades, lvl, quality, effects, signature);
+		
+		this.type = type;
+		this.uniqueEquip = false;
+		this.reinca = false;
 		this.icon = setIcon(path);
 	}
 	
@@ -130,47 +140,50 @@ public class Weapon extends Equipment {
 		}
 		
 		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().size()];
+			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
 			
 			for(int i = 0; i < this.effects.length; i++) {
 				newTab[i] = this.effects[i];
 			}
 			
-			for(int i = 0; i < enchant.getEffects().size(); i++) {
-				newTab[this.effects.length + i] = enchant.getEffects().get(i);
+			for(int i = 0; i < enchant.getEffects().length; i++) {
+				newTab[this.effects.length + i] = enchant.getEffects()[i];
 			}
 			
 			this.effects = newTab;
 		} else {
-			for(Effect e : enchant.getEffects()) {
-				int value = Enchantment.getValue(this, e.getType());
-				boolean found = false;
-				
-				for(Calculable calculable : this.effects) {
-					if(calculable instanceof Effect) {
-						Effect get = (Effect) calculable;
-						
-						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-							get.addEnchantValue(value);
+			for(Calculable c : enchant.getEffects()) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					int value = Enchantment.getValue(this, e.getType());
+					boolean found = false;
+					
+					for(Calculable calculable : this.effects) {
+						if(calculable instanceof Effect) {
+							Effect get = (Effect) calculable;
 							
-							found = true;
-							break;
+							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+								get.addEnchantValue(value);
+								
+								found = true;
+								break;
+							}
 						}
 					}
-				}
-				
-				if(!found) {
-					e.addEnchantValue(value);
 					
-					Calculable[] newTab = new Calculable[this.effects.length + 1];
-					
-					for(int i = 0; i < this.effects.length; i++) {
-						newTab[i] = this.effects[i];
+					if(!found) {
+						e.addEnchantValue(value);
+						
+						Calculable[] newTab = new Calculable[this.effects.length + 1];
+						
+						for(int i = 0; i < this.effects.length; i++) {
+							newTab[i] = this.effects[i];
+						}
+						
+						newTab[this.effects.length] = e;
+						
+						this.effects = newTab;
 					}
-					
-					newTab[this.effects.length] = e;
-					
-					this.effects = newTab;
 				}
 			}
 		}
@@ -392,6 +405,10 @@ public class Weapon extends Equipment {
 		Weapon.data = fusion;
 	}
 	
+	public static void addCustom(Weapon weapon) {
+		Weapon.customData.add(weapon);
+	}
+	
 	public static Weapon get(String name, Language lang) {
 		for(Weapon[] type : Weapon.data) {
 			for(Weapon weapon : type) {
@@ -402,6 +419,35 @@ public class Weapon extends Equipment {
 		}
 		
 		return null;
+	}
+	
+	public static Weapon getCustom(String name, Language lang) {
+		for(Weapon weapon : Weapon.customData) {
+			if(weapon.getName(lang).equals(name)) {
+				return weapon;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Weapon getCustom(String name, Quality quality, String signature) {
+		for(Weapon weapon : Weapon.customData) {
+			if(weapon.getName(Language.FR).equals(name) && weapon.getQuality() == quality && weapon.getSignature().equals(signature)) {
+				return weapon;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static Weapon[] getCustomData() {
+		Weapon[] cast = new Weapon[customData.size()];
+		for(int i = 0; i < cast.length; i++) {
+			cast[i] = customData.get(i);
+		}
+		
+		return cast;
 	}
 	
 	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
@@ -420,6 +466,35 @@ public class Weapon extends Equipment {
 		}
 		
 		result.add(new Weapon());
+		
+		for(Weapon custom : Weapon.customData) {
+			if(!custom.containGrade(grade.getGrade())) {
+				continue;
+			}
+			
+			boolean allowType = false;
+			for(int checkType : weaponType) {
+				if(checkType == custom.getType().index) {
+					allowType = true;
+					break;
+				}
+			}
+			
+			if(!allowType) {
+				continue;
+			}
+			
+			if(custom.getLvl() <= lvl) {
+				if(!custom.isReinca()) {
+					result.add(custom);
+				} else {
+					if(reinca.getLvl() > 0) {
+						result.add(custom);
+					}
+				}
+			}
+		}
+		
 		for(int i = 0; i < weaponType.length; i++) {
 			Weapon[] oneWeaponType = Weapon.data[weaponType[i]];
 			for(int j = 0; j < oneWeaponType.length; j++) {
