@@ -6,24 +6,24 @@ public class Proc implements Calculable {
 	
 	private Calculable[] effects;
 	private Activation activation;
-	private int taux;
+	private double taux;
 	private double time = 0;
 	private int cumul = 1;
 	private TDB tdb = TDB.NONE;
 	
 	
-	public Proc(int taux, Activation activation, Calculable[] effects) {
+	public Proc(double taux, Activation activation, Calculable[] effects) {
 		this.taux = taux;
 		this.activation = activation;
 		this.effects = effects;
 	}
 	
-	public Proc(int taux, Activation activation, double time, Calculable[] effects) {
+	public Proc(double taux, Activation activation, double time, Calculable[] effects) {
 		this(taux, activation, effects);
 		this.time = time;
 	}
 	
-	public Proc(int taux, Activation activation, double time, int cumul, Calculable[] effects) {
+	public Proc(double taux, Activation activation, double time, int cumul, Calculable[] effects) {
 		this(taux, activation, time, effects);
 		this.cumul = cumul;
 	}
@@ -45,6 +45,8 @@ public class Proc implements Calculable {
 	public static enum Activation {
 		Attack("en attaquant", "attacking"),
 		Attacked("quand attaqué", "when attacked"),
+		Phys("sur coup physique", "on physical hit"),
+		Mag("sur coup magique", "on magical hit"),
 		Crit("sur coup critique", "on critical hit"),
 		Crited("sur critique reçu", "on receive critical");
 		
@@ -61,7 +63,7 @@ public class Proc implements Calculable {
 		NONE,TDB;
 	}
 	
-	public int getTaux() {
+	public double getTaux() {
 		return this.taux;
 	}
 	

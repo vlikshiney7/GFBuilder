@@ -149,7 +149,7 @@ public class PageWeapon extends PagePanel {
 			this.labelValue.get(i).setVisible(false);
 			
 			/* PEARL */
-			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i).getQuality());
+			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i));
 			
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
@@ -367,10 +367,19 @@ public class PageWeapon extends PagePanel {
 		for(int i = 0; i < this.pearl.size(); i++) {
 			Pearl pearl = this.getPearl(i);
 			if(pearl.isCumulable()) {
-				list.addAll(pearl.getEffects());
+				if(pearl.getEffects() != null) {
+					for(Calculable c : pearl.getEffects()) {
+						list.add(c);
+					}
+				}
 			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
 				notCombinablePearl.add(pearl);
-				list.addAll(pearl.getEffects());
+				
+				if(pearl.getEffects() != null) {
+					for(Calculable c : pearl.getEffects()) {
+						list.add(c);
+					}
+				}
 			}
 		}
 		
@@ -610,7 +619,7 @@ public class PageWeapon extends PagePanel {
 	}
 	
 	private void updatePearl(int id) {
-		Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(id).getQuality());
+		Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(id));
 		
 		if(id == 0) {
 			for(int i = 0; i < 6; i++) {

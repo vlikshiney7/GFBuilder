@@ -1,25 +1,23 @@
 package fr.vlik.grandfantasia;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.SkillEffect;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Runway {
 	
-	public static final int[][] currentRunway = { {6, 7}, {4, 9}, {0, 3}, {1, 5}, {10, 8, 2} };
+	//public static final int[][] currentRunway = { {6, 7}, {4, 9}, {0, 3}, {1, 5}, {10, 8, 2} };
+	public static final String[][] currentRunway = { { "Bravoure", "Sorcier" }, { "Berserker", "Sagesse" }, { "Turbo", "Synthétisation" }, { "Lutte", "Malédiction" }, { "Illusion", "Ranger", "Praetor" } };
 	
-	public static Runway[] data;
-	static {
-		loadData();
-	}
+	public static Runway[] data = Loader.getRunway();
 	
 	private String name;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Calculable[] effects;
 	
-	public Runway(String name, ArrayList<Effect> effects) {
+	public Runway(String name, Calculable[] effects) {
 		this.name = name;
 		this.effects = effects;
 	}
@@ -28,59 +26,46 @@ public class Runway {
 		return this.name;
 	}
 	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < this.effects.length; i++) {
+			Calculable c = this.effects[i];
+			
+			if(c instanceof Effect) {
+				tab[i] = new Effect((Effect) c);
+			} else if(c instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) c);
+			} else if(c instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) c);
+			} else if(c instanceof Proc) {
+				tab[i] = new Proc((Proc) c);
+			}
+		}
+		
+		return tab;
 	}
 	
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("<strong>- " + this.name + "</strong>");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
-		}
 		
-		return tooltip.toString();
-	}
-	
-	public static void loadData() {
-		ArrayList<Runway> list = new ArrayList<Runway>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Runway.class.getResourceAsStream(Tools.RESOURCE + "runway.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[1]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[1]); j++)
-					effects.add(new Effect(lineSplit[j+2]));
-				
-				list.add(new Runway(lineSplit[0], effects));
-				
-				line = reader.readLine();
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				tooltip.append(e.getTooltip());
 			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Runway.class.getClass().getSimpleName() + " class");
 		}
 		
-		Runway.data = new Runway[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
+		return "<ul>" + tooltip + "</ul>";
 	}
 	
-	public static String getTooltipRunway(int[] idRunway) {
-		StringBuilder tooltip = new StringBuilder("<strong>Bonus :</strong>");
+	public static String getTooltipRunway(String[] idRunway) {
+		StringBuilder tooltip = new StringBuilder("<strong>Bonus :</strong><br>");
 		
 		for(int i = 0; i < idRunway.length; i++) {
-			tooltip.append("<br>");
-			tooltip.append(Runway.data[idRunway[i]].getTooltip());
+			tooltip.append(Runway.get(idRunway[i]).getTooltip());
 		}
 		
 		return "<html>" + tooltip + "</html>";
@@ -88,5 +73,15 @@ public class Runway {
 	
 	public static Runway[] getData() {
 		return Runway.data;
+	}
+	
+	public static Runway get(String name) {
+		for(Runway runway : Runway.data) {
+			if(runway.getName().equals(name)) {
+				return runway;
+			}
+		}
+		
+		return null;
 	}
 }

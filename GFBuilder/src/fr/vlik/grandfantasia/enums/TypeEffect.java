@@ -58,11 +58,14 @@ public enum TypeEffect implements Colorable, Writable {
 	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", 100, false, Tools.EffectColor[0]),
 	Depla("Vitesse de Déplacement", "", "Vit Depla", "", 200, false, Tools.EffectColor[0]),
 	
+	DegAtk("Dégât d'Attaque", "", "Deg Atq", "", -1, true, Tools.EffectColor[7]),
+	DegAtkD("Dégât d'Attaque Distance", "", "Deg Atq Dist", "", -1, true, Tools.EffectColor[7]),
+	DegAtkM("Dégât d'Attaque Magique", "", "Deg Atq Mag", "", -1, true, Tools.EffectColor[7]),
+	
 	ReducAtk("Réduction d'Attaque Mêlée", "", "Reduc Atq Mel", "", -1, true, Tools.EffectColor[10]),
 	ReducAtkD("Réduction d'Attaque Distance", "", "Reduc Atq Dist", "", -1, true, Tools.EffectColor[7]),
 	ReducAtkM("Réduction d'Attaque Magique", "", "Reduc Atq Mag", "", -1, true, Tools.EffectColor[11]),
 	
-	DegAtkD("Dégât d'Attaque Distance", "", "Dg Atq Dist", "", -1, true, Tools.EffectColor[7]),
 	RDegAtkD("Réduction de Dégât d'Attaque Distance", "", "Red Dg Dist", "", -1, true, Tools.EffectColor[7]),
 
 	ReducPtsP("Réduction Point Phyique", "", "Red Pts Phys", "", -1, true, Tools.EffectColor[10]),
@@ -83,7 +86,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegStdFeu("Dégât Feu sur attaque standard", "Fire Damage with standard attack", "Deg Feu Std", "Std Fire Dam", -1, true, Tools.EffectColor[10]),
 	DegStdGlace("Dégât Glace sur attaque standard", "Ice Damage with standard attack", "Deg Glace Std", "Std Ice Dam", -1, true, Tools.EffectColor[11]),
 	DegStdNature("Dégât Nature sur attaque standard", "Natural Damage with standard attack", "Deg Nature Std", "Std Natural Dam", -1, true, Tools.EffectColor[12]),
-
+	
 	DegPSacre("Dégât Sacré sur attaque physique", "Holy Damage with physical attack", "Deg Sacre Phys", "Phys Holy Dam", -1, true, Tools.EffectColor[7]),
 	DegPOmbre("Dégât Ombre sur attaque physique", "Dark Damage with physical attack", "Deg Ombre Phys", "Phys Dark Dam", -1, true, Tools.EffectColor[8]),
 	DegPFoudre("Dégât Foudre sur attaque physique", "Lighting Damage with physical attack", "Deg Foudre Phys", "Phys Lighting Dam", -1, true, Tools.EffectColor[9]),
@@ -138,6 +141,13 @@ public enum TypeEffect implements Colorable, Writable {
 	DegBa("Dégât au Bâton", "", "Deg Bat", "", -1, true, Tools.EffectColor[0]),
 	DegLa("Dégât à la Lame", "", "Deg Lame", "", -1, true, Tools.EffectColor[0]),
 	
+	DegBete("Dégât sur Bête", "", "Deg Bete", "", -1, true, Tools.EffectColor[0]),
+	DegPlante("Dégât sur Plante", "", "Deg Plante", "", -1, true, Tools.EffectColor[0]),
+	DegHuma("Dégât sur Humanoïde", "", "Deg Huma", "", -1, true, Tools.EffectColor[0]),
+	DegElem("Dégât sur Élémentaire", "", "Deg Elem", "", -1, true, Tools.EffectColor[0]),
+	DegMeca("Dégât sur Mécanique", "", "Deg Meca", "", -1, true, Tools.EffectColor[0]),
+	DegMort("Dégât sur Mort-Vivant", "", "Deg Mort", "", -1, true, Tools.EffectColor[0]),
+	DegDemon("Dégât sur Démon", "", "Deg Demon", "", -1, true, Tools.EffectColor[0]),
 	DegBeteP("Dégât Physique sur Bête", "", "Deg Phys Bete", "", -1, true, Tools.EffectColor[0]),
 	DegPlanteP("Dégât Physique sur Plante", "", "Deg Phys Plante", "", -1, true, Tools.EffectColor[0]),
 	DegHumaP("Dégât Physique sur Humanoïde", "", "Deg Phys Huma", "", -1, true, Tools.EffectColor[0]),

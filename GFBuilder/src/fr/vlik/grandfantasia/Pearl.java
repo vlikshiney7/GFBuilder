@@ -1,9 +1,6 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,38 +10,47 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equipable.Armor;
+import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.SkillEffect;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Pearl implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	private static Pearl[] dataWeapon;
-	private static Pearl[] dataArmor;
-	private static Pearl[] dataWeaponCost;
-	private static Pearl[] dataArmorCost;
-	static {
-		loadData();
-	}
+	private static Pearl[] dataWeapon = Loader.getWeaponPearl();
+	private static Pearl[] dataArmor = Loader.getArmorPearl();
+	private static Pearl[] dataWeaponCost = Loader.getWeaponCostPearl();
+	private static Pearl[] dataArmorCost = Loader.getArmorCostPearl();
 	
 	private String name;
 	private Quality quality;
-	private boolean purpulOnly;
+	private Quality restricStuff;
 	private boolean cumulable;
 	private Icon icon;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
+	private Calculable[] effects;
 	
-	public Pearl(String name, Quality quality, boolean purpulOnly, boolean cumulable, String path, String[] effects) {
+	public Pearl() {
+		this.name = "Aucun";
+		this.quality = Quality.GREY;
+		this.restricStuff = Quality.GREY;
+		this.cumulable = true;
+		this.icon = setIcon("null");
+	}
+	
+	public Pearl(String name, Quality quality, Quality restricStuff, boolean cumulable, String path, Calculable[] effects) {
 		this.name = name;
-		this.purpulOnly = purpulOnly;
+		this.restricStuff = restricStuff;
 		this.cumulable = cumulable;
 		this.quality = quality;
 		this.icon = setIcon(path);
-		
-		for(int i = 0; i < effects.length; i++) {
-			this.effects.add(new Effect(effects[i]));
-		}
+		this.effects = effects;
 	}
 
 	public String getName() {
@@ -54,9 +60,9 @@ public class Pearl implements FullRenderer {
 	public Quality getQuality() {
 		return this.quality;
 	}
-
-	public boolean isPurpleOnly() {
-		return this.purpulOnly;
+	
+	public Quality getRestricStuff() {
+		return this.restricStuff;
 	}
 	
 	public boolean isCumulable() {
@@ -67,9 +73,29 @@ public class Pearl implements FullRenderer {
 	public Icon getIcon() {
 		return this.icon;
 	}
-
-	public ArrayList<Effect> getEffects() {
-		return this.effects;
+	
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		
+		for(int i = 0; i < this.effects.length; i++) {
+			Calculable c = this.effects[i];
+			
+			if(c instanceof Effect) {
+				tab[i] = new Effect((Effect) c);
+			} else if(c instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) c);
+			} else if(c instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) c);
+			} else if(c instanceof Proc) {
+				tab[i] = new Proc((Proc) c);
+			}
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -112,16 +138,6 @@ public class Pearl implements FullRenderer {
 		boolean b = this.name.equals(pearl.name)
 				&& this.quality == pearl.quality;
 		
-		if(b && this.effects.size() == pearl.effects.size()) {
-			for(int i = 0; i < this.effects.size(); i++) {
-				if(!this.effects.get(i).equals(pearl.getEffects().get(i))) {
-					return false;
-				}
-			}
-		} else {
-			return false;
-		}
-		
 		return b;
 	}
 	
@@ -133,64 +149,14 @@ public class Pearl implements FullRenderer {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
-		}
 		
-		return "<html>" + tooltip + "</html>";
-	}
-	
-	public static void loadData() {
-		ArrayList<ArrayList<Pearl>> list = new ArrayList<ArrayList<Pearl>>();
-		String[] filesName = { "weapon/pearl", "armor/pearl", "costume/pearlWeapon", "costume/pearlArmor" };
-		
-		for(int i = 0; i < filesName.length; i++) {
-			list.add(new ArrayList<Pearl>());
-			try (
-				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						Pearl.class.getResourceAsStream(Tools.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
-			) {
-				String line = reader.readLine();
-				while (line != null) {
-					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1];
-					
-					Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
-					
-					String[] effects = new String[Integer.parseInt(lineSplit[4])];
-					for(int j = 0; j < effects.length; j++) effects[j] = lineSplit[j+5];
-					
-					Pearl pearl = new Pearl(lineSplit[0], quality, Boolean.parseBoolean(lineSplit[2]), Boolean.parseBoolean(lineSplit[3]), path, effects);
-					list.get(i).add(pearl);
-					
-					line = reader.readLine();
-				}
-			}  catch (IOException e) {
-				System.out.println("Error with " + Pearl.class.getClass().getSimpleName() + " class");
+		if(this.effects != null) {
+			for(Calculable c : this.effects) {
+				tooltip.append(c.getTooltip());
 			}
 		}
 		
-		Pearl.dataWeapon = new Pearl[list.get(0).size()];
-		for(int i = 0; i < dataWeapon.length; i++) {
-			dataWeapon[i] = list.get(0).get(i);
-		}
-		
-		Pearl.dataArmor = new Pearl[list.get(1).size()];
-		for(int i = 0; i < dataArmor.length; i++) {
-			dataArmor[i] = list.get(1).get(i);
-		}
-		
-		
-		Pearl.dataWeaponCost = new Pearl[list.get(2).size()];
-		for(int i = 0; i < dataWeaponCost.length; i++) {
-			dataWeaponCost[i] = list.get(2).get(i);
-		}
-		
-		Pearl.dataArmorCost = new Pearl[list.get(3).size()];
-		for(int i = 0; i < dataArmorCost.length; i++) {
-			dataArmorCost[i] = list.get(3).get(i);
-		}
+		return "<html>" + tooltip + "</html>";
 	}
 	
 	public static Pearl getWeapon(String name) {
@@ -233,16 +199,18 @@ public class Pearl implements FullRenderer {
 		return null;
 	}
 	
-	public static Pearl[] getPossibleWeaponPearl(Quality quality) {
+	public static Pearl[] getPossibleWeaponPearl(Weapon weapon) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
-		for(int i = 0; i < Pearl.dataWeapon.length; i++) {
-			if(Pearl.dataWeapon[i].isPurpleOnly()) {
-				if(quality == Quality.PURPLE) {
-					result.add(Pearl.dataWeapon[i]);
+		result.add(new Pearl());
+		
+		for(Pearl pearl : Pearl.dataWeapon) {
+			if(pearl.getRestricStuff() != null) {
+				if(weapon.getQuality() == pearl.getRestricStuff()) {
+					result.add(pearl);
 				}
 			} else {
-				result.add(Pearl.dataWeapon[i]);
+				result.add(pearl);
 			}
 		}
 		
@@ -254,16 +222,18 @@ public class Pearl implements FullRenderer {
 		return cast;
 	}
 	
-	public static Pearl[] getPossibleArmorPearl(Quality quality) {
+	public static Pearl[] getPossibleArmorPearl(Armor armor) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
-		for(int i = 0; i < Pearl.dataArmor.length; i++) {
-			if(Pearl.dataArmor[i].isPurpleOnly()) {
-				if(quality == Quality.PURPLE) {
-					result.add(Pearl.dataArmor[i]);
+		result.add(new Pearl());
+		
+		for(Pearl pearl : Pearl.dataWeapon) {
+			if(pearl.getRestricStuff() != null) {
+				if(armor.getQuality() == pearl.getRestricStuff()) {
+					result.add(pearl);
 				}
 			} else {
-				result.add(Pearl.dataArmor[i]);
+				result.add(pearl);
 			}
 		}
 		

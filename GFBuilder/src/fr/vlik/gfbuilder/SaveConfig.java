@@ -182,7 +182,7 @@ public class SaveConfig extends JCustomButton {
 				}
 				
 				if(lineSplit.length == 4 && quality != null) {
-				
+					
 					switch (lineSplit[0]) {
 						case "Weapon":
 							if(!CustomWeapon.constructCustom(lineSplit[1], quality, lineSplit[3])) {

@@ -1,9 +1,6 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,23 +11,22 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class Nucleus implements FullRenderer {
 	
 	public static String PATH = Tools.RESOURCE + Nucleus.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	private static Nucleus[][] data;
-	static {
-		loadData();
-	}
+	private static Nucleus[][] data = Loader.getNucleus();
 	
 	private String name;
 	private Quality quality;
 	private Icon icon;
-	private Effect[] effects;
+	private Calculable[] effects;
 	
-	public Nucleus(String name, Quality quality, String path, Effect[] effects) {
+	public Nucleus(String name, Quality quality, String path, Calculable[] effects) {
 		this.name = name;
 		this.quality = quality;
 		this.icon = setIcon(path);
@@ -55,14 +51,18 @@ public class Nucleus implements FullRenderer {
 		return this.icon;
 	}
 	
-	public Effect[] getEffects() {
+	public Calculable[] getEffects() {
 		if(this.effects == null) {
 			return null;
 		}
 		
-		Effect[] tab = new Effect[this.effects.length];
+		Calculable[] tab = new Calculable[this.effects.length];
 		for(int i = 0; i < tab.length; i++) {
-			tab[i] = new Effect(this.effects[i]);
+			if(this.effects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) this.effects[i]);
+			} else {
+				tab[i] = this.effects[i];
+			}
 		}
 		
 		return tab;
@@ -93,55 +93,13 @@ public class Nucleus implements FullRenderer {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				tooltip.append(e.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";
-	}
-	
-	public static void loadData() {
-		ArrayList<ArrayList<Nucleus>> list = new ArrayList<ArrayList<Nucleus>>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Nucleus.class.getResourceAsStream(PATH + "nucleus.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while(line != null) {
-				int numLine = Integer.parseInt(line);
-				ArrayList<Nucleus> array = new ArrayList<Nucleus>(numLine);
-				for(int j = 0; j < numLine; j++) {
-					line = reader.readLine();
-					
-					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1];
-					
-					Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
-					
-					Effect[] effects = new Effect[Integer.parseInt(lineSplit[2])];
-					for(int k = 0; k < Integer.parseInt(lineSplit[2]); k++)
-						effects[k] = new Effect(lineSplit[k+3]);
-					
-					array.add(new Nucleus(lineSplit[0], quality, path, effects));
-				}
-				list.add(array);
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Nucleus.class.getClass().getSimpleName() + " class");
-		}
-		
-		Nucleus.data = new Nucleus[list.size()][];
-		for(int i = 0; i < data.length; i++) {
-			Nucleus[] nucleus = new Nucleus[list.get(i).size()];
-			for(int j = 0; j < list.get(i).size(); j++) {
-				nucleus[j] = list.get(i).get(j);				
-			}
-			Nucleus.data[i] = nucleus;
-		}
 	}
 	
 	public static Nucleus[] getData(ArrayList<String> stoneName) {

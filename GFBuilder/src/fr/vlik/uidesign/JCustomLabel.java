@@ -97,6 +97,7 @@ public class JCustomLabel extends JLabel {
 			this.setText(nucleus.getName());
 			this.setIcon(nucleus.getIcon());
 			this.setToolTipText(nucleus.getTooltip());
+			this.setForeground(nucleus.getColor());
 			this.effects = nucleus.getEffects();
 		} else if(object instanceof CombiTalent) {
 			CombiTalent combiTalent = (CombiTalent) object;

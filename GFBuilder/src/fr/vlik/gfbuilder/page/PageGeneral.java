@@ -191,7 +191,15 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void setAdditionalEffects() {
-		this.additionalEffects = this.getArchive().getEffects();
+		ArrayList<Effect> list = new ArrayList<Effect>();
+		
+		if(this.getArchive().getEffects() != null) {
+			for(Effect e : this.getArchive().getEffects()) {
+				list.add(e);
+			}
+		}
+		
+		this.additionalEffects = list;
 	}
 
 	@Override

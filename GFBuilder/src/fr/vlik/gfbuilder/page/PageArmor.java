@@ -160,7 +160,7 @@ public class PageArmor extends PagePanel {
 			
 			
 			/* PERLE */
-			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i).getQuality());
+			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i));
 			
 			this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 			
@@ -353,10 +353,19 @@ public class PageArmor extends PagePanel {
 		for(int i = 0; i < this.pearl.size(); i++) {
 			Pearl pearl = this.getPearl(i);
 			if(pearl.isCumulable()) {
-				list.addAll(pearl.getEffects());
+				if(pearl.getEffects() != null) {
+					for(Calculable c : pearl.getEffects()) {
+						list.add(c);
+					}
+				}
 			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
 				notCombinablePearl.add(pearl);
-				list.addAll(pearl.getEffects());
+				
+				if(pearl.getEffects() != null) {
+					for(Calculable c : pearl.getEffects()) {
+						list.add(c);
+					}
+				}
 			}
 		}
 		
@@ -637,7 +646,7 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updatePearl(int id) {
-		Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(id).getQuality());
+		Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(id));
 		
 		if(id == 0) {
 			Pearl memory = this.getPearl(id);

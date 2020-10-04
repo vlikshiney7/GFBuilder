@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,15 +10,13 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.Loader;
 
 public class Grade implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	public static Grade[] data;
-	static {
-		loadData();
-	}
+	public static Grade[] data = Loader.getGrade();
 	
 	private Map<Language, String> name;
 	private GradeName grade;
@@ -95,39 +90,6 @@ public class Grade implements Iconable, Writable {
 	@Override
 	public String getTooltip() {
 		return this.lvlMin + " - " + this.lvlMax;
-	}
-	
-	public static void loadData() {
-		ArrayList<Grade> list = new ArrayList<Grade>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Grade.class.getResourceAsStream(PATH + "grade.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String[] name = lineSplit[0].split(",");
-				String path =  lineSplit[lineSplit.length-1];
-				
-				Map<Language, String> lang = new HashMap<Language, String>();
-				for(int i = 0; i < name.length; i++) {
-					lang.put(Language.values()[i], name[i]);
-				}
-				
-				list.add(new Grade(lang, GradeName.values()[Integer.parseInt(lineSplit[1])], Integer.parseInt(lineSplit[2]), Integer.parseInt(lineSplit[3]), path));
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Grade.class.getClass().getSimpleName() + " class");
-		}
-		
-		Grade.data = new Grade[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
 	}
 	
 	public static Grade[] getData() {

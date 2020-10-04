@@ -4868,10 +4868,7 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
-						new Effect(TypeEffect.VitAtkD, false, -40, Target.OPPONENT),
-						new Effect(TypeEffect.Depla, false, 50),
-						new Effect(TypeEffect.RDCCP, false, 35),
+						new Effect(TypeEffect.RDCCP, false, -35, Target.OPPONENT),
 					}),
 				}),
 			new EquipSet("Set du Dragon Émeraude", "tdb1",

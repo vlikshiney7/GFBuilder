@@ -43,7 +43,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
 	private ArrayList<JCustomLabel> guildBuffUsed = new ArrayList<JCustomLabel>(4);
 	private JCustomComboBox<BuffIcon> guildBuff;
-	private ArrayList<JCustomLabel> stoneUsed = new ArrayList<JCustomLabel>(3);
+	private ArrayList<JCustomLabel> stoneUsed = new ArrayList<JCustomLabel>(13);
 	private JCustomComboBox<Nucleus> stone;
 	
 	private ArrayList<Effect> additionalEffects;
@@ -122,7 +122,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		});
 		
 		
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 13; i++) {
 			this.stoneUsed.add(new JCustomLabel());
 			this.stoneUsed.get(i).setBackground(Design.UIColor[0]);
 			this.stoneUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
@@ -183,8 +183,8 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			if(this.getNucleus(i).getEffects() != null) {
-				for(Effect e : this.getNucleus(i).getEffects()) {
-					list.add(e);
+				for(Calculable c : this.getNucleus(i).getEffects()) {
+					list.add(c);
 				}
 			}
 		}
@@ -334,7 +334,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		blocStone.setBackground(Design.UIColor[1]);
 		blocStone.add(Box.createVerticalStrut(5));
 		
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 13; i++) {
 			JPanel lineStone = new JPanel();
 			lineStone.setLayout(new BoxLayout(lineStone, BoxLayout.X_AXIS));
 			lineStone.setBackground(Design.UIColor[0]);
@@ -475,7 +475,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		int slot = 0;
-		while(slot < 3 && this.stoneUsed.get(slot).isVisible()) {
+		while(slot < 13 && this.stoneUsed.get(slot).isVisible()) {
 			slot++;
 		}
 		
@@ -496,7 +496,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private void refreshStoneList() {
 		ArrayList<String> stoneName = new ArrayList<String>();
 		
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 13; i++) {
 			if(this.stoneUsed.get(i).isVisible()) {
 				stoneName.add(this.stoneUsed.get(i).getText());
 			}

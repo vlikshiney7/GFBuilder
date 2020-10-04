@@ -251,19 +251,32 @@ public class PageCostume extends PagePanel {
 				continue;
 			}
 			if(i % 2 == 0) {
-				for(int j : Runway.currentRunway[i/2]) {
-					list.addAll(Runway.getData()[j].getEffects());
+				for(String j : Runway.currentRunway[i/2]) {
+					if(Runway.get(j).getEffects() != null) {
+						for(Calculable c : Runway.get(j).getEffects()) {
+							list.add(c);
+						}
+					}
 				}
 			} else {
-				for(int j : Runway.currentRunway[4]) {
-					list.addAll(Runway.getData()[j].getEffects());
+				for(String j : Runway.currentRunway[4]) {
+					if(Runway.get(j).getEffects() != null) {
+						for(Calculable c : Runway.get(j).getEffects()) {
+							list.add(c);
+						}
+					}
 				}
 			}
 		}
 		
 		for(int i = 0; i < this.costPearl.size(); i++) {
 			Pearl pearl = this.getCostPearl(i);
-			list.addAll(pearl.getEffects());
+			
+			if(pearl.getEffects() != null) {
+				for(Calculable c : pearl.getEffects()) {
+					list.add(c);
+				}
+			}
 		}
 		
 		this.effects = list;
