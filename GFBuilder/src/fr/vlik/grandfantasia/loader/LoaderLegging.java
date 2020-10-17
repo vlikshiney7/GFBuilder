@@ -753,7 +753,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Destructeur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "100evo0R", "pantalons/65pvp0", new MultiEffect("100evo0R-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo0R", "pantalons/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1053, true),
 						new Effect(TypeEffect.DefM, false, 788, true),
@@ -837,7 +837,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Destructeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "100evo0", "pantalons/65pvp0", new MultiEffect("100evo0-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo0", "pantalons/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 877, true),
 						new Effect(TypeEffect.DefM, false, 656, true),
@@ -921,7 +921,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Croisé (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "100evo1R", "pantalons/100pve1", new MultiEffect("100evo1R-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo1R", "pantalons/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1121, true),
 						new Effect(TypeEffect.DefM, false, 756, true),
@@ -1005,7 +1005,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Croisé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "100evo1", "pantalons/100pve1", new MultiEffect("100evo1-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo1", "pantalons/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 934, true),
 						new Effect(TypeEffect.DefM, false, 630, true),
@@ -1119,7 +1119,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Ravageur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "90evo0R", "pantalons/70nucleus0", new MultiEffect("90evo0R-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo0R", "pantalons/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 932, true),
 						new Effect(TypeEffect.DefM, false, 698, true),
@@ -1243,7 +1243,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Ravageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "90evo0", "pantalons/70nucleus0", new MultiEffect("90evo0-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo0", "pantalons/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 776, true),
 						new Effect(TypeEffect.DefM, false, 581, true),
@@ -1367,7 +1367,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Templier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "90evo1R", "pantalons/70nucleus1", new MultiEffect("90evo1R-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo1R", "pantalons/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 995, true),
 						new Effect(TypeEffect.DefM, false, 674, true),
@@ -1491,7 +1491,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Templier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "90evo1", "pantalons/70nucleus1", new MultiEffect("90evo1-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo1", "pantalons/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 829, true),
 						new Effect(TypeEffect.DefM, false, 561, true),
@@ -1665,7 +1665,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Gladiateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "75evo0R", "pantalons/75evo0", new MultiEffect("75evo0R-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo0R", "pantalons/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 807, true),
 						new Effect(TypeEffect.DefM, false, 604, true),
@@ -1789,7 +1789,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives du Gladiateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "75evo0", "pantalons/75evo0", new MultiEffect("75evo0-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo0", "pantalons/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 672, true),
 						new Effect(TypeEffect.DefM, false, 503, true),
@@ -1913,7 +1913,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Vindicateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "75evo1R", "pantalons/75evo1", new MultiEffect("75evo1R-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo1R", "pantalons/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 848, true),
 						new Effect(TypeEffect.DefM, false, 575, true),
@@ -2037,7 +2037,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives du Vindicateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "75evo1", "pantalons/75evo1", new MultiEffect("75evo1-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo1", "pantalons/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 706, true),
 						new Effect(TypeEffect.DefM, false, 479, true),
@@ -2210,7 +2210,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Berserker (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "60evo0R", "pantalons/100pve0", new MultiEffect("60evo0R-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo0R", "pantalons/100pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 548, true),
 						new Effect(TypeEffect.DefM, false, 410, true),
@@ -2444,7 +2444,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives du Berserker"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "60evo0", "pantalons/100pve0", new MultiEffect("60evo0-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo0", "pantalons/100pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 456, true),
 						new Effect(TypeEffect.DefM, false, 341, true),
@@ -2678,7 +2678,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Paladin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "60evo1R", "pantalons/100pve0", new MultiEffect("60evo1R-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo1R", "pantalons/100pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 580, true),
 						new Effect(TypeEffect.DefM, false, 391, true),
@@ -2912,7 +2912,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives du Paladin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "60evo1", "pantalons/100pve0", new MultiEffect("60evo1-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo1", "pantalons/100pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 483, true),
 						new Effect(TypeEffect.DefM, false, 325, true),
@@ -3162,7 +3162,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Guerrier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "30evo0R", "pantalons/30pve0", new MultiEffect("30evo0R-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo0R", "pantalons/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 269, true),
 						new Effect(TypeEffect.DefM, false, 202, true),
@@ -3316,7 +3316,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives du Guerrier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "30evo0", "pantalons/30pve0", new MultiEffect("30evo0-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo0", "pantalons/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 224, true),
 						new Effect(TypeEffect.DefM, false, 168, true),
@@ -4057,7 +4057,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Kage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "100evo3R", "pantalons/100pve3", new MultiEffect("100evo3R-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo3R", "pantalons/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 879, true),
 						new Effect(TypeEffect.DefM, false, 875, true),
@@ -4141,7 +4141,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Kage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "100evo3", "pantalons/100pve3", new MultiEffect("100evo3-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo3", "pantalons/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 732, true),
 						new Effect(TypeEffect.DefM, false, 729, true),
@@ -4244,7 +4244,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Shinobi (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "90evo3R", "pantalons/70nucleus3", new MultiEffect("90evo3R-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo3R", "pantalons/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 777, true),
 						new Effect(TypeEffect.DefM, false, 774, true),
@@ -4368,7 +4368,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Shinobi"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "90evo3", "pantalons/70nucleus3", new MultiEffect("90evo3-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo3", "pantalons/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 647, true),
 						new Effect(TypeEffect.DefM, false, 645, true),
@@ -4511,7 +4511,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Ninja (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "75evo3R", "pantalons/75evo3", new MultiEffect("75evo3R-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo3R", "pantalons/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 639, true),
 						new Effect(TypeEffect.DefM, false, 671, true),
@@ -4635,7 +4635,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Collants Évolutifs du Ninja"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "75evo3", "pantalons/75evo3", new MultiEffect("75evo3-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo3", "pantalons/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 532, true),
 						new Effect(TypeEffect.DefM, false, 559, true),
@@ -4789,7 +4789,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives de l'Assassin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "60evo3R", "pantalons/40pve1", new MultiEffect("60evo3R-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo3R", "pantalons/40pve1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 434, true),
 						new Effect(TypeEffect.DefM, false, 455, true),
@@ -5023,7 +5023,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres Évolutives de l'Assassin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "60evo3", "pantalons/40pve1", new MultiEffect("60evo3-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo3", "pantalons/40pve1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 361, true),
 						new Effect(TypeEffect.DefM, false, 379, true),
@@ -5272,7 +5272,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de l'Archer (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "30evo2R", "pantalons/30pve2", new MultiEffect("30evo2R-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo2R", "pantalons/30pve2", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 225, true),
 						new Effect(TypeEffect.DefM, false, 214, true),
@@ -5426,7 +5426,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives de l'Archer"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "30evo2", "pantalons/30pve2", new MultiEffect("30evo2-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo2", "pantalons/30pve2", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 187, true),
 						new Effect(TypeEffect.DefM, false, 178, true),
@@ -6143,7 +6143,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon évolutif du Druide (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "100evo5R", "pantalons/100pve5", new MultiEffect("100evo5R-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo5R", "pantalons/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 965, true),
 						new Effect(TypeEffect.DefM, false, 962, true),
@@ -6227,7 +6227,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon évolutif du Druide"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "100evo5", "pantalons/100pve5", new MultiEffect("100evo5-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo5", "pantalons/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 804, true),
 						new Effect(TypeEffect.DefM, false, 801, true),
@@ -6321,7 +6321,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Shaman (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "90evo5R", "pantalons/70nucleus5", new MultiEffect("90evo5R-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo5R", "pantalons/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 855, true),
 						new Effect(TypeEffect.DefM, false, 852, true),
@@ -6445,7 +6445,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Shaman"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "90evo5", "pantalons/70nucleus5", new MultiEffect("90evo5-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo5", "pantalons/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 712, true),
 						new Effect(TypeEffect.DefM, false, 710, true),
@@ -6599,7 +6599,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon évolutif de l'Oracle (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "75evo5R", "pantalons/75evo5", new MultiEffect("75evo5R-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo5R", "pantalons/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 702, true),
 						new Effect(TypeEffect.DefM, false, 746, true),
@@ -6723,7 +6723,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon Évolutif de l'Oracle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "75evo5", "pantalons/75evo5", new MultiEffect("75evo5-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo5", "pantalons/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 585, true),
 						new Effect(TypeEffect.DefM, false, 621, true),
@@ -6877,7 +6877,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon évolutif du Sage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "60evo5R", "pantalons/50pve2", new MultiEffect("60evo5R-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo5R", "pantalons/50pve2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 477, true),
 						new Effect(TypeEffect.DefM, false, 506, true),
@@ -7111,7 +7111,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon Évolutif du Sage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "60evo5", "pantalons/50pve2", new MultiEffect("60evo5-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo5", "pantalons/50pve2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 397, true),
 						new Effect(TypeEffect.DefM, false, 421, true),
@@ -7361,7 +7361,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Prêtre (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "30evo0R", "pantalons/30pve4", new MultiEffect("30evo0R-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo0R", "pantalons/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 246, true),
 						new Effect(TypeEffect.DefM, false, 236, true),
@@ -7515,7 +7515,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières Évolutives du Prêtre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "30evo0", "pantalons/30pve4", new MultiEffect("30evo0-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo0", "pantalons/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 205, true),
 						new Effect(TypeEffect.DefM, false, 196, true),
@@ -8279,7 +8279,7 @@ class LoaderLegging {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives de l'Oméga (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
-					ArmorType.JAMBIERE, "100evo8R", "pantalons/100evo8", new MultiEffect("100evo8R-2", 91, new Effect[][] {
+					ArmorType.JAMBIERE, "100evo8R", "pantalons/100evo8", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 1053, true),
 							new Effect(TypeEffect.DefM, false, 750, true),
@@ -8363,7 +8363,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres spirituelles d'Oméga"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
-					ArmorType.JAMBIERE, "100evo8", "pantalons/100evo8", new MultiEffect("100evo8-2", 91, new Effect[][] {
+					ArmorType.JAMBIERE, "100evo8", "pantalons/100evo8", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 877, true),
 							new Effect(TypeEffect.DefM, false, 625, true),
@@ -8458,7 +8458,7 @@ class LoaderLegging {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Mégatron (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, true,
-					ArmorType.JAMBIERE, "90evo8R", "pantalons/90evo8", new MultiEffect("90evo8R-2", 76, new Effect[][] {
+					ArmorType.JAMBIERE, "90evo8R", "pantalons/90evo8", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 932, true),
 							new Effect(TypeEffect.DefM, false, 664, true),
@@ -8582,7 +8582,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres d'Essence de Prime"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
-					ArmorType.JAMBIERE, "90evo8", "pantalons/90evo8", new MultiEffect("90evo8-2", 76, new Effect[][] {
+					ArmorType.JAMBIERE, "90evo8", "pantalons/90evo8", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 776, true),
 							new Effect(TypeEffect.DefM, false, 553, true),
@@ -8726,7 +8726,7 @@ class LoaderLegging {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Prime (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
-					ArmorType.JAMBIERE, "75evo8R", "pantalons/75evo8", new MultiEffect("75evo8R-2", 61, new Effect[][] {
+					ArmorType.JAMBIERE, "75evo8R", "pantalons/75evo8", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 807, true),
 							new Effect(TypeEffect.DefM, false, 575, true),
@@ -8850,7 +8850,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres de l'Essence du Métalleux"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
-					ArmorType.JAMBIERE, "75evo8", "pantalons/75evo8", new MultiEffect("75evo8-2", 61, new Effect[][] {
+					ArmorType.JAMBIERE, "75evo8", "pantalons/75evo8", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 672, true),
 							new Effect(TypeEffect.DefM, false, 479, true),
@@ -8983,7 +8983,7 @@ class LoaderLegging {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres évolutives du Métalleux (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
-					ArmorType.JAMBIERE, "60evo8R", "pantalons/65pvp8", new MultiEffect("60evo8R-2", 31, new Effect[][] {
+					ArmorType.JAMBIERE, "60evo8R", "pantalons/65pvp8", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 548, true),
 							new Effect(TypeEffect.DefM, false, 390, true),
@@ -9217,7 +9217,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres spirituelles du Métalleux"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
-					ArmorType.JAMBIERE, "60evo8", "pantalons/65pvp8", new MultiEffect("60evo8-2", 31, new Effect[][] {
+					ArmorType.JAMBIERE, "60evo8", "pantalons/65pvp8", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 456, true),
 							new Effect(TypeEffect.DefM, false, 325, true),
@@ -9451,7 +9451,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Machiniste (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
-					ArmorType.JAMBIERE, "30evo8R", "pantalons/20pve8", new MultiEffect("30evo8R-2", 6, new Effect[][] {
+					ArmorType.JAMBIERE, "30evo8R", "pantalons/20pve8", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 202, true),
 							new Effect(TypeEffect.DefM, false, 257, true),
@@ -9605,7 +9605,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Culottes spirituelles du Machiniste"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-					ArmorType.JAMBIERE, "30evo8", "pantalons/20pve8", new MultiEffect("30evo8-2", 6, new Effect[][] {
+					ArmorType.JAMBIERE, "30evo8", "pantalons/20pve8", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 168, true),
 							new Effect(TypeEffect.DefM, false, 214, true),
@@ -10371,7 +10371,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Pillard réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "100evo11R", "pantalons/100evo11", new MultiEffect("100evo11R-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo11R", "pantalons/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 828, true),
 						new Effect(TypeEffect.DefM, false, 998, true),
@@ -10455,7 +10455,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Pillard"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "100evo11", "pantalons/100evo11", new MultiEffect("100evo11-2", 91, new Effect[][] {
+				ArmorType.JAMBIERE, "100evo11", "pantalons/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 690, true),
 						new Effect(TypeEffect.DefM, false, 831, true),
@@ -10561,7 +10561,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives d'Augure réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "90evo11R", "pantalons/80gvg11", new MultiEffect("90evo11R-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo11R", "pantalons/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 734, true),
 						new Effect(TypeEffect.DefM, false, 884, true),
@@ -10685,7 +10685,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives d'Augure"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "90evo11", "pantalons/80gvg11", new MultiEffect("90evo11-2", 76, new Effect[][] {
+				ArmorType.JAMBIERE, "90evo11", "pantalons/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 611, true),
 						new Effect(TypeEffect.DefM, false, 736, true),
@@ -10831,7 +10831,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Maître Chronos réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "75evo11R", "pantalons/75evo11", new MultiEffect("75evo11R-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo11R", "pantalons/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 617, true),
 						new Effect(TypeEffect.DefM, false, 729, true),
@@ -10955,7 +10955,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Maître Chronos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "75evo11", "pantalons/75evo11", new MultiEffect("75evo11-2", 61, new Effect[][] {
+				ArmorType.JAMBIERE, "75evo11", "pantalons/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 514, true),
 						new Effect(TypeEffect.DefM, false, 607, true),
@@ -11110,7 +11110,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Chronos réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "60evo11R", "pantalons/60evo11", new MultiEffect("60evo11R-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo11R", "pantalons/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 419, true),
 						new Effect(TypeEffect.DefM, false, 494, true),
@@ -11344,7 +11344,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives de Chronos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "60evo11", "pantalons/60evo11", new MultiEffect("60evo11-2", 31, new Effect[][] {
+				ArmorType.JAMBIERE, "60evo11", "pantalons/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 349, true),
 						new Effect(TypeEffect.DefM, false, 411, true),
@@ -11593,7 +11593,7 @@ class LoaderLegging {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Voyageur réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, true,
-				ArmorType.JAMBIERE, "30evo10R", "pantalons/30evo10", new MultiEffect("30evo10R-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo10R", "pantalons/30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 225, true),
 						new Effect(TypeEffect.DefM, false, 277, true),
@@ -11747,7 +11747,7 @@ class LoaderLegging {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières évolutives du Voyageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.JAMBIERE, "30evo10", "pantalons/30evo10", new MultiEffect("30evo10-2", 6, new Effect[][] {
+				ArmorType.JAMBIERE, "30evo10", "pantalons/30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 187, true),
 						new Effect(TypeEffect.DefM, false, 230, true),

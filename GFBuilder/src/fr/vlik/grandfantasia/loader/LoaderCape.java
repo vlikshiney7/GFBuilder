@@ -10,6 +10,7 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 
@@ -787,7 +788,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.VOL, false, 40, true),
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, 2, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
 						new Effect(TypeEffect.RTCCP, false, 5),
 						new Effect(TypeEffect.RTCCM, false, 5),
 						new Effect(TypeEffect.MEN, false, 5),
@@ -802,7 +803,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VOL, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, 2, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 5),
 						new Effect(TypeEffect.Depla, false, 3),
 					}),
@@ -816,7 +817,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.INT, false, 44, true),
 					new Effect(TypeEffect.VOL, false, 40, true),
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
 						new Effect(TypeEffect.IntComp, false, -45),
 						new Effect(TypeEffect.VitComp, false, 13),
 					}),
@@ -830,7 +831,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VOL, false, 44, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
 						new Effect(TypeEffect.CostComp, false, -60),
 						new Effect(TypeEffect.RegenPM, false, 40),
 					}),
@@ -844,7 +845,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.INT, false, 43, true),
 					new Effect(TypeEffect.AGI, false, 42, true),
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, 2, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 5),
 						new Effect(TypeEffect.TCCM, false, 5),
 						new Effect(TypeEffect.VitAtk, false, 5),
@@ -961,11 +962,66 @@ public class LoaderCape {
 					new Effect(TypeEffect.RegenPV, false, 71),
 					new Effect(TypeEffect.RegenPM, false, 41),
 				}, null ),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de gardien sacré"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				80, Quality.BLUE, false, "-1", "tdb0", new Calculable[] {
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 3, new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 1),
+						new Effect(TypeEffect.ReducPeneM, false, 1),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'envolée fantastique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				80, Quality.BLUE, false, "-1", "tdb1", new Calculable[] {
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 2),
+						new Effect(TypeEffect.ReducM, false, 2),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape hydrophobe"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				80, Quality.BLUE, false, "-1", "tdb2", new Calculable[] {
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
+						new Effect(TypeEffect.Sacre, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Ombre, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Foudre, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Feu, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Glace, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Nature, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.ESQ, false, 5, Target.OPPONENT),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape sans-fin"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				80, Quality.BLUE, false, "-1", "tdb3", new Calculable[] {
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
+						new Effect(TypeEffect.FCE, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.VIT, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.INT, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.VOL, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.AGI, true, -5, Target.OPPONENT),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du bout de l'éternité"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				80, Quality.BLUE, false, "-1", "tdb4", new Calculable[] {
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
+						new Effect(TypeEffect.Atk, true, 5),
+						new Effect(TypeEffect.AtkM, true, 5),
+						new Effect(TypeEffect.DCCP, false, 1),
+						new Effect(TypeEffect.DCCM, false, 1),
+					}),
+				}),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Cri de Guerre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.BLUE, false, "-1", "tdb0", new Calculable[] {
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, 2, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
 						new Effect(TypeEffect.RTCCP, false, 5),
 						new Effect(TypeEffect.RTCCM, false, 5),
 						new Effect(TypeEffect.MEN, false, 5),
@@ -975,7 +1031,7 @@ public class LoaderCape {
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.BLUE, false, "-1", "tdb1", new Calculable[] {
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, 2, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 5),
 						new Effect(TypeEffect.Depla, false, 3),
 					}),
@@ -984,7 +1040,7 @@ public class LoaderCape {
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.BLUE, false, "-1", "tdb2", new Calculable[] {
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
 						new Effect(TypeEffect.IntComp, false, -45),
 						new Effect(TypeEffect.VitComp, false, 13),
 					}),
@@ -993,7 +1049,7 @@ public class LoaderCape {
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.BLUE, false, "-1", "tdb3", new Calculable[] {
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
 						new Effect(TypeEffect.CostComp, false, -60),
 						new Effect(TypeEffect.RegenPM, false, 40),
 					}),
@@ -1002,7 +1058,7 @@ public class LoaderCape {
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.BLUE, false, "-1", "tdb4", new Calculable[] {
 				}, new Calculable[] {
-					new Proc(5, Activation.Attack, 5, 2, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 5),
 						new Effect(TypeEffect.TCCM, false, 5),
 						new Effect(TypeEffect.VitAtk, false, 5),
@@ -1039,7 +1095,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'Âme du Sprite Sombre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
-				70, Quality.BLUE, false, "black1", "red2", new MultiEffect("cape70", 70, new Effect[][] {
+				70, Quality.BLUE, false, "black1", "red2", new MultiEffect(70, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 73, true),
 						new Effect(TypeEffect.DefM, false, 69, true),

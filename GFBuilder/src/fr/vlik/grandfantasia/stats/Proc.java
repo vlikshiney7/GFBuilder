@@ -48,7 +48,10 @@ public class Proc implements Calculable {
 		Phys("sur coup physique", "on physical hit"),
 		Mag("sur coup magique", "on magical hit"),
 		Crit("sur coup critique", "on critical hit"),
-		Crited("sur critique reçu", "on receive critical");
+		CritPhys("sur critique physique", "on physical critical hit"),
+		CritMag("sur critique magique", "on magical critical hit"),
+		Crited("sur critique reçu", "on receive critical"),
+		Nothing("", "");
 		
 		public final String fr;
 		public final String en;

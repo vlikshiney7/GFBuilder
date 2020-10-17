@@ -754,7 +754,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Destructeur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo0R", "torses/65pvp0", new MultiEffect("100evo0R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo0R", "torses/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1142, true),
 						new Effect(TypeEffect.DefM, false, 854, true),
@@ -838,7 +838,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Destructeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo0", "torses/65pvp0", new MultiEffect("100evo0-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo0", "torses/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 951, true),
 						new Effect(TypeEffect.DefM, false, 711, true),
@@ -922,7 +922,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Croisé (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo1R", "torses/100pve1", new MultiEffect("100evo1R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo1R", "torses/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1217, true),
 						new Effect(TypeEffect.DefM, false, 826, true),
@@ -1006,7 +1006,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Croisé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo1", "torses/100pve1", new MultiEffect("100evo1-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo1", "torses/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1014, true),
 						new Effect(TypeEffect.DefM, false, 688, true),
@@ -1119,7 +1119,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Ravageur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo0R", "torses/70nucleus0", new MultiEffect("90evo0R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo0R", "torses/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1010, true),
 						new Effect(TypeEffect.DefM, false, 755, true),
@@ -1243,7 +1243,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Ravageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo0", "torses/70nucleus0", new MultiEffect("90evo0-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo0", "torses/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 841, true),
 						new Effect(TypeEffect.DefM, false, 629, true),
@@ -1367,7 +1367,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Templier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo1R", "torses/70nucleus1", new MultiEffect("90evo1R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo1R", "torses/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1078, true),
 						new Effect(TypeEffect.DefM, false, 730, true),
@@ -1476,7 +1476,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif de Templier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo1", "torses/70nucleus1", new MultiEffect("90evo1-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo1", "torses/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 898, true),
 						new Effect(TypeEffect.DefM, false, 608, true),
@@ -1634,7 +1634,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Gladiateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo0R", "torses/75evo0", new MultiEffect("75evo0R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo0R", "torses/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 875, true),
 						new Effect(TypeEffect.DefM, false, 654, true),
@@ -1748,7 +1748,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse Évolutive du Gladiateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo0", "torses/75evo0", new MultiEffect("75evo0-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo0", "torses/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 729, true),
 						new Effect(TypeEffect.DefM, false, 545, true),
@@ -1862,7 +1862,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Vindicateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo1R", "torses/75evo1", new MultiEffect("75evo1R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo1R", "torses/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 918, true),
 						new Effect(TypeEffect.DefM, false, 623, true),
@@ -1971,7 +1971,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron Évolutif du Vindicateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo1", "torses/75evo1", new MultiEffect("75evo1-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo1", "torses/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 765, true),
 						new Effect(TypeEffect.DefM, false, 519, true),
@@ -2135,7 +2135,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Berserker (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo0R", "torses/60bleu0", new MultiEffect("60evo0R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo0R", "torses/60bleu0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 593, true),
 						new Effect(TypeEffect.DefM, false, 443, true),
@@ -2359,7 +2359,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse Évolutive du Berserker"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo0", "torses/60bleu0", new MultiEffect("60evo0-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo0", "torses/60bleu0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 494, true),
 						new Effect(TypeEffect.DefM, false, 369, true),
@@ -2583,7 +2583,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron Évolutif du Paladin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo1R", "torses/60pve0", new MultiEffect("60evo1R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo1R", "torses/60pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 629, true),
 						new Effect(TypeEffect.DefM, false, 423, true),
@@ -2797,7 +2797,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron Évolutif du Paladin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo1", "torses/60pve0", new MultiEffect("60evo1-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo1", "torses/60pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 524, true),
 						new Effect(TypeEffect.DefM, false, 352, true),
@@ -3011,7 +3011,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Guerrier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 6, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "30evo0R", "torses/30pve0", new MultiEffect("30evo0R-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo0R", "torses/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 292, true),
 						new Effect(TypeEffect.DefM, false, 219, true),
@@ -3165,7 +3165,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse Évolutive du Guerrier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 6, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "30evo0", "torses/30pve0", new MultiEffect("30evo0-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo0", "torses/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 243, true),
 						new Effect(TypeEffect.DefM, false, 182, true),
@@ -3825,7 +3825,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Kage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo3R", "torses/100pve3", new MultiEffect("100evo3R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo3R", "torses/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 952, true),
 						new Effect(TypeEffect.DefM, false, 948, true),
@@ -3909,7 +3909,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Kage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo3", "torses/100pve3", new MultiEffect("100evo3-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo3", "torses/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 793, true),
 						new Effect(TypeEffect.DefM, false, 790, true),
@@ -4003,7 +4003,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Shinobi (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo3R", "torses/70nucleus3", new MultiEffect("90evo3R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo3R", "torses/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 842, true),
 						new Effect(TypeEffect.DefM, false, 839, true),
@@ -4127,7 +4127,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Shinobi"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo3", "torses/70nucleus3", new MultiEffect("90evo3-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo3", "torses/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 701, true),
 						new Effect(TypeEffect.DefM, false, 699, true),
@@ -4281,7 +4281,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive du Ninja (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo3R", "torses/75evo3", new MultiEffect("75evo3R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo3R", "torses/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 693, true),
 						new Effect(TypeEffect.DefM, false, 728, true),
@@ -4405,7 +4405,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casaque Évolutive du Ninja"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo3", "torses/75evo3", new MultiEffect("75evo3-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo3", "torses/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 577, true),
 						new Effect(TypeEffect.DefM, false, 606, true),
@@ -4557,7 +4557,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse évolutive de l'Assassin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo3R", "torses/50pve0", new MultiEffect("60evo3R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo3R", "torses/50pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 470, true),
 						new Effect(TypeEffect.DefM, false, 494, true),
@@ -4791,7 +4791,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuirasse Évolutive de l'Assassin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo3", "torses/50pve0", new MultiEffect("60evo3-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo3", "torses/50pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 391, true),
 						new Effect(TypeEffect.DefM, false, 411, true),
@@ -5025,7 +5025,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Veste évolutive de l'Archer (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "30evo2R", "torses/30pve2", new MultiEffect("30evo2R-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo2R", "torses/30pve2", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 243, true),
 						new Effect(TypeEffect.DefM, false, 232, true),
@@ -5179,7 +5179,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Manteau Évolutif de l'Archer"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "30evo2", "torses/30pve2", new MultiEffect("30evo2-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo2", "torses/30pve2", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 202, true),
 						new Effect(TypeEffect.DefM, false, 193, true),
@@ -5807,7 +5807,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement évolutif du Druide (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo5R", "torses/100pve5", new MultiEffect("100evo5R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo5R", "torses/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1047, true),
 						new Effect(TypeEffect.DefM, false, 1043, true),
@@ -5891,7 +5891,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement évolutif du Druide"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo5", "torses/100pve5", new MultiEffect("100evo5-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo5", "torses/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 872, true),
 						new Effect(TypeEffect.DefM, false, 869, true),
@@ -5985,7 +5985,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement évolutif du Shaman (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo5R", "torses/70nucleus5", new MultiEffect("90evo5R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo5R", "torses/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 926, true),
 						new Effect(TypeEffect.DefM, false, 923, true),
@@ -6109,7 +6109,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement évolutif du Shaman"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo5", "torses/70nucleus5", new MultiEffect("90evo5-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo5", "torses/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 771, true),
 						new Effect(TypeEffect.DefM, false, 769, true),
@@ -6263,7 +6263,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement évolutif de l'Oracle (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo5R", "torses/75evo5", new MultiEffect("75evo5R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo5R", "torses/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 762, true),
 						new Effect(TypeEffect.DefM, false, 807, true),
@@ -6387,7 +6387,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Manteau Évolutif de l'Oracle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo5", "torses/75evo5", new MultiEffect("75evo5-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo5", "torses/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 635, true),
 						new Effect(TypeEffect.DefM, false, 672, true),
@@ -6539,7 +6539,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement évolutif du Sage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo5R", "torses/60evo5", new MultiEffect("60evo5R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo5R", "torses/60evo5", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 516, true),
 						new Effect(TypeEffect.DefM, false, 548, true),
@@ -6763,7 +6763,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Parement Évolutif du Sage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo5", "torses/60evo5", new MultiEffect("60evo5-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo5", "torses/60evo5", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 430, true),
 						new Effect(TypeEffect.DefM, false, 456, true),
@@ -6987,7 +6987,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Robe évolutive du Prêtre (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "30evo0R", "torses/30pve4", new MultiEffect("30evo0R-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo0R", "torses/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 268, true),
 						new Effect(TypeEffect.DefM, false, 255, true),
@@ -7141,7 +7141,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Robe Évolutive du Prêtre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "30evo0", "torses/30pve4", new MultiEffect("30evo0-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo0", "torses/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 223, true),
 						new Effect(TypeEffect.DefM, false, 212, true),
@@ -7820,7 +7820,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif de l'Oméga (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo8R", "torses/100evo8", new MultiEffect("100evo8R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo8R", "torses/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1140, true),
 						new Effect(TypeEffect.DefM, false, 813, true),
@@ -7904,7 +7904,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron spirituel d'Oméga"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo8", "torses/100evo8", new MultiEffect("100evo8-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo8", "torses/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 950, true),
 						new Effect(TypeEffect.DefM, false, 677, true),
@@ -7999,7 +7999,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Mégatron (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo8R", "torses/90evo8", new MultiEffect("90evo8R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo8R", "torses/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 1010, true),
 						new Effect(TypeEffect.DefM, false, 719, true),
@@ -8123,7 +8123,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron d'Essence de Prime"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo8", "torses/90evo8", new MultiEffect("90evo8-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo8", "torses/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 841, true),
 						new Effect(TypeEffect.DefM, false, 599, true),
@@ -8267,7 +8267,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Prime (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo8R", "torses/65pve8", new MultiEffect("75evo8R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo8R", "torses/65pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 875, true),
 						new Effect(TypeEffect.DefM, false, 623, true),
@@ -8381,7 +8381,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron de l'Essence du Métalleux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo8", "torses/65pve8", new MultiEffect("75evo8-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo8", "torses/65pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 729, true),
 						new Effect(TypeEffect.DefM, false, 519, true),
@@ -8504,7 +8504,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron évolutif du Métalleux (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo8R", "torses/65pvp8", new MultiEffect("60evo8R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo8R", "torses/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 594, true),
 						new Effect(TypeEffect.DefM, false, 423, true),
@@ -8728,7 +8728,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron spirituel du Métalleux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo8", "torses/65pvp8", new MultiEffect("60evo8-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo8", "torses/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 495, true),
 						new Effect(TypeEffect.DefM, false, 352, true),
@@ -8952,7 +8952,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Veste évolutive du Machiniste (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "30evo8R", "torses/20pve8", new MultiEffect("30evo8R-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo8R", "torses/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 220, true),
 						new Effect(TypeEffect.DefM, false, 278, true),
@@ -9106,7 +9106,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Veste spirituelle du Machiniste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "30evo8", "torses/20pve8", new MultiEffect("30evo8-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo8", "torses/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 183, true),
 						new Effect(TypeEffect.DefM, false, 231, true),
@@ -10138,7 +10138,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cape évolutive d'outremonde réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo10R", "torses/100evo10", new MultiEffect("100evo10R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo10R", "torses/100evo10", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 952, true),
 						new Effect(TypeEffect.DefM, false, 1224, true),
@@ -10222,7 +10222,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive de Pillard réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "100evo11R", "torses/100evo11", new MultiEffect("100evo11R-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo11R", "torses/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 899, true),
 						new Effect(TypeEffect.DefM, false, 1082, true),
@@ -10306,7 +10306,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cape évolutive d'outremonde"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo10", "torses/100evo10", new MultiEffect("100evo10-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo10", "torses/100evo10", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 793, true),
 						new Effect(TypeEffect.DefM, false, 1019, true),
@@ -10390,7 +10390,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive de Pillard"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "100evo11", "torses/100evo11", new MultiEffect("100evo11-1", 91, new Effect[][] {
+				ArmorType.PLASTRON, "100evo11", "torses/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 749, true),
 						new Effect(TypeEffect.DefM, false, 901, true),
@@ -10496,7 +10496,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de bataille évolutive d'Occultiste réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo10R", "torses/80gvg10", new MultiEffect("90evo10R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo10R", "torses/80gvg10", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 842, true),
 						new Effect(TypeEffect.DefM, false, 1083, true),
@@ -10620,7 +10620,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue maudite évolutive d'Augure réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "90evo11R", "torses/80gvg11", new MultiEffect("90evo11R-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo11R", "torses/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 795, true),
 						new Effect(TypeEffect.DefM, false, 957, true),
@@ -10744,7 +10744,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de bataille évolutive d'Occultiste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo10", "torses/80gvg10", new MultiEffect("90evo10-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo10", "torses/80gvg10", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 701, true),
 						new Effect(TypeEffect.DefM, false, 902, true),
@@ -10868,7 +10868,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue maudite évolutive d'Augure"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90evo11", "torses/80gvg11", new MultiEffect("90evo11-1", 76, new Effect[][] {
+				ArmorType.PLASTRON, "90evo11", "torses/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 662, true),
 						new Effect(TypeEffect.DefM, false, 797, true),
@@ -11056,7 +11056,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de bataille évolutive de Maître Demis réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo10R", "torses/75evo10", new MultiEffect("75evo10R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo10R", "torses/75evo10", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 693, true),
 						new Effect(TypeEffect.DefM, false, 897, true),
@@ -11180,7 +11180,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive de Maître Chronos réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "75evo11R", "torses/75evo11", new MultiEffect("75evo11R-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo11R", "torses/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 669, true),
 						new Effect(TypeEffect.DefM, false, 789, true),
@@ -11304,7 +11304,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Combat évolutive de maître Demis"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo10", "torses/75evo10", new MultiEffect("75evo10-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo10", "torses/75evo10", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 577, true),
 						new Effect(TypeEffect.DefM, false, 747, true),
@@ -11428,7 +11428,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive de Maître Chronos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "75evo11", "torses/75evo11", new MultiEffect("75evo11-1", 61, new Effect[][] {
+				ArmorType.PLASTRON, "75evo11", "torses/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 557, true),
 						new Effect(TypeEffect.DefM, false, 657, true),
@@ -11614,7 +11614,7 @@ class LoaderBreastplate {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de bataille évolutive de Demis réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo10R", "torses/60evo10", new MultiEffect("60evo10R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo10R", "torses/60evo10", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 470, true),
 						new Effect(TypeEffect.DefM, false, 608, true),
@@ -11848,7 +11848,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive de Chronos réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "60evo11R", "torses/60evo11", new MultiEffect("60evo11R-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo11R", "torses/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 454, true),
 						new Effect(TypeEffect.DefM, false, 536, true),
@@ -12082,7 +12082,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Combat évolutive Demis"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo10", "torses/60evo10", new MultiEffect("60evo10-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo10", "torses/60evo10", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 391, true),
 						new Effect(TypeEffect.DefM, false, 507, true),
@@ -12316,7 +12316,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive de Chronos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "60evo11", "torses/60evo11", new MultiEffect("60evo11-1", 31, new Effect[][] {
+				ArmorType.PLASTRON, "60evo11", "torses/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 378, true),
 						new Effect(TypeEffect.DefM, false, 446, true),
@@ -12550,7 +12550,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive du Voyageur réincarné"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, true,
-				ArmorType.PLASTRON, "30evo10R", "torses/30evo10", new MultiEffect("30evo10R-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo10R", "torses/30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 243, true),
 						new Effect(TypeEffect.DefM, false, 300, true),
@@ -12704,7 +12704,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue évolutive du Voyageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "30evo10", "torses/30evo10", new MultiEffect("30evo10-1", 6, new Effect[][] {
+				ArmorType.PLASTRON, "30evo10", "torses/30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 202, true),
 						new Effect(TypeEffect.DefM, false, 250, true),

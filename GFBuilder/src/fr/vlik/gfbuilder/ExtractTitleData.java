@@ -8,26 +8,46 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+
+import fr.vlik.grandfantasia.Title;
 
 public class ExtractTitleData {
 	
 	private static HashMap<String, String> allTitles = new HashMap<String, String>();
-	private static LinkedList<String> sortTitles = new LinkedList<String>();
+	private static ArrayList<LinkedList<String>> sortTitles = new ArrayList<LinkedList<String>>();
 	
 	private static String[] toIgnore = {
-			"Placeholder", "Titre familial",
+			"*Festival d'Hiver*", "Été GF - Titre Souvenir", "Placeholder", 
+			"Aeria Games", "AFK", "Ami des Sprites", "Ami du Père Noël", "Amoureux des Sprites", "Ancêtre Vénérable", "Apprenti Maître du Monde", "Archange de Saphaël", "Aventurier Téméraire",
+			"Bronzage Intégral",
+			"Capitaine des Sept Mers", "Caïd du Bac à Sable", "Cendrillon aux Pied Nus", "Citoyen de Poséidon", "Collectionneur de Pokémons", "Copain des Sprites", "Cœur Généreux",
+			"Dieu Absolu du Web", "Enfant de l'Océan", "Enfant du Soleil", "Escapade de Clair de Lune", "Esprit Supérieur", "Expert en Réseaux", "Expert en Sprites",
+			"Fakir Illuminé", "Fan des Sprites", "Fidèle aux Traditions", "FreeKill",
+			"Gourou des Sprites", "Grand Fantastique", "Grand Manitou", "Grand Maître de Grand Fantasia", "Gélapin Mon Amour",
+			"Héritier des Royaumes Sprites", "IMPACT Céleste", "Illusion Lunaire", "Japanese event", "Lignée Royale",
+			"Marche-Lune", "Maître des Arènes", "Maître en Arts Martiaux", "Meilleur Messager de Saphaël", "Messager Ultime", "Messager au Cœur pur", "Messager de l'Amour", "Modèle de Santé", "Mystère",
+			"Perturbateur Irritant", "Petite Poupée", "Prince Protecteur de Kaslow", "Protecteur des Débutants",
+			"Rencontre Inévitable", "Romantique Désespéré", "Rêveur Impénitent", "Service client d'Aeria Games", "Sportif de l'Extrême", "Sprite dans l'Âme", "Spritophile Fanatique",
+			"Titre 8648", "Troll Sauvage des Forums", "Tête Dure", "Vieux de la Vieille", "Yakuza Impitoyable",
+			"Élite de Clair de Lune", "Étoile Élue", "Cœur de Démon", "Cœur de Pierre", "Collectionneur d'œufs de Pâques", "Cœur vagabond", "Maître de l'Œuf de Pâques Magique", "Voyageur au Cœur Brisé",
+			"GF Grand Fantasia", "GFWT 2016 - DO NOT USE", "Titre du concours PvP 2015", "Titre du tournoi PvP 2018",
+			"Héraut de Cœur de Lion Embrasé", "Nouveau titre de serveur étranger",
+			"Faisons la fête avec l'idole (Répét.)", "Qu'est-ce que l'amour ?", "Membre honoraire éternel Gélapin",
 			"Pro de la Production", "Pro de la Synthèse", "Pro de l'Amélioration", "Pro des Bijoux", "Pro des titres", "Artisan Professionnel",
-			"Messager appliqué",
 		};
 
 	public static void main(String[] args) {
 		
+		System.out.println("Read Title TW");
 		readTitleTW();
+		System.out.println("Read Mission EU");
 		readMissionEU();
+		System.out.println("Read Title EU");
 		readTitleEU();
+		System.out.println("Processing");
 		
 		allTitles.entrySet().forEach(entry -> {
 			String[] split = entry.getValue().split(";");
@@ -38,7 +58,7 @@ public class ExtractTitleData {
 				String effects = split[split.length-1].trim().replace("|", "");
 				String lvl = split[split.length-3].trim();
 				
-				if(notIn(name)) {
+				if(notInBanList(name)) {
 				
 					if(color.equals(lvl)) {
 						lvl = "0";
@@ -48,16 +68,20 @@ public class ExtractTitleData {
 						System.out.println(name);
 					}
 					
-					process(name, color, lvl, effects);
+					if(!alreadyInData(name)) {
+						process(name, color, lvl, effects);
+					}
 				}
 			}
 		});
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tools" + File.separator + "ExtractTitle-" + Instant.now().toString().substring(0, 10) + ".txt", false), "UTF-8"));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tools" + File.separator + "ExtractTitle.java", false), "UTF-8"));
 		) {
-			for(String s : sortTitles) {
-				writer.append(s);
+			for(LinkedList<String> list : sortTitles) {
+				for(String s : list) {
+					writer.append(s);
+				}
 			}
 			
 			writer.flush();
@@ -71,51 +95,54 @@ public class ExtractTitleData {
 	private static void process(String name, String color, String lvl, String effects) {
 		String quality = "GREY";
 		
+		int indexQuality = -1;
+		
 		switch(color) {
-			case "1":	quality = "WHITE";		break;
-			case "2":	quality = "GREEN";		break;
-			case "3":	quality = "BLUE";		break;
-			case "4":	quality = "ORANGE";		break;
-			case "5":	quality = "GOLD";		break;
-			case "6":	quality = "PURPLE";		break;
-			case "7":	quality = "RED";		break;
-			case "10":	quality = "P8TITLE";	break;
+			case "1":	quality = "WHITE";		indexQuality = 7;		break;
+			case "2":	quality = "GREEN";		indexQuality = 6;		break;
+			case "3":	quality = "BLUE";		indexQuality = 5;		break;
+			case "4":	quality = "ORANGE";		indexQuality = 4;		break;
+			case "5":	quality = "GOLD";		indexQuality = 3;		break;
+			case "6":	quality = "PURPLE";		indexQuality = 2;		break;
+			case "7":	quality = "RED";		indexQuality = 1;		break;
+			case "10":	quality = "P8TITLE";	indexQuality = 0;		break;
 		}
 		
-		if(quality != "GREY") {
+		for(int i = 0; i < 8; i++) {
+			sortTitles.add(new LinkedList<String>());
+		}
+		
+		if(!quality.equals("GREY")) {
 			
-			String toCode = "new Title(\"" + name + "\", Quality." + quality + ", " + lvl + ", GradeName.NONE, new Calculable[] {\n";
+			String toCode = "new Title(\"" + name + "\", Quality." + quality + ", " + lvl + ", false, GradeName.NONE, new Calculable[] {\n";
 			
 			String[] split = effects.split("\n");
 			for(String s : split) {
 				toCode += "\tnew Effect(" + s + "),\n";
 			}
 			
-			toCode += "}\n";
+			toCode = toCode.replace("\tnew Effect(Bonus / Malus :),\n", "");
+			toCode = toCode.replace("\tnew Effect(Bonus / Malus : ),\n", "");
+			toCode = toCode.replace("\tnew Effect(Bonus / Malus :),\n", "");
+			toCode = toCode.replace("\tnew Effect(Bonus / Malus : ),\n", "");
 			
+			toCode += "}),\n";
 			
-			if(sortTitles.isEmpty()) {
-				sortTitles.add(toCode);
+			if(sortTitles.get(indexQuality).isEmpty()) {
+				sortTitles.get(indexQuality).add(toCode);
 			} else {
-				boolean colorOK = false;
 				boolean done = false;
 				
-				for(int i = 0; i < sortTitles.size(); i++) {
-					if(!colorOK && sortTitles.get(i).split("Quality.")[1].substring(0, 2).equals(quality.substring(0, 2))) {
-						colorOK = true;
-					}
-					
-					if(colorOK) {
-						if(toCode.compareTo(sortTitles.get(i)) > 0) {
-							sortTitles.add(i+1, toCode);
-							done = true;
-							break;
-						}
+				for(int i = 0; i < sortTitles.get(indexQuality).size(); i++) {
+					if(toCode.compareTo(sortTitles.get(indexQuality).get(i)) < 0) {
+						sortTitles.get(indexQuality).add(i, toCode);
+						done = true;
+						break;
 					}
 				}
 				
 				if(!done) {
-					sortTitles.add(toCode);
+					sortTitles.get(indexQuality).add(toCode);
 				}
 			}
 		}
@@ -193,7 +220,8 @@ public class ExtractTitleData {
 					
 					line = reader.readLine();
 					
-					String effects = "";
+					String effects = lineSplit.length > 2 ? "\n" + lineSplit[2] : "";
+					
 					while(line != null && !line.matches("^[0-9]{4}\\|.*")) {
 						effects += "\n" + line;
 						line = reader.readLine();
@@ -212,13 +240,17 @@ public class ExtractTitleData {
 		}
 	}
 	
-	public static boolean notIn(String element) {
+	public static boolean notInBanList(String element) {
 		for(String s : toIgnore) {
-			if(s.equals(element)) {
+			if(element.startsWith(s)) {
 				return false;
 			}
 		}
 		
 		return true;
+	}
+	
+	public static boolean alreadyInData(String name) {
+		return Title.get(name) != null;
 	}
 }

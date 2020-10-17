@@ -353,7 +353,7 @@ public class PageWeapon extends PagePanel {
 			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
 					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
-				if(lvlXpStuff >= weapons[i].getLvl()) {
+				if(lvlXpStuff >= weapons[i].getLvl() && weapons[i].getBonusXP() != null) {
 					for(Calculable c : weapons[i].getBonusXP()) {
 						list.add(c);
 					}

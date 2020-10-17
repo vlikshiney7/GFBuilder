@@ -744,7 +744,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Destructeur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
-				ArmorType.GANT, "100evo0R", "gants/65pvp0", new MultiEffect("100evo0R-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo0R", "gants/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 527, true),
 						new Effect(TypeEffect.DefM, false, 394, true),
@@ -828,7 +828,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Destructeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
-				ArmorType.GANT, "100evo0", "gants/65pvp0", new MultiEffect("100evo0-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo0", "gants/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 439, true),
 						new Effect(TypeEffect.DefM, false, 328, true),
@@ -912,7 +912,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Croisé (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.GANT, "100evo1R", "gants/100pve1", new MultiEffect("100evo1R-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo1R", "gants/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 562, true),
 						new Effect(TypeEffect.DefM, false, 380, true),
@@ -996,7 +996,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Croisé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.GANT, "100evo1", "gants/100pve1", new MultiEffect("100evo1-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo1", "gants/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 468, true),
 						new Effect(TypeEffect.DefM, false, 316, true),
@@ -1150,7 +1150,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Ravageur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
-				ArmorType.GANT, "90evo0R", "gants/70nucleus0", new MultiEffect("90evo0R-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo0R", "gants/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 466, true),
 						new Effect(TypeEffect.DefM, false, 348, true),
@@ -1274,7 +1274,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Ravageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
-				ArmorType.GANT, "90evo0", "gants/70nucleus0", new MultiEffect("90evo0-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo0", "gants/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 388, true),
 						new Effect(TypeEffect.DefM, false, 290, true),
@@ -1398,7 +1398,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Templier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.GANT, "90evo1R", "gants/70nucleus1", new MultiEffect("90evo1R-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo1R", "gants/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 498, true),
 						new Effect(TypeEffect.DefM, false, 338, true),
@@ -1522,7 +1522,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de Templier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.GANT, "90evo1", "gants/70nucleus1", new MultiEffect("90evo1-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo1", "gants/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 415, true),
 						new Effect(TypeEffect.DefM, false, 281, true),
@@ -1696,7 +1696,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Gladiateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
-				ArmorType.GANT, "75evo0R", "gants/75evo0", new MultiEffect("75evo0R-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo0R", "gants/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 404, true),
 						new Effect(TypeEffect.DefM, false, 303, true),
@@ -1820,7 +1820,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Gladiateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
-				ArmorType.GANT, "75evo0", "gants/75evo0", new MultiEffect("75evo0-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo0", "gants/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 336, true),
 						new Effect(TypeEffect.DefM, false, 252, true),
@@ -1944,7 +1944,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Vindicateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.GANT, "75evo1R", "gants/75evo1", new MultiEffect("75evo1R-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo1R", "gants/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 424, true),
 						new Effect(TypeEffect.DefM, false, 288, true),
@@ -2068,7 +2068,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Vindicateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.GANT, "75evo1", "gants/75evo1", new MultiEffect("75evo1-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo1", "gants/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 353, true),
 						new Effect(TypeEffect.DefM, false, 240, true),
@@ -2261,7 +2261,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poing de Fer évolutif du Berserker (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
-				ArmorType.GANT, "60evo0R", "gants/60evo0", new MultiEffect("60evo0R-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo0R", "gants/60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 274, true),
 						new Effect(TypeEffect.DefM, false, 204, true),
@@ -2495,7 +2495,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poing de Fer Évolutif du Berserker"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
-				ArmorType.GANT, "60evo0", "gants/60evo0", new MultiEffect("60evo0-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo0", "gants/60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 228, true),
 						new Effect(TypeEffect.DefM, false, 170, true),
@@ -2729,7 +2729,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Paladin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.GANT, "60evo1R", "gants/25pvp1", new MultiEffect("60evo1R-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo1R", "gants/25pvp1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 290, true),
 						new Effect(TypeEffect.DefM, false, 196, true),
@@ -2963,7 +2963,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Paladin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.GANT, "60evo1", "gants/25pvp1", new MultiEffect("60evo1-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo1", "gants/25pvp1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 241, true),
 						new Effect(TypeEffect.DefM, false, 163, true),
@@ -3197,7 +3197,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Guerrier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, true,
-				ArmorType.GANT, "30evo0R", "gants/60pve0", new MultiEffect("30evo0R-3", 6, new Effect[][] {
+				ArmorType.GANT, "30evo0R", "gants/60pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 135, true),
 						new Effect(TypeEffect.DefM, false, 101, true),
@@ -3351,7 +3351,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Guerrier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, false,
-				ArmorType.GANT, "30evo0", "gants/60pve0", new MultiEffect("30evo0-3", 6, new Effect[][] {
+				ArmorType.GANT, "30evo0", "gants/60pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 112, true),
 						new Effect(TypeEffect.DefM, false, 84, true),
@@ -4094,7 +4094,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Kage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.GANT, "100evo3R", "gants/100pve3", new MultiEffect("100evo3R-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo3R", "gants/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 441, true),
 						new Effect(TypeEffect.DefM, false, 438, true),
@@ -4178,7 +4178,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Kage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.GANT, "100evo3", "gants/100pve3", new MultiEffect("100evo3-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo3", "gants/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 367, true),
 						new Effect(TypeEffect.DefM, false, 365, true),
@@ -4290,7 +4290,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Shinobi (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.GANT, "90evo3R", "gants/70nucleus3", new MultiEffect("90evo3R-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo3R", "gants/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 388, true),
 						new Effect(TypeEffect.DefM, false, 388, true),
@@ -4414,7 +4414,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Shinobi"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.GANT, "90evo3", "gants/70nucleus3", new MultiEffect("90evo3-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo3", "gants/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 323, true),
 						new Effect(TypeEffect.DefM, false, 323, true),
@@ -4566,7 +4566,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Ninja (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.GANT, "75evo3R", "gants/75evo3", new MultiEffect("75evo3R-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo3R", "gants/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 320, true),
 						new Effect(TypeEffect.DefM, false, 335, true),
@@ -4690,7 +4690,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffes Évolutives du Ninja"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.GANT, "75evo3", "gants/75evo3", new MultiEffect("75evo3-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo3", "gants/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 266, true),
 						new Effect(TypeEffect.DefM, false, 279, true),
@@ -4853,7 +4853,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Assassin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.GANT, "60evo3R", "gants/25pvp2", new MultiEffect("60evo3R-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo3R", "gants/25pvp2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 216, true),
 						new Effect(TypeEffect.DefM, false, 227, true),
@@ -5087,7 +5087,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards Évolutifs de l'Assassin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.GANT, "60evo3", "gants/25pvp2", new MultiEffect("60evo3-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo3", "gants/25pvp2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 180, true),
 						new Effect(TypeEffect.DefM, false, 189, true),
@@ -5321,7 +5321,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Archer (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
-				ArmorType.GANT, "30evo2R", "gants/37bleu0", new MultiEffect("30evo2R-3", 6, new Effect[][] {
+				ArmorType.GANT, "30evo2R", "gants/37bleu0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 112, true),
 						new Effect(TypeEffect.DefM, false, 107, true),
@@ -5475,7 +5475,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards Évolutifs de l'Archer"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
-				ArmorType.GANT, "30evo2", "gants/37bleu0", new MultiEffect("30evo2-3", 6, new Effect[][] {
+				ArmorType.GANT, "30evo2", "gants/37bleu0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 93, true),
 						new Effect(TypeEffect.DefM, false, 89, true),
@@ -6179,7 +6179,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Druide (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, true,
-				ArmorType.GANT, "100evo5R", "gants/100pve5", new MultiEffect("100evo5R-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo5R", "gants/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 483, true),
 						new Effect(TypeEffect.DefM, false, 482, true),
@@ -6263,7 +6263,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Druide"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, false,
-				ArmorType.GANT, "100evo5", "gants/100pve5", new MultiEffect("100evo5-3", 91, new Effect[][] {
+				ArmorType.GANT, "100evo5", "gants/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 402, true),
 						new Effect(TypeEffect.DefM, false, 401, true),
@@ -6377,7 +6377,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Shaman (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, true,
-				ArmorType.GANT, "90evo5R", "gants/70nucleus5", new MultiEffect("90evo5R-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo5R", "gants/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 428, true),
 						new Effect(TypeEffect.DefM, false, 426, true),
@@ -6501,7 +6501,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Shaman"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
-				ArmorType.GANT, "90evo5", "gants/70nucleus5", new MultiEffect("90evo5-3", 76, new Effect[][] {
+				ArmorType.GANT, "90evo5", "gants/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 356, true),
 						new Effect(TypeEffect.DefM, false, 355, true),
@@ -6655,7 +6655,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Oracle (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, true,
-				ArmorType.GANT, "75evo5R", "gants/75evo5", new MultiEffect("75evo5R-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo5R", "gants/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 352, true),
 						new Effect(TypeEffect.DefM, false, 374, true),
@@ -6779,7 +6779,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines Évolutives de l'Oracle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, false,
-				ArmorType.GANT, "75evo5", "gants/75evo5", new MultiEffect("75evo5-3", 61, new Effect[][] {
+				ArmorType.GANT, "75evo5", "gants/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 293, true),
 						new Effect(TypeEffect.DefM, false, 311, true),
@@ -6943,7 +6943,7 @@ class LoaderGauntlet {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Sage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, true,
-				ArmorType.GANT, "60evo5R", "gants/53vert3", new MultiEffect("60evo5R-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo5R", "gants/53vert3", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 238, true),
 						new Effect(TypeEffect.DefM, false, 252, true),
@@ -7177,7 +7177,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Sage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, false,
-				ArmorType.GANT, "60evo5", "gants/53vert3", new MultiEffect("60evo5-3", 31, new Effect[][] {
+				ArmorType.GANT, "60evo5", "gants/53vert3", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 198, true),
 						new Effect(TypeEffect.DefM, false, 210, true),
@@ -7411,7 +7411,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Prêtre (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
-				ArmorType.GANT, "30evo0R", "gants/30pve4", new MultiEffect("30evo0R-3", 6, new Effect[][] {
+				ArmorType.GANT, "30evo0R", "gants/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 123, true),
 						new Effect(TypeEffect.DefM, false, 118, true),
@@ -7565,7 +7565,7 @@ class LoaderGauntlet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Prêtre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.GANT, "30evo0", "gants/30pve4", new MultiEffect("30evo0-3", 6, new Effect[][] {
+				ArmorType.GANT, "30evo0", "gants/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 102, true),
 						new Effect(TypeEffect.DefM, false, 98, true),
@@ -8325,7 +8325,7 @@ class LoaderGauntlet {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de l'Oméga (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
-					ArmorType.GANT, "100evo8R", "gants/100evo8", new MultiEffect("100evo8R-3", 91, new Effect[][] {
+					ArmorType.GANT, "100evo8R", "gants/100evo8", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 527, true),
 							new Effect(TypeEffect.DefM, false, 375, true),
@@ -8409,7 +8409,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets spirituels d'Oméga"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
-					ArmorType.GANT, "100evo8", "gants/100evo8", new MultiEffect("100evo8-3", 91, new Effect[][] {
+					ArmorType.GANT, "100evo8", "gants/100evo8", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 439, true),
 							new Effect(TypeEffect.DefM, false, 312, true),
@@ -8522,7 +8522,7 @@ class LoaderGauntlet {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Mégatron (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, true,
-					ArmorType.GANT, "90evo8R", "gants/90evo8", new MultiEffect("90evo8R-3", 76, new Effect[][] {
+					ArmorType.GANT, "90evo8R", "gants/90evo8", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 466, true),
 							new Effect(TypeEffect.DefM, false, 333, true),
@@ -8646,7 +8646,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Essence de Prime"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
-					ArmorType.GANT, "90evo8", "gants/90evo8", new MultiEffect("90evo8-3", 76, new Effect[][] {
+					ArmorType.GANT, "90evo8", "gants/90evo8", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 388, true),
 							new Effect(TypeEffect.DefM, false, 277, true),
@@ -8790,7 +8790,7 @@ class LoaderGauntlet {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Prime (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
-					ArmorType.GANT, "75evo8R", "gants/50pve8", new MultiEffect("75evo8R-3", 61, new Effect[][] {
+					ArmorType.GANT, "75evo8R", "gants/50pve8", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 404, true),
 							new Effect(TypeEffect.DefM, false, 288, true),
@@ -8914,7 +8914,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Essence du Métalleux"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
-					ArmorType.GANT, "75evo8", "gants/50pve8", new MultiEffect("75evo8-3", 61, new Effect[][] {
+					ArmorType.GANT, "75evo8", "gants/50pve8", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 336, true),
 							new Effect(TypeEffect.DefM, false, 240, true),
@@ -9056,7 +9056,7 @@ class LoaderGauntlet {
 					}, null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Métalleux (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
-					ArmorType.GANT, "60evo8R", "gants/65pvp8", new MultiEffect("60evo8R-3", 31, new Effect[][] {
+					ArmorType.GANT, "60evo8R", "gants/65pvp8", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 274, true),
 							new Effect(TypeEffect.DefM, false, 196, true),
@@ -9290,7 +9290,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets spirituels du Métalleux"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
-					ArmorType.GANT, "60evo8", "gants/65pvp8", new MultiEffect("60evo8-3", 31, new Effect[][] {
+					ArmorType.GANT, "60evo8", "gants/65pvp8", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 228, true),
 							new Effect(TypeEffect.DefM, false, 163, true),
@@ -9524,7 +9524,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Machiniste (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
-					ArmorType.GANT, "30evo8R", "gants/20pve8", new MultiEffect("30evo8R-3", 6, new Effect[][] {
+					ArmorType.GANT, "30evo8R", "gants/20pve8", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 101, true),
 							new Effect(TypeEffect.DefM, false, 129, true),
@@ -9678,7 +9678,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets spirituels du Machiniste"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-					ArmorType.GANT, "30evo8", "gants/20pve8", new MultiEffect("30evo8-3", 6, new Effect[][] {
+					ArmorType.GANT, "30evo8", "gants/20pve8", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 84, true),
 							new Effect(TypeEffect.DefM, false, 107, true),

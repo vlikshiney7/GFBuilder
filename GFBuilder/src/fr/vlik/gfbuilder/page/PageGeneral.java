@@ -173,7 +173,11 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			list.add(new Effect(Base.getEffect(i), false, value, false));
 		}
 		
-		list.addAll(this.getTitle().getEffects());
+		if(this.getTitle().getEffects() != null) {
+			for(Calculable c : this.getTitle().getEffects()) {
+				list.add(c);
+			}
+		}
 		
 		if(this.getYggdrasil().getEffects() != null) {
 			for(Effect e : this.getYggdrasil().getEffects()) {

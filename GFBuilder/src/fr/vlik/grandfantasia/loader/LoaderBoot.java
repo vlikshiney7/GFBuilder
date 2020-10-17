@@ -744,7 +744,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Destructeur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "100evo0R", "bottes/65pvp0", new MultiEffect("100evo0R-4", 91, new Effect[][] {
+				ArmorType.BOTTE, "100evo0R", "bottes/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 615, true),
 						new Effect(TypeEffect.DefM, false, 460, true),
@@ -828,7 +828,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Destructeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "100evo0", "bottes/65pvp0", new MultiEffect("100evo0-4", 91, new Effect[][] {
+				ArmorType.BOTTE, "100evo0", "bottes/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 512, true),
 						new Effect(TypeEffect.DefM, false, 383, true),
@@ -912,7 +912,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Croisé (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "100evo1R", "bottes/100pve1", new MultiEffect("100evo1R-4", 91, new Effect[][] {
+				ArmorType.BOTTE, "100evo1R", "bottes/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 657, true),
 						new Effect(TypeEffect.DefM, false, 444, true),
@@ -996,7 +996,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Croisé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "100evo1", "bottes/100pve1", new MultiEffect("100evo1-4", 91, new Effect[][] {
+				ArmorType.BOTTE, "100evo1", "bottes/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 547, true),
 						new Effect(TypeEffect.DefM, false, 370, true),
@@ -1150,7 +1150,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ravageur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "90evo0R", "bottes/70nucleus0", new MultiEffect("90evo0R-4", 76, new Effect[][] {
+				ArmorType.BOTTE, "90evo0R", "bottes/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 544, true),
 						new Effect(TypeEffect.DefM, false, 407, true),
@@ -1274,7 +1274,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ravageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "90evo0", "bottes/70nucleus0", new MultiEffect("90evo0-4", 76, new Effect[][] {
+				ArmorType.BOTTE, "90evo0", "bottes/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 453, true),
 						new Effect(TypeEffect.DefM, false, 339, true),
@@ -1398,7 +1398,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Templier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "90evo1R", "bottes/70nucleus1", new MultiEffect("90evo1R-4", 76, new Effect[][] {
+				ArmorType.BOTTE, "90evo1R", "bottes/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 581, true),
 						new Effect(TypeEffect.DefM, false, 393, true),
@@ -1522,7 +1522,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Templier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "90evo1", "bottes/70nucleus1", new MultiEffect("90evo1-4", 76, new Effect[][] {
+				ArmorType.BOTTE, "90evo1", "bottes/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 484, true),
 						new Effect(TypeEffect.DefM, false, 327, true),
@@ -1696,7 +1696,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Gladiateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "75evo0R", "bottes/75evo0", new MultiEffect("75evo0R-4", 61, new Effect[][] {
+				ArmorType.BOTTE, "75evo0R", "bottes/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 471, true),
 						new Effect(TypeEffect.DefM, false, 352, true),
@@ -1820,7 +1820,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Gladiateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "75evo0", "bottes/75evo0", new MultiEffect("75evo0-4", 61, new Effect[][] {
+				ArmorType.BOTTE, "75evo0", "bottes/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 392, true),
 						new Effect(TypeEffect.DefM, false, 293, true),
@@ -1944,7 +1944,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Vindicateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "75evo1R", "bottes/75evo1", new MultiEffect("75evo1R-4", 61, new Effect[][] {
+				ArmorType.BOTTE, "75evo1R", "bottes/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 495, true),
 						new Effect(TypeEffect.DefM, false, 335, true),
@@ -2068,7 +2068,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Vindicateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "75evo1", "bottes/75evo1", new MultiEffect("75evo1-4", 61, new Effect[][] {
+				ArmorType.BOTTE, "75evo1", "bottes/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 412, true),
 						new Effect(TypeEffect.DefM, false, 279, true),
@@ -2241,7 +2241,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Berserker (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "60evo0R", "bottes/60evo0", new MultiEffect("60evo0R-4", 31, new Effect[][] {
+				ArmorType.BOTTE, "60evo0R", "bottes/60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 320, true),
 						new Effect(TypeEffect.DefM, false, 239, true),
@@ -2475,7 +2475,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Berserker"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "60evo0", "bottes/60evo0", new MultiEffect("60evo0-4", 31, new Effect[][] {
+				ArmorType.BOTTE, "60evo0", "bottes/60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 266, true),
 						new Effect(TypeEffect.DefM, false, 199, true),
@@ -2709,7 +2709,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Paladin (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "60evo1R", "bottes/62vert0", new MultiEffect("60evo1R-4", 31, new Effect[][] {
+				ArmorType.BOTTE, "60evo1R", "bottes/62vert0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 339, true),
 						new Effect(TypeEffect.DefM, false, 228, true),
@@ -2943,7 +2943,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Paladin"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "60evo1", "bottes/62vert0", new MultiEffect("60evo1-4", 31, new Effect[][] {
+				ArmorType.BOTTE, "60evo1", "bottes/62vert0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 282, true),
 						new Effect(TypeEffect.DefM, false, 190, true),
@@ -3185,7 +3185,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Guerrier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "30evo0R", "bottes/30pve0", new MultiEffect("30evo0R-4", 6, new Effect[][] {
+				ArmorType.BOTTE, "30evo0R", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 158, true),
 						new Effect(TypeEffect.DefM, false, 118, true),
@@ -3339,7 +3339,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Guerrier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "30evo0", "bottes/30pve0", new MultiEffect("30evo0-4", 6, new Effect[][] {
+				ArmorType.BOTTE, "30evo0", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 131, true),
 						new Effect(TypeEffect.DefM, false, 98, true),
@@ -4076,7 +4076,7 @@ class LoaderBoot {
 					}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Kage (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
-					ArmorType.BOTTE, "100evo3R", "bottes/100pve3", new MultiEffect("100evo3R-4", 91, new Effect[][] {
+					ArmorType.BOTTE, "100evo3R", "bottes/100pve3", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 513, true),
 							new Effect(TypeEffect.DefM, false, 510, true),
@@ -4160,7 +4160,7 @@ class LoaderBoot {
 					}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Kage"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
-					ArmorType.BOTTE, "100evo3", "bottes/100pve3", new MultiEffect("100evo3-4", 91, new Effect[][] {
+					ArmorType.BOTTE, "100evo3", "bottes/100pve3", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 427, true),
 							new Effect(TypeEffect.DefM, false, 425, true),
@@ -4272,7 +4272,7 @@ class LoaderBoot {
 					}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shinobi (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
-					ArmorType.BOTTE, "90evo3R", "bottes/70nucleus3", new MultiEffect("90evo3R-4", 76, new Effect[][] {
+					ArmorType.BOTTE, "90evo3R", "bottes/70nucleus3", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
 								new Effect(TypeEffect.DefP, false, 453, true),
 								new Effect(TypeEffect.DefM, false, 452, true),
@@ -4396,7 +4396,7 @@ class LoaderBoot {
 						}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shinobi"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
-					ArmorType.BOTTE, "90evo3", "bottes/70nucleus3", new MultiEffect("90evo3-4", 76, new Effect[][] {
+					ArmorType.BOTTE, "90evo3", "bottes/70nucleus3", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
 								new Effect(TypeEffect.DefP, false, 377, true),
 								new Effect(TypeEffect.DefM, false, 376, true),
@@ -4548,7 +4548,7 @@ class LoaderBoot {
 					}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ninja (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
-					ArmorType.BOTTE, "75evo3R", "bottes/75evo3", new MultiEffect("75evo3R-4", 61, new Effect[][] {
+					ArmorType.BOTTE, "75evo3R", "bottes/75evo3", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 374, true),
 							new Effect(TypeEffect.DefM, false, 393, true),
@@ -4672,7 +4672,7 @@ class LoaderBoot {
 					}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales Évolutives du Ninja"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
-					ArmorType.BOTTE, "75evo3", "bottes/75evo3", new MultiEffect("75evo3-4", 61, new Effect[][] {
+					ArmorType.BOTTE, "75evo3", "bottes/75evo3", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 311, true),
 							new Effect(TypeEffect.DefM, false, 327, true),
@@ -4826,7 +4826,7 @@ class LoaderBoot {
 					}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Assassin (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
-					ArmorType.BOTTE, "60evo3R", "bottes/40pve0", new MultiEffect("60evo3R-4", 31, new Effect[][] {
+					ArmorType.BOTTE, "60evo3R", "bottes/40pve0", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 252, true),
 							new Effect(TypeEffect.DefM, false, 266, true),
@@ -5060,7 +5060,7 @@ class LoaderBoot {
 					}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Assassin"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
-					ArmorType.BOTTE, "60evo3", "bottes/40pve0", new MultiEffect("60evo3-4", 31, new Effect[][] {
+					ArmorType.BOTTE, "60evo3", "bottes/40pve0", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 210, true),
 							new Effect(TypeEffect.DefM, false, 221, true),
@@ -5302,7 +5302,7 @@ class LoaderBoot {
 					}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Archer (Réincarné)"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
-					ArmorType.BOTTE, "30evo2R", "bottes/50pve0", new MultiEffect("30evo2R-4", 6, new Effect[][] {
+					ArmorType.BOTTE, "30evo2R", "bottes/50pve0", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 131, true),
 							new Effect(TypeEffect.DefM, false, 125, true),
@@ -5456,7 +5456,7 @@ class LoaderBoot {
 					}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Archer"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
-					ArmorType.BOTTE, "30evo2", "bottes/50pve0", new MultiEffect("30evo2-4", 6, new Effect[][] {
+					ArmorType.BOTTE, "30evo2", "bottes/50pve0", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
 							new Effect(TypeEffect.DefP, false, 109, true),
 							new Effect(TypeEffect.DefM, false, 104, true),
@@ -6211,7 +6211,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Oméga (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "100evo8R", "bottes/100evo8", new MultiEffect("100evo8R-4", 91, new Effect[][] {
+				ArmorType.BOTTE, "100evo8R", "bottes/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 615, true),
 						new Effect(TypeEffect.DefM, false, 438, true),
@@ -6295,7 +6295,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées spirituelles d'Oméga"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "100evo8", "bottes/100evo8", new MultiEffect("100evo8-4", 91, new Effect[][] {
+				ArmorType.BOTTE, "100evo8", "bottes/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 512, true),
 						new Effect(TypeEffect.DefM, false, 365, true),
@@ -6417,7 +6417,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Mégatron (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "90evo8R", "bottes/90evo8", new MultiEffect("90evo8R-4", 76, new Effect[][] {
+				ArmorType.BOTTE, "90evo8R", "bottes/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 544, true),
 						new Effect(TypeEffect.DefM, false, 388, true),
@@ -6541,7 +6541,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de l'Essence de Prime"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "90evo8", "bottes/90evo8", new MultiEffect("90evo8-4", 76, new Effect[][] {
+				ArmorType.BOTTE, "90evo8", "bottes/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 453, true),
 						new Effect(TypeEffect.DefM, false, 323, true),
@@ -6685,7 +6685,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Prime (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "75evo8R", "bottes/50pve8", new MultiEffect("75evo8R-4", 61, new Effect[][] {
+				ArmorType.BOTTE, "75evo8R", "bottes/50pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 471, true),
 						new Effect(TypeEffect.DefM, false, 335, true),
@@ -6809,7 +6809,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de l'Essence du Métalleux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "75evo8", "bottes/50pve8", new MultiEffect("75evo8-4", 61, new Effect[][] {
+				ArmorType.BOTTE, "75evo8", "bottes/50pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 392, true),
 						new Effect(TypeEffect.DefM, false, 279, true),
@@ -6951,7 +6951,7 @@ class LoaderBoot {
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Métalleux (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "60evo8R", "bottes/65pvp8", new MultiEffect("60evo8R-4", 31, new Effect[][] {
+				ArmorType.BOTTE, "60evo8R", "bottes/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 320, true),
 						new Effect(TypeEffect.DefM, false, 228, true),
@@ -7185,7 +7185,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées spirituelles du Métalleux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "60evo8", "bottes/65pvp8", new MultiEffect("60evo8-4", 31, new Effect[][] {
+				ArmorType.BOTTE, "60evo8", "bottes/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 266, true),
 						new Effect(TypeEffect.DefM, false, 190, true),
@@ -7419,7 +7419,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Machiniste (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "30evo8R", "bottes/20pve8", new MultiEffect("30evo8R-4", 6, new Effect[][] {
+				ArmorType.BOTTE, "30evo8R", "bottes/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 118, true),
 						new Effect(TypeEffect.DefM, false, 150, true),
@@ -7573,7 +7573,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes spirituelles du Machiniste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "30evo8", "bottes/20pve8", new MultiEffect("30evo8-4", 6, new Effect[][] {
+				ArmorType.BOTTE, "30evo8", "bottes/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 98, true),
 						new Effect(TypeEffect.DefM, false, 125, true),

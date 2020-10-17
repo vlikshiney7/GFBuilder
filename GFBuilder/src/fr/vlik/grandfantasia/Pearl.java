@@ -227,7 +227,7 @@ public class Pearl implements FullRenderer {
 		
 		result.add(new Pearl());
 		
-		for(Pearl pearl : Pearl.dataWeapon) {
+		for(Pearl pearl : Pearl.dataArmor) {
 			if(pearl.getRestricStuff() != null) {
 				if(armor.getQuality() == pearl.getRestricStuff()) {
 					result.add(pearl);

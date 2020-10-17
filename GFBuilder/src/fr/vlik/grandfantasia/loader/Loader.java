@@ -17,11 +17,13 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.grandfantasia.Talent;
+import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
+import fr.vlik.grandfantasia.equipable.Anima;
 import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Bague;
 import fr.vlik.grandfantasia.equipable.Cape;
@@ -366,6 +368,10 @@ public class Loader {
 					new Effect(TypeEffect.PeneM, false, 7),
 			})
 		};
+	}
+	
+	public static Title[] getTitle() {
+		return LoaderTitle.getTitle();
 	}
 	
 	public static Archive[] getArchive() {
@@ -1112,6 +1118,10 @@ public class Loader {
 				new Effect(TypeEffect.AtkM, false, 20, true),
 			}),
 		};
+	}
+	
+	public static Anima[] getAnima() {
+		return LoaderAnima.getAnima();
 	}
 	
 	public static Nucleus[][] getNucleus() {

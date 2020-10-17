@@ -339,11 +339,9 @@ public class PageArmor extends PagePanel {
 			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
 					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
 				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
-				if(lvlXpStuff >= armors[i].getLvl()) {
-					if(armors[i].getBonusXP() != null) {
-						for(Calculable c : armors[i].getBonusXP()) {
-							list.add(c);
-						}
+				if(lvlXpStuff >= armors[i].getLvl() && armors[i].getBonusXP() != null) {
+					for(Calculable c : armors[i].getBonusXP()) {
+						list.add(c);
 					}
 				}
 			}

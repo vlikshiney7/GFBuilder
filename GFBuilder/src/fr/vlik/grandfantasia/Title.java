@@ -1,9 +1,6 @@
 package fr.vlik.grandfantasia;
 
 import java.awt.Color;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
@@ -11,40 +8,46 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.RegenEffect;
+import fr.vlik.grandfantasia.stats.SkillEffect;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Title implements Colorable, Writable {
 
-	private static Title[] data;
-	static {
-		loadData();
-	}
+	private static Title[] data = Loader.getTitle();
 	
 	private String name;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	private Quality quality;
 	private int lvl;
+	private boolean reinca;
 	private GradeName grade;
+	private Calculable[] effects;
 	
-	public Title(String name, Quality quality, int lvl, GradeName grade, String[] effects) {
+	public Title() {
+		this.name = "Aucun";
+		this.quality = Quality.GREY;
+		this.lvl = 0;
+		this.grade = GradeName.NONE;
+		this.reinca = false;
+	}
+	
+	public Title(String name, Quality quality, int lvl, boolean reinca, GradeName grade, Calculable[] effects) {
 		this.name = name;
-		this.lvl = lvl;
 		this.quality = quality;
+		this.lvl = lvl;
+		this.reinca = reinca;
 		this.grade = grade;
-		
-		for(int i = 0; i < effects.length; i++) {
-			this.effects.add(new Effect(effects[i]));
-		}
+		this.effects = effects;
 	}
 
 	public String getName() {
 		return this.name;
 	}
-
-	public ArrayList<Effect> getEffects() {
-		return this.effects;
-	}
-
+	
 	public Quality getQuality() {
 		return this.quality;
 	}
@@ -53,8 +56,38 @@ public class Title implements Colorable, Writable {
 		return this.lvl;
 	}
 	
+	public boolean getReinca() {
+		return this.reinca;
+	}
+	
 	public GradeName getGrade() {
 		return this.grade;
+	}
+	
+	public Calculable[] getEffects() {
+		if(this.effects == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		
+		for(int i = 0; i < tab.length; i++) {
+			Calculable c = this.effects[i];
+			
+			if(c instanceof Effect) {
+				tab[i] = new Effect((Effect) c);
+			} else if(c instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) c);
+			} else if(c instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) c);
+			} else if(c instanceof RegenEffect) {
+				tab[i] = new RegenEffect((RegenEffect) c);
+			} else if(c instanceof Proc) {
+				tab[i] = new Proc((Proc) c);
+			}
+		}
+		
+		return tab;
 	}
 	
 	@Override
@@ -70,48 +103,13 @@ public class Title implements Colorable, Writable {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		if(this.effects != null) {
+			for(Calculable c : this.effects) {
+				tooltip.append(c.getTooltip());
+			}
 		}
 		
 		return "<html>" + tooltip + "</html>";
-	}
-	
-	public static void loadData() {
-		ArrayList<Title> list = new ArrayList<Title>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Title.class.getResourceAsStream(Tools.RESOURCE + "title.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				String[] effects = new String[Integer.parseInt(lineSplit[4])];
-				
-				Quality quality = Quality.values()[Integer.parseInt(lineSplit[1])];
-				GradeName grade;
-				try {
-					grade = GradeName.values()[Integer.parseInt(lineSplit[3])];
-				} catch (ArrayIndexOutOfBoundsException e) {
-					grade = GradeName.NONE;
-				}
-				
-				for(int i = 0; i < effects.length; i++) effects[i] = lineSplit[i+5];
-				
-				list.add(new Title(lineSplit[0], quality, Integer.parseInt(lineSplit[2]), grade, effects));
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Title.class.getClass().getSimpleName() + " class");
-		}
-		
-		Title.data = new Title[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
 	}
 	
 	public static Title get(String name) {
@@ -127,30 +125,33 @@ public class Title implements Colorable, Writable {
 	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
+		result.add(new Title());
+		
 		if(reinca.getLvl() > 0) {
 			lvl += 100;
-			for(int i = 0; i < Title.data.length; i++) {
-				if(Title.data[i].getLvl() <= lvl
-						&& (Title.data[i].getGrade() == GradeName.NONE || Title.data[i].getGrade() == grade)) {
+			
+			for(Title title : Title.data) {
+				if(title.getLvl() <= lvl
+						&& (title.getGrade() == GradeName.NONE || title.getGrade() == grade)) {
 					
-					result.add(Title.data[i]);
+					result.add(title);
 				}
 			}
 		} else {
-			for(int i = 0; i < Title.data.length; i++) {
-				if(Title.data[i].getQuality() == Quality.RED) {
+			for(Title title : Title.data) {
+				if(title.getReinca()) {
 					continue;
 				}
 				
-				if(Title.data[i].getGrade() == GradeName.NONE
-						|| Title.data[i].getGrade() == grade) {
+				if(title.getGrade() == GradeName.NONE
+						|| title.getGrade() == grade) {
 					
-					if(Title.data[i].getLvl() <= lvl) {
-						result.add(Title.data[i]);
-					} else if(Title.data[i].getLvl() > 100
-							&& Title.data[i].getLvl()-100 <= lvl)
+					if(title.getLvl() <= lvl) {
+						result.add(title);
+					} else if(title.getLvl() > 100
+							&& title.getLvl()-100 <= lvl)
 						
-						result.add(Title.data[i]);
+						result.add(title);
 				}
 			}
 		}

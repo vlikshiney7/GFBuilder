@@ -121,7 +121,7 @@ public class Armor extends Equipment {
 	}
 	
 	public MultiEffect getMultiEffect() {
-		return this.isMultiEffect ? new MultiEffect(this.multiEffects.getCode(), this.multiEffects.getLvlMin(), this.multiEffects.getEffects()) : null;
+		return this.isMultiEffect ? new MultiEffect(this.multiEffects.getLvlMin(), this.multiEffects.getEffects()) : null;
 	}
 	
 	public void setEffects(int lvl) {
