@@ -361,7 +361,11 @@ public class PageWeapon extends PagePanel {
 			}
 		}
 		
-		list.addAll(this.getBullet().getEffects());
+		if(this.getBullet().getEffects() != null) {
+			for(Effect e : this.getBullet().getEffects()) {
+				list.add(e);
+			}
+		}
 		
 		ArrayList<Pearl> notCombinablePearl = new ArrayList<Pearl>();
 		for(int i = 0; i < this.pearl.size(); i++) {

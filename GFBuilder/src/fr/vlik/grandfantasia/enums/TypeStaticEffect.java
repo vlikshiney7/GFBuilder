@@ -67,6 +67,8 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	Title28("Transformation Insecte géant", "Giant insect transformation", "Insecte géant", "Giant insect", Tools.EffectColor[8]),
 	Title29("Transformation Gadouillos, Boue Mangetout", "Muddy Maw, Gaius transformation", "Gadouillos, Boue Mangetout", "Muddy Maw, Gaius", Tools.EffectColor[8]),
 	Title30("Transformation Kutila, Vétéran", "Field Marshal, Kutila transformation", "Kutila, Vétéran", "Field Marshal, Kutila", Tools.EffectColor[8]),
+	Title31("Transformation Bulles bleues", "Blue bubbles transformation", "Bulles bleues", "Blue bubbles", Tools.EffectColor[8]),
+	Title32("Transformation Citrouille", "Pumpkin transformation", "Citrouille", "Pumpkin", Tools.EffectColor[8]),
 	
 	Anima0("+1% PV et PM à chaque effet reçu", "+1% HP and MP when receive effect", "+1% PV/PM par effet", "+1% HP/MP per effect", Tools.EffectColor[8]),
 	Anima1("Si PM<20%", "If MP<20%", "Si PM<20%", "If MP<20%", Tools.EffectColor[8]),

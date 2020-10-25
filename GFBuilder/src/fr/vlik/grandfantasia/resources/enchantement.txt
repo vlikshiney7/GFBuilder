@@ -18,8 +18,8 @@ de Parade/15/15/false,false,false,false/false/1/Parade,false,0
 de Soif Sanguine/0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15/-1/false,false,false,false/true/1/RegenCB,false,3
 de Coordination/12,13/-1/true,false,false,false/true/2/RTCCP,false,3/RTCCM,false,3
 de la Détermination/12,15/-1/true,false,false,false/true/2/RDCCP,false,10/RDCCM,false,10
-des Mortels/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false,false/true/1/TCCP,false,2
-d'Explosion Énergétique/11,12,13,14/-1/false,false,false,false/true/1/TCCM,false,2
+des Mortels/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,false,true/true/1/TCCP,false,2
+d'Explosion Énergétique/11,12,13,14/-1/false,false,false,true/true/1/TCCM,false,2
 de la Mort/0,1,2,3,4,5,6,7,8,9,10/-1/false,false,true,true/true/1/DCCP,false,8
 de l'Amplification/11,12,13,14/-1/false,false,true,true/true/1/DCCM,false,8
 d'Adversité/11,14/-1/true,false,true,true/true/2/ReflectP,false,10/ReflectM,false,10

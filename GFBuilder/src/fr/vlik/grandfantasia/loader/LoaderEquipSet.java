@@ -609,6 +609,24 @@ public class LoaderEquipSet {
 							new Effect(TypeEffect.DegPNature, false, 800),
 					}),
 				}),
+			new EquipSet("Féroce Tigre de Combat", "90gvg0",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 27),
+					new Effect(TypeEffect.FCE, false, 22),
+					new Effect(TypeEffect.VIT, false, 7),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Ombre, false, 70),
+					new Effect(TypeEffect.ReducP, false, 15),
+					new Effect(TypeEffect.ReducM, false, 15),
+				},
+				new Calculable[] {
+					new StaticEffect(TypeStaticEffect.x3STD, 20),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -120, Target.OPPONENT),
+						new Effect(TypeEffect.AGI, false, -120, Target.OPPONENT),
+					}),
+				}),
 			new EquipSet("Rage du Minotaure", "80gvg0",
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 27),
@@ -1310,6 +1328,24 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.Atk, true, 10),
 					new Effect(TypeEffect.FCE, false, 18),
 					new Effect(TypeEffect.MEN, false, 10),
+				}),
+			new EquipSet("Rhino des Cieux Sacrés", "90gvg1",
+				new Calculable[] {
+					new Effect(TypeEffect.Glace, false, 70),
+					new Effect(TypeEffect.VIT, false, 27),
+					new Effect(TypeEffect.VOL, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 27),
+					new Effect(TypeEffect.RTCCM, false, 27),
+					new Effect(TypeEffect.PV, true, 17),
+				},
+				new Calculable[] {
+					new StaticEffect(TypeStaticEffect.AntiStun),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -100, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -100, Target.OPPONENT),
+					}),
 				}),
 			new EquipSet("Force des Titans", "80gvg1",
 				new Calculable[] {
@@ -2047,6 +2083,24 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Effect(TypeEffect.DCCM, false, 35),
 					new Effect(TypeEffect.DegOmbre, false, 700),
+				}),
+			new EquipSet("Chien-Loup Zombie", "90gvg3",
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 70),
+					new Effect(TypeEffect.FCE, false, 27),
+					new Effect(TypeEffect.AGI, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 27),
+					new Effect(TypeEffect.RTCCM, false, 27),
+					new Effect(TypeEffect.ESQ, false, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 100),
+					new Effect(TypeEffect.DegDuo, false, 25),
+					new Proc(40, Activation.Attacked, 15, new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 50),
+					}),
 				}),
 			new EquipSet("Frénésie du Lycan", "80gvg3",
 				new Calculable[] {
@@ -2852,6 +2906,29 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new StaticEffect(TypeStaticEffect.x2Skill, 12),
+				}
+			),
+			new EquipSet("Grand Bois Divin", "90gvg5",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 22),
+					new Effect(TypeEffect.VOL, false, 17),
+					new Proc(75, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.Nature, false, -100, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 27),
+					new Effect(TypeEffect.RTCCM, false, 27),
+					new Effect(TypeEffect.ReducP, false, 12),
+					new Effect(TypeEffect.ReducM, false, 12),
+					new Effect(TypeEffect.PV, true, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ESQ, false, 35),
+					new Effect(TypeEffect.Toucher, false, 30),
+					new Proc(60, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.AGI, false, -195, Target.OPPONENT),
+					}),
 				}
 			),
 			new EquipSet("Envoûtement des Dryades", "80gvg5",
@@ -3757,6 +3834,24 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.FCE, false, 50),
 					new StaticEffect(TypeStaticEffect.x2STD, 30),
 				}),
+			new EquipSet("Âme Brisée du prédateur nocturne", "90gvg8",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 30),
+					new Effect(TypeEffect.RTCCM, false, 30),
+					new Effect(TypeEffect.FCE, false, 38),
+					new Effect(TypeEffect.VIT, false, 23),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 22),
+					new Effect(TypeEffect.ReducP, false, 25),
+					new Effect(TypeEffect.ReducM, false, 25),
+				},
+				new Calculable[] {
+					new StaticEffect(TypeStaticEffect.x2STD, 35),
+					new Proc(50, Activation.Attack, 9, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 30),
+					}),
+				}),
 			new EquipSet("Combat sans fin", "80gvg8",
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 30),
@@ -4523,6 +4618,23 @@ public class LoaderEquipSet {
 					new Proc(30, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 					}),
+				}),
+			new EquipSet("Os de dragon Crystalis", "90gvg11",
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 25),
+					new Effect(TypeEffect.VOL, false, 25),
+					new Proc(75, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -50, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PM, true, 7),
+					new Effect(TypeEffect.Depla, false, 22),
+					new Effect(TypeEffect.VitComp, false, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RegenPV, false, 60),
+					new Effect(TypeEffect.RegenPM, false, 60),
 				}),
 			new EquipSet("Cristal dégénéré", "80gvg11",
 				new Calculable[] {

@@ -68,7 +68,7 @@ public class ExtractTitleData {
 						System.out.println(name);
 					}
 					
-					if(!alreadyInData(name)) {
+					if(notInData(name, Integer.parseInt(lvl))) {
 						process(name, color, lvl, effects);
 					}
 				}
@@ -250,7 +250,7 @@ public class ExtractTitleData {
 		return true;
 	}
 	
-	public static boolean alreadyInData(String name) {
-		return Title.get(name) != null;
+	public static boolean notInData(String name, int lvl) {
+		return Title.get(name) == null || (Title.get(name).getLvl() == 0 && lvl != 0);
 	}
 }

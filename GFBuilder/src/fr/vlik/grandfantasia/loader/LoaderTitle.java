@@ -1232,6 +1232,10 @@ public class LoaderTitle {
 			new Title("Chevalier du Cristal", Quality.BLUE, 31, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PM, false, 200),
 			}),
+			new Title("Christmas placeholder", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
+				new Effect(TypeEffect.ESQ, true, 3),
+				new Effect(TypeEffect.Toucher, false, 3),
+			}),
 			new Title("Citrouille sentinelle", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.ESQ, true, 5),
 				new Effect(TypeEffect.PV, true, 3),
@@ -1316,6 +1320,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.DefP, true, -12),
 				new Effect(TypeEffect.DefM, true, -12),
+			}),
+			new Title("Dose d'amour et de justice", Quality.BLUE, 0, false, GradeName.NONE, new Calculable[] {
+				new StaticEffect(TypeStaticEffect.Title31),
 			}),
 			new Title("Écrivain fantastique", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.DegMortP, true, 2),
@@ -1528,6 +1535,13 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Toucher, false, 3),
 				new Effect(TypeEffect.ESQ, true, 3),
 			}),
+			new Title("Homme-bête assassin", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
+				new Effect(TypeEffect.FCE, true, 2),
+				new Effect(TypeEffect.VIT, true, 2),
+				new Effect(TypeEffect.INT, true, 2),
+				new Effect(TypeEffect.VOL, true, 2),
+				new Effect(TypeEffect.AGI, true, 2),
+			}),
 			new Title("Honorable compagnon", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.DegHumaP, true, 5),
 				new Effect(TypeEffect.DegHumaP, false, 50),
@@ -1597,6 +1611,9 @@ public class LoaderTitle {
 			new Title("La voie de la Forêt", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.Loot, false, 5),
 				new Effect(TypeEffect.VitComp, false, 5),
+			}),
+			new Title("Le copain de l'épouvantail", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
+				new StaticEffect(TypeStaticEffect.Title32),
 			}),
 			new Title("Le Gardien du Futur", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 300),
@@ -1697,6 +1714,9 @@ public class LoaderTitle {
 			new Title("Mégère Pirate", Quality.BLUE, 186, false, GradeName.NONE, new Calculable[] {
 				new StaticEffect(TypeStaticEffect.Title5),
 			}),
+			new Title("Membre essentiel", Quality.BLUE, 31, false, GradeName.NONE, new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 10),
+			}),
 			new Title("Membre Honoraire du Clan Infernal", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 200),
 				new Effect(TypeEffect.Atk, false, 2),
@@ -1733,6 +1753,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, false, 200),
 				new Effect(TypeEffect.AtkM, true, 2),
 				new Effect(TypeEffect.VitComp, false, 2),
+			}),
+			new Title("Pleine lune automnale", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
+				new Effect(TypeEffect.ESQ, true, 3),
+				new Effect(TypeEffect.Toucher, false, 3),
 			}),
 			new Title("Pourfendeur de célibat", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.Loot, false, 3),
@@ -2570,6 +2594,8 @@ public class LoaderTitle {
 			new Title("Enfant des Fleurs", Quality.WHITE, 1, false, GradeName.NONE, null),
 			new Title("Espoir de la Plaine", Quality.WHITE, 11, false, GradeName.NONE, null),
 			new Title("Étoile Filante de Saphaël", Quality.WHITE, 0, false, GradeName.NONE, null),
+			new Title("Expert en pigments", Quality.WHITE, 71, false, GradeName.NONE, null),
+			new Title("Expert gazier", Quality.WHITE, 71, false, GradeName.NONE, null),
 			new Title("Fan des Gélapins", Quality.WHITE, 30, false, GradeName.NONE, null),
 			new Title("Gardien de l'Héritage", Quality.WHITE, 24, false, GradeName.NONE, null),
 			new Title("Gardien des Mines", Quality.WHITE, 11, false, GradeName.NONE, null),
