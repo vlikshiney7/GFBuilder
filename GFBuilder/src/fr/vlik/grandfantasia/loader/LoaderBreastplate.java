@@ -8028,7 +8028,7 @@ class LoaderBreastplate {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron du Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
-				ArmorType.PLASTRON, "90gvg8", "torses/80gvg8", new Calculable[] {
+				ArmorType.PLASTRON, "90gvg8", "torses/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 943, true),
 					new Effect(TypeEffect.DefM, false, 672, true),
 					new Effect(TypeEffect.FCE, false, 35, true),

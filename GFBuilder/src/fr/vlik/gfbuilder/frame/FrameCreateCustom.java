@@ -80,7 +80,7 @@ public class FrameCreateCustom extends JFrame {
 			e.printStackTrace();
 		}
 		
-		this.setSize(420, 350);
+		this.setSize(540, 350);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -139,7 +139,7 @@ public class FrameCreateCustom extends JFrame {
 			checkValidity();
 		});
 		
-		this.grade = new JCustomComboBox<Grade>(new DefaultComboBoxModel<Grade>(Grade.getPossibleData(31)));
+		this.grade = new JCustomComboBox<Grade>(new DefaultComboBoxModel<Grade>(Grade.getPossibleGrade(31)));
 		this.grade.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -360,37 +360,19 @@ public class FrameCreateCustom extends JFrame {
 	}
 	
 	private void updateEnchant() {
-		int optionType = this.getTypeEquipment();
 		CustomEquipment equipment = this.getCustomEquipment();
-		Quality quality = this.getQuality();
-		Enchantment[] tabEnchant = null;
+		Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(equipment, this.getQuality());
 		
-		if(equipment != null) {
-			switch (optionType) {
-				case 0:
-					tabEnchant = CustomWeapon.getEnchant(equipment, quality);
-					break;
-				case 1:
-					tabEnchant = CustomArmor.getEnchant(equipment, quality);
-					break;
-				case 2:
-					tabEnchant = CustomCape.getEnchant(equipment, quality);
-					break;
-				case 3:
-					tabEnchant = CustomRing.getEnchant(equipment, quality);
-					break;
-			}
-		} else {
+		if(equipment == null) {
 			for(int i = 0; i < 6; i++) {
 				this.enchantement.get(i).setVisible(false);
 			}
-		}
-		
-		if(tabEnchant != null) {
+		} else {
 			for(int i = 0; i < 6; i++) {
 				this.enchantement.get(i).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
 			}
 		}
+		
 	}
 	
 	private void updateNbEnchant() {

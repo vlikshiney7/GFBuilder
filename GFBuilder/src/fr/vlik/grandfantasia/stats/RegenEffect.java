@@ -50,7 +50,8 @@ public class RegenEffect implements Calculable {
 	
 	public static enum TypeRegen {
 		REGENERATION("Régénération", "Recover"),
-		ABSORPTION("Absorption", "absorbing");
+		ABSORPTION("Absorption", "absorbing"),
+		POISON("Poison", "poison");
 		
 		public final String fr;
 		public final String en;
@@ -95,7 +96,7 @@ public class RegenEffect implements Calculable {
 		
 		if(this.type == TypeRegen.ABSORPTION) {
 			tooltip.append("Absorbe ");
-		} else {
+		} else if(this.type == TypeRegen.REGENERATION) {
 			tooltip.append("+");
 		}
 		
@@ -106,7 +107,7 @@ public class RegenEffect implements Calculable {
 				tooltip.append("%");
 			}
 		} else {
-			tooltip.append(this.rangeMin + "-" + this.rangeMax);
+			tooltip.append(this.rangeMin + " à " + this.rangeMax);
 			
 			if(isPercent) {
 				tooltip.append("%");
@@ -137,7 +138,7 @@ public class RegenEffect implements Calculable {
 					result.append("%");
 				}
 			} else {
-				result.append(this.rangeMin + "-" + this.rangeMax);
+				result.append(this.rangeMin + " to " + this.rangeMax);
 				
 				if(isPercent) {
 					result.append("%");
@@ -152,7 +153,7 @@ public class RegenEffect implements Calculable {
 				result.append(" chaque " + this.periodicity + " secondes");
 			}
 			
-			if(this.type == TypeRegen.ABSORPTION) {
+			if(this.type == TypeRegen.ABSORPTION || this.type == TypeRegen.POISON) {
 				result.append(" à l'ennemi");
 			}
 		} else {
@@ -174,7 +175,7 @@ public class RegenEffect implements Calculable {
 				}
 			}
 			
-			if(this.type == TypeRegen.ABSORPTION) {
+			if(this.type == TypeRegen.ABSORPTION || this.type == TypeRegen.POISON) {
 				result.append(" of opponent's ");
 			}
 			

@@ -8533,7 +8533,7 @@ class LoaderGauntlet {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
-					ArmorType.GANT, "90gvg8", "gants/80gvg8", new Calculable[] {
+					ArmorType.GANT, "90gvg8", "gants/85pve8", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 435, true),
 						new Effect(TypeEffect.DefM, false, 310, true),
 						new Effect(TypeEffect.FCE, false, 17, true),

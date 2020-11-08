@@ -124,7 +124,7 @@ public class Effect implements Calculable {
 		this.value = (int) (this.value * coef);
 	}
 	
-	public void addEnchantValue(int value) {
+	public void addEnchantValue(double value) {
 		this.value = this.value + value;
 	}
 	

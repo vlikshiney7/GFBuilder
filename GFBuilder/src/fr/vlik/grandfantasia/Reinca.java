@@ -108,7 +108,7 @@ public class Reinca implements FullRenderer {
 		return null;
 	}
 
-	public static Reinca[] getPossibleData(int lvl) {
+	public static Reinca[] getPossibleReinca(int lvl) {
 		ArrayList<Reinca> result = new ArrayList<Reinca>();
 		
 		for(Reinca reinca : Reinca.data) {
@@ -120,9 +120,7 @@ public class Reinca implements FullRenderer {
 		}
 		
 		Reinca[] cast = new Reinca[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

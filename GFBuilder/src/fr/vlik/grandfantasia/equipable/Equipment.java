@@ -7,9 +7,11 @@ import java.util.Map;
 import javax.swing.Icon;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -92,6 +94,8 @@ public abstract class Equipment implements FullRenderer {
 		return this.icon;
 	}
 	
+	public abstract Icon setIcon(String path);
+	
 	public Calculable[] getEffects() {
 		if(this.effects == null) {
 			return null;
@@ -122,6 +126,51 @@ public abstract class Equipment implements FullRenderer {
 		return tab;
 	}
 	
+	public void addEnchant(Enchantment enchant) {
+		if(enchant == null) {
+			return;
+		}
+		
+		if(!this.enchantable) {
+			return;
+		}
+		
+		for(Calculable c : enchant.getEffects()) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				double value = e.getValue();
+				boolean found = false;
+				
+				for(Calculable calculable : this.effects) {
+					if(calculable instanceof Effect) {
+						Effect get = (Effect) calculable;
+						
+						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
+							get.addEnchantValue(value);
+							
+							found = true;
+							break;
+						}
+					}
+				}
+				
+				if(!found) {
+					e.addEnchantValue(value);
+					
+					Calculable[] newTab = new Calculable[this.effects.length + 1];
+					
+					for(int i = 0; i < this.effects.length; i++) {
+						newTab[i] = this.effects[i];
+					}
+					
+					newTab[this.effects.length] = e;
+					
+					this.effects = newTab;
+				}
+			}
+		}
+	}
+	
 	public boolean isCustom() {
 		return this.isCustom;
 	}
@@ -129,6 +178,8 @@ public abstract class Equipment implements FullRenderer {
 	public String getSignature() {
 		return this.signature;
 	}
+	
+	public abstract EnchantType getType();
 	
 	public boolean containGrade(GradeName grade) {
 		if(grade == GradeName.NONE) {

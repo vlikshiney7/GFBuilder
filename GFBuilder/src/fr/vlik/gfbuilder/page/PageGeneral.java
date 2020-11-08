@@ -49,7 +49,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	private PageGeneral() {
 		super(new GridLayout(3, 2, 10, 10), NUM_PAGE);
 		
-		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleData(0));
+		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleGrade(0));
 		this.grade.addActionListener(e -> {
 			PageSkill.getInstance().updateSkill();
 			PageSkill.getInstance().updateProSkill();
@@ -92,7 +92,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		});
 		
 		
-		this.reinca = new JCustomComboBox<Reinca>(Reinca.getPossibleData(1));
+		this.reinca = new JCustomComboBox<Reinca>(Reinca.getPossibleReinca(1));
 		this.reinca.addActionListener(e -> {
 			PageSkill.getInstance().updateSkillReinca();
 			PageWeapon.getInstance().updateWeapon();
@@ -197,7 +197,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	public void setAdditionalEffects() {
 		ArrayList<Effect> list = new ArrayList<Effect>();
 		
-		if(this.getArchive().getEffects() != null) {
+		if(this.getArchive() != null && this.getArchive().getEffects() != null) {
 			for(Effect e : this.getArchive().getEffects()) {
 				list.add(e);
 			}
@@ -302,7 +302,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	private void updateGrade() {
-		Grade tabGrade[] = Grade.getPossibleData(this.getLvl());
+		Grade tabGrade[] = Grade.getPossibleGrade(this.getLvl());
 		GradeName memoryGrade = this.getGrade().getGrade();
 		Grade memory = null;
 		
@@ -328,7 +328,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	private void updateReinca() {
-		Reinca[] tabReinca = Reinca.getPossibleData(this.getLvl());
+		Reinca[] tabReinca = Reinca.getPossibleReinca(this.getLvl());
 		int memory = this.reinca.getSelectedIndex();
 		
 		this.reinca.setModel(new DefaultComboBoxModel<Reinca>(tabReinca));
@@ -376,6 +376,11 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			this.yggdra.setSelectedIndex(0);
 		}
 		
-		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
+		Archive archive = Archive.get(config.get("Archive"));
+		if(archive != null) {
+			this.archive.setSelectedItem(ygg);
+		} else {
+			this.archive.setSelectedIndex(0);
+		}
 	}
 }

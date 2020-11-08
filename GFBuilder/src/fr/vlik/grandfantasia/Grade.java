@@ -106,7 +106,7 @@ public class Grade implements Iconable, Writable {
 		return null;
 	}
 	
-	public static Grade[] getPossibleData(int lvl) {
+	public static Grade[] getPossibleGrade(int lvl) {
 		ArrayList<Grade> result = new ArrayList<Grade>();
 		
 		for(Grade grade : Grade.data) {
@@ -118,9 +118,7 @@ public class Grade implements Iconable, Writable {
 		}
 		
 		Grade[] cast = new Grade[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

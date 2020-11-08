@@ -8081,7 +8081,7 @@ class LoaderHelmet {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
-				ArmorType.CASQUE, "90gvg8", "casques/80gvg8", new Calculable[] {
+				ArmorType.CASQUE, "90gvg8", "casques/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 725, true),
 					new Effect(TypeEffect.DefM, false, 516, true),
 					new Effect(TypeEffect.FCE, false, 19, true),

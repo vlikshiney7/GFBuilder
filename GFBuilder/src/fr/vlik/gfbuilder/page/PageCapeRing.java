@@ -434,7 +434,7 @@ public class PageCapeRing extends PagePanel {
 				Cape cape = this.getCape();
 				
 				if(cape.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleCapeEnchant();
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(cape);
 					Enchantment memory = this.getEnchantment(id);
 					
 					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
@@ -451,7 +451,7 @@ public class PageCapeRing extends PagePanel {
 				Ring ring = (Ring) this.ring.get(id-1).getSelectedItem();
 				
 				if(ring.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleRingEnchant();
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(ring);
 					Enchantment memory = this.getEnchantment(id);
 					
 					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
@@ -711,8 +711,10 @@ public class PageCapeRing extends PagePanel {
 			}
 		}
 		
-		for(int i = 0; i < this.enchant.size(); i++) {
-			this.enchant.get(i).setSelectedItem(Enchantment.get(config.get("Enchantment" + i)));
+		this.enchant.get(0).setSelectedItem(Enchantment.get(this.getCape(), config.get("Enchantment" + 0)));
+		
+		for(int i = 1; i < this.enchant.size(); i++) {
+			this.enchant.get(i).setSelectedItem(Enchantment.get(this.getRing(i-1), config.get("Enchantment" + i)));
 		}
 		
 		for(int i = 0; i < this.effectXpStuff.size(); i++) {

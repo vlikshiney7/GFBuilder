@@ -3,7 +3,6 @@ package fr.vlik.grandfantasia.custom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -13,8 +12,8 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipable.Ring;
+import fr.vlik.grandfantasia.equipable.Ring.RingType;
 import fr.vlik.grandfantasia.loader.CustomLoader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -24,21 +23,25 @@ public class CustomRing extends CustomEquipment {
 	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static CustomRing[] data = CustomLoader.getCustomRing();
-	public static Enchantment[] ringEnchant = CustomLoader.getRingEnchantment();
 	public final static double IncreaseValueGreen = 1.09;
 	public final static double IncreaseValueBlue = 1.24;
 	
 	public CustomRing(CustomRing ring) {
-		super(ring.getMap(), ring.getGrades(), ring.getLvl(), ring.getUnfixValue(), ring.getEffects());
+		super(ring.getMap(), ring.getGrades(), ring.getLvl(), ring.getEffects());
 		
 		this.icon = ring.getIcon();
 		this.iconName = ring.getIconName();
 	}
 	
-	public CustomRing(Map<Language, String> name, GradeName[] grades, int lvl, Map<TypeEffect, Integer[]> unfixValue, String path, Calculable[] effects) {
-		super(name, grades, lvl, unfixValue, effects);
+	public CustomRing(Map<Language, String> name, GradeName[] grades, int lvl, String path, Calculable[] effects) {
+		super(name, grades, lvl, effects);
 		
 		this.icon = setIcon(path);
+	}
+	
+	@Override
+	public RingType getType() {
+		return RingType.RING;
 	}
 	
 	@Override
@@ -126,42 +129,9 @@ public class CustomRing extends CustomEquipment {
 		}
 		
 		CustomRing[] cast = new CustomRing[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
-	}
-	
-	public static Enchantment[] getEnchant(CustomEquipment equip, Quality quality) {
-		if(quality == Quality.WHITE) {
-			return null;
-		}
-		
-		Enchantment[] result = new Enchantment[1 + equip.getUnfixValue().size() + CustomRing.ringEnchant.length];
-		
-		result[0] = new Enchantment();
-		
-		int it = 0;
-		for(Entry<TypeEffect, Integer[]> entry : equip.getUnfixValue().entrySet()) {
-			if(quality == Quality.GREEN) {
-				result[it] = new Enchantment(Enchantment.retrieveName.get(entry.getKey()), new Calculable[] {
-					new Effect(entry.getKey(), false, entry.getValue()[0]),
-				});
-			} else if(quality == Quality.BLUE) {
-				result[it] = new Enchantment(Enchantment.retrieveName.get(entry.getKey()), new Calculable[] {
-					new Effect(entry.getKey(), false, entry.getValue()[1]),
-				});
-			}
-			
-			it++;
-		}
-		
-		for(int i = 0; i < ringEnchant.length; i++) {
-			result[it+i] = ringEnchant[i];
-		}
-		
-		return result;
 	}
 	
 	public static boolean constructCustom(String name, Quality quality, String enchants) {
@@ -175,40 +145,18 @@ public class CustomRing extends CustomEquipment {
 		Enchantment[] tabEnchant = new Enchantment[6];
 		
 		if(quality == Quality.GREEN) {
-			Enchantment[] allEnchant = CustomRing.getEnchant(custom, quality);
-			
-			tabEnchant = new Enchantment[3];
-			
 			for(int i = 0; i < 3; i++) {
-				boolean found = false;
+				tabEnchant[i] = Enchantment.get(custom, quality, enchantSplit[i]);
 				
-				for(Enchantment enchant : allEnchant) {
-					if(enchant.getName().equals(enchantSplit[i])) {
-						tabEnchant[i] = enchant;
-						found = true;
-					}
-				}
-				
-				if(!found) {
+				if(tabEnchant[i] == null) {
 					return false;
 				}
 			}
 		} else if(quality == Quality.BLUE) {
-			Enchantment[] allEnchant = CustomRing.getEnchant(custom, quality);
-			
-			tabEnchant = new Enchantment[6];
-			
 			for(int i = 0; i < 6; i++) {
-				boolean found = false;
+				tabEnchant[i] = Enchantment.get(custom, quality, enchantSplit[i]);
 				
-				for(Enchantment enchant : allEnchant) {
-					if(enchant.getName().equals(enchantSplit[i])) {
-						tabEnchant[i] = enchant;
-						found = true;
-					}
-				}
-				
-				if(!found) {
+				if(tabEnchant[i] == null) {
 					return false;
 				}
 			}

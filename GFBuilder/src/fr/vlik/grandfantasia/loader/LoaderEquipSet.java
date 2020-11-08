@@ -82,7 +82,7 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.AGI, false, 60),
 					new SkillEffect(TypeSkillEffect.Class0S0, 10, TypeValue.DURATION),
 					new Proc(7, Activation.Attack, 2.5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 					}),
 				}),
 			new EquipSet("Sanguinaire Kenpachi", "90gold0",
@@ -2052,7 +2052,7 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Proc(33, Activation.Attack, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 					}),
 				}),
 			new EquipSet("Ombre Diabolique", "70lingot3",
@@ -4559,7 +4559,7 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 					}),
 				}),
 			new EquipSet("Esprit du voyageur", "60nucleus11",
@@ -4602,7 +4602,7 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Proc(30, Activation.Attack, 9, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 					}),
 				}),
 			new EquipSet("Malédiction du voyageur", "60lingot11",

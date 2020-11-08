@@ -45,6 +45,7 @@ public class Proc implements Calculable {
 	public static enum Activation {
 		Attack("en attaquant", "attacking"),
 		Attacked("quand attaqué", "when attacked"),
+		Standard("sur coup standard", "on standard hit"),
 		Phys("sur coup physique", "on physical hit"),
 		Mag("sur coup magique", "on magical hit"),
 		Crit("sur coup critique", "on critical hit"),

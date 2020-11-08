@@ -8506,7 +8506,7 @@ class LoaderBoot {
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "90gvg8", "bottes/80gvg8", new Calculable[] {
+				ArmorType.BOTTE, "90gvg8", "bottes/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
 					new Effect(TypeEffect.DefM, false, 362, true),
 					new Effect(TypeEffect.FCE, false, 15, true),

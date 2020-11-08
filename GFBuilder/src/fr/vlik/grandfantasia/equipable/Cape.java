@@ -7,13 +7,13 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -22,11 +22,8 @@ public class Cape extends Equipment {
 	
 	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	private static Cape[] data;
+	private static Cape[] data = Loader.getCape();
 	private static ArrayList<Cape> customData = new ArrayList<Cape>();
-	static {
-		data = Loader.getCape();
-	}
 	
 	private String setCode;
 	private boolean isMultiEffect;
@@ -72,6 +69,15 @@ public class Cape extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
+	public static enum CapeType implements EnchantType {
+		CAPE;
+	}
+	
+	@Override
+	public CapeType getType() {
+		return CapeType.CAPE;
+	}
+	
 	public String getSetCode() {
 		return this.setCode;
 	}
@@ -107,65 +113,6 @@ public class Cape extends Equipment {
 		}
 		
 		return (object != null) ? Tools.constructIcon(back, object) : back;
-	}
-	
-	public void addEnchant(Enchantment enchant) {
-		if(enchant == null) {
-			return;
-		}
-		
-		if(!this.enchantable) {
-			return;
-		}
-		
-		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
-			
-			for(int i = 0; i < this.effects.length; i++) {
-				newTab[i] = this.effects[i];
-			}
-			
-			for(int i = 0; i < enchant.getEffects().length; i++) {
-				newTab[this.effects.length + i] = enchant.getEffects()[i];
-			}
-			
-			this.effects = newTab;
-		} else {
-			for(Calculable c : enchant.getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					int value = Enchantment.getValue(this, e.getType());
-					boolean found = false;
-					
-					for(Calculable calculable : this.effects) {
-						if(calculable instanceof Effect) {
-							Effect get = (Effect) calculable;
-							
-							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-								get.addEnchantValue(value);
-								
-								found = true;
-								break;
-							}
-						}
-					}
-					
-					if(!found) {
-						e.addEnchantValue(value);
-						
-						Calculable[] newTab = new Calculable[this.effects.length + 1];
-						
-						for(int i = 0; i < this.effects.length; i++) {
-							newTab[i] = this.effects[i];
-						}
-						
-						newTab[this.effects.length] = e;
-						
-						this.effects = newTab;
-					}
-				}
-			}
-		}
 	}
 	
 	public void toCode(String path) {
@@ -276,7 +223,7 @@ public class Cape extends Equipment {
 		}
 		
 		Cape[] cast = new Cape[result.size()];
-		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

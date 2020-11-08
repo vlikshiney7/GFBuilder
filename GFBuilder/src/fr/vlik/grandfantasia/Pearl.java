@@ -215,9 +215,7 @@ public class Pearl implements FullRenderer {
 		}
 		
 		Pearl[] cast = new Pearl[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
 	}
@@ -238,9 +236,7 @@ public class Pearl implements FullRenderer {
 		}
 		
 		Pearl[] cast = new Pearl[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

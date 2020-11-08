@@ -1,10 +1,12 @@
 package fr.vlik.grandfantasia.loader;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Bullet;
 import fr.vlik.grandfantasia.CombiTalent;
+import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Energy;
 import fr.vlik.grandfantasia.EquipSet;
 import fr.vlik.grandfantasia.Fortification;
@@ -1112,6 +1114,10 @@ public class Loader {
 				new Effect(TypeEffect.Bullet, false, 20),
 			}),
 		};
+	}
+	
+	public static Map<Quality, Enchantment[]> getEnchant() {
+		return LoaderEnchant.getEnchant();
 	}
 	
 	public static Fortification[] getFortification() {

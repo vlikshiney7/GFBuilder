@@ -183,9 +183,7 @@ public class Blason implements Iconable, Writable {
 		}
 		
 		Blason[] cast = new Blason[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

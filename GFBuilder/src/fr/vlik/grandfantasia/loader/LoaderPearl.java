@@ -25,7 +25,7 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique d'Enfermement", Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 2, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Immobilisation),
+					new StaticEffect(TypeStaticEffect.NoMove),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 100),
@@ -246,7 +246,7 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de cage royale", Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
 				new Proc(10, Activation.Attack, 2, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Immobilisation),
+					new StaticEffect(TypeStaticEffect.NoMove),
 					new StaticEffect(TypeStaticEffect.NoSkill),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
@@ -256,7 +256,7 @@ public class LoaderPearl {
 			new Pearl("Pierre runique de cage vindicatrice", Quality.ORANGE, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Effect(TypeEffect.ReducPtsP, false, 100),
 				new Proc(15, Activation.Attack, 2, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Immobilisation),
+					new StaticEffect(TypeStaticEffect.NoMove),
 					new StaticEffect(TypeStaticEffect.NoSkill),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {

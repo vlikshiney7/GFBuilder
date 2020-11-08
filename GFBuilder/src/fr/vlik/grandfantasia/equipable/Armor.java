@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
@@ -16,6 +15,7 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -85,7 +85,7 @@ public class Armor extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum ArmorType {
+	public static enum ArmorType implements EnchantType {
 		CASQUE(0, "casque", "helmet"),
 		PLASTRON(1, "plastron", "breastplate"),
 		JAMBIERE(2, "jambière", "legging"),
@@ -104,6 +104,7 @@ public class Armor extends Equipment {
 	    }
 	}
 	
+	@Override
 	public ArmorType getType() {
 		return this.type;
 	}
@@ -153,65 +154,6 @@ public class Armor extends Equipment {
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
-	public void addEnchant(Enchantment enchant) {
-		if(enchant == null) {
-			return;
-		}
-		
-		if(!this.enchantable) {
-			return;
-		}
-		
-		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
-			
-			for(int i = 0; i < this.effects.length; i++) {
-				newTab[i] = this.effects[i];
-			}
-			
-			for(int i = 0; i < enchant.getEffects().length; i++) {
-				newTab[this.effects.length + i] = enchant.getEffects()[i];
-			}
-			
-			this.effects = newTab;
-		} else {
-			for(Calculable c : enchant.getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					int value = Enchantment.getValue(this, e.getType());
-					boolean found = false;
-					
-					for(Calculable calculable : this.effects) {
-						if(calculable instanceof Effect) {
-							Effect get = (Effect) calculable;
-							
-							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-								get.addEnchantValue(value);
-								
-								found = true;
-								break;
-							}
-						}
-					}
-					
-					if(!found) {
-						e.addEnchantValue(value);
-						
-						Calculable[] newTab = new Calculable[this.effects.length + 1];
-						
-						for(int i = 0; i < this.effects.length; i++) {
-							newTab[i] = this.effects[i];
-						}
-						
-						newTab[this.effects.length] = e;
-						
-						this.effects = newTab;
-					}
-				}
-			}
-		}
-	}
-
 	public void addFortif(Fortification fortif) {
 		if(this.effects == null) {
 			return;
@@ -305,7 +247,7 @@ public class Armor extends Equipment {
 		}
 		
 		Armor[] cast = new Armor[result.size()];
-		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

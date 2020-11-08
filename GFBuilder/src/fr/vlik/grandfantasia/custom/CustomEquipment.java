@@ -9,7 +9,7 @@ import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -23,17 +23,15 @@ public abstract class CustomEquipment implements Iconable, Writable {
 	protected Map<Language, String> name;
 	protected GradeName[] grades;
 	protected int lvl;
-	protected Map<TypeEffect, Integer[]> unfixValue;
 	protected String iconName;
 	protected String signature;
 	protected Icon icon;
 	protected Calculable[] effects;
 	
-	public CustomEquipment(Map<Language, String> name, GradeName[] grades, int lvl, Map<TypeEffect, Integer[]> unfixValue, Calculable[] effects) {
+	public CustomEquipment(Map<Language, String> name, GradeName[] grades, int lvl, Calculable[] effects) {
 		this.name = name;
 		this.grades = grades;
 		this.lvl = lvl;
-		this.unfixValue = unfixValue;
 		this.effects = effects;
 		this.signature = "";
 	}
@@ -54,20 +52,6 @@ public abstract class CustomEquipment implements Iconable, Writable {
 		return this.lvl;
 	}
 	
-	public Map<TypeEffect, Integer[]> getUnfixValue() {
-		return this.unfixValue;
-	}
-	
-	public int getUnfixValue(TypeEffect type, Quality quality) {
-		if(quality == Quality.GREEN) {
-			return this.unfixValue.get(type)[0];
-		} else if(quality == Quality.BLUE) {
-			return this.unfixValue.get(type)[0];
-		}
-		
-		return 0;
-	}
-	
 	public String getIconName() {
 		return this.iconName;
 	}
@@ -76,6 +60,8 @@ public abstract class CustomEquipment implements Iconable, Writable {
 	public Icon getIcon() {
 		return this.icon;
 	}
+	
+	public abstract Icon setIcon(String path);
 	
 	public Calculable[] getEffects() {
 		if(this.effects == null) {
@@ -93,6 +79,8 @@ public abstract class CustomEquipment implements Iconable, Writable {
 		
 		return tab;
 	}
+	
+	public abstract EnchantType getType();
 	
 	public boolean containGrade(GradeName grade) {
 		if(grade == GradeName.NONE) {

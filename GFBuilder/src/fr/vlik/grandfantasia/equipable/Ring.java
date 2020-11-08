@@ -7,14 +7,13 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 
 public final class Ring extends Equipment {
 	
@@ -58,6 +57,15 @@ public final class Ring extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
+	public static enum RingType implements EnchantType {
+		RING;
+	}
+	
+	@Override
+	public RingType getType() {
+		return RingType.RING;
+	}
+	
 	public String getSetCode() {
 		return this.setCode;
 	}
@@ -81,65 +89,6 @@ public final class Ring extends Equipment {
 		}
 		
 		return (object != null) ? Tools.constructIcon(back, object) : back;
-	}
-	
-	public void addEnchant(Enchantment enchant) {
-		if(enchant == null) {
-			return;
-		}
-		
-		if(!this.enchantable) {
-			return;
-		}
-		
-		if(enchant.isFixValue()) {
-			Calculable[] newTab = new Calculable[this.effects.length + enchant.getEffects().length];
-			
-			for(int i = 0; i < this.effects.length; i++) {
-				newTab[i] = this.effects[i];
-			}
-			
-			for(int i = 0; i < enchant.getEffects().length; i++) {
-				newTab[this.effects.length + i] = enchant.getEffects()[i];
-			}
-			
-			this.effects = newTab;
-		} else {
-			for(Calculable c : enchant.getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					int value = Enchantment.getValue(this, e.getType());
-					boolean found = false;
-					
-					for(Calculable calculable : this.effects) {
-						if(calculable instanceof Effect) {
-							Effect get = (Effect) calculable;
-							
-							if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
-								get.addEnchantValue(value);
-								
-								found = true;
-								break;
-							}
-						}
-					}
-					
-					if(!found) {
-						e.addEnchantValue(value);
-						
-						Calculable[] newTab = new Calculable[this.effects.length + 1];
-						
-						for(int i = 0; i < this.effects.length; i++) {
-							newTab[i] = this.effects[i];
-						}
-						
-						newTab[this.effects.length] = e;
-						
-						this.effects = newTab;
-					}
-				}
-			}
-		}
 	}
 	
 	public static void addCustom(Ring cape) {
@@ -201,7 +150,7 @@ public final class Ring extends Equipment {
 		}
 		
 		Ring[] cast = new Ring[result.size()];
-		for(int i = 0; i < cast.length; i++) cast[i] = result.get(i);
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

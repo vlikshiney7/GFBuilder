@@ -201,13 +201,13 @@ public class LoaderProSkill {
 			}),
 			new ProSkill("Sournoiserie maléfique 1", 86, "3-2", new Calculable[] {
 				new Proc(5, Activation.Attack, 1.5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Immobilisation),
+					new StaticEffect(TypeStaticEffect.NoMove),
 					new StaticEffect(TypeStaticEffect.AntiHeal),
 				}),
 			}),
 			new ProSkill("Sournoiserie maléfique 2", 91, "3-2", new Calculable[] {
 				new Proc(15, Activation.Attack, 1.5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Immobilisation),
+					new StaticEffect(TypeStaticEffect.NoMove),
 					new StaticEffect(TypeStaticEffect.AntiHeal),
 				}),
 			}),
@@ -573,7 +573,7 @@ public class LoaderProSkill {
 				new Proc(15, Activation.Attacked, 3, new Calculable[] {
 					new Effect(TypeEffect.DegP, false, -10, Target.OPPONENT),
 					new Effect(TypeEffect.DegM, false, -10, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.Immobilisation),
+					new StaticEffect(TypeStaticEffect.NoMove),
 				}),
 			}),
 		};

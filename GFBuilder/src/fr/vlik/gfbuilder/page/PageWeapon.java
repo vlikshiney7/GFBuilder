@@ -18,6 +18,7 @@ import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Fortification;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Pearl;
+import fr.vlik.grandfantasia.RedEnchantment;
 import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
@@ -52,7 +53,7 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(6);
 	
 	private ArrayList<JCustomComboBox<RedFortification>> redFortif = new ArrayList<JCustomComboBox<RedFortification>>(3);
-	private ArrayList<JCustomComboBox<Enchantment>> redEnchant = new ArrayList<JCustomComboBox<Enchantment>>(9);
+	private ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>(9);
 	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(9);
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(3);
 	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>(3);
@@ -116,8 +117,7 @@ public class PageWeapon extends PagePanel {
 			/* RED ENCHANT */
 			for(int j = 0; j < 3; j++) {
 				int idRed = i*3+j;
-				Enchantment[] red = Enchantment.getWeaponRedEnchant(WeaponType.NONE, null, null);
-				this.redEnchant.add(new JCustomComboBox<Enchantment>(red));
+				this.redEnchant.add(new JCustomComboBox<RedEnchantment>());
 				this.redEnchant.get(i*3+j).addActionListener(e -> {
 					updateRedLvlEnchant(idRed);
 					updateRedEnchant(idRed);
@@ -227,7 +227,7 @@ public class PageWeapon extends PagePanel {
 		return this.fortif.get(id).getSelectedItem();
 	}
 	
-	public Enchantment getRedEnchantment(int id) {
+	public RedEnchantment getRedEnchantment(int id) {
 		return this.redEnchant.get(id).getSelectedItem();
 	}
 	
@@ -290,13 +290,13 @@ public class PageWeapon extends PagePanel {
 				
 				for(int j = 0; j < 3; j++) {
 					if(this.redEnchant.get(i*3+j).getSelectedIndex() != 0) {
-						Enchantment red = this.getRedEnchantment(i*3+j);
+						RedEnchantment red = this.getRedEnchantment(i*3+j);
 						
 						if(red != null) {
-							for(Calculable c : red.getEffects()) {
+							for(Calculable c : red.getEffects(this.getRedLvlEnchant(i*3+j))) {
 								if(c instanceof Effect) {
 									Effect e = (Effect) c;
-									list.add(Enchantment.multiplyEffect(e, this.getRedLvlEnchant(i*3+j)));
+									list.add(e);
 								}
 							}
 						}
@@ -647,12 +647,12 @@ public class PageWeapon extends PagePanel {
 			Weapon weapon = this.getWeapon(id);
 			
 			if(weapon.getQuality() == Quality.RED) {
-				Enchantment[] tabRed = Enchantment.getWeaponRedEnchant(this.getWeapon(id).getType(), null, null);
+				RedEnchantment[] tabRed = RedEnchantment.getPossibleRedEnchant(weapon, null, null);
 				
 				for(int i = 0; i < 3; i++) {
-					Enchantment memory = this.getRedEnchantment(id*3+i);
+					RedEnchantment memory = this.getRedEnchantment(id*3+i);
 					
-					this.redEnchant.get(id*3+i).setModel(new DefaultComboBoxModel<Enchantment>(tabRed));
+					this.redEnchant.get(id*3+i).setModel(new DefaultComboBoxModel<RedEnchantment>(tabRed));
 					this.redEnchant.get(id*3+i).setSelectedItem(memory);
 					this.redEnchant.get(id*3+i).setVisible(true);
 				}
@@ -660,7 +660,7 @@ public class PageWeapon extends PagePanel {
 				this.enchant.get(id).setVisible(false);
 			} else {
 				if(weapon.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleWeaponEnchant(weapon.getQuality(), weapon.getType());
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(weapon);
 					Enchantment memory = this.getEnchantment(id);
 					
 					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
@@ -874,17 +874,17 @@ public class PageWeapon extends PagePanel {
 			ignore2 = idRed - 1;
 		}
 		
-		Enchantment choice = this.getRedEnchantment(idRed);
-		Enchantment memory1 = this.getRedEnchantment(ignore1);
-		Enchantment memory2 = this.getRedEnchantment(ignore2);
+		RedEnchantment choice = this.getRedEnchantment(idRed);
+		RedEnchantment memory1 = this.getRedEnchantment(ignore1);
+		RedEnchantment memory2 = this.getRedEnchantment(ignore2);
 		
-		Enchantment[] tabRed1 = Enchantment.getWeaponRedEnchant(this.getWeapon(idRed/3).getType(), choice, memory2);
-		Enchantment[] tabRed2 = Enchantment.getWeaponRedEnchant(this.getWeapon(idRed/3).getType(), choice, memory1);
+		RedEnchantment[] tabRed1 = RedEnchantment.getPossibleRedEnchant(this.getWeapon(idRed/3), choice, memory2);
+		RedEnchantment[] tabRed2 = RedEnchantment.getPossibleRedEnchant(this.getWeapon(idRed/3), choice, memory1);
 		
-		this.redEnchant.get(ignore1).setModel(new DefaultComboBoxModel<Enchantment>(tabRed1));
+		this.redEnchant.get(ignore1).setModel(new DefaultComboBoxModel<RedEnchantment>(tabRed1));
 		this.redEnchant.get(ignore1).setSelectedItem(memory1);
 		
-		this.redEnchant.get(ignore2).setModel(new DefaultComboBoxModel<Enchantment>(tabRed2));
+		this.redEnchant.get(ignore2).setModel(new DefaultComboBoxModel<RedEnchantment>(tabRed2));
 		this.redEnchant.get(ignore2).setSelectedItem(memory2);
 	}
 	
@@ -1015,7 +1015,7 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
-			this.enchant.get(i).setSelectedItem(Enchantment.get(config.get("Enchantment" + i)));
+			this.enchant.get(i).setSelectedItem(Enchantment.get(this.getWeapon(i), config.get("Enchantment" + i)));
 		}
 		
 		for(int i = 0; i < this.fortif.size(); i++) {
@@ -1054,7 +1054,7 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
-			this.redEnchant.get(i).setSelectedItem(Enchantment.getRed(config.get("RedEnchantment" + i)));
+			this.redEnchant.get(i).setSelectedItem(Enchantment.get(this.getWeapon(i), config.get("RedEnchantment" + i)));
 		}
 
 		for(int i = 0; i < this.redLvlEnchant.size(); i++) {

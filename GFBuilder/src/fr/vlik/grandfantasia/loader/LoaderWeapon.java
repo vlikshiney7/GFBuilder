@@ -895,7 +895,7 @@ public class LoaderWeapon {
 		return new Weapon[] {
 			new RedWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillets de Guerre du Proverbe"); put(Language.EN, "Rumor Proverb Warhammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
-				100, Quality.RED, false, WeaponType.MARTEAU1M, true, false, "marteau1M/90red", new Calculable[] {
+				90, Quality.RED, false, WeaponType.MARTEAU1M, true, false, "marteau1M/90red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 4088, true),
 					new Effect(TypeEffect.AtkM, false, 2350, true),
 					new Effect(TypeEffect.FCE, false, 78, true),
@@ -1003,7 +1003,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.DegStdMa, true, 40),
 					new Effect(TypeEffect.MEN, false, 40),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 						new StaticEffect(TypeStaticEffect.NoSkill),
 					}),
 				}, null ),
@@ -1166,7 +1166,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.DegStdMa, false, 20),
 					new Effect(TypeEffect.DCCM, false, 20),
 					new Proc(10, Activation.Attack, 1, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 						new StaticEffect(TypeStaticEffect.NoSkill),
 					}),
 				}, null ),
@@ -1954,7 +1954,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -35),
 					new Effect(TypeEffect.Depla, false, 15),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 						new StaticEffect(TypeStaticEffect.NoSkill),
 					}),
 				}, null ),
@@ -2010,7 +2010,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.MEN, false, -20),
 					new Proc(12, Activation.Attack, 1, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 						new StaticEffect(TypeStaticEffect.NoSkill),
 					}),
 				}, null ),
@@ -2099,7 +2099,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -30),
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(10, Activation.Attack, 1, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 						new StaticEffect(TypeStaticEffect.NoSkill),
 					}),
 				}, null ),
@@ -2184,7 +2184,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 14),
 					new Effect(TypeEffect.MEN, false, -20),
 					new Proc(12, Activation.Attack, 1, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 						new StaticEffect(TypeStaticEffect.NoSkill),
 					}),
 				}, null ),
@@ -2692,7 +2692,7 @@ public class LoaderWeapon {
 		return new Weapon[] {
 			new RedWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Foudre Laser Cyan"); put(Language.EN, "Cyan Laser Lightning"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
-				90, Quality.RED, false, WeaponType.EPEE1M, true, false, "meca1M/90red", new Calculable[] {
+				90, Quality.RED, false, WeaponType.MECA1M, true, false, "meca1M/90red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 3406, true),
 					new Effect(TypeEffect.AtkM, false, 1880, true),
 					new Effect(TypeEffect.FCE, false, 97, true),
@@ -3955,7 +3955,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Immobilisation),
+						new StaticEffect(TypeStaticEffect.NoMove),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Gardien des cauchemars"); put(Language.EN, ""); }},

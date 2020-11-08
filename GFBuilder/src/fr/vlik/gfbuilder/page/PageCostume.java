@@ -68,7 +68,7 @@ public class PageCostume extends PagePanel {
 			int id = i;
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
-				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
+				JCustomLabel quality = new JCustomLabel(Costume.ORDER_QUALITY[j], Language.FR);
 				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
 				this.costQuality.get(i).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
 				this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
@@ -130,7 +130,7 @@ public class PageCostume extends PagePanel {
 			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
-				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
+				JCustomLabel quality = new JCustomLabel(Costume.ORDER_QUALITY[j], Language.FR);
 				quality.setFont(Design.TEXT);
 				this.costQuality.get(i+2).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
 				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);

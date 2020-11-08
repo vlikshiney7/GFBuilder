@@ -123,9 +123,7 @@ public class Nucleus implements FullRenderer {
 		}
 		
 		Nucleus[] cast = new Nucleus[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
+		cast = result.toArray(cast);
 		
 		return cast;
 	}

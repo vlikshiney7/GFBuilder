@@ -8487,7 +8487,7 @@ class LoaderLegging {
 					}), null ),
 				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guêtres du Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
-					ArmorType.JAMBIERE, "90gvg8", "pantalons/80gvg8", new Calculable[] {
+					ArmorType.JAMBIERE, "90gvg8", "pantalons/85pve8", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 870, true),
 						new Effect(TypeEffect.DefM, false, 620, true),
 						new Effect(TypeEffect.FCE, false, 29, true),

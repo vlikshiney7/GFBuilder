@@ -14,7 +14,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	x3Skill("Dégât x3", "Damage x3", "DEG x3", "DAM x3", Tools.EffectColor[10]),
 	
 	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", Tools.EffectColor[8]),
-	Immobilisation("Immobilisation", "Immobilization", "Immobilisation", "Immobilization", Tools.EffectColor[8]),
+	NoMove("Immobilisation", "Immobilization", "Immobilisation", "Immobilization", Tools.EffectColor[8]),
 	NoSkill("Compétences bloquées", "Skills blocked", "Silence", "Anti Skills", Tools.EffectColor[8]),
 	NoPhys("Compétences physique bloquées", "Physical skills blocked", "Silence physique", "Anti Phys Skills", Tools.EffectColor[8]),
 	NoMag("Compétences magique bloquées", "Magical skills blocked", "Silence magique", "Anti Mag Skills", Tools.EffectColor[8]),
