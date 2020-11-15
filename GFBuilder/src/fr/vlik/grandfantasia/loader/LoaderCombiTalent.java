@@ -209,7 +209,72 @@ public class LoaderCombiTalent {
 	
 	static CombiTalent[] getClass5() {
 		return new CombiTalent[] {
-			
+			new CombiTalent("Montagne Immobile", new int[] { 1, 1, 1, 3, }, new Calculable[] {
+				new Effect(TypeEffect.DefM, true, 12),
+				new Effect(TypeEffect.MEN, false, 5),
+			}),
+			new CombiTalent("Esprit Antique de Loup", new int[] { 2, 2, 1, 2, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 9),
+				new Effect(TypeEffect.Toucher, false, 10),
+			}),
+			new CombiTalent("Aigle Majestueux Ancien", new int[] { 3, 3, 3, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 8),
+				new Effect(TypeEffect.Toucher, false, 5),
+			}),
+			new CombiTalent("Roi de la Jungle", new int[] { 1, 2, 1, }, new Calculable[] {
+				new Effect(TypeEffect.DefM, true, 20),
+			}),
+			new CombiTalent("Prophète en Sorcellerie", new int[] { 2, 3, 2, }, new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 15),
+				new Effect(TypeEffect.PM, true, 5),
+			}),
+			new CombiTalent("Rites de Anciens", new int[] { 3, 1, 3, }, new Calculable[] {
+				new Effect(TypeEffect.RDCCM, false, 40),
+				new Effect(TypeEffect.RTCCM, true, 40),
+			}),
+			new CombiTalent("Erudit Supérieur en Ensorcellement", new int[] { 3, 2, 3, }, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 6),
+				new Effect(TypeEffect.Sacre, false, 10),
+				new Effect(TypeEffect.Ombre, false, 10),
+				new Effect(TypeEffect.Foudre, false, 10),
+				new Effect(TypeEffect.Feu, false, 10),
+				new Effect(TypeEffect.Glace, false, 10),
+				new Effect(TypeEffect.Nature, false, 10),
+			}),
+			new CombiTalent("Prophète", new int[] { 3, 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 15),
+			}),
+			new CombiTalent("Juge Sacré", new int[] { 1, 2, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 4),
+				new Effect(TypeEffect.DefP, true, 6),
+			}),
+			new CombiTalent("Erudit en Mots Sacrés", new int[] { 1, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 10),
+				new Effect(TypeEffect.AtkM, true, 5),
+			}),
+			new CombiTalent("Entraîneur de la Volonté", new int[] { 2, 1, }, new Calculable[] {
+				new Effect(TypeEffect.PM, true, 10),
+				new Effect(TypeEffect.DefP, true, 10),
+			}),
+			new CombiTalent("Erudit en Spiritualité", new int[] { 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.PV, true, 5),
+				new Effect(TypeEffect.DefM, true, 10),
+			}),
+			new CombiTalent("Défenseur Magique", new int[] { 2, 3, }, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 8),
+				new Effect(TypeEffect.DefM, true, 8),
+			}),
+			new CombiTalent("Missionaire", new int[] { 3, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 10),
+			}),
+			new CombiTalent("Messager Mana", new int[] { 3, 2, }, new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 10),
+				new Effect(TypeEffect.DefM, true, 7),
+			}),
+			new CombiTalent("Economiseur d'Energie", new int[] { 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.CostComp, false, -10),
+				new Effect(TypeEffect.PM, true, 3),
+			}),
 		};
 	}
 	

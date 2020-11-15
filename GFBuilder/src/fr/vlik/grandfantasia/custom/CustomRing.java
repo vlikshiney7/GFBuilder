@@ -33,8 +33,8 @@ public class CustomRing extends CustomEquipment {
 		this.iconName = ring.getIconName();
 	}
 	
-	public CustomRing(Map<Language, String> name, GradeName[] grades, int lvl, String path, Calculable[] effects) {
-		super(name, grades, lvl, effects);
+	public CustomRing(Map<Language, String> name, int lvl, String path, Calculable[] effects) {
+		super(name, new GradeName[] { GradeName.NONE }, lvl, effects);
 		
 		this.icon = setIcon(path);
 	}
@@ -61,6 +61,8 @@ public class CustomRing extends CustomEquipment {
 				System.out.println("Image introuvable : " + path);
 			}
 		}
+		
+		this.iconName = path;
 		
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}

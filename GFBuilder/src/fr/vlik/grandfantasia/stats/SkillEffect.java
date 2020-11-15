@@ -30,7 +30,8 @@ public class SkillEffect implements Calculable {
 		ESQ("Esquive", "evasion"),
 		NUMBER("Nombre", "number"),
 		PARA("Durée paralysie", "paralysis duration"),
-		FUFU("Mouvement non réduite", "no reduce movement");
+		FUFU("Mouvement non réduite", "No reduce movement"),
+		RELOAD("Rechargement", "Reload");
 		
 		public final String fr;
 		public final String en;
@@ -57,7 +58,7 @@ public class SkillEffect implements Calculable {
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
-		if(this.type == TypeValue.FUFU) {
+		if(this.type == TypeValue.FUFU || this.type == TypeValue.RELOAD) {
 			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\"");
 		} else {
 			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
@@ -77,7 +78,7 @@ public class SkillEffect implements Calculable {
 		StringBuilder result = new StringBuilder();
 		
 		if(lang == Language.FR) {
-			if(this.type == TypeValue.FUFU) {
+			if(this.type == TypeValue.FUFU || this.type == TypeValue.RELOAD) {
 				result.append(this.type.fr + " de \"" + this.skill.fr + "\"");
 			} else {
 				result.append(this.skill.fr + " +" + this.value);
@@ -89,7 +90,7 @@ public class SkillEffect implements Calculable {
 				result.append("s");
 			}
 		} else {
-			if(this.type == TypeValue.FUFU) {
+			if(this.type == TypeValue.FUFU || this.type == TypeValue.RELOAD) {
 				result.append(this.type.en + " of \"" + this.skill.en + "\"");
 			} else {
 				result.append(this.skill.en + " +" + this.value);
@@ -101,7 +102,6 @@ public class SkillEffect implements Calculable {
 				result.append("s");
 			}
 		}
-		
 		
 		return result.toString();
 	}

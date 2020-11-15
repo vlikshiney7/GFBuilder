@@ -4644,7 +4644,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de Brisecrâne", 91, 100, Quality.BLUE,
@@ -5016,7 +5016,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Sleep),
+						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de l'Ombre", 6, 100, Quality.BLUE,
@@ -5028,7 +5028,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 6, 15, Quality.BLUE,
@@ -5036,7 +5036,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 16, 25, Quality.BLUE,
@@ -5044,7 +5044,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 26, 35, Quality.BLUE,
@@ -5052,7 +5052,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 36, 45, Quality.BLUE,
@@ -5060,7 +5060,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 46, 55, Quality.BLUE,
@@ -5068,7 +5068,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 56, 100, Quality.BLUE,
@@ -5076,7 +5076,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Détermination", 6, 100, Quality.BLUE,
@@ -5099,7 +5099,7 @@ public class LoaderEnchant {
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Mort", 6, 100, Quality.BLUE,
@@ -5121,7 +5121,7 @@ public class LoaderEnchant {
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoMove),
+						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Surveillance", 6, 100, Quality.BLUE,
@@ -5133,7 +5133,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoMove),
+						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de Massacre", 6, 15, Quality.BLUE,
@@ -5491,7 +5491,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60),
+						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de Vigueur", 36, 45, Quality.BLUE,
@@ -6300,7 +6300,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 16, 25, Quality.BLUE,
@@ -6308,7 +6308,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 26, 35, Quality.BLUE,
@@ -6316,7 +6316,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 36, 45, Quality.BLUE,
@@ -6324,7 +6324,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 46, 55, Quality.BLUE,
@@ -6332,7 +6332,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 56, 100, Quality.BLUE,
@@ -6340,21 +6340,21 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fracas Osseux", 6, 90, Quality.BLUE,
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Malheur", 6, 100, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60),
+						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Piège", 6, 15, Quality.BLUE,
@@ -6466,55 +6466,55 @@ public class LoaderEnchant {
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 6, 15, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -10, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -10, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 16, 25, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -12, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -12, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 26, 35, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -14, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -14, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 36, 45, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -16, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -16, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 46, 55, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -18, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -18, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 56, 100, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -20, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -20, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Sprint", 6, 100, Quality.BLUE,
@@ -7386,7 +7386,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de Brisecrâne", 91, 100, Quality.GREEN,
@@ -7718,7 +7718,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Sleep),
+						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de l'Ombre", 6, 95, Quality.GREEN,
@@ -7730,7 +7730,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 6, 15, Quality.GREEN,
@@ -7738,7 +7738,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 16, 25, Quality.GREEN,
@@ -7746,7 +7746,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 26, 35, Quality.GREEN,
@@ -7754,7 +7754,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 36, 45, Quality.GREEN,
@@ -7762,7 +7762,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 46, 55, Quality.GREEN,
@@ -7770,7 +7770,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Contagion", 56, 100, Quality.GREEN,
@@ -7778,7 +7778,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Détermination", 6, 95, Quality.GREEN,
@@ -7801,7 +7801,7 @@ public class LoaderEnchant {
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Mort", 6, 95, Quality.GREEN,
@@ -7823,7 +7823,7 @@ public class LoaderEnchant {
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoMove),
+						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de la Surveillance", 6, 95, Quality.GREEN,
@@ -7835,7 +7835,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoMove),
+						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de Massacre", 6, 15, Quality.GREEN,
@@ -8193,7 +8193,7 @@ public class LoaderEnchant {
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60),
+						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("de Vigueur", 36, 45, Quality.GREEN,
@@ -8932,7 +8932,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 16, 25, Quality.GREEN,
@@ -8940,7 +8940,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 26, 35, Quality.GREEN,
@@ -8948,7 +8948,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 36, 45, Quality.GREEN,
@@ -8956,7 +8956,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 46, 55, Quality.GREEN,
@@ -8964,7 +8964,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fléau", 56, 100, Quality.GREEN,
@@ -8972,21 +8972,21 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal),
+						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Fracas Osseux", 6, 90, Quality.GREEN,
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Malheur", 6, 100, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60),
+						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Piège", 6, 15, Quality.GREEN,
@@ -9098,55 +9098,55 @@ public class LoaderEnchant {
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill),
+						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 6, 15, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -10, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -10, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 16, 25, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -12, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -12, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 26, 35, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -14, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -14, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 36, 45, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -16, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -16, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 46, 55, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -18, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -18, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Spectre", 56, 100, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.PV, true, -10),
-						new Effect(TypeEffect.PM, true, -10),
+						new Effect(TypeEffect.PV, true, -20, Target.OPPONENT),
+						new Effect(TypeEffect.PM, true, -20, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment("du Sprint", 6, 95, Quality.GREEN,

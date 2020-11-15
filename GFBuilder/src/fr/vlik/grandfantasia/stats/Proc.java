@@ -140,6 +140,9 @@ public class Proc implements Calculable {
 				} else if(calculable instanceof StaticEffect) {
 					StaticEffect s = (StaticEffect) calculable;
 					result.append("\t\t- " + s.toString(lang) + "\n");
+				} else if(calculable instanceof RegenEffect) {
+					RegenEffect r = (RegenEffect) calculable;
+					result.append("\t\t- " + r.toString(lang) + "\n");
 				}
 			}
 			
@@ -164,6 +167,9 @@ public class Proc implements Calculable {
 				} else if(calculable instanceof StaticEffect) {
 					StaticEffect s = (StaticEffect) calculable;
 					result.append("\t\t- " + s.toString(lang) + "\n");
+				} else if(calculable instanceof RegenEffect) {
+					RegenEffect r = (RegenEffect) calculable;
+					result.append("\t\t- " + r.toString(lang) + "\n");
 				}
 			}
 			

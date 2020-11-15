@@ -12,6 +12,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.SkillEffect;
@@ -74,6 +75,8 @@ public final class Talent implements Writable {
 				list[j] = new SkillEffect((SkillEffect) c);
 			} else if(c instanceof Proc) {
 				list[j] = new Proc((Proc) c);
+			} else if(c instanceof Condition) {
+				list[j] = new Condition((Condition) c);
 			}
 		}
 		

@@ -3,15 +3,16 @@ package fr.vlik.grandfantasia.loader;
 import fr.vlik.grandfantasia.MultiEffect;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equipable.Anima;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
+import fr.vlik.grandfantasia.stats.Condition.TypeCondition;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class LoaderAnima {
 	
@@ -5245,12 +5246,16 @@ public class LoaderAnima {
 			new Anima("Anima de Rétablissement", Quality.ORANGE, "ora0", new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 8),
 				new Effect(TypeEffect.HealD, false, 10),
-				new StaticEffect(TypeStaticEffect.Anima0),
+				new Condition(TypeCondition.STATUT, new Calculable[] {
+					new RegenEffect(TypeEffect.PV, true, 1, TypeRegen.REGENERATION),
+					new RegenEffect(TypeEffect.PM, true, 1, TypeRegen.REGENERATION),
+				}),
 				new Proc(0, Activation.Attack, 20, new Calculable[] {
 					new Effect(TypeEffect.HealD, false, 1),
 				}),
 				new Proc(0, Activation.Attack, 20, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Gel),
+					new Effect(TypeEffect.PV, true, -20, Target.OPPONENT),
+					new Effect(TypeEffect.PM, true, -20, Target.OPPONENT),
 				}),
 			}),
 			new Anima("Anima de Rapidité", Quality.ORANGE, "ora1", new Calculable[] {
@@ -5261,7 +5266,8 @@ public class LoaderAnima {
 					new Effect(TypeEffect.HealD, false, 1),
 				}),
 				new Proc(0, Activation.Attack, 20, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Gel),
+					new Effect(TypeEffect.PV, true, -20, Target.OPPONENT),
+					new Effect(TypeEffect.PM, true, -20, Target.OPPONENT),
 				}),
 			}),
 			new Anima("Anima de Polyvalence", Quality.ORANGE, "ora2", new MultiEffect(1, new Calculable[][] {
@@ -7511,462 +7517,397 @@ public class LoaderAnima {
 			new Anima("Anima multi-noyaux", Quality.ORANGE, "ora8", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 15, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 30, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 45, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 60, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 75, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 90, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 105, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 120, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 135, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 150, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 165, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 180, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 195, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 210, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 225, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 240, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 255, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 270, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 285, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 300, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 315, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 330, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 345, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 360, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 375, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 390, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 405, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 420, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 435, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 450, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 465, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 480, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 495, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 510, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 525, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 540, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 555, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 570, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 585, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 600, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
-			        new Effect(TypeEffect.PM, false, 615, true),new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+			        new Effect(TypeEffect.PM, false, 615, true),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 630, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 645, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 660, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 675, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 690, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 705, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 720, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 735, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 750, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 765, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 780, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 795, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 810, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 825, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 840, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 855, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 870, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 885, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 900, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 915, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 930, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 945, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 960, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 975, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 990, true),
-					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Anima1),
+					new Condition(TypeEffect.PM, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 					}),
 			    },

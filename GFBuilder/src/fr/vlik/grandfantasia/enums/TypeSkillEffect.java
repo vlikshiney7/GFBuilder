@@ -78,6 +78,13 @@ public enum TypeSkillEffect implements Writable {
 	Class5S9("Flèche de plume", "Feather Dart"),
 	Class5S10("Sérénade de la Prompte Lame", "Swift Blade"),
 	Class5S11("Embuscade Éclair", "Flash Ambush"),
+	Class5S12("Tempête de Sable", "Desert Storm"),
+	Class5S13("Sablevent", "Sand Tornado"),
+	Class5S14("Flèche Paralysante", "Shackling Feather Dart"),
+	Class5S15("Flèche Entravante", "Confined Arrow"),
+	Class5S16("Angoisse Folle", "Jaws of Madness"),
+	Class5S17("Larme Sauvage", "Wild Tear"),
+	Class5S18("Réflexe de l'Ombre", "Shadow Power Wave"),
 	
 	Class6S0("Flèche Enflammée", "Fire Arrow"),
 	Class6S1("Tempête de Flammes", "Explosive Bomb"),
@@ -105,6 +112,7 @@ public enum TypeSkillEffect implements Writable {
 	Class8S8("Cœur de transformation - Vie", "Transforming Core - Life additionally"),
 	
 	Class9S0("Surcadençage - Noyau glacé", "Overclocking - Frost Core"),
+	Class9S1("Frappe foudroyante", "Lightning Stab"),
 	
 	;
 	

@@ -76,8 +76,12 @@ public final class Ring extends Equipment {
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + this.quality.index + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
+		
+		if(path == null) {
+			path = "null";
+		}
 		
 		if(object == null) {
 			try {
@@ -138,6 +142,12 @@ public final class Ring extends Equipment {
 		ArrayList<Ring> result = new ArrayList<Ring>();
 		
 		result.add(new Ring());
+		
+		for(Ring custom : Ring.customData) {
+			if(custom.getLvl() <= lvl) {
+				result.add(custom);
+			}
+		}
 		
 		for(Ring ring : Ring.data) {
 			if(ring.getLvl() <= lvl) {

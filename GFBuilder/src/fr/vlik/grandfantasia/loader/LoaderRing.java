@@ -184,10 +184,10 @@ public class LoaderRing {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.Feu, false, 30),
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB0),
+						new RegenEffect(TypeEffect.PV, false, -700, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 20, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB0C),
+						new RegenEffect(TypeEffect.PV, false, -3000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Dragon"); put(Language.EN, ""); }},
@@ -197,11 +197,11 @@ public class LoaderRing {
 					new Effect(TypeEffect.AGI, false, 25, true),
 					new Effect(TypeEffect.Foudre, false, 30),
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB0),
+						new RegenEffect(TypeEffect.PV, false, -700, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -50, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.ProcTDB1C),
+						new RegenEffect(TypeEffect.PV, false, -1000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de Foi Divine"); put(Language.EN, ""); }},
@@ -214,7 +214,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.ReloadComp, false, 1),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB1C),
+						new RegenEffect(TypeEffect.PV, false, -1000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Squelette"); put(Language.EN, ""); }},
@@ -225,11 +225,11 @@ public class LoaderRing {
 					new Effect(TypeEffect.Nature, false, 30),
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -1, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.ProcTDB3),
+						new RegenEffect(TypeEffect.PV, false, -500, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB3),
 						new RegenEffect(TypeEffect.PV, false, 500, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PV, false, -500, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Écusson de Puissance"); put(Language.EN, ""); }},
@@ -241,10 +241,10 @@ public class LoaderRing {
 					new Effect(TypeEffect.Ombre, false, 30),
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -1, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.ProcTDB3),
+						new RegenEffect(TypeEffect.PV, false, -500, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB4C),
+						new RegenEffect(TypeEffect.PV, false, -2000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Œil pourpre"); put(Language.EN, ""); }},
@@ -257,7 +257,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.FCE, true, 1),
 					}),
 					new Proc(Activation.Attack, 20, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB5C),
+						new StaticEffect(TypeStaticEffect.ProcTDB),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Œil d'émeraude"); put(Language.EN, ""); }},
@@ -283,7 +283,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VIT, true, 1),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB7C),
+						new StaticEffect(TypeStaticEffect.Shield5k),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "​Malédiction du Hasard"); put(Language.EN, ""); }},
@@ -296,7 +296,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Toucher, false, -1, Target.OPPONENT),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 20),
+						new StaticEffect(TypeStaticEffect.Poisse, 20, Target.OPPONENT),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Bravoure du Champion"); put(Language.EN, ""); }},
@@ -815,20 +815,20 @@ public class LoaderRing {
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Bûcher"); put(Language.EN, ""); }},
 				80, Quality.BLUE, false, "-1", false, "tdb10", new Calculable[] {
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB0),
+						new RegenEffect(TypeEffect.PV, false, -700, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 20, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB0C),
+						new RegenEffect(TypeEffect.PV, false, -3000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de la Foudre"); put(Language.EN, ""); }},
 				80, Quality.BLUE, false, "-1", false, "tdb11", new Calculable[] {
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB0),
+						new RegenEffect(TypeEffect.PV, false, -700, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -50, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.ProcTDB1C),
+						new RegenEffect(TypeEffect.PV, false, -1000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Vent"); put(Language.EN, ""); }},
@@ -837,28 +837,28 @@ public class LoaderRing {
 						new Effect(TypeEffect.ReloadComp, false, 1),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB1C),
+						new RegenEffect(TypeEffect.PV, false, -1000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Démoniste"); put(Language.EN, ""); }},
 				80, Quality.BLUE, false, "-1", false, "tdb13", new Calculable[] {
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -1, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.ProcTDB3),
+						new RegenEffect(TypeEffect.PV, false, -500, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB3),
 						new RegenEffect(TypeEffect.PV, false, 500, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PV, false, -500, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Blizzard"); put(Language.EN, ""); }},
 				80, Quality.BLUE, false, "-1", false, "tdb14", new Calculable[] {
 					new Proc(100, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -1, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.ProcTDB3),
+						new RegenEffect(TypeEffect.PV, false, -500, TypeRegen.POISON),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB4C),
+						new RegenEffect(TypeEffect.PV, false, -2000, TypeRegen.POISON),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de concentration"); put(Language.EN, ""); }},
@@ -867,7 +867,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.FCE, true, 1),
 					}),
 					new Proc(Activation.Attack, 20, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB5C),
+						new StaticEffect(TypeStaticEffect.ProcTDB),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau d'accélération"); put(Language.EN, ""); }},
@@ -885,7 +885,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VIT, true, 1),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB7C),
+						new StaticEffect(TypeStaticEffect.Shield5k),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau des arts interdits"); put(Language.EN, ""); }},
@@ -894,7 +894,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Toucher, false, -1, Target.OPPONENT),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 20),
+						new StaticEffect(TypeStaticEffect.Poisse, 20, Target.OPPONENT),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau d'érosion d'armure"); put(Language.EN, ""); }},

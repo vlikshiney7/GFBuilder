@@ -25,7 +25,7 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique d'Enfermement", Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 2, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoMove),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 100),
@@ -107,7 +107,7 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de Métamorphose", Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Transfo),
+					new StaticEffect(TypeStaticEffect.Transfo, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegFoudre, false, 100),
@@ -124,8 +124,8 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de Sceau", Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoSkill),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
@@ -246,8 +246,8 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de cage royale", Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
 				new Proc(10, Activation.Attack, 2, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoMove),
-					new StaticEffect(TypeStaticEffect.NoSkill),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 200),
@@ -256,8 +256,8 @@ public class LoaderPearl {
 			new Pearl("Pierre runique de cage vindicatrice", Quality.ORANGE, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Effect(TypeEffect.ReducPtsP, false, 100),
 				new Proc(15, Activation.Attack, 2, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoMove),
-					new StaticEffect(TypeStaticEffect.NoSkill),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 300),
@@ -271,8 +271,8 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de cruauté absolue", Quality.ORANGE, Quality.RED, false, "absolue", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoSkill),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 200),
@@ -281,8 +281,8 @@ public class LoaderPearl {
 			new Pearl("Pierre runique de cruauté prestigieuse", Quality.ORANGE, Quality.RED, false, "prestigieuse", new Calculable[] {
 				new StaticEffect(TypeStaticEffect.x2STD, 8),
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoSkill),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 300),
@@ -340,7 +340,7 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de métamorphose royale", Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Transfo),
+					new StaticEffect(TypeStaticEffect.Transfo, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegFoudre, false, 200),
@@ -348,7 +348,7 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de métamorphose vindicatrice", Quality.ORANGE, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Transfo),
+					new StaticEffect(TypeStaticEffect.Transfo, Target.OPPONENT),
 				}),
 				new Proc(20, Activation.Attacked, new Calculable[] {
 					new Effect(TypeEffect.ReflectM, false, 15),
@@ -418,8 +418,8 @@ public class LoaderPearl {
 			}),
 			new Pearl("Pierre runique de sceau royale", Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoSkill),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 200),
@@ -428,8 +428,8 @@ public class LoaderPearl {
 			new Pearl("Pierre runique de sceau vindicateur", Quality.ORANGE, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Effect(TypeEffect.HealR, false, 10),
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoSkill),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 300),

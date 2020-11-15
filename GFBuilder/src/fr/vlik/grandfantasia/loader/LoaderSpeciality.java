@@ -314,45 +314,75 @@ public class LoaderSpeciality {
 	
 	static Speciality[] getClass5() {
 		return new Speciality[] {
-			new Speciality("", 45, "5-0", new Calculable[] {
+			new Speciality("Esprit de l'Aigle Majestueux", 45, "5-0", new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 1.5),
 			}),
-			new Speciality("", 45, "5-1", new Calculable[] {
+			new Speciality("Esprit de Loup Spectral", 45, "5-1", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 1),
 			}),
-			new Speciality("", 45, "5-2", new Calculable[] {
+			new Speciality("Esprit de Singe Géant", 45, "5-2", new Calculable[] {
+				new Effect(TypeEffect.ReducP, false, 1),
+				new Effect(TypeEffect.ReducM, false, 1),
 			}),
-			new Speciality("", 45, "5-3", new Calculable[] {
+			new Speciality("Maître dans l'Usage des Plantes", 45, "5-3", new Calculable[] {
+				new Effect(TypeEffect.DegPlanteM, false, 50),
+				new Effect(TypeEffect.DegPlanteM, true, 1),
 			}),
-			new Speciality("", 45, "5-4", new Calculable[] {
+			new Speciality("Totem d'Autorité", 45, "5-4", new Calculable[] {
+				new Effect(TypeEffect.DegMa, false, 1),
 			}),
-			new Speciality("", 45, "5-5", new Calculable[] {
+			new Speciality("Arc-en-Ciel", 45, "5-5", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 1),
+				new Effect(TypeEffect.Ombre, false, 1),
+				new Effect(TypeEffect.Foudre, false, 1),
+				new Effect(TypeEffect.Feu, false, 1),
+				new Effect(TypeEffect.Glace, false, 1),
+				new Effect(TypeEffect.Nature, false, 1),
 			}),
-			new Speciality("", 60, "5-6", new Calculable[] {
+			new Speciality("Déclaration de la Tête Tribale", 60, "5-6", new Calculable[] {
+				new Effect(TypeEffect.INT, false, 9),
 			}),
-			new Speciality("", 60, "5-7", new Calculable[] {
+			new Speciality("Physique Robuste", 60, "5-7", new Calculable[] {
+				new Effect(TypeEffect.PV, true, 1),
 			}),
-			new Speciality("", 60, "5-8", new Calculable[] {
+			new Speciality("Main Supersonique", 60, "5-8", new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 1),
 			}),
-			new Speciality("", 60, "5-9", new Calculable[] {
+			new Speciality("Murmures du Vent", 60, "5-9", new Calculable[] {
+				new Effect(TypeEffect.VitComp, false, 1),
 			}),
-			new Speciality("", 75, "5-10", new Calculable[] {
+			new Speciality("Béatitude du Dieu du Vent", 75, "5-10", new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 2),
 			}),
-			new Speciality("", 75, "5-11", new Calculable[] {
+			new Speciality("Miracle des Rochers", 75, "5-11", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 1),
 			}),
-			new Speciality("", 75, "5-12", new Calculable[] {
+			new Speciality("Héritage des Arcanes", 75, "5-12", new Calculable[] {
+				new Effect(TypeEffect.DefM, true, 1),
 			}),
-			new Speciality("", 75, "5-13", new Calculable[] {
+			new Speciality("Anticipation Stellaire", 75, "5-13", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 2),
 			}),
-			new Speciality("", 75, "5-14", new Calculable[] {
+			new Speciality("Force des Ancêtres", 75, "5-14", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 1),
+				new Effect(TypeEffect.TCCM, false, 1),
 			}),
-			new Speciality("", 75, "5-15", new Calculable[] {
+			new Speciality("Arts Tribaux", 75, "5-15", new Calculable[] {
+				new Effect(TypeEffect.DCCP, false, 3),
+				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Speciality("", 91, "5-16", new Calculable[] {
+			new Speciality("Griffe de loup démoniaque", 91, "5-16", new Calculable[] {
+				new Effect(TypeEffect.DegP, false, 1.5),
 			}),
-			new Speciality("", 91, "5-17", new Calculable[] {
+			new Speciality("Appel du fier faucon", 91, "5-17", new Calculable[] {
+				new Effect(TypeEffect.DegM, false, 1.5),
 			}),
-			new Speciality("", 91, "5-18", new Calculable[] {
+			new Speciality("Pranayama de la nature", 91, "5-18", new Calculable[] {
+				new Effect(TypeEffect.PM, true, 1),
 			}),
-			new Speciality("", 91, "5-19", new Calculable[] {
+			new Speciality("Rage du singe", 91, "5-19", new Calculable[] {
+				new Effect(TypeEffect.RTCCP, false, 1),
+				new Effect(TypeEffect.RTCCM, false, 1),
 			}),
 		};
 	}

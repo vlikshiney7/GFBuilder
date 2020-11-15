@@ -63,6 +63,8 @@ public class CustomCape extends CustomEquipment {
 			}
 		}
 		
+		this.iconName = path;
+		
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	

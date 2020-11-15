@@ -161,7 +161,7 @@ public class LoaderProSkill {
 			}),
 			new ProSkill("Contre-attaque soudaine", 91, "2-3", new Calculable[] {
 				new Proc(15, Activation.Attack, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.Push),
+					new StaticEffect(TypeStaticEffect.Push, Target.OPPONENT),
 				}),
 			}),
 		};
@@ -201,14 +201,14 @@ public class LoaderProSkill {
 			}),
 			new ProSkill("Sournoiserie maléfique 1", 86, "3-2", new Calculable[] {
 				new Proc(5, Activation.Attack, 1.5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoMove),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill("Sournoiserie maléfique 2", 91, "3-2", new Calculable[] {
 				new Proc(15, Activation.Attack, 1.5, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.NoMove),
-					new StaticEffect(TypeStaticEffect.AntiHeal),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill("Tromperie", 91, "3-3", new Calculable[] {
@@ -264,7 +264,7 @@ public class LoaderProSkill {
 			new ProSkill("Verdict final", 91, "4-3", new Calculable[] {
 				new Proc(5, Activation.Attacked, 2.5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -75, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.NoSkill),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 				}),
 			}),
 		};
@@ -321,14 +321,14 @@ public class LoaderProSkill {
 				new Effect(TypeEffect.MEN, false, -10),
 				new Proc(50, Activation.Crit, 2, new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, -5, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiItem),
+					new StaticEffect(TypeStaticEffect.AntiItem, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill("Cours du fleuve 2", 91, "5-2", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -20),
 				new Proc(50, Activation.Crit, 2, new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, -10, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiItem),
+					new StaticEffect(TypeStaticEffect.AntiItem, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill("Instinct primaire", 91, "5-3", new Calculable[] {
@@ -573,7 +573,7 @@ public class LoaderProSkill {
 				new Proc(15, Activation.Attacked, 3, new Calculable[] {
 					new Effect(TypeEffect.DegP, false, -10, Target.OPPONENT),
 					new Effect(TypeEffect.DegM, false, -10, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.NoMove),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 				}),
 			}),
 		};

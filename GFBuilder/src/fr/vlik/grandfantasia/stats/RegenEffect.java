@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class RegenEffect implements Calculable {
 	
@@ -12,6 +13,7 @@ public class RegenEffect implements Calculable {
 	private int rangeMax = 0;
 	private int periodicity = 0;
 	private TypeRegen type;
+	private Target target = Target.SELF;
 	
 	
 	public RegenEffect(TypeEffect effect, boolean isPercent, int fixValue, TypeRegen type) {
@@ -19,6 +21,10 @@ public class RegenEffect implements Calculable {
 		this.isPercent = isPercent;
 		this.fixValue = fixValue;
 		this.type = type;
+		
+		if(type == TypeRegen.POISON) {
+			this.target = Target.OPPONENT;
+		}
 	}
 	
 	public RegenEffect(TypeEffect effect, boolean isPercent, int rangeMin, int rangeMax, TypeRegen type) {
@@ -27,6 +33,10 @@ public class RegenEffect implements Calculable {
 		this.rangeMin = rangeMin;
 		this.rangeMax = rangeMax;
 		this.type = type;
+		
+		if(type == TypeRegen.POISON) {
+			this.target = Target.OPPONENT;
+		}
 	}
 	
 	public RegenEffect(TypeEffect effect, boolean isPercent, int fixValue, TypeRegen type, int periodicity) {
@@ -90,6 +100,10 @@ public class RegenEffect implements Calculable {
 		return this.periodicity;
 	}
 	
+	public Target getTarget() {
+		return this.target;
+	}
+	
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
@@ -98,6 +112,8 @@ public class RegenEffect implements Calculable {
 			tooltip.append("Absorbe ");
 		} else if(this.type == TypeRegen.REGENERATION) {
 			tooltip.append("+");
+		} else if(this.target == Target.OPPONENT) {
+			tooltip.append("Enn : ");
 		}
 		
 		if(this.fixValue != 0) {
@@ -129,6 +145,10 @@ public class RegenEffect implements Calculable {
 		StringBuilder result = new StringBuilder();
 		
 		if(lang == Language.FR) {
+			if(this.target == Target.OPPONENT) {
+				result.append("Ennemi : ");
+			}
+			
 			result.append(this.type.fr + " de ");
 			
 			if(this.fixValue != 0) {
@@ -157,6 +177,10 @@ public class RegenEffect implements Calculable {
 				result.append(" à l'ennemi");
 			}
 		} else {
+			if(this.target == Target.OPPONENT) {
+				result.append("Opponent: ");
+			}
+			
 			if(this.type == TypeRegen.REGENERATION) {
 				result.append(this.type.en + " of ");
 			}
