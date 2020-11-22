@@ -79,12 +79,14 @@ public class RedEnchantment extends Enchantment {
 		
 		result.add(new RedEnchantment());
 		
-		for(Enchantment preCast : Enchantment.data.get(equip.getQuality())) {
-			RedEnchantment enchant = (RedEnchantment) preCast;
-			
-			if(equip.getLvl() >= enchant.getLvlMin() && equip.getLvl() <= enchant.getLvlMax()) {
-				if(enchant.containType(equip.getType())) {
-					result.add(enchant);
+		if(equip.getQuality() == Quality.RED) {
+			for(Enchantment preCast : Enchantment.data.get(equip.getQuality())) {
+				RedEnchantment enchant = (RedEnchantment) preCast;
+				
+				if(equip.getLvl() >= enchant.getLvlMin() && equip.getLvl() <= enchant.getLvlMax()) {
+					if(enchant.containType(equip.getType())) {
+						result.add(enchant);
+					}
 				}
 			}
 		}

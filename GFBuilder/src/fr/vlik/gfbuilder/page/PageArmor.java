@@ -1061,7 +1061,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
-			this.redEnchant.get(i).setSelectedItem(Enchantment.get(this.getArmor(i), config.get("RedEnchantment" + i)));
+			this.redEnchant.get(i).setSelectedItem(Enchantment.get(this.getArmor(i/3), config.get("RedEnchantment" + i)));
 		}
 
 		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
