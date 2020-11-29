@@ -140,9 +140,6 @@ public class MainFrame extends JFrame {
 		menu.setBackground(Design.UIColor[0]);
 		menu.setLayout(new GridLayout(14, 1, 0, 0));
 		
-		
-		//this.tabPanelText = Lang.getDataPane();
-		
 		for(int i = 0; i < Lang.getDataPane().length; i++) {
 			this.tabPaneMenu.add(new JCustomTabPane(Lang.getDataPane()[i]));
 			int id = i;

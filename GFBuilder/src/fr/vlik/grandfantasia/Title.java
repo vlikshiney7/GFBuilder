@@ -10,11 +10,13 @@ import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.SkillEffect;
 import fr.vlik.grandfantasia.stats.StaticEffect;
+import fr.vlik.grandfantasia.stats.TransformEffect;
 
 public class Title implements Colorable, Writable {
 
@@ -82,8 +84,12 @@ public class Title implements Colorable, Writable {
 				tab[i] = new SkillEffect((SkillEffect) c);
 			} else if(c instanceof RegenEffect) {
 				tab[i] = new RegenEffect((RegenEffect) c);
+			} else if(c instanceof TransformEffect) {
+				tab[i] = new TransformEffect((TransformEffect) c);
 			} else if(c instanceof Proc) {
 				tab[i] = new Proc((Proc) c);
+			} else if(c instanceof Condition) {
+				tab[i] = new Condition((Condition) c);
 			}
 		}
 		

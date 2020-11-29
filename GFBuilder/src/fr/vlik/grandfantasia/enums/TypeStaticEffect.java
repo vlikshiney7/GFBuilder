@@ -33,6 +33,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	
 	Shield4k("4000 points de bouclier", "4000 points of shield", "4000 pts de bouclier", "4000 pts of shield", Tools.EffectColor[0]),
 	Shield5k("5000 points de bouclier", "5000 points of shield", "5000 pts de bouclier", "5000 pts of shield", Tools.EffectColor[0]),
+	Epee1M("Dégâts d'attaque +1000", "Attack damage +1000", "Dégât +1000", "Damage +1000", Tools.EffectColor[0]),
 	ProcTDB("Dégâts d'attaque +3000", "Attack damage +3000", "Dégât +3000", "Damage +3000", Tools.EffectColor[0]),
 	
 	Invoc("Invoque une Dinde rôtie", "Summon a Roast Turkey", "Dinde rôtie", "Roast Turkey", Tools.EffectColor[0]),

@@ -173,7 +173,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			list.add(new Effect(Base.getEffect(i), false, value, false));
 		}
 		
-		if(this.getTitle().getEffects() != null) {
+		if(this.getTitle() != null && this.getTitle().getEffects() != null) {
 			for(Calculable c : this.getTitle().getEffects()) {
 				list.add(c);
 			}
@@ -367,7 +367,13 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.lvl.setValue(Integer.valueOf(config.get("Lvl")));
 		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
 		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
-		this.title.setSelectedItem(Title.get(config.get("Title")));
+		
+		Title title = Title.get(config.get("Title"));
+		if(title != null) {
+			this.title.setSelectedItem(title);
+		} else {
+			this.title.setSelectedIndex(0);
+		}
 		
 		Yggdrasil ygg = Yggdrasil.get(config.get("Yggdrasil"), lang);
 		if(ygg != null) {

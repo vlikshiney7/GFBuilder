@@ -4650,7 +4650,7 @@ public class LoaderEnchant {
 			new Enchantment("de Brisecrâne", 91, 100, Quality.BLUE,
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
-					new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, -30, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -30, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -120, TypeRegen.POISON, 1),
@@ -7392,7 +7392,7 @@ public class LoaderEnchant {
 			new Enchantment("de Brisecrâne", 91, 100, Quality.GREEN,
 				new EnchantType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
-					new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, -30, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -30, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -120, TypeRegen.POISON, 1),

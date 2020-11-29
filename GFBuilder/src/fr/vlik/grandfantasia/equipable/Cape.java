@@ -213,6 +213,12 @@ public class Cape extends Equipment {
 		
 		result.add(new Cape());
 		
+		for(Cape custom : Cape.customData) {
+			if(custom.getLvl() <= lvl && custom.containGrade(grade)) {
+				result.add(custom);
+			}
+		}
+		
 		for(Cape cape : Cape.data) {
 			if(cape.getLvl() <= lvl && cape.containGrade(grade)) {
 				if(cape.isMultiEffect()) {

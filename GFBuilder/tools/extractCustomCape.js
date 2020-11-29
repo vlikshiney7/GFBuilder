@@ -22,23 +22,6 @@ idClasses = idClasses.substring(0, idClasses.length-1);
 var lvl = document.getElementsByClassName('type');
 lvl = lvl[lvl.length-1].parentElement.nextElementSibling.cells[1].innerText;
 
-var color = document.getElementsByTagName('h4');
-for(var i = 0; i < color.length; i++) {
-	if(color[i].innerHTML == "Final Product") {
-		var classNames = color[i].nextElementSibling.className;
-		color = classNames.substring(classNames.length-1, classNames.length);
-		break;
-	}
-}
-if(!(color > 0 && color < 7)) color = "   ";
-
-var enchant = false;
-
-var reinca = document.getElementsByClassName('color-red')[0];
-if(reinca == undefined) reinca = false;
-else reinca = reinca.innerHTML.match("Réincarnation") ? true : false;
-
-var pvp = false;
 var count = 0;
 var effects = "";
 var effectName = [];
@@ -107,38 +90,8 @@ gradeNameCorrespondance[9] = "DEMOLISSEUR";
 gradeNameCorrespondance[10] = "SPATIODERIVEUR";
 gradeNameCorrespondance[11] = "CHRONODERIVEUR";
 
-var colorCorrespondance = new Array();
-colorCorrespondance[0] = "GREY";
-colorCorrespondance[1] = "WHITE";
-colorCorrespondance[2] = "GREEN";
-colorCorrespondance[3] = "BLUE";
-colorCorrespondance[4] = "ORANGE";
-colorCorrespondance[5] = "GOLD";
-colorCorrespondance[6] = "PURPLE";
-colorCorrespondance[7] = "RED";
 
-var iconpath = "ICONPATH";
-
-if(colorCorrespondance[color] == "PURPLE") {
-	enchant = true;
-	iconpath = lvl + "purple";
-} else if(colorCorrespondance[color] == "GOLD") {
-	enchant = true;
-	iconpath = lvl + "gold";
-} else if(colorCorrespondance[color] == "ORANGE" && !pvp) {
-	enchant = true;
-	iconpath = lvl + "pre";
-}
-
-if(pvp) {
-	color = 4;
-	iconpath = lvl + "pvp";
-}
-
-var idPiece = document.getElementsByTagName('tbody')[0].getElementsByTagName('a')[0].outerHTML.match(/[0-9]+/)[0];
-
-
-var result = "new Weapon(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+var result = "new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 result += "\tnew GradeName[] { ";
 
 idClasses = idClasses.split(",");
@@ -147,9 +100,9 @@ for(var i = 0; i < idClasses.length; i++) {
 	result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
 }
 
-result += "},\n\t" + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", WeaponType.LAME, false, " + reinca + ", \"lame/" + iconpath + "\", new Calculable[] {\n";
+result += "},\n\t" + lvl + ", \"ITEMICON\", new Calculable[] {\n";
 
 result += effects;
-result += "\t}, null ),\n";
+result += "\t}),\n";
 
 console.log(result);
