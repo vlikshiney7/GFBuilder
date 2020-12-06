@@ -7,10 +7,12 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class RedArmor extends Armor {
 	
-	private ArrayList<ArrayList<Effect>> starEffects = new ArrayList<ArrayList<Effect>>();
+	private ArrayList<ArrayList<Calculable>> starEffects = new ArrayList<ArrayList<Calculable>>();
 	
 	public RedArmor(RedArmor redArmor) {
 		super(redArmor);
@@ -18,31 +20,43 @@ public class RedArmor extends Armor {
 		this.starEffects = redArmor.getStarEffects();
 	}
 	
-	public RedArmor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String iconPath, Calculable[] effects, Calculable[] bonusXP, ArrayList<ArrayList<Effect>> starEffects) {
+	public RedArmor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String iconPath, Calculable[] effects, Calculable[] bonusXP, ArrayList<ArrayList<Calculable>> starEffects) {
 		super(name, grades, lvl, quality, enchantable, reinca, type, setCode, iconPath, effects, bonusXP);
 		
 		this.starEffects = starEffects;
 	}
 	
-	public ArrayList<ArrayList<Effect>> getStarEffects() {
-		ArrayList<ArrayList<Effect>> list = new ArrayList<ArrayList<Effect>>();
+	public ArrayList<ArrayList<Calculable>> getStarEffects() {
+		ArrayList<ArrayList<Calculable>> list = new ArrayList<ArrayList<Calculable>>();
 		
 		for(int i = 0; i < this.starEffects.size(); i++) {
-			list.add(new ArrayList<Effect>());
-			for(Effect effect : this.starEffects.get(i)) {
-				list.get(i).add(new Effect(effect));
+			list.add(new ArrayList<Calculable>());
+			for(Calculable c : this.starEffects.get(i)) {
+				if(c instanceof Effect) {
+					list.get(i).add(new Effect((Effect)c));
+				} else if(c instanceof Proc) {
+					list.get(i).add(new Proc((Proc)c));
+				} else if(c instanceof StaticEffect) {
+					list.get(i).add(new StaticEffect((StaticEffect)c));
+				}
 			}
 		}
 		
 		return list;
 	}
 	
-	public ArrayList<Effect> getStarEffects(int nbStar) {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+	public ArrayList<Calculable> getStarEffects(int nbStar) {
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < nbStar; i++) {
-			for(Effect effect : this.starEffects.get(i)) {
-				list.add(new Effect(effect));
+			for(Calculable c : this.starEffects.get(i)) {
+				if(c instanceof Effect) {
+					list.add(new Effect((Effect)c));
+				} else if(c instanceof Proc) {
+					list.add(new Proc((Proc)c));
+				} else if(c instanceof StaticEffect) {
+					list.add(new StaticEffect((StaticEffect)c));
+				}
 			}
 		}
 		

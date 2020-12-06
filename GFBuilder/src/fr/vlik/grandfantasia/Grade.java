@@ -39,7 +39,7 @@ public class Grade implements Iconable, Writable {
 		SORCIER(6), NECROMANCIEN(7),
 		METALLEUX(8), DEMOLISSEUR(9),
 		SPATIODERIVEUR(10), CHRONODERIVEUR(11),
-		NONE(-1);
+		NONE(0);
 		
 		public final int index;
 		 

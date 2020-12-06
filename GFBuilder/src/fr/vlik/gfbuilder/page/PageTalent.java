@@ -37,6 +37,8 @@ public class PageTalent extends PagePanel {
 	private static final String SAVE_NAME = "TALENT";
 	private static PageTalent INSTANCE = new PageTalent();
 	
+	private Grade currentGrade;
+	
 	private JLabel[] tabChosenTalent = new JLabel[9];
 	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(8);
 	private ArrayList<JCustomComboBox<Talent>> talent = new ArrayList<JCustomComboBox<Talent>>(24);
@@ -55,7 +57,9 @@ public class PageTalent extends PagePanel {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
-		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
+		this.currentGrade = PageGeneral.getInstance().getGrade();
+		
+		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(this.currentGrade.getGrade(), PageGeneral.getInstance().getLvl());
 		
 		for(int i = 0; i < 2; i++) {
 			boolean ancestral = i == 1;
@@ -97,7 +101,7 @@ public class PageTalent extends PagePanel {
 						MainFrame.getInstance().updateStat();
 					});
 					
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(Talent.getData()[PageGeneral.getInstance().getGrade().getGrade().index][i*12+j*3+k].getIcon()));
+					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(Talent.getData()[this.currentGrade.getGrade().index][i*12+j*3+k].getIcon()));
 					this.radioTalent.get(i*4+j).get(k+1).setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).addActionListener(e -> {
 						updateSelectedTalent(id);
@@ -281,6 +285,13 @@ public class PageTalent extends PagePanel {
 	
 	public void updateListTalent() {
 		Grade grade = PageGeneral.getInstance().getGrade();
+		
+		if(this.currentGrade.getGrade() == grade.getGrade()) {
+			return;
+		} else {
+			this.currentGrade = grade;
+		}
+		
 		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), PageGeneral.getInstance().getLvl());
 		
 		for(int i = 0; i < listTalent.size(); i++) {
@@ -303,7 +314,9 @@ public class PageTalent extends PagePanel {
 		for(int i = 0; i < listTalent.size(); i++) {
 			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
 			tabTalent[0] = new Talent();
-			for(int j = 0; j < tabTalent.length-1; j++) tabTalent[j+1] = listTalent.get(i).get(j);
+			for(int j = 0; j < tabTalent.length-1; j++) {
+				tabTalent[j+1] = listTalent.get(i).get(j);
+			}
 			
 			int memory = this.talent.get(i).getSelectedIndex() > tabTalent.length-1 ? tabTalent.length-1 : this.talent.get(i).getSelectedIndex();
 			this.talent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));

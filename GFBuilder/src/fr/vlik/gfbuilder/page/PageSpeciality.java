@@ -32,6 +32,8 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	private static final String SAVE_NAME = "SPECIALITY";
 	private static PageSpeciality INSTANCE = new PageSpeciality();
 	
+	private Grade currentGrade;
+	
 	private Speciality[] tabSpeciality;
 	private JLabel nbSpePoint = new JLabel("1145");
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
@@ -50,7 +52,9 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
-		this.tabSpeciality = Speciality.getData(PageGeneral.getInstance().getGrade().getGrade());
+		this.currentGrade = PageGeneral.getInstance().getGrade();
+		
+		this.tabSpeciality = Speciality.getData(this.currentGrade.getGrade());
 		
 		int numSpe = 0;
 		
@@ -209,6 +213,13 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	public void updateListSpe() {
 		Grade grade = PageGeneral.getInstance().getGrade();
+		
+		if(this.currentGrade.getGrade() == grade.getGrade()) {
+			return;
+		} else {
+			this.currentGrade = grade;
+		}
+		
 		this.tabSpeciality = Speciality.getData(grade.getGrade());
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {

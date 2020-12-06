@@ -14,7 +14,6 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Skill;
@@ -32,6 +31,9 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	private static final String SAVE_NAME = "SKILL";
 	private static PageSkill INSTANCE = new PageSkill();
 	
+	private Grade currentGrade;
+	private int currentLvl;
+	
 	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
 	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
 	private JCustomComboBox<ProSkill> proSkill;
@@ -48,6 +50,9 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
+		this.currentGrade = PageGeneral.getInstance().getGrade();
+		this.currentLvl = PageGeneral.getInstance().getLvl();
+		
 		for(int i = 0; i < 5; i++) {
 			this.skillNatif.add(new JCustomLabel());
 			this.skillNatif.get(i).setPreferredSize(new Dimension(250, 32));
@@ -63,7 +68,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		}
 		
 		
-		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
+		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(this.currentGrade.getGrade(), this.currentLvl);
 		this.proSkill = new JCustomComboBox<ProSkill>(tabProSkill);
 		this.proSkill.addActionListener(e -> {
 			setEffects();
@@ -197,11 +202,18 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	}
 	
 	public void updateSkill() {
-		GradeName grade = PageGeneral.getInstance().getGrade().getGrade();
+		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		int count = 0;
 		boolean isProgressUpdate = false;
+		
+		/*if(this.currentGrade.getGrade() == grade.getGrade() && this.currentLvl == lvl) {
+			return;
+		} else {
+			this.currentGrade = grade;
+			this.currentLvl = lvl;
+		}*/
 		
 		if(lvl < 6) {
 			this.showAndHide.get(0).setVisible(false);
@@ -209,7 +221,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			this.showAndHide.get(0).setVisible(true);
 		}
 		
-		for(Skill skill : Skill.getData()[grade.index]) {
+		for(Skill skill : Skill.getData()[grade.getGrade().index]) {
 			if(skill.getLvl()[0] > lvl) {
 				continue;
 			}
@@ -235,7 +247,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 				Skill[] tabSkill = new Skill[lvlSkill.size()];
 				for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
 				
-				Skill memory = (Skill) this.skillProgress.get(0).getSelectedItem();
+				Skill memory = this.getSkill(0);
 				this.skillProgress.get(0).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
 				this.skillProgress.get(0).setSelectedItem(memory);
 				this.skillProgress.get(0).setVisible(true);
@@ -262,7 +274,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			Skill[] tabSkill = new Skill[lvlSkill.size()];
 			for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
 			
-			Skill memory = (Skill) this.skillProgress.get(1).getSelectedItem();
+			Skill memory = this.getSkill(1);
 			this.skillProgress.get(1).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
 			this.skillProgress.get(1).setSelectedItem(memory);
 			this.skillProgress.get(1).setVisible(true);

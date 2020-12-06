@@ -126,7 +126,11 @@ function ExtractArmor() {
 	var codearmor = "CODEARMOR";
 	var iconpath = "ICONPATH";
 	
-	if(colorCorrespondance[color] == "PURPLE") {
+	if(colorCorrespondance[color] == "RED") {
+		enchant = false;
+		codearmor = "90red" + idClasses.split(",")[0];
+		iconpath = "90red" + idClasses.split(",")[0];
+	} else if(colorCorrespondance[color] == "PURPLE") {
 		var codeLvl = lvl;
 		while(codeLvl % 10 != 0) {
 			codeLvl++;
@@ -168,21 +172,47 @@ function ExtractArmor() {
 
 	var idPiece = document.getElementsByTagName('tbody')[0].getElementsByTagName('a')[0].outerHTML.match(/[0-9]+/)[0];
 
+	var result;
+	
+	if(colorCorrespondance[color] != "RED") {
+		result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+		result += "\tnew GradeName[] { ";
 
-	var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
-	result += "\tnew GradeName[] { ";
+		idClasses = idClasses.split(",");
 
-	idClasses = idClasses.split(",");
+		for(var i = 0; i < idClasses.length; i++) {
+			result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
+		}
 
-	for(var i = 0; i < idClasses.length; i++) {
-		result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
+		result += "}, " + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", " + reinca + ",\n";
+
+		result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
+		result += effects;
+		result += "\t}, null ),\n";
+	} else {
+		result = "new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+		result += "\tnew GradeName[] { ";
+
+		idClasses = idClasses.split(",");
+
+		for(var i = 0; i < idClasses.length; i++) {
+			result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
+		}
+
+		result += "}, " + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", " + reinca + ",\n";
+
+		result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
+		result += effects;
+		result += "\t}, null,\n\tnew ArrayList<ArrayList<Calculable>>() {{\n";
+		
+		for(var i = 0; i < 5; i++) {
+			result += "\t\tadd(new ArrayList<Calculable>() {{\n";
+			result += "\t\t\t\n";
+			result += "\t\t}});\n";
+		}
+		
+		result += "\t}}),\n";
 	}
-
-	result += "}, " + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", " + reinca + ",\n";
-
-	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
-	result += effects;
-	result += "\t}, null ),\n";
 
 	console.log(result);
 }

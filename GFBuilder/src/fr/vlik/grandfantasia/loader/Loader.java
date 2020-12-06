@@ -121,7 +121,7 @@ public class Loader {
 	public static Grade[] getGrade() {
 		return new Grade[] {
 			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Novice"); put(Language.EN, "Novice"); }},
-				GradeName.BERSERKER, 0, 5, "novice"),
+				GradeName.NONE, 0, 5, "novice"),
 			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Combattant"); put(Language.EN, "Fighter"); }},
 				GradeName.BERSERKER, 6, 15, "0-0"),
 			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Chasseur"); put(Language.EN, "Hunter"); }},

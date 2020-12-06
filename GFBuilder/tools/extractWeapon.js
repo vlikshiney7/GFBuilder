@@ -147,7 +147,7 @@ for(var i = 0; i < idClasses.length; i++) {
 	result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
 }
 
-result += "},\n\t" + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", WeaponType.LAME, false, " + reinca + ", \"lame/" + iconpath + "\", new Calculable[] {\n";
+result += "},\n\t" + lvl + ", Quality." + colorCorrespondance[color] + ", " + enchant + ", WeaponType.CLE, false, " + reinca + ", \"cle/" + iconpath + "\", new Calculable[] {\n";
 
 result += effects;
 result += "\t}, null ),\n";

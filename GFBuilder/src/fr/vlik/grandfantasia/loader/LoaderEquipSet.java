@@ -3213,7 +3213,7 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.Feu, false, 50),
 					new Effect(TypeEffect.Glace, false, 50),
 					new Effect(TypeEffect.Nature, false, 50),
-					new Effect(TypeEffect.ESQ, false, 25),
+					new Effect(TypeEffect.ESQ, true, 25),
 					new Effect(TypeEffect.ReducP, false, 30),
 					new Effect(TypeEffect.ReducM, false, 30),
 				},
@@ -4013,9 +4013,9 @@ public class LoaderEquipSet {
 	private static EquipSet[] getVoyageur() {
 		return new EquipSet[] {
 			new EquipSet("Frappe Brise-Temps", "90red11", null, null, null),
-			new EquipSet("Royaume temporel - voyageur des ères", "100vio8", null, null, null),
-			new EquipSet("Appareil - contrôle de pantin", "90vio8", null, null, null),
-			new EquipSet("Temps - Gardien", "80vio8", null, null, null),
+			new EquipSet("Royaume temporel - voyageur des ères", "100vio11", null, null, null),
+			new EquipSet("Appareil - contrôle de pantin", "90vio11", null, null, null),
+			new EquipSet("Temps - Gardien", "80vio11", null, null, null),
 			new EquipSet("Cristal Spatio-temporel", "100gold11",
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 40),
