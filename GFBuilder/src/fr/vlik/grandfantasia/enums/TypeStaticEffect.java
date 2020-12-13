@@ -31,12 +31,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	Transfo("Transformation", "Transformation", "Transformation", "Transformation", Tools.EffectColor[0]),
 	Duo("Permet d'équiper 2 armes", "Allow to equip 2 weapons", "2 armes possible", "2 weapons allowed", Tools.EffectColor[0]),
 	
-	Shield4k("4000 points de bouclier", "4000 points of shield", "4000 pts de bouclier", "4000 pts of shield", Tools.EffectColor[0]),
-	Shield5k("5000 points de bouclier", "5000 points of shield", "5000 pts de bouclier", "5000 pts of shield", Tools.EffectColor[0]),
-	Epee1M("Dégâts d'attaque +1000", "Attack damage +1000", "Dégât +1000", "Damage +1000", Tools.EffectColor[0]),
-	ProcTDB("Dégâts d'attaque +3000", "Attack damage +3000", "Dégât +3000", "Damage +3000", Tools.EffectColor[0]),
-	
-	Invoc("Invoque une Dinde rôtie", "Summon a Roast Turkey", "Dinde rôtie", "Roast Turkey", Tools.EffectColor[0]),
+	Combi11("+10% def joueur vers marionnette", "+10% def player to doll", "Marionnette : +10% def joueur", "Doll : +10% player's def", Tools.EffectColor[0]),
 	
 	ProSkillC1("20% réduction de dégât, maximum 3 coups", "20% damage reduction, 3 hits maximum", "20% reduc, max 3 coups", "20% reduc, 3 hits max", Tools.EffectColor[0]),
 	ProSkillC6("Bloque 50% des dégâts, maximum 750 points", "50% damage blocked, 750 points maximum", "Bloque 50% deg, max 750 pts", "50% dam blocked, 750 pts max", Tools.EffectColor[0]),

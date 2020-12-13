@@ -8064,6 +8064,34 @@ class LoaderBoot {
 	
 	private static Armor[] getMeca() {
 		return new Armor[] {
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Entaille ultime"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "90red8", "bottes/90red8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 581, true),
+					new Effect(TypeEffect.DefM, false, 431, true),
+					new Effect(TypeEffect.FCE, false, 38, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.AGI, false, 27, true),
+				}, null,
+				new ArrayList<ArrayList<Calculable>>() {{
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.FCE, false, 6));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, false, 400));
+						add(new Effect(TypeEffect.PM, false, 400));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, true, 2));
+						add(new Effect(TypeEffect.TCCP, false, 1));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.Depla, false, 7));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, true, 10));
+					}});
+				}}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Démon Frappe-pierre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio8", "bottes/100vio8", new Calculable[] {
@@ -10187,6 +10215,35 @@ class LoaderBoot {
 	
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Frappe Brise-Temps"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "90red11", "bottes/90red11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 436, true),
+					new Effect(TypeEffect.DefM, false, 545, true),
+					new Effect(TypeEffect.INT, false, 44, true),
+					new Effect(TypeEffect.VOL, false, 30, true),
+					new Effect(TypeEffect.AGI, false, 22, true),
+				}, null,
+				new ArrayList<ArrayList<Calculable>>() {{
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.FCE, false, 3));
+						add(new Effect(TypeEffect.INT, false, 3));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, false, 150));
+						add(new Effect(TypeEffect.PM, false, 150));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PM, true, 1));
+						add(new Effect(TypeEffect.TCCM, false, 1));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.Depla, false, 7));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PM, true, 10));
+					}});
+				}}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume temporel - Bottes de voyageur des ères"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio11", "bottes/100vio11", new Calculable[] {

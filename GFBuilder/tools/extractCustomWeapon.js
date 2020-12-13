@@ -100,16 +100,7 @@ for(var i = 0; i < idClasses.length; i++) {
 	result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
 }
 
-result += "},\n\t" + lvl + ", WeaponType.EPEE1M, new HashMap<TypeEffect, Integer[]>() {{\n";
-
-result += "\t\tput(TypeEffect.FCE, new Integer[] { 0, 0 });\n";
-result += "\t\tput(TypeEffect.VIT, new Integer[] { 0, 0 });\n";
-result += "\t\tput(TypeEffect.INT, new Integer[] { 0, 0 });\n";
-result += "\t\tput(TypeEffect.VOL, new Integer[] { 0, 0 });\n";
-result += "\t\tput(TypeEffect.AGI, new Integer[] { 0, 0 });\n";
-result += "\t\tput(TypeEffect.Toucher, new Integer[] { 0, 0 });\n";
-
-result += "\t}}, \"epee1M/ITEMICON\", new Calculable[] {\n";
+result += "},\n\t" + lvl + ", WeaponType.EPEE2M, \"epee2M/ITEMICON\", new Calculable[] {\n";
 
 result += effects;
 result += "\t}),\n";

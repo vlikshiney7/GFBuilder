@@ -8,7 +8,7 @@ public class RegenEffect implements Calculable {
 	
 	private TypeEffect effect;
 	private boolean isPercent;
-	private int fixValue = 0;
+	private double fixValue = 0;
 	private int rangeMin = 0;
 	private int rangeMax = 0;
 	private int periodicity = 0;
@@ -16,7 +16,7 @@ public class RegenEffect implements Calculable {
 	private Target target = Target.SELF;
 	
 	
-	public RegenEffect(TypeEffect effect, boolean isPercent, int fixValue, TypeRegen type) {
+	public RegenEffect(TypeEffect effect, boolean isPercent, double fixValue, TypeRegen type) {
 		this.effect = effect;
 		this.isPercent = isPercent;
 		this.fixValue = fixValue;
@@ -39,7 +39,7 @@ public class RegenEffect implements Calculable {
 		}
 	}
 	
-	public RegenEffect(TypeEffect effect, boolean isPercent, int fixValue, TypeRegen type, int periodicity) {
+	public RegenEffect(TypeEffect effect, boolean isPercent, double fixValue, TypeRegen type, int periodicity) {
 		this(effect, isPercent, fixValue, type);
 		this.periodicity = periodicity;
 	}
@@ -80,7 +80,7 @@ public class RegenEffect implements Calculable {
 		return this.isPercent;
 	}
 	
-	public int getFixValue() {
+	public double getFixValue() {
 		return this.fixValue;
 	}
 	

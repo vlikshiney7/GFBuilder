@@ -58,6 +58,7 @@ public enum TypeEffect implements Colorable, Writable {
 	VitComp("Vitesse d'Incantation", "", "Vit Incant", "", 100, false, Tools.EffectColor[0]),
 	Depla("Vitesse de Déplacement", "", "Vit Depla", "", 200, false, Tools.EffectColor[0]),
 	
+	DegAtkAll("Dégât d'attaque augmenté", "", "Deg Atq Aug", "", -1, true, Tools.EffectColor[0]),
 	DegAtk("Dégât d'Attaque", "", "Deg Atq", "", -1, true, Tools.EffectColor[7]),
 	DegAtkD("Dégât d'Attaque Distance", "", "Deg Atq Dist", "", -1, true, Tools.EffectColor[7]),
 	DegAtkM("Dégât d'Attaque Magique", "", "Deg Atq Mag", "", -1, true, Tools.EffectColor[7]),
@@ -180,6 +181,7 @@ public enum TypeEffect implements Colorable, Writable {
 	ReflectP("Dégât Physique Renvoyé", "", "Deg Phys Refl", "", -1, true, Tools.EffectColor[10]),
 	ReflectM("Dégât Magique Renvoyé", "", "Deg Mag Refl", "", -1, true, Tools.EffectColor[11]),
 	ReflectPene("Dégât Pénétration Renvoyé", "", "Deg Péné Refl", "", -1, true, Tools.EffectColor[7]),
+	Shield("Bouclier de dégât", "Shield damage", "Bouclier", "Shield", -1, true, Tools.EffectColor[0]),
 	
 	NONE("Aucun", "None", "Aucun", "None", -1, true, Tools.EffectColor[6]);
 	

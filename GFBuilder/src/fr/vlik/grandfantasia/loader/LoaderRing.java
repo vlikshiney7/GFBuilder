@@ -257,7 +257,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.FCE, true, 1),
 					}),
 					new Proc(Activation.Attack, 20, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB),
+						new Effect(TypeEffect.DegAtkAll, false, 3000),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Œil d'émeraude"); put(Language.EN, ""); }},
@@ -283,7 +283,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VIT, true, 1),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Shield5k),
+						new Effect(TypeEffect.Shield, false, 5000),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "​Malédiction du Hasard"); put(Language.EN, ""); }},
@@ -867,7 +867,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.FCE, true, 1),
 					}),
 					new Proc(Activation.Attack, 20, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.ProcTDB),
+						new Effect(TypeEffect.DegAtkAll, false, 3000),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau d'accélération"); put(Language.EN, ""); }},
@@ -885,7 +885,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VIT, true, 1),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Shield5k),
+						new Effect(TypeEffect.Shield, false, 5000),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau des arts interdits"); put(Language.EN, ""); }},

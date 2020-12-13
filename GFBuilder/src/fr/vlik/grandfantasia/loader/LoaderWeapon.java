@@ -2801,7 +2801,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(10, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -15, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.Epee1M),
+						new Effect(TypeEffect.DegAtkAll, false, 1000),
 						new RegenEffect(TypeEffect.PV, false, 300, TypeRegen.POISON, 1),
 					}),
 				}, null ),

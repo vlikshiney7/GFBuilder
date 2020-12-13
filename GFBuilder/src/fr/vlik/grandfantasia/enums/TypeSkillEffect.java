@@ -114,6 +114,11 @@ public enum TypeSkillEffect implements Writable {
 	Class9S0("Surcadençage - Noyau glacé", "Overclocking - Frost Core"),
 	Class9S1("Frappe foudroyante", "Lightning Stab"),
 	
+	Class11S0("Saint de la Maîtrise du Temps", "Temporal Saint"),
+	Class11S1("Libération Cristalline", "Crystal Burst"),
+	Class11S2("Temps Abandonné", "Forsaken Time"),
+	Class11S3("Puissance du Bouclier", "Sturdy Shield"),
+	
 	;
 	
 	public final String fr;

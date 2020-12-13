@@ -7653,6 +7653,38 @@ class LoaderHelmet {
 	
 	private static Armor[] getMeca() {
 		return new Armor[] {
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Entaille ultime"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "90red8", "casques/90red8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 830, true),
+					new Effect(TypeEffect.DefM, false, 616, true),
+					new Effect(TypeEffect.FCE, false, 44, true),
+					new Effect(TypeEffect.VIT, false, 30, true),
+					new Effect(TypeEffect.VOL, false, 22, true),
+				}, null,
+				new ArrayList<ArrayList<Calculable>>() {{
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.FCE, false, 6));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, false, 400));
+						add(new Effect(TypeEffect.PM, false, 400));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, true, 2));
+						add(new Effect(TypeEffect.TCCP, false, 1));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.FCE, false, 10));
+						add(new Effect(TypeEffect.VIT, false, 10));
+						add(new Effect(TypeEffect.AGI, false, 10));
+						add(new Effect(TypeEffect.DCCP, false, 2));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.ReducPeneP, false, 5));
+						add(new Effect(TypeEffect.ReducPeneM, false, 5));
+					}});
+				}}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Démon Frappe-pierre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio8", "casques/100vio8", new Calculable[] {
@@ -9579,6 +9611,72 @@ class LoaderHelmet {
 	
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Danse Sauvage de Dimensionaliste"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "90red10", "casques/90red10", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 700, true),
+					new Effect(TypeEffect.DefM, false, 701, true),
+					new Effect(TypeEffect.FCE, false, 30, true),
+					new Effect(TypeEffect.INT, false, 42, true),
+					new Effect(TypeEffect.VOL, false, 24, true),
+				}, null,
+				new ArrayList<ArrayList<Calculable>>() {{
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.FCE, false, 3));
+						add(new Effect(TypeEffect.INT, false, 3));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, false, 300));
+						add(new Effect(TypeEffect.PM, false, 300));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PM, true, 2));
+						add(new Effect(TypeEffect.TCCM, false, 2));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.INT, false, 10));
+						add(new Effect(TypeEffect.VOL, false, 10));
+						add(new Effect(TypeEffect.AGI, false, 10));
+						add(new Effect(TypeEffect.TCCM, false, 2));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.ReducPeneP, false, 5));
+						add(new Effect(TypeEffect.ReducPeneM, false, 5));
+					}});
+				}}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Frappe Brise-Temps"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "90red11", "casques/90red11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 622, true),
+					new Effect(TypeEffect.DefM, false, 778, true),
+					new Effect(TypeEffect.INT, false, 37, true),
+					new Effect(TypeEffect.VOL, false, 33, true),
+					new Effect(TypeEffect.AGI, false, 26, true),
+				}, null,
+				new ArrayList<ArrayList<Calculable>>() {{
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.FCE, false, 3));
+						add(new Effect(TypeEffect.INT, false, 3));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PV, false, 150));
+						add(new Effect(TypeEffect.PM, false, 150));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.PM, true, 1));
+						add(new Effect(TypeEffect.TCCM, false, 1));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.INT, false, 10));
+						add(new Effect(TypeEffect.VOL, false, 10));
+						add(new Effect(TypeEffect.AGI, false, 10));
+						add(new Effect(TypeEffect.TCCM, false, 2));
+					}});
+					add(new ArrayList<Calculable>() {{
+						add(new Effect(TypeEffect.ReducPeneP, false, 5));
+						add(new Effect(TypeEffect.ReducPeneM, false, 5));
+					}});
+				}}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Coiffe de juge d'outremonde"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio10", "casques/100vio10", new Calculable[] {

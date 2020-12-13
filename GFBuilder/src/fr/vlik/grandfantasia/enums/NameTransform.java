@@ -2,7 +2,7 @@ package fr.vlik.grandfantasia.enums;
 
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public enum TypeTransformEffect implements Writable {
+public enum NameTransform implements Writable {
 	
 	Transform0("Démon Géant", "Giant Evil"),
 	Transform1("Lion", "Lion"),
@@ -36,12 +36,14 @@ public enum TypeTransformEffect implements Writable {
 	Transform29("Citrouille", "Pumpkin"),
 	Transform30("Sprite miraculeux", "Miraculous Sprite"),
 	
+	Invoc0("Dinde rôtie", "Roast Turkey"),
+	
 	;
 	
 	public final String fr;
 	public final String en;
 	
-    private TypeTransformEffect(String fr, String en) {
+    private NameTransform(String fr, String en) {
     	this.fr = fr;
     	this.en = en;
     }

@@ -5,7 +5,7 @@ import fr.vlik.grandfantasia.Title;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
-import fr.vlik.grandfantasia.enums.TypeTransformEffect;
+import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -16,6 +16,7 @@ import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.TransformEffect;
+import fr.vlik.grandfantasia.stats.TransformEffect.TypeTransformation;
 
 public class LoaderTitle {
 	
@@ -115,7 +116,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DefP, true, 6),
 				new Effect(TypeEffect.DefM, true, 6),
 				new Proc(1, Activation.Attack, 30, new Calculable[] {
-					new TransformEffect(TypeTransformEffect.Transform0),
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform0),
 				})
 			}),
 			new Title("Contremaître de l'Île", Quality.P8TITLE, 15, false, GradeName.NONE, new Calculable[] {
@@ -208,7 +209,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.RDCCM, false, 8),
 				new Effect(TypeEffect.ESQ, true, 5),
 				new Proc(1, Activation.Attacked, 30, new Calculable[] {
-					new TransformEffect(TypeTransformEffect.Transform1),
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform1),
 				}),
 			}),
 			new Title("Héritage d'Ezio", Quality.P8TITLE, 1, false, GradeName.NONE, new Calculable[] {
@@ -301,7 +302,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DCCM, false, 7),
 				new Effect(TypeEffect.ESQ, true, 5),
 				new Proc(1, Activation.Attacked, 30, new Calculable[] {
-					new TransformEffect(TypeTransformEffect.Transform2),
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform2),
 				}),
 			}),
 			new Title("Prince de Kaslow", Quality.P8TITLE, 1, false, GradeName.NONE, new Calculable[] {
@@ -613,7 +614,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, true, -2),
 			}),
 			new Title("Cupidon Amoureux", Quality.GOLD, 5, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform3),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform3),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Défenseur des Glaces d'Ilannia", Quality.GOLD, 1, false, GradeName.NONE, new Calculable[] {
@@ -687,7 +688,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VitComp, false, 8),
 			}),
 			new Title("Gardien des Secrets", Quality.GOLD, 66, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform4),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform4),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Gardien du Royaume de Saphaël", Quality.GOLD, 0, false, GradeName.NONE, new Calculable[] {
@@ -778,7 +779,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 18),
 			}),
 			new Title("Survivant du Dédale", Quality.GOLD, 31, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform5),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform5),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Témoin des Pensées de la Reine de la Forêt", Quality.GOLD, 71, false, GradeName.NONE, new Calculable[] {
@@ -1281,7 +1282,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, false, 400),
 			}),
 			new Title("Crapule Pirate", Quality.BLUE, 86, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform6),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform6),
 			}),
 			new Title("Défenseur du Cristal", Quality.BLUE, 31, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 100),
@@ -1323,7 +1324,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DefM, true, -12),
 			}),
 			new Title("Dose d'amour et de justice", Quality.BLUE, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform28),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform28),
 			}),
 			new Title("Écrivain fantastique", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.DegMortP, true, 2),
@@ -1440,7 +1441,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 5),
 			}),
 			new Title("Forban Pirate", Quality.BLUE, 86, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform2),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform2),
 			}),
 			new Title("Garde démoniaque", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.RegenCB, false, 2),
@@ -1459,14 +1460,14 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VOL, false, 3),
 			}),
 			new Title("Gardien de la Baie Bleue", Quality.BLUE, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform7),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform7),
 			}),
 			new Title("Gardien de la Tombe du Roi", Quality.BLUE, 56, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.VitComp, false, 10),
 				new Effect(TypeEffect.PV, true, -10),
 			}),
 			new Title("Gardien du Campement Sylvestre", Quality.BLUE, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform8),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform8),
 			}),
 			new Title("Gardien du dîner de la Veille du Nouvel An", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.DefP, true, 2),
@@ -1478,7 +1479,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
 			new Title("Gaveur de poulette", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new StaticEffect(TypeStaticEffect.Invoc),
+				new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc0),
 			}),
 			new Title("Général du Cristal", Quality.BLUE, 31, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 200),
@@ -1503,7 +1504,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VitAtkD, false, 7),
 			}),
 			new Title("Grand Manchot de Noël", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform9),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform9),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Grande bienveillance", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
@@ -1582,7 +1583,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DegPlanteM, false, 100),
 			}),
 			new Title("Je suis le roi dindon", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform10),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform10),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Je vous aurai !", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
@@ -1591,9 +1592,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 1),
 			}),
 			new Title("Joueur de légende", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform11),
-				new TransformEffect(TypeTransformEffect.Transform12),
-				new TransformEffect(TypeTransformEffect.Transform13),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform11),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform12),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform13),
 			}),
 			new Title("Jour de baptême", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
@@ -1618,7 +1619,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VitComp, false, 5),
 			}),
 			new Title("Le copain de l'épouvantail", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform29),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform29),
 			}),
 			new Title("Le Gardien du Futur", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 300),
@@ -1660,7 +1661,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Loot, false, 3),
 			}),
 			new Title("Légende parmi les légendes", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform14),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform14),
 			}),
 			new Title("Les Soldes de Mayk", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.PM, false, 500),
@@ -1704,7 +1705,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Loot, false, 5),
 			}),
 			new Title("Maître farceur", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform15),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform15),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Majin", Quality.BLUE, 0, false, GradeName.NONE, new Calculable[] {
@@ -1717,7 +1718,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 4),
 			}),
 			new Title("Mégère Pirate", Quality.BLUE, 186, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform2),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform2),
 			}),
 			new Title("Membre essentiel", Quality.BLUE, 31, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1785,7 +1786,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, true, 1),
 			}),
 			new Title("Protecteur du Camp Sauvage", Quality.BLUE, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform16),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform16),
 			}),
 			new Title("Purificateur Fanatique", Quality.BLUE, 62, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 3),
@@ -1797,7 +1798,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.RegenPM, false, 250),
 			}),
 			new Title("Que des sentiments purs", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform30),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform30),
 			}),
 			new Title("Remède miracle", Quality.BLUE, 15, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.Loot, false, 5),
@@ -2022,7 +2023,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DegPlanteP, false, 20),
 			}),
 			new Title("Buveur sans Soif", Quality.GREEN, 85, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform17),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform17),
 				new Effect(TypeEffect.Depla, false, -120),
 			}),
 			new Title("Chasseur de Démons", Quality.GREEN, 36, false, GradeName.NONE, new Calculable[] {
@@ -2064,7 +2065,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 2),
 			}),
 			new Title("Défenseur de fer -Quatrième Dimension", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform18),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform18),
 			}),
 			new Title("Défenseur de l'Eau Bénite", Quality.GREEN, 85, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
@@ -2073,7 +2074,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Loot, false, 6),
 			}),
 			new Title("Défenseur du Plateau de l'Espoir", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform19),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform19),
 			}),
 			new Title("Destructeur de Preuve", Quality.GREEN, 81, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.AGI, false, 7),
@@ -2240,7 +2241,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DegPlanteM, false, 30),
 			}),
 			new Title("Héritier de la Fournaise", Quality.GREEN, 21, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform20),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform20),
 				new Effect(TypeEffect.Depla, false, -100),
 			}),
 			new Title("Héros de la Crête Dimensionnelle", Quality.GREEN, 85, false, GradeName.NONE, new Calculable[] {
@@ -2310,7 +2311,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, -7),
 			}),
 			new Title("Libérateur de la Vallée de la lumière", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform21),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform21),
 			}),
 			new Title("Maître des Sprites", Quality.GREEN, 51, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 1),
@@ -2386,7 +2387,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Toucher, false, -3),
 			}),
 			new Title("Péninsule du Chagrin - Garde de Fer", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform22),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform22),
 			}),
 			new Title("Pote avec Kuda", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 3),
@@ -2416,10 +2417,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VitAtk, false, -3),
 			}),
 			new Title("Purificateur des Montagnes de Verre", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform23),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform23),
 			}),
 			new Title("Ressusciteur du Port escarpé", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform24),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform24),
 			}),
 			new Title("Roi de la Destruction", Quality.GREEN, 94, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 8),
@@ -2428,7 +2429,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.ESQ, true, -5),
 			}),
 			new Title("Sauveur du Bassin fumant", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform25),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform25),
 			}),
 			new Title("Secours Immédiats", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 6),
@@ -2447,7 +2448,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Toucher, false, 3),
 			}),
 			new Title("Soutien des mines - Quatrième Dimension", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform26),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform26),
 			}),
 			new Title("Spécialiste du Surimi", Quality.GREEN, 71, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.DegBeteM, true, 2),
@@ -2489,7 +2490,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.FCE, false, 1),
 			}),
 			new Title("Tueur pourpre - Quatrième Dimension", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
-				new TransformEffect(TypeTransformEffect.Transform27),
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform27),
 			}),
 			new Title("Vaincre les guerriers du cristal magique expérimental", Quality.GREEN, 0, false, GradeName.NONE, new Calculable[] {
 				new Effect(TypeEffect.DegElemM, true, 3),
