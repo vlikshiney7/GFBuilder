@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
 
@@ -25,14 +26,27 @@ public class JCustomButton extends JButton {
 		setBlackUI();
 	}
 	
+	public JCustomButton(String iconName) {
+		setVoidUI();
+		
+		try {
+			this.setIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/" + iconName + ".png"))));
+		} catch (IOException e) {
+			System.out.println("Image non chargé : " + iconName + ".png");
+		} catch (IllegalArgumentException e) {
+			System.out.println("Image introuvable : " + iconName + ".png");
+		}
+		
+		this.setBorderPainted(true);
+		this.setBorder(new LineBorder(Design.UIColor[3], 2));
+		setColorUI(Design.GREY_COLOR);
+	}
+	
 	public JCustomButton(JCustomLabel label) {
 		this.label = label;
 		this.setSize(100, 40);
 		
-		this.setBackground(Design.GREY_COLOR[0]);
-		this.setHoverBackgroundColor(Design.GREY_COLOR[1]);
-		this.setPressedBackgroundColor(Design.GREY_COLOR[2]);
-		
+		setColorUI(Design.GREY_COLOR);
 		setBlackUI();
 	}
 	
@@ -40,10 +54,7 @@ public class JCustomButton extends JButton {
 		this.label = label;
 		this.setSize(100, 40);
 		
-		this.setBackground(color[0]);
-		this.setHoverBackgroundColor(color[1]);
-		this.setPressedBackgroundColor(color[2]);
-		
+		setColorUI(color);
 		setBlackUI();
 	}
 	
@@ -83,6 +94,12 @@ public class JCustomButton extends JButton {
 		this.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
+	}
+	
+	public void setColorUI(Color[] color) {
+		this.setBackground(color[0]);
+		this.setHoverBackgroundColor(color[1]);
+		this.setPressedBackgroundColor(color[2]);
 	}
 	
 	@Override

@@ -127,7 +127,7 @@ public abstract class Equipment implements FullRenderer {
 	}
 	
 	public void addEnchant(Enchantment enchant) {
-		if(enchant == null) {
+		if(enchant == null || enchant.getEffects() == null) {
 			return;
 		}
 		
@@ -155,8 +155,6 @@ public abstract class Equipment implements FullRenderer {
 				}
 				
 				if(!found) {
-					e.addEnchantValue(value);
-					
 					Calculable[] newTab = new Calculable[this.effects.length + 1];
 					
 					for(int i = 0; i < this.effects.length; i++) {

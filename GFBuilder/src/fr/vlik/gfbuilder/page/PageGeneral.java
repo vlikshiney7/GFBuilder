@@ -23,7 +23,9 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomDialog;
 import fr.vlik.uidesign.JCustomSpinner;
 
 public class PageGeneral extends PagePanel implements AdditionalEffect {
@@ -39,6 +41,9 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	private JCustomComboBox<Title> title;
 	private JCustomComboBox<Yggdrasil> yggdra;
 	private JCustomComboBox<Archive> archive;
+	
+	private JCustomButton filter;
+	private JCustomDialog filterDialog;
 	
 	private ArrayList<Effect> additionalEffects = new ArrayList<Effect>();
 	
@@ -131,6 +136,16 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.archive.addActionListener(e -> {
 			setAdditionalEffects();
 			MainFrame.getInstance().updateStat();
+		});
+		
+		
+		this.filterDialog = new JCustomDialog(Title.getTags(), Title.getQualities());
+		
+		this.filter = new JCustomButton("filter16");
+		this.filter.setToolTipText("Filtre");
+		
+		this.filter.addActionListener(e -> {
+			this.filterDialog.popup(this.filter);
 		});
 		
 		updateLanguage(Language.FR);
@@ -257,8 +272,13 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		panelTitle4.add(this.label[3]);
 		this.label[3].setFont(Design.TITLE);
 		
+		JPanel filterTitle = new JPanel();
+		filterTitle.setBackground(Design.UIColor[1]);
+		filterTitle.add(this.filter);
+		filterTitle.add(this.title);
+		
 		elem4.add(panelTitle4);
-		elem4.add(this.title);
+		elem4.add(filterTitle);
 		
 		
 		JPanel elem5 = new JPanel(new GridLayout(2, 1, 10, 10));
@@ -299,6 +319,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
 		}
+		
+		this.filterDialog.updateLanguage(lang);
 	}
 	
 	private void updateGrade() {
@@ -336,11 +358,16 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	private void updateTitle() {
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca());
 		Title memory = this.getTitle();
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getFilters(), memory);
 		
 		this.title.setModel(new DefaultComboBoxModel<Title>(tabTitle));
 		this.title.setSelectedItem(memory);
+	}
+	
+	public void popoff() {
+		this.filterDialog.popoff();
+		updateTitle();
 	}
 	
 	@Override

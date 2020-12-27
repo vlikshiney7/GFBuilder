@@ -8,15 +8,23 @@ import javax.swing.JCheckBox;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class JCustomCheckBox extends JCheckBox {
 	
 	private static final long serialVersionUID = 1L;
-	private JCustomLabel label;
+	private Object object;
 	
-	public JCustomCheckBox(JCustomLabel label) {
+	public JCustomCheckBox(Object obj) {
 		super();
-		this.label = label;
+		this.object = obj;
+		
+		if(this.object instanceof Colorable) {
+			this.setForeground(((Colorable) this.object).getColor());
+		} else {
+			this.setForeground(Design.FontColor[0]);
+		}
 		
 		try {
 			this.setSelectedIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/checkOn.png"))));
@@ -37,6 +45,10 @@ public class JCustomCheckBox extends JCheckBox {
 		setVoidUI();
 	}
 	
+	public Object getObject() {
+		return this.object;
+	}
+	
 	public void setVoidUI() {
 		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);
@@ -45,7 +57,11 @@ public class JCustomCheckBox extends JCheckBox {
 	}
 	
 	public void updateText(Language lang) {
-		this.label.updateText(lang);
-		this.setText(this.label.getText());
+		if(this.object instanceof Writable) {
+			this.setText(((Writable) this.object).getInfo(lang));
+		} else if(this.object instanceof JCustomLabel) {
+			((JCustomLabel) this.object).updateText(lang);
+			this.setText(((JCustomLabel) this.object).getText());
+		}
 	}
 }

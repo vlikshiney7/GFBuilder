@@ -9,7 +9,7 @@ import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 @SuppressWarnings("serial")
-public enum Quality implements Colorable, Writable {
+public enum Quality implements Colorable, Filtrable, Writable {
 	
 	GREY(0, new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Tools.itemColor[0]),
 	WHITE(1, new HashMap<Language, String>() {{ put(Language.FR, "Blanc"); put(Language.EN, "White"); }}, Tools.itemColor[1]),

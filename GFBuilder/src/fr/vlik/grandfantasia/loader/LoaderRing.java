@@ -32,7 +32,7 @@ public class LoaderRing {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 30),
 						new Effect(TypeEffect.DegPSacre, false, 2400),
-						new StaticEffect(TypeStaticEffect.x3STD, 15),
+						new StaticEffect(TypeStaticEffect.x3Skill, 15),
 					}),
 				}, null),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Assertion sacrée de Tarot ténébreux"); put(Language.EN, ""); }},

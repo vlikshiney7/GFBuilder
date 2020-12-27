@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
@@ -32,7 +33,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.frame.FrameCreateCustom;
-import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
 import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
@@ -161,7 +161,6 @@ public class MainFrame extends JFrame {
 		/****************************************/
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
-		try {
 		
 		System.out.println("Chargement Page : " + Duration.between(this.start, Instant.now()).toMillis());
 		
@@ -365,13 +364,19 @@ public class MainFrame extends JFrame {
 		this.add(content, BorderLayout.CENTER);
 		this.add(scrollStats, BorderLayout.EAST);
 		
-		} catch (Exception e) {
-			new FrameError(e);
-		}
 		
 		updateTabPane(0);
 		updateLanguage();
 		updateStat();
+		
+		
+		this.addWindowFocusListener(new WindowFocusListener() {
+			
+			@Override public void windowLostFocus(WindowEvent e) {}
+			@Override public void windowGainedFocus(WindowEvent e) {
+				PageGeneral.getInstance().popoff();
+			}
+		});
 		
 		
 		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_MASK), "newFile");

@@ -4,8 +4,10 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.enums.Filtrable;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.Loader;
@@ -21,6 +23,8 @@ import fr.vlik.grandfantasia.stats.TransformEffect;
 public class Title implements Colorable, Writable {
 
 	private static Title[] data = Loader.getTitle();
+	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.CHRONO, Tag.DONJON, Tag.EVENT, Tag.GVG, Tag.PVP, Tag.QUETE, Tag.RANK, Tag.REINCA, Tag.REPUTATION, Tag.TDB, Tag.TITLEP8, Tag.OTHER, };
+	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD, Quality.PURPLE, Quality.RED, Quality.P8TITLE };
 	
 	private String name;
 	private Quality quality;
@@ -29,12 +33,24 @@ public class Title implements Colorable, Writable {
 	private GradeName grade;
 	private Calculable[] effects;
 	
+	private Tag[] tag;
+	
 	public Title() {
 		this.name = "Aucun";
 		this.quality = Quality.GREY;
 		this.lvl = 0;
 		this.grade = GradeName.NONE;
 		this.reinca = false;
+	}
+	
+	public Title(String name, Quality quality, int lvl, boolean reinca, GradeName grade, Tag[] tag, Calculable[] effects) {
+		this.name = name;
+		this.quality = quality;
+		this.lvl = lvl;
+		this.reinca = reinca;
+		this.grade = grade;
+		this.tag = tag;
+		this.effects = effects;
 	}
 	
 	public Title(String name, Quality quality, int lvl, boolean reinca, GradeName grade, Calculable[] effects) {
@@ -58,12 +74,26 @@ public class Title implements Colorable, Writable {
 		return this.lvl;
 	}
 	
-	public boolean getReinca() {
+	public boolean isReinca() {
 		return this.reinca;
 	}
 	
 	public GradeName getGrade() {
 		return this.grade;
+	}
+	
+	public Tag[] getTag() {
+		if(this.tag == null) {
+			return null;
+		}
+		
+		Tag[] tab = new Tag[this.tag.length];
+		
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = this.tag[i];
+		}
+		
+		return tab;
 	}
 	
 	public Calculable[] getEffects() {
@@ -94,6 +124,25 @@ public class Title implements Colorable, Writable {
 		}
 		
 		return tab;
+	}
+	
+	public boolean equals(Object obj) {
+		if(this == obj) {
+			return true;
+		}
+		
+		if(obj == null) {
+			return false;
+		}
+		
+		if (!(obj instanceof Title)) {
+			return false;
+		}
+		
+		Title title = (Title) obj;
+		boolean b = this.name.equals(title.name);
+		
+		return b;
 	}
 	
 	@Override
@@ -145,7 +194,7 @@ public class Title implements Colorable, Writable {
 			}
 		} else {
 			for(Title title : Title.data) {
-				if(title.getReinca()) {
+				if(title.isReinca()) {
 					continue;
 				}
 				
@@ -166,5 +215,90 @@ public class Title implements Colorable, Writable {
 		cast = result.toArray(cast);
 		
 		return cast;
+	}
+	
+	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, Filtrable[] filter, Title choice) {
+		ArrayList<Title> result = new ArrayList<Title>();
+		
+		result.add(new Title());
+		if(!choice.equals(new Title())) {
+			result.add(choice);
+		}
+		
+		if(reinca.getLvl() > 0) {
+			lvl += 100;
+			
+			for(Title title : Title.data) {
+				if(title.getLvl() <= lvl && (title.getGrade() == GradeName.NONE || title.getGrade() == grade)) {
+					
+					if(Title.contains(filter, title.getQuality()) || Title.contains(filter, title.getTag())) {
+						if(!choice.equals(title)) {
+							result.add(title);
+						}
+					}
+				}
+			}
+		} else {
+			for(Title title : Title.data) {
+				if(title.isReinca()) {
+					continue;
+				}
+				
+				if(title.getGrade() == GradeName.NONE || title.getGrade() == grade) {
+					
+					if(title.getLvl() <= lvl) {
+						if(Title.contains(filter, title.getQuality()) || Title.contains(filter, title.getTag())) {
+							if(!choice.equals(title)) {
+								result.add(title);
+							}
+						}
+					} else if(title.getLvl() > 100 && title.getLvl()-100 <= lvl) {
+						
+						if(Title.contains(filter, title.getQuality()) || Title.contains(filter, title.getTag())) {
+							if(!choice.equals(title)) {
+								result.add(title);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		Title[] cast = new Title[result.size()];
+		cast = result.toArray(cast);
+		
+		return cast;
+	}
+	
+	public static Tag[] getTags() {
+		return Title.tags;
+	}
+	
+	public static Quality[] getQualities() {
+		return Title.qualities;
+	}
+	
+	public static boolean contains(Filtrable[] tabFilter, Filtrable[] filter) {
+		if(filter == null) {
+			return false;
+		}
+		
+		for(Filtrable element : filter) {
+			if(Title.contains(tabFilter, element)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public static boolean contains(Filtrable[] tabFilter, Filtrable filter) {
+		for(Filtrable element : tabFilter) {
+			if(filter.equals(element)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

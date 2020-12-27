@@ -39,6 +39,8 @@ public class Condition implements Calculable {
 	public static enum TypeCondition {
 		STATUT("A chaque statut reçu", "For each receive status"),
 		RAYON("Dans les 16 mètres", "On the 16 meters"),
+		DEATH("Évite une mort", "Avoid one death"),
+		
 		AIGLE("Aigle", "Eagle"),
 		LOUP("Loup", "Wolf"),
 		SINGE("Singe", "Monkey"),

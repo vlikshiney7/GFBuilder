@@ -5,6 +5,8 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
+import fr.vlik.grandfantasia.stats.Condition.TypeCondition;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
@@ -1656,14 +1658,20 @@ public class LoaderPearl {
 			new Pearl("Pierre runique de renaissance absolue", Quality.ORANGE, Quality.RED, false, "absolue", new Calculable[] {
 				new Effect(TypeEffect.Sacre, false, 200),
 				new Proc(7, Activation.Attack, 10, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.AntiDeath),
+					new Condition(TypeCondition.DEATH, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 100, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 100, TypeRegen.REGENERATION),
+					}),
 				}),
 			}),
 			new Pearl("Pierre runique de renaissance prestigieuse", Quality.ORANGE, Quality.RED, false, "prestigieuse", new Calculable[] {
 				new Effect(TypeEffect.Sacre, false, 300),
 				new Effect(TypeEffect.Depla, false, 15),
 				new Proc(15, Activation.Attack, 10, new Calculable[] {
-					new StaticEffect(TypeStaticEffect.AntiDeath),
+					new Condition(TypeCondition.DEATH, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 100, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 100, TypeRegen.REGENERATION),
+					}),
 				}),
 			}),
 			new Pearl("Pierre runique de ténacité chaotique", Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
