@@ -2,6 +2,8 @@ package fr.vlik.grandfantasia;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Filtrable;
@@ -21,7 +23,13 @@ import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.TransformEffect;
 
 public class Title implements Colorable, Writable {
-
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Titre");
+		put(Language.EN, "Title");
+	}};
+	
 	private static Title[] data = Loader.getTitle();
 	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.CHRONO, Tag.DONJON, Tag.EVENT, Tag.GVG, Tag.PVP, Tag.QUETE, Tag.RANK, Tag.REINCA, Tag.REPUTATION, Tag.TDB, Tag.TITLEP8, Tag.OTHER, };
 	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD, Quality.PURPLE, Quality.RED, Quality.P8TITLE };
@@ -33,7 +41,7 @@ public class Title implements Colorable, Writable {
 	private GradeName grade;
 	private Calculable[] effects;
 	
-	private Tag[] tag;
+	private Tag tag;
 	
 	public Title() {
 		this.name = "Aucun";
@@ -43,7 +51,7 @@ public class Title implements Colorable, Writable {
 		this.reinca = false;
 	}
 	
-	public Title(String name, Quality quality, int lvl, boolean reinca, GradeName grade, Tag[] tag, Calculable[] effects) {
+	public Title(String name, Quality quality, int lvl, boolean reinca, GradeName grade, Tag tag, Calculable[] effects) {
 		this.name = name;
 		this.quality = quality;
 		this.lvl = lvl;
@@ -82,18 +90,8 @@ public class Title implements Colorable, Writable {
 		return this.grade;
 	}
 	
-	public Tag[] getTag() {
-		if(this.tag == null) {
-			return null;
-		}
-		
-		Tag[] tab = new Tag[this.tag.length];
-		
-		for(int i = 0; i < tab.length; i++) {
-			tab[i] = this.tag[i];
-		}
-		
-		return tab;
+	public Tag getTag() {
+		return this.tag;
 	}
 	
 	public Calculable[] getEffects() {
@@ -217,7 +215,7 @@ public class Title implements Colorable, Writable {
 		return cast;
 	}
 	
-	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, Filtrable[] filter, Title choice) {
+	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Title choice) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
 		result.add(new Title());
@@ -231,7 +229,7 @@ public class Title implements Colorable, Writable {
 			for(Title title : Title.data) {
 				if(title.getLvl() <= lvl && (title.getGrade() == GradeName.NONE || title.getGrade() == grade)) {
 					
-					if(Title.contains(filter, title.getQuality()) || Title.contains(filter, title.getTag())) {
+					if(Tools.searchOnName(key, title.getName()) || Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
 						if(!choice.equals(title)) {
 							result.add(title);
 						}
@@ -247,14 +245,14 @@ public class Title implements Colorable, Writable {
 				if(title.getGrade() == GradeName.NONE || title.getGrade() == grade) {
 					
 					if(title.getLvl() <= lvl) {
-						if(Title.contains(filter, title.getQuality()) || Title.contains(filter, title.getTag())) {
+						if(Tools.searchOnName(key, title.getName()) || Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
 							if(!choice.equals(title)) {
 								result.add(title);
 							}
 						}
 					} else if(title.getLvl() > 100 && title.getLvl()-100 <= lvl) {
 						
-						if(Title.contains(filter, title.getQuality()) || Title.contains(filter, title.getTag())) {
+						if(Tools.searchOnName(key, title.getName()) || Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
 							if(!choice.equals(title)) {
 								result.add(title);
 							}
@@ -276,29 +274,5 @@ public class Title implements Colorable, Writable {
 	
 	public static Quality[] getQualities() {
 		return Title.qualities;
-	}
-	
-	public static boolean contains(Filtrable[] tabFilter, Filtrable[] filter) {
-		if(filter == null) {
-			return false;
-		}
-		
-		for(Filtrable element : filter) {
-			if(Title.contains(tabFilter, element)) {
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	public static boolean contains(Filtrable[] tabFilter, Filtrable filter) {
-		for(Filtrable element : tabFilter) {
-			if(filter.equals(element)) {
-				return true;
-			}
-		}
-		
-		return false;
 	}
 }

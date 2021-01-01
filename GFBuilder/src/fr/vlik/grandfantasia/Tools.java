@@ -3,9 +3,14 @@ package fr.vlik.grandfantasia;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.text.Normalizer;
+import java.util.Map;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import fr.vlik.grandfantasia.enums.Filtrable;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class Tools {
 	public static final String RESOURCE = "/fr/vlik/grandfantasia/resources/";
@@ -30,5 +35,56 @@ public class Tools {
 		g.dispose();
 		
 		return new ImageIcon(result);
+	}
+	
+	public static String simplifyString(String entry) {
+		String result = entry.replaceAll(" ", "").toLowerCase();
+		result = Normalizer.normalize(result, Normalizer.Form.NFD);
+		result = result.replaceAll("[^\\p{ASCII}]", "");
+		
+		return result;
+	}
+	
+	public static boolean searchOnName(String key, String name) {
+		key = Tools.simplifyString(key);
+		name = Tools.simplifyString(name);
+		
+		return name.matches(".*(" + key + ").*");
+	}
+	
+	public static boolean searchOnName(String key, Map<Language, String> names) {
+		
+		for(String name : names.values()) {
+			if(searchOnName(key, name)) {
+				return true;
+			}
+			
+		}
+		
+		return false;
+	}
+	
+	public static boolean contains(Filtrable[] tabFilter, Filtrable filter) {
+		for(Filtrable element : tabFilter) {
+			if(filter.equals(element)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public static boolean contains(Filtrable[] tabFilter, Filtrable[] filter) {
+		if(filter == null) {
+			return false;
+		}
+		
+		for(Filtrable element : filter) {
+			if(contains(tabFilter, element)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

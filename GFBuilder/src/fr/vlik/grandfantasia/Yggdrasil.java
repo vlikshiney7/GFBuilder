@@ -14,6 +14,12 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Yggdrasil implements Writable, Iconable {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Yggdrasil");
+		put(Language.EN, "Yggdrasil");
+	}};
+	
 	public static String PATH = Tools.RESOURCE + Yggdrasil.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Yggdrasil[] data = Loader.getYggdrasil();

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Bullet;
+import fr.vlik.grandfantasia.CombiRunway;
 import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Energy;
@@ -1378,6 +1379,37 @@ public class Loader {
 				new Effect(TypeEffect.VitAtk, false, 2),
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
+		};
+	}
+	
+	public static CombiRunway[] getCombiRunway() {
+		return new CombiRunway[] {
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Arme"); put(Language.EN, "Weapon Runway"); }},
+				new Runway[] {
+					Runway.get("Bravoure"),
+					Runway.get("Sorcier"),
+				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tête"); put(Language.EN, "Head Runway"); }},
+				new Runway[] {
+					Runway.get("Berserker"),
+					Runway.get("Sagesse"),
+				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tenue"); put(Language.EN, "Body Runway"); }},
+				new Runway[] {
+					Runway.get("Turbo"),
+					Runway.get("Synthétisation"),
+				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Dos"); put(Language.EN, "Back Runway"); }},
+				new Runway[] {
+					Runway.get("Lutte"),
+					Runway.get("Malédiction"),
+				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Nouveauté"); put(Language.EN, "New Runway"); }},
+				new Runway[] {
+					Runway.get("Illusion"),
+					Runway.get("Ranger"),
+					Runway.get("Praetor"),
+				}),
 		};
 	}
 	

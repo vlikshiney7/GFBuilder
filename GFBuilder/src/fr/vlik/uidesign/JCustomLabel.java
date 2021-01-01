@@ -35,7 +35,14 @@ public class JCustomLabel extends JLabel {
 	public JCustomLabel(Map<Language, String> lang) {
 		this.lang = lang;
 		setBlackUI();
-		this.setFont(Design.TITLE); // TODO faire en sorte que ce soit supprimé
+		this.setFont(Design.TITLE);
+		this.setAlignmentX(CENTER_ALIGNMENT);
+	}
+	
+	public JCustomLabel(Map<Language, String> lang, Font font) {
+		this.lang = lang;
+		setBlackUI();
+		this.setFont(font);
 		this.setAlignmentX(CENTER_ALIGNMENT);
 	}
 	

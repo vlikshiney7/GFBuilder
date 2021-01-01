@@ -17,23 +17,26 @@ public abstract class PagePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	protected ArrayList<Calculable> effects;
-	protected JCustomLabel[] label;
+	protected JCustomLabel[] labelGFB;
+	protected JCustomLabel[] labelAPI;
 	
 	public PagePanel(int caseTabLabel) {
 		super();
 		this.setBackground(Design.UIColor[2]);
-		this.label = Lang.getDataLabel(caseTabLabel);
+		this.labelGFB = Lang.getDataLabel(caseTabLabel);
 	}
 	
 	public PagePanel(LayoutManager layout, int caseTabLabel) {
 		super(layout);
 		this.setBackground(Design.UIColor[2]);
-		this.label = Lang.getDataLabel(caseTabLabel);
+		this.labelGFB = Lang.getDataLabel(caseTabLabel);
 	}
 
 	public ArrayList<Calculable> getEffects() {
 		return this.effects;
 	}
+	
+	abstract protected void setLabelAPI();
 	
 	abstract protected void setEffects();
 	

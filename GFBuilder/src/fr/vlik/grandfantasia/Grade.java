@@ -14,6 +14,12 @@ import fr.vlik.grandfantasia.loader.Loader;
 
 public class Grade implements Iconable, Writable {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Classe");
+		put(Language.EN, "Class");
+	}};
+	
 	public static String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	public static Grade[] data = Loader.getGrade();

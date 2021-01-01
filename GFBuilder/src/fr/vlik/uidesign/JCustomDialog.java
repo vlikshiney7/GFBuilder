@@ -1,13 +1,19 @@
 package fr.vlik.uidesign;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.ArrayList;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Filtrable;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -17,62 +23,117 @@ public class JCustomDialog extends JDialog {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private JCustomCheckBox[][] check;
+	private JCustomTextField search;
+	private ArrayList<ArrayList<JCustomCheckBox<Filtrable>>> check;
+	private JCustomButton uncheck;
+	private JCustomButton allcheck;
+	
+	private JCustomLabel[] label;
 
-	public JCustomDialog(Tag[] tags, Quality[] qualities) {
-		super();
+	public JCustomDialog(Tag[] tags, Quality[] qualities, boolean searchable, int gridValue) {
+		this.setLayout(new BorderLayout());
 		this.setBlackUI();
 		this.setUndecorated(true);
-		this.setSize(500, 120);
+		this.setSize(500, 220);
 		
-		this.check = new JCustomCheckBox[2][];
+		this.label = Lang.getDataLabel(19);
 		
-		JCustomCheckBox[] tabTag = new JCustomCheckBox[tags.length];
-		for(int i = 0; i < tags.length; i++) {
-			tabTag[i] = new JCustomCheckBox(tags[i]);
-			tabTag[i].setSelected(true);
-			tabTag[i].setForeground(Design.FontColor[0]);
+		this.check = new ArrayList<ArrayList<JCustomCheckBox<Filtrable>>>(2);
+		this.check.add(toList(tags));
+		this.check.add(toList(qualities));
+		
+		if(searchable) {
+			this.search = new JCustomTextField();
+			this.search.setBorder(new EmptyBorder(10, 10, 10, 10));
 		}
-		this.check[0] = tabTag;
 		
-		JCustomCheckBox[] tabQuality = new JCustomCheckBox[qualities.length];
-		for(int i = 0; i < qualities.length; i++) {
-			tabQuality[i] = new JCustomCheckBox(qualities[i]);
-			tabQuality[i].setSelected(true);
+		this.uncheck = new JCustomButton(this.label[0], Design.RED_COLOR);
+		this.uncheck.addActionListener(e -> {
+			setCheck(false);
+		});
+		this.uncheck.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.uncheck.setMinimumSize(new Dimension(0, 30));
+		
+		this.allcheck = new JCustomButton(this.label[1], Design.GREEN_COLOR);
+		this.allcheck.addActionListener(e -> {
+			setCheck(true);
+		});
+		this.allcheck.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.allcheck.setMinimumSize(new Dimension(0, 30));
+		
+		
+		JPanel panelSearch = new JPanel();
+		panelSearch.setLayout(new BoxLayout(panelSearch, BoxLayout.Y_AXIS));
+		panelSearch.setBackground(Design.UIColor[2]);
+		panelSearch.setBorder(new EmptyBorder(10, 10, 10, 10));
+		panelSearch.add(this.search);
+		
+		JPanel panelTag = new JPanel(new GridLayout(tags.length / gridValue +1, gridValue));
+		panelTag.setBackground(Design.UIColor[2]);
+		for(JCustomCheckBox<Filtrable> filter : this.check.get(0)) {
+			panelTag.add(filter);
 		}
-		this.check[1] = tabQuality;
+		for(int i = 0; i < gridValue - (tags.length % gridValue); i++) {
+			JPanel fake = new JPanel();
+			fake.setVisible(false);
+			panelTag.add(fake);
+		}
+		
+		JPanel panelQuality = new JPanel(new GridLayout(qualities.length / gridValue +1, gridValue));
+		panelQuality.setBackground(Design.UIColor[2]);
+		for(JCustomCheckBox<Filtrable> filter : this.check.get(1)) {
+			panelQuality.add(filter);
+		}
+		for(int i = 0; i < gridValue - (qualities.length % gridValue); i++) {
+			JPanel fake = new JPanel();
+			fake.setVisible(false);
+			panelQuality.add(fake);
+		}
+		
+		JPanel panelButton = new JPanel(new GridLayout(1, 2, 10, 5));
+		panelButton.setBackground(Design.UIColor[2]);
+		panelButton.setBorder(new EmptyBorder(10, 10, 10, 10));
+		panelButton.add(this.uncheck);
+		panelButton.add(this.allcheck);
+		
 		
 		JPanel page = new JPanel();
 		page.setLayout(new BoxLayout(page, BoxLayout.Y_AXIS));
 		page.setBackground(Design.UIColor[2]);
-		page.setBorder(new LineBorder(Design.UIColor[0], 3));
+		page.setBorder(new LineBorder(Design.UIColor[0], 2));
 		
-		JPanel listTag = new JPanel();
-		listTag.setBackground(Design.UIColor[2]);
-		for(int i = 0; i < this.check[0].length; i++) {
-			listTag.add(this.check[0][i]);
+		if(searchable) {
+			page.add(panelSearch);
 		}
-		
-		JPanel listQuality = new JPanel();
-		listQuality.setBackground(Design.UIColor[2]);
-		for(int i = 0; i < this.check[1].length; i++) {
-			listQuality.add(this.check[1][i]);
-		}
-		
-		page.add(listTag);
-		page.add(listQuality);
+		page.add(panelTag);
+		page.add(Box.createVerticalStrut(10));
+		page.add(panelQuality);
+		page.add(panelButton);
 		
 		this.add(page);
 		
 		this.setVisible(false);
 	}
 	
+	private ArrayList<JCustomCheckBox<Filtrable>> toList(Filtrable[] filter) {
+		ArrayList<JCustomCheckBox<Filtrable>> listFilter = new ArrayList<JCustomCheckBox<Filtrable>>(filter.length);
+		for(int i = 0; i < filter.length; i++) {
+			listFilter.add(new JCustomCheckBox<Filtrable>(filter[i]));
+			listFilter.get(i).setSelected(true);
+		}
+		
+		return listFilter;
+	}
+	
 	public void updateLanguage(Language lang) {
-		for(JCustomCheckBox[] checkBoxTab : this.check) {
-			for(JCustomCheckBox checkBox : checkBoxTab) {
+		for(ArrayList<JCustomCheckBox<Filtrable>> checkBoxList : this.check) {
+			for(JCustomCheckBox<Filtrable> checkBox : checkBoxList) {
 				checkBox.updateText(lang);
 			}
 		}
+		
+		this.uncheck.updateText(lang);
+		this.allcheck.updateText(lang);
 	}
 	
 	public void setBlackUI() {
@@ -87,6 +148,7 @@ public class JCustomDialog extends JDialog {
 			this.setLocation(this.getX(), 0);
 		}
 		
+		this.search.requestFocus();
 		this.setVisible(true);
 	}
 	
@@ -94,14 +156,17 @@ public class JCustomDialog extends JDialog {
 		this.setVisible(false);
 	}
 	
+	public String getSearch() {
+		return this.search.getText();
+	}
+	
 	public Filtrable[] getFilters() {
 		ArrayList<Filtrable> result = new ArrayList<Filtrable>();
 		
-		for(JCustomCheckBox[] tabCheck : this.check) {
-			for(JCustomCheckBox checkBox : tabCheck) {
+		for(ArrayList<JCustomCheckBox<Filtrable>> checkBoxList : this.check) {
+			for(JCustomCheckBox<Filtrable> checkBox : checkBoxList) {
 				if(checkBox.isSelected()) {
-					Filtrable filter = (Filtrable) checkBox.getObject();
-					result.add(filter);
+					result.add(checkBox.getItem());
 				}
 			}
 		}
@@ -110,5 +175,13 @@ public class JCustomDialog extends JDialog {
 		cast = result.toArray(cast);
 		
 		return cast;
+	}
+	
+	private void setCheck(boolean toCheck) {
+		for(ArrayList<JCustomCheckBox<Filtrable>> checkBoxList : this.check) {
+			for(JCustomCheckBox<Filtrable> checkBox : checkBoxList) {
+				checkBox.setSelected(toCheck);
+			}
+		}
 	}
 }

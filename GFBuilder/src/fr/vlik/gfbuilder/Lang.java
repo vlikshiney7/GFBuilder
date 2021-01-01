@@ -14,7 +14,6 @@ public class Lang {
 	
 	private static JCustomLabel[] dataPane;
 	private static JCustomLabel[][] dataLabel;
-	
 	private static String[][] dataCredit;
 	static {
 		loadData();

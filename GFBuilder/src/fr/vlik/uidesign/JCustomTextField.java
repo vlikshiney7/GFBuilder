@@ -12,7 +12,6 @@ public class JCustomTextField extends JTextField {
 		super();
 		this.setFont(new Font("Open Sans", Font.BOLD, 14));
 		this.setHorizontalAlignment(JTextField.CENTER);
-		this.setSize(100, 40);
 		this.setCaretColor(Design.FontColor[0]);
 		this.putClientProperty("caretWidth", 2);
 		

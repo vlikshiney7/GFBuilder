@@ -92,6 +92,11 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	public ArrayList<Effect> getConvertEffects() {
 		return this.convertEffects;
 	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
+	}
 
 	@Override
 	protected void setEffects() {
@@ -145,8 +150,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		elem1.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 5; i++) {
@@ -166,8 +171,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		elem2.setLayout(new BoxLayout(elem2, BoxLayout.Y_AXIS));
 		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem2.setBackground(Design.UIColor[1]);
-		elem2.add(this.label[1]);
-		this.label[1].setFont(Design.TITLE);
+		elem2.add(this.labelGFB[1]);
+		this.labelGFB[1].setFont(Design.TITLE);
 		elem2.add(Box.createVerticalStrut(10));
 		
 		elem2.add(this.proSkill);
@@ -196,8 +201,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 	}
 	

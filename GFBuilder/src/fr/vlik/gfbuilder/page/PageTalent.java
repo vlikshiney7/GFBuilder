@@ -114,12 +114,12 @@ public class PageTalent extends PagePanel {
 			}
 		}
 
-		this.reinitTalent = new JCustomButton(this.label[11], Design.RED_COLOR);
+		this.reinitTalent = new JCustomButton(this.labelGFB[11], Design.RED_COLOR);
 		this.reinitTalent.addActionListener(e -> {
 			setMinCBoxTalent();
 		});
 
-		this.maxTalent = new JCustomButton(this.label[12], Design.GREEN_COLOR);
+		this.maxTalent = new JCustomButton(this.labelGFB[12], Design.GREEN_COLOR);
 		this.maxTalent.addActionListener(e -> {
 			setMaxCBoxTalent();
 		});
@@ -135,6 +135,11 @@ public class PageTalent extends PagePanel {
 	
 	public ArrayList<JCustomRadioButton> getRadioButton(int index) {
 		return this.radioTalent.get(index);
+	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
 	}
 	
 	@Override
@@ -188,8 +193,8 @@ public class PageTalent extends PagePanel {
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		elem1.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(chosenTalent);
 		elem1.add(Box.createVerticalStrut(5));
@@ -208,8 +213,8 @@ public class PageTalent extends PagePanel {
 			colTalent.setLayout(new BoxLayout(colTalent, BoxLayout.Y_AXIS));
 			colTalent.setBorder(new EmptyBorder(10, 10, 10, 10));
 			colTalent.setBackground(Design.UIColor[1]);
-			colTalent.add(this.label[i+1]);
-			this.label[i+1].setFont(Design.TITLE);
+			colTalent.add(this.labelGFB[i+1]);
+			this.labelGFB[i+1].setFont(Design.TITLE);
 			colTalent.add(Box.createVerticalStrut(10));
 			
 			JPanel blocTalent = new JPanel(new GridLayout(4, 1, 10, 10));
@@ -241,8 +246,8 @@ public class PageTalent extends PagePanel {
 				subtitle.setLayout(new BoxLayout(subtitle, BoxLayout.Y_AXIS));
 				subtitle.setBorder(new EmptyBorder(5, 5, 5, 5));
 				subtitle.setBackground(Design.UIColor[0]);
-				subtitle.add(this.label[i*4+j+3]);
-				this.label[i*4+j+3].setFont(Design.SUBTITLE);
+				subtitle.add(this.labelGFB[i*4+j+3]);
+				this.labelGFB[i*4+j+3].setFont(Design.SUBTITLE);
 				subtitle.add(lineTalent);
 				
 				this.showAndHideTalent.add(subtitle);
@@ -275,8 +280,8 @@ public class PageTalent extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 		
 		this.reinitTalent.updateText(lang);

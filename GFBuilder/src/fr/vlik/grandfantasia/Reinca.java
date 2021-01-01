@@ -14,6 +14,12 @@ import fr.vlik.grandfantasia.loader.Loader;
 
 public class Reinca implements FullRenderer {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Réincarnation");
+		put(Language.EN, "Rebirth");
+	}};
+	
 	public static String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + "/";
 	private static final Color[] LEVEL = { new Color(147, 147, 147), new Color(111, 225, 28) };
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();

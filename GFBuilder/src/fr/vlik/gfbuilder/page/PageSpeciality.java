@@ -80,12 +80,12 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		this.reinitSpe = new JCustomButton(this.label[6], Design.RED_COLOR);
+		this.reinitSpe = new JCustomButton(this.labelGFB[6], Design.RED_COLOR);
 		this.reinitSpe.addActionListener(e -> {
 			setMinSpe();
 		});
 		
-		this.maxSpe = new JCustomButton(this.label[7], Design.GREEN_COLOR);
+		this.maxSpe = new JCustomButton(this.labelGFB[7], Design.GREEN_COLOR);
 		this.maxSpe.addActionListener(e -> {
 			setMaxSpe();
 		});
@@ -98,6 +98,11 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	@Override
 	public ArrayList<Effect> getConvertEffects() {
 		return this.convertEffects;
+	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
 	}
 	
 	@Override
@@ -126,14 +131,14 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	protected void createPanel() {
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.setBackground(Design.UIColor[1]);
-		this.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		this.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		this.add(Box.createVerticalStrut(10));
 		
 		JPanel remain = new JPanel();
 		remain.setBackground(Design.UIColor[1]);
-		remain.add(this.label[1]);
-		this.label[1].setFont(Design.SUBTITLE);
+		remain.add(this.labelGFB[1]);
+		this.labelGFB[1].setFont(Design.SUBTITLE);
 		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
 		this.nbSpePoint.setForeground(Design.FontColor[0]);
 		remain.add(this.nbSpePoint);
@@ -150,9 +155,9 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 		int numSpe = 0;
 		
 		for(int i = 0; i < 4; i++) {
-			catSpe.add(this.label[i+2]);
-			this.label[i+2].setFont(Design.SUBTITLE);
-			this.label[i+2].setPreferredSize(new Dimension(76, 70));
+			catSpe.add(this.labelGFB[i+2]);
+			this.labelGFB[i+2].setFont(Design.SUBTITLE);
+			this.labelGFB[i+2].setPreferredSize(new Dimension(76, 70));
 			
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
@@ -203,8 +208,8 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 		
 		this.reinitSpe.updateText(lang);

@@ -78,6 +78,11 @@ public class PageOther extends PagePanel {
 	public Anima getAnima() {
 		return this.anima.getSelectedItem();
 	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
+	}
 
 	@Override
 	protected void setEffects() {
@@ -110,13 +115,13 @@ public class PageOther extends PagePanel {
 		page12Elem1.setLayout(new BoxLayout(page12Elem1, BoxLayout.Y_AXIS));
 		page12Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page12Elem1.setBackground(Design.UIColor[1]);
-		page12Elem1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		page12Elem1.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		page12Elem1.add(Box.createVerticalStrut(10));
 		page12Elem1.add(this.bague);
 		page12Elem1.add(Box.createVerticalStrut(15));
-		page12Elem1.add(this.label[1]);
-		this.label[1].setFont(Design.TITLE);
+		page12Elem1.add(this.labelGFB[1]);
+		this.labelGFB[1].setFont(Design.TITLE);
 		page12Elem1.add(Box.createVerticalStrut(10));
 		page12Elem1.add(this.loveCo);
 		
@@ -127,8 +132,8 @@ public class PageOther extends PagePanel {
 		page12Elem2.setLayout(new BoxLayout(page12Elem2, BoxLayout.Y_AXIS));
 		page12Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page12Elem2.setBackground(Design.UIColor[1]);
-		page12Elem2.add(this.label[2]);
-		this.label[2].setFont(Design.TITLE);
+		page12Elem2.add(this.labelGFB[2]);
+		this.labelGFB[2].setFont(Design.TITLE);
 		page12Elem2.add(Box.createVerticalStrut(10));
 		page12Elem2.add(this.anima);
 		
@@ -142,8 +147,8 @@ public class PageOther extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 	}
 	

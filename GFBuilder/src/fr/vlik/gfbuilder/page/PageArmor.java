@@ -276,6 +276,11 @@ public class PageArmor extends PagePanel {
 	public Integer getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
+	}
 
 	@Override
 	protected void setEffects() {
@@ -442,8 +447,8 @@ public class PageArmor extends PagePanel {
 		this.showAndHide.setLayout(new BoxLayout(this.showAndHide, BoxLayout.Y_AXIS));
 		this.showAndHide.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.showAndHide.setBackground(Design.UIColor[1]);
-		this.showAndHide.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		this.showAndHide.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		this.showAndHide.add(Box.createVerticalStrut(10));
 		this.showAndHide.add(this.shortcutSet);
 		this.showAndHide.setVisible(false);
@@ -494,8 +499,8 @@ public class PageArmor extends PagePanel {
 			
 			JPanel xpArmor = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpArmor.setBackground(Design.UIColor[1]);
-			xpArmor.add(this.label[i+6]);
-			this.label[i+6].setFont(Design.SUBTITLE);
+			xpArmor.add(this.labelGFB[i+6]);
+			this.labelGFB[i+6].setFont(Design.SUBTITLE);
 			
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
@@ -509,8 +514,8 @@ public class PageArmor extends PagePanel {
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.label[i+1]);
-			this.label[i+1].setFont(Design.TITLE);
+			elemI.add(this.labelGFB[i+1]);
+			this.labelGFB[i+1].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descArmor);
 			elemI.add(Box.createVerticalStrut(2));
@@ -538,8 +543,8 @@ public class PageArmor extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 	}
 	

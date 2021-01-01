@@ -9,13 +9,17 @@ import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Runway {
 	
-	//public static final int[][] currentRunway = { {6, 7}, {4, 9}, {0, 3}, {1, 5}, {10, 8, 2} };
 	public static final String[][] currentRunway = { { "Bravoure", "Sorcier" }, { "Berserker", "Sagesse" }, { "Turbo", "Synthétisation" }, { "Lutte", "Malédiction" }, { "Illusion", "Ranger", "Praetor" } };
 	
 	public static Runway[] data = Loader.getRunway();
 	
 	private String name;
 	private Calculable[] effects;
+	
+	public Runway(Runway runway) {
+		this.name = runway.getName();
+		this.effects = runway.getEffects();
+	}
 	
 	public Runway(String name, Calculable[] effects) {
 		this.name = name;

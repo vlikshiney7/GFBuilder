@@ -26,6 +26,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomDialog;
+import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomSpinner;
 
 public class PageGeneral extends PagePanel implements AdditionalEffect {
@@ -53,6 +54,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private PageGeneral() {
 		super(new GridLayout(3, 2, 10, 10), NUM_PAGE);
+		setLabelAPI();
 		
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleGrade(0));
 		this.grade.addActionListener(e -> {
@@ -118,7 +120,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		
 		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca());
-		this.title = new JCustomComboBox<Title>(new DefaultComboBoxModel<Title>(tabTitle));
+		this.title = new JCustomComboBox<Title>(tabTitle);
 		this.title.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -132,14 +134,14 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		});
 		
 		
-		this.archive = new JCustomComboBox<Archive>(new DefaultComboBoxModel<Archive>(Archive.getData()));
+		this.archive = new JCustomComboBox<Archive>(Archive.getData());
 		this.archive.addActionListener(e -> {
 			setAdditionalEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
 		
-		this.filterDialog = new JCustomDialog(Title.getTags(), Title.getQualities());
+		this.filterDialog = new JCustomDialog(Title.getTags(), Title.getQualities(), true, 5);
 		
 		this.filter = new JCustomButton("filter16");
 		this.filter.setToolTipText("Filtre");
@@ -176,6 +178,16 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	public Archive getArchive() {
 		return this.archive.getSelectedItem();
+	}
+	
+	@Override
+	protected void setLabelAPI() {
+		this.labelAPI = new JCustomLabel[5];
+		this.labelAPI[0] = new JCustomLabel(Grade.CLASS_NAME, Design.TITLE);
+		this.labelAPI[1] = new JCustomLabel(Reinca.CLASS_NAME, Design.TITLE);
+		this.labelAPI[2] = new JCustomLabel(Title.CLASS_NAME, Design.TITLE);
+		this.labelAPI[3] = new JCustomLabel(Yggdrasil.CLASS_NAME, Design.TITLE);
+		this.labelAPI[4] = new JCustomLabel(Archive.CLASS_NAME, Design.TITLE);
 	}
 	
 	@Override
@@ -230,8 +242,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		JPanel panelTitle1 = new JPanel();
 		panelTitle1.setBackground(Design.UIColor[1]);
-		panelTitle1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		panelTitle1.add(this.labelAPI[0]);
 		
 		elem1.add(panelTitle1);
 		elem1.add(this.grade);
@@ -243,8 +254,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		JPanel panelTitle2 = new JPanel();
 		panelTitle2.setBackground(Design.UIColor[1]);
-		panelTitle2.add(this.label[1]);
-		this.label[1].setFont(Design.TITLE);
+		panelTitle2.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		
 		elem2.add(panelTitle2);
 		elem2.add(this.lvl);
@@ -256,8 +267,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		JPanel panelTitle3 = new JPanel();
 		panelTitle3.setBackground(Design.UIColor[1]);
-		panelTitle3.add(this.label[2]);
-		this.label[2].setFont(Design.TITLE);
+		panelTitle3.add(this.labelAPI[1]);
 		
 		elem3.add(panelTitle3);
 		elem3.add(this.reinca);
@@ -269,8 +279,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		JPanel panelTitle4 = new JPanel();
 		panelTitle4.setBackground(Design.UIColor[1]);
-		panelTitle4.add(this.label[3]);
-		this.label[3].setFont(Design.TITLE);
+		panelTitle4.add(this.labelAPI[2]);
 		
 		JPanel filterTitle = new JPanel();
 		filterTitle.setBackground(Design.UIColor[1]);
@@ -287,8 +296,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		JPanel panelTitle5 = new JPanel();
 		panelTitle5.setBackground(Design.UIColor[1]);
-		panelTitle5.add(this.label[4]);
-		this.label[4].setFont(Design.TITLE);
+		panelTitle5.add(this.labelAPI[3]);
 		
 		elem5.add(panelTitle5);
 		elem5.add(this.yggdra);
@@ -300,8 +308,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		JPanel panelTitle6 = new JPanel();
 		panelTitle6.setBackground(Design.UIColor[1]);
-		panelTitle6.add(this.label[5]);
-		this.label[5].setFont(Design.TITLE);
+		panelTitle6.add(this.labelAPI[4]);
 		
 		elem6.add(panelTitle6);
 		elem6.add(this.archive);
@@ -316,8 +323,12 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(JCustomLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(JCustomLabel label : this.labelAPI) {
+			label.updateText(lang);
 		}
 		
 		this.filterDialog.updateLanguage(lang);
@@ -359,7 +370,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private void updateTitle() {
 		Title memory = this.getTitle();
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getFilters(), memory);
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getSearch(), this.filterDialog.getFilters(), memory);
 		
 		this.title.setModel(new DefaultComboBoxModel<Title>(tabTitle));
 		this.title.setSelectedItem(memory);

@@ -65,6 +65,11 @@ public class PageSprite extends PagePanel {
 	public Buff getIsleBuff() {
 		return this.isleBuff.getSelectedItem();
 	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
+	}
 
 	@Override
 	protected void setEffects() {
@@ -89,16 +94,16 @@ public class PageSprite extends PagePanel {
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		elem1.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel panelBlason = new JPanel();
 			panelBlason.setLayout(new BoxLayout(panelBlason, BoxLayout.Y_AXIS));
 			panelBlason.setBackground(Design.UIColor[1]);
-			panelBlason.add(this.label[i+1]);
-			this.label[i+1].setFont(Design.SUBTITLE);
+			panelBlason.add(this.labelGFB[i+1]);
+			this.labelGFB[i+1].setFont(Design.SUBTITLE);
 			panelBlason.add(Box.createVerticalStrut(3));
 			panelBlason.add(this.blason.get(i));
 			panelBlason.add(Box.createVerticalStrut(5));
@@ -110,8 +115,8 @@ public class PageSprite extends PagePanel {
 		elem2.setLayout(new BoxLayout(elem2, BoxLayout.Y_AXIS));
 		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem2.setBackground(Design.UIColor[1]);
-		elem2.add(this.label[3]);
-		this.label[3].setFont(Design.TITLE);
+		elem2.add(this.labelGFB[3]);
+		this.labelGFB[3].setFont(Design.TITLE);
 		elem2.add(Box.createVerticalStrut(10));
 		elem2.add(this.isleBuff);
 		
@@ -122,8 +127,8 @@ public class PageSprite extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 	}
 	

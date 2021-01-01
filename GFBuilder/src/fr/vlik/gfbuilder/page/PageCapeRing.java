@@ -182,6 +182,11 @@ public class PageCapeRing extends PagePanel {
 	public Integer getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
+	
+	@Override
+	protected void setLabelAPI() {
+		
+	}
 
 	@Override
 	protected void setEffects() {
@@ -317,8 +322,8 @@ public class PageCapeRing extends PagePanel {
 		
 		JPanel xpCape = new JPanel(new GridLayout(1, 3, 10, 3));
 		xpCape.setBackground(Design.UIColor[1]);
-		xpCape.add(this.label[1]);
-		this.label[1].setFont(Design.SUBTITLE);
+		xpCape.add(this.labelGFB[1]);
+		this.labelGFB[1].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
@@ -332,8 +337,8 @@ public class PageCapeRing extends PagePanel {
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		elem1.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(descCape);
 		elem1.add(Box.createVerticalStrut(5));
@@ -352,8 +357,8 @@ public class PageCapeRing extends PagePanel {
 			
 			JPanel xpRing = new JPanel(new GridLayout(1, 3, 10, 3));
 			xpRing.setBackground(Design.UIColor[1]);
-			xpRing.add(this.label[i+4]);
-			this.label[i+4].setFont(Design.SUBTITLE);
+			xpRing.add(this.labelGFB[i+4]);
+			this.labelGFB[i+4].setFont(Design.SUBTITLE);
 			
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
@@ -367,8 +372,8 @@ public class PageCapeRing extends PagePanel {
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.label[i+2]);
-			this.label[i+2].setFont(Design.TITLE);
+			elemI.add(this.labelGFB[i+2]);
+			this.labelGFB[i+2].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(descRing);
 			elemI.add(Box.createVerticalStrut(5));
@@ -390,8 +395,8 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 	}
 	

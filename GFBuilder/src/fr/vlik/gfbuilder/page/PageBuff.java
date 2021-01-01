@@ -178,6 +178,11 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
+	protected void setLabelAPI() {
+		
+	}
+	
+	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
@@ -238,17 +243,17 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem1.setLayout(new BoxLayout(page11Elem1, BoxLayout.Y_AXIS));
 		page11Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem1.setBackground(Design.UIColor[1]);
-		page11Elem1.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		page11Elem1.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.TITLE);
 		page11Elem1.add(Box.createVerticalStrut(10));
 		
 		
 		for(int i = 0; i < 6; i++) {
 			JPanel nucleus = new JPanel();
 			nucleus.setBackground(Design.UIColor[1]);
-			nucleus.add(this.label[i+1]);
-			this.label[i+1].setFont(Design.SUBTITLE);
-			this.label[i+1].setPreferredSize(new Dimension(60, 20));
+			nucleus.add(this.labelGFB[i+1]);
+			this.labelGFB[i+1].setFont(Design.SUBTITLE);
+			this.labelGFB[i+1].setPreferredSize(new Dimension(60, 20));
 			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
 			nucleus.add(this.nucleus.get(i));
 			nucleus.add(Box.createVerticalStrut(5));
@@ -277,8 +282,8 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem2.setLayout(new BoxLayout(page11Elem2, BoxLayout.Y_AXIS));
 		page11Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem2.setBackground(Design.UIColor[1]);
-		page11Elem2.add(this.label[7]);
-		this.label[7].setFont(Design.TITLE);
+		page11Elem2.add(this.labelGFB[7]);
+		this.labelGFB[7].setFont(Design.TITLE);
 		page11Elem2.add(Box.createVerticalStrut(10));
 		page11Elem2.add(energies);
 		
@@ -318,13 +323,13 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
 		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem3.setBackground(Design.UIColor[1]);
-		page11Elem3.add(this.label[8]);
-		this.label[8].setFont(Design.TITLE);
+		page11Elem3.add(this.labelGFB[8]);
+		this.labelGFB[8].setFont(Design.TITLE);
 		page11Elem3.add(Box.createVerticalStrut(10));
 		page11Elem3.add(blocBuffGuild);
 		page11Elem3.add(Box.createVerticalStrut(10));
-		page11Elem3.add(this.label[9]);
-		this.label[9].setFont(Design.SUBTITLE);
+		page11Elem3.add(this.labelGFB[9]);
+		this.labelGFB[9].setFont(Design.SUBTITLE);
 		page11Elem3.add(Box.createVerticalStrut(5));
 		page11Elem3.add(this.guildBuff);
 		
@@ -356,13 +361,13 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		page11Elem4.setLayout(new BoxLayout(page11Elem4, BoxLayout.Y_AXIS));
 		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
 		page11Elem4.setBackground(Design.UIColor[1]);
-		page11Elem4.add(this.label[10]);
-		this.label[10].setFont(Design.TITLE);
+		page11Elem4.add(this.labelGFB[10]);
+		this.labelGFB[10].setFont(Design.TITLE);
 		page11Elem4.add(Box.createVerticalStrut(10));
 		page11Elem4.add(blocStone);
 		page11Elem4.add(Box.createVerticalStrut(10));
-		page11Elem4.add(this.label[11]);
-		this.label[11].setFont(Design.SUBTITLE);
+		page11Elem4.add(this.labelGFB[11]);
+		this.labelGFB[11].setFont(Design.SUBTITLE);
 		page11Elem4.add(Box.createVerticalStrut(5));
 		page11Elem4.add(this.stone);
 		
@@ -380,8 +385,8 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(int i = 0; i < this.labelGFB.length; i++) {
+			this.labelGFB[i].updateText(lang);
 		}
 		
 		for(int i = 0; i < this.labelEnergy.size(); i++) {

@@ -45,6 +45,9 @@ public class Condition implements Calculable {
 		LOUP("Loup", "Wolf"),
 		SINGE("Singe", "Monkey"),
 		
+		SANCTU1("Sanctuaire Forêt", "Forest Sanctuary"),
+		SANCTU2("Sanctuaire Sable", "Sand Sanctuary"),
+		
 		;
 		
 		public final String fr;
