@@ -25,11 +25,9 @@ import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.equipable.Weapon;
-import fr.vlik.uidesign.JCustomButton;
 
-public class SaveConfig extends JCustomButton {
+public class SaveConfig {
 	
-	private static final long serialVersionUID = 1L;
 	private static final String SAVE_FOLDER_NAME = "GFBuilderSave";
 	private static final String EXTENSION = ".gfb";
 	private static final String CUSTOM_FILENAME = "CustomEquipmentCreation.gfbc";
@@ -151,8 +149,6 @@ public class SaveConfig extends JCustomButton {
 						line = reader.readLine();
 					}
 					
-					
-					// TODO A corriger, le header peut être null --> CRASH UTILISATEUR PREMIER LANCEMENT
 					SaveConfig.data.add(new SaveConfig(header[0], Language.valueOf(header[1]), build));
 				} catch (IOException e) {
 					System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");

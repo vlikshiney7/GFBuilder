@@ -34,7 +34,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	private Grade currentGrade;
 	private int currentLvl;
 	
-	private ArrayList<JCustomLabel> skillNatif = new ArrayList<JCustomLabel>(5);
+	private ArrayList<JCustomLabel<Skill>> skillNatif = new ArrayList<JCustomLabel<Skill>>(5);
 	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
 	private JCustomComboBox<ProSkill> proSkill;
 	
@@ -54,8 +54,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		this.currentLvl = PageGeneral.getInstance().getLvl();
 		
 		for(int i = 0; i < 5; i++) {
-			this.skillNatif.add(new JCustomLabel());
-			this.skillNatif.get(i).setPreferredSize(new Dimension(250, 32));
+			this.skillNatif.add(new JCustomLabel<Skill>(null));
+			this.skillNatif.get(i).setPreferredSize(new Dimension(380, 32));
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -105,8 +105,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {
-				if(this.skillNatif.get(i).getEffects() != null) {
-					for(Calculable c : this.skillNatif.get(i).getEffects()) {
+				if(this.skillNatif.get(i).getItem().getEffects() != null) {
+					for(Calculable c : this.skillNatif.get(i).getItem().getEffects()) {
 						if(c instanceof Effect) {
 							Effect e = (Effect) c;
 							if(e.getTransfert() == null) {
@@ -213,13 +213,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		int count = 0;
 		boolean isProgressUpdate = false;
 		
-		/*if(this.currentGrade.getGrade() == grade.getGrade() && this.currentLvl == lvl) {
-			return;
-		} else {
-			this.currentGrade = grade;
-			this.currentLvl = lvl;
-		}*/
-		
 		if(lvl < 6) {
 			this.showAndHide.get(0).setVisible(false);
 		} else {
@@ -237,7 +230,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 					maxLvlIndex++;
 				}
 				
-				this.skillNatif.get(count).setObject(skill, maxLvlIndex);
+				this.skillNatif.get(count).setItem(new Skill(skill, maxLvlIndex));
 				this.skillNatif.get(count).setVisible(true);
 				count++;
 			} else {
@@ -246,11 +239,15 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 				lvlSkill.add(new Skill(skill.getName() + " non acquis"));
 				
 				for(int i = 0; i < skill.getLvl().length; i++) {
-					if(skill.getLvl()[i] <= lvl) lvlSkill.add(new Skill(skill, i));
+					if(skill.getLvl()[i] <= lvl) {
+						lvlSkill.add(new Skill(skill, i));
+					}
 				}
 				
 				Skill[] tabSkill = new Skill[lvlSkill.size()];
-				for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
+				for(int i = 0; i < tabSkill.length; i++) {
+					tabSkill[i] = lvlSkill.get(i);
+				}
 				
 				Skill memory = this.getSkill(0);
 				this.skillProgress.get(0).setModel(new DefaultComboBoxModel<Skill>(tabSkill));

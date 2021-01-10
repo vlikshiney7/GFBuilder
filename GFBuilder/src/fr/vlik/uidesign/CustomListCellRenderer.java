@@ -40,7 +40,7 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 			FullRenderer full = (FullRenderer) value;
 			renderer.setForeground(full.getColor());
 			renderer.setIcon(full.getIcon());
-			renderer.setText(full.getInfo(lang));
+			renderer.setText(full.getInfo(CustomListCellRenderer.lang));
 			renderer.setToolTipText(full.getTooltip());
 		} else {
 			if(value instanceof Colorable) {

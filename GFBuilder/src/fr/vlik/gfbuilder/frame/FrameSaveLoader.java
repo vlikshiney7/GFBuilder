@@ -20,7 +20,7 @@ import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveLoader extends JFrame {
 	
@@ -32,7 +32,7 @@ public class FrameSaveLoader extends JFrame {
 	private JCustomButton delete;
 	private JCustomButton cancel;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	
 	public static FrameSaveLoader getInstance() {
 		return INSTANCE;
@@ -60,7 +60,7 @@ public class FrameSaveLoader extends JFrame {
 			}
 		});
 		
-		this.load = new JCustomButton(this.label[1], Design.GREEN_COLOR);
+		this.load = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
 		this.load.addActionListener(e -> {
 			PageOption.getInstance().updateSave();
 			MainFrame.getInstance().updateStat();
@@ -69,7 +69,7 @@ public class FrameSaveLoader extends JFrame {
 			close();
 		});
 		
-		this.delete = new JCustomButton(this.label[2], Design.RED_COLOR);
+		this.delete = new JCustomButton(this.label[2].getLang(), Design.RED_COLOR);
 		this.delete.addActionListener(e -> {
 			SaveConfig.deleteData(PageOption.getInstance().getSave());
 			PageOption.getInstance().refreshSave();
@@ -77,7 +77,7 @@ public class FrameSaveLoader extends JFrame {
 			close();
 		});
 		
-		this.cancel = new JCustomButton(this.label[3], Design.YELLOW_COLOR);
+		this.cancel = new JCustomButton(this.label[3].getLang(), Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> {
 			close();
 		});

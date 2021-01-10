@@ -20,7 +20,7 @@ import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveOnNew extends JFrame {
 
@@ -31,7 +31,7 @@ public class FrameSaveOnNew extends JFrame {
 	private JCustomButton notSave;
 	private JCustomButton cancel;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	
 	public static FrameSaveOnNew getInstance() {
 		return INSTANCE;
@@ -59,7 +59,7 @@ public class FrameSaveOnNew extends JFrame {
 			}
 		});
 		
-		this.save = new JCustomButton(this.label[1], Design.GREEN_COLOR);
+		this.save = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
 		this.save.addActionListener(e -> {
 			PageOption.getInstance().overrideSave();
 			
@@ -69,7 +69,7 @@ public class FrameSaveOnNew extends JFrame {
 			close();
 		});
 		
-		this.notSave = new JCustomButton(this.label[2], Design.RED_COLOR);
+		this.notSave = new JCustomButton(this.label[2].getLang(), Design.RED_COLOR);
 		this.notSave.addActionListener(e -> {
 			Overlay.getInstance().setNameSave(SaveConfig.DEFAULT_NAME);
 			Overlay.getInstance().setSave(false);
@@ -77,7 +77,7 @@ public class FrameSaveOnNew extends JFrame {
 			close();
 		});
 		
-		this.cancel = new JCustomButton(this.label[3], Design.YELLOW_COLOR);
+		this.cancel = new JCustomButton(this.label[3].getLang(), Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> {
 			MainFrame.getInstance().toFront();
 			MainFrame.getInstance().setEnabled(true);

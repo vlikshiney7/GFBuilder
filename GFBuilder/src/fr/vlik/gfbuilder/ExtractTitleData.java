@@ -150,7 +150,7 @@ public class ExtractTitleData {
 	
 	private static void readTitleTW() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/C_Title.ini"), "UTF-8"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/C_Title.ini"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {
@@ -169,7 +169,7 @@ public class ExtractTitleData {
 	
 	private static void readMissionEU() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/C_Mission.ini"), "UTF-8"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/C_Mission.ini"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {
@@ -209,7 +209,7 @@ public class ExtractTitleData {
 	
 	private static void readTitleEU() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/T_Title.ini"), "Cp1252"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/T_Title.ini"), "Cp1252"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {

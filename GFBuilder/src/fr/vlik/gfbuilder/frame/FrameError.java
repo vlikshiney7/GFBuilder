@@ -15,14 +15,14 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomTextPane;
 
 public class FrameError extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	private JCustomTextPane zoneError;
 	
 	public FrameError(final Throwable error) {

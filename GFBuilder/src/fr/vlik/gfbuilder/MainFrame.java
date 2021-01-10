@@ -60,6 +60,7 @@ import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomTabPane;
+import fr.vlik.uidesign.JLangLabel;
 
 public class MainFrame extends JFrame {
 	
@@ -74,7 +75,7 @@ public class MainFrame extends JFrame {
 	private JScrollPane scrollContent;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
 	
-	private ArrayList<JCustomLabel> labelStat = new ArrayList<JCustomLabel>(TypeEffect.values().length);
+	private ArrayList<JCustomLabel<TypeEffect>> labelStat = new ArrayList<JCustomLabel<TypeEffect>>(TypeEffect.values().length);
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
@@ -278,7 +279,7 @@ public class MainFrame extends JFrame {
 			blocStat.setBackground(Design.UIColor[1]);
 			blocStat.setSize(new Dimension(sizeStat, 25));
 			
-			blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
+			blocStat.add(JLangLabel.getEmptyLabel(7, sizeStat));
 			
 			for(int j = 0; j < section[i]; j++) {
 				JPanel inline = new JPanel();
@@ -288,12 +289,12 @@ public class MainFrame extends JFrame {
 				inline.setOpaque(false);
 				inline.setAlignmentX(LEFT_ALIGNMENT);
 				
-				JCustomLabel name = new JCustomLabel(TypeEffect.values()[ordinal], Language.FR);
+				JCustomLabel<TypeEffect> name = new JCustomLabel<TypeEffect>(TypeEffect.values()[ordinal]);
 				name.toStatLabel(widthName[i], 10, 0);
 				
 				this.labelStat.add(name);
 				
-				JLabel stat = JCustomLabel.getStatLabel(sizeStat - widthName[i], 0, 10);
+				JLabel stat = JLangLabel.getStatLabel(sizeStat - widthName[i], 0, 10);
 				stat.setText("0");
 				stat.setForeground(TypeEffect.values()[ordinal].color);
 				stat.setHorizontalAlignment(JLabel.RIGHT);
@@ -307,7 +308,7 @@ public class MainFrame extends JFrame {
 				ordinal++;
 			}
 			
-			blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
+			blocStat.add(JLangLabel.getEmptyLabel(7, sizeStat));
 			
 			stats.add(blocStat);
 		}
@@ -318,7 +319,7 @@ public class MainFrame extends JFrame {
 		blocStat.setBackground(Design.UIColor[1]);
 		blocStat.setSize(new Dimension(sizeStat, 25));
 		
-		blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
+		blocStat.add(JLangLabel.getEmptyLabel(7, sizeStat));
 		
 		while(ordinal < TypeEffect.values().length) {
 			JPanel inline = new JPanel();
@@ -328,12 +329,12 @@ public class MainFrame extends JFrame {
 			inline.setOpaque(false);
 			inline.setAlignmentX(LEFT_ALIGNMENT);
 			
-			JCustomLabel name = new JCustomLabel(TypeEffect.values()[ordinal], Language.FR);
+			JCustomLabel<TypeEffect> name = new JCustomLabel<TypeEffect>(TypeEffect.values()[ordinal]);
 			name.toStatLabel(widthName[5], 10, 0);
 			
 			this.labelStat.add(name);
 			
-			JLabel stat = JCustomLabel.getStatLabel(sizeStat - widthName[5], 0, 10);
+			JLabel stat = JLangLabel.getStatLabel(sizeStat - widthName[5], 0, 10);
 			stat.setText("0");
 			stat.setForeground(TypeEffect.values()[ordinal].color);
 			stat.setHorizontalAlignment(JLabel.RIGHT);
@@ -347,7 +348,7 @@ public class MainFrame extends JFrame {
 			ordinal++;
 		}
 		
-		blocStat.add(JCustomLabel.getEmptyLabel(7, sizeStat));
+		blocStat.add(JLangLabel.getEmptyLabel(7, sizeStat));
 		
 		stats.add(blocStat);
 		

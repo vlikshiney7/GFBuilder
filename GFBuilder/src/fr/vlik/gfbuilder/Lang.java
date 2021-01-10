@@ -8,19 +8,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JLangLabel;
 
 public class Lang {
 	
-	private static JCustomLabel[] dataPane;
-	private static JCustomLabel[][] dataLabel;
+	private static JLangLabel[] dataPane;
+	private static JLangLabel[][] dataLabel;
 	private static String[][] dataCredit;
 	static {
 		loadData();
 	}
 	
 	public static void loadData() {
-		ArrayList<ArrayList<JCustomLabel>> list = new ArrayList<ArrayList<JCustomLabel>>();
+		ArrayList<ArrayList<JLangLabel>> list = new ArrayList<ArrayList<JLangLabel>>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -29,7 +30,7 @@ public class Lang {
 			
 			int lineCount = 0;
 			while(line != null) {
-				list.add(new ArrayList<JCustomLabel>());
+				list.add(new ArrayList<JLangLabel>());
 				
 				String[] lineSplit = line.split("/");
 				
@@ -40,7 +41,7 @@ public class Lang {
 					lang.put(Language.FR, trad[0]);
 					lang.put(Language.EN, trad[1]);
 					
-					list.get(lineCount).add(new JCustomLabel(lang));
+					list.get(lineCount).add(new JLangLabel(lang, Design.TEXT));
 				}
 				lineCount++;
 				line = reader.readLine();
@@ -71,8 +72,8 @@ public class Lang {
 			System.out.println("Error with " + Lang.class.getClass().getSimpleName() + " class, File credit.txt");
 		}
 		
-		Lang.dataLabel = new JCustomLabel[list.size()-1][];
-		Lang.dataPane = new JCustomLabel[list.get(0).size()];
+		Lang.dataLabel = new JLangLabel[list.size()-1][];
+		Lang.dataPane = new JLangLabel[list.get(0).size()];
 		Lang.dataCredit = new String[credit.size()][credit.get(0).size()];
 		
 		for(int i = 0; i < list.size(); i++) {
@@ -81,7 +82,7 @@ public class Lang {
 					Lang.dataPane[j] = list.get(i).get(j);
 				}
 			} else {
-				JCustomLabel[] pageOrFrame = new JCustomLabel[list.get(i).size()];
+				JLangLabel[] pageOrFrame = new JLangLabel[list.get(i).size()];
 				for(int j = 0; j < list.get(i).size(); j++) {
 					pageOrFrame[j] = list.get(i).get(j);
 				}
@@ -97,11 +98,11 @@ public class Lang {
 		}
 	}
 	
-	public static JCustomLabel[] getDataLabel(int page) {
+	public static JLangLabel[] getDataLabel(int page) {
 		return Lang.dataLabel[page];
 	}
 	
-	public static JCustomLabel[] getDataPane() {
+	public static JLangLabel[] getDataPane() {
 		return Lang.dataPane;
 	}
 	

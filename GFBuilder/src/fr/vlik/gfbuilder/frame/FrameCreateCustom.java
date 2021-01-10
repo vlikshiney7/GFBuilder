@@ -41,29 +41,30 @@ import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomSpinner;
+import fr.vlik.uidesign.JLangLabel;
+import fr.vlik.uidesign.JLangRadioButton;
 
 public class FrameCreateCustom extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final FrameCreateCustom INSTANCE = new FrameCreateCustom();
 	
-	private ArrayList<JCustomRadioButton> typeEquipment = new ArrayList<JCustomRadioButton>(4);
+	private ArrayList<JLangRadioButton> typeEquipment = new ArrayList<JLangRadioButton>(4);
 	
 	private JCustomSpinner lvl;
 	private JCustomComboBox<WeaponType> typeWeapon;
 	private JCustomComboBox<ArmorType> typeArmor;
 	private JCustomComboBox<Grade> grade;
-	private ArrayList<JCustomRadioButton> quality = new ArrayList<JCustomRadioButton>(3);
+	private ArrayList<JCustomRadioButton<Quality>> quality = new ArrayList<JCustomRadioButton<Quality>>(3);
 	
 	private JCustomComboBox<CustomEquipment> customEquipment;
 	private ArrayList<JCustomComboBox<Enchantment>> enchantement = new ArrayList<JCustomComboBox<Enchantment>>(6);
 	
 	private JCustomButton create;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	
 	public static FrameCreateCustom getInstance() {
 		return INSTANCE;
@@ -95,7 +96,7 @@ public class FrameCreateCustom extends JFrame {
 		for(int i = 0; i < 4; i++) {
 			int id = i;
 			this.label[i+1].setFont(Design.TEXT);
-			this.typeEquipment.add(new JCustomRadioButton(this.label[i+1], "radio01", "radioOff"));
+			this.typeEquipment.add(new JLangRadioButton(this.label[i+1].getLang()));
 			this.typeEquipment.get(i).setBackground(Design.UIColor[1]);
 			this.typeEquipment.get(i).setForeground(Design.FontColor[0]);
 			this.typeEquipment.get(i).addActionListener(e -> {
@@ -148,9 +149,7 @@ public class FrameCreateCustom extends JFrame {
 		});
 		
 		for(int i = 0; i < 3; i++) {
-			JCustomLabel quality = new JCustomLabel(Quality.values()[i+1], Language.FR);
-			quality.setFont(Design.TEXT);
-			this.quality.add(new JCustomRadioButton(quality, "radio0" + (i+1), "radioOff"));
+			this.quality.add(new JCustomRadioButton<Quality>(Quality.values()[i+1]));
 			this.quality.get(i).addActionListener(e -> {
 				updateNbEnchant();
 				updateEnchant();
@@ -175,7 +174,7 @@ public class FrameCreateCustom extends JFrame {
 			this.enchantement.get(i).setVisible(false);
 		}
 		
-		this.create = new JCustomButton(this.label[8], Design.GREEN_COLOR);
+		this.create = new JCustomButton(this.label[8].getLang(), Design.GREEN_COLOR);
 		this.create.setAlignmentX(CENTER_ALIGNMENT);
 		this.create.addActionListener(e -> {
 			createEquipment();
@@ -299,11 +298,11 @@ public class FrameCreateCustom extends JFrame {
 		
 		this.create.updateText(lang);
 		
-		for(JCustomRadioButton button : this.typeEquipment) {
+		for(JLangRadioButton button : this.typeEquipment) {
 			button.updateText(lang);
 		}
 		
-		for(JCustomRadioButton button : this.quality) {
+		for(JCustomRadioButton<Quality> button : this.quality) {
 			button.updateText(lang);
 		}
 	}

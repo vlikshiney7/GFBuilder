@@ -2,6 +2,10 @@ package fr.vlik.uidesign;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.HashMap;
+import java.util.Map;
+
+import fr.vlik.grandfantasia.Tools;
 
 public class Design {
 	
@@ -17,4 +21,17 @@ public class Design {
 	public static final Color[] RED_COLOR = { new Color(75, 27, 29), new Color(97, 24, 26), new Color(53, 30, 33) };
 	public static final Color[] YELLOW_COLOR = { new Color(75, 77, 29), new Color(97, 99, 26), new Color(53, 55, 33) };
 	public static final Color[] GREEN_COLOR = { new Color(25, 77, 36), new Color(22, 99, 35), new Color(28, 55, 36) };
+	
+	@SuppressWarnings("serial")
+	public static final Map<Color, String> iconLink = new HashMap<Color, String>() {{
+		put(Tools.itemColor[0], "0");
+		put(Tools.itemColor[1], "1");
+		put(Tools.itemColor[2], "2");
+		put(Tools.itemColor[3], "3");
+		put(Tools.itemColor[4], "4");
+		put(Tools.itemColor[5], "5");
+		put(Tools.itemColor[6], "6");
+		put(Tools.itemColor[7], "7");
+		put(Tools.titleColor[8], "8");
+	}};
 }

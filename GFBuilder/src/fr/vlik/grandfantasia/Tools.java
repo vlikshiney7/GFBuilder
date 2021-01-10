@@ -49,6 +49,10 @@ public class Tools {
 		key = Tools.simplifyString(key);
 		name = Tools.simplifyString(name);
 		
+		if(key.equals("")) {
+			return false;
+		}
+		
 		return name.matches(".*(" + key + ").*");
 	}
 	

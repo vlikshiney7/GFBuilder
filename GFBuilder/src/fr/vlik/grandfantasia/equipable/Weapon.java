@@ -307,7 +307,7 @@ public class Weapon extends Equipment {
 						
 						list.get(i).add(weapon);
 						
-						if(i == 3) {
+						if(i == 5) {
 							System.out.println(weapon.toCode(path));
 						}
 					}

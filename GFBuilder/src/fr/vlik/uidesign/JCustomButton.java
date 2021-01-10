@@ -3,6 +3,8 @@ package fr.vlik.uidesign;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -17,67 +19,75 @@ import fr.vlik.grandfantasia.enums.Language;
 public class JCustomButton extends JButton {
 	
 	private static final long serialVersionUID = 1L;
-	private JCustomLabel label;
+	
+	private Map<Language, String> lang = new HashMap<Language, String>();
 	
 	private Color hoverBackgroundColor;
 	private Color pressedBackgroundColor;
-
-	public JCustomButton() {
-		setBlackUI();
-	}
 	
-	public JCustomButton(String iconName) {
-		setVoidUI();
-		
-		try {
-			this.setIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/" + iconName + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconName + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconName + ".png");
-		}
-		
-		this.setBorderPainted(true);
-		this.setBorder(new LineBorder(Design.UIColor[3], 2));
-		setColorUI(Design.GREY_COLOR);
-	}
-	
-	public JCustomButton(JCustomLabel label) {
-		this.label = label;
-		this.setSize(100, 40);
-		
-		setColorUI(Design.GREY_COLOR);
-		setBlackUI();
-	}
-	
-	public JCustomButton(JCustomLabel label, Color[] color) {
-		this.label = label;
-		this.setSize(100, 40);
+	public JCustomButton(Map<Language, String> lang, Color[] color) {
+		this.lang = lang;
 		
 		setColorUI(color);
 		setBlackUI();
+		updateText(Language.FR);
 	}
 	
-	public JCustomButton(ImageIcon imageIcon) {
-		super(imageIcon);
-		
-		try {
-			this.setPressedIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/crossPress.png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : crossPress.png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : crossPress.png");
-		}
-		
-		try {
-			this.setRolloverIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/crossHover.png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : crossPress.png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : crossPress.png");
-		}
-		
+	public JCustomButton(String iconBase, String iconPress, String iconHover) {
 		setVoidUI();
+		
+		setIcon(iconBase);
+		setPressedIcon(iconPress);
+		setRolloverIcon(iconHover);
+	}
+	
+	public JCustomButton(String iconBase, String iconPress, String iconHover, Color[] color) {
+		setVoidUI();
+		
+		setIcon(iconBase);
+		setPressedIcon(iconPress);
+		setRolloverIcon(iconHover);
+		
+		setColorUI(color);
+	}
+	
+	public void setIcon(String icon) {
+		try {
+			this.setIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/button/" + icon + ".png"))));
+		} catch (IOException e) {
+			System.out.println("Image non chargé : " + icon + ".png");
+		} catch (IllegalArgumentException e) {
+			System.out.println("Image introuvable : " + icon + ".png");
+		}
+	}
+	
+	public void setPressedIcon(String iconPress) {
+		try {
+			this.setPressedIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/button/" + iconPress + ".png"))));
+		} catch (IOException e) {
+			System.out.println("Image non chargé : " + iconPress + ".png");
+		} catch (IllegalArgumentException e) {
+			System.out.println("Image introuvable : " + iconPress + ".png");
+		}
+	}
+	
+	public void setRolloverIcon(String iconHover) {
+		try {
+			this.setRolloverIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/button/" + iconHover + ".png"))));
+		} catch (IOException e) {
+			System.out.println("Image non chargé : " + iconHover + ".png");
+		} catch (IllegalArgumentException e) {
+			System.out.println("Image introuvable : " + iconHover + ".png");
+		}
+	}
+	
+	public void setBorder(Color color) {
+		this.setBorderPainted(true);
+		this.setBorder(new LineBorder(color, 2));
+	}
+	
+	public void updateText(Language lang) {
+		this.setText(this.lang.get(lang));
 	}
 	
 	public void setBlackUI() {
@@ -91,7 +101,7 @@ public class JCustomButton extends JButton {
 	
 	public void setVoidUI() {
 		this.setBackground(Design.UIColor[0]);
-		this.setBorder(null);
+		super.setBorder(null);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
 	}
@@ -129,10 +139,5 @@ public class JCustomButton extends JButton {
 
 	public void setPressedBackgroundColor(Color pressedBackgroundColor) {
 		this.pressedBackgroundColor = pressedBackgroundColor;
-	}
-	
-	public void updateText(Language lang) {
-		this.label.updateText(lang);
-		this.setText(this.label.getText());
 	}
 }

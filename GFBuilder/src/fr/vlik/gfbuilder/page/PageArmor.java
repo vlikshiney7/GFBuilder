@@ -35,7 +35,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JCustomTextPane;
 
@@ -62,7 +62,7 @@ public class PageArmor extends PagePanel {
 	private ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>(15);
 	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(15);
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(5);
-	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>(5);
+	private ArrayList<JLangLabel> labelValue = new ArrayList<JLangLabel>(5);
 	
 	private JPanel showAndHide = new JPanel();
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(5);
@@ -154,7 +154,7 @@ public class PageArmor extends PagePanel {
 			});
 			this.valueFortif.get(i).setVisible(false);
 			
-			this.labelValue.add(new JCustomLabel());
+			this.labelValue.add(new JLangLabel());
 			this.labelValue.get(i).setVisible(false);
 			
 			

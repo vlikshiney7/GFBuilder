@@ -10,15 +10,15 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 
 public abstract class PagePanel extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
 	protected ArrayList<Calculable> effects;
-	protected JCustomLabel[] labelGFB;
-	protected JCustomLabel[] labelAPI;
+	protected JLangLabel[] labelGFB;
+	protected JLangLabel[] labelAPI;
 	
 	public PagePanel(int caseTabLabel) {
 		super();

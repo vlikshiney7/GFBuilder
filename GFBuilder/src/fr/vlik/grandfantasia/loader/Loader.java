@@ -18,6 +18,7 @@ import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.ProSkill;
 import fr.vlik.grandfantasia.RedFortification;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Ride;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.Speciality;
 import fr.vlik.grandfantasia.Talent;
@@ -1217,6 +1218,10 @@ public class Loader {
 	
 	public static Pearl[] getArmorCostPearl() {
 		return LoaderPearl.getArmorCost();
+	}
+	
+	public static Ride[] getRide() {
+		return LoaderRide.getRide();
 	}
 	
 	public static Talent[][] getTalent() {

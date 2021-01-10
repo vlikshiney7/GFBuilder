@@ -28,7 +28,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
-import fr.vlik.uidesign.JCustomRadioButton;
+import fr.vlik.uidesign.JLangRadioButton;
 
 public class PageTalent extends PagePanel {
 
@@ -40,9 +40,9 @@ public class PageTalent extends PagePanel {
 	private Grade currentGrade;
 	
 	private JLabel[] tabChosenTalent = new JLabel[9];
-	private ArrayList<ArrayList<JCustomRadioButton>> radioTalent = new ArrayList<ArrayList<JCustomRadioButton>>(8);
+	private ArrayList<ArrayList<JLangRadioButton>> radioTalent = new ArrayList<ArrayList<JLangRadioButton>>(8);
 	private ArrayList<JCustomComboBox<Talent>> talent = new ArrayList<JCustomComboBox<Talent>>(24);
-	private JCustomLabel combiTalent = new JCustomLabel(new CombiTalent(), Language.FR);
+	private JCustomLabel<CombiTalent> combiTalent = new JCustomLabel<CombiTalent>(new CombiTalent());
 	
 	private JCustomButton reinitTalent;
 	private JCustomButton maxTalent;
@@ -52,7 +52,7 @@ public class PageTalent extends PagePanel {
 	public static PageTalent getInstance() {
 		return INSTANCE;
 	}
-
+	
 	private PageTalent() {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -68,8 +68,8 @@ public class PageTalent extends PagePanel {
 				
 				int id = i*4+j;
 				try {
-					this.radioTalent.add(new ArrayList<JCustomRadioButton>());
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossTalent.png")))));
+					this.radioTalent.add(new ArrayList<JLangRadioButton>());
+					this.radioTalent.get(i*4+j).add(new JLangRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossTalent.png")))));
 					this.radioTalent.get(i*4+j).get(0).setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(0).addActionListener(e -> {
 						updateSelectedTalent(id);
@@ -101,7 +101,7 @@ public class PageTalent extends PagePanel {
 						MainFrame.getInstance().updateStat();
 					});
 					
-					this.radioTalent.get(i*4+j).add(new JCustomRadioButton(Talent.getData()[this.currentGrade.getGrade().index][i*12+j*3+k].getIcon()));
+					this.radioTalent.get(i*4+j).add(new JLangRadioButton(Talent.getData()[this.currentGrade.getGrade().index][i*12+j*3+k].getIcon()));
 					this.radioTalent.get(i*4+j).get(k+1).setBackground(Design.UIColor[0]);
 					this.radioTalent.get(i*4+j).get(k+1).addActionListener(e -> {
 						updateSelectedTalent(id);
@@ -114,12 +114,12 @@ public class PageTalent extends PagePanel {
 			}
 		}
 
-		this.reinitTalent = new JCustomButton(this.labelGFB[11], Design.RED_COLOR);
+		this.reinitTalent = new JCustomButton(this.labelGFB[11].getLang(), Design.RED_COLOR);
 		this.reinitTalent.addActionListener(e -> {
 			setMinCBoxTalent();
 		});
 
-		this.maxTalent = new JCustomButton(this.labelGFB[12], Design.GREEN_COLOR);
+		this.maxTalent = new JCustomButton(this.labelGFB[12].getLang(), Design.GREEN_COLOR);
 		this.maxTalent.addActionListener(e -> {
 			setMaxCBoxTalent();
 		});
@@ -133,7 +133,11 @@ public class PageTalent extends PagePanel {
 		return this.talent.get(id).getSelectedItem();
 	}
 	
-	public ArrayList<JCustomRadioButton> getRadioButton(int index) {
+	public CombiTalent getCombiTalent() {
+		return this.combiTalent.getItem();
+	}
+	
+	public ArrayList<JLangRadioButton> getRadioButton(int index) {
 		return this.radioTalent.get(index);
 	}
 	
@@ -160,8 +164,8 @@ public class PageTalent extends PagePanel {
 			}
 		}
 		
-		if(this.combiTalent.getEffects() != null) {
-			for(Calculable c : this.combiTalent.getEffects()) {
+		if(this.getCombiTalent().getEffects() != null) {
+			for(Calculable c : this.getCombiTalent().getEffects()) {
 				list.add(c);
 			}
 		}
@@ -337,7 +341,7 @@ public class PageTalent extends PagePanel {
 	
 	private void updateSelectedTalent(int index) {
 		Grade grade = PageGeneral.getInstance().getGrade();
-		ArrayList<JCustomRadioButton> radio = this.radioTalent.get(index);
+		ArrayList<JLangRadioButton> radio = this.radioTalent.get(index);
 		for(int i = 0; i < radio.size(); i++) {
 			if(radio.get(i).isSelected()) {
 				if(i == 0 || this.talent.get(index*3+i-1).getSelectedIndex() == 0) {
@@ -360,7 +364,7 @@ public class PageTalent extends PagePanel {
 				}
 			}
 		}
-		this.combiTalent.setObject(CombiTalent.getCombiTalent(grade.getGrade(), currentCode));
+		this.combiTalent.setItem(CombiTalent.getCombiTalent(grade.getGrade(), currentCode));
 		this.combiTalent.setVisible(true);
 	}
 	
@@ -403,7 +407,7 @@ public class PageTalent extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.radioTalent.size(); i++) {
-			ArrayList<JCustomRadioButton> buttons = this.radioTalent.get(i);
+			ArrayList<JLangRadioButton> buttons = this.radioTalent.get(i);
 			int select = 3;
 			
 			while(select > 0) {
@@ -427,7 +431,7 @@ public class PageTalent extends PagePanel {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.radioTalent.size(); i++) {
-			ArrayList<JCustomRadioButton> buttons = this.radioTalent.get(i);
+			ArrayList<JLangRadioButton> buttons = this.radioTalent.get(i);
 			int select = Integer.valueOf(config.get("TalentSelect" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {

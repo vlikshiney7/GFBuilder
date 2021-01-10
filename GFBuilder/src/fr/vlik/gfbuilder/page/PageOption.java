@@ -23,7 +23,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageOption extends JPanel {
 	
@@ -38,7 +38,7 @@ public class PageOption extends JPanel {
 	private JCustomButton createCustom;
 	private JTextPane parameter = new JTextPane();
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	
 	public static PageOption getInstance() {
 		return INSTANCE;
@@ -57,7 +57,7 @@ public class PageOption extends JPanel {
 			}
 		});
 		
-		this.newSave = new JCustomButton(this.label[1], Design.YELLOW_COLOR);
+		this.newSave = new JCustomButton(this.label[1].getLang(), Design.YELLOW_COLOR);
 		this.newSave.setToolTipText("Ctrl + N");
 		this.newSave.addActionListener(e -> {
 			if(!SaveConfig.fileExist()) {
@@ -72,7 +72,7 @@ public class PageOption extends JPanel {
 			}
 		});
 		
-		this.currentSave = new JCustomButton(this.label[2], Design.GREEN_COLOR);
+		this.currentSave = new JCustomButton(this.label[2].getLang(), Design.GREEN_COLOR);
 		this.currentSave.setToolTipText("Ctrl + S");
 		this.currentSave.addActionListener(e -> {
 			if(!SaveConfig.fileExist()) {
@@ -85,13 +85,13 @@ public class PageOption extends JPanel {
 			Overlay.getInstance().setSave(true);
 		});
 		
-		this.saveAs = new JCustomButton(this.label[3], Design.GREEN_COLOR);
+		this.saveAs = new JCustomButton(this.label[3].getLang(), Design.GREEN_COLOR);
 		this.saveAs.setToolTipText("Ctrl + Shift + S");
 		this.saveAs.addActionListener(e -> {
 			FrameSaveAs.getInstance().popup();
 		});
 		
-		this.createCustom = new JCustomButton(this.label[4], Design.GREEN_COLOR);
+		this.createCustom = new JCustomButton(this.label[4].getLang(), Design.GREEN_COLOR);
 		this.createCustom.addActionListener(e -> {
 			FrameCreateCustom.getInstance().popup(0, PageGeneral.getInstance().getLvl());
 		});

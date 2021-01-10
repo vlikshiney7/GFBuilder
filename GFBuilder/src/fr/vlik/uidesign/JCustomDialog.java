@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -28,7 +27,7 @@ public class JCustomDialog extends JDialog {
 	private JCustomButton uncheck;
 	private JCustomButton allcheck;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 
 	public JCustomDialog(Tag[] tags, Quality[] qualities, boolean searchable, int gridValue) {
 		this.setLayout(new BorderLayout());
@@ -47,14 +46,14 @@ public class JCustomDialog extends JDialog {
 			this.search.setBorder(new EmptyBorder(10, 10, 10, 10));
 		}
 		
-		this.uncheck = new JCustomButton(this.label[0], Design.RED_COLOR);
+		this.uncheck = new JCustomButton(this.label[0].getLang(), Design.RED_COLOR);
 		this.uncheck.addActionListener(e -> {
 			setCheck(false);
 		});
 		this.uncheck.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.uncheck.setMinimumSize(new Dimension(0, 30));
 		
-		this.allcheck = new JCustomButton(this.label[1], Design.GREEN_COLOR);
+		this.allcheck = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
 		this.allcheck.addActionListener(e -> {
 			setCheck(true);
 		});
@@ -70,6 +69,7 @@ public class JCustomDialog extends JDialog {
 		
 		JPanel panelTag = new JPanel(new GridLayout(tags.length / gridValue +1, gridValue));
 		panelTag.setBackground(Design.UIColor[2]);
+		panelTag.setBorder(new EmptyBorder(0, 10, 10, 10));
 		for(JCustomCheckBox<Filtrable> filter : this.check.get(0)) {
 			panelTag.add(filter);
 		}
@@ -81,6 +81,7 @@ public class JCustomDialog extends JDialog {
 		
 		JPanel panelQuality = new JPanel(new GridLayout(qualities.length / gridValue +1, gridValue));
 		panelQuality.setBackground(Design.UIColor[2]);
+		panelQuality.setBorder(new EmptyBorder(0, 10, 10, 10));
 		for(JCustomCheckBox<Filtrable> filter : this.check.get(1)) {
 			panelQuality.add(filter);
 		}
@@ -92,7 +93,7 @@ public class JCustomDialog extends JDialog {
 		
 		JPanel panelButton = new JPanel(new GridLayout(1, 2, 10, 5));
 		panelButton.setBackground(Design.UIColor[2]);
-		panelButton.setBorder(new EmptyBorder(10, 10, 10, 10));
+		panelButton.setBorder(new EmptyBorder(0, 10, 10, 10));
 		panelButton.add(this.uncheck);
 		panelButton.add(this.allcheck);
 		
@@ -106,7 +107,6 @@ public class JCustomDialog extends JDialog {
 			page.add(panelSearch);
 		}
 		page.add(panelTag);
-		page.add(Box.createVerticalStrut(10));
 		page.add(panelQuality);
 		page.add(panelButton);
 		

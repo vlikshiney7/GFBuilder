@@ -12,7 +12,7 @@ import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class Overlay extends JPanel {
 	
@@ -39,9 +39,9 @@ public class Overlay extends JPanel {
 		this.setAlignmentX(LEFT_ALIGNMENT);
 		
 		this.setGrade(Grade.data[0]);
-		this.lvl = JCustomLabel.getSimpleLabel("1");
+		this.lvl = JLangLabel.getSimpleLabel("1");
 		this.setReinca(Reinca.getData()[0]);
-		this.nameSave = JCustomLabel.getSimpleLabel(SaveConfig.DEFAULT_NAME);
+		this.nameSave = JLangLabel.getSimpleLabel(SaveConfig.DEFAULT_NAME);
 		
 		createPanel();
 	}
@@ -95,7 +95,7 @@ public class Overlay extends JPanel {
 		this.add(Box.createHorizontalStrut(5));
 		this.add(this.iconReinca);
 		this.add(Box.createHorizontalStrut(5));
-		this.add(JCustomLabel.getSimpleLabel("-"));
+		this.add(JLangLabel.getSimpleLabel("-"));
 		this.add(Box.createHorizontalStrut(5));
 		this.add(this.nameSave);
 		this.add(Box.createHorizontalStrut(5));

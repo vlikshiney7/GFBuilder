@@ -71,6 +71,10 @@ public class Skill implements Iconable, Writable {
 		return this.icon;
 	}
 	
+	public Effect[] getEffects() {
+		return getEffects(0);
+	}
+	
 	public Effect[] getEffects(int i) {
 		if(this.effects == null || this.effects[i] == null) {
 			return null;

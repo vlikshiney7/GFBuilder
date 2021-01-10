@@ -1,6 +1,5 @@
 package fr.vlik.gfbuilder.page;
 
-import java.awt.Font;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +15,6 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.CombiRunway;
 import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Runway;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipable.Costume;
@@ -26,8 +24,8 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomRadioButton;
+import fr.vlik.uidesign.JLangRadioButton;
 
 public class PageCostume extends PagePanel {
 	
@@ -36,8 +34,8 @@ public class PageCostume extends PagePanel {
 	private static final String SAVE_NAME = "COSTUME";
 	private static PageCostume INSTANCE = new PageCostume();
 	
-	private ArrayList<JCustomRadioButton> costWeapon = new ArrayList<JCustomRadioButton>(2);
-	private ArrayList<ArrayList<JCustomRadioButton>> costQuality = new ArrayList<ArrayList<JCustomRadioButton>>(5);
+	private ArrayList<JLangRadioButton> costWeapon = new ArrayList<JLangRadioButton>(2);
+	private ArrayList<ArrayList<JCustomRadioButton<Quality>>> costQuality = new ArrayList<ArrayList<JCustomRadioButton<Quality>>>(5);
 	private ArrayList<JCustomComboBox<Costume>> costume = new ArrayList<JCustomComboBox<Costume>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> costPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
 	private ArrayList<JCustomCheckBox<CombiRunway>> checkBoxRunway = new ArrayList<JCustomCheckBox<CombiRunway>>(8);
@@ -54,7 +52,7 @@ public class PageCostume extends PagePanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JCustomRadioButton(this.labelGFB[i+5], "radio11", "radioOff"));
+			this.costWeapon.add(new JLangRadioButton(this.labelGFB[i+5].getLang()));
 			this.costWeapon.get(i).setBackground(Design.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Design.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
@@ -67,13 +65,10 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < 2; i++) {
 			int id = i;
-			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
+			this.costQuality.add(new ArrayList<JCustomRadioButton<Quality>>(5));
 			for(int j = 0; j < 5; j++) {
-				JCustomLabel quality = new JCustomLabel(Costume.ORDER_QUALITY[j], Language.FR);
-				quality.setFont(new Font("Open Sans", Font.PLAIN, 12));
-				this.costQuality.get(i).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
-				this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
-				this.costQuality.get(i).get(j).setForeground(Tools.costColor[j]);
+				this.costQuality.get(i).add(new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]));
+				//this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
 				this.costQuality.get(i).get(j).addActionListener(e -> {
 					updateCostume(id);
 
@@ -109,12 +104,8 @@ public class PageCostume extends PagePanel {
 		for(int i = 0; i < 2; i++) {
 			if(i == 0) {
 				this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(0)));
-				//this.checkBoxRunway.add(new JCustomCheckBox(this.label[9]));
-				//this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[0]));
 			} else {
 				this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(4)));
-				//this.checkBoxRunway.add(new JCustomCheckBox(this.label[13]));
-				//this.checkBoxRunway.get(i).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 			}
 			
 			this.checkBoxRunway.get(i).setBackground(Design.UIColor[1]);
@@ -129,14 +120,11 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			this.costQuality.add(new ArrayList<JCustomRadioButton>(5));
+			this.costQuality.add(new ArrayList<JCustomRadioButton<Quality>>(5));
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
-				JCustomLabel quality = new JCustomLabel(Costume.ORDER_QUALITY[j], Language.FR);
-				quality.setFont(Design.TEXT);
-				this.costQuality.get(i+2).add(new JCustomRadioButton(quality, "radio1" + j, "radioOff"));
+				this.costQuality.get(i+2).add(new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]));
 				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);
-				this.costQuality.get(i+2).get(j).setForeground(Tools.costColor[j]);
 				this.costQuality.get(i+2).get(j).addActionListener(e -> {
 					updateCostume(id);
 					
@@ -185,12 +173,8 @@ public class PageCostume extends PagePanel {
 			for(int j = 0; j < 2; j++) {
 				if(j == 0) {
 					this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(i+1)));
-					//this.checkBoxRunway.add(new JCustomCheckBox(this.label[i+10]));
-					//this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[i+1]));
 				} else {
 					this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(4)));
-					//this.checkBoxRunway.add(new JCustomCheckBox(this.label[13]));
-					//this.checkBoxRunway.get(i*2+j+2).setToolTipText(Runway.getTooltipRunway(Runway.currentRunway[4]));
 				}
 				
 				this.checkBoxRunway.get(i*2+j+2).setBackground(Design.UIColor[1]);
@@ -408,7 +392,7 @@ public class PageCostume extends PagePanel {
 			this.add(elemI);
 		}
 		
-		for(ArrayList<JCustomRadioButton> quality : this.costQuality) {
+		for(ArrayList<JCustomRadioButton<Quality>> quality : this.costQuality) {
 			quality.get(0).setSelected(true);
 		}
 		
@@ -423,12 +407,12 @@ public class PageCostume extends PagePanel {
 			this.labelGFB[i].updateText(lang);
 		}
 		
-		for(JCustomRadioButton button : this.costWeapon) {
+		for(JLangRadioButton button : this.costWeapon) {
 			button.updateText(lang);
 		}
 		
 		for(int i = 0; i < this.costQuality.size(); i++) {
-			for(JCustomRadioButton button : this.costQuality.get(i)) {
+			for(JCustomRadioButton<Quality> button : this.costQuality.get(i)) {
 				button.updateText(lang);
 			}
 		}
@@ -594,7 +578,7 @@ public class PageCostume extends PagePanel {
 		config.put("1or2Hand", "" + select);
 		
 		for(int i = 0; i < this.costQuality.size(); i++) {
-			ArrayList<JCustomRadioButton> buttons = this.costQuality.get(i);
+			ArrayList<JCustomRadioButton<Quality>> buttons = this.costQuality.get(i);
 			select = 4;
 			
 			while(select > 0) {
@@ -637,7 +621,7 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.costQuality.size(); i++) {
-			ArrayList<JCustomRadioButton> buttons = this.costQuality.get(i);
+			ArrayList<JCustomRadioButton<Quality>> buttons = this.costQuality.get(i);
 			int select = Integer.valueOf(config.get("CostQuality" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {

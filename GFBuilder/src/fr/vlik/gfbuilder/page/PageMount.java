@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Mount;
+import fr.vlik.grandfantasia.Ride;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
@@ -24,9 +24,8 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomRadioButton;
-import fr.vlik.uidesign.JStarCheckBox;
+import fr.vlik.uidesign.JIconCheckBox;
 
 public class PageMount extends PagePanel {
 
@@ -35,9 +34,9 @@ public class PageMount extends PagePanel {
 	private static final String SAVE_NAME = "MOUNT";
 	private static PageMount INSTANCE = new PageMount();
 	
-	private JCustomComboBox<Mount> mount;
-	private ArrayList<ArrayList<JCustomRadioButton>> qualityGenki = new ArrayList<ArrayList<JCustomRadioButton>>(2);
-	private ArrayList<ArrayList<JStarCheckBox>> starGenki = new ArrayList<ArrayList<JStarCheckBox>>(2);
+	private JCustomComboBox<Ride> ride;
+	private ArrayList<ArrayList<JCustomRadioButton<Quality>>> qualityGenki = new ArrayList<ArrayList<JCustomRadioButton<Quality>>>(2);
+	private ArrayList<ArrayList<JIconCheckBox>> starGenki = new ArrayList<ArrayList<JIconCheckBox>>(2);
 	private ArrayList<JCustomComboBox<Genki>> genki = new ArrayList<JCustomComboBox<Genki>>(2);
 	
 	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(2);
@@ -54,9 +53,9 @@ public class PageMount extends PagePanel {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
-		Mount[] tabMount = Mount.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-		this.mount = new JCustomComboBox<Mount>(tabMount);
-		this.mount.addActionListener(e -> {
+		Ride[] tabMount = Ride.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
+		this.ride = new JCustomComboBox<Ride>(tabMount);
+		this.ride.addActionListener(e -> {
 			updateXpStuff();
 			
 			setEffects();
@@ -92,13 +91,10 @@ public class PageMount extends PagePanel {
 		for(int i = 0; i < 2; i++) {
 			int id = i;
 			
-			this.qualityGenki.add(new ArrayList<JCustomRadioButton>(6));
+			this.qualityGenki.add(new ArrayList<JCustomRadioButton<Quality>>(6));
 			
 			for(int j = 0; j < 6; j++) {
-				JCustomLabel quality = new JCustomLabel(Quality.values()[j], Language.FR);
-				quality.setFont(Design.TEXT);
-				
-				this.qualityGenki.get(i).add(new JCustomRadioButton(quality, "radio0" + j, "radioOff"));
+				this.qualityGenki.get(i).add(new JCustomRadioButton<Quality>(Quality.values()[j]));
 				this.qualityGenki.get(i).get(j).setBackground(Design.UIColor[1]);
 				this.qualityGenki.get(i).get(j).addActionListener(e -> {
 					updateQualityGenki(id);
@@ -108,12 +104,12 @@ public class PageMount extends PagePanel {
 				});
 			}
 			
-			this.starGenki.add(new ArrayList<JStarCheckBox>(5));
+			this.starGenki.add(new ArrayList<JIconCheckBox>(5));
 			
 			for(int j = 0; j < 5; j++) {
 				int idCheck = j;
 				
-				this.starGenki.get(i).add(new JStarCheckBox());
+				this.starGenki.get(i).add(new JIconCheckBox("starOn", "starOff"));
 				this.starGenki.get(i).get(j).addActionListener(e -> {
 					updateStarGenki(id, idCheck);
 					
@@ -136,8 +132,8 @@ public class PageMount extends PagePanel {
 		setEffects();
 	}
 	
-	public Mount getMount() {
-		return this.mount.getSelectedItem();
+	public Ride getMount() {
+		return this.ride.getSelectedItem();
 	}
 	
 	public Genki getGenki(int id) {
@@ -161,8 +157,8 @@ public class PageMount extends PagePanel {
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
-		Mount mount = this.getMount();
-		list.add(mount.getDepla());
+		Ride ride = this.getMount();
+		list.add(ride.getEffect());
 		
 		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE
 				&& this.getEffectXpStuff(0) != this.getEffectXpStuff(1)) {
@@ -170,7 +166,7 @@ public class PageMount extends PagePanel {
 				TypeEffect type = this.getEffectXpStuff(i);
 				double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 				
-				if(mount.getName().equals("Loup Spectral de Combat")) {
+				if(ride.getName().equals("Loup Spectral de Combat")) {
 					list.add(new Effect(type, false, valueXpStuff/2, true));
 				} else {
 					list.add(new Effect(type, false, valueXpStuff, true));
@@ -185,7 +181,7 @@ public class PageMount extends PagePanel {
 				
 				int nbStar = 0;
 				
-				for(JStarCheckBox star : this.starGenki.get(i)) {
+				for(JIconCheckBox star : this.starGenki.get(i)) {
 					if(!star.isSelected()) {
 						break;
 					}
@@ -223,7 +219,7 @@ public class PageMount extends PagePanel {
 		elem1.add(this.labelGFB[0]);
 		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(this.mount);
+		elem1.add(this.ride);
 		elem1.add(Box.createVerticalStrut(5));
 		elem1.add(xpRide);
 		
@@ -273,10 +269,10 @@ public class PageMount extends PagePanel {
 		
 		this.showAndHideXpStuff.setVisible(false);
 		
-		for(ArrayList<JCustomRadioButton> quality : this.qualityGenki) {
+		for(ArrayList<JCustomRadioButton<Quality>> quality : this.qualityGenki) {
 			quality.get(0).setSelected(true);
 		}
-		for(ArrayList<JStarCheckBox> star : this.starGenki) {
+		for(ArrayList<JIconCheckBox> star : this.starGenki) {
 			star.get(0).setSelected(true);
 		}
 		
@@ -289,7 +285,7 @@ public class PageMount extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.qualityGenki.size(); i++) {
-			for(JCustomRadioButton button : this.qualityGenki.get(i)) {
+			for(JCustomRadioButton<Quality> button : this.qualityGenki.get(i)) {
 				button.updateText(lang);
 			}
 		}
@@ -299,13 +295,13 @@ public class PageMount extends PagePanel {
 		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
-		Mount tabMount[] = Mount.getPossibleMount(lvl, reinca);
-		Mount memory = this.getMount();
+		Ride tabMount[] = Ride.getPossibleMount(lvl, reinca);
+		Ride memory = this.getMount();
 		
-		this.mount.setModel(new DefaultComboBoxModel<Mount>(tabMount));
-		this.mount.setSelectedItem(memory);
+		this.ride.setModel(new DefaultComboBoxModel<Ride>(tabMount));
+		this.ride.setSelectedItem(memory);
 		
-		if(this.mount.getSelectedIndex() == 0) {
+		if(this.ride.getSelectedIndex() == 0) {
 			this.effectXpStuff.get(0).setVisible(false);
 			this.effectXpStuff.get(1).setVisible(false);
 			this.effectXpStuff.get(0).setSelectedIndex(0);
@@ -329,7 +325,7 @@ public class PageMount extends PagePanel {
 	}
 	
 	private void updateXpStuff() {
-		if(this.mount.getSelectedIndex() != 0) {
+		if(this.ride.getSelectedIndex() != 0) {
 			this.showAndHideXpStuff.setVisible(true);	
 			this.effectXpStuff.get(0).setVisible(true);
 			this.effectXpStuff.get(1).setVisible(true);
@@ -402,7 +398,7 @@ public class PageMount extends PagePanel {
 	
 	private void updateQualityGenki(int id) {
 		int nbStar = 0;
-		for(JStarCheckBox star : this.starGenki.get(id)) {
+		for(JIconCheckBox star : this.starGenki.get(id)) {
 			if(!star.isSelected()) {
 				break;
 			}
@@ -411,7 +407,7 @@ public class PageMount extends PagePanel {
 		}
 		
 		int quality = 0;
-		for(JCustomRadioButton radio : this.qualityGenki.get(id)) {
+		for(JCustomRadioButton<Quality> radio : this.qualityGenki.get(id)) {
 			if(radio.isSelected()) {
 				break;
 			}
@@ -442,7 +438,7 @@ public class PageMount extends PagePanel {
 	
 	private void updateStarGenki(int id, int idCheck) {
 		int quality = 0;
-		for(JCustomRadioButton radio : this.qualityGenki.get(id)) {
+		for(JCustomRadioButton<Quality> radio : this.qualityGenki.get(id)) {
 			if(radio.isSelected()) {
 				break;
 			}
@@ -483,7 +479,7 @@ public class PageMount extends PagePanel {
 		config.put("Mount", this.getMount().getName());
 		
 		for(int i = 0; i < this.qualityGenki.size(); i++) {
-			ArrayList<JCustomRadioButton> buttons = this.qualityGenki.get(i);
+			ArrayList<JCustomRadioButton<Quality>> buttons = this.qualityGenki.get(i);
 			int select = 5;
 			
 			while(select > 0) {
@@ -499,7 +495,7 @@ public class PageMount extends PagePanel {
 		
 		
 		for(int i = 0; i < this.starGenki.size(); i++) {
-			ArrayList<JStarCheckBox> buttons = this.starGenki.get(i);
+			ArrayList<JIconCheckBox> buttons = this.starGenki.get(i);
 			int select = 4;
 			
 			while(select > 0) {
@@ -532,15 +528,15 @@ public class PageMount extends PagePanel {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		Mount mount = Mount.get(config.get("Mount"));
-		if(mount == null) {
-			this.mount.setSelectedIndex(0);
+		Ride ride = Ride.get(config.get("Mount"));
+		if(ride == null) {
+			this.ride.setSelectedIndex(0);
 		} else {
-			this.mount.setSelectedItem(mount);
+			this.ride.setSelectedItem(ride);
 		}
 		
 		for(int i = 0; i < this.qualityGenki.size(); i++) {
-			ArrayList<JCustomRadioButton> buttons = this.qualityGenki.get(i);
+			ArrayList<JCustomRadioButton<Quality>> buttons = this.qualityGenki.get(i);
 			int select = Integer.valueOf(config.get("QualityGenki" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {
@@ -555,7 +551,7 @@ public class PageMount extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.starGenki.size(); i++) {
-			ArrayList<JStarCheckBox> buttons = this.starGenki.get(i);
+			ArrayList<JIconCheckBox> buttons = this.starGenki.get(i);
 			int select = Integer.valueOf(config.get("StarGenki" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {

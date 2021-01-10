@@ -2,16 +2,13 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
@@ -39,11 +36,11 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private static PageBuff INSTANCE = new PageBuff();
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
-	private ArrayList<JCustomLabel> labelEnergy = new ArrayList<JCustomLabel>(6);
+	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(6);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
-	private ArrayList<JCustomLabel> guildBuffUsed = new ArrayList<JCustomLabel>(4);
+	private ArrayList<JCustomLabel<BuffIcon>> guildBuffUsed = new ArrayList<JCustomLabel<BuffIcon>>(4);
 	private JCustomComboBox<BuffIcon> guildBuff;
-	private ArrayList<JCustomLabel> stoneUsed = new ArrayList<JCustomLabel>(13);
+	private ArrayList<JCustomLabel<Nucleus>> stoneUsed = new ArrayList<JCustomLabel<Nucleus>>(13);
 	private JCustomComboBox<Nucleus> stone;
 	
 	private ArrayList<Effect> additionalEffects;
@@ -70,7 +67,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		for(int i = 0; i < 6; i++) {
-			this.labelEnergy.add(new JCustomLabel(Energy.getData()[i], Language.FR));
+			this.labelEnergy.add(new JCustomLabel<Energy>(Energy.getData()[i]));
 			this.labelEnergy.get(i).setPreferredSize(new Dimension(120, 32));
 			
 			this.energy.add(new JCustomSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
@@ -82,7 +79,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		for(int i = 0; i < 4; i++) {
-			this.guildBuffUsed.add(new JCustomLabel());
+			this.guildBuffUsed.add(new JCustomLabel<BuffIcon>(null));
 			this.guildBuffUsed.get(i).setBackground(Design.UIColor[0]);
 			this.guildBuffUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
 			this.guildBuffUsed.get(i).setMaximumSize(new Dimension(350, 32));
@@ -91,12 +88,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			
 			int id = i;
 			
-			try {
-				this.remove.add(new JCustomButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossBase.png")))));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
+			this.remove.add(new JCustomButton("crossBase", "crossPress", "crossHover"));
 			this.remove.get(i).addActionListener(e -> {
 				removeGuildBuff(id);
 				
@@ -123,7 +115,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		for(int i = 0; i < 13; i++) {
-			this.stoneUsed.add(new JCustomLabel());
+			this.stoneUsed.add(new JCustomLabel<Nucleus>(null));
 			this.stoneUsed.get(i).setBackground(Design.UIColor[0]);
 			this.stoneUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
 			this.stoneUsed.get(i).setMaximumSize(new Dimension(300, 32));
@@ -131,11 +123,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			this.stoneUsed.get(i).setVisible(false);
 			
 			int id = i;
-			try {
-				this.remove.add(new JCustomButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossBase.png")))));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			this.remove.add(new JCustomButton("crossBase", "crossPress", "crossHover"));
 			this.remove.get(i+4).addActionListener(e -> {
 				removeStoneBuff(id);
 				
@@ -169,8 +157,16 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		return this.nucleus.get(id).getSelectedItem();
 	}
 	
+	public BuffIcon getGuildBuffUsed(int i) {
+		return this.guildBuffUsed.get(i).getItem();
+	}
+	
 	public BuffIcon getGuildBuff() {
 		return this.guildBuff.getSelectedItem();
+	}
+	
+	public Nucleus getStoneUsed(int i) {
+		return this.stoneUsed.get(i).getItem();
 	}
 	
 	public Nucleus getStone() {
@@ -194,20 +190,20 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		for(JCustomLabel guild : this.guildBuffUsed) {
+		for(JCustomLabel<BuffIcon> guild : this.guildBuffUsed) {
 			if(guild.isVisible()) {
-				if(guild.getEffects() != null) {
-					for(Calculable e : guild.getEffects()) {
+				if(guild.getItem().getEffects() != null) {
+					for(Calculable e : guild.getItem().getEffects()) {
 						list.add(e);
 					}
 				}
 			}
 		}
 		
-		for(JCustomLabel stone : this.stoneUsed) {
+		for(JCustomLabel<Nucleus> stone : this.stoneUsed) {
 			if(stone.isVisible()) {
-				if(stone.getEffects() != null) {
-					for(Calculable e : stone.getEffects()) {
+				if(stone.getItem().getEffects() != null) {
+					for(Calculable e : stone.getItem().getEffects()) {
 						list.add(e);
 					}
 				}
@@ -435,11 +431,11 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		if(slot == 4) {
 			for(int i = 0; i < 3; i++) {
-				this.guildBuffUsed.get(i).setObject(this.guildBuffUsed.get(i+1));
+				this.guildBuffUsed.get(i).setItem(this.guildBuffUsed.get(i+1).getItem());
 			}
-			this.guildBuffUsed.get(3).setObject(choice);
+			this.guildBuffUsed.get(3).setItem(choice);
 		} else {
-			this.guildBuffUsed.get(slot).setObject(choice);
+			this.guildBuffUsed.get(slot).setItem(choice);
 			this.guildBuffUsed.get(slot).setVisible(true);
 			this.cross.get(slot).setVisible(true);
 		}
@@ -449,7 +445,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 
 	private void removeGuildBuff(int id) {
 		while(id < 3 && this.guildBuffUsed.get(id+1).isVisible()) {
-			this.guildBuffUsed.get(id).setObject(this.guildBuffUsed.get(id+1));
+			this.guildBuffUsed.get(id).setItem(this.guildBuffUsed.get(id+1).getItem());
 			id++;
 		}
 		
@@ -484,7 +480,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			slot++;
 		}
 		
-		this.stoneUsed.get(slot).setObject(choice);
+		this.stoneUsed.get(slot).setItem(choice);
 		this.stoneUsed.get(slot).setVisible(true);
 		this.cross.get(slot+4).setVisible(true);
 		

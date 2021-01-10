@@ -22,7 +22,7 @@ import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomTextField;
 
 public class FrameSaveAs extends JFrame {
@@ -33,7 +33,7 @@ public class FrameSaveAs extends JFrame {
 	private JCustomTextField askName;
 	private JCustomButton submit;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	
 	public static FrameSaveAs getInstance() {
 		return INSTANCE;
@@ -74,7 +74,7 @@ public class FrameSaveAs extends JFrame {
 			}
 		});
 		
-		this.submit = new JCustomButton(this.label[1], Design.GREEN_COLOR);
+		this.submit = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
 		this.submit.addActionListener(e -> {
 			createSaveConfig();
 		});

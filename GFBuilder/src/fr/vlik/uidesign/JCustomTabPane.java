@@ -18,12 +18,12 @@ public class JCustomTabPane extends JToggleButton {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private JCustomLabel label;
+	private JLangLabel label;
 	private Color selectedBackgroundColor;
 	private Color hoverBackgroundColor;
 	private Color pressedBackgroundColor;
 
-	public JCustomTabPane(JCustomLabel label) {
+	public JCustomTabPane(JLangLabel label) {
 		this.label = label;
 		
 		this.setBackground(Design.UIColor[0]);

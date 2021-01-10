@@ -33,7 +33,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomSlider;
 
 public class PageWeapon extends PagePanel {
@@ -56,7 +56,7 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>(9);
 	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(9);
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(3);
-	private ArrayList<JCustomLabel> labelValue = new ArrayList<JCustomLabel>(3);
+	private ArrayList<JLangLabel> labelValue = new ArrayList<JLangLabel>(3);
 	
 	private WeaponType[] weaponType = new WeaponType[3];
 	private boolean doubleWeapon = false;
@@ -145,7 +145,7 @@ public class PageWeapon extends PagePanel {
 			});
 			this.valueFortif.get(i).setVisible(false);
 			
-			this.labelValue.add(new JCustomLabel());
+			this.labelValue.add(new JLangLabel());
 			this.labelValue.get(i).setVisible(false);
 			
 			/* PEARL */

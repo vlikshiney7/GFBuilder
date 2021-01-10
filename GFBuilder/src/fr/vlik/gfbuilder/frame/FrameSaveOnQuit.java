@@ -18,7 +18,7 @@ import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveOnQuit extends JFrame {
 
@@ -29,7 +29,7 @@ public class FrameSaveOnQuit extends JFrame {
 	private JCustomButton leave;
 	private JCustomButton cancel;
 	
-	private JCustomLabel[] label;
+	private JLangLabel[] label;
 	
 	public static FrameSaveOnQuit getInstance() {
 		return INSTANCE;
@@ -57,18 +57,18 @@ public class FrameSaveOnQuit extends JFrame {
 			}
 		});
 		
-		this.save = new JCustomButton(this.label[1], Design.GREEN_COLOR);
+		this.save = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
 		this.save.addActionListener(e -> {
 			PageOption.getInstance().overrideSave();
 			end();
 		});
 		
-		this.leave = new JCustomButton(this.label[2], Design.RED_COLOR);
+		this.leave = new JCustomButton(this.label[2].getLang(), Design.RED_COLOR);
 		this.leave.addActionListener(e -> {
 			end();
 		});
 		
-		this.cancel = new JCustomButton(this.label[3], Design.YELLOW_COLOR);
+		this.cancel = new JCustomButton(this.label[3].getLang(), Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> {
 			MainFrame.getInstance().toFront();
 			MainFrame.getInstance().setEnabled(true);

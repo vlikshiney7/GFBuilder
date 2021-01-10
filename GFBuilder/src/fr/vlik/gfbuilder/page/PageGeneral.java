@@ -26,7 +26,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomDialog;
-import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomSpinner;
 
 public class PageGeneral extends PagePanel implements AdditionalEffect {
@@ -119,8 +119,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		});
 		
 		
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca());
-		this.title = new JCustomComboBox<Title>(tabTitle);
+		this.title = new JCustomComboBox<Title>(Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca()));
 		this.title.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -143,7 +142,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		this.filterDialog = new JCustomDialog(Title.getTags(), Title.getQualities(), true, 5);
 		
-		this.filter = new JCustomButton("filter16");
+		this.filter = new JCustomButton("filter16", "filter16", "filter16", Design.GREY_COLOR);
+		this.filter.setBorder(Design.UIColor[3]);
 		this.filter.setToolTipText("Filtre");
 		
 		this.filter.addActionListener(e -> {
@@ -182,12 +182,12 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	protected void setLabelAPI() {
-		this.labelAPI = new JCustomLabel[5];
-		this.labelAPI[0] = new JCustomLabel(Grade.CLASS_NAME, Design.TITLE);
-		this.labelAPI[1] = new JCustomLabel(Reinca.CLASS_NAME, Design.TITLE);
-		this.labelAPI[2] = new JCustomLabel(Title.CLASS_NAME, Design.TITLE);
-		this.labelAPI[3] = new JCustomLabel(Yggdrasil.CLASS_NAME, Design.TITLE);
-		this.labelAPI[4] = new JCustomLabel(Archive.CLASS_NAME, Design.TITLE);
+		this.labelAPI = new JLangLabel[5];
+		this.labelAPI[0] = new JLangLabel(Grade.CLASS_NAME, Design.TITLE);
+		this.labelAPI[1] = new JLangLabel(Reinca.CLASS_NAME, Design.TITLE);
+		this.labelAPI[2] = new JLangLabel(Title.CLASS_NAME, Design.TITLE);
+		this.labelAPI[3] = new JLangLabel(Yggdrasil.CLASS_NAME, Design.TITLE);
+		this.labelAPI[4] = new JLangLabel(Archive.CLASS_NAME, Design.TITLE);
 	}
 	
 	@Override
@@ -323,11 +323,11 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JCustomLabel label : this.labelGFB) {
+		for(JLangLabel label : this.labelGFB) {
 			label.updateText(lang);
 		}
 		
-		for(JCustomLabel label : this.labelAPI) {
+		for(JLangLabel label : this.labelAPI) {
 			label.updateText(lang);
 		}
 		
@@ -422,7 +422,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		Archive archive = Archive.get(config.get("Archive"));
 		if(archive != null) {
-			this.archive.setSelectedItem(ygg);
+			this.archive.setSelectedItem(archive);
 		} else {
 			this.archive.setSelectedIndex(0);
 		}
