@@ -32,6 +32,7 @@ import fr.vlik.grandfantasia.equipable.Anima;
 import fr.vlik.grandfantasia.equipable.Armor;
 import fr.vlik.grandfantasia.equipable.Bague;
 import fr.vlik.grandfantasia.equipable.Cape;
+import fr.vlik.grandfantasia.equipable.Costume;
 import fr.vlik.grandfantasia.equipable.Ring;
 import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -1119,7 +1120,14 @@ public class Loader {
 	}
 	
 	public static Map<Quality, Enchantment[]> getEnchant() {
-		return LoaderEnchant.getEnchant();
+		return new HashMap<Quality, Enchantment[]>() {{
+			put(Quality.RED, LoaderEnchant.getRed());
+			put(Quality.PURPLE, LoaderEnchant.getPurple());
+			put(Quality.GOLD, LoaderEnchant.getGold());
+			put(Quality.ORANGE, LoaderEnchant.getOrange());
+			put(Quality.BLUE, LoaderEnchant.getBlue());
+			put(Quality.GREEN, LoaderEnchant.getGreen());
+		}};
 	}
 	
 	public static Fortification[] getFortification() {
@@ -1222,6 +1230,15 @@ public class Loader {
 	
 	public static Ride[] getRide() {
 		return LoaderRide.getRide();
+	}
+	
+	public static Map<Quality, Costume[]> getCostume() {
+		return new HashMap<Quality, Costume[]>() {{
+			put(Quality.GOLD, LoaderCostume.getGold());
+			put(Quality.BLUE, LoaderCostume.getBlue());
+			put(Quality.GREEN, LoaderCostume.getGreen());
+			put(Quality.WHITE, LoaderCostume.getWhite());
+		}};
 	}
 	
 	public static Talent[][] getTalent() {

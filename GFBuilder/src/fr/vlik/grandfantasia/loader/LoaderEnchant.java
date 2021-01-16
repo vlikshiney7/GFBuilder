@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia.loader;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -21,27 +18,15 @@ import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 
-@SuppressWarnings("serial")
 public class LoaderEnchant {
 	
-	static Map<Quality, Enchantment[]> getEnchant() {
-		return new HashMap<Quality, Enchantment[]>() {{
-			put(Quality.RED, getRed());
-			put(Quality.PURPLE, getPurple());
-			put(Quality.GOLD, getGold());
-			put(Quality.ORANGE, getOrange());
-			put(Quality.BLUE, getBlue());
-			put(Quality.GREEN, getGreen());
-		}};
-	}
-	
-	private static Enchantment[] getRed() {
+	static Enchantment[] getRed() {
 		return new Enchantment[] {
 			
 		};
 	}
 	
-	private static Enchantment[] getPurple() {
+	static Enchantment[] getPurple() {
 		return new Enchantment[] {
 			new Enchantment("d'Absorption énergétique", 66, 70, Quality.PURPLE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
@@ -930,7 +915,7 @@ public class LoaderEnchant {
 		};
 	}
 	
-	private static Enchantment[] getGold() {
+	static Enchantment[] getGold() {
 		return new Enchantment[] {
 				new Enchantment("d'Absorption énergétique", 36, 45, Quality.GOLD,
 					new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
@@ -2206,7 +2191,7 @@ public class LoaderEnchant {
 		};
 	}
 	
-	private static Enchantment[] getOrange() {
+	static Enchantment[] getOrange() {
 		return new Enchantment[] {
 				new Enchantment("d'Absorption énergétique", 16, 25, Quality.ORANGE,
 					new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
@@ -3756,7 +3741,7 @@ public class LoaderEnchant {
 		};
 	}
 	
-	private static Enchantment[] getBlue() {
+	static Enchantment[] getBlue() {
 		return new Enchantment[] {
 			new Enchantment("d'Absorption énergétique", 6, 15, Quality.BLUE,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
@@ -6583,7 +6568,7 @@ public class LoaderEnchant {
 		};
 	}
 	
-	private static Enchantment[] getGreen() {
+	static Enchantment[] getGreen() {
 		return new Enchantment[] {
 			new Enchantment("d'Absorption énergétique", 6, 15, Quality.GREEN,
 				new EnchantType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },

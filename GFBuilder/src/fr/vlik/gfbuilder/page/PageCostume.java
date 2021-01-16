@@ -1,9 +1,11 @@
 package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -17,14 +19,16 @@ import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Synthesis;
 import fr.vlik.grandfantasia.equipable.Costume;
-import fr.vlik.grandfantasia.equipable.Costume.CostType;
+import fr.vlik.grandfantasia.equipable.Costume.CostumeType;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomRadioButton;
+import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JLangRadioButton;
 
 public class PageCostume extends PagePanel {
@@ -35,7 +39,8 @@ public class PageCostume extends PagePanel {
 	private static PageCostume INSTANCE = new PageCostume();
 	
 	private ArrayList<JLangRadioButton> costWeapon = new ArrayList<JLangRadioButton>(2);
-	private ArrayList<ArrayList<JCustomRadioButton<Quality>>> costQuality = new ArrayList<ArrayList<JCustomRadioButton<Quality>>>(5);
+	private ArrayList<JCustomButtonGroup<Quality>> groupQuality = new ArrayList<JCustomButtonGroup<Quality>>(5);
+	private ArrayList<JCustomButtonGroup<Synthesis>> groupSynthesis = new ArrayList<JCustomButtonGroup<Synthesis>>(5);
 	private ArrayList<JCustomComboBox<Costume>> costume = new ArrayList<JCustomComboBox<Costume>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> costPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
 	private ArrayList<JCustomCheckBox<CombiRunway>> checkBoxRunway = new ArrayList<JCustomCheckBox<CombiRunway>>(8);
@@ -50,6 +55,7 @@ public class PageCostume extends PagePanel {
 	private PageCostume() {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLabelAPI();
 		
 		for(int i = 0; i < 2; i++) {
 			this.costWeapon.add(new JLangRadioButton(this.labelGFB[i+5].getLang()));
@@ -57,6 +63,8 @@ public class PageCostume extends PagePanel {
 			this.costWeapon.get(i).setForeground(Design.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
 				updateWeaponCost();
+				updateCostume(0);
+				updateCostume(1);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -65,16 +73,28 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < 2; i++) {
 			int id = i;
-			this.costQuality.add(new ArrayList<JCustomRadioButton<Quality>>(5));
+			this.groupQuality.add(new JCustomButtonGroup<Quality>());
 			for(int j = 0; j < 5; j++) {
-				this.costQuality.get(i).add(new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]));
-				//this.costQuality.get(i).get(j).setBackground(Design.UIColor[1]);
-				this.costQuality.get(i).get(j).addActionListener(e -> {
+				JCustomRadioButton<Quality> radio = new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]);
+				radio.addActionListener(e -> {
 					updateCostume(id);
 
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
+				this.groupQuality.get(i).add(radio);
+			}
+			
+			this.groupSynthesis.add(new JCustomButtonGroup<Synthesis>());
+			for(int j = 0; j < 2; j++) {
+				JCustomRadioButton<Synthesis> synthesis = new JCustomRadioButton<Synthesis>(Synthesis.values()[j]);
+				synthesis.addActionListener(e -> {
+					updateCostume(id);
+
+					setEffects();
+					MainFrame.getInstance().updateStat();
+				});
+				this.groupSynthesis.get(i).add(synthesis);
 			}
 			
 			this.costume.add(new JCustomComboBox<Costume>());
@@ -120,17 +140,30 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			this.costQuality.add(new ArrayList<JCustomRadioButton<Quality>>(5));
+			this.groupQuality.add(new JCustomButtonGroup<Quality>());
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
-				this.costQuality.get(i+2).add(new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]));
-				this.costQuality.get(i+2).get(j).setBackground(Design.UIColor[1]);
-				this.costQuality.get(i+2).get(j).addActionListener(e -> {
+				JCustomRadioButton<Quality> radio = new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]);
+				radio.addActionListener(e -> {
 					updateCostume(id);
-					
+
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
+				this.groupQuality.get(i+2).add(radio);
+			}
+			
+			this.groupSynthesis.add(new JCustomButtonGroup<Synthesis>());
+			for(int j = 0; j < 2; j++) {
+				int id = i+2;
+				JCustomRadioButton<Synthesis> synthesis = new JCustomRadioButton<Synthesis>(Synthesis.values()[j]);
+				synthesis.addActionListener(e -> {
+					updateCostume(id);
+
+					setEffects();
+					MainFrame.getInstance().updateStat();
+				});
+				this.groupSynthesis.get(i+2).add(synthesis);
 			}
 			
 			this.costume.add(new JCustomComboBox<Costume>());
@@ -189,13 +222,18 @@ public class PageCostume extends PagePanel {
 			}
 		}
 		
-		this.costWeapon.get(0).setSelected(false);
-		this.costWeapon.get(1).setSelected(true);
-		
 		updateLanguage(Language.FR);
 		createPanel();
 		updateWeaponCost();
 		setEffects();
+	}
+	
+	public Quality getGroupQuality(int i) {
+		return this.groupQuality.get(i).getSelectedItem();
+	}
+	
+	public Synthesis getGroupSynthesis(int i) {
+		return this.groupSynthesis.get(i).getSelectedItem();
 	}
 	
 	public Costume getCostume(int i) {
@@ -212,7 +250,12 @@ public class PageCostume extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		
+		this.labelAPI = new JLangLabel[5];
+		this.labelAPI[0] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[1] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[2] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[3] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[4] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
 	}
 
 	@Override
@@ -221,24 +264,31 @@ public class PageCostume extends PagePanel {
 		
 		if(this.costWeapon.get(0).isSelected()) {
 			for(int i = 0; i < 2; i++) {
-				if(!this.costQuality.get(i).get(0).isSelected()) {
-					Costume cost = this.getCostume(i);
-					list.addAll(cost.getEffects());
+				if(this.getGroupQuality(i) != Quality.GREY) {
+					if(this.getCostume(i) != null && this.getCostume(i).getEffects() != null) {
+						for(int j = 0; j < this.getCostume(i).getEffects().length; j++) {
+							list.add(this.getCostume(i).getEffects()[j]);
+						}
+					}
 				}
 			}
 		} else {
-			if(!this.costQuality.get(0).get(0).isSelected()) {
-				Costume cost = this.getCostume(0);
-				for(Effect e : cost.getEffects()) {
-					list.add(new Effect(e.getType(), e.isPercent(), e.getValue()*2, e.getWithReinca()));
+			if(this.getGroupQuality(0) != Quality.GREY) {
+				if(this.getCostume(0) != null && this.getCostume(0).getEffects() != null) {
+					for(int j = 0; j < this.getCostume(0).getEffects().length; j++) {
+						list.add(this.getCostume(0).getEffects()[j]);
+					}
 				}
 			}
 		}
 		
 		for(int i = 2; i < this.costume.size(); i++) {
-			if(!this.costQuality.get(i).get(0).isSelected()) {
-				Costume cost = this.getCostume(i);
-				list.addAll(cost.getEffects());
+			if(this.getGroupQuality(i) != Quality.GREY) {
+				if(this.getCostume(i) != null && this.getCostume(i).getEffects() != null) {
+					for(int j = 0; j < this.getCostume(i).getEffects().length; j++) {
+						list.add(this.getCostume(i).getEffects()[j]);
+					}
+				}
 			}
 		}
 		
@@ -278,7 +328,6 @@ public class PageCostume extends PagePanel {
 		this.labelGFB[4].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
-			
 			costGroup.add(this.costWeapon.get(i));
 			costGroupPanel.add(this.costWeapon.get(i));
 		}
@@ -293,17 +342,27 @@ public class PageCostume extends PagePanel {
 			currentQualityPanel.add(this.labelGFB[i+7]);
 			this.labelGFB[i+7].setFont(Design.SUBTITLE);
 			
-			ButtonGroup currentQuality = new ButtonGroup();
-			for(int j = 0; j < 5; j++) {
-				currentQuality.add(this.costQuality.get(i).get(j));
-				currentQualityPanel.add(this.costQuality.get(i).get(j));
-			}
+			Enumeration<AbstractButton> itQuality = this.groupQuality.get(i).getElements();
+			do {
+				currentQualityPanel.add(itQuality.nextElement());
+			} while(itQuality.hasMoreElements());
+			
+			JPanel currentSynthesisPanel = new JPanel();
+			currentSynthesisPanel.setBackground(Design.UIColor[1]);
+			currentSynthesisPanel.add(this.labelAPI[i]);
+			
+			Enumeration<AbstractButton> itSynthesis = this.groupSynthesis.get(i).getElements();
+			do {
+				currentSynthesisPanel.add(itSynthesis.nextElement());
+			} while(itSynthesis.hasMoreElements());
 			
 			JPanel itemCost = new JPanel();
 			itemCost.setLayout(new BoxLayout(itemCost, BoxLayout.Y_AXIS));
 			itemCost.setBackground(Design.UIColor[1]);
 			itemCost.add(Box.createVerticalStrut(10));
 			itemCost.add(currentQualityPanel);
+			itemCost.add(Box.createVerticalStrut(3));
+			itemCost.add(currentSynthesisPanel);
 			itemCost.add(Box.createVerticalStrut(3));
 			itemCost.add(this.costume.get(i));
 			if(i == 0) {
@@ -347,12 +406,21 @@ public class PageCostume extends PagePanel {
 		for(int i = 0; i < 3; i++) {
 			JPanel currentQualityPanel = new JPanel();
 			currentQualityPanel.setBackground(Design.UIColor[1]);
-			ButtonGroup currentQuality = new ButtonGroup();
 			
-			for(int j = 0; j < 5; j++) {
-				currentQuality.add(this.costQuality.get(i+2).get(j));
-				currentQualityPanel.add(this.costQuality.get(i+2).get(j));
-			}
+			Enumeration<AbstractButton> it = this.groupQuality.get(i+2).getElements();
+			do {
+				currentQualityPanel.add(it.nextElement());
+			} while(it.hasMoreElements());
+			
+			JPanel currentSynthesisPanel = new JPanel();
+			currentSynthesisPanel.setBackground(Design.UIColor[1]);
+			currentSynthesisPanel.add(this.labelAPI[i+2]);
+			
+			Enumeration<AbstractButton> itSynthesis = this.groupSynthesis.get(i+2).getElements();
+			do {
+				currentSynthesisPanel.add(itSynthesis.nextElement());
+			} while(itSynthesis.hasMoreElements());
+			
 			
 			JPanel runwayPanel = new JPanel();
 			runwayPanel.setBackground(Design.UIColor[1]);
@@ -370,6 +438,8 @@ public class PageCostume extends PagePanel {
 			this.labelGFB[i+1].setFont(Design.TITLE);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(currentQualityPanel);
+			elemI.add(Box.createVerticalStrut(3));
+			elemI.add(currentSynthesisPanel);
 			elemI.add(Box.createVerticalStrut(3));
 			elemI.add(this.costume.get(i+2));
 			
@@ -392,8 +462,21 @@ public class PageCostume extends PagePanel {
 			this.add(elemI);
 		}
 		
-		for(ArrayList<JCustomRadioButton<Quality>> quality : this.costQuality) {
-			quality.get(0).setSelected(true);
+		
+		this.costWeapon.get(0).setSelected(false);
+		this.costWeapon.get(1).setSelected(true);
+		
+		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
+			quality.setSelectedItem(Quality.GREY);
+		}
+		
+		for(JCustomButtonGroup<Synthesis> synthesis : this.groupSynthesis) {
+			synthesis.setSelectedItem(Synthesis.GENKI);
+			synthesis.setVisible(false);
+		}
+		
+		for(JLangLabel label : this.labelAPI) {
+			label.setVisible(false);
 		}
 		
 		for(JPanel panel : this.showAndHideRunway) {
@@ -403,18 +486,24 @@ public class PageCostume extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(JLangLabel label : this.labelAPI) {
+			label.updateText(lang);
 		}
 		
 		for(JLangRadioButton button : this.costWeapon) {
 			button.updateText(lang);
 		}
 		
-		for(int i = 0; i < this.costQuality.size(); i++) {
-			for(JCustomRadioButton<Quality> button : this.costQuality.get(i)) {
-				button.updateText(lang);
-			}
+		for(int i = 0; i < this.groupQuality.size(); i++) {
+			this.groupQuality.get(i).updateText(lang);
+		}
+		
+		for(int i = 0; i < this.groupSynthesis.size(); i++) {
+			this.groupSynthesis.get(i).updateText(lang);
 		}
 		
 		for(JCustomCheckBox<CombiRunway> checkBox : this.checkBoxRunway) {
@@ -423,35 +512,38 @@ public class PageCostume extends PagePanel {
 	}
 	
 	private void updateCostume(int id) {
-		Quality quality = Quality.GREY;
-		CostType type = id < 2 || id == 4 ? CostType.OFFENSIVE : CostType.DEFENSIVE;
+		CostumeType type = null;
+		switch (id) {
+			case 0:	type = this.costWeapon.get(0).isSelected() ? CostumeType.DosArme1M : CostumeType.Arme2M;	break;
+			case 1:	type = CostumeType.DosArme1M;	break;
+			case 2:	type = CostumeType.TeteCorps;	break;
+			case 3:	type = CostumeType.TeteCorps;	break;
+			case 4:	type = CostumeType.DosArme1M;	break;
+		}
 		
-		for(int i = 0; i < 5; i++) {
-			if(this.costQuality.get(id).get(i).isSelected()) {
-				switch (i) {
-					case 0:	quality = Quality.GREY;		break;
-					case 1:	quality = Quality.WHITE;	break;
-					case 2:	quality = Quality.GREEN;	break;
-					case 3:	quality = Quality.BLUE;		break;
-					case 4:	quality = Quality.GOLD;		break;
-				}
+		Costume[] cost = Costume.getPossibleCostume(this.getGroupSynthesis(id), type, this.getGroupQuality(id));
+		
+		if(cost == null) {
+			this.labelAPI[id].setVisible(false);
+			this.groupSynthesis.get(id).setVisible(false);
+			this.costume.get(id).setVisible(false);
+		} else {
+			this.labelAPI[id].setVisible(true);
+			this.groupSynthesis.get(id).setVisible(true);
+			this.costume.get(id).setVisible(true);
+			
+			Costume memory = this.getCostume(id);
+			this.costume.get(id).setModel(new DefaultComboBoxModel<Costume>(cost));
+			
+			if(memory != null) {
+				Costume retrieve = Costume.getFromList(memory.getName(), cost);
+				this.costume.get(id).setSelectedItem(retrieve);
+			} else {
+				this.costume.get(id).setSelectedIndex(0);
 			}
 		}
 		
-		Costume[] cost = Costume.getPossibleCostume(quality, type);
-		
-		if(cost == null) {
-			this.costume.get(id).setVisible(false);
-		} else {
-			this.costume.get(id).setVisible(true);
-			
-			int memory = this.costume.get(id).getSelectedIndex() != -1 ? this.costume.get(id).getSelectedIndex() : 0;
-			if(memory+1 > cost.length) memory = 0;
-			this.costume.get(id).setModel(new DefaultComboBoxModel<Costume>(cost));
-			this.costume.get(id).setSelectedIndex(memory);
-		}
-		
-		if(quality == Quality.GREY) {
+		if(this.getGroupQuality(id) == Quality.GREY) {
 			if(id == 0) {
 				this.costPearl.get(id).setVisible(false);
 				this.costPearl.get(id).setSelectedIndex(0);
@@ -474,14 +566,14 @@ public class PageCostume extends PagePanel {
 				updateCheckBoxRunway(0);
 				updateCheckBoxRunway(1);
 				
-				if(this.costQuality.get(0).get(0).isSelected() && this.costQuality.get(1).get(0).isSelected())	{
+				if(this.groupQuality.get(0).getSelectedItem() == Quality.GREY && this.groupQuality.get(1).getSelectedItem() == Quality.GREY) {
 					this.showAndHideRunway.get(id).setVisible(false);
 				}
 			} else if(id == 1) {
 				updateCheckBoxRunway(id*2-2);
 				updateCheckBoxRunway(id*2-1);
 				
-				if(this.costQuality.get(0).get(0).isSelected() && this.costQuality.get(1).get(0).isSelected())	{
+				if(this.groupQuality.get(0).getSelectedItem() == Quality.GREY && this.groupQuality.get(1).getSelectedItem() == Quality.GREY) {
 					this.showAndHideRunway.get(id-1).setVisible(false);
 				}
 			} else {
@@ -509,7 +601,7 @@ public class PageCostume extends PagePanel {
 			}
 		}
 		
-		if(this.costWeapon.get(0).isSelected() || this.costQuality.get(0).get(0).isSelected()) {
+		if(this.costWeapon.get(0).isSelected() || this.groupQuality.get(0).getSelectedItem() == Quality.GREY) {
 			this.costPearl.get(1).setVisible(false);
 			this.costPearl.get(1).setSelectedIndex(0);
 		}
@@ -521,15 +613,15 @@ public class PageCostume extends PagePanel {
 			this.costPearl.get(1).setVisible(false);
 			this.costPearl.get(1).setSelectedIndex(0);
 			
-			if(!this.costQuality.get(1).get(0).isSelected()) {
+			if(this.groupQuality.get(1).getSelectedItem() != Quality.GREY) {
 				this.showAndHideRunway.get(0).setVisible(true);
 			}
 		} else {
 			this.showAndHide.setVisible(false);
 			
-			this.costQuality.get(1).get(0).setSelected(true);
+			this.groupQuality.get(1).setSelectedItem(Quality.GREY);
 			
-			if(!this.costQuality.get(0).get(0).isSelected()) {
+			if(this.groupQuality.get(0).getSelectedItem() != Quality.GREY) {
 				this.costPearl.get(1).setVisible(true);
 			} else {
 				this.showAndHideRunway.get(0).setVisible(false);
@@ -545,10 +637,10 @@ public class PageCostume extends PagePanel {
 		int indexQuality = index/2 +1;
 		
 		if(indexQuality == 1) {
-			if(this.costQuality.get(0).get(0).isSelected() && this.costQuality.get(1).get(0).isSelected()) {
+			if(this.groupQuality.get(0).getSelectedItem() == Quality.GREY && this.groupQuality.get(1).getSelectedItem() == Quality.GREY) {
 				this.checkBoxRunway.get(index).setSelected(false);
 			}
-		} else if(this.costQuality.get(indexQuality).get(0).isSelected()) {
+		} else if(this.groupQuality.get(indexQuality).getSelectedItem() == Quality.GREY) {
 			this.checkBoxRunway.get(index).setSelected(false);
 		}
 		
@@ -577,19 +669,14 @@ public class PageCostume extends PagePanel {
 		
 		config.put("1or2Hand", "" + select);
 		
-		for(int i = 0; i < this.costQuality.size(); i++) {
-			ArrayList<JCustomRadioButton<Quality>> buttons = this.costQuality.get(i);
-			select = 4;
-			
-			while(select > 0) {
-				if(buttons.get(select).isSelected()) {
-					break;
-				}
-				
-				select--;
-			}
-			
-			config.put("CostQuality" + i, "" + select);
+		for(int i = 0; i < this.groupQuality.size(); i++) {
+			Quality quality = this.groupQuality.get(i).getSelectedItem();
+			config.put("CostQuality" + i, "" + quality);
+		}
+		
+		for(int i = 0; i < this.groupSynthesis.size(); i++) {
+			Synthesis synthesis = this.groupSynthesis.get(i).getSelectedItem();
+			config.put("CostSynthesis" + i, "" + synthesis);
 		}
 		
 		for(int i = 0; i < this.costume.size(); i++) {
@@ -620,22 +707,25 @@ public class PageCostume extends PagePanel {
 			}
 		}
 		
-		for(int i = 0; i < this.costQuality.size(); i++) {
-			ArrayList<JCustomRadioButton<Quality>> buttons = this.costQuality.get(i);
-			int select = Integer.valueOf(config.get("CostQuality" + i));
-			
-			for(int j = 0; j < buttons.size(); j++) {
-				if(j == select) {
-					buttons.get(j).setSelected(true);
-					updateCostume(i);
-				} else {
-					buttons.get(j).setSelected(false);
-				}
-			}
-		}
-		
 		for(int i = 0; i < this.costume.size(); i++) {
-			Costume costume = Costume.get(config.get("Costume" + i), Integer.valueOf(config.get("CostQuality" + i)));
+			Quality quality = Quality.valueOf(config.get("CostQuality" + i) != null ? config.get("CostQuality" + i) : Quality.GREY.toString());
+			this.groupQuality.get(i).setSelectedItem(quality);
+			
+			Synthesis synthesis = Synthesis.valueOf(config.get("CostSynthesis" + i) != null ? config.get("CostSynthesis" + i) : Synthesis.GENKI.toString());
+			this.groupSynthesis.get(i).setSelectedItem(synthesis);
+			
+			updateCostume(i);
+			
+			CostumeType type = null;
+			switch (i) {
+				case 0:	type = this.costWeapon.get(0).isSelected() ? CostumeType.DosArme1M : CostumeType.Arme2M;	break;
+				case 1:	type = CostumeType.DosArme1M;	break;
+				case 2:	type = CostumeType.TeteCorps;	break;
+				case 3:	type = CostumeType.TeteCorps;	break;
+				case 4:	type = CostumeType.DosArme1M;	break;
+			}
+			
+			Costume costume = Costume.get(config.get("Costume" + i), synthesis, type, quality);
 			
 			if(costume != null) {
 				this.costume.get(i).setSelectedItem(costume);

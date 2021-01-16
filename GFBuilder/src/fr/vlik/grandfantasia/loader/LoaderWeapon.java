@@ -1000,7 +1000,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 41, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.DCCP, false, 40),
-					new Effect(TypeEffect.DegStdMa, true, 40),
+					new Effect(TypeEffect.DegStdMa, false, 40),
 					new Effect(TypeEffect.MEN, false, 40),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),

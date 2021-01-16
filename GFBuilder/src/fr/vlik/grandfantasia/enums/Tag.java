@@ -41,6 +41,6 @@ public enum Tag implements Filtrable, Writable {
 
 	@Override
 	public String getTooltip() {
-		return this.lang.get(lang);
+		return this.lang.get(Language.FR);
 	}
 }

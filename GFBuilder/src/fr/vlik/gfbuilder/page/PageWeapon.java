@@ -1046,6 +1046,10 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			this.lvlXpStuff.get(i).setSelectedItem(1);
+		}
+		
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
 			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
 		}
 		
