@@ -74,7 +74,10 @@ public class SaveConfig {
 			if(pages.get(orderLoading[i]) instanceof PagePanel) {
 				try {
 					PagePanel page = (PagePanel) pages.get(orderLoading[i]);
-					page.setConfig(this.getValuesFromPage(page.getSaveName()), this.lang);
+					Map<String, String> values = this.getValuesFromPage(page.getSaveName());
+					if(values != null) {
+						page.setConfig(values, this.lang);
+					}
 				} catch (IllegalArgumentException e) {
 					System.out.println("Out of range");
 				}

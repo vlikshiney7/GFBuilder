@@ -1633,6 +1633,12 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Loot, false, 5),
 				new Effect(TypeEffect.VitComp, false, 5),
 			}),
+			new Title("Le cochon d'or est en forme !", Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 2),
+				new Effect(TypeEffect.TCCM, false, 2),
+				new Effect(TypeEffect.DCCP, false, 2),
+				new Effect(TypeEffect.DCCM, false, 2),
+			}),
 			new Title("Le copain de l'épouvantail", Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform29),
 			}),

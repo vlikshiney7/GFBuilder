@@ -44,7 +44,7 @@ import fr.vlik.gfbuilder.page.PageBuff;
 import fr.vlik.gfbuilder.page.PageCapeRing;
 import fr.vlik.gfbuilder.page.PageCostume;
 import fr.vlik.gfbuilder.page.PageGeneral;
-import fr.vlik.gfbuilder.page.PageMount;
+import fr.vlik.gfbuilder.page.PageRide;
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PageOther;
 import fr.vlik.gfbuilder.page.PagePanel;
@@ -187,7 +187,7 @@ public class MainFrame extends JFrame {
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Mount Page");
-		this.pages.add(PageMount.getInstance());
+		this.pages.add(PageRide.getInstance());
 		System.out.println("Fin Mount : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);

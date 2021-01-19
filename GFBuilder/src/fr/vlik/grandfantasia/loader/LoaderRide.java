@@ -9,6 +9,7 @@ public class LoaderRide {
 	static Ride[] getRide() {
 		return new Ride[] {
 			new Ride("Mordragon spectral de guerre", 1, true, "reinca", new Effect(TypeEffect.Depla, false, 50)),
+			new Ride("Goldo-Lion de Guerre", 60, false, "goldo3", new Effect(TypeEffect.Depla, false, 60)),
 			new Ride("Loup Spectral de Combat", 60, false, "loup0", new Effect(TypeEffect.Depla, false, 60)),
 			
 			new Ride("Aérowing de combat", 40, false, "airwing1", new Effect(TypeEffect.Depla, false, 100)),

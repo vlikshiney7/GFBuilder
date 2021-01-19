@@ -84,7 +84,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageCapeRing.getInstance().updateCapeRing();
 			updateReinca();
 			updateTitle();
-			PageMount.getInstance().updateMount();
+			PageRide.getInstance().updateMount();
 			PageTalent.getInstance().updateTalent();
 			PageSpeciality.getInstance().updateSpe();
 			PageSprite.getInstance().updateBlason();
@@ -105,7 +105,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageWeapon.getInstance().updateWeapon();
 			PageArmor.getInstance().updateArmor();
 			updateTitle();
-			PageMount.getInstance().updateMount();
+			PageRide.getInstance().updateMount();
 			PageSpeciality.getInstance().updateSpe();
 			PageBuff.getInstance().updateNucleus();
 			PageBuff.getInstance().updateEnergy();

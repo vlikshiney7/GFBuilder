@@ -7,7 +7,7 @@ import java.util.Map;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.enums.Synthesis;
+import fr.vlik.grandfantasia.enums.TypeSynthesis;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.Loader;
@@ -20,14 +20,14 @@ public class Costume implements Colorable, Writable {
 	private static Map<Quality, Costume[]> data = Loader.getCostume();
 	
 	private String name;
-	private Synthesis synthesis;
+	private TypeSynthesis typeSynthesis;
 	private CostumeType type;
 	private Quality quality;
 	private Effect[] effects;
 	
-	public Costume(String name, Synthesis synhtesis, CostumeType type, Quality quality, Effect[] effects) {
+	public Costume(String name, TypeSynthesis typeSynthesis, CostumeType type, Quality quality, Effect[] effects) {
 		this.name = name;
-		this.synthesis = synhtesis;
+		this.typeSynthesis = typeSynthesis;
 		this.type = type;
 		this.quality = quality;
 		this.effects = effects;
@@ -41,8 +41,8 @@ public class Costume implements Colorable, Writable {
 		return this.name;
 	}
 	
-	public Synthesis getSynthesis() {
-		return this.synthesis;
+	public TypeSynthesis getSynthesis() {
+		return this.typeSynthesis;
 	}
 	
 	public CostumeType getType() {
@@ -51,11 +51,6 @@ public class Costume implements Colorable, Writable {
 
 	public Quality getQuality() {
 		return this.quality;
-	}
-	
-	@Override
-	public Color getColor() {
-		return Tools.itemColor[this.quality.index];
 	}
 	
 	public Effect[] getEffects() {
@@ -70,6 +65,11 @@ public class Costume implements Colorable, Writable {
 		}
 		
 		return tab;
+	}
+	
+	@Override
+	public Color getColor() {
+		return Tools.itemColor[this.quality.index];
 	}
 	
 	@Override
@@ -88,13 +88,13 @@ public class Costume implements Colorable, Writable {
 		return "<html>" + tooltip + "</html>";
 	}
 	
-	public static Costume get(String name, Synthesis synthesis, CostumeType type, Quality quality) {
+	public static Costume get(String name, TypeSynthesis typeSynthesis, CostumeType type, Quality quality) {
 		if(quality == Quality.GREY) {
 			return null;
 		}
 		
 		for(Costume costume : Costume.data.get(quality)) {
-			if(costume.getSynthesis() == synthesis && costume.getType() == type && costume.getName().equals(name)) {
+			if(costume.getSynthesis() == typeSynthesis && costume.getType() == type && costume.getName().equals(name)) {
 				return costume;
 			}
 		}
@@ -114,7 +114,7 @@ public class Costume implements Colorable, Writable {
 		return tabCost == null ? null : tabCost[0];
 	}
 	
-	public static Costume[] getPossibleCostume(Synthesis synhtesis, CostumeType type, Quality quality) {
+	public static Costume[] getPossibleCostume(TypeSynthesis synhtesis, CostumeType type, Quality quality) {
 		if(quality == Quality.GREY) {
 			return null;
 		}

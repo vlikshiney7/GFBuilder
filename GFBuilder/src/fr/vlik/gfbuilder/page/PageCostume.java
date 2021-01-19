@@ -19,7 +19,7 @@ import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.enums.Synthesis;
+import fr.vlik.grandfantasia.enums.TypeSynthesis;
 import fr.vlik.grandfantasia.equipable.Costume;
 import fr.vlik.grandfantasia.equipable.Costume.CostumeType;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -40,7 +40,7 @@ public class PageCostume extends PagePanel {
 	
 	private ArrayList<JLangRadioButton> costWeapon = new ArrayList<JLangRadioButton>(2);
 	private ArrayList<JCustomButtonGroup<Quality>> groupQuality = new ArrayList<JCustomButtonGroup<Quality>>(5);
-	private ArrayList<JCustomButtonGroup<Synthesis>> groupSynthesis = new ArrayList<JCustomButtonGroup<Synthesis>>(5);
+	private ArrayList<JCustomButtonGroup<TypeSynthesis>> groupSynthesis = new ArrayList<JCustomButtonGroup<TypeSynthesis>>(5);
 	private ArrayList<JCustomComboBox<Costume>> costume = new ArrayList<JCustomComboBox<Costume>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> costPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
 	private ArrayList<JCustomCheckBox<CombiRunway>> checkBoxRunway = new ArrayList<JCustomCheckBox<CombiRunway>>(8);
@@ -85,16 +85,17 @@ public class PageCostume extends PagePanel {
 				this.groupQuality.get(i).add(radio);
 			}
 			
-			this.groupSynthesis.add(new JCustomButtonGroup<Synthesis>());
+			this.groupSynthesis.add(new JCustomButtonGroup<TypeSynthesis>());
 			for(int j = 0; j < 2; j++) {
-				JCustomRadioButton<Synthesis> synthesis = new JCustomRadioButton<Synthesis>(Synthesis.values()[j]);
-				synthesis.addActionListener(e -> {
+				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<TypeSynthesis>(TypeSynthesis.values()[j]);
+				typeSynthesis.addActionListener(e -> {
 					updateCostume(id);
 
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.groupSynthesis.get(i).add(synthesis);
+				this.groupSynthesis.get(i).add(typeSynthesis);
+				this.groupSynthesis.get(i).setVisible(false);
 			}
 			
 			this.costume.add(new JCustomComboBox<Costume>());
@@ -153,17 +154,18 @@ public class PageCostume extends PagePanel {
 				this.groupQuality.get(i+2).add(radio);
 			}
 			
-			this.groupSynthesis.add(new JCustomButtonGroup<Synthesis>());
+			this.groupSynthesis.add(new JCustomButtonGroup<TypeSynthesis>());
 			for(int j = 0; j < 2; j++) {
 				int id = i+2;
-				JCustomRadioButton<Synthesis> synthesis = new JCustomRadioButton<Synthesis>(Synthesis.values()[j]);
-				synthesis.addActionListener(e -> {
+				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<TypeSynthesis>(TypeSynthesis.values()[j]);
+				typeSynthesis.addActionListener(e -> {
 					updateCostume(id);
 
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.groupSynthesis.get(i+2).add(synthesis);
+				this.groupSynthesis.get(i+2).add(typeSynthesis);
+				this.groupSynthesis.get(i+2).setVisible(false);
 			}
 			
 			this.costume.add(new JCustomComboBox<Costume>());
@@ -232,7 +234,7 @@ public class PageCostume extends PagePanel {
 		return this.groupQuality.get(i).getSelectedItem();
 	}
 	
-	public Synthesis getGroupSynthesis(int i) {
+	public TypeSynthesis getGroupSynthesis(int i) {
 		return this.groupSynthesis.get(i).getSelectedItem();
 	}
 	
@@ -251,11 +253,11 @@ public class PageCostume extends PagePanel {
 	@Override
 	protected void setLabelAPI() {
 		this.labelAPI = new JLangLabel[5];
-		this.labelAPI[0] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[1] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[2] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[3] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[4] = new JLangLabel(Synthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[0] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[1] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[2] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[3] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[4] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
 	}
 
 	@Override
@@ -470,9 +472,8 @@ public class PageCostume extends PagePanel {
 			quality.setSelectedItem(Quality.GREY);
 		}
 		
-		for(JCustomButtonGroup<Synthesis> synthesis : this.groupSynthesis) {
-			synthesis.setSelectedItem(Synthesis.GENKI);
-			synthesis.setVisible(false);
+		for(JCustomButtonGroup<TypeSynthesis> typeSynthesis : this.groupSynthesis) {
+			typeSynthesis.setSelectedItem(TypeSynthesis.GENKI);
 		}
 		
 		for(JLangLabel label : this.labelAPI) {
@@ -671,12 +672,12 @@ public class PageCostume extends PagePanel {
 		
 		for(int i = 0; i < this.groupQuality.size(); i++) {
 			Quality quality = this.groupQuality.get(i).getSelectedItem();
-			config.put("CostQuality" + i, "" + quality);
+			config.put("Quality" + i, "" + quality);
 		}
 		
 		for(int i = 0; i < this.groupSynthesis.size(); i++) {
-			Synthesis synthesis = this.groupSynthesis.get(i).getSelectedItem();
-			config.put("CostSynthesis" + i, "" + synthesis);
+			TypeSynthesis typeSynthesis = this.groupSynthesis.get(i).getSelectedItem();
+			config.put("TypeSynthesis" + i, "" + typeSynthesis);
 		}
 		
 		for(int i = 0; i < this.costume.size(); i++) {
@@ -708,11 +709,11 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.costume.size(); i++) {
-			Quality quality = Quality.valueOf(config.get("CostQuality" + i) != null ? config.get("CostQuality" + i) : Quality.GREY.toString());
+			Quality quality = Quality.valueOf(config.get("Quality" + i) != null ? config.get("Quality" + i) : Quality.GREY.toString());
 			this.groupQuality.get(i).setSelectedItem(quality);
 			
-			Synthesis synthesis = Synthesis.valueOf(config.get("CostSynthesis" + i) != null ? config.get("CostSynthesis" + i) : Synthesis.GENKI.toString());
-			this.groupSynthesis.get(i).setSelectedItem(synthesis);
+			TypeSynthesis typeSynthesis = TypeSynthesis.valueOf(config.get("TypeSynthesis" + i) != null ? config.get("TypeSynthesis" + i) : TypeSynthesis.GENKI.toString());
+			this.groupSynthesis.get(i).setSelectedItem(typeSynthesis);
 			
 			updateCostume(i);
 			
@@ -725,7 +726,7 @@ public class PageCostume extends PagePanel {
 				case 4:	type = CostumeType.DosArme1M;	break;
 			}
 			
-			Costume costume = Costume.get(config.get("Costume" + i), synthesis, type, quality);
+			Costume costume = Costume.get(config.get("Costume" + i), typeSynthesis, type, quality);
 			
 			if(costume != null) {
 				this.costume.get(i).setSelectedItem(costume);

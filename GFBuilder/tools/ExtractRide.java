@@ -1,0 +1,1 @@
+new Ride("Scorpion de combat de cristal doré à double place", 40, false, "I01691", new Effect(TypeEffect.Depla, false, 100)),

@@ -34,6 +34,7 @@ import fr.vlik.grandfantasia.equipable.Bague;
 import fr.vlik.grandfantasia.equipable.Cape;
 import fr.vlik.grandfantasia.equipable.Costume;
 import fr.vlik.grandfantasia.equipable.Ring;
+import fr.vlik.grandfantasia.equipable.Synthesis;
 import fr.vlik.grandfantasia.equipable.Weapon;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -350,29 +351,41 @@ public class Loader {
 				new Effect(TypeEffect.PeneM, false, 5),
 			}),
 			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "9 - Jundo"); put(Language.EN, "9 - Jundo"); }}, "boss9", new Effect[] {
-					new Effect(TypeEffect.FCE, true, 10),
-					new Effect(TypeEffect.VIT, true, 10),
-					new Effect(TypeEffect.INT, true, 10),
-					new Effect(TypeEffect.VOL, true, 10),
-					new Effect(TypeEffect.AGI, true, 10),
-					new Effect(TypeEffect.XP, false, 11),
-					new Effect(TypeEffect.DegP, false, 7),
-					new Effect(TypeEffect.DegM, false, 7),
-					new Effect(TypeEffect.PeneP, false, 7),
-					new Effect(TypeEffect.PeneM, false, 7),
+				new Effect(TypeEffect.FCE, true, 10),
+				new Effect(TypeEffect.VIT, true, 10),
+				new Effect(TypeEffect.INT, true, 10),
+				new Effect(TypeEffect.VOL, true, 10),
+				new Effect(TypeEffect.AGI, true, 10),
+				new Effect(TypeEffect.XP, false, 11),
+				new Effect(TypeEffect.DegP, false, 7),
+				new Effect(TypeEffect.DegM, false, 7),
+				new Effect(TypeEffect.PeneP, false, 7),
+				new Effect(TypeEffect.PeneM, false, 7),
 			}),
 			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "10 - Siropas"); put(Language.EN, "10 - Siropas"); }}, "boss10", new Effect[] {
-					new Effect(TypeEffect.FCE, true, 15),
-					new Effect(TypeEffect.VIT, true, 15),
-					new Effect(TypeEffect.INT, true, 15),
-					new Effect(TypeEffect.VOL, true, 15),
-					new Effect(TypeEffect.AGI, true, 15),
-					new Effect(TypeEffect.XP, false, 11),
-					new Effect(TypeEffect.DegP, false, 7),
-					new Effect(TypeEffect.DegM, false, 7),
-					new Effect(TypeEffect.PeneP, false, 7),
-					new Effect(TypeEffect.PeneM, false, 7),
-			})
+				new Effect(TypeEffect.FCE, true, 15),
+				new Effect(TypeEffect.VIT, true, 15),
+				new Effect(TypeEffect.INT, true, 15),
+				new Effect(TypeEffect.VOL, true, 15),
+				new Effect(TypeEffect.AGI, true, 15),
+				new Effect(TypeEffect.XP, false, 11),
+				new Effect(TypeEffect.DegP, false, 7),
+				new Effect(TypeEffect.DegM, false, 7),
+				new Effect(TypeEffect.PeneP, false, 7),
+				new Effect(TypeEffect.PeneM, false, 7),
+			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "11 - Ilannia"); put(Language.EN, "11 - Ilannia"); }}, "boss11", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 15),
+				new Effect(TypeEffect.VIT, true, 15),
+				new Effect(TypeEffect.INT, true, 15),
+				new Effect(TypeEffect.VOL, true, 15),
+				new Effect(TypeEffect.AGI, true, 15),
+				new Effect(TypeEffect.XP, false, 15),
+				new Effect(TypeEffect.DegP, false, 7),
+				new Effect(TypeEffect.DegM, false, 7),
+				new Effect(TypeEffect.PeneP, false, 7),
+				new Effect(TypeEffect.PeneM, false, 7),
+			}),
 		};
 	}
 	
@@ -1232,6 +1245,26 @@ public class Loader {
 		return LoaderRide.getRide();
 	}
 	
+	public static Map<Quality, Synthesis[]> getRideSynthesis() {
+		return new HashMap<Quality, Synthesis[]>() {{
+			put(Quality.GOLD, LoaderSynthesis.getRideGold());
+			put(Quality.ORANGE, LoaderSynthesis.getRideOrange());
+			put(Quality.BLUE, LoaderSynthesis.getRideBlue());
+			put(Quality.GREEN, LoaderSynthesis.getRideGreen());
+			put(Quality.WHITE, LoaderSynthesis.getRideWhite());
+		}};
+	}
+	
+	public static Map<Quality, Synthesis[]> getThroneSynthesis() {
+		return new HashMap<Quality, Synthesis[]>() {{
+			put(Quality.GOLD, LoaderSynthesis.getThroneGold());
+			put(Quality.ORANGE, LoaderSynthesis.getThroneOrange());
+			put(Quality.BLUE, LoaderSynthesis.getThroneBlue());
+			put(Quality.GREEN, LoaderSynthesis.getThroneGreen());
+			put(Quality.WHITE, LoaderSynthesis.getThroneWhite());
+		}};
+	}
+	
 	public static Map<Quality, Costume[]> getCostume() {
 		return new HashMap<Quality, Costume[]>() {{
 			put(Quality.GOLD, LoaderCostume.getGold());
@@ -1340,10 +1373,24 @@ public class Loader {
 				new Effect(TypeEffect.VIT, false, 7),
 				new Effect(TypeEffect.DefP, true, 2),
 			}),
+			new Runway("Chance", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 2),
+				new Effect(TypeEffect.TCCM, false, 2),
+				new Effect(TypeEffect.RTCCP, false, 2),
+				new Effect(TypeEffect.RTCCM, false, 2),
+			}),
 			new Runway("Enchantement", new Calculable[] {
 				new Effect(TypeEffect.VIT, false, 7),
 				new Effect(TypeEffect.INT, false, 7),
 				new Effect(TypeEffect.VitComp, false, 2),
+			}),
+			new Runway("Folie", new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 10),
+				new Effect(TypeEffect.VIT, false, 10),
+				new Effect(TypeEffect.INT, false, 10),
+				new Effect(TypeEffect.VOL, false, 10),
+				new Effect(TypeEffect.AGI, false, 10),
+				new Effect(TypeEffect.BoostCraft, false, 2),
 			}),
 			new Runway("Gardien", new Calculable[] {
 				new Effect(TypeEffect.ReducP, false, 3),
@@ -1396,6 +1443,11 @@ public class Loader {
 				new Effect(TypeEffect.RDCCP, false, 8),
 				new Effect(TypeEffect.RDCCM, false, 8),
 			}),
+			new Runway("Tempête", new Calculable[] {
+				new Effect(TypeEffect.VIT, false, 7),
+				new Effect(TypeEffect.AGI, false, 7),
+				new Effect(TypeEffect.VitAtk, false, 2),
+			}),
 			new Runway("Turbo", new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.VitAtk, false, 2),
@@ -1408,27 +1460,27 @@ public class Loader {
 		return new CombiRunway[] {
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Arme"); put(Language.EN, "Weapon Runway"); }},
 				new Runway[] {
-					Runway.get("Bravoure"),
-					Runway.get("Sorcier"),
-				}),
-			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tête"); put(Language.EN, "Head Runway"); }},
-				new Runway[] {
-					Runway.get("Berserker"),
-					Runway.get("Sagesse"),
-				}),
-			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tenue"); put(Language.EN, "Body Runway"); }},
-				new Runway[] {
-					Runway.get("Turbo"),
-					Runway.get("Synthétisation"),
-				}),
-			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Dos"); put(Language.EN, "Back Runway"); }},
-				new Runway[] {
 					Runway.get("Lutte"),
 					Runway.get("Malédiction"),
 				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tête"); put(Language.EN, "Head Runway"); }},
+				new Runway[] {
+					Runway.get("Prêtre"),
+					Runway.get("Sorcier"),
+				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tenue"); put(Language.EN, "Body Runway"); }},
+				new Runway[] {
+					Runway.get("Berserker"),
+					Runway.get("Tempête"),
+				}),
+			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Dos"); put(Language.EN, "Back Runway"); }},
+				new Runway[] {
+					Runway.get("Turbo"),
+					Runway.get("Folie"),
+				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Nouveauté"); put(Language.EN, "New Runway"); }},
 				new Runway[] {
-					Runway.get("Illusion"),
+					Runway.get("Chance"),
 					Runway.get("Ranger"),
 					Runway.get("Praetor"),
 				}),
