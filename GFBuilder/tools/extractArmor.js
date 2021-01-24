@@ -159,6 +159,8 @@ function ExtractArmor() {
 		codearmor = codeLvl + "gvg" + idClasses.split(",")[0];
 	} else if(colorCorrespondance[color] == "GREEN") {
 		codearmor = "-1";
+	} else if(colorCorrespondance[color] == "WHITE") {
+		codearmor = "-1";
 	}
 
 	if(pvp) {
