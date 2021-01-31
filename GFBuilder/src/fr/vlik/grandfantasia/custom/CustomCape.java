@@ -7,15 +7,15 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipable.Cape;
-import fr.vlik.grandfantasia.equipable.Cape.CapeType;
-import fr.vlik.grandfantasia.loader.CustomLoader;
+import fr.vlik.grandfantasia.equip.Cape;
+import fr.vlik.grandfantasia.equip.Cape.CapeType;
+import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
+import fr.vlik.grandfantasia.loader.customEquip.LoaderCustom;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -23,7 +23,7 @@ public class CustomCape extends CustomEquipment {
 	
 	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	public static CustomCape[] data = CustomLoader.getCustomCape();
+	public static CustomCape[] data = LoaderCustom.getCustomCape();
 	public final static double IncreaseValueGreen = 1.06;
 	public final static double IncreaseValueBlue = 1.18;
 	

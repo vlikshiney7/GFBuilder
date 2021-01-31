@@ -4,7 +4,7 @@ import fr.vlik.gfbuilder.page.PageGeneral;
 import fr.vlik.gfbuilder.page.PageTalent;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Talent;
+import fr.vlik.grandfantasia.characUpgrade.Talent;
 
 public class Util {
 	

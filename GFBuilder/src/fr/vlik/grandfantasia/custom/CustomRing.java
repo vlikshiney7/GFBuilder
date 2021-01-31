@@ -7,14 +7,14 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipable.Ring;
-import fr.vlik.grandfantasia.equipable.Ring.RingType;
-import fr.vlik.grandfantasia.loader.CustomLoader;
+import fr.vlik.grandfantasia.equip.Ring;
+import fr.vlik.grandfantasia.equip.Ring.RingType;
+import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
+import fr.vlik.grandfantasia.loader.customEquip.LoaderCustom;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -22,7 +22,7 @@ public class CustomRing extends CustomEquipment {
 	
 	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	public static CustomRing[] data = CustomLoader.getCustomRing();
+	public static CustomRing[] data = LoaderCustom.getCustomRing();
 	public final static double IncreaseValueGreen = 1.09;
 	public final static double IncreaseValueBlue = 1.24;
 	

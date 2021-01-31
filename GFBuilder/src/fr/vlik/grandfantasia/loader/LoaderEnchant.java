@@ -1,13 +1,13 @@
 package fr.vlik.grandfantasia.loader;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
-import fr.vlik.grandfantasia.equipable.Armor.ArmorType;
-import fr.vlik.grandfantasia.equipable.Cape.CapeType;
-import fr.vlik.grandfantasia.equipable.Ring.RingType;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equip.Armor.ArmorType;
+import fr.vlik.grandfantasia.equip.Cape.CapeType;
+import fr.vlik.grandfantasia.equip.Ring.RingType;
+import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;

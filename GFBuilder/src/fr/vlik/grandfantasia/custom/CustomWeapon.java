@@ -7,14 +7,14 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipable.Weapon;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
-import fr.vlik.grandfantasia.loader.CustomLoader;
+import fr.vlik.grandfantasia.equip.Weapon;
+import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
+import fr.vlik.grandfantasia.loader.customEquip.LoaderCustom;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -22,7 +22,7 @@ public class CustomWeapon extends CustomEquipment {
 	
 	public static String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	public static CustomWeapon[][] data = CustomLoader.getCustomWeapon();
+	public static CustomWeapon[][] data = LoaderCustom.getCustomWeapon();
 	public final static double IncreaseValueGreen = 1.21;
 	public final static double IncreaseValueBlue = 1.60;
 	

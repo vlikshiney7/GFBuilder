@@ -55,7 +55,7 @@ import fr.vlik.gfbuilder.page.PageTalent;
 import fr.vlik.gfbuilder.page.PageWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;

@@ -18,8 +18,8 @@ public enum TypeEffect implements Colorable, Writable {
 	AtkD("Attaque à Distance", "Range Attack", "ATQ D.", "R-ATK", 60000, true, Tools.EffectColor[5]),
 	AtkM("Attaque Magique", "Magic Attack", "ATQ M.", "M-ATK", 60000, true, Tools.EffectColor[3]),
 	
-	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, true, Tools.EffectColor[2]),
-	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, true, Tools.EffectColor[4]),
+	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, false, Tools.EffectColor[2]),
+	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, false, Tools.EffectColor[4]),
 	TCCP("Taux Coup Critique Physique", "Chance of Physical Critical Hit", "TCCP", "", 100, false, Tools.EffectColor[5]),
 	TCCM("Taux Coup Critique Magique", "Chance of Magical Critical Hit", "TCCM", "", 100, false, Tools.EffectColor[3]),
 	ESQ("Esquive", "", "ESQ", "", -1, true, Tools.EffectColor[5]),
@@ -40,8 +40,8 @@ public enum TypeEffect implements Colorable, Writable {
 	ReducP("Réduction Physique", "Physical Reduction", "Reduc Phys", "Phys Reduc", -1, true, Tools.EffectColor[10]),
 	ReducM("Réduction Magique", "Magical Reduction", "Reduc Mag", "Mag Reduc", -1, true, Tools.EffectColor[11]),
 	
-	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "Phys Pene", 100, true, Tools.EffectColor[10]),
-	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "Mag Pene", 100, true, Tools.EffectColor[11]),
+	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "Phys Pene", 100, false, Tools.EffectColor[10]),
+	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "Mag Pene", 100, false, Tools.EffectColor[11]),
 	ReducPeneP("Réduction Pénétration Physique", "", "Red Pén Phys", "", -1, true, Tools.EffectColor[10]),
 	ReducPeneM("Réduction Pénétration Magique", "", "Red Pén Mag", "", -1, true, Tools.EffectColor[11]),
 	

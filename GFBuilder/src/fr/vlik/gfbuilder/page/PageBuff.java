@@ -15,10 +15,10 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.BuffIcon;
-import fr.vlik.grandfantasia.Energy;
-import fr.vlik.grandfantasia.Nucleus;
 import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.characUpgrade.BuffIcon;
+import fr.vlik.grandfantasia.characUpgrade.Energy;
+import fr.vlik.grandfantasia.characUpgrade.Nucleus;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;

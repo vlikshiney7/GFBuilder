@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.loader;
 
-import fr.vlik.grandfantasia.CombiTalent;
+import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeSkillEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
@@ -419,7 +419,53 @@ public class LoaderCombiTalent {
 	
 	static CombiTalent[] getClass10() {
 		return new CombiTalent[] {
-			
+			new CombiTalent("Couperet de l'Air", new int[] { 1, 2, 1, 1, }, new Calculable[] {
+				new Effect(TypeEffect.PeneM, false, 4),
+				new Effect(TypeEffect.VitAtk, false, 10),
+			}),
+			new CombiTalent("Demi Seigneur", new int[] { 2, 3, 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.RTCCP, false, 15),
+				new Effect(TypeEffect.RTCCM, false, 15),
+			}),
+			new CombiTalent("Lame Démoniaque Frénétique", new int[] { 3, 2, 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 10),
+				new Effect(TypeEffect.AtkM, true, 10),
+			}),
+			new CombiTalent("Dérive Spatiale", new int[] { 1, 3, 2, }, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 8),
+				new Effect(TypeEffect.ESQ, false, 5),
+			}),
+			new CombiTalent("Briseur Dimensionnel", new int[] { 2, 2, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 4),
+				new Effect(TypeEffect.Depla, false, 8),
+			}),
+			new CombiTalent("Vagabond du Temps", new int[] { 3, 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.DCCM, false, 8),
+				new Effect(TypeEffect.CostComp, false, -15),
+			}),
+			new CombiTalent("Lame de la Faille de Cristal", new int[] { 1, 1, }, new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 8),
+			}),
+			new CombiTalent("Seigneur de la Lame Démoniaque", new int[] { 1, 2, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 4),
+				new Effect(TypeEffect.ESQ, false, 8),
+			}),
+			new CombiTalent("Avant-Garde du Cristal Démoniaque", new int[] { 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.VitComp, false, 5),
+				new Effect(TypeEffect.Depla, false, 8),
+			}),
+			new CombiTalent("Marcheur des Ténèbres", new int[] { 2, 3, }, new Calculable[] {
+				new Effect(TypeEffect.DCCM, false, 10),
+				new Effect(TypeEffect.Toucher, false, 10),
+			}),
+			new CombiTalent("Voleur de Vie", new int[] { 3, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 3),
+				new Effect(TypeEffect.TCCM, false, 5),
+			}),
+			new CombiTalent("Révélateur", new int[] { 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.TCCM, false, 5),
+				new Effect(TypeEffect.Toucher, false, 5),
+			}),
 		};
 	}
 	

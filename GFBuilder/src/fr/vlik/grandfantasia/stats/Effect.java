@@ -2,7 +2,7 @@ package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 
 public class Effect implements Calculable {
 

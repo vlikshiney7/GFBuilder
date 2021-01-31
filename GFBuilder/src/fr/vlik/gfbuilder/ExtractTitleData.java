@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-import fr.vlik.grandfantasia.Title;
+import fr.vlik.grandfantasia.characUpgrade.Title;
 
 public class ExtractTitleData {
 	

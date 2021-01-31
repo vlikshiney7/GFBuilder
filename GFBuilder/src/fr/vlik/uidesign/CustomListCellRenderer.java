@@ -8,8 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 
 import fr.vlik.gfbuilder.SaveConfig;
-import fr.vlik.grandfantasia.Talent;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;

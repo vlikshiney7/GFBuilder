@@ -1,7 +1,7 @@
 package fr.vlik.grandfantasia.loader;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Title;
+import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;

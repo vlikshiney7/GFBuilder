@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.loader;
 
-import fr.vlik.grandfantasia.ProSkill;
+import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;

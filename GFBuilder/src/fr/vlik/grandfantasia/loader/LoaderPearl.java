@@ -1,9 +1,9 @@
 package fr.vlik.grandfantasia.loader;
 
-import fr.vlik.grandfantasia.Pearl;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
+import fr.vlik.grandfantasia.equipUpgrade.Pearl;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Condition.TypeCondition;

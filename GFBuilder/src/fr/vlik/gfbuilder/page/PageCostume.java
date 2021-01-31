@@ -15,14 +15,14 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.CombiRunway;
-import fr.vlik.grandfantasia.Pearl;
-import fr.vlik.grandfantasia.Runway;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
-import fr.vlik.grandfantasia.equipable.Costume;
-import fr.vlik.grandfantasia.equipable.Costume.CostumeType;
+import fr.vlik.grandfantasia.equipUpgrade.Pearl;
+import fr.vlik.grandfantasia.equipUpgrade.Runway;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.subEquip.Costume;
+import fr.vlik.grandfantasia.subEquip.Costume.CostumeType;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomCheckBox;

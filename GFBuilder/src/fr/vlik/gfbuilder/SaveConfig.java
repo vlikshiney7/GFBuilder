@@ -21,10 +21,10 @@ import fr.vlik.grandfantasia.custom.CustomRing;
 import fr.vlik.grandfantasia.custom.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipable.Armor;
-import fr.vlik.grandfantasia.equipable.Cape;
-import fr.vlik.grandfantasia.equipable.Ring;
-import fr.vlik.grandfantasia.equipable.Weapon;
+import fr.vlik.grandfantasia.equip.Armor;
+import fr.vlik.grandfantasia.equip.Cape;
+import fr.vlik.grandfantasia.equip.Ring;
+import fr.vlik.grandfantasia.equip.Weapon;
 
 public class SaveConfig {
 	

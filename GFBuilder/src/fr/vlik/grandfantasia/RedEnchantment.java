@@ -3,7 +3,8 @@ package fr.vlik.grandfantasia;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipable.Equipment;
+import fr.vlik.grandfantasia.equip.Equipment;
+import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;

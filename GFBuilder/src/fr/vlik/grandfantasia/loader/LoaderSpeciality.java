@@ -1,8 +1,8 @@
 package fr.vlik.grandfantasia.loader;
 
-import fr.vlik.grandfantasia.Speciality;
+import fr.vlik.grandfantasia.characUpgrade.Speciality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipable.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -618,45 +618,67 @@ public class LoaderSpeciality {
 	
 	static Speciality[] getClass10() {
 		return new Speciality[] {
-			new Speciality("", 45, "10-0", new Calculable[] {
+			new Speciality("Fortifier Magie", 45, "10-0", new Calculable[] {
+				new Effect(TypeEffect.INT, false, 9),
 			}),
-			new Speciality("", 45, "10-1", new Calculable[] {
+			new Speciality("Contrôle du Royaume", 45, "10-1", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 1),
 			}),
-			new Speciality("", 45, "10-2", new Calculable[] {
+			new Speciality("Combustion Cristalline", 45, "10-2", new Calculable[] {
+				new Effect(TypeEffect.TCCM, false, 1.5),
 			}),
-			new Speciality("", 45, "10-3", new Calculable[] {
+			new Speciality("Maîtrise de la lame", 45, "10-3", new Calculable[] {
+				new Effect(TypeEffect.DegLa, false, 1.5),
 			}),
-			new Speciality("", 45, "10-4", new Calculable[] {
+			new Speciality("Drainage Magique", 45, "10-4", new Calculable[] {
+				new Effect(TypeEffect.CostComp, false, -3),
 			}),
-			new Speciality("", 45, "10-5", new Calculable[] {
+			new Speciality("Accumulation Cristalline", 45, "10-5", new Calculable[] {
+				new Effect(TypeEffect.PM, true, 1),
 			}),
-			new Speciality("", 60, "10-6", new Calculable[] {
+			new Speciality("Danse des Lames", 60, "10-6", new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 1),
 			}),
-			new Speciality("", 60, "10-7", new Calculable[] {
+			new Speciality("Contrôle de Pouvoir Magique", 60, "10-7", new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 1),
 			}),
-			new Speciality("", 60, "10-8", new Calculable[] {
+			new Speciality("Lame Briseuse de Royaume", 60, "10-8", new Calculable[] {
+				new Effect(TypeEffect.PeneP, false, 1.5),
 			}),
-			new Speciality("", 60, "10-9", new Calculable[] {
+			new Speciality("Gardien du Royaume", 60, "10-9", new Calculable[] {
+				new Effect(TypeEffect.MEN, false, 1),
 			}),
-			new Speciality("", 75, "10-10", new Calculable[] {
+			new Speciality("Gardien Briseur de Magie", 75, "10-10", new Calculable[] {
+				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Speciality("", 75, "10-11", new Calculable[] {
+			new Speciality("Bouclier Magique", 75, "10-11", new Calculable[] {
+				new Effect(TypeEffect.DefM, true, 1.5),
 			}),
-			new Speciality("", 75, "10-12", new Calculable[] {
+			new Speciality("Volonté du Néant", 75, "10-12", new Calculable[] {
+				new Effect(TypeEffect.ReducP, false, 1.5),
+				new Effect(TypeEffect.ReducM, false, 1.5),
 			}),
-			new Speciality("", 75, "10-13", new Calculable[] {
+			new Speciality("Épée Magique Gardienne", 75, "10-13", new Calculable[] {
+				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Speciality("", 75, "10-14", new Calculable[] {
+			new Speciality("Ascension de Lame Magique", 75, "10-14", new Calculable[] {
+				new Effect(TypeEffect.VIT, false, 4),
+				new Effect(TypeEffect.INT, false, 5),
 			}),
-			new Speciality("", 75, "10-15", new Calculable[] {
+			new Speciality("Transfert de Position", 75, "10-15", new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 2),
 			}),
-			new Speciality("", 91, "10-16", new Calculable[] {
+			new Speciality("Échange de Capacité", 91, "10-16", new Calculable[] {
+				new Effect(TypeEffect.FCE, 3, TypeEffect.INT),
 			}),
-			new Speciality("", 91, "10-17", new Calculable[] {
+			new Speciality("Échange de Cristal", 91, "10-17", new Calculable[] {
+				new Effect(TypeEffect.VIT, 3, TypeEffect.VOL),
 			}),
-			new Speciality("", 91, "10-18", new Calculable[] {
+			new Speciality("Cristallisation du Sang", 91, "10-18", new Calculable[] {
+				new Effect(TypeEffect.PV, true, 1),
 			}),
-			new Speciality("", 91, "10-19", new Calculable[] {
+			new Speciality("Combustion Temporelle", 91, "10-19", new Calculable[] {
+				new Effect(TypeEffect.DCCM, false, 2),
 			}),
 		};
 	}

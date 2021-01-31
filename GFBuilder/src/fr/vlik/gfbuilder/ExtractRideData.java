@@ -13,8 +13,8 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fr.vlik.grandfantasia.Ride;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.equip.Ride;
 
 public class ExtractRideData {
 	

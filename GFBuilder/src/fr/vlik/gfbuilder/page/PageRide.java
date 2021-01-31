@@ -15,15 +15,15 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.Ride;
-import fr.vlik.grandfantasia.XpStuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
-import fr.vlik.grandfantasia.equipable.Synthesis;
+import fr.vlik.grandfantasia.equip.Ride;
+import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.subEquip.Synthesis;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;

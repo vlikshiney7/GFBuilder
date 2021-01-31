@@ -5,10 +5,10 @@ import java.util.Map;
 
 import javax.swing.Icon;
 
-import fr.vlik.grandfantasia.Enchantment;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;

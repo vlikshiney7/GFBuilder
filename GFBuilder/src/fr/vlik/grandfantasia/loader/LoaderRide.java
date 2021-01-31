@@ -1,7 +1,7 @@
 package fr.vlik.grandfantasia.loader;
 
-import fr.vlik.grandfantasia.Ride;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.equip.Ride;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class LoaderRide {

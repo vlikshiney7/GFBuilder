@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.equipUpgrade.Runway;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.Loader;
 

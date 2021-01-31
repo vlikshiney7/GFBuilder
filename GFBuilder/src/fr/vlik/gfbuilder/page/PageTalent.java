@@ -18,9 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.CombiTalent;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Talent;
+import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
+import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.CustomListCellRenderer;
