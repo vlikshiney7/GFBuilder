@@ -2673,7 +2673,7 @@ public class LoaderWeapon {
 	static Weapon[] getEp2M() {
 		return new Weapon[] {
 			new RedWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Miroir de la Colombe"); put(Language.EN, "Typhoon Sparrow Mirror"); }},
-				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
 				90, Quality.RED, false, WeaponType.EPEE2M, true, false, "epee2M/90red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 7152, true),
 					new Effect(TypeEffect.FCE, false, 124, true),
@@ -6862,7 +6862,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 40, true),
 					new Effect(TypeEffect.Toucher, false, 15),
 					new StaticEffect(TypeStaticEffect.x3STD, 20),
-					new StaticEffect(TypeStaticEffect.Push, 12),
+					new StaticEffect(TypeStaticEffect.Push, 12, Target.OPPONENT),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marque du Dragon Noir Magique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7083,7 +7083,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 23, true),
 					new Effect(TypeEffect.Toucher, false, 8),
 					new StaticEffect(TypeStaticEffect.x3STD, 20),
-					new StaticEffect(TypeStaticEffect.Push, 12),
+					new StaticEffect(TypeStaticEffect.Push, 12, Target.OPPONENT),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Métal Tranchant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7973,7 +7973,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Effect(TypeEffect.Glace, false, 10),
-					new StaticEffect(TypeStaticEffect.Push, 18),
+					new StaticEffect(TypeStaticEffect.Push, 18, Target.OPPONENT),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Nobles Sacrés"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },

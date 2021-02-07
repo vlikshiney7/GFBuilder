@@ -18,8 +18,8 @@ public enum TypeEffect implements Colorable, Writable {
 	AtkD("Attaque à Distance", "Range Attack", "ATQ D.", "R-ATK", 60000, true, Tools.EffectColor[5]),
 	AtkM("Attaque Magique", "Magic Attack", "ATQ M.", "M-ATK", 60000, true, Tools.EffectColor[3]),
 	
-	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, false, Tools.EffectColor[2]),
-	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, false, Tools.EffectColor[4]),
+	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, true, Tools.EffectColor[2]),
+	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, true, Tools.EffectColor[4]),
 	TCCP("Taux Coup Critique Physique", "Chance of Physical Critical Hit", "TCCP", "", 100, false, Tools.EffectColor[5]),
 	TCCM("Taux Coup Critique Magique", "Chance of Magical Critical Hit", "TCCM", "", 100, false, Tools.EffectColor[3]),
 	ESQ("Esquive", "", "ESQ", "", -1, true, Tools.EffectColor[5]),
@@ -173,8 +173,6 @@ public enum TypeEffect implements Colorable, Writable {
 	RegenPV("Régénération de Point de Vie Assis", "", "Regen PV", "", -1, false, Tools.EffectColor[0]),
 	RegenPM("Régénération de Point de Mana Assis", "", "Regen PM", "", -1, false, Tools.EffectColor[0]),
 	MEN("Menace", "", "Menace", "", -1, true, Tools.EffectColor[0]),
-	BoostCraft("Taux de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Tools.EffectColor[0]),
-	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Tools.EffectColor[0]),
 	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Tools.EffectColor[0]),
 	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Tools.EffectColor[0]),
 	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Tools.EffectColor[7]),
@@ -182,6 +180,13 @@ public enum TypeEffect implements Colorable, Writable {
 	ReflectM("Dégât Magique Renvoyé", "", "Deg Mag Refl", "", -1, true, Tools.EffectColor[11]),
 	ReflectPene("Dégât Pénétration Renvoyé", "", "Deg Péné Refl", "", -1, true, Tools.EffectColor[7]),
 	Shield("Bouclier de dégât", "Shield damage", "Bouclier", "Shield", -1, true, Tools.EffectColor[0]),
+	
+	BoostCraft("Taux de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Tools.EffectColor[0]),
+	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Tools.EffectColor[0]),
+	Mine("Matériaux Bonus Mine", "", "Mine", "", -1, true, Tools.EffectColor[0]),
+	Chasse("Matériaux Bonus Chasse", "", "Chasse", "", -1, true, Tools.EffectColor[0]),
+	Cueillete("Matériaux Bonus Cueilette", "", "Cueillette", "", -1, true, Tools.EffectColor[0]),
+	Material("Matériel Sup.", "Sup. Material", "Matériel Sup.", "Sup. Material", -1, true, Tools.EffectColor[0]),
 	
 	NONE("Aucun", "None", "Aucun", "None", -1, true, Tools.EffectColor[6]);
 	

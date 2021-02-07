@@ -81,6 +81,7 @@ public class Effect implements Calculable {
 		
 		SELF("soi", "self"),
 		ALLY("allié", "ally"),
+		SPRITE("sprite", "sprite"),
 		OPPONENT("ennemi", "opponent");
 		
 		public final String fr;
@@ -140,14 +141,15 @@ public class Effect implements Calculable {
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder(this.type.abbrevFR);
 		tooltip.append(this.value > 0 ? " +" : " ");
-		tooltip.append((int) this.value);
+		tooltip.append(this.value);
 		tooltip.append(this.isPercent ? "%" : "");
-		return "<li>" + tooltip + "</li>";
+		
+		return "<li>" + tooltip.toString().replace(".0", "") + "</li>";
 	}
 	
 	@Override
 	public String toString() {
-		String result = this.getType().fr + (this.getValue() < 0 ? " " : " +") + (int) this.getValue() + (this.isPercent ? "%" :"");
+		String result = this.type.fr + (this.value > 0 ? " +" : " ") + this.value + (this.isPercent ? "%" :"");
 		if(this.withWeapon != WeaponType.NONE) {
 			result += " si équipé ";
 			switch (this.withWeapon) {
@@ -171,7 +173,7 @@ public class Effect implements Calculable {
 			}
 		}
 		
-		return result;
+		return result.replace(".0", "");
 	}
 	
 	public String toString(Language lang) {
@@ -192,7 +194,7 @@ public class Effect implements Calculable {
 		}
 		
 		result += (this.value < 0 ? " " : " +");
-		result += (int) this.value + (this.isPercent ? "%" : "");
+		result += this.value + (this.isPercent ? "%" : "");
 		if(this.withWeapon != WeaponType.NONE) {
 			if(lang == Language.FR) {
 				result += " si équipé d'";
@@ -204,6 +206,34 @@ public class Effect implements Calculable {
 			
 		}
 		
-		return result;
+		return result.replace(".0", "");
+	}
+	
+	public String toCode() {
+		String code = "\tnew Effect(TypeEffect." + this.type + ", " + this.isPercent + ", " + this.value;
+		
+		if(this.transfert != null) {
+			code += ", " + this.withReinca;
+			code += ", WeaponType." + this.withWeapon;
+			code += ", TypeEffect." + this.transfert;
+			code += "),\n";
+		}
+		
+		if(this.withWeapon != WeaponType.NONE) {
+			code += ", " + this.withReinca;
+			code += ", WeaponType." + this.withWeapon;
+			code += "),\n";
+		}
+		
+		if(this.withReinca) {
+			code += ", " + this.withReinca;
+		}
+		
+		code += "),\n";
+		
+		code = code.replace(".0)", ")");
+		code = code.replace(".0,", ",");
+		
+		return code;
 	}
 }

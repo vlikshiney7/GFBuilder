@@ -22,7 +22,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Weapon extends Equipment {
 	
-	public static String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
+	private static final String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Weapon[][] data = LoaderEquip.getWeapon();
 	private static ArrayList<Weapon> customData = new ArrayList<Weapon>();
@@ -105,12 +105,8 @@ public class Weapon extends Equipment {
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + this.quality.index + Tools.PNG));
+		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
-		
-		if(path == null) {
-			path = "null";
-		}
 		
 		if(object == null) {
 			try {
@@ -284,8 +280,6 @@ public class Weapon extends Equipment {
 		}
 		
 		Weapon[] cast = new Weapon[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

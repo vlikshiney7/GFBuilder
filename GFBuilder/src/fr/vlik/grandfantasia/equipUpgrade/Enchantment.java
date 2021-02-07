@@ -174,9 +174,7 @@ public class Enchantment implements Colorable, Writable {
 		}
 		
 		Enchantment[] cast = new Enchantment[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 	
 	public static Enchantment[] getPossibleEnchant(CustomEquipment equip, Quality quality) {
@@ -195,8 +193,6 @@ public class Enchantment implements Colorable, Writable {
 		}
 		
 		Enchantment[] cast = new Enchantment[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

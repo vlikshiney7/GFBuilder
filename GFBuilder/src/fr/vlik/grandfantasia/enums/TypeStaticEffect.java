@@ -20,7 +20,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	NoMag("Compétences magique bloquées", "Magical skills blocked", "Silence magique", "Anti Mag Skills", Tools.EffectColor[8]),
 	AntiItem("Objet bloqué", "Object blocked", "Anti Objet", "Anti Item", Tools.EffectColor[8]),
 	Stun("Étourdissement", "Stun", "Stun", "Stun", Tools.EffectColor[8]),
-	Push("Repousse l'ennemi", "Opponent push", "Push", "Push", Tools.EffectColor[8]),
+	Push("Ejection", "Push", "Push", "Push", Tools.EffectColor[8]),
 	Sleep("Endormissement", "Sleep", "Sommeil", "Sleep", Tools.EffectColor[8]),
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),

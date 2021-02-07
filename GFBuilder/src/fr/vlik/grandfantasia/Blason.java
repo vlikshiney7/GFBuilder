@@ -17,7 +17,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Blason implements Iconable, Writable {
 	
-	public static String PATH = Tools.RESOURCE + "sprite/";
+	private static final String PATH = Tools.RESOURCE + "sprite/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Blason[] data;
 	static {

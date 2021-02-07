@@ -864,13 +864,424 @@ public class LoaderCustomWeapon {
 	
 	static CustomWeapon[] getMa2M() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Sismique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				100, WeaponType.MARTEAU2M, "marteau2M/32vert", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4269, true),
+					new Effect(TypeEffect.AtkM, false, 1718, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Masse de Charon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				100, WeaponType.MARTEAU2M, "marteau2M/20ora", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4269, true),
+					new Effect(TypeEffect.AtkM, false, 1718, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de Siège"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				95, WeaponType.MARTEAU2M, "marteau2M/97sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3990, true),
+					new Effect(TypeEffect.AtkM, false, 1606, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Étoile du Matin à Deux Têtes"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				95, WeaponType.MARTEAU2M, "marteau2M/70gvg", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3990, true),
+					new Effect(TypeEffect.AtkM, false, 1606, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Traces de Rune Cherche-Bête"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				90, WeaponType.MARTEAU2M, "marteau2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3715, true),
+					new Effect(TypeEffect.AtkM, false, 1495, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Rune Cherche-Bête"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				90, WeaponType.MARTEAU2M, "marteau2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3715, true),
+					new Effect(TypeEffect.AtkM, false, 1495, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de l'Épine d'Or"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				87, WeaponType.MARTEAU2M, "marteau2M/80pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3553, true),
+					new Effect(TypeEffect.AtkM, false, 1430, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Emblème des Bêtes Légendaires"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				85, WeaponType.MARTEAU2M, "marteau2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3341, true),
+					new Effect(TypeEffect.AtkM, false, 1345, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau Béni"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				82, WeaponType.MARTEAU2M, "marteau2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3288, true),
+					new Effect(TypeEffect.AtkM, false, 1219, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Foudre Mortelle - Rêves Brisés"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				80, WeaponType.MARTEAU2M, "marteau2M/83bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3183, true),
+					new Effect(TypeEffect.AtkM, false, 1281, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Foudre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				77, WeaponType.MARTEAU2M, "marteau2M/83bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3028, true),
+					new Effect(TypeEffect.AtkM, false, 1219, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Grand Marteau Céleste"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				75, WeaponType.MARTEAU2M, "marteau2M/icon9", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2926, true),
+					new Effect(TypeEffect.AtkM, false, 1178, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Masse du Géant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				71, WeaponType.MARTEAU2M, "marteau2M/icon7", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2724, true),
+					new Effect(TypeEffect.AtkM, false, 1097, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Assommoir"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				70, WeaponType.MARTEAU2M, "marteau2M/66blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2675, true),
+					new Effect(TypeEffect.AtkM, false, 1077, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau d'Apparat"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				66, WeaponType.MARTEAU2M, "marteau2M/66blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2478, true),
+					new Effect(TypeEffect.AtkM, false, 997, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de la Roue de Feu"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				65, WeaponType.MARTEAU2M, "marteau2M/icon5", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2430, true),
+					new Effect(TypeEffect.AtkM, false, 978, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de la Frappe d'Acier Rouge"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				61, WeaponType.MARTEAU2M, "marteau2M/icon5", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2239, true),
+					new Effect(TypeEffect.AtkM, false, 901, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Cristal"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				60, WeaponType.MARTEAU2M, "marteau2M/62bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2191, true),
+					new Effect(TypeEffect.AtkM, false, 882, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Météorite"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				60, WeaponType.MARTEAU2M, "marteau2M/32vert", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2200, true),
+					new Effect(TypeEffect.AtkM, false, 882, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau du Siège Démoniaque"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				56, WeaponType.MARTEAU2M, "marteau2M/97sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2006, true),
+					new Effect(TypeEffect.AtkM, false, 807, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Mutant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				56, WeaponType.MARTEAU2M, "marteau2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2015, true),
+					new Effect(TypeEffect.AtkM, false, 807, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau Massacreur de Monstres"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				56, WeaponType.MARTEAU2M, "marteau2M/97sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2010, true),
+					new Effect(TypeEffect.AtkM, false, 805, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau à Motifs Ancestraux"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				48, WeaponType.MARTEAU2M, "marteau2M/32bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1649, true),
+					new Effect(TypeEffect.AtkM, false, 664, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Guerre du Protecteur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				48, WeaponType.MARTEAU2M, "marteau2M/42blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1677, true),
+					new Effect(TypeEffect.AtkM, false, 664, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet du Peuple Ancestral"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				48, WeaponType.MARTEAU2M, "marteau2M/32bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1650, true),
+					new Effect(TypeEffect.AtkM, false, 670, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Vengeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				40, WeaponType.MARTEAU2M, "marteau2M/icon0", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1313, true),
+					new Effect(TypeEffect.AtkM, false, 529, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Protection"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				40, WeaponType.MARTEAU2M, "marteau2M/97sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1321, true),
+					new Effect(TypeEffect.AtkM, false, 529, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet du Péché Céleste"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				40, WeaponType.MARTEAU2M, "marteau2M/icon0", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1312, true),
+					new Effect(TypeEffect.AtkM, false, 530, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Combat Féroce"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				32, WeaponType.MARTEAU2M, "marteau2M/42blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1001, true),
+					new Effect(TypeEffect.AtkM, false, 403, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Original Maillet de Pierre Géant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				32, WeaponType.MARTEAU2M, "marteau2M/32vert", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1010, true),
+					new Effect(TypeEffect.AtkM, false, 403, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Guerre de l'Irritable"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				32, WeaponType.MARTEAU2M, "marteau2M/42blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1000, true),
+					new Effect(TypeEffect.AtkM, false, 410, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau Dur du Dictateur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				26, WeaponType.MARTEAU2M, "marteau2M/26blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 784, true),
+					new Effect(TypeEffect.AtkM, false, 316, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de Métal Lourd"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				24, WeaponType.MARTEAU2M, "marteau2M/icon1", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 716, true),
+					new Effect(TypeEffect.AtkM, false, 288, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Massue Épineuse"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				24, WeaponType.MARTEAU2M, "marteau2M/icon3", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 720, true),
+					new Effect(TypeEffect.AtkM, false, 288, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau d'Acier Renforcé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				24, WeaponType.MARTEAU2M, "marteau2M/icon1", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 718, true),
+					new Effect(TypeEffect.AtkM, false, 290, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Gros Maillet du Forgeron"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				16, WeaponType.MARTEAU2M, "marteau2M/26blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 463, true),
+					new Effect(TypeEffect.AtkM, false, 186, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Excellent Maillet de Combat"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				16, WeaponType.MARTEAU2M, "marteau2M/42blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 477, true),
+					new Effect(TypeEffect.AtkM, false, 186, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Grande Masse"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
+				10, WeaponType.MARTEAU2M, "marteau2M/10sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 301, true),
+					new Effect(TypeEffect.AtkM, false, 121, true),
+				}),
 		};
 	}
 	
 	static CustomWeapon[] getHa2M() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Tyran"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				100, WeaponType.HACHE2M, "hache2M/16sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4803, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Casse-colline"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				100, WeaponType.HACHE2M, "hache2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4803, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Grande Hache Ouragan"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				95, WeaponType.HACHE2M, "hache2M/95blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4489, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Tornade de Dragon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				95, WeaponType.HACHE2M, "hache2M/70gvg", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4489, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Massacre Enflammé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				90, WeaponType.HACHE2M, "hache2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 4180, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Combat du Saurien"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				86, WeaponType.HACHE2M, "hache2M/80pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3937, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Valyria"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				85, WeaponType.HACHE2M, "hache2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3758, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Ravageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				81, WeaponType.HACHE2M, "hache2M/89bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3640, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Ailes Nocturnes - Illusion"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				80, WeaponType.HACHE2M, "hache2M/83bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3581, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de l'Aile Obscure"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				76, WeaponType.HACHE2M, "hache2M/83bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3349, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Double Hache Titanesque"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				75, WeaponType.HACHE2M, "hache2M/icon6", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3292, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Grande Hache Sombre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				72, WeaponType.HACHE2M, "hache2M/95blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3121, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Sapeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				70, WeaponType.HACHE2M, "hache2M/67blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3009, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hallebarde Lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				67, WeaponType.HACHE2M, "hache2M/67blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2843, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de l'Hérétique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				65, WeaponType.HACHE2M, "hache2M/icon4", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2733, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Combat Veineux"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				62, WeaponType.HACHE2M, "hache2M/icon4", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2572, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Destructeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				60, WeaponType.HACHE2M, "hache2M/46sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2465, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache en Demie-Lune"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				60, WeaponType.HACHE2M, "hache2M/48vert", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2477, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Grand Seigneur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				57, WeaponType.HACHE2M, "hache2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2308, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Chef de Guerre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				57, WeaponType.HACHE2M, "hache2M/52blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2315, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Roi Sacré"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				57, WeaponType.HACHE2M, "hache2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2312, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Combat du Général"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				49, WeaponType.HACHE2M, "hache2M/icon0", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1904, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de la Mort"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				49, WeaponType.HACHE2M, "hache2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1923, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Seigneur de Guerre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				49, WeaponType.HACHE2M, "hache2M/icon0", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1908, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Géante Barbare"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				41, WeaponType.HACHE2M, "hache2M/16sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1523, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fracassante Hache d'Acier"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				41, WeaponType.HACHE2M, "hache2M/icon1", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1537, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Primitive du Géant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				41, WeaponType.HACHE2M, "hache2M/16sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1525, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache à Long Crochet"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				33, WeaponType.HACHE2M, "hache2M/60bleu1", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1169, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache en Lune"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				33, WeaponType.HACHE2M, "hache2M/36sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1178, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Guerre à Eperon de Requin"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				33, WeaponType.HACHE2M, "hache2M/60bleu1", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1170, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache des Champs de Bataille"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				26, WeaponType.HACHE2M, "hache2M/26blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 882, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Combat Royale"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				25, WeaponType.HACHE2M, "hache2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 843, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Pierre Aiguisée"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				25, WeaponType.HACHE2M, "hache2M/56sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 850, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Tranchante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				18, WeaponType.HACHE2M, "hache2M/33bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 588, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Longue d'Officier"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				17, WeaponType.HACHE2M, "hache2M/33bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 554, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Coupante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				17, WeaponType.HACHE2M, "hache2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 558, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache à Double Tranchant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				11, WeaponType.HACHE2M, "hache2M/6blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 367, true),
+				}),
 		};
 	}
 	

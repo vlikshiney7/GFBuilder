@@ -21,7 +21,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Armor extends Equipment {
 	
-	public static String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
+	private static final String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Armor[][] data = LoaderEquip.getArmor();
 	private static ArrayList<Armor> customData = new ArrayList<Armor>();
@@ -134,12 +134,8 @@ public class Armor extends Equipment {
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
-		
-		if(path == null) {
-			path = "null";
-		}
 		
 		if(object == null) {
 			try {
@@ -246,8 +242,6 @@ public class Armor extends Equipment {
 		}
 		
 		Armor[] cast = new Armor[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

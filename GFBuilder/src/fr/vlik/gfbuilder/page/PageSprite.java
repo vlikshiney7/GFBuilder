@@ -13,10 +13,9 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Blason.BlasonType;
-import fr.vlik.grandfantasia.Buff;
+import fr.vlik.grandfantasia.IslandBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 
@@ -28,7 +27,7 @@ public class PageSprite extends PagePanel {
 	private static PageSprite INSTANCE = new PageSprite();
 	
 	private ArrayList<JCustomComboBox<Blason>> blason = new ArrayList<JCustomComboBox<Blason>>(2);
-	private JCustomComboBox<Buff> isleBuff;
+	private JCustomComboBox<IslandBuff> islandBuff;
 	
 	public static PageSprite getInstance() {
 		return INSTANCE;
@@ -47,8 +46,8 @@ public class PageSprite extends PagePanel {
 			});
 		}
 		
-		this.isleBuff = new JCustomComboBox<Buff>(Buff.getData());
-		this.isleBuff.addActionListener(e -> {
+		this.islandBuff = new JCustomComboBox<IslandBuff>(IslandBuff.getData());
+		this.islandBuff.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
@@ -62,8 +61,8 @@ public class PageSprite extends PagePanel {
 		return this.blason.get(id).getSelectedItem();
 	}
 	
-	public Buff getIsleBuff() {
-		return this.isleBuff.getSelectedItem();
+	public IslandBuff getIsleBuff() {
+		return this.islandBuff.getSelectedItem();
 	}
 	
 	@Override
@@ -80,7 +79,7 @@ public class PageSprite extends PagePanel {
 		}
 		
 		if(this.getIsleBuff().getEffects() != null) {
-			for(Effect e : this.getIsleBuff().getEffects()) {
+			for(Calculable e : this.getIsleBuff().getEffects()) {
 				list.add(e);
 			}
 		}
@@ -118,7 +117,7 @@ public class PageSprite extends PagePanel {
 		elem2.add(this.labelGFB[3]);
 		this.labelGFB[3].setFont(Design.TITLE);
 		elem2.add(Box.createVerticalStrut(10));
-		elem2.add(this.isleBuff);
+		elem2.add(this.islandBuff);
 		
 		this.add(elem1);
 		this.add(Box.createVerticalStrut(10));
@@ -159,7 +158,7 @@ public class PageSprite extends PagePanel {
 			config.put("Blason" + i, this.getBlason(i).getName());
 		}
 		
-		config.put("Isle", this.getIsleBuff().getName());
+		config.put("Isle", this.getIsleBuff().getName(Language.FR));
 		
 		return config;
 	}
@@ -175,11 +174,11 @@ public class PageSprite extends PagePanel {
 			}
 		}
 		
-		Buff isle = Buff.get(config.get("Isle"));
+		IslandBuff isle = IslandBuff.get(config.get("Isle"));
 		if(isle == null) {
-			this.isleBuff.setSelectedIndex(0);
+			this.islandBuff.setSelectedIndex(0);
 		} else {
-			this.isleBuff.setSelectedItem(isle);
+			this.islandBuff.setSelectedItem(isle);
 		}
 	}
 }

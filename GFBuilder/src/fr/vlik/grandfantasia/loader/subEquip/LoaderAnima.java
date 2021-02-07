@@ -1,5 +1,8 @@
 package fr.vlik.grandfantasia.loader.subEquip;
 
+import java.util.HashMap;
+
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.MultiEffect;
@@ -14,6 +17,7 @@ import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.subEquip.Anima;
 
+@SuppressWarnings("serial")
 public class LoaderAnima {
 	
 	static Anima[] getAnima() {
@@ -23,7 +27,7 @@ public class LoaderAnima {
 		Anima[] result = new Anima[1 + purple.length + orange.length];
 		
 		int i = 1;
-		result[0] = new Anima("Aucun", Quality.GREY, "null", (Calculable[]) null);
+		result[0] = new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", (Calculable[]) null);
 			
 		for(int j = 0; j < purple.length; i++, j++) {
 			result[i] = purple[j];
@@ -38,7 +42,7 @@ public class LoaderAnima {
 	
 	private static Anima[] getPurple() {
 		return new Anima[] {
-			new Anima("Anima sylvestre transperçant", Quality.PURPLE, "vio0", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre transperçant"); put(Language.EN, ""); }}, Quality.PURPLE, "vio0", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.PeneP, false, 0.1),
 			        new Effect(TypeEffect.PeneM, false, 0.1),
@@ -440,7 +444,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.PeneM, false, 5.7),
 			    },
 			})),
-			new Anima("Anima sylvestre gardien", Quality.PURPLE, "vio1", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre gardien"); put(Language.EN, ""); }}, Quality.PURPLE, "vio1", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.ReducPeneP, false, 0.1),
 			        new Effect(TypeEffect.ReducPeneM, false, 0.1),
@@ -842,7 +846,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.ReducPeneM, false, 5.7),
 			    },
 			})),
-			new Anima("Anima sylvestre d'attaque", Quality.PURPLE, "vio2", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre d'attaque"); put(Language.EN, ""); }}, Quality.PURPLE, "vio2", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Atk, false, 6, true),
 			        new Effect(TypeEffect.AtkD, false, 6, true),
@@ -1444,7 +1448,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			    },
 			})),
-			new Anima("Anima sylvestre de chasse", Quality.PURPLE, "vio3", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre de chasse"); put(Language.EN, ""); }}, Quality.PURPLE, "vio3", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			        new Effect(TypeEffect.DCCP, false, 1),
@@ -1942,7 +1946,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.DCCP, false, 38),
 			    },
 			})),
-			new Anima("Anima sylvestre ésotérique", Quality.PURPLE, "vio4", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre ésotérique"); put(Language.EN, ""); }}, Quality.PURPLE, "vio4", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			        new Effect(TypeEffect.DCCM, false, 1),
@@ -2440,7 +2444,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.DCCM, false, 38),
 			    },
 			})),
-			new Anima("Anima sylvestre redoutable", Quality.PURPLE, "vio5", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre redoutable"); put(Language.EN, ""); }}, Quality.PURPLE, "vio5", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.FCE, false, 2, true),
 			        new Effect(TypeEffect.VIT, false, 2, true),
@@ -3242,7 +3246,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			    },
 			})),
-			new Anima("Anima sylvestre embrasant", Quality.PURPLE, "vio6", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre embrasant"); put(Language.EN, ""); }}, Quality.PURPLE, "vio6", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 15, true),
 			    },
@@ -3544,7 +3548,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.PM, false, 1500, true),
 			    },
 			})),
-			new Anima("Anima sylvestre de dextérité", Quality.PURPLE, "vio7", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre de dextérité"); put(Language.EN, ""); }}, Quality.PURPLE, "vio7", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 10),
 			        new Effect(TypeEffect.ESQ, false, 2),
@@ -3946,7 +3950,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.ESQ, false, 14),
 			    },
 			})),
-			new Anima("Anima sylvestre renforçant", Quality.PURPLE, "vio8", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre renforçant"); put(Language.EN, ""); }}, Quality.PURPLE, "vio8", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.DefP, false, 6, true),
 			        new Effect(TypeEffect.DefM, false, 5, true),
@@ -4544,7 +4548,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.Parade, false, 12),
 			    },
 			})),
-			new Anima("Anima sylvestre d'Alice", Quality.PURPLE, "vioRoi1", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima sylvestre d'Alice"); put(Language.EN, ""); }}, Quality.PURPLE, "vioRoi1", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			        new Effect(TypeEffect.DCCP, false, 1),
@@ -5243,7 +5247,7 @@ public class LoaderAnima {
 	
 	private static Anima[] getOrange() {
 		return new Anima[] {
-			new Anima("Anima de Rétablissement", Quality.ORANGE, "ora0", new Calculable[] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Rétablissement"); put(Language.EN, ""); }}, Quality.ORANGE, "ora0", new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 8),
 				new Effect(TypeEffect.HealD, false, 10),
 				new Condition(TypeCondition.STATUT, new Calculable[] {
@@ -5258,7 +5262,7 @@ public class LoaderAnima {
 					new Effect(TypeEffect.PM, true, -20, Target.OPPONENT),
 				}),
 			}),
-			new Anima("Anima de Rapidité", Quality.ORANGE, "ora1", new Calculable[] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Rapidité"); put(Language.EN, ""); }}, Quality.ORANGE, "ora1", new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 8),
 				new Effect(TypeEffect.VitAtk, false, 10),
 				new Effect(TypeEffect.VitComp, false, 10),
@@ -5270,7 +5274,7 @@ public class LoaderAnima {
 					new Effect(TypeEffect.PM, true, -20, Target.OPPONENT),
 				}),
 			}),
-			new Anima("Anima de Polyvalence", Quality.ORANGE, "ora2", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Polyvalence"); put(Language.EN, ""); }}, Quality.ORANGE, "ora2", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.FCE, false, 2, true),
 			        new Effect(TypeEffect.VIT, false, 2, true),
@@ -5800,7 +5804,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			    },
 			})),
-			new Anima("Anima de Sort", Quality.ORANGE, "ora3", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Sort"); put(Language.EN, ""); }}, Quality.ORANGE, "ora3", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			        new Effect(TypeEffect.DCCM, false, 1),
@@ -6128,7 +6132,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.DCCM, false, 13),
 			    },
 			})),
-			new Anima("Anima d'Exécution", Quality.ORANGE, "ora4", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima d'Exécution"); put(Language.EN, ""); }}, Quality.ORANGE, "ora4", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			        new Effect(TypeEffect.DCCP, false, 1),
@@ -6456,7 +6460,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.DCCP, false, 13),
 			    },
 			})),
-			new Anima("Anima de Courage", Quality.ORANGE, "ora5", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Courage"); put(Language.EN, ""); }}, Quality.ORANGE, "ora5", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.DefP, false, 6, true),
 			        new Effect(TypeEffect.DefM, false, 5, true),
@@ -6850,7 +6854,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.Parade, false, 8),
 			    },
 			})),
-			new Anima("Anima de Discrétion", Quality.ORANGE, "ora6", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Discrétion"); put(Language.EN, ""); }}, Quality.ORANGE, "ora6", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Toucher, false, 10),
 			        new Effect(TypeEffect.ESQ, false, 2),
@@ -7116,7 +7120,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.ESQ, false, 10),
 			    },
 			})),
-			new Anima("Anima de Précision", Quality.ORANGE, "ora7", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima de Précision"); put(Language.EN, ""); }}, Quality.ORANGE, "ora7", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.Atk, false, 6, true),
 			        new Effect(TypeEffect.AtkD, false, 6, true),
@@ -7514,7 +7518,7 @@ public class LoaderAnima {
 			        new Effect(TypeEffect.Toucher, false, 8),
 			    },
 			})),
-			new Anima("Anima multi-noyaux", Quality.ORANGE, "ora8", new MultiEffect(1, new Calculable[][] {
+			new Anima(new HashMap<Language, String>() {{ put(Language.FR, "Anima multi-noyaux"); put(Language.EN, ""); }}, Quality.ORANGE, "ora8", new MultiEffect(1, new Calculable[][] {
 			    new Calculable[] {
 			        new Effect(TypeEffect.PM, false, 15, true),
 					new Condition(TypeEffect.PM, 20, new Calculable[] {

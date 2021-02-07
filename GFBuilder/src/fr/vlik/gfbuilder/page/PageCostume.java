@@ -14,10 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.CombiRunway;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
+import fr.vlik.grandfantasia.equipUpgrade.CombiRunway;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
 import fr.vlik.grandfantasia.equipUpgrade.Runway;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -686,7 +686,7 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.costPearl.size(); i++) {
-			config.put("Pearl" + i, this.getCostPearl(i).getName());
+			config.put("Pearl" + i, this.getCostPearl(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.checkBoxRunway.size(); i++) {

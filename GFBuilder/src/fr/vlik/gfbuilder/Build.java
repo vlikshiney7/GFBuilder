@@ -76,24 +76,7 @@ public class Build {
 					}
 				}
 			}
-		}/* else if(c instanceof Proc) {
-			Proc p = (Proc) c;
-			
-			for(Calculable calculable : p.getEffects()) {
-				if(calculable instanceof Effect) {
-					Effect e = (Effect) calculable;
-					if(e.getTarget() == Target.SELF) {
-						if(containIdWeapon(e.getWithWeapon())) {
-							if(e.isPercent()) {
-								this.effectPercent.add(e);
-							} else {
-								this.effectPoint.add(e);
-							}
-						}
-					}
-				}
-			}
-		}*/
+		}
 	}
 
 	public void addEffect(Calculable[] effects) {
@@ -108,13 +91,21 @@ public class Build {
 		}
 	}
 	
-	public void addAdditionalEffect(Effect e) {
-		this.effectAdditional.add(e);
+	public void addAdditionalEffect(Calculable c) {
+		if(c instanceof Effect) {
+			Effect e = (Effect) c;
+			
+			if(e.getTarget() == Target.SELF) {
+				if(containIdWeapon(e.getWithWeapon())) {
+					this.effectAdditional.add(e);
+				}
+			}
+		}
 	}
 	
-	public void addAdditionalEffect(ArrayList<Effect> effects) {
-		for(Effect e : effects) {
-			this.effectAdditional.add(e);
+	public void addAdditionalEffect(ArrayList<Calculable> effects) {
+		for(Calculable c : effects) {
+			addAdditionalEffect(c);
 		}
 	}
 	
@@ -171,8 +162,8 @@ public class Build {
 		result[9] = Math.floor(Math.round((result[3] * 1.5) + combinePoint[9]) * (combinePercent[9] / 100 +1));
 		
 		/* TCCP TCCM */
-		result[10] = Math.floor((Math.floor((Math.min(result[4], 2646) + 14 ) / 28) + 5 + combinePoint[10]) * (combinePercent[10] / 100 +1));
-		result[11] = Math.floor((Math.floor((Math.min(result[2], 2646) + 14 ) / 28) + 5 + combinePoint[11]) * (combinePercent[11] / 100 +1));
+		result[10] = (Math.floor((Math.min(result[4], 2646) + 14 ) / 28) + 5 + combinePoint[10]) * (combinePercent[10] / 100 +1);
+		result[11] = (Math.floor((Math.min(result[2], 2646) + 14 ) / 28) + 5 + combinePoint[11]) * (combinePercent[11] / 100 +1);
 		
 		/* ESQ */
 		result[12] = Math.floor(Math.floor((result[4] + 5) / 10) * (combinePercent[12] / 100 +1)) + combinePoint[12];
@@ -187,7 +178,11 @@ public class Build {
 		result[20] = Math.floor((Math.round(result[3] * 20) + 50 + combinePoint[20]) * (combinePercent[20] / 100 +1));
 		
 		for(int i = 21; i < result.length; i++) {
-			result[i] = Math.floor(combinePoint[i] * (combinePercent[i] / 100 +1));
+			if(TypeEffect.values()[i].entier) {
+				result[i] = Math.floor(combinePoint[i] * (combinePercent[i] / 100 +1));
+			} else {
+				result[i] = combinePoint[i] * (combinePercent[i] / 100 +1);
+			}
 		}
 
 		for(Effect add : this.effectAdditional) {

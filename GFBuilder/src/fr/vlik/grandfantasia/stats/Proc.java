@@ -54,6 +54,7 @@ public class Proc implements Calculable {
 		Crited("sur critique reçu", "on receive critical"),
 		CritedPhys("sur critique physique reçu", "on receive physical critical"),
 		CritedMag("sur critique magique reçu", "on receive magical critical"),
+		Meditation("en méditation", "on meditation"),
 		Nothing("", "");
 		
 		public final String fr;

@@ -13,6 +13,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -494,7 +495,10 @@ public class MainFrame extends JFrame {
 				if(TypeEffect.values()[i].entier) {
 					this.valueStat.get(i).setText("" + (int) allStats[i]);
 				} else {
-					this.valueStat.get(i).setText("" + allStats[i]);
+					NumberFormat format = NumberFormat.getInstance();
+					format.setMaximumFractionDigits(2);
+					
+					this.valueStat.get(i).setText(format.format(allStats[i]).replace(",", "."));
 				}
 			}
 			

@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equip;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,77 +7,72 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import fr.vlik.grandfantasia.CompleteBuff;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.interfaces.FullRenderer;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.subEquip.Anima;
 
-public class Ride implements FullRenderer {
+public class Ride extends CompleteBuff {
 	
-	public static String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + "/";
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Monture");
+		put(Language.EN, "Ride");
+	}};
+	
+	private static final String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Ride[] data = Loader.getRide();
 	
-	private String name;
 	private int lvl;
 	private boolean reinca;
-	private Effect effect;
-	private Icon icon;
+	private boolean nerfXpStuff = false;
 	
 	public Ride() {
-		this.name = "Aucun";
+		super();
 		this.lvl = 0;
+		this.quality = Quality.GREY;
 		this.reinca = false;
-		this.effect = new Effect(TypeEffect.Depla, false, 0);
-		this.icon = setIcon("null");
 	}
 	
-	public Ride(String name, int lvl, boolean reinca, String path, Effect effect) {
-		this.name = name;
+	public Ride(Map<Language, String> name, int lvl, boolean reinca, String path, Effect[] effects) {
 		this.lvl = lvl;
+		this.quality = Quality.ORANGE;
 		this.reinca = reinca;
-		this.effect = effect;
 		this.icon = setIcon(path);
 	}
 	
-	public String getName() {
-		return this.name;
+	public Ride(Map<Language, String> name, int lvl, boolean reinca, boolean nerfXpStuff, String path, Effect[] effects) {
+		this.lvl = lvl;
+		this.quality = Quality.ORANGE;
+		this.reinca = reinca;
+		this.nerfXpStuff = nerfXpStuff;
+		this.icon = setIcon(path);
 	}
 	
 	public int getLvl() {
 		return this.lvl;
 	}
 	
-	public Effect getEffect() {
-		return new Effect(this.effect);
-	}
-	
 	public boolean isReinca() {
 		return this.reinca;
 	}
-	
-	@Override
-	public Color getColor() {
-		return this.name.equals("Rien") ? Tools.itemColor[0] : Tools.itemColor[4];
-	}
-	
-	@Override
-	public Icon getIcon() {
-		return this.icon;
+
+	public boolean isNerfXpStuff() {
+		return this.nerfXpStuff;
 	}
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Anima.class.getResource(Tools.PATH32 + "4.png"));
+		ImageIcon back = new ImageIcon(Ride.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
 		
 		if(object == null) {
 			try {
-				object = new ImageIcon(Anima.class.getResource(PATH + path + Tools.PNG));
+				object = new ImageIcon(Ride.class.getResource(PATH + path + Tools.PNG));
 				ICONS.put(path, object);
 			} catch (NullPointerException e) {
 				System.out.println("Image introuvable : " + path);
@@ -90,21 +84,15 @@ public class Ride implements FullRenderer {
 	
 	@Override
 	public String getInfo(Language lang) {
-		return "Lvl " + this.lvl + " - " + this.name;
-	}
-	
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		
-		tooltip.append(this.effect.getTooltip());
-		
-		return "<html>" + tooltip + "</html>";
+		if(this.name.get(lang) == "") {
+			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
+		}
+		return "Lvl " + this.lvl + " - " + this.name.get(lang);
 	}
 	
 	public static Ride get(String name) {
 		for(Ride ride : Ride.data) {
-			if(ride.getName().equals(name)) {
+			if(ride.getName(Language.FR).equals(name)) {
 				return ride;
 			}
 		}
@@ -132,8 +120,6 @@ public class Ride implements FullRenderer {
 		}
 		
 		Ride[] cast = new Ride[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

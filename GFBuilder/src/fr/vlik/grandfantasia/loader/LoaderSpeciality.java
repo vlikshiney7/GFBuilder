@@ -643,7 +643,7 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.AtkM, true, 1),
 			}),
 			new Speciality("Lame Briseuse de Royaume", 60, "10-8", new Calculable[] {
-				new Effect(TypeEffect.PeneP, false, 1.5),
+				new Effect(TypeEffect.PeneM, false, 1.5),
 			}),
 			new Speciality("Gardien du Royaume", 60, "10-9", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 1),

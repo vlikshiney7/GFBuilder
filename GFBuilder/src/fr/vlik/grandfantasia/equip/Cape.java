@@ -19,7 +19,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Cape extends Equipment {
 	
-	public static String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
+	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Cape[] data = LoaderEquip.getCape();
 	private static ArrayList<Cape> customData = new ArrayList<Cape>();
@@ -99,7 +99,7 @@ public class Cape extends Equipment {
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Cape.class.getResource(Tools.PATH32 + this.quality.index + ".png"));
+		ImageIcon back = new ImageIcon(Cape.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
 		
 		if(object == null) {
@@ -228,8 +228,6 @@ public class Cape extends Equipment {
 		}
 		
 		Cape[] cast = new Cape[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

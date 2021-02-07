@@ -5750,7 +5750,7 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.PM, true, 5),
 					new Effect(TypeEffect.DefP, true, 5),
 					new Effect(TypeEffect.DefM, true, 5),
-					new Condition(TypeCondition.RAYON, new Calculable[] {
+					new Condition(TypeCondition.RAYON16, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 5, Target.ALLY),
 						new Effect(TypeEffect.DefM, true, 5, Target.ALLY),
 					}),

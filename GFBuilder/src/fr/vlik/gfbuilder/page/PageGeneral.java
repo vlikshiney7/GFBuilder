@@ -16,9 +16,9 @@ import fr.vlik.grandfantasia.Archive;
 import fr.vlik.grandfantasia.Base;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Yggdrasil;
+import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -26,8 +26,8 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomDialog;
-import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomSpinner;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
@@ -46,7 +46,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	private JCustomButton filter;
 	private JCustomDialog filterDialog;
 	
-	private ArrayList<Effect> additionalEffects = new ArrayList<Effect>();
+	private ArrayList<Calculable> additionalEffects;
 	
 	public static PageGeneral getInstance() {
 		return INSTANCE;
@@ -85,6 +85,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			updateReinca();
 			updateTitle();
 			PageRide.getInstance().updateMount();
+			PageRide.getInstance().updateQualityGenki(1);
 			PageTalent.getInstance().updateTalent();
 			PageSpeciality.getInstance().updateSpe();
 			PageSprite.getInstance().updateBlason();
@@ -207,8 +208,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		}
 		
 		if(this.getYggdrasil().getEffects() != null) {
-			for(Effect e : this.getYggdrasil().getEffects()) {
-				list.add(e);
+			for(Calculable c : this.getYggdrasil().getEffects()) {
+				list.add(c);
 			}
 		}
 		
@@ -216,13 +217,13 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	public ArrayList<Effect> getAdditionalEffects() {
+	public ArrayList<Calculable> getAdditionalEffects() {
 		return this.additionalEffects;
 	}
 	
 	@Override
 	public void setAdditionalEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>();
+		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		if(this.getArchive() != null && this.getArchive().getEffects() != null) {
 			for(Effect e : this.getArchive().getEffects()) {

@@ -12,10 +12,9 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.BuffIcon;
+import fr.vlik.grandfantasia.characUpgrade.LoveBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.subEquip.Anima;
 import fr.vlik.grandfantasia.subEquip.Bague;
 import fr.vlik.uidesign.Design;
@@ -29,7 +28,7 @@ public class PageOther extends PagePanel {
 	private static PageOther INSTANCE = new PageOther();
 	
 	private JCustomComboBox<Bague> bague = new JCustomComboBox<Bague>();
-	private JCustomComboBox<BuffIcon> loveCo = new JCustomComboBox<BuffIcon>();
+	private JCustomComboBox<LoveBuff> loveCo = new JCustomComboBox<LoveBuff>();
 	private JCustomComboBox<Anima> anima = new JCustomComboBox<Anima>();
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
@@ -48,7 +47,7 @@ public class PageOther extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.loveCo = new JCustomComboBox<BuffIcon>(BuffIcon.getDataLove());
+		this.loveCo = new JCustomComboBox<LoveBuff>(LoveBuff.getData());
 		this.loveCo.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -71,7 +70,7 @@ public class PageOther extends PagePanel {
 		return this.bague.getSelectedItem();
 	}
 	
-	public BuffIcon getLoveCo() {
+	public LoveBuff getLoveCo() {
 		return this.loveCo.getSelectedItem();
 	}
 	
@@ -89,13 +88,13 @@ public class PageOther extends PagePanel {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		if(this.getBague().getEffects() != null) {
-			for(Effect e : this.getBague().getEffects()) {
-				list.add(e);
+			for(Calculable c : this.getBague().getEffects()) {
+				list.add(c);
 			}
 		}
 		
 		if(this.getLoveCo().getEffects() != null) {
-			for(Effect e : this.getLoveCo().getEffects()) {
+			for(Calculable e : this.getLoveCo().getEffects()) {
 				list.add(e);
 			}
 		}
@@ -157,7 +156,7 @@ public class PageOther extends PagePanel {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		Bague memoryBague = this.getBague();
-		BuffIcon memoryLoveCo = this.getLoveCo();
+		LoveBuff memoryLoveCo = this.getLoveCo();
 		
 		if(reinca.getLvl() > 0 || lvl >= 20) {
 			this.showAndHide.get(0).setVisible(true);
@@ -208,8 +207,8 @@ public class PageOther extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		config.put("Bague", this.getBague().getName(lang));
-		config.put("LoveBuff", this.getLoveCo().getName());
-		config.put("Anima", this.getAnima().getName());
+		config.put("LoveBuff", this.getLoveCo().getName(Language.FR));
+		config.put("Anima", this.getAnima().getName(Language.FR));
 		
 		return config;
 	}
@@ -220,21 +219,21 @@ public class PageOther extends PagePanel {
 		if(bague == null) {
 			this.bague.setSelectedIndex(0);
 		} else {
-			this.bague.setSelectedItem(Bague.get(config.get("Bague"), lang));
+			this.bague.setSelectedItem(bague);
 		}
 		
-		BuffIcon loveCo = BuffIcon.getLove(config.get("LoveBuff"));
+		LoveBuff loveCo = LoveBuff.get(config.get("LoveBuff"));
 		if(loveCo == null) {
 			this.loveCo.setSelectedIndex(0);
 		} else {
-			this.loveCo.setSelectedItem(BuffIcon.getLove(config.get("LoveBuff")));
+			this.loveCo.setSelectedItem(loveCo);
 		}
 		
 		Anima anima = Anima.get(config.get("Anima"));
 		if(anima == null) {
 			this.anima.setSelectedIndex(0);
 		} else {
-			this.anima.setSelectedItem(Anima.get(config.get("Anima")));
+			this.anima.setSelectedItem(anima);
 		}
 	}
 }

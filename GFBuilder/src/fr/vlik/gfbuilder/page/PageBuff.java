@@ -15,13 +15,13 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.BuffIcon;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
+import fr.vlik.grandfantasia.characUpgrade.Stone;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -38,12 +38,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
 	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(6);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
-	private ArrayList<JCustomLabel<BuffIcon>> guildBuffUsed = new ArrayList<JCustomLabel<BuffIcon>>(4);
-	private JCustomComboBox<BuffIcon> guildBuff;
-	private ArrayList<JCustomLabel<Nucleus>> stoneUsed = new ArrayList<JCustomLabel<Nucleus>>(13);
-	private JCustomComboBox<Nucleus> stone;
+	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
+	private JCustomComboBox<GuildBuff> guildBuff;
+	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(13);
+	private JCustomComboBox<Stone> stone;
 	
-	private ArrayList<Effect> additionalEffects;
+	private ArrayList<Calculable> additionalEffects;
 	
 	private JPanel showAndHide;
 	private ArrayList<JCustomButton> cross = new ArrayList<JCustomButton>(7);
@@ -79,7 +79,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		for(int i = 0; i < 4; i++) {
-			this.guildBuffUsed.add(new JCustomLabel<BuffIcon>(null));
+			this.guildBuffUsed.add(new JCustomLabel<GuildBuff>(null));
 			this.guildBuffUsed.get(i).setBackground(Design.UIColor[0]);
 			this.guildBuffUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
 			this.guildBuffUsed.get(i).setMaximumSize(new Dimension(350, 32));
@@ -104,7 +104,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			this.cross.get(i).setVisible(false);
 		}
 		
-		this.guildBuff = new JCustomComboBox<BuffIcon>(BuffIcon.getDataGuild());
+		this.guildBuff = new JCustomComboBox<GuildBuff>(GuildBuff.getData());
 		this.guildBuff.setMaximumSize(new Dimension(320, 36));
 		this.guildBuff.addActionListener(e -> {
 			updateGuildBuff();
@@ -115,7 +115,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		
 		
 		for(int i = 0; i < 13; i++) {
-			this.stoneUsed.add(new JCustomLabel<Nucleus>(null));
+			this.stoneUsed.add(new JCustomLabel<Stone>(null));
 			this.stoneUsed.get(i).setBackground(Design.UIColor[0]);
 			this.stoneUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
 			this.stoneUsed.get(i).setMaximumSize(new Dimension(300, 32));
@@ -138,7 +138,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			this.cross.get(i+4).setVisible(false);
 		}
 		
-		this.stone = new JCustomComboBox<Nucleus>(Nucleus.getData(6));
+		this.stone = new JCustomComboBox<Stone>(Stone.getData());
 		this.stone.setMaximumSize(new Dimension(280, 36));
 		this.stone.addActionListener(e -> {
 			updateStoneBuff();
@@ -157,19 +157,19 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		return this.nucleus.get(id).getSelectedItem();
 	}
 	
-	public BuffIcon getGuildBuffUsed(int i) {
+	public GuildBuff getGuildBuffUsed(int i) {
 		return this.guildBuffUsed.get(i).getItem();
 	}
 	
-	public BuffIcon getGuildBuff() {
+	public GuildBuff getGuildBuff() {
 		return this.guildBuff.getSelectedItem();
 	}
 	
-	public Nucleus getStoneUsed(int i) {
+	public Stone getStoneUsed(int i) {
 		return this.stoneUsed.get(i).getItem();
 	}
 	
-	public Nucleus getStone() {
+	public Stone getStone() {
 		return this.stone.getSelectedItem();
 	}
 	
@@ -190,7 +190,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		for(JCustomLabel<BuffIcon> guild : this.guildBuffUsed) {
+		for(JCustomLabel<GuildBuff> guild : this.guildBuffUsed) {
 			if(guild.isVisible()) {
 				if(guild.getItem().getEffects() != null) {
 					for(Calculable e : guild.getItem().getEffects()) {
@@ -200,7 +200,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		for(JCustomLabel<Nucleus> stone : this.stoneUsed) {
+		for(JCustomLabel<Stone> stone : this.stoneUsed) {
 			if(stone.isVisible()) {
 				if(stone.getItem().getEffects() != null) {
 					for(Calculable e : stone.getItem().getEffects()) {
@@ -214,17 +214,17 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	@Override
-	public ArrayList<Effect> getAdditionalEffects() {
+	public ArrayList<Calculable> getAdditionalEffects() {
 		return this.additionalEffects;
 	}
 
 	@Override
 	public void setAdditionalEffects() {
-		ArrayList<Effect> additional = new ArrayList<Effect>();
+		ArrayList<Calculable> additional = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.energy.size(); i++) {
 			if(Energy.getData()[i].getEffects() != null) {
-				for(Effect effect : Energy.getData()[i].getEffects()) {
+				for(Calculable effect : Energy.getData()[i].getEffects()) {
 					additional.add(Energy.multiplyEffect(effect, Math.min(this.energy.get(i).getIntValue(), PageGeneral.getInstance().getLvl() *2)));
 				}
 			}
@@ -422,7 +422,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	}
 	
 	private void updateGuildBuff() {
-		BuffIcon choice = this.getGuildBuff();
+		GuildBuff choice = this.getGuildBuff();
 		
 		int slot = 0;
 		while(slot < 4 && this.guildBuffUsed.get(slot).isVisible()) {
@@ -464,12 +464,12 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		BuffIcon[] tabGuildBuff = BuffIcon.getListGuildBuff(guildBuffName);
-		this.guildBuff.setModel(new DefaultComboBoxModel<BuffIcon>(tabGuildBuff));
+		GuildBuff[] tabGuildBuff = GuildBuff.getListGuildBuff(guildBuffName);
+		this.guildBuff.setModel(new DefaultComboBoxModel<GuildBuff>(tabGuildBuff));
 	}
 	
 	private void updateStoneBuff() {
-		Nucleus choice = this.getStone();
+		Stone choice = this.getStone();
 		
 		if(choice == null) {
 			return;
@@ -503,7 +503,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 			}
 		}
 		
-		this.stone.setModel(new DefaultComboBoxModel<Nucleus>(Nucleus.getData(stoneName)));
+		this.stone.setModel(new DefaultComboBoxModel<Stone>(Stone.getData(stoneName)));
 	}
 	
 	@Override
@@ -516,7 +516,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
-			config.put("Nucleus" + i, this.getNucleus(i).getName());
+			config.put("Nucleus" + i, this.getNucleus(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.energy.size(); i++) {
@@ -550,14 +550,14 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			BuffIcon buffGuild = BuffIcon.getGuild(config.get("GuildBuff" + i));
-			if(buffGuild != null) {
-				this.guildBuff.setSelectedItem(buffGuild);
+			GuildBuff guildBuff = GuildBuff.get(config.get("GuildBuff" + i));
+			if(guildBuff != null) {
+				this.guildBuff.setSelectedItem(guildBuff);
 			}
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {
-			this.stone.setSelectedItem(Nucleus.get(config.get("Stone" + i), 6));
+			this.stone.setSelectedItem(Stone.get(config.get("Stone" + i)));
 		}
 		
 		setEffects();

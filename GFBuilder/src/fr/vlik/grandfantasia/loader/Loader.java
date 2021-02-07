@@ -4,35 +4,45 @@ import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.Archive;
-import fr.vlik.grandfantasia.CombiRunway;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.GuildBuff;
+import fr.vlik.grandfantasia.IslandBuff;
+import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
+import fr.vlik.grandfantasia.characUpgrade.LoveBuff;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.characUpgrade.Speciality;
+import fr.vlik.grandfantasia.characUpgrade.Stone;
 import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.characUpgrade.Title;
-import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.Yggdrasil;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equip.Ride;
+import fr.vlik.grandfantasia.equipUpgrade.CombiRunway;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
 import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.Runway;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
+import fr.vlik.grandfantasia.stats.Condition.TypeCondition;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
+import fr.vlik.grandfantasia.stats.TransformEffect;
+import fr.vlik.grandfantasia.stats.TransformEffect.TypeTransformation;
 
 @SuppressWarnings("serial")
 public class Loader {
@@ -252,7 +262,7 @@ public class Loader {
 	
 	public static Yggdrasil[] getYggdrasil() {
 		return new Yggdrasil[] {
-			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "0 - Aucun"); put(Language.EN, "0 - None"); }}, "null", null),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "0 - Aucun"); put(Language.EN, "0 - None"); }}, "boss0", null),
 			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "1 - Alice"); put(Language.EN, "1 - Alice"); }}, "boss1", new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15),
 				new Effect(TypeEffect.VIT, false, 15),
@@ -1123,105 +1133,105 @@ public class Loader {
 	public static Nucleus[][] getNucleus() {
 		return new Nucleus[][] {
 			new Nucleus[] {
-				new Nucleus("Aucun", Quality.GREY, "null", null),
-				new Nucleus("FCE +4%", Quality.GREEN, "FCEgreen", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +4%"); put(Language.EN, ""); }}, Quality.GREEN, "FCEgreen", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 4),
 				}),
-				new Nucleus("VIT +2%", Quality.GREEN, "VITgreen", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +2%"); put(Language.EN, ""); }}, Quality.GREEN, "VITgreen", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 2),
 				}),
-				new Nucleus("INT +4%", Quality.GREEN, "INTgreen", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +4%"); put(Language.EN, ""); }}, Quality.GREEN, "INTgreen", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 4),
 				}),
-				new Nucleus("VOL +2%", Quality.GREEN, "VOLgreen", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +2%"); put(Language.EN, ""); }}, Quality.GREEN, "VOLgreen", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 2),
 				}),
-				new Nucleus("AGI +4%", Quality.GREEN, "AGIgreen", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +4%"); put(Language.EN, ""); }}, Quality.GREEN, "AGIgreen", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 4),
 				}),
 			},
 			new Nucleus[] {
-				new Nucleus("Aucun", Quality.GREY, "null", null),
-				new Nucleus("FCE +5%", Quality.BLUE, "FCEblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +5%"); put(Language.EN, ""); }}, Quality.BLUE, "FCEblue", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 5),
 				}),
-				new Nucleus("VIT +3%", Quality.BLUE, "VITblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +3%"); put(Language.EN, ""); }}, Quality.BLUE, "VITblue", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 3),
 				}),
-				new Nucleus("INT +5%", Quality.BLUE, "INTblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +5%"); put(Language.EN, ""); }}, Quality.BLUE, "INTblue", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 5),
 				}),
-				new Nucleus("VOL +3%", Quality.BLUE, "VOLblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +3%"); put(Language.EN, ""); }}, Quality.BLUE, "VOLblue", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 3),
 				}),
-				new Nucleus("AGI +5%", Quality.BLUE, "AGIblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +5%"); put(Language.EN, ""); }}, Quality.BLUE, "AGIblue", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 5),
 				}),
 			},
 			new Nucleus[] {
-				new Nucleus("Aucun", Quality.GREY, "null", null),
-				new Nucleus("FCE +6%", Quality.BLUE, "FCEblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +6%"); put(Language.EN, ""); }}, Quality.BLUE, "FCEblue", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 6),
 				}),
-				new Nucleus("VIT +4%", Quality.BLUE, "VITblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +4%"); put(Language.EN, ""); }}, Quality.BLUE, "VITblue", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 4),
 				}),
-				new Nucleus("INT +6%", Quality.BLUE, "INTblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +6%"); put(Language.EN, ""); }}, Quality.BLUE, "INTblue", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 6),
 				}),
-				new Nucleus("VOL +4%", Quality.BLUE, "VOLblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +4%"); put(Language.EN, ""); }}, Quality.BLUE, "VOLblue", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 4),
 				}),
-				new Nucleus("AGI +6%", Quality.BLUE, "AGIblue", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +6%"); put(Language.EN, ""); }}, Quality.BLUE, "AGIblue", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 6),
 				}),
 			},
 			new Nucleus[] {
-				new Nucleus("Aucun", Quality.GREY, "null", null),
-				new Nucleus("FCE +8%", Quality.ORANGE, "FCEorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8%"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 8),
 				}),
-				new Nucleus("VIT +6%", Quality.ORANGE, "VITorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6%"); put(Language.EN, ""); }}, Quality.ORANGE, "VITorange", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 6),
 				}),
-				new Nucleus("INT +8%", Quality.ORANGE, "INTorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8%"); put(Language.EN, ""); }}, Quality.ORANGE, "INTorange", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 8),
 				}),
-				new Nucleus("VOL +6%", Quality.ORANGE, "VOLorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6%"); put(Language.EN, ""); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 6),
 				}),
-				new Nucleus("AGI +8%", Quality.ORANGE, "AGIorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8%"); put(Language.EN, ""); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 8),
 				}),
-				new Nucleus("FCE +8% - Réduc", Quality.ORANGE, "FCEorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 8),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 6),
 						new Effect(TypeEffect.ReducM, false, 6),
 					}),
 				}),
-				new Nucleus("VIT +6% - Réduc", Quality.ORANGE, "VITorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "VITorange", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 6),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 6),
 						new Effect(TypeEffect.ReducM, false, 6),
 					}),
 				}),
-				new Nucleus("INT +8% - Réduc", Quality.ORANGE, "INTorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "INTorange", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 8),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 6),
 						new Effect(TypeEffect.ReducM, false, 6),
 					}),
 				}),
-				new Nucleus("VOL +6% - Réduc", Quality.ORANGE, "VOLorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 6),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 6),
 						new Effect(TypeEffect.ReducM, false, 6),
 					}),
 				}),
-				new Nucleus("AGI +8% - Réduc", Quality.ORANGE, "AGIorange", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 8),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 6),
@@ -1230,221 +1240,1057 @@ public class Loader {
 				}),
 			},
 			new Nucleus[] {
-				new Nucleus("Aucun", Quality.GREY, "null", null),
-				new Nucleus("FCE +10%", Quality.GOLD, "FCEgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 10),
 				}),
-				new Nucleus("VIT +8%", Quality.GOLD, "VITgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 8),
 				}),
-				new Nucleus("INT +10%", Quality.GOLD, "INTgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 10),
 				}),
-				new Nucleus("VOL +8%", Quality.GOLD, "VOLgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 8),
 				}),
-				new Nucleus("AGI +10%", Quality.GOLD, "AGIgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 10),
 				}),
-				new Nucleus("FCE +10% - Depla +5%", Quality.GOLD, "FCEgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 10),
 					new Effect(TypeEffect.Depla, false, 5),
 				}),
-				new Nucleus("VIT +8% - Depla +5%", Quality.GOLD, "VITgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 8),
 					new Effect(TypeEffect.Depla, false, 5),
 				}),
-				new Nucleus("INT +10% - Depla +5%", Quality.GOLD, "INTgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 10),
 					new Effect(TypeEffect.Depla, false, 5),
 				}),
-				new Nucleus("VOL +8% - Depla +5%", Quality.GOLD, "VOLgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 8),
 					new Effect(TypeEffect.Depla, false, 5),
 				}),
-				new Nucleus("AGI +10% - Depla +5%", Quality.GOLD, "AGIgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 10),
 					new Effect(TypeEffect.Depla, false, 5),
 				}),
-				new Nucleus("FCE +10% - Depla +10%", Quality.GOLD, "FCEgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("VIT +8% - Depla +10%", Quality.GOLD, "VITgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 8),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("INT +10% - Depla +10%", Quality.GOLD, "INTgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("VOL +8% - Depla +10%", Quality.GOLD, "VOLgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 8),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("AGI +10% - Depla +10%", Quality.GOLD, "AGIgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("FCE +10% - Depla +15%", Quality.GOLD, "FCEgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 10),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("VIT +8% - Depla +15%", Quality.GOLD, "VITgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 8),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("INT +10% - Depla +15%", Quality.GOLD, "INTgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 10),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("VOL +8% - Depla +15%", Quality.GOLD, "VOLgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 8),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("AGI +10% - Depla +15%", Quality.GOLD, "AGIgold", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 10),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
 			},
 			new Nucleus[] {
-				new Nucleus("Aucun", Quality.GREY, "null", null),
-				new Nucleus("FCE +12%", Quality.PURPLE, "FCEpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +12%"); put(Language.EN, ""); }}, Quality.PURPLE, "FCEpurple", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 12),
 				}),
-				new Nucleus("VIT +10%", Quality.PURPLE, "VITpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VITpurple", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 10),
 				}),
-				new Nucleus("INT +12%", Quality.PURPLE, "INTpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +12%"); put(Language.EN, ""); }}, Quality.PURPLE, "INTpurple", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 12),
 				}),
-				new Nucleus("VOL +10%", Quality.PURPLE, "VOLpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VOLpurple", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 10),
 				}),
-				new Nucleus("AGI +12%", Quality.PURPLE, "AGIpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12%"); put(Language.EN, ""); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 12),
 				}),
-				new Nucleus("FCE +12% - Depla +10%", Quality.PURPLE, "FCEpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +12% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "FCEpurple", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 12),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("VIT +10% - Depla +10%", Quality.PURPLE, "VITpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VITpurple", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("INT +12% - Depla +10%", Quality.PURPLE, "INTpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +12% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "INTpurple", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 12),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("VOL +10% - Depla +10%", Quality.PURPLE, "VOLpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VOLpurple", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("AGI +12% - Depla +10%", Quality.PURPLE, "AGIpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 12),
 					new Effect(TypeEffect.Depla, false, 10),
 				}),
-				new Nucleus("FCE +12% - Depla +15%", Quality.PURPLE, "FCEpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +12% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "FCEpurple", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 12),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("VIT +10% - Depla +15%", Quality.PURPLE, "VITpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "VITpurple", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 10),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("INT +12% - Depla +15%", Quality.PURPLE, "INTpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +12% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "INTpurple", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 12),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("VOL +10% - Depla +15%", Quality.PURPLE, "VOLpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "VOLpurple", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 10),
 					new Effect(TypeEffect.Depla, false, 15),
 				}),
-				new Nucleus("AGI +12% - Depla +15%", Quality.PURPLE, "AGIpurple", new Calculable[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 12),
 					new Effect(TypeEffect.Depla, false, 15),
-				}),
-			},
-			new Nucleus[] {
-				new Nucleus("Doctrines bien-aimées de Werther", Quality.WHITE, "doctrine", new Calculable[] {
-					new Effect(TypeEffect.RegenPM, false, 250),
-					new Effect(TypeEffect.VitAtk, false, 5),
-				}),
-				new Nucleus("Griffe de la Brute cristalline magique", Quality.WHITE, "griffe", new Calculable[] {
-					new Effect(TypeEffect.DegP, false, 5),
-					new Effect(TypeEffect.VitAtk, false, 5),
-				}),
-				new Nucleus("Pierre de Bénédiction de la Baie Bleue", Quality.GREEN, "blueBay", new Calculable[] {
-					new StaticEffect(TypeStaticEffect.x2Skill, 5),
-				}),
-				new Nucleus("Gri-Gri porte-bonheur pour loterie", Quality.WHITE, "grigri", new Calculable[] {
-					new Effect(TypeEffect.Loot, false, 5),
-				}),
-				new Nucleus("Carte de type bien manchot", Quality.WHITE, "manchot", new Calculable[] {
-					new Effect(TypeEffect.Loot, false, 5),
-				}),
-				new Nucleus("Corne du Roi Triomphant", Quality.WHITE, "corne", new Calculable[] {
-					new Effect(TypeEffect.DegP, false, 5),
-					new Effect(TypeEffect.DegM, false, 5),
-					new Effect(TypeEffect.RegenPV, false, 250),
-				}),
-				new Nucleus("Pierre d'Invocation de Robolol de Hawk", Quality.WHITE, "robolol", new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 1),
-				}),
-				new Nucleus("Sac Trésor du Zéphyr", Quality.WHITE, "sac", new Calculable[] {
-					new Effect(TypeEffect.Depla, false, 15),
-					new Effect(TypeEffect.ESQ, false, 5),
-				}),
-				new Nucleus("Cristal magique du Chronodériveur", Quality.GREEN, "chrono", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 1),
-					new Effect(TypeEffect.VIT, true, 1),
-					new Effect(TypeEffect.INT, true, 1),
-					new Effect(TypeEffect.VOL, true, 1),
-					new Effect(TypeEffect.AGI, true, 1),
-				}),
-				new Nucleus("Pierre de chance du Mauvais esprit", Quality.WHITE, "esprit", new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 5),
-					new Effect(TypeEffect.TCCM, false, 5),
-					new Effect(TypeEffect.Toucher, false, 5),
-					new Effect(TypeEffect.ESQ, false, 5),
-				}),
-				new Nucleus("Corne de Bataille de Smulca", Quality.WHITE, "smulca", new Calculable[] {
-					new Effect(TypeEffect.DefP, true, 5),
-					new Effect(TypeEffect.DefM, true, 5),
-					new Effect(TypeEffect.PV, true, 2),
-				}),
-				new Nucleus("Branche verte", Quality.WHITE, "branche", new Calculable[] {
-					new RegenEffect(TypeEffect.PM, true, 1, TypeRegen.REGENERATION, 3),
-				}),
-				new Nucleus("Serment de 400 ans", Quality.WHITE, "serment", new Calculable[] {
-					new Effect(TypeEffect.Depla, false, 40),
-					new RegenEffect(TypeEffect.PV, true, -6, TypeRegen.REGENERATION, 1),
 				}),
 			},
 		};
 	}
-
+	
+	public static Stone[] getStone() {
+		return new Stone[] {
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Doctrines bien-aimées de Werther"); put(Language.EN, ""); }}, Quality.WHITE, "doctrine", new Calculable[] {
+				new Effect(TypeEffect.RegenPM, false, 250),
+				new Effect(TypeEffect.VitAtk, false, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Griffe de la Brute cristalline magique"); put(Language.EN, ""); }}, Quality.WHITE, "griffe", new Calculable[] {
+				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.VitAtk, false, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de Bénédiction de la Baie Bleue"); put(Language.EN, ""); }}, Quality.GREEN, "blueBay", new Calculable[] {
+				new StaticEffect(TypeStaticEffect.x2Skill, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Gri-Gri porte-bonheur pour loterie"); put(Language.EN, ""); }} , Quality.WHITE, "grigri", new Calculable[] {
+				new Effect(TypeEffect.Loot, false, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Carte de type bien manchot"); put(Language.EN, ""); }}, Quality.WHITE, "manchot", new Calculable[] {
+				new Effect(TypeEffect.Loot, false, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Corne du Roi Triomphant"); put(Language.EN, ""); }}, Quality.WHITE, "corne", new Calculable[] {
+				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.DegM, false, 5),
+				new Effect(TypeEffect.RegenPV, false, 250),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre d'Invocation de Robolol de Hawk"); put(Language.EN, ""); }}, Quality.WHITE, "robolol", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 1),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Sac Trésor du Zéphyr"); put(Language.EN, ""); }}, Quality.WHITE, "sac", new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 15),
+				new Effect(TypeEffect.ESQ, false, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Cristal magique du Chronodériveur"); put(Language.EN, ""); }}, Quality.GREEN, "chrono", new Calculable[] {
+				new Effect(TypeEffect.FCE, true, 1),
+				new Effect(TypeEffect.VIT, true, 1),
+				new Effect(TypeEffect.INT, true, 1),
+				new Effect(TypeEffect.VOL, true, 1),
+				new Effect(TypeEffect.AGI, true, 1),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de chance du Mauvais esprit"); put(Language.EN, ""); }}, Quality.WHITE, "esprit", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 5),
+				new Effect(TypeEffect.TCCM, false, 5),
+				new Effect(TypeEffect.Toucher, false, 5),
+				new Effect(TypeEffect.ESQ, false, 5),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Corne de Bataille de Smulca"); put(Language.EN, ""); }}, Quality.WHITE, "smulca", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+				new Effect(TypeEffect.PV, true, 2),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Branche verte"); put(Language.EN, ""); }}, Quality.WHITE, "branche", new Calculable[] {
+				new RegenEffect(TypeEffect.PM, true, 1, TypeRegen.REGENERATION, 3),
+			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Serment de 400 ans"); put(Language.EN, ""); }}, Quality.WHITE, "serment", new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 40),
+				new RegenEffect(TypeEffect.PV, true, -6, TypeRegen.REGENERATION, 1),
+			}),
+		};
+	}
+	
 	public static Energy[] getEnergy() {
 		return new Energy[] {
-				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Écarlate"); put(Language.EN, "Crimson"); }}, "red", new Effect[] {
-					new Effect(TypeEffect.PV, false, 24),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Écarlate"); put(Language.EN, "Crimson"); }}, "red", new Effect[] {
+				new Effect(TypeEffect.PV, false, 24),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Indigo"); put(Language.EN, "Azure"); }}, "blue", new Effect[] {
+				new Effect(TypeEffect.PM, false, 10),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Citrus"); }}, "orange", new Effect[] {
+				new Effect(TypeEffect.Atk, false, 13),
+				new Effect(TypeEffect.AtkD, false, 10),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Violette"); put(Language.EN, "Violet"); }}, "purple", new Effect[] {
+				new Effect(TypeEffect.AtkM, false, 10),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Émeraude"); put(Language.EN, "Emerald"); }}, "green", new Effect[] {
+				new Effect(TypeEffect.DefP, false, 6),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Rose"); put(Language.EN, "Peach"); }}, "pink", new Effect[] {
+				new Effect(TypeEffect.DefM, false, 5),
+			}),
+		};
+	}
+	
+	public static IslandBuff[] getIslandBuff() {
+		return new IslandBuff[] {
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, null),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Accord du Roi des Sprites 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 20),
+				new Effect(TypeEffect.VIT, false, 20),
+				new Effect(TypeEffect.INT, false, 20),
+				new Effect(TypeEffect.VOL, false, 20),
+				new Effect(TypeEffect.AGI, false, 20),
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.AtkD, true, 5),
+				new Effect(TypeEffect.AtkM, true, 5),
+				new Effect(TypeEffect.DefP, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+				new Effect(TypeEffect.Depla, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Accord du Roi des Sprites 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 15),
+				new Effect(TypeEffect.VIT, false, 15),
+				new Effect(TypeEffect.INT, false, 15),
+				new Effect(TypeEffect.VOL, false, 15),
+				new Effect(TypeEffect.AGI, false, 15),
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.AtkD, true, 5),
+				new Effect(TypeEffect.AtkM, true, 5),
+				new Effect(TypeEffect.DefP, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+				new Effect(TypeEffect.Depla, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Accord du Roi des Sprites 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 15),
+				new Effect(TypeEffect.VIT, false, 15),
+				new Effect(TypeEffect.INT, false, 15),
+				new Effect(TypeEffect.VOL, false, 15),
+				new Effect(TypeEffect.AGI, false, 15),
+				new Effect(TypeEffect.Atk, true, 4),
+				new Effect(TypeEffect.AtkD, true, 4),
+				new Effect(TypeEffect.AtkM, true, 4),
+				new Effect(TypeEffect.DefP, true, 4),
+				new Effect(TypeEffect.DefM, true, 4),
+				new Effect(TypeEffect.Depla, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Accord du Roi des Sprites 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 10),
+				new Effect(TypeEffect.VIT, false, 10),
+				new Effect(TypeEffect.INT, false, 10),
+				new Effect(TypeEffect.VOL, false, 10),
+				new Effect(TypeEffect.AGI, false, 10),
+				new Effect(TypeEffect.Atk, true, 4),
+				new Effect(TypeEffect.AtkD, true, 4),
+				new Effect(TypeEffect.AtkM, true, 4),
+				new Effect(TypeEffect.DefP, true, 4),
+				new Effect(TypeEffect.DefM, true, 4),
+				new Effect(TypeEffect.Depla, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Accord du Roi des Sprites 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 10),
+				new Effect(TypeEffect.VIT, false, 10),
+				new Effect(TypeEffect.INT, false, 10),
+				new Effect(TypeEffect.VOL, false, 10),
+				new Effect(TypeEffect.AGI, false, 10),
+				new Effect(TypeEffect.Atk, true, 3),
+				new Effect(TypeEffect.AtkD, true, 3),
+				new Effect(TypeEffect.AtkM, true, 3),
+				new Effect(TypeEffect.DefP, true, 3),
+				new Effect(TypeEffect.DefM, true, 3),
+				new Effect(TypeEffect.Depla, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Arme de l'Arrogance 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(14, Activation.CritPhys, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
 				}),
-				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Indigo"); put(Language.EN, "Azure"); }}, "blue", new Effect[] {
-					new Effect(TypeEffect.PM, false, 10),
+				new Proc(14, Activation.CritMag, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoMag, Target.OPPONENT),
 				}),
-				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Citrus"); }}, "orange", new Effect[] {
-					new Effect(TypeEffect.Atk, false, 13),
-					new Effect(TypeEffect.AtkD, false, 10),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Arme de l'Arrogance 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(13, Activation.CritPhys, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
 				}),
-				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Violette"); put(Language.EN, "Violet"); }}, "purple", new Effect[] {
-					new Effect(TypeEffect.AtkM, false, 10),
+				new Proc(13, Activation.CritMag, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoMag, Target.OPPONENT),
 				}),
-				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Émeraude"); put(Language.EN, "Emerald"); }}, "green", new Effect[] {
-					new Effect(TypeEffect.DefP, false, 6),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Arme de l'Arrogance 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(12, Activation.CritPhys, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
 				}),
-				new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Rose"); put(Language.EN, "Peach"); }}, "pink", new Effect[] {
-					new Effect(TypeEffect.DefM, false, 5),
+				new Proc(12, Activation.CritMag, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoMag, Target.OPPONENT),
 				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Arme de l'Arrogance 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(11, Activation.CritPhys, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
+				}),
+				new Proc(11, Activation.CritMag, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoMag, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Arme de l'Arrogance 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(10, Activation.CritPhys, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
+				}),
+				new Proc(10, Activation.CritMag, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoMag, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Cauchemar du Jour du Destin 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, -5),
+				new Effect(TypeEffect.Loot, false, -5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Cauchemar du Jour du Destin 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, -4),
+				new Effect(TypeEffect.Loot, false, -4),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Cauchemar du Jour du Destin 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, -4),
+				new Effect(TypeEffect.Loot, false, -4),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Cauchemar du Jour du Destin 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, -3),
+				new Effect(TypeEffect.Loot, false, -3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Cauchemar du Jour du Destin 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, -3),
+				new Effect(TypeEffect.Loot, false, -3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Chance de Gobelin 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 3),
+				new Effect(TypeEffect.Cueillete, false, 3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Chance de Gobelin 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 3),
+				new Effect(TypeEffect.Cueillete, false, 2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Chance de Gobelin 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 2),
+				new Effect(TypeEffect.Cueillete, false, 2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Chance de Gobelin 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 2),
+				new Effect(TypeEffect.Cueillete, false, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Chance de Gobelin 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 1),
+				new Effect(TypeEffect.Cueillete, false, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, -140),
+				new Effect(TypeEffect.PM, false, -140),
+				new StaticEffect(TypeStaticEffect.Poisse, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, -130),
+				new Effect(TypeEffect.PM, false, -130),
+				new StaticEffect(TypeStaticEffect.Poisse, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, -120),
+				new Effect(TypeEffect.PM, false, -120),
+				new StaticEffect(TypeStaticEffect.Poisse, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, -110),
+				new Effect(TypeEffect.PM, false, -110),
+				new StaticEffect(TypeStaticEffect.Poisse, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, -100),
+				new Effect(TypeEffect.PM, false, -100),
+				new StaticEffect(TypeStaticEffect.Poisse, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Ermite Sprite 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 5),
+				new Proc(50, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.XP, false, 9, Target.SPRITE),
+				}),
+				new Proc(10, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.Material, false, 1, Target.SPRITE),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Ermite Sprite 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 4),
+				new Proc(50, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.XP, false, 8, Target.SPRITE),
+				}),
+				new Proc(10, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.Material, false, 1, Target.SPRITE),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Ermite Sprite 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 4),
+				new Proc(50, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.XP, false, 7, Target.SPRITE),
+				}),
+				new Proc(10, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.Material, false, 1, Target.SPRITE),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Ermite Sprite 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 3),
+				new Proc(50, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.XP, false, 6, Target.SPRITE),
+				}),
+				new Proc(10, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.Material, false, 1, Target.SPRITE),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Ermite Sprite 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 3),
+				new Proc(50, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.XP, false, 5, Target.SPRITE),
+				}),
+				new Proc(10, Activation.Meditation, new Calculable[] {
+					new Effect(TypeEffect.Material, false, 1, Target.SPRITE),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Jeune beauté de lumière 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+				new Effect(TypeEffect.XP, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Jeune beauté de lumière 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+				new Effect(TypeEffect.XP, false, 5),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Jeune beauté de lumière 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 4),
+				new Effect(TypeEffect.DefM, true, 4),
+				new Effect(TypeEffect.XP, false, 4),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Jeune beauté de lumière 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 4),
+				new Effect(TypeEffect.DefM, true, 4),
+				new Effect(TypeEffect.XP, false, 4),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Jeune beauté de lumière 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 3),
+				new Effect(TypeEffect.DefM, true, 3),
+				new Effect(TypeEffect.XP, false, 3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Journée Ordinaire 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new RegenEffect(TypeEffect.PV, false, 1, 120, TypeRegen.REGENERATION, 1),
+				new RegenEffect(TypeEffect.PM, false, 1, 60, TypeRegen.REGENERATION, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Journée Ordinaire 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new RegenEffect(TypeEffect.PV, false, 1, 120, TypeRegen.REGENERATION, 1),
+				new RegenEffect(TypeEffect.PM, false, 1, 56, TypeRegen.REGENERATION, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Journée Ordinaire 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new RegenEffect(TypeEffect.PV, false, 1, 110, TypeRegen.REGENERATION, 1),
+				new RegenEffect(TypeEffect.PM, false, 1, 56, TypeRegen.REGENERATION, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Journée Ordinaire 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new RegenEffect(TypeEffect.PV, false, 1, 110, TypeRegen.REGENERATION, 1),
+				new RegenEffect(TypeEffect.PM, false, 1, 50, TypeRegen.REGENERATION, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Journée Ordinaire 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new RegenEffect(TypeEffect.PV, false, 1, 100, TypeRegen.REGENERATION, 1),
+				new RegenEffect(TypeEffect.PM, false, 1, 50, TypeRegen.REGENERATION, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Monstre de Foire 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.MEN, false, 3),
+				new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -3, Target.OPPONENT),
+					new Effect(TypeEffect.DefM, true, -3, Target.OPPONENT),
+					new Effect(TypeEffect.Atk, true, -3, Target.OPPONENT),
+					new Effect(TypeEffect.AtkD, true, -3, Target.OPPONENT),
+					new Effect(TypeEffect.AtkM, true, -3, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Monstre de Foire 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.MEN, false, 2),
+				new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -3, Target.OPPONENT),
+					new Effect(TypeEffect.DefM, true, -3, Target.OPPONENT),
+					new Effect(TypeEffect.Atk, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.AtkD, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.AtkM, true, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Monstre de Foire 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.MEN, false, 2),
+				new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.DefM, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.Atk, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.AtkD, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.AtkM, true, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Monstre de Foire 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.MEN, false, 1),
+				new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.DefM, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.Atk, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.AtkD, true, -2, Target.OPPONENT),
+					new Effect(TypeEffect.AtkM, true, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Monstre de Foire"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.MEN, false, 1),
+				new Proc(3, Activation.Attack, 5, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -1, Target.OPPONENT),
+					new Effect(TypeEffect.DefM, true, -1, Target.OPPONENT),
+					new Effect(TypeEffect.Atk, true, -1, Target.OPPONENT),
+					new Effect(TypeEffect.AtkD, true, -1, Target.OPPONENT),
+					new Effect(TypeEffect.AtkM, true, -1, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Murmures du Roi des Sprites 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, 160),
+				new Effect(TypeEffect.PM, false, 160),
+				new Effect(TypeEffect.Depla, false, 3),
+				new Effect(TypeEffect.ESQ, false, 3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Murmures du Roi des Sprites 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, 160),
+				new Effect(TypeEffect.PM, false, 160),
+				new Effect(TypeEffect.Depla, false, 2),
+				new Effect(TypeEffect.ESQ, false, 2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Murmures du Roi des Sprites 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, 130),
+				new Effect(TypeEffect.PM, false, 130),
+				new Effect(TypeEffect.Depla, false, 2),
+				new Effect(TypeEffect.ESQ, false, 2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Murmures du Roi des Sprites 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, 130),
+				new Effect(TypeEffect.PM, false, 130),
+				new Effect(TypeEffect.Depla, false, 1),
+				new Effect(TypeEffect.ESQ, false, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Murmures du Roi des Sprites 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.PV, false, 100),
+				new Effect(TypeEffect.PM, false, 100),
+				new Effect(TypeEffect.Depla, false, 1),
+				new Effect(TypeEffect.ESQ, false, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Nouvelle Star de Saphaël 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 3),
+				new Effect(TypeEffect.DefM, true, 3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Nouvelle Star de Saphaël 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 3),
+				new Effect(TypeEffect.DefM, true, 2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Nouvelle Star de Saphaël 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 2),
+				new Effect(TypeEffect.DefM, true, 2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Nouvelle Star de Saphaël 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 2),
+				new Effect(TypeEffect.DefM, true, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Nouvelle Star de Saphaël 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 1),
+				new Effect(TypeEffect.DefM, true, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Photosynthèse 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(10, Activation.Attack, 5, new Calculable[] {
+					new RegenEffect(TypeEffect.PV, false, 1, 50, TypeRegen.ABSORPTION),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Photosynthèse 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(10, Activation.Attack, 5, new Calculable[] {
+					new RegenEffect(TypeEffect.PV, false, 1, 45, TypeRegen.ABSORPTION),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Photosynthèse 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(10, Activation.Attack, 5, new Calculable[] {
+					new RegenEffect(TypeEffect.PV, false, 1, 40, TypeRegen.ABSORPTION),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Photosynthèse 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(10, Activation.Attack, 5, new Calculable[] {
+					new RegenEffect(TypeEffect.PV, false, 1, 35, TypeRegen.ABSORPTION),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Photosynthèse 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(10, Activation.Attack, 5, new Calculable[] {
+					new RegenEffect(TypeEffect.PV, false, 1, 30, TypeRegen.ABSORPTION),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Prix Stimulant 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(2, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 58),
+					new RegenEffect(TypeEffect.PV, false, -1, -50, TypeRegen.REGENERATION, 2),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Prix Stimulant 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(2, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 56),
+					new RegenEffect(TypeEffect.PV, false, -1, -50, TypeRegen.REGENERATION, 2),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Prix Stimulant 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(2, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 54),
+					new RegenEffect(TypeEffect.PV, false, -1, -50, TypeRegen.REGENERATION, 2),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Prix Stimulant 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(2, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 52),
+					new RegenEffect(TypeEffect.PV, false, -1, -50, TypeRegen.REGENERATION, 2),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Prix Stimulant 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Proc(2, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 50),
+					new RegenEffect(TypeEffect.PV, false, -1, -50, TypeRegen.REGENERATION, 2),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection de Yoda 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 210),
+				new Effect(TypeEffect.DefM, false, 210),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection de Yoda 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 190),
+				new Effect(TypeEffect.DefM, false, 190),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection de Yoda 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 160),
+				new Effect(TypeEffect.DefM, false, 160),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection de Yoda 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 130),
+				new Effect(TypeEffect.DefM, false, 130),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection de Yoda 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 100),
+				new Effect(TypeEffect.DefM, false, 100),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, -2, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Rhume des Foins Insulaire 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, -18),
+				new Effect(TypeEffect.DefM, false, -18),
+				new StaticEffect(TypeStaticEffect.Push, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Rhume des Foins Insulaire 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, -16),
+				new Effect(TypeEffect.DefM, false, -16),
+				new StaticEffect(TypeStaticEffect.Push, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Rhume des Foins Insulaire 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, -14),
+				new Effect(TypeEffect.DefM, false, -14),
+				new StaticEffect(TypeStaticEffect.Push, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Rhume des Foins Insulaire 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, -12),
+				new Effect(TypeEffect.DefM, false, -12),
+				new StaticEffect(TypeStaticEffect.Push, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Rhume des Foins Insulaire 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, -10),
+				new Effect(TypeEffect.DefM, false, -10),
+				new StaticEffect(TypeStaticEffect.Push, 1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sort des Îles 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Condition(TypeCondition.RAYON, 2, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -3, Target.ALLY),
+					new Effect(TypeEffect.DefM, true, -3, Target.ALLY),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sort des Îles 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Condition(TypeCondition.RAYON, 2, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -3, Target.ALLY),
+					new Effect(TypeEffect.DefM, true, -2, Target.ALLY),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sort des Îles 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Condition(TypeCondition.RAYON, 2, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -2, Target.ALLY),
+					new Effect(TypeEffect.DefM, true, -2, Target.ALLY),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sort des Îles 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Condition(TypeCondition.RAYON, 2, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -2, Target.ALLY),
+					new Effect(TypeEffect.DefM, true, -1, Target.ALLY),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sort des Îles 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Condition(TypeCondition.RAYON, 2, new Calculable[] {
+					new Effect(TypeEffect.DefP, true, -1, Target.ALLY),
+					new Effect(TypeEffect.DefM, true, -1, Target.ALLY),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Percepteur 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 3),
+				new Effect(TypeEffect.Loot, false, -3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Percepteur 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 2),
+				new Effect(TypeEffect.Loot, false, -3),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Percepteur 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 2),
+				new Effect(TypeEffect.Loot, false, -2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Percepteur 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 1),
+				new Effect(TypeEffect.Loot, false, -2),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Percepteur 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.XP, false, 1),
+				new Effect(TypeEffect.Loot, false, -1),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Volonté de Phoebios 5"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 250),
+				new Effect(TypeEffect.DefM, false, 250),
+				new Proc(4, Activation.Attack, 10, new Calculable[] {
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new Effect(TypeEffect.DegP, false, -5, Target.OPPONENT),
+					new Effect(TypeEffect.DegM, false, -5, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Très puissant mystère des aborigènes 4"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 240),
+				new Effect(TypeEffect.DefM, false, 240),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new Effect(TypeEffect.DegP, false, -5, Target.OPPONENT),
+					new Effect(TypeEffect.DegM, false, -5, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Volonté de Phoebios 3"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 230),
+				new Effect(TypeEffect.DefM, false, 230),
+				new Proc(3, Activation.Attack, 10, new Calculable[] {
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new Effect(TypeEffect.DegP, false, -4, Target.OPPONENT),
+					new Effect(TypeEffect.DegM, false, -4, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Très puissant mystère des aborigènes 2"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 220),
+				new Effect(TypeEffect.DefM, false, 220),
+				new Proc(2, Activation.Attack, 10, new Calculable[] {
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new Effect(TypeEffect.DegP, false, -4, Target.OPPONENT),
+					new Effect(TypeEffect.DegM, false, -4, Target.OPPONENT),
+				}),
+			}),
+			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Très puissant mystère des aborigènes 1"); put(Language.EN, ""); }}, new Calculable[] {
+				new Effect(TypeEffect.DefP, false, 210),
+				new Effect(TypeEffect.DefM, false, 210),
+				new Proc(2, Activation.Attack, 10, new Calculable[] {
+					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new Effect(TypeEffect.DegP, false, -3, Target.OPPONENT),
+					new Effect(TypeEffect.DegM, false, -3, Target.OPPONENT),
+				}),
+			}),
+		};
+	}
+	
+	public static GuildBuff[] getGuildBuff() {
+		return new GuildBuff[] {
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Épreuve du roi des Sprites"); put(Language.EN, ""); }}, "xp0", new Calculable[] {
+				new Effect(TypeEffect.XP, false, 5),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction interdimensionnelle d'Eugénie"); put(Language.EN, ""); }}, "xp1", new Calculable[] {
+				new Effect(TypeEffect.XP, false, 20),
+				new Effect(TypeEffect.Loot, false, 20),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction Secrète d'Alice"); put(Language.EN, ""); }}, "0-0", new Calculable[] {
+				new Effect(TypeEffect.Loot, false, 7),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Barrière Naturelle d'Alice"); put(Language.EN, ""); }}, "0-1", new Calculable[] {
+				new Effect(TypeEffect.Nature, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegNature, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Aria de défense d'Alice"); put(Language.EN, ""); }}, "0-2", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 8),
+				new Effect(TypeEffect.DefM, true, 8),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Tempête de Sable de Ronto"); put(Language.EN, ""); }}, "1-0", new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 8),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Poussière Terrestre de Ronto"); put(Language.EN, ""); }}, "1-1", new Calculable[] {
+				new Effect(TypeEffect.Ombre, false, 25),
+				new Effect(TypeEffect.Nature, false, 25),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegOmbre, false, 500),
+				}),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegNature, false, 500),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction colérique de Ronto"); put(Language.EN, ""); }}, "1-2", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 7),
+				new Effect(TypeEffect.TCCM, false, 7),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Corne de Bataille de Bodor"); put(Language.EN, ""); }}, "2-0", new Calculable[] {
+				new Effect(TypeEffect.PV, true, 8),
+				new Effect(TypeEffect.PM, true, 8),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Armure Sacrée de Bodor"); put(Language.EN, ""); }}, "2-1", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 25),
+				new Effect(TypeEffect.Nature, false, 25),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegSacre, false, 500),
+				}),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegNature, false, 500),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Cri de bataille de Bodor"); put(Language.EN, ""); }}, "2-2", new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 7),
+				new Effect(TypeEffect.AtkD, true, 7),
+				new Effect(TypeEffect.AtkM, true, 7),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Force Sismique de Smulca"); put(Language.EN, ""); }}, "3-0", new Calculable[] {
+				new Proc(15, Activation.Attack, 8, new Calculable[] {
+					new Effect(TypeEffect.ReflectP, false, 100),
+					new Effect(TypeEffect.ReflectM, false, 100),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Forme de Bœuf de Smulca"); put(Language.EN, ""); }}, "3-1", new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 4),
+				new Effect(TypeEffect.VitComp, false, 4),
+				new Effect(TypeEffect.CostComp, false, -10),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection Montagneuse de Smulca"); put(Language.EN, ""); }}, "3-2", new Calculable[] {
+				new Effect(TypeEffect.Glace, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegGlace, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Exécution sans pitié d'Ewan"); put(Language.EN, ""); }}, "4-0", new Calculable[] {
+				new Effect(TypeEffect.DCCP, false, 15),
+				new Effect(TypeEffect.DCCM, false, 15),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Forme Morbide d'Ewan"); put(Language.EN, ""); }}, "4-1", new Calculable[] {
+				new Effect(TypeEffect.Toucher, true, 8),
+				new Effect(TypeEffect.ESQ, false, 8),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Regard Noir d'Ewan"); put(Language.EN, ""); }}, "4-2", new Calculable[] {
+				new Effect(TypeEffect.Ombre, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegOmbre, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection Aquatique de Bahadolo"); put(Language.EN, ""); }}, "5-0", new Calculable[] {
+				new Proc(15, Activation.Attack, 8, new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 15),
+					new Effect(TypeEffect.RTCCM, false, 15),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Retour de Tsunami de Bahadolo"); put(Language.EN, ""); }}, "5-1", new Calculable[] {
+				new Proc(15, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.ReflectP, false, 70),
+					new Effect(TypeEffect.ReflectM, false, 70),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Tempête Enragée de Bahadolo"); put(Language.EN, ""); }}, "5-2", new Calculable[] {
+				new Effect(TypeEffect.Foudre, false, 25),
+				new Effect(TypeEffect.Glace, false, 25),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Leggings Venteux de Quill"); put(Language.EN, ""); }}, "6-0", new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 12),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Rugissement Tempétueux de Quill"); put(Language.EN, ""); }}, "6-1", new Calculable[] {
+				new Effect(TypeEffect.DCCP, false, 10),
+				new Effect(TypeEffect.DCCM, false, 10),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Tornade Orageuse de Quill"); put(Language.EN, ""); }}, "6-2", new Calculable[] {
+				new Effect(TypeEffect.Foudre, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegFoudre, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Magie Chanceuse de Mosunk"); put(Language.EN, ""); }}, "7-0", new Calculable[] {
+				new Effect(TypeEffect.Loot, false, 10),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Armure Magique de Mosunk"); put(Language.EN, ""); }}, "7-1", new Calculable[] {
+				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.DegM, false, 5),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Lumière Bénie de Mosunk"); put(Language.EN, ""); }}, "7-2", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegSacre, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Boost de Vie de Jundo"); put(Language.EN, ""); }}, "8-0", new Calculable[] {
+				new Effect(TypeEffect.PV, true, 12),
+				new Effect(TypeEffect.PM, true, 12),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir Primal de Jundo"); put(Language.EN, ""); }}, "8-1", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 5),
+				new Effect(TypeEffect.TCCM, false, 5),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Immunité Naturelle de Jundo"); put(Language.EN, ""); }}, "8-2", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 20),
+				new Effect(TypeEffect.Ombre, false, 20),
+				new Effect(TypeEffect.Foudre, false, 20),
+				new Effect(TypeEffect.Feu, false, 20),
+				new Effect(TypeEffect.Glace, false, 20),
+				new Effect(TypeEffect.Nature, false, 20),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Vision Ardente de Siropas"); put(Language.EN, ""); }}, "9-0", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 12),
+				new Effect(TypeEffect.ESQ, false, 12),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection Enflammée de Siropas"); put(Language.EN, ""); }}, "9-1", new Calculable[] {
+				new Proc(15, Activation.Attack, 6, new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 15),
+					new Effect(TypeEffect.RTCCM, false, 15),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Armure Brûlante de Siropas"); put(Language.EN, ""); }}, "9-2", new Calculable[] {
+				new Effect(TypeEffect.Feu, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegFeu, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Encouragement d'Ilannia"); put(Language.EN, ""); }}, "10-0", new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 6),
+				new Effect(TypeEffect.VitAtkD, false, 6),
+				new Effect(TypeEffect.VitAtkM, false, 6),
+				new Effect(TypeEffect.VitComp, false, 6),
+				new Effect(TypeEffect.CostComp, false, -10),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier Gelé d'Ilannia"); put(Language.EN, ""); }}, "10-1", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 6),
+				new Effect(TypeEffect.DefM, true, 6),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Armure Glacée d'Ilannia"); put(Language.EN, ""); }}, "10-2", new Calculable[] {
+				new Effect(TypeEffect.Glace, false, 50),
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegGlace, false, 1000),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir Interdimensionnel d'Eugénie"); put(Language.EN, ""); }}, "11-0", new Calculable[] {
+				new Proc(10, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegSacre, false, 500),
+					new Effect(TypeEffect.DegOmbre, false, 500),
+					new Effect(TypeEffect.DegFoudre, false, 500),
+					new Effect(TypeEffect.DegFeu, false, 500),
+					new Effect(TypeEffect.DegGlace, false, 500),
+					new Effect(TypeEffect.DegNature, false, 500),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Frappe Interdimensionnelle d'Eugénie"); put(Language.EN, ""); }}, "11-1", new Calculable[] {
+				new Condition(TypeEffect.PV, 50, new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.TCCM, false, 5),
+					new Effect(TypeEffect.DefP, true, 10),
+					new Effect(TypeEffect.DefM, true, 10),
+				}),
+				new Condition(TypeEffect.PV, 15, new Calculable[] {
+					new Proc(100, Activation.Attacked, 10, new Calculable[] {
+						new Effect(TypeEffect.TCCP, false, 100),
+						new Effect(TypeEffect.TCCM, false, 100),
+						new Effect(TypeEffect.DefP, true, 20),
+						new Effect(TypeEffect.DefM, true, 20),
+					}),
+				}),
+			}),
+			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Arrivée Interdimensionnelle d'Eugénie"); put(Language.EN, ""); }}, "11-2", new Calculable[] {
+				new Proc(3, Activation.Attack, new Calculable[] {
+					new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc1),
+					new Effect(TypeEffect.Atk, true, 4),
+					new Effect(TypeEffect.AtkD, true, 4),
+					new Effect(TypeEffect.AtkM, true, 4),
+					new Effect(TypeEffect.VitAtk, false, 4),
+					new Effect(TypeEffect.TCCP, false, 4),
+					new Effect(TypeEffect.TCCM, false, 4),
+					new Effect(TypeEffect.DefP, true, 5),
+					new Effect(TypeEffect.DefM, true, 5),
+					new Effect(TypeEffect.ESQ, false, 5),
+					new Effect(TypeEffect.Toucher, false, 5),
+				}),
+			}),
+		};
+	}
+	
+	public static LoveBuff[] getLoveBuff() {
+		return new LoveBuff[] {
+			new LoveBuff(new HashMap<Language, String>() {{ put(Language.FR, "Inactif"); put(Language.EN, "Inactive"); }}, "32-0", null),
+			new LoveBuff(new HashMap<Language, String>() {{ put(Language.FR, "Conflit Conjugal"); put(Language.EN, ""); }}, "love0", new Calculable[] {
+				new Effect(TypeEffect.PV, false, 9),
+				new Effect(TypeEffect.PM, false, 9),
+			}),
+			new LoveBuff(new HashMap<Language, String>() {{ put(Language.FR, "Feux Éteint"); put(Language.EN, ""); }}, "love1", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 2),
+				new Effect(TypeEffect.DefM, true, 2),
+				new Effect(TypeEffect.ESQ, false, 2),
+			}),
+			new LoveBuff(new HashMap<Language, String>() {{ put(Language.FR, "Douce Compagnie"); put(Language.EN, ""); }}, "love2", new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 2),
+				new Effect(TypeEffect.AtkM, true, 2),
+				new Effect(TypeEffect.Toucher, false, 2),
+			}),
+			new LoveBuff(new HashMap<Language, String>() {{ put(Language.FR, "Étreinte sauvage"); put(Language.EN, ""); }}, "love3", new Calculable[] {
+				new Effect(TypeEffect.PV, true, 9),
+				new Effect(TypeEffect.PM, true, 9),
+				new Effect(TypeEffect.Atk, true, 9),
+				new Effect(TypeEffect.AtkM, true, 9),
+				new Effect(TypeEffect.DefP, true, 9),
+				new Effect(TypeEffect.DefM, true, 9),
+			}),
 		};
 	}
 }

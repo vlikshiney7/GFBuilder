@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equipUpgrade;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,58 +7,40 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import fr.vlik.grandfantasia.CompleteBuff;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Weapon;
-import fr.vlik.grandfantasia.interfaces.FullRenderer;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
-public class Pearl implements FullRenderer {
-	
-	public static String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
+public class Pearl extends CompleteBuff {
+
+	private static final String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	
 	private static Pearl[] dataWeapon = Loader.getWeaponPearl();
 	private static Pearl[] dataArmor = Loader.getArmorPearl();
 	private static Pearl[] dataWeaponCost = Loader.getWeaponCostPearl();
 	private static Pearl[] dataArmorCost = Loader.getArmorCostPearl();
 	
-	private String name;
-	private Quality quality;
 	private Quality restricStuff;
 	private boolean cumulable;
-	private Icon icon;
-	private Calculable[] effects;
+	
 	
 	public Pearl() {
-		this.name = "Aucun";
-		this.quality = Quality.GREY;
+		super();
 		this.restricStuff = Quality.GREY;
 		this.cumulable = true;
-		this.icon = setIcon("null");
 	}
 	
-	public Pearl(String name, Quality quality, Quality restricStuff, boolean cumulable, String path, Calculable[] effects) {
-		this.name = name;
+	public Pearl(Map<Language, String> name, Quality quality, Quality restricStuff, boolean cumulable, String path, Calculable[] effects) {
+		super(name, quality, effects);
 		this.restricStuff = restricStuff;
 		this.cumulable = cumulable;
-		this.quality = quality;
 		this.icon = setIcon(path);
-		this.effects = effects;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-	
-	public Quality getQuality() {
-		return this.quality;
 	}
 	
 	public Quality getRestricStuff() {
@@ -71,42 +52,8 @@ public class Pearl implements FullRenderer {
 	}
 	
 	@Override
-	public Icon getIcon() {
-		return this.icon;
-	}
-	
-	public Calculable[] getEffects() {
-		if(this.effects == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.effects.length];
-		
-		for(int i = 0; i < this.effects.length; i++) {
-			Calculable c = this.effects[i];
-			
-			if(c instanceof Effect) {
-				tab[i] = new Effect((Effect) c);
-			} else if(c instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) c);
-			} else if(c instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) c);
-			} else if(c instanceof Proc) {
-				tab[i] = new Proc((Proc) c);
-			}
-		}
-		
-		return tab;
-	}
-	
-	@Override
-	public Color getColor() {
-		return Tools.itemColor[this.quality.index];
-	}
-	
-	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH24 + this.quality.index + Tools.PNG));
+		ImageIcon back = new ImageIcon(Pearl.class.getResource(Tools.PATH24 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
 		
 		if(object == null) {
@@ -142,27 +89,9 @@ public class Pearl implements FullRenderer {
 		return b;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
-		return this.name;
-	}
-	
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		
-		if(this.effects != null) {
-			for(Calculable c : this.effects) {
-				tooltip.append(c.getTooltip());
-			}
-		}
-		
-		return "<html>" + tooltip + "</html>";
-	}
-	
 	public static Pearl getWeapon(String name) {
 		for(Pearl pearl : Pearl.dataWeapon) {
-			if(pearl.getName().equals(name)) {
+			if(pearl.getName(Language.FR).equals(name)) {
 				return pearl;
 			}
 		}
@@ -172,7 +101,7 @@ public class Pearl implements FullRenderer {
 	
 	public static Pearl getArmor(String name) {
 		for(Pearl pearl : Pearl.dataArmor) {
-			if(pearl.getName().equals(name)) {
+			if(pearl.getName(Language.FR).equals(name)) {
 				return pearl;
 			}
 		}
@@ -182,7 +111,7 @@ public class Pearl implements FullRenderer {
 	
 	public static Pearl getWeaponCost(String name) {
 		for(Pearl pearl : Pearl.dataWeaponCost) {
-			if(pearl.getName().equals(name)) {
+			if(pearl.getName(Language.FR).equals(name)) {
 				return pearl;
 			}
 		}
@@ -192,7 +121,7 @@ public class Pearl implements FullRenderer {
 	
 	public static Pearl getArmorCost(String name) {
 		for(Pearl pearl : Pearl.dataArmorCost) {
-			if(pearl.getName().equals(name)) {
+			if(pearl.getName(Language.FR).equals(name)) {
 				return pearl;
 			}
 		}
@@ -216,9 +145,7 @@ public class Pearl implements FullRenderer {
 		}
 		
 		Pearl[] cast = new Pearl[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 	
 	public static Pearl[] getPossibleArmorPearl(Armor armor) {
@@ -237,9 +164,7 @@ public class Pearl implements FullRenderer {
 		}
 		
 		Pearl[] cast = new Pearl[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 	
 	public static Pearl[] getWeaponCostPearl() {

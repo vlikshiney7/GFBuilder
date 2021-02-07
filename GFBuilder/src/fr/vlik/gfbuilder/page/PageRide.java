@@ -48,7 +48,7 @@ public class PageRide extends PagePanel {
 	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(2);
 
 	private JPanel showAndHideXpStuff;
-	private JPanel showAndHide;
+	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>(2);
 	
 	public static PageRide getInstance() {
 		return INSTANCE;
@@ -177,9 +177,15 @@ public class PageRide extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		this.labelAPI = new JLangLabel[2];
-		this.labelAPI[0] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI = new JLangLabel[5];
+		this.labelAPI[0] = new JLangLabel(Ride.CLASS_NAME, Design.TITLE);
 		this.labelAPI[1] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[2] = new JLangLabel(Synthesis.CLASS_NAME_RIDE, Design.TITLE);
+		this.labelAPI[3] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		this.labelAPI[4] = new JLangLabel(Synthesis.CLASS_NAME_THRONE, Design.TITLE);
+		
+		this.labelAPI[1].setVisible(false);
+		this.labelAPI[3].setVisible(false);
 	}
 
 	@Override
@@ -187,7 +193,12 @@ public class PageRide extends PagePanel {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		Ride ride = this.getMount();
-		list.add(ride.getEffect());
+		
+		if(ride.getEffects() != null) {
+			for(Calculable c : ride.getEffects()) {
+				list.add(c);
+			}
+		}
 		
 		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE
 				&& this.getEffectXpStuff(0) != this.getEffectXpStuff(1)) {
@@ -195,7 +206,7 @@ public class PageRide extends PagePanel {
 				TypeEffect type = this.getEffectXpStuff(i);
 				double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
 				
-				if(ride.getName().equals("Loup Spectral de Combat") || ride.getName().equals("Goldo-Lion de Guerre")) {
+				if(ride.isNerfXpStuff()) {
 					list.add(new Effect(type, false, valueXpStuff/2, true));
 				} else {
 					list.add(new Effect(type, false, valueXpStuff, true));
@@ -218,10 +229,12 @@ public class PageRide extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
+		int iLabelAPI = 0;
+		
 		JPanel xpRide = new JPanel(new GridLayout(1, 3, 10, 3));
 		xpRide.setBackground(Design.UIColor[1]);
-		xpRide.add(this.labelGFB[1]);
-		this.labelGFB[1].setFont(Design.SUBTITLE);
+		xpRide.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
@@ -235,15 +248,14 @@ public class PageRide extends PagePanel {
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelGFB[0]);
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem1.add(this.labelAPI[iLabelAPI++]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(this.ride);
 		elem1.add(Box.createVerticalStrut(5));
 		elem1.add(xpRide);
 		
 		this.showAndHideXpStuff = xpRide;
-		this.showAndHide = elem1;
+		this.showAndHide.add(elem1);
 		
 		this.add(elem1);
 		
@@ -258,7 +270,7 @@ public class PageRide extends PagePanel {
 			
 			JPanel currentSynthesisPanel = new JPanel();
 			currentSynthesisPanel.setBackground(Design.UIColor[1]);
-			currentSynthesisPanel.add(this.labelAPI[i]);
+			currentSynthesisPanel.add(this.labelAPI[iLabelAPI++]);
 			
 			Enumeration<AbstractButton> itSynthesis = this.groupSynthesis.get(i).getElements();
 			do {
@@ -277,8 +289,7 @@ public class PageRide extends PagePanel {
 			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
 			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
 			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.labelGFB[i+2]);
-			this.labelGFB[i+2].setFont(Design.TITLE);
+			elemI.add(this.labelAPI[iLabelAPI++]);
 			elemI.add(Box.createVerticalStrut(10));
 			elemI.add(currentQualityPanel);
 			elemI.add(Box.createVerticalStrut(3));
@@ -290,8 +301,15 @@ public class PageRide extends PagePanel {
 			
 			this.add(Box.createVerticalStrut(10));
 			this.add(elemI);
+			
+			if(i == 1) {
+				this.showAndHide.add(elemI);
+			}
 		}
 		
+		for(JPanel panel : this.showAndHide) {
+			panel.setVisible(false);
+		}
 		this.showAndHideXpStuff.setVisible(false);
 		
 		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
@@ -300,10 +318,6 @@ public class PageRide extends PagePanel {
 		
 		for(JCustomButtonGroup<TypeSynthesis> typeSynthesis : this.groupSynthesis) {
 			typeSynthesis.setSelectedItem(TypeSynthesis.GENKI);
-		}
-		
-		for(JLangLabel label : this.labelAPI) {
-			label.setVisible(false);
 		}
 		
 		for(ArrayList<JIconCheckBox> star : this.starSynthesis) {
@@ -354,9 +368,9 @@ public class PageRide extends PagePanel {
 		}
 		
 		if(tabMount.length > 1) {
-			this.showAndHide.setVisible(true);
+			this.showAndHide.get(0).setVisible(true);
 		} else {
-			this.showAndHide.setVisible(false);
+			this.showAndHide.get(0).setVisible(false);
 		}
 		
 		if(!this.getMount().equals(memory)) {
@@ -436,7 +450,7 @@ public class PageRide extends PagePanel {
 		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
 	
-	private void updateQualityGenki(int id) {
+	public void updateQualityGenki(int id) {
 		int nbStar = 0;
 		for(JIconCheckBox star : this.starSynthesis.get(id)) {
 			if(!star.isSelected()) {
@@ -452,14 +466,14 @@ public class PageRide extends PagePanel {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(false);
 			}
-			this.labelAPI[id].setVisible(false);
+			this.labelAPI[id*2+1].setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.synthesis.get(id).setVisible(false);
 		} else {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(true);
 			}
-			this.labelAPI[id].setVisible(true);
+			this.labelAPI[id*2+1].setVisible(true);
 			this.groupSynthesis.get(id).setVisible(true);
 			this.synthesis.get(id).setVisible(true);
 			
@@ -471,6 +485,20 @@ public class PageRide extends PagePanel {
 				this.synthesis.get(id).setSelectedItem(retrieve);
 			} else {
 				this.synthesis.get(id).setSelectedIndex(0);
+			}
+		}
+		
+		if(id == 1) {
+			if(Synthesis.getAvailableThrone(PageGeneral.getInstance().getLvl(), this.getGroupSynthesis(id))) {
+				this.showAndHide.get(1).setVisible(true);
+			} else {
+				if(Synthesis.getAvailableThrone(PageGeneral.getInstance().getLvl(), TypeSynthesis.CLASSIC)) {
+					this.groupSynthesis.get(1).setSelectedItem(TypeSynthesis.CLASSIC);
+					this.showAndHide.get(1).setVisible(true);
+				} else {
+					this.showAndHide.get(1).setVisible(false);
+					this.groupQuality.get(1).setSelectedItem(Quality.GREY);
+				}
 			}
 		}
 	}
@@ -509,7 +537,7 @@ public class PageRide extends PagePanel {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		config.put("Ride", this.getMount().getName());
+		config.put("Ride", this.getMount().getName(Language.FR));
 		
 		for(int i = 0; i < this.groupQuality.size(); i++) {
 			Quality quality = this.groupQuality.get(i).getSelectedItem();

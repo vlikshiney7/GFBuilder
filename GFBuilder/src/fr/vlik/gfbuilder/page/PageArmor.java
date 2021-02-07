@@ -17,7 +17,6 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.RedEnchantment;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.custom.CustomArmor;
 import fr.vlik.grandfantasia.enums.Language;
@@ -29,6 +28,7 @@ import fr.vlik.grandfantasia.equip.RedArmor;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
+import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
 import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -954,7 +954,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.pearl.size(); i++) {
-			config.put("Pearl" + i, this.getPearl(i).getName());
+			config.put("Pearl" + i, this.getPearl(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.effectXpStuff.size(); i++) {

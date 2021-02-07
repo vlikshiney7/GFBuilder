@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.subEquip;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
@@ -14,6 +15,18 @@ import fr.vlik.grandfantasia.loader.subEquip.LoaderSubEquip;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class Synthesis implements Colorable, Writable {
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME_RIDE = new HashMap<Language, String>() {{
+		put(Language.FR, "Monture enchantée");
+		put(Language.EN, "Ride enchantment");
+	}};
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME_THRONE = new HashMap<Language, String>() {{
+		put(Language.FR, "Trône enchanté");
+		put(Language.EN, "Throne enchantment");
+	}};
 	
 	private String name;
 	private String serie;
@@ -165,5 +178,9 @@ public class Synthesis implements Colorable, Writable {
 		cast = result.toArray(cast);
 		
 		return cast;
+	}
+	
+	public static boolean getAvailableThrone(int lvl, TypeSynthesis type) {
+		return (type == TypeSynthesis.CLASSIC && lvl >= 15) || (type == TypeSynthesis.GENKI && lvl >= 40);
 	}
 }

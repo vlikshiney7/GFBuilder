@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.characUpgrade;
 
-import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;

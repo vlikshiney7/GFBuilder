@@ -11,6 +11,13 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Filtrable;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
+import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.RegenEffect;
+import fr.vlik.grandfantasia.stats.SkillEffect;
+import fr.vlik.grandfantasia.stats.TransformEffect;
 
 public class Tools {
 	public static final String RESOURCE = "/fr/vlik/grandfantasia/resources/";
@@ -90,5 +97,30 @@ public class Tools {
 		}
 		
 		return false;
+	}
+	
+	public static Calculable[] getEffects(Calculable[] tabEffects) {
+		if(tabEffects == null) {
+			return null;
+		}
+		
+		Calculable[] tab = new Calculable[tabEffects.length];
+		for(int i = 0; i < tab.length; i++) {
+			if(tabEffects[i] instanceof Condition) {
+				tab[i] = new Condition((Condition) tabEffects[i]);
+			} else if(tabEffects[i] instanceof Effect) {
+				tab[i] = new Effect((Effect) tabEffects[i]);
+			} else if(tabEffects[i] instanceof Proc) {
+				tab[i] = new Proc((Proc) tabEffects[i]);
+			} else if(tabEffects[i] instanceof RegenEffect) {
+				tab[i] = new RegenEffect((RegenEffect) tabEffects[i]);
+			} else if(tabEffects[i] instanceof SkillEffect) {
+				tab[i] = new SkillEffect((SkillEffect) tabEffects[i]);
+			} else if(tabEffects[i] instanceof TransformEffect) {
+				tab[i] = new TransformEffect((TransformEffect) tabEffects[i]);
+			}
+		}
+		
+		return tab;
 	}
 }

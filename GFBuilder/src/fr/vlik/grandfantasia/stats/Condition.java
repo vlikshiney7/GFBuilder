@@ -10,6 +10,7 @@ public class Condition implements Calculable {
 	private TypeCondition specialCondition = null;
 	private int percent;
 	private int taux;
+	private int cumul = 1;
 	
 	public Condition(TypeEffect targetEffect, int percent, Calculable[] effects) {
 		this.targetEffect = targetEffect;
@@ -28,17 +29,26 @@ public class Condition implements Calculable {
 		this.specialCondition = specialCondition;
 		this.effects = effects;
 	}
+
+	public Condition(TypeCondition specialCondition, int cumul, Calculable[] effects) {
+		this.specialCondition = specialCondition;
+		this.cumul = cumul;
+		this.effects = effects;
+	}
 	
 	public Condition(Condition condition) {
 		this.targetEffect = condition.getTargetEffect();
-		this.percent = condition.getPercent();
-		this.effects = condition.getEffects();
 		this.specialCondition = condition.getTypeCondition();
+		this.percent = condition.getPercent();
+		this.taux = condition.getTaux();
+		this.cumul = condition.getCumul();
+		this.effects = condition.getEffects();
 	}
 	
 	public static enum TypeCondition {
 		STATUT("A chaque statut reçu", "For each receive status"),
-		RAYON("Dans les 16 mètres", "On the 16 meters"),
+		RAYON16("Dans les 16 mètres", "On the 16 meters"),
+		RAYON("Autour de soi", "Around you"),
 		DEATH("Évite une mort", "Avoid one death"),
 		
 		AIGLE("Aigle", "Eagle"),
@@ -70,6 +80,10 @@ public class Condition implements Calculable {
 	public int getTaux() {
 		return this.taux;
 	}
+
+	public int getCumul() {
+		return this.cumul;
+	}
 	
 	public TypeCondition getTypeCondition() {
 		return this.specialCondition;
@@ -88,7 +102,7 @@ public class Condition implements Calculable {
 		StringBuilder tooltip = new StringBuilder();
 		
 		if(this.specialCondition == null) {
-			tooltip.append("Si " + this.targetEffect.fr + " < " + this.percent);
+			tooltip.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent);
 			
 			if(this.taux > 0) {
 				tooltip.append(", " + this.taux + "% d'activer");
@@ -102,6 +116,10 @@ public class Condition implements Calculable {
 		tooltip.append("<ul>");
 		for(Calculable calculable : this.effects) {
 			tooltip.append(calculable.getTooltip());
+		}
+		
+		if(this.cumul > 1) {
+			tooltip.append("<li>Cumulable " + this.cumul + " fois</li>");
 		}
 		
 		tooltip.append("</ul>");
@@ -137,6 +155,10 @@ public class Condition implements Calculable {
 					result.append("\t\t- " + r.toString(lang) + "\n");
 				}
 			}
+			
+			if(this.cumul != 1) {
+				result.append("\t\tCumulable " + this.cumul + " fois\n");
+			}
 		} else {
 			if(this.specialCondition == null) {
 				result.append("If " + this.targetEffect.abbrevEN + " < " + this.percent + "%");
@@ -161,7 +183,10 @@ public class Condition implements Calculable {
 					RegenEffect r = (RegenEffect) calculable;
 					result.append("\t\t- " + r.toString(lang) + "\n");
 				}
-				
+			}
+			
+			if(this.cumul != 1) {
+				result.append("\t\tStacks up to " + this.cumul + " times\n");
 			}
 		}
 		

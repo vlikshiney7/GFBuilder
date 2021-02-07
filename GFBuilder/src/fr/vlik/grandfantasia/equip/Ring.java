@@ -17,7 +17,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 
 public final class Ring extends Equipment {
 	
-	public static String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
+	private static final String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Ring[] data = LoaderEquip.getRing();
 	private static ArrayList<Ring> customData = new ArrayList<Ring>();
@@ -76,12 +76,8 @@ public final class Ring extends Equipment {
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + this.quality.index + Tools.PNG));
+		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
-		
-		if(path == null) {
-			path = "null";
-		}
 		
 		if(object == null) {
 			try {
@@ -160,8 +156,6 @@ public final class Ring extends Equipment {
 		}
 		
 		Ring[] cast = new Ring[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

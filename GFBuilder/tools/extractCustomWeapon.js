@@ -100,7 +100,7 @@ for(var i = 0; i < idClasses.length; i++) {
 	result += "GradeName." + gradeNameCorrespondance[idClasses[i]] + ", ";
 }
 
-result += "},\n\t" + lvl + ", WeaponType.EPEE2M, \"epee2M/ITEMICON\", new Calculable[] {\n";
+result += "},\n\t" + lvl + ", WeaponType.MARTEAU2M, \"marteau2M/ITEMICON\", new Calculable[] {\n";
 
 result += effects;
 result += "\t}),\n";

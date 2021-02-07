@@ -14,7 +14,6 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.RedEnchantment;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.custom.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
@@ -27,6 +26,7 @@ import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
+import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
 import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -71,6 +71,7 @@ public class PageWeapon extends PagePanel {
 	public PageWeapon() {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLabelAPI();
 		
 		for(int i = 0; i < 3; i++) {
 			int id = i;
@@ -269,7 +270,8 @@ public class PageWeapon extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		
+		this.labelAPI = new JLangLabel[1];
+		this.labelAPI[0] = new JLangLabel(Bullet.CLASS_NAME, Design.TITLE);
 	}
 	
 	@Override
@@ -367,8 +369,8 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		if(this.getBullet().getEffects() != null) {
-			for(Effect e : this.getBullet().getEffects()) {
-				list.add(e);
+			for(Calculable c : this.getBullet().getEffects()) {
+				list.add(c);
 			}
 		}
 		
@@ -481,8 +483,7 @@ public class PageWeapon extends PagePanel {
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
 		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
 		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelGFB[6]);
-		this.labelGFB[6].setFont(Design.TITLE);
+		elem1.add(this.labelAPI[0]);
 		elem1.add(Box.createVerticalStrut(10));
 		elem1.add(this.bullet);
 		
@@ -495,8 +496,12 @@ public class PageWeapon extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(JLangLabel label : this.labelAPI) {
+			label.updateText(lang);
 		}
 	}
 	
@@ -928,7 +933,7 @@ public class PageWeapon extends PagePanel {
 			}
 		}
 		
-		config.put("Bullet", this.getBullet().getName());
+		config.put("Bullet", this.getBullet().getName(Language.FR));
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
 			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName() : "";
@@ -940,7 +945,7 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.pearl.size(); i++) {
-			config.put("Pearl" + i, this.getPearl(i).getName());
+			config.put("Pearl" + i, this.getPearl(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.effectXpStuff.size(); i++) {

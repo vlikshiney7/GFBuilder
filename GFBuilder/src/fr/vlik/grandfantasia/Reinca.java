@@ -20,7 +20,7 @@ public class Reinca implements FullRenderer {
 		put(Language.EN, "Rebirth");
 	}};
 	
-	public static String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + "/";
+	private static final String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + "/";
 	private static final Color[] LEVEL = { new Color(147, 147, 147), new Color(111, 225, 28) };
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	public static Reinca[] data = Loader.getReinca();
