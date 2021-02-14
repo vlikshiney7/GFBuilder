@@ -226,8 +226,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		if(this.getArchive() != null && this.getArchive().getEffects() != null) {
-			for(Effect e : this.getArchive().getEffects()) {
-				list.add(e);
+			for(Calculable c : this.getArchive().getEffects()) {
+				list.add(c);
 			}
 		}
 		
@@ -394,9 +394,9 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		config.put("Grade", this.getGrade().getName(lang));
 		config.put("Lvl", "" + this.getLvl());
 		config.put("Rebirth", this.getReinca().getName(lang));
-		config.put("Title", this.getTitle().getName());
+		config.put("Title", this.getTitle().getName(Language.FR));
 		config.put("Yggdrasil", this.getYggdrasil().getName(lang));
-		config.put("Archive", this.getArchive().getName());
+		config.put("Archive", this.getArchive().getName(Language.FR));
 		
 		return config;
 	}

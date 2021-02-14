@@ -15,10 +15,10 @@ import java.util.Map;
 import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.page.PagePanel;
-import fr.vlik.grandfantasia.custom.CustomArmor;
-import fr.vlik.grandfantasia.custom.CustomCape;
-import fr.vlik.grandfantasia.custom.CustomRing;
-import fr.vlik.grandfantasia.custom.CustomWeapon;
+import fr.vlik.grandfantasia.customEquip.CustomArmor;
+import fr.vlik.grandfantasia.customEquip.CustomCape;
+import fr.vlik.grandfantasia.customEquip.CustomRing;
+import fr.vlik.grandfantasia.customEquip.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;

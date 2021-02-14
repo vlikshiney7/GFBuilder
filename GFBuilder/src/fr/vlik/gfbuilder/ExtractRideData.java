@@ -63,27 +63,27 @@ public class ExtractRideData {
 		
 		
 		try (
-				BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tools" + File.separator + "ExtractRide.java", false), "UTF-8"));
-			) {
-				for(Entry<String, String[]> entry : filterResult.entrySet()) {
-					String[] values = entry.getValue();
-					
-					if(Ride.get(values[0]) == null && notInBanList(values[0])) {
-						writer.append("new Ride(\"" + values[0] + "\", " + values[1] + ", " + values[2] + ", \"" + values[4] + "\", new Effect(TypeEffect.Depla, false, " + values[3] + ")),");
-					}
-				}
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tools" + File.separator + "ExtractRide.java", false), "UTF-8"));
+		) {
+			for(Entry<String, String[]> entry : filterResult.entrySet()) {
+				String[] values = entry.getValue();
 				
-				writer.flush();
-			} catch (IOException e) {
-				System.out.println("Error save file");
+				if(Ride.get(values[0]) == null && notInBanList(values[0])) {
+					writer.append("new Ride(\"" + values[0] + "\", " + values[1] + ", " + values[2] + ", \"" + values[4] + "\", new Effect(TypeEffect.Depla, false, " + values[3] + ")),");
+				}
 			}
 			
-			System.out.println("Done !");
+			writer.flush();
+		} catch (IOException e) {
+			System.out.println("Error save file");
+		}
+		
+		System.out.println("Done !");
 	}
 	
 	private static void readItemTW() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/C_Item.ini"), "UTF-8"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/TW/C_Item.ini"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {
@@ -111,7 +111,7 @@ public class ExtractRideData {
 	
 	private static void readItemMallTW() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/C_ItemMall.ini"), "UTF-8"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/TW/C_ItemMall.ini"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {
@@ -139,7 +139,7 @@ public class ExtractRideData {
 	
 	private static void readItemEU() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/T_Item.ini"), "Cp1252"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/FR/T_Item.ini"), "Cp1252"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {
@@ -172,7 +172,7 @@ public class ExtractRideData {
 	
 	private static void readItemMallEU() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/T_ItemMall.ini"), "Cp1252"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/FR/T_ItemMall.ini"), "Cp1252"));
 		) {
 			String line = reader.readLine();
 			while (line != null) {
@@ -205,7 +205,7 @@ public class ExtractRideData {
 	
 	private static void readEnchantEU() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/T_Enchant.ini"), "Cp1252"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/FR/T_Enchant.ini"), "Cp1252"));
 		) {
 			String line = reader.readLine();
 			HashMap<String, String[]> reconstructResult = new HashMap<String, String[]>();

@@ -8,35 +8,24 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.IconBuff;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Iconable;
-import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
-public class ProSkill implements Iconable, Writable {
+public class ProSkill extends IconBuff {
 	
+	private static final String PATH = Tools.RESOURCE + ProSkill.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	private static ProSkill[][] data = Loader.getProSkill();
+	private static ProSkill[][] data = LoaderCharacUpgrade.getProSkill();
 	
-	private String name;
 	private int lvl;
-	private Icon icon;
-	private Calculable[] effects;
 	
-	public ProSkill(String name, int lvl, String path, Calculable[] effects) {
-		this.name = name;
+	public ProSkill(Map<Language, String> name, int lvl, String path, Calculable[] effects) {
+		super(name, effects);
 		this.lvl = lvl;
 		this.icon = setIcon(path);
-		this.effects = effects;
-	}
-	
-	public String getName() {
-		return this.name;
 	}
 	
 	public int getLvl() {
@@ -44,34 +33,10 @@ public class ProSkill implements Iconable, Writable {
 	}
 	
 	@Override
-	public Icon getIcon() {
-		return this.icon;
-	}
-	
-	public Calculable[] getEffects() {
-		if(this.effects == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.effects.length];
-		for(int i = 0; i < tab.length; i++) {
-			if(this.effects[i] instanceof Effect) {
-				tab[i] = new Effect((Effect) this.effects[i]);
-			} else if(this.effects[i] instanceof Proc) {
-				tab[i] = new Proc((Proc) this.effects[i]);
-			} else if(this.effects[i] instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) this.effects[i]);
-			}
-		}
-		
-		return tab;
-	}
-	
-	@Override
 	public Icon setIcon(String path) {
 		if(ICONS.get(path) == null) {
 			try {
-				ICONS.put(path, new ImageIcon(ProSkill.class.getResource(Tools.RESOURCE + "pro/" + path + Tools.PNG)));
+				ICONS.put(path, new ImageIcon(ProSkill.class.getResource(PATH + path + Tools.PNG)));
 			} catch (NullPointerException e) {
 				System.out.println("Image introuvable : " + path);
 			}
@@ -82,7 +47,10 @@ public class ProSkill implements Iconable, Writable {
 	
 	@Override
 	public String getInfo(Language lang) {
-		return "Lvl " + this.lvl + " - " + this.name;
+		if(this.name.get(lang) == "") {
+			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
+		}
+		return "Lvl " + this.lvl + " - " + this.name.get(lang);
 	}
 	
 	@Override
@@ -106,7 +74,7 @@ public class ProSkill implements Iconable, Writable {
 	public static ProSkill get(String name) {
 		for(ProSkill[] grade : ProSkill.data) {
 			for(ProSkill proSkill : grade) {
-				if(proSkill.getName().equals(name)) {
+				if(proSkill.getName(Language.FR).equals(name)) {
 					return proSkill;
 				}
 			}
@@ -125,10 +93,6 @@ public class ProSkill implements Iconable, Writable {
 		}
 		
 		ProSkill[] cast = new ProSkill[result.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = result.get(i);
-		}
-		
-		return cast;
+		return result.toArray(cast);
 	}
 }

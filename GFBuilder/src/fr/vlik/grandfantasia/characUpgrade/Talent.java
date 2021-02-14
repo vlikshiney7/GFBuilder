@@ -7,12 +7,11 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -24,7 +23,7 @@ public final class Talent implements Writable {
 	
 	public static String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	private static Talent[][] data = Loader.getTalent();
+	private static Talent[][] data = LoaderCharacUpgrade.getTalent();
 	
 	private String name;
 	private int[] lvl;

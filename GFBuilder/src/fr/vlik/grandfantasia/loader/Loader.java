@@ -10,21 +10,12 @@ import fr.vlik.grandfantasia.GuildBuff;
 import fr.vlik.grandfantasia.IslandBuff;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Yggdrasil;
-import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
-import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.LoveBuff;
-import fr.vlik.grandfantasia.characUpgrade.Nucleus;
-import fr.vlik.grandfantasia.characUpgrade.ProSkill;
-import fr.vlik.grandfantasia.characUpgrade.Speciality;
-import fr.vlik.grandfantasia.characUpgrade.Stone;
-import fr.vlik.grandfantasia.characUpgrade.Talent;
-import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
-import fr.vlik.grandfantasia.equip.Ride;
 import fr.vlik.grandfantasia.equipUpgrade.CombiRunway;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
@@ -389,124 +380,120 @@ public class Loader {
 		};
 	}
 	
-	public static Title[] getTitle() {
-		return LoaderTitle.getTitle();
-	}
-	
 	public static Archive[] getArchive() {
 		return new Archive[] {
-			new Archive("Rien", Quality.GREY, null),
-			new Archive("Architecte Débutant", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Rien"); put(Language.EN, ""); }}, Quality.GREY, null),
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Architecte Débutant"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 432),
 				new Effect(TypeEffect.PM, false, 180),
 			}),
-			new Archive("Architecte Amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Architecte Amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 864),
 				new Effect(TypeEffect.PM, false, 360),
 			}),
-			new Archive("Architecte Confirmé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Architecte Confirmé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1296),
 				new Effect(TypeEffect.PM, false, 540),
 			}),
-			new Archive("Décorateur Professionnel de l'Île", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Décorateur Professionnel de l'Île"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1728),
 				new Effect(TypeEffect.PM, false, 720),
 			}),
-			new Archive("Artiste de l'Île", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2160),
 				new Effect(TypeEffect.PM, false, 900),
 			}),
-			new Archive("Artiste de l'Île - Superstar", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Superstar"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2592),
 				new Effect(TypeEffect.PM, false, 1080),
 			}),
-			new Archive("Artiste de l'Île - Expert", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Expert"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3024),
 				new Effect(TypeEffect.PM, false, 1260),
 			}),
-			new Archive("Artiste de l'Île - Talentueux", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Talentueux"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3456),
 				new Effect(TypeEffect.PM, false, 1440),
 			}),
-			new Archive("Artiste de l'Île - Chef", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Chef"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3888),
 				new Effect(TypeEffect.PM, false, 1620),
 			}),
-			new Archive("Artiste de l'Île - Maître", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Maître"); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.PV, false, 4320),
 				new Effect(TypeEffect.PM, false, 1800),
 			}),
-			new Archive("Top-Model Débutant", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Top-Model Débutant"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 234),
 				new Effect(TypeEffect.AtkD, false, 180),
 				new Effect(TypeEffect.AtkM, false, 180),
 			}),
-			new Archive("Top-Model Amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Top-Model Amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 468),
 				new Effect(TypeEffect.AtkD, false, 360),
 				new Effect(TypeEffect.AtkM, false, 360),
 			}),
-			new Archive("Top-Model Confirmé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Top-Model Confirmé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 702),
 				new Effect(TypeEffect.AtkD, false, 540),
 				new Effect(TypeEffect.AtkM, false, 540),
 			}),
-			new Archive("Organisateur Professionnel", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur Professionnel"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 936),
 				new Effect(TypeEffect.AtkD, false, 720),
 				new Effect(TypeEffect.AtkM, false, 720),
 			}),
-			new Archive("Organisateur", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1170),
 				new Effect(TypeEffect.AtkD, false, 900),
 				new Effect(TypeEffect.AtkM, false, 900),
 			}),
-			new Archive("Organisateur - Superstar", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Superstar"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1404),
 				new Effect(TypeEffect.AtkD, false, 1080),
 				new Effect(TypeEffect.AtkM, false, 1080),
 			}),
-			new Archive("Organisateur - Expert", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Expert"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1638),
 				new Effect(TypeEffect.AtkD, false, 1260),
 				new Effect(TypeEffect.AtkM, false, 1260),
 			}),
-			new Archive("Organisateur - Talentueux", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Talentueux"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1872),
 				new Effect(TypeEffect.AtkD, false, 1440),
 				new Effect(TypeEffect.AtkM, false, 1440),
 			}),
-			new Archive("Organisateur - Chef", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Chef"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 2106),
 				new Effect(TypeEffect.AtkD, false, 1620),
 				new Effect(TypeEffect.AtkM, false, 1620),
 			}),
-			new Archive("Organisateur - Maître", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Maître"); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 2340),
 				new Effect(TypeEffect.AtkD, false, 1800),
 				new Effect(TypeEffect.AtkM, false, 1800),
 			}),
-			new Archive("Philatéliste Débutant", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Philatéliste Débutant"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 20),
 				new Effect(TypeEffect.ESQ, false, 10),
 			}),
-			new Archive("Philatéliste Amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Philatéliste Amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 40),
 				new Effect(TypeEffect.ESQ, false, 20),
 			}),
-			new Archive("Philatéliste Confirmé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Philatéliste Confirmé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 60),
 				new Effect(TypeEffect.ESQ, false, 30),
 			}),
-			new Archive("Récolteur Professionnel", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Récolteur Professionnel"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 80),
 				new Effect(TypeEffect.ESQ, false, 40),
 			}),
-			new Archive("Collectionneur ", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur "); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 100),
 				new Effect(TypeEffect.ESQ, false, 50),
 			}),
-			new Archive("Collectionneur - Superstar ", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Superstar "); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 110),
 				new Effect(TypeEffect.ESQ, false, 55),
 				new Effect(TypeEffect.FCE, false, 5, true),
@@ -515,7 +502,7 @@ public class Loader {
 				new Effect(TypeEffect.VOL, false, 5, true),
 				new Effect(TypeEffect.AGI, false, 5, true),
 			}),
-			new Archive("Collectionneur - Expert ", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Expert "); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 120),
 				new Effect(TypeEffect.ESQ, false, 60),
 				new Effect(TypeEffect.FCE, false, 10, true),
@@ -524,7 +511,7 @@ public class Loader {
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Archive("Collectionneur - Talentueux ", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Talentueux "); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 130),
 				new Effect(TypeEffect.ESQ, false, 65),
 				new Effect(TypeEffect.FCE, false, 15, true),
@@ -533,7 +520,7 @@ public class Loader {
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 			}),
-			new Archive("Collectionneur - Chef ", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Chef "); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 140),
 				new Effect(TypeEffect.ESQ, false, 70),
 				new Effect(TypeEffect.FCE, false, 20, true),
@@ -542,7 +529,7 @@ public class Loader {
 				new Effect(TypeEffect.VOL, false, 20, true),
 				new Effect(TypeEffect.AGI, false, 20, true),
 			}),
-			new Archive("Collectionneur - Maître ", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Maître "); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 150),
 				new Effect(TypeEffect.ESQ, false, 75),
 				new Effect(TypeEffect.FCE, false, 25, true),
@@ -551,77 +538,77 @@ public class Loader {
 				new Effect(TypeEffect.VOL, false, 25, true),
 				new Effect(TypeEffect.AGI, false, 25, true),
 			}),
-			new Archive("Sprite Débutant", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Débutant"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 108),
 				new Effect(TypeEffect.DefM, false, 90),
 			}),
-			new Archive("Sprite Amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 216),
 				new Effect(TypeEffect.DefM, false, 180),
 			}),
-			new Archive("Sprite Confirmé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Confirmé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 324),
 				new Effect(TypeEffect.DefM, false, 270),
 			}),
-			new Archive("Nounou Sprite Professionnelle", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Nounou Sprite Professionnelle"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 432),
 				new Effect(TypeEffect.DefM, false, 360),
 			}),
-			new Archive("Protecteur des Sprite", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 540),
 				new Effect(TypeEffect.DefM, false, 450),
 			}),
-			new Archive("Protecteur des Sprite - Superstar", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Superstar"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 648),
 				new Effect(TypeEffect.DefM, false, 540),
 			}),
-			new Archive("Protecteur des Sprite - Expert", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Expert"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 756),
 				new Effect(TypeEffect.DefM, false, 630),
 			}),
-			new Archive("Protecteur des Sprite - Talentueux", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Talentueux"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 864),
 				new Effect(TypeEffect.DefM, false, 720),
 			}),
-			new Archive("Protecteur des Sprite - Chef", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Chef"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 972),
 				new Effect(TypeEffect.DefM, false, 810),
 			}),
-			new Archive("Protecteur des Sprite - Maître", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Maître"); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 1080),
 				new Effect(TypeEffect.DefM, false, 900),
 			}),
-			new Archive("Dompteur Débutant", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur Débutant"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 2),
 			}),
-			new Archive("Dompteur Amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur Amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 4),
 			}),
-			new Archive("Dompteur Confirmé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur Confirmé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 6),
 			}),
-			new Archive("Parking de Professionnel", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Parking de Professionnel"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 8),
 			}),
-			new Archive("Parking de Luxe", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Parking de Luxe"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 10),
 			}),
-			new Archive("Chantier naval - Apprenti", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Apprenti"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 12),
 			}),
-			new Archive("Chantier naval - Débutant", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Débutant"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 14),
 			}),
-			new Archive("Chantier naval - Avancé", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Avancé"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 16),
 			}),
-			new Archive("Chantier naval - Senior", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Senior"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 18),
 			}),
-			new Archive("Chantier naval luxueux", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval luxueux"); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 20),
 			}),
-			new Archive("Collectionneur Débutant", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Débutant"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 432),
 				new Effect(TypeEffect.PM, false, 180),
 				new Effect(TypeEffect.Atk, false, 234),
@@ -632,7 +619,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 108),
 				new Effect(TypeEffect.DefM, false, 90),
 			}),
-			new Archive("Collectionneur Amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 864),
 				new Effect(TypeEffect.PM, false, 360),
 				new Effect(TypeEffect.Atk, false, 468),
@@ -643,7 +630,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 216),
 				new Effect(TypeEffect.DefM, false, 180),
 			}),
-			new Archive("Collectionneur Confirmé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Confirmé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1296),
 				new Effect(TypeEffect.PM, false, 540),
 				new Effect(TypeEffect.Atk, false, 702),
@@ -654,7 +641,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 324),
 				new Effect(TypeEffect.DefM, false, 270),
 			}),
-			new Archive("Collectionneur Professionnel", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Professionnel"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1728),
 				new Effect(TypeEffect.PM, false, 720),
 				new Effect(TypeEffect.Atk, false, 936),
@@ -665,7 +652,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 432),
 				new Effect(TypeEffect.DefM, false, 360),
 			}),
-			new Archive("Collectionneur", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2160),
 				new Effect(TypeEffect.PM, false, 900),
 				new Effect(TypeEffect.Atk, false, 1170),
@@ -676,7 +663,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 540),
 				new Effect(TypeEffect.DefM, false, 450),
 			}),
-			new Archive("Collectionneur - Superstar", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Superstar"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2592),
 				new Effect(TypeEffect.PM, false, 1080),
 				new Effect(TypeEffect.Atk, false, 1404),
@@ -687,7 +674,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 648),
 				new Effect(TypeEffect.DefM, false, 540),
 			}),
-			new Archive("Collectionneur - Expert", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Expert"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3024),
 				new Effect(TypeEffect.PM, false, 1260),
 				new Effect(TypeEffect.Atk, false, 1638),
@@ -698,7 +685,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 756),
 				new Effect(TypeEffect.DefM, false, 630),
 			}),
-			new Archive("Collectionneur - Talentueux", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Talentueux"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3456),
 				new Effect(TypeEffect.PM, false, 1440),
 				new Effect(TypeEffect.Atk, false, 1872),
@@ -709,7 +696,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 864),
 				new Effect(TypeEffect.DefM, false, 720),
 			}),
-			new Archive("Collectionneur - Chef", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Chef"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3888),
 				new Effect(TypeEffect.PM, false, 1620),
 				new Effect(TypeEffect.Atk, false, 2106),
@@ -720,7 +707,7 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 972),
 				new Effect(TypeEffect.DefM, false, 810),
 			}),
-			new Archive("Collectionneur - Maître", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Maître"); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.PV, false, 4320),
 				new Effect(TypeEffect.PM, false, 1800),
 				new Effect(TypeEffect.Atk, false, 2340),
@@ -731,71 +718,71 @@ public class Loader {
 				new Effect(TypeEffect.DefP, false, 1080),
 				new Effect(TypeEffect.DefM, false, 900),
 			}),
-			new Archive("Blogueur novice", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur novice"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 8),
 				new Effect(TypeEffect.TCCM, false, 8),
 			}),
-			new Archive("Blogueur amateur", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur amateur"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 16),
 				new Effect(TypeEffect.TCCM, false, 16),
 			}),
-			new Archive("Blogueur intermédiaire", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur intermédiaire"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 20),
 				new Effect(TypeEffect.TCCM, false, 20),
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 			}),
-			new Archive("Blogueur confirmé", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur confirmé"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 24),
 				new Effect(TypeEffect.TCCM, false, 24),
 				new Effect(TypeEffect.RTCCP, false, 10),
 				new Effect(TypeEffect.RTCCM, false, 10),
 			}),
-			new Archive("Critique culinaire - Apprenti", Quality.WHITE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Apprenti"); put(Language.EN, ""); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 2),
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Archive("Critique culinaire - Débutant", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Débutant"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.DCCM, false, 4),
 			}),
-			new Archive("Critique culinaire - Avancé", Quality.GREEN, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Avancé"); put(Language.EN, ""); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6),
 				new Effect(TypeEffect.DCCM, false, 6),
 			}),
-			new Archive("Critique culinaire - Professionnel", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Professionnel"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 8),
 				new Effect(TypeEffect.DCCM, false, 8),
 			}),
-			new Archive("Gourmand", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 10),
 				new Effect(TypeEffect.DCCM, false, 10),
 			}),
-			new Archive("Gourmand - Superstar", Quality.BLUE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Superstar"); put(Language.EN, ""); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 10),
 				new Effect(TypeEffect.DCCM, false, 10),
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 			}),
-			new Archive("Gourmand - Expert", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Expert"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 11),
 				new Effect(TypeEffect.DCCM, false, 11),
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Archive("Gourmand - Talentueux", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Talentueux"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 12),
 				new Effect(TypeEffect.DCCM, false, 12),
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 			}),
-			new Archive("Gourmand - Chef", Quality.ORANGE, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Chef"); put(Language.EN, ""); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 13),
 				new Effect(TypeEffect.DCCM, false, 13),
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 			}),
-			new Archive("Gourmand - Maître", Quality.GOLD, new Effect[] {
+			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Maître"); put(Language.EN, ""); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 14),
 				new Effect(TypeEffect.DCCM, false, 14),
 				new Effect(TypeEffect.RDCCP, false, 7),
@@ -911,78 +898,6 @@ public class Loader {
 	
 	public static Pearl[] getArmorCostPearl() {
 		return LoaderPearl.getArmorCost();
-	}
-	
-	public static Ride[] getRide() {
-		return LoaderRide.getRide();
-	}
-	
-	public static Talent[][] getTalent() {
-		return new Talent[][] {
-			LoaderTalent.getClass0(),
-			LoaderTalent.getClass1(),
-			LoaderTalent.getClass2(),
-			LoaderTalent.getClass3(),
-			LoaderTalent.getClass4(),
-			LoaderTalent.getClass5(),
-			LoaderTalent.getClass6(),
-			LoaderTalent.getClass7(),
-			LoaderTalent.getClass8(),
-			LoaderTalent.getClass9(),
-			LoaderTalent.getClass10(),
-			LoaderTalent.getClass11(),
-		};
-	}
-	
-	public static CombiTalent[][] getCombiTalent() {
-		return new CombiTalent[][] {
-			LoaderCombiTalent.getClass0(),
-			LoaderCombiTalent.getClass1(),
-			LoaderCombiTalent.getClass2(),
-			LoaderCombiTalent.getClass3(),
-			LoaderCombiTalent.getClass4(),
-			LoaderCombiTalent.getClass5(),
-			LoaderCombiTalent.getClass6(),
-			LoaderCombiTalent.getClass7(),
-			LoaderCombiTalent.getClass8(),
-			LoaderCombiTalent.getClass9(),
-			LoaderCombiTalent.getClass10(),
-			LoaderCombiTalent.getClass11(),
-		};
-	}
-	
-	public static Speciality[][] getSpeciality() {
-		return new Speciality[][] {
-			LoaderSpeciality.getClass0(),
-			LoaderSpeciality.getClass1(),
-			LoaderSpeciality.getClass2(),
-			LoaderSpeciality.getClass3(),
-			LoaderSpeciality.getClass4(),
-			LoaderSpeciality.getClass5(),
-			LoaderSpeciality.getClass6(),
-			LoaderSpeciality.getClass7(),
-			LoaderSpeciality.getClass8(),
-			LoaderSpeciality.getClass9(),
-			LoaderSpeciality.getClass10(),
-			LoaderSpeciality.getClass11(),
-		};
-	}
-	
-	public static ProSkill[][] getProSkill() {
-		return new ProSkill[][] {
-			LoaderProSkill.getClass0(),
-			LoaderProSkill.getClass1(),
-			LoaderProSkill.getClass2(),
-			LoaderProSkill.getClass3(),
-			LoaderProSkill.getClass4(),
-			LoaderProSkill.getClass5(),
-			LoaderProSkill.getClass6(),
-			LoaderProSkill.getClass7(),
-			LoaderProSkill.getClass8(),
-			LoaderProSkill.getClass9(),
-			LoaderProSkill.getClass10(),
-			LoaderProSkill.getClass11(),
-		};
 	}
 	
 	public static Runway[] getRunway() {
@@ -1127,337 +1042,6 @@ public class Loader {
 					Runway.get("Ranger"),
 					Runway.get("Praetor"),
 				}),
-		};
-	}
-	
-	public static Nucleus[][] getNucleus() {
-		return new Nucleus[][] {
-			new Nucleus[] {
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", null),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +4%"); put(Language.EN, ""); }}, Quality.GREEN, "FCEgreen", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 4),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +2%"); put(Language.EN, ""); }}, Quality.GREEN, "VITgreen", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 2),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +4%"); put(Language.EN, ""); }}, Quality.GREEN, "INTgreen", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 4),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +2%"); put(Language.EN, ""); }}, Quality.GREEN, "VOLgreen", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 2),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +4%"); put(Language.EN, ""); }}, Quality.GREEN, "AGIgreen", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 4),
-				}),
-			},
-			new Nucleus[] {
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", null),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +5%"); put(Language.EN, ""); }}, Quality.BLUE, "FCEblue", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +3%"); put(Language.EN, ""); }}, Quality.BLUE, "VITblue", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 3),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +5%"); put(Language.EN, ""); }}, Quality.BLUE, "INTblue", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +3%"); put(Language.EN, ""); }}, Quality.BLUE, "VOLblue", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 3),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +5%"); put(Language.EN, ""); }}, Quality.BLUE, "AGIblue", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 5),
-				}),
-			},
-			new Nucleus[] {
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +6%"); put(Language.EN, ""); }}, Quality.BLUE, "FCEblue", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 6),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +4%"); put(Language.EN, ""); }}, Quality.BLUE, "VITblue", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 4),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +6%"); put(Language.EN, ""); }}, Quality.BLUE, "INTblue", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 6),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +4%"); put(Language.EN, ""); }}, Quality.BLUE, "VOLblue", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 4),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +6%"); put(Language.EN, ""); }}, Quality.BLUE, "AGIblue", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 6),
-				}),
-			},
-			new Nucleus[] {
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8%"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 8),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6%"); put(Language.EN, ""); }}, Quality.ORANGE, "VITorange", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 6),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8%"); put(Language.EN, ""); }}, Quality.ORANGE, "INTorange", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 8),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6%"); put(Language.EN, ""); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 6),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8%"); put(Language.EN, ""); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 8),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 8),
-					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
-					}),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "VITorange", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 6),
-					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
-					}),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "INTorange", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 8),
-					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
-					}),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 6),
-					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
-					}),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 8),
-					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
-					}),
-				}),
-			},
-			new Nucleus[] {
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 8),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 8),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 10),
-					new Effect(TypeEffect.Depla, false, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 8),
-					new Effect(TypeEffect.Depla, false, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 10),
-					new Effect(TypeEffect.Depla, false, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 8),
-					new Effect(TypeEffect.Depla, false, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10% - Depla +5%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 10),
-					new Effect(TypeEffect.Depla, false, 5),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 10),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 8),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 10),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 8),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 10),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "FCEgold", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 10),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +8% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "VITgold", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 8),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "INTgold", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 10),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +8% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "VOLgold", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 8),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.GOLD, "AGIgold", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 10),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-			},
-			new Nucleus[] {
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, ""); }}, Quality.GREY, "null", null),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +12%"); put(Language.EN, ""); }}, Quality.PURPLE, "FCEpurple", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 12),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VITpurple", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +12%"); put(Language.EN, ""); }}, Quality.PURPLE, "INTpurple", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 12),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VOLpurple", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12%"); put(Language.EN, ""); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 12),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +12% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "FCEpurple", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 12),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VITpurple", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 10),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +12% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "INTpurple", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 12),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +10% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "VOLpurple", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 10),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12% - Depla +10%"); put(Language.EN, ""); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 12),
-					new Effect(TypeEffect.Depla, false, 10),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +12% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "FCEpurple", new Calculable[] {
-					new Effect(TypeEffect.FCE, true, 12),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "VITpurple", new Calculable[] {
-					new Effect(TypeEffect.VIT, true, 10),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +12% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "INTpurple", new Calculable[] {
-					new Effect(TypeEffect.INT, true, 12),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +10% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "VOLpurple", new Calculable[] {
-					new Effect(TypeEffect.VOL, true, 10),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12% - Depla +15%"); put(Language.EN, ""); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
-					new Effect(TypeEffect.AGI, true, 12),
-					new Effect(TypeEffect.Depla, false, 15),
-				}),
-			},
-		};
-	}
-	
-	public static Stone[] getStone() {
-		return new Stone[] {
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Doctrines bien-aimées de Werther"); put(Language.EN, ""); }}, Quality.WHITE, "doctrine", new Calculable[] {
-				new Effect(TypeEffect.RegenPM, false, 250),
-				new Effect(TypeEffect.VitAtk, false, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Griffe de la Brute cristalline magique"); put(Language.EN, ""); }}, Quality.WHITE, "griffe", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 5),
-				new Effect(TypeEffect.VitAtk, false, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de Bénédiction de la Baie Bleue"); put(Language.EN, ""); }}, Quality.GREEN, "blueBay", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Gri-Gri porte-bonheur pour loterie"); put(Language.EN, ""); }} , Quality.WHITE, "grigri", new Calculable[] {
-				new Effect(TypeEffect.Loot, false, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Carte de type bien manchot"); put(Language.EN, ""); }}, Quality.WHITE, "manchot", new Calculable[] {
-				new Effect(TypeEffect.Loot, false, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Corne du Roi Triomphant"); put(Language.EN, ""); }}, Quality.WHITE, "corne", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 5),
-				new Effect(TypeEffect.DegM, false, 5),
-				new Effect(TypeEffect.RegenPV, false, 250),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre d'Invocation de Robolol de Hawk"); put(Language.EN, ""); }}, Quality.WHITE, "robolol", new Calculable[] {
-				new Effect(TypeEffect.Toucher, false, 1),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Sac Trésor du Zéphyr"); put(Language.EN, ""); }}, Quality.WHITE, "sac", new Calculable[] {
-				new Effect(TypeEffect.Depla, false, 15),
-				new Effect(TypeEffect.ESQ, false, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Cristal magique du Chronodériveur"); put(Language.EN, ""); }}, Quality.GREEN, "chrono", new Calculable[] {
-				new Effect(TypeEffect.FCE, true, 1),
-				new Effect(TypeEffect.VIT, true, 1),
-				new Effect(TypeEffect.INT, true, 1),
-				new Effect(TypeEffect.VOL, true, 1),
-				new Effect(TypeEffect.AGI, true, 1),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de chance du Mauvais esprit"); put(Language.EN, ""); }}, Quality.WHITE, "esprit", new Calculable[] {
-				new Effect(TypeEffect.TCCP, false, 5),
-				new Effect(TypeEffect.TCCM, false, 5),
-				new Effect(TypeEffect.Toucher, false, 5),
-				new Effect(TypeEffect.ESQ, false, 5),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Corne de Bataille de Smulca"); put(Language.EN, ""); }}, Quality.WHITE, "smulca", new Calculable[] {
-				new Effect(TypeEffect.DefP, true, 5),
-				new Effect(TypeEffect.DefM, true, 5),
-				new Effect(TypeEffect.PV, true, 2),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Branche verte"); put(Language.EN, ""); }}, Quality.WHITE, "branche", new Calculable[] {
-				new RegenEffect(TypeEffect.PM, true, 1, TypeRegen.REGENERATION, 3),
-			}),
-			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Serment de 400 ans"); put(Language.EN, ""); }}, Quality.WHITE, "serment", new Calculable[] {
-				new Effect(TypeEffect.Depla, false, 40),
-				new RegenEffect(TypeEffect.PV, true, -6, TypeRegen.REGENERATION, 1),
-			}),
-		};
-	}
-	
-	public static Energy[] getEnergy() {
-		return new Energy[] {
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Écarlate"); put(Language.EN, "Crimson"); }}, "red", new Effect[] {
-				new Effect(TypeEffect.PV, false, 24),
-			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Indigo"); put(Language.EN, "Azure"); }}, "blue", new Effect[] {
-				new Effect(TypeEffect.PM, false, 10),
-			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Citrus"); }}, "orange", new Effect[] {
-				new Effect(TypeEffect.Atk, false, 13),
-				new Effect(TypeEffect.AtkD, false, 10),
-			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Violette"); put(Language.EN, "Violet"); }}, "purple", new Effect[] {
-				new Effect(TypeEffect.AtkM, false, 10),
-			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Émeraude"); put(Language.EN, "Emerald"); }}, "green", new Effect[] {
-				new Effect(TypeEffect.DefP, false, 6),
-			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Rose"); put(Language.EN, "Peach"); }}, "pink", new Effect[] {
-				new Effect(TypeEffect.DefM, false, 5),
-			}),
 		};
 	}
 	

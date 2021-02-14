@@ -40,7 +40,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
 	
-	private ArrayList<Effect> convertEffects;
+	private ArrayList<Calculable> convertEffects;
 	
 	public static PageSkill getInstance() {
 		return INSTANCE;
@@ -89,7 +89,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	}
 	
 	@Override
-	public ArrayList<Effect> getConvertEffects() {
+	public ArrayList<Calculable> getConvertEffects() {
 		return this.convertEffects;
 	}
 	
@@ -101,7 +101,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
-		ArrayList<Effect> convert = new ArrayList<Effect>();
+		ArrayList<Calculable> convert = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {
@@ -359,7 +359,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			config.put("LvlSkill" + i, "" + this.skillProgress.get(i).getSelectedIndex());
 		}
 		
-		String value = this.getProSkill() != null ? this.getProSkill().getName() : "";
+		String value = this.getProSkill() != null ? this.getProSkill().getName(Language.FR) : "";
 		config.put("ProSkill", "" + value);
 		
 		return config;

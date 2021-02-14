@@ -1,9 +1,9 @@
 package fr.vlik.grandfantasia.loader.customEquip;
 
-import fr.vlik.grandfantasia.custom.CustomArmor;
-import fr.vlik.grandfantasia.custom.CustomCape;
-import fr.vlik.grandfantasia.custom.CustomRing;
-import fr.vlik.grandfantasia.custom.CustomWeapon;
+import fr.vlik.grandfantasia.customEquip.CustomArmor;
+import fr.vlik.grandfantasia.customEquip.CustomCape;
+import fr.vlik.grandfantasia.customEquip.CustomRing;
+import fr.vlik.grandfantasia.customEquip.CustomWeapon;
 
 public class LoaderCustom {
 	

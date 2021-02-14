@@ -12,7 +12,7 @@ import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class Ride extends CompleteBuff {
@@ -25,7 +25,7 @@ public class Ride extends CompleteBuff {
 	
 	private static final String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
-	private static Ride[] data = Loader.getRide();
+	private static Ride[] data = LoaderEquip.getRide();
 	
 	private int lvl;
 	private boolean reinca;

@@ -1,11 +1,11 @@
 package fr.vlik.grandfantasia.enums;
 
 public enum Language {
-	FR(0), EN(1);
+	FR("Français"), EN("English"), ES("Español"), PT("Português");
 	
-	public final int index;
+	public final String name;
 	 
-    private Language(int index) {
-        this.index = index;
+    private Language(String name) {
+        this.name = name;
     }
 }

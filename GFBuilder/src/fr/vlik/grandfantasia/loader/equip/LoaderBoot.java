@@ -7543,8 +7543,8 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Prêtre (Réincarné)"); put(Language.EN, ""); }},
-				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
-				ArmorType.BOTTE, "30evo0R", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
+				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, true,
+				ArmorType.BOTTE, "30evo4R", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 144, true),
 						new Effect(TypeEffect.DefM, false, 138, true),
@@ -7697,8 +7697,8 @@ class LoaderBoot {
 					},
 				}), null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Prêtre"); put(Language.EN, ""); }},
-				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
-				ArmorType.BOTTE, "30evo0", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
+				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, false,
+				ArmorType.BOTTE, "30evo4", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
 						new Effect(TypeEffect.DefP, false, 120, true),
 						new Effect(TypeEffect.DefM, false, 114, true),

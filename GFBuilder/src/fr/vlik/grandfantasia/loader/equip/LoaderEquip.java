@@ -9,6 +9,7 @@ import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Bullet;
 import fr.vlik.grandfantasia.equip.Cape;
 import fr.vlik.grandfantasia.equip.EquipSet;
+import fr.vlik.grandfantasia.equip.Ride;
 import fr.vlik.grandfantasia.equip.Ring;
 import fr.vlik.grandfantasia.equip.Weapon;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -342,5 +343,9 @@ public class LoaderEquip {
 				new Effect(TypeEffect.Bullet, false, 20),
 			}),
 		};
+	}
+	
+	public static Ride[] getRide() {
+		return LoaderRide.getRide();
 	}
 }

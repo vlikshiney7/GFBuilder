@@ -65,6 +65,15 @@ public enum TypeSkillEffect implements Writable {
 	Class3S14("Mouvement furtif", "Stealth"),
 	
 	Class4S0("Grenade de Gloire", "Blessed Bomb"),
+	Class4S1("Bouclier Sacré", "Sacred Shield"),
+	Class4S2("Guérison Divine", "Divine Heal"),
+	Class4S3("Doigt Brillant", "Shining Finger"),
+	Class4S4("Punition du maillet divin", "Holy Hammer Crush"),
+	Class4S5("Sceau Divin", "Sacred Seal"),
+	Class4S6("Grenade de Gloire Sacrée", "Blessed Bomb"),
+	Class4S7("Bombe de lumière sacrée", "Holy Light Grenade"),
+	Class4S8("Marteau Sacré Surpuissant", "High Holy Hammer Crush Magic"),
+	Class4S9("Sceau du Sacré ", "Light Seal Magic"),
 	
 	Class5S0("Bouclier d'Éternité", "Shield of Eternity"),
 	Class5S1("Vol du Gardien", "Guardian Flight"),

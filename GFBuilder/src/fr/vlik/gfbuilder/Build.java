@@ -109,13 +109,21 @@ public class Build {
 		}
 	}
 	
-	public void addConvertEffect(Effect e) {
-		this.effectConvert.add(e);
+	public void addConvertEffect(Calculable c) {
+		if(c instanceof Effect) {
+			Effect e = (Effect) c;
+			
+			if(e.getTarget() == Target.SELF) {
+				if(containIdWeapon(e.getWithWeapon())) {
+					this.effectConvert.add(e);
+				}
+			}
+		}
 	}
 	
-	public void addConvertEffect(ArrayList<Effect> effects) {
-		for(Effect e : effects) {
-			this.effectConvert.add(e);
+	public void addConvertEffect(ArrayList<Calculable> effects) {
+		for(Calculable c : effects) {
+			addConvertEffect(c);
 		}
 	}
 	

@@ -108,7 +108,7 @@ public class Lang {
 	
 	public static String getDataCredit(Language lang) {
 		StringBuilder str = new StringBuilder();
-		for(String s : Lang.dataCredit[lang.index]) {
+		for(String s : Lang.dataCredit[lang.ordinal()]) {
 			str.append(s);
 			str.append("\n");
 		}

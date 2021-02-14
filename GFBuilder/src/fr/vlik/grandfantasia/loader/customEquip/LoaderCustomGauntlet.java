@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.loader.customEquip;
 
-import fr.vlik.grandfantasia.custom.CustomArmor;
+import fr.vlik.grandfantasia.customEquip.CustomArmor;
 
 @SuppressWarnings("serial")
 class LoaderCustomGauntlet {

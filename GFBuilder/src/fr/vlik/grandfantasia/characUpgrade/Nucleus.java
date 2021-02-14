@@ -5,12 +5,12 @@ import java.util.Map;
 import fr.vlik.grandfantasia.CompleteBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 
 public class Nucleus extends CompleteBuff {
 	
-	private static Nucleus[][] data = Loader.getNucleus();
+	private static Nucleus[][] data = LoaderCharacUpgrade.getNucleus();
 	
 	public Nucleus(Map<Language, String> name, Quality quality, String path, Calculable[] effects) {
 		super(name, quality, path, effects);

@@ -6,12 +6,12 @@ import java.util.Map;
 import fr.vlik.grandfantasia.CompleteBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 
 public class Stone extends CompleteBuff {
 	
-	private static Stone[] data = Loader.getStone();
+	private static Stone[] data = LoaderCharacUpgrade.getStone();
 	
 	public Stone(Map<Language, String> name, Quality quality, String path, Calculable[] effects) {
 		super(name, quality, path, effects);

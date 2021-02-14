@@ -4,13 +4,13 @@ import java.util.Map;
 
 import fr.vlik.grandfantasia.IconBuff;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public class Energy extends IconBuff {
 	
-	private static Energy[] data = Loader.getEnergy();
+	private static Energy[] data = LoaderCharacUpgrade.getEnergy();
 	
 	public Energy(Map<Language, String> name, String path, Calculable[] effects) {
 		super(name, path, effects);

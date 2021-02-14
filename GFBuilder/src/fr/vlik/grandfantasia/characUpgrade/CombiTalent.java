@@ -3,13 +3,13 @@ package fr.vlik.grandfantasia.characUpgrade;
 import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
 public final class CombiTalent implements Writable {
 	
-	private static CombiTalent[][] data = Loader.getCombiTalent();
+	private static CombiTalent[][] data = LoaderCharacUpgrade.getCombiTalent();
 	
 	private String name;
 	private int[] code;

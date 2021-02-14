@@ -18,7 +18,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.custom.CustomArmor;
+import fr.vlik.grandfantasia.customEquip.CustomArmor;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;

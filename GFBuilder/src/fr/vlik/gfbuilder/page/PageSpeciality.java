@@ -42,7 +42,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	private JCustomButton reinitSpe;
 	private JCustomButton maxSpe;
 	
-	private ArrayList<Effect> convertEffects;
+	private ArrayList<Calculable> convertEffects;
 	
 	public static PageSpeciality getInstance() {
 		return INSTANCE;
@@ -96,7 +96,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	@Override
-	public ArrayList<Effect> getConvertEffects() {
+	public ArrayList<Calculable> getConvertEffects() {
 		return this.convertEffects;
 	}
 	
@@ -108,7 +108,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
-		ArrayList<Effect> convert = new ArrayList<Effect>();
+		ArrayList<Calculable> convert = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(Calculable c : this.tabSpeciality[i].getEffects()) {
