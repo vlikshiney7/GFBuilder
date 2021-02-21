@@ -466,7 +466,7 @@ public class FrameCreateCustom extends JFrame {
 				this.create.setVisible(true);
 				
 				for(int i = 0; i < 3; i++) {
-					if(this.getEnchantment(i).getName().equals(" ")) {
+					if(this.getEnchantment(i).getName(Language.FR).equals(" ")) {
 						this.create.setVisible(false);
 						break;
 					}
@@ -479,7 +479,7 @@ public class FrameCreateCustom extends JFrame {
 				this.create.setVisible(true);
 				
 				for(int i = 0; i < 6; i++) {
-					if(this.getEnchantment(i).getName().equals(" ")) {
+					if(this.getEnchantment(i).getName(Language.FR).equals(" ")) {
 						this.create.setVisible(false);
 						break;
 					}

@@ -130,10 +130,7 @@ public class CustomRing extends CustomEquipment {
 			}
 		}
 		
-		CustomRing[] cast = new CustomRing[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new CustomRing[result.size()]);
 	}
 	
 	public static boolean constructCustom(String name, Quality quality, String enchants) {

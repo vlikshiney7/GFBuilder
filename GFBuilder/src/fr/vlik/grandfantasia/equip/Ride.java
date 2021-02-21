@@ -119,7 +119,6 @@ public class Ride extends CompleteBuff {
 			}
 		}
 		
-		Ride[] cast = new Ride[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Ride[result.size()]);
 	}
 }

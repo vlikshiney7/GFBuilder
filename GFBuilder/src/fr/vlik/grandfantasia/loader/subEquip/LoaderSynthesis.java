@@ -1,24 +1,28 @@
 package fr.vlik.grandfantasia.loader.subEquip;
 
+import java.util.HashMap;
+
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.subEquip.Synthesis;
 
+@SuppressWarnings("serial")
 public class LoaderSynthesis {
 	
 	static Synthesis[] getRideGold() {
 		return new Synthesis[] {
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 36, true),
 				new Effect(TypeEffect.VIT, false, 13, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 41, true),
 				new Effect(TypeEffect.VIT, false, 16, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 48, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -28,7 +32,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 57, true),
 				new Effect(TypeEffect.VIT, false, 21, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -38,7 +42,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 68, true),
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -48,13 +52,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 31, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -63,7 +67,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -72,7 +76,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -81,15 +85,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.INT, false, 36, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.INT, false, 41, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -99,7 +103,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 21, true),
 				new Effect(TypeEffect.INT, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -109,7 +113,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.INT, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -119,15 +123,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 31, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -137,7 +141,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 29, true),
 				new Effect(TypeEffect.VOL, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -147,7 +151,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 34, true),
 				new Effect(TypeEffect.VOL, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -157,15 +161,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.AGI, false, 36, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.AGI, false, 41, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -175,7 +179,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 21, true),
 				new Effect(TypeEffect.AGI, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -185,7 +189,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.AGI, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -195,21 +199,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 31, true),
 				new Effect(TypeEffect.VIT, false, 31, true),
 				new Effect(TypeEffect.INT, false, 31, true),
 				new Effect(TypeEffect.VOL, false, 31, true),
 				new Effect(TypeEffect.AGI, false, 31, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 36, true),
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.INT, false, 36, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.AGI, false, 36, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 42, true),
 				new Effect(TypeEffect.INT, false, 42, true),
@@ -222,7 +226,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 50, true),
 				new Effect(TypeEffect.VIT, false, 50, true),
 				new Effect(TypeEffect.INT, false, 50, true),
@@ -235,7 +239,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 58, true),
 				new Effect(TypeEffect.VIT, false, 58, true),
 				new Effect(TypeEffect.INT, false, 58, true),
@@ -248,15 +252,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Sniper", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
-			new Synthesis("Sniper précis", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper précis"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3.5),
 				new Effect(TypeEffect.TCCM, false, 3.5),
 			}),
-			new Synthesis("Sniper rusé", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper rusé"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 				new Effect(TypeEffect.TCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -266,7 +270,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Sniper omniscient", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper omniscient"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5),
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -276,7 +280,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Sniper devin", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper devin"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 6.5),
 				new Effect(TypeEffect.TCCM, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -286,15 +290,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Éventreur", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Synthesis("Éventreur armé", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur armé"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3.5),
 				new Effect(TypeEffect.DCCM, false, 3.5),
 			}),
-			new Synthesis("Éventreur sanglant", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanglant"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -304,7 +308,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Éventreur sanguinaire", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanguinaire"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.DCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -314,7 +318,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Éventreur déicide", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur déicide"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6.5),
 				new Effect(TypeEffect.DCCM, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -324,13 +328,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3.5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -339,7 +343,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -348,7 +352,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -357,13 +361,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3.5),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -372,7 +376,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -381,7 +385,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -390,19 +394,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Avatar multiple tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2.5),
 				new Effect(TypeEffect.RTCCM, false, 2.5),
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 			}),
-			new Synthesis("Avatar fantôme tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 				new Effect(TypeEffect.ReducP, false, 3),
@@ -414,7 +418,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar brume magique tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3.5),
 				new Effect(TypeEffect.RTCCM, false, 3.5),
 				new Effect(TypeEffect.ReducP, false, 3.5),
@@ -426,7 +430,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar miroir magique tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
@@ -438,19 +442,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Lien robuste", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Lien robuste du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2.5),
 				new Effect(TypeEffect.RDCCM, false, 2.5),
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 			}),
-			new Synthesis("Barrière robuste", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 				new Effect(TypeEffect.ReducP, false, 3),
@@ -462,7 +466,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière robuste du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3.5),
 				new Effect(TypeEffect.RDCCM, false, 3.5),
 				new Effect(TypeEffect.ReducP, false, 3.5),
@@ -474,7 +478,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière robuste de givre", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
@@ -487,15 +491,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
 			
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 76, true),
 				new Effect(TypeEffect.VIT, false, 35, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 87, true),
 				new Effect(TypeEffect.VIT, false, 41, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 100, true),
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -505,7 +509,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 115, true),
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -515,7 +519,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 132, true),
 				new Effect(TypeEffect.VIT, false, 60, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -525,13 +529,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 70, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 82, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 94, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -540,7 +544,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 107, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -549,7 +553,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 120, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -558,15 +562,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.INT, false, 76, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.INT, false, 87, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.INT, false, 100, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -576,7 +580,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.INT, false, 115, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -586,7 +590,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 60, true),
 				new Effect(TypeEffect.INT, false, 132, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -596,15 +600,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 38, true),
 				new Effect(TypeEffect.VOL, false, 70, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 44, true),
 				new Effect(TypeEffect.VOL, false, 82, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 50, true),
 				new Effect(TypeEffect.VOL, false, 94, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -614,7 +618,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 58, true),
 				new Effect(TypeEffect.VOL, false, 107, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -624,7 +628,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 66, true),
 				new Effect(TypeEffect.VOL, false, 120, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -634,15 +638,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.AGI, false, 76, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.AGI, false, 87, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.AGI, false, 100, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -652,7 +656,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.AGI, false, 115, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -662,7 +666,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 60, true),
 				new Effect(TypeEffect.AGI, false, 132, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -672,21 +676,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 73, true),
 				new Effect(TypeEffect.VIT, false, 73, true),
 				new Effect(TypeEffect.INT, false, 73, true),
 				new Effect(TypeEffect.VOL, false, 73, true),
 				new Effect(TypeEffect.AGI, false, 73, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 85, true),
 				new Effect(TypeEffect.VIT, false, 85, true),
 				new Effect(TypeEffect.INT, false, 85, true),
 				new Effect(TypeEffect.VOL, false, 85, true),
 				new Effect(TypeEffect.AGI, false, 85, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 97, true),
 				new Effect(TypeEffect.VIT, false, 97, true),
 				new Effect(TypeEffect.INT, false, 97, true),
@@ -699,7 +703,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 111, true),
 				new Effect(TypeEffect.VIT, false, 111, true),
 				new Effect(TypeEffect.INT, false, 111, true),
@@ -712,7 +716,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 126, true),
 				new Effect(TypeEffect.VIT, false, 126, true),
 				new Effect(TypeEffect.INT, false, 126, true),
@@ -725,15 +729,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Sniper", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 6),
 				new Effect(TypeEffect.TCCM, false, 6),
 			}),
-			new Synthesis("Sniper précis", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper précis"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 7),
 				new Effect(TypeEffect.TCCM, false, 7),
 			}),
-			new Synthesis("Sniper rusé", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper rusé"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 8),
 				new Effect(TypeEffect.TCCM, false, 8),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -743,7 +747,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Sniper omniscient", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper omniscient"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 9.5),
 				new Effect(TypeEffect.TCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -753,7 +757,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Sniper devin", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper devin"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 11.5),
 				new Effect(TypeEffect.TCCM, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -763,15 +767,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Éventreur", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6),
 				new Effect(TypeEffect.DCCM, false, 6),
 			}),
-			new Synthesis("Éventreur armé", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur armé"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 7),
 				new Effect(TypeEffect.DCCM, false, 7),
 			}),
-			new Synthesis("Éventreur sanglant", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanglant"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 8),
 				new Effect(TypeEffect.DCCM, false, 8),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -781,7 +785,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 5),
 				new Effect(TypeEffect.AGI, true, 5),
 			}),
-			new Synthesis("Éventreur sanguinaire", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanguinaire"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 9.5),
 				new Effect(TypeEffect.DCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -791,7 +795,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Éventreur déicide", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur déicide"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 11.5),
 				new Effect(TypeEffect.DCCM, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -801,13 +805,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 6),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 7),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 8),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -816,7 +820,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -825,7 +829,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -834,13 +838,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 6),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 7),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 8),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -849,7 +853,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -858,7 +862,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -867,19 +871,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Avatar tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 			}),
-			new Synthesis("Avatar multiple tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 			}),
-			new Synthesis("Avatar fantôme tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 6),
 				new Effect(TypeEffect.RTCCM, false, 6),
 				new Effect(TypeEffect.ReducP, false, 6),
@@ -891,7 +895,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar brume magique tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 7),
 				new Effect(TypeEffect.RTCCM, false, 7),
 				new Effect(TypeEffect.ReducP, false, 7),
@@ -903,7 +907,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar miroir magique tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 8),
 				new Effect(TypeEffect.RTCCM, false, 8),
 				new Effect(TypeEffect.ReducP, false, 8),
@@ -915,19 +919,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Lien robuste", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 			}),
-			new Synthesis("Lien robuste du gardien", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 			}),
-			new Synthesis("Barrière robuste", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 				new Effect(TypeEffect.ReducP, false, 6),
@@ -939,7 +943,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière robuste du gardien", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 7),
 				new Effect(TypeEffect.RDCCM, false, 7),
 				new Effect(TypeEffect.ReducP, false, 7),
@@ -951,7 +955,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière robuste de givre", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 8),
 				new Effect(TypeEffect.RDCCM, false, 8),
 				new Effect(TypeEffect.ReducP, false, 8),
@@ -968,15 +972,15 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getRideOrange() {
 		return new Synthesis[] {
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 9, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 30, true),
 				new Effect(TypeEffect.VIT, false, 11, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 36, true),
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -986,7 +990,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 44, true),
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -996,7 +1000,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 54, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1006,13 +1010,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1021,7 +1025,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1030,7 +1034,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1039,15 +1043,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.INT, false, 30, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.INT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1057,7 +1061,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.INT, false, 44, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1067,7 +1071,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 54, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1077,15 +1081,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 13, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1095,7 +1099,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 22, true),
 				new Effect(TypeEffect.VOL, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1105,7 +1109,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 27, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1115,15 +1119,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.AGI, false, 30, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.AGI, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1133,7 +1137,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.AGI, false, 44, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1143,7 +1147,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 54, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1153,21 +1157,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 22, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 22, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 22, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 31, true),
 				new Effect(TypeEffect.VIT, false, 31, true),
 				new Effect(TypeEffect.INT, false, 31, true),
@@ -1180,7 +1184,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 38, true),
 				new Effect(TypeEffect.VIT, false, 38, true),
 				new Effect(TypeEffect.INT, false, 38, true),
@@ -1193,7 +1197,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 45, true),
 				new Effect(TypeEffect.VIT, false, 45, true),
 				new Effect(TypeEffect.INT, false, 45, true),
@@ -1206,13 +1210,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2.5),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1221,7 +1225,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1230,7 +1234,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1239,13 +1243,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3.5),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1254,7 +1258,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1263,7 +1267,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1272,13 +1276,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3.5),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1287,7 +1291,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1296,7 +1300,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle illuminé", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1305,13 +1309,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2.5),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1320,7 +1324,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1329,7 +1333,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1338,13 +1342,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2.5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1353,7 +1357,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1362,7 +1366,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1371,13 +1375,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3.5),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1386,7 +1390,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -1395,7 +1399,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1404,15 +1408,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de protection", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 1.5),
 				new Effect(TypeEffect.ReducM, false, 1.5),
 			}),
-			new Synthesis("Barrière de protection solide", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Barrière de protection (terre)", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (terre)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1422,7 +1426,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de protection (acier)", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (acier)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1432,7 +1436,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de protection (diamant)", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (diamant)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3.5),
 				new Effect(TypeEffect.ReducM, false, 3.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1442,15 +1446,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1.5),
 				new Effect(TypeEffect.RTCCM, false, 1.5),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2.5),
 				new Effect(TypeEffect.RTCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1460,7 +1464,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1470,7 +1474,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3.5),
 				new Effect(TypeEffect.RTCCM, false, 3.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1480,15 +1484,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 1.5),
 				new Effect(TypeEffect.RDCCM, false, 1.5),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2.5),
 				new Effect(TypeEffect.RDCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1498,7 +1502,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -1508,7 +1512,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3.5),
 				new Effect(TypeEffect.RDCCM, false, 3.5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1519,15 +1523,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
 			
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 57, true),
 				new Effect(TypeEffect.VIT, false, 26, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 66, true),
 				new Effect(TypeEffect.VIT, false, 30, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 76, true),
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1537,7 +1541,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 89, true),
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1547,7 +1551,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 104, true),
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -1557,13 +1561,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 51, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 60, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 70, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1572,7 +1576,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1581,7 +1585,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 92, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1590,15 +1594,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.INT, false, 57, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.INT, false, 66, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.INT, false, 76, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1608,7 +1612,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.INT, false, 89, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1618,7 +1622,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.INT, false, 104, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -1628,15 +1632,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 29, true),
 				new Effect(TypeEffect.VOL, false, 51, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 33, true),
 				new Effect(TypeEffect.VOL, false, 60, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 38, true),
 				new Effect(TypeEffect.VOL, false, 70, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1646,7 +1650,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 45, true),
 				new Effect(TypeEffect.VOL, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1656,7 +1660,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 52, true),
 				new Effect(TypeEffect.VOL, false, 92, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -1666,15 +1670,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.AGI, false, 57, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.AGI, false, 66, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.AGI, false, 76, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1684,7 +1688,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.AGI, false, 89, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1694,7 +1698,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.AGI, false, 104, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -1704,21 +1708,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 54, true),
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.INT, false, 54, true),
 				new Effect(TypeEffect.VOL, false, 54, true),
 				new Effect(TypeEffect.AGI, false, 54, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 63, true),
 				new Effect(TypeEffect.VIT, false, 63, true),
 				new Effect(TypeEffect.INT, false, 63, true),
 				new Effect(TypeEffect.VOL, false, 63, true),
 				new Effect(TypeEffect.AGI, false, 63, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 73, true),
 				new Effect(TypeEffect.VIT, false, 73, true),
 				new Effect(TypeEffect.INT, false, 73, true),
@@ -1731,7 +1735,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 85, true),
 				new Effect(TypeEffect.VIT, false, 85, true),
 				new Effect(TypeEffect.INT, false, 85, true),
@@ -1744,7 +1748,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 98, true),
 				new Effect(TypeEffect.VIT, false, 98, true),
 				new Effect(TypeEffect.INT, false, 98, true),
@@ -1757,13 +1761,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1772,7 +1776,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1781,7 +1785,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1790,13 +1794,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1805,7 +1809,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1814,7 +1818,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1823,13 +1827,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1838,7 +1842,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1847,7 +1851,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle illuminé", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1856,13 +1860,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1871,7 +1875,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1880,7 +1884,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1889,13 +1893,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1904,7 +1908,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1913,7 +1917,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1922,13 +1926,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1937,7 +1941,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -1946,7 +1950,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -1955,15 +1959,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Barrière de protection", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 			}),
-			new Synthesis("Barrière de protection solide", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 			}),
-			new Synthesis("Barrière de protection (terre)", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (terre)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1973,7 +1977,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de protection (acier)", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (acier)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 6),
 				new Effect(TypeEffect.ReducM, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -1983,7 +1987,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de protection (diamant)", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (diamant)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 7),
 				new Effect(TypeEffect.ReducM, false, 7),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -1993,15 +1997,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2011,7 +2015,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 6),
 				new Effect(TypeEffect.RTCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2021,7 +2025,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 7),
 				new Effect(TypeEffect.RTCCM, false, 7),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -2031,15 +2035,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2049,7 +2053,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2059,7 +2063,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 7),
 				new Effect(TypeEffect.RDCCM, false, 7),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -2074,15 +2078,15 @@ public class LoaderSynthesis {
 
 	static Synthesis[] getRideBlue() {
 		return new Synthesis[] {
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.VIT, false, 6, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 21, true),
 				new Effect(TypeEffect.VIT, false, 8, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2092,7 +2096,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 33, true),
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2102,7 +2106,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2112,13 +2116,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2127,7 +2131,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2136,7 +2140,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2145,15 +2149,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6, true),
 				new Effect(TypeEffect.INT, false, 18, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 				new Effect(TypeEffect.INT, false, 21, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2163,7 +2167,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.INT, false, 33, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2173,7 +2177,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.INT, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2183,15 +2187,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 11, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 13, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2201,7 +2205,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 17, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2211,7 +2215,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2221,15 +2225,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6, true),
 				new Effect(TypeEffect.AGI, false, 18, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 				new Effect(TypeEffect.AGI, false, 21, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2239,7 +2243,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.AGI, false, 33, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2249,7 +2253,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.AGI, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2259,21 +2263,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 18, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 22, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 22, true),
@@ -2286,7 +2290,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 28, true),
 				new Effect(TypeEffect.VIT, false, 28, true),
 				new Effect(TypeEffect.INT, false, 28, true),
@@ -2299,7 +2303,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 34, true),
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.INT, false, 34, true),
@@ -2312,13 +2316,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 1),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 1.5),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2327,7 +2331,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2336,7 +2340,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2345,13 +2349,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 1),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 2),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2360,7 +2364,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2369,7 +2373,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2378,13 +2382,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 1),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 2),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2393,7 +2397,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2402,7 +2406,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle illuminé", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2411,13 +2415,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 1),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2426,7 +2430,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2435,7 +2439,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2444,13 +2448,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 1),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 1.5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2459,7 +2463,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2468,7 +2472,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2477,13 +2481,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 1),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 2),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2492,7 +2496,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -2501,7 +2505,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2510,15 +2514,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de protection", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 1),
 				new Effect(TypeEffect.ReducM, false, 1),
 			}),
-			new Synthesis("Barrière de protection solide", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 1.5),
 				new Effect(TypeEffect.ReducM, false, 1.5),
 			}),
-			new Synthesis("Barrière de protection (terre)", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (terre)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2528,7 +2532,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de protection (acier)", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (acier)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2538,7 +2542,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de protection (diamant)", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (diamant)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2548,15 +2552,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1),
 				new Effect(TypeEffect.RTCCM, false, 1),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1.5),
 				new Effect(TypeEffect.RTCCM, false, 1.5),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2566,7 +2570,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2.5),
 				new Effect(TypeEffect.RTCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2576,7 +2580,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2586,15 +2590,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 1),
 				new Effect(TypeEffect.RDCCM, false, 1),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 1.5),
 				new Effect(TypeEffect.RDCCM, false, 1.5),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2604,7 +2608,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2.5),
 				new Effect(TypeEffect.RDCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2614,7 +2618,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2625,15 +2629,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
 			
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 49, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 57, true),
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2643,7 +2647,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 68, true),
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2653,7 +2657,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 81, true),
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -2663,13 +2667,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 43, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2678,7 +2682,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 59, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2687,7 +2691,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 67, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -2696,15 +2700,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 42, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 49, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.INT, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2714,7 +2718,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.INT, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2724,7 +2728,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.INT, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -2734,15 +2738,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 25, true),
 				new Effect(TypeEffect.VOL, false, 43, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 29, true),
 				new Effect(TypeEffect.VOL, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2752,7 +2756,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 34, true),
 				new Effect(TypeEffect.VOL, false, 59, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2762,7 +2766,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 41, true),
 				new Effect(TypeEffect.VOL, false, 67, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -2772,15 +2776,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 42, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 49, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.AGI, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2790,7 +2794,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.AGI, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -2800,7 +2804,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.AGI, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -2810,21 +2814,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 39, true),
 				new Effect(TypeEffect.VIT, false, 39, true),
 				new Effect(TypeEffect.INT, false, 39, true),
 				new Effect(TypeEffect.VOL, false, 39, true),
 				new Effect(TypeEffect.AGI, false, 39, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 46, true),
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.INT, false, 46, true),
 				new Effect(TypeEffect.VOL, false, 46, true),
 				new Effect(TypeEffect.AGI, false, 46, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 54, true),
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.INT, false, 54, true),
@@ -2837,7 +2841,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 64, true),
 				new Effect(TypeEffect.VIT, false, 64, true),
 				new Effect(TypeEffect.INT, false, 64, true),
@@ -2850,7 +2854,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 74, true),
 				new Effect(TypeEffect.VIT, false, 74, true),
 				new Effect(TypeEffect.INT, false, 74, true),
@@ -2863,13 +2867,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2878,7 +2882,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2887,7 +2891,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -2896,13 +2900,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2911,7 +2915,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2920,7 +2924,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -2929,13 +2933,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2944,7 +2948,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2953,7 +2957,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle illuminé", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -2962,13 +2966,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2977,7 +2981,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -2986,7 +2990,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -2995,13 +2999,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3010,7 +3014,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3019,7 +3023,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3028,13 +3032,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 2),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3043,7 +3047,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3052,7 +3056,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3061,15 +3065,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Barrière de protection", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Barrière de protection solide", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 			}),
-			new Synthesis("Barrière de protection (terre)", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (terre)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3079,7 +3083,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de protection (acier)", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (acier)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3089,7 +3093,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de protection (diamant)", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de protection (diamant)"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 6),
 				new Effect(TypeEffect.ReducM, false, 6),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3099,15 +3103,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3117,7 +3121,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3127,7 +3131,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 6),
 				new Effect(TypeEffect.RTCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3137,15 +3141,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3155,7 +3159,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3165,7 +3169,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3180,13 +3184,13 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getRideGreen() {
 		return new Synthesis[] {
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 14, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3195,7 +3199,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3204,7 +3208,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 32, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3213,13 +3217,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3228,7 +3232,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3237,7 +3241,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3246,13 +3250,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 14, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3261,7 +3265,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3270,7 +3274,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 32, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3279,13 +3283,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 8, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 10, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3294,7 +3298,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3303,7 +3307,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3312,13 +3316,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 12, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 14, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3327,7 +3331,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3336,7 +3340,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 32, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3345,15 +3349,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 6, true),
 				new Effect(TypeEffect.VIT, false, 4, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 7, true),
 				new Effect(TypeEffect.VIT, false, 5, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 9, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3363,7 +3367,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3373,7 +3377,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 16, true),
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3383,15 +3387,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.INT, false, 6, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.INT, false, 7, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3401,7 +3405,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3411,7 +3415,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.INT, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3421,15 +3425,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.AGI, false, 6, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.AGI, false, 7, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 9, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3439,7 +3443,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3449,7 +3453,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.AGI, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3459,15 +3463,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 6, true),
 				new Effect(TypeEffect.VOL, false, 4, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.VOL, false, 5, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3477,7 +3481,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -3487,7 +3491,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 16, true),
 				new Effect(TypeEffect.VOL, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3497,21 +3501,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 10, true),
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.AGI, false, 12, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 15, true),
@@ -3524,7 +3528,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 20, true),
 				new Effect(TypeEffect.VIT, false, 20, true),
 				new Effect(TypeEffect.INT, false, 20, true),
@@ -3537,7 +3541,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 25, true),
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.INT, false, 25, true),
@@ -3551,13 +3555,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
 			
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 30, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 35, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3566,7 +3570,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3575,7 +3579,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 62, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3584,13 +3588,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3599,7 +3603,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 43, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3608,7 +3612,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 50, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3617,13 +3621,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 30, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 35, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3632,7 +3636,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3641,7 +3645,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 62, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3650,13 +3654,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 24, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 30, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3665,7 +3669,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 43, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3674,7 +3678,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 50, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3683,13 +3687,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 30, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 35, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3698,7 +3702,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3707,7 +3711,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 62, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -3716,15 +3720,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 21, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3734,7 +3738,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3744,7 +3748,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 31, true),
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3754,15 +3758,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 15, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 18, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3772,7 +3776,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3782,7 +3786,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.INT, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3792,15 +3796,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 18, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 21, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3810,7 +3814,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3820,7 +3824,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.AGI, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3830,15 +3834,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3848,7 +3852,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -3858,7 +3862,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 31, true),
 				new Effect(TypeEffect.VOL, false, 25, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -3868,21 +3872,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 27, true),
 				new Effect(TypeEffect.VIT, false, 27, true),
 				new Effect(TypeEffect.INT, false, 27, true),
 				new Effect(TypeEffect.VOL, false, 27, true),
 				new Effect(TypeEffect.AGI, false, 27, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 33, true),
 				new Effect(TypeEffect.VIT, false, 33, true),
 				new Effect(TypeEffect.INT, false, 33, true),
 				new Effect(TypeEffect.VOL, false, 33, true),
 				new Effect(TypeEffect.AGI, false, 33, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 39, true),
 				new Effect(TypeEffect.VIT, false, 39, true),
 				new Effect(TypeEffect.INT, false, 39, true),
@@ -3895,7 +3899,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 47, true),
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.INT, false, 47, true),
@@ -3908,7 +3912,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 56, true),
 				new Effect(TypeEffect.VIT, false, 56, true),
 				new Effect(TypeEffect.INT, false, 56, true),
@@ -3926,13 +3930,13 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getRideWhite() {
 		return new Synthesis[] {
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 8, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3941,7 +3945,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3950,7 +3954,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3959,13 +3963,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3974,7 +3978,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -3983,7 +3987,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -3992,13 +3996,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 8, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 10, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -4007,7 +4011,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -4016,7 +4020,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4025,13 +4029,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 6, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 7, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -4040,7 +4044,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -4049,7 +4053,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4058,13 +4062,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 8, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -4073,7 +4077,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -4082,7 +4086,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4091,15 +4095,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 4, true),
 				new Effect(TypeEffect.VIT, false, 3, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 5, true),
 				new Effect(TypeEffect.VIT, false, 4, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 6, true),
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4109,7 +4113,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 7, true),
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4119,7 +4123,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 8, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4129,15 +4133,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 3, true),
 				new Effect(TypeEffect.INT, false, 4, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.INT, false, 5, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.INT, false, 6, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4147,7 +4151,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4157,7 +4161,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4167,15 +4171,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 3, true),
 				new Effect(TypeEffect.AGI, false, 4, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.AGI, false, 5, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.AGI, false, 6, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4185,7 +4189,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.AGI, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4195,7 +4199,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4205,15 +4209,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 4, true),
 				new Effect(TypeEffect.VOL, false, 3, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 5, true),
 				new Effect(TypeEffect.VOL, false, 4, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 6, true),
 				new Effect(TypeEffect.VOL, false, 4, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4223,7 +4227,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.VOL, false, 5, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4233,7 +4237,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 8, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4243,21 +4247,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 7, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 7, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 9, true),
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.VOL, false, 9, true),
 				new Effect(TypeEffect.AGI, false, 9, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 10, true),
@@ -4270,7 +4274,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 12, true),
@@ -4283,7 +4287,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 14, true),
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.INT, false, 14, true),
@@ -4297,13 +4301,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
 			
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 20, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 24, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4312,7 +4316,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 38, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4321,7 +4325,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -4330,13 +4334,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 14, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 19, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4345,7 +4349,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4354,7 +4358,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -4363,13 +4367,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 20, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4378,7 +4382,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 38, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4387,7 +4391,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -4396,13 +4400,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 14, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 19, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4411,7 +4415,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4420,7 +4424,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -4429,13 +4433,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 20, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 24, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4444,7 +4448,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 38, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -4453,7 +4457,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 8),
@@ -4462,15 +4466,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4480,7 +4484,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 19, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4490,7 +4494,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 24, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -4500,15 +4504,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution du sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 10, true),
 			}),
-			new Synthesis("Évolution archimage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution archimage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 12, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4518,7 +4522,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 19, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4528,7 +4532,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -4538,15 +4542,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 12, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4556,7 +4560,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 19, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4566,7 +4570,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -4576,15 +4580,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 10, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.VOL, false, 10, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4594,7 +4598,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 19, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -4604,7 +4608,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -4614,21 +4618,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 8),
 				new Effect(TypeEffect.AGI, true, 8),
 			}),
-			new Synthesis("Ombre du guide", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du guide"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 17, true),
 				new Effect(TypeEffect.VIT, false, 17, true),
 				new Effect(TypeEffect.INT, false, 17, true),
 				new Effect(TypeEffect.VOL, false, 17, true),
 				new Effect(TypeEffect.AGI, false, 17, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 22, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 22, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 22, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 27, true),
 				new Effect(TypeEffect.VIT, false, 27, true),
 				new Effect(TypeEffect.INT, false, 27, true),
@@ -4641,7 +4645,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 34, true),
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.INT, false, 34, true),
@@ -4654,7 +4658,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 42, true),
 				new Effect(TypeEffect.INT, false, 42, true),
@@ -4673,15 +4677,15 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getThroneGold() {
 		return new Synthesis[] {
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 36, true),
 				new Effect(TypeEffect.VIT, false, 13, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 41, true),
 				new Effect(TypeEffect.VIT, false, 16, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 48, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4691,7 +4695,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 57, true),
 				new Effect(TypeEffect.VIT, false, 21, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4701,7 +4705,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 68, true),
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4711,13 +4715,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 31, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -4726,7 +4730,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -4735,7 +4739,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 3),
@@ -4744,15 +4748,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.INT, false, 36, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.INT, false, 41, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4762,7 +4766,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 21, true),
 				new Effect(TypeEffect.INT, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4772,7 +4776,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.INT, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4782,15 +4786,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 31, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4800,7 +4804,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 29, true),
 				new Effect(TypeEffect.VOL, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4810,7 +4814,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 34, true),
 				new Effect(TypeEffect.VOL, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4820,15 +4824,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.AGI, false, 36, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.AGI, false, 41, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4838,7 +4842,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 21, true),
 				new Effect(TypeEffect.AGI, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4848,7 +4852,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.AGI, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4858,21 +4862,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 31, true),
 				new Effect(TypeEffect.VIT, false, 31, true),
 				new Effect(TypeEffect.INT, false, 31, true),
 				new Effect(TypeEffect.VOL, false, 31, true),
 				new Effect(TypeEffect.AGI, false, 31, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 36, true),
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.INT, false, 36, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.AGI, false, 36, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 42, true),
 				new Effect(TypeEffect.INT, false, 42, true),
@@ -4885,7 +4889,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 50, true),
 				new Effect(TypeEffect.VIT, false, 50, true),
 				new Effect(TypeEffect.INT, false, 50, true),
@@ -4898,7 +4902,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 58, true),
 				new Effect(TypeEffect.VIT, false, 58, true),
 				new Effect(TypeEffect.INT, false, 58, true),
@@ -4911,15 +4915,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Sniper", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
-			new Synthesis("Sniper précis", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper précis"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3.5),
 				new Effect(TypeEffect.TCCM, false, 3.5),
 			}),
-			new Synthesis("Sniper rusé", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper rusé"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 				new Effect(TypeEffect.TCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4929,7 +4933,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Sniper omniscient", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper omniscient"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5),
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4939,7 +4943,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Sniper devin", "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper devin"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 6.5),
 				new Effect(TypeEffect.TCCM, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4949,15 +4953,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Éventreur", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Synthesis("Éventreur armé", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur armé"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3.5),
 				new Effect(TypeEffect.DCCM, false, 3.5),
 			}),
-			new Synthesis("Éventreur sanglant", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanglant"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4967,7 +4971,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Éventreur sanguinaire", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanguinaire"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.DCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -4977,7 +4981,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Éventreur déicide", "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur déicide"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6.5),
 				new Effect(TypeEffect.DCCM, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -4987,13 +4991,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3.5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5002,7 +5006,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5011,7 +5015,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 3),
@@ -5020,13 +5024,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3.5),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5035,7 +5039,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5044,7 +5048,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 6.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 3),
@@ -5053,19 +5057,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Avatar tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Avatar multiple tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2.5),
 				new Effect(TypeEffect.RTCCM, false, 2.5),
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 			}),
-			new Synthesis("Avatar fantôme tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 				new Effect(TypeEffect.ReducP, false, 3),
@@ -5077,7 +5081,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Avatar brume magique tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3.5),
 				new Effect(TypeEffect.RTCCM, false, 3.5),
 				new Effect(TypeEffect.ReducP, false, 3.5),
@@ -5089,7 +5093,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Avatar miroir magique tenace", "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
@@ -5101,19 +5105,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 3),
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
-			new Synthesis("Lien robuste", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Lien robuste du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2.5),
 				new Effect(TypeEffect.RDCCM, false, 2.5),
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 			}),
-			new Synthesis("Barrière robuste", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 				new Effect(TypeEffect.ReducP, false, 3),
@@ -5125,7 +5129,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Barrière robuste du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3.5),
 				new Effect(TypeEffect.RDCCM, false, 3.5),
 				new Effect(TypeEffect.ReducP, false, 3.5),
@@ -5137,7 +5141,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Barrière robuste de givre", "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
@@ -5150,15 +5154,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 3),
 			}),
 			
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 76, true),
 				new Effect(TypeEffect.VIT, false, 35, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 87, true),
 				new Effect(TypeEffect.VIT, false, 41, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 100, true),
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5168,7 +5172,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 115, true),
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5178,7 +5182,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 132, true),
 				new Effect(TypeEffect.VIT, false, 60, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -5188,13 +5192,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 70, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 82, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 94, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5203,7 +5207,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 107, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5212,7 +5216,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 120, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 6),
@@ -5221,15 +5225,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.INT, false, 76, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.INT, false, 87, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.INT, false, 100, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5239,7 +5243,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.INT, false, 115, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5249,7 +5253,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 60, true),
 				new Effect(TypeEffect.INT, false, 132, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -5259,15 +5263,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 38, true),
 				new Effect(TypeEffect.VOL, false, 70, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 44, true),
 				new Effect(TypeEffect.VOL, false, 82, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 50, true),
 				new Effect(TypeEffect.VOL, false, 94, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5277,7 +5281,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 58, true),
 				new Effect(TypeEffect.VOL, false, 107, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5287,7 +5291,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 66, true),
 				new Effect(TypeEffect.VOL, false, 120, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -5297,15 +5301,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.AGI, false, 76, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.AGI, false, 87, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.AGI, false, 100, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5315,7 +5319,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.AGI, false, 115, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5325,7 +5329,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 60, true),
 				new Effect(TypeEffect.AGI, false, 132, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -5335,21 +5339,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 73, true),
 				new Effect(TypeEffect.VIT, false, 73, true),
 				new Effect(TypeEffect.INT, false, 73, true),
 				new Effect(TypeEffect.VOL, false, 73, true),
 				new Effect(TypeEffect.AGI, false, 73, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 85, true),
 				new Effect(TypeEffect.VIT, false, 85, true),
 				new Effect(TypeEffect.INT, false, 85, true),
 				new Effect(TypeEffect.VOL, false, 85, true),
 				new Effect(TypeEffect.AGI, false, 85, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 97, true),
 				new Effect(TypeEffect.VIT, false, 97, true),
 				new Effect(TypeEffect.INT, false, 97, true),
@@ -5362,7 +5366,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 111, true),
 				new Effect(TypeEffect.VIT, false, 111, true),
 				new Effect(TypeEffect.INT, false, 111, true),
@@ -5375,7 +5379,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 126, true),
 				new Effect(TypeEffect.VIT, false, 126, true),
 				new Effect(TypeEffect.INT, false, 126, true),
@@ -5388,15 +5392,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Sniper", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 6),
 				new Effect(TypeEffect.TCCM, false, 6),
 			}),
-			new Synthesis("Sniper précis", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper précis"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 7),
 				new Effect(TypeEffect.TCCM, false, 7),
 			}),
-			new Synthesis("Sniper rusé", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper rusé"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 8),
 				new Effect(TypeEffect.TCCM, false, 8),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5406,7 +5410,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Sniper omniscient", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper omniscient"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 9.5),
 				new Effect(TypeEffect.TCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5416,7 +5420,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Sniper devin", "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sniper devin"); put(Language.EN, ""); }}, "Sniper", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 11.5),
 				new Effect(TypeEffect.TCCM, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -5426,15 +5430,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Éventreur", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6),
 				new Effect(TypeEffect.DCCM, false, 6),
 			}),
-			new Synthesis("Éventreur armé", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur armé"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 7),
 				new Effect(TypeEffect.DCCM, false, 7),
 			}),
-			new Synthesis("Éventreur sanglant", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanglant"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 8),
 				new Effect(TypeEffect.DCCM, false, 8),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5444,7 +5448,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 5),
 				new Effect(TypeEffect.AGI, true, 5),
 			}),
-			new Synthesis("Éventreur sanguinaire", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur sanguinaire"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 9.5),
 				new Effect(TypeEffect.DCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5454,7 +5458,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Éventreur déicide", "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Éventreur déicide"); put(Language.EN, ""); }}, "Éventreur", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 11.5),
 				new Effect(TypeEffect.DCCM, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -5464,13 +5468,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 6),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 7),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 8),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5479,7 +5483,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5488,7 +5492,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 6),
@@ -5497,13 +5501,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 6),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 7),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 8),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5512,7 +5516,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5521,7 +5525,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 11.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 6),
@@ -5530,19 +5534,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Avatar tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 			}),
-			new Synthesis("Avatar multiple tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 			}),
-			new Synthesis("Avatar fantôme tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 6),
 				new Effect(TypeEffect.RTCCM, false, 6),
 				new Effect(TypeEffect.ReducP, false, 6),
@@ -5554,7 +5558,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar brume magique tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 7),
 				new Effect(TypeEffect.RTCCM, false, 7),
 				new Effect(TypeEffect.ReducP, false, 7),
@@ -5566,7 +5570,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar miroir magique tenace", "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique tenace"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 8),
 				new Effect(TypeEffect.RTCCM, false, 8),
 				new Effect(TypeEffect.ReducP, false, 8),
@@ -5578,19 +5582,19 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 6),
 				new Effect(TypeEffect.AGI, true, 6),
 			}),
-			new Synthesis("Lien robuste", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 			}),
-			new Synthesis("Lien robuste du gardien", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 			}),
-			new Synthesis("Barrière robuste", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 				new Effect(TypeEffect.ReducP, false, 6),
@@ -5602,7 +5606,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière robuste du gardien", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 7),
 				new Effect(TypeEffect.RDCCM, false, 7),
 				new Effect(TypeEffect.ReducP, false, 7),
@@ -5614,7 +5618,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière robuste de givre", "Lien", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière robuste de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.GOLD, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 8),
 				new Effect(TypeEffect.RDCCM, false, 8),
 				new Effect(TypeEffect.ReducP, false, 8),
@@ -5631,15 +5635,15 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getThroneOrange() {
 		return new Synthesis[] {
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 9, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 30, true),
 				new Effect(TypeEffect.VIT, false, 11, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 36, true),
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5649,7 +5653,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 44, true),
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5659,7 +5663,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 54, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5669,13 +5673,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5684,7 +5688,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5693,7 +5697,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5702,15 +5706,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.INT, false, 30, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.INT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5720,7 +5724,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.INT, false, 44, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5730,7 +5734,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 54, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5740,15 +5744,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 13, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5758,7 +5762,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 22, true),
 				new Effect(TypeEffect.VOL, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5768,7 +5772,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 27, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5778,15 +5782,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.AGI, false, 30, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.AGI, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5796,7 +5800,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 16, true),
 				new Effect(TypeEffect.AGI, false, 44, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -5806,7 +5810,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 54, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -5816,21 +5820,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 22, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 22, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 22, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 31, true),
 				new Effect(TypeEffect.VIT, false, 31, true),
 				new Effect(TypeEffect.INT, false, 31, true),
@@ -5843,7 +5847,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 38, true),
 				new Effect(TypeEffect.VIT, false, 38, true),
 				new Effect(TypeEffect.INT, false, 38, true),
@@ -5856,7 +5860,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 45, true),
 				new Effect(TypeEffect.VIT, false, 45, true),
 				new Effect(TypeEffect.INT, false, 45, true),
@@ -5869,13 +5873,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2.5),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5884,7 +5888,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5893,7 +5897,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5902,13 +5906,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3.5),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5917,7 +5921,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5926,7 +5930,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5935,13 +5939,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3.5),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5950,7 +5954,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5959,7 +5963,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Sage illuminé", "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sage illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -5968,13 +5972,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2.5),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5983,7 +5987,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -5992,7 +5996,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6001,13 +6005,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2.5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6016,7 +6020,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6025,7 +6029,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6034,13 +6038,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3.5),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6049,7 +6053,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6058,7 +6062,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6067,15 +6071,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Mur Protecteur", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 1.5),
 				new Effect(TypeEffect.ReducM, false, 1.5),
 			}),
-			new Synthesis("Mur Protecteur solide", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Mur Protecteur - terre", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - terre"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6085,7 +6089,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Mur Protecteur - acier", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - acier"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6095,7 +6099,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Mur Protecteur - diamant", "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - diamant"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3.5),
 				new Effect(TypeEffect.ReducM, false, 3.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6105,15 +6109,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1.5),
 				new Effect(TypeEffect.RTCCM, false, 1.5),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2.5),
 				new Effect(TypeEffect.RTCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6123,7 +6127,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6133,7 +6137,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3.5),
 				new Effect(TypeEffect.RTCCM, false, 3.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6143,15 +6147,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 1.5),
 				new Effect(TypeEffect.RDCCM, false, 1.5),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2.5),
 				new Effect(TypeEffect.RDCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6161,7 +6165,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6171,7 +6175,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3.5),
 				new Effect(TypeEffect.RDCCM, false, 3.5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6182,15 +6186,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
 			
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 57, true),
 				new Effect(TypeEffect.VIT, false, 26, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 66, true),
 				new Effect(TypeEffect.VIT, false, 30, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 76, true),
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6200,7 +6204,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 89, true),
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6210,7 +6214,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 104, true),
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6220,13 +6224,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 51, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 60, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 70, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6235,7 +6239,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6244,7 +6248,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 92, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6253,15 +6257,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.INT, false, 57, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.INT, false, 66, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.INT, false, 76, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6271,7 +6275,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.INT, false, 89, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6281,7 +6285,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.INT, false, 104, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6291,15 +6295,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 29, true),
 				new Effect(TypeEffect.VOL, false, 51, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 33, true),
 				new Effect(TypeEffect.VOL, false, 60, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 38, true),
 				new Effect(TypeEffect.VOL, false, 70, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6309,7 +6313,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 45, true),
 				new Effect(TypeEffect.VOL, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6319,7 +6323,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 52, true),
 				new Effect(TypeEffect.VOL, false, 92, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6329,15 +6333,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.AGI, false, 57, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.AGI, false, 66, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 35, true),
 				new Effect(TypeEffect.AGI, false, 76, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6347,7 +6351,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 41, true),
 				new Effect(TypeEffect.AGI, false, 89, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6357,7 +6361,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.AGI, false, 104, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6367,21 +6371,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 54, true),
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.INT, false, 54, true),
 				new Effect(TypeEffect.VOL, false, 54, true),
 				new Effect(TypeEffect.AGI, false, 54, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 63, true),
 				new Effect(TypeEffect.VIT, false, 63, true),
 				new Effect(TypeEffect.INT, false, 63, true),
 				new Effect(TypeEffect.VOL, false, 63, true),
 				new Effect(TypeEffect.AGI, false, 63, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 73, true),
 				new Effect(TypeEffect.VIT, false, 73, true),
 				new Effect(TypeEffect.INT, false, 73, true),
@@ -6394,7 +6398,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 85, true),
 				new Effect(TypeEffect.VIT, false, 85, true),
 				new Effect(TypeEffect.INT, false, 85, true),
@@ -6407,7 +6411,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 98, true),
 				new Effect(TypeEffect.VIT, false, 98, true),
 				new Effect(TypeEffect.INT, false, 98, true),
@@ -6420,13 +6424,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6435,7 +6439,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6444,7 +6448,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6453,13 +6457,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6468,7 +6472,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6477,7 +6481,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6486,13 +6490,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6501,7 +6505,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6510,7 +6514,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Sage illuminé", "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sage illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6519,13 +6523,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6534,7 +6538,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6543,7 +6547,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6552,13 +6556,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6567,7 +6571,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6576,7 +6580,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6585,13 +6589,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6600,7 +6604,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6609,7 +6613,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 9.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -6618,15 +6622,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Mur Protecteur", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 			}),
-			new Synthesis("Mur Protecteur solide", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 			}),
-			new Synthesis("Mur Protecteur - terre", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - terre"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6636,7 +6640,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Mur Protecteur - acier", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - acier"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 6),
 				new Effect(TypeEffect.ReducM, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6646,7 +6650,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Mur Protecteur - diamant", "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - diamant"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 7),
 				new Effect(TypeEffect.ReducM, false, 7),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6656,15 +6660,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6674,7 +6678,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 6),
 				new Effect(TypeEffect.RTCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6684,7 +6688,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 7),
 				new Effect(TypeEffect.RTCCM, false, 7),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6694,15 +6698,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6712,7 +6716,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6722,7 +6726,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.ORANGE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 7),
 				new Effect(TypeEffect.RDCCM, false, 7),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -6737,15 +6741,15 @@ public class LoaderSynthesis {
 
 	static Synthesis[] getThroneBlue() {
 		return new Synthesis[] {
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.VIT, false, 6, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 21, true),
 				new Effect(TypeEffect.VIT, false, 8, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6755,7 +6759,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 33, true),
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6765,7 +6769,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6775,13 +6779,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6790,7 +6794,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6799,7 +6803,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -6808,15 +6812,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6, true),
 				new Effect(TypeEffect.INT, false, 18, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 				new Effect(TypeEffect.INT, false, 21, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6826,7 +6830,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.INT, false, 33, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6836,7 +6840,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.INT, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6846,15 +6850,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 11, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 13, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6864,7 +6868,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 17, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6874,7 +6878,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6884,15 +6888,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6, true),
 				new Effect(TypeEffect.AGI, false, 18, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 				new Effect(TypeEffect.AGI, false, 21, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6902,7 +6906,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 11, true),
 				new Effect(TypeEffect.AGI, false, 33, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -6912,7 +6916,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 13, true),
 				new Effect(TypeEffect.AGI, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -6922,21 +6926,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 18, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 22, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 22, true),
@@ -6949,7 +6953,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 28, true),
 				new Effect(TypeEffect.VIT, false, 28, true),
 				new Effect(TypeEffect.INT, false, 28, true),
@@ -6962,7 +6966,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 34, true),
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.INT, false, 34, true),
@@ -6975,13 +6979,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 1),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 1.5),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6990,7 +6994,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -6999,7 +7003,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7008,13 +7012,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 1),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 2),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7023,7 +7027,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7032,7 +7036,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7041,13 +7045,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 1),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 2),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7056,7 +7060,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7065,7 +7069,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Sage illuminé", "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sage illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7074,13 +7078,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 1),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7089,7 +7093,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7098,7 +7102,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7107,13 +7111,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 1),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 1.5),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7122,7 +7126,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7131,7 +7135,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7140,13 +7144,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 1),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 2),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7155,7 +7159,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7164,7 +7168,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7173,15 +7177,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Mur Protecteur", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 1),
 				new Effect(TypeEffect.ReducM, false, 1),
 			}),
-			new Synthesis("Mur Protecteur solide", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 1.5),
 				new Effect(TypeEffect.ReducM, false, 1.5),
 			}),
-			new Synthesis("Mur Protecteur - terre", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - terre"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -7191,7 +7195,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Mur Protecteur - acier", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - acier"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2.5),
 				new Effect(TypeEffect.ReducM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -7201,7 +7205,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Mur Protecteur - diamant", "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - diamant"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7211,15 +7215,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1),
 				new Effect(TypeEffect.RTCCM, false, 1),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1.5),
 				new Effect(TypeEffect.RTCCM, false, 1.5),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -7229,7 +7233,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2.5),
 				new Effect(TypeEffect.RTCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -7239,7 +7243,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7249,15 +7253,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 1),
 				new Effect(TypeEffect.RDCCM, false, 1),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 1.5),
 				new Effect(TypeEffect.RDCCM, false, 1.5),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -7267,7 +7271,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2.5),
 				new Effect(TypeEffect.RDCCM, false, 2.5),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -7277,7 +7281,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.CLASSIC, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7288,15 +7292,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
 			
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 49, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 57, true),
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7306,7 +7310,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 68, true),
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7316,7 +7320,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 81, true),
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7326,13 +7330,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 43, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7341,7 +7345,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 59, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7350,7 +7354,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 67, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7359,15 +7363,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 42, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 49, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.INT, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7377,7 +7381,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.INT, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7387,7 +7391,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.INT, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7397,15 +7401,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 36, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 25, true),
 				new Effect(TypeEffect.VOL, false, 43, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 29, true),
 				new Effect(TypeEffect.VOL, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7415,7 +7419,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 34, true),
 				new Effect(TypeEffect.VOL, false, 59, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7425,7 +7429,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 41, true),
 				new Effect(TypeEffect.VOL, false, 67, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7435,15 +7439,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 42, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 49, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 26, true),
 				new Effect(TypeEffect.AGI, false, 57, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7453,7 +7457,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.AGI, false, 68, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7463,7 +7467,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.AGI, false, 81, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7473,21 +7477,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 39, true),
 				new Effect(TypeEffect.VIT, false, 39, true),
 				new Effect(TypeEffect.INT, false, 39, true),
 				new Effect(TypeEffect.VOL, false, 39, true),
 				new Effect(TypeEffect.AGI, false, 39, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 46, true),
 				new Effect(TypeEffect.VIT, false, 46, true),
 				new Effect(TypeEffect.INT, false, 46, true),
 				new Effect(TypeEffect.VOL, false, 46, true),
 				new Effect(TypeEffect.AGI, false, 46, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 54, true),
 				new Effect(TypeEffect.VIT, false, 54, true),
 				new Effect(TypeEffect.INT, false, 54, true),
@@ -7500,7 +7504,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 64, true),
 				new Effect(TypeEffect.VIT, false, 64, true),
 				new Effect(TypeEffect.INT, false, 64, true),
@@ -7513,7 +7517,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 74, true),
 				new Effect(TypeEffect.VIT, false, 74, true),
 				new Effect(TypeEffect.INT, false, 74, true),
@@ -7526,13 +7530,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bourreau", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 			}),
-			new Synthesis("Bourreau impitoyable", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau impitoyable"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 3),
 			}),
-			new Synthesis("Bourreau violent", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau violent"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7541,7 +7545,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau furieux", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau furieux"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7550,7 +7554,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bourreau déchaîné", "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bourreau déchaîné"); put(Language.EN, ""); }}, "Bourreau", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7559,13 +7563,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Prédateur", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 3),
 			}),
-			new Synthesis("Prédateur impitoyable", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur impitoyable"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4),
 			}),
-			new Synthesis("Prédateur violent", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur violent"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7574,7 +7578,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur furieux", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur furieux"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7583,7 +7587,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Prédateur déchaîné", "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur déchaîné"); put(Language.EN, ""); }}, "Prédateur", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7592,13 +7596,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Fidèle", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
-			new Synthesis("Fidèle sacré", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle sacré"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 4),
 			}),
-			new Synthesis("Fidèle divin", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle divin"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7607,7 +7611,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Fidèle fanatique", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Fidèle fanatique"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7616,7 +7620,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Sage illuminé", "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Sage illuminé"); put(Language.EN, ""); }}, "Fidèle", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.TCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7625,13 +7629,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Partisan", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
-			new Synthesis("Partisan sacré", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan sacré"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Synthesis("Partisan divin", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan divin"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7640,7 +7644,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan fanatique", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan fanatique"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7649,7 +7653,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Partisan illuminé", "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Partisan illuminé"); put(Language.EN, ""); }}, "Partisan", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.DCCM, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7658,13 +7662,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Choriste", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
-			new Synthesis("Choriste en rythme", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste en rythme"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
-			new Synthesis("Choriste rapide", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste rapide"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7673,7 +7677,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste presto", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste presto"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7682,7 +7686,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Choriste éclair", "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Choriste éclair"); put(Language.EN, ""); }}, "Choriste", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitComp, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7691,13 +7695,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 2),
 			}),
-			new Synthesis("Super attaque tourbillon", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque tourbillon"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
-			new Synthesis("Attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7706,7 +7710,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Super attaque du vent", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Super attaque du vent"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 5.5),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7715,7 +7719,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Brise-tempête", "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Brise-tempête"); put(Language.EN, ""); }}, "Attaque", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.VitAtk, false, 7.5),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -7724,15 +7728,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Mur Protecteur", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 2),
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
-			new Synthesis("Mur Protecteur solide", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur solide"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 3),
 				new Effect(TypeEffect.ReducM, false, 3),
 			}),
-			new Synthesis("Mur Protecteur - terre", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - terre"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 4),
 				new Effect(TypeEffect.ReducM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7742,7 +7746,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Mur Protecteur - acier", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - acier"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 5),
 				new Effect(TypeEffect.ReducM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7752,7 +7756,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Mur Protecteur - diamant", "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Mur Protecteur - diamant"); put(Language.EN, ""); }}, "Barrière", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.ReducP, false, 6),
 				new Effect(TypeEffect.ReducM, false, 6),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7762,15 +7766,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Avatar", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 			}),
-			new Synthesis("Avatar multiple", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar multiple"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 3),
 				new Effect(TypeEffect.RTCCM, false, 3),
 			}),
-			new Synthesis("Avatar fantôme", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar fantôme"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7780,7 +7784,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar brume magique", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar brume magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 5),
 				new Effect(TypeEffect.RTCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7790,7 +7794,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Avatar miroir magique", "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Avatar miroir magique"); put(Language.EN, ""); }}, "Avatar", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 6),
 				new Effect(TypeEffect.RTCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7800,15 +7804,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Lien", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 1, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 2),
 				new Effect(TypeEffect.RDCCM, false, 2),
 			}),
-			new Synthesis("Lien du gardien", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Lien du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 2, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 3),
 				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Synthesis("Barrière", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 3, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 4),
 				new Effect(TypeEffect.RDCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7818,7 +7822,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière du gardien", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière du gardien"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 4, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 5),
 				new Effect(TypeEffect.RDCCM, false, 5),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -7828,7 +7832,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Barrière de givre", "Lien", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Barrière de givre"); put(Language.EN, ""); }}, "Lien", TypeSynthesis.GENKI, Quality.BLUE, 5, new Effect[] {
 				new Effect(TypeEffect.RDCCP, false, 6),
 				new Effect(TypeEffect.RDCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -7843,13 +7847,13 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getThroneGreen() {
 		return new Synthesis[] {
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 14, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7858,7 +7862,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7867,7 +7871,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 32, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7876,13 +7880,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7891,7 +7895,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7900,7 +7904,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7909,13 +7913,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 14, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7924,7 +7928,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7933,7 +7937,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 32, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7942,13 +7946,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 8, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 10, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7957,7 +7961,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7966,7 +7970,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -7975,13 +7979,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 12, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 14, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7990,7 +7994,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -7999,7 +8003,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 32, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8008,15 +8012,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 6, true),
 				new Effect(TypeEffect.VIT, false, 4, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 7, true),
 				new Effect(TypeEffect.VIT, false, 5, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 9, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8026,7 +8030,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8036,7 +8040,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 16, true),
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8046,15 +8050,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.INT, false, 6, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.INT, false, 7, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8064,7 +8068,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8074,7 +8078,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.INT, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8084,15 +8088,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.AGI, false, 6, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.AGI, false, 7, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 9, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8102,7 +8106,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8112,7 +8116,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.AGI, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8122,15 +8126,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 6, true),
 				new Effect(TypeEffect.VOL, false, 4, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.VOL, false, 5, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8140,7 +8144,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8150,7 +8154,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 16, true),
 				new Effect(TypeEffect.VOL, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8160,21 +8164,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 10, true),
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.AGI, false, 12, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 15, true),
@@ -8187,7 +8191,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 20, true),
 				new Effect(TypeEffect.VIT, false, 20, true),
 				new Effect(TypeEffect.INT, false, 20, true),
@@ -8200,7 +8204,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 25, true),
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.INT, false, 25, true),
@@ -8214,13 +8218,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
 			
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 30, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 35, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8229,7 +8233,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8238,7 +8242,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 62, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -8247,13 +8251,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8262,7 +8266,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 43, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8271,7 +8275,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 50, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -8280,13 +8284,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 30, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 35, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8295,7 +8299,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8304,7 +8308,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 62, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -8313,13 +8317,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 24, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 30, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8328,7 +8332,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 43, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8337,7 +8341,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 50, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -8346,13 +8350,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 30, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 35, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 42, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8361,7 +8365,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 51, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8370,7 +8374,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 62, true),
 				new Effect(TypeEffect.Depla, false, 20),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -8379,15 +8383,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 18, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 21, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8397,7 +8401,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 26, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8407,7 +8411,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 31, true),
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -8417,15 +8421,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 15, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 18, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8435,7 +8439,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8445,7 +8449,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.INT, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -8455,15 +8459,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 18, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 21, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8473,7 +8477,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 26, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8483,7 +8487,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 25, true),
 				new Effect(TypeEffect.AGI, false, 31, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -8493,15 +8497,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 18, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 21, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8511,7 +8515,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 26, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8521,7 +8525,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 31, true),
 				new Effect(TypeEffect.VOL, false, 25, true),
 				new Effect(TypeEffect.Depla, false, 20),
@@ -8531,21 +8535,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 27, true),
 				new Effect(TypeEffect.VIT, false, 27, true),
 				new Effect(TypeEffect.INT, false, 27, true),
 				new Effect(TypeEffect.VOL, false, 27, true),
 				new Effect(TypeEffect.AGI, false, 27, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 33, true),
 				new Effect(TypeEffect.VIT, false, 33, true),
 				new Effect(TypeEffect.INT, false, 33, true),
 				new Effect(TypeEffect.VOL, false, 33, true),
 				new Effect(TypeEffect.AGI, false, 33, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 39, true),
 				new Effect(TypeEffect.VIT, false, 39, true),
 				new Effect(TypeEffect.INT, false, 39, true),
@@ -8558,7 +8562,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 47, true),
 				new Effect(TypeEffect.VIT, false, 47, true),
 				new Effect(TypeEffect.INT, false, 47, true),
@@ -8571,7 +8575,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.GREEN, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 56, true),
 				new Effect(TypeEffect.VIT, false, 56, true),
 				new Effect(TypeEffect.INT, false, 56, true),
@@ -8589,13 +8593,13 @@ public class LoaderSynthesis {
 	
 	static Synthesis[] getThroneWhite() {
 		return new Synthesis[] {
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 8, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8604,7 +8608,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8613,7 +8617,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8622,13 +8626,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8637,7 +8641,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8646,7 +8650,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8655,13 +8659,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 8, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 10, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8670,7 +8674,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8679,7 +8683,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8688,13 +8692,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 6, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 7, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8703,7 +8707,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 10, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8712,7 +8716,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8721,13 +8725,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 8, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8736,7 +8740,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 14, true),
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.FCE, true, 1),
@@ -8745,7 +8749,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 16, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8754,15 +8758,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 4, true),
 				new Effect(TypeEffect.VIT, false, 3, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 5, true),
 				new Effect(TypeEffect.VIT, false, 4, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 6, true),
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8772,7 +8776,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 7, true),
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8782,7 +8786,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 8, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8792,15 +8796,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 3, true),
 				new Effect(TypeEffect.INT, false, 4, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.INT, false, 5, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.INT, false, 6, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8810,7 +8814,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8820,7 +8824,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8830,15 +8834,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 3, true),
 				new Effect(TypeEffect.AGI, false, 4, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.AGI, false, 5, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 4, true),
 				new Effect(TypeEffect.AGI, false, 6, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8848,7 +8852,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 5, true),
 				new Effect(TypeEffect.AGI, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8858,7 +8862,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 8, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8868,15 +8872,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 4, true),
 				new Effect(TypeEffect.VOL, false, 3, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 5, true),
 				new Effect(TypeEffect.VOL, false, 4, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 6, true),
 				new Effect(TypeEffect.VOL, false, 4, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8886,7 +8890,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.VOL, false, 5, true),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -8896,7 +8900,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 8, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -8906,21 +8910,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 7, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 7, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 7, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 9, true),
 				new Effect(TypeEffect.VIT, false, 9, true),
 				new Effect(TypeEffect.INT, false, 9, true),
 				new Effect(TypeEffect.VOL, false, 9, true),
 				new Effect(TypeEffect.AGI, false, 9, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 10, true),
@@ -8933,7 +8937,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 12, true),
@@ -8946,7 +8950,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 1),
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.CLASSIC, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 14, true),
 				new Effect(TypeEffect.VIT, false, 14, true),
 				new Effect(TypeEffect.INT, false, 14, true),
@@ -8960,13 +8964,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
 			
-			new Synthesis("Aide FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 20, true),
 			}),
-			new Synthesis("Amélioration FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 24, true),
 			}),
-			new Synthesis("Bonus FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8975,7 +8979,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 38, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -8984,7 +8988,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion FCE", "FCE", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion FCE"); put(Language.EN, ""); }}, "FCE", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -8993,13 +8997,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 14, true),
 			}),
-			new Synthesis("Amélioration VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 19, true),
 			}),
-			new Synthesis("Bonus VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9008,7 +9012,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9017,7 +9021,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VIT", "VIT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VIT"); put(Language.EN, ""); }}, "VIT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -9026,13 +9030,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 20, true),
 			}),
-			new Synthesis("Amélioration INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 			}),
-			new Synthesis("Bonus INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9041,7 +9045,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 38, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9050,7 +9054,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion INT", "INT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion INT"); put(Language.EN, ""); }}, "INT", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -9059,13 +9063,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 14, true),
 			}),
-			new Synthesis("Amélioration VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 19, true),
 			}),
-			new Synthesis("Bonus VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9074,7 +9078,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9083,7 +9087,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion VOL", "VOL", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion VOL"); put(Language.EN, ""); }}, "VOL", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VOL, false, 36, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -9092,13 +9096,13 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Aide AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Aide AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 20, true),
 			}),
-			new Synthesis("Amélioration AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 24, true),
 			}),
-			new Synthesis("Bonus AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bonus AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 30, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9107,7 +9111,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Boost AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Boost AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 38, true),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.FCE, true, 2),
@@ -9116,7 +9120,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Explosion AGI", "AGI", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Explosion AGI"); put(Language.EN, ""); }}, "AGI", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.AGI, false, 48, true),
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.FCE, true, 4),
@@ -9125,15 +9129,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Pouvoir du soldat", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du soldat"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 10, true),
 				new Effect(TypeEffect.VIT, false, 7, true),
 			}),
-			new Synthesis("Pouvoir du guerrier", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du guerrier"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 12, true),
 				new Effect(TypeEffect.VIT, false, 10, true),
 			}),
-			new Synthesis("Pouvoir du général", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du général"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 15, true),
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9143,7 +9147,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du chef", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du chef"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 19, true),
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9153,7 +9157,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Pouvoir du héros", "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du héros"); put(Language.EN, ""); }}, "Pouvoir", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 24, true),
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -9163,15 +9167,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'apprenti sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'apprenti sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.INT, false, 10, true),
 			}),
-			new Synthesis("Évolution du Sorcier", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du Sorcier"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.INT, false, 12, true),
 			}),
-			new Synthesis("Évolution du sage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9181,7 +9185,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du grand sage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du grand sage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.INT, false, 19, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9191,7 +9195,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution du mage", "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du mage"); put(Language.EN, ""); }}, "EvolMage", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -9201,15 +9205,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Évolution de l'archerot", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archerot"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 7, true),
 				new Effect(TypeEffect.AGI, false, 10, true),
 			}),
-			new Synthesis("Évolution de l'archer", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution de l'archer"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 10, true),
 				new Effect(TypeEffect.AGI, false, 12, true),
 			}),
-			new Synthesis("Évolution du chasseur", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution du chasseur"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 12, true),
 				new Effect(TypeEffect.AGI, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9219,7 +9223,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution braconnier", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution braconnier"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 15, true),
 				new Effect(TypeEffect.AGI, false, 19, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9229,7 +9233,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Évolution d'Orion", "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Évolution d'Orion"); put(Language.EN, ""); }}, "EvolArcher", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.VIT, false, 18, true),
 				new Effect(TypeEffect.AGI, false, 24, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -9239,15 +9243,15 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Bénédiction du révérend", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du révérend"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.INT, false, 10, true),
 				new Effect(TypeEffect.VOL, false, 7, true),
 			}),
-			new Synthesis("Bénédiction du pasteur", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du pasteur"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.INT, false, 12, true),
 				new Effect(TypeEffect.VOL, false, 10, true),
 			}),
-			new Synthesis("Bénédiction du clerc", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du clerc"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.INT, false, 15, true),
 				new Effect(TypeEffect.VOL, false, 12, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9257,7 +9261,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du prêtre", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du prêtre"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.INT, false, 19, true),
 				new Effect(TypeEffect.VOL, false, 15, true),
 				new Effect(TypeEffect.Depla, false, 5),
@@ -9267,7 +9271,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Bénédiction du messager", "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction du messager"); put(Language.EN, ""); }}, "Bénédiction", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.INT, false, 24, true),
 				new Effect(TypeEffect.VOL, false, 18, true),
 				new Effect(TypeEffect.Depla, false, 10),
@@ -9277,21 +9281,21 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 4),
 				new Effect(TypeEffect.AGI, true, 4),
 			}),
-			new Synthesis("Ombre de l'autorité", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de l'autorité"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 1, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 17, true),
 				new Effect(TypeEffect.VIT, false, 17, true),
 				new Effect(TypeEffect.INT, false, 17, true),
 				new Effect(TypeEffect.VOL, false, 17, true),
 				new Effect(TypeEffect.AGI, false, 17, true),
 			}),
-			new Synthesis("Ombre du boss", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du boss"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 2, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 22, true),
 				new Effect(TypeEffect.VIT, false, 22, true),
 				new Effect(TypeEffect.INT, false, 22, true),
 				new Effect(TypeEffect.VOL, false, 22, true),
 				new Effect(TypeEffect.AGI, false, 22, true),
 			}),
-			new Synthesis("Ombre du chancelier", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du chancelier"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 3, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 27, true),
 				new Effect(TypeEffect.VIT, false, 27, true),
 				new Effect(TypeEffect.INT, false, 27, true),
@@ -9304,7 +9308,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre du seigneur", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du seigneur"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 4, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 34, true),
 				new Effect(TypeEffect.VIT, false, 34, true),
 				new Effect(TypeEffect.INT, false, 34, true),
@@ -9317,7 +9321,7 @@ public class LoaderSynthesis {
 				new Effect(TypeEffect.VOL, true, 2),
 				new Effect(TypeEffect.AGI, true, 2),
 			}),
-			new Synthesis("Ombre de Zeus", "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
+			new Synthesis(new HashMap<Language, String>() {{ put(Language.FR, "Ombre de Zeus"); put(Language.EN, ""); }}, "Ombre", TypeSynthesis.GENKI, Quality.WHITE, 5, new Effect[] {
 				new Effect(TypeEffect.FCE, false, 42, true),
 				new Effect(TypeEffect.VIT, false, 42, true),
 				new Effect(TypeEffect.INT, false, 42, true),

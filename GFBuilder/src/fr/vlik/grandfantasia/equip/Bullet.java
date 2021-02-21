@@ -103,7 +103,6 @@ public class Bullet extends CompleteBuff {
 			}
 		}
 		
-		Bullet[] cast = new Bullet[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Bullet[result.size()]);
 	}
 }

@@ -1470,6 +1470,86 @@ public class LoaderCape {
 
 	private static Cape[] getAll() {
 		return new Cape[] {
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape honorifique aérienne"); put(Language.EN, "Honorary Wings Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.GOLD, false, "tdb0", "tdb0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 152, true),
+					new Effect(TypeEffect.DefM, false, 108, true),
+					new Effect(TypeEffect.FCE, false, 48, true),
+					new Effect(TypeEffect.VIT, false, 40, true),
+					new Effect(TypeEffect.VOL, false, 40, true),
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 3, new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 1),
+						new Effect(TypeEffect.ReducPeneM, false, 1),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape des esprits d'émeraude"); put(Language.EN, "Green Eyes Spirit Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.GOLD, false, "tdb1", "tdb1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 127, true),
+					new Effect(TypeEffect.DefM, false, 121, true),
+					new Effect(TypeEffect.FCE, false, 45, true),
+					new Effect(TypeEffect.VOL, false, 45, true),
+					new Effect(TypeEffect.AGI, false, 38, true),
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 2),
+						new Effect(TypeEffect.ReducM, false, 2),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape d'esprit ancestral"); put(Language.EN, "Ancient Spirit Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.GOLD, false, "tdb2", "tdb2", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 140, true),
+					new Effect(TypeEffect.DefM, false, 133, true),
+					new Effect(TypeEffect.FCE, false, 40, true),
+					new Effect(TypeEffect.VIT, false, 40, true),
+					new Effect(TypeEffect.INT, false, 48, true),
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, 2, new Calculable[] {
+						new Effect(TypeEffect.Sacre, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Ombre, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Foudre, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Feu, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Glace, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Nature, false, 10, Target.OPPONENT),
+						new Effect(TypeEffect.ESQ, false, 5, Target.OPPONENT),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du massacre cauchemardesque"); put(Language.EN, "Cursed Killing Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.GOLD, false, "tdb3", "tdb3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 114, true),
+					new Effect(TypeEffect.DefM, false, 145, true),
+					new Effect(TypeEffect.VIT, false, 40, true),
+					new Effect(TypeEffect.INT, false, 40, true),
+					new Effect(TypeEffect.VOL, false, 48, true),
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
+						new Effect(TypeEffect.FCE, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.VIT, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.INT, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.VOL, true, -5, Target.OPPONENT),
+						new Effect(TypeEffect.AGI, true, -5, Target.OPPONENT),
+					}),
+				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de persévérance infaillible"); put(Language.EN, "Brave Persistence Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.GOLD, false, "tdb4", "tdb4", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 129, true),
+					new Effect(TypeEffect.DefM, false, 130, true),
+					new Effect(TypeEffect.INT, false, 45, true),
+					new Effect(TypeEffect.VOL, false, 45, true),
+					new Effect(TypeEffect.AGI, false, 38, true),
+				}, new Calculable[] {
+					new Proc(5, Activation.Crit, 5, new Calculable[] {
+						new Effect(TypeEffect.Atk, true, 5),
+						new Effect(TypeEffect.AtkM, true, 5),
+						new Effect(TypeEffect.DCCP, false, 1),
+						new Effect(TypeEffect.DCCM, false, 1),
+					}),
+				}),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Berserker"); put(Language.EN, "War Killing Cape"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.GOLD, false, "tdb0", "tdb0", new Calculable[] {
@@ -1542,6 +1622,51 @@ public class LoaderCape {
 						new Effect(TypeEffect.VitAtk, false, 5),
 					}),
 				}),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape honorifique aérienne"); put(Language.EN, "Honorary Wings Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.ORANGE, false, "tdb0", "tdb0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 138, true),
+					new Effect(TypeEffect.DefM, false, 98, true),
+					new Effect(TypeEffect.FCE, false, 22, true),
+					new Effect(TypeEffect.VIT, false, 28, true),
+					new Effect(TypeEffect.AGI, false, 22, true),
+				}, null),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape des esprits d'émeraude"); put(Language.EN, "Green Eyes Spirit Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.ORANGE, false, "tdb1", "tdb1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 115, true),
+					new Effect(TypeEffect.DefM, false, 109, true),
+					new Effect(TypeEffect.FCE, false, 25, true),
+					new Effect(TypeEffect.VOL, false, 25, true),
+					new Effect(TypeEffect.AGI, false, 22, true),
+				}, null),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape d'esprit ancestral"); put(Language.EN, "Ancient Spirit Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.ORANGE, false, "tdb2", "tdb2", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 126, true),
+					new Effect(TypeEffect.DefM, false, 120, true),
+					new Effect(TypeEffect.FCE, false, 22, true),
+					new Effect(TypeEffect.VIT, false, 22, true),
+					new Effect(TypeEffect.INT, false, 28, true),
+				}, null),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du massacre cauchemardesque"); put(Language.EN, "Cursed Killing Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.ORANGE, false, "tdb3", "tdb3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 103, true),
+					new Effect(TypeEffect.DefM, false, 131, true),
+					new Effect(TypeEffect.VIT, false, 22, true),
+					new Effect(TypeEffect.INT, false, 22, true),
+					new Effect(TypeEffect.VOL, false, 28, true),
+				}, null),
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de persévérance infaillible"); put(Language.EN, "Brave Persistence Cape"); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				90, Quality.ORANGE, false, "tdb4", "tdb4", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 117, true),
+					new Effect(TypeEffect.DefM, false, 118, true),
+					new Effect(TypeEffect.INT, false, 22, true),
+					new Effect(TypeEffect.VOL, false, 25, true),
+					new Effect(TypeEffect.AGI, false, 25, true),
+				}, null),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Berserker"); put(Language.EN, "War Killing Cape"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.ORANGE, false, "tdb0", "tdb0", new Calculable[] {

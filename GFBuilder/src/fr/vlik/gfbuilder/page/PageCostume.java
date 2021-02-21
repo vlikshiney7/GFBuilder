@@ -537,7 +537,7 @@ public class PageCostume extends PagePanel {
 			this.costume.get(id).setModel(new DefaultComboBoxModel<Costume>(cost));
 			
 			if(memory != null) {
-				Costume retrieve = Costume.getFromList(memory.getName(), cost);
+				Costume retrieve = Costume.getFromList(memory.getName(Language.FR), cost);
 				this.costume.get(id).setSelectedItem(retrieve);
 			} else {
 				this.costume.get(id).setSelectedIndex(0);
@@ -681,7 +681,7 @@ public class PageCostume extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.costume.size(); i++) {
-			String value = this.getCostume(i) != null ? this.getCostume(i).getName() : "";
+			String value = this.getCostume(i) != null ? this.getCostume(i).getName(Language.FR) : "";
 			config.put("Costume" + i, value);
 		}
 		

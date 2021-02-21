@@ -102,7 +102,7 @@ public abstract class CustomEquipment extends IconBuff {
 					listEffects.add(c);
 				}
 				
-				this.signature += enchant[i].getName() + "/";
+				this.signature += enchant[i].getName(Language.FR) + "/";
 			}
 		} else if(quality == Quality.BLUE) {
 			for(int i = 0; i < 6; i++) {
@@ -110,13 +110,10 @@ public abstract class CustomEquipment extends IconBuff {
 					listEffects.add(c);
 				}
 				
-				this.signature += enchant[i].getName() + "/";
+				this.signature += enchant[i].getName(Language.FR) + "/";
 			}
 		}
 		
-		Calculable[] tabEffects = new Calculable[listEffects.size()];
-		tabEffects = listEffects.toArray(tabEffects);
-		
-		return tabEffects;
+		return listEffects.toArray(new Calculable[listEffects.size()]);
 	}
 }

@@ -566,7 +566,7 @@ public class PageRide extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.synthesis.size(); i++) {
-			String value = this.getSynthesis(i) != null ? this.getSynthesis(i).getName() : "";
+			String value = this.getSynthesis(i) != null ? this.getSynthesis(i).getName(Language.FR) : "";
 			config.put("Synthesis" + i, value);
 		}
 		

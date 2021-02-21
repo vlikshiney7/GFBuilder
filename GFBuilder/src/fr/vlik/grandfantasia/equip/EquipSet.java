@@ -2,15 +2,13 @@ package fr.vlik.grandfantasia.equip;
 
 import java.util.Arrays;
 
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class EquipSet implements Writable {
 	
@@ -69,7 +67,7 @@ public class EquipSet implements Writable {
 			}
 		}
 	}
-
+	
 	public EquipSet(Ring[] rings, Cape cape) {
 		String equipCode[] = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
 		
@@ -87,97 +85,29 @@ public class EquipSet implements Writable {
 			}
 		}
 	}
-
+	
 	public String getName() {
 		return this.name;
 	}
-
+	
 	public String getCode() {
 		return this.code;
 	}
 	
 	public Calculable[] getWith2() {
-		if(this.with2 == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.with2.length];
-		for(int i = 0; i < tab.length; i++) {
-			if(this.with2[i] instanceof Effect) {
-				tab[i] = new Effect((Effect) this.with2[i]);
-			} else if(this.with2[i] instanceof Proc) {
-				tab[i] = new Proc((Proc) this.with2[i]);
-			} else if(this.with2[i] instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) this.with2[i]);
-			} else if(this.with2[i] instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) this.with2[i]);
-			}
-		}
-		
-		return tab;
+		return Tools.getEffects(this.with2);
 	}
 	
 	public Calculable[] getWith3() {
-		if(this.with3 == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.with3.length];
-		for(int i = 0; i < tab.length; i++) {
-			if(this.with3[i] instanceof Effect) {
-				tab[i] = new Effect((Effect) this.with3[i]);
-			} else if(this.with3[i] instanceof Proc) {
-				tab[i] = new Proc((Proc) this.with3[i]);
-			} else if(this.with3[i] instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) this.with3[i]);
-			} else if(this.with3[i] instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) this.with3[i]);
-			}
-		}
-		
-		return tab;
+		return Tools.getEffects(this.with3);
 	}
 	
 	public Calculable[] getWith4() {
-		if(this.with4 == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.with4.length];
-		for(int i = 0; i < tab.length; i++) {
-			if(this.with4[i] instanceof Effect) {
-				tab[i] = new Effect((Effect) this.with4[i]);
-			} else if(this.with4[i] instanceof Proc) {
-				tab[i] = new Proc((Proc) this.with4[i]);
-			} else if(this.with4[i] instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) this.with4[i]);
-			} else if(this.with4[i] instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) this.with4[i]);
-			}
-		}
-		
-		return tab;
+		return Tools.getEffects(this.with4);
 	}
 	
 	public Calculable[] getWith5() {
-		if(this.with5 == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.with5.length];
-		for(int i = 0; i < tab.length; i++) {
-			if(this.with5[i] instanceof Effect) {
-				tab[i] = new Effect((Effect) this.with5[i]);
-			} else if(this.with5[i] instanceof Proc) {
-				tab[i] = new Proc((Proc) this.with5[i]);
-			} else if(this.with5[i] instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) this.with5[i]);
-			} else if(this.with5[i] instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) this.with5[i]);
-			}
-		}
-		
-		return tab;
+		return Tools.getEffects(this.with5);
 	}
 	
 	public int getNbCurrentUsed() {

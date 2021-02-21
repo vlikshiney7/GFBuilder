@@ -140,11 +140,20 @@ public class Proc implements Calculable {
 				if(calculable instanceof Effect) {
 					Effect e = (Effect) calculable;
 					result.append("\t\t- " + e.toString(lang) + "\n");
+				} else if(calculable instanceof Proc) {
+					Proc s = (Proc) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
+				} else if(calculable instanceof RegenEffect) {
+					RegenEffect s = (RegenEffect) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
+				} else if(calculable instanceof SkillEffect) {
+					SkillEffect s = (SkillEffect) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
 				} else if(calculable instanceof StaticEffect) {
 					StaticEffect s = (StaticEffect) calculable;
 					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof RegenEffect) {
-					RegenEffect r = (RegenEffect) calculable;
+				} else if(calculable instanceof TransformEffect) {
+					TransformEffect r = (TransformEffect) calculable;
 					result.append("\t\t- " + r.toString(lang) + "\n");
 				}
 			}

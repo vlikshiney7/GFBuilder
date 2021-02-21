@@ -11,11 +11,9 @@ import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 
 public class Cape extends Equipment {
 	
@@ -114,56 +112,6 @@ public class Cape extends Equipment {
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
-	public void toCode(String path) {
-		String code = "new Cape(new HashMap<Language, String>() {{ put(Language.FR, \"" + this.name.get(Language.FR) + "\"); put(Language.EN, \"\"); }},\n";
-		
-		code += "\tnew GradeName[] { ";
-		for(GradeName grade : this.grades) {
-			code += "GradeName." + grade + ", ";
-		}
-		code += "},\n";
-		
-		code += "\t" + this.lvl + ", ";
-		code += "Quality." + this.quality + ", ";
-		code += this.enchantable + ", ";
-		code += "\"" + this.setCode + "\", ";
-		code += "\"" + path + "\", ";
-		code += "new Calculable[] {\n";
-		
-		for(Calculable c : this.effects) {
-			if(c instanceof Effect) {
-				Effect e = (Effect) c;
-				code += "\t\tnew Effect(TypeEffect." + e.getType() + ", " + e.isPercent() + ", " + e.getValue();
-				
-				if(e.getTransfert() != null) {
-					code += ", " + e.getWithReinca();
-					code += ", WeaponType." + e.getWithWeapon();
-					code += ", TypeEffect." + e.getTransfert();
-					continue;
-				}
-				
-				if(e.getWithWeapon() != WeaponType.NONE) {
-					code += ", " + e.getWithReinca();
-					code += ", WeaponType." + e.getWithWeapon();
-					continue;
-				}
-				
-				if(e.getWithReinca()) {
-					code += ", " + e.getWithReinca();
-				}
-				
-				code += "),\n";
-			}
-		}
-		
-		code += "\t}, null ),";
-		
-		code = code.replace(".0)", ")");
-		code = code.replace(".0,", ",");
-		
-		System.out.println(code);
-	}
-	
 	public static void addCustom(Cape cape) {
 		Cape.customData.add(cape);
 	}
@@ -227,7 +175,6 @@ public class Cape extends Equipment {
 			}
 		}
 		
-		Cape[] cast = new Cape[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Cape[result.size()]);
 	}
 }

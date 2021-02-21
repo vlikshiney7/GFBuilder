@@ -1,77 +1,75 @@
 package fr.vlik.grandfantasia.equipUpgrade;
 
 import java.util.ArrayList;
+import java.util.Map;
 
+import fr.vlik.grandfantasia.InnerEffect;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.RegenEffect;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class RedEnchantment extends Enchantment {
 	
-	private int nbLvl;
-	private Calculable[][] effectsLvl;
-	
+	private InnerEffect[] lvlEffect;
 	
 	public RedEnchantment() {
 		super();
+	}
+	
+	public RedEnchantment(Map<Language, String> name, int lvlMin, int lvlMax, EnchantType[] tabType, Calculable[][] lvlEffect) {
+		super(name, lvlMin, lvlMax, Quality.RED, tabType, null);
 		
-		this.nbLvl = 0;
-	}
-	
-	public RedEnchantment(String name, int lvlMin, int lvlMax, Quality quality, EnchantType[] tabType, Calculable[][] effectsLvl) {
-		super(name, lvlMin, lvlMax, quality, tabType, null);
-		
-		this.nbLvl = effectsLvl.length;
-		this.effectsLvl = effectsLvl;
-	}
-	
-	public int getNbLvl() {
-		return this.nbLvl;
-	}
-	
-	public Calculable[] getEffects(int lvl) {
-		if(this.effectsLvl == null) {
-			return null;
+		this.lvlEffect = new InnerEffect[lvlEffect.length];
+		for(int i = 0; i < lvlEffect.length; i++) {
+			int lvl = i+1;
+			this.lvlEffect[i] = new InnerEffect(name, lvl, lvlEffect[i]);
 		}
 		
-		Calculable[] tab = new Calculable[this.effectsLvl[lvl-1].length];
 		
-		for(int i = 0; i < this.effectsLvl[lvl-1].length; i++) {
-			Calculable c = this.effectsLvl[lvl-1][i];
+	}
+	
+	@Override
+	public String getTooltip() {
+		if(this.lvlEffect == null) {
+			return "";
+		}
+		return this.lvlEffect[0].getTooltip();
+	}
+	
+	public InnerEffect[] getInnerEffect() {
+		return this.lvlEffect;
+	}
+	
+	public static InnerEffect[] cumulConstraint(ArrayList<InnerEffect> innerEffect) {
+		ArrayList<InnerEffect> result = new ArrayList<InnerEffect>();
+		
+		for(InnerEffect current : innerEffect) {
+			InnerEffect toAdd = current;
+			InnerEffect toRemove = null;
 			
-			if(c instanceof Effect) {
-				tab[i] = new Effect((Effect) c);
-			} else if(c instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) c);
-			} else if(c instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) c);
-			} else if(c instanceof RegenEffect) {
-				tab[i] = new RegenEffect((RegenEffect) c);
-			} else if(c instanceof Proc) {
-				tab[i] = new Proc((Proc) c);
+			for(InnerEffect calculated : result) {
+				
+				if(calculated.getName(Language.FR).equals(current.getName(Language.FR))) {
+					if(calculated.getLvlbuff() < current.getLvlbuff()) {
+						toRemove = calculated;
+					} else {
+						toAdd = null;
+					}
+				}
+			}
+			
+			if(toRemove != null) {
+				result.remove(toRemove);
+			}
+			
+			if(toAdd != null) {
+				result.add(toAdd);
 			}
 		}
 		
-		return tab;
-	}
-	
-	public String getTooltip(int lvl) {
-		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
-		
-		if(this.effectsLvl[lvl-1] != null) {
-			for(Calculable e : this.effectsLvl[lvl-1]) {
-				tooltip.append(e.getTooltip());
-			}
-		}
-		tooltip.append("</ul>");
-		
-		return "<html>" + tooltip + "</html>";
+		return result.toArray(new InnerEffect[result.size()]);
 	}
 	
 	public static RedEnchantment[] getPossibleRedEnchant(Equipment equip, RedEnchantment ignore1, RedEnchantment ignore2) {
@@ -99,9 +97,6 @@ public class RedEnchantment extends Enchantment {
 			result.remove(ignore2);
 		}
 		
-		RedEnchantment[] cast = new RedEnchantment[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new RedEnchantment[result.size()]);
 	}
 }

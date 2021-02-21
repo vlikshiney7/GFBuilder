@@ -131,10 +131,7 @@ public class CustomCape extends CustomEquipment {
 			}
 		}
 		
-		CustomCape[] cast = new CustomCape[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new CustomCape[result.size()]);
 	}
 	
 	public static boolean constructCustom(String name, Quality quality, String enchants) {

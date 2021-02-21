@@ -279,7 +279,6 @@ public class Weapon extends Equipment {
 			result.remove(toIgnore);
 		}
 		
-		Weapon[] cast = new Weapon[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Weapon[result.size()]);
 	}
 }

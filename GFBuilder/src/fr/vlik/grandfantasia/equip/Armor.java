@@ -241,7 +241,6 @@ public class Armor extends Equipment {
 			}
 		}
 		
-		Armor[] cast = new Armor[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Armor[result.size()]);
 	}
 }

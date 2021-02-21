@@ -125,9 +125,6 @@ public class Reinca implements FullRenderer {
 			}
 		}
 		
-		Reinca[] cast = new Reinca[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new Reinca[result.size()]);
 	}
 }

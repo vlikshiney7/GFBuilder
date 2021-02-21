@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.InnerEffect;
 import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.customEquip.CustomArmor;
 import fr.vlik.grandfantasia.enums.Language;
@@ -35,9 +36,9 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JCustomTextPane;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageArmor extends PagePanel {
 
@@ -60,7 +61,7 @@ public class PageArmor extends PagePanel {
 	
 	private ArrayList<JCustomComboBox<RedFortification>> redFortif = new ArrayList<JCustomComboBox<RedFortification>>(5);
 	private ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>(15);
-	private ArrayList<JCustomComboBox<Integer>> redLvlEnchant = new ArrayList<JCustomComboBox<Integer>>(15);
+	private ArrayList<JCustomComboBox<InnerEffect>> redLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>(15);
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(5);
 	private ArrayList<JLangLabel> labelValue = new ArrayList<JLangLabel>(5);
 	
@@ -136,7 +137,7 @@ public class PageArmor extends PagePanel {
 				});
 				this.redEnchant.get(i*3+j).setVisible(false);
 				
-				this.redLvlEnchant.add(new JCustomComboBox<Integer>());
+				this.redLvlEnchant.add(new JCustomComboBox<InnerEffect>());
 				this.redLvlEnchant.get(i*3+j).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -258,10 +259,7 @@ public class PageArmor extends PagePanel {
 		return this.redFortif.get(id).getSelectedItem();
 	}
 	
-	public int getRedLvlEnchant(int id) {
-		if(this.redLvlEnchant.get(id).getItemCount() == 0) {
-			return 0;
-		}
+	public InnerEffect getRedLvlEnchant(int id) {
 		return this.redLvlEnchant.get(id).getSelectedItem();
 	}
 
@@ -287,6 +285,8 @@ public class PageArmor extends PagePanel {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
 		Armor[] armors = new Armor[5];
+		ArrayList<InnerEffect> innerEffect = new ArrayList<InnerEffect>();
+		
 		for(int i = 0; i < armors.length; i++) {
 			if(this.getArmor(i).getQuality() == Quality.RED) {
 				armors[i] = new RedArmor((RedArmor) this.getArmor(i));
@@ -309,12 +309,7 @@ public class PageArmor extends PagePanel {
 						RedEnchantment red = this.getRedEnchantment(i*3+j);
 						
 						if(red != null) {
-							for(Calculable c : red.getEffects(this.getRedLvlEnchant(i*3+j))) {
-								if(c instanceof Effect) {
-									Effect e = (Effect) c;
-									list.add(e);
-								}
-							}
+							innerEffect.add(this.getRedLvlEnchant(i*3+j));
 						}
 					}
 				}
@@ -326,6 +321,12 @@ public class PageArmor extends PagePanel {
 				for(Calculable c : armors[i].getEffects()) {
 					list.add(c);
 				}
+			}
+		}
+		
+		for(InnerEffect effects : RedEnchantment.cumulConstraint(innerEffect)) {
+			for(Calculable c : effects.getEffects()) {
+				list.add(c);
 			}
 		}
 		
@@ -384,24 +385,21 @@ public class PageArmor extends PagePanel {
 				setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
 				if(armorSet.getWith3() != null) {
 					for(int i = 0; i < armorSet.getWith3().length; i++) {
-						Calculable c = (Calculable) armorSet.getWith3()[i];
-						setInfo += "\t- " + c.toString(Language.FR) + "\n";
+						setInfo += "\t- " + armorSet.getWith3()[i].toString(Language.FR) + "\n";
 					}
 				}
 				
 				setInfo += "4 pièces équipées " + (armorSet.getNbCurrentUsed() >= 4 ? "(Actif) " : "") + ":\n";
 				if(armorSet.getWith4() != null) {
 					for(int i = 0; i < armorSet.getWith4().length; i++) {
-						Calculable c = (Calculable) armorSet.getWith4()[i];
-						setInfo += "\t- " + c.toString(Language.FR) + "\n";
+						setInfo += "\t- " + armorSet.getWith4()[i].toString(Language.FR) + "\n";
 					}
 				}
 				
 				setInfo += "5 pièces équipées " + (armorSet.getNbCurrentUsed() >= 5 ? "(Actif) " : "") + ":\n";
 				if(armorSet.getWith5() != null) {
 					for(int i = 0; i < armorSet.getWith5().length; i++) {
-						Calculable c = (Calculable) armorSet.getWith5()[i];
-						setInfo += "\t- " + c.toString(Language.FR) + "\n";
+						setInfo += "\t- " + armorSet.getWith5()[i].toString(Language.FR) + "\n";
 					}
 				}
 				
@@ -856,17 +854,19 @@ public class PageArmor extends PagePanel {
 	}
 	
 	private void updateRedLvlEnchant(int id) {
-		if(this.getRedEnchantment(id) != null) {
-			Integer[] nbLvl = new Integer[this.getRedEnchantment(id).getNbLvl()];
+		RedEnchantment redEnchant = this.getRedEnchantment(id);
+		
+		if(redEnchant != null && redEnchant.getInnerEffect() != null) {
+			InnerEffect memory = this.getRedLvlEnchant(id);
 			
-			for(int i = 0; i < nbLvl.length; i++) {
-				nbLvl[i] = i+1;
+			this.redLvlEnchant.get(id).setModel(new DefaultComboBoxModel<InnerEffect>(redEnchant.getInnerEffect()));
+			
+			if(memory != null) {
+				this.redLvlEnchant.get(id).setSelectedItem(memory);
+			} else {
+				this.redLvlEnchant.get(id).setSelectedIndex(0);
 			}
 			
-			int memory = this.getRedLvlEnchant(id);
-			
-			this.redLvlEnchant.get(id).setModel(new DefaultComboBoxModel<Integer>(nbLvl));
-			this.redLvlEnchant.get(id).setSelectedItem(memory);
 			this.redLvlEnchant.get(id).setVisible(true);
 		} else {
 			this.redLvlEnchant.get(id).setVisible(false);
@@ -945,7 +945,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
-			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName() : "";
+			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName(Language.FR) : "";
 			config.put("Enchantment" + i, value);
 		}
 		
@@ -971,7 +971,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
-			String value = this.getRedEnchantment(i) != null ? this.getRedEnchantment(i).getName() : "";
+			String value = this.getRedEnchantment(i) != null ? this.getRedEnchantment(i).getName(Language.FR) : "";
 			config.put("RedEnchantment" + i, value);
 		}
 

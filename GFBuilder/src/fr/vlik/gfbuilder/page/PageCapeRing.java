@@ -624,7 +624,7 @@ public class PageCapeRing extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
-			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName() : "";
+			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName(Language.FR) : "";
 			config.put("Enchantment" + i, value);
 		}
 		

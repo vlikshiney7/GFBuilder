@@ -1,53 +1,39 @@
 package fr.vlik.grandfantasia.equipUpgrade;
 
-import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
+import fr.vlik.grandfantasia.ColorBuff;
 import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
-import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
-import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.RegenEffect;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
-public class Enchantment implements Colorable, Writable {
+public class Enchantment extends ColorBuff {
 	
 	protected static Map<Quality, Enchantment[]> data = Loader.getEnchant();
 	
-	private String name;
 	private int lvlMin;
 	private int lvlMax;
-	private Quality quality;
 	private EnchantType[] tabType;
-	private Calculable[] effects;
 	
+	@SuppressWarnings("serial")
 	public Enchantment() {
-		this.name = " ";
+		this.name = new HashMap<Language, String>() {{ put(Language.FR, " "); put(Language.EN, " "); }};
 		this.lvlMin = 0;
 		this.lvlMax = 100;
 		this.quality = Quality.GREY;
 	}
 	
-	public Enchantment(String name, int lvlMin, int lvlMax, Quality quality, EnchantType[] tabType, Calculable[] effects) {
-		this.name = name;
+	public Enchantment(Map<Language, String> name, int lvlMin, int lvlMax, Quality quality, EnchantType[] tabType, Calculable[] effects) {
+		super(name, quality, effects);
 		this.lvlMin = lvlMin;
 		this.lvlMax = lvlMax;
-		this.quality = quality;
 		this.tabType = tabType;
-		this.effects = effects;
-	}
-	
-	public String getName() {
-		return this.name;
 	}
 	
 	public int getLvlMin() {
@@ -58,62 +44,8 @@ public class Enchantment implements Colorable, Writable {
 		return this.lvlMax;
 	}
 	
-	public Quality getQuality() {
-		return this.quality;
-	}
-	
 	public EnchantType[] getTabType() {
 		return this.tabType;
-	}
-	
-	public Calculable[] getEffects() {
-		if(this.effects == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[this.effects.length];
-		
-		for(int i = 0; i < this.effects.length; i++) {
-			Calculable c = this.effects[i];
-			
-			if(c instanceof Effect) {
-				tab[i] = new Effect((Effect) c);
-			} else if(c instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) c);
-			} else if(c instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) c);
-			} else if(c instanceof RegenEffect) {
-				tab[i] = new RegenEffect((RegenEffect) c);
-			} else if(c instanceof Proc) {
-				tab[i] = new Proc((Proc) c);
-			}
-		}
-		
-		return tab;
-	}
-
-	@Override
-	public String getInfo(Language lang) {
-		return this.name;
-	}
-
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
-		
-		if(this.effects != null) {
-			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
-			}
-		}
-		tooltip.append("</ul>");
-		
-		return "<html>" + tooltip + "</html>";
-	}
-
-	@Override
-	public Color getColor() {
-		return this.quality.getColor();
 	}
 	
 	public boolean containType(EnchantType type) {
@@ -133,7 +65,7 @@ public class Enchantment implements Colorable, Writable {
 	public static Enchantment get(Equipment equip, String name) {
 		if(equip.getQuality() != Quality.GREY) {
 			for(Enchantment enchant : Enchantment.data.get(equip.getQuality())) {
-				if(enchant.getName().equals(name)
+				if(enchant.getName(Language.FR).equals(name)
 					&& equip.getLvl() >= enchant.getLvlMin() && equip.getLvl() <= enchant.getLvlMax()
 					&& enchant.containType(equip.getType())) {
 					
@@ -148,7 +80,7 @@ public class Enchantment implements Colorable, Writable {
 	public static Enchantment get(CustomEquipment equip, Quality quality, String name) {
 		if(quality != Quality.GREY) {
 			for(Enchantment enchant : Enchantment.data.get(quality)) {
-				if(enchant.getName().equals(name)
+				if(enchant.getName(Language.FR).equals(name)
 					&& equip.getLvl() >= enchant.getLvlMin() && equip.getLvl() <= enchant.getLvlMax()
 					&& enchant.containType(equip.getType())) {
 					
@@ -173,8 +105,7 @@ public class Enchantment implements Colorable, Writable {
 			}
 		}
 		
-		Enchantment[] cast = new Enchantment[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Enchantment[result.size()]);
 	}
 	
 	public static Enchantment[] getPossibleEnchant(CustomEquipment equip, Quality quality) {
@@ -192,7 +123,6 @@ public class Enchantment implements Colorable, Writable {
 			}
 		}
 		
-		Enchantment[] cast = new Enchantment[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Enchantment[result.size()]);
 	}
 }

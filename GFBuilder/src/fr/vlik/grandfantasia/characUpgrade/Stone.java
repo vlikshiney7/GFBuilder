@@ -35,8 +35,7 @@ public class Stone extends CompleteBuff {
 			}
 		}
 		
-		Stone[] cast = new Stone[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Stone[result.size()]);
 	}
 	
 	public static Stone get(String name) {

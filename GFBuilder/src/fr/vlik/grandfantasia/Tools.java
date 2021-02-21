@@ -17,6 +17,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.SkillEffect;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.TransformEffect;
 
 public class Tools {
@@ -116,6 +117,8 @@ public class Tools {
 				tab[i] = new RegenEffect((RegenEffect) tabEffects[i]);
 			} else if(tabEffects[i] instanceof SkillEffect) {
 				tab[i] = new SkillEffect((SkillEffect) tabEffects[i]);
+			} else if(tabEffects[i] instanceof StaticEffect) {
+				tab[i] = new StaticEffect((StaticEffect) tabEffects[i]);
 			} else if(tabEffects[i] instanceof TransformEffect) {
 				tab[i] = new TransformEffect((TransformEffect) tabEffects[i]);
 			}

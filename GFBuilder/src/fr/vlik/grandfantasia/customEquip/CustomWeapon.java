@@ -132,10 +132,7 @@ public class CustomWeapon extends CustomEquipment {
 			}
 		}
 		
-		CustomWeapon[] cast = new CustomWeapon[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new CustomWeapon[result.size()]);
 	}
 	
 	public static boolean constructCustom(String name, Quality quality, String enchants) {

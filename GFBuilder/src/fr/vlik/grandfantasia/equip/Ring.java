@@ -155,7 +155,6 @@ public final class Ring extends Equipment {
 			result.remove(toIgnore);
 		}
 		
-		Ring[] cast = new Ring[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Ring[result.size()]);
 	}
 }
