@@ -4,11 +4,11 @@ import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 
 public class CombiRunway implements Writable {
 	
-	public static CombiRunway[] data = Loader.getCombiRunway();
+	public static CombiRunway[] data = LoaderEquipUpgrade.getCombiRunway();
 	
 	private Map<Language, String> name;
 	private Runway[] runways;

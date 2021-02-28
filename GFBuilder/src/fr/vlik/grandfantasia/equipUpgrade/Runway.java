@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.equipUpgrade;
 
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
@@ -11,7 +11,7 @@ public class Runway {
 	
 	public static final String[][] currentRunway = { { "Bravoure", "Sorcier" }, { "Berserker", "Sagesse" }, { "Turbo", "Synthétisation" }, { "Lutte", "Malédiction" }, { "Illusion", "Ranger", "Praetor" } };
 	
-	public static Runway[] data = Loader.getRunway();
+	public static Runway[] data = LoaderEquipUpgrade.getRunway();
 	
 	private String name;
 	private Calculable[] effects;

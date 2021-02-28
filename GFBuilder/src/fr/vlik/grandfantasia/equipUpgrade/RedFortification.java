@@ -3,12 +3,12 @@ package fr.vlik.grandfantasia.equipUpgrade;
 import java.awt.Color;
 
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 
 public class RedFortification extends Fortification {
 	
 	public static final Color[] LEVEL = new Color[] { new Color(147, 147, 147), new Color(33, 171, 235), new Color(234, 225, 0), new Color(3, 114, 107), new Color(5, 178, 166), new Color(5, 244, 230) };
-	private static RedFortification[] data = Loader.getRedFortification();
+	private static RedFortification[] data = LoaderEquipUpgrade.getRedFortification();
 	
 	private final double coefMin;
 	private final double coefMax;

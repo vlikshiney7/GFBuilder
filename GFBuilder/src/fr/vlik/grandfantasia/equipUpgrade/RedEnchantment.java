@@ -26,8 +26,6 @@ public class RedEnchantment extends Enchantment {
 			int lvl = i+1;
 			this.lvlEffect[i] = new InnerEffect(name, lvl, lvlEffect[i]);
 		}
-		
-		
 	}
 	
 	@Override

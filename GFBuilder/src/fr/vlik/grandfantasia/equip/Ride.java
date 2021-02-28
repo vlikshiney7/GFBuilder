@@ -39,15 +39,15 @@ public class Ride extends CompleteBuff {
 	}
 	
 	public Ride(Map<Language, String> name, int lvl, boolean reinca, String path, Effect[] effects) {
+		super(name, Quality.ORANGE, effects);
 		this.lvl = lvl;
-		this.quality = Quality.ORANGE;
 		this.reinca = reinca;
 		this.icon = setIcon(path);
 	}
 	
 	public Ride(Map<Language, String> name, int lvl, boolean reinca, boolean nerfXpStuff, String path, Effect[] effects) {
+		super(name, Quality.ORANGE, effects);
 		this.lvl = lvl;
-		this.quality = Quality.ORANGE;
 		this.reinca = reinca;
 		this.nerfXpStuff = nerfXpStuff;
 		this.icon = setIcon(path);
@@ -100,7 +100,7 @@ public class Ride extends CompleteBuff {
 		return null;
 	}
 	
-	public static Ride[] getPossibleMount(int lvl, Reinca reinca) {
+	public static Ride[] getPossibleRide(int lvl, Reinca reinca) {
 		ArrayList<Ride> result = new ArrayList<Ride>();
 		
 		result.add(new Ride());

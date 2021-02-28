@@ -25,6 +25,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.EquipSet;
+import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.equip.RedArmor;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
@@ -40,14 +41,16 @@ import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageArmor extends PagePanel {
+public class PageArmor extends PagePanel implements ConvertEffect {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "ARMOR";
 	private static PageArmor INSTANCE = new PageArmor();
 	
-	private JCustomComboBox<EquipSet> shortcutSet = new JCustomComboBox<EquipSet>();
+	private JCustomComboBox<EquipSet> shortcutSet;
+	private JCustomComboBox<Fortification> shortcutFortif;
+	private JCustomComboBox<Enchantment> shortcutEnchant;
 	
 	private ArrayList<JCustomComboBox<Armor>> armor = new ArrayList<JCustomComboBox<Armor>>(5);
 	private EquipSet equipSet;
@@ -68,6 +71,8 @@ public class PageArmor extends PagePanel {
 	private JPanel showAndHide = new JPanel();
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(5);
 	
+	private ArrayList<Calculable> convertEffects;
+	
 	public static PageArmor getInstance() {
 		return INSTANCE;
 	}
@@ -79,6 +84,16 @@ public class PageArmor extends PagePanel {
 		this.shortcutSet = new JCustomComboBox<EquipSet>(new EquipSet[] {});
 		this.shortcutSet.addActionListener(e -> {
 			applySet();
+		});
+		
+		this.shortcutFortif = new JCustomComboBox<Fortification>(Fortification.getData());
+		this.shortcutFortif.addActionListener(e -> {
+			applyFortif();
+		});
+		
+		this.shortcutEnchant = new JCustomComboBox<Enchantment>();
+		this.shortcutEnchant.addActionListener(e -> {
+			applyEnchant();
 		});
 		
 		for(int i = 0; i < 5; i++) {
@@ -227,8 +242,21 @@ public class PageArmor extends PagePanel {
 		setEffects();
 	}
 	
+	@Override
+	public ArrayList<Calculable> getConvertEffects() {
+		return this.convertEffects;
+	}
+	
 	public EquipSet getShortcutSet() {
 		return this.shortcutSet.getSelectedItem();
+	}
+	
+	public Fortification getShortcutFortif() {
+		return this.shortcutFortif.getSelectedItem();
+	}
+	
+	public Enchantment getShortcutEnchant() {
+		return this.shortcutEnchant.getSelectedItem();
 	}
 	
 	public Armor getArmor(int id) {
@@ -283,6 +311,7 @@ public class PageArmor extends PagePanel {
 	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		ArrayList<Calculable> convert = new ArrayList<Calculable>();
 		
 		Armor[] armors = new Armor[5];
 		ArrayList<InnerEffect> innerEffect = new ArrayList<InnerEffect>();
@@ -326,7 +355,17 @@ public class PageArmor extends PagePanel {
 		
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(innerEffect)) {
 			for(Calculable c : effects.getEffects()) {
-				list.add(c);
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					
+					if(e.getTransfert() == null) {
+						list.add(c);
+					} else {
+						//convert.add(c);
+					}
+				} else {
+					list.add(c);
+				}
 			}
 		}
 		
@@ -407,6 +446,7 @@ public class PageArmor extends PagePanel {
 				this.armorSetInfo.setVisible(true);
 				
 				this.equipSet = armorSet;
+				updateShorcut();
 			} else {
 				this.armorSetInfo.setVisible(false);
 			}
@@ -437,6 +477,7 @@ public class PageArmor extends PagePanel {
 		}
 		
 		this.effects = list;
+		this.convertEffects = convert;
 	}
 	
 	@Override
@@ -449,6 +490,10 @@ public class PageArmor extends PagePanel {
 		this.labelGFB[0].setFont(Design.TITLE);
 		this.showAndHide.add(Box.createVerticalStrut(10));
 		this.showAndHide.add(this.shortcutSet);
+		this.showAndHide.add(Box.createVerticalStrut(5));
+		this.showAndHide.add(this.shortcutFortif);
+		this.showAndHide.add(Box.createVerticalStrut(5));
+		this.showAndHide.add(this.shortcutEnchant);
 		this.showAndHide.setVisible(false);
 		
 		this.add(showAndHide);
@@ -925,6 +970,41 @@ public class PageArmor extends PagePanel {
 		}
 		
 		this.shortcutSet.setSelectedItem(equipSet);
+	}
+	
+	private void applyFortif() {
+		for(JCustomComboBox<Fortification> fortif : this.fortif) {
+			fortif.setSelectedItem(this.getShortcutFortif());
+		}
+	}
+	
+	private void applyEnchant() {
+		Enchantment choice = this.getShortcutEnchant();
+		for(JCustomComboBox<Enchantment> listEnchant : this.enchant) {
+			for (int i = 0; i < listEnchant.getItemCount(); i++) {
+				Enchantment enchant = listEnchant.getItemAt(i);
+				
+				if(enchant.getName(Language.FR).equals(choice.getName(Language.FR))) {
+					listEnchant.setSelectedItem(enchant);
+					break;
+				}
+			}
+		}
+	}
+	
+	private void updateShorcut() {
+		if(!this.equipSet.getName().equals("-1")) {
+			Equipment equip = null;
+			for(int i = 0; i < this.armor.size(); i++) {
+				if(this.getArmor(i).getSetCode().equals(this.equipSet.getCode())) {
+					equip = this.getArmor(i);
+					break;
+				}
+			}
+			
+			Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(equip);
+			this.shortcutEnchant.setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
+		}
 	}
 	
 	@Override

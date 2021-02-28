@@ -255,7 +255,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	private void updateSpePoint() {
-		int remain = 1145;
+		int remain = 1775;
 		for(int i = 0; i < this.spePoint.size(); i++) {
 			int current = this.spePoint.get(i).getSelectedIndex();
 			if(this.tabSpeciality[i].getLvl() == 45) {
@@ -298,6 +298,16 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 					current -= current - 10;
 				}
 				remain -= current * 8;
+			} else if(this.tabSpeciality[i].getLvl() == 100) {
+				if(current > 15) {
+					remain -= (current - 15) * 17;
+					current -= current - 15;
+				}
+				if(current > 10) {
+					remain -= (current - 10) * 13;
+					current -= current - 10;
+				}
+				remain -= current * 10;
 			}
 		}
 		

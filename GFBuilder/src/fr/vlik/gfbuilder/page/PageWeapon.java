@@ -37,7 +37,7 @@ import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageWeapon extends PagePanel {
+public class PageWeapon extends PagePanel implements ConvertEffect {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -64,6 +64,8 @@ public class PageWeapon extends PagePanel {
 	
 	private JPanel showAndHide;
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
+	
+	private ArrayList<Calculable> convertEffects;
 	
 	public static PageWeapon getInstance() {
 		return INSTANCE;
@@ -213,6 +215,11 @@ public class PageWeapon extends PagePanel {
 		setEffects();
 	}
 	
+	@Override
+	public ArrayList<Calculable> getConvertEffects() {
+		return this.convertEffects;
+	}
+	
 	public Weapon getWeapon(int id) {
 		return this.weapon.get(id).getSelectedItem();
 	}
@@ -275,6 +282,7 @@ public class PageWeapon extends PagePanel {
 	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		ArrayList<Calculable> convert = new ArrayList<Calculable>();
 		
 		Weapon[] weapons = new Weapon[3];
 		ArrayList<InnerEffect> innerEffect = new ArrayList<InnerEffect>();
@@ -311,7 +319,17 @@ public class PageWeapon extends PagePanel {
 		
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(innerEffect)) {
 			for(Calculable c : effects.getEffects()) {
-				list.add(c);
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					
+					if(e.getTransfert() == null) {
+						list.add(c);
+					} else {
+						//convert.add(c);
+					}
+				} else {
+					list.add(c);
+				}
 			}
 		}
 		
@@ -395,6 +413,7 @@ public class PageWeapon extends PagePanel {
 		}
 		
 		this.effects = list;
+		this.convertEffects = convert;
 	}
 
 	@Override

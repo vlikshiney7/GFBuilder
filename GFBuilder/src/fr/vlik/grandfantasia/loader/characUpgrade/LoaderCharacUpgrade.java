@@ -11,6 +11,7 @@ import fr.vlik.grandfantasia.characUpgrade.Stone;
 import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
@@ -19,8 +20,10 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.StaticEffect;
+import fr.vlik.grandfantasia.stats.TransformEffect;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
+import fr.vlik.grandfantasia.stats.TransformEffect.TypeTransformation;
 
 @SuppressWarnings("serial")
 public class LoaderCharacUpgrade {
@@ -203,6 +206,36 @@ public class LoaderCharacUpgrade {
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReducP, false, 6),
 						new Effect(TypeEffect.ReducM, false, 6),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8% - Pirate"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
+					new Effect(TypeEffect.FCE, true, 8),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc2),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6% - Pirate"); put(Language.EN, ""); }}, Quality.ORANGE, "VITorange", new Calculable[] {
+					new Effect(TypeEffect.VIT, true, 6),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc2),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8% - Pirate"); put(Language.EN, ""); }}, Quality.ORANGE, "INTorange", new Calculable[] {
+					new Effect(TypeEffect.INT, true, 8),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc2),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6% - Pirate"); put(Language.EN, ""); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
+					new Effect(TypeEffect.VOL, true, 6),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc2),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8% - Pirate"); put(Language.EN, ""); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
+					new Effect(TypeEffect.AGI, true, 8),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc2),
 					}),
 				}),
 			},

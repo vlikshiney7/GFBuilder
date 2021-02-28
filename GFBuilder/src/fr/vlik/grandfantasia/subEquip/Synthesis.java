@@ -34,6 +34,7 @@ public class Synthesis extends ColorBuff {
 	
 	
 	public Synthesis(Map<Language, String> name, String serie, TypeSynthesis typeSynthesis, Quality quality, int star, Calculable[] effects) {
+		super(name, quality, effects);
 		this.serie = serie;
 		this.typeSynthesis = typeSynthesis;
 		this.star = star;

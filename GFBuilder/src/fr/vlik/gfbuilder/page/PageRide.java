@@ -59,7 +59,7 @@ public class PageRide extends PagePanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setLabelAPI();
 		
-		Ride[] tabMount = Ride.getPossibleMount(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
+		Ride[] tabMount = Ride.getPossibleRide(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 		this.ride = new JCustomComboBox<Ride>(tabMount);
 		this.ride.addActionListener(e -> {
 			updateXpStuff();
@@ -349,7 +349,7 @@ public class PageRide extends PagePanel {
 		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
-		Ride tabMount[] = Ride.getPossibleMount(lvl, reinca);
+		Ride tabMount[] = Ride.getPossibleRide(lvl, reinca);
 		Ride memory = this.getMount();
 		
 		this.ride.setModel(new DefaultComboBoxModel<Ride>(tabMount));

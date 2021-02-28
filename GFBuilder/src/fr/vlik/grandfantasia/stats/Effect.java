@@ -11,7 +11,8 @@ public class Effect implements Calculable {
 	private double value;
 	private boolean withReinca = false;
 	private WeaponType withWeapon = WeaponType.NONE;
-	private TypeEffect transfert = null;
+	private TypeEffect transfert;
+	private boolean isBaseTransfert = false;
 	private Target target = Target.SELF;
 
 	public Effect(TypeEffect type, boolean isPercent, double value) {
@@ -35,6 +36,14 @@ public class Effect implements Calculable {
 		this.isPercent = false;
 		this.value = value;
 		this.transfert = transfert;
+	}
+	
+	public Effect(TypeEffect type, double value, TypeEffect transfert, boolean isBaseTransfert) {
+		this.type = type;
+		this.isPercent = false;
+		this.value = value;
+		this.transfert = transfert;
+		this.isBaseTransfert = isBaseTransfert;
 	}
 	
 	public Effect(TypeEffect type, boolean isPercent, double value, Target target) {
@@ -115,6 +124,10 @@ public class Effect implements Calculable {
 	
 	public TypeEffect getTransfert() {
 		return this.transfert;
+	}
+	
+	public boolean isBaseTransfert() {
+		return this.isBaseTransfert;
 	}
 	
 	public Target getTarget() {

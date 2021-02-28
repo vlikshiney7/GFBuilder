@@ -10,12 +10,12 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.interfaces.EnchantType;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 
 public class Enchantment extends ColorBuff {
 	
-	protected static Map<Quality, Enchantment[]> data = Loader.getEnchant();
+	protected static Map<Quality, Enchantment[]> data = LoaderEquipUpgrade.getEnchant();
 	
 	private int lvlMin;
 	private int lvlMax;

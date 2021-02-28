@@ -2,11 +2,13 @@ package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class Condition implements Calculable {
 	
 	private Calculable[] effects;
 	private TypeEffect targetEffect;
+	private Target target = Target.SELF;
 	private TypeCondition specialCondition = null;
 	private int percent;
 	private int taux;
@@ -15,6 +17,13 @@ public class Condition implements Calculable {
 	public Condition(TypeEffect targetEffect, int percent, Calculable[] effects) {
 		this.targetEffect = targetEffect;
 		this.percent = percent;
+		this.effects = effects;
+	}
+	
+	public Condition(TypeEffect targetEffect, int percent, Target target, Calculable[] effects) {
+		this.targetEffect = targetEffect;
+		this.percent = percent;
+		this.target = target;
 		this.effects = effects;
 	}
 	
@@ -58,6 +67,7 @@ public class Condition implements Calculable {
 		SANCTU1("Sanctuaire Forêt", "Forest Sanctuary"),
 		SANCTU2("Sanctuaire Sable", "Sand Sanctuary"),
 		
+		SPRITE("Maître de l'Encyclopédie sprite", "Master of Sprite Encyclopedia"),
 		;
 		
 		public final String fr;
@@ -75,6 +85,10 @@ public class Condition implements Calculable {
 	
 	public int getPercent() {
 		return this.percent;
+	}
+	
+	public Target getTarget() {
+		return this.target;
 	}
 	
 	public int getTaux() {
@@ -102,6 +116,10 @@ public class Condition implements Calculable {
 		StringBuilder tooltip = new StringBuilder();
 		
 		if(this.specialCondition == null) {
+			if(this.target == Target.OPPONENT) {
+				tooltip.append("Adversaire : ");
+			}
+			
 			tooltip.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent);
 			
 			if(this.taux > 0) {
@@ -132,6 +150,10 @@ public class Condition implements Calculable {
 		
 		if(lang == Language.FR) {
 			if(this.specialCondition == null) {
+				if(this.target == Target.OPPONENT) {
+					result.append("Adversaire : ");
+				}
+				
 				result.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent + "%");
 				
 				if(this.taux > 0) {
@@ -170,6 +192,10 @@ public class Condition implements Calculable {
 			}
 		} else {
 			if(this.specialCondition == null) {
+				if(this.target == Target.OPPONENT) {
+					result.append("Opponent: ");
+				}
+				
 				result.append("If " + this.targetEffect.abbrevEN + " < " + this.percent + "%");
 				
 				if(this.taux > 0) {
@@ -185,11 +211,20 @@ public class Condition implements Calculable {
 				if(calculable instanceof Effect) {
 					Effect e = (Effect) calculable;
 					result.append("\t\t- " + e.toString(lang) + "\n");
+				} else if(calculable instanceof Proc) {
+					Proc s = (Proc) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
+				} else if(calculable instanceof RegenEffect) {
+					RegenEffect s = (RegenEffect) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
+				} else if(calculable instanceof SkillEffect) {
+					SkillEffect s = (SkillEffect) calculable;
+					result.append("\t\t- " + s.toString(lang) + "\n");
 				} else if(calculable instanceof StaticEffect) {
 					StaticEffect s = (StaticEffect) calculable;
 					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof RegenEffect) {
-					RegenEffect r = (RegenEffect) calculable;
+				} else if(calculable instanceof TransformEffect) {
+					TransformEffect r = (TransformEffect) calculable;
 					result.append("\t\t- " + r.toString(lang) + "\n");
 				}
 			}

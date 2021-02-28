@@ -53,15 +53,6 @@ public class ExtractRideData {
 			}
 		});
 		
-		filterResult.entrySet().forEach(entry -> {
-			String[] values = entry.getValue();
-			
-			if(Ride.get(values[0]) == null && notInBanList(values[0])) {
-				System.out.println("new Ride(\"" + values[0] + "\", " + values[1] + ", " + values[2] + ", \"" + values[4] + "\", new Effect(TypeEffect.Depla, false, " + values[3] + ")),");
-			}
-		});
-		
-		
 		try (
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("tools" + File.separator + "ExtractRide.java", false), "UTF-8"));
 		) {
@@ -69,7 +60,8 @@ public class ExtractRideData {
 				String[] values = entry.getValue();
 				
 				if(Ride.get(values[0]) == null && notInBanList(values[0])) {
-					writer.append("new Ride(\"" + values[0] + "\", " + values[1] + ", " + values[2] + ", \"" + values[4] + "\", new Effect(TypeEffect.Depla, false, " + values[3] + ")),");
+					System.out.println("new Ride(new HashMap<Language, String>() {{ put(Language.FR, \"" + values[0] + "\"); put(Language.EN, \"\"); }}, " + values[1] + ", " + values[2] + ", \"" + values[4] + "\", new Effect[] { new Effect(TypeEffect.Depla, false, " + values[3] + "), }),");
+					writer.append("new Ride(new HashMap<Language, String>() {{ put(Language.FR, \"" + values[0] + "\"); put(Language.EN, \"\"); }}, " + values[1] + ", " + values[2] + ", \"" + values[4] + "\", new Effect[] { new Effect(TypeEffect.Depla, false, " + values[3] + "), }),\n");
 				}
 			}
 			

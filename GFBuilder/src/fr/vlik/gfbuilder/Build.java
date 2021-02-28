@@ -114,7 +114,7 @@ public class Build {
 			Effect e = (Effect) c;
 			
 			if(e.getTarget() == Target.SELF) {
-				if(containIdWeapon(e.getWithWeapon())) {
+				if(containIdWeapon(e.getWithWeapon()) && !e.isBaseTransfert()) {
 					this.effectConvert.add(e);
 				}
 			}
@@ -153,8 +153,16 @@ public class Build {
 		}
 		
 		/* CONVERSION BASE */
+		/*for(Effect e : this.effectConvert) {
+			if(e.isBaseTransfert()) {
+				double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
+				result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
+			}
+		}*/
+		
+		/* CONVERSION AUTRES */
 		for(Effect e : this.effectConvert) {
-			if(e.getTransfert().ordinal() < 5) {
+			if(e.getTransfert().ordinal() < 5 && !e.isBaseTransfert()) {
 				double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
 				result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
 			}
@@ -199,7 +207,7 @@ public class Build {
 		
 		/* CONVERSION AUTRES */
 		for(Effect e : this.effectConvert) {
-			if(e.getTransfert().ordinal() >= 5) {
+			if(e.getTransfert().ordinal() >= 5 && !e.isBaseTransfert()) {
 				double value = result[e.getTransfert().ordinal()] * (e.getValue() / 100);
 				result[e.getType().ordinal()] += Math.floor(value * (combinePercent[e.getType().ordinal()] / 100 +1));
 			}

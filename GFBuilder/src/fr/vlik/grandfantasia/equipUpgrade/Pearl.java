@@ -13,7 +13,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Weapon;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 
 public class Pearl extends CompleteBuff {
@@ -21,10 +21,10 @@ public class Pearl extends CompleteBuff {
 	private static final String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	
-	private static Pearl[] dataWeapon = Loader.getWeaponPearl();
-	private static Pearl[] dataArmor = Loader.getArmorPearl();
-	private static Pearl[] dataWeaponCost = Loader.getWeaponCostPearl();
-	private static Pearl[] dataArmorCost = Loader.getArmorCostPearl();
+	private static Pearl[] dataWeapon = LoaderEquipUpgrade.getWeaponPearl();
+	private static Pearl[] dataArmor = LoaderEquipUpgrade.getArmorPearl();
+	private static Pearl[] dataWeaponCost = LoaderEquipUpgrade.getWeaponCostPearl();
+	private static Pearl[] dataArmorCost = LoaderEquipUpgrade.getArmorCostPearl();
 	
 	private Quality restricStuff;
 	private boolean cumulable;

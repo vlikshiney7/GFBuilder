@@ -114,7 +114,7 @@ public class ExtractTitleData {
 		
 		if(!quality.equals("GREY")) {
 			
-			String toCode = "new Title(\"" + name + "\", Quality." + quality + ", " + lvl + ", false, GradeName.NONE, new Calculable[] {\n";
+			String toCode = "new Title(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }}, Quality." + quality + ", " + lvl + ", false, GradeName.NONE, Tag.OTHER, new Calculable[] {\n";
 			
 			String[] split = effects.split("\n");
 			for(String s : split) {

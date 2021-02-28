@@ -1287,7 +1287,211 @@ public class LoaderCustomWeapon {
 	
 	static CustomWeapon[] getMeca1M() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Dague courte aveuglante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				100, WeaponType.MARTEAU2M, "meca1M/91sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1779, true),
+					new Effect(TypeEffect.AtkM, false, 982, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Dague courte aveuglante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				100, WeaponType.MARTEAU2M, "meca1M/icon0", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1779, true),
+					new Effect(TypeEffect.AtkM, false, 982, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Dague Chérubim"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				95, WeaponType.MARTEAU2M, "meca1M/icon6", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1662, true),
+					new Effect(TypeEffect.AtkM, false, 918, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de feu Sang de lune"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				91, WeaponType.MARTEAU2M, "meca1M/icon7", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1571, true),
+					new Effect(TypeEffect.AtkM, false, 867, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée éblouissante du vide lunaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				90, WeaponType.MARTEAU2M, "meca1M/icon5", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1548, true),
+					new Effect(TypeEffect.AtkM, false, 854, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Croc acéré des orcs"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				90, WeaponType.MARTEAU2M, "meca1M/icon5", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1548, true),
+					new Effect(TypeEffect.AtkM, false, 854, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Découpe-cavalerie"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				86, WeaponType.MARTEAU2M, "meca1M/86blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1458, true),
+					new Effect(TypeEffect.AtkM, false, 805, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée hivernale d'engelure"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				85, WeaponType.MARTEAU2M, "meca1M/79pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1436, true),
+					new Effect(TypeEffect.AtkM, false, 793, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame antique de sorcière"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				81, WeaponType.MARTEAU2M, "meca1M/79pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1348, true),
+					new Effect(TypeEffect.AtkM, false, 744, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau tournoyant frénétique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				80, WeaponType.MARTEAU2M, "meca1M/84pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1326, true),
+					new Effect(TypeEffect.AtkM, false, 732, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de torture"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				76, WeaponType.MARTEAU2M, "meca1M/84pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1240, true),
+					new Effect(TypeEffect.AtkM, false, 685, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame secrète du Rôdeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				75, WeaponType.MARTEAU2M, "meca1M/79pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1219, true),
+					new Effect(TypeEffect.AtkM, false, 673, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée forgée de runes"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				71, WeaponType.MARTEAU2M, "meca1M/79pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1135, true),
+					new Effect(TypeEffect.AtkM, false, 626, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Burin plume de phénix"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				70, WeaponType.MARTEAU2M, "meca1M/84pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1114, true),
+					new Effect(TypeEffect.AtkM, false, 615, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de lumière de berseker en kaolinite"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				66, WeaponType.MARTEAU2M, "meca1M/84pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1033, true),
+					new Effect(TypeEffect.AtkM, false, 570, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet du pic enneigé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				65, WeaponType.MARTEAU2M, "meca1M/icon9", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1012, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Longue épée hacheuse"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				61, WeaponType.MARTEAU2M, "meca1M/icon8", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 933, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau brise-barrière"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				56, WeaponType.MARTEAU2M, "meca1M/icon9", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 836, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Petite lame de Coupe-gorge"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				56, WeaponType.MARTEAU2M, "meca1M/icon8", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 836, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache ronde atypique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				53, WeaponType.MARTEAU2M, "meca1M/icon10", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 724, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Courte rapière rapide"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				51, WeaponType.MARTEAU2M, "meca1M/icon8", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 742, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Trancheur d'homme"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				47, WeaponType.MARTEAU2M, "meca1M/icon10", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 669, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de guerre péremptoire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				46, WeaponType.MARTEAU2M, "meca1M/icon9", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 651, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Simple lame chirurgicale rouge"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				44, WeaponType.MARTEAU2M, "meca1M/icon8", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 616, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée du commandant "); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				41, WeaponType.MARTEAU2M, "meca1M/icon8", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 564, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache légère de gobelin"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				37, WeaponType.MARTEAU2M, "meca1M/icon10", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 497, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau explosif"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				36, WeaponType.MARTEAU2M, "meca1M/icon9", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 481, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée de l'Elégance"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				31, WeaponType.MARTEAU2M, "meca1M/icon8", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 402, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Longue épée lumineuse de raid de nuit"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				30, WeaponType.MARTEAU2M, "meca1M/28ora", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 386, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Baïonnette de l'esprit combattant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				26, WeaponType.MARTEAU2M, "meca1M/14sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 327, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame en acier trempé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				24, WeaponType.MARTEAU2M, "meca1M/28ora", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 298, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Courte lame du pouvoir militaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				22, WeaponType.MARTEAU2M, "meca1M/14sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 271, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Belle épée de fer"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				21, WeaponType.MARTEAU2M, "meca1M/14sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 257, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Dague de fer fragmentaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				16, WeaponType.MARTEAU2M, "meca1M/14sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 193, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Dague standard de Kaslow"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				16, WeaponType.MARTEAU2M, "meca1M/14sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 193, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau solide du protecteur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				11, WeaponType.MARTEAU2M, "meca1M/31reinca", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 136, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Court marteau cruel"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				10, WeaponType.MARTEAU2M, "meca1M/31reinca", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 125, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de fer rouillé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				6, WeaponType.MARTEAU2M, "meca1M/31reinca", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 88, true),
+				}),
 		};
 	}
 	

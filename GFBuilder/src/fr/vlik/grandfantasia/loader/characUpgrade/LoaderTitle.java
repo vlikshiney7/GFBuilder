@@ -1174,6 +1174,12 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, true, 3),
 				new Effect(TypeEffect.PM, true, 3),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Apôtre des Profondeurs"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.PV, true, 5),
+				new Proc(5, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegSacre, false, 1000),
+				}),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Appelez-moi le roi de la fête"); put(Language.EN, "Call me the celebration king"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.VIT, false, 8),
 				new Effect(TypeEffect.Loot, false, 8),
@@ -1858,6 +1864,11 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur du Cristal"); put(Language.EN, "Crystal Master"); }}, Quality.BLUE, 31, false, GradeName.NONE, Tag.PVP, new Calculable[] {
 				new Effect(TypeEffect.PM, false, 300),
+			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Service client au top"); put(Language.EN, ""); }}, Quality.BLUE, 31, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
+				new Condition(TypeCondition.SPRITE, new Calculable[] {
+					new Effect(TypeEffect.VitComp, false, 15),
+				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Singe de mon coeur"); put(Language.EN, "Primate Love"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.CHRONO, new Calculable[] {
 				new Effect(TypeEffect.ReducPeneP, false, 5),
