@@ -1,7 +1,6 @@
 package fr.vlik.uidesign;
 
 import java.awt.Dimension;
-import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
@@ -19,7 +18,7 @@ public class JCustomLabel<T> extends JLabel {
 	
 	public JCustomLabel(T obj) {
 		this.object = obj;
-		this.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.setFont(Design.SUBTITLE);
 		
 		setIcon();
 		setColor();
@@ -63,7 +62,7 @@ public class JCustomLabel<T> extends JLabel {
 	}
 	
 	public void toStatLabel(int size, int left, int right) {
-		this.setFont(new Font("Open Sans", Font.BOLD, 16));
+		this.setFont(Design.TITLE);
 		this.setBackground(Design.UIColor[0]);
 		this.setBorder(new EmptyBorder(0, left, 0, right));
 		this.setMaximumSize(new Dimension(size, 25));

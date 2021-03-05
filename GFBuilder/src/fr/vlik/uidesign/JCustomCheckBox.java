@@ -1,9 +1,7 @@
 package fr.vlik.uidesign;
 
 import java.awt.Color;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 
@@ -54,20 +52,7 @@ public class JCustomCheckBox<T> extends JCheckBox {
 	}
 	
 	public void setIconUI(String iconOn, String iconOff) {
-		try {
-			this.setSelectedIcon(new ImageIcon(ImageIO.read(JCustomCheckBox.class.getResource("/fr/vlik/uidesign/images/check/" + iconOn + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOn + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconOn + ".png");
-		}
-		
-		try {
-			this.setIcon(new ImageIcon(ImageIO.read(JCustomCheckBox.class.getResource("/fr/vlik/uidesign/images/check/" + iconOff + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOff + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconOff + ".png");
-		}
+		this.setSelectedIcon(new ImageIcon(JCustomCheckBox.class.getResource(Design.RESOURCE + "check/" + iconOn + Design.PNG)));
+		this.setIcon(new ImageIcon(JCustomCheckBox.class.getResource(Design.RESOURCE + "check/" + iconOff + Design.PNG)));
 	}
 }

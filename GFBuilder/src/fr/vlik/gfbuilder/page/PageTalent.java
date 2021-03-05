@@ -2,33 +2,34 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
+import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.IconBuff;
+import fr.vlik.grandfantasia.InnerColorEffect;
 import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
+import fr.vlik.grandfantasia.characUpgrade.SingleTalent;
 import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
+import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
-import fr.vlik.uidesign.JLangRadioButton;
+import fr.vlik.uidesign.JCustomRadioButton;
+import fr.vlik.uidesign.JCustomTextPane;
 
 public class PageTalent extends PagePanel {
 
@@ -39,10 +40,10 @@ public class PageTalent extends PagePanel {
 	
 	private Grade currentGrade;
 	
-	private JLabel[] tabChosenTalent = new JLabel[9];
-	private ArrayList<ArrayList<JLangRadioButton>> radioTalent = new ArrayList<ArrayList<JLangRadioButton>>(8);
-	private ArrayList<JCustomComboBox<Talent>> talent = new ArrayList<JCustomComboBox<Talent>>(24);
-	private JCustomLabel<CombiTalent> combiTalent = new JCustomLabel<CombiTalent>(new CombiTalent());
+	private ArrayList<JCustomLabel<IconBuff>> tabChosenTalent = new ArrayList<JCustomLabel<IconBuff>>(9);
+	private ArrayList<JCustomButtonGroup<Talent>> groupTalent = new ArrayList<JCustomButtonGroup<Talent>>(8);
+	private ArrayList<JCustomComboBox<InnerColorEffect>> itemTalent = new ArrayList<JCustomComboBox<InnerColorEffect>>(24);
+	private JCustomTextPane combiTalentInfo;
 	
 	private JCustomButton reinitTalent;
 	private JCustomButton maxTalent;
@@ -59,61 +60,55 @@ public class PageTalent extends PagePanel {
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
-		ArrayList<ArrayList<Talent>> tabTalent = Talent.getPossibleTalent(this.currentGrade.getGrade(), PageGeneral.getInstance().getLvl());
+		Talent[] tabVoidTalent = Talent.getVoidData();
+		Talent[] tabTalent = Talent.getPossibleTalent(this.currentGrade);
+		int count = 0;
 		
-		for(int i = 0; i < 2; i++) {
-			boolean ancestral = i == 1;
+		for(int i = 0; i < 8; i++) {
+			this.groupTalent.add(new JCustomButtonGroup<Talent>());
 			
 			for(int j = 0; j < 4; j++) {
+				JCustomRadioButton<Talent> radioTalent;
+				int global = i*4 + j;
+				int id = count;
 				
-				int id = i*4+j;
-				try {
-					this.radioTalent.add(new ArrayList<JLangRadioButton>());
-					this.radioTalent.get(i*4+j).add(new JLangRadioButton(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/crossTalent.png")))));
-					this.radioTalent.get(i*4+j).get(0).setBackground(Design.UIColor[0]);
-					this.radioTalent.get(i*4+j).get(0).addActionListener(e -> {
-						updateSelectedTalent(id);
-						updateCombiTalent();
-						
-						setEffects();
-						MainFrame.getInstance().updateStat();
-					});
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				
-				for(int k = 0; k < 3; k++) {
-					int idIn = i*12+j*3+k;
+				if(j == 0) {
+					radioTalent = new JCustomRadioButton<Talent>(tabVoidTalent[i]);
+					this.tabChosenTalent.add(new JCustomLabel<IconBuff>(new SingleTalent(tabVoidTalent[i].getMap(), tabVoidTalent[i].getIcon(), null)));
+				} else {
+					InnerColorEffect[] innerLvl = tabTalent[count].getInnerTalent(PageGeneral.getInstance().getLvl());
 					
-					Talent[] currentTalent = new Talent[tabTalent.get(i*12+j*3+k).size() + 1];
-					currentTalent[0] = new Talent();
-					for(int l = 0; l < currentTalent.length-1; l++) {
-						currentTalent[l+1] = tabTalent.get(i*12+j*3+k).get(l);
-					}
-					
-					this.talent.add(new JCustomComboBox<Talent>(currentTalent));
-					this.talent.get(i*12+j*3+k).setRenderer(new CustomListCellRenderer(ancestral));
-					this.talent.get(i*12+j*3+k).addActionListener(e -> {
-						updateRadioTalent(idIn);
+					this.itemTalent.add(new JCustomComboBox<InnerColorEffect>(innerLvl));
+					this.itemTalent.get(count).addActionListener(e -> {
+						updateGroupTalent(id);
+						updateSelectedTalent(global);
 						updateCombiTalent();
 						
 						setEffects();
 						MainFrame.getInstance().updateStat();
 					});
 					
-					this.radioTalent.get(i*4+j).add(new JLangRadioButton(Talent.getData()[this.currentGrade.getGrade().index][i*12+j*3+k].getIcon()));
-					this.radioTalent.get(i*4+j).get(k+1).setBackground(Design.UIColor[0]);
-					this.radioTalent.get(i*4+j).get(k+1).addActionListener(e -> {
-						updateSelectedTalent(id);
-						updateCombiTalent();
-
-						setEffects();
-						MainFrame.getInstance().updateStat();
-					});
+					radioTalent = new JCustomRadioButton<Talent>(tabTalent[count]);
+					count++;
 				}
+				
+				radioTalent.setAlignmentX(CENTER_ALIGNMENT);
+				radioTalent.addActionListener(e -> {
+					trySelectTalent(global);
+					updateSelectedTalent(global);
+					updateCombiTalent();
+					
+					setEffects();
+					MainFrame.getInstance().updateStat();
+					
+				});
+				this.groupTalent.get(i).add(radioTalent);
 			}
 		}
-
+		
+		this.tabChosenTalent.add(new JCustomLabel<IconBuff>(new CombiTalent()));
+		this.combiTalentInfo = new JCustomTextPane();
+		
 		this.reinitTalent = new JCustomButton(this.labelGFB[11].getLang(), Design.RED_COLOR);
 		this.reinitTalent.addActionListener(e -> {
 			setMinCBoxTalent();
@@ -129,16 +124,16 @@ public class PageTalent extends PagePanel {
 		setEffects();
 	}
 	
-	public Talent getTalent(int id) {
-		return this.talent.get(id).getSelectedItem();
+	public int getSelectedIndex(int i) {
+		return this.groupTalent.get(i).getSelectedIndex();
 	}
 	
-	public CombiTalent getCombiTalent() {
-		return this.combiTalent.getItem();
+	public Talent getTalent(int i) {
+		return this.groupTalent.get(i).getSelectedItem();
 	}
 	
-	public ArrayList<JLangRadioButton> getRadioButton(int index) {
-		return this.radioTalent.get(index);
+	public InnerColorEffect getLvlTalent(int id) {
+		return this.itemTalent.get(id).getSelectedItem();
 	}
 	
 	@Override
@@ -150,23 +145,12 @@ public class PageTalent extends PagePanel {
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
 		
-		for(int i = 0; i < this.radioTalent.size(); i++) {
-			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {
-				if(this.radioTalent.get(i).get(j).isSelected() && j != 0 && this.talent.get(i*3+j-1).getSelectedIndex() != 0) {
-					Talent talent = this.getTalent(i*3+j-1);
-					
-					if(talent.getEffects(0) != null) {
-						for(Calculable c : talent.getEffects(0)) {
-							list.add(c);
-						}
-					}
+		for(JCustomLabel<IconBuff> label : this.tabChosenTalent) {
+			IconBuff talent = label.getItem();
+			if(talent.getEffects() != null) {
+				for(Calculable c : talent.getEffects()) {
+					list.add(c);
 				}
-			}
-		}
-		
-		if(this.getCombiTalent().getEffects() != null) {
-			for(Calculable c : this.getCombiTalent().getEffects()) {
-				list.add(c);
 			}
 		}
 		
@@ -182,16 +166,14 @@ public class PageTalent extends PagePanel {
 		
 		int[] orderTalent = { 5, 0, 4, 1, 8, 2, 7, 3, 6 };
 		for(int i = 0; i < orderTalent.length; i++) {
-			this.tabChosenTalent[orderTalent[i]] = new JLabel();
-			this.tabChosenTalent[orderTalent[i]].setBorder(new EmptyBorder(2, 2, 2, 2));
-			chosenTalent.add(this.tabChosenTalent[orderTalent[i]]);
+			this.tabChosenTalent.get(orderTalent[i]).setBorder(new EmptyBorder(2, 2, 2, 2));
+			chosenTalent.add(this.tabChosenTalent.get(orderTalent[i]));
 		}
-		this.tabChosenTalent[8].setBorder(new EmptyBorder(2, 2, 2, 2));
-		try {
-			this.tabChosenTalent[8].setIcon(new ImageIcon(ImageIO.read(MainFrame.class.getResource("/fr/vlik/grandfantasia/resources/talent/combi.png"))));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
+		JPanel subElem1 = new JPanel();
+		subElem1.setBackground(Design.UIColor[1]);
+		subElem1.add(chosenTalent);
+		subElem1.add(this.combiTalentInfo);
 		
 		JPanel elem1 = new JPanel();
 		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
@@ -200,10 +182,7 @@ public class PageTalent extends PagePanel {
 		elem1.add(this.labelGFB[0]);
 		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(chosenTalent);
-		elem1.add(Box.createVerticalStrut(5));
-		this.combiTalent.setAlignmentX(CENTER_ALIGNMENT);
-		elem1.add(this.combiTalent);
+		elem1.add(subElem1);
 		
 		this.add(elem1);
 		this.add(Box.createVerticalStrut(10));
@@ -227,24 +206,24 @@ public class PageTalent extends PagePanel {
 			for(int j = 0; j < 4; j++) {
 				JPanel lineTalent = new JPanel(new GridLayout(1, 4, 5, 5));
 				lineTalent.setBackground(Design.UIColor[0]);
-				lineTalent.add(this.radioTalent.get(i*4+j).get(0));
 				
-				for(int k = 0; k < 3; k++) {
-					JPanel singleTalent = new JPanel();
-					singleTalent.setLayout(new BoxLayout(singleTalent, BoxLayout.Y_AXIS));
-					singleTalent.setBackground(Design.UIColor[0]);
-					this.radioTalent.get(i*4+j).get(k+1).setAlignmentX(CENTER_ALIGNMENT);
-					singleTalent.add(this.radioTalent.get(i*4+j).get(k+1));
-					singleTalent.add(Box.createVerticalStrut(5));
-					singleTalent.add(this.talent.get(i*12+j*3+k));
-					
-					lineTalent.add(singleTalent);
-				}
-				
-				ButtonGroup talentGroup = new ButtonGroup();
-				for(int k = 0; k < 4; k++) {
-					talentGroup.add(this.radioTalent.get(i*4+j).get(k));
-				}
+				Enumeration<AbstractButton> itTalent = this.groupTalent.get(i*4+j).getElements();
+				do {
+					for(int k = 0; k < 4; k++) {
+						if(k == 0) {
+							lineTalent.add(itTalent.nextElement());
+						} else {
+							JPanel singleTalent = new JPanel();
+							singleTalent.setLayout(new BoxLayout(singleTalent, BoxLayout.Y_AXIS));
+							singleTalent.setBackground(Design.UIColor[0]);
+							singleTalent.add(itTalent.nextElement());
+							singleTalent.add(Box.createVerticalStrut(5));
+							singleTalent.add(this.itemTalent.get(i*12+j*3+k-1));
+							
+							lineTalent.add(singleTalent);
+						}
+					}
+				} while(itTalent.hasMoreElements());
 				
 				JPanel subtitle = new JPanel();
 				subtitle.setLayout(new BoxLayout(subtitle, BoxLayout.Y_AXIS));
@@ -278,6 +257,10 @@ public class PageTalent extends PagePanel {
 		elem3.setBackground(Design.UIColor[2]);
 		elem3.add(this.reinitTalent);
 		elem3.add(this.maxTalent);
+
+		for(JPanel panel : this.showAndHideTalent) {
+			panel.setVisible(false);
+		}
 		
 		this.add(elem3);
 	}
@@ -301,99 +284,124 @@ public class PageTalent extends PagePanel {
 			this.currentGrade = grade;
 		}
 		
-		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), PageGeneral.getInstance().getLvl());
+		Talent[] tabTalent = Talent.getPossibleTalent(this.currentGrade);
 		
-		for(int i = 0; i < listTalent.size(); i++) {
-			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
-			tabTalent[0] = new Talent();
-			for(int j = 0; j < tabTalent.length-1; j++) {
-				tabTalent[j+1] = listTalent.get(i).get(j);
+		int count = 0;
+		for(int i = 0; i < 32; i++) {
+			if(i % 4 != 0) {
+				this.groupTalent.get(i/4).getButton(i%4).setItem(tabTalent[count]);
+				count++;
 			}
-			
-			this.radioTalent.get(i/3).get((i%3)+1).setIcon(Talent.getData()[grade.getGrade().index][i].getIcon());
-			this.talent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));
 		}
+		
+		for(int i = 0; i < this.groupTalent.size(); i++) {
+			this.groupTalent.get(i).setSelectedIndex(0);
+			updateSelectedTalent(i*4);
+		}
+		
+		updateCombiTalent();
+		setEffects();
 	}
 	
 	public void updateTalent() {
-		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
-		ArrayList<ArrayList<Talent>> listTalent = Talent.getPossibleTalent(grade.getGrade(), lvl);
 		
-		for(int i = 0; i < listTalent.size(); i++) {
-			Talent[] tabTalent = new Talent[listTalent.get(i).size()+1];
-			tabTalent[0] = new Talent();
-			for(int j = 0; j < tabTalent.length-1; j++) {
-				tabTalent[j+1] = listTalent.get(i).get(j);
+		int count = 0;
+		for(int i = 0; i < 32; i++) {
+			if(i % 4 != 0) {
+				Talent talent = this.groupTalent.get(i/4).getElement(i%4);
+				InnerColorEffect[] innerLvl = talent.getInnerTalent(lvl);
+				
+				InnerColorEffect memory = this.getLvlTalent(count);
+				this.itemTalent.get(count).setModel(new DefaultComboBoxModel<InnerColorEffect>(innerLvl));
+				this.itemTalent.get(count).setSelectedItem(memory);
+				
+				count++;
 			}
-			
-			int memory = this.talent.get(i).getSelectedIndex() > tabTalent.length-1 ? tabTalent.length-1 : this.talent.get(i).getSelectedIndex();
-			this.talent.get(i).setModel(new DefaultComboBoxModel<Talent>(tabTalent));
-			this.talent.get(i).setSelectedIndex(memory);
 		}
 		
 		int[] tierLvl = new int[] { 6, 16, 31, 46, 66, 70, 73, 77 };
 		for(int i = 0; i < tierLvl.length; i++) {
-			if(tierLvl[i] <= lvl) this.showAndHideTalent.get(i).setVisible(true);
-			else this.showAndHideTalent.get(i).setVisible(false);
+			if(tierLvl[i] <= lvl) {
+				this.showAndHideTalent.get(i).setVisible(true);
+			} else {
+				this.groupTalent.get(i).setSelectedIndex(0);
+				this.showAndHideTalent.get(i).setVisible(false);
+			}
 		}
 	}
 	
-	private void updateSelectedTalent(int index) {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		ArrayList<JLangRadioButton> radio = this.radioTalent.get(index);
-		for(int i = 0; i < radio.size(); i++) {
-			if(radio.get(i).isSelected()) {
-				if(i == 0 || this.talent.get(index*3+i-1).getSelectedIndex() == 0) {
-					this.tabChosenTalent[index].setIcon(new ImageIcon());
-				} else {
-					this.tabChosenTalent[index].setIcon(Talent.getData()[grade.getGrade().index][index*3+i-1].getIcon());
-				}
+	private void updateGroupTalent(int index24) {
+		int combiId = (index24 % 3) + 1;
+		if(this.itemTalent.get(index24).getSelectedIndex() == 0 && this.groupTalent.get(index24/3).getSelectedIndex() == combiId) {
+			this.groupTalent.get(index24/3).setSelectedIndex(0);
+		}
+	}
+	
+	private void trySelectTalent(int index32) {
+		int index24 = (index32/4)*3 + (index32%4) - 1;
+		if(index32 % 4 != 0) {
+			if(this.itemTalent.get(index24).getSelectedIndex() == 0) {
+				this.groupTalent.get(index32/4).setSelectedIndex(0);
 			}
+		}
+	}
+	
+	private void updateSelectedTalent(int index32) {
+		Talent groupTalent = this.groupTalent.get(index32/4).getSelectedItem();
+		int index24 = (index32/4)*3 + (index32%4) - 1;
+		
+		if(index32 % 4 != 0 && this.groupTalent.get(index32/4).getSelectedIndex() != 0) {
+			if(this.groupTalent.get(index32/4).getSelectedIndex() == (index24%3) + 1) {
+				SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), this.getLvlTalent(index24));
+				this.tabChosenTalent.get(index32/4).setItem(talent);
+			}
+		} else {
+			SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), null);
+			this.tabChosenTalent.get(index32/4).setItem(talent);
 		}
 	}
 	
 	private void updateCombiTalent() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int[] currentCode = new int[4];
+		
 		for(int i = 0; i < 4; i++) {
-			for(int j = 0; j < this.radioTalent.get(i).size(); j++) {
-				if(this.radioTalent.get(i).get(j).isSelected() && j != 0 && this.talent.get(i*3+j-1).getSelectedIndex() != 0) {
-					currentCode[i] = j;
-					break;
-				}
+			currentCode[i] = this.groupTalent.get(i).getSelectedIndex();
+		}
+		
+		CombiTalent combi = CombiTalent.getCombiTalent(grade.getGrade(), currentCode);
+		
+		this.tabChosenTalent.get(8).setItem(combi);
+		
+		String combiInfo = combi.getName(Language.FR) + "\n";
+		
+		if(combi.getEffects() != null) {
+			for(int i = 0; i < combi.getEffects().length; i++) {
+				combiInfo += "\t- " + combi.getEffects()[i].toString(Language.FR) + "\n";
 			}
 		}
-		this.combiTalent.setItem(CombiTalent.getCombiTalent(grade.getGrade(), currentCode));
-		this.combiTalent.setVisible(true);
-	}
-	
-	private void updateRadioTalent(int index) {
-		Grade grade = PageGeneral.getInstance().getGrade();
-		if(this.radioTalent.get(index/3).get(index % 3 + 1).isSelected()) {
-			if(this.talent.get(index).getSelectedIndex() == 0) {
-				this.radioTalent.get(index/3).get(index % 3 + 1).setSelected(false);
-				this.radioTalent.get(index/3).get(0).setSelected(true);
-				this.tabChosenTalent[index/3].setIcon(new ImageIcon());
-			} else {
-				this.tabChosenTalent[index/3].setIcon(Talent.getData()[grade.getGrade().index][index].getIcon());
-			}
-		}
+		
+		this.combiTalentInfo.setText(combiInfo);
 	}
 	
 	private void setMinCBoxTalent() {
-		for(JCustomComboBox<Talent> talent : this.talent) {
+		for(JCustomComboBox<InnerColorEffect> talent : this.itemTalent) {
 			if(talent.isVisible()) {
 				talent.setSelectedIndex(0);
-			} else break;
+			} else {
+				break;
+			}
 		}
 	}
 	
 	private void setMaxCBoxTalent() {
-		for(JCustomComboBox<Talent> talent : this.talent) {
+		for(JCustomComboBox<InnerColorEffect> talent : this.itemTalent) {
 			if(talent.isVisible()) {
 				talent.setSelectedIndex(talent.getItemCount()-1);
-			} else break;
+			} else {
+				break;
+			}
 		}
 	}
 	
@@ -406,45 +414,39 @@ public class PageTalent extends PagePanel {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		for(int i = 0; i < this.radioTalent.size(); i++) {
-			ArrayList<JLangRadioButton> buttons = this.radioTalent.get(i);
-			int select = 3;
-			
-			while(select > 0) {
-				if(buttons.get(select).isSelected()) {
-					break;
-				}
-				
-				select--;
-			}
-			
-			config.put("TalentSelect" + i, "" + select);
+		for(int i = 0; i < this.groupTalent.size(); i++) {
+			Talent talent = this.getTalent(i);
+			config.put("TalentSelect" + i, "" + talent.getName(Language.FR));
 		}
 		
-		for(int i = 0; i < this.talent.size(); i++) {
-			config.put("TalentLvl" + i, "" + this.talent.get(i).getSelectedIndex());
+		for(int i = 0; i < this.itemTalent.size(); i++) {
+			config.put("TalentLvl" + i, "" + this.itemTalent.get(i).getSelectedIndex());
 		}
 		
 		return config;
 	}
-
+	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		for(int i = 0; i < this.radioTalent.size(); i++) {
-			ArrayList<JLangRadioButton> buttons = this.radioTalent.get(i);
-			int select = Integer.valueOf(config.get("TalentSelect" + i));
+		for(int i = 0; i < this.itemTalent.size(); i++) {
+			this.itemTalent.get(i).setSelectedIndex(Integer.valueOf(config.get("TalentLvl" + i)));
+		}
+		
+		for(int i = 0; i < this.groupTalent.size(); i++) {
+			Talent talent = Talent.get(config.get("TalentSelect" + i), PageGeneral.getInstance().getGrade(), Language.FR);
 			
-			for(int j = 0; j < buttons.size(); j++) {
-				if(j == select) {
-					buttons.get(j).setSelected(true);
-				} else {
-					buttons.get(j).setSelected(false);
-				}
+			if(talent == null) {
+				this.groupTalent.get(i).setSelectedIndex(0);
+				updateSelectedTalent(i*4);
+			} else {
+				this.groupTalent.get(i).setSelectedItem(talent);
+				
+				int trigger = this.groupTalent.get(i).getSelectedIndex();
+				updateSelectedTalent(i*4 + trigger);
 			}
 		}
 		
-		for(int i = 0; i < this.talent.size(); i++) {
-			this.talent.get(i).setSelectedIndex(Integer.valueOf(config.get("TalentLvl" + i)));
-		}
+		updateCombiTalent();
+		setEffects();
 	}
 }

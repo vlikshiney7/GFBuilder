@@ -9,7 +9,6 @@ import javax.swing.JList;
 
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Tools;
-import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
@@ -21,16 +20,9 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 	private static final long serialVersionUID = 1L;
 	private static Language lang = Language.FR;
 	
-	protected boolean ancestral;
-	
 	public CustomListCellRenderer() {
 		super();
 	};
-	
-	public CustomListCellRenderer(boolean ancestral) {
-		super();
-		this.ancestral = ancestral;
-	}
 	
 	@Override
 	public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -73,24 +65,6 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 				renderer.setForeground(Tools.speColor[1]);
 			else
 				renderer.setForeground(Tools.speColor[0]);
-		} else if(value instanceof Talent) {
-			if(!this.ancestral) {
-				if(index == 0) {
-					renderer.setForeground(Tools.itemColor[0]);
-				} else if(index == 1) {
-					renderer.setForeground(Tools.itemColor[1]);
-				} else if(index == 2) {
-					renderer.setForeground(Tools.itemColor[2]);
-				} else {
-					renderer.setForeground(Tools.itemColor[3]);
-				}
-			} else {
-				if(index == 0) {
-					renderer.setForeground(Tools.itemColor[0]);
-				} else {
-					renderer.setForeground(Tools.itemColor[3]);
-				}
-			}
 		} else if(value instanceof SaveConfig) {
 			renderer.setText(((SaveConfig) value).getName());
 		}

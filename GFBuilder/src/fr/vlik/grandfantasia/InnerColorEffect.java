@@ -3,14 +3,15 @@ package fr.vlik.grandfantasia;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.stats.Calculable;
 
-public class InnerEffect extends Buff {
+public class InnerColorEffect extends ColorBuff {
 	
 	private int lvlBuff;
 	
-	public InnerEffect(Map<Language, String> name, int lvlBuff, Calculable[] effects) {
-		super(name, effects);
+	public InnerColorEffect(Map<Language, String> name, Quality quality, int lvlBuff, Calculable[] effects) {
+		super(name, quality, effects);
 		this.lvlBuff = lvlBuff;
 	}
 	

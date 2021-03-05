@@ -7,81 +7,83 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.IconBuff;
+import fr.vlik.grandfantasia.InnerColorEffect;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Condition;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
-public final class Talent implements Writable {
+public class Talent extends IconBuff {
 	
-	public static String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
+	private static String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
+	private static final Quality[] ORDER_QUALITY = new Quality[] { Quality.GREY, Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.BLUE, Quality.BLUE, Quality.BLUE, };
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Talent[][] data = LoaderCharacUpgrade.getTalent();
+	private static Talent[] voidData = LoaderCharacUpgrade.getVoidTalent();
 	
-	private String name;
 	private int[] lvl;
-	private Icon icon;
-	private Calculable[][] effects;
+	private InnerColorEffect[] lvlEffect;
 	
 	public Talent() {
-		this.name = "";
+		super();
 		this.lvl =  new int[] { 0 };
 		this.icon = setIcon("null");
 	}
 	
-	public Talent(String name, int[] lvl, String path, Calculable[][] effects) {
-		this.name = name;
+	public Talent(String path) {
+		super();
+		this.lvl =  new int[] { 0 };
+		this.icon = setIcon(path);
+	}
+	
+	@SuppressWarnings("serial")
+	public Talent(Map<Language, String> name, int[] lvl, String path, Calculable[][] lvlEffect) {
+		super(name, null);
 		this.lvl = lvl;
 		this.icon = setIcon(path);
-		this.effects = effects;
-	}
-	
-	public Talent(Talent talent, int index) {
-		this.name = talent.getName();
-		this.lvl = new int[] { talent.getLvl()[index] };
-		this.effects = new Calculable[1][];
-		this.effects[0] = talent.getEffects(index);
-	}
-	
-	public String getName() {
-		return this.name;
+		
+		this.lvlEffect = new InnerColorEffect[lvlEffect.length+1];
+		this.lvlEffect[0] = new InnerColorEffect(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, ORDER_QUALITY[0], 0, null);
+		
+		for(int i = 1; i < this.lvlEffect.length; i++) {
+			Quality quality = (lvlEffect.length == 6) ? ORDER_QUALITY[i] : Quality.BLUE;
+			
+			String item = "Lvl " + this.lvl[i-1] + " -";
+			this.lvlEffect[i] = new InnerColorEffect(new HashMap<Language, String>() {{ put(Language.FR, item); put(Language.EN, item); }}, quality, i, lvlEffect[i-1]);
+		}
 	}
 	
 	public int[] getLvl() {
 		return this.lvl;
 	}
 	
-	public Icon getIcon() {
-		return this.icon;
+	@Override
+	public String getInfo(Language lang) {
+		if(this.name.get(lang) == "") {
+			return this.name.get(Language.FR);
+		}
+		return "";
 	}
 	
-	public Calculable[] getEffects(int i) {
-		Calculable[] list = new Calculable[this.effects[i].length];
+	@Override
+	public String getTooltip() {
+		return "<html>" + this.name.get(Language.FR) + "</html>";
+	}
+	
+	public InnerColorEffect[] getInnerTalent(int lvl) {
+		ArrayList<InnerColorEffect> result = new ArrayList<InnerColorEffect>();
+		result.add(this.lvlEffect[0]);
 		
-		for(int j = 0; j < this.effects[i].length; j++) {
-			Calculable c = this.effects[i][j];
-			
-			if(c instanceof Effect) {
-				list[j] = new Effect((Effect) c);
-			} else if(c instanceof StaticEffect) {
-				list[j] = new StaticEffect((StaticEffect) c);
-			} else if(c instanceof SkillEffect) {
-				list[j] = new SkillEffect((SkillEffect) c);
-			} else if(c instanceof Proc) {
-				list[j] = new Proc((Proc) c);
-			} else if(c instanceof Condition) {
-				list[j] = new Condition((Condition) c);
+		for(int i = 0; i < this.lvl.length; i++) {
+			if(this.lvl[i] <= lvl) {
+				result.add(this.lvlEffect[i+1]);
 			}
 		}
 		
-		return list;
+		return result.toArray(new InnerColorEffect[result.size()]);
 	}
 	
 	public Icon setIcon(String path) {
@@ -96,46 +98,25 @@ public final class Talent implements Writable {
 		return ICONS.get(path);
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
-		return "Lvl " + this.lvl[0];
-	}
-	
-	@Override
-	public String getTooltip() {
-		return getTooltip(0);
-	}
-	
-	public String getTooltip(int i) {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		
-		if(this.effects != null) {
-			for(Calculable e : this.effects[i]) {
-				tooltip.append(e.getTooltip());
+	public static Talent get(String name, Grade grade, Language lang) {
+		for(Talent talent : Talent.data[grade.getGrade().index]) {
+			if(talent.getName(lang).equals(name)) {
+				return talent;
 			}
 		}
 		
-		return "<html>" + tooltip + "</html>";
+		return null;
 	}
 	
-	public static ArrayList<ArrayList<Talent>> getPossibleTalent(GradeName grade, int lvl) {
-		ArrayList<ArrayList<Talent>> result = new ArrayList<ArrayList<Talent>>();
-		for(int i = 0; i < 24; i++) {
-			result.add(new ArrayList<Talent>());
-			Talent currentTalent = Talent.data[grade.index][i];
-			for(int j = 0; j < currentTalent.getLvl().length; j++) {
-				if(currentTalent.getLvl()[j] <= lvl) {
-					result.get(i).add(new Talent(currentTalent, j));
-				} else {
-					break;
-				}
-			}
-		}
-		
-		return result;
+	public static Talent[] getPossibleTalent(Grade grade) {
+		return Talent.data[grade.getGrade().index];
 	}
 	
 	public static Talent[][] getData() {
 		return Talent.data;
+	}
+	
+	public static Talent[] getVoidData() {
+		return Talent.voidData;
 	}
 }

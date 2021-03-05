@@ -4,7 +4,6 @@ import fr.vlik.gfbuilder.page.PageGeneral;
 import fr.vlik.gfbuilder.page.PageTalent;
 import fr.vlik.grandfantasia.Grade;
 import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.characUpgrade.Talent;
 
 public class Util {
 	
@@ -27,15 +26,9 @@ public class Util {
 		} else if(grade.getGrade() == GradeName.RANGER || grade.getGrade() == GradeName.ASSASSIN) {
 			return lvl >= 16;
 		} else if(grade.getGrade() == GradeName.BERSERKER && lvl >= 31) {
-			if(PageTalent.getInstance().getRadioButton(2).get(3).isSelected()) {
-				Talent talent = PageTalent.getInstance().getTalent(8);
-				return talent.getLvl()[0] > 0;
-			}
+			return PageTalent.getInstance().getSelectedIndex(2) == 3;
 		} else if(grade.getGrade() == GradeName.SAGE && lvl >= 31) {
-			if(PageTalent.getInstance().getRadioButton(2).get(1).isSelected()) {
-				Talent talent = PageTalent.getInstance().getTalent(6);
-				return talent.getLvl()[0] > 0;
-			}
+			return PageTalent.getInstance().getSelectedIndex(2) == 1;
 		}
 		
 		return false;

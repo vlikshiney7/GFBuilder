@@ -22,6 +22,10 @@ public abstract class Buff implements Writable {
 		this.effects = effects;
 	}
 	
+	public Map<Language, String> getMap() {
+		return this.name;
+	}
+	
 	public String getName(Language lang) {
 		return this.name.get(lang);
 	}

@@ -16,12 +16,57 @@ public class JCustomButtonGroup<T> extends ButtonGroup {
 		super.add(radio);
 	}
 	
+	public T getElement(int i) {
+		int count = 0;
+		Enumeration<AbstractButton> it = this.getElements();
+		do {
+			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
+			if(i == count) {
+				return element.getItem();
+			}
+			
+			count++;
+		} while(it.hasMoreElements());
+		
+		return null;
+	}
+	
+	public JCustomRadioButton<T> getButton(int i) {
+		int count = 0;
+		Enumeration<AbstractButton> it = this.getElements();
+		do {
+			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
+			if(i == count) {
+				return element;
+			}
+			
+			count++;
+		} while(it.hasMoreElements());
+		
+		return null;
+	}
+	
 	public void setVisible(boolean visible) {
 		Enumeration<AbstractButton> it = this.getElements();
 		do {
 			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
 			element.setVisible(visible);
 		} while(it.hasMoreElements());
+	}
+	
+	public int getSelectedIndex() {
+		int count = 0;
+		Enumeration<AbstractButton> it = this.getElements();
+		do {
+			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
+			if(element.isSelected()) {
+				return count;
+			}
+			
+			count++;
+		} while(it.hasMoreElements());
+		
+		return 0;
 	}
 	
 	public T getSelectedItem() {
@@ -34,6 +79,20 @@ public class JCustomButtonGroup<T> extends ButtonGroup {
 		} while(it.hasMoreElements());
 		
 		return null;
+	}
+	
+	public void setSelectedIndex(int index) {
+		int count = 0;
+		Enumeration<AbstractButton> it = this.getElements();
+		do {
+			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
+			if(count == index) {
+				element.setSelected(true);
+			} else {
+				element.setSelected(false);
+			}
+			count++;
+		} while(it.hasMoreElements());
 	}
 	
 	public void setSelectedItem(T obj) {

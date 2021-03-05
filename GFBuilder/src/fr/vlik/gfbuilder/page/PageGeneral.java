@@ -65,6 +65,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			PageCapeRing.getInstance().updateCapeRing();
 			updateTitle();
 			PageTalent.getInstance().updateListTalent();
+			PageTalent.getInstance().updateTalent();
 			PageSpeciality.getInstance().updateListSpe();
 			
 			Overlay.getInstance().setGrade(this.getGrade());

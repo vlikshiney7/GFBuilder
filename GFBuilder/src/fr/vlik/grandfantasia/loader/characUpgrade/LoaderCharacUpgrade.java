@@ -18,11 +18,11 @@ import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
+import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.TransformEffect;
-import fr.vlik.grandfantasia.stats.Proc.Activation;
-import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.TransformEffect.TypeTransformation;
 
 @SuppressWarnings("serial")
@@ -46,6 +46,19 @@ public class LoaderCharacUpgrade {
 			LoaderTalent.getClass9(),
 			LoaderTalent.getClass10(),
 			LoaderTalent.getClass11(),
+		};
+	}
+	
+	public static Talent[] getVoidTalent() {
+		return new Talent[] {
+			new Talent("void-0"),
+			new Talent("void-1"),
+			new Talent("void-2"),
+			new Talent("void-3"),
+			new Talent("void-4"),
+			new Talent("void-5"),
+			new Talent("void-6"),
+			new Talent("void-7"),
 		};
 	}
 	

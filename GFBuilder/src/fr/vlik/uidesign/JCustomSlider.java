@@ -1,7 +1,5 @@
 package fr.vlik.uidesign;
 
-import java.awt.Font;
-
 import javax.swing.JSlider;
 
 public class JCustomSlider extends JSlider {
@@ -11,7 +9,7 @@ public class JCustomSlider extends JSlider {
 
 	public JCustomSlider(double min, double max, double middle) {
 		super();
-		this.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		this.setFont(Design.TEXT);
 		this.setMinorTickSpacing((int) factor);
 		this.setPaintTicks(true);
 		

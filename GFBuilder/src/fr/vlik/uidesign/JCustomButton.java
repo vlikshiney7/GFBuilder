@@ -2,11 +2,9 @@ package fr.vlik.uidesign;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
@@ -52,33 +50,15 @@ public class JCustomButton extends JButton {
 	}
 	
 	public void setIcon(String icon) {
-		try {
-			this.setIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/button/" + icon + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + icon + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + icon + ".png");
-		}
+		this.setIcon(new ImageIcon(JCustomButton.class.getResource(Design.RESOURCE + "button/" + icon + Design.PNG)));
 	}
 	
 	public void setPressedIcon(String iconPress) {
-		try {
-			this.setPressedIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/button/" + iconPress + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconPress + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconPress + ".png");
-		}
+		this.setPressedIcon(new ImageIcon(JCustomButton.class.getResource(Design.RESOURCE + "button/" + iconPress + Design.PNG)));
 	}
 	
 	public void setRolloverIcon(String iconHover) {
-		try {
-			this.setRolloverIcon(new ImageIcon(ImageIO.read(JCustomButton.class.getResource("/fr/vlik/uidesign/images/button/" + iconHover + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconHover + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconHover + ".png");
-		}
+		this.setRolloverIcon(new ImageIcon(JCustomButton.class.getResource(Design.RESOURCE + "button/" + iconHover + Design.PNG)));
 	}
 	
 	public void setBorder(Color color) {

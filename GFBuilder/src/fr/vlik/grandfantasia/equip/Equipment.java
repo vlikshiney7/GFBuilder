@@ -47,10 +47,6 @@ public abstract class Equipment extends CompleteBuff {
 		this.signature = signature;
 	}
 	
-	protected Map<Language, String> getMap() {
-		return this.name;
-	}
-	
 	public GradeName[] getGrades() {
 		return this.grades;
 	}

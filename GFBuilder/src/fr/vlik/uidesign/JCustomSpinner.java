@@ -2,7 +2,6 @@ package fr.vlik.uidesign;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Font;
 
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -28,7 +27,7 @@ public class JCustomSpinner extends JSpinner {
 	
 	private void setBlackUI() {
 		for(Component c : this.getEditor().getComponents()) {
-			c.setFont(new Font("Open Sans", Font.BOLD, 14));
+			c.setFont(Design.EDIT);
 			c.setBackground(Design.UIColor[0]);
 			c.setForeground(Design.FontColor[0]);
 		}

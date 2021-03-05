@@ -1,10 +1,8 @@
 package fr.vlik.uidesign;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
@@ -40,20 +38,7 @@ public class JLangRadioButton extends JRadioButton {
 	}
 	
 	public void setIconUI(String iconOn, String iconOff) {
-		try {
-			this.setSelectedIcon(new ImageIcon(ImageIO.read(JLangRadioButton.class.getResource("/fr/vlik/uidesign/images/radio/" + iconOn + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOn + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconOn + ".png");
-		}
-		
-		try {
-			this.setIcon(new ImageIcon(ImageIO.read(JLangRadioButton.class.getResource("/fr/vlik/uidesign/images/radio/" + iconOff + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOff + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconOff + ".png");
-		}
+		this.setSelectedIcon(new ImageIcon(JLangRadioButton.class.getResource(Design.RESOURCE + "radio/" + iconOn + Design.PNG)));
+		this.setIcon(new ImageIcon(JLangRadioButton.class.getResource(Design.RESOURCE + "radio/" + iconOff + Design.PNG)));
 	}
 }

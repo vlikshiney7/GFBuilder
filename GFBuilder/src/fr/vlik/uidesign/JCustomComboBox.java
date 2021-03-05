@@ -1,7 +1,5 @@
 package fr.vlik.uidesign;
 
-import java.awt.Font;
-
 import javax.swing.ComboBoxModel;
 import javax.swing.JComboBox;
 
@@ -11,21 +9,21 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 
 	public JCustomComboBox() {
 		super();
-		this.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
 	}
 	
 	public JCustomComboBox(ComboBoxModel<T> object) {
 		super(object);
-		this.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
 	}
 	
 	public JCustomComboBox(T[] object) {
 		super(object);
-		this.setFont(new Font("Open Sans", Font.PLAIN, 12));
+		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
 	}

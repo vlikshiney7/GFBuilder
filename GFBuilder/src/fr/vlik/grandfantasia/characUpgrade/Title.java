@@ -140,8 +140,7 @@ public class Title extends ColorBuff {
 			}
 		}
 		
-		Title[] cast = new Title[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Title[result.size()]);
 	}
 	
 	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Title choice) {

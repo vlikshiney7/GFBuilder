@@ -1,7 +1,5 @@
 package fr.vlik.uidesign;
 
-import java.awt.Font;
-
 import javax.swing.JTextField;
 
 public class JCustomTextField extends JTextField {
@@ -10,7 +8,7 @@ public class JCustomTextField extends JTextField {
 	
 	public JCustomTextField() {
 		super();
-		this.setFont(new Font("Open Sans", Font.BOLD, 14));
+		this.setFont(Design.EDIT);
 		this.setHorizontalAlignment(JTextField.CENTER);
 		this.setCaretColor(Design.FontColor[0]);
 		this.putClientProperty("caretWidth", 2);

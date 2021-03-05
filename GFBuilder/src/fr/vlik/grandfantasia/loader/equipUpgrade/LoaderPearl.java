@@ -1555,7 +1555,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.Glace, false, 200),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'armure prestigieuse"); put(Language.EN, ""); }}, Quality.ORANGE, Quality.RED, false, "prestigieuse", new Calculable[] {
-				new Effect(TypeEffect.ReducPeneP, false, 10),
+				new Effect(TypeEffect.ReducPeneP, false, 20),
 				new Effect(TypeEffect.Glace, false, 300),
 				new Proc(10, Activation.Attacked, new Calculable[] {
 					new Effect(TypeEffect.ReflectP, false, 30),
@@ -1624,7 +1624,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.Foudre, false, 200),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de frontière prestigieuse"); put(Language.EN, ""); }}, Quality.ORANGE, Quality.RED, false, "prestigieuse", new Calculable[] {
-				new Effect(TypeEffect.ReducPeneM, false, 10),
+				new Effect(TypeEffect.ReducPeneM, false, 20),
 				new Effect(TypeEffect.Foudre, false, 300),
 				new Proc(10, Activation.Attacked, new Calculable[] {
 					new Effect(TypeEffect.ReflectM, false, 30),

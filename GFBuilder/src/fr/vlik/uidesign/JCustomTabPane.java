@@ -2,16 +2,11 @@ package fr.vlik.uidesign;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
 
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
 
 public class JCustomTabPane extends JToggleButton {
@@ -27,49 +22,32 @@ public class JCustomTabPane extends JToggleButton {
 		this.label = label;
 		
 		this.setBackground(Design.UIColor[0]);
-		this.setBorder(null);
-		super.setContentAreaFilled(false);
 		this.setSelectedBackgroundColor(Design.UIColor[1]);
-		this.setFocusPainted(false);
-		this.setFont(new Font("Open Sans", Font.PLAIN, 24));
-		this.setForeground(Design.FontColor[0]);
 		this.setHoverBackgroundColor(Design.UIColor[2]);
-		this.setPreferredSize(new Dimension(160, 0));
 		this.setPressedBackgroundColor(Design.UIColor[1]);
+		this.setBorder(null);
+		this.setContentAreaFilled(false);
+		this.setFocusPainted(false);
+		
+		this.setFont(Design.TABPANE);
+		this.setForeground(Design.FontColor[0]);
+		this.setPreferredSize(new Dimension(160, 0));
 	}
 	
 	public JCustomTabPane(String icon1, String icon2) {
-		super();
-		BufferedImage object = null;
+		ImageIcon object = new ImageIcon(JCustomTabPane.class.getResource(Design.RESOURCE + icon1 + Design.PNG));
+		this.setIcon(object);
+		this.setSelectedIcon(object);
 		
-		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + icon1 + ".png"));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + icon1);
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + icon1);
-		}
+		this.setDisabledIcon(new ImageIcon(JCustomTabPane.class.getResource(Design.RESOURCE + icon2 + Design.PNG)));
 		
-		super.setIcon(new ImageIcon(object));
-		super.setSelectedIcon(new ImageIcon(object));
-		
-		try {
-			object = ImageIO.read(MainFrame.class.getResource("/fr/vlik/uidesign/images/" + icon2 + ".png"));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + icon2);
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + icon2);
-		}
-		
-		super.setDisabledIcon(new ImageIcon(object));
-		
-		super.setBackground(Design.UIColor[0]);
+		this.setBackground(Design.UIColor[0]);
 		this.setSelectedBackgroundColor(Design.UIColor[0]);
 		this.setHoverBackgroundColor(Design.UIColor[2]);
 		this.setPressedBackgroundColor(Design.UIColor[1]);
-		super.setBorder(null);
-		super.setContentAreaFilled(false);
-		super.setFocusPainted(false);
+		this.setBorder(null);
+		this.setContentAreaFilled(false);
+		this.setFocusPainted(false);
 	}
 
 	@Override

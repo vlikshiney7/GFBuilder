@@ -28,10 +28,6 @@ public abstract class CustomEquipment extends IconBuff {
 		this.signature = "";
 	}
 	
-	protected Map<Language, String> getMap() {
-		return this.name;
-	}
-	
 	public String getName(Language lang) {
 		return this.name.get(lang);
 	}

@@ -1,14 +1,14 @@
 package fr.vlik.uidesign;
 
 import java.awt.Color;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class JCustomRadioButton<T> extends JRadioButton {
@@ -29,7 +29,11 @@ public class JCustomRadioButton<T> extends JRadioButton {
 			this.setForeground(Design.FontColor[0]);
 		}
 		
-		setIconUI(radioIcon, "radioOff");
+		if(this.object instanceof Iconable) {
+			setIconUI(((Iconable) this.object).getIcon());
+		} else {
+			setIconUI(radioIcon, "radioOff");
+		}
 		
 		setVoidUI();
 		updateText(Language.FR);
@@ -37,6 +41,22 @@ public class JCustomRadioButton<T> extends JRadioButton {
 	
 	public T getItem() {
 		return this.object;
+	}
+	
+	public void setItem(T obj) {
+		this.object = obj;
+		
+		updateText(Language.FR);
+		
+		if(this.object instanceof Colorable) {
+			this.setForeground(((Colorable) this.object).getColor());
+		} else {
+			this.setForeground(Design.FontColor[0]);
+		}
+		
+		if(this.object instanceof Iconable) {
+			setIconUI(((Iconable) this.object).getIcon());
+		}
 	}
 	
 	public void updateText(Language lang) {
@@ -53,21 +73,13 @@ public class JCustomRadioButton<T> extends JRadioButton {
 		this.setContentAreaFilled(false);
 	}
 	
+	public void setIconUI(Icon back) {
+		this.setSelectedIcon(back);
+		this.setIcon(Design.disableIcon((ImageIcon) back));
+	}
+	
 	public void setIconUI(String iconOn, String iconOff) {
-		try {
-			this.setSelectedIcon(new ImageIcon(ImageIO.read(JCustomRadioButton.class.getResource("/fr/vlik/uidesign/images/radio/" + iconOn + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOn + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconOn + ".png");
-		}
-		
-		try {
-			this.setIcon(new ImageIcon(ImageIO.read(JCustomRadioButton.class.getResource("/fr/vlik/uidesign/images/radio/" + iconOff + ".png"))));
-		} catch (IOException e) {
-			System.out.println("Image non chargé : " + iconOff + ".png");
-		} catch (IllegalArgumentException e) {
-			System.out.println("Image introuvable : " + iconOff + ".png");
-		}
+		this.setSelectedIcon(new ImageIcon(JCustomRadioButton.class.getResource(Design.RESOURCE + "radio/" + iconOn + Design.PNG)));
+		this.setIcon(new ImageIcon(JCustomRadioButton.class.getResource(Design.RESOURCE + "radio/" + iconOff + Design.PNG)));
 	}
 }

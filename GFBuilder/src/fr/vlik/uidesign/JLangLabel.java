@@ -37,12 +37,12 @@ public class JLangLabel extends JLabel {
 	
 	public void setBlackUI() {
 		this.setForeground(Design.FontColor[0]);
-		this.setFont(new Font("Open Sans", Font.PLAIN, 14));
+		this.setFont(Design.SUBTITLE);
 	}
 	
 	public static JLabel getSimpleLabel(String text) {
 		JLabel label = new JLabel(text);
-		label.setFont(new Font("Open Sans", Font.BOLD, 16));
+		label.setFont(Design.TITLE);
 		label.setForeground(Design.FontColor[0]);
 		label.setAlignmentX(CENTER_ALIGNMENT);
 		
@@ -51,7 +51,7 @@ public class JLangLabel extends JLabel {
 	
 	public static JLabel getStatLabel(int size, int left, int right) {
 		JLabel label = new JLabel();
-		label.setFont(new Font("Open Sans", Font.BOLD, 16));
+		label.setFont(Design.TITLE);
 		label.setBackground(Design.UIColor[0]);
 		label.setForeground(Design.FontColor[0]);
 		label.setBorder(new EmptyBorder(0, left, 0, right));

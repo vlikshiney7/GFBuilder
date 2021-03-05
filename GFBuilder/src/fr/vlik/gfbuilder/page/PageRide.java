@@ -613,7 +613,7 @@ public class PageRide extends PagePanel {
 				}
 			}
 			
-			Synthesis synthesis = Synthesis.getRide(config.get("Synthesis" + i), typeSynthesis, quality, select);
+			Synthesis synthesis = (i == 0) ? Synthesis.getRide(config.get("Synthesis" + i), typeSynthesis, quality, select+1) : Synthesis.getThrone(config.get("Synthesis" + i), typeSynthesis, quality, select+1);
 			
 			if(synthesis != null) {
 				this.synthesis.get(i).setSelectedItem(synthesis);
