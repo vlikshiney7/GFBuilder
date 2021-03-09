@@ -2,7 +2,7 @@ package fr.vlik.grandfantasia.loader.characUpgrade;
 
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.NameTransform;

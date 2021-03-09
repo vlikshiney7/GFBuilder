@@ -7,11 +7,11 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 
@@ -57,7 +57,7 @@ public final class Ring extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum RingType implements EnchantType {
+	public static enum RingType implements EquipType {
 		RING;
 	}
 	

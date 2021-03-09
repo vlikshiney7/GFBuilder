@@ -13,11 +13,12 @@ import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
 import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.Runway;
+import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class LoaderEquipUpgrade {
 	
@@ -129,6 +130,10 @@ public class LoaderEquipUpgrade {
 	
 	public static Pearl[] getArmorCostPearl() {
 		return LoaderPearl.getArmorCost();
+	}
+	
+	public static XpStuff[] getXpStuff() {
+		return LoaderXpStuff.getXpStuff();
 	}
 	
 	public static Runway[] getRunway() {

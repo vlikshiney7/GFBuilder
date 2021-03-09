@@ -23,7 +23,7 @@ import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.page.PageArmor;
 import fr.vlik.gfbuilder.page.PageCapeRing;
 import fr.vlik.gfbuilder.page.PageWeapon;
-import fr.vlik.grandfantasia.Grade;
+import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.customEquip.CustomArmor;
 import fr.vlik.grandfantasia.customEquip.CustomCape;
 import fr.vlik.grandfantasia.customEquip.CustomEquipment;

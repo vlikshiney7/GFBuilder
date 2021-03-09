@@ -586,7 +586,6 @@ public class MainFrame extends JFrame {
 					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].en);
 					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
 				}
-				
 			}
 		}
 	}

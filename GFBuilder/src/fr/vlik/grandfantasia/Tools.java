@@ -9,8 +9,8 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.enums.Filtrable;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;

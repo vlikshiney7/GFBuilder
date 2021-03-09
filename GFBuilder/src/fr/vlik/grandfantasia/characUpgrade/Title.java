@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.ColorBuff;
-import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
-import fr.vlik.grandfantasia.enums.Filtrable;
+import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.ColorBuff;
 
 public class Title extends ColorBuff {
 	

@@ -1,8 +1,9 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.template;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.stats.Calculable;

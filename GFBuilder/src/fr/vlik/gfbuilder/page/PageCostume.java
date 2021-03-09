@@ -23,6 +23,7 @@ import fr.vlik.grandfantasia.equipUpgrade.Runway;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.subEquip.Costume;
 import fr.vlik.grandfantasia.subEquip.Costume.CostumeType;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomCheckBox;
@@ -262,35 +263,23 @@ public class PageCostume extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
 		
 		if(this.costWeapon.get(0).isSelected()) {
 			for(int i = 0; i < 2; i++) {
 				if(this.getGroupQuality(i) != Quality.GREY) {
-					if(this.getCostume(i) != null && this.getCostume(i).getEffects() != null) {
-						for(int j = 0; j < this.getCostume(i).getEffects().length; j++) {
-							list.add(this.getCostume(i).getEffects()[j]);
-						}
-					}
+					list.addAll(this.getCostume(i));
 				}
 			}
 		} else {
 			if(this.getGroupQuality(0) != Quality.GREY) {
-				if(this.getCostume(0) != null && this.getCostume(0).getEffects() != null) {
-					for(int j = 0; j < this.getCostume(0).getEffects().length; j++) {
-						list.add(this.getCostume(0).getEffects()[j]);
-					}
-				}
+				list.addAll(this.getCostume(0));
 			}
 		}
 		
 		for(int i = 2; i < this.costume.size(); i++) {
 			if(this.getGroupQuality(i) != Quality.GREY) {
-				if(this.getCostume(i) != null && this.getCostume(i).getEffects() != null) {
-					for(int j = 0; j < this.getCostume(i).getEffects().length; j++) {
-						list.add(this.getCostume(i).getEffects()[j]);
-					}
-				}
+				list.addAll(this.getCostume(i));
 			}
 		}
 		
@@ -301,20 +290,12 @@ public class PageCostume extends PagePanel {
 			
 			CombiRunway combi = this.getRunway(i);
 			for(Runway runway : combi.getRunways()) {
-				for(Calculable c : runway.getEffects()) {
-					list.add(c);
-				}
+				list.addAll(runway.getEffects());
 			}
 		}
 		
 		for(int i = 0; i < this.costPearl.size(); i++) {
-			Pearl pearl = this.getCostPearl(i);
-			
-			if(pearl.getEffects() != null) {
-				for(Calculable c : pearl.getEffects()) {
-					list.add(c);
-				}
-			}
+			list.addAll(this.getCostPearl(i));
 		}
 		
 		this.effects = list;

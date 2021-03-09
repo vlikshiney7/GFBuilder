@@ -3,12 +3,12 @@ package fr.vlik.grandfantasia.equipUpgrade;
 import java.util.ArrayList;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.InnerEffect;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.InnerEffect;
 
 public class RedEnchantment extends Enchantment {
 	
@@ -18,7 +18,7 @@ public class RedEnchantment extends Enchantment {
 		super();
 	}
 	
-	public RedEnchantment(Map<Language, String> name, int lvlMin, int lvlMax, EnchantType[] tabType, Calculable[][] lvlEffect) {
+	public RedEnchantment(Map<Language, String> name, int lvlMin, int lvlMax, EquipType[] tabType, Calculable[][] lvlEffect) {
 		super(name, lvlMin, lvlMax, Quality.RED, tabType, null);
 		
 		this.lvlEffect = new InnerEffect[lvlEffect.length];

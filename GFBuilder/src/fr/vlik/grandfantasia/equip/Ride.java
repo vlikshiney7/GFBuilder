@@ -7,13 +7,14 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.CompleteBuff;
-import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Ride extends CompleteBuff {
 	
@@ -29,7 +30,7 @@ public class Ride extends CompleteBuff {
 	
 	private int lvl;
 	private boolean reinca;
-	private boolean nerfXpStuff = false;
+	private RideType type = RideType.NORMAL;
 	
 	public Ride() {
 		super();
@@ -45,12 +46,20 @@ public class Ride extends CompleteBuff {
 		this.icon = setIcon(path);
 	}
 	
-	public Ride(Map<Language, String> name, int lvl, boolean reinca, boolean nerfXpStuff, String path, Effect[] effects) {
+	public Ride(Map<Language, String> name, int lvl, boolean reinca, RideType type, String path, Effect[] effects) {
 		super(name, Quality.ORANGE, effects);
 		this.lvl = lvl;
 		this.reinca = reinca;
-		this.nerfXpStuff = nerfXpStuff;
+		this.type = type;
 		this.icon = setIcon(path);
+	}
+	
+	public static enum RideType implements EquipType {
+		NORMAL, NERF;
+	}
+	
+	public RideType getType() {
+		return this.type;
 	}
 	
 	public int getLvl() {
@@ -59,10 +68,6 @@ public class Ride extends CompleteBuff {
 	
 	public boolean isReinca() {
 		return this.reinca;
-	}
-
-	public boolean isNerfXpStuff() {
-		return this.nerfXpStuff;
 	}
 	
 	@Override

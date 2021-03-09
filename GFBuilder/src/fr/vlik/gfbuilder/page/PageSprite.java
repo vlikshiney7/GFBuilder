@@ -13,9 +13,10 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.Blason.BlasonType;
-import fr.vlik.grandfantasia.IslandBuff;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.gameBuff.IslandBuff;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 
@@ -72,17 +73,13 @@ public class PageSprite extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
 		
 		for(int i = 0; i < this.blason.size(); i++) {
 			list.addAll(this.getBlason(i).getEffects());
 		}
 		
-		if(this.getIsleBuff().getEffects() != null) {
-			for(Calculable e : this.getIsleBuff().getEffects()) {
-				list.add(e);
-			}
-		}
+		list.addAll(this.getIsleBuff());
 		
 		this.effects = list;
 	}

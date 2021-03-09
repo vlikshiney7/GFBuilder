@@ -3,11 +3,11 @@ package fr.vlik.grandfantasia.characUpgrade;
 import java.util.ArrayList;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.CompleteBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Stone extends CompleteBuff {
 	

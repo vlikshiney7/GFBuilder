@@ -5,6 +5,7 @@ import java.util.HashMap;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Ride;
+import fr.vlik.grandfantasia.equip.Ride.RideType;
 import fr.vlik.grandfantasia.stats.Effect;
 
 @SuppressWarnings("serial")
@@ -13,8 +14,8 @@ public class LoaderRide {
 	static Ride[] getRide() {
 		return new Ride[] {
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Mordragon spectral de guerre"); put(Language.EN, ""); }}, 1, true, "reinca", new Effect[] { new Effect(TypeEffect.Depla, false, 50), }),
-			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Goldo-Lion de Guerre"); put(Language.EN, ""); }}, 60, false, true, "goldo3", new Effect[] { new Effect(TypeEffect.Depla, false, 60), }),
-			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup Spectral de Combat"); put(Language.EN, ""); }}, 60, false, true, "loup0", new Effect[] { new Effect(TypeEffect.Depla, false, 60), }),
+			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Goldo-Lion de Guerre"); put(Language.EN, ""); }}, 60, false, RideType.NERF, "goldo3", new Effect[] { new Effect(TypeEffect.Depla, false, 60), }),
+			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup Spectral de Combat"); put(Language.EN, ""); }}, 60, false, RideType.NERF, "loup0", new Effect[] { new Effect(TypeEffect.Depla, false, 60), }),
 			
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Aérowing de combat"); put(Language.EN, ""); }}, 40, false, "airwing1", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Alpaga Étincelant de combat"); put(Language.EN, ""); }}, 40, false, "alpaga", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),

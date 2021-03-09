@@ -2,7 +2,7 @@ package fr.vlik.grandfantasia.loader.customEquip;
 
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.customEquip.CustomCape;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;

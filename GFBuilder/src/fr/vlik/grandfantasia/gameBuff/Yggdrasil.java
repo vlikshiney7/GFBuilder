@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.gameBuff;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,6 +6,7 @@ import java.util.Map;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
 
 public class Yggdrasil extends IconBuff {
 	

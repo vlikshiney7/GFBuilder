@@ -2,8 +2,8 @@ package fr.vlik.gfbuilder;
 
 import fr.vlik.gfbuilder.page.PageGeneral;
 import fr.vlik.gfbuilder.page.PageTalent;
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 
 public class Util {
 	

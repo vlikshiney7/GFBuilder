@@ -6,6 +6,7 @@ import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 @SuppressWarnings("serial")

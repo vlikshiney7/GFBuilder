@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.ColorBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
 import fr.vlik.grandfantasia.loader.subEquip.LoaderSubEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.ColorBuff;
 
 public class Synthesis extends ColorBuff {
 	

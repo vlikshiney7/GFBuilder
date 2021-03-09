@@ -13,9 +13,8 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.InnerEffect;
-import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.customEquip.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -32,6 +31,8 @@ import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomSlider;
@@ -50,8 +51,8 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
 	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(3);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(12);
-	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(6);
-	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(6);
+	private ArrayList<JCustomComboBox<XpStuff>> xpStuff = new ArrayList<JCustomComboBox<XpStuff>>(6);
+	private ArrayList<JCustomComboBox<InnerEffect>> lvlXpStuff = new ArrayList<JCustomComboBox<InnerEffect>>(6);
 	
 	private ArrayList<JCustomComboBox<RedFortification>> redFortif = new ArrayList<JCustomComboBox<RedFortification>>(3);
 	private ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>(9);
@@ -179,16 +180,16 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 			for(int j = 0; j < 2; j++) {
 				int duo = i*2+j;
 				
-				this.effectXpStuff.add(new JCustomComboBox<TypeEffect>(new TypeEffect[] { TypeEffect.NONE }));
-				this.effectXpStuff.get(duo).addActionListener(e -> {
+				this.xpStuff.add(new JCustomComboBox<XpStuff>());
+				this.xpStuff.get(duo).addActionListener(e -> {
 					updateLvlXpStuff(duo);
 					
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.effectXpStuff.get(duo).setVisible(false);
+				this.xpStuff.get(duo).setVisible(false);
 				
-				this.lvlXpStuff.add(new JCustomComboBox<Integer>());
+				this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
 				this.lvlXpStuff.get(duo).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
@@ -252,11 +253,11 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 		return this.pearl.get(id).getSelectedItem();
 	}
 
-	public TypeEffect getEffectXpStuff(int id) {
-		return this.effectXpStuff.get(id).getSelectedItem();
+	public XpStuff getXpStuff(int id) {
+		return this.xpStuff.get(id).getSelectedItem();
 	}
 
-	public Integer getLvlXpStuff(int id) {
+	public InnerEffect getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 	
@@ -281,8 +282,8 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
-		ArrayList<Calculable> convert = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> convert = new CustomList<Calculable>();
 		
 		Weapon[] weapons = new Weapon[3];
 		ArrayList<InnerEffect> innerEffect = new ArrayList<InnerEffect>();
@@ -343,72 +344,57 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 		}
 		
 		for(int i = 0; i < weapons.length; i++) {
-			if(weapons[i].getEffects() != null) {
-				for(Calculable c : weapons[i].getEffects()) {
-					list.add(c);
-				}
-			}
+			list.addAll(weapons[i]);
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			if(this.getEffectXpStuff(i*2) == TypeEffect.NONE || this.getEffectXpStuff(i*2+1) == TypeEffect.NONE
-				|| this.getEffectXpStuff(i*2) == this.getEffectXpStuff(i*2+1)) {
+			if(this.getXpStuff(i*2) == null || this.getXpStuff(i*2+1) == null
+				|| this.getXpStuff(i*2).getType() == TypeEffect.NONE || this.getXpStuff(i*2+1).getType() == TypeEffect.NONE
+				|| this.getXpStuff(i*2).getType() == this.getXpStuff(i*2+1).getType()) {
 				continue;
 			}
 			
 			for(int j = 0; j < 2; j++) {
-				TypeEffect type = this.getEffectXpStuff(i*2+j);
-				int idListXp = weapons[i].getType().index;
-				
-				if(idListXp == -1) {
-					break;
-				}
-				
-				double valueXpStuff = XpStuff.getDataWeapon()[idListXp][this.effectXpStuff.get(i*2+j).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i*2+j).getSelectedIndex());
-				
-				if(duoWeapon && (type == TypeEffect.Atk || type == TypeEffect.AtkD || type == TypeEffect.AtkM)) {
-					list.add(new Effect(type, false, valueXpStuff * 0.75, true));
-				} else {
-					list.add(new Effect(type, false, valueXpStuff, true));
+				for(Calculable effect : this.getLvlXpStuff(i*2+j).getEffects()) {
+					if(effect instanceof Effect) {
+						Effect e = (Effect) effect;
+						
+						if(duoWeapon && (e.getType() == TypeEffect.Atk || e.getType() == TypeEffect.AtkD || e.getType() == TypeEffect.AtkM)) {
+							e.reduceCoef(0.75);
+						}
+						
+						list.add(e);
+					} else {
+						list.add(effect);
+					}
 				}
 			}
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
-					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
-				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
-				if(lvlXpStuff >= weapons[i].getLvl() && weapons[i].getBonusXP() != null) {
-					for(Calculable c : weapons[i].getBonusXP()) {
-						list.add(c);
-					}
+			if(this.getXpStuff(i*2) != null && this.getXpStuff(i*2+1) != null
+				&& this.getXpStuff(i*2).getType() != TypeEffect.NONE && this.getXpStuff(i*2+1).getType() != TypeEffect.NONE
+				&& this.getXpStuff(i*2).getType() != this.getXpStuff(i*2+1).getType()) {
+				
+				int lvlXpStuff = this.getLvlXpStuff(i*2).getLvlbuff() + this.getLvlXpStuff(i*2+1).getLvlbuff();
+				
+				if(lvlXpStuff >= weapons[i].getLvl()) {
+					list.addAll(weapons[i].getBonusXP());
 				}
 			}
 		}
 		
-		if(this.getBullet().getEffects() != null) {
-			for(Calculable c : this.getBullet().getEffects()) {
-				list.add(c);
-			}
-		}
+		list.addAll(this.getBullet());
 		
 		ArrayList<Pearl> notCombinablePearl = new ArrayList<Pearl>();
 		for(int i = 0; i < this.pearl.size(); i++) {
 			Pearl pearl = this.getPearl(i);
+			
 			if(pearl.isCumulable()) {
-				if(pearl.getEffects() != null) {
-					for(Calculable c : pearl.getEffects()) {
-						list.add(c);
-					}
-				}
+				list.addAll(pearl);
 			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
 				notCombinablePearl.add(pearl);
-				
-				if(pearl.getEffects() != null) {
-					for(Calculable c : pearl.getEffects()) {
-						list.add(c);
-					}
-				}
+				list.addAll(pearl);
 			}
 		}
 		
@@ -467,7 +453,7 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Design.UIColor[1]);
-				xp.add(this.effectXpStuff.get(i*2+j));
+				xp.add(this.xpStuff.get(i*2+j));
 				xp.add(this.lvlXpStuff.get(i*2+j));
 				xpWeapon.add(xp);
 			}
@@ -623,29 +609,23 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 	private void updateXpStuff(int id) {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
 			if(this.weaponType[id] != this.getWeapon(id).getType()) {
-				int weaponType = this.getWeapon(id).getType().index;
-				if(weaponType == 16) {
-					weaponType = 0;
-				}
+				XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getWeapon(id));
 				
-				TypeEffect[] tmp = new TypeEffect[XpStuff.getDataWeapon()[weaponType].length +1];
-				tmp[0] = TypeEffect.NONE;
-				for(int i = 0; i < tmp.length-1; i++) {
-					tmp[i+1] = XpStuff.getDataWeapon()[weaponType][i].getType();
-				}
-				
-				this.effectXpStuff.get(id*2).setModel(new DefaultComboBoxModel<TypeEffect>(tmp));
-				this.effectXpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<TypeEffect>(tmp));
+				this.xpStuff.get(id*2).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+				this.xpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
 			}
 			this.showAndHideXpStuff.get(id).setVisible(true);	
-			this.effectXpStuff.get(id*2).setVisible(true);
-			this.effectXpStuff.get(id*2+1).setVisible(true);
+			this.xpStuff.get(id*2).setVisible(true);
+			this.xpStuff.get(id*2+1).setVisible(true);
 		} else {
 			this.showAndHideXpStuff.get(id).setVisible(false);
-			this.effectXpStuff.get(id*2).setVisible(false);
-			this.effectXpStuff.get(id*2+1).setVisible(false);
-			this.effectXpStuff.get(id*2).setSelectedIndex(0);
-			this.effectXpStuff.get(id*2+1).setSelectedIndex(0);
+			this.xpStuff.get(id*2).setVisible(false);
+			this.xpStuff.get(id*2+1).setVisible(false);
+			
+			if(this.getXpStuff(id*2) != null && this.getXpStuff(id*2+1) != null) {
+				this.xpStuff.get(id*2).setSelectedIndex(0);
+				this.xpStuff.get(id*2+1).setSelectedIndex(0);
+			}
 		}
 		
 		this.weaponType[id] = this.getWeapon(id).getType();
@@ -783,38 +763,23 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 	private void updateLvlXpStuff(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
+		if(this.getXpStuff(id).getType() == TypeEffect.NONE || this.getXpStuff(indexPair).getType() == TypeEffect.NONE
+				|| this.getXpStuff(id).getType() == this.getXpStuff(indexPair).getType()) {
 			
 			this.lvlXpStuff.get(id).setVisible(false);
 			this.lvlXpStuff.get(indexPair).setVisible(false);
 			
-			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<Integer>());
-			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<InnerEffect>());
+			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>());
 		} else {
-			WeaponType type = this.getWeapon(id/2).getType();
+			XpStuff xpStuff = this.getXpStuff(id);
+			XpStuff xpStuffDuo = this.getXpStuff(indexPair);
 			
-			Integer[] tmp = new Integer[XpStuff.getDataWeapon()[type.index][this.effectXpStuff.get(id).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = i+1;
-			}
+			InnerEffect[] inner = xpStuff.getInnerEffect();
+			InnerEffect[] innerDuo = xpStuffDuo.getInnerEffect();
 			
-			Integer memory = this.getLvlXpStuff(id);
-			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<Integer>(tmp));
-			if(memory != null) {
-				this.lvlXpStuff.get(id).setSelectedItem(memory);
-			}
-			
-			tmp = new Integer[XpStuff.getDataWeapon()[type.index][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = i+1;
-			}
-			
-			memory = this.getLvlXpStuff(indexPair);
-			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
-			if(memory != null) {
-				this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
-			}
+			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
+			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(innerDuo));
 			
 			this.lvlXpStuff.get(id).setVisible(true);
 			this.lvlXpStuff.get(indexPair).setVisible(true);
@@ -824,24 +789,18 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 	private void updateMaxLvlValue(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getEffectXpStuff(id) == TypeEffect.NONE	|| this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
+		if(this.getXpStuff(id).getType() == TypeEffect.NONE || this.getXpStuff(indexPair).getType() == TypeEffect.NONE
+				|| this.getXpStuff(id).getType() == this.getXpStuff(indexPair).getType()) {
 			return;
 		}
 		
-		int currentLvl = this.lvlXpStuff.get(id).getSelectedIndex()+1;
+		InnerEffect memoryDuo = this.getLvlXpStuff(indexPair);
+		InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
 		
-		WeaponType type = this.getWeapon(id/2).getType();
-		int sizePair = XpStuff.getDataWeapon()[type.index][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		
-		Integer[] tmp = new Integer[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
-		for(int i = 0; i < tmp.length; i++) {
-			tmp[i] = i+1;
+		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
+		if(memoryDuo != null) {
+			this.lvlXpStuff.get(indexPair).setSelectedItem(memoryDuo);
 		}
-		
-		Integer memory = this.getLvlXpStuff(indexPair);
-		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
-		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
 	
 	private void updateValueFortif(int id) {
@@ -969,13 +928,14 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 			config.put("Pearl" + i, this.getPearl(i).getName(Language.FR));
 		}
 		
-		for(int i = 0; i < this.effectXpStuff.size(); i++) {
-			config.put("EffectXpStuff" + i, this.getEffectXpStuff(i).getInfo(lang));
+		for(int i = 0; i < this.xpStuff.size(); i++) {
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			config.put("EffectXpStuff" + i, value);
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			String value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).toString() : "0";
-			config.put("LvlXpStuff" + i, value);
+			Integer value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).getLvlbuff() : 0;
+			config.put("LvlXpStuff" + i, "" + value);
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
@@ -1067,20 +1027,38 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		for(int i = 0; i < this.effectXpStuff.size(); i++) {
-			this.effectXpStuff.get(i).setSelectedItem(TypeEffect.get(config.get("EffectXpStuff" + i), lang));
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			if(this.lvlXpStuff.get(i).getItemCount() > 0) {
+				this.lvlXpStuff.get(i).setSelectedIndex(0);
+			}
+		}
+		
+		for(int i = 0; i < this.xpStuff.size(); i++) {
+			if(this.getWeapon(i/2).getType() != WeaponType.NONE) {
+				XpStuff xpStuff = XpStuff.get(this.getWeapon(i/2), config.get("EffectXpStuff" + i));
+				
+				if(xpStuff == null) {
+					this.xpStuff.get(i).setSelectedIndex(0);
+				} else {
+					this.xpStuff.get(i).setSelectedItem(xpStuff);
+				}
+			}
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(1);
-		}
-		
-		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
+			XpStuff xpStuff = this.getXpStuff(i);
+			if(xpStuff != null) {
+				InnerEffect inner = xpStuff.getInnerEffect(Integer.valueOf(config.get("LvlXpStuff" + i)));
+				
+				if(inner != null) {
+					this.lvlXpStuff.get(i).setSelectedItem(inner);
+				}
+			}
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
 			RedFortification redFortif = RedFortification.get(config.get("RedFortif" + i));
+			
 			if(redFortif == null) {
 				this.redFortif.get(i).setSelectedIndex(0);
 			} else {

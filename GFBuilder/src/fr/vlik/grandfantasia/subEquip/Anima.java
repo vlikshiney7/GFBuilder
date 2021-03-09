@@ -6,13 +6,13 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.CompleteBuff;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.MultiEffect;
 import fr.vlik.grandfantasia.loader.subEquip.LoaderSubEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Anima extends CompleteBuff {
 	

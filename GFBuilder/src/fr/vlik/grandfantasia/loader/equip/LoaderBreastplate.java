@@ -3,7 +3,7 @@ package fr.vlik.grandfantasia.loader.equip;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;

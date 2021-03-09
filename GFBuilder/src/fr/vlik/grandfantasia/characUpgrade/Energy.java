@@ -2,11 +2,11 @@ package fr.vlik.grandfantasia.characUpgrade;
 
 import java.util.Map;
 
-import fr.vlik.grandfantasia.IconBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.IconBuff;
 
 public class Energy extends IconBuff {
 	

@@ -7,14 +7,14 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.IconBuff;
-import fr.vlik.grandfantasia.InnerColorEffect;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
+import fr.vlik.grandfantasia.template.InnerColorEffect;
 
 public class Talent extends IconBuff {
 	

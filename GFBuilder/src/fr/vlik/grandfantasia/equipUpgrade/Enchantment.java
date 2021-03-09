@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.ColorBuff;
 import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.ColorBuff;
 
 public class Enchantment extends ColorBuff {
 	
@@ -19,7 +19,7 @@ public class Enchantment extends ColorBuff {
 	
 	private int lvlMin;
 	private int lvlMax;
-	private EnchantType[] tabType;
+	private EquipType[] tabType;
 	
 	@SuppressWarnings("serial")
 	public Enchantment() {
@@ -29,7 +29,7 @@ public class Enchantment extends ColorBuff {
 		this.quality = Quality.GREY;
 	}
 	
-	public Enchantment(Map<Language, String> name, int lvlMin, int lvlMax, Quality quality, EnchantType[] tabType, Calculable[] effects) {
+	public Enchantment(Map<Language, String> name, int lvlMin, int lvlMax, Quality quality, EquipType[] tabType, Calculable[] effects) {
 		super(name, quality, effects);
 		this.lvlMin = lvlMin;
 		this.lvlMax = lvlMax;
@@ -44,16 +44,16 @@ public class Enchantment extends ColorBuff {
 		return this.lvlMax;
 	}
 	
-	public EnchantType[] getTabType() {
+	public EquipType[] getTabType() {
 		return this.tabType;
 	}
 	
-	public boolean containType(EnchantType type) {
+	public boolean containType(EquipType type) {
 		if(this.tabType == null) {
 			return false;
 		}
 		
-		for(EnchantType element : this.tabType) {
+		for(EquipType element : this.tabType) {
 			if(element == type) {
 				return true;
 			}

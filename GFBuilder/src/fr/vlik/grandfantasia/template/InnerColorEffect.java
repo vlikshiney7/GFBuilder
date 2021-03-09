@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.template;
 
 import java.util.Map;
 

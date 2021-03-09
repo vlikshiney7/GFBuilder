@@ -2,10 +2,10 @@ package fr.vlik.grandfantasia.characUpgrade;
 
 import java.util.Map;
 
-import fr.vlik.grandfantasia.IconBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
 
 public class LoveBuff extends IconBuff {
 	

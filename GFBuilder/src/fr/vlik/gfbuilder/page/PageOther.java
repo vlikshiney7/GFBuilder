@@ -11,12 +11,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.LoveBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.subEquip.Anima;
 import fr.vlik.grandfantasia.subEquip.Bague;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 
@@ -85,25 +86,11 @@ public class PageOther extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
 		
-		if(this.getBague().getEffects() != null) {
-			for(Calculable c : this.getBague().getEffects()) {
-				list.add(c);
-			}
-		}
-		
-		if(this.getLoveCo().getEffects() != null) {
-			for(Calculable e : this.getLoveCo().getEffects()) {
-				list.add(e);
-			}
-		}
-		
-		if(this.getAnima().getEffects() != null) {
-			for(Calculable c : this.getAnima().getEffects()) {
-				list.add(c);
-			}
-		}
+		list.addAll(this.getBague());
+		list.addAll(this.getLoveCo());
+		list.addAll(this.getAnima());
 		
 		this.effects = list;
 	}

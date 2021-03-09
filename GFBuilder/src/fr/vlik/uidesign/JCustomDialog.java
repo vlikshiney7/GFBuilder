@@ -13,10 +13,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.Lang;
-import fr.vlik.grandfantasia.enums.Filtrable;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 
 public class JCustomDialog extends JDialog {
 	

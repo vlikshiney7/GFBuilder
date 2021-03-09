@@ -4,10 +4,10 @@ import java.util.Map;
 
 import javax.swing.Icon;
 
-import fr.vlik.grandfantasia.IconBuff;
-import fr.vlik.grandfantasia.InnerColorEffect;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
+import fr.vlik.grandfantasia.template.InnerColorEffect;
 
 public class SingleTalent extends IconBuff {
 	

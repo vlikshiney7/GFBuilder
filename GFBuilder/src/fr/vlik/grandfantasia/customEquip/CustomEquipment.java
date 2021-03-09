@@ -3,13 +3,13 @@ package fr.vlik.grandfantasia.customEquip;
 import java.util.ArrayList;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.IconBuff;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
 
 public abstract class CustomEquipment extends IconBuff {
 	
@@ -44,7 +44,7 @@ public abstract class CustomEquipment extends IconBuff {
 		return this.iconName;
 	}
 	
-	public abstract EnchantType getType();
+	public abstract EquipType getType();
 	
 	public boolean containGrade(GradeName grade) {
 		if(grade == GradeName.NONE) {

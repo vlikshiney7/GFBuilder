@@ -249,4 +249,14 @@ public class Effect implements Calculable {
 		
 		return code;
 	}
+	
+	public static Effect[] tabEffect(TypeEffect type, boolean isPercent, double[] values, boolean withReinca) {
+		Effect[] tabEffect = new Effect[values.length];
+		
+		for(int i = 0; i < values.length; i++) {
+			tabEffect[i] = new Effect(type, isPercent, values[i], withReinca);
+		}
+		
+		return tabEffect;
+	}
 }

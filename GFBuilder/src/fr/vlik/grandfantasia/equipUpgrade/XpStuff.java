@@ -1,31 +1,43 @@
 package fr.vlik.grandfantasia.equipUpgrade;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.awt.Color;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.equip.Equipment;
+import fr.vlik.grandfantasia.equip.Ride;
+import fr.vlik.grandfantasia.interfaces.Colorable;
+import fr.vlik.grandfantasia.interfaces.EquipType;
+import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.InnerEffect;
 
-public class XpStuff {
+public class XpStuff implements Colorable, Writable {
 	
-	private static XpStuff[][] dataWeapon;
-	private static XpStuff[][] dataArmor;
-	private static XpStuff[][] dataCapeRing;
-	private static XpStuff[] dataMount;
-	static {
-		loadData();
-	}
+	private static XpStuff[] data = LoaderEquipUpgrade.getXpStuff();
 	
 	private TypeEffect type;
-	private ArrayList<Double> lvlValues = new ArrayList<Double>();
+	private EquipType[] tabType;
+	private InnerEffect[] lvlEffect;
 	
-	public XpStuff(String type, double[] values) {
-		this.type = TypeEffect.valueOf(type);
+	public XpStuff() {
+		this.type = TypeEffect.NONE;
+	}
+	
+	@SuppressWarnings("serial")
+	public XpStuff(TypeEffect type, EquipType[] tabType, Calculable[] effects) {
+		this.type = type;
+		this.tabType = tabType;
 		
-		for(int i = 0; i < values.length; i++) {
-			this.lvlValues.add(values[i]);
+		this.lvlEffect = new InnerEffect[effects.length];
+		for(int i = 0; i < effects.length; i++) {
+			int lvl = i+1;
+			String name = "Lvl";
+			Calculable[] effect = new Calculable[] { effects[i] };
+			this.lvlEffect[i] = new InnerEffect(new HashMap<Language, String>() {{ put(Language.FR, name); put(Language.EN, name); }}, lvl, effect);
 		}
 	}
 	
@@ -33,91 +45,115 @@ public class XpStuff {
 		return this.type;
 	}
 	
-	public ArrayList<Double> getLvlValue() {
-		return this.lvlValues;
+	public InnerEffect[] getInnerEffect() {
+		return this.lvlEffect;
 	}
 	
-	public double getValueFromLvl(int index) {
-		return this.lvlValues.get(index);
-	}
-	
-	public static void loadData() {
-		ArrayList<ArrayList<ArrayList<XpStuff>>> list = new ArrayList<ArrayList<ArrayList<XpStuff>>>();
-		int[] size = new int[] { 16, 5, 2, 1 };
-		int[] nbEffect = new int[] { 5, 5, 5, 14 };
-		String[] filesName = new String[] { "weapon/xp", "armor/xp", "capering/xp", "xpride" };
+	public InnerEffect getInnerEffect(int lvl) {
+		if(lvl == 0) {
+			return null;
+		}
 		
-		for(int i = 0; i < size.length; i++) {
-			list.add(new ArrayList<ArrayList<XpStuff>>());
-			try (
-				BufferedReader reader = new BufferedReader(new InputStreamReader(
-						XpStuff.class.getResourceAsStream(Tools.RESOURCE + filesName[i] + ".txt"), "UTF-8"));
-			) {
-				String line = reader.readLine();
-				for(int j = 0; j < size[i]; j++) {
-					list.get(i).add(new ArrayList<XpStuff>());
-					for(int k = 0; k < nbEffect[i]; k++) {
-						String[] lineSplit = line.split("/");
-						double[] values = new double[Integer.parseInt(lineSplit[1])];
-						for(int l = 0; l < values.length; l++) values[l] = Double.parseDouble(lineSplit[l+2]);
-						
-						list.get(i).get(j).add(new XpStuff(lineSplit[0], values));
-						
-						line = reader.readLine();
-					}
-					line = reader.readLine();
+		for(InnerEffect inner : this.lvlEffect) {
+			if(lvl == inner.getLvlbuff()) {
+				return inner;
+			}
+		}
+		
+		return null;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		if(lang == Language.EN && !this.type.abbrevEN.equals("")) {
+			return this.type.abbrevEN;
+		}
+		return this.type.abbrevFR;
+	}
+	
+	@Override
+	public String getTooltip() {
+		return this.type.fr;
+	}
+	
+	@Override
+	public Color getColor() {
+		return this.type.getColor();
+	}
+	
+	public InnerEffect[] getPossibleLvl(InnerEffect inner) {
+		InnerEffect[] result = new InnerEffect[101 - inner.getLvlbuff()];
+		
+		for(int i = 0; i < result.length; i++) {
+			result[i] = this.lvlEffect[i];
+		}
+		
+		return result;
+	}
+	
+	public boolean containType(EquipType type) {
+		if(this.tabType == null) {
+			return false;
+		}
+		
+		for(EquipType element : this.tabType) {
+			if(element == type) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public static XpStuff get(Equipment equip, String name) {
+		for(XpStuff xpStuff : XpStuff.data) {
+			if(xpStuff.containType(equip.getType())) {
+				if(xpStuff.getInfo(Language.FR).equals(name)) {
+					return xpStuff;
 				}
-			} catch (IOException e) {
-				System.out.println("Error with " + XpStuff.class.getClass().getSimpleName() + " class");
 			}
 		}
 		
-		XpStuff.dataWeapon = new XpStuff[list.get(0).size()][];
-		for(int i = 0; i < dataWeapon.length; i++) {
-			XpStuff[] xpStuff = new XpStuff[list.get(0).get(i).size()];
-			for(int j = 0; j < list.get(0).get(i).size(); j++) {
-				xpStuff[j] = list.get(0).get(i).get(j);				
+		return null;
+	}
+	
+	public static XpStuff get(Ride ride, String name) {
+		for(XpStuff xpStuff : XpStuff.data) {
+			if(xpStuff.containType(ride.getType())) {
+				if(xpStuff.getInfo(Language.FR).equals(name)) {
+					return xpStuff;
+				}
 			}
-			XpStuff.dataWeapon[i] = xpStuff;
 		}
 		
-		XpStuff.dataArmor = new XpStuff[list.get(1).size()][];
-		for(int i = 0; i < dataArmor.length; i++) {
-			XpStuff[] xpStuff = new XpStuff[list.get(1).get(i).size()];
-			for(int j = 0; j < list.get(1).get(i).size(); j++) {
-				xpStuff[j] = list.get(1).get(i).get(j);				
+		return null;
+	}
+	
+	public static XpStuff[] getPossibleTypeEffect(Equipment equip) {
+		ArrayList<XpStuff> result = new ArrayList<XpStuff>();
+		
+		result.add(new XpStuff());
+		
+		for(XpStuff xpStuff : XpStuff.data) {
+			if(xpStuff.containType(equip.getType())) {
+				result.add(xpStuff);
 			}
-			XpStuff.dataArmor[i] = xpStuff;
 		}
 		
-		XpStuff.dataCapeRing = new XpStuff[list.get(2).size()][];
-		for(int i = 0; i < dataCapeRing.length; i++) {
-			XpStuff[] xpStuff = new XpStuff[list.get(2).get(i).size()];
-			for(int j = 0; j < list.get(2).get(i).size(); j++) {
-				xpStuff[j] = list.get(2).get(i).get(j);				
+		return result.toArray(new XpStuff[result.size()]);
+	}
+	
+	public static XpStuff[] getPossibleTypeEffect(Ride ride) {
+		ArrayList<XpStuff> result = new ArrayList<XpStuff>();
+		
+		result.add(new XpStuff());
+		
+		for(XpStuff xpStuff : XpStuff.data) {
+			if(xpStuff.containType(ride.getType())) {
+				result.add(xpStuff);
 			}
-			XpStuff.dataCapeRing[i] = xpStuff;
 		}
 		
-		XpStuff.dataMount = new XpStuff[list.get(3).get(0).size()];
-		for(int i = 0; i < dataMount.length; i++) {
-			dataMount[i] = list.get(3).get(0).get(i);
-		}
-	}
-	
-	public static XpStuff[][] getDataWeapon() {
-		return XpStuff.dataWeapon;
-	}
-	
-	public static XpStuff[][] getDataArmor() {
-		return XpStuff.dataArmor;
-	}
-	
-	public static XpStuff[][] getDataCapeRing() {
-		return XpStuff.dataCapeRing;
-	}
-	
-	public static XpStuff[] getDataMount() {
-		return XpStuff.dataMount;
+		return result.toArray(new XpStuff[result.size()]);
 	}
 }

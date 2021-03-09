@@ -7,13 +7,13 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.CompleteBuff;
-import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Bullet extends CompleteBuff {
 	

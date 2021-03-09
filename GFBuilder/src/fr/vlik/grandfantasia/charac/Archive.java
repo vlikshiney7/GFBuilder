@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.charac;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +7,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.Loader;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.ColorBuff;
 
 public class Archive extends ColorBuff {
 	

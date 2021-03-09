@@ -7,15 +7,15 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -68,7 +68,7 @@ public class Weapon extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum WeaponType implements EnchantType {
+	public static enum WeaponType implements EquipType {
 		EPEE1M(0, "une épée une main", ""), MARTEAU1M(1, "un marteau une main", ""), HACHE1M(2, "une hache une main", ""),
 		EPEE2M(3, "une épée à deux mains", ""), MARTEAU2M(4, "un marteau à deux mains", ""), HACHE2M(5, "une hache à deux mains", ""),
 		MECA1M(6, "une arme mécanique une main", ""), MECA2M(7, "une arme mécanique à deux mains", ""),

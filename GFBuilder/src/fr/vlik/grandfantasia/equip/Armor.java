@@ -7,14 +7,14 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.Reinca;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -84,7 +84,7 @@ public class Armor extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum ArmorType implements EnchantType {
+	public static enum ArmorType implements EquipType {
 		CASQUE(0, "casque", "helmet"),
 		PLASTRON(1, "plastron", "breastplate"),
 		JAMBIERE(2, "jambière", "legging"),

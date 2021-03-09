@@ -15,13 +15,14 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.GuildBuff;
-import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
 import fr.vlik.grandfantasia.characUpgrade.Stone;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.gameBuff.GuildBuff;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -180,33 +181,21 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
-			if(this.getNucleus(i).getEffects() != null) {
-				for(Calculable c : this.getNucleus(i).getEffects()) {
-					list.add(c);
-				}
-			}
+			list.addAll(this.getNucleus(i));
 		}
 		
 		for(JCustomLabel<GuildBuff> guild : this.guildBuffUsed) {
 			if(guild.isVisible()) {
-				if(guild.getItem().getEffects() != null) {
-					for(Calculable e : guild.getItem().getEffects()) {
-						list.add(e);
-					}
-				}
+				list.addAll(guild.getItem());
 			}
 		}
 		
 		for(JCustomLabel<Stone> stone : this.stoneUsed) {
 			if(stone.isVisible()) {
-				if(stone.getItem().getEffects() != null) {
-					for(Calculable e : stone.getItem().getEffects()) {
-						list.add(e);
-					}
-				}
+				list.addAll(stone.getItem());
 			}
 		}
 		
@@ -220,7 +209,7 @@ public class PageBuff extends PagePanel implements AdditionalEffect {
 
 	@Override
 	public void setAdditionalEffects() {
-		ArrayList<Calculable> additional = new ArrayList<Calculable>();
+		CustomList<Calculable> additional = new CustomList<Calculable>();
 		
 		for(int i = 0; i < this.energy.size(); i++) {
 			if(Energy.getData()[i].getEffects() != null) {

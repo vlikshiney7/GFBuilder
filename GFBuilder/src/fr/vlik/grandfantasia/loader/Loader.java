@@ -2,19 +2,19 @@ package fr.vlik.grandfantasia.loader;
 
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Archive;
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Grade.GradeName;
-import fr.vlik.grandfantasia.GuildBuff;
-import fr.vlik.grandfantasia.IslandBuff;
-import fr.vlik.grandfantasia.Reinca;
-import fr.vlik.grandfantasia.Yggdrasil;
+import fr.vlik.grandfantasia.charac.Archive;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.characUpgrade.LoveBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
+import fr.vlik.grandfantasia.gameBuff.GuildBuff;
+import fr.vlik.grandfantasia.gameBuff.IslandBuff;
+import fr.vlik.grandfantasia.gameBuff.Yggdrasil;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Condition.TypeCondition;

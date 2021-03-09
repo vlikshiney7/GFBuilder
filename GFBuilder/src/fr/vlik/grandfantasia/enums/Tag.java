@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.enums;
 import java.util.HashMap;
 import java.util.Map;
 
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 @SuppressWarnings("serial")

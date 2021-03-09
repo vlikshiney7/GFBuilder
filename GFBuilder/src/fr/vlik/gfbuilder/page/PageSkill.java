@@ -13,13 +13,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.characUpgrade.Skill;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
@@ -100,8 +101,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
-		ArrayList<Calculable> convert = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> convert = new CustomList<Calculable>();
 		
 		for(int i = 0; i < this.skillNatif.size(); i++) {
 			if(this.skillNatif.get(i).isVisible()) {
@@ -133,11 +134,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		}
 		
 		if(this.showAndHide.get(1).isVisible()) {
-			if(this.getProSkill().getEffects() != null) {
-				for(Calculable c : this.getProSkill().getEffects()) {
-					list.add(c);
-				}
-			}
+			list.addAll(this.getProSkill());
 		}
 		
 		this.effects = list;

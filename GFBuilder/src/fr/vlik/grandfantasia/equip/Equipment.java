@@ -2,15 +2,15 @@ package fr.vlik.grandfantasia.equip;
 
 import java.util.Map;
 
-import fr.vlik.grandfantasia.CompleteBuff;
-import fr.vlik.grandfantasia.Grade.GradeName;
 import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
-import fr.vlik.grandfantasia.interfaces.EnchantType;
+import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public abstract class Equipment extends CompleteBuff {
 	
@@ -110,7 +110,7 @@ public abstract class Equipment extends CompleteBuff {
 		return this.signature;
 	}
 	
-	public abstract EnchantType getType();
+	public abstract EquipType getType();
 	
 	public boolean containGrade(GradeName grade) {
 		if(grade == GradeName.NONE) {

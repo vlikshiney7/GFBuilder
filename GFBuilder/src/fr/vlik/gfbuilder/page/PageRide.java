@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -22,8 +22,9 @@ import fr.vlik.grandfantasia.enums.TypeSynthesis;
 import fr.vlik.grandfantasia.equip.Ride;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.subEquip.Synthesis;
+import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -44,8 +45,8 @@ public class PageRide extends PagePanel {
 	private ArrayList<ArrayList<JIconCheckBox>> starSynthesis = new ArrayList<ArrayList<JIconCheckBox>>(2);
 	private ArrayList<JCustomComboBox<Synthesis>> synthesis = new ArrayList<JCustomComboBox<Synthesis>>(2);
 	
-	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(2);
-	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(2);
+	private ArrayList<JCustomComboBox<XpStuff>> xpStuff = new ArrayList<JCustomComboBox<XpStuff>>(2);
+	private ArrayList<JCustomComboBox<InnerEffect>> lvlXpStuff = new ArrayList<JCustomComboBox<InnerEffect>>(2);
 
 	private JPanel showAndHideXpStuff;
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>(2);
@@ -68,30 +69,27 @@ public class PageRide extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		TypeEffect[] tmp = new TypeEffect[XpStuff.getDataMount().length +1];
-		tmp[0] = TypeEffect.NONE;
-		for(int i = 0; i < tmp.length-1; i++) {
-			tmp[i+1] = XpStuff.getDataMount()[i].getType();
-		}
+		/* XP STUFF */
 		for(int i = 0; i < 2; i++) {
-			this.effectXpStuff.add(new JCustomComboBox<TypeEffect>(tmp));
-			this.effectXpStuff.get(i).addActionListener(e -> {
+			int duo = i;
+			
+			this.xpStuff.add(new JCustomComboBox<XpStuff>());
+			this.xpStuff.get(duo).addActionListener(e -> {
 				updateLvlXpStuff();
-
+				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.effectXpStuff.get(i).setVisible(false);
+			this.xpStuff.get(duo).setVisible(false);
 			
-			int duo = i;
-			this.lvlXpStuff.add(new JCustomComboBox<Integer>());
-			this.lvlXpStuff.get(i).addActionListener(e -> {
+			this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
+			this.lvlXpStuff.get(duo).addActionListener(e -> {
 				updateMaxLvlValue(duo);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.lvlXpStuff.get(i).setVisible(false);
+			this.lvlXpStuff.get(duo).setVisible(false);
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -151,7 +149,7 @@ public class PageRide extends PagePanel {
 		setEffects();
 	}
 	
-	public Ride getMount() {
+	public Ride getRide() {
 		return this.ride.getSelectedItem();
 	}
 	
@@ -167,11 +165,11 @@ public class PageRide extends PagePanel {
 		return this.synthesis.get(id).getSelectedItem();
 	}
 	
-	public TypeEffect getEffectXpStuff(int id) {
-		return this.effectXpStuff.get(id).getSelectedItem();
+	public XpStuff getXpStuff(int id) {
+		return this.xpStuff.get(id).getSelectedItem();
 	}
 
-	public Integer getLvlXpStuff(int id) {
+	public InnerEffect getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 	
@@ -190,37 +188,22 @@ public class PageRide extends PagePanel {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
 		
-		Ride ride = this.getMount();
+		list.addAll(this.getRide());
 		
-		if(ride.getEffects() != null) {
-			for(Calculable c : ride.getEffects()) {
-				list.add(c);
-			}
-		}
-		
-		if(this.getEffectXpStuff(0) != TypeEffect.NONE && this.getEffectXpStuff(1) != TypeEffect.NONE
-				&& this.getEffectXpStuff(0) != this.getEffectXpStuff(1)) {
+		if(this.getXpStuff(0) != null && this.getXpStuff(1) != null
+			&& this.getXpStuff(0).getType() != TypeEffect.NONE && this.getXpStuff(1).getType() != TypeEffect.NONE
+			&& this.getXpStuff(0).getType() != this.getXpStuff(1).getType()) {
+			
 			for(int i = 0; i < 2; i++) {
-				TypeEffect type = this.getEffectXpStuff(i);
-				double valueXpStuff = XpStuff.getDataMount()[this.effectXpStuff.get(i).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i).getSelectedIndex());
-				
-				if(ride.isNerfXpStuff()) {
-					list.add(new Effect(type, false, valueXpStuff/2, true));
-				} else {
-					list.add(new Effect(type, false, valueXpStuff, true));
-				}
+				list.addAll(this.getLvlXpStuff(i));
 			}
 		}
 		
 		for(int i = 0; i < this.synthesis.size(); i++) {
 			if(this.getGroupQuality(i) != Quality.GREY) {
-				if(this.getSynthesis(i) != null && this.getSynthesis(i).getEffects() != null) {
-					for(int j = 0; j < this.getSynthesis(i).getEffects().length; j++) {
-						list.add(this.getSynthesis(i).getEffects()[j]);
-					}
-				}
+				list.addAll(this.getSynthesis(i));
 			}
 		}
 		
@@ -239,7 +222,7 @@ public class PageRide extends PagePanel {
 		for(int i = 0; i < 2; i++) {
 			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 			xp.setBackground(Design.UIColor[1]);
-			xp.add(this.effectXpStuff.get(i));
+			xp.add(this.xpStuff.get(i));
 			xp.add(this.lvlXpStuff.get(i));
 			xpRide.add(xp);
 		}
@@ -345,25 +328,28 @@ public class PageRide extends PagePanel {
 		}
 	}
 	
-	public void updateMount() {
+	public void updateRide() {
 		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		Ride tabMount[] = Ride.getPossibleRide(lvl, reinca);
-		Ride memory = this.getMount();
+		Ride memory = this.getRide();
 		
 		this.ride.setModel(new DefaultComboBoxModel<Ride>(tabMount));
 		this.ride.setSelectedItem(memory);
 		
-		if(this.ride.getSelectedIndex() == 0) {
-			this.effectXpStuff.get(0).setVisible(false);
-			this.effectXpStuff.get(1).setVisible(false);
-			this.effectXpStuff.get(0).setSelectedIndex(0);
-			this.effectXpStuff.get(1).setSelectedIndex(0);
+		if(!this.getRide().equals(memory)) {
 			this.showAndHideXpStuff.setVisible(false);
+			this.xpStuff.get(0).setVisible(false);
+			this.xpStuff.get(1).setVisible(false);
+			
+			if(this.getXpStuff(0) != null && this.getXpStuff(1) != null) {
+				this.xpStuff.get(0).setSelectedIndex(0);
+				this.xpStuff.get(1).setSelectedIndex(0);
+			}
 		} else {
-			this.effectXpStuff.get(0).setVisible(true);
-			this.effectXpStuff.get(1).setVisible(true);
+			this.xpStuff.get(0).setVisible(true);
+			this.xpStuff.get(1).setVisible(true);
 			this.showAndHideXpStuff.setVisible(true);
 		}
 		
@@ -373,56 +359,51 @@ public class PageRide extends PagePanel {
 			this.showAndHide.get(0).setVisible(false);
 		}
 		
-		if(!this.getMount().equals(memory)) {
+		if(!this.getRide().equals(memory)) {
 			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
 	
 	private void updateXpStuff() {
 		if(this.ride.getSelectedIndex() != 0) {
+			XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getRide());
+			
+			this.xpStuff.get(0).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+			this.xpStuff.get(1).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+			
 			this.showAndHideXpStuff.setVisible(true);	
-			this.effectXpStuff.get(0).setVisible(true);
-			this.effectXpStuff.get(1).setVisible(true);
+			this.xpStuff.get(0).setVisible(true);
+			this.xpStuff.get(1).setVisible(true);
 		} else {
 			this.showAndHideXpStuff.setVisible(false);
-			this.effectXpStuff.get(0).setVisible(false);
-			this.effectXpStuff.get(1).setVisible(false);
-			this.effectXpStuff.get(0).setSelectedIndex(0);
-			this.effectXpStuff.get(1).setSelectedIndex(0);
+			this.xpStuff.get(0).setVisible(false);
+			this.xpStuff.get(1).setVisible(false);
+			
+			if(this.getXpStuff(0) != null && this.getXpStuff(1) != null) {
+				this.xpStuff.get(0).setSelectedIndex(0);
+				this.xpStuff.get(1).setSelectedIndex(0);
+			}
 		}
 	}
 	
 	private void updateLvlXpStuff() {
-		if(this.getEffectXpStuff(0) == TypeEffect.NONE || this.getEffectXpStuff(1) == TypeEffect.NONE
-				|| this.getEffectXpStuff(0) == this.getEffectXpStuff(1)) {
+		if(this.getXpStuff(0).getType() == TypeEffect.NONE || this.getXpStuff(1).getType() == TypeEffect.NONE
+				|| this.getXpStuff(0).getType() == this.getXpStuff(1).getType()) {
 			
 			this.lvlXpStuff.get(0).setVisible(false);
 			this.lvlXpStuff.get(1).setVisible(false);
 			
-			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<Integer>());
-			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<InnerEffect>());
+			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<InnerEffect>());
 		} else {
-			Integer[] tmp = new Integer[XpStuff.getDataMount()[this.effectXpStuff.get(0).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = i+1;
-			}
+			XpStuff xpStuff = this.getXpStuff(0);
+			XpStuff xpStuffDuo = this.getXpStuff(1);
 			
-			Integer memory = this.lvlXpStuff.get(0).getSelectedItem();
-			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<Integer>(tmp));
-			if(memory != null) {
-				this.lvlXpStuff.get(0).setSelectedItem(memory);
-			}
+			InnerEffect[] inner = xpStuff.getInnerEffect();
+			InnerEffect[] innerDuo = xpStuffDuo.getInnerEffect();
 			
-			tmp = new Integer[XpStuff.getDataMount()[this.effectXpStuff.get(1).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = i+1;
-			}
-			
-			memory = this.lvlXpStuff.get(1).getSelectedItem();
-			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<Integer>(tmp));
-			if(memory != null) {
-				this.lvlXpStuff.get(1).setSelectedItem(memory);
-			}
+			this.lvlXpStuff.get(0).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
+			this.lvlXpStuff.get(1).setModel(new DefaultComboBoxModel<InnerEffect>(innerDuo));
 			
 			this.lvlXpStuff.get(0).setVisible(true);
 			this.lvlXpStuff.get(1).setVisible(true);
@@ -432,22 +413,18 @@ public class PageRide extends PagePanel {
 	private void updateMaxLvlValue(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
+		if(this.getXpStuff(0).getType() == TypeEffect.NONE || this.getXpStuff(1).getType() == TypeEffect.NONE
+				|| this.getXpStuff(0).getType() == this.getXpStuff(1).getType()) {
 			return;
 		}
 		
-		int currentLvl = this.lvlXpStuff.get(id).getSelectedIndex()+1;
-		int sizePair = XpStuff.getDataMount()[this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
+		InnerEffect memoryDuo = this.getLvlXpStuff(indexPair);
+		InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
 		
-		Integer[] tmp = new Integer[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
-		for(int i = 0; i < tmp.length; i++) {
-			tmp[i] = i+1;
+		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
+		if(memoryDuo != null) {
+			this.lvlXpStuff.get(indexPair).setSelectedItem(memoryDuo);
 		}
-		
-		Integer memory = this.getLvlXpStuff(indexPair);
-		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
-		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
 	
 	public void updateQualityGenki(int id) {
@@ -537,7 +514,7 @@ public class PageRide extends PagePanel {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		config.put("Ride", this.getMount().getName(Language.FR));
+		config.put("Ride", this.getRide().getName(Language.FR));
 		
 		for(int i = 0; i < this.groupQuality.size(); i++) {
 			Quality quality = this.groupQuality.get(i).getSelectedItem();
@@ -570,18 +547,19 @@ public class PageRide extends PagePanel {
 			config.put("Synthesis" + i, value);
 		}
 		
-		for(int i = 0; i < this.effectXpStuff.size(); i++) {
-			config.put("EffectXpStuff" + i, this.getEffectXpStuff(i).getInfo(lang));
+		for(int i = 0; i < this.xpStuff.size(); i++) {
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			config.put("EffectXpStuff" + i, value);
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			String value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).toString() : "0";
-			config.put("LvlXpStuff" + i, value);
+			Integer value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).getLvlbuff() : 0;
+			config.put("LvlXpStuff" + i, "" + value);
 		}
 		
 		return config;
 	}
-
+	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		Ride ride = Ride.get(config.get("Ride"));
@@ -620,16 +598,33 @@ public class PageRide extends PagePanel {
 			}
 		}
 		
-		for(int i = 0; i < this.effectXpStuff.size(); i++) {
-			this.effectXpStuff.get(i).setSelectedItem(TypeEffect.get(config.get("EffectXpStuff" + i), lang));
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			if(this.lvlXpStuff.get(i).getItemCount() > 0) {
+				this.lvlXpStuff.get(i).setSelectedIndex(0);
+			}
+		}
+		
+		for(int i = 0; i < this.xpStuff.size(); i++) {
+			if(this.getRide().getQuality() != Quality.GREY) {
+				XpStuff xpStuff = XpStuff.get(this.getRide(), config.get("EffectXpStuff" + i));
+				
+				if(xpStuff == null) {
+					this.xpStuff.get(i).setSelectedIndex(0);
+				} else {
+					this.xpStuff.get(i).setSelectedItem(xpStuff);
+				}
+			}
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(1);
-		}
-		
-		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
+			XpStuff xpStuff = this.getXpStuff(i);
+			if(xpStuff != null) {
+				InnerEffect inner = xpStuff.getInnerEffect(Integer.valueOf(config.get("LvlXpStuff" + i)));
+				
+				if(inner != null) {
+					this.lvlXpStuff.get(i).setSelectedItem(inner);
+				}
+			}
 		}
 	}
 }

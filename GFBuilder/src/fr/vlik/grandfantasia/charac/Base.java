@@ -1,6 +1,6 @@
-package fr.vlik.grandfantasia;
+package fr.vlik.grandfantasia.charac;
 
-import fr.vlik.grandfantasia.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.loader.Loader;
 

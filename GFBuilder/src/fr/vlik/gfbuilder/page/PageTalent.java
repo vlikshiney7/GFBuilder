@@ -15,14 +15,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.IconBuff;
-import fr.vlik.grandfantasia.InnerColorEffect;
+import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
 import fr.vlik.grandfantasia.characUpgrade.SingleTalent;
 import fr.vlik.grandfantasia.characUpgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
+import fr.vlik.grandfantasia.template.InnerColorEffect;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomButtonGroup;
@@ -143,15 +144,10 @@ public class PageTalent extends PagePanel {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
 		
 		for(JCustomLabel<IconBuff> label : this.tabChosenTalent) {
-			IconBuff talent = label.getItem();
-			if(talent.getEffects() != null) {
-				for(Calculable c : talent.getEffects()) {
-					list.add(c);
-				}
-			}
+			list.addAll(label.getItem());
 		}
 		
 		this.effects = list;
@@ -351,14 +347,16 @@ public class PageTalent extends PagePanel {
 		Talent groupTalent = this.groupTalent.get(index32/4).getSelectedItem();
 		int index24 = (index32/4)*3 + (index32%4) - 1;
 		
-		if(index32 % 4 != 0 && this.groupTalent.get(index32/4).getSelectedIndex() != 0) {
-			if(this.groupTalent.get(index32/4).getSelectedIndex() == (index24%3) + 1) {
-				SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), this.getLvlTalent(index24));
+		if(groupTalent != null) {
+			if(index32 % 4 != 0 && this.groupTalent.get(index32/4).getSelectedIndex() != 0) {
+				if(this.groupTalent.get(index32/4).getSelectedIndex() == (index24%3) + 1) {
+					SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), this.getLvlTalent(index24));
+					this.tabChosenTalent.get(index32/4).setItem(talent);
+				}
+			} else {
+				SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), null);
 				this.tabChosenTalent.get(index32/4).setItem(talent);
 			}
-		} else {
-			SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), null);
-			this.tabChosenTalent.get(index32/4).setItem(talent);
 		}
 	}
 	

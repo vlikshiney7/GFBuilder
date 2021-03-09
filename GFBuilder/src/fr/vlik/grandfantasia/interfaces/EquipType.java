@@ -1,5 +1,5 @@
 package fr.vlik.grandfantasia.interfaces;
 
-public interface EnchantType {
+public interface EquipType {
 	
 }

@@ -16,14 +16,14 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
-import fr.vlik.grandfantasia.Grade;
-import fr.vlik.grandfantasia.InnerEffect;
-import fr.vlik.grandfantasia.Reinca;
+import fr.vlik.grandfantasia.charac.Grade;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.customEquip.CustomArmor;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Armor;
+import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.equip.EquipSet;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.equip.RedArmor;
@@ -35,6 +35,8 @@ import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomSlider;
@@ -59,8 +61,8 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
 	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(6);
-	private ArrayList<JCustomComboBox<TypeEffect>> effectXpStuff = new ArrayList<JCustomComboBox<TypeEffect>>(10);
-	private ArrayList<JCustomComboBox<Integer>> lvlXpStuff = new ArrayList<JCustomComboBox<Integer>>(10);
+	private ArrayList<JCustomComboBox<XpStuff>> xpStuff = new ArrayList<JCustomComboBox<XpStuff>>(10);
+	private ArrayList<JCustomComboBox<InnerEffect>> lvlXpStuff = new ArrayList<JCustomComboBox<InnerEffect>>(10);
 	
 	private ArrayList<JCustomComboBox<RedFortification>> redFortif = new ArrayList<JCustomComboBox<RedFortification>>(5);
 	private ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>(15);
@@ -206,25 +208,19 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 			}
 			
 			/* XP STUFF */
-			TypeEffect[] tabEffect = new TypeEffect[XpStuff.getDataArmor()[i].length +1];
-			tabEffect[0] = TypeEffect.NONE;
-			for(int j = 0; j < tabEffect.length-1; j++) {
-				tabEffect[j+1] = XpStuff.getDataArmor()[i][j].getType();
-			}
-			
 			for(int j = 0; j < 2; j++) {
 				int duo = i*2+j;
 				
-				this.effectXpStuff.add(new JCustomComboBox<TypeEffect>(tabEffect));
-				this.effectXpStuff.get(duo).addActionListener(e -> {
+				this.xpStuff.add(new JCustomComboBox<XpStuff>());
+				this.xpStuff.get(duo).addActionListener(e -> {
 					updateLvlXpStuff(duo);
 					
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.effectXpStuff.get(duo).setVisible(false);
+				this.xpStuff.get(duo).setVisible(false);
 				
-				this.lvlXpStuff.add(new JCustomComboBox<Integer>());
+				this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
 				this.lvlXpStuff.get(duo).addActionListener(e -> {
 					updateMaxLvlValue(duo);
 					
@@ -295,11 +291,11 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		return this.pearl.get(id).getSelectedItem();
 	}
 
-	public TypeEffect getEffectXpStuff(int id) {
-		return this.effectXpStuff.get(id).getSelectedItem();
+	public XpStuff getXpStuff(int id) {
+		return this.xpStuff.get(id).getSelectedItem();
 	}
 
-	public Integer getLvlXpStuff(int id) {
+	public InnerEffect getLvlXpStuff(int id) {
 		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 	
@@ -310,8 +306,8 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
-		ArrayList<Calculable> convert = new ArrayList<Calculable>();
+		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> convert = new CustomList<Calculable>();
 		
 		Armor[] armors = new Armor[5];
 		ArrayList<InnerEffect> innerEffect = new ArrayList<InnerEffect>();
@@ -346,11 +342,7 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 				armors[i].addFortif(this.getFortif(i));
 			}
 			
-			if(armors[i].getEffects() != null) {
-				for(Calculable c : armors[i].getEffects()) {
-					list.add(c);
-				}
-			}
+			list.addAll(armors[i]);
 		}
 		
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(innerEffect)) {
@@ -370,27 +362,26 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		}
 		
 		for(int i = 0; i < 5; i++) {
-			if(this.getEffectXpStuff(i*2) == TypeEffect.NONE || this.getEffectXpStuff(i*2+1) == TypeEffect.NONE
-				|| this.getEffectXpStuff(i*2) == this.getEffectXpStuff(i*2+1)) {
+			if(this.getXpStuff(i*2) == null || this.getXpStuff(i*2+1) == null
+				|| this.getXpStuff(i*2).getType() == TypeEffect.NONE || this.getXpStuff(i*2+1).getType() == TypeEffect.NONE
+				|| this.getXpStuff(i*2).getType() == this.getXpStuff(i*2+1).getType()) {
 				continue;
 			}
 			
 			for(int j = 0; j < 2; j++) {
-				TypeEffect type = this.getEffectXpStuff(i*2+j);
-				double valueXpStuff = XpStuff.getDataArmor()[i][this.effectXpStuff.get(i*2+j).getSelectedIndex()-1].getValueFromLvl(this.lvlXpStuff.get(i*2+j).getSelectedIndex());
-				
-				list.add(new Effect(type, false, valueXpStuff, true));
+				list.addAll(this.getLvlXpStuff(i*2+j));
 			}
 		}
 		
 		for(int i = 0; i < 5; i++) {
-			if(this.getEffectXpStuff(i*2) != TypeEffect.NONE && this.getEffectXpStuff(i*2+1) != TypeEffect.NONE
-					&& this.getEffectXpStuff(i*2) != this.getEffectXpStuff(i*2+1)) {
-				int lvlXpStuff = this.lvlXpStuff.get(i*2).getSelectedIndex() + this.lvlXpStuff.get(i*2+1).getSelectedIndex() +1;
-				if(lvlXpStuff >= armors[i].getLvl() && armors[i].getBonusXP() != null) {
-					for(Calculable c : armors[i].getBonusXP()) {
-						list.add(c);
-					}
+			if(this.getXpStuff(i*2) != null && this.getXpStuff(i*2+1) != null
+				&& this.getXpStuff(i*2).getType() != TypeEffect.NONE && this.getXpStuff(i*2+1).getType() != TypeEffect.NONE
+				&& this.getXpStuff(i*2).getType() != this.getXpStuff(i*2+1).getType()) {
+				
+				int lvlXpStuff = this.getLvlXpStuff(i*2).getLvlbuff() + this.getLvlXpStuff(i*2+1).getLvlbuff();
+				
+				if(lvlXpStuff >= armors[i].getLvl()) {
+					list.addAll(armors[i].getBonusXP());
 				}
 			}
 		}
@@ -399,19 +390,10 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		for(int i = 0; i < this.pearl.size(); i++) {
 			Pearl pearl = this.getPearl(i);
 			if(pearl.isCumulable()) {
-				if(pearl.getEffects() != null) {
-					for(Calculable c : pearl.getEffects()) {
-						list.add(c);
-					}
-				}
+				list.addAll(pearl);
 			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
 				notCombinablePearl.add(pearl);
-				
-				if(pearl.getEffects() != null) {
-					for(Calculable c : pearl.getEffects()) {
-						list.add(c);
-					}
-				}
+				list.addAll(pearl);
 			}
 		}
 		
@@ -453,25 +435,13 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		}
 		
 		if(armorSet.getNbCurrentUsed() >= 3) {
-			if(armorSet.getWith3() != null) {
-				for(Calculable c : armorSet.getWith3()) {
-					list.add(c);
-				}
-			}
+			list.addAll(armorSet.getWith3());
 			
 			if(armorSet.getNbCurrentUsed() >= 4) {
-				if(armorSet.getWith4() != null) {
-					for(Calculable c : armorSet.getWith4()) {
-						list.add(c);
-					}
-				}
+				list.addAll(armorSet.getWith4());
 				
 				if(armorSet.getNbCurrentUsed() == 5) {
-					if(armorSet.getWith5() != null) {
-						for(Calculable c : armorSet.getWith5()) {
-							list.add(c);
-						}
-					}
+					list.addAll(armorSet.getWith5());
 				}
 			}
 		}
@@ -548,7 +518,7 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 			for(int j = 0; j < 2; j++) {
 				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
 				xp.setBackground(Design.UIColor[1]);
-				xp.add(this.effectXpStuff.get(i*2+j));
+				xp.add(this.xpStuff.get(i*2+j));
 				xp.add(this.lvlXpStuff.get(i*2+j));
 				xpArmor.add(xp);
 			}
@@ -682,15 +652,23 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 	
 	private void updateXpStuff(int id) {
 		if(this.armor.get(id).getSelectedIndex() != 0) {
+			XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getArmor(id));
+			
+			this.xpStuff.get(id*2).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+			this.xpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+			
 			this.showAndHideXpStuff.get(id).setVisible(true);	
-			this.effectXpStuff.get(id*2).setVisible(true);
-			this.effectXpStuff.get(id*2+1).setVisible(true);
+			this.xpStuff.get(id*2).setVisible(true);
+			this.xpStuff.get(id*2+1).setVisible(true);
 		} else {
 			this.showAndHideXpStuff.get(id).setVisible(false);
-			this.effectXpStuff.get(id*2).setVisible(false);
-			this.effectXpStuff.get(id*2+1).setVisible(false);
-			this.effectXpStuff.get(id*2).setSelectedIndex(0);
-			this.effectXpStuff.get(id*2+1).setSelectedIndex(0);
+			this.xpStuff.get(id*2).setVisible(false);
+			this.xpStuff.get(id*2+1).setVisible(false);
+			
+			if(this.getXpStuff(id*2) != null && this.getXpStuff(id*2+1) != null) {
+				this.xpStuff.get(id*2).setSelectedIndex(0);
+				this.xpStuff.get(id*2+1).setSelectedIndex(0);
+			}
 		}
 	}
 	
@@ -766,36 +744,23 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 	private void updateLvlXpStuff(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
+		if(this.getXpStuff(id).getType() == TypeEffect.NONE || this.getXpStuff(indexPair).getType() == TypeEffect.NONE
+				|| this.getXpStuff(id).getType() == this.getXpStuff(indexPair).getType()) {
 			
 			this.lvlXpStuff.get(id).setVisible(false);
 			this.lvlXpStuff.get(indexPair).setVisible(false);
 			
-			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<Integer>());
-			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>());
+			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<InnerEffect>());
+			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>());
 		} else {
-			Integer[] tmp = new Integer[XpStuff.getDataArmor()[id/2][this.effectXpStuff.get(id).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = i+1;
-			}
+			XpStuff xpStuff = this.getXpStuff(id);
+			XpStuff xpStuffDuo = this.getXpStuff(indexPair);
 			
-			Integer memory = this.getLvlXpStuff(id);
-			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<Integer>(tmp));
-			if(memory != null) {
-				this.lvlXpStuff.get(id).setSelectedItem(memory);
-			}
+			InnerEffect[] inner = xpStuff.getInnerEffect();
+			InnerEffect[] innerDuo = xpStuffDuo.getInnerEffect();
 			
-			tmp = new Integer[XpStuff.getDataArmor()[id/2][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size()];
-			for(int i = 0; i < tmp.length; i++) {
-				tmp[i] = i+1;
-			}
-			
-			memory = this.getLvlXpStuff(indexPair);
-			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
-			if(memory != null) {
-				this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
-			}
+			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
+			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(innerDuo));
 			
 			this.lvlXpStuff.get(id).setVisible(true);
 			this.lvlXpStuff.get(indexPair).setVisible(true);
@@ -805,24 +770,18 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 	private void updateMaxLvlValue(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getEffectXpStuff(id) == TypeEffect.NONE || this.getEffectXpStuff(indexPair) == TypeEffect.NONE
-				|| this.getEffectXpStuff(id) == this.getEffectXpStuff(indexPair)) {
+		if(this.getXpStuff(id).getType() == TypeEffect.NONE || this.getXpStuff(indexPair).getType() == TypeEffect.NONE
+				|| this.getXpStuff(id).getType() == this.getXpStuff(indexPair).getType()) {
 			return;
 		}
 		
-		int currentLvl = this.lvlXpStuff.get(id).getSelectedIndex()+1;
+		InnerEffect memoryDuo = this.getLvlXpStuff(indexPair);
+		InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
 		
-		int sizePair = XpStuff.getDataArmor()[id/2][this.effectXpStuff.get(indexPair).getSelectedIndex()-1].getLvlValue().size();
-		
-		
-		Integer[] tmp = new Integer[sizePair + currentLvl > 101 ? 101 - currentLvl : sizePair];
-		for(int i = 0; i < tmp.length; i++) {
-			tmp[i] = i+1;
+		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
+		if(memoryDuo != null) {
+			this.lvlXpStuff.get(indexPair).setSelectedItem(memoryDuo);
 		}
-		
-		Integer memory = this.getLvlXpStuff(indexPair);
-		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<Integer>(tmp));
-		this.lvlXpStuff.get(indexPair).setSelectedItem(memory);
 	}
 	
 	private void updateValueFortif(int id) {
@@ -1037,13 +996,14 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 			config.put("Pearl" + i, this.getPearl(i).getName(Language.FR));
 		}
 		
-		for(int i = 0; i < this.effectXpStuff.size(); i++) {
-			config.put("EffectXpStuff" + i, this.getEffectXpStuff(i).getInfo(lang));
+		for(int i = 0; i < this.xpStuff.size(); i++) {
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			config.put("EffectXpStuff" + i, value);
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			String value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).toString() : "0";
-			config.put("LvlXpStuff" + i, value);
+			Integer value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).getLvlbuff() : 0;
+			config.put("LvlXpStuff" + i, "" + value);
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
@@ -1128,16 +1088,33 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		for(int i = 0; i < this.effectXpStuff.size(); i++) {
-			this.effectXpStuff.get(i).setSelectedItem(TypeEffect.get(config.get("EffectXpStuff" + i), lang));
+		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
+			if(this.lvlXpStuff.get(i).getItemCount() > 0) {
+				this.lvlXpStuff.get(i).setSelectedIndex(0);
+			}
+		}
+		
+		for(int i = 0; i < this.xpStuff.size(); i++) {
+			if(this.getArmor(i/2).getType() != ArmorType.NONE) {
+				XpStuff xpStuff = XpStuff.get(this.getArmor(i/2), config.get("EffectXpStuff" + i));
+				
+				if(xpStuff == null) {
+					this.xpStuff.get(i).setSelectedIndex(0);
+				} else {
+					this.xpStuff.get(i).setSelectedItem(xpStuff);
+				}
+			}
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(1);
-		}
-		
-		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
-			this.lvlXpStuff.get(i).setSelectedItem(Integer.valueOf(config.get("LvlXpStuff" + i)));
+			XpStuff xpStuff = this.getXpStuff(i);
+			if(xpStuff != null) {
+				InnerEffect inner = xpStuff.getInnerEffect(Integer.valueOf(config.get("LvlXpStuff" + i)));
+				
+				if(inner != null) {
+					this.lvlXpStuff.get(i).setSelectedItem(inner);
+				}
+			}
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
