@@ -80,7 +80,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegFeu("Dégât Feu", "Fire Damage", "Deg Feu", "Fire Dam", -1, true, Tools.EffectColor[10]),
 	DegGlace("Dégât Glace", "Ice Damage", "Deg Glace", "Ice Dam", -1, true, Tools.EffectColor[11]),
 	DegNature("Dégât Nature", "Natural Damage", "Deg Nature", "Natural Dam", -1, true, Tools.EffectColor[12]),
-
+	
 	DegStdSacre("Dégât Sacré sur attaque standard", "Holy Damage with standard attack", "Deg Sacre Std", "Std Holy Dam", -1, true, Tools.EffectColor[7]),
 	DegStdOmbre("Dégât Ombre sur attaque standard", "Dark Damage with standard attack", "Deg Ombre Std", "Std Dark Dam", -1, true, Tools.EffectColor[8]),
 	DegStdFoudre("Dégât Foudre sur attaque standard", "Lighting Damage with standard attack", "Deg Foudre Std", "Std Lighting Dam", -1, true, Tools.EffectColor[9]),
@@ -149,6 +149,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegMeca("Dégât sur Mécanique", "", "Deg Meca", "", -1, true, Tools.EffectColor[0]),
 	DegMort("Dégât sur Mort-Vivant", "", "Deg Mort", "", -1, true, Tools.EffectColor[0]),
 	DegDemon("Dégât sur Démon", "", "Deg Demon", "", -1, true, Tools.EffectColor[0]),
+	
 	DegBeteP("Dégât Physique sur Bête", "", "Deg Phys Bete", "", -1, true, Tools.EffectColor[0]),
 	DegPlanteP("Dégât Physique sur Plante", "", "Deg Phys Plante", "", -1, true, Tools.EffectColor[0]),
 	DegHumaP("Dégât Physique sur Humanoïde", "", "Deg Phys Huma", "", -1, true, Tools.EffectColor[0]),
@@ -156,6 +157,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegMecaP("Dégât Physique sur Mécanique", "", "Deg Phys Meca", "", -1, true, Tools.EffectColor[0]),
 	DegMortP("Dégât Physique sur Mort-Vivant", "", "Deg Phys Mort", "", -1, true, Tools.EffectColor[0]),
 	DegDemonP("Dégât Physique sur Démon", "", "Deg Phys Demon", "", -1, true, Tools.EffectColor[0]),
+	
 	DegBeteM("Dégât Magique sur Bête", "", "Deg Mag Bete", "", -1, true, Tools.EffectColor[0]),
 	DegPlanteM("Dégât Magique sur Plante", "", "Deg Mag Plante", "", -1, true, Tools.EffectColor[0]),
 	DegHumaM("Dégât Magique sur Humanoïde", "", "Deg Mag Huma", "", -1, true, Tools.EffectColor[0]),
@@ -172,6 +174,7 @@ public enum TypeEffect implements Colorable, Writable {
 	
 	RegenPV("Régénération de Point de Vie Assis", "", "Regen PV", "", -1, false, Tools.EffectColor[0]),
 	RegenPM("Régénération de Point de Mana Assis", "", "Regen PM", "", -1, false, Tools.EffectColor[0]),
+	CostPV("Coût en PV", "", "Coût PV", "", -1, false, Tools.EffectColor[0]),
 	MEN("Menace", "", "Menace", "", -1, true, Tools.EffectColor[0]),
 	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Tools.EffectColor[0]),
 	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Tools.EffectColor[0]),

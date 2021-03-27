@@ -9,7 +9,6 @@ import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -480,12 +479,12 @@ public class PageCostume extends PagePanel {
 			button.updateText(lang);
 		}
 		
-		for(int i = 0; i < this.groupQuality.size(); i++) {
-			this.groupQuality.get(i).updateText(lang);
+		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
+			quality.updateText(lang);
 		}
 		
-		for(int i = 0; i < this.groupSynthesis.size(); i++) {
-			this.groupSynthesis.get(i).updateText(lang);
+		for(JCustomButtonGroup<TypeSynthesis> typeSynthesis : this.groupSynthesis) {
+			typeSynthesis.updateText(lang);
 		}
 		
 		for(JCustomCheckBox<CombiRunway> checkBox : this.checkBoxRunway) {
@@ -515,7 +514,7 @@ public class PageCostume extends PagePanel {
 			this.costume.get(id).setVisible(true);
 			
 			Costume memory = this.getCostume(id);
-			this.costume.get(id).setModel(new DefaultComboBoxModel<Costume>(cost));
+			this.costume.get(id).setItems(cost);
 			
 			if(memory != null) {
 				Costume retrieve = Costume.getFromList(memory.getName(Language.FR), cost);
@@ -708,29 +707,14 @@ public class PageCostume extends PagePanel {
 			}
 			
 			Costume costume = Costume.get(config.get("Costume" + i), typeSynthesis, type, quality);
-			
-			if(costume != null) {
-				this.costume.get(i).setSelectedItem(costume);
-			}
+			this.costume.get(i).setSelectedItem(costume);
 		}
 		
 		for(int i = 0; i < this.costPearl.size(); i++) {
 			if(i < 2) {
-				Pearl pearl = Pearl.getWeaponCost(config.get("Pearl" + i));
-				
-				if(pearl == null) {
-					this.costPearl.get(i).setSelectedIndex(0);
-				} else {
-					this.costPearl.get(i).setSelectedItem(pearl);
-				}
+				this.costPearl.get(i).setSelectedItem(Pearl.getWeaponCost(config.get("Pearl" + i)));
 			} else {
-				Pearl pearl = Pearl.getArmorCost(config.get("Pearl" + i));
-				
-				if(pearl == null) {
-					this.costPearl.get(i).setSelectedIndex(0);
-				} else {
-					this.costPearl.get(i).setSelectedItem(pearl);
-				}
+				this.costPearl.get(i).setSelectedItem(Pearl.getArmorCost(config.get("Pearl" + i)));
 			}
 		}
 		

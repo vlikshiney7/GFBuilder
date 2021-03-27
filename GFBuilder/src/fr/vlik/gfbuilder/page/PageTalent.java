@@ -10,7 +10,6 @@ import java.util.Map;
 import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -307,10 +306,7 @@ public class PageTalent extends PagePanel {
 			if(i % 4 != 0) {
 				Talent talent = this.groupTalent.get(i/4).getElement(i%4);
 				InnerColorEffect[] innerLvl = talent.getInnerTalent(lvl);
-				
-				InnerColorEffect memory = this.getLvlTalent(count);
-				this.itemTalent.get(count).setModel(new DefaultComboBoxModel<InnerColorEffect>(innerLvl));
-				this.itemTalent.get(count).setSelectedItem(memory);
+				this.itemTalent.get(count).setItems(innerLvl);
 				
 				count++;
 			}
@@ -432,16 +428,10 @@ public class PageTalent extends PagePanel {
 		
 		for(int i = 0; i < this.groupTalent.size(); i++) {
 			Talent talent = Talent.get(config.get("TalentSelect" + i), PageGeneral.getInstance().getGrade(), Language.FR);
+			this.groupTalent.get(i).setSelectedItem(talent);
 			
-			if(talent == null) {
-				this.groupTalent.get(i).setSelectedIndex(0);
-				updateSelectedTalent(i*4);
-			} else {
-				this.groupTalent.get(i).setSelectedItem(talent);
-				
-				int trigger = this.groupTalent.get(i).getSelectedIndex();
-				updateSelectedTalent(i*4 + trigger);
-			}
+			int trigger = this.groupTalent.get(i).getSelectedIndex();
+			updateSelectedTalent(i*4 + trigger);
 		}
 		
 		updateCombiTalent();

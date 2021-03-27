@@ -134,12 +134,12 @@ public class Armor extends Equipment {
 	
 	@Override
 	public Icon setIcon(String path) {
-		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
+		ImageIcon back = new ImageIcon(Armor.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
 		ImageIcon object = ICONS.get(path);
 		
 		if(object == null) {
 			try {
-				object = new ImageIcon(Weapon.class.getResource(PATH + path + Tools.PNG));
+				object = new ImageIcon(Armor.class.getResource(PATH + path + Tools.PNG));
 				ICONS.put(path, object);
 			} catch (NullPointerException e) {
 				System.out.println("Image introuvable : " + path);

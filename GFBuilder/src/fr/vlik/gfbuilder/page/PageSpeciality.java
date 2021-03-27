@@ -9,7 +9,6 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -35,7 +34,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	private Grade currentGrade;
 	
 	private Speciality[] tabSpeciality;
-	private JLabel nbSpePoint = new JLabel("1145");
+	private JLabel nbSpePoint = new JLabel("1775");
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
 	private ArrayList<JCustomComboBox<Integer>> spePoint = new ArrayList<JCustomComboBox<Integer>>(20);
 	
@@ -469,7 +468,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	private void setMinSpe() {
-		for(JComboBox<Integer> speciality : this.spePoint) {
+		for(JCustomComboBox<Integer> speciality : this.spePoint) {
 			if(speciality.isVisible()) {
 				speciality.setSelectedIndex(0);
 			} else break;
@@ -479,7 +478,7 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	private void setMaxSpe() {
 		setMinSpe();
 		
-		for(JComboBox<Integer> speciality : this.spePoint) {
+		for(JCustomComboBox<Integer> speciality : this.spePoint) {
 			if(speciality.isVisible()) {
 				speciality.setSelectedIndex(10);
 			} else break;

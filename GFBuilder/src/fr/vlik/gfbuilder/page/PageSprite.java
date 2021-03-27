@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -133,8 +132,7 @@ public class PageSprite extends PagePanel {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
 			Blason memory = this.getBlason(i);
 			
-			this.blason.get(i).setModel(new DefaultComboBoxModel<Blason>(tabBlason));
-			this.blason.get(i).setSelectedItem(memory);
+			this.blason.get(i).setItems(tabBlason);
 			
 			if(!this.getBlason(i).equals(memory)) {
 				MainFrame.getInstance().setRedPane(NUM_PAGE);
@@ -152,7 +150,7 @@ public class PageSprite extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.blason.size(); i++) {
-			config.put("Blason" + i, this.getBlason(i).getName());
+			config.put("Blason" + i, this.getBlason(i).getName(Language.FR));
 		}
 		
 		config.put("Isle", this.getIsleBuff().getName(Language.FR));
@@ -163,19 +161,9 @@ public class PageSprite extends PagePanel {
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.blason.size(); i++) {
-			Blason blason = Blason.get(config.get("Blason" + i));
-			if(blason == null) {
-				this.blason.get(i).setSelectedIndex(0);
-			} else {
-				this.blason.get(i).setSelectedItem(Blason.get(config.get("Blason" + i)));
-			}
+			this.blason.get(i).setSelectedItem(Blason.get(config.get("Blason" + i)));
 		}
 		
-		IslandBuff isle = IslandBuff.get(config.get("Isle"));
-		if(isle == null) {
-			this.islandBuff.setSelectedIndex(0);
-		} else {
-			this.islandBuff.setSelectedItem(isle);
-		}
+		this.islandBuff.setSelectedItem(IslandBuff.get(config.get("Isle")));
 	}
 }

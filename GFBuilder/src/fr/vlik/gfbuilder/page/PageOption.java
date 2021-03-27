@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
@@ -204,7 +203,7 @@ public class PageOption extends JPanel {
 	}
 	
 	public void refreshSave() {
-		this.save.setModel(new DefaultComboBoxModel<SaveConfig>(SaveConfig.getData()));
+		this.save.setItems(SaveConfig.getData());
 	}
 	
 	public void refreshSave(String nameSave) {

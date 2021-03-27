@@ -7,7 +7,6 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -18,7 +17,6 @@ import fr.vlik.grandfantasia.customEquip.CustomCape;
 import fr.vlik.grandfantasia.customEquip.CustomRing;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Cape;
 import fr.vlik.grandfantasia.equip.EquipSet;
 import fr.vlik.grandfantasia.equip.Ring;
@@ -57,7 +55,7 @@ public class PageCapeRing extends PagePanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
-		this.cape = new JCustomComboBox<Cape>(new DefaultComboBoxModel<Cape>(tabCape));
+		this.cape = new JCustomComboBox<Cape>(tabCape);
 		this.cape.addActionListener(e -> {
 			updateXpStuff(0);
 			updateEnchant(0);
@@ -102,7 +100,7 @@ public class PageCapeRing extends PagePanel {
 		for(int i = 0; i < 2; i++) {
 			int id = i;
 			
-			this.ring.add(new JCustomComboBox<Ring>(new DefaultComboBoxModel<Ring>(tabRing)));
+			this.ring.add(new JCustomComboBox<Ring>(tabRing));
 			this.ring.get(i).addActionListener(e -> {
 				updateXpStuff(id+1);
 				updateEnchant(id+1);
@@ -198,21 +196,10 @@ public class PageCapeRing extends PagePanel {
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			if(this.getXpStuff(i*2) == null || this.getXpStuff(i*2+1) == null
-				|| this.getXpStuff(i*2).getType() == TypeEffect.NONE || this.getXpStuff(i*2+1).getType() == TypeEffect.NONE
-				|| this.getXpStuff(i*2).getType() == this.getXpStuff(i*2+1).getType()) {
-				continue;
-			}
-			
-			for(int j = 0; j < 2; j++) {
-				list.addAll(this.getLvlXpStuff(i*2+j));
-			}
-		}
-		
-		for(int i = 0; i < 3; i++) {
-			if(this.getXpStuff(i*2) != null && this.getXpStuff(i*2+1) != null
-				&& this.getXpStuff(i*2).getType() != TypeEffect.NONE && this.getXpStuff(i*2+1).getType() != TypeEffect.NONE
-				&& this.getXpStuff(i*2).getType() != this.getXpStuff(i*2+1).getType()) {
+			if(XpStuff.availableEffects(this.getXpStuff(i*2), this.getXpStuff(i*2+1))) {
+				for(int j = 0; j < 2; j++) {
+					list.addAll(this.getLvlXpStuff(i*2+j));
+				}
 				
 				int lvlXpStuff = this.getLvlXpStuff(i*2).getLvlbuff() + this.getLvlXpStuff(i*2+1).getLvlbuff();
 				
@@ -361,8 +348,7 @@ public class PageCapeRing extends PagePanel {
 		Cape[] tabCape = Cape.getPossibleCape(grade.getGrade(), lvl);
 		Cape memoryCape = this.getCape();
 		
-		this.cape.setModel(new DefaultComboBoxModel<Cape>(tabCape));
-		this.cape.setSelectedItem(memoryCape);
+		this.cape.setItems(tabCape);
 		
 		if(!this.getCape().equals(memoryCape)) {
 			updateXpStuff(0);
@@ -375,8 +361,7 @@ public class PageCapeRing extends PagePanel {
 			Ring[] tabRing = Ring.getPossibleRing(lvl, null);
 			Ring memory = this.getRing(i);
 			
-			this.ring.get(i).setModel(new DefaultComboBoxModel<Ring>(tabRing));
-			this.ring.get(i).setSelectedItem(memory);
+			this.ring.get(i).setItems(tabRing);
 			
 			if(!this.getRing(i).equals(memory)) {
 				updateXpStuff(i+1);
@@ -394,10 +379,8 @@ public class PageCapeRing extends PagePanel {
 				
 				if(cape.isEnchantable()) {
 					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(cape);
-					Enchantment memory = this.getEnchantment(id);
 					
-					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-					this.enchant.get(id).setSelectedItem(memory);
+					this.enchant.get(id).setItems(tabEnchant);
 					this.enchant.get(id).setVisible(true);
 				} else {
 					this.enchant.get(id).setVisible(false);
@@ -411,10 +394,8 @@ public class PageCapeRing extends PagePanel {
 				
 				if(ring.isEnchantable()) {
 					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(ring);
-					Enchantment memory = this.getEnchantment(id);
 					
-					this.enchant.get(id).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-					this.enchant.get(id).setSelectedItem(memory);
+					this.enchant.get(id).setItems(tabEnchant);
 					this.enchant.get(id).setVisible(true);
 				} else {
 					this.enchant.get(id).setVisible(false);
@@ -430,8 +411,8 @@ public class PageCapeRing extends PagePanel {
 			if(this.cape.getSelectedIndex() != 0) {
 				XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getCape());
 				
-				this.xpStuff.get(id*2).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
-				this.xpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+				this.xpStuff.get(id*2).setItems(xpStuff);
+				this.xpStuff.get(id*2+1).setItems(xpStuff);
 				
 				this.showAndHideXpStuff.get(id).setVisible(true);	
 				this.xpStuff.get(id*2).setVisible(true);
@@ -450,8 +431,8 @@ public class PageCapeRing extends PagePanel {
 			if(this.ring.get(id-1).getSelectedIndex() != 0) {
 				XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getRing(id-1));
 				
-				this.xpStuff.get(id*2).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
-				this.xpStuff.get(id*2+1).setModel(new DefaultComboBoxModel<XpStuff>(xpStuff));
+				this.xpStuff.get(id*2).setItems(xpStuff);
+				this.xpStuff.get(id*2+1).setItems(xpStuff);
 				
 				this.showAndHideXpStuff.get(id).setVisible(true);	
 				this.xpStuff.get(id*2).setVisible(true);
@@ -472,23 +453,15 @@ public class PageCapeRing extends PagePanel {
 	private void updateLvlXpStuff(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getXpStuff(id).getType() == TypeEffect.NONE || this.getXpStuff(indexPair).getType() == TypeEffect.NONE
-				|| this.getXpStuff(id).getType() == this.getXpStuff(indexPair).getType()) {
-			
+		if(!XpStuff.availableEffects(this.getXpStuff(id), this.getXpStuff(indexPair))) {
 			this.lvlXpStuff.get(id).setVisible(false);
 			this.lvlXpStuff.get(indexPair).setVisible(false);
-			
-			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<InnerEffect>());
-			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>());
 		} else {
 			XpStuff xpStuff = this.getXpStuff(id);
 			XpStuff xpStuffDuo = this.getXpStuff(indexPair);
 			
-			InnerEffect[] inner = xpStuff.getInnerEffect();
-			InnerEffect[] innerDuo = xpStuffDuo.getInnerEffect();
-			
-			this.lvlXpStuff.get(id).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
-			this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(innerDuo));
+			this.lvlXpStuff.get(id).setItems(xpStuff.getInnerEffect());
+			this.lvlXpStuff.get(indexPair).setItems(xpStuffDuo.getInnerEffect());
 			
 			this.lvlXpStuff.get(id).setVisible(true);
 			this.lvlXpStuff.get(indexPair).setVisible(true);
@@ -498,17 +471,9 @@ public class PageCapeRing extends PagePanel {
 	private void updateMaxLvlValue(int id) {
 		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
 		
-		if(this.getXpStuff(id).getType() == TypeEffect.NONE || this.getXpStuff(indexPair).getType() == TypeEffect.NONE
-				|| this.getXpStuff(id).getType() == this.getXpStuff(indexPair).getType()) {
-			return;
-		}
-		
-		InnerEffect memoryDuo = this.getLvlXpStuff(indexPair);
-		InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
-		
-		this.lvlXpStuff.get(indexPair).setModel(new DefaultComboBoxModel<InnerEffect>(inner));
-		if(memoryDuo != null) {
-			this.lvlXpStuff.get(indexPair).setSelectedItem(memoryDuo);
+		if(XpStuff.availableEffects(this.getXpStuff(id), this.getXpStuff(indexPair))) {
+			InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
+			this.lvlXpStuff.get(indexPair).setItems(inner);
 		}
 	}
 	
@@ -517,10 +482,7 @@ public class PageCapeRing extends PagePanel {
 		int other = id == 0 ? 1 : 0;
 		
 		Ring[] tabRing = Ring.getPossibleRing(PageGeneral.getInstance().getLvl(), choice);
-		Ring memory = this.getRing(other);
-		
-		this.ring.get(other).setModel(new DefaultComboBoxModel<Ring>(tabRing));
-		this.ring.get(other).setSelectedItem(memory);
+		this.ring.get(other).setItems(tabRing);
 	}
 	
 	@Override
@@ -566,7 +528,6 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		Cape cape = null;
 		if(config.get("Cape") != null && config.get("Cape").startsWith("Custom")) {
 			String[] valueSplit = config.get("Cape").split("::");
 			
@@ -578,7 +539,7 @@ public class PageCapeRing extends PagePanel {
 			}
 			
 			if(quality != null) {
-				cape = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
+				Cape cape = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
 				
 				if(cape == null) {
 					if(CustomCape.constructCustom(valueSplit[1], quality, valueSplit[3])) {
@@ -593,17 +554,10 @@ public class PageCapeRing extends PagePanel {
 				}
 			}
 		} else {
-			cape = Cape.get(config.get("Cape"), Language.FR);
-			
-			if(cape == null) {
-				this.cape.setSelectedIndex(0);
-			} else {
-				this.cape.setSelectedItem(cape);
-			}
+			this.cape.setSelectedItem(Cape.get(config.get("Cape"), Language.FR));
 		}
 		
 		for(int i = 0; i < this.ring.size(); i++) {
-			Ring ring = null;
 			if(config.get("Ring" + i) != null && config.get("Ring" + i).startsWith("Custom")) {
 				String[] valueSplit = config.get("Ring" + i).split("::");
 				
@@ -615,7 +569,7 @@ public class PageCapeRing extends PagePanel {
 				}
 				
 				if(quality != null) {
-					ring = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
+					Ring ring = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
 					
 					if(ring == null) {
 						if(CustomRing.constructCustom(valueSplit[1], quality, valueSplit[3])) {
@@ -630,13 +584,7 @@ public class PageCapeRing extends PagePanel {
 					}
 				}
 			} else {
-				ring = Ring.get(config.get("Ring" + i), Language.FR);
-				
-				if(ring == null) {
-					this.ring.get(i).setSelectedIndex(0);
-				} else {
-					this.ring.get(i).setSelectedItem(ring);
-				}
+				this.ring.get(i).setSelectedItem(Ring.get(config.get("Ring" + i), Language.FR));
 			}
 		}
 		
@@ -655,23 +603,12 @@ public class PageCapeRing extends PagePanel {
 		for(int i = 0; i < this.xpStuff.size(); i++) {
 			if(i/2 == 0) {
 				if(this.getCape().getQuality() != Quality.GREY) {
-					XpStuff xpStuff = XpStuff.get(this.getCape(), config.get("EffectXpStuff" + i));
-					
-					if(xpStuff == null) {
-						this.xpStuff.get(i).setSelectedIndex(0);
-					} else {
-						this.xpStuff.get(i).setSelectedItem(xpStuff);
-					}
+					this.xpStuff.get(i).setSelectedItem(XpStuff.get(this.getCape(), config.get("EffectXpStuff" + i)));
 				}
 			} else {
 				if(this.getRing((i/2)-1).getQuality() != Quality.GREY) {
 					XpStuff xpStuff = XpStuff.get(this.getRing((i/2)-1), config.get("EffectXpStuff" + i));
-					
-					if(xpStuff == null) {
-						this.xpStuff.get(i).setSelectedIndex(0);
-					} else {
-						this.xpStuff.get(i).setSelectedItem(xpStuff);
-					}
+					this.xpStuff.get(i).setSelectedItem(xpStuff);
 				}
 			}
 		}
@@ -680,10 +617,7 @@ public class PageCapeRing extends PagePanel {
 			XpStuff xpStuff = this.getXpStuff(i);
 			if(xpStuff != null) {
 				InnerEffect inner = xpStuff.getInnerEffect(Integer.valueOf(config.get("LvlXpStuff" + i)));
-				
-				if(inner != null) {
-					this.lvlXpStuff.get(i).setSelectedItem(inner);
-				}
+				this.lvlXpStuff.get(i).setSelectedItem(inner);
 			}
 		}
 	}

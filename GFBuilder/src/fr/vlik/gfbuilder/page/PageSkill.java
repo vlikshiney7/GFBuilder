@@ -7,19 +7,19 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.characUpgrade.PassiveSkill;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.characUpgrade.Skill;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.template.InnerIconEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -35,7 +35,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	private Grade currentGrade;
 	private int currentLvl;
 	
-	private ArrayList<JCustomLabel<Skill>> skillNatif = new ArrayList<JCustomLabel<Skill>>(5);
+	private ArrayList<JCustomLabel<InnerIconEffect>> passiveSkill = new ArrayList<JCustomLabel<InnerIconEffect>>(4);
 	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
 	private JCustomComboBox<ProSkill> proSkill;
 	
@@ -46,7 +46,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	public static PageSkill getInstance() {
 		return INSTANCE;
 	}
-
+	
 	private PageSkill() {
 		super(NUM_PAGE);
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -54,9 +54,12 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		this.currentLvl = PageGeneral.getInstance().getLvl();
 		
-		for(int i = 0; i < 5; i++) {
-			this.skillNatif.add(new JCustomLabel<Skill>(null));
-			this.skillNatif.get(i).setPreferredSize(new Dimension(380, 32));
+		for(int i = 0; i < 4; i++) {
+			this.passiveSkill.add(new JCustomLabel<InnerIconEffect>(null));
+			this.passiveSkill.get(i).setBackground(Design.UIColor[0]);
+			this.passiveSkill.get(i).setBorder(new EmptyBorder(0, 0, 0, 5));
+			this.passiveSkill.get(i).setPreferredSize(new Dimension(380, 32));
+			this.passiveSkill.get(i).setOpaque(true);
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -79,6 +82,10 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
+	}
+	
+	public InnerIconEffect getPassiveSkill(int i) {
+		return this.passiveSkill.get(i).getItem();
 	}
 	
 	public ProSkill getProSkill() {
@@ -104,10 +111,12 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		CustomList<Calculable> list = new CustomList<Calculable>();
 		CustomList<Calculable> convert = new CustomList<Calculable>();
 		
-		for(int i = 0; i < this.skillNatif.size(); i++) {
-			if(this.skillNatif.get(i).isVisible()) {
-				if(this.skillNatif.get(i).getItem().getEffects() != null) {
-					for(Calculable c : this.skillNatif.get(i).getItem().getEffects()) {
+		for(JCustomLabel<InnerIconEffect> passive : this.passiveSkill) {
+			if(passive.isVisible()) {
+				InnerIconEffect iconEffect = passive.getItem();
+				
+				if(iconEffect.getEffects() != null) {
+					for(Calculable c : iconEffect.getEffects()) {
 						if(c instanceof Effect) {
 							Effect e = (Effect) c;
 							if(e.getTransfert() == null) {
@@ -151,10 +160,10 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		this.labelGFB[0].setFont(Design.TITLE);
 		elem1.add(Box.createVerticalStrut(10));
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 4; i++) {
 			JPanel skill = new JPanel();
 			skill.setBackground(Design.UIColor[1]);
-			skill.add(this.skillNatif.get(i));
+			skill.add(this.passiveSkill.get(i));
 			
 			elem1.add(skill);
 		}
@@ -183,7 +192,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		this.add(Box.createVerticalStrut(10));
 		this.add(elem2);
 		
-		for(JLabel label : this.skillNatif) {
+		for(JCustomLabel<InnerIconEffect> label : this.passiveSkill) {
 			label.setVisible(false);
 		}
 		
@@ -207,7 +216,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
-		int count = 0;
 		boolean isProgressUpdate = false;
 		
 		if(lvl < 6) {
@@ -216,47 +224,60 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			this.showAndHide.get(0).setVisible(true);
 		}
 		
+		PassiveSkill[] passive = PassiveSkill.getSkill(grade);
+		
+		for(int i = 0; i < passive.length; i++) {
+			InnerIconEffect innerEffect = passive[i].getCurrentEffect(lvl);
+			
+			InnerIconEffect memory = this.getPassiveSkill(i);
+			
+			if(innerEffect != null) {
+				this.passiveSkill.get(i).setItem(innerEffect);
+				this.passiveSkill.get(i).setVisible(true);
+			} else {
+				this.passiveSkill.get(i).setItem(null);
+				this.passiveSkill.get(i).setVisible(false);
+			}
+			
+			if(this.getPassiveSkill(i) != null && !this.getPassiveSkill(i).equals(memory)) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
+			}
+		}
+		
+		for(int i = passive.length; i < 4; i++) {
+			this.passiveSkill.get(i).setItem(null);
+			this.passiveSkill.get(i).setVisible(false);
+		}
+		
 		for(Skill skill : Skill.getData()[grade.getGrade().index]) {
 			if(skill.getLvl()[0] > lvl) {
 				continue;
 			}
 			
-			if(skill.getNatif()) {
-				int maxLvlIndex = 0;
-				while(maxLvlIndex+1 < skill.getLvl().length && skill.getLvl()[maxLvlIndex+1] <= lvl) {
-					maxLvlIndex++;
+			isProgressUpdate = !isProgressUpdate;
+			ArrayList<Skill> lvlSkill = new ArrayList<Skill>();
+			lvlSkill.add(new Skill(skill.getName() + " non acquis"));
+			
+			for(int i = 0; i < skill.getLvl().length; i++) {
+				if(skill.getLvl()[i] <= lvl) {
+					lvlSkill.add(new Skill(skill, i));
 				}
-				
-				this.skillNatif.get(count).setItem(new Skill(skill, maxLvlIndex));
-				this.skillNatif.get(count).setVisible(true);
-				count++;
-			} else {
-				isProgressUpdate = !isProgressUpdate;
-				ArrayList<Skill> lvlSkill = new ArrayList<Skill>();
-				lvlSkill.add(new Skill(skill.getName() + " non acquis"));
-				
-				for(int i = 0; i < skill.getLvl().length; i++) {
-					if(skill.getLvl()[i] <= lvl) {
-						lvlSkill.add(new Skill(skill, i));
-					}
-				}
-				
-				Skill[] tabSkill = new Skill[lvlSkill.size()];
-				for(int i = 0; i < tabSkill.length; i++) {
-					tabSkill[i] = lvlSkill.get(i);
-				}
-				
-				Skill memory = this.getSkill(0);
-				this.skillProgress.get(0).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
-				this.skillProgress.get(0).setSelectedItem(memory);
-				this.skillProgress.get(0).setVisible(true);
-				if(this.skillProgress.get(0).getSelectedIndex() == -1) {
-					this.skillProgress.get(0).setSelectedIndex(0);
-				}
-				
-				if(!this.getSkill(0).equals(memory)) {
-					MainFrame.getInstance().setRedPane(NUM_PAGE);
-				}
+			}
+			
+			Skill[] tabSkill = new Skill[lvlSkill.size()];
+			for(int i = 0; i < tabSkill.length; i++) {
+				tabSkill[i] = lvlSkill.get(i);
+			}
+			
+			Skill memory = this.getSkill(0);
+			this.skillProgress.get(0).setItems(tabSkill);
+			this.skillProgress.get(0).setVisible(true);
+			if(this.skillProgress.get(0).getSelectedIndex() == -1) {
+				this.skillProgress.get(0).setSelectedIndex(0);
+			}
+			
+			if(!this.getSkill(0).equals(memory)) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}
 		
@@ -274,13 +295,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
 			
 			Skill memory = this.getSkill(1);
-			this.skillProgress.get(1).setModel(new DefaultComboBoxModel<Skill>(tabSkill));
-			this.skillProgress.get(1).setSelectedItem(memory);
+			this.skillProgress.get(1).setItems(tabSkill);
 			this.skillProgress.get(1).setVisible(true);
-			
-			if(this.skillProgress.get(1).getSelectedIndex() == -1) {
-				this.skillProgress.get(1).setSelectedIndex(0);
-			}
 			
 			if(!this.getSkill(1).equals(memory)) {
 				MainFrame.getInstance().setRedPane(NUM_PAGE);
@@ -289,10 +305,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			this.skillProgress.get(1).setVisible(false);
 		}
 		
-		while(count < this.skillNatif.size()) {
-			this.skillNatif.get(count).setVisible(false);
-			count++;
-		}
 		if(!isProgressUpdate) {
 			this.skillProgress.get(0).setVisible(false);
 		}
@@ -328,7 +340,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
 		ProSkill memory = (ProSkill) this.proSkill.getSelectedItem();
-		this.proSkill.setModel(new DefaultComboBoxModel<ProSkill>(tabProSkill));
+		this.proSkill.setItems(tabProSkill);
 		
 		if(memory != null) {
 			this.proSkill.setSelectedItem(memory);
@@ -336,10 +348,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			if(this.getProSkill() != null && this.getProSkill().equals(memory)) {
 				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
-		}
-		
-		if(this.proSkill.getSelectedIndex() == -1 && tabProSkill.length > 0) {
-			this.proSkill.setSelectedIndex(0);
 		}
 	}
 	

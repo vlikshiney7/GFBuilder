@@ -229,13 +229,11 @@ public class Effect implements Calculable {
 			code += ", " + this.withReinca;
 			code += ", WeaponType." + this.withWeapon;
 			code += ", TypeEffect." + this.transfert;
-			code += "),\n";
 		}
 		
 		if(this.withWeapon != WeaponType.NONE) {
 			code += ", " + this.withReinca;
 			code += ", WeaponType." + this.withWeapon;
-			code += "),\n";
 		}
 		
 		if(this.withReinca) {

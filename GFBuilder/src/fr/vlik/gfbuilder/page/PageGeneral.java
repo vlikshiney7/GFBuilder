@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
@@ -346,24 +345,21 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 			memory = tabGrade[0];
 		}
 		
-		this.grade.setModel(new DefaultComboBoxModel<Grade>(tabGrade));
-		this.grade.setSelectedItem(memory);
+		this.grade.setItems(tabGrade, memory);
 	}
 	
 	private void updateReinca() {
 		Reinca[] tabReinca = Reinca.getPossibleReinca(this.getLvl());
 		int memory = this.reinca.getSelectedIndex();
 		
-		this.reinca.setModel(new DefaultComboBoxModel<Reinca>(tabReinca));
+		this.reinca.setItems(tabReinca);
 		this.reinca.setSelectedIndex(memory);
 	}
 	
 	private void updateTitle() {
-		Title memory = this.getTitle();
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getSearch(), this.filterDialog.getFilters(), memory);
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getSearch(), this.filterDialog.getFilters(), this.getTitle());
 		
-		this.title.setModel(new DefaultComboBoxModel<Title>(tabTitle));
-		this.title.setSelectedItem(memory);
+		this.title.setItems(tabTitle);
 	}
 	
 	public void popoff() {
@@ -395,26 +391,8 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		this.lvl.setValue(Integer.valueOf(config.get("Lvl")));
 		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
 		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
-		
-		Title title = Title.get(config.get("Title"));
-		if(title != null) {
-			this.title.setSelectedItem(title);
-		} else {
-			this.title.setSelectedIndex(0);
-		}
-		
-		Yggdrasil ygg = Yggdrasil.get(config.get("Yggdrasil"), lang);
-		if(ygg != null) {
-			this.yggdra.setSelectedItem(ygg);
-		} else {
-			this.yggdra.setSelectedIndex(0);
-		}
-		
-		Archive archive = Archive.get(config.get("Archive"));
-		if(archive != null) {
-			this.archive.setSelectedItem(archive);
-		} else {
-			this.archive.setSelectedIndex(0);
-		}
+		this.title.setSelectedItem(Title.get(config.get("Title")));
+		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
+		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
 	}
 }

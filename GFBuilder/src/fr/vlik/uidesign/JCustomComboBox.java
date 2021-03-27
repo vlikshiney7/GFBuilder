@@ -1,6 +1,7 @@
 package fr.vlik.uidesign;
 
 import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 
 public class JCustomComboBox<T> extends JComboBox<T> {
@@ -26,6 +27,42 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
+	}
+	
+	public void setItems(T[] tabItems) {
+		T memory = this.getSelectedItem();
+		
+		this.setModel(new DefaultComboBoxModel<T>(tabItems));
+		
+		if(memory != null) {
+			this.setSelectedItem(memory);
+		} else {
+			if(this.getItemCount() > 0) {
+				this.setSelectedIndex(0);
+			}
+		}
+	}
+	
+	public void setItems(T[] tabItems, T item) {
+		this.setModel(new DefaultComboBoxModel<T>(tabItems));
+		
+		if(item != null) {
+			this.setSelectedItem(item);
+		} else {
+			if(this.getItemCount() > 0) {
+				this.setSelectedIndex(0);
+			}
+		}
+	}
+	
+	public void setSelectedItem(Object item) {
+		if(item == null) {
+			if(this.getItemCount() > 0) {
+				this.setSelectedIndex(0);
+			}
+		} else {
+			super.setSelectedItem(item);
+		}
 	}
 	
 	public void setBlackUI() {

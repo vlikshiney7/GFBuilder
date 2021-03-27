@@ -27,14 +27,12 @@ public class Skill implements Iconable, Writable {
 	
 	private String name;
 	private int[] lvl;
-	private boolean natif;
 	private Icon icon;
 	private Effect[][] effects;
 	
-	public Skill(String name, int[] lvl, boolean natif, String path, Effect[][] effects) {
+	public Skill(String name, int[] lvl, String path, Effect[][] effects) {
 		this.name = name;
 		this.lvl = lvl;
-		this.natif = natif;
 		this.icon = setIcon(path);
 		this.effects = effects;
 	}
@@ -42,14 +40,12 @@ public class Skill implements Iconable, Writable {
 	public Skill(String name) {
 		this.name = name;
 		this.lvl = new int[] { 0 };
-		this.natif = false;
 		this.icon = setIcon("32-7");
 	}
 	
 	public Skill(Skill skill, int index) {
 		this.name = skill.getName() + " " + (index+1);
 		this.lvl = new int[] { skill.getLvl()[index] };
-		this.natif = skill.getNatif();
 		this.icon = skill.getIcon();
 		this.effects = new Effect[1][];
 		this.effects[0] = skill.getEffects(index);
@@ -61,10 +57,6 @@ public class Skill implements Iconable, Writable {
 	
 	public int[] getLvl() {
 		return this.lvl;
-	}
-	
-	public boolean getNatif() {
-		return this.natif;
 	}
 	
 	@Override
@@ -143,20 +135,20 @@ public class Skill implements Iconable, Writable {
 				for(int i = 0; i < lineSplitInfo; i++) {
 					String[] lineSplit = line.split("/");
 					String path =  lineSplit[lineSplit.length-1];
-					String[] lvlSkill = lineSplit[2].split(",");
+					String[] lvlSkill = lineSplit[1].split(",");
 					int[] lvl = new int[lvlSkill.length];
 					
 					Effect[][] effects = new Effect[lvlSkill.length][];
 					for(int j = 0; j < lvlSkill.length; j++) {
-						int nbEffect = Integer.parseInt(lineSplit[3]);
+						int nbEffect = Integer.parseInt(lineSplit[2]);
 						effects[j] = new Effect[nbEffect];
 						lvl[j] = Integer.parseInt(lvlSkill[j]);
 						for(int k = 0; k < nbEffect; k++) {
-							effects[j][k] = new Effect(lineSplit[j*nbEffect+k+4]);
+							effects[j][k] = new Effect(lineSplit[j*nbEffect+k+3]);
 						}
 					}
 					
-					skill.add(new Skill(lineSplit[0], lvl, Boolean.parseBoolean(lineSplit[1]), path, effects));
+					skill.add(new Skill(lineSplit[0], lvl, path, effects));
 					
 					line = reader.readLine();
 				}

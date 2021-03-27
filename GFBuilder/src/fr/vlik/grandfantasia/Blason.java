@@ -1,8 +1,5 @@
 package fr.vlik.grandfantasia;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,38 +8,29 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Iconable;
-import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.IconBuff;
 
-public class Blason implements Iconable, Writable {
+public class Blason extends IconBuff {
 	
 	private static final String PATH = Tools.RESOURCE + "sprite/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	private static Blason[] data;
-	static {
-		loadData();
-	}
+	private static Blason[] data = LoaderCharacUpgrade.getBlason();
 	
-	private String name;
 	private int lvl;
 	private BlasonType type;
-	private Icon icon;
-	private ArrayList<Effect> effects = new ArrayList<Effect>();
 	
 	public Blason() {
-		this.name = "Rien";
+		super();
 		this.lvl = 0;
-		this.type = BlasonType.OFFENSIVE;
-		this.icon = setIcon("32-7");
 	}
 	
-	public Blason(String name, int lvl, BlasonType type, ArrayList<Effect> effects) {
-		this.name = name;
+	public Blason(Map<Language, String> name, int lvl, BlasonType type, Calculable[] effects) {
+		super(name, effects);
 		this.lvl = lvl;
 		this.type = type;
 		this.icon = setIcon(type == BlasonType.OFFENSIVE ? "atk" : "def");
-		this.effects = effects;
 	}
 	
 	public static enum BlasonType {
@@ -55,29 +43,12 @@ public class Blason implements Iconable, Writable {
 	    }
 	}
 	
-	public String getName() {
-		return this.name;
-	}
-	
 	public int getLvl() {
 		return this.lvl;
 	}
 	
 	public BlasonType getType() {
 		return this.type;
-	}
-	
-	@Override
-	public Icon getIcon() {
-		return this.icon;
-	}
-	
-	public ArrayList<Effect> getEffects() {
-		ArrayList<Effect> list = new ArrayList<Effect>(this.effects.size());
-		for(Effect effect : this.effects) {
-			list.add(new Effect(effect));
-		}
-		return list;
 	}
 	
 	@Override
@@ -116,54 +87,15 @@ public class Blason implements Iconable, Writable {
 	
 	@Override
 	public String getInfo(Language lang) {
-		return "Lvl " + this.lvl + " - " + this.name;
-	}
-	
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
-		for(Effect e : this.effects) {
-			tooltip.append("<br>");
-			tooltip.append(e.getTooltip());
+		if(this.name.get(lang) == "") {
+			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}
-		
-		return "<html>" + tooltip + "</html>";
-	}
-	
-	public static void loadData() {
-		ArrayList<Blason> list = new ArrayList<Blason>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Blason.class.getResourceAsStream(PATH + "blasons.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			while (line != null) {
-				String[] lineSplit = line.split("/");
-				
-				BlasonType type = BlasonType.values()[Integer.parseInt(lineSplit[2])];
-				
-				ArrayList<Effect> effects = new ArrayList<Effect>(Integer.parseInt(lineSplit[3]));
-				for(int j = 0; j < Integer.parseInt(lineSplit[3]); j++)
-					effects.add(new Effect(lineSplit[j+4]));
-				
-				list.add(new Blason(lineSplit[0], Integer.parseInt(lineSplit[1]), type, effects));
-				
-				line = reader.readLine();
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Blason.class.getClass().getSimpleName() + " class");
-		}
-		
-		Blason.data = new Blason[list.size()];
-		for(int i = 0; i < data.length; i++) {
-			data[i] = list.get(i);
-		}
+		return "Lvl " + this.lvl + " - " + this.name.get(lang);
 	}
 	
 	public static Blason get(String name) {
 		for(Blason blason : Blason.data) {
-			if(blason.getName().equals(name)) {
+			if(blason.getName(Language.FR).equals(name)) {
 				return blason;
 			}
 		}
@@ -182,9 +114,6 @@ public class Blason implements Iconable, Writable {
 			}
 		}
 		
-		Blason[] cast = new Blason[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new Blason[result.size()]);
 	}
 }

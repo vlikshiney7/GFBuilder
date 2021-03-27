@@ -105,6 +105,18 @@ public class XpStuff implements Colorable, Writable {
 		return false;
 	}
 	
+	public static boolean availableEffects(XpStuff xpStuff1, XpStuff xpStuff2) {
+		if(xpStuff1 == null || xpStuff2 == null) {
+			return false;
+		}
+		
+		if(xpStuff1.getType() == TypeEffect.NONE || xpStuff2.getType() == TypeEffect.NONE) {
+			return false;
+		}
+		
+		return xpStuff1.getType() != xpStuff2.getType();
+	}
+	
 	public static XpStuff get(Equipment equip, String name) {
 		for(XpStuff xpStuff : XpStuff.data) {
 			if(xpStuff.containType(equip.getType())) {

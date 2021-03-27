@@ -1,64 +1,24 @@
-4
-Défense experte/true/6/1/ReducP,false,10/0-0
-Endurance au combat/true/16/1/RegenPV,false,20/0-1
-Évolution en berserker/true/31/0/31-0
-Âme Invincible/false/86,89,92,95,98/3/FCE,false,50/VIT,false,30/DefP,true,6/FCE,false,55/VIT,false,35/DefP,true,8/FCE,false,60/VIT,false,40/DefP,true,10/FCE,false,65/VIT,false,45/DefP,true,12/FCE,false,70/VIT,false,50/DefP,true,14/86-0
-4
-Défense experte/true/6/1/ReducP,false,10/0-0
-Endurance au combat/true/16/1/RegenPV,false,20/0-1
-Évolution en paladin/true/31/3/DefP,false,500/PV,false,800/PM,false,400/31-1
-Âme Invincible/false/86,89,92,95,98/3/FCE,false,50/VIT,false,30/DefP,true,6/FCE,false,55/VIT,false,35/DefP,true,8/FCE,false,60/VIT,false,40/DefP,true,10/FCE,false,65/VIT,false,45/DefP,true,12/FCE,false,70/VIT,false,50/DefP,true,14/86-0
-4
-Tireur d'élite/true/6/1/VitAtkD,false,30/1-0
-Combat à l'arme double/true/16/0/1-1
-Évolution en ranger/true/31/0/31-2
-Âme Agile/false/86,89,92,95,98/3/VIT,false,30/AGI,false,50/Atk,true,3/VIT,false,35/AGI,false,55/Atk,true,4/VIT,false,40/AGI,false,60/Atk,true,5/VIT,false,45/AGI,false,65/Atk,true,6/VIT,false,50/AGI,false,70/Atk,true,7/86-1
-4
-Tireur d'élite/true/6/1/VitAtkD,false,30/1-0
-Combat à l'arme double/true/16/0/1-1
-Évolution en assassin/true/31/1/ESQ,false,12/31-3
-Âme Agile/false/86,89,92,95,98/3/VIT,false,30/AGI,false,50/Atk,true,3/VIT,false,35/AGI,false,55/Atk,true,4/VIT,false,40/AGI,false,60/Atk,true,5/VIT,false,45/AGI,false,65/Atk,true,6/VIT,false,50/AGI,false,70/Atk,true,7/86-1
-4
-Résistance à la magie/true/6/1/ReducM,false,10/2-0
-Restauration de PM/true/16/1/RegenPM,false,20/2-1
-Évolution en clerc/true/31/0/32-7
-Âme Pure/false/86,89,92,95,98/4/VIT,false,14/INT,false,50/VOL,false,14/AtkM,true,6/VIT,false,17/INT,false,55/VOL,false,17/AtkM,true,8/VIT,false,20/INT,false,60/VOL,false,20/AtkM,true,10/VIT,false,23/INT,false,65/VOL,false,23/AtkM,true,12/VIT,false,26/INT,false,70/VOL,false,26/AtkM,true,14/86-2
-4
-Résistance à la magie/true/6/1/ReducM,false,10/2-0
-Restauration de PM/true/16/1/RegenPM,false,20/2-1
-Évolution en sage/true/31/0/31-5
-Âme Pure/false/86,89,92,95,98/4/VIT,false,14/INT,false,50/VOL,false,14/AtkM,true,6/VIT,false,17/INT,false,55/VOL,false,17/AtkM,true,8/VIT,false,20/INT,false,60/VOL,false,20/AtkM,true,10/VIT,false,23/INT,false,65/VOL,false,23/AtkM,true,12/VIT,false,26/INT,false,70/VOL,false,26/AtkM,true,14/86-2
-4
-Adepte de la magie/true/6/1/DegM,false,10/3-0
-Tireur d'élite magique/true/16/1/TCCM,false,3/3-1
-Évolution en sorcier/true/31/1/PM,false,800/31-6
-Âme Magique/false/86,89,92,95,98/4/VIT,false,14/INT,false,30/VOL,false,14/AtkM,true,3/VIT,false,17/INT,false,35/VOL,false,17/AtkM,true,4/VIT,false,20/INT,false,40/VOL,false,20/AtkM,true,5/VIT,false,23/INT,false,45/VOL,false,23/AtkM,true,6/VIT,false,26/INT,false,50/VOL,false,26/AtkM,true,7/86-3
-4
-Adepte de la magie/true/6/1/DegM,false,10/3-0
-Tireur d'élite magique/true/16/1/TCCM,false,3/3-1
-Évolution en nécromancien/true/31/2/PV,false,400/PM,false,400/31-7
-Âme Magique/false/86,89,92,95,98/4/VIT,false,14/INT,false,30/VOL,false,14/AtkM,true,3/VIT,false,17/INT,false,35/VOL,false,17/AtkM,true,4/VIT,false,20/INT,false,40/VOL,false,20/AtkM,true,5/VIT,false,23/INT,false,45/VOL,false,23/AtkM,true,6/VIT,false,26/INT,false,50/VOL,false,26/AtkM,true,7/86-3
-4
-ORDI de Technopolis/true/6,31,66/1/BoostCraft,false,1/BoostCraft,false,2/BoostCraft,false,3/4-0
-Microprocesseur de combat multi-coeur/true/16/1/ReloadComp,false,0.5/4-1
-Double armes mécaniques/true/31/0/4-2
-Évolution en métalleux/true/31/0/31-8
-4
-ORDI de Technopolis/true/6,31,66/1/BoostCraft,false,1/BoostCraft,false,2/BoostCraft,false,3/4-0
-Microprocesseur de combat multi-coeur/true/16/1/ReloadComp,false,0.5/4-1
-Double armes mécaniques/true/31/0/4-2
-Évolution en démolisseur/true/31/0/31-9
-5
-Résonance cristalline/true/6/0/5-0
-Cristal du Temps/false/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
-Noyau de Cristallisation de l'Espace/true/31/2/PeneP,false,5/PeneM,false,5/5-2
-Évolution en spatiodériveur/true/31/0/31-10
-Poids de l'univers/true/66/4/Depla,false,5/ReducP,false,5/ReducM,false,5/Atk,false,50,false,-1,AtkM/66-0
-5
-Résonance cristalline/true/6/0/5-0
-Cristal du Temps/false/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
-Noyau de Cristallisation de l'Espace/true/31/2/PeneP,false,5/PeneM,false,5/5-2
-Évolution en chronodériveur/true/31/1/PM,false,800/31-11
-Pouvoir du Temps/true/66/1/VitComp,false,10/66-1
 1
-Âme brisée/false/6,66/2/XP,false,10/Loot,false,5/XP,false,13/Loot,false,5/reinca
+Âme Invincible/86,89,92,95,98/3/FCE,false,50/VIT,false,30/DefP,true,6/FCE,false,55/VIT,false,35/DefP,true,8/FCE,false,60/VIT,false,40/DefP,true,10/FCE,false,65/VIT,false,45/DefP,true,12/FCE,false,70/VIT,false,50/DefP,true,14/86-0
+1
+Âme Invincible/86,89,92,95,98/3/FCE,false,50/VIT,false,30/DefP,true,6/FCE,false,55/VIT,false,35/DefP,true,8/FCE,false,60/VIT,false,40/DefP,true,10/FCE,false,65/VIT,false,45/DefP,true,12/FCE,false,70/VIT,false,50/DefP,true,14/86-0
+1
+Âme Agile/86,89,92,95,98/3/VIT,false,30/AGI,false,50/Atk,true,3/VIT,false,35/AGI,false,55/Atk,true,4/VIT,false,40/AGI,false,60/Atk,true,5/VIT,false,45/AGI,false,65/Atk,true,6/VIT,false,50/AGI,false,70/Atk,true,7/86-1
+1
+Âme Agile/86,89,92,95,98/3/VIT,false,30/AGI,false,50/Atk,true,3/VIT,false,35/AGI,false,55/Atk,true,4/VIT,false,40/AGI,false,60/Atk,true,5/VIT,false,45/AGI,false,65/Atk,true,6/VIT,false,50/AGI,false,70/Atk,true,7/86-1
+1
+Âme Pure/86,89,92,95,98/4/VIT,false,14/INT,false,50/VOL,false,14/AtkM,true,6/VIT,false,17/INT,false,55/VOL,false,17/AtkM,true,8/VIT,false,20/INT,false,60/VOL,false,20/AtkM,true,10/VIT,false,23/INT,false,65/VOL,false,23/AtkM,true,12/VIT,false,26/INT,false,70/VOL,false,26/AtkM,true,14/86-2
+1
+Âme Pure/86,89,92,95,98/4/VIT,false,14/INT,false,50/VOL,false,14/AtkM,true,6/VIT,false,17/INT,false,55/VOL,false,17/AtkM,true,8/VIT,false,20/INT,false,60/VOL,false,20/AtkM,true,10/VIT,false,23/INT,false,65/VOL,false,23/AtkM,true,12/VIT,false,26/INT,false,70/VOL,false,26/AtkM,true,14/86-2
+1
+Âme Magique/86,89,92,95,98/4/VIT,false,14/INT,false,30/VOL,false,14/AtkM,true,3/VIT,false,17/INT,false,35/VOL,false,17/AtkM,true,4/VIT,false,20/INT,false,40/VOL,false,20/AtkM,true,5/VIT,false,23/INT,false,45/VOL,false,23/AtkM,true,6/VIT,false,26/INT,false,50/VOL,false,26/AtkM,true,7/86-3
+1
+Âme Magique/86,89,92,95,98/4/VIT,false,14/INT,false,30/VOL,false,14/AtkM,true,3/VIT,false,17/INT,false,35/VOL,false,17/AtkM,true,4/VIT,false,20/INT,false,40/VOL,false,20/AtkM,true,5/VIT,false,23/INT,false,45/VOL,false,23/AtkM,true,6/VIT,false,26/INT,false,50/VOL,false,26/AtkM,true,7/86-3
+0
+0
+1
+Cristal du Temps/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
+1
+Cristal du Temps/16,31,66/1/TimeCraft,false,-5/TimeCraft,false,-10/TimeCraft,false,-15/5-1
+1
+Âme brisée/6,66/2/XP,false,10/Loot,false,5/XP,false,13/Loot,false,5/reinca

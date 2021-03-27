@@ -2,9 +2,11 @@ package fr.vlik.grandfantasia.loader.characUpgrade;
 
 import java.util.HashMap;
 
+import fr.vlik.grandfantasia.Blason;
 import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
+import fr.vlik.grandfantasia.characUpgrade.PassiveSkill;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.characUpgrade.Speciality;
 import fr.vlik.grandfantasia.characUpgrade.Stone;
@@ -16,6 +18,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
@@ -93,6 +96,197 @@ public class LoaderCharacUpgrade {
 			LoaderSpeciality.getClass9(),
 			LoaderSpeciality.getClass10(),
 			LoaderSpeciality.getClass11(),
+		};
+	}
+	
+	public static PassiveSkill[][] getPassiveSkill() {
+		return new PassiveSkill[][] {
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Défense experte"); put(Language.EN, ""); }}, 6, "0-0", new Calculable[] {
+					new Effect(TypeEffect.ReducP, false, 10),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Endurance au combat"); put(Language.EN, ""); }}, 16, "0-1", new Calculable[] {
+					new Effect(TypeEffect.RegenPV, false, 20),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en berserker"); put(Language.EN, ""); }}, 31, "31-0", null),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Défense experte"); put(Language.EN, ""); }}, 6, "0-0", new Calculable[] {
+					new Effect(TypeEffect.ReducP, false, 10),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Endurance au combat"); put(Language.EN, ""); }}, 16, "0-1", new Calculable[] {
+					new Effect(TypeEffect.RegenPV, false, 20),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en paladin"); put(Language.EN, ""); }}, 31, "31-1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 500),
+					new Effect(TypeEffect.PV, false, 800),
+					new Effect(TypeEffect.PM, false, 400),
+				}),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite"); put(Language.EN, ""); }}, 6, "1-0", new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 30),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Combat à l'arme double"); put(Language.EN, ""); }}, 16, "1-1", new Calculable[] {
+					new StaticEffect(TypeStaticEffect.Duo),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en ranger"); put(Language.EN, ""); }}, 31, "31-2", null),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite"); put(Language.EN, ""); }}, 6, "1-0", new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 30),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Combat à l'arme double"); put(Language.EN, ""); }}, 16, "1-1", new Calculable[] {
+					new StaticEffect(TypeStaticEffect.Duo),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en assassin"); put(Language.EN, ""); }}, 31, "31-3", new Calculable[] {
+					new Effect(TypeEffect.ESQ, false, 12),
+				}),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Résistance à la magie"); put(Language.EN, ""); }}, 6, "2-0", new Calculable[] {
+					new Effect(TypeEffect.ReducM, false, 10),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Restauration de PM"); put(Language.EN, ""); }}, 16, "2-1", new Calculable[] {
+					new Effect(TypeEffect.RegenPM, false, 20),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en clerc"); put(Language.EN, ""); }}, 31, "31-4", null),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Résistance à la magie"); put(Language.EN, ""); }}, 6, "2-0", new Calculable[] {
+					new Effect(TypeEffect.ReducM, false, 10),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Restauration de PM"); put(Language.EN, ""); }}, 16, "2-1", new Calculable[] {
+					new Effect(TypeEffect.RegenPM, false, 20),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en sage"); put(Language.EN, ""); }}, 31, "31-5", null),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Adepte de la magie"); put(Language.EN, ""); }}, 6, "3-0", new Calculable[] {
+					new Effect(TypeEffect.DegM, false, 10),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite magique"); put(Language.EN, ""); }}, 16, "3-1", new Calculable[] {
+					new Effect(TypeEffect.TCCM, false, 3),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en sorcier"); put(Language.EN, ""); }}, 31, "31-6", new Calculable[] {
+					new Effect(TypeEffect.PM, false, 800),
+				}),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Adepte de la magie"); put(Language.EN, ""); }}, 6, "3-0", new Calculable[] {
+					new Effect(TypeEffect.DegM, false, 10),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite magique"); put(Language.EN, ""); }}, 16, "3-1", new Calculable[] {
+					new Effect(TypeEffect.TCCM, false, 3),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en nécromancien"); put(Language.EN, ""); }}, 31, "31-7", new Calculable[] {
+					new Effect(TypeEffect.PV, false, 400),
+					new Effect(TypeEffect.PM, false, 400),
+				}),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "ORDI de Technopolis"); put(Language.EN, ""); }}, new int[] { 6, 31, 66, }, "4-0", new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.BoostCraft, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.BoostCraft, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.BoostCraft, false, 3),
+					},
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Microprocesseur de combat multi-coeur"); put(Language.EN, ""); }}, 16, "4-1", new Calculable[] {
+					new Effect(TypeEffect.ReloadComp, false, 0.5),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Double armes mécaniques"); put(Language.EN, ""); }}, 31, "4-2", new Calculable[] {
+					new StaticEffect(TypeStaticEffect.Duo),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en métalleux"); put(Language.EN, ""); }}, 31, "31-8", null),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "ORDI de Technopolis"); put(Language.EN, ""); }}, new int[] { 6, 31, 66, }, "4-0", new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.BoostCraft, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.BoostCraft, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.BoostCraft, false, 3),
+					},
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Microprocesseur de combat multi-coeur"); put(Language.EN, ""); }}, 16, "4-1", new Calculable[] {
+					new Effect(TypeEffect.ReloadComp, false, 0.5),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Double armes mécaniques"); put(Language.EN, ""); }}, 31, "4-2", new Calculable[] {
+					new StaticEffect(TypeStaticEffect.Duo),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en démolisseur"); put(Language.EN, ""); }}, 31, "31-9", null),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Résonance cristalline"); put(Language.EN, ""); }}, 6, "5-0", new Calculable[] {
+					new Condition(TypeEffect.PV, new int[] { 67, 100, }, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 10),
+						new Effect(TypeEffect.ReducM, false, 10),
+					}),
+					new Condition(TypeEffect.PV, new int[] { 34, 66, }, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 5),
+						new Effect(TypeEffect.ReducM, false, 5),
+						new Effect(TypeEffect.DegP, false, 5),
+						new Effect(TypeEffect.DegM, false, 5),
+					}),
+					new Condition(TypeEffect.PV, new int[] { 1, 33, }, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 10),
+						new Effect(TypeEffect.ReducM, false, 10),
+						new Effect(TypeEffect.DegP, false, 20),
+						new Effect(TypeEffect.DegM, false, 20),
+						new Effect(TypeEffect.CostPV, false, -100),
+					}),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Noyau de Cristallisation de l'Espace"); put(Language.EN, ""); }}, 31, "5-2", new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 5),
+					new Effect(TypeEffect.PeneM, false, 5),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en spatiodériveur"); put(Language.EN, ""); }}, 31, "31-10", null),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Poids de l'univers"); put(Language.EN, ""); }}, 66, "66-0", new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 5),
+					new Effect(TypeEffect.ReducP, false, 5),
+					new Effect(TypeEffect.ReducM, false, 5),
+					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM),
+				}),
+			},
+			new PassiveSkill[] {
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Résonance cristalline"); put(Language.EN, ""); }}, 6, "5-0", new Calculable[] {
+					new Condition(TypeEffect.PV, new int[] { 67, 100, }, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 10),
+						new Effect(TypeEffect.ReducM, false, 10),
+					}),
+					new Condition(TypeEffect.PV, new int[] { 34, 66, }, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 5),
+						new Effect(TypeEffect.ReducM, false, 5),
+						new Effect(TypeEffect.DegP, false, 5),
+						new Effect(TypeEffect.DegM, false, 5),
+					}),
+					new Condition(TypeEffect.PV, new int[] { 1, 33, }, new Calculable[] {
+						new Effect(TypeEffect.ReducP, false, 10),
+						new Effect(TypeEffect.ReducM, false, 10),
+						new Effect(TypeEffect.DegP, false, 20),
+						new Effect(TypeEffect.DegM, false, 20),
+						new Effect(TypeEffect.CostPV, false, -100),
+					}),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Noyau de Cristallisation de l'Espace"); put(Language.EN, ""); }}, 31, "5-2", new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 5),
+					new Effect(TypeEffect.PeneM, false, 5),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en chronodériveur"); put(Language.EN, ""); }}, 31, "31-11", new Calculable[] {
+					new Effect(TypeEffect.PM, false, 800),
+				}),
+				new PassiveSkill(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du Temps"); put(Language.EN, ""); }}, 66, "66-1", new Calculable[] {
+					new Effect(TypeEffect.VitComp, false, 10),
+				}),
+			},
 		};
 	}
 	
@@ -472,5 +666,9 @@ public class LoaderCharacUpgrade {
 				new Effect(TypeEffect.DefM, false, 5),
 			}),
 		};
+	}
+	
+	public static Blason[] getBlason() {
+		return LoaderBlason.getBlason();
 	}
 }

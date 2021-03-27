@@ -11,12 +11,20 @@ public class Condition implements Calculable {
 	private Target target = Target.SELF;
 	private TypeCondition specialCondition = null;
 	private int percent;
+	private int percentMin = 0;
 	private int taux;
 	private int cumul = 1;
 	
 	public Condition(TypeEffect targetEffect, int percent, Calculable[] effects) {
 		this.targetEffect = targetEffect;
 		this.percent = percent;
+		this.effects = effects;
+	}
+	
+	public Condition(TypeEffect targetEffect, int[] percent, Calculable[] effects) {
+		this.targetEffect = targetEffect;
+		this.percent = percent[1];
+		this.percentMin = percent[0];
 		this.effects = effects;
 	}
 	
@@ -86,6 +94,10 @@ public class Condition implements Calculable {
 	public int getPercent() {
 		return this.percent;
 	}
+
+	public int getPercentMin() {
+		return this.percentMin;
+	}
 	
 	public Target getTarget() {
 		return this.target;
@@ -120,7 +132,11 @@ public class Condition implements Calculable {
 				tooltip.append("Adversaire : ");
 			}
 			
-			tooltip.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent);
+			if(this.percentMin != 0) {
+				tooltip.append("Si " + this.targetEffect.abbrevFR + " entre " + this.percentMin + "% et " + this.percent + "%");
+			} else {
+				tooltip.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent + "%");
+			}
 			
 			if(this.taux > 0) {
 				tooltip.append(", " + this.taux + "% d'activer");
@@ -154,7 +170,11 @@ public class Condition implements Calculable {
 					result.append("Adversaire : ");
 				}
 				
-				result.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent + "%");
+				if(this.percentMin != 0) {
+					result.append("Si " + this.targetEffect.abbrevFR + " entre " + this.percentMin + "% et " + this.percent + "%");
+				} else {
+					result.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent + "%");
+				}
 				
 				if(this.taux > 0) {
 					result.append(", " + this.taux + "% d'activer");
@@ -196,7 +216,11 @@ public class Condition implements Calculable {
 					result.append("Opponent: ");
 				}
 				
-				result.append("If " + this.targetEffect.abbrevEN + " < " + this.percent + "%");
+				if(this.percentMin != 0) {
+					result.append("If " + this.targetEffect.abbrevEN + " between " + this.percentMin + "% and " + this.percent + "%");
+				} else {
+					result.append("If " + this.targetEffect.abbrevEN + " < " + this.percent + "%");
+				}
 				
 				if(this.taux > 0) {
 					result.append(", " + this.taux + "% to activate");

@@ -4532,7 +4532,7 @@ public class LoaderTalent {
 					new Effect(TypeEffect.Depla, false, 15),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Combo Magique"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "11-6", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Combo Magique"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "10-6", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegM, false, 8),
 					new StaticEffect(TypeStaticEffect.x2STD, 10),

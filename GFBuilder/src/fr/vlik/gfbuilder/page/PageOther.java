@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -169,8 +168,7 @@ public class PageOther extends PagePanel {
 		Anima[] tabAnima = Anima.getData(lvl);
 		Anima memory = this.getAnima();
 		
-		this.anima.setModel(new DefaultComboBoxModel<Anima>(tabAnima));
-		this.anima.setSelectedItem(memory);
+		this.anima.setItems(tabAnima);
 		
 		if(reinca.getLvl() > 0 && lvl >= 10) {
 			this.showAndHide.get(1).setVisible(true);
@@ -202,25 +200,8 @@ public class PageOther extends PagePanel {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		Bague bague = Bague.get(config.get("Bague"), lang);
-		if(bague == null) {
-			this.bague.setSelectedIndex(0);
-		} else {
-			this.bague.setSelectedItem(bague);
-		}
-		
-		LoveBuff loveCo = LoveBuff.get(config.get("LoveBuff"));
-		if(loveCo == null) {
-			this.loveCo.setSelectedIndex(0);
-		} else {
-			this.loveCo.setSelectedItem(loveCo);
-		}
-		
-		Anima anima = Anima.get(config.get("Anima"));
-		if(anima == null) {
-			this.anima.setSelectedIndex(0);
-		} else {
-			this.anima.setSelectedItem(anima);
-		}
+		this.bague.setSelectedItem(Bague.get(config.get("Bague"), lang));
+		this.loveCo.setSelectedItem(LoveBuff.get(config.get("LoveBuff")));
+		this.anima.setSelectedItem(Anima.get(config.get("Anima")));
 	}
 }
