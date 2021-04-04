@@ -29,7 +29,7 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 		setBlackUI();
 	}
 	
-	public void setItems(T[] tabItems) {
+	public boolean setItems(T[] tabItems) {
 		T memory = this.getSelectedItem();
 		
 		this.setModel(new DefaultComboBoxModel<T>(tabItems));
@@ -41,6 +41,13 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 				this.setSelectedIndex(0);
 			}
 		}
+		
+		boolean result = false;
+		if(memory == this.getSelectedItem() || (memory != null && memory.equals(this.getSelectedItem()))) {
+			result = true;
+		}
+		
+		return result;
 	}
 	
 	public void setItems(T[] tabItems, T item) {

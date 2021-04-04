@@ -555,11 +555,8 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		
 		for(int i = 0; i < 5; i++) {
 			Armor[] tabArmor = Armor.getPossibleArmor(i, grade, lvl, reinca);
-			Armor memory = this.getArmor(i);
 			
-			this.armor.get(i).setItems(tabArmor);
-			
-			if(!this.getArmor(i).equals(memory)) {
+			if(!this.armor.get(i).setItems(tabArmor)) {
 				updateXpStuff(i);
 				updateDetails(i);
 				updateEnchant(i);

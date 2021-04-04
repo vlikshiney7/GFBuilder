@@ -1,173 +1,98 @@
 package fr.vlik.grandfantasia.characUpgrade;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
-import fr.vlik.grandfantasia.Tools;
+import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Iconable;
-import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
+import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.Buff;
+import fr.vlik.grandfantasia.template.InnerIconEffect;
 
-public class Skill implements Iconable, Writable {
+public class Skill extends Buff {
 	
-	public static String PATH = Tools.RESOURCE + Skill.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	private static Skill[][] data;
-	static {
-		loadData();
-	}
+	private static Skill[][] dataPassive = LoaderCharacUpgrade.getPassiveSkill();
+	private static Skill[] dataUpgrade = LoaderCharacUpgrade.getUpgradeSkill();
 	
-	private String name;
 	private int[] lvl;
-	private Icon icon;
-	private Effect[][] effects;
+	private InnerIconEffect[] lvlEffect;
 	
-	public Skill(String name, int[] lvl, String path, Effect[][] effects) {
-		this.name = name;
+	@SuppressWarnings("serial")
+	public Skill(Map<Language, String> name, int lvl, String path, Calculable[] effects) {
+		super(name, effects);
+		this.lvl = new int[] { lvl };
+		String lvlSkill = "Lvl " + lvl + " - ";
+		this.lvlEffect = new InnerIconEffect[] { new InnerIconEffect(new HashMap<Language, String>() {{ put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN)); }}, "skill/" + path, 0, effects) };
+	}
+	
+	@SuppressWarnings("serial")
+	public Skill(Map<Language, String> name, int[] lvl, String path, Calculable[][] lvlEffects) {
+		super(name, null);
 		this.lvl = lvl;
-		this.icon = setIcon(path);
-		this.effects = effects;
+		
+		this.lvlEffect = new InnerIconEffect[lvlEffects.length];
+		for(int i = 0; i < lvlEffects.length; i++) {
+			int lvlEffect = i+1;
+			String lvlSkill = "Lvl " + this.lvl[i] + " - ";
+			Calculable[] effect = lvlEffects[i];
+			this.lvlEffect[i] = new InnerIconEffect(new HashMap<Language, String>() {{ put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN)); }}, "skill/" + path, lvlEffect, effect);
+		}
 	}
 	
-	public Skill(String name) {
-		this.name = name;
-		this.lvl = new int[] { 0 };
-		this.icon = setIcon("32-7");
-	}
-	
-	public Skill(Skill skill, int index) {
-		this.name = skill.getName() + " " + (index+1);
-		this.lvl = new int[] { skill.getLvl()[index] };
-		this.icon = skill.getIcon();
-		this.effects = new Effect[1][];
-		this.effects[0] = skill.getEffects(index);
-	}
-	
-	public String getName() {
-		return this.name;
+	@SuppressWarnings("serial")
+	public Skill(Map<Language, String> name, int[] lvl, String[] path, Calculable[][] lvlEffects) {
+		super(name, null);
+		this.lvl = lvl;
+		
+		this.lvlEffect = new InnerIconEffect[lvlEffects.length+1];
+		this.lvlEffect[0] = new InnerIconEffect(new HashMap<Language, String>() {{ put(Language.FR, name.get(Language.FR) + " - Non acquis"); put(Language.EN, name.get(Language.EN) + " - Not acquired"); }}, "skill/32-7", 0, null);
+		
+		for(int i = 0; i < lvlEffects.length; i++) {
+			int lvlEffect = i+1;
+			String lvlSkill = "Lvl " + this.lvl[i] + " - ";
+			Calculable[] effect = lvlEffects[i];
+			this.lvlEffect[i+1] = new InnerIconEffect(new HashMap<Language, String>() {{ put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN)); }}, "skill/" + path[i], lvlEffect, effect);
+		}
 	}
 	
 	public int[] getLvl() {
 		return this.lvl;
 	}
 	
-	@Override
-	public Icon getIcon() {
-		return this.icon;
-	}
-	
-	public Effect[] getEffects() {
-		return getEffects(0);
-	}
-	
-	public Effect[] getEffects(int i) {
-		if(this.effects == null || this.effects[i] == null) {
-			return null;
-		}
-		
-		Effect[] tab = new Effect[this.effects[i].length];
-		for(int j = 0; j < tab.length; j++) {
-			tab[j] = new Effect(this.effects[i][j]);
-		}
-		
-		return tab;
-	}
-	
-	@Override
-	public Icon setIcon(String path) {
-		if(ICONS.get(path) == null) {
-			try {
-				ICONS.put(path, new ImageIcon(Skill.class.getResource(PATH + path + Tools.PNG)));
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
+	public InnerIconEffect getCurrentEffect(int lvl) {
+		for(int i = this.lvl.length-1; i >= 0; i--) {
+			if(lvl >= this.lvl[i]) {
+				return this.lvlEffect[i];
 			}
 		}
 		
-		return ICONS.get(path);
+		return null;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
-		return "Lvl " + this.lvl[0] + " - " + this.name;
-	}
-	
-	@Override
-	public String getTooltip() {
-		return getTooltip(0);
-	}
-	
-	public String getTooltip(int i) {
-		StringBuilder tooltip = new StringBuilder("- Statistique -");
+	public InnerIconEffect[] getInnerSkill(int lvl) {
+		ArrayList<InnerIconEffect> result = new ArrayList<InnerIconEffect>();
+		result.add(this.lvlEffect[0]);
 		
-		if(this.effects != null && this.effects[i] != null) {
-			for(Effect e : this.effects[i]) {
-				tooltip.append("<br>");
-				tooltip.append(e.getTooltip());
+		for(int i = 0; i < this.lvl.length; i++) {
+			if(this.lvl[i] <= lvl) {
+				result.add(this.lvlEffect[i+1]);
 			}
 		}
 		
-		return "<html>" + tooltip + "</html>";
+		return result.toArray(new InnerIconEffect[result.size()]);
 	}
 	
-	public static void loadData() {
-		ArrayList<ArrayList<Skill>> list = new ArrayList<ArrayList<Skill>>();
-		
-		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					Skill.class.getResourceAsStream(PATH + "skill.txt"), "UTF-8"));
-		) {
-			String line = reader.readLine();
-			
-			for(int i = 0; i < 13; i++) {
-				list.add(new ArrayList<Skill>());
-			}
-			for(ArrayList<Skill> skill : list) {
-				int lineSplitInfo = Integer.parseInt(line);
-				line = reader.readLine();
-				for(int i = 0; i < lineSplitInfo; i++) {
-					String[] lineSplit = line.split("/");
-					String path =  lineSplit[lineSplit.length-1];
-					String[] lvlSkill = lineSplit[1].split(",");
-					int[] lvl = new int[lvlSkill.length];
-					
-					Effect[][] effects = new Effect[lvlSkill.length][];
-					for(int j = 0; j < lvlSkill.length; j++) {
-						int nbEffect = Integer.parseInt(lineSplit[2]);
-						effects[j] = new Effect[nbEffect];
-						lvl[j] = Integer.parseInt(lvlSkill[j]);
-						for(int k = 0; k < nbEffect; k++) {
-							effects[j][k] = new Effect(lineSplit[j*nbEffect+k+3]);
-						}
-					}
-					
-					skill.add(new Skill(lineSplit[0], lvl, path, effects));
-					
-					line = reader.readLine();
-				}
-			}
-		} catch (IOException e) {
-			System.out.println("Error with " + Skill.class.getClass().getSimpleName() + " class");
-		}
-		
-		Skill.data = new Skill[list.size()][];
-		for(int i = 0; i < data.length; i++) {
-			Skill[] skill = new Skill[list.get(i).size()];
-			for(int j = 0; j < list.get(i).size(); j++) {
-				skill[j] = list.get(i).get(j);				
-			}
-			Skill.data[i] = skill;
-		}
+	public static Skill[] getPassiveSkill(Grade grade) {
+		return Skill.dataPassive[grade.getGrade().index];
 	}
 	
-	public static Skill[][] getData() {
-		return Skill.data;
+	public static Skill getUpgradeSkill(Grade grade) {
+		return Skill.dataUpgrade[grade.getGrade().index / 2];
+	}
+	
+	public static Skill getReinca() {
+		return Skill.dataUpgrade[6];
 	}
 }

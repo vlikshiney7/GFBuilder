@@ -328,11 +328,8 @@ public class PageRide extends PagePanel {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		Ride tabRide[] = Ride.getPossibleRide(lvl, reinca);
-		Ride memory = this.getRide();
 		
-		this.ride.setItems(tabRide);
-		
-		if(!this.getRide().equals(memory)) {
+		if(!this.ride.setItems(tabRide)) {
 			this.showAndHideXpStuff.setVisible(false);
 			this.xpStuff.get(0).setVisible(false);
 			this.xpStuff.get(1).setVisible(false);
@@ -341,6 +338,8 @@ public class PageRide extends PagePanel {
 				this.xpStuff.get(0).setSelectedIndex(0);
 				this.xpStuff.get(1).setSelectedIndex(0);
 			}
+			
+			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		} else {
 			this.xpStuff.get(0).setVisible(true);
 			this.xpStuff.get(1).setVisible(true);
@@ -351,10 +350,6 @@ public class PageRide extends PagePanel {
 			this.showAndHide.get(0).setVisible(true);
 		} else {
 			this.showAndHide.get(0).setVisible(false);
-		}
-		
-		if(!this.getRide().equals(memory)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
 	

@@ -346,11 +346,8 @@ public class PageCapeRing extends PagePanel {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
 		Cape[] tabCape = Cape.getPossibleCape(grade.getGrade(), lvl);
-		Cape memoryCape = this.getCape();
 		
-		this.cape.setItems(tabCape);
-		
-		if(!this.getCape().equals(memoryCape)) {
+		if(!this.cape.setItems(tabCape)) {
 			updateXpStuff(0);
 			updateEnchant(0);
 			
@@ -359,11 +356,8 @@ public class PageCapeRing extends PagePanel {
 		
 		for(int i = 0; i < 2; i++) {
 			Ring[] tabRing = Ring.getPossibleRing(lvl, null);
-			Ring memory = this.getRing(i);
 			
-			this.ring.get(i).setItems(tabRing);
-			
-			if(!this.getRing(i).equals(memory)) {
+			if(!this.ring.get(i).setItems(tabRing)) {
 				updateXpStuff(i+1);
 				updateEnchant(i+1);
 				

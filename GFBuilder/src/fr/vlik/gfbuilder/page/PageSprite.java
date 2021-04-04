@@ -130,11 +130,8 @@ public class PageSprite extends PagePanel {
 	public void updateBlason() {
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
-			Blason memory = this.getBlason(i);
 			
-			this.blason.get(i).setItems(tabBlason);
-			
-			if(!this.getBlason(i).equals(memory)) {
+			if(!this.blason.get(i).setItems(tabBlason)) {
 				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		}

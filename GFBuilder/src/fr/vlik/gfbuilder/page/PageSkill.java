@@ -13,9 +13,8 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.PassiveSkill;
-import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.characUpgrade.Skill;
+import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -36,7 +35,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	private int currentLvl;
 	
 	private ArrayList<JCustomLabel<InnerIconEffect>> passiveSkill = new ArrayList<JCustomLabel<InnerIconEffect>>(4);
-	private ArrayList<JCustomComboBox<Skill>> skillProgress = new ArrayList<JCustomComboBox<Skill>>(2);
+	private ArrayList<JCustomComboBox<InnerIconEffect>> upgradeSkill = new ArrayList<JCustomComboBox<InnerIconEffect>>(2);
 	private JCustomComboBox<ProSkill> proSkill;
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
@@ -63,12 +62,11 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		}
 		
 		for(int i = 0; i < 2; i++) {
-			this.skillProgress.add(new JCustomComboBox<Skill>());
-			this.skillProgress.get(i).addActionListener(e -> {
+			this.upgradeSkill.add(new JCustomComboBox<InnerIconEffect>());
+			this.upgradeSkill.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.skillProgress.get(i).setVisible(false);
 		}
 		
 		
@@ -88,12 +86,12 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		return this.passiveSkill.get(i).getItem();
 	}
 	
+	public InnerIconEffect getUpgradeSkill(int id) {
+		return this.upgradeSkill.get(id).getSelectedItem();
+	}
+	
 	public ProSkill getProSkill() {
 		return this.proSkill.getSelectedItem();
-	}
-
-	public Skill getSkill(int id) {
-		return this.skillProgress.get(id).getSelectedItem();
 	}
 	
 	@Override
@@ -132,13 +130,9 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			}
 		}
 		
-		for(int i = 0; i < this.skillProgress.size(); i++) {
-			if(this.skillProgress.get(i).isVisible() && this.getSkill(i) != null) {
-				if(this.getSkill(i).getEffects(0) != null) {
-					for(Effect e : this.getSkill(i).getEffects(0)) {
-						list.add(e);
-					}
-				}
+		for(int i = 0; i < this.upgradeSkill.size(); i++) {
+			if(this.upgradeSkill.get(i).isVisible()) {
+				list.addAll(this.getUpgradeSkill(i));
 			}
 		}
 		
@@ -170,7 +164,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		
 		for(int i = 0; i < 2; i++) {
 			elem1.add(Box.createVerticalStrut(5));
-			elem1.add(this.skillProgress.get(i));
+			elem1.add(this.upgradeSkill.get(i));
 		}
 		
 		JPanel elem2 = new JPanel();
@@ -196,7 +190,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			label.setVisible(false);
 		}
 		
-		for(JCustomComboBox<Skill> skill : this.skillProgress) {
+		for(JCustomComboBox<InnerIconEffect> skill : this.upgradeSkill) {
 			skill.setVisible(false);
 		}
 		
@@ -215,8 +209,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	public void updateSkill() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
-		Reinca reinca = PageGeneral.getInstance().getReinca();
-		boolean isProgressUpdate = false;
 		
 		if(lvl < 6) {
 			this.showAndHide.get(0).setVisible(false);
@@ -224,7 +216,7 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			this.showAndHide.get(0).setVisible(true);
 		}
 		
-		PassiveSkill[] passive = PassiveSkill.getSkill(grade);
+		Skill[] passive = Skill.getPassiveSkill(grade);
 		
 		for(int i = 0; i < passive.length; i++) {
 			InnerIconEffect innerEffect = passive[i].getCurrentEffect(lvl);
@@ -249,80 +241,45 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 			this.passiveSkill.get(i).setVisible(false);
 		}
 		
-		for(Skill skill : Skill.getData()[grade.getGrade().index]) {
-			if(skill.getLvl()[0] > lvl) {
-				continue;
-			}
-			
-			isProgressUpdate = !isProgressUpdate;
-			ArrayList<Skill> lvlSkill = new ArrayList<Skill>();
-			lvlSkill.add(new Skill(skill.getName() + " non acquis"));
-			
-			for(int i = 0; i < skill.getLvl().length; i++) {
-				if(skill.getLvl()[i] <= lvl) {
-					lvlSkill.add(new Skill(skill, i));
-				}
-			}
-			
-			Skill[] tabSkill = new Skill[lvlSkill.size()];
-			for(int i = 0; i < tabSkill.length; i++) {
-				tabSkill[i] = lvlSkill.get(i);
-			}
-			
-			Skill memory = this.getSkill(0);
-			this.skillProgress.get(0).setItems(tabSkill);
-			this.skillProgress.get(0).setVisible(true);
-			if(this.skillProgress.get(0).getSelectedIndex() == -1) {
-				this.skillProgress.get(0).setSelectedIndex(0);
-			}
-			
-			if(!this.getSkill(0).equals(memory)) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
-			}
-		}
 		
-		Skill skill = Skill.getData()[12][0];
-		
-		ArrayList<Skill> lvlSkill = new ArrayList<Skill>();
-		lvlSkill.add(new Skill(skill.getName() + " non acquis"));
-		
-		for(int i = 0; i < skill.getLvl().length; i++) {
-			if(skill.getLvl()[i] <= lvl) lvlSkill.add(new Skill(skill, i));
-		}
-		
-		if(lvlSkill.size() > 1 && reinca.getLvl() > 0) {
-			Skill[] tabSkill = new Skill[lvlSkill.size()];
-			for(int i = 0; i < tabSkill.length; i++) tabSkill[i] = lvlSkill.get(i);
+		Skill skill = Skill.getUpgradeSkill(grade);
+		if(skill != null) {
+			InnerIconEffect[] innerSkill = skill.getInnerSkill(lvl);
 			
-			Skill memory = this.getSkill(1);
-			this.skillProgress.get(1).setItems(tabSkill);
-			this.skillProgress.get(1).setVisible(true);
-			
-			if(!this.getSkill(1).equals(memory)) {
+			if(innerSkill.length > 1) {
+				this.upgradeSkill.get(0).setVisible(true);
+			} else {
+				this.upgradeSkill.get(0).setVisible(false);
+			}
+		
+			if(!this.upgradeSkill.get(0).setItems(innerSkill)) {
 				MainFrame.getInstance().setRedPane(NUM_PAGE);
 			}
 		} else {
-			this.skillProgress.get(1).setVisible(false);
+			this.upgradeSkill.get(0).setVisible(false);
 		}
 		
-		if(!isProgressUpdate) {
-			this.skillProgress.get(0).setVisible(false);
-		}
-
-		setEffects();
+		updateSkillReinca();
 	}
 	
 	public void updateSkillReinca() {
+		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
-		if(this.skillProgress.get(1).getItemCount() == 0) {
-			updateSkill();
-		}
-		
-		if(reinca.getLvl() > 0 && this.skillProgress.get(1).getItemCount() > 1) {
-			this.skillProgress.get(1).setVisible(true);
+		if(reinca.getLvl() > 0) {
+			InnerIconEffect[] innerSkill = Skill.getReinca().getInnerSkill(lvl);
+			
+			if(innerSkill.length > 1) {
+				this.upgradeSkill.get(1).setVisible(true);
+			} else {
+				this.upgradeSkill.get(1).setVisible(false);
+			}
+			
+			if(!this.upgradeSkill.get(1).setItems(innerSkill)) {
+				MainFrame.getInstance().setRedPane(NUM_PAGE);
+			}
 		} else {
-			this.skillProgress.get(1).setVisible(false);
+			this.upgradeSkill.get(1).setVisible(false);
 		}
 		
 		setEffects();
@@ -339,15 +296,9 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		}
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
-		ProSkill memory = (ProSkill) this.proSkill.getSelectedItem();
-		this.proSkill.setItems(tabProSkill);
 		
-		if(memory != null) {
-			this.proSkill.setSelectedItem(memory);
-			
-			if(this.getProSkill() != null && this.getProSkill().equals(memory)) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
-			}
+		if(!this.proSkill.setItems(tabProSkill)) {
+			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
 	
@@ -360,8 +311,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();
 		
-		for(int i = 0; i < this.skillProgress.size(); i++) {
-			config.put("LvlSkill" + i, "" + this.skillProgress.get(i).getSelectedIndex());
+		for(int i = 0; i < this.upgradeSkill.size(); i++) {
+			config.put("LvlSkill" + i, "" + this.upgradeSkill.get(i).getSelectedIndex());
 		}
 		
 		String value = this.getProSkill() != null ? this.getProSkill().getName(Language.FR) : "";
@@ -372,8 +323,8 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		for(int i = 0; i < this.skillProgress.size(); i++) {
-			this.skillProgress.get(i).setSelectedIndex(Integer.valueOf(config.get("LvlSkill" + i)));
+		for(int i = 0; i < this.upgradeSkill.size(); i++) {
+			this.upgradeSkill.get(i).setSelectedIndex(Integer.valueOf(config.get("LvlSkill" + i)));
 		}
 		
 		this.proSkill.setSelectedItem(ProSkill.get(config.get("ProSkill")));

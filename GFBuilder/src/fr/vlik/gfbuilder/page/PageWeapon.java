@@ -505,10 +505,8 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 		
 		for(int i = 0; i < 3; i++) {
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade, lvl, reinca, null, this.doubleWeapon);
-			Weapon memory = this.getWeapon(i);
-			this.weapon.get(i).setItems(tabWeapon);
 			
-			if(!this.getWeapon(i).equals(memory)) {
+			if(!this.weapon.get(i).setItems(tabWeapon)) {
 				updateXpStuff(i);
 				updateDetails(i);
 				updateEnchant(i);
@@ -525,10 +523,8 @@ public class PageWeapon extends PagePanel implements ConvertEffect {
 		}
 		
 		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl, reinca);
-		Bullet memory = this.getBullet();
-		this.bullet.setItems(tabBullet);
 		
-		if(!this.getBullet().equals(memory)) {
+		if(!this.bullet.setItems(tabBullet)) {
 			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
