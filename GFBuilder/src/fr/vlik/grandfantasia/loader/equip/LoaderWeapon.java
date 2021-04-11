@@ -8502,7 +8502,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 35, true),
 					new Effect(TypeEffect.AGI, false, 63, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new Effect(TypeEffect.ESQ, false, 15),
+					new Effect(TypeEffect.ESQ, true, 15),
 					new StaticEffect(TypeStaticEffect.x3STD, 20),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 50),

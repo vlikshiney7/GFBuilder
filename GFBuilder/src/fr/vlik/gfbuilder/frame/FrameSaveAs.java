@@ -25,7 +25,7 @@ import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JCustomTextField;
 
-public class FrameSaveAs extends JFrame {
+public class FrameSaveAs extends JCustomFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final FrameSaveAs INSTANCE = new FrameSaveAs();
@@ -101,6 +101,7 @@ public class FrameSaveAs extends JFrame {
 		this.add(pageSave);
 	}
 	
+	@Override
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
@@ -109,6 +110,7 @@ public class FrameSaveAs extends JFrame {
 		this.submit.updateText(lang);
 	}
 	
+	@Override
 	public void popup() {
 		MainFrame.getInstance().setEnabled(false);
 		

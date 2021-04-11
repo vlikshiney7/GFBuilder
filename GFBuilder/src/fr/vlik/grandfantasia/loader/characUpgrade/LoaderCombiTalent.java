@@ -209,7 +209,61 @@ public class LoaderCombiTalent {
 	
 	static CombiTalent[] getClass4() {
 		return new CombiTalent[] {
-			
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Clerc Martial Religieux"); put(Language.EN, ""); }}, new int[] { 1, 3, 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur de Lumière"); put(Language.EN, ""); }}, new int[] { 2, 1, 1, 1, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Disciple de Lumière"); put(Language.EN, ""); }}, new int[] { 3, 2, 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Évèque"); put(Language.EN, ""); }}, new int[] { 1, 1, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur de la Loi"); put(Language.EN, ""); }}, new int[] { 1, 2, 1, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guérisseur"); put(Language.EN, ""); }}, new int[] { 2, 3, 1, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.DefM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Juge Sacré"); put(Language.EN, ""); }}, new int[] { 1, 2, }, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 4),
+				new Effect(TypeEffect.DefP, true, 6),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Erudit en Mots Sacrés"); put(Language.EN, ""); }}, new int[] { 1, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 10),
+				new Effect(TypeEffect.AtkM, true, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Entraîneur de la Volonté"); put(Language.EN, ""); }}, new int[] { 2, 1, }, new Calculable[] {
+				new Effect(TypeEffect.PM, true, 10),
+				new Effect(TypeEffect.DefP, true, 10),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Erudit en Spiritualité"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.PV, true, 5),
+				new Effect(TypeEffect.DefM, true, 10),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur Magique"); put(Language.EN, ""); }}, new int[] { 2, 3, }, new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 8),
+				new Effect(TypeEffect.DefM, true, 8),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Missionaire"); put(Language.EN, ""); }}, new int[] { 3, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 10),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Messager Mana"); put(Language.EN, ""); }}, new int[] { 3, 2, }, new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 10),
+				new Effect(TypeEffect.DefM, true, 7),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Economiseur d'Energie"); put(Language.EN, ""); }}, new int[] { 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.CostComp, false, -10),
+				new Effect(TypeEffect.PM, true, 3),
+			}),
 		};
 	}
 	

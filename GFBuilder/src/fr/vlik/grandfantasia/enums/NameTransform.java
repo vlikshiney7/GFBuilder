@@ -36,6 +36,7 @@ public enum NameTransform implements Writable {
 	Transform29("Citrouille", "Pumpkin"),
 	Transform30("Sprite miraculeux", "Miraculous Sprite"),
 	Transform31("Non humain", "No human"),
+	Transform32("Arbre", "Tree"),
 	
 	Invoc0("Dinde rôtie", "Roast Turkey"),
 	Invoc1("Enfant du Miracle", "Miracle Child"),

@@ -22,7 +22,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JLangLabel;
 
-public class FrameSaveOnNew extends JFrame {
+public class FrameSaveOnNew extends JCustomFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final FrameSaveOnNew INSTANCE = new FrameSaveOnNew();
@@ -107,6 +107,7 @@ public class FrameSaveOnNew extends JFrame {
 		this.add(pageNew);
 	}
 	
+	@Override
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
@@ -117,6 +118,7 @@ public class FrameSaveOnNew extends JFrame {
 		this.cancel.updateText(lang);
 	}
 	
+	@Override
 	public void popup() {
 		MainFrame.getInstance().setEnabled(false);
 		this.setVisible(true);

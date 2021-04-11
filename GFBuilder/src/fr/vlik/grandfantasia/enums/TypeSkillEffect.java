@@ -73,7 +73,12 @@ public enum TypeSkillEffect implements Writable {
 	Class4S6("Grenade de Gloire Sacrée", "Blessed Bomb"),
 	Class4S7("Bombe de lumière sacrée", "Holy Light Grenade"),
 	Class4S8("Marteau Sacré Surpuissant", "High Holy Hammer Crush Magic"),
-	Class4S9("Sceau du Sacré ", "Light Seal Magic"),
+	Class4S9("Sceau du Sacré", "Light Seal Magic"),
+	Class4S10("Imposition des Mains ", "Lay on Hands"),
+	Class4S11("Imposition des Mains Améliorée", "Improved Lay on Hands"),
+	Class4S12("Marteau du Jugement", "Hammer of Judgment"),
+	Class4S13("Censure Divine", "God's Censure"),
+	Class4S14("Esprits Enragés", "Rage of Spirits"),
 	
 	Class5S0("Bouclier d'Éternité", "Shield of Eternity"),
 	Class5S1("Vol du Gardien", "Guardian Flight"),

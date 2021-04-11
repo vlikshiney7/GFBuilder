@@ -14,6 +14,7 @@ import java.util.Map;
 
 import javax.swing.JPanel;
 
+import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.page.PagePanel;
 import fr.vlik.grandfantasia.customEquip.CustomArmor;
 import fr.vlik.grandfantasia.customEquip.CustomCape;
@@ -125,7 +126,13 @@ public class SaveConfig {
 		File folder = new File(SAVE_FOLDER_NAME);
 		
 		if(!folder.exists()) {
-			folder.mkdir();
+			System.out.println("Le dossier de sauvegarde n'existe pas, création...");
+			if(folder.mkdir()) {
+				System.out.println("Création terminée");
+			} else {
+				System.out.println("Création impossible, droit d'administration nécessaire.");
+				FrameError.getInstance().popup();
+			}
 		}
 		
 		for(File file : folder.listFiles()) {

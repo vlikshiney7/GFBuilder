@@ -34,10 +34,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.frame.FrameCreateCustom;
+import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.frame.FrameSaveAs;
 import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
 import fr.vlik.gfbuilder.frame.FrameSaveOnQuit;
+import fr.vlik.gfbuilder.frame.JCustomFrame;
 import fr.vlik.gfbuilder.page.AdditionalEffect;
 import fr.vlik.gfbuilder.page.ConvertEffect;
 import fr.vlik.gfbuilder.page.PageArmor;
@@ -45,10 +47,10 @@ import fr.vlik.gfbuilder.page.PageBuff;
 import fr.vlik.gfbuilder.page.PageCapeRing;
 import fr.vlik.gfbuilder.page.PageCostume;
 import fr.vlik.gfbuilder.page.PageGeneral;
-import fr.vlik.gfbuilder.page.PageRide;
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PageOther;
 import fr.vlik.gfbuilder.page.PagePanel;
+import fr.vlik.gfbuilder.page.PageRide;
 import fr.vlik.gfbuilder.page.PageSkill;
 import fr.vlik.gfbuilder.page.PageSpeciality;
 import fr.vlik.gfbuilder.page.PageSprite;
@@ -75,6 +77,7 @@ public class MainFrame extends JFrame {
 	private static int nbPages = 0;
 	private JScrollPane scrollContent;
 	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
+	private ArrayList<JCustomFrame> frames = new ArrayList<JCustomFrame>();
 	
 	private ArrayList<JCustomLabel<TypeEffect>> labelStat = new ArrayList<JCustomLabel<TypeEffect>>(TypeEffect.values().length);
 	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
@@ -88,7 +91,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder");
+		super("Grand Fantasia Builder - Version 0.18.0");
 		setCustomUI();
 		
 		try {
@@ -119,7 +122,7 @@ public class MainFrame extends JFrame {
 		progressPanel.setBackground(Design.UIColor[1]);
 		progressPanel.setSize(1325, 750);
 		
-		JProgressBar progress = new JProgressBar(0, 16);
+		JProgressBar progress = new JProgressBar(0, 17);
 		progress.setFont(new Font("Open Sans", Font.BOLD, 16));
 		progress.setPreferredSize(new Dimension(600, 50));
 		progress.setStringPainted(true);
@@ -256,13 +259,31 @@ public class MainFrame extends JFrame {
 		content.add(this.overlay);
 		content.add(this.scrollContent);
 		
+		System.out.println("Fin Option : " + Duration.between(this.start, Instant.now()).toMillis());
+		
+		/****************************************/
+		/*		****	   STATS	  	****	*/
+		/****************************************/
+		
 		progress.setValue(progress.getValue()+1);
-		progress.setString("Loading Stats Display");
+		progress.setString("Loading Frames");
+		
+		this.frames.add(FrameCreateCustom.getInstance());
+		this.frames.add(FrameError.getInstance());
+		this.frames.add(FrameSaveAs.getInstance());
+		this.frames.add(FrameSaveLoader.getInstance());
+		this.frames.add(FrameSaveOnNew.getInstance());
+		this.frames.add(FrameSaveOnQuit.getInstance());
+		
+		System.out.println("Fin Frames : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		
 		/****************************************/
 		/*		****	   STATS	  	****	*/
 		/****************************************/
+		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Stats Display");
 		
 		JPanel stats = new JPanel();
 		stats.setLayout(new BoxLayout(stats, BoxLayout.Y_AXIS));
@@ -563,11 +584,9 @@ public class MainFrame extends JFrame {
 			}
 		}
 		
-		FrameSaveLoader.getInstance().updateLanguage(lang);
-		FrameSaveAs.getInstance().updateLanguage(lang);
-		FrameSaveOnNew.getInstance().updateLanguage(lang);
-		FrameSaveOnQuit.getInstance().updateLanguage(lang);
-		FrameCreateCustom.getInstance().updateLanguage(lang);
+		for(JCustomFrame frame : this.frames) {
+			frame.updateLanguage(lang);
+		}
 		
 		if(lang == Language.FR) {
 			for(int i = 0; i < this.valueStat.size(); i++) {
@@ -588,12 +607,5 @@ public class MainFrame extends JFrame {
 				}
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		if(args.length > 0) {
-			MainFrame.getInstance().setTitle(args[0]);
-		}
-		PageOption.getInstance().setSave(Overlay.getInstance().getCurrentName());
 	}
 }

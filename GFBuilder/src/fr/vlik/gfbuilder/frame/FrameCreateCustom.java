@@ -32,10 +32,10 @@ import fr.vlik.grandfantasia.customEquip.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
+import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.equip.Cape;
 import fr.vlik.grandfantasia.equip.Ring;
 import fr.vlik.grandfantasia.equip.Weapon;
-import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.uidesign.Design;
@@ -46,7 +46,7 @@ import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JLangRadioButton;
 
-public class FrameCreateCustom extends JFrame {
+public class FrameCreateCustom extends JCustomFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final FrameCreateCustom INSTANCE = new FrameCreateCustom();
@@ -291,6 +291,7 @@ public class FrameCreateCustom extends JFrame {
 		this.add(pageCustom);
 	}
 	
+	@Override
 	public void updateLanguage(Language lang) {
 		for(int i = 0; i < this.label.length; i++) {
 			this.label[i].updateText(lang);
@@ -440,6 +441,19 @@ public class FrameCreateCustom extends JFrame {
 		MainFrame.getInstance().toFront();
 		MainFrame.getInstance().setEnabled(true);
 		this.setVisible(false);
+	}
+	
+	@Override
+	public void popup() {
+		MainFrame.getInstance().setEnabled(false);
+		
+		this.typeEquipment.get(0).setSelected(true);
+		updateForm(0);
+		
+		this.lvl.setValue(1);
+		this.quality.get(0).setSelected(true);
+		
+		this.setVisible(true);
 	}
 	
 	public void popup(int option, int lvl) {
