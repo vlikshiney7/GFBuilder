@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 
@@ -12,18 +13,47 @@ public class Effect implements Calculable {
 	private boolean withReinca = false;
 	private WeaponType withWeapon = WeaponType.NONE;
 	private TypeEffect transfert;
-	private boolean isBaseTransfert = false;
 	private Target target = Target.SELF;
-
+	
+	private TypeCalcul typeCalcul = TypeCalcul.CLASSIC;
+	
 	public Effect(TypeEffect type, boolean isPercent, double value) {
 		this.type = type;
 		this.isPercent = isPercent;
 		this.value = value;
+		
+		this.typeCalcul = TypeCalcul.CLASSIC;
+		
+		if(this.isPercent) {
+			if(type != TypeEffect.FCE && type != TypeEffect.VIT && type != TypeEffect.INT && type != TypeEffect.VOL && type != TypeEffect.AGI 
+					&& type != TypeEffect.Atk && type != TypeEffect.AtkD && type != TypeEffect.AtkM
+					&& type != TypeEffect.DefP && type != TypeEffect.DefM && type != TypeEffect.ESQ
+					&& type != TypeEffect.PV && type != TypeEffect.PM) {
+				this.isPercent = false;
+			}
+		}
 	}
-
+	
 	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca) {
 		this(type, isPercent, value);
 		this.withReinca = withReinca;
+	}
+	
+	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, TypeCalcul typeCalcul) {
+		this(type, isPercent, value, withReinca);
+		
+		this.typeCalcul = typeCalcul;
+	}
+	
+	public Effect(TypeEffect type, boolean isPercent, double value, WeaponType withWeapon) {
+		this(type, isPercent, value);
+		this.withWeapon = withWeapon;
+	}
+	
+	public Effect(TypeEffect type, boolean isPercent, double value, TypeCalcul typeCalcul) {
+		this(type, isPercent, value);
+		
+		this.typeCalcul = typeCalcul;
 	}
 	
 	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca, WeaponType withWeapon) {
@@ -31,25 +61,15 @@ public class Effect implements Calculable {
 		this.withWeapon = withWeapon;
 	}
 	
-	public Effect(TypeEffect type, double value, TypeEffect transfert) {
-		this.type = type;
-		this.isPercent = false;
-		this.value = value;
+	public Effect(TypeEffect type, double value, TypeEffect transfert, TypeCalcul typeCalcul) {
+		this(type, false, value);
 		this.transfert = transfert;
-	}
-	
-	public Effect(TypeEffect type, double value, TypeEffect transfert, boolean isBaseTransfert) {
-		this.type = type;
-		this.isPercent = false;
-		this.value = value;
-		this.transfert = transfert;
-		this.isBaseTransfert = isBaseTransfert;
+		
+		this.typeCalcul = typeCalcul;
 	}
 	
 	public Effect(TypeEffect type, boolean isPercent, double value, Target target) {
-		this.type = type;
-		this.isPercent = isPercent;
-		this.value = value;
+		this(type, isPercent, value);
 		this.target = target;
 	}
 	
@@ -60,46 +80,12 @@ public class Effect implements Calculable {
 		this.withReinca = effect.getWithReinca();
 		this.withWeapon = effect.getWithWeapon();
 		this.transfert = effect.getTransfert();
+		this.target = effect.getTarget();
+		this.typeCalcul = effect.getCalcul();
 	}
 	
-	public Effect(String parsing) {
-		String[] split = parsing.split(",");
-		this.type = TypeEffect.valueOf(split[0]);
-		this.isPercent = Boolean.parseBoolean(split[1]);
-		this.value = Double.parseDouble(split[2]);
-		
-		if(split.length > 3) {
-			this.withReinca = Boolean.parseBoolean(split[3]);
-		}
-		
-		if(split.length > 4) {
-			try {
-				this.withWeapon = WeaponType.values()[Integer.parseInt(split[4])];
-			} catch (ArrayIndexOutOfBoundsException e) {
-				this.withWeapon = WeaponType.NONE;
-			}
-			
-		}
-		
-		if(split.length > 5) {
-			this.transfert = TypeEffect.valueOf(split[5]);
-		}
-	}
-	
-	public enum Target {
-		
-		SELF("soi", "self"),
-		ALLY("allié", "ally"),
-		SPRITE("sprite", "sprite"),
-		OPPONENT("ennemi", "opponent");
-		
-		public final String fr;
-		public final String en;
-		 
-	    private Target(String fr, String en) {
-	        this.fr = fr;
-	        this.en = en;
-	    }
+	public enum TypeCalcul {
+		BASE, CONVERTBASE, CLASSIC, CONVERT, ADDITIONAL,
 	}
 	
 	public TypeEffect getType() {
@@ -126,14 +112,14 @@ public class Effect implements Calculable {
 		return this.transfert;
 	}
 	
-	public boolean isBaseTransfert() {
-		return this.isBaseTransfert;
-	}
-	
 	public Target getTarget() {
 		return this.target;
 	}
-
+	
+	public TypeCalcul getCalcul() {
+		return this.typeCalcul;
+	}
+	
 	public void addFortifValue(double coef) {
 		this.value = (int) (this.value * coef);
 	}

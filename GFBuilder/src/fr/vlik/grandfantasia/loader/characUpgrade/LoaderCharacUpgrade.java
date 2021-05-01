@@ -2,7 +2,7 @@ package fr.vlik.grandfantasia.loader.characUpgrade;
 
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Blason;
+import fr.vlik.grandfantasia.charac.Blason;
 import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
@@ -20,6 +20,7 @@ import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Effect.TypeCalcul;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
@@ -118,9 +119,9 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.RegenPV, false, 20),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en paladin"); put(Language.EN, ""); }}, 31, "31-1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 500),
-					new Effect(TypeEffect.PV, false, 800),
-					new Effect(TypeEffect.PM, false, 400),
+					new Effect(TypeEffect.DefP, false, 500, TypeCalcul.BASE),
+					new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+					new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
 				}),
 			},
 			new Skill[] {
@@ -169,7 +170,7 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.TCCM, false, 3),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en sorcier"); put(Language.EN, ""); }}, 31, "31-6", new Calculable[] {
-					new Effect(TypeEffect.PM, false, 800),
+					new Effect(TypeEffect.PM, false, 800, TypeCalcul.BASE),
 				}),
 			},
 			new Skill[] {
@@ -180,8 +181,8 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.TCCM, false, 3),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en nécromancien"); put(Language.EN, ""); }}, 31, "31-7", new Calculable[] {
-					new Effect(TypeEffect.PV, false, 400),
-					new Effect(TypeEffect.PM, false, 400),
+					new Effect(TypeEffect.PV, false, 400, TypeCalcul.BASE),
+					new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
 				}),
 			},
 			new Skill[] {
@@ -253,7 +254,7 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.Depla, false, 5),
 					new Effect(TypeEffect.ReducP, false, 5),
 					new Effect(TypeEffect.ReducM, false, 5),
-					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM),
+					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM, TypeCalcul.CONVERT),
 				}),
 			},
 			new Skill[] {
@@ -281,7 +282,7 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.PeneM, false, 5),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en chronodériveur"); put(Language.EN, ""); }}, 31, "31-11", new Calculable[] {
-					new Effect(TypeEffect.PM, false, 800),
+					new Effect(TypeEffect.PM, false, 800, TypeCalcul.BASE),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du Temps"); put(Language.EN, ""); }}, 66, "66-1", new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 10),
@@ -354,31 +355,31 @@ public class LoaderCharacUpgrade {
 						new Effect(TypeEffect.VIT, false, 14),
 						new Effect(TypeEffect.INT, false, 50),
 						new Effect(TypeEffect.VOL, false, 14),
-						new Effect(TypeEffect.Atk, true, 6),
+						new Effect(TypeEffect.AtkM, true, 6),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 17),
 						new Effect(TypeEffect.INT, false, 55),
 						new Effect(TypeEffect.VOL, false, 17),
-						new Effect(TypeEffect.Atk, true, 8),
+						new Effect(TypeEffect.AtkM, true, 8),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 20),
 						new Effect(TypeEffect.INT, false, 60),
 						new Effect(TypeEffect.VOL, false, 20),
-						new Effect(TypeEffect.Atk, true, 10),
+						new Effect(TypeEffect.AtkM, true, 10),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 23),
 						new Effect(TypeEffect.INT, false, 65),
 						new Effect(TypeEffect.VOL, false, 23),
-						new Effect(TypeEffect.Atk, true, 12),
+						new Effect(TypeEffect.AtkM, true, 12),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 26),
 						new Effect(TypeEffect.INT, false, 70),
 						new Effect(TypeEffect.VOL, false, 26),
-						new Effect(TypeEffect.Atk, true, 14),
+						new Effect(TypeEffect.AtkM, true, 14),
 					},
 			}),
 			new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Âme Magique"); put(Language.EN, ""); }},
@@ -387,31 +388,31 @@ public class LoaderCharacUpgrade {
 						new Effect(TypeEffect.VIT, false, 14),
 						new Effect(TypeEffect.INT, false, 30),
 						new Effect(TypeEffect.VOL, false, 14),
-						new Effect(TypeEffect.Atk, true, 3),
+						new Effect(TypeEffect.AtkM, true, 3),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 17),
 						new Effect(TypeEffect.INT, false, 35),
 						new Effect(TypeEffect.VOL, false, 17),
-						new Effect(TypeEffect.Atk, true, 4),
+						new Effect(TypeEffect.AtkM, true, 4),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 20),
 						new Effect(TypeEffect.INT, false, 40),
 						new Effect(TypeEffect.VOL, false, 20),
-						new Effect(TypeEffect.Atk, true, 5),
+						new Effect(TypeEffect.AtkM, true, 5),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 23),
 						new Effect(TypeEffect.INT, false, 45),
 						new Effect(TypeEffect.VOL, false, 23),
-						new Effect(TypeEffect.Atk, true, 6),
+						new Effect(TypeEffect.AtkM, true, 6),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 26),
 						new Effect(TypeEffect.INT, false, 50),
 						new Effect(TypeEffect.VOL, false, 26),
-						new Effect(TypeEffect.Atk, true, 7),
+						new Effect(TypeEffect.AtkM, true, 7),
 					},
 			}),
 			null,
@@ -798,23 +799,23 @@ public class LoaderCharacUpgrade {
 	public static Energy[] getEnergy() {
 		return new Energy[] {
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Écarlate"); put(Language.EN, "Crimson"); }}, "red", new Effect[] {
-				new Effect(TypeEffect.PV, false, 24),
+				new Effect(TypeEffect.PV, false, 24, TypeCalcul.ADDITIONAL),
 			}),
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Indigo"); put(Language.EN, "Azure"); }}, "blue", new Effect[] {
-				new Effect(TypeEffect.PM, false, 10),
+				new Effect(TypeEffect.PM, false, 10, TypeCalcul.ADDITIONAL),
 			}),
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Citrus"); }}, "orange", new Effect[] {
-				new Effect(TypeEffect.Atk, false, 13),
-				new Effect(TypeEffect.AtkD, false, 10),
+				new Effect(TypeEffect.Atk, false, 13, TypeCalcul.ADDITIONAL),
+				new Effect(TypeEffect.AtkD, false, 10, TypeCalcul.ADDITIONAL),
 			}),
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Violette"); put(Language.EN, "Violet"); }}, "purple", new Effect[] {
-				new Effect(TypeEffect.AtkM, false, 10),
+				new Effect(TypeEffect.AtkM, false, 10, TypeCalcul.ADDITIONAL),
 			}),
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Émeraude"); put(Language.EN, "Emerald"); }}, "green", new Effect[] {
-				new Effect(TypeEffect.DefP, false, 6),
+				new Effect(TypeEffect.DefP, false, 6, TypeCalcul.ADDITIONAL),
 			}),
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Rose"); put(Language.EN, "Peach"); }}, "pink", new Effect[] {
-				new Effect(TypeEffect.DefM, false, 5),
+				new Effect(TypeEffect.DefM, false, 5, TypeCalcul.ADDITIONAL),
 			}),
 		};
 	}

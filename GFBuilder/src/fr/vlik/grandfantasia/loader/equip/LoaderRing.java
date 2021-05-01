@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equip.Ring;
@@ -15,7 +16,6 @@ import fr.vlik.grandfantasia.stats.Proc.TDB;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
-import fr.vlik.grandfantasia.stats.Effect.Target;
 
 @SuppressWarnings("serial")
 public class LoaderRing {

@@ -8,13 +8,13 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.NameTransform;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
+import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Condition.TypeCondition;
 import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Effect.Target;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
@@ -609,6 +609,12 @@ public class LoaderTitle {
 
 	private static Title[] getGold() {
 		return new Title[] {
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Bénéficiaire du testament du Chevalier des Prairies"); put(Language.EN, ""); }}, Quality.GOLD, 71, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
+				new Effect(TypeEffect.PV, false, 10000),
+				new Effect(TypeEffect.DCCP, false, 10),
+				new Effect(TypeEffect.DCCM, false, 10),
+				new Effect(TypeEffect.Depla, false, -30),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Braconnier suprême"); put(Language.EN, "Monster Hunter King"); }}, Quality.GOLD, 96, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, 3),
 				new Effect(TypeEffect.AtkD, true, 3),
@@ -990,6 +996,13 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, false, 500),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.Atk, true, 2),
+			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Maraudeur de la Prairie"); put(Language.EN, ""); }}, Quality.ORANGE, 71, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
+				new Condition(TypeCondition.SANCTU3, new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 15),
+					new Effect(TypeEffect.VitAtkD, false, 15),
+					new Effect(TypeEffect.VitAtkM, false, 15),
+				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Massacre au paradis"); put(Language.EN, "Heavenly Slaughter"); }}, Quality.ORANGE, 31, false, GradeName.NONE, Tag.TDB, new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 15),
@@ -1652,6 +1665,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Atk, true, 5),
 				new Effect(TypeEffect.AtkM, true, 5),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "La Tribu Légendaire"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.AGI, true, 2),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "La voie de la Forêt"); put(Language.EN, "Forest's Champion"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.Loot, false, 5),
 				new Effect(TypeEffect.VitComp, false, 5),
@@ -1780,6 +1796,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, false, 500),
 				new Effect(TypeEffect.PM, false, 500),
 				new Effect(TypeEffect.ESQ, true, 5),
+			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Moi, super-héros"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform33),
+				new Effect(TypeEffect.Depla, false, 2),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Montagnard au Pied Sûr"); put(Language.EN, "White Spring Poet"); }}, Quality.BLUE, 67, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.VOL, false, 3),

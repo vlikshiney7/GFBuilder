@@ -2,8 +2,8 @@ package fr.vlik.grandfantasia.loader.characUpgrade;
 
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Blason;
-import fr.vlik.grandfantasia.Blason.BlasonType;
+import fr.vlik.grandfantasia.charac.Blason;
+import fr.vlik.grandfantasia.charac.Blason.BlasonType;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;

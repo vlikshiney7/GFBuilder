@@ -1,8 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class Condition implements Calculable {
 	
@@ -74,6 +74,7 @@ public class Condition implements Calculable {
 		
 		SANCTU1("Sanctuaire Forêt", "Forest Sanctuary"),
 		SANCTU2("Sanctuaire Sable", "Sand Sanctuary"),
+		SANCTU3("Sanctuaire Prairie", "Grassland Sanctuary"),
 		
 		SPRITE("Maître de l'Encyclopédie sprite", "Master of Sprite Encyclopedia"),
 		;

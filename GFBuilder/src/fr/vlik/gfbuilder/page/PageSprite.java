@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.Blason;
-import fr.vlik.grandfantasia.Blason.BlasonType;
+import fr.vlik.grandfantasia.charac.Blason;
+import fr.vlik.grandfantasia.charac.Blason.BlasonType;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gameBuff.IslandBuff;
 import fr.vlik.grandfantasia.stats.Calculable;

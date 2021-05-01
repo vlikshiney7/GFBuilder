@@ -41,7 +41,7 @@ import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageArmor extends PagePanel implements ConvertEffect {
+public class PageArmor extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -70,8 +70,6 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 	
 	private JPanel showAndHide = new JPanel();
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(5);
-	
-	private ArrayList<Calculable> convertEffects;
 	
 	public static PageArmor getInstance() {
 		return INSTANCE;
@@ -236,11 +234,6 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		setEffects();
 	}
 	
-	@Override
-	public ArrayList<Calculable> getConvertEffects() {
-		return this.convertEffects;
-	}
-	
 	public EquipSet getShortcutSet() {
 		return this.shortcutSet.getSelectedItem();
 	}
@@ -305,7 +298,6 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 	@Override
 	protected void setEffects() {
 		CustomList<Calculable> list = new CustomList<Calculable>();
-		CustomList<Calculable> convert = new CustomList<Calculable>();
 		
 		Armor[] armors = new Armor[5];
 		ArrayList<InnerEffect> innerEffect = new ArrayList<InnerEffect>();
@@ -344,19 +336,7 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		}
 		
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(innerEffect)) {
-			for(Calculable c : effects.getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					
-					if(e.getTransfert() == null) {
-						list.add(c);
-					} else {
-						//convert.add(c);
-					}
-				} else {
-					list.add(c);
-				}
-			}
+			list.addAll(effects);
 		}
 		
 		for(int i = 0; i < 5; i++) {
@@ -434,7 +414,6 @@ public class PageArmor extends PagePanel implements ConvertEffect {
 		}
 		
 		this.effects = list;
-		this.convertEffects = convert;
 	}
 	
 	@Override

@@ -40,8 +40,6 @@ import fr.vlik.gfbuilder.frame.FrameSaveLoader;
 import fr.vlik.gfbuilder.frame.FrameSaveOnNew;
 import fr.vlik.gfbuilder.frame.FrameSaveOnQuit;
 import fr.vlik.gfbuilder.frame.JCustomFrame;
-import fr.vlik.gfbuilder.page.AdditionalEffect;
-import fr.vlik.gfbuilder.page.ConvertEffect;
 import fr.vlik.gfbuilder.page.PageArmor;
 import fr.vlik.gfbuilder.page.PageBuff;
 import fr.vlik.gfbuilder.page.PageCapeRing;
@@ -91,7 +89,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.18.0");
+		super("Grand Fantasia Builder - Version 0.18.1");
 		setCustomUI();
 		
 		try {
@@ -258,8 +256,6 @@ public class MainFrame extends JFrame {
 		content.setBackground(Design.UIColor[2]);
 		content.add(this.overlay);
 		content.add(this.scrollContent);
-		
-		System.out.println("Fin Option : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		/****************************************/
 		/*		****	   STATS	  	****	*/
@@ -490,14 +486,6 @@ public class MainFrame extends JFrame {
 		for(JPanel page : this.pages) {
 			if(page instanceof PagePanel) {
 				build.addEffect(((PagePanel) page).getEffects());
-			}
-			
-			if(page instanceof AdditionalEffect) {
-				build.addAdditionalEffect(((AdditionalEffect) page).getAdditionalEffects());
-			}
-			
-			if(page instanceof ConvertEffect) {
-				build.addConvertEffect(((ConvertEffect) page).getConvertEffects());
 			}
 		}
 		

@@ -1,8 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
-import fr.vlik.grandfantasia.stats.Effect.Target;
 
 public class StaticEffect implements Calculable {
 	

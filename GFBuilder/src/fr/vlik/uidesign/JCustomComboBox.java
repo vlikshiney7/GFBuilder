@@ -29,6 +29,10 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 		setBlackUI();
 	}
 	
+	public void placeItems(T[] tabItems) {
+		this.setModel(new DefaultComboBoxModel<T>(tabItems));
+	}
+	
 	public boolean setItems(T[] tabItems) {
 		T memory = this.getSelectedItem();
 		

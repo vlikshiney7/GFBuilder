@@ -68,6 +68,7 @@ public class LoaderRide {
 			
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Dragon de combat en armure"); put(Language.EN, ""); }}, 40, false, "dragon4", new Effect[] { new Effect(TypeEffect.Depla, false, 95), }),
 			
+			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Bodor vif spectral de combat"); put(Language.EN, ""); }}, 40, false, "yggdra3", new Effect[] { new Effect(TypeEffect.Depla, false, 90), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Dragon de combat blindé"); put(Language.EN, ""); }}, 40, false, "dragon5", new Effect[] { new Effect(TypeEffect.Depla, false, 90), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Élégante Alice spectrale de combat"); put(Language.EN, ""); }}, 40, false, "yggdra1", new Effect[] { new Effect(TypeEffect.Depla, false, 90), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Goldo-Tigre rapide de Combat"); put(Language.EN, ""); }}, 40, false, "tigre1", new Effect[] { new Effect(TypeEffect.Depla, false, 90), }),
@@ -88,6 +89,7 @@ public class LoaderRide {
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup Sanglant de Combat"); put(Language.EN, ""); }}, 40, false, "loup1", new Effect[] { new Effect(TypeEffect.Depla, false, 80), }),
 			
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Airwing de combat"); put(Language.EN, ""); }}, 40, false, "airwing0", new Effect[] { new Effect(TypeEffect.Depla, false, 75), }),
+			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Babama musclé de combat"); put(Language.EN, ""); }}, 40, false, "human", new Effect[] { new Effect(TypeEffect.Depla, false, 75), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Caddie de combat pour Sprite"); put(Language.EN, ""); }}, 40, false, "caddie", new Effect[] { new Effect(TypeEffect.Depla, false, 75), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Dragon mécanique enflammé de combat"); put(Language.EN, ""); }}, 40, false, "meca1", new Effect[] { new Effect(TypeEffect.Depla, false, 75), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Dragon Noir de Combat"); put(Language.EN, ""); }}, 40, false, "dragon1", new Effect[] { new Effect(TypeEffect.Depla, false, 75), }),

@@ -19,12 +19,11 @@ import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.Speciality;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 
-public class PageSpeciality extends PagePanel implements ConvertEffect {
+public class PageSpeciality extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -40,8 +39,6 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	
 	private JCustomButton reinitSpe;
 	private JCustomButton maxSpe;
-	
-	private ArrayList<Calculable> convertEffects;
 	
 	public static PageSpeciality getInstance() {
 		return INSTANCE;
@@ -95,11 +92,6 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	}
 	
 	@Override
-	public ArrayList<Calculable> getConvertEffects() {
-		return this.convertEffects;
-	}
-	
-	@Override
 	protected void setLabelAPI() {
 		
 	}
@@ -107,23 +99,14 @@ public class PageSpeciality extends PagePanel implements ConvertEffect {
 	@Override
 	protected void setEffects() {
 		ArrayList<Calculable> list = new ArrayList<Calculable>();
-		ArrayList<Calculable> convert = new ArrayList<Calculable>();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(Calculable c : this.tabSpeciality[i].getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					if(e.getTransfert() == null) {
-						list.add(Speciality.multiplyEffect(e, this.spePoint.get(i).getSelectedIndex()));
-					} else {
-						convert.add(Speciality.multiplyEffect(e, this.spePoint.get(i).getSelectedIndex()));
-					}
-				}
+				list.add(Speciality.multiplyEffect(c, this.spePoint.get(i).getSelectedIndex()));
 			}
 		}
 		
 		this.effects = list;
-		this.convertEffects = convert;
 	}
 	
 	@Override

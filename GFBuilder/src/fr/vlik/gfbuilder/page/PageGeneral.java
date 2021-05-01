@@ -1,7 +1,6 @@
 package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +19,6 @@ import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gameBuff.Yggdrasil;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
@@ -29,7 +27,7 @@ import fr.vlik.uidesign.JCustomDialog;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageGeneral extends PagePanel implements AdditionalEffect {
+public class PageGeneral extends PagePanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -45,8 +43,6 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	
 	private JCustomButton filter;
 	private JCustomDialog filterDialog;
-	
-	private ArrayList<Calculable> additionalEffects;
 	
 	public static PageGeneral getInstance() {
 		return INSTANCE;
@@ -137,7 +133,7 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		
 		this.archive = new JCustomComboBox<Archive>(Archive.getData());
 		this.archive.addActionListener(e -> {
-			setAdditionalEffects();
+			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
@@ -155,7 +151,6 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
-		setAdditionalEffects();
 	}
 	
 	public Grade getGrade() {
@@ -196,32 +191,14 @@ public class PageGeneral extends PagePanel implements AdditionalEffect {
 	protected void setEffects() {
 		CustomList<Calculable> list = new CustomList<Calculable>();
 		
-		for(int i = 0; i < 5; i++) {
-			int value = Base.getBase(i, this.getGrade().getGrade(), this.getLvl());
-			value = (int) Math.floor(value * this.getReinca().getCoef());
-			list.add(new Effect(Base.getEffect(i), false, value));
-		}
-		
+		list.addAll(Base.getBase(this.getGrade(), this.getLvl()));
 		list.addAll(this.getTitle());
 		list.addAll(this.getYggdrasil());
+		list.addAll(this.getArchive());
 		
 		this.effects = list;
 	}
 	
-	@Override
-	public ArrayList<Calculable> getAdditionalEffects() {
-		return this.additionalEffects;
-	}
-	
-	@Override
-	public void setAdditionalEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
-		
-		list.addAll(this.getArchive());
-		
-		this.additionalEffects = list;
-	}
-
 	@Override
 	protected void createPanel() {
 		

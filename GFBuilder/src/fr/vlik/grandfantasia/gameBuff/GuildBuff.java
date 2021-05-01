@@ -17,14 +17,14 @@ public class GuildBuff extends IconBuff {
 		super(name, path, effects);
 	}
 	
-	public static GuildBuff[] getListGuildBuff(ArrayList<String> guildBuffName) {
+	public static GuildBuff[] getListGuildBuff(ArrayList<GuildBuff> guildBuff) {
 		ArrayList<GuildBuff> result = new ArrayList<GuildBuff>();
 		
 		for(int i = 0; i < GuildBuff.data.length; i++) {
 			boolean add = true;
 			
-			for(int j = 0; j < guildBuffName.size(); j++) {
-				if(guildBuffName.get(j).equals(GuildBuff.data[i].getName(Language.FR))) {
+			for(int j = 0; j < guildBuff.size(); j++) {
+				if(guildBuff.get(j).equals(GuildBuff.data[i])) {
 					add = false;
 					break;
 				}
@@ -35,14 +35,7 @@ public class GuildBuff extends IconBuff {
 			}
 		}
 		
-		GuildBuff[] cast = new GuildBuff[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
-	}
-	
-	public static GuildBuff[] getData() {
-		return GuildBuff.data;
+		return result.toArray(new GuildBuff[result.size()]);
 	}
 	
 	public static GuildBuff get(String name) {
@@ -53,5 +46,9 @@ public class GuildBuff extends IconBuff {
 		}
 		
 		return null;
+	}
+
+	public static GuildBuff[] getData() {
+		return GuildBuff.data;
 	}
 }

@@ -17,14 +17,14 @@ public class Stone extends CompleteBuff {
 		super(name, quality, path, effects);
 	}
 	
-	public static Stone[] getData(ArrayList<String> stoneName) {
+	public static Stone[] getListStone(ArrayList<Stone> stone) {
 		ArrayList<Stone> result = new ArrayList<Stone>();
 		
 		for(int i = 0; i < Stone.data.length; i++) {
 			boolean add = true;
 			
-			for(int j = 0; j < stoneName.size(); j++) {
-				if(stoneName.get(j).equals(Stone.data[i].getName(Language.FR))) {
+			for(int j = 0; j < stone.size(); j++) {
+				if(stone.get(j).equals(Stone.data[i])) {
 					add = false;
 					break;
 				}

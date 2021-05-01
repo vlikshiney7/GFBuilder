@@ -13,18 +13,17 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.Skill;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
+import fr.vlik.grandfantasia.characUpgrade.Skill;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerIconEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 
-public class PageSkill extends PagePanel implements ConvertEffect {
+public class PageSkill extends PagePanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -39,8 +38,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	private JCustomComboBox<ProSkill> proSkill;
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
-	
-	private ArrayList<Calculable> convertEffects;
 	
 	public static PageSkill getInstance() {
 		return INSTANCE;
@@ -95,11 +92,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	}
 	
 	@Override
-	public ArrayList<Calculable> getConvertEffects() {
-		return this.convertEffects;
-	}
-	
-	@Override
 	protected void setLabelAPI() {
 		
 	}
@@ -107,26 +99,10 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 	@Override
 	protected void setEffects() {
 		CustomList<Calculable> list = new CustomList<Calculable>();
-		CustomList<Calculable> convert = new CustomList<Calculable>();
 		
 		for(JCustomLabel<InnerIconEffect> passive : this.passiveSkill) {
 			if(passive.isVisible()) {
-				InnerIconEffect iconEffect = passive.getItem();
-				
-				if(iconEffect.getEffects() != null) {
-					for(Calculable c : iconEffect.getEffects()) {
-						if(c instanceof Effect) {
-							Effect e = (Effect) c;
-							if(e.getTransfert() == null) {
-								list.add(e);
-							} else {
-								convert.add(e);
-							}
-						} else {
-							list.add(c);
-						}
-					}
-				}
+				list.addAll(passive.getItem());
 			}
 		}
 		
@@ -141,7 +117,6 @@ public class PageSkill extends PagePanel implements ConvertEffect {
 		}
 		
 		this.effects = list;
-		this.convertEffects = convert;
 	}
 
 	@Override
