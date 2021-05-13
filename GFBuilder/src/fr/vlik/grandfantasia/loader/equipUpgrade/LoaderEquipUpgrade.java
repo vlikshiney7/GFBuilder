@@ -11,6 +11,7 @@ import fr.vlik.grandfantasia.equipUpgrade.CombiRunway;
 import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
+import fr.vlik.grandfantasia.equipUpgrade.PearlEnchantment;
 import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.Runway;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
@@ -130,6 +131,10 @@ public class LoaderEquipUpgrade {
 	
 	public static Pearl[] getArmorCostPearl() {
 		return LoaderPearl.getArmorCost();
+	}
+	
+	public static PearlEnchantment[] getPearlEnchantment() {
+		return LoaderPearlEnchantment.getPearlEnchantment();
 	}
 	
 	public static XpStuff[] getXpStuff() {

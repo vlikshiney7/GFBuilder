@@ -493,11 +493,13 @@ public class PageBuff extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			config.put("GuildBuff" + i, this.guildBuffUsed.get(i).getText());
+			String value = this.getGuildBuffUsed(i) != null && this.guildBuffUsed.get(i).isVisible() ? this.getGuildBuffUsed(i).getName(Language.FR) : "";
+			config.put("GuildBuff" + i, value);
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {
-			config.put("Stone" + i, this.stoneUsed.get(i).getText());
+			String value = this.getStoneUsed(i) != null && this.stoneUsed.get(i).isVisible() ? this.getStoneUsed(i).getName(Language.FR) : "";
+			config.put("Stone" + i, value);
 		}
 		
 		return config;
@@ -514,13 +516,27 @@ public class PageBuff extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			this.guildBuffUsed.get(i).setItem(GuildBuff.get(config.get("GuildBuff" + i)));
+			GuildBuff guildBuff = GuildBuff.get(config.get("GuildBuff" + i));
+			if(guildBuff != null) {
+				this.guildBuffUsed.get(i).setItem(guildBuff);
+				this.guildBuffUsed.get(i).setVisible(true);
+			} else {
+				this.guildBuffUsed.get(i).setVisible(false);
+			}
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {
-			this.stoneUsed.get(i).setItem(Stone.get(config.get("Stone" + i)));
+			Stone stone = Stone.get(config.get("Stone" + i));
+			if(stone != null) {
+				this.stoneUsed.get(i).setItem(stone);
+				this.stoneUsed.get(i).setVisible(true);
+			} else {
+				this.stoneUsed.get(i).setVisible(false);
+			}
 		}
 		
+		refreshGuildBuffList();
+		refreshStoneList();
 		setEffects();
 	}
 }

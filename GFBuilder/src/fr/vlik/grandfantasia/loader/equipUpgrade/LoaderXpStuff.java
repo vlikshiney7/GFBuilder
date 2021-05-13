@@ -461,7 +461,7 @@ public class LoaderXpStuff {
 					1171, 1188, 1204, 1221, 1237, 1254, 1270, 1287, 1303, 1320,
 					1336, 1353, 1369, 1386, 1402, 1419, 1435, 1452, 1468, 1485,
 					1501, 1518, 1534, 1551, 1567, 1584, 1600, 1617, 1633, 1650,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PV, new EquipType[] {
 					WeaponType.EPEE2M, WeaponType.MECA2M, WeaponType.BATON,
 				}, Effect.tabEffect(TypeEffect.PV, false, new double[] {
@@ -475,7 +475,7 @@ public class LoaderXpStuff {
 					2343, 2376, 2409, 2442, 2475, 2508, 2541, 2574, 2607, 2640,
 					2673, 2706, 2739, 2772, 2805, 2838, 2871, 2904, 2937, 2970,
 					3003, 3036, 3069, 3102, 3135, 3168, 3201, 3234, 3267, 3300,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PV, new EquipType[] {
 					RideType.NORMAL,
 				}, Effect.tabEffect(TypeEffect.PV, false, new double[] {
@@ -489,7 +489,7 @@ public class LoaderXpStuff {
 					2840, 2880, 2920, 2960, 3000, 3040, 3080, 3120, 3160, 3200,
 					3240, 3280, 3320, 3360, 3400, 3440, 3480, 3520, 3560, 3600,
 					3640, 3680, 3720, 3760, 3800, 3840, 3880, 3920, 3960, 4000,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PV, new EquipType[] {
 					RideType.NERF,
 				}, Effect.tabEffect(TypeEffect.PV, false, new double[] {
@@ -503,7 +503,7 @@ public class LoaderXpStuff {
 					1420, 1440, 1460, 1480, 1500, 1520, 1540, 1560, 1580, 1600,
 					1620, 1640, 1660, 1680, 1700, 1720, 1740, 1760, 1780, 1800,
 					1820, 1840, 1860, 1880, 1900, 1920, 1940, 1960, 1980, 2000,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PM, new EquipType[] {
 					WeaponType.CANON, WeaponType.CLE,
 				}, Effect.tabEffect(TypeEffect.PM, false, new double[] {
@@ -517,7 +517,7 @@ public class LoaderXpStuff {
 					546, 554, 562, 569, 577, 585, 592, 600, 608, 616,
 					623, 631, 639, 646, 654, 662, 669, 677, 685, 693,
 					700, 708, 716, 723, 731, 739, 746, 754, 762, 770,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PM, new EquipType[] {
 					WeaponType.BATON,
 				}, Effect.tabEffect(TypeEffect.PM, false, new double[] {
@@ -531,7 +531,7 @@ public class LoaderXpStuff {
 					1093, 1108, 1124, 1139, 1155, 1170, 1185, 1201, 1216, 1232,
 					1247, 1262, 1278, 1293, 1309, 1324, 1339, 1355, 1370, 1386,
 					1401, 1416, 1432, 1447, 1463, 1478, 1493, 1509, 1524, 1540,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PM, new EquipType[] {
 					ArmorType.CASQUE,
 				}, Effect.tabEffect(TypeEffect.PM, false, new double[] {
@@ -545,7 +545,7 @@ public class LoaderXpStuff {
 					994, 1008, 1022, 1036, 1050, 1064, 1078, 1092, 1106, 1120,
 					1134, 1148, 1162, 1176, 1190, 1204, 1218, 1232, 1246, 1260,
 					1274, 1288, 1302, 1316, 1330, 1344, 1358, 1372, 1386, 1400,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PM, new EquipType[] {
 					RideType.NORMAL,
 				}, Effect.tabEffect(TypeEffect.PM, false, new double[] {
@@ -559,7 +559,7 @@ public class LoaderXpStuff {
 					1420, 1440, 1460, 1480, 1500, 1520, 1540, 1560, 1580, 1600,
 					1620, 1640, 1660, 1680, 1700, 1720, 1740, 1760, 1780, 1800,
 					1820, 1840, 1860, 1880, 1900, 1920, 1940, 1960, 1980, 2000,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.PM, new EquipType[] {
 					RideType.NERF,
 				}, Effect.tabEffect(TypeEffect.PM, false, new double[] {
@@ -573,7 +573,7 @@ public class LoaderXpStuff {
 					710, 720, 730, 740, 750, 760, 770, 780, 790, 800,
 					810, 820, 830, 840, 850, 860, 870, 880, 890, 900,
 					910, 920, 930, 940, 950, 960, 970, 980, 990, 1000,
-				}, true)),
+				}, false)),
 			new XpStuff(TypeEffect.Atk, new EquipType[] {
 					WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.MECA1M, WeaponType.DEFAULT,
 				}, Effect.tabEffect(TypeEffect.Atk, false, new double[] {

@@ -20,18 +20,18 @@ public class GuildBuff extends IconBuff {
 	public static GuildBuff[] getListGuildBuff(ArrayList<GuildBuff> guildBuff) {
 		ArrayList<GuildBuff> result = new ArrayList<GuildBuff>();
 		
-		for(int i = 0; i < GuildBuff.data.length; i++) {
+		for(GuildBuff data : GuildBuff.data) {
 			boolean add = true;
 			
 			for(int j = 0; j < guildBuff.size(); j++) {
-				if(guildBuff.get(j).equals(GuildBuff.data[i])) {
+				if(data.equals(guildBuff.get(j))) {
 					add = false;
 					break;
 				}
 			}
 			
 			if(add) {
-				result.add(GuildBuff.data[i]);
+				result.add(data);
 			}
 		}
 		

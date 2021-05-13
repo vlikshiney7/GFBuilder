@@ -40,6 +40,20 @@ public class RedEnchantment extends Enchantment {
 		return this.lvlEffect;
 	}
 	
+	public InnerEffect getInnerEffect(int lvl) {
+		if(lvl == 0) {
+			return null;
+		}
+		
+		for(InnerEffect inner : this.lvlEffect) {
+			if(lvl == inner.getLvlbuff()) {
+				return inner;
+			}
+		}
+		
+		return null;
+	}
+	
 	public static InnerEffect[] cumulConstraint(ArrayList<InnerEffect> innerEffect) {
 		ArrayList<InnerEffect> result = new ArrayList<InnerEffect>();
 		

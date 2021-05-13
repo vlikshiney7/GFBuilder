@@ -89,7 +89,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.18.1");
+		super("Grand Fantasia Builder - Version 0.18.2");
 		setCustomUI();
 		
 		try {
@@ -188,7 +188,7 @@ public class MainFrame extends JFrame {
 		System.out.println("Fin CapeRing : " + Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
-		progress.setString("Loading Mount Page");
+		progress.setString("Loading Ride Page");
 		this.pages.add(PageRide.getInstance());
 		System.out.println("Fin Mount : " + Duration.between(this.start, Instant.now()).toMillis());
 
@@ -477,16 +477,16 @@ public class MainFrame extends JFrame {
 		double coefReinca = PageGeneral.getInstance().getReinca().getCoef();
 		WeaponType[] weaponType = PageWeapon.getInstance().getWeaponType();
 		
-		if(PageWeapon.getInstance().isDoubleWeapon() != Util.allowedDoubleWeapon()) {
-			PageWeapon.getInstance().applyDoubleWeapon(!PageWeapon.getInstance().isDoubleWeapon());
-		}
-		
 		Build build = new Build(coefReinca, weaponType);
 		
 		for(JPanel page : this.pages) {
 			if(page instanceof PagePanel) {
 				build.addEffect(((PagePanel) page).getEffects());
 			}
+		}
+		
+		if(PageWeapon.getInstance().isDoubleWeapon() != build.isDoubleWeapon()) {
+			PageWeapon.getInstance().applyDoubleWeapon(!PageWeapon.getInstance().isDoubleWeapon());
 		}
 		
 		updateLabel(build.calculStatFromEffect());

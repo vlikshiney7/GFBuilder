@@ -20,18 +20,18 @@ public class Stone extends CompleteBuff {
 	public static Stone[] getListStone(ArrayList<Stone> stone) {
 		ArrayList<Stone> result = new ArrayList<Stone>();
 		
-		for(int i = 0; i < Stone.data.length; i++) {
+		for(Stone data : Stone.data) {
 			boolean add = true;
 			
 			for(int j = 0; j < stone.size(); j++) {
-				if(stone.get(j).equals(Stone.data[i])) {
+				if(data.equals(stone.get(j))) {
 					add = false;
 					break;
 				}
 			}
 			
 			if(add) {
-				result.add(Stone.data[i]);
+				result.add(data);
 			}
 		}
 		

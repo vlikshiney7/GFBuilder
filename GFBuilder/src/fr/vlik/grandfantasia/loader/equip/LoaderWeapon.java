@@ -10912,7 +10912,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 100, true),
 					new Effect(TypeEffect.Toucher, false, 25),
 					new Effect(TypeEffect.Depla, false, 12),
-					new Effect(TypeEffect.VitComp, false, -30),
+					new Effect(TypeEffect.VitComp, false, 30),
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -30),
 						new Effect(TypeEffect.DefM, true, -20),

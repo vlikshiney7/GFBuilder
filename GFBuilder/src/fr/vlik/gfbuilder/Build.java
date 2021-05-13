@@ -5,17 +5,21 @@ import java.util.Arrays;
 
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Effect.TypeCalcul;
+import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class Build {
 	
 	private double coefReinca;
+	private boolean isDoubleWeapon = false;
 	private WeaponType[] weaponType;
 	
 	private ArrayList<Effect> baseEffects = new ArrayList<Effect>();
+	private ArrayList<Effect> yggdrasil = new ArrayList<Effect>();
 	private ArrayList<Effect> convertBaseEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> classicPointEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> classicPercentEffects = new ArrayList<Effect>();
@@ -31,6 +35,10 @@ public class Build {
 		return this.coefReinca;
 	}
 	
+	public boolean isDoubleWeapon() {
+		return this.isDoubleWeapon;
+	}
+	
 	public WeaponType[] getWeaponType() {
 		return this.weaponType;
 	}
@@ -43,6 +51,7 @@ public class Build {
 				if(containIdWeapon(e.getWithWeapon())) {
 					switch(e.getCalcul()) {
 						case BASE: 			this.baseEffects.add(e);		break;
+						case YGGDRASIL:		this.yggdrasil.add(e);			break;
 						case CONVERTBASE:	this.convertBaseEffects.add(e);	break;
 						case CLASSIC:
 							if(e.isPercent()) {
@@ -63,6 +72,12 @@ public class Build {
 						}
 					}
 				}
+			}
+		} else if(c instanceof StaticEffect) {
+			StaticEffect s = (StaticEffect) c;
+			
+			if(s.getType() == TypeStaticEffect.Duo) {
+				this.isDoubleWeapon = true;
 			}
 		}
 	}
@@ -96,10 +111,11 @@ public class Build {
 	
 	public double[] calculStatFromEffect() {
 		double[] base = combineEffect(this.baseEffects);
-		double[] convertBase = convertEffect(this.convertBaseEffects, base);
+		double[] yggdra = combineEffect(this.yggdrasil);
+		double[] convertBase = convertEffect(this.convertBaseEffects, base, yggdra);
 		double[] point = combineEffect(this.classicPointEffects);
 		double[] percent = combineEffect(this.classicPercentEffects);
-		double[] convert = convertEffect(this.convertEffects, base, convertBase, point, percent);
+		double[] convert = convertEffect(this.convertEffects, base, yggdra, convertBase, point, percent);
 		double[] additional = combineEffect(this.additionalEffects);
 		
 		double[] result = new double[TypeEffect.values().length];
@@ -107,7 +123,7 @@ public class Build {
 		
 		/* FCE VIT INT VOL AGI */
 		for(int i = 0; i < 5; i++) {
-			result[i] = Math.floor((base[i] + point[i]) * (percent[i] / 100 +1) + convertBase[i] + convert[i] + additional[i]);
+			result[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i] + convert[i] + additional[i]);
 		}
 		
 		/* Atk AtkD AtkM */
@@ -160,27 +176,27 @@ public class Build {
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base) {
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] redefinedBase = Arrays.copyOf(base, base.length);
 		
 		/* PV PM */
-		redefinedBase[19] = Math.floor(Math.round(base[1] * 40)) + base[19];
-		redefinedBase[20] = Math.floor(Math.round(base[3] * 20)) + base[20];
+		redefinedBase[19] = Math.floor(base[1] * (yggdra[1] / 100 +1) * 40) + base[19];
+		redefinedBase[20] = Math.floor(base[3] * (yggdra[3] / 100 +1) * 20) + base[20];
 		
 		for(Effect e : effects) {
-			combine[e.getType().ordinal()] += Math.round(redefinedBase[e.getTransfert().ordinal()] * (e.getValue() / 100) * this.coefReinca);
+			combine[e.getType().ordinal()] += Math.round(redefinedBase[e.getTransfert().ordinal()] * (e.getValue() / 100));
 		}
 		
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] convertBase, double[] point, double[] percent) {
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra, double[] convertBase, double[] point, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] merge = Arrays.copyOf(base, base.length);
 		
 		for(int i = 0; i < 5; i++) {
-			merge[i] = Math.floor((base[i] + point[i]) * (percent[i] / 100 +1) + convertBase[i]);
+			merge[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i]);
 		}
 		
 		/* Atk AtkD AtkM */
@@ -195,7 +211,7 @@ public class Build {
 		
 		for(Effect e : effects) {
 			double value = merge[e.getTransfert().ordinal()] * (e.getValue() / 100);
-			combine[e.getType().ordinal()] += Math.floor(value * (percent[e.getType().ordinal()] / 100 +1));
+			combine[e.getType().ordinal()] += Math.floor(value * ((yggdra[e.getType().ordinal()] + percent[e.getType().ordinal()]) / 100 +1));
 		}
 		
 		return combine;

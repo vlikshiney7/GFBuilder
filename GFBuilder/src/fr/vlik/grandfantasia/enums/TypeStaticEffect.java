@@ -30,6 +30,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	Transfo("Transformation", "Transformation", "Transformation", "Transformation", Tools.EffectColor[0]),
 	Duo("Permet d'équiper 2 armes", "Allow to equip 2 weapons", "2 armes possible", "2 weapons allowed", Tools.EffectColor[0]),
 	
+	Passive9("Accumulation d'Interférence électromagnétique", "Accumulation of Electromagnetic Interference", "Accum Inter élec", "Accum Elec Inter", Tools.EffectColor[0]),
 	Combi11("+10% def joueur vers marionnette", "+10% def player to doll", "Marionnette : +10% def joueur", "Doll : +10% player's def", Tools.EffectColor[0]),
 	
 	ProSkillC1("20% réduction de dégât, maximum 3 coups", "20% damage reduction, 3 hits maximum", "20% reduc, max 3 coups", "20% reduc, 3 hits max", Tools.EffectColor[0]),

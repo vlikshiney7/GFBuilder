@@ -28,8 +28,11 @@ public class Effect implements Calculable {
 			if(type != TypeEffect.FCE && type != TypeEffect.VIT && type != TypeEffect.INT && type != TypeEffect.VOL && type != TypeEffect.AGI 
 					&& type != TypeEffect.Atk && type != TypeEffect.AtkD && type != TypeEffect.AtkM
 					&& type != TypeEffect.DefP && type != TypeEffect.DefM && type != TypeEffect.ESQ
-					&& type != TypeEffect.PV && type != TypeEffect.PM) {
+					&& type != TypeEffect.PV && type != TypeEffect.PM
+					&& type.ordinal() < 53 && type.ordinal() > 58) {
+				
 				this.isPercent = false;
+				System.out.println("Un effet a été corrigé : " + type + ", true, " + value);
 			}
 		}
 	}
@@ -85,7 +88,7 @@ public class Effect implements Calculable {
 	}
 	
 	public enum TypeCalcul {
-		BASE, CONVERTBASE, CLASSIC, CONVERT, ADDITIONAL,
+		BASE, YGGDRASIL, CONVERTBASE, CLASSIC, CONVERT, ADDITIONAL,
 	}
 	
 	public TypeEffect getType() {

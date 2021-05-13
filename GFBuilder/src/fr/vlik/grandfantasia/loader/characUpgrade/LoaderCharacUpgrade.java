@@ -109,7 +109,7 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Endurance au combat"); put(Language.EN, ""); }}, 16, "0-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPV, false, 20),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en berserker"); put(Language.EN, ""); }}, 31, "31-0", null),
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en berserker"); put(Language.EN, ""); }}, 31, "31-0", null),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Défense experte"); put(Language.EN, ""); }}, 6, "0-0", new Calculable[] {
@@ -131,7 +131,7 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Combat à l'arme double"); put(Language.EN, ""); }}, 16, "1-1", new Calculable[] {
 					new StaticEffect(TypeStaticEffect.Duo),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en ranger"); put(Language.EN, ""); }}, 31, "31-2", null),
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en ranger"); put(Language.EN, ""); }}, 31, "31-2", null),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite"); put(Language.EN, ""); }}, 6, "1-0", new Calculable[] {
@@ -151,7 +151,7 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Restauration de PM"); put(Language.EN, ""); }}, 16, "2-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 20),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en clerc"); put(Language.EN, ""); }}, 31, "31-4", null),
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en clerc"); put(Language.EN, ""); }}, 31, "31-4", null),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Résistance à la magie"); put(Language.EN, ""); }}, 6, "2-0", new Calculable[] {
@@ -160,7 +160,7 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Restauration de PM"); put(Language.EN, ""); }}, 16, "2-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 20),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en sage"); put(Language.EN, ""); }}, 31, "31-5", null),
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en sage"); put(Language.EN, ""); }}, 31, "31-5", null),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Adepte de la magie"); put(Language.EN, ""); }}, 6, "3-0", new Calculable[] {
@@ -203,7 +203,13 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Double armes mécaniques"); put(Language.EN, ""); }}, 31, "4-2", new Calculable[] {
 					new StaticEffect(TypeStaticEffect.Duo),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en métalleux"); put(Language.EN, ""); }}, 31, "31-8", null),
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en métalleux"); put(Language.EN, ""); }}, 31, "31-8", null),
+				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise de Mécha gravité"); put(Language.EN, ""); }}, 66, "66-0", new Calculable[] {
+					new Effect(TypeEffect.ReducP, false, 5),
+					new Effect(TypeEffect.ReducM, false, 5),
+					new Effect(TypeEffect.DefP, true, 5),
+					new Effect(TypeEffect.DefM, true, 5),
+				}),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "ORDI de Technopolis"); put(Language.EN, ""); }}, new int[] { 6, 31, 66, }, "4-0", new Calculable[][] {
@@ -223,7 +229,10 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Double armes mécaniques"); put(Language.EN, ""); }}, 31, "4-2", new Calculable[] {
 					new StaticEffect(TypeStaticEffect.Duo),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en démolisseur"); put(Language.EN, ""); }}, 31, "31-9", null),
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en démolisseur"); put(Language.EN, ""); }}, 31, "31-9", null),
+				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise d'Interférence électromagnétique"); put(Language.EN, ""); }}, 66, "66-1", new Calculable[] {
+					new StaticEffect(TypeStaticEffect.Passive9, 5),
+				}),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Résonance cristalline"); put(Language.EN, ""); }}, 6, "5-0", new Calculable[] {
@@ -249,8 +258,8 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.PeneP, false, 5),
 					new Effect(TypeEffect.PeneM, false, 5),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en spatiodériveur"); put(Language.EN, ""); }}, 31, "31-10", null),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Poids de l'univers"); put(Language.EN, ""); }}, 66, "66-0", new Calculable[] {
+				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en spatiodériveur"); put(Language.EN, ""); }}, 31, "31-10", null),
+				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Poids de l'univers"); put(Language.EN, ""); }}, 66, "66-2", new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 5),
 					new Effect(TypeEffect.ReducP, false, 5),
 					new Effect(TypeEffect.ReducM, false, 5),
@@ -284,7 +293,7 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en chronodériveur"); put(Language.EN, ""); }}, 31, "31-11", new Calculable[] {
 					new Effect(TypeEffect.PM, false, 800, TypeCalcul.BASE),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du Temps"); put(Language.EN, ""); }}, 66, "66-1", new Calculable[] {
+				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir du Temps"); put(Language.EN, ""); }}, 66, "66-3", new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 10),
 				}),
 			},

@@ -601,45 +601,69 @@ public class LoaderSpeciality {
 	
 	static Speciality[] getClass9() {
 		return new Speciality[] {
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "9-0", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration de Réaction"); put(Language.EN, ""); }}, 45, "9-0", new Calculable[] {
+				new Effect(TypeEffect.AGI, false, 9),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "9-1", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Entraînement Tireur d'élite"); put(Language.EN, ""); }}, 45, "9-1", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 1.5),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "9-2", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Choc Haute Fréquence"); put(Language.EN, ""); }}, 45, "9-2", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "9-3", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maître Canon Lourd"); put(Language.EN, ""); }}, 45, "9-3", new Calculable[] {
+				new Effect(TypeEffect.DegStdCanon, false, 1.5),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "9-4", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Énergie à Neutrons"); put(Language.EN, ""); }}, 45, "9-4", new Calculable[] {
+				new Effect(TypeEffect.CostComp, false, -3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "9-5", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Étude robotique"); put(Language.EN, ""); }}, 45, "9-5", new Calculable[] {
+				new Effect(TypeEffect.DegMecaP, false, 50),
+				new Effect(TypeEffect.DegMecaP, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "9-6", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Chargement Rapide"); put(Language.EN, ""); }}, 60, "9-6", new Calculable[] {
+				new Effect(TypeEffect.VitAtkD, false, 1.5),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "9-7", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Transfert Nucléaire"); put(Language.EN, ""); }}, 60, "9-7", new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 1.2),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "9-8", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Changement de Phase"); put(Language.EN, ""); }}, 60, "9-8", new Calculable[] {
+				new Effect(TypeEffect.PeneP, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "9-9", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Interférence Magnétique"); put(Language.EN, ""); }}, 60, "9-9", new Calculable[] {
+				new Effect(TypeEffect.MEN, false, -1.5),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "9-10", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Coeur de Feu"); put(Language.EN, ""); }}, 75, "9-10", new Calculable[] {
+				new Effect(TypeEffect.PM, true, 2),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "9-11", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Armure Coeur de Feu"); put(Language.EN, ""); }}, 75, "9-11", new Calculable[] {
+				new Effect(TypeEffect.DefM, true, 1.5),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "9-12", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Détermination Spéciale"); put(Language.EN, ""); }}, 75, "9-12", new Calculable[] {
+				new Effect(TypeEffect.DegP, false, 1),
+				new Effect(TypeEffect.DegM, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "9-13", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier de Plasma"); put(Language.EN, ""); }}, 75, "9-13", new Calculable[] {
+				new Effect(TypeEffect.RTCCM, false, 3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "9-14", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Recherches sur les Munitions"); put(Language.EN, ""); }}, 75, "9-14", new Calculable[] {
+				new Effect(TypeEffect.AGI, false, 5),
+				new Effect(TypeEffect.VOL, false, 4),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "9-15", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration Canon Lourd"); put(Language.EN, ""); }}, 75, "9-15", new Calculable[] {
+				new Effect(TypeEffect.TCCP, false, 1.5, WeaponType.CANON),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "9-16", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Transfert de Plasma"); put(Language.EN, ""); }}, 91, "9-16", new Calculable[] {
+				new Effect(TypeEffect.VOL, 3, TypeEffect.AGI, TypeCalcul.CONVERT),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "9-17", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Accélération de Phase"); put(Language.EN, ""); }}, 91, "9-17", new Calculable[] {
+				new Effect(TypeEffect.VitAtkD, 3, TypeEffect.TCCP, TypeCalcul.CONVERT),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "9-18", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Suivi Optique"); put(Language.EN, ""); }}, 91, "9-18", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 2),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "9-19", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Ressource Nucléaire"); put(Language.EN, ""); }}, 91, "9-19", new Calculable[] {
+				new Effect(TypeEffect.DCCP, false, 1),
+				new Effect(TypeEffect.DCCM, false, 1),
 			}),
 		};
 	}

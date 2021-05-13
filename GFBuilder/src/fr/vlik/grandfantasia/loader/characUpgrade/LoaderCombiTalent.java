@@ -67,7 +67,7 @@ public class LoaderCombiTalent {
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier à la Hache de Bataille"); put(Language.EN, ""); }}, new int[] { 2, 1, }, new Calculable[] {
 				new Effect(TypeEffect.DCCP, false, 30),
 			}),
-			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier à la Hache Lumineuse"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier à Hache Légère"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 				new Effect(TypeEffect.Toucher, false, 5),
 			}),
@@ -122,7 +122,7 @@ public class LoaderCombiTalent {
 				new Effect(TypeEffect.ESQ, false, 8),
 				new Effect(TypeEffect.VitAtk, false, 10),
 			}),
-			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier à la Hache Lumineuse"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier à Hache Légère"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 				new Effect(TypeEffect.Toucher, false, 5),
 			}),

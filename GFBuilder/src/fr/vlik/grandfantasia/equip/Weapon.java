@@ -69,24 +69,26 @@ public class Weapon extends Equipment {
 	}
 	
 	public static enum WeaponType implements EquipType {
-		EPEE1M(0, "une épée une main", ""), MARTEAU1M(1, "un marteau une main", ""), HACHE1M(2, "une hache une main", ""),
-		EPEE2M(3, "une épée à deux mains", ""), MARTEAU2M(4, "un marteau à deux mains", ""), HACHE2M(5, "une hache à deux mains", ""),
-		MECA1M(6, "une arme mécanique une main", ""), MECA2M(7, "une arme mécanique à deux mains", ""),
-		ARC(8, "un arc", ""), GUN(9, "un pistolet", ""), CANON(10, "un canon", ""),
-		RELIQUE(11, "une relique", ""), BATON(12, "un bâton", ""),
-		LAME(13, "une lame", ""), CLE(14, "une clé", ""),
-		BOUCLIER(15, "un bouclier", ""),
-		DEFAULT(16, "un défaut", "default"),
-		NONE(-1, "vide", "void");
+		EPEE1M(0, "une épée une main", "", true), MARTEAU1M(1, "un marteau une main", "", true), HACHE1M(2, "une hache une main", "", true),
+		EPEE2M(3, "une épée à deux mains", "", false), MARTEAU2M(4, "un marteau à deux mains", "", false), HACHE2M(5, "une hache à deux mains", "", false),
+		MECA1M(6, "une arme mécanique une main", "", true), MECA2M(7, "une arme mécanique à deux mains", "", false),
+		ARC(8, "un arc", "", false), GUN(9, "un pistolet", "", false), CANON(10, "un canon", "", false),
+		RELIQUE(11, "une relique", "", false), BATON(12, "un bâton", "", false),
+		LAME(13, "une lame", "", false), CLE(14, "une clé", "", false),
+		BOUCLIER(15, "un bouclier", "", false),
+		DEFAULT(16, "un défaut", "default", true),
+		NONE(-1, "vide", "void", true);
 		
 		public final int index;
 		public final String fr;
 		public final String en;
+		public final boolean isMainOneHand;
 		 
-	    private WeaponType(int index, String fr, String en) {
+	    private WeaponType(int index, String fr, String en, boolean isMainOneHand) {
 	        this.index = index;
 	        this.fr = fr;
 	        this.en = en;
+	        this.isMainOneHand = isMainOneHand;
 	    }
 	}
 	
