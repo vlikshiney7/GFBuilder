@@ -12,7 +12,7 @@ public class Effect implements Calculable {
 	private double value;
 	private boolean withReinca = false;
 	private WeaponType withWeapon = WeaponType.NONE;
-	private TypeEffect transfert;
+	private TypeEffect transfert = TypeEffect.NONE;
 	private Target target = Target.SELF;
 	
 	private TypeCalcul typeCalcul = TypeCalcul.CLASSIC;
@@ -65,7 +65,7 @@ public class Effect implements Calculable {
 	}
 	
 	public Effect(TypeEffect type, double value, TypeEffect transfert, TypeCalcul typeCalcul) {
-		this(type, false, value);
+		this(type, true, value);
 		this.transfert = transfert;
 		
 		this.typeCalcul = typeCalcul;
@@ -146,6 +146,11 @@ public class Effect implements Calculable {
 		tooltip.append(this.value);
 		tooltip.append(this.isPercent ? "%" : "");
 		
+		if(this.transfert != TypeEffect.NONE) {
+			tooltip.append(" de ");
+			tooltip.append(this.transfert.abbrevFR);
+		}
+		
 		return "<li>" + tooltip.toString().replace(".0", "") + "</li>";
 	}
 	
@@ -197,6 +202,7 @@ public class Effect implements Calculable {
 		
 		result += (this.value < 0 ? " " : " +");
 		result += this.value + (this.isPercent ? "%" : "");
+		
 		if(this.withWeapon != WeaponType.NONE) {
 			if(lang == Language.FR) {
 				result += " si équipé d'";
@@ -206,6 +212,16 @@ public class Effect implements Calculable {
 				result += this.withWeapon.en;
 			}
 			
+		}
+		
+		if(this.transfert != TypeEffect.NONE) {
+			if(lang == Language.FR) {
+				result += " de ";
+				result += this.transfert.fr;
+			} else {
+				result += " of ";
+				result += this.transfert.en;
+			}
 		}
 		
 		return result.replace(".0", "");

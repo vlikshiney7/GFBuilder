@@ -1315,7 +1315,7 @@ public class Loader {
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Volonté de Phoebios 5"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DefP, false, 250),
-				new Effect(TypeEffect.DefM, false, 250),
+				new Effect(TypeEffect.DefM, false, 270),
 				new Proc(4, Activation.Attack, 10, new Calculable[] {
 					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
@@ -1325,7 +1325,7 @@ public class Loader {
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Très puissant mystère des aborigènes 4"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DefP, false, 240),
-				new Effect(TypeEffect.DefM, false, 240),
+				new Effect(TypeEffect.DefM, false, 260),
 				new Proc(3, Activation.Attack, 10, new Calculable[] {
 					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
@@ -1335,7 +1335,7 @@ public class Loader {
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Volonté de Phoebios 3"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DefP, false, 230),
-				new Effect(TypeEffect.DefM, false, 230),
+				new Effect(TypeEffect.DefM, false, 250),
 				new Proc(3, Activation.Attack, 10, new Calculable[] {
 					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
@@ -1345,7 +1345,7 @@ public class Loader {
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Très puissant mystère des aborigènes 2"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DefP, false, 220),
-				new Effect(TypeEffect.DefM, false, 220),
+				new Effect(TypeEffect.DefM, false, 240),
 				new Proc(2, Activation.Attack, 10, new Calculable[] {
 					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
@@ -1355,7 +1355,7 @@ public class Loader {
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Très puissant mystère des aborigènes 1"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DefP, false, 210),
-				new Effect(TypeEffect.DefM, false, 210),
+				new Effect(TypeEffect.DefM, false, 230),
 				new Proc(2, Activation.Attack, 10, new Calculable[] {
 					new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform31),
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),

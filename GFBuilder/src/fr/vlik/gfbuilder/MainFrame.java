@@ -57,6 +57,8 @@ import fr.vlik.gfbuilder.page.PageWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
+import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
+import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;
@@ -89,7 +91,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.18.2");
+		super("Grand Fantasia Builder - Version 0.18.3");
 		setCustomUI();
 		
 		try {
@@ -383,11 +385,9 @@ public class MainFrame extends JFrame {
 		this.add(content, BorderLayout.CENTER);
 		this.add(scrollStats, BorderLayout.EAST);
 		
-		
 		updateTabPane(0);
 		updateLanguage();
 		updateStat();
-		
 		
 		this.addWindowFocusListener(new WindowFocusListener() {
 			
@@ -473,6 +473,11 @@ public class MainFrame extends JFrame {
 	    ToolTipManager.sharedInstance().setDismissDelay(30000);
 	}
 	
+	public void init() {
+		PageWeapon.getInstance().initPearlEnchant();
+		PageArmor.getInstance().initPearlEnchant();
+	}
+	
 	public void updateStat() {
 		double coefReinca = PageGeneral.getInstance().getReinca().getCoef();
 		WeaponType[] weaponType = PageWeapon.getInstance().getWeaponType();
@@ -483,6 +488,20 @@ public class MainFrame extends JFrame {
 			if(page instanceof PagePanel) {
 				build.addEffect(((PagePanel) page).getEffects());
 			}
+		}
+		
+		ArrayList<InnerEffect> redEnchant = new ArrayList<InnerEffect>();
+		redEnchant.addAll(PageWeapon.getInstance().getRedEnchant());
+		redEnchant.addAll(PageArmor.getInstance().getRedEnchant());
+		for(InnerEffect effects : RedEnchantment.cumulConstraint(redEnchant)) {
+			build.addEffect(effects.getEffects());
+		}
+		
+		ArrayList<InnerEffect> pearlEnchant = new ArrayList<InnerEffect>();
+		pearlEnchant.addAll(PageWeapon.getInstance().getPearlEnchant());
+		pearlEnchant.addAll(PageArmor.getInstance().getPearlEnchant());
+		for(InnerEffect effects : RedEnchantment.cumulConstraint(pearlEnchant)) {
+			build.addEffect(effects.getEffects());
 		}
 		
 		if(PageWeapon.getInstance().isDoubleWeapon() != build.isDoubleWeapon()) {

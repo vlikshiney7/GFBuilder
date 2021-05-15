@@ -22,7 +22,8 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.TCCP, false, 0.8),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maître dans l'Usage de la Hache"); put(Language.EN, ""); }}, 45, "0-2", new Calculable[] {
-				new Effect(TypeEffect.DegStdHa, false, 1.5),
+				new Effect(TypeEffect.DegHa, false, 1.5),
+				new Effect(TypeEffect.DegHa2M, false, 1.5),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Confession Brutable"); put(Language.EN, ""); }}, 45, "0-3", new Calculable[] {
 				new Effect(TypeEffect.DegHumaP, false, 50),

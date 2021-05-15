@@ -53,7 +53,6 @@ public class PageWeapon extends PagePanel {
 	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(3);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(12);
 	
-	private boolean toInit = true;
 	private ArrayList<ArrayList<JIconCheckBox>> starPearl = new ArrayList<ArrayList<JIconCheckBox>>(3);
 	private ArrayList<JCustomComboBox<PearlEnchantment>> pearlEnchant = new ArrayList<JCustomComboBox<PearlEnchantment>>(15);
 	private ArrayList<JCustomComboBox<InnerEffect>> pearlLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>(15);
@@ -73,6 +72,9 @@ public class PageWeapon extends PagePanel {
 	private JPanel showAndHide;
 	private ArrayList<JPanel> showAndHideEnchant = new ArrayList<JPanel>(3);
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
+	
+	private CustomList<InnerEffect> redEnchants = new CustomList<InnerEffect>();
+	private CustomList<InnerEffect> pearlEnchants = new CustomList<InnerEffect>();
 	
 	public static PageWeapon getInstance() {
 		return INSTANCE;
@@ -206,6 +208,7 @@ public class PageWeapon extends PagePanel {
 					MainFrame.getInstance().updateStat();
 				});
 				this.starPearl.get(i).get(j).setVisible(false);
+				this.labelGFB[i+6].setVisible(false);
 			}
 			
 			for(int j = 0; j < 5; j++) {
@@ -339,10 +342,10 @@ public class PageWeapon extends PagePanel {
 	@Override
 	protected void setEffects() {
 		CustomList<Calculable> list = new CustomList<Calculable>();
+		this.redEnchants.clear();
+		this.pearlEnchants.clear();
 		
 		Weapon[] weapons = new Weapon[3];
-		ArrayList<InnerEffect> redEffect = new ArrayList<InnerEffect>();
-		ArrayList<InnerEffect> pearlEffect = new ArrayList<InnerEffect>();
 		
 		for(int i = 0; i < weapons.length; i++) {
 			if(this.getWeapon(i).getQuality() == Quality.RED) {
@@ -364,7 +367,7 @@ public class PageWeapon extends PagePanel {
 						RedEnchantment red = this.getRedEnchantment(i*3+j);
 						
 						if(red != null) {
-							redEffect.add(this.getRedLvlEnchant(i*3+j));
+							this.redEnchants.add(this.getRedLvlEnchant(i*3+j));
 						}
 					}
 				}
@@ -375,17 +378,9 @@ public class PageWeapon extends PagePanel {
 			
 			for(int j = 0; j < 5; j++) {
 				if(this.pearlEnchant.get(i*5+j).isVisible()) {
-					pearlEffect.add(this.getLvlPearlEnchant(i*5+j));
+					this.pearlEnchants.add(this.getLvlPearlEnchant(i*5+j));
 				}
 			}
-		}
-		
-		for(InnerEffect effects : RedEnchantment.cumulConstraint(redEffect)) {
-			list.addAll(effects);
-		}
-		
-		for(InnerEffect effects : PearlEnchantment.cumulConstraint(pearlEffect)) {
-			list.addAll(effects);
 		}
 		
 		boolean duoWeapon = false;
@@ -442,6 +437,14 @@ public class PageWeapon extends PagePanel {
 		
 		this.effects = list;
 	}
+	
+	public ArrayList<InnerEffect> getRedEnchant() {
+		return this.redEnchants;
+	}
+	
+	public ArrayList<InnerEffect> getPearlEnchant() {
+		return this.pearlEnchants;
+	}
 
 	@Override
 	protected void createPanel() {
@@ -488,6 +491,9 @@ public class PageWeapon extends PagePanel {
 			
 			JPanel starPanel = new JPanel();
 			starPanel.setBackground(Design.UIColor[1]);
+			starPanel.add(this.labelGFB[i+6]);
+			this.labelGFB[i+6].setFont(Design.SUBTITLE);
+			starPanel.add(Box.createHorizontalStrut(10));
 			
 			for(int j = 0; j < 4; j++) {
 				starPanel.add(this.starPearl.get(i).get(j));
@@ -530,7 +536,7 @@ public class PageWeapon extends PagePanel {
 			elemI.add(Box.createVerticalStrut(3));
 			elemI.add(starPanel);
 			elemI.add(listEnchant);
-			elemI.add(Box.createVerticalStrut(5));
+			elemI.add(Box.createVerticalStrut(2));
 			elemI.add(xpWeapon);
 			
 			if(i == 1) {
@@ -736,19 +742,17 @@ public class PageWeapon extends PagePanel {
 		}
 	}
 	
-	private void updateEnchantPearl(int id) {
-		if(this.toInit) {
-			for(int i = 0; i < this.pearlEnchant.size(); i++) {
-				this.pearlEnchant.get(i).setSelectedIndex(i%5);
-			}
-			
-			for(int i = 0; i < this.pearlEnchant.size(); i++) {
-				this.pearlEnchant.get(i).setSelectedIndex(0);
-			}
-			
-			this.toInit = false;
+	public void initPearlEnchant() {
+		for(int i = 0; i < this.pearlEnchant.size(); i++) {
+			this.pearlEnchant.get(i).setSelectedIndex(i%5);
 		}
 		
+		for(int i = 0; i < this.pearlEnchant.size(); i++) {
+			this.pearlEnchant.get(i).setSelectedIndex(0);
+		}
+	}
+	
+	private void updateEnchantPearl(int id) {
 		boolean showStar = false;
 		
 		switch (id) {
@@ -783,6 +787,7 @@ public class PageWeapon extends PagePanel {
 		int idCheck = -1;
 		for(int i = 0; i < 4; i++) {
 			this.starPearl.get(id).get(i).setVisible(showStar);
+			this.labelGFB[id+6].setVisible(showStar);
 			
 			if(this.starPearl.get(id).get(i).isSelected()) {
 				idCheck++;

@@ -37,6 +37,6 @@ public class JavaElevator {
 	
 	public static void main(String[] args) {
 		//JavaElevator.elevate();
-		MainFrame.getInstance();
+		MainFrame.getInstance().init();
 	}
 }
