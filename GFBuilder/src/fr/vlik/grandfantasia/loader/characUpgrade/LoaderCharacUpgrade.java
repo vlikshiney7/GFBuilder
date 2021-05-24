@@ -2,12 +2,12 @@ package fr.vlik.grandfantasia.loader.characUpgrade;
 
 import java.util.HashMap;
 
-import fr.vlik.grandfantasia.charac.Blason;
 import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
-import fr.vlik.grandfantasia.characUpgrade.Skill;
+import fr.vlik.grandfantasia.characUpgrade.NucleusEnchantment;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
+import fr.vlik.grandfantasia.characUpgrade.Skill;
 import fr.vlik.grandfantasia.characUpgrade.Speciality;
 import fr.vlik.grandfantasia.characUpgrade.Stone;
 import fr.vlik.grandfantasia.characUpgrade.Talent;
@@ -336,26 +336,31 @@ public class LoaderCharacUpgrade {
 						new Effect(TypeEffect.VIT, false, 30),
 						new Effect(TypeEffect.AGI, false, 50),
 						new Effect(TypeEffect.Atk, true, 3),
+						new Effect(TypeEffect.AtkD, true, 3),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 35),
 						new Effect(TypeEffect.AGI, false, 55),
 						new Effect(TypeEffect.Atk, true, 4),
+						new Effect(TypeEffect.AtkD, true, 4),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 40),
 						new Effect(TypeEffect.AGI, false, 60),
 						new Effect(TypeEffect.Atk, true, 5),
+						new Effect(TypeEffect.AtkD, true, 5),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 45),
 						new Effect(TypeEffect.AGI, false, 65),
 						new Effect(TypeEffect.Atk, true, 6),
+						new Effect(TypeEffect.AtkD, true, 6),
 					},
 					new Calculable[] {
 						new Effect(TypeEffect.VIT, false, 50),
 						new Effect(TypeEffect.AGI, false, 70),
 						new Effect(TypeEffect.Atk, true, 7),
+						new Effect(TypeEffect.AtkD, true, 7),
 					},
 			}),
 			new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Âme Pure"); put(Language.EN, ""); }},
@@ -746,6 +751,10 @@ public class LoaderCharacUpgrade {
 		};
 	}
 	
+	public static NucleusEnchantment[] getNucleusEnchantment() {
+		return LoaderNucleusEnchantment.getNucleusEnchantment();
+	}
+	
 	public static Stone[] getStone() {
 		return new Stone[] {
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Doctrines bien-aimées de Werther"); put(Language.EN, ""); }}, Quality.WHITE, "doctrine", new Calculable[] {
@@ -827,9 +836,5 @@ public class LoaderCharacUpgrade {
 				new Effect(TypeEffect.DefM, false, 5, TypeCalcul.ADDITIONAL),
 			}),
 		};
-	}
-	
-	public static Blason[] getBlason() {
-		return LoaderBlason.getBlason();
 	}
 }

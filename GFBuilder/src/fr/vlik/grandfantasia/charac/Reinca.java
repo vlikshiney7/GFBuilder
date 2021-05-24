@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.FullRenderer;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
 
 public class Reinca implements FullRenderer {
 	
@@ -24,7 +24,7 @@ public class Reinca implements FullRenderer {
 	private static final String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + "/";
 	private static final Color[] LEVEL = { new Color(147, 147, 147), new Color(111, 225, 28) };
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	public static Reinca[] data = Loader.getReinca();
+	public static Reinca[] data = LoaderCharac.getReinca();
 	
 	private final Map<Language, String> name;
 	private final double coef;

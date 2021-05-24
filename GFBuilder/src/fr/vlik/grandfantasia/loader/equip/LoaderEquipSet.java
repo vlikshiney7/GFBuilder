@@ -3065,7 +3065,7 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.VitAtk, false, 15),
 				},
 				new Calculable[] {
-					new StaticEffect(TypeStaticEffect.x3Skill, 15),
+					new StaticEffect(TypeStaticEffect.x2Skill, 15),
 				}),
 			new EquipSet("Cri Ancestral", "100pve5",
 				new Calculable[] {

@@ -6102,7 +6102,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Sacre, false, 10),
 					new StaticEffect(TypeStaticEffect.x3STD, 15),
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
-						new Effect(TypeEffect.VitAtk, false, 10),
+						new Effect(TypeEffect.Atk, true, 10),
 						new Effect(TypeEffect.Depla, false, 10),
 					}),
 				}, null ),

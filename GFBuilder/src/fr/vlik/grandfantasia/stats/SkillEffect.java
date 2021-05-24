@@ -55,6 +55,11 @@ public class SkillEffect implements Calculable {
 	}
 	
 	@Override
+	public void multiplyValue(int factor) {
+		this.value *= factor;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		

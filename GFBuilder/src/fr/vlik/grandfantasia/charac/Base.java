@@ -3,14 +3,14 @@ package fr.vlik.grandfantasia.charac;
 import java.util.ArrayList;
 
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Effect.TypeCalcul;
 
 public class Base {
 	
 	private static TypeEffect[] effect = { TypeEffect.FCE, TypeEffect.VIT, TypeEffect.INT, TypeEffect.VOL, TypeEffect.AGI };
-	private static int[][][] data = Loader.getBase();
+	private static int[][][] data = LoaderCharac.getBase();
 
 	public static Effect[] getBase(Grade grade, int lvl) {
 		ArrayList<Effect> result = new ArrayList<Effect>();

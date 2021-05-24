@@ -88,7 +88,7 @@ public class Effect implements Calculable {
 	}
 	
 	public enum TypeCalcul {
-		BASE, YGGDRASIL, CONVERTBASE, CLASSIC, CONVERT, ADDITIONAL,
+		BASE, ALLSTATS, CONVERTBASE, CLASSIC, CONVERT, ADDITIONAL,
 	}
 	
 	public TypeEffect getType() {
@@ -135,6 +135,7 @@ public class Effect implements Calculable {
 		this.value = (int) (this.value * coef);
 	}
 	
+	@Override
 	public void multiplyValue(int factor) {
 		this.value *= factor;
 	}

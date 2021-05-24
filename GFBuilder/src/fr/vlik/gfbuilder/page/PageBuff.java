@@ -17,16 +17,19 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.Energy;
 import fr.vlik.grandfantasia.characUpgrade.Nucleus;
+import fr.vlik.grandfantasia.characUpgrade.NucleusEnchantment;
 import fr.vlik.grandfantasia.characUpgrade.Stone;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gameBuff.GuildBuff;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomSpinner;
+import fr.vlik.uidesign.JIconCheckBox;
 
 public class PageBuff extends PagePanel {
 	
@@ -43,7 +46,12 @@ public class PageBuff extends PagePanel {
 	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(13);
 	private JCustomComboBox<Stone> stone;
 	
+	private ArrayList<JIconCheckBox> starNucleus = new ArrayList<JIconCheckBox>(4);
+	private ArrayList<JCustomComboBox<NucleusEnchantment>> nucleusEnchant = new ArrayList<JCustomComboBox<NucleusEnchantment>>(3);
+	private ArrayList<JCustomComboBox<InnerEffect>> nucleusLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>(3);
+	
 	private JPanel showAndHide;
+	private JPanel showAndHideEnchant;
 	private ArrayList<JCustomButton> cross = new ArrayList<JCustomButton>(7);
 	private ArrayList<JCustomButton> remove = new ArrayList<JCustomButton>(7);
 	
@@ -61,6 +69,46 @@ public class PageBuff extends PagePanel {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
+		}
+		
+		/* ENCHANT NUCLEUS */
+		for(int i = 0; i < 4; i++) {
+			int idCheck = i;
+			
+			if(i == 0) {
+				this.starNucleus.add(new JIconCheckBox("starZero", "starOff"));
+				this.starNucleus.get(0).setSelected(true);
+			} else {
+				this.starNucleus.add(new JIconCheckBox("starOn", "starOff"));
+			}
+			
+			this.starNucleus.get(i).addActionListener(e -> {
+				updateStarNucleus(idCheck);
+				
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+		}
+		
+		for(int j = 0; j < 3; j++) {
+			int idNucleus = j;
+			
+			this.nucleusEnchant.add(new JCustomComboBox<NucleusEnchantment>(NucleusEnchantment.getData()));
+			this.nucleusEnchant.get(idNucleus).addActionListener(e -> {
+				updateNucleusLvlEnchant(idNucleus);
+				updateNucleusEnchant(idNucleus);
+				
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+			this.nucleusEnchant.get(idNucleus).setVisible(false);
+			
+			this.nucleusLvlEnchant.add(new JCustomComboBox<InnerEffect>());
+			this.nucleusLvlEnchant.get(idNucleus).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+			this.nucleusLvlEnchant.get(idNucleus).setVisible(false);
 		}
 		
 		
@@ -154,6 +202,14 @@ public class PageBuff extends PagePanel {
 		return this.nucleus.get(id).getSelectedItem();
 	}
 	
+	public NucleusEnchantment getNucleusEnchantment(int id) {
+		return this.nucleusEnchant.get(id).getSelectedItem();
+	}
+	
+	public InnerEffect getLvlNucleusEnchant(int id) {
+		return this.nucleusLvlEnchant.get(id).getSelectedItem();
+	}
+	
 	public GuildBuff getGuildBuffUsed(int i) {
 		return this.guildBuffUsed.get(i).getItem();
 	}
@@ -181,6 +237,10 @@ public class PageBuff extends PagePanel {
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			list.addAll(this.getNucleus(i));
+		}
+		
+		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
+			list.addAll(this.getLvlNucleusEnchant(i));
 		}
 		
 		for(int i = 0; i < this.energy.size(); i++) {
@@ -234,6 +294,28 @@ public class PageBuff extends PagePanel {
 			page11Elem1.add(nucleus);
 		}
 		
+		JPanel starPanel = new JPanel();
+		starPanel.setBackground(Design.UIColor[1]);
+		starPanel.add(this.labelGFB[12]);
+		this.labelGFB[12].setFont(Design.SUBTITLE);
+		starPanel.add(Box.createHorizontalStrut(10));
+		
+		for(int i = 0; i < 4; i++) {
+			starPanel.add(this.starNucleus.get(i));
+		}
+		
+		JPanel listEnchant = new JPanel(new GridLayout(3, 2, 2, 5));
+		listEnchant.setBackground(Design.UIColor[1]);
+		for(int i = 0; i < 3; i++) {
+			listEnchant.add(this.nucleusEnchant.get(i));
+			listEnchant.add(this.nucleusLvlEnchant.get(i));
+		}
+		
+		page11Elem1.add(Box.createVerticalStrut(5));
+		page11Elem1.add(starPanel);
+		page11Elem1.add(listEnchant);
+		
+		this.showAndHideEnchant = listEnchant;
 		
 		JPanel energies = new JPanel(new GridLayout(6, 1, 5, 5));
 		energies.setBackground(Design.UIColor[1]);
@@ -338,7 +420,7 @@ public class PageBuff extends PagePanel {
 		
 		JPanel page11Inter2 = new JPanel(new GridLayout(1, 2, 10, 10));
 		page11Inter2.setBackground(Design.UIColor[2]);
-		page11Inter2.setBorder(new EmptyBorder(10, 10, 10, 10));
+		page11Inter2.setBorder(new EmptyBorder(0, 10, 10, 10));
 		page11Inter2.add(page11Elem3);
 		page11Inter2.add(page11Elem4);
 		
@@ -346,6 +428,8 @@ public class PageBuff extends PagePanel {
 		this.setBackground(Design.UIColor[1]);
 		this.add(page11Inter1);
 		this.add(page11Inter2);
+		
+		this.showAndHideEnchant.setVisible(false);
 	}
 	
 	@Override
@@ -365,6 +449,116 @@ public class PageBuff extends PagePanel {
 			this.nucleus.get(1).setSelectedIndex(0);
 		} else {
 			this.showAndHide.setVisible(true);
+		}
+	}
+	
+	public void initNucleusEnchant() {
+		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
+			this.nucleusEnchant.get(i).setSelectedIndex(i);
+		}
+		
+		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
+			this.nucleusEnchant.get(i).setSelectedIndex(0);
+		}
+	}
+	
+	private void updateStarNucleus(int idCheck) {
+		for(int i = 0; i < this.starNucleus.size(); i++) {
+			if(i <= idCheck) {
+				this.starNucleus.get(i).setSelected(true);
+			} else {
+				this.starNucleus.get(i).setSelected(false);
+			}
+		}
+		
+		switch (idCheck) {
+			case 0:
+				this.showAndHideEnchant.setVisible(false);
+				for(int i = 0; i < 3; i++) {
+					this.nucleusEnchant.get(i).setVisible(false);
+					this.nucleusLvlEnchant.get(i).setVisible(false);
+				}
+				break;
+			case 1:
+				for(int i = 0; i < 3; i++) {
+					this.showAndHideEnchant.setVisible(true);
+					if(i < 1) {
+						this.nucleusEnchant.get(i).setVisible(true);
+						this.nucleusLvlEnchant.get(i).setVisible(true);
+						updateNucleusLvlEnchant(i);
+					} else {
+						this.nucleusEnchant.get(i).setVisible(false);
+						this.nucleusLvlEnchant.get(i).setVisible(false);
+					}
+				}
+				break;
+			case 2:
+				for(int i = 0; i < 3; i++) {
+					this.showAndHideEnchant.setVisible(true);
+					if(i < 2) {
+						this.nucleusEnchant.get(i).setVisible(true);
+						this.nucleusLvlEnchant.get(i).setVisible(true);
+						updateNucleusLvlEnchant(i);
+					} else {
+						this.nucleusEnchant.get(i).setVisible(false);
+						this.nucleusLvlEnchant.get(i).setVisible(false);
+					}
+				}
+				break;
+			case 3:
+				this.showAndHideEnchant.setVisible(true);
+				for(int i = 0; i < 3; i++) {
+					this.nucleusEnchant.get(i).setVisible(true);
+					this.nucleusLvlEnchant.get(i).setVisible(true);
+					updateNucleusLvlEnchant(i);
+				}
+				break;
+		}
+	}
+	
+	private void updateNucleusEnchant(int idNucleus) {
+		int ignore1;
+		int ignore2;
+		
+		if(idNucleus == 0) {
+			ignore1 = idNucleus + 1;
+			ignore2 = idNucleus + 2;
+		} else if(idNucleus == 1) {
+			ignore1 = idNucleus - 1;
+			ignore2 = idNucleus + 1;
+		} else {
+			ignore1 = idNucleus - 2;
+			ignore2 = idNucleus - 1;
+		}
+		
+		NucleusEnchantment choice = this.getNucleusEnchantment(idNucleus);
+		NucleusEnchantment memory1 = this.getNucleusEnchantment(ignore1);
+		NucleusEnchantment memory2 = this.getNucleusEnchantment(ignore2);
+		
+		NucleusEnchantment[] tabNucleus1 = NucleusEnchantment.getPossibleNucleusEnchant(choice, memory2);
+		NucleusEnchantment[] tabNucleus2 = NucleusEnchantment.getPossibleNucleusEnchant(choice, memory1);
+		
+		this.nucleusEnchant.get(ignore1).setItems(tabNucleus1, memory1);
+		this.nucleusEnchant.get(ignore2).setItems(tabNucleus2, memory2);
+	}
+	
+	private void updateNucleusLvlEnchant(int id) {
+		int nbStar = -1;
+		for(JIconCheckBox star : this.starNucleus) {
+			if(!star.isSelected()) {
+				break;
+			}
+			
+			nbStar++;
+		}
+		
+		NucleusEnchantment nucleusEnchant = this.getNucleusEnchantment(id);
+		
+		if(nucleusEnchant != null) {
+			this.nucleusLvlEnchant.get(id).setItems(nucleusEnchant.getInnerLvlEffect(nbStar));
+			this.nucleusLvlEnchant.get(id).setVisible(this.nucleusEnchant.get(id).isVisible());
+		} else {
+			this.nucleusLvlEnchant.get(id).setVisible(false);
 		}
 	}
 	
@@ -488,6 +682,26 @@ public class PageBuff extends PagePanel {
 			config.put("Nucleus" + i, this.getNucleus(i).getName(Language.FR));
 		}
 		
+		int select = 3;
+		while(select > 0) {
+			if(this.starNucleus.get(select).isSelected()) {
+				break;
+			}
+			
+			select--;
+		}
+		config.put("StarNucleus", "" + select);
+		
+		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
+			String value = this.getNucleusEnchantment(i) != null ? this.getNucleusEnchantment(i).getInfo(lang) : "";
+			config.put("NucleusEnchant" + i, value);
+		}
+		
+		for(int i = 0; i < this.nucleusLvlEnchant.size(); i++) {
+			Integer value = this.getLvlNucleusEnchant(i) != null ? this.getLvlNucleusEnchant(i).getLvlbuff() : 0;
+			config.put("NucleusLvlEnchant" + i, "" + value);
+		}
+		
 		for(int i = 0; i < this.energy.size(); i++) {
 			config.put("Energy" + i, "" + this.energy.get(i).getIntValue());
 		}
@@ -509,6 +723,28 @@ public class PageBuff extends PagePanel {
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			this.nucleus.get(i).setSelectedItem(Nucleus.get(config.get("Nucleus" + i), i));
+		}
+		
+		int select = Integer.valueOf(config.get("StarNucleus"));
+		for(int i = 0; i < this.starNucleus.size(); i++) {
+			if(i == select) {
+				this.starNucleus.get(i).setSelected(true);
+				updateStarNucleus(i);
+				setEffects();
+			} else {
+				this.starNucleus.get(i).setSelected(false);
+			}
+		}
+			
+		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
+			this.nucleusEnchant.get(i).setSelectedItem(NucleusEnchantment.get(config.get("NucleusEnchant" + i)));
+			
+			NucleusEnchantment nucleusEnchant = this.getNucleusEnchantment(i);
+			
+			if(nucleusEnchant != null) {
+				InnerEffect inner = nucleusEnchant.getInnerEffect(Integer.valueOf(config.get("NucleusLvlEnchant" + i)));
+				this.nucleusLvlEnchant.get(i).setSelectedItem(inner);
+			}
 		}
 		
 		for(int i = 0; i < this.energy.size(); i++) {

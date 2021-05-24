@@ -99,6 +99,15 @@ public class Proc implements Calculable {
 	}
 	
 	@Override
+	public void multiplyValue(int factor) {
+		this.taux *= factor;
+		
+		for(Calculable c : this.effects) {
+			c.multiplyValue(factor);
+		}
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		

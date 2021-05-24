@@ -91,7 +91,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.18.3");
+		super("Grand Fantasia Builder - Version 0.18.4");
 		setCustomUI();
 		
 		try {
@@ -476,6 +476,7 @@ public class MainFrame extends JFrame {
 	public void init() {
 		PageWeapon.getInstance().initPearlEnchant();
 		PageArmor.getInstance().initPearlEnchant();
+		PageBuff.getInstance().initNucleusEnchant();
 	}
 	
 	public void updateStat() {

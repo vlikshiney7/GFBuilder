@@ -9,6 +9,8 @@ import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Effect.TypeCalcul;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.Proc.Activation;
 
 @SuppressWarnings("serial")
 public class LoaderSpeciality {
@@ -26,8 +28,9 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.DegHa2M, false, 1.5),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Confession Brutable"); put(Language.EN, ""); }}, 45, "0-3", new Calculable[] {
-				new Effect(TypeEffect.DegHumaP, false, 50),
-				new Effect(TypeEffect.DegHumaP, true, 1),
+				new Proc(1, Activation.Phys, new Calculable[] {
+					new Effect(TypeEffect.DegHuma, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Armes à Vacillement"); put(Language.EN, ""); }}, 45, "0-4", new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 1),
@@ -86,7 +89,9 @@ public class LoaderSpeciality {
 	static Speciality[] getClass1() {
 		return new Speciality[] {
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Assassin de Mort-Vivant"); put(Language.EN, ""); }}, 45, "1-0", new Calculable[] {
-				new Effect(TypeEffect.DegMortM, false, 50),
+				new Proc(1, Activation.Phys, new Calculable[] {
+					new Effect(TypeEffect.DegMort, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maitre dans l'usage du bouclier"); put(Language.EN, ""); }}, 45, "1-1", new Calculable[] {
 				new Effect(TypeEffect.Parade, false, 1),
@@ -213,7 +218,7 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.Toucher, false, 1),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Rapine Ardente"); put(Language.EN, ""); }}, 45, "3-2", new Calculable[] {
-				new Effect(TypeEffect.TCCP, false, 1),
+				new Effect(TypeEffect.TCCP, false, 1.2),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Inébranlable comme une Montagne"); put(Language.EN, ""); }}, 45, "3-3", new Calculable[] {
 				new Effect(TypeEffect.ESQ, false, 2),
@@ -229,8 +234,9 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.FCE, false, 4),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Démon de Boucher"); put(Language.EN, ""); }}, 60, "3-7", new Calculable[] {
-				new Effect(TypeEffect.DegDemonP, false, 80),
-				new Effect(TypeEffect.DegDemonP, true, 1),
+				new Proc(1, Activation.Phys, new Calculable[] {
+					new Effect(TypeEffect.DegDemon, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maître de Kendo"); put(Language.EN, ""); }}, 60, "3-8", new Calculable[] {
 				new Effect(TypeEffect.DegStdEp, false, 1.5),
@@ -276,8 +282,9 @@ public class LoaderSpeciality {
 	static Speciality[] getClass4() {
 		return new Speciality[] {
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Assassin de Démon"); put(Language.EN, ""); }}, 45, "4-0", new Calculable[] {
-				new Effect(TypeEffect.DegDemonM, false, 50),
-				new Effect(TypeEffect.DegDemonM, true, 1),
+				new Proc(1, Activation.Mag, new Calculable[] {
+					new Effect(TypeEffect.DegDemon, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Protection de l'Eglise"); put(Language.EN, ""); }}, 45, "4-1", new Calculable[] {
 				new Effect(TypeEffect.Sacre, false, 2),
@@ -309,7 +316,7 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.Toucher, false, 1),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Arts Martiaux"); put(Language.EN, ""); }}, 75, "4-10", new Calculable[] {
-				new Effect(TypeEffect.VitAtk, false, 1.5),
+				new Effect(TypeEffect.Atk, true, 1.5),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Incantation Hâtée"); put(Language.EN, ""); }}, 75, "4-11", new Calculable[] {
 				new Effect(TypeEffect.VitComp, false, 1.5),
@@ -354,8 +361,9 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.ReducM, false, 1),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maître dans l'Usage des Plantes"); put(Language.EN, ""); }}, 45, "5-3", new Calculable[] {
-				new Effect(TypeEffect.DegPlanteM, false, 50),
-				new Effect(TypeEffect.DegPlanteM, true, 1),
+				new Proc(1, Activation.Mag, new Calculable[] {
+					new Effect(TypeEffect.DegPlante, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Totem d'Autorité"); put(Language.EN, ""); }}, 45, "5-4", new Calculable[] {
 				new Effect(TypeEffect.DegMa, false, 1),
@@ -430,8 +438,9 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.ReducM, false, 2),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Sort des Éléments"); put(Language.EN, ""); }}, 45, "6-3", new Calculable[] {
-				new Effect(TypeEffect.DegElemM, false, 50),
-				new Effect(TypeEffect.DegElemM, true, 1),
+				new Proc(1, Activation.Mag, new Calculable[] {
+					new Effect(TypeEffect.DegElem, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Volonté de la Sorcellerie"); put(Language.EN, ""); }}, 45, "6-4", new Calculable[] {
 				new Effect(TypeEffect.PM, true, 1),
@@ -462,7 +471,7 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.DefM, true, 1),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Perspicacité"); put(Language.EN, ""); }}, 75, "6-13", new Calculable[] {
-				new Effect(TypeEffect.Toucher, true, 2),
+				new Effect(TypeEffect.Toucher, false, 2),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Redimensionnement"); put(Language.EN, ""); }}, 75, "6-14", new Calculable[] {
 				new Effect(TypeEffect.ESQ, false, 2),
@@ -550,8 +559,9 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.CostComp, false, -3),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Étude robotique"); put(Language.EN, ""); }}, 45, "8-5", new Calculable[] {
-				new Effect(TypeEffect.DegMecaP, false, 50),
-				new Effect(TypeEffect.DegMecaP, true, 1),
+				new Proc(1, Activation.Phys, new Calculable[] {
+					new Effect(TypeEffect.DegMeca, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Accélération Mécanique"); put(Language.EN, ""); }}, 60, "8-6", new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 1),
@@ -618,8 +628,9 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.CostComp, false, -3),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Étude robotique"); put(Language.EN, ""); }}, 45, "9-5", new Calculable[] {
-				new Effect(TypeEffect.DegMecaP, false, 50),
-				new Effect(TypeEffect.DegMecaP, true, 1),
+				new Proc(1, Activation.Phys, new Calculable[] {
+					new Effect(TypeEffect.DegMeca, false, 50),
+				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Chargement Rapide"); put(Language.EN, ""); }}, 60, "9-6", new Calculable[] {
 				new Effect(TypeEffect.VitAtkD, false, 1.5),

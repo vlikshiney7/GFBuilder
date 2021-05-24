@@ -41,6 +41,9 @@ public class TransformEffect implements Calculable {
 	}
 	
 	@Override
+	public void multiplyValue(int factor) {}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		

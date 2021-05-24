@@ -1,4 +1,4 @@
-package fr.vlik.grandfantasia.loader.characUpgrade;
+package fr.vlik.grandfantasia.loader.charac;
 
 import java.util.HashMap;
 

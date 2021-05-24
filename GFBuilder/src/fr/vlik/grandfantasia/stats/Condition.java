@@ -72,6 +72,9 @@ public class Condition implements Calculable {
 		LOUP("Loup", "Wolf"),
 		SINGE("Singe", "Monkey"),
 		
+		INTER3("3 charges", "3 charges"),
+		PREPA("Préparation", "Preparation"),
+		
 		SANCTU1("Sanctuaire Forêt", "Forest Sanctuary"),
 		SANCTU2("Sanctuaire Sable", "Sand Sanctuary"),
 		SANCTU3("Sanctuaire Prairie", "Grassland Sanctuary"),
@@ -122,6 +125,15 @@ public class Condition implements Calculable {
 			list[i] = this.effects[i];
 		}
 		return list;
+	}
+	
+	@Override
+	public void multiplyValue(int factor) {
+		this.percent *= factor;
+
+		for(Calculable c : this.effects) {
+			c.multiplyValue(factor);
+		}
 	}
 	
 	@Override

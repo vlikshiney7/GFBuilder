@@ -3695,21 +3695,27 @@ public class LoaderTalent {
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Appareil d'Amélioration"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "8-2", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 3),
+					new Effect(TypeEffect.TCCM, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.TCCM, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 7),
+					new Effect(TypeEffect.TCCM, false, 7),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 9),
+					new Effect(TypeEffect.TCCM, false, 9),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 11),
+					new Effect(TypeEffect.TCCM, false, 11),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 13),
+					new Effect(TypeEffect.TCCM, false, 13),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Spécialiste du Canon lourd"); put(Language.EN, ""); }}, new int[] { 16, 28, 46, 66, 86, 91 }, "8-3", new Calculable[][] {
@@ -3794,26 +3800,32 @@ public class LoaderTalent {
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 10),
 					new Effect(TypeEffect.TCCP, false, 3),
+					new Effect(TypeEffect.TCCM, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 13),
 					new Effect(TypeEffect.TCCP, false, 4),
+					new Effect(TypeEffect.TCCM, false, 4),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 16),
 					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.TCCM, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 19),
 					new Effect(TypeEffect.TCCP, false, 6),
+					new Effect(TypeEffect.TCCM, false, 6),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 22),
 					new Effect(TypeEffect.TCCP, false, 7),
+					new Effect(TypeEffect.TCCM, false, 7),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 25),
 					new Effect(TypeEffect.TCCP, false, 8),
+					new Effect(TypeEffect.TCCM, false, 8),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Amplification Armure"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "8-7", new Calculable[][] {
@@ -4207,21 +4219,27 @@ public class LoaderTalent {
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Appareil d'Amélioration"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "8-2", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 3),
+					new Effect(TypeEffect.TCCM, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.TCCM, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 7),
+					new Effect(TypeEffect.TCCM, false, 7),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 9),
+					new Effect(TypeEffect.TCCM, false, 9),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 11),
+					new Effect(TypeEffect.TCCM, false, 11),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCP, false, 13),
+					new Effect(TypeEffect.TCCM, false, 13),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Spécialiste du Canon lourd"); put(Language.EN, ""); }}, new int[] { 16, 28, 46, 66, 86, 91 }, "8-3", new Calculable[][] {
@@ -4305,21 +4323,27 @@ public class LoaderTalent {
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Explosion Améliorée"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "9-6", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 20),
+					new Effect(TypeEffect.DCCM, false, 20),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 30),
+					new Effect(TypeEffect.DCCM, false, 30),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 40),
+					new Effect(TypeEffect.DCCM, false, 40),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 50),
+					new Effect(TypeEffect.DCCM, false, 50),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 55),
+					new Effect(TypeEffect.DCCM, false, 55),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 60),
+					new Effect(TypeEffect.DCCM, false, 60),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Chargement Rapide"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "9-7", new Calculable[][] {
@@ -4362,142 +4386,319 @@ public class LoaderTalent {
 					new SkillEffect(TypeSkillEffect.Class9S0, 7, TypeValue.DURATION),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "9-9", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration Pénétration"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "9-9", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 3),
+					new Effect(TypeEffect.TCCP, false, 6),
+					new Effect(TypeEffect.TCCM, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 4.5),
+					new Effect(TypeEffect.TCCP, false, 7),
+					new Effect(TypeEffect.TCCM, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 6),
+					new Effect(TypeEffect.TCCP, false, 8),
+					new Effect(TypeEffect.TCCM, false, 8),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 7.5),
+					new Effect(TypeEffect.TCCP, false, 9),
+					new Effect(TypeEffect.TCCM, false, 9),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 9),
+					new Effect(TypeEffect.TCCP, false, 10),
+					new Effect(TypeEffect.TCCM, false, 10),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "9-10", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "9-11", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.PeneP, false, 10),
+					new Effect(TypeEffect.TCCP, false, 11),
+					new Effect(TypeEffect.TCCM, false, 11),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "9-12", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration Mouvement"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "9-10", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 8),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "9-13", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 10),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 12),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "9-14", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 14),
 				},
 				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 16),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "9-15", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Chargement Éclair"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "9-11", new Calculable[][] {
 				new Calculable[] {
+					new Proc(15, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.5),
+					}),
 				},
 				new Calculable[] {
+					new Proc(16, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.6),
+					}),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "9-16", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Proc(17, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.7),
+					}),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "9-17", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Proc(18, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.8),
+					}),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "9-18", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Proc(19, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 0.9),
+					}),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "9-19", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Proc(20, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.ReloadComp, false, 1),
+					}),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "9-20", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Interférence de déplacement"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "9-12", new Calculable[][] {
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(15, Activation.Attack, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.Push, Target.OPPONENT),
+						}),
+					}),
 				},
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(17, Activation.Attack, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.Push, Target.OPPONENT),
+						}),
+					}),
 				},
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(20, Activation.Attack, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.Push, Target.OPPONENT),
+						}),
+					}),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "9-21", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Interférence d'esquive"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "9-13", new Calculable[][] {
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(100, Activation.Attack, 8, new Calculable[] {
+							new Effect(TypeEffect.ESQ, false, -50, Target.OPPONENT),
+						}),
+					}),
 				},
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(100, Activation.Attack, 8, new Calculable[] {
+							new Effect(TypeEffect.ESQ, false, -60, Target.OPPONENT),
+						}),
+					}),
 				},
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(100, Activation.Attack, 8, new Calculable[] {
+							new Effect(TypeEffect.ESQ, false, -70, Target.OPPONENT),
+						}),
+					}),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "9-22", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Interférence Magique"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "9-14", new Calculable[][] {
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(100, Activation.Attack, 8, new Calculable[] {
+							new Effect(TypeEffect.DefM, true, -6, Target.OPPONENT),
+						}),
+					}),
 				},
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(100, Activation.Attack, 8, new Calculable[] {
+							new Effect(TypeEffect.DefM, true, -7, Target.OPPONENT),
+						}),
+					}),
 				},
 				new Calculable[] {
+					new Condition(TypeCondition.INTER3, new Calculable[] {
+						new Proc(100, Activation.Attack, 8, new Calculable[] {
+							new Effect(TypeEffect.DefM, true, -8, Target.OPPONENT),
+						}),
+					}),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "9-23", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Brèche Critique"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "9-15", new Calculable[][] {
 				new Calculable[] {
+					new Proc(100, Activation.Crit, 8, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 5),
+						new Effect(TypeEffect.PeneM, false, 5),
+					}),
 				},
 				new Calculable[] {
+					new Proc(100, Activation.Crit, 8, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 6),
+						new Effect(TypeEffect.PeneM, false, 6),
+					}),
 				},
 				new Calculable[] {
+					new Proc(100, Activation.Crit, 8, new Calculable[] {
+						new Effect(TypeEffect.PeneP, false, 7),
+						new Effect(TypeEffect.PeneM, false, 7),
+					}),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Récupération critique"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "9-16", new Calculable[][] {
+				new Calculable[] {
+					new Proc(100, Activation.Crit, 8, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 0.8, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PV, true, 1.2, TypeRegen.REGENERATION),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Crit, 8, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 1, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PV, true, 1.4, TypeRegen.REGENERATION),
+					}),
+				},
+				new Calculable[] {
+					new Proc(100, Activation.Crit, 8, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 1.2, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PV, true, 1.6, TypeRegen.REGENERATION),
+					}),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Recharge Critique"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "9-17", new Calculable[][] {
+				new Calculable[] {
+					new Proc(20, Activation.Crit, new Calculable[] {
+						new SkillEffect(TypeSkillEffect.Class8S5, 1, TypeValue.NUMBER),
+					}),
+				},
+				new Calculable[] {
+					new Proc(25, Activation.Crit, new Calculable[] {
+						new SkillEffect(TypeSkillEffect.Class8S5, 1, TypeValue.NUMBER),
+					}),
+				},
+				new Calculable[] {
+					new Proc(30, Activation.Crit, new Calculable[] {
+						new SkillEffect(TypeSkillEffect.Class8S5, 1, TypeValue.NUMBER),
+					}),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Modification du Cœur"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "9-18", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 5),
+					new Effect(TypeEffect.VIT, false, 5),
+					new Effect(TypeEffect.INT, false, 5),
+					new Effect(TypeEffect.VOL, false, 5),
+					new Effect(TypeEffect.AGI, false, 5),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 8),
+					new Effect(TypeEffect.VIT, false, 8),
+					new Effect(TypeEffect.INT, false, 8),
+					new Effect(TypeEffect.VOL, false, 8),
+					new Effect(TypeEffect.AGI, false, 8),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 12),
+					new Effect(TypeEffect.VIT, false, 12),
+					new Effect(TypeEffect.INT, false, 12),
+					new Effect(TypeEffect.VOL, false, 12),
+					new Effect(TypeEffect.AGI, false, 12),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Modification Arme mécanique"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "9-19", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 15),
+					new Effect(TypeEffect.DCCM, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 20),
+					new Effect(TypeEffect.DCCM, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 25),
+					new Effect(TypeEffect.DCCM, false, 25),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Modification Propulseur"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "9-20", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -10),
+					new Effect(TypeEffect.ESQ, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -15),
+					new Effect(TypeEffect.ESQ, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -20),
+					new Effect(TypeEffect.ESQ, false, 30),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Accélération Téléportation"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "9-21", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 3),
+					new Proc(100, Activation.Attacked, new Calculable[] {
+						new SkillEffect(TypeSkillEffect.Class9S2, 0.5, TypeValue.RELOAD),
+						new SkillEffect(TypeSkillEffect.Class9S3, 0.5, TypeValue.RELOAD),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 5),
+					new Proc(100, Activation.Attacked, new Calculable[] {
+						new SkillEffect(TypeSkillEffect.Class9S2, 0.6, TypeValue.RELOAD),
+						new SkillEffect(TypeSkillEffect.Class9S3, 0.6, TypeValue.RELOAD),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 7),
+					new Proc(100, Activation.Attacked, new Calculable[] {
+						new SkillEffect(TypeSkillEffect.Class9S2, 0.7, TypeValue.RELOAD),
+						new SkillEffect(TypeSkillEffect.Class9S3, 0.7, TypeValue.RELOAD),
+					}),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Accélération Furtivité"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "9-22", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 3),
+					new SkillEffect(TypeSkillEffect.Class9S4, 6, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 4),
+					new SkillEffect(TypeSkillEffect.Class9S4, 8, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 5),
+					new SkillEffect(TypeSkillEffect.Class9S4, 10, TypeValue.DURATION),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Accélération Missile"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "9-23", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 3),
+					new Effect(TypeEffect.TCCM, false, 3),
+					new SkillEffect(TypeSkillEffect.Class9S5, 3, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 4),
+					new Effect(TypeEffect.TCCM, false, 4),
+					new SkillEffect(TypeSkillEffect.Class9S5, 5, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.TCCM, false, 5),
+					new SkillEffect(TypeSkillEffect.Class9S5, 7, TypeValue.DURATION),
 				},
 			}),
 		};

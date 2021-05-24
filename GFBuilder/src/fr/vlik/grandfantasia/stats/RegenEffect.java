@@ -105,6 +105,13 @@ public class RegenEffect implements Calculable {
 	}
 	
 	@Override
+	public void multiplyValue(int factor) {
+		this.fixValue *= factor;
+		this.rangeMin *= factor;
+		this.rangeMax *= factor;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		

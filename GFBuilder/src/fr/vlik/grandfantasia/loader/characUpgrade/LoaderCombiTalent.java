@@ -8,6 +8,8 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeSkillEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Condition;
+import fr.vlik.grandfantasia.stats.Condition.TypeCondition;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
@@ -441,6 +443,7 @@ public class LoaderCombiTalent {
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Arme Géante"); put(Language.EN, ""); }}, new int[] { 3, 3, 3, }, new Calculable[] {
 				new Effect(TypeEffect.TCCP, false, 3),
+				new Effect(TypeEffect.TCCM, false, 3),
 				new Effect(TypeEffect.CostComp, false, -15),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet Automatique"); put(Language.EN, ""); }}, new int[] { 1, 1, }, new Calculable[] {
@@ -448,10 +451,10 @@ public class LoaderCombiTalent {
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Robot Guerrier"); put(Language.EN, ""); }}, new int[] { 1, 2, }, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 8),
-				new Effect(TypeEffect.VitAtk, false, 4),
+				new Effect(TypeEffect.Atk, true, 4),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Régulateur"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
-				new Effect(TypeEffect.ESQ, false, 8),
+				new Effect(TypeEffect.ESQ, true, 8),
 				new Effect(TypeEffect.VitAtk, false, 5),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur"); put(Language.EN, ""); }}, new int[] { 2, 3, }, new Calculable[] {
@@ -471,7 +474,56 @@ public class LoaderCombiTalent {
 	
 	static CombiTalent[] getClass9() {
 		return new CombiTalent[] {
-			
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Granzort"); put(Language.EN, ""); }}, new int[] { 1, 1, 3, 3, }, new Calculable[] {
+				new Condition(TypeCondition.PREPA, new Calculable[] {
+					new Effect(TypeEffect.Atk, true, 30),
+					new Effect(TypeEffect.AtkD, true, 30),
+					new Effect(TypeEffect.AtkM, true, 30),
+				}),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Fusilier Briselame"); put(Language.EN, ""); }}, new int[] { 2, 1, 1, 1, }, new Calculable[] {
+				new Effect(TypeEffect.PeneP, false, 6),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Supernova"); put(Language.EN, ""); }}, new int[] { 3, 1, 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 12),
+				new Effect(TypeEffect.TCCP, false, 8),
+				new Effect(TypeEffect.TCCM, false, 8),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Étoile Filante"); put(Language.EN, ""); }}, new int[] { 1, 1, 2, }, new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 15),
+				new Effect(TypeEffect.Toucher, false, 10),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Soldat Combattant"); put(Language.EN, ""); }}, new int[] { 2, 1, 3, }, new Calculable[] {
+				new Effect(TypeEffect.ESQ, true, 5),
+				new Effect(TypeEffect.CostComp, false, -15),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Machiniste d'Élite"); put(Language.EN, ""); }}, new int[] { 3, 1, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkD, true, 4),
+				new Effect(TypeEffect.DCCP, false, 15),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet Automatique"); put(Language.EN, ""); }}, new int[] { 1, 1, }, new Calculable[] {
+				new Effect(TypeEffect.VitAtk, false, 20),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Robot Guerrier"); put(Language.EN, ""); }}, new int[] { 1, 2, }, new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 8),
+				new Effect(TypeEffect.Atk, true, 4),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Régulateur"); put(Language.EN, ""); }}, new int[] { 2, 2, }, new Calculable[] {
+				new Effect(TypeEffect.ESQ, true, 8),
+				new Effect(TypeEffect.VitAtk, false, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur"); put(Language.EN, ""); }}, new int[] { 2, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 10),
+				new Effect(TypeEffect.DCCP, false, 10),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Armure de Tempête"); put(Language.EN, ""); }}, new int[] { 3, 1, }, new Calculable[] {
+				new Effect(TypeEffect.AtkD, true, 3),
+				new Effect(TypeEffect.TCCP, false, 5),
+			}),
+			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Armure Furieuse"); put(Language.EN, ""); }}, new int[] { 3, 3, }, new Calculable[] {
+				new Effect(TypeEffect.Toucher, true, 5),
+				new Effect(TypeEffect.TCCP, false, 5),
+			}),
 		};
 	}
 	

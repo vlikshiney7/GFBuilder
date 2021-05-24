@@ -6,6 +6,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.template.IconBuff;
 
 public class Energy extends IconBuff {
@@ -17,10 +18,13 @@ public class Energy extends IconBuff {
 	}
 	
 	public static Calculable multiplyEffect(Calculable effect, int point) {
-		Effect copy = null;
+		Calculable copy = null;
 		
 		if(effect instanceof Effect) {
 			copy = new Effect((Effect) effect);
+			copy.multiplyValue(point);
+		} else if(effect instanceof Proc) {
+			copy = new Proc((Proc) effect);
 			copy.multiplyValue(point);
 		}
 		

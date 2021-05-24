@@ -47,6 +47,11 @@ public class StaticEffect implements Calculable {
 	}
 	
 	@Override
+	public void multiplyValue(int factor) {
+		this.taux *= factor;
+	}
+	
+	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		

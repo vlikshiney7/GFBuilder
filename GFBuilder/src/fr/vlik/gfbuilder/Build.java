@@ -51,7 +51,7 @@ public class Build {
 				if(containIdWeapon(e.getWithWeapon())) {
 					switch(e.getCalcul()) {
 						case BASE: 			this.baseEffects.add(e);		break;
-						case YGGDRASIL:		this.yggdrasil.add(e);			break;
+						case ALLSTATS:		this.yggdrasil.add(e);			break;
 						case CONVERTBASE:	this.convertBaseEffects.add(e);	break;
 						case CLASSIC:
 							if(e.isPercent()) {
@@ -185,7 +185,8 @@ public class Build {
 		redefinedBase[20] = Math.floor(base[3] * (yggdra[3] / 100 +1) * 20) + base[20];
 		
 		for(Effect e : effects) {
-			combine[e.getType().ordinal()] += Math.round(redefinedBase[e.getTransfert().ordinal()] * (e.getValue() / 100));
+			int indexTypeOrTranfert = e.getTransfert() != TypeEffect.NONE ? e.getTransfert().ordinal() : e.getType().ordinal();
+			combine[e.getType().ordinal()] += Math.round(redefinedBase[indexTypeOrTranfert] * (e.getValue() / 100));
 		}
 		
 		return combine;

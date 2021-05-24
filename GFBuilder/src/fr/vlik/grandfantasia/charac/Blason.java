@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
+import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.IconBuff;
 
@@ -17,7 +17,7 @@ public class Blason extends IconBuff {
 	
 	private static final String PATH = Tools.RESOURCE + "sprite/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	private static Blason[] data = LoaderCharacUpgrade.getBlason();
+	private static Blason[] data = LoaderCharac.getBlason();
 	
 	private int lvl;
 	private BlasonType type;

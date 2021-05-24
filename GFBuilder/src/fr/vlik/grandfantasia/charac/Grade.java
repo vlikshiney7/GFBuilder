@@ -11,7 +11,7 @@ import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.loader.Loader;
+import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
 
 public class Grade implements Iconable, Writable {
 	
@@ -23,7 +23,7 @@ public class Grade implements Iconable, Writable {
 	
 	public static String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	public static Grade[] data = Loader.getGrade();
+	public static Grade[] data = LoaderCharac.getGrade();
 	
 	private Map<Language, String> name;
 	private GradeName grade;
