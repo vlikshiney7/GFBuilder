@@ -28,7 +28,7 @@ var colorCorrespondance = new Array();
 	colorCorrespondance[5] = "GOLD";
 	colorCorrespondance[6] = "PURPLE";
 	colorCorrespondance[7] = "RED";
-
+/*
 function ExtractArmorOld() {
 
 	function ExtractArmor() {
@@ -339,9 +339,9 @@ function ExtractArmorOld() {
 	} else {
 		ExtractEvo();
 	}
-}
+}*/
 
-function ExtractArmorNew() {
+function ExtractArmor() {
 	var nameHTML = document.getElementsByClassName('item-name')[0].getElementsByTagName('h6')[0]
 	var name = nameHTML.innerHTML;
 	var quality = nameHTML.outerHTML.charAt(19);
@@ -354,20 +354,30 @@ function ExtractArmorNew() {
 	
 	var line = document.getElementsByClassName('item-general');
 	
-	var getNameClass = [["Luchador", "Guerrero", "Berserker", "Dios de Guerra", "Caballero de la Muerte", "Destructor"],
-					["Luchador", "Guerrero", "Paladin", "Templario", "Caballero Sagrado", "Cruzado"],
+	var getNameClass = [["Luchador", "Guerrero", "Berserker", "Dios de Guerra", "Caballero de la Muerte", "Destructor",
+						"Combattant", "Guerrier", "Berserker", "Gladiateur", "Ravageur", "Destructeur"],
+					["Luchador", "Guerrero", "Paladin", "Templario", "Caballero Sagrado", "Cruzado",
+					"Combattant", "Guerrier", "Paladin", "Vindicateur", "Templier", "Croisé"],
 					
-					["Cazador", "Arquero", "Ranger", "Francotirador", "Ballestero Mortal", "Depredador"],
-					["Cazador", "Arquero", "Asesino", "Acechador Oscuro", "Ninja Fantasmal", "Shinobi"],
+					["Cazador", "Arquero", "Ranger", "Francotirador", "Ballestero Mortal", "Depredador",
+					"Chasseur", "Archer", "Ranger", "Traqueur", "Sniper", "Prédateur"],
+					["Cazador", "Arquero", "Asesino", "Acechador Oscuro", "Ninja Fantasmal", "Shinobi",
+					"Chasseur", "Archer", "Assassin", "Ninja", "Shinobi", "Kage"],
 					
-					["Acolito", "Sacerdote", "Clerigo", "Profeta", "Santo", "Arcángel"],
-					["Acolito", "Sacerdote", "Sabio", "Mistico", "Chamán", "Druida"],
+					["Acolito", "Sacerdote", "Clerigo", "Profeta", "Santo", "Arcángel",
+					"Acolyte", "Prêtre", "Clerc", "Rédempteur", "Exorciste", "Archange"],
+					["Acolito", "Sacerdote", "Sabio", "Mistico", "Chamán", "Druida",
+					"Acolyte", "Prêtre", "Sage", "Oracle", "Shaman", "Druide"],
 					
-					["Hechicero", "Mago", "Mago Brujo", "Archimago", "Avatar", "Brujo"],
-					["Hechicero", "Mago", "Nigromante", "Demonólogo", "Amo de Almas", "Shinigami"],
+					["Hechicero", "Mago", "Mago Brujo", "Archimago", "Avatar", "Brujo",
+					"Ensolceleur", "Mage", "Sorcier", "Archimage", "Avatar", "Arcaniste"],
+					["Hechicero", "Mago", "Nigromante", "Demonólogo", "Amo de Almas", "Shinigami",
+					"Ensolceleur", "Mage", "Nécromancien", "Démoniste", "Shinigami", "Faucheur"],
 					
-					["Mecánico", "Ingeniero", "Artificiero", "Prime", "Megatron", "Omega"],
-					["Mecánico", "Ingeniero", "Artillero", "Optimus", "Galvatron", "Domador Celestial"],
+					["Mecánico", "Ingeniero", "Artificiero", "Prime", "Megatron", "Omega",
+					"Mécanicien", "Machiniste", "Métalleux", "Prime", "Mégatron", "Oméga"],
+					["Mecánico", "Ingeniero", "Artillero", "Optimus", "Galvatron", "Domador Celestial",
+					"Mécanicien", "Machiniste", "Démolisseur", "Optimus", "Galvatron", "Suprême"],
 					
 					["Viajero", "Nómada", "Duelista", "Samurai", "Dimensionalista", "Espectro Mortal"],
 					["Viajero", "Nómada", "Relojero", "Maestro del Tiempo", "Oráculo", "Alterador Cósmico"]];
@@ -394,7 +404,11 @@ function ExtractArmorNew() {
 					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('AGI')) {
 					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
-				} else if(stat[j].innerHTML.match(/golpear/)) {
+				} else if(stat[j].innerHTML.trim().startsWith('HP')) {
+					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('EN')) {
+					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.match(/chance to hit/)) {
 					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				}
 			}
@@ -472,12 +486,138 @@ function ExtractArmorNew() {
 	console.log(result);
 }
 
+function ExtractEvo() {
+	var nameHTML = document.getElementsByClassName('item-name')[0].getElementsByTagName('h6')[0]
+	var name = nameHTML.innerHTML;
+	var quality = 3;
+	var lvl = document.getElementsByClassName('item-information-table')[0].getElementsByTagName('td');
+	if(lvl[0] != undefined) {
+		lvl = lvl[0].innerHTML;
+	} else {
+		lvl = "undefined";
+	}
+	
+	var line = document.getElementsByClassName('item-general');
+	
+	var getNameClass = [["Luchador", "Guerrero", "Berserker", "Dios de Guerra", "Caballero de la Muerte", "Destructor",
+						"Combattant", "Guerrier", "Berserker", "Gladiateur", "Ravageur", "Destructeur"],
+					["Luchador", "Guerrero", "Paladin", "Templario", "Caballero Sagrado", "Cruzado",
+					"Combattant", "Guerrier", "Paladin", "Vindicateur", "Templier", "Croisé"],
+					
+					["Cazador", "Arquero", "Ranger", "Francotirador", "Ballestero Mortal", "Depredador",
+					"Chasseur", "Archer", "Ranger", "Traqueur", "Sniper", "Prédateur"],
+					["Cazador", "Arquero", "Asesino", "Acechador Oscuro", "Ninja Fantasmal", "Shinobi",
+					"Chasseur", "Archer", "Assassin", "Ninja", "Shinobi", "Kage"],
+					
+					["Acolito", "Sacerdote", "Clerigo", "Profeta", "Santo", "Arcángel",
+					"Acolyte", "Prêtre", "Clerc", "Rédempteur", "Exorciste", "Archange"],
+					["Acolito", "Sacerdote", "Sabio", "Mistico", "Chamán", "Druida",
+					"Acolyte", "Prêtre", "Sage", "Oracle", "Shaman", "Druide"],
+					
+					["Hechicero", "Mago", "Mago Brujo", "Archimago", "Avatar", "Brujo",
+					"Ensolceleur", "Mage", "Sorcier", "Archimage", "Avatar", "Arcaniste"],
+					["Hechicero", "Mago", "Nigromante", "Demonólogo", "Amo de Almas", "Shinigami",
+					"Ensolceleur", "Mage", "Nécromancien", "Démoniste", "Shinigami", "Faucheur"],
+					
+					["Mecánico", "Ingeniero", "Artificiero", "Prime", "Megatron", "Omega",
+					"Mécanicien", "Machiniste", "Métalleux", "Prime", "Mégatron", "Oméga"],
+					["Mecánico", "Ingeniero", "Artillero", "Optimus", "Galvatron", "Domador Celestial",
+					"Mécanicien", "Machiniste", "Démolisseur", "Optimus", "Galvatron", "Suprême"],
+					
+					["Viajero", "Nómada", "Duelista", "Samurai", "Dimensionalista", "Espectro Mortal"],
+					["Viajero", "Nómada", "Relojero", "Maestro del Tiempo", "Oráculo", "Alterador Cósmico"]];
+	
+	var listClass = "";
+	var listEffect = "";
+	var codeFirstClass = "";
+	
+	for(var i = 0; i < line.length; i++) {
+		if(line[i].getElementsByClassName('stat').length > 0) {
+			var stat = line[i].getElementsByClassName('stat');
+			
+			for(var j = 0; j < stat.length; j++) {
+				if(stat[j].innerHTML.trim().startsWith('DEF')) {
+					listEffect += "\t\tnew Effect(TypeEffect.DefP, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('M-DEF')) {
+					listEffect += "\t\tnew Effect(TypeEffect.DefM, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('STR')) {
+					listEffect += "\t\tnew Effect(TypeEffect.FCE, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('VIT')) {
+					listEffect += "\t\tnew Effect(TypeEffect.VIT, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('INT')) {
+					listEffect += "\t\tnew Effect(TypeEffect.INT, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('WIL')) {
+					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('AGI')) {
+					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('HP')) {
+					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('EN')) {
+					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.match(/chance to hit/)) {
+					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				}
+			}
+		} else {
+			if(line[i].innerHTML.match(/Magic Critical Damage/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.DCCM, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+			} else if(line[i].innerHTML.match(/critical hit damage/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.DCCP, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+			} else if(line[i].innerHTML.match(/magic critical hit/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.TCCM, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+			} else if(line[i].innerHTML.match(/critical hit/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.TCCP, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+			} else if(!line[i].innerHTML.match(/([0-9])/) && !line[i].innerHTML.match(/color/)) {
+				for(var j = 0; j < getNameClass.length; j++) {
+					for(var k = 0; k < getNameClass[j].length; k++) {
+						if(line[i].innerHTML.match(getNameClass[j][k])) {
+							listClass += "GradeName." + gradeNameCorrespondance[j] + ", ";
+							
+							if(codeFirstClass == "") {
+								codeFirstClass = j;
+							}
+							
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	var iconpath = "";
+	
+	var codeLvl = Number(lvl) + document.getElementById("itemGrowEquip").length - 1;
+	var codearmor = codeLvl + "evo" + codeFirstClass;
+	
+	var reinca = false;
+	if(name.match(/eforgé/) || name.match(/éincarn/)) {
+		reinca = true;
+		codearmor += "R";
+	}
+	
+	// A REDEFINIR
+	var idPiece = 1;
+	
+	var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+	result += "\tnew GradeName[] { ";
+	result += listClass;
+	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", false, " + reinca + ",\n";
+	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
+	result += listEffect;
+	result += "\t}, null ),\n";
+	
+	console.log(result);
+}
+
 function updateClock() {}
 
 if(document.URL.match(/grandfantasia-db/)) {
-	ExtractArmorNew();
-} else if(document.URL.match(/grandfantasia\.info/)) {
-	ExtractArmorOld();
+	if(document.getElementById("itemGrowEquip").length > 0) {
+		ExtractEvo();
+	} else {
+		ExtractArmor();
+	}
 } else {
 	console.log("Site non compatible")
 }

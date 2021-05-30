@@ -352,12 +352,12 @@ public class LoaderCostume {
 				new Effect(TypeEffect.VitAtkD, false, 4),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Purlock"); put(Language.EN, ""); }}, TypeSynthesis.CLASSIC, CostumeType.TeteCorps, Quality.GOLD, new Effect[] {
-				new Effect(TypeEffect.ReducP, false, 2),
-				new Effect(TypeEffect.ReducM, false, 2),
+				new Effect(TypeEffect.ReducP_old, false, 2),
+				new Effect(TypeEffect.ReducM_old, false, 2),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Purlock"); put(Language.EN, ""); }}, TypeSynthesis.GENKI, CostumeType.TeteCorps, Quality.GOLD, new Effect[] {
-				new Effect(TypeEffect.ReducP, false, 3),
-				new Effect(TypeEffect.ReducM, false, 3),
+				new Effect(TypeEffect.ReducP_old, false, 3),
+				new Effect(TypeEffect.ReducM_old, false, 3),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Molilada"); put(Language.EN, ""); }}, TypeSynthesis.CLASSIC, CostumeType.TeteCorps, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 2),
@@ -708,12 +708,12 @@ public class LoaderCostume {
 				new Effect(TypeEffect.VitAtkD, false, 2),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Purlock"); put(Language.EN, ""); }}, TypeSynthesis.CLASSIC, CostumeType.TeteCorps, Quality.BLUE, new Effect[] {
-				new Effect(TypeEffect.ReducP, false, 1),
-				new Effect(TypeEffect.ReducM, false, 1),
+				new Effect(TypeEffect.ReducP_old, false, 1),
+				new Effect(TypeEffect.ReducM_old, false, 1),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Purlock"); put(Language.EN, ""); }}, TypeSynthesis.GENKI, CostumeType.TeteCorps, Quality.BLUE, new Effect[] {
-				new Effect(TypeEffect.ReducP, false, 2),
-				new Effect(TypeEffect.ReducM, false, 2),
+				new Effect(TypeEffect.ReducP_old, false, 2),
+				new Effect(TypeEffect.ReducM_old, false, 2),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Molilada"); put(Language.EN, ""); }}, TypeSynthesis.CLASSIC, CostumeType.TeteCorps, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1),
@@ -1013,8 +1013,8 @@ public class LoaderCostume {
 				new Effect(TypeEffect.DCCM, false, 2),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Purlock"); put(Language.EN, ""); }}, TypeSynthesis.GENKI, CostumeType.TeteCorps, Quality.GREEN, new Effect[] {
-				new Effect(TypeEffect.ReducP, false, 1),
-				new Effect(TypeEffect.ReducM, false, 1),
+				new Effect(TypeEffect.ReducP_old, false, 1),
+				new Effect(TypeEffect.ReducM_old, false, 1),
 			}),
 			new Costume(new HashMap<Language, String>() {{ put(Language.FR, "Molilada"); put(Language.EN, ""); }}, TypeSynthesis.GENKI, CostumeType.TeteCorps, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.RTCCP, false, 1),

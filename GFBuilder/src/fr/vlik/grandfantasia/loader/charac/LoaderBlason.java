@@ -79,7 +79,7 @@ public class LoaderBlason {
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie de la Magie 4"); put(Language.EN, ""); }},
 				100, BlasonType.OFFENSIVE, new Calculable[] {
 					new Effect(TypeEffect.AtkM, true, 6, false, WeaponType.BATON),
-					new Effect(TypeEffect.ReducP, false, 6, false, WeaponType.BATON),
+					new Effect(TypeEffect.ReducP_old, false, 6, false, WeaponType.BATON),
 				}),
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie du Grand Marteau 4"); put(Language.EN, ""); }},
 				100, BlasonType.OFFENSIVE, new Calculable[] {
@@ -155,7 +155,7 @@ public class LoaderBlason {
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie de la Magie 3"); put(Language.EN, ""); }},
 				95, BlasonType.OFFENSIVE, new Calculable[] {
 					new Effect(TypeEffect.AtkM, true, 6, false, WeaponType.BATON),
-					new Effect(TypeEffect.ReducP, false, 6, false, WeaponType.BATON),
+					new Effect(TypeEffect.ReducP_old, false, 6, false, WeaponType.BATON),
 				}),
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie du Grand Marteau 3"); put(Language.EN, ""); }},
 				95, BlasonType.OFFENSIVE, new Calculable[] {
@@ -231,7 +231,7 @@ public class LoaderBlason {
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie de la Magie 2"); put(Language.EN, ""); }},
 				90, BlasonType.OFFENSIVE, new Calculable[] {
 					new Effect(TypeEffect.AtkM, true, 6, false, WeaponType.BATON),
-					new Effect(TypeEffect.ReducP, false, 6, false, WeaponType.BATON),
+					new Effect(TypeEffect.ReducP_old, false, 6, false, WeaponType.BATON),
 				}),
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie du Grand Marteau 2"); put(Language.EN, ""); }},
 				90, BlasonType.OFFENSIVE, new Calculable[] {
@@ -286,7 +286,7 @@ public class LoaderBlason {
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie de la Magie 1"); put(Language.EN, ""); }},
 				85, BlasonType.OFFENSIVE, new Calculable[] {
 					new Effect(TypeEffect.AtkM, true, 5, false, WeaponType.BATON),
-					new Effect(TypeEffect.ReducP, false, 5, false, WeaponType.BATON),
+					new Effect(TypeEffect.ReducP_old, false, 5, false, WeaponType.BATON),
 				}),
 			new Blason(new HashMap<Language, String>() {{ put(Language.FR, "Furie du Grand Marteau 1"); put(Language.EN, ""); }},
 				85, BlasonType.OFFENSIVE, new Calculable[] {

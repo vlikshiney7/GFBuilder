@@ -220,24 +220,24 @@ public class LoaderPearlEnchantment {
 			new PearlEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Foi"); put(Language.EN, ""); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 1),
-						new Effect(TypeEffect.ReducM, false, 1),
+						new Effect(TypeEffect.ReducP_old, false, 1),
+						new Effect(TypeEffect.ReducM_old, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 2),
-						new Effect(TypeEffect.ReducM, false, 2),
+						new Effect(TypeEffect.ReducP_old, false, 2),
+						new Effect(TypeEffect.ReducM_old, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 3),
-						new Effect(TypeEffect.ReducM, false, 3),
+						new Effect(TypeEffect.ReducP_old, false, 3),
+						new Effect(TypeEffect.ReducM_old, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 4),
-						new Effect(TypeEffect.ReducM, false, 4),
+						new Effect(TypeEffect.ReducP_old, false, 4),
+						new Effect(TypeEffect.ReducM_old, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 5),
-						new Effect(TypeEffect.ReducM, false, 5),
+						new Effect(TypeEffect.ReducP_old, false, 5),
+						new Effect(TypeEffect.ReducM_old, false, 5),
 					},
 				}),
 			new PearlEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Renard spirituel"); put(Language.EN, ""); }},

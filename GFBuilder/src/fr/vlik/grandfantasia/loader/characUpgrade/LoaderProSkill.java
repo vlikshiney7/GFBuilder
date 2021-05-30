@@ -22,20 +22,26 @@ public class LoaderProSkill {
 		return new ProSkill[] {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Possession du Dieu de feu 1"); put(Language.EN, ""); }}, 66, "0-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdFeu, false, 200),
 					new Effect(TypeEffect.Toucher, false, 3),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegFeu, false, 200),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Possession du Dieu de feu 2"); put(Language.EN, ""); }}, 86, "0-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdFeu, false, 400),
 					new Effect(TypeEffect.Toucher, false, 6),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegFeu, false, 400),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Possession du Dieu de feu 3"); put(Language.EN, ""); }}, 91, "0-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdFeu, false, 600),
 					new Effect(TypeEffect.Toucher, false, 10),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegFeu, false, 600),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Force exorcisante 1"); put(Language.EN, ""); }}, 66, "0-1", new Calculable[] {
@@ -72,35 +78,41 @@ public class LoaderProSkill {
 		return new ProSkill[] {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Lumière sacrée 1"); put(Language.EN, ""); }}, 66, "1-0", new Calculable[] {
 				new Proc(20, Activation.Attacked, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdSacre, false, 600),
 					new Effect(TypeEffect.ESQ, false, 5),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegSacre, false, 600),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Lumière sacrée 2"); put(Language.EN, ""); }}, 86, "1-0", new Calculable[] {
 				new Proc(20, Activation.Attacked, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdSacre, false, 700),
 					new Effect(TypeEffect.ESQ, false, 10),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegSacre, false, 700),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Lumière sacrée 3"); put(Language.EN, ""); }}, 91, "1-0", new Calculable[] {
 				new Proc(20, Activation.Attacked, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdSacre, false, 1000),
 					new Effect(TypeEffect.ESQ, false, 15),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegSacre, false, 1000),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment sacré 1"); put(Language.EN, ""); }}, 66, "1-1", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 10),
-				new Effect(TypeEffect.DegM, false, 10),
+				new Effect(TypeEffect.DegP_old, false, 10),
+				new Effect(TypeEffect.DegM_old, false, 10),
 				new Effect(TypeEffect.MEN, false, 10),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment sacré 2"); put(Language.EN, ""); }}, 86, "1-1", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 20),
-				new Effect(TypeEffect.DegM, false, 20),
+				new Effect(TypeEffect.DegP_old, false, 20),
+				new Effect(TypeEffect.DegM_old, false, 20),
 				new Effect(TypeEffect.MEN, false, 20),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment sacré 3"); put(Language.EN, ""); }}, 91, "1-1", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 30),
-				new Effect(TypeEffect.DegM, false, 30),
+				new Effect(TypeEffect.DegP_old, false, 30),
+				new Effect(TypeEffect.DegM_old, false, 30),
 				new Effect(TypeEffect.MEN, false, 35),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Pavois du Roi 1"); put(Language.EN, ""); }}, 86, "1-2", new Calculable[] {
@@ -125,20 +137,26 @@ public class LoaderProSkill {
 		return new ProSkill[] {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Assaut foudroyant 1"); put(Language.EN, ""); }}, 66, "2-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdFoudre, false, 200),
 					new Effect(TypeEffect.TCCP, false, 3),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegFoudre, false, 200),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Assaut foudroyant 2"); put(Language.EN, ""); }}, 86, "2-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdFoudre, false, 400),
 					new Effect(TypeEffect.TCCP, false, 6),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegFoudre, false, 400),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Assaut foudroyant 3"); put(Language.EN, ""); }}, 91, "2-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdFoudre, false, 600),
 					new Effect(TypeEffect.TCCP, false, 10),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegFoudre, false, 600),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Tir sournois 1"); put(Language.EN, ""); }}, 66, "2-1", new Calculable[] {
@@ -175,20 +193,26 @@ public class LoaderProSkill {
 		return new ProSkill[] {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Forme spectrale 1"); put(Language.EN, ""); }}, 66, "3-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdOmbre, false, 250),
 					new Effect(TypeEffect.DCCP, false, 10),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegOmbre, false, 250),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Forme spectrale 2"); put(Language.EN, ""); }}, 86, "3-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdOmbre, false, 500),
 					new Effect(TypeEffect.DCCP, false, 15),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegOmbre, false, 500),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Forme spectrale 3"); put(Language.EN, ""); }}, 91, "3-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.DegStdOmbre, false, 700),
 					new Effect(TypeEffect.DCCP, false, 20),
+					new Proc(100, Activation.Standard, new Calculable[] {
+						new Effect(TypeEffect.DegOmbre, false, 700),
+					}),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Soif de sang 1"); put(Language.EN, ""); }}, 66, "3-1", new Calculable[] {
@@ -300,24 +324,24 @@ public class LoaderProSkill {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Sarcasmes 1"); put(Language.EN, ""); }}, 66, "5-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 20),
 				new Proc(10, Activation.Attacked, 5, new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, 5),
-					new Effect(TypeEffect.ReducM, false, 5),
+					new Effect(TypeEffect.ReducP_old, false, 5),
+					new Effect(TypeEffect.ReducM_old, false, 5),
 					new Effect(TypeEffect.MEN, false, 100),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Sarcasmes 2"); put(Language.EN, ""); }}, 86, "5-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 30),
 				new Proc(10, Activation.Attacked, 5, new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, 10),
-					new Effect(TypeEffect.ReducM, false, 10),
+					new Effect(TypeEffect.ReducP_old, false, 10),
+					new Effect(TypeEffect.ReducM_old, false, 10),
 					new Effect(TypeEffect.MEN, false, 300),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Sarcasmes 3"); put(Language.EN, ""); }}, 91, "5-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 40),
 				new Proc(10, Activation.Attacked, 5, new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, 15),
-					new Effect(TypeEffect.ReducM, false, 15),
+					new Effect(TypeEffect.ReducP_old, false, 15),
+					new Effect(TypeEffect.ReducM_old, false, 15),
 					new Effect(TypeEffect.MEN, false, 500),
 				}),
 			}),
@@ -446,15 +470,15 @@ public class LoaderProSkill {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Marque mortelle 1"); put(Language.EN, ""); }}, 86, "7-2", new Calculable[] {
 				new Proc(15, Activation.Attack, 6, new Calculable[] {
 					new Effect(TypeEffect.Ombre, false, -10, Target.OPPONENT),
-					new Effect(TypeEffect.ReducP, false, -5, Target.OPPONENT),
-					new Effect(TypeEffect.ReducM, false, -5, Target.OPPONENT),
+					new Effect(TypeEffect.ReducP_old, false, -5, Target.OPPONENT),
+					new Effect(TypeEffect.ReducM_old, false, -5, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Marque mortelle 2"); put(Language.EN, ""); }}, 91, "7-2", new Calculable[] {
 				new Proc(15, Activation.Attack, 6, new Calculable[] {
 					new Effect(TypeEffect.Ombre, false, -25, Target.OPPONENT),
-					new Effect(TypeEffect.ReducP, false, -10, Target.OPPONENT),
-					new Effect(TypeEffect.ReducM, false, -10, Target.OPPONENT),
+					new Effect(TypeEffect.ReducP_old, false, -10, Target.OPPONENT),
+					new Effect(TypeEffect.ReducM_old, false, -10, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Retour du revenant"); put(Language.EN, ""); }}, 91, "7-3", new Calculable[] {
@@ -514,8 +538,8 @@ public class LoaderProSkill {
 				new Proc(20, Activation.Attack, 20, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.ProSkillC8),
 					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 5),
-						new Effect(TypeEffect.ReducM, false, 5),
+						new Effect(TypeEffect.ReducP_old, false, 5),
+						new Effect(TypeEffect.ReducM_old, false, 5),
 					}),
 				}),
 			}),
@@ -544,22 +568,22 @@ public class LoaderProSkill {
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Injection de feu 1"); put(Language.EN, ""); }}, 66, "9-1", new Calculable[] {
 				new Proc(60, Activation.Crit, 6, new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, -2, Target.OPPONENT),
-					new Effect(TypeEffect.ReducM, false, -2, Target.OPPONENT),
+					new Effect(TypeEffect.ReducP_old, false, -2, Target.OPPONENT),
+					new Effect(TypeEffect.ReducM_old, false, -2, Target.OPPONENT),
 					new Effect(TypeEffect.VitAtkD, false, -5, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Injection de feu 2"); put(Language.EN, ""); }}, 86, "9-1", new Calculable[] {
 				new Proc(60, Activation.Crit, 6, new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, -5, Target.OPPONENT),
-					new Effect(TypeEffect.ReducM, false, -5, Target.OPPONENT),
+					new Effect(TypeEffect.ReducP_old, false, -5, Target.OPPONENT),
+					new Effect(TypeEffect.ReducM_old, false, -5, Target.OPPONENT),
 					new Effect(TypeEffect.VitAtkD, false, -10, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Injection de feu 3"); put(Language.EN, ""); }}, 91, "9-1", new Calculable[] {
 				new Proc(60, Activation.Crit, 6, new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, -8, Target.OPPONENT),
-					new Effect(TypeEffect.ReducM, false, -8, Target.OPPONENT),
+					new Effect(TypeEffect.ReducP_old, false, -8, Target.OPPONENT),
+					new Effect(TypeEffect.ReducM_old, false, -8, Target.OPPONENT),
 					new Effect(TypeEffect.VitAtkD, false, -15, Target.OPPONENT),
 				}),
 			}),
@@ -575,8 +599,8 @@ public class LoaderProSkill {
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier magnétique"); put(Language.EN, ""); }}, 91, "9-3", new Calculable[] {
 				new Proc(15, Activation.Attacked, 3, new Calculable[] {
-					new Effect(TypeEffect.DegP, false, -10, Target.OPPONENT),
-					new Effect(TypeEffect.DegM, false, -10, Target.OPPONENT),
+					new Effect(TypeEffect.DegP_old, false, -10, Target.OPPONENT),
+					new Effect(TypeEffect.DegM_old, false, -10, Target.OPPONENT),
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 				}),
 			}),
@@ -605,25 +629,25 @@ public class LoaderProSkill {
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Protection aérienne 1"); put(Language.EN, ""); }}, 66, "10-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 10),
-				new Effect(TypeEffect.ReducP, false, 3),
-				new Effect(TypeEffect.ReducM, false, 3),
+				new Effect(TypeEffect.ReducP_old, false, 3),
+				new Effect(TypeEffect.ReducM_old, false, 3),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Protection aérienne 2"); put(Language.EN, ""); }}, 86, "10-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 20),
-				new Effect(TypeEffect.ReducP, false, 6),
-				new Effect(TypeEffect.ReducM, false, 6),
+				new Effect(TypeEffect.ReducP_old, false, 6),
+				new Effect(TypeEffect.ReducM_old, false, 6),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Protection aérienne 3"); put(Language.EN, ""); }}, 91, "10-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, 30),
-				new Effect(TypeEffect.ReducP, false, 10),
-				new Effect(TypeEffect.ReducM, false, 10),
+				new Effect(TypeEffect.ReducP_old, false, 10),
+				new Effect(TypeEffect.ReducM_old, false, 10),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier de condensation 1"); put(Language.EN, ""); }}, 86, "10-2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.ProSkillC10L1),
 					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 10),
-						new Effect(TypeEffect.DegM, false, 10),
+						new Effect(TypeEffect.DegP_old, false, 10),
+						new Effect(TypeEffect.DegM_old, false, 10),
 					}),
 				}),
 			}),
@@ -631,8 +655,8 @@ public class LoaderProSkill {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.ProSkillC10L2),
 					new Proc(100, Activation.Attacked, 10, new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 20),
-						new Effect(TypeEffect.DegM, false, 20),
+						new Effect(TypeEffect.DegP_old, false, 20),
+						new Effect(TypeEffect.DegM_old, false, 20),
 					}),
 				}),
 			}),
@@ -667,18 +691,18 @@ public class LoaderProSkill {
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Roi du Temps 1"); put(Language.EN, ""); }}, 66, "11-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -10),
-				new Effect(TypeEffect.DegP, false, 10),
-				new Effect(TypeEffect.DegM, false, 10),
+				new Effect(TypeEffect.DegP_old, false, 10),
+				new Effect(TypeEffect.DegM_old, false, 10),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Roi du Temps 2"); put(Language.EN, ""); }}, 86, "11-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -20),
-				new Effect(TypeEffect.DegP, false, 12),
-				new Effect(TypeEffect.DegM, false, 12),
+				new Effect(TypeEffect.DegP_old, false, 12),
+				new Effect(TypeEffect.DegM_old, false, 12),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Roi du Temps 3"); put(Language.EN, ""); }}, 91, "11-1", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -30),
-				new Effect(TypeEffect.DegP, false, 15),
-				new Effect(TypeEffect.DegM, false, 15),
+				new Effect(TypeEffect.DegP_old, false, 15),
+				new Effect(TypeEffect.DegM_old, false, 15),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Charge temporelle 1"); put(Language.EN, ""); }}, 86, "11-2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {

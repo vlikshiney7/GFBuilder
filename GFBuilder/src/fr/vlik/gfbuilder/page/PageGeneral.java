@@ -89,6 +89,7 @@ public class PageGeneral extends PagePanel {
 			PageBuff.getInstance().updateEnergy();
 			PageOther.getInstance().updateMarried();
 			PageOther.getInstance().updateAnima();
+			PageOther.getInstance().updateSouvenir();
 			
 			Overlay.getInstance().setLvl(this.getLvl());
 			

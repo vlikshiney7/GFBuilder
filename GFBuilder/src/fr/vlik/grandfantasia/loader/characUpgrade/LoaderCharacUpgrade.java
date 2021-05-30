@@ -104,7 +104,7 @@ public class LoaderCharacUpgrade {
 		return new Skill[][] {
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Défense experte"); put(Language.EN, ""); }}, 6, "0-0", new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, 10),
+					new Effect(TypeEffect.ReducP_old, false, 10),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Endurance au combat"); put(Language.EN, ""); }}, 16, "0-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPV, false, 20),
@@ -113,7 +113,7 @@ public class LoaderCharacUpgrade {
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Défense experte"); put(Language.EN, ""); }}, 6, "0-0", new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, 10),
+					new Effect(TypeEffect.ReducP_old, false, 10),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Endurance au combat"); put(Language.EN, ""); }}, 16, "0-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPV, false, 20),
@@ -146,7 +146,7 @@ public class LoaderCharacUpgrade {
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Résistance à la magie"); put(Language.EN, ""); }}, 6, "2-0", new Calculable[] {
-					new Effect(TypeEffect.ReducM, false, 10),
+					new Effect(TypeEffect.ReducM_old, false, 10),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Restauration de PM"); put(Language.EN, ""); }}, 16, "2-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 20),
@@ -155,7 +155,7 @@ public class LoaderCharacUpgrade {
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Résistance à la magie"); put(Language.EN, ""); }}, 6, "2-0", new Calculable[] {
-					new Effect(TypeEffect.ReducM, false, 10),
+					new Effect(TypeEffect.ReducM_old, false, 10),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Restauration de PM"); put(Language.EN, ""); }}, 16, "2-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 20),
@@ -164,7 +164,7 @@ public class LoaderCharacUpgrade {
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Adepte de la magie"); put(Language.EN, ""); }}, 6, "3-0", new Calculable[] {
-					new Effect(TypeEffect.DegM, false, 10),
+					new Effect(TypeEffect.DegM_old, false, 10),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite magique"); put(Language.EN, ""); }}, 16, "3-1", new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 3),
@@ -175,7 +175,7 @@ public class LoaderCharacUpgrade {
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Adepte de la magie"); put(Language.EN, ""); }}, 6, "3-0", new Calculable[] {
-					new Effect(TypeEffect.DegM, false, 10),
+					new Effect(TypeEffect.DegM_old, false, 10),
 				}),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Tireur d'élite magique"); put(Language.EN, ""); }}, 16, "3-1", new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 3),
@@ -205,8 +205,8 @@ public class LoaderCharacUpgrade {
 				}),
 				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en métalleux"); put(Language.EN, ""); }}, 31, "31-8", null),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise de Mécha gravité"); put(Language.EN, ""); }}, 66, "66-0", new Calculable[] {
-					new Effect(TypeEffect.ReducP, false, 5),
-					new Effect(TypeEffect.ReducM, false, 5),
+					new Effect(TypeEffect.ReducP_old, false, 5),
+					new Effect(TypeEffect.ReducM_old, false, 5),
 					new Effect(TypeEffect.DefP, true, 5),
 					new Effect(TypeEffect.DefM, true, 5),
 				}),
@@ -237,20 +237,20 @@ public class LoaderCharacUpgrade {
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Résonance cristalline"); put(Language.EN, ""); }}, 6, "5-0", new Calculable[] {
 					new Condition(TypeEffect.PV, new int[] { 67, 100, }, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 10),
-						new Effect(TypeEffect.ReducM, false, 10),
+						new Effect(TypeEffect.ReducP_old, false, 10),
+						new Effect(TypeEffect.ReducM_old, false, 10),
 					}),
 					new Condition(TypeEffect.PV, new int[] { 34, 66, }, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 5),
-						new Effect(TypeEffect.ReducM, false, 5),
-						new Effect(TypeEffect.DegP, false, 5),
-						new Effect(TypeEffect.DegM, false, 5),
+						new Effect(TypeEffect.ReducP_old, false, 5),
+						new Effect(TypeEffect.ReducM_old, false, 5),
+						new Effect(TypeEffect.DegP_old, false, 5),
+						new Effect(TypeEffect.DegM_old, false, 5),
 					}),
 					new Condition(TypeEffect.PV, new int[] { 1, 33, }, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 10),
-						new Effect(TypeEffect.ReducM, false, 10),
-						new Effect(TypeEffect.DegP, false, 20),
-						new Effect(TypeEffect.DegM, false, 20),
+						new Effect(TypeEffect.ReducP_old, false, 10),
+						new Effect(TypeEffect.ReducM_old, false, 10),
+						new Effect(TypeEffect.DegP_old, false, 20),
+						new Effect(TypeEffect.DegM_old, false, 20),
 						new Effect(TypeEffect.CostPV, false, -100),
 					}),
 				}),
@@ -261,28 +261,28 @@ public class LoaderCharacUpgrade {
 				//new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en spatiodériveur"); put(Language.EN, ""); }}, 31, "31-10", null),
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Poids de l'univers"); put(Language.EN, ""); }}, 66, "66-2", new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 5),
-					new Effect(TypeEffect.ReducP, false, 5),
-					new Effect(TypeEffect.ReducM, false, 5),
+					new Effect(TypeEffect.ReducP_old, false, 5),
+					new Effect(TypeEffect.ReducM_old, false, 5),
 					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM, TypeCalcul.CONVERT),
 				}),
 			},
 			new Skill[] {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Résonance cristalline"); put(Language.EN, ""); }}, 6, "5-0", new Calculable[] {
 					new Condition(TypeEffect.PV, new int[] { 67, 100, }, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 10),
-						new Effect(TypeEffect.ReducM, false, 10),
+						new Effect(TypeEffect.ReducP_old, false, 10),
+						new Effect(TypeEffect.ReducM_old, false, 10),
 					}),
 					new Condition(TypeEffect.PV, new int[] { 34, 66, }, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 5),
-						new Effect(TypeEffect.ReducM, false, 5),
-						new Effect(TypeEffect.DegP, false, 5),
-						new Effect(TypeEffect.DegM, false, 5),
+						new Effect(TypeEffect.ReducP_old, false, 5),
+						new Effect(TypeEffect.ReducM_old, false, 5),
+						new Effect(TypeEffect.DegP_old, false, 5),
+						new Effect(TypeEffect.DegM_old, false, 5),
 					}),
 					new Condition(TypeEffect.PV, new int[] { 1, 33, }, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 10),
-						new Effect(TypeEffect.ReducM, false, 10),
-						new Effect(TypeEffect.DegP, false, 20),
-						new Effect(TypeEffect.DegM, false, 20),
+						new Effect(TypeEffect.ReducP_old, false, 10),
+						new Effect(TypeEffect.ReducM_old, false, 10),
+						new Effect(TypeEffect.DegP_old, false, 20),
+						new Effect(TypeEffect.DegM_old, false, 20),
 						new Effect(TypeEffect.CostPV, false, -100),
 					}),
 				}),
@@ -549,36 +549,36 @@ public class LoaderCharacUpgrade {
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 8),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
+						new Effect(TypeEffect.ReducP_old, false, 6),
+						new Effect(TypeEffect.ReducM_old, false, 6),
 					}),
 				}),
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "VITorange", new Calculable[] {
 					new Effect(TypeEffect.VIT, true, 6),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
+						new Effect(TypeEffect.ReducP_old, false, 6),
+						new Effect(TypeEffect.ReducM_old, false, 6),
 					}),
 				}),
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "INTorange", new Calculable[] {
 					new Effect(TypeEffect.INT, true, 8),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
+						new Effect(TypeEffect.ReducP_old, false, 6),
+						new Effect(TypeEffect.ReducM_old, false, 6),
 					}),
 				}),
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 6),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
+						new Effect(TypeEffect.ReducP_old, false, 6),
+						new Effect(TypeEffect.ReducM_old, false, 6),
 					}),
 				}),
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8% - Réduc"); put(Language.EN, ""); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 8),
 					new Proc(20, Activation.Attacked, 3, new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 6),
-						new Effect(TypeEffect.ReducM, false, 6),
+						new Effect(TypeEffect.ReducP_old, false, 6),
+						new Effect(TypeEffect.ReducM_old, false, 6),
 					}),
 				}),
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8% - Pirate"); put(Language.EN, ""); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
@@ -762,7 +762,7 @@ public class LoaderCharacUpgrade {
 				new Effect(TypeEffect.VitAtk, false, 5),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Griffe de la Brute cristalline magique"); put(Language.EN, ""); }}, Quality.WHITE, "griffe", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 5),
+				new Effect(TypeEffect.DegP_old, false, 5),
 				new Effect(TypeEffect.VitAtk, false, 5),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de Bénédiction de la Baie Bleue"); put(Language.EN, ""); }}, Quality.GREEN, "blueBay", new Calculable[] {
@@ -775,8 +775,8 @@ public class LoaderCharacUpgrade {
 				new Effect(TypeEffect.Loot, false, 5),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Corne du Roi Triomphant"); put(Language.EN, ""); }}, Quality.WHITE, "corne", new Calculable[] {
-				new Effect(TypeEffect.DegP, false, 5),
-				new Effect(TypeEffect.DegM, false, 5),
+				new Effect(TypeEffect.DegP_old, false, 5),
+				new Effect(TypeEffect.DegM_old, false, 5),
 				new Effect(TypeEffect.RegenPV, false, 250),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre d'Invocation de Robolol de Hawk"); put(Language.EN, ""); }}, Quality.WHITE, "robolol", new Calculable[] {

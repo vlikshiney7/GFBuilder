@@ -222,24 +222,24 @@ public class LoaderNucleusEnchantment {
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Foi"); put(Language.EN, ""); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 1),
-						new Effect(TypeEffect.ReducM, false, 1),
+						new Effect(TypeEffect.ReducP_old, false, 1),
+						new Effect(TypeEffect.ReducM_old, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 2),
-						new Effect(TypeEffect.ReducM, false, 2),
+						new Effect(TypeEffect.ReducP_old, false, 2),
+						new Effect(TypeEffect.ReducM_old, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 3),
-						new Effect(TypeEffect.ReducM, false, 3),
+						new Effect(TypeEffect.ReducP_old, false, 3),
+						new Effect(TypeEffect.ReducM_old, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 4),
-						new Effect(TypeEffect.ReducM, false, 4),
+						new Effect(TypeEffect.ReducP_old, false, 4),
+						new Effect(TypeEffect.ReducM_old, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP, false, 5),
-						new Effect(TypeEffect.ReducM, false, 5),
+						new Effect(TypeEffect.ReducP_old, false, 5),
+						new Effect(TypeEffect.ReducM_old, false, 5),
 					},
 				}),
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Renard spirituel"); put(Language.EN, ""); }},
@@ -815,37 +815,37 @@ public class LoaderNucleusEnchantment {
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Brute"); put(Language.EN, ""); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 1),
+						new Effect(TypeEffect.DegP_old, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 2),
+						new Effect(TypeEffect.DegP_old, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 3),
+						new Effect(TypeEffect.DegP_old, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 4),
+						new Effect(TypeEffect.DegP_old, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP, false, 5),
+						new Effect(TypeEffect.DegP_old, false, 5),
 					},
 				}),
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Sagesse"); put(Language.EN, ""); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.DegM, false, 1),
+						new Effect(TypeEffect.DegM_old, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM, false, 2),
+						new Effect(TypeEffect.DegM_old, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM, false, 3),
+						new Effect(TypeEffect.DegM_old, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM, false, 4),
+						new Effect(TypeEffect.DegM_old, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM, false, 5),
+						new Effect(TypeEffect.DegM_old, false, 5),
 					},
 				}),
 		};

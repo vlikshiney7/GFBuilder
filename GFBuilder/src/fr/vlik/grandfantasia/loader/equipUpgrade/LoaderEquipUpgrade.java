@@ -160,8 +160,8 @@ public class LoaderEquipUpgrade {
 			new Runway("Bouclier", new Calculable[] {
 				new Effect(TypeEffect.PV, true, 2),
 				new Effect(TypeEffect.PM, true, 2),
-				new Effect(TypeEffect.ReducP, false, 3),
-				new Effect(TypeEffect.ReducM, false, 3),
+				new Effect(TypeEffect.ReducP_old, false, 3),
+				new Effect(TypeEffect.ReducM_old, false, 3),
 				new Proc(0, Activation.Attacked, new Calculable[] {
 					new Effect(TypeEffect.ReflectP, false, 100),
 					new Effect(TypeEffect.ReflectM, false, 100),
@@ -192,7 +192,7 @@ public class LoaderEquipUpgrade {
 				new Effect(TypeEffect.BoostCraft, false, 2),
 			}),
 			new Runway("Gardien", new Calculable[] {
-				new Effect(TypeEffect.ReducP, false, 3),
+				new Effect(TypeEffect.ReducP_old, false, 3),
 			}),
 			new Runway("Hymne", new Calculable[] {
 				new Effect(TypeEffect.VitComp, false, 4),
@@ -217,7 +217,7 @@ public class LoaderEquipUpgrade {
 				new Effect(TypeEffect.DefM, true, 3),
 			}),
 			new Runway("Prêtre", new Calculable[] {
-				new Effect(TypeEffect.ReducM, false, 3),
+				new Effect(TypeEffect.ReducM_old, false, 3),
 			}),
 			new Runway("Ranger", new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 5),
@@ -233,7 +233,7 @@ public class LoaderEquipUpgrade {
 				new Effect(TypeEffect.AtkM, true, 2),
 			}),
 			new Runway("Sorcier", new Calculable[] {
-				new Effect(TypeEffect.DegM, false, 3),
+				new Effect(TypeEffect.DegM_old, false, 3),
 			}),
 			new Runway("Synthétisation", new Calculable[] {
 				new Effect(TypeEffect.BoostCraft, false, 2),
