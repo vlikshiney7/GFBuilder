@@ -790,12 +790,15 @@ public class LoaderEquipSet {
 			new EquipSet("Épique de Brienne", "100gold1",
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 60),
-					new Effect(TypeEffect.DegP_old, false, 18),
+					new Effect(TypeEffect.DegStdP, false, 18),
+					new Effect(TypeEffect.DegSkillP, false, 18),
 					new Effect(TypeEffect.Parade, false, 30),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 15),
-					new Effect(TypeEffect.ReducM_old, false, 15),
+					new Effect(TypeEffect.ReducStdP, false, 15),
+					new Effect(TypeEffect.ReducStdD, false, 15),
+					new Effect(TypeEffect.ReducSkillP, false, 15),
+					new Effect(TypeEffect.ReducSkillM, false, 15),
 					new Effect(TypeEffect.MEN, false, 30),
 					new Proc(20, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.FCE, true, 40),
@@ -3765,7 +3768,6 @@ public class LoaderEquipSet {
 				}),
 		};
 	}
-
 	
 	private static EquipSet[] getMeca() {
 		return new EquipSet[] {
@@ -6086,7 +6088,6 @@ public class LoaderEquipSet {
 				}),
 		};
 	}
-	
 	
 	private static EquipSet[] getAll() {
 		return new EquipSet[] {

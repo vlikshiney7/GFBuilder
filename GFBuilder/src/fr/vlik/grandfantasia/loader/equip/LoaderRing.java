@@ -22,7 +22,7 @@ public class LoaderRing {
 	
 	public static Ring[] getRing() {
 		return new Ring[] {
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Tyrannie sacrée de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Tyrannie sacrée de Tarot ténébreux"); put(Language.EN, "Dark Taro - Emperor's Tyranny"); }},
 				100, Quality.GOLD, true, "-1", true, "tdb0", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
@@ -37,7 +37,7 @@ public class LoaderRing {
 						}),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Assertion sacrée de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Assertion sacrée de Tarot ténébreux"); put(Language.EN, "Dark Taro - Emperor's Assertion"); }},
 				100, Quality.GOLD, true, "-1", true, "sombre11", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
@@ -50,7 +50,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Atk, true, 9),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Cycle de Roue de la fortune de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Cycle de Roue de la fortune de Tarot ténébreux"); put(Language.EN, "Dark Taro - Wheel of Fortune's Cycle"); }},
 				100, Quality.GOLD, true, "-1", true, "tdb5", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
@@ -63,7 +63,7 @@ public class LoaderRing {
 						new StaticEffect(TypeStaticEffect.x3Skill, 15),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Fugacité de Roue de la fortune de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Fugacité de Roue de la fortune de Tarot ténébreux"); put(Language.EN, "Dark Taro - Wheel of Fortune's Charm"); }},
 				100, Quality.GOLD, true, "-1", true, "tdb1", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
@@ -76,7 +76,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VitComp, false, 3),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Fin de mort de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Fin de mort de Tarot ténébreux"); put(Language.EN, "Dark Taro - Death's End"); }},
 				100, Quality.GOLD, true, "-1", true, "tdb4", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.FCE, false, 27, true),
@@ -91,7 +91,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Depla, false, 7),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Méfaits de mort de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Méfaits de mort de Tarot ténébreux"); put(Language.EN, "Dark Taro - Death's Mischief"); }},
 				100, Quality.GOLD, true, "-1", true, "100tarot", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.FCE, false, 27, true),
@@ -107,7 +107,7 @@ public class LoaderRing {
 						}),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Force infinie de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Force infinie de Tarot ténébreux"); put(Language.EN, "Dark Taro Strength's Infinity"); }},
 				95, Quality.GOLD, true, "-1", true, "gt2", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 641, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
@@ -119,7 +119,7 @@ public class LoaderRing {
 						new StaticEffect(TypeStaticEffect.x2STD, 20),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Force débordante de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Force débordante de Tarot ténébreux"); put(Language.EN, "Dark Taro Strength's Overflow"); }},
 				95, Quality.GOLD, true, "-1", true, "tdb9", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 641, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
@@ -131,7 +131,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VitAtk, false, 8),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Zodiaque visionnaire de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Zodiaque visionnaire de Tarot ténébreux"); put(Language.EN, "Dark Taro Zodiac's Vision"); }},
 				95, Quality.GOLD, true, "-1", true, "gt3", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 641, true),
 					new Effect(TypeEffect.VIT, false, 26, true),
@@ -143,7 +143,7 @@ public class LoaderRing {
 						new StaticEffect(TypeStaticEffect.x2Skill, 25),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Zodiaque méprisant de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Zodiaque méprisant de Tarot ténébreux"); put(Language.EN, "Dark Taro Zodiac's Contempt"); }},
 				95, Quality.GOLD, true, "-1", true, "gt0", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 641, true),
 					new Effect(TypeEffect.VIT, false, 26, true),
@@ -155,7 +155,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.VitComp, false, 8),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Lune féérique de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Lune féérique de Tarot ténébreux"); put(Language.EN, "Dark Taro Moon's Fantasy"); }},
 				95, Quality.GOLD, true, "-1", true, "gt1", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 641, true),
 					new Effect(TypeEffect.FCE, false, 25, true),
@@ -168,7 +168,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Depla, false, 4),
 					}),
 				}, null),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Lune enchantée de Tarot ténébreux"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Lune enchantée de Tarot ténébreux"); put(Language.EN, "Dark Taro Moon's Enchantment"); }},
 				95, Quality.GOLD, true, "-1", true, "tdb6", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 641, true),
 					new Effect(TypeEffect.FCE, false, 25, true),
@@ -208,7 +208,7 @@ public class LoaderRing {
 						new RegenEffect(TypeEffect.PV, false, -1000, TypeRegen.POISON),
 					}),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de Foi Divine"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de Foi Divine"); put(Language.EN, "Zealot's Conviction Ring"); }},
 				90, Quality.GOLD, false, "tdb2", false, "tdb2", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 584, true),
 					new Effect(TypeEffect.INT, false, 23, true),
@@ -363,7 +363,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.AGI, false, 10, true),
 					new Effect(TypeEffect.Glace, false, 22),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Rosaire du Repentir de Kraato"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Rosaire du Repentir de Kraato"); put(Language.EN, "Gluttony's Rosary of Repentance"); }},
 				58, Quality.GOLD, true, "-1", true, "messager3", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 460, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
@@ -421,7 +421,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Feu, false, 18),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 12),
-						new Effect(TypeEffect.DegP_old, false, 6),
+						new Effect(TypeEffect.DegSkillP, false, 6),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Méditative de la Tourmente"); put(Language.EN, "Meditative Signet Ring of Haunting"); }},
@@ -432,7 +432,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Feu, false, 18),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 12),
-						new Effect(TypeEffect.DegM_old, false, 6),
+						new Effect(TypeEffect.DegSkillM, false, 6),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Martiale de l'Enfer"); put(Language.EN, "Martial Signet Ring of Hell"); }},
@@ -443,8 +443,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.PV, false, 950),
 					new Effect(TypeEffect.Ombre, false, 18),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 10),
-						new Effect(TypeEffect.DegM_old, false, 10),
+						new Effect(TypeEffect.DegSkillP, false, 10),
+						new Effect(TypeEffect.DegSkillM, false, 10),
 						new Effect(TypeEffect.Toucher, false, 15),
 						new Effect(TypeEffect.ESQ, false, 15),
 					}),
@@ -457,8 +457,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.PV, false, 800),
 					new Effect(TypeEffect.Ombre, false, 17),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 10),
-						new Effect(TypeEffect.DegM_old, false, 10),
+						new Effect(TypeEffect.DegSkillP, false, 10),
+						new Effect(TypeEffect.DegSkillM, false, 10),
 						new Effect(TypeEffect.Toucher, false, 10),
 						new Effect(TypeEffect.ESQ, false, 10),
 					}),
@@ -543,7 +543,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Feu, false, 17),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 12),
-						new Effect(TypeEffect.DegP_old, false, 4),
+						new Effect(TypeEffect.DegSkillP, false, 4),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Méditative des Trois Royaumes"); put(Language.EN, "Meditative Signet Ring of the Three Realms"); }},
@@ -554,7 +554,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Feu, false, 17),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 12),
-						new Effect(TypeEffect.DegM_old, false, 4),
+						new Effect(TypeEffect.DegSkillM, false, 4),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Élite de la Destruction"); put(Language.EN, "Elite Signet Ring of Destruction"); }},
@@ -565,8 +565,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.PV, false, 650),
 					new Effect(TypeEffect.Ombre, false, 16),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 8),
-						new Effect(TypeEffect.DegM_old, false, 8),
+						new Effect(TypeEffect.DegSkillP, false, 8),
+						new Effect(TypeEffect.DegSkillM, false, 8),
 						new Effect(TypeEffect.Toucher, false, 10),
 						new Effect(TypeEffect.ESQ, false, 10),
 					}),
@@ -579,7 +579,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Ombre, false, 16),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 10),
-						new Effect(TypeEffect.DegP_old, false, 4),
+						new Effect(TypeEffect.DegSkillP, false, 4),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Méditative de l'Apathie"); put(Language.EN, "Meditative Signet Ring of Apathy"); }},
@@ -590,7 +590,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Glace, false, 16),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 10),
-						new Effect(TypeEffect.DegM_old, false, 4),
+						new Effect(TypeEffect.DegSkillM, false, 4),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Élite du Jugement"); put(Language.EN, "Elite Signet Ring of Judgment"); }},
@@ -601,8 +601,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.Ombre, false, 15),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 8),
-						new Effect(TypeEffect.DegM_old, false, 8),
+						new Effect(TypeEffect.DegSkillP, false, 8),
+						new Effect(TypeEffect.DegSkillM, false, 8),
 						new Effect(TypeEffect.Toucher, false, 5),
 						new Effect(TypeEffect.ESQ, false, 5),
 					}),
@@ -634,8 +634,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.Ombre, false, 14),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 8),
-						new Effect(TypeEffect.DegM_old, false, 8),
+						new Effect(TypeEffect.DegSkillP, false, 8),
+						new Effect(TypeEffect.DegSkillM, false, 8),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Martiale du Trouble"); put(Language.EN, "Martial Signet Ring of Unrest"); }},
@@ -665,8 +665,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.Ombre, false, 13),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 6),
-						new Effect(TypeEffect.DegM_old, false, 6),
+						new Effect(TypeEffect.DegSkillP, false, 6),
+						new Effect(TypeEffect.DegSkillM, false, 6),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Martiale des Vagues"); put(Language.EN, "Martial Signet Ring of Waves"); }},
@@ -696,8 +696,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.Ombre, false, 12),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 4),
-						new Effect(TypeEffect.DegM_old, false, 4),
+						new Effect(TypeEffect.DegSkillP, false, 4),
+						new Effect(TypeEffect.DegSkillM, false, 4),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Martiale du Tremblement"); put(Language.EN, "Martial Signet Ring of Shaking"); }},
@@ -727,8 +727,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.Ombre, false, 11),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 2),
-						new Effect(TypeEffect.DegM_old, false, 2),
+						new Effect(TypeEffect.DegSkillP, false, 2),
+						new Effect(TypeEffect.DegSkillM, false, 2),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Chevalière Martiale de Frappe"); put(Language.EN, "Martial Signet Ring of Striking"); }},
@@ -937,7 +937,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.Depla, false, 3),
 					new Effect(TypeEffect.VitAtk, false, 3),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.ReducStd, false, 10),
+						new Effect(TypeEffect.ReducStdP, false, 10),
+						new Effect(TypeEffect.ReducStdD, false, 10),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Bague de Mornelune"); put(Language.EN, "Bloodmoon Ring"); }},
@@ -957,7 +958,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.Glace, false, 21),
-					new Effect(TypeEffect.DegM_old, false, 5),
+					new Effect(TypeEffect.DegSkillM, false, 5),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, 15),
 					}),
@@ -968,8 +969,8 @@ public class LoaderRing {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.Nature, false, 21),
-					new Effect(TypeEffect.ReducP_old, false, 5),
-					new Effect(TypeEffect.ReducM_old, false, 5),
+					new Effect(TypeEffect.ReducSkillP, false, 5),
+					new Effect(TypeEffect.ReducSkillM, false, 5),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 250, TypeRegen.REGENERATION, 2),
 						new RegenEffect(TypeEffect.PM, false, 250, TypeRegen.REGENERATION, 2),
@@ -1039,7 +1040,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.Feu, false, 20),
-					new Effect(TypeEffect.DegP_old, false, 3),
+					new Effect(TypeEffect.DegSkillP, false, 3),
 					new Proc(8, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 10),
 					}),
@@ -1063,7 +1064,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Glace, false, 20),
 					new Effect(TypeEffect.IntComp, false, 30),
 					new Proc(8, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.ReducM_old, false, 3),
+						new Effect(TypeEffect.ReducSkillM, false, 3),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau Rose de Nacre"); put(Language.EN, "Sunset Ring"); }},
@@ -1461,39 +1462,39 @@ public class LoaderRing {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.PV, false, 720),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Boucles d'Oreille de l'Ombre Lunaire"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Boucles d'Oreille de l'Ombre Lunaire"); put(Language.EN, "Lunashade Earrings"); }},
 				90, Quality.WHITE, false, "-1", false, "messager4", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.PM, false, 360),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau d'Or du Sang du Démon"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau d'Or du Sang du Démon"); put(Language.EN, "Demon's Golden Bloodring"); }},
 				90, Quality.WHITE, false, "-1", false, "tdb15", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.PV, false, 360),
 					new Effect(TypeEffect.Feu, false, 7),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Clé du Coffre Glacé"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Clé du Coffre Glacé"); put(Language.EN, "Frozen Casket Key"); }},
 				90, Quality.WHITE, false, "-1", false, "90blanc1", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.PM, false, 180),
 					new Effect(TypeEffect.Glace, false, 7),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Torche du Géant du Temple"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Torche du Géant du Temple"); put(Language.EN, "Temple Giant's Torch"); }},
 				90, Quality.WHITE, false, "-1", false, "90blanc2", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.Feu, false, 13),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Feuille Glacée de l'Arbre Ingelable"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Feuille Glacée de l'Arbre Ingelable"); put(Language.EN, "Frostleaf from Unfrozen Tree"); }},
 				90, Quality.WHITE, false, "-1", false, "90blanc3", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.Glace, false, 13),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Cendres du Dieu du Tonnerre"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Cendres du Dieu du Tonnerre"); put(Language.EN, "Thunder God's Ashes"); }},
 				90, Quality.WHITE, false, "-1", false, "90blanc4", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.Foudre, false, 13),
 				}, null ),
-			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Sourire de la Nymphe"); put(Language.EN, ""); }},
+			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau du Sourire de la Nymphe"); put(Language.EN, "Nymph's Ring of Smiles"); }},
 				90, Quality.WHITE, false, "-1", false, "flora", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.Nature, false, 13),

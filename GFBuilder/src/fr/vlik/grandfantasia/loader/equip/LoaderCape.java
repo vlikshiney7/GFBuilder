@@ -521,7 +521,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VIT, false, 43, true),
 					new Effect(TypeEffect.VOL, false, 38, true),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Gardienne de Gargantua"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Gardienne de Gargantua"); put(Language.EN, "Nanoq's Guardian Cape"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
 				80, Quality.GOLD, true, "-1", "red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 132, true),
@@ -1026,7 +1026,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 39, true),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape tressée claquante d'Alchimiste"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape tressée claquante d'Alchimiste"); put(Language.EN, "Alchemist's Dissonant Cloak"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				60, Quality.GOLD, true, "-1", "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 116, true),
@@ -1035,7 +1035,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape tressée de contre-attaque d'Alchimiste"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape tressée de contre-attaque d'Alchimiste"); put(Language.EN, "Alchemist's Vengeance Cloak"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				60, Quality.GOLD, true, "-1", "red1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
@@ -1285,7 +1285,7 @@ public class LoaderCape {
 				}, new Calculable[] {
 					new RegenEffect(TypeEffect.PV, false, 10, TypeRegen.REGENERATION, 1),
 				}),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Voyageur d'Artisan"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Voyageur d'Artisan"); put(Language.EN, "Alchemist's Immovable Traveler Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.GOLD, true, "-1", "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
@@ -1294,7 +1294,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.INT, false, 44, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Maître Chronos d'Artisan"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Maître Chronos d'Artisan"); put(Language.EN, "Alchemist's Immovable Chronomaster Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.GOLD, true, "-1", "red1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
@@ -1303,7 +1303,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.VOL, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 22, true),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Voyageur d'Artisan"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Voyageur d'Artisan"); put(Language.EN, "Alchemist's Immovable Traveler Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.GOLD, false, "-1", "purple1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
@@ -1312,7 +1312,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.INT, false, 44, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Maître Chronos d'Artisan"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Inébranlable de Maître Chronos d'Artisan"); put(Language.EN, "Alchemist's Immovable Chronomaster Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.GOLD, false, "-1", "black2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
@@ -1909,7 +1909,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.DefP, false, 110, true),
 					new RegenEffect(TypeEffect.PV, false, 89, 93, TypeRegen.REGENERATION, 5),
 				}, null ),
-			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'Âme du Sprite Sombre"); put(Language.EN, ""); }},
+			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'Âme du Sprite Sombre"); put(Language.EN, "Dark Sprite's Soul Cape"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				70, Quality.BLUE, false, "black1", "red2", new MultiEffect(70, new Calculable[][] {
 					new Calculable[] {

@@ -114,6 +114,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegStdPts("Dégât Standard", "Stardard Damage", "Deg Std", "Std Dam", -1, true, Tools.EffectColor[0]), // DELETE
 	
 	DCCMa("Dégât Critique au Maillet", "", "Deg Crit Ma 1M", "", -1, true, Tools.EffectColor[0]),
+	TCCHa("Taux Critique à la Hache", "", "Taux Crit Ha 1M", "", -1, true, Tools.EffectColor[0]),
 	TCCCanon("Taux Critique au Canon", "", "Taux Crit Can", "", -1, true, Tools.EffectColor[0]),
 	
 	DegStdMeca("Dégât Standard à l'arme Mécanique", "", "Deg Std Mec 1M", "", -1, true, Tools.EffectColor[0]), // DELETE

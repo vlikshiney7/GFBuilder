@@ -13,7 +13,6 @@ import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.equip.Ride;
 
 public class ExtractRideData {
@@ -23,6 +22,7 @@ public class ExtractRideData {
 		"Monture 1 - Concours PvP 2015", "Monture 2 - Concours PvP 2015", "Monture 3 - Concours PvP 2015", "Monture 4 - Concours PvP 2015",
 		"GFWT 2016 mount - DO NOT USE",
 		"Monture - Tournoi PvP 2019",
+		"Armure Méca Élite", "Loup Élite", "Chocobo de Combat Élite",
 	};
 	
 	public static void main(String[] args) {
@@ -37,9 +37,9 @@ public class ExtractRideData {
 		
 		System.out.println("Read ItemMall EU");
 		readItemMallEU();
-		
-		System.out.println("Read Enchant EU");
-		readEnchantEU();
+
+		System.out.println("Read Enchant TW");
+		readEnchantTW();
 		
 		
 		HashMap<String, String[]> filterResult = new HashMap<String, String[]>();
@@ -48,7 +48,7 @@ public class ExtractRideData {
 			String id = entry.getKey();
 			String[] values = entry.getValue();
 			
-			if(values[0] != null && !values[0].matches(".*(jours).*") && Integer.valueOf(values[3]) <= 100 && Integer.valueOf(values[3]) >= 40) {
+			if(values[0] != null && !values[0].matches(".*(jours).*")) {
 				filterResult.put(id, values);
 			}
 		});
@@ -84,7 +84,7 @@ public class ExtractRideData {
 					String id = lineSplit[0];
 					
 					String[] values = new String[5];
-					if(lineSplit.length > 69 && lineSplit[24].equals("4") && !lineSplit[16].equals("") && !lineSplit[69].equals("")) {
+					if(lineSplit.length > 89 && lineSplit[24].equals("4") && lineSplit[88].equals("38")) {
 						values[1] = lineSplit[16];
 						values[2] = lineSplit[18].equals("1") ? "true" : "false";
 						values[3] = lineSplit[69];
@@ -112,7 +112,7 @@ public class ExtractRideData {
 					String id = lineSplit[0];
 					
 					String[] values = new String[5];
-					if(lineSplit.length > 69 && lineSplit[24].equals("4") && !lineSplit[16].equals("") && !lineSplit[69].equals("")) {
+					if(lineSplit.length > 89 && lineSplit[24].equals("4") && lineSplit[88].equals("38")) {
 						values[1] = lineSplit[16];
 						values[2] = lineSplit[18].equals("1") ? "true" : "false";
 						values[3] = lineSplit[69];
@@ -195,9 +195,9 @@ public class ExtractRideData {
 		}
 	}
 	
-	private static void readEnchantEU() {
+	private static void readEnchantTW() {
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/FR/T_Enchant.ini"), "Cp1252"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("tools/datafile/TW/C_Enchant.ini"), "UTF-8"));
 		) {
 			String line = reader.readLine();
 			HashMap<String, String[]> reconstructResult = new HashMap<String, String[]>();
@@ -205,23 +205,19 @@ public class ExtractRideData {
 				if(line.matches("^[0-9]{5}\\|.*")) {
 					String[] lineSplit = line.split("\\|");
 					
-					if(lineSplit.length > 2) {
+					if(lineSplit.length > 55) {
 						for(Entry<String, String[]> entry : allRides.entrySet()) {
 							String id = entry.getKey();
 							String[] values = entry.getValue();
 							
 							if(lineSplit[0].equals(values[3])) {
-								String[] sousSplit = lineSplit[2].split("\\$");
-								lineSplit[2] = sousSplit[sousSplit.length-1];
-								lineSplit[2] = Tools.simplifyString(lineSplit[2]);
-								
-								if(lineSplit[2].matches(".*(dep).*")) {
-								
-									Pattern r = Pattern.compile("([0-9]+)");
-									Matcher m = r.matcher(lineSplit[2]);
+								if(lineSplit[56].matches(".*(%).*")) {
+									
+									Pattern r = Pattern.compile("([0-9]+)%");
+									Matcher m = r.matcher(lineSplit[56]);
 									
 									if(m.find()) {
-										values[3] = m.group(0);
+										values[3] = m.group(0).replace("%", "");
 										reconstructResult.put(id, values);
 									}
 								}
@@ -235,7 +231,7 @@ public class ExtractRideData {
 			
 			allRides = reconstructResult;
 		}  catch (IOException e) {
-			System.out.println("Error T_Enchant.ini");
+			System.out.println("Error C_Enchant.ini");
 		}
 	}
 	

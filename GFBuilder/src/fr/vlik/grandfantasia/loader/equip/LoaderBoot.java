@@ -64,7 +64,7 @@ class LoaderBoot {
 	
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Tremblement de terre"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red0", "bottes/90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 581, true),
@@ -92,7 +92,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PV, true, 20));
 					}});
 				}}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red1", "bottes/90red1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 592, true),
@@ -120,7 +120,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PV, true, 20));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fierté pétrifiante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fierté pétrifiante"); put(Language.EN, "Petrifying Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio0", "bottes/100vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 596, true),
@@ -129,7 +129,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 37, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Immortalité du damné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Immortalité du damné"); put(Language.EN, "Immortal Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio1", "bottes/100vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 716, true),
@@ -138,7 +138,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Seigneur Arlong"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Seigneur Arlong"); put(Language.EN, "Berserk Warlord Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "90vio0", "bottes/90vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 556, true),
@@ -147,7 +147,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 21, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Templier Résolu"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Templier Résolu"); put(Language.EN, "Resolute Templar Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "90vio1", "bottes/90vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 567, true),
@@ -156,7 +156,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes belliqueuses d'Aiolia"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes belliqueuses d'Aiolia"); put(Language.EN, "Belligerent Rider Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio0", "bottes/80vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 519, true),
@@ -165,7 +165,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 28, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Défenseur Voldo"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Défenseur Voldo"); put(Language.EN, "Rampager Defender Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio1", "bottes/80vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 529, true),
@@ -174,7 +174,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes puissantes de Khal Drogo"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes puissantes de Khal Drogo"); put(Language.EN, "Ravaging Destroyer's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold0", "bottes/100gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -183,7 +183,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes épique de Brienne"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes épique de Brienne"); put(Language.EN, "Holy Oath's Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold1", "bottes/100gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 678, true),
@@ -192,7 +192,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 31, true),
 					new Effect(TypeEffect.INT, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du sanguinaire Kenpachi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du sanguinaire Kenpachi"); put(Language.EN, "Proud Berserker Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold0", "bottes/90gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 525, true),
@@ -201,7 +201,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vertueux de Parsifal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold1", "bottes/90gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 535, true),
@@ -210,7 +210,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.INT, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Vengeance de Mordred"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Vengeance de Mordred"); put(Language.EN, "Fiery Warrior Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold0", "bottes/80gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 484, true),
@@ -219,7 +219,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 23, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Châtiment de Baldur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Châtiment de Baldur"); put(Language.EN, "Spirit Shock Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold1", "bottes/80gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 493, true),
@@ -228,7 +228,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes blindées de l'Apostat"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes blindées de l'Apostat"); put(Language.EN, "Unholy Frenzy Warboots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp0", "bottes/100pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 539, true),
@@ -239,7 +239,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Solerets du Gardien éclairé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Solerets du Gardien éclairé"); put(Language.EN, "Light Guardian's Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp1", "bottes/100pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 647, true),
@@ -250,7 +250,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Héros Bestial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Héros Bestial"); put(Language.EN, "Beast Warrior Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve0", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 512, true),
@@ -259,7 +259,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Plume Verte"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Plume Verte"); put(Language.EN, "Green Feather Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve1", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 615, true),
@@ -268,7 +268,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Courroux Sanguinaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Courroux Sanguinaire"); put(Language.EN, "Blood Wrath Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp0", "bottes/95pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 501, true),
@@ -279,7 +279,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Bouclier du Monde Encyclique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Bouclier du Monde Encyclique"); put(Language.EN, "Planetary Shield Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp1", "bottes/95pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 601, true),
@@ -290,7 +290,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Explorateur Fondues"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Explorateur Fondues"); put(Language.EN, "Molten Explorer Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve0", "bottes/95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 494, true),
@@ -299,7 +299,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Chevalier Béni"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Chevalier Béni"); put(Language.EN, "Blessed Knight Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 593, true),
@@ -308,7 +308,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Feu Fanatique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Feu Fanatique"); put(Language.EN, "Fanatical Fire Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve0", "bottes/90pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -326,7 +326,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Gladiateur du Hokuto"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Gladiateur du Hokuto"); put(Language.EN, "Shura's Wrath Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp0", "bottes/85pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 464, true),
@@ -337,7 +337,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vindicateur Shichibukai"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vindicateur Shichibukai"); put(Language.EN, "Heavenly Shield Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp1", "bottes/85pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 473, true),
@@ -348,7 +348,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme de l'Ours Terrifiant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme de l'Ours Terrifiant"); put(Language.EN, "Shark's Frenzy Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve0", "bottes/85pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -357,7 +357,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme du Lion Glorieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme du Lion Glorieux"); put(Language.EN, "Sunbeam Crest Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve1", "bottes/85pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -366,7 +366,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Dieu de la Guerre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Dieu de la Guerre"); put(Language.EN, "Ares Impact Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus0", "bottes/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -375,7 +375,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Thaumaturge Exalté"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Thaumaturge Exalté"); put(Language.EN, "Sundering Blow Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus1", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 454, true),
@@ -384,7 +384,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Hurlement Divin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Hurlement Divin"); put(Language.EN, "Violent Mars Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80lingot0", "bottes/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -393,7 +393,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voix de la Création"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voix de la Création"); put(Language.EN, "Kingstrike Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80lingot1", "bottes/80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 454, true),
@@ -402,7 +402,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Furie du Maître"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Furie du Maître"); put(Language.EN, "Fury Master Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve0", "bottes/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 438, true),
@@ -411,7 +411,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Colère Divine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Colère Divine"); put(Language.EN, "Divine Impact Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve1", "bottes/80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 447, true),
@@ -420,7 +420,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cothurnes de Puissance d'Héraclès (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cothurnes de Puissance d'Héraclès (Reforgés)"); put(Language.EN, "(Reforged) Emperor of Destruction Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "75pvp0R", "bottes/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 469, true),
@@ -431,7 +431,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cothurnes de Puissance d'Héraclès"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cothurnes de Puissance d'Héraclès"); put(Language.EN, "Emperor of Destruction Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp0", "bottes/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 426, true),
@@ -442,7 +442,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ardeur de Zatoichi (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ardeur de Zatoichi (Reforgées)"); put(Language.EN, "(Reforged) Infinite Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "75pvp1R", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 479, true),
@@ -453,7 +453,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ardeur de Zatoichi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ardeur de Zatoichi"); put(Language.EN, "Infinite Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp1", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 435, true),
@@ -464,7 +464,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fureur du Berserker"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fureur du Berserker"); put(Language.EN, "Supreme War Deity Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve0", "bottes/75pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 419, true),
@@ -473,7 +473,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures du Guerrier Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures du Guerrier Céleste"); put(Language.EN, "Heavenly Warrior Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve1", "bottes/75pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 427, true),
@@ -482,7 +482,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Armée Sanguinaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Armée Sanguinaire"); put(Language.EN, "Crushing Gladiator Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus0", "bottes/70nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
@@ -491,7 +491,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de la Licorne Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de la Licorne Céleste"); put(Language.EN, "Iron Wall Rider Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus1", "bottes/70nucleus1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 415, true),
@@ -500,7 +500,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Soif de Mort"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Soif de Mort"); put(Language.EN, "Determined Gladiator Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot0", "bottes/70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
@@ -509,7 +509,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chevalier des Saints"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chevalier des Saints"); put(Language.EN, "Blitzing Rider Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot1", "bottes/70pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 415, true),
@@ -518,7 +518,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Guerrier Suprême"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Guerrier Suprême"); put(Language.EN, "Supreme Warrior Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve0", "bottes/70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 400, true),
@@ -527,7 +527,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Pureté du Paladin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Pureté du Paladin"); put(Language.EN, "King's Heart Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve1", "bottes/70pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -536,7 +536,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Stratégie de Sun Tzu (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Stratégie de Sun Tzu (Reforgées)"); put(Language.EN, "(Reforged) Emperor of Terror Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "65pvp0R", "bottes/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 427, true),
@@ -547,7 +547,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Stratégie de Sun Tzu"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Stratégie de Sun Tzu"); put(Language.EN, "Emperor of Terror Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp0", "bottes/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -558,7 +558,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Vertu de Galahad (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Vertu de Galahad (Reforgées)"); put(Language.EN, "(Reforged) Immovable Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "65pvp1R", "bottes/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 436, true),
@@ -569,7 +569,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Vertu de Galahad"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Vertu de Galahad"); put(Language.EN, "Immovable Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp1", "bottes/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -580,7 +580,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Boucher de Saphaël"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Boucher de Saphaël"); put(Language.EN, "Blood Frenzy Battle Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve0", "bottes/95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 380, true),
@@ -589,7 +589,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Chevalier de l'Eclipse Blanche"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Chevalier de l'Eclipse Blanche"); put(Language.EN, "White Eclipse Knight Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve1", "bottes/72vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -598,7 +598,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Marquis du Chaos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Marquis du Chaos"); put(Language.EN, "Marquis of Slaughter Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus", "bottes/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -606,7 +606,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Marquis de Destruction"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Marquis de Destruction"); put(Language.EN, "Marquis of Destruction Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot0", "bottes/95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -614,7 +614,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Juge Impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Juge Impérial"); put(Language.EN, "Imperial Inquisitor Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus1", "bottes/72vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 376, true),
@@ -622,7 +622,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Gardien Impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Gardien Impérial"); put(Language.EN, "Imperial Guardian Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot1", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 376, true),
@@ -630,7 +630,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Duc Obscur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Duc Obscur"); put(Language.EN, "Dark Marquis Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve0", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -638,7 +638,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Duc Impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Duc Impérial"); put(Language.EN, "Imperial Duke Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
@@ -646,7 +646,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Roi Diabolique (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Roi Diabolique (Reforgées)"); put(Language.EN, "(Reforged) Majin King Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 55, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "55pvp0R", "bottes/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
@@ -655,7 +655,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Roi Diabolique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Roi Diabolique"); put(Language.EN, "Majin King Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp0", "bottes/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 374, true),
@@ -664,7 +664,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense absolue (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense absolue (Reforgées)"); put(Language.EN, "(Reforged) Absolute Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 55, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "55pvp1R", "bottes/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 406, true),
@@ -673,7 +673,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense Absolue"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense Absolue"); put(Language.EN, "Absolute Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp1", "bottes/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -682,7 +682,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Destructrices à Lame d'Acier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Destructrices à Lame d'Acier"); put(Language.EN, "Steel Destruction Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve0", "bottes/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 325, true),
@@ -690,7 +690,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Hautes du Destructeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Hautes du Destructeur"); put(Language.EN, "Saboteur Longboots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 321, true),
@@ -698,7 +698,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Général Diabolique (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Général Diabolique (Reforgé)"); put(Language.EN, "(Reforged) Majin General's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 41, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "45pvp0R", "bottes/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 347, true),
@@ -707,7 +707,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Général Diabolique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Général Diabolique"); put(Language.EN, "Majin General's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 41, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp0", "bottes/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 315, true),
@@ -716,7 +716,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de Défense Parfaite (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de Défense Parfaite (Reforgé)"); put(Language.EN, "(Reforged) Perfect Defense Armored Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 41, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "45pvp1R", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 341, true),
@@ -725,7 +725,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de Défense Parfaite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de Défense Parfaite"); put(Language.EN, "Perfect Defense Armored Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 41, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp1", "bottes/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 310, true),
@@ -734,7 +734,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Guerrier robuste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Guerrier robuste"); put(Language.EN, "Heavy Warrior's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve0", "bottes/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 286, true),
@@ -742,7 +742,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chevalier du Fort"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chevalier du Fort"); put(Language.EN, "Fortress Knight Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve1", "bottes/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -750,7 +750,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Officier tactique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Officier tactique"); put(Language.EN, "Tactical Officer's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 29, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "30pve0", "bottes/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 244, true),
@@ -758,7 +758,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Hurlement de Conan (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Hurlement de Conan (Reforgé)"); put(Language.EN, "(Reforged) Armored Wolf Howl Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp0R", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 279, true),
@@ -767,7 +767,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Hurlement de Conan"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Hurlement de Conan"); put(Language.EN, "Armored Wolf Howl Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp0", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 253, true),
@@ -776,7 +776,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense de Lancelot (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense de Lancelot (Reforgé)"); put(Language.EN, "(Reforged) Rider Defense Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp1R", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 284, true),
@@ -785,7 +785,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense de Lancelot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense de Lancelot"); put(Language.EN, "Rider Defense Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
@@ -794,7 +794,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Garde d'Elite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Garde d'Elite"); put(Language.EN, "Elite Guard's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 19, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "20pve0", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 198, true),
@@ -802,7 +802,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Destructeur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Destructeur (Réincarné)"); put(Language.EN, "(Reincarnated) Destroyer's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "100evo0R", "bottes/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -886,7 +886,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 28),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Destructeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Destructeur"); put(Language.EN, "Destroyer's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "100evo0", "bottes/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -970,7 +970,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 23),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Croisé (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Croisé (Réincarné)"); put(Language.EN, "(Reincarnated) Holy Knight's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "100evo1R", "bottes/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1054,7 +1054,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 252),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Croisé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Croisé"); put(Language.EN, "Holy Knight's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "100evo1", "bottes/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1138,7 +1138,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 210),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme du Tigre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme du Tigre"); put(Language.EN, "Voracious Wartiger Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg0", "bottes/80gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
@@ -1148,7 +1148,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 790),
 					new Effect(TypeEffect.PM, false, 510),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Rhino Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Rhino Céleste"); put(Language.EN, "Sacred Sky Rhino Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg1", "bottes/80gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 518, true),
@@ -1158,7 +1158,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 940),
 					new Effect(TypeEffect.PM, false, 360),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Tigre de Guerre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Tigre de Guerre"); put(Language.EN, "Wild Wartiger Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 500, true),
@@ -1168,7 +1168,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 675),
 					new Effect(TypeEffect.PM, false, 275),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Givre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Givre"); put(Language.EN, "Frostbite Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 86, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
@@ -1178,7 +1178,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 475),
 					new Effect(TypeEffect.PM, false, 475),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Soleil Levant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Soleil Levant"); put(Language.EN, "Rising Sun Ghost Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 83, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 480, true),
@@ -1188,7 +1188,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 650),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Mur de Fer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Mur de Fer"); put(Language.EN, "Iron Wall Defense Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 83, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 490, true),
@@ -1198,7 +1198,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 450),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Rage du Minotaure"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Rage du Minotaure"); put(Language.EN, "Bloodthirsty Berserker Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg0", "bottes/80gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 469, true),
@@ -1208,7 +1208,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 660),
 					new Effect(TypeEffect.PM, false, 380),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Force des Titans"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Force des Titans"); put(Language.EN, "Radiant Wing Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg1", "bottes/80gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 478, true),
@@ -1218,7 +1218,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 810),
 					new Effect(TypeEffect.PM, false, 230),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Dragon Vert"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Dragon Vert"); put(Language.EN, "Green Dragon Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 461, true),
@@ -1228,7 +1228,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ravageur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ravageur (Réincarné)"); put(Language.EN, "(Reincarnated) Deathknight's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "90evo0R", "bottes/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1352,7 +1352,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ravageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ravageur"); put(Language.EN, "Death Knight's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90evo0", "bottes/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1476,7 +1476,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Templier (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Templier (Réincarné)"); put(Language.EN, "(Reincarnated) Crusader's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "90evo1R", "bottes/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1600,7 +1600,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 228),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Templier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Templier"); put(Language.EN, "Crusader's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90evo1", "bottes/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1724,7 +1724,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 190),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristaux de Glace"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristaux de Glace"); put(Language.EN, "Ice Crystal Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -1734,7 +1734,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 400),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Preux Soldat"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Preux Soldat"); put(Language.EN, "Ancient Runic Knight Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 72, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/75evo1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 446, true),
@@ -1744,7 +1744,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottillons de la Salamandre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottillons de la Salamandre"); put(Language.EN, "Cold Wind Fighter Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 71, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/75evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 433, true),
@@ -1754,7 +1754,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Conquête d'Attila"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Conquête d'Attila"); put(Language.EN, "Lunatic High Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg0", "bottes/70gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
@@ -1764,7 +1764,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 400),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Noblesse de Siegfried"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Noblesse de Siegfried"); put(Language.EN, "Stars of Glory Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg1", "bottes/70gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 438, true),
@@ -1774,7 +1774,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Gladiateur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Gladiateur (Réincarné)"); put(Language.EN, "(Reincarnated) Warlord's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "75evo0R", "bottes/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -1898,7 +1898,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Gladiateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Gladiateur"); put(Language.EN, "Warlord's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "75evo0", "bottes/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2022,7 +2022,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Vindicateur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Vindicateur (Réincarné)"); put(Language.EN, "(Reincarnated) Templar's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "75evo1R", "bottes/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2146,7 +2146,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Vindicateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Vindicateur"); put(Language.EN, "Templar's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "75evo1", "bottes/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2270,7 +2270,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pieds Trépignants de la Bête Démoniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pieds Trépignants de la Bête Démoniaque"); put(Language.EN, "Merciless Beast's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -2280,7 +2280,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 400),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de secours du Noble"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de secours du Noble"); put(Language.EN, "Regal Hero Armored Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -2289,7 +2289,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.PV, false, 550),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Guerrier aux Os Noirs"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Guerrier aux Os Noirs"); put(Language.EN, "Black Bone Warrior's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 330, true),
@@ -2299,7 +2299,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de la Sentinelle du Templier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de la Sentinelle du Templier"); put(Language.EN, "Templar Sentinel's Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -2309,7 +2309,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Hermétiques"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Hermétiques"); put(Language.EN, "Inscrutable Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 39, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 310, true),
@@ -2319,7 +2319,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 100),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Berserker (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Berserker (Réincarné)"); put(Language.EN, "(Reincarnated) Berserker's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "60evo0R", "bottes/60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2553,7 +2553,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Berserker"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Berserker"); put(Language.EN, "Berserker's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "60evo0", "bottes/60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2787,7 +2787,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Paladin (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Paladin (Réincarné)"); put(Language.EN, "(Reincarnated) Paladin's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "60evo1R", "bottes/62vert0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -3021,7 +3021,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 228),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Paladin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Paladin"); put(Language.EN, "Paladin's Soul Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "60evo1", "bottes/62vert0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -3255,7 +3255,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 190),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Guerrier Courageux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Guerrier Courageux"); put(Language.EN, "Brave Warrior Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 30, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -3263,7 +3263,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Guerrier (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Guerrier (Réincarné)"); put(Language.EN, "(Reincarnated) Warrior's Soul Longboots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "30evo0R", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -3417,7 +3417,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 6, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Guerrier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Guerrier"); put(Language.EN, "Warrior's Soul Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "30evo0", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -3571,119 +3571,119 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Bestiales de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Bestiales de Sprite"); put(Language.EN, "Sprite's Bestial Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 97, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 483, true),
 					new Effect(TypeEffect.DefM, false, 344, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Pourpres de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Pourpres de Sprite"); put(Language.EN, "Sprite's Crimson Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 92, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 465, true),
 					new Effect(TypeEffect.DefM, false, 331, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sprite Inquisiteur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sprite Inquisiteur"); put(Language.EN, "Sprite's Inquisition Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 87, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/85pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 447, true),
 					new Effect(TypeEffect.DefM, false, 319, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sprite Sombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sprite Sombre"); put(Language.EN, "Sprite's Dark Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 82, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
 					new Effect(TypeEffect.DefM, false, 306, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Pontife des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Pontife des Sprites"); put(Language.EN, "Sprite's Pontiff Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 77, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
 					new Effect(TypeEffect.DefM, false, 293, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Gravées d'Altesse"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Gravées d'Altesse"); put(Language.EN, "Sprite's Holy Warrior Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 72, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/72vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 393, true),
 					new Effect(TypeEffect.DefM, false, 280, true),
 					new Effect(TypeEffect.FCE, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Ornées d'Aristocrate"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Ornées d'Aristocrate"); put(Language.EN, "Sprite's Sky Overload Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 67, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/72vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
 					new Effect(TypeEffect.DefM, false, 267, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Lourd Mercenaire des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Lourd Mercenaire des Sprites"); put(Language.EN, "Sprite's Heavy Mercenary Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 62, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 356, true),
 					new Effect(TypeEffect.DefM, false, 254, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Régent des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Régent des Sprites"); put(Language.EN, "Sprite's Regent Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 56, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
 					new Effect(TypeEffect.DefM, false, 238, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Roi des Bêtes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Roi des Bêtes"); put(Language.EN, "Beastmaster Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 54, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
 					new Effect(TypeEffect.DefM, false, 233, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de l'Eglise"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées de l'Eglise"); put(Language.EN, "Holy Stompers"); }},
 				new GradeName[] { GradeName.PALADIN, }, 54, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
 					new Effect(TypeEffect.DefM, false, 240, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Lame d'Acier des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Lame d'Acier des Sprites"); put(Language.EN, "Sprite's Steelblade Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 46, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
 					new Effect(TypeEffect.DefM, false, 211, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées Endurcies des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées Endurcies des Sprites"); put(Language.EN, "Sprite's Heavy Forged Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 36, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 259, true),
 					new Effect(TypeEffect.DefM, false, 185, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes Stratégiques des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes Stratégiques des Sprites"); put(Language.EN, "Sprite's Strategist's Longboots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 26, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 218, true),
 					new Effect(TypeEffect.DefM, false, 156, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Garde des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Garde des Sprites"); put(Language.EN, "Sprite's Guard's Longboots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 16, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 173, true),
 					new Effect(TypeEffect.DefM, false, 123, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées des Sprites"); put(Language.EN, "Sprite's Sturdy Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 136, true),
 					new Effect(TypeEffect.DefM, false, 97, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Feu de Météore"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Feu de Météore"); put(Language.EN, "Meteorfire Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 425, true),
@@ -3691,7 +3691,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Précipice"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Précipice"); put(Language.EN, "Precipice Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 433, true),
@@ -3699,83 +3699,83 @@ class LoaderBoot {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Sentinelle des Enfers"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Sentinelle des Enfers"); put(Language.EN, "Burning Sentry Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 86, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 405, true),
 					new Effect(TypeEffect.DefM, false, 298, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Gardien du Sanctuaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Gardien du Sanctuaire"); put(Language.EN, "Sanctuary Defender Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 86, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
 					new Effect(TypeEffect.DefM, false, 292, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Orgueil"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Orgueil"); put(Language.EN, "Proud Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 81, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 390, true),
 					new Effect(TypeEffect.DefM, false, 286, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Silence Sacré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Silence Sacré"); put(Language.EN, "Holy Silence Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 81, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 398, true),
 					new Effect(TypeEffect.DefM, false, 280, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Marche"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Marche"); put(Language.EN, "War Spectre Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 66, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/70nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 345, true),
 					new Effect(TypeEffect.DefM, false, 249, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Rangers de Combat"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Rangers de Combat"); put(Language.EN, "Godly Glory Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 66, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/70nucleus1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 352, true),
 					new Effect(TypeEffect.DefM, false, 244, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Régent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Régent"); put(Language.EN, "Regent Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 53, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 301, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Lame d'Acier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Lame d'Acier"); put(Language.EN, "Steelblade Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 43, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 267, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées Endurcies"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées Endurcies"); put(Language.EN, "Heavy Forged Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 33, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 230, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes en Acier Renforcé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes en Acier Renforcé"); put(Language.EN, "Reinforced Steel Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 28, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 207, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes Stratégiques"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes Stratégiques"); put(Language.EN, "Strategist's Longboots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 23, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 192, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense Blindées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Défense Blindées"); put(Language.EN, "Defender's Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 22, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 184, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Blindées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Blindées"); put(Language.EN, "Combat Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 16, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 158, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Garde"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Garde"); put(Language.EN, "Guard's Longboots"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 13, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 147, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Gladiateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Gladiateur"); put(Language.EN, "Gladiator's Greaves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 10, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 130, true),
@@ -3785,7 +3785,7 @@ class LoaderBoot {
 	
 	private static Armor[] getArcher() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assassin Ninja"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Shoes"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red3", "bottes/90red3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 482, true),
@@ -3813,7 +3813,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PV, true, 20));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Orage de l'ombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Boots"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio3", "bottes/100vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 492, true),
@@ -3822,7 +3822,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 26, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assaut des Kage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assaut des Kage"); put(Language.EN, "Strike Shadow Assault Shoes"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.PURPLE, true, false,
 					ArmorType.BOTTE, "90vio3", "bottes/90vio3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 461, true),
@@ -3831,7 +3831,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 29, true),
 						new Effect(TypeEffect.AGI, false, 23, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures du Chasseur des Ombres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures du Chasseur des Ombres"); put(Language.EN, "Shadow Hunter Shoes"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 78, Quality.PURPLE, true, false,
 					ArmorType.BOTTE, "80vio3", "bottes/80vio3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 429, true),
@@ -3840,7 +3840,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 27, true),
 						new Effect(TypeEffect.AGI, false, 21, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes furtives de Minato"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes furtives de Minato"); put(Language.EN, "Shadow Master's Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.GOLD, true, false,
 					ArmorType.BOTTE, "100gold3", "bottes/100gold3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 471, true),
@@ -3849,7 +3849,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 27, true),
 						new Effect(TypeEffect.AGI, false, 10, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Furtivité du CP9"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Furtivité du CP9"); put(Language.EN, "Ghost Walker Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
 					ArmorType.BOTTE, "90gold3", "bottes/90gold3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 437, true),
@@ -3858,7 +3858,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 24, true),
 						new Effect(TypeEffect.AGI, false, 17, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chausses des Ombres de Loki"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chausses des Ombres de Loki"); put(Language.EN, "Cruel Senses Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 78, Quality.GOLD, true, false,
 					ArmorType.BOTTE, "80gold3", "bottes/80gold3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 403, true),
@@ -3867,7 +3867,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 22, true),
 						new Effect(TypeEffect.AGI, false, 16, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Assassin scarifié"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Assassin scarifié"); put(Language.EN, "Necrotic Assassin's Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "100pvp3", "bottes/100pvp3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 449, true),
@@ -3878,7 +3878,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.ReducPeneP, false, 5),
 						new Effect(TypeEffect.ReducPeneM, false, 5),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Bourreau Fantôme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Bourreau Fantôme"); put(Language.EN, "Ghost Executioner Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "100pve3", "bottes/100pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 427, true),
@@ -3887,7 +3887,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 16, true),
 						new Effect(TypeEffect.AGI, false, 9, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Samouraï Fantôme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Samouraï Fantôme"); put(Language.EN, "Phantom Samurai Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "95pvp3", "bottes/95pvp3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 418, true),
@@ -3898,7 +3898,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.ReducPeneP, false, 4),
 						new Effect(TypeEffect.ReducPeneM, false, 4),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Ninja Démoniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Ninja Démoniaque"); put(Language.EN, "Demonic Ninja Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 93, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "95pve3", "bottes/95pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 412, true),
@@ -3907,7 +3907,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 15, true),
 						new Effect(TypeEffect.AGI, false, 8, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Ombres Éphémères"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Ombres Éphémères"); put(Language.EN, "Veiled Shadow Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "90pve3", "bottes/90pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 396, true),
@@ -3916,7 +3916,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 14, true),
 						new Effect(TypeEffect.AGI, false, 7, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Ninja de Konoha"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Ninja de Konoha"); put(Language.EN, "Ghost Slayer Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "85pvp3", "bottes/85pvp3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 387, true),
@@ -3927,7 +3927,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.ReducPeneP, false, 3),
 						new Effect(TypeEffect.ReducPeneM, false, 3),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme de la Panthère Ténébreuse"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme de la Panthère Ténébreuse"); put(Language.EN, "Stealth Eagle Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 83, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "85pve3", "bottes/85pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 381, true),
@@ -3936,7 +3936,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 13, true),
 						new Effect(TypeEffect.AGI, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Vision Nocturne"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Vision Nocturne"); put(Language.EN, "Shadowcraft Assassin Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "80nucleus3", "bottes/95pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 371, true),
@@ -3945,7 +3945,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 10, true),
 						new Effect(TypeEffect.VOL, false, 8, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre de Terreur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre de Terreur"); put(Language.EN, "Blackshroud Assassin Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "80lingot3", "bottes/80pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 371, true),
@@ -3954,7 +3954,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 12, true),
 						new Effect(TypeEffect.AGI, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du 6ème Sens Ninja"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du 6ème Sens Ninja"); put(Language.EN, "Ninja's Senses Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 78, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "80pve3", "bottes/80pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 365, true),
@@ -3963,7 +3963,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 12, true),
 						new Effect(TypeEffect.AGI, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Fourberie de Lucrezia (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Fourberie de Lucrezia (Reforgées)"); put(Language.EN, "(Reforged) Illusion Warrior Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, false, true,
 					ArmorType.BOTTE, "75pvp3R", "bottes/95pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 391, true),
@@ -3974,7 +3974,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.ReducPeneP, false, 2),
 						new Effect(TypeEffect.ReducPeneM, false, 2),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Fourberie de Lucrezia"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Fourberie de Lucrezia"); put(Language.EN, "Illusion Warrior Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "75pvp3", "bottes/95pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 355, true),
@@ -3985,7 +3985,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.ReducPeneP, false, 2),
 						new Effect(TypeEffect.ReducPeneM, false, 2),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures d'Ombre Embrasée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures d'Ombre Embrasée"); put(Language.EN, "Deviant Flaming Shadow Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 73, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "75pve3", "bottes/75pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 349, true),
@@ -3994,7 +3994,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 9, true),
 						new Effect(TypeEffect.VOL, false, 7, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines des Crocs du Cobra"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines des Crocs du Cobra"); put(Language.EN, "Shadow Punisher Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "70nucleus3", "bottes/70nucleus3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 340, true),
@@ -4003,7 +4003,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 8, true),
 						new Effect(TypeEffect.AGI, false, 10, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre Diabolique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre Diabolique"); put(Language.EN, "Diabolic Shadow Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "70lingot3", "bottes/70pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 340, true),
@@ -4011,7 +4011,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.FCE, false, 18, true),
 						new Effect(TypeEffect.VIT, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Rigueur d'al Sabah"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Rigueur d'al Sabah"); put(Language.EN, "Shadow Specter Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 68, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "70pve3", "bottes/70pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 333, true),
@@ -4019,7 +4019,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.FCE, false, 18, true),
 						new Effect(TypeEffect.VIT, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sabotage de Fawkes (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sabotage de Fawkes (Reforgées)"); put(Language.EN, "(Reforged) Shura Warrior Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, false, true,
 					ArmorType.BOTTE, "65pvp3R", "bottes/100pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 355, true),
@@ -4030,7 +4030,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.ReducPeneP, false, 1),
 						new Effect(TypeEffect.ReducPeneM, false, 1),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sabotage de Fawkes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sabotage de Fawkes"); put(Language.EN, "Shura Warrior Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "65pvp3", "bottes/100pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 323, true),
@@ -4050,7 +4050,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 7, true),
 						new Effect(TypeEffect.AGI, false, 9, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines du Samourai du Poison"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines du Samourai du Poison"); put(Language.EN, "Venom Elite Short Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "60nucleus3", "bottes/100pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 307, true),
@@ -4058,7 +4058,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VOL, false, 5, true),
 						new Effect(TypeEffect.AGI, false, 13, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines du Samourai du Tonnerre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines du Samourai du Tonnerre"); put(Language.EN, "Shadow Elite Short Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "60lingot3", "bottes/65pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 307, true),
@@ -4066,7 +4066,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VOL, false, 7, true),
 						new Effect(TypeEffect.AGI, false, 11, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines du Samouraï Fantôme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines du Samouraï Fantôme"); put(Language.EN, "Shadow Warrior's Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 59, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "60pve3", "bottes/54vert0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 304, true),
@@ -4074,7 +4074,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VOL, false, 6, true),
 						new Effect(TypeEffect.AGI, false, 9, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant de l'Enfer (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant de l'Enfer (Reforgées)"); put(Language.EN, "(Reforged) Hellblazer Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 55, Quality.ORANGE, false, true,
 					ArmorType.BOTTE, "55pvp3R", "bottes/100pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 338, true),
@@ -4083,7 +4083,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 14, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant de l'Enfer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant de l'Enfer"); put(Language.EN, "Hellblazer Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 55, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "55pvp3", "bottes/100pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 307, true),
@@ -4092,7 +4092,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 12, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Royaume Ciselé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Royaume Ciselé"); put(Language.EN, "Sniper's Realm Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 49, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "50pve3", "bottes/54vert0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 271, true),
@@ -4100,7 +4100,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 6, true),
 						new Effect(TypeEffect.AGI, false, 7, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant au Lion Bleu (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant au Lion Bleu (Reforgé)"); put(Language.EN, "(Reforged) Blue Lion Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 41, Quality.ORANGE, false, true,
 					ArmorType.BOTTE, "45pvp3R", "bottes/95pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 284, true),
@@ -4110,7 +4110,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.AGI, false, 3, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant au Lion Bleu"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Combattant au Lion Bleu"); put(Language.EN, "Blue Lion Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 41, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "45pvp3", "bottes/95pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 258, true),
@@ -4120,7 +4120,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.AGI, false, 2, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Embuscade"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Embuscade"); put(Language.EN, "Ambush Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 39, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "40pve3", "bottes/40pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 238, true),
@@ -4128,7 +4128,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 3, true),
 						new Effect(TypeEffect.AGI, false, 7, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chasseur de vent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chasseur de vent"); put(Language.EN, "Windtracker Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 29, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "30pve2", "bottes/50pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 203, true),
@@ -4136,7 +4136,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 3, true),
 						new Effect(TypeEffect.AGI, false, 5, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Précision de Sogeking (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Précision de Sogeking (Reforgé)"); put(Language.EN, "(Reforged) Shoot the Breeze Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, true,
 					ArmorType.BOTTE, "25pvp2R", "bottes/50pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 237, true),
@@ -4145,7 +4145,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.AGI, false, 6, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ombre de Kakashi (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ombre de Kakashi (Reforgé)"); put(Language.EN, "(Reforged) Shadow Assassin Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, true,
 					ArmorType.BOTTE, "25pvp3R", "bottes/40pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 233, true),
@@ -4155,7 +4155,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.AGI, false, 3, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Précision de Sogeking"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Précision de Sogeking"); put(Language.EN, "Shoot the Breeze Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "25pvp2", "bottes/50pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 215, true),
@@ -4164,7 +4164,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.AGI, false, 5, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ombre de Kakashi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ombre de Kakashi"); put(Language.EN, "Shadow Assassin Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, false,
 					ArmorType.BOTTE, "25pvp3", "bottes/40pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 211, true),
@@ -4174,7 +4174,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.AGI, false, 2, true),
 						new Effect(TypeEffect.ESQ, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chasseur de la Jungle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chasseur de la Jungle"); put(Language.EN, "Jungle Hunter's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 19, Quality.ORANGE, true, false,
 					ArmorType.BOTTE, "20pve2", "bottes/50pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 165, true),
@@ -4182,7 +4182,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 1, true),
 						new Effect(TypeEffect.AGI, false, 4, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Kage (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Kage (Réincarné)"); put(Language.EN, "(Reincarnated) Shinobi's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
 					ArmorType.BOTTE, "100evo3R", "bottes/100pve3", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
@@ -4266,7 +4266,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.PM, false, 348),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Kage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Kage"); put(Language.EN, "Shinobi's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "100evo3", "bottes/100pve3", new MultiEffect(91, new Effect[][] {
 						new Effect[] {
@@ -4350,7 +4350,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.PM, false, 290),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Chien-Loup Zombie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Chien-Loup Zombie"); put(Language.EN, "Ghostwalker Hound Boots"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg3", "bottes/80gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -4360,7 +4360,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 690),
 					new Effect(TypeEffect.PM, false, 610),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures Bleues Souples"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures Bleues Souples"); put(Language.EN, "Nimble Navy Shoes"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 86, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/86bleu3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 410, true),
@@ -4369,7 +4369,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 19, true),
 						new Effect(TypeEffect.PV, false, 950),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de l'Ombre Assassine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de l'Ombre Assassine"); put(Language.EN, "Shadow Killer Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 82, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/86bleu3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 397, true),
@@ -4378,7 +4378,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 18, true),
 						new Effect(TypeEffect.PV, false, 900),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Frénésie du Lycan"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Frénésie du Lycan"); put(Language.EN, "Void Rift Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "80gvg3", "bottes/80gvg3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 391, true),
@@ -4388,7 +4388,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PV, false, 560),
 						new Effect(TypeEffect.PM, false, 480),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shinobi (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shinobi (Réincarné)"); put(Language.EN, "(Reincarnated) Windshadow's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
 					ArmorType.BOTTE, "90evo3R", "bottes/70nucleus3", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
@@ -4512,7 +4512,7 @@ class LoaderBoot {
 								new Effect(TypeEffect.PM, false, 324),
 							},
 						}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shinobi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shinobi"); put(Language.EN, "Windshadow's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "90evo3", "bottes/70nucleus3", new MultiEffect(76, new Effect[][] {
 						new Effect[] {
@@ -4636,7 +4636,7 @@ class LoaderBoot {
 								new Effect(TypeEffect.PM, false, 270),
 							},
 						}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assassin Silencieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assassin Silencieux"); put(Language.EN, "Silent Killer Shoes"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/86bleu3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 377, true),
@@ -4645,7 +4645,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 18, true),
 						new Effect(TypeEffect.PV, false, 800),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de la Banquise"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de la Banquise"); put(Language.EN, "Ancient Runic Mark of Shadow Shoes"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 72, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/75evo3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 364, true),
@@ -4654,7 +4654,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 16, true),
 						new Effect(TypeEffect.PV, false, 750),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Dragon Sombre Atma"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Dragon Sombre Atma"); put(Language.EN, "Mirage Crevice Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "70gvg3", "bottes/70gvg3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 357, true),
@@ -4664,7 +4664,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PV, false, 300),
 						new Effect(TypeEffect.PM, false, 350),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ninja (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Ninja (Réincarné)"); put(Language.EN, "(Reincarnated) Darkstalker's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
 					ArmorType.BOTTE, "75evo3R", "bottes/75evo3", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
@@ -4788,7 +4788,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.PM, false, 306),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales Évolutives du Ninja"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales Évolutives du Ninja"); put(Language.EN, "Darkstalker's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "75evo3", "bottes/75evo3", new MultiEffect(61, new Effect[][] {
 						new Effect[] {
@@ -4912,7 +4912,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.PM, false, 255),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Embuscade de Brume Noire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Embuscade de Brume Noire"); put(Language.EN, "Black Mist Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 329, true),
@@ -4922,7 +4922,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PV, false, 300),
 						new Effect(TypeEffect.PM, false, 250),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Hautes de l'Arracheur d'Âme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Hautes de l'Arracheur d'Âme"); put(Language.EN, "Soul Taker Longboots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 46, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 275, true),
@@ -4932,7 +4932,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PV, false, 210),
 						new Effect(TypeEffect.PM, false, 190),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Renforcées Regard d'Aigle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Renforcées Regard d'Aigle"); put(Language.EN, "Fortified Hawkeye Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 39, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 258, true),
@@ -4942,7 +4942,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PV, false, 80),
 						new Effect(TypeEffect.PM, false, 170),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Assassin (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Assassin (Réincarné)"); put(Language.EN, "(Reincarnated) Assassin's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
 					ArmorType.BOTTE, "60evo3R", "bottes/40pve0", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
@@ -5176,7 +5176,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.PM, false, 252),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Assassin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Assassin"); put(Language.EN, "Assassin's Soul Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "60evo3", "bottes/40pve0", new MultiEffect(31, new Effect[][] {
 						new Effect[] {
@@ -5410,7 +5410,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.PM, false, 210),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vent Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vent Céleste"); put(Language.EN, "Wind God's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 30, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 224, true),
@@ -5418,7 +5418,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 4, true),
 						new Effect(TypeEffect.AGI, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Archer (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Archer (Réincarné)"); put(Language.EN, "(Reincarnated) Archer's Soul Longboots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
 					ArmorType.BOTTE, "30evo2R", "bottes/50pve0", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
@@ -5572,7 +5572,7 @@ class LoaderBoot {
 							new Effect(TypeEffect.AGI, false, 9, true),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Archer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Archer"); put(Language.EN, "Archer's Soul Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
 					ArmorType.BOTTE, "30evo2", "bottes/50pve0", new MultiEffect(6, new Effect[][] {
 						new Effect[] {
@@ -5726,112 +5726,112 @@ class LoaderBoot {
 							new Effect(TypeEffect.AGI, false, 7, true),
 						},
 					}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Volantes de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Volantes de Sprite"); put(Language.EN, "Sprite's Flying Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 97, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 402, true),
 						new Effect(TypeEffect.DefM, false, 382, true),
 						new Effect(TypeEffect.AGI, false, 14, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Feuillues de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Feuillues de Sprite"); put(Language.EN, "Sprite's Leafy Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 92, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/65pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 388, true),
 						new Effect(TypeEffect.DefM, false, 368, true),
 						new Effect(TypeEffect.AGI, false, 13, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sprite Furtif"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sprite Furtif"); put(Language.EN, "Sprite's Stealthy Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 87, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/87vert3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 373, true),
 						new Effect(TypeEffect.DefM, false, 354, true),
 						new Effect(TypeEffect.VIT, false, 12, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Roi des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Roi des Sprites"); put(Language.EN, "Sprite King's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 82, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/82vert3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 358, true),
 						new Effect(TypeEffect.DefM, false, 340, true),
 						new Effect(TypeEffect.VIT, false, 11, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Malédiction des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Malédiction des Sprites"); put(Language.EN, "Sprite's Star-Crossed Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 77, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/77vert3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 343, true),
 						new Effect(TypeEffect.DefM, false, 326, true),
 						new Effect(TypeEffect.VIT, false, 10, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Longues Bottes d'Espionnage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Longues Bottes d'Espionnage"); put(Language.EN, "Sprite's Leaper Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 72, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/65pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 328, true),
 						new Effect(TypeEffect.DefM, false, 311, true),
 						new Effect(TypeEffect.VIT, false, 9, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Montantes d'Embuscade"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Montantes d'Embuscade"); put(Language.EN, "Sprite's Forest Patroller Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 67, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/65pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 312, true),
 						new Effect(TypeEffect.DefM, false, 297, true),
 						new Effect(TypeEffect.VIT, false, 8, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Chasseur de Prime des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Chasseur de Prime des Sprites"); put(Language.EN, "Sprite's Bounty Hunter Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 62, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/60evo0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 297, true),
 						new Effect(TypeEffect.DefM, false, 282, true),
 						new Effect(TypeEffect.AGI, false, 7, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées des Sprites du Coeur de Lion"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées des Sprites du Coeur de Lion"); put(Language.EN, "Sprite's Lionheart Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 56, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 278, true),
 						new Effect(TypeEffect.DefM, false, 264, true),
 						new Effect(TypeEffect.AGI, false, 6, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Silencieuses"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Silencieuses"); put(Language.EN, "Stealth Killer Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 54, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 272, true),
 						new Effect(TypeEffect.DefM, false, 258, true),
 						new Effect(TypeEffect.AGI, false, 5, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de l'Ombre des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de l'Ombre des Sprites"); put(Language.EN, "Sprite's Flying Shadow Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 46, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 247, true),
 						new Effect(TypeEffect.DefM, false, 235, true),
 						new Effect(TypeEffect.AGI, false, 5, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Faucon des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Faucon des Sprites"); put(Language.EN, "Sprite's Falcon Longboots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 36, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 216, true),
 						new Effect(TypeEffect.DefM, false, 205, true),
 						new Effect(TypeEffect.VIT, false, 4, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Traqueur des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Traqueur des Sprites"); put(Language.EN, "Sprite's Tracker's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 26, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 182, true),
 						new Effect(TypeEffect.DefM, false, 173, true),
 						new Effect(TypeEffect.AGI, false, 3, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales du Chasseur des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales du Chasseur des Sprites"); put(Language.EN, "Sprite's Hunter's Sandals"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 16, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 144, true),
 						new Effect(TypeEffect.DefM, false, 137, true),
 						new Effect(TypeEffect.AGI, false, 2, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'agilité des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'agilité des Sprites"); put(Language.EN, "Sprite's Agile Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 9, Quality.GREEN, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 113, true),
 						new Effect(TypeEffect.DefM, false, 108, true),
 						new Effect(TypeEffect.AGI, false, 1, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre Sereine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/65pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 354, true),
@@ -5839,65 +5839,65 @@ class LoaderBoot {
 						new Effect(TypeEffect.ESQ, false, 5),
 						new Effect(TypeEffect.TCCP, false, 1.8),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Garde Silencieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Garde Silencieux"); put(Language.EN, "Silent Guard Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 86, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/80pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 337, true),
 						new Effect(TypeEffect.DefM, false, 331, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Serpent d'Émeraude"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Serpent d'Émeraude"); put(Language.EN, "Green Magic Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 81, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/86bleu3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 325, true),
 						new Effect(TypeEffect.DefM, false, 317, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines Pourpres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines Pourpres"); put(Language.EN, "Darkmoon Walker Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 66, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/70nucleus3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 288, true),
 						new Effect(TypeEffect.DefM, false, 277, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Coeur de Lion"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Coeur de Lion"); put(Language.EN, "Lionheart Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 53, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 250, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre Volante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ombre Volante"); put(Language.EN, "Flying Shadow Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 43, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 222, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Hautes Bottes du Faucon"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Hautes Bottes du Faucon"); put(Language.EN, "Falcon Longboots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 33, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 192, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Sniper"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Sniper"); put(Language.EN, "Scout's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 28, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 172, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Traqueur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Traqueur"); put(Language.EN, "Tracker's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 23, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 159, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Sniper"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Blindées du Sniper"); put(Language.EN, "Scout's Boots"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 22, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/50pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 153, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales de Forêt"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales de Forêt"); put(Language.EN, "Forest Sandals"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 16, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 131, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales du Chasseur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales du Chasseur"); put(Language.EN, "Hunter's Sandals"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 13, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 122, true),
 					}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales du Chasseur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Sandales du Chasseur"); put(Language.EN, "Hunter's Sandals"); }},
 					new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 10, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", "bottes/40pve3", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 107, true),
@@ -5907,7 +5907,7 @@ class LoaderBoot {
 
 	private static Armor[] getPretre() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Mantra Sacré Salvateur"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red5", "bottes/90red5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 533, true),
@@ -5936,7 +5936,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PM, true, 20));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Prière de l'Aube"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Prière de l'Aube"); put(Language.EN, "Dawn Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio5", "bottes/100vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 546, true),
@@ -5945,7 +5945,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 28, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Vérité Divine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Vérité Divine"); put(Language.EN, "Divine Truth Understanding Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "90vio5", "bottes/90vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 510, true),
@@ -5954,7 +5954,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 25, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Prophète Omniscient"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Prophète Omniscient"); put(Language.EN, "World Prophet Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio5", "bottes/80vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 476, true),
@@ -5963,7 +5963,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes tribales de Thrall"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes tribales de Thrall"); put(Language.EN, "Shapeshifer's Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold5", "bottes/100gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 518, true),
@@ -5972,7 +5972,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Esprit de Tao Ren"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold5", "bottes/90gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 481, true),
@@ -5981,7 +5981,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chausses de Fureur de Fenrir"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chausses de Fureur de Fenrir"); put(Language.EN, "Comeback Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold5", "bottes/80gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 443, true),
@@ -5990,7 +5990,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Intuition sauvage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Intuition sauvage"); put(Language.EN, "Feral Inspiration Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp5", "bottes/100pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 494, true),
@@ -6001,7 +6001,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Cri Ancestral"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Cri Ancestral"); put(Language.EN, "Ancient Call Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve5", "bottes/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 470, true),
@@ -6010,7 +6010,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Brute Psionique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Brute Psionique"); put(Language.EN, "Psionic Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp5", "bottes/95pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 460, true),
@@ -6021,7 +6021,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ode à la Vie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Ode à la Vie"); put(Language.EN, "Ode of Life Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve5", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -6030,7 +6030,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Oracle Prolixe"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Oracle Prolixe"); put(Language.EN, "Oracular Murmurs Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve5", "bottes/90pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 436, true),
@@ -6039,7 +6039,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Oracle d'Amestris"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Oracle d'Amestris"); put(Language.EN, "Beast Commander Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp5", "bottes/85pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 425, true),
@@ -6050,7 +6050,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme de l'Aigle Perspicace"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Âme de l'Aigle Perspicace"); put(Language.EN, "Nirvana Guard Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve5", "bottes/85pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 419, true),
@@ -6059,7 +6059,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chasseur de Tempêtes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Chasseur de Tempêtes"); put(Language.EN, "Gaia Seeker Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus5", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -6068,7 +6068,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Mélopée des Montagnes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Mélopée des Montagnes"); put(Language.EN, "Gale Seeker Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80lingot5", "bottes/80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -6077,7 +6077,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Tables Tournantes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Tables Tournantes"); put(Language.EN, "Turn the Table Magic Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve5", "bottes/80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 401, true),
@@ -6086,7 +6086,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Ruse de Sun Wukong (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Ruse de Sun Wukong (Reforgées)"); put(Language.EN, "(Reforged) Holy Beastlord Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "75pvp5R", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
@@ -6097,7 +6097,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Ruse de Sun Wukong"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de Ruse de Sun Wukong"); put(Language.EN, "Holy Beastlord Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp5", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 391, true),
@@ -6108,7 +6108,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures magiques du Jugement des Dieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures magiques du Jugement des Dieux"); put(Language.EN, "Judge of Gods Magic Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve5", "bottes/75pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 384, true),
@@ -6117,7 +6117,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Totem des Ancêtres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Totem des Ancêtres"); put(Language.EN, "Nature Circle Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus5", "bottes/70nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -6126,7 +6126,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de l'Oeil du Cyclone"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines de l'Oeil du Cyclone"); put(Language.EN, "Storm Circle Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot5", "bottes/70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -6134,7 +6134,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures du Secret de Chimère"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures du Secret de Chimère"); put(Language.EN, "Beast God's Wish Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve5", "bottes/70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -6143,7 +6143,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Illusion de Kuzunoha (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Illusion de Kuzunoha (Reforgées)"); put(Language.EN, "(Reforged) Pegasus Saint Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "65pvp5R", "bottes/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 392, true),
@@ -6154,7 +6154,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Illusion de Kuzunoha"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Illusion de Kuzunoha"); put(Language.EN, "Pegasus Saint's Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp5", "bottes/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 356, true),
@@ -6165,7 +6165,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques du Sage du Soleil Levant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques du Sage du Soleil Levant"); put(Language.EN, "Rising Sun Sage's Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve5", "bottes/65pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -6174,7 +6174,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Prix de la Raison"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Prix de la Raison"); put(Language.EN, "Peace Walker Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus5", "bottes/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 338, true),
@@ -6182,7 +6182,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Équilibre de la Nature"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Équilibre de la Nature"); put(Language.EN, "Freeland Walker Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot5", "bottes/65pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 338, true),
@@ -6190,7 +6190,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Marcheur Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Marcheur Céleste"); put(Language.EN, "Skywalker Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve5", "bottes/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
@@ -6198,7 +6198,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Héraut Bestial Intelligent (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Héraut Bestial Intelligent (Reforgées)"); put(Language.EN, "(Reforged) Beast Herald Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 55, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "55pvp5R", "bottes/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 372, true),
@@ -6207,7 +6207,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Héraut Bestial Intelligent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Héraut Bestial Intelligent"); put(Language.EN, "Beast Herald Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp5", "bottes/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 338, true),
@@ -6216,7 +6216,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Esprits Sacrés"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Esprits Sacrés"); put(Language.EN, "Sacred Spirit Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve5", "bottes/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 298, true),
@@ -6224,7 +6224,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Coursier céleste (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Coursier céleste (Reforgé)"); put(Language.EN, "(Reforged) Pegasus Messenger Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 41, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "45pvp5R", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 313, true),
@@ -6233,7 +6233,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Coursier céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Coursier céleste"); put(Language.EN, "Pegasus Messenger Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 41, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp5", "bottes/62vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 284, true),
@@ -6242,7 +6242,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Plumes Colorées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes à Plumes Colorées"); put(Language.EN, "Colorful Feather Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve5", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -6250,7 +6250,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Lumière de la grâce"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Lumière de la grâce"); put(Language.EN, "Light of Grace Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 29, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "30pve4", "bottes/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 224, true),
@@ -6258,7 +6258,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Saint Eto (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Saint Eto (Reforgé)"); put(Language.EN, "(Reforged) Theology of War Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp4R", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 260, true),
@@ -6267,7 +6267,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Éléments d'Asakura (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Éléments d'Asakura (Reforgé)"); put(Language.EN, "(Reforged) Divine Roman Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp5R", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 256, true),
@@ -6276,7 +6276,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Saint Eto"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Saint Eto"); put(Language.EN, "Theology of War Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp4", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 236, true),
@@ -6285,7 +6285,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Éléments d'Asakura"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des Éléments d'Asakura"); put(Language.EN, "Divine Roman Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp5", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 232, true),
@@ -6294,7 +6294,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Clerc Priant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Clerc Priant"); put(Language.EN, "Cleric's Prayer Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 19, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "20pve4", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 181, true),
@@ -6302,7 +6302,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Druide (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Druide (Réincarné)"); put(Language.EN, "(Reincarnated) Druid's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "100evo5R", "bottes/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -6386,7 +6386,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 330),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Druide"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Druide"); put(Language.EN, "Druid's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "100evo5", "bottes/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -6470,7 +6470,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 275),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Bois Sacré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Bois Sacré"); put(Language.EN, "Divine Forest Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg5", "bottes/80gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 466, true),
@@ -6480,7 +6480,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 740),
 					new Effect(TypeEffect.PM, false, 560),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Rêves Paillettées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Rêves Paillettées"); put(Language.EN, "Daydream Shoes"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 458, true),
@@ -6490,7 +6490,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 575),
 					new Effect(TypeEffect.PM, false, 375),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Imagination"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Imagination"); put(Language.EN, "Fathom Messenger Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 83, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 440, true),
@@ -6500,7 +6500,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Envoûtement des Dryades"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Envoûtement des Dryades"); put(Language.EN, "North Star Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg5", "bottes/80gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
@@ -6510,7 +6510,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 610),
 					new Effect(TypeEffect.PM, false, 430),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Arc-en-Ciel Luisant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Arc-en-Ciel Luisant"); put(Language.EN, "Glowing Rainbow Magic Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 422, true),
@@ -6520,7 +6520,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shaman (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shaman (Réincarné)"); put(Language.EN, "(Reincarnated) Shaman's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "90evo5R", "bottes/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -6644,7 +6644,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 288),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shaman"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Shaman"); put(Language.EN, "Shaman's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90evo5", "bottes/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -6768,7 +6768,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines ornées des Oracles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines ornées des Oracles"); put(Language.EN, "Ancient Inscriptions Prophet Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 72, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/75evo5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 400, true),
@@ -6778,7 +6778,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Érudition de Diviciacos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Érudition de Diviciacos"); put(Language.EN, "Future Guide's Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg5", "bottes/70gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 393, true),
@@ -6788,7 +6788,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Oracle (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Oracle (Réincarné)"); put(Language.EN, "(Reincarnated) Mystic's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "75evo5R", "bottes/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -6912,7 +6912,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Oracle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives de l'Oracle"); put(Language.EN, "Mystic's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "75evo5", "bottes/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -7036,7 +7036,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Eternité du Créateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Eternité du Créateur"); put(Language.EN, "Creator's Boots of Eternity"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 363, true),
@@ -7046,7 +7046,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Murmure du Vent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Murmure du Vent"); put(Language.EN, "Whisperwind Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 303, true),
@@ -7056,7 +7056,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 180),
 					new Effect(TypeEffect.PM, false, 220),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Soleil Brûlant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Soleil Brûlant"); put(Language.EN, "Burning Sun Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 39, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 284, true),
@@ -7066,7 +7066,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 60),
 					new Effect(TypeEffect.PM, false, 190),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Sage (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Sage (Réincarné)"); put(Language.EN, "(Reincarnated) Sage's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "60evo5R", "bottes/40pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -7300,7 +7300,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 228),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Sage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Sage"); put(Language.EN, "Sage's Soul Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "60evo5", "bottes/40pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -7534,7 +7534,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 190),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Officier Courtois Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Officier Courtois Céleste"); put(Language.EN, "Deity's Ritual Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 30, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 240, true),
@@ -7542,7 +7542,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Prêtre (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Prêtre (Réincarné)"); put(Language.EN, "(Reincarnated) Priest's Soul Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "30evo4R", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -7696,7 +7696,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 6, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Prêtre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Évolutives du Prêtre"); put(Language.EN, "Priest's Soul Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "30evo4", "bottes/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -7850,185 +7850,185 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fête de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fête de Sprite"); put(Language.EN, "Sprite's Festive Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 97, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 451, true),
 					new Effect(TypeEffect.DefM, false, 412, true),
 					new Effect(TypeEffect.VOL, false, 14, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Purifiantes de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Purifiantes de Sprite"); put(Language.EN, "Sprite's Purifying Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 92, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 426, true),
 					new Effect(TypeEffect.DefM, false, 405, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Oracle Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Oracle Sprite"); put(Language.EN, "Sprite's Oracle Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 87, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/87sprite5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 410, true),
 					new Effect(TypeEffect.DefM, false, 389, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Renaissance des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Renaissance des Sprites"); put(Language.EN, "Sprite Revival Light Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 82, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 394, true),
 					new Effect(TypeEffect.DefM, false, 374, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques de la Prophétie des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques de la Prophétie des Sprites"); put(Language.EN, "Sprite's Sacred Prophecy Magic Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 77, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/77sprite5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 377, true),
 					new Effect(TypeEffect.DefM, false, 358, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussons de Soie Consacrée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussons de Soie Consacrée"); put(Language.EN, "Sprite's Hexagram Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 72, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/72sprite5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
 					new Effect(TypeEffect.DefM, false, 342, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussons de Velours Béni"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussons de Velours Béni"); put(Language.EN, "Sprite's Holy Walker Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 67, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/72sprite5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
 					new Effect(TypeEffect.DefM, false, 326, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Disciples des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Disciples des Sprites"); put(Language.EN, "Sprite's Boots of Discipline"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 62, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 327, true),
 					new Effect(TypeEffect.DefM, false, 310, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Pape des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Pape des Sprites"); put(Language.EN, "Sprite's Pontiff Longboots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 56, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
 					new Effect(TypeEffect.DefM, false, 291, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques du Pouvoir Originel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques du Pouvoir Originel"); put(Language.EN, "Original Power Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 54, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
 					new Effect(TypeEffect.DefM, false, 289, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Esprits Célestes des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Esprits Célestes des Sprites"); put(Language.EN, "Sprite's Heavenly Spirit Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 46, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
 					new Effect(TypeEffect.DefM, false, 258, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques Brumeuses des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques Brumeuses des Sprites"); put(Language.EN, "Sprite's Mist Magic Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 36, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
 					new Effect(TypeEffect.DefM, false, 226, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes de la Grâce des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes de la Grâce des Sprites"); put(Language.EN, "Sprite's Grace Longboots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 26, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 200, true),
 					new Effect(TypeEffect.DefM, false, 190, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Prière des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Prière des Sprites"); put(Language.EN, "Sprite's Prayer Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 16, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 158, true),
 					new Effect(TypeEffect.DefM, false, 151, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Foi des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Foi des Sprites"); put(Language.EN, "Sprite's Pious Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/9sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 125, true),
 					new Effect(TypeEffect.DefM, false, 118, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Pays des Merveilles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Pays des Merveilles"); put(Language.EN, "Wonderland Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 389, true),
 					new Effect(TypeEffect.DefM, false, 303, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Joueur de Flûte"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Joueur de Flûte"); put(Language.EN, "Beast Bellow Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 86, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
 					new Effect(TypeEffect.DefM, false, 288, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Astronome Fou"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Astronome Fou"); put(Language.EN, "Star Oracle Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 81, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 358, true),
 					new Effect(TypeEffect.DefM, false, 278, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Montantes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Montantes"); put(Language.EN, "Words of Truth Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 66, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/70nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 316, true),
 					new Effect(TypeEffect.DefM, false, 246, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Pape"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes du Pape"); put(Language.EN, "Pontiff Longboots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 53, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
 					new Effect(TypeEffect.DefM, false, 220, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Esprits Célestes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Esprits Célestes"); put(Language.EN, "Heavenly Spirit Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 43, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 244, true),
 					new Effect(TypeEffect.DefM, false, 196, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques Brumeuses"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques Brumeuses"); put(Language.EN, "Mist Magic Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 33, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 212, true),
 					new Effect(TypeEffect.DefM, false, 169, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques de l'éclat"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques de l'éclat"); put(Language.EN, "Glory Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 28, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 190, true),
 					new Effect(TypeEffect.DefM, false, 147, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes de la Grâce"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cuissardes de la Grâce"); put(Language.EN, "Grace Longboots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 23, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/54vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 176, true),
 					new Effect(TypeEffect.DefM, false, 141, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en Cuir Sacrées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en Cuir Sacrées"); put(Language.EN, "Holy Short Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 22, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 168, true),
 					new Effect(TypeEffect.DefM, false, 131, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en cuir de Foi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en cuir de Foi"); put(Language.EN, "Faith Short Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 16, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 145, true),
 					new Effect(TypeEffect.DefM, false, 112, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Prière"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Prière"); put(Language.EN, "Prayer Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 13, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 134, true),
 					new Effect(TypeEffect.DefM, false, 108, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en Cuir du Moine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en Cuir du Moine"); put(Language.EN, "Priest's Short Boots"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 10, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 119, true),
@@ -8039,7 +8039,7 @@ class LoaderBoot {
 	
 	private static Armor[] getMage() {
 		return new Armor[] {
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Fourvoyé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Fourvoyé"); put(Language.EN, "Demon Master's Boots"); }},
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp6", "bottes/100pvp6", new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 34, true),
@@ -8050,7 +8050,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes enchantées d'Elminster"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes enchantées d'Elminster"); put(Language.EN, "Arcanist's Boots"); }},
 				new GradeName[] { GradeName.SORCIER, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold6", "bottes/100gold6", new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 18, true),
@@ -8064,7 +8064,7 @@ class LoaderBoot {
 	
 	private static Armor[] getMeca() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Entaille ultime"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red8", "bottes/90red8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 581, true),
@@ -8092,7 +8092,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PV, true, 10));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Démon Frappe-pierre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Démon Frappe-pierre"); put(Language.EN, "Earthquake Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio8", "bottes/100vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 588, true),
@@ -8101,7 +8101,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ailes célestes envoûtantes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Ailes célestes envoûtantes"); put(Language.EN, "Seraphic Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.PURPLE, false, false,
 				ArmorType.BOTTE, "90vio8", "bottes/90vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 549, true),
@@ -8110,7 +8110,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Trépas de Glace et d'Étoiles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Trépas de Glace et d'Étoiles"); put(Language.EN, "Hyperborean Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio8", "bottes/80vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 511, true),
@@ -8119,7 +8119,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Général divin du centre de la Terre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Général divin du centre de la Terre"); put(Language.EN, "Terra Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold8", "bottes/100gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -8128,7 +8128,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Brume rugissante effrayante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Brume rugissante effrayante"); put(Language.EN, "Mistfall Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, false, false,
 				ArmorType.BOTTE, "90gold8", "bottes/90gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 525, true),
@@ -8137,7 +8137,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Arme de zone gelée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Arme de zone gelée"); put(Language.EN, "Glacial Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold8", "bottes/80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 484, true),
@@ -8146,7 +8146,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chausses du Démon traqueur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chausses du Démon traqueur"); put(Language.EN, "Demon Stalker's Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp8", "bottes/100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 501, true),
@@ -8158,7 +8158,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Excellent guerrier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Excellent guerrier"); put(Language.EN, "Warmonger Greaves"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve8", "bottes/100pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 512, true),
@@ -8167,7 +8167,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Mort Dévoreuse d'Âmes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Mort Dévoreuse d'Âmes"); put(Language.EN, "Deathsbane Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp8", "bottes/95pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 501, true),
@@ -8179,7 +8179,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Garde impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Garde impérial"); put(Language.EN, "Imperial Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve8", "bottes/95pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 494, true),
@@ -8188,7 +8188,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Ouragan du Val de la fissure"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Ouragan du Val de la fissure"); put(Language.EN, "Hurricane Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve8", "bottes/90pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -8197,7 +8197,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Mort désintégrante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Mort désintégrante"); put(Language.EN, "Soul Sealer Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp8", "bottes/85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 488, true),
@@ -8209,7 +8209,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Péché du pénitent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Péché du pénitent"); put(Language.EN, "Sinful Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve8", "bottes/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 457, true),
@@ -8218,7 +8218,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Balayage radical"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Balayage radical"); put(Language.EN, "Mortal Sorrow Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus8", "bottes/80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -8227,7 +8227,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Démogorgon pleureur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Démogorgon pleureur"); put(Language.EN, "Divine Sorrow Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80lingot8", "bottes/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -8236,7 +8236,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Flamme de glace bleue"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Flamme de glace bleue"); put(Language.EN, "Arctic Flame Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve8", "bottes/80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 438, true),
@@ -8245,7 +8245,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Ravageur de Massacre (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Ravageur de Massacre (Reforgées)"); put(Language.EN, "(Reforged) Slaughter Berserker Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "75pvp8R", "bottes/75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 494, true),
@@ -8257,7 +8257,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Ravageur massacrant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Ravageur massacrant"); put(Language.EN, "Butcher's Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp8", "bottes/75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 449, true),
@@ -8269,7 +8269,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Démon enragé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Démon enragé"); put(Language.EN, "Hellscream Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve8", "bottes/85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 419, true),
@@ -8278,7 +8278,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Chaînes Lumifer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Chaînes Lumifer"); put(Language.EN, "Lightspeed Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus8", "bottes/70nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
@@ -8287,7 +8287,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées des Chaînes Mortefer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées des Chaînes Mortefer"); put(Language.EN, "Fettered Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot8", "bottes/70lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
@@ -8296,7 +8296,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Esprit dansant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Esprit dansant"); put(Language.EN, "Epiphany Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve8", "bottes/75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 400, true),
@@ -8305,7 +8305,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Combat Sanglant (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Combat Sanglant (Reforgées)"); put(Language.EN, "(Reforged) Blood Combat Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "65pvp8R", "bottes/65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
@@ -8317,7 +8317,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Fervent adepte de sacrifice sanglant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Fervent adepte de sacrifice sanglant"); put(Language.EN, "Bloodfighter Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp8", "bottes/65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 409, true),
@@ -8329,7 +8329,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Hémophilie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Hémophilie"); put(Language.EN, "Bloodbath Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve8", "bottes/65pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 380, true),
@@ -8338,7 +8338,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Gladiateur flamboyant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Gladiateur flamboyant"); put(Language.EN, "Ruthless Warlord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus8", "bottes/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -8347,7 +8347,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Gladiateur Ballarcane"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Gladiateur Ballarcane"); put(Language.EN, "Profane Warlord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot8", "bottes/60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -8356,7 +8356,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Seigneur Bondinouri"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Seigneur Bondinouri"); put(Language.EN, "Blood Lord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve8", "bottes/60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -8365,7 +8365,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Seigneur Maniaque (Reforgées)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Seigneur Maniaque (Reforgées)"); put(Language.EN, "(Reforged) Maniac Lord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "55pvp8R", "bottes/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 404, true),
@@ -8375,7 +8375,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Seigneur maniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Seigneur maniaque"); put(Language.EN, "Maniac Lord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp8", "bottes/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 367, true),
@@ -8385,7 +8385,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Faucille de pillage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Faucille de pillage"); put(Language.EN, "Brigand Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve8", "bottes/50pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 325, true),
@@ -8394,7 +8394,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Assassin maniaque (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Assassin maniaque (Reforgé)"); put(Language.EN, "(Reforged) Maniac Assassin Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 44, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "45pvp8R", "bottes/60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 355, true),
@@ -8404,7 +8404,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Assassin maniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Assassin maniaque"); put(Language.EN, "Maniac Assassin Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 44, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp8", "bottes/60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 322, true),
@@ -8414,7 +8414,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Gladiateur belliqueux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Gladiateur belliqueux"); put(Language.EN, "Gladiator Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve8", "bottes/60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 286, true),
@@ -8423,7 +8423,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Agent de renseignement"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Agent de renseignement"); put(Language.EN, "Reconnaissance Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 29, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "30pve8", "bottes/30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 183, true),
@@ -8432,7 +8432,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Robuste samouraï (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Robuste samouraï (Reforgé)"); put(Language.EN, "(Reforged) Tough Samurai Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp8R", "bottes/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 197, true),
@@ -8442,7 +8442,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Robuste samouraï"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Robuste samouraï"); put(Language.EN, "Tough Samurai Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp8", "bottes/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 179, true),
@@ -8452,7 +8452,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 1, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Longues bottes de Bretteur nomade (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Longues bottes de Bretteur nomade (Reforgé)"); put(Language.EN, "(Reforged) Roaming Swordsman Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp9R", "bottes/30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 187, true),
@@ -8462,7 +8462,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Longues bottes de Bretteur nomade"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Longues bottes de Bretteur nomade"); put(Language.EN, "Roaming Swordsman Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp9", "bottes/30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 170, true),
@@ -8472,7 +8472,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Garde imposant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Garde imposant"); put(Language.EN, "Sentinel's Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 19, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "20pve8", "bottes/20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 148, true),
@@ -8481,7 +8481,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Oméga (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de l'Oméga (Réincarné)"); put(Language.EN, "(Reincarnated) Mechmaster's Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "100evo8R", "bottes/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -8565,7 +8565,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 28),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées spirituelles d'Oméga"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées spirituelles d'Oméga"); put(Language.EN, "Mechmaster's Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "100evo8", "bottes/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -8649,7 +8649,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 23),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Maléfice nocturne des âmes damnées"); put(Language.EN, "Wretched Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg8", "bottes/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -8658,7 +8658,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Bretteur de la neige glacée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Bretteur de la neige glacée"); put(Language.EN, "Frost Warrior's Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/88bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 500, true),
@@ -8667,7 +8667,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Massacre crépusculaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Massacre crépusculaire"); put(Language.EN, "Duskfall Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 83, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 480, true),
@@ -8676,7 +8676,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Combat sans fin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Combat sans fin"); put(Language.EN, "Endless Battle Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg8", "bottes/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 469, true),
@@ -8687,7 +8687,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 735),
 					new Effect(TypeEffect.PM, false, 305),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Molosse lunaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Molosse lunaire"); put(Language.EN, "Moonwolf Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 461, true),
@@ -8696,7 +8696,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Mégatron (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Mégatron (Réincarné)"); put(Language.EN, "(Reincarnated) Cogmaster's Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "90evo8R", "bottes/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -8820,7 +8820,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de l'Essence de Prime"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de l'Essence de Prime"); put(Language.EN, "Cogmaster's Soul Greaves"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90evo8", "bottes/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -8944,7 +8944,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Guerrier du Loup d'hiver"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Guerrier du Loup d'hiver"); put(Language.EN, "Snow Wolf Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 71, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 433, true),
@@ -8953,7 +8953,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Puissance éternelle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Puissance éternelle"); put(Language.EN, "Eternal Power Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg8", "bottes/80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
@@ -8964,7 +8964,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 475),
 					new Effect(TypeEffect.PM, false, 175),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Prime (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Prime (Réincarné)"); put(Language.EN, "(Reincarnated) Gearmaster's Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "75evo8R", "bottes/50pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -9088,7 +9088,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de l'Essence du Métalleux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de l'Essence du Métalleux"); put(Language.EN, "Gearmaster's Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "75evo8", "bottes/50pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -9212,7 +9212,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées sismiques de la Danse du sang"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées sismiques de la Danse du sang"); put(Language.EN, "Sanguine Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -9221,7 +9221,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées des Gardes de la bataille sanglante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées des Gardes de la bataille sanglante"); put(Language.EN, "Bloodied Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 330, true),
@@ -9230,7 +9230,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Métalleux (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Métalleux (Réincarné)"); put(Language.EN, "(Reincarnated) Engineer's Soul Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "60evo8R", "bottes/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -9464,7 +9464,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées spirituelles du Métalleux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées spirituelles du Métalleux"); put(Language.EN, "Engineer's Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "60evo8", "bottes/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -9698,7 +9698,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Machiniste (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Machiniste (Réincarné)"); put(Language.EN, "(Reincarnated) Machinist's Soul Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "30evo8R", "bottes/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -9852,7 +9852,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 6, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes spirituelles du Machiniste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes spirituelles du Machiniste"); put(Language.EN, "Machinist's Soul Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "30evo8", "bottes/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -10006,7 +10006,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.VIT, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes primitives de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes primitives de Sprite"); put(Language.EN, "Sprite's Primitive Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 97, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/97sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -10015,7 +10015,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées en Plumes vert jade de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées en Plumes vert jade de Sprite"); put(Language.EN, "Sprite's Jade Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 92, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/92sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -10024,7 +10024,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Pic embrumé de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Pic embrumé de Sprite"); put(Language.EN, "Sprite's Mist Peak Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 87, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/87sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -10033,7 +10033,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cauchemars de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cauchemars de Sprite"); put(Language.EN, "Sprite's Nightmare Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 82, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 358, true),
@@ -10042,7 +10042,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Froide canicule de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Froide canicule de Sprite"); put(Language.EN, "Sprite's Frostbite Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 77, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/77sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
@@ -10051,7 +10051,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Soldats précurseurs de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Soldats précurseurs de Sprite"); put(Language.EN, "Sprite's Vanguard Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 72, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/72sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
@@ -10060,7 +10060,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Bois nocturnes de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Bois nocturnes de Sprite"); put(Language.EN, "Sprite's Nightwood Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 67, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/67sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
@@ -10069,7 +10069,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Mercenaire sanguinaire de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Mercenaire sanguinaire de Sprite"); put(Language.EN, "Sprite's Bloodthirsty Mercenary Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 62, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -10078,7 +10078,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Garde du corps sanglant de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Garde du corps sanglant de Sprite"); put(Language.EN, "Sprite's Bloody Bodyguard Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 56, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/56sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
@@ -10087,7 +10087,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Lune argentée de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Lune argentée de Sprite"); put(Language.EN, "Sprite's Silver Moon Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 46, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 247, true),
@@ -10096,7 +10096,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Armes à deux mains de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Armes à deux mains de Sprite"); put(Language.EN, "Sprite's Bolstered Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 36, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/56sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 216, true),
@@ -10105,106 +10105,106 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de Pratique de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de Pratique de Sprite"); put(Language.EN, "Sprite's Stratagem Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 26, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 164, true),
 					new Effect(TypeEffect.DefM, false, 207, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de la Cité murée de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de la Cité murée de Sprite"); put(Language.EN, "Sprite's Bastion Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 16, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 130, true),
 					new Effect(TypeEffect.DefM, false, 164, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Exercice de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Exercice de Sprite"); put(Language.EN, "Sprite's Workout Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/9sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),
 					new Effect(TypeEffect.DefM, false, 129, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Bête à bain de sang"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Bête à bain de sang"); put(Language.EN, "Bloody Roar Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
 					new Effect(TypeEffect.DefM, false, 319, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Chute"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Chute"); put(Language.EN, "Armor Boots of Ruin"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/87blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
 					new Effect(TypeEffect.DefM, false, 300, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Charge de taureau"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Charge de taureau"); put(Language.EN, "Bull Charge Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 82, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 393, true),
 					new Effect(TypeEffect.DefM, false, 288, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Roche fondue"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de la Roche fondue"); put(Language.EN, "Molten Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 67, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 348, true),
 					new Effect(TypeEffect.DefM, false, 252, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Garde du corps sanglant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Garde du corps sanglant"); put(Language.EN, "Bloody Bodyguard Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 53, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/56sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 253, true),
 					new Effect(TypeEffect.DefM, false, 240, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Lune argentée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Lune argentée"); put(Language.EN, "Silver Moon Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 43, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 225, true),
 					new Effect(TypeEffect.DefM, false, 213, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Armes à deux mains"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées d'Armes à deux mains"); put(Language.EN, "Bolstered Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 33, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/56sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 194, true),
 					new Effect(TypeEffect.DefM, false, 184, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Machine nucléaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Machine nucléaire"); put(Language.EN, "Atomic Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 28, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 160, true),
 					new Effect(TypeEffect.DefM, false, 152, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de Pratique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de Pratique"); put(Language.EN, "Stratagem Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 23, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 145, true),
 					new Effect(TypeEffect.DefM, false, 138, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Rayon sombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Rayon sombre"); put(Language.EN, "Eclipse Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 145, true),
 					new Effect(TypeEffect.DefM, false, 138, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Cœur fortifié"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées du Cœur fortifié"); put(Language.EN, "Fortified Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 16, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 122, true),
 					new Effect(TypeEffect.DefM, false, 116, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de la Cité murée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes longues de la Cité murée"); put(Language.EN, "Bastion Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 13, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 112, true),
 					new Effect(TypeEffect.DefM, false, 106, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Remontée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Remontée"); put(Language.EN, "Transcendent Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/16sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 100, true),
 					new Effect(TypeEffect.DefM, false, 95, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Soldat de forage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Soldat de forage"); put(Language.EN, "Drill Soldier Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/9sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 83, true),
@@ -10215,7 +10215,7 @@ class LoaderBoot {
 	
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Danse Sauvage de Dimensionaliste"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red10", "bottes/90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 490, true),
@@ -10244,7 +10244,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PM, true, 10));
 					}});
 				}}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Frappe Brise-Temps"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red11", "bottes/90red11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 436, true),
@@ -10273,7 +10273,7 @@ class LoaderBoot {
 						add(new Effect(TypeEffect.PM, true, 10));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Bottes de combat du juge d'outremonde"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Bottes de combat du juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio10", "bottes/100vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
@@ -10284,7 +10284,7 @@ class LoaderBoot {
 				}, new Calculable[] {
 					new RegenEffect(TypeEffect.PV, false, 100, TypeRegen.REGENERATION, 1),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume temporel - Bottes de voyageur des ères"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume temporel - Bottes de voyageur des ères"); put(Language.EN, "Time Realm - Era Traveler Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio11", "bottes/100vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 455, true),
@@ -10295,7 +10295,7 @@ class LoaderBoot {
 				}, new Calculable[] {
 					new RegenEffect(TypeEffect.PV, false, 100, TypeRegen.REGENERATION, 1),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Trou noir - Bottes de dispersion Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Trou noir - Bottes de dispersion Demis"); put(Language.EN, "Black Hole - Dimensional Scurry Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "90vio10", "bottes/90vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 461, true),
@@ -10306,7 +10306,7 @@ class LoaderBoot {
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 50),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Appareil - Bottes de contrôle de pantin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Appareil - Bottes de contrôle de pantin"); put(Language.EN, "Device - Puppetmaster Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "90vio11", "bottes/90vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 425, true),
@@ -10317,7 +10317,7 @@ class LoaderBoot {
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 50),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Univers - Bottes de pionnier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Univers - Bottes de pionnier"); put(Language.EN, "Universal Trailblazer Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio10", "bottes/80vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
@@ -10328,7 +10328,7 @@ class LoaderBoot {
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 10),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Temps - Bottes de Gardien"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Temps - Bottes de Gardien"); put(Language.EN, "Time-Keeper Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio11", "bottes/80vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 397, true),
@@ -10339,7 +10339,7 @@ class LoaderBoot {
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 10),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Stalactite de l'Ombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Stalactite de l'Ombre"); put(Language.EN, "Icy Shadow Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold10", "bottes/100gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 436, true),
@@ -10348,7 +10348,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Spatio-temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Spatio-temporel"); put(Language.EN, "Spacetime Crystal Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold11", "bottes/100gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 432, true),
@@ -10357,7 +10357,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Prisme de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Prisme de Cristal"); put(Language.EN, "Crystal Prism Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold10", "bottes/90gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 437, true),
@@ -10366,7 +10366,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Destructeur de l'Âme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold11", "bottes/90gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 401, true),
@@ -10375,7 +10375,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cape démoniaque d'éclat cristallin hérétique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cape démoniaque d'éclat cristallin hérétique"); put(Language.EN, "Demonic Crystal Shard Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold10", "bottes/80gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -10384,7 +10384,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Lien de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Lien de Cristal"); put(Language.EN, "Crystal Bind Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold11", "bottes/80gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
@@ -10393,7 +10393,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Jaillissant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Jaillissant"); put(Language.EN, "Molten Crystal Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp10", "bottes/100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 449, true),
@@ -10405,7 +10405,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Chaotique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Chaotique"); put(Language.EN, "Chaotic Crystal Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp11", "bottes/100pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 404, true),
@@ -10417,7 +10417,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Mirage cristallin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Mirage cristallin"); put(Language.EN, "Crystal Mirage Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve10", "bottes/100pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 427, true),
@@ -10426,7 +10426,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Panorama"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Panorama"); put(Language.EN, "Horizon Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve11", "bottes/100pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 392, true),
@@ -10435,7 +10435,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de voyageur Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de voyageur Demis"); put(Language.EN, "Dimensional Traveler Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp10", "bottes/95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 426, true),
@@ -10447,7 +10447,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Gardien du temps"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Gardien du temps"); put(Language.EN, "Chrono Keeper Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp11", "bottes/95pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 384, true),
@@ -10459,7 +10459,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Malédiction du Cristal Runique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Malédiction du Cristal Runique"); put(Language.EN, "Runic Crystal Curse Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve10", "bottes/95pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -10468,7 +10468,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Fléau de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Fléau de Cristal"); put(Language.EN, "Crystal Blight Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve11", "bottes/95pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 377, true),
@@ -10477,7 +10477,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal radieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal radieux"); put(Language.EN, "Brilliant Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve10", "bottes/90pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -10486,7 +10486,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur du carnage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur du carnage"); put(Language.EN, "Carnage Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve11", "bottes/90pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
@@ -10495,7 +10495,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur runique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur runique"); put(Language.EN, "Runic Traveler Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp10", "bottes/85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 387, true),
@@ -10507,7 +10507,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Créateur du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Créateur du cristal"); put(Language.EN, "Crystalsmith's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp11", "bottes/85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 355, true),
@@ -10519,7 +10519,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyageur Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyageur Sprite"); put(Language.EN, "Spectral Ranger Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve10", "bottes/85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 381, true),
@@ -10528,7 +10528,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyageur nocturne"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyageur nocturne"); put(Language.EN, "Midnight Hitchhiker's Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve11", "bottes/85pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -10537,7 +10537,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Gardien du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Gardien du cristal"); put(Language.EN, "Crystal Keeper Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus10", "bottes/80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
@@ -10546,7 +10546,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Cristallines d'incantation"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Cristallines d'incantation"); put(Language.EN, "Incarnated Crystalline Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus11", "bottes/80nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 341, true),
@@ -10555,7 +10555,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Porteur du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Porteur du cristal"); put(Language.EN, "Crystal Wielder Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80lingot10", "bottes/80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
@@ -10573,7 +10573,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'éclat cristallin hérétique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'éclat cristallin hérétique"); put(Language.EN, "Crystal Shard Heretic Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve10", "bottes/85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -10582,7 +10582,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal mortel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal mortel"); put(Language.EN, "Deadly Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve11", "bottes/85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
@@ -10591,7 +10591,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voyageur rayonnant (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voyageur rayonnant (Reforgé)"); put(Language.EN, "(Reforged) Incandescent Traveler Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "75pvp10R", "bottes/80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 391, true),
@@ -10603,7 +10603,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voyageur rayonnant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voyageur rayonnant"); put(Language.EN, "Luminous Traveler's Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp10", "bottes/80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 355, true),
@@ -10615,7 +10615,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur ténébreux (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur ténébreux (Reforgé)"); put(Language.EN, "(Reforged) Shadowy Traveler Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "75pvp11R", "bottes/80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 360, true),
@@ -10627,7 +10627,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur ténébreux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur ténébreux"); put(Language.EN, "Shadowy Traveler's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp11", "bottes/80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 327, true),
@@ -10639,7 +10639,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Grand Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Grand Voyageur"); put(Language.EN, "Lauded Adventurer's Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve10", "bottes/80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -10648,7 +10648,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'éclat de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'éclat de Cristal"); put(Language.EN, "Crystal Shard Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve11", "bottes/80nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 320, true),
@@ -10657,7 +10657,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Puissance du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Puissance du cristal"); put(Language.EN, "Crystal Strength Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus10", "bottes/85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -10666,7 +10666,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur désespéré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur désespéré"); put(Language.EN, "Traveler in Despair Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus11", "bottes/85pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -10675,7 +10675,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de la Puissance du cristal de givre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de la Puissance du cristal de givre"); put(Language.EN, "Frostbitten Crystal Strength Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot10", "bottes/70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -10684,7 +10684,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Roi de la catastrophe"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Roi de la catastrophe"); put(Language.EN, "Lord of Calamity Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot11", "bottes/70pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -10693,7 +10693,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal Mutant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal Mutant"); put(Language.EN, "Mutated Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve10", "bottes/70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -10702,7 +10702,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Roi des profondeurs cristallines"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Roi des profondeurs cristallines"); put(Language.EN, "Crystal Nether King Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve11", "bottes/70pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -10711,7 +10711,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Souliers de Voyageur prismatique (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Souliers de Voyageur prismatique (Reforgé)"); put(Language.EN, "(Reforged) Prismatic Traveler Shoes"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "65pvp10R", "bottes/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 355, true),
@@ -10723,7 +10723,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Voyageur prismatique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Voyageur prismatique"); put(Language.EN, "Prismic Wanderer's Shoes"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp10", "bottes/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 323, true),
@@ -10735,7 +10735,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse spatio-temporelle (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse spatio-temporelle (Reforgé)"); put(Language.EN, "(Reforged) Temporal Genesis Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "65pvp11R", "bottes/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 327, true),
@@ -10747,7 +10747,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse spatio-temporelle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse spatio-temporelle"); put(Language.EN, "Temporal Genesis Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp11", "bottes/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -10759,7 +10759,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Arc-en-Ciel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Arc-en-Ciel"); put(Language.EN, "Radiant Crystal Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve10", "bottes/65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
@@ -10768,7 +10768,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal ténébreux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal ténébreux"); put(Language.EN, "Nebulous Crystal Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve11", "bottes/65pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -10777,7 +10777,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal de célérité"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal de célérité"); put(Language.EN, "Speedy Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus10", "bottes/60pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
@@ -10786,7 +10786,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de l'Esprit du voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de l'Esprit du voyageur"); put(Language.EN, "Traveler's Spirit Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus11", "bottes/60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -10795,7 +10795,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Gemme robuste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Gemme robuste"); put(Language.EN, "Sturdy Crystal Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot10", "bottes/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
@@ -10804,7 +10804,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Malédiction du voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Malédiction du voyageur"); put(Language.EN, "Traveler's Curse Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot11", "bottes/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -10813,7 +10813,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal infini"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal infini"); put(Language.EN, "Infinite Crystalline Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve10", "bottes/60pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
@@ -10822,7 +10822,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voyageur magique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voyageur magique"); put(Language.EN, "Traveling Magician's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve11", "bottes/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 273, true),
@@ -10831,7 +10831,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Souliers d'Ancien du cristal (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Souliers d'Ancien du cristal (Reforgé)"); put(Language.EN, "(Reforged) Crystal Elder Shoes"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "55pvp10R", "bottes/25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 338, true),
@@ -10841,7 +10841,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures d'Ancien du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures d'Ancien du cristal"); put(Language.EN, "Crystal Elder Shoes"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp10", "bottes/25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
@@ -10851,7 +10851,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse cristalline (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse cristalline (Reforgé)"); put(Language.EN, "(Reforged) Crystal Genesis Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "55pvp11R", "bottes/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -10861,7 +10861,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse cristalline"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Genèse cristalline"); put(Language.EN, "Crystal Genesis Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp11", "bottes/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 277, true),
@@ -10871,7 +10871,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur Temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur Temporel"); put(Language.EN, "Time Traveler Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve10", "bottes/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 271, true),
@@ -10880,7 +10880,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Cristal"); put(Language.EN, "Crystal Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve11", "bottes/65pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 244, true),
@@ -10889,7 +10889,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Reforgées du Sage de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Reforgées du Sage de Cristal"); put(Language.EN, "(Reforged) Crystal Sage Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 41, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "45pvp10R", "bottes/45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 284, true),
@@ -10899,7 +10899,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sage de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Sage de Cristal"); put(Language.EN, "Crystal Sage Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 41, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp10", "bottes/45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
@@ -10909,7 +10909,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Reforgées du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Reforgées du Voyageur"); put(Language.EN, "(Reforged) Adventurer's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 41, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "45pvp11R", "bottes/60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 256, true),
@@ -10919,7 +10919,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur"); put(Language.EN, "Traveling Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 41, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp11", "bottes/60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 232, true),
@@ -10929,7 +10929,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal déviant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal déviant"); put(Language.EN, "Devious Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve10", "bottes/65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 238, true),
@@ -10938,7 +10938,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal"); put(Language.EN, "Crystalline Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve11", "bottes/40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 214, true),
@@ -10947,7 +10947,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'ermite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'ermite"); put(Language.EN, "Hermit's Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 29, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "30pve10", "bottes/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 198, true),
@@ -10955,7 +10955,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Reforgés de la Source de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Reforgés de la Source de Cristal"); put(Language.EN, "(Reforged) Crystal Spring Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp10R", "bottes/25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 226, true),
@@ -10965,7 +10965,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Source de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Source de Cristal"); put(Language.EN, "Crystal Spring Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp10", "bottes/25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 205, true),
@@ -10975,7 +10975,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives Reforgées de Runes Sacrificielles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives Reforgées de Runes Sacrificielles"); put(Language.EN, "(Reforged) Sacrificial Rune Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp11R", "bottes/40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 192, true),
@@ -10984,7 +10984,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Runes Sacrificielles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp11", "bottes/40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 174, true),
@@ -10993,7 +10993,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Cristalisées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Cristalisées"); put(Language.EN, "Crystallized Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 19, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "20pve10", "bottes/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 173, true),
@@ -11001,7 +11001,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.FCE, false, 2, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'outremonde réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'outremonde réincarné"); put(Language.EN, "Reincarnated Otherworld Warlock Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "100evo10R", "bottes/97sprite10", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -11085,7 +11085,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 378),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'outremonde"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'outremonde"); put(Language.EN, "Otherworld Warlock Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "100evo10", "bottes/97sprite10", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -11169,7 +11169,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 315),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Pillard réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Pillard réincarné"); put(Language.EN, "Reincarnated Plunderer Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "100evo11R", "bottes/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -11253,7 +11253,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 348),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Pillard"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Pillard"); put(Language.EN, "Plunderer Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "100evo11", "bottes/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -11337,7 +11337,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 290),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'Agate mutante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'Agate mutante"); put(Language.EN, "Mutated Agate Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg10", "bottes/90gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -11348,7 +11348,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 690),
 					new Effect(TypeEffect.PM, false, 610),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'Os de dragon Crystalis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'Os de dragon Crystalis"); put(Language.EN, "Crystalline Dragon Bone Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg11", "bottes/90gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -11359,7 +11359,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 690),
 					new Effect(TypeEffect.PM, false, 610),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal fleuri"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal fleuri"); put(Language.EN, "Carved Flower Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/90gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 410, true),
@@ -11370,7 +11370,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 775),
 					new Effect(TypeEffect.PM, false, 175),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal ultime"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal ultime"); put(Language.EN, "Extreme Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 86, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/86bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 376, true),
@@ -11381,7 +11381,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 325),
 					new Effect(TypeEffect.PM, false, 625),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Gouverneur de l'Espace"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Gouverneur de l'Espace"); put(Language.EN, "Cosmic Governor Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 82, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 397, true),
@@ -11392,7 +11392,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 750),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyeur de l'Espace-Temps"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyeur de l'Espace-Temps"); put(Language.EN, "Spacetime Scientist's Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 82, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
@@ -11403,7 +11403,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 600),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyageur Temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Voyageur Temporel"); put(Language.EN, "Time Traveler Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg10", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 391, true),
@@ -11414,7 +11414,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 560),
 					new Effect(TypeEffect.PM, false, 480),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal dégénéré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal dégénéré"); put(Language.EN, "Depraved Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg11", "bottes/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 359, true),
@@ -11425,7 +11425,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 560),
 					new Effect(TypeEffect.PM, false, 480),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Combat de Chamana du Vide"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Combat de Chamana du Vide"); put(Language.EN, "Abyssal Plain Battle Shoes"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -11436,7 +11436,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 700),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Occultiste réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Occultiste réincarné"); put(Language.EN, "Reincarnated Occulist Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "90evo10R", "bottes/82sprite10", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -11560,7 +11560,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 336),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Occultiste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Occultiste"); put(Language.EN, "Occulist Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90evo10", "bottes/82sprite10", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -11684,7 +11684,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 280),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Augure réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Augure réincarné"); put(Language.EN, "Reincarnated Augerer Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "90evo11R", "bottes/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -11808,7 +11808,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 324),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Augure"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives d'Augure"); put(Language.EN, "Augerer Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90evo11", "bottes/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -11932,7 +11932,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 270),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Combat du Domaine du Temps Solitaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Combat du Domaine du Temps Solitaire"); put(Language.EN, "Lonely Temporal Realm Battle Shoes"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 347, true),
@@ -11943,7 +11943,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 550),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures d'Augure aux inscriptions anciennes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures d'Augure aux inscriptions anciennes"); put(Language.EN, "Ancient Inscription Shoes"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 72, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
@@ -11954,7 +11954,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 550),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Magie de Glace"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de Magie de Glace"); put(Language.EN, "Frostbite Shoes"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 71, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
@@ -11965,7 +11965,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 650),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'univers éternel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'univers éternel"); put(Language.EN, "Eternal Expanse Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg10", "bottes/82bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
@@ -11976,7 +11976,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal d'éternité"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Cristal d'éternité"); put(Language.EN, "Eternal Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg11", "bottes/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
@@ -11987,7 +11987,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Maître Demis réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Maître Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Master Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "75evo10R", "bottes/75evo10", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -12111,7 +12111,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de maître Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de maître Demis"); put(Language.EN, "Dimensional Master Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "75evo10", "bottes/75evo10", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -12235,7 +12235,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines évolutives de Maître Chronos réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines évolutives de Maître Chronos réincarné"); put(Language.EN, "Reincarnated Chronomaster Soul Short Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "75evo11R", "bottes/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -12359,7 +12359,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines évolutives de Maître Chronos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines évolutives de Maître Chronos"); put(Language.EN, "Chronomaster Soul Short Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "75evo11", "bottes/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -12483,7 +12483,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes régénératrices du Voyageur étranger"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes régénératrices du Voyageur étranger"); put(Language.EN, "Exotic Ranger's Recharge Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/46sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 329, true),
@@ -12494,7 +12494,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Briseuses d'Os du Juge de l'Espace-Temps"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Briseuses d'Os du Juge de l'Espace-Temps"); put(Language.EN, "Spacetime Judge's Bonecrusher Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -12505,7 +12505,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Messager accordeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Messager accordeur"); put(Language.EN, "Tuning Messenger Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/75evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
@@ -12516,7 +12516,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 140),
 					new Effect(TypeEffect.PM, false, 260),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Pirate Solaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Pirate Solaire"); put(Language.EN, "Sun Pirate Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/75evo11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 255, true),
@@ -12527,7 +12527,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 160),
 					new Effect(TypeEffect.PM, false, 240),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottines en Cristal"); put(Language.EN, "Crystalline Short Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 39, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/39bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
@@ -12536,7 +12536,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.PV, false, 40),
 					new Effect(TypeEffect.PM, false, 210),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal du Voyageur"); put(Language.EN, "Wanderer's Crystalline Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 30, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 212, true),
@@ -12544,7 +12544,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Demis réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "60evo10R", "bottes/39bleu11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -12778,7 +12778,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 252),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives Demis"); put(Language.EN, "Dimensional Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "60evo10", "bottes/39bleu11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -13012,7 +13012,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 210),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Chronos réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Chronos réincarné"); put(Language.EN, "Reincarnated Chrono Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "60evo11R", "bottes/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -13246,7 +13246,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 276),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Chronos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Chronos"); put(Language.EN, "Chrono Soul Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "60evo11", "bottes/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -13480,7 +13480,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, false, 230),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Voyageur réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Voyageur réincarné"); put(Language.EN, "Reincarnated Traveler's Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, true,
 				ArmorType.BOTTE, "30evo10R", "bottes/30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -13634,7 +13634,7 @@ class LoaderBoot {
 						new Effect(TypeEffect.INT, false, 6, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives du Voyageur"); put(Language.EN, "Traveler's Soul Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "30evo10", "bottes/30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -13788,191 +13788,191 @@ class LoaderBoot {
 						new Effect(TypeEffect.INT, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de la Marque du Temps des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de la Marque du Temps des Sprites"); put(Language.EN, "Sprite's Timestamp Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 97, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/97sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
 					new Effect(TypeEffect.DefM, false, 495, true),
 					new Effect(TypeEffect.VOL, false, 14, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Illusion du Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Illusion du Sprite"); put(Language.EN, "Sprite's Illusory Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 92, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/92sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
 					new Effect(TypeEffect.DefM, false, 477, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Rune de Cristal de Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Rune de Cristal de Sprite"); put(Language.EN, "Sprite's Crystal Rune Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 87, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/87sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
 					new Effect(TypeEffect.DefM, false, 459, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'Enchantement du Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat d'Enchantement du Sprite"); put(Language.EN, "Sprite's Enchantment Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 82, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 358, true),
 					new Effect(TypeEffect.DefM, false, 440, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Sprite à propagation"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal Sprite à propagation"); put(Language.EN, "Sprite's Flattened Crystalline Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 77, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
 					new Effect(TypeEffect.DefM, false, 422, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Magiques des Sprites"); put(Language.EN, "Sprite's Magic Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 72, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
 					new Effect(TypeEffect.DefM, false, 691, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de rune des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de rune des Sprites"); put(Language.EN, "Sprite's Rune Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 67, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
 					new Effect(TypeEffect.DefM, false, 659, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Messager Chorno des Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Messager Chorno des Sprite"); put(Language.EN, "Sprite's Chrono Messenger Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 62, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
 					new Effect(TypeEffect.DefM, false, 366, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal brisé des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal brisé des Sprites"); put(Language.EN, "Sprite's Shattered Crystal Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 56, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/39bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
 					new Effect(TypeEffect.DefM, false, 342, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Clé Spatiale"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Clé Spatiale"); put(Language.EN, "Space Spanner's Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 54, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/46sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
 					new Effect(TypeEffect.DefM, false, 344, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Clé Temporelle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de la Clé Temporelle"); put(Language.EN, "Time Spanner's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 54, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/60evo11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 252, true),
 					new Effect(TypeEffect.DefM, false, 310, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sanctification des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 46, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/46sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 247, true),
 					new Effect(TypeEffect.DefM, false, 304, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Sanctification des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 36, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 216, true),
 					new Effect(TypeEffect.DefM, false, 265, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal à grain des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal à grain des Sprites"); put(Language.EN, "Sprite's Crystal Grain Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 26, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 177, true),
 					new Effect(TypeEffect.DefM, false, 223, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal léger des Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal léger des Sprites"); put(Language.EN, "Sprite's Slender Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 16, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 152, true),
 					new Effect(TypeEffect.DefM, false, 177, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des anomalies Sprites"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes des anomalies Sprites"); put(Language.EN, "Sprite's Odd Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", "bottes/9sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 129, true),
 					new Effect(TypeEffect.DefM, false, 139, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Souffle Exotique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Souffle Exotique"); put(Language.EN, "Exotic Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 81, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 325, true),
 					new Effect(TypeEffect.DefM, false, 307, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Solitaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat du Solitaire"); put(Language.EN, "Lonely Combat Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 81, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
 					new Effect(TypeEffect.DefM, false, 272, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Souffle Exotique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Souffle Exotique"); put(Language.EN, "Exotic Crumbling Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 66, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 288, true),
 					new Effect(TypeEffect.DefM, false, 272, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voleur de Soleil"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Voleur de Soleil"); put(Language.EN, "Sun Thief's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 66, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/82bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 264, true),
 					new Effect(TypeEffect.DefM, false, 241, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal brisé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Cristal brisé"); put(Language.EN, "Shattered Crystal Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 53, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/39bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 250, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sanctification"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Sanctification"); put(Language.EN, "Sanctified Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 43, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/46sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 222, true),
 					new Effect(TypeEffect.DefM, false, 212, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Sanctification"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Sanctification"); put(Language.EN, "Sanctified Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 33, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/62sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 173, true),
 					new Effect(TypeEffect.DefM, false, 184, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Idole secrète"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Idole secrète"); put(Language.EN, "Idol's Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 28, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 167, true),
 					new Effect(TypeEffect.DefM, false, 163, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal à grain"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal à grain"); put(Language.EN, "Crystal Grain Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 23, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 157, true),
 					new Effect(TypeEffect.DefM, false, 153, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Cristallines"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Cristallines"); put(Language.EN, "Crystalline Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 148, true),
 					new Effect(TypeEffect.DefM, false, 145, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Runiques"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Runiques"); put(Language.EN, "Runic Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 16, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 138, true),
 					new Effect(TypeEffect.DefM, false, 124, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal léger"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat de Cristal léger"); put(Language.EN, "Slender Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 13, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/9sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 131, true),
 					new Effect(TypeEffect.DefM, false, 117, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Voyageur"); put(Language.EN, "Traveling Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", "bottes/9sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 122, true),
@@ -13983,7 +13983,7 @@ class LoaderBoot {
 	
 	private static Armor[] getAll() {
 		return new Armor[] {
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Marche de Résistance suprême de Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Marche de Résistance suprême de Tarot"); put(Language.EN, "Taro - Emperor's March"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100tarot0", "bottes/100tarot0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -13992,7 +13992,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 27, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Système de Roue de la fortune de Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Système de Roue de la fortune de Tarot"); put(Language.EN, "Taro - Wheel of Fortune's System"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100tarot1", "bottes/100tarot1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 518, true),
@@ -14001,7 +14001,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaîne de cheville de Sombre présage de Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chaîne de cheville de Sombre présage de Tarot"); put(Language.EN, "Taro - Death's Foot Binding"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100tarot2", "bottes/100tarot2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 471, true),
@@ -14010,7 +14010,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 31, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Force Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Force Tarot"); put(Language.EN, "Taro Strength's Domination"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 93, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "95tarot0", "bottes/95tarot0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 545, true),
@@ -14019,7 +14019,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Zodiaque Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes Zodiaque Tarot"); put(Language.EN, "Taro Zodiac's Journey"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 93, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "95tarot1", "bottes/95tarot1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 409, true),
@@ -14028,7 +14028,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 21, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes clair de lune Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes clair de lune Tarot"); put(Language.EN, "Taro Moon's Revival"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 93, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "95tarot2", "bottes/95tarot2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 556, true),
@@ -14037,7 +14037,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 27, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Adieux de l'Amant Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Adieux de l'Amant Tarot"); put(Language.EN, "Taro Lover Farewell"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90tarot0", "bottes/90tarot0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 525, true),
@@ -14046,7 +14046,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 22, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Course Folle du Démon Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Course Folle du Démon Tarot"); put(Language.EN, "Taro Demon Dash"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90tarot1", "bottes/90tarot1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 394, true),
@@ -14055,7 +14055,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 24, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Vitesse de l'Ermite Tarot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Vitesse de l'Ermite Tarot"); put(Language.EN, "Taro Hermit Stealth"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90tarot2", "bottes/90tarot2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 437, true),

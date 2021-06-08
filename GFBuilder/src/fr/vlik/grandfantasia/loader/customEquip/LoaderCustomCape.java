@@ -94,7 +94,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 87, true),
 					new Effect(TypeEffect.Toucher, false, 14),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Gardien Violent"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Gardien Violent"); put(Language.EN, "Violent Guardian Cape"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
 				85, "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 115, true),
@@ -232,7 +232,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 101, true),
 					new Effect(TypeEffect.Toucher, false, 16),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Feuille d'Automne"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Feuille d'Automne"); put(Language.EN, "Autumn Leaf Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
 				95, "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),
@@ -253,7 +253,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 97, true),
 					new Effect(TypeEffect.Toucher, false, 14),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Rôdeur Rapide"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Rôdeur Rapide"); put(Language.EN, "Shadowglide Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
 				85, "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 96, true),
@@ -299,7 +299,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 78, true),
 					new Effect(TypeEffect.DefM, false, 74, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Promeneur Céleste"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Promeneur Céleste"); put(Language.EN, "Skywalker Mantle"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
 				55, "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 74, true),
@@ -311,7 +311,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 74, true),
 					new Effect(TypeEffect.DefM, false, 70, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'Ombre Rapide"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'Ombre Rapide"); put(Language.EN, "Swift Shadow Mantle"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
 				55, "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 74, true),
@@ -335,7 +335,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 67, true),
 					new Effect(TypeEffect.DefM, false, 64, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Manteau Aile de Dragon"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Manteau Aile de Dragon"); put(Language.EN, "Dragonwing Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
 				47, "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 67, true),
@@ -412,7 +412,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 85, true),
 					new Effect(TypeEffect.Toucher, false, 14),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Voyant du Monde"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Voyant du Monde"); put(Language.EN, "Worldseer Cape"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
 				85, "green0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 105, true),
@@ -550,7 +550,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 88, true),
 					new Effect(TypeEffect.Toucher, false, 16),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Gel Hivernal"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape du Gel Hivernal"); put(Language.EN, "Winter Frost Cape"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
 				95, "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 92, true),
@@ -571,7 +571,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 85, true),
 					new Effect(TypeEffect.Toucher, false, 14),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de la Genèse Sombre"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de la Genèse Sombre"); put(Language.EN, "Dark Genesis Cape"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
 				85, "black1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 86, true),
@@ -635,7 +635,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 66, true),
 					new Effect(TypeEffect.DefM, false, 62, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Manteau Légendaire"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Manteau Légendaire"); put(Language.EN, "Legendary Cape"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
 				55, "green1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 66, true),
@@ -653,7 +653,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 61, true),
 					new Effect(TypeEffect.DefM, false, 58, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de Chauve-Souris Fantôme"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de Chauve-Souris Fantôme"); put(Language.EN, "Devil Bat Cape"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
 				47, "red1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 61, true),
@@ -665,7 +665,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 55, true),
 					new Effect(TypeEffect.DefM, false, 52, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle"); put(Language.EN, "Secret Workings Cape"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
 				39, "blue", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 55, true),
@@ -677,7 +677,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 48, true),
 					new Effect(TypeEffect.DefM, false, 46, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de l'Amuseur"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de l'Amuseur"); put(Language.EN, "Entertainer's Cape"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
 				31, "blue", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 47, true),
@@ -702,7 +702,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefM, false, 105, true),
 					new Effect(TypeEffect.Toucher, false, 18),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle d'Éole soufflant"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle d'Éole soufflant"); put(Language.EN, "Northwind Cape"); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				100, "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 127, true),
@@ -770,7 +770,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 96, true),
 					new Effect(TypeEffect.DefM, false, 93, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle du Voyage solitaire"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle du Voyage solitaire"); put(Language.EN, "Wanderer's Cape"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				85, "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 115, true),
@@ -789,7 +789,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 92, true),
 					new Effect(TypeEffect.DefM, false, 90, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle des Pleurs des Enfers"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle des Pleurs des Enfers"); put(Language.EN, "Underworld Cape"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				80, "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 111, true),
@@ -808,7 +808,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 89, true),
 					new Effect(TypeEffect.DefM, false, 86, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de Neige exotique"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de Neige exotique"); put(Language.EN, "Whiteout Cape"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				75, "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 106, true),
@@ -827,7 +827,7 @@ public class LoaderCustomCape {
 					new Effect(TypeEffect.DefP, false, 85, true),
 					new Effect(TypeEffect.DefM, false, 82, true),
 				}),
-			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de pouvoir réformé"); put(Language.EN, ""); }},
+			new CustomCape(new HashMap<Language, String>() {{ put(Language.FR, "Châle de pouvoir réformé"); put(Language.EN, "Transformative Cape"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				70, "purple2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),

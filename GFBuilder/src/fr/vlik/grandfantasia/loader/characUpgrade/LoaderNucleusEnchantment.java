@@ -756,7 +756,7 @@ public class LoaderNucleusEnchantment {
 						new Effect(TypeEffect.AGI, 3, TypeEffect.PM, TypeCalcul.CONVERTBASE),
 					},
 				}),
-			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur"); put(Language.EN, ""); }},
+			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur"); put(Language.EN, "Overlord"); }},
 				new Calculable[][] {
 					new Calculable[] {
 						new Effect(TypeEffect.FCE, true, 1, TypeCalcul.CONVERTBASE),
@@ -794,7 +794,7 @@ public class LoaderNucleusEnchantment {
 						new Effect(TypeEffect.AGI, true, 5, TypeCalcul.CONVERTBASE),
 					},
 				}),
-			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Cruauté"); put(Language.EN, ""); }},
+			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Cruauté"); put(Language.EN, "Cruel"); }},
 				new Calculable[][] {
 					new Calculable[] {
 						new StaticEffect(TypeStaticEffect.x2Skill, 7),
@@ -812,7 +812,7 @@ public class LoaderNucleusEnchantment {
 						new StaticEffect(TypeStaticEffect.x2Skill, 7),
 					},
 				}),
-			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Brute"); put(Language.EN, ""); }},
+			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Brute"); put(Language.EN, "Brute"); }},
 				new Calculable[][] {
 					new Calculable[] {
 						new Effect(TypeEffect.DegP_old, false, 1),
@@ -830,7 +830,7 @@ public class LoaderNucleusEnchantment {
 						new Effect(TypeEffect.DegP_old, false, 5),
 					},
 				}),
-			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Sagesse"); put(Language.EN, ""); }},
+			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Sagesse"); put(Language.EN, "Sagacious"); }},
 				new Calculable[][] {
 					new Calculable[] {
 						new Effect(TypeEffect.DegM_old, false, 1),

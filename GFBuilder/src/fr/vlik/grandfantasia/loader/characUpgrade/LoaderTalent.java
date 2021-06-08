@@ -740,27 +740,37 @@ public class LoaderTalent {
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Peau Rêche et Chair Dure"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "0-6", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 8),
-					new Effect(TypeEffect.NONE, false, 0),
+					new Effect(TypeEffect.ReducStdP, false, 8),
+					new Effect(TypeEffect.ReducStdD, false, 8),
+					new Effect(TypeEffect.ReducSkillP, false, 8),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.ReducP_old, false, 13),
-					new Effect(TypeEffect.NONE, false, 0),
+					new Effect(TypeEffect.ReducStdP, false, 8),
+					new Effect(TypeEffect.ReducStdD, false, 8),
+					new Effect(TypeEffect.ReducSkillP, false, 8),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 18),
-					new Effect(TypeEffect.NONE, false, 0),
+					new Effect(TypeEffect.ReducStdP, false, 18),
+					new Effect(TypeEffect.ReducStdD, false, 18),
+					new Effect(TypeEffect.ReducSkillP, false, 18),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 18),
+					new Effect(TypeEffect.ReducStdP, false, 18),
+					new Effect(TypeEffect.ReducStdD, false, 18),
+					new Effect(TypeEffect.ReducSkillP, false, 18),
 					new Effect(TypeEffect.DefP, true, 5),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 18),
+					new Effect(TypeEffect.ReducStdP, false, 18),
+					new Effect(TypeEffect.ReducStdD, false, 18),
+					new Effect(TypeEffect.ReducSkillP, false, 18),
 					new Effect(TypeEffect.DefP, true, 8),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 18),
+					new Effect(TypeEffect.ReducStdP, false, 18),
+					new Effect(TypeEffect.ReducStdD, false, 18),
+					new Effect(TypeEffect.ReducSkillP, false, 18),
 					new Effect(TypeEffect.DefP, true, 11),
 				},
 			}),
@@ -830,27 +840,27 @@ public class LoaderTalent {
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Volonté de Fer"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "1-10", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.ReducM_old, false, 14),
+					new Effect(TypeEffect.ReducSkillM, false, 14),
 					new Effect(TypeEffect.VitComp, false, 20),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducM_old, false, 18),
+					new Effect(TypeEffect.ReducSkillM, false, 18),
 					new Effect(TypeEffect.VitComp, false, 30),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducM_old, false, 22),
+					new Effect(TypeEffect.ReducSkillM, false, 22),
 					new Effect(TypeEffect.VitComp, false, 40),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducM_old, false, 23),
+					new Effect(TypeEffect.ReducSkillM, false, 23),
 					new Effect(TypeEffect.VitComp, false, 50),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducM_old, false, 24),
+					new Effect(TypeEffect.ReducSkillM, false, 24),
 					new Effect(TypeEffect.VitComp, false, 60),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ReducM_old, false, 25),
+					new Effect(TypeEffect.ReducSkillM, false, 25),
 					new Effect(TypeEffect.VitComp, false, 70),
 				},
 			}),
@@ -916,15 +926,15 @@ public class LoaderTalent {
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Règne de Glace"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "1-15", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.Glace, false, 20),
-					new Effect(TypeEffect.ReducM_old, false, 4),
+					new Effect(TypeEffect.ReducSkillM, false, 4),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Glace, false, 20),
-					new Effect(TypeEffect.ReducM_old, false, 5),
+					new Effect(TypeEffect.ReducSkillM, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Glace, false, 30),
-					new Effect(TypeEffect.ReducM_old, false, 6),
+					new Effect(TypeEffect.ReducSkillM, false, 6),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Création de Menace"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-19", new Calculable[][] {
@@ -989,15 +999,18 @@ public class LoaderTalent {
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Bataille Lumineuse"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "1-20", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.Sacre, false, 20),
-					new Effect(TypeEffect.DegP_old, false, 5),
+					new Effect(TypeEffect.DegStdP, false, 5),
+					new Effect(TypeEffect.DegSkillP, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Sacre, false, 20),
-					new Effect(TypeEffect.DegP_old, false, 6),
+					new Effect(TypeEffect.DegStdP, false, 6),
+					new Effect(TypeEffect.DegSkillP, false, 6),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Sacre, false, 30),
-					new Effect(TypeEffect.DegP_old, false, 7),
+					new Effect(TypeEffect.DegStdP, false, 7),
+					new Effect(TypeEffect.DegSkillP, false, 7),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Garde Spéciale"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-18", new Calculable[][] {
@@ -2274,16 +2287,19 @@ public class LoaderTalent {
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Pouvoir Divin"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-19", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.DegP_old, true, 5),
 					new Effect(TypeEffect.VOL, false, 15),
+					new Effect(TypeEffect.DegStdP, false, 5),
+					new Effect(TypeEffect.DegSkillP, false, 5),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.DegP_old, true, 10),
 					new Effect(TypeEffect.VOL, false, 15),
+					new Effect(TypeEffect.DegStdP, false, 10),
+					new Effect(TypeEffect.DegSkillP, false, 10),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.DegP_old, true, 15),
 					new Effect(TypeEffect.VOL, false, 20),
+					new Effect(TypeEffect.DegStdP, false, 15),
+					new Effect(TypeEffect.DegSkillP, false, 15),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Énergie du Sacré"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "3-21", new Calculable[][] {

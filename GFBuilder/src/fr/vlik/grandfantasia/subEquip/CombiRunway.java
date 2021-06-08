@@ -1,14 +1,14 @@
-package fr.vlik.grandfantasia.equipUpgrade;
+package fr.vlik.grandfantasia.subEquip;
 
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
-import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
+import fr.vlik.grandfantasia.loader.subEquip.LoaderSubEquip;
 
 public class CombiRunway implements Writable {
 	
-	public static CombiRunway[] data = LoaderEquipUpgrade.getCombiRunway();
+	public static CombiRunway[] data = LoaderSubEquip.getCombiRunway();
 	
 	private Map<Language, String> name;
 	private Runway[] runways;

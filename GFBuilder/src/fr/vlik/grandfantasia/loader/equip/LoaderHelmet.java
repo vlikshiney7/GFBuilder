@@ -62,7 +62,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Tremblement de terre"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red0", "casques/90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 830, true),
@@ -94,7 +94,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red1", "casques/90red1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 846, true),
@@ -126,7 +126,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fierté pétrifiante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fierté pétrifiante"); put(Language.EN, "Petrifying Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio0", "casques/100vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 851, true),
@@ -135,7 +135,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.AGI, false, 25, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Immortalité du damné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Immortalité du damné"); put(Language.EN, "Immortal Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio1", "casques/100vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1026, true),
@@ -144,7 +144,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.VOL, false, 28, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Seigneur Arlong"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Seigneur Arlong"); put(Language.EN, "Berserk Warlord Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio0", "casques/90vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 794, true),
@@ -153,7 +153,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Templier Résolu"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Templier Résolu"); put(Language.EN, "Resolute Templar Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio1", "casques/90vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 810, true),
@@ -162,7 +162,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 25, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque belliqueux d'Aiolia"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque belliqueux d'Aiolia"); put(Language.EN, "Belligerent Rider Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio0", "casques/80vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 741, true),
@@ -171,7 +171,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Défenseur Voldo"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Défenseur Voldo"); put(Language.EN, "Rampager Defender Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio1", "casques/80vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 756, true),
@@ -180,7 +180,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque puissant de Khal Drogo"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque puissant de Khal Drogo"); put(Language.EN, "Ravaging Destroyer's Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold0", "casques/100gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 819, true),
@@ -189,7 +189,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque épique de Brienne"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque épique de Brienne"); put(Language.EN, "Holy Oath's Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold1", "casques/100gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 983, true),
@@ -198,7 +198,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Sanguinaire Kenpachi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Sanguinaire Kenpachi"); put(Language.EN, "Proud Berserker Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold0", "casques/90gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 761, true),
@@ -207,7 +207,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Vertueux de Parsifal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold1", "casques/90gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 776, true),
@@ -216,7 +216,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Vengeance de Mordred"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Vengeance de Mordred"); put(Language.EN, "Fiery Warrior Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold0", "casques/80gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 703, true),
@@ -225,7 +225,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Châtiment de Baldur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Châtiment de Baldur"); put(Language.EN, "Spirit Shock Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold1", "casques/80gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 717, true),
@@ -234,7 +234,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Apostat"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Apostat"); put(Language.EN, "Unholy Frenzy Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp0", "casques/100pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 781, true),
@@ -245,7 +245,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Gardien éclairé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Gardien éclairé"); put(Language.EN, "Light Guardian's Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp1", "casques/100pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 937, true),
@@ -256,7 +256,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Héros Bestial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Héros Bestial"); put(Language.EN, "Beast Warrior Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve0", "casques/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 743, true),
@@ -265,7 +265,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque à Plume Verte"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque à Plume Verte"); put(Language.EN, "Green Feather Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve1", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 891, true),
@@ -274,7 +274,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Courroux Sanguinaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Courroux Sanguinaire"); put(Language.EN, "Blood Wrath Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp0", "casques/95pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 716, true),
@@ -285,7 +285,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Bouclier du Monde Encyclique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Bouclier du Monde Encyclique"); put(Language.EN, "Planetary Shield Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp1", "casques/95pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 859, true),
@@ -296,7 +296,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Explorateur Fondu"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Explorateur Fondu"); put(Language.EN, "Molten Explorer Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve0", "casques/95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 716, true),
@@ -305,7 +305,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Chevalier Béni"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Chevalier Béni"); put(Language.EN, "Blessed Knight Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 859, true),
@@ -314,7 +314,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Feu Fanatique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Feu Fanatique"); put(Language.EN, "Fanatical Fire Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve0", "casques/90pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 690, true),
@@ -323,7 +323,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque aux Ailes Divines"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque aux Ailes Divines"); put(Language.EN, "Divine Wings Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve1", "casques/90pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 704, true),
@@ -332,7 +332,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur du Hokuto"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur du Hokuto"); put(Language.EN, "Shura's Wrath Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp0", "casques/85pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 663, true),
@@ -343,7 +343,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Vindicateur Shichibukai"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Vindicateur Shichibukai"); put(Language.EN, "Heavenly Shield Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp1", "casques/85pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 676, true),
@@ -354,7 +354,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Âme de l'Ours Terrifiant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Âme de l'Ours Terrifiant"); put(Language.EN, "Shark's Frenzy Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve0", "casques/85pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 663, true),
@@ -363,7 +363,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Âme du Lion Glorieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Âme du Lion Glorieux"); put(Language.EN, "Sunbeam Crest Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve1", "casques/85pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 676, true),
@@ -372,7 +372,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Dieu de la Guerre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Dieu de la Guerre"); put(Language.EN, "Ares Impact Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus0", "casques/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
@@ -381,7 +381,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Thaumaturge Exalté"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Thaumaturge Exalté"); put(Language.EN, "Sundering Blow Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus1", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 649, true),
@@ -390,7 +390,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Hurlement Divin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Hurlement Divin"); put(Language.EN, "Violent Mars Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot0", "casques/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
@@ -399,7 +399,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Voix de la Création"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Voix de la Création"); put(Language.EN, "Kingstrike Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot1", "casques/80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 649, true),
@@ -408,7 +408,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Furie du Maître"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Furie du Maître"); put(Language.EN, "Fury Master Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve0", "casques/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
@@ -417,7 +417,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Colère Divine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Colère Divine"); put(Language.EN, "Divine Impact Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve1", "casques/80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 649, true),
@@ -426,7 +426,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Puissance d'Héraclès (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Puissance d'Héraclès (Reforgé)"); put(Language.EN, "(Reforged) Emperor of Destruction Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp0R", "casques/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 670, true),
@@ -437,7 +437,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Puissance d'Héraclès"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Puissance d'Héraclès"); put(Language.EN, "Emperor of Destruction Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp0", "casques/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -448,7 +448,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Kabuto d'Ardeur de Zatoichi (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Kabuto d'Ardeur de Zatoichi (Reforgé)"); put(Language.EN, "(Reforged) Infinite Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp1R", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 683, true),
@@ -459,7 +459,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Kabuto d'Ardeur de Zatoichi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Kabuto d'Ardeur de Zatoichi"); put(Language.EN, "Infinite Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp1", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 621, true),
@@ -470,7 +470,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fureur du Berserker"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fureur du Berserker"); put(Language.EN, "Supreme War Deity Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve0", "casques/75pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -479,7 +479,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Guerrier Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Guerrier Céleste"); put(Language.EN, "Heavenly Warrior Headdress"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve1", "casques/75pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 621, true),
@@ -488,7 +488,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Armée Sanguinaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Armée Sanguinaire"); put(Language.EN, "Crushing Gladiator Mask"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus0", "casques/70nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -497,7 +497,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de la Licorne Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de la Licorne Céleste"); put(Language.EN, "Iron Wall Rider Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus1", "casques/70nucleus1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 594, true),
@@ -506,7 +506,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Soif de Mort"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Soif de Mort"); put(Language.EN, "Determined Gladiator Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot0", "casques/70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -515,7 +515,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Chevalier des Saints"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Chevalier des Saints"); put(Language.EN, "Blitzing Rider Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot1", "casques/70pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 594, true),
@@ -524,7 +524,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Guerrier Suprême"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Guerrier Suprême"); put(Language.EN, "Supreme Warrior Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve0", "casques/70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -533,7 +533,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Pureté du Paladin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Pureté du Paladin"); put(Language.EN, "King's Heart Headdress"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve1", "casques/70pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 594, true),
@@ -542,7 +542,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visière de Stratégie de Sun Tzu (Reforgée)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visière de Stratégie de Sun Tzu (Reforgée)"); put(Language.EN, "(Reforged) Emperor of Terror Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp0R", "casques/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -553,7 +553,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visière de Stratégie de Sun Tzu"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visière de Stratégie de Sun Tzu"); put(Language.EN, "Emperor of Terror Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp0", "casques/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
@@ -564,7 +564,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Vertu de Galahad (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Vertu de Galahad (Reforgé)"); put(Language.EN, "(Reforged) Immovable Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp1R", "casques/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 622, true),
@@ -575,7 +575,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Vertu de Galahad"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Vertu de Galahad"); put(Language.EN, "Immovable Defense Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp1", "casques/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -586,7 +586,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Boucher de Saphaël"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Boucher de Saphaël"); put(Language.EN, "Blood Frenzy Battle Mask"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve0", "casques/95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
@@ -595,7 +595,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Chevalier de l'Eclipse Blanche"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Chevalier de l'Eclipse Blanche"); put(Language.EN, "White Eclipse Knight Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve1", "casques/65pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -604,7 +604,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Marquis du Chaos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Marquis du Chaos"); put(Language.EN, "Marquis of Slaughter Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus0", "casques/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -612,7 +612,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Juge Impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Juge Impérial"); put(Language.EN, "Imperial Inquisitor Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus1", "casques/65pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 538, true),
@@ -620,7 +620,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Marquis de Destruction"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Marquis de Destruction"); put(Language.EN, "Marquis of Destruction Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot0", "casques/95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -628,7 +628,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Gardien Impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Gardien Impérial"); put(Language.EN, "Imperial Guardian Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot1", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 538, true),
@@ -636,7 +636,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Marquis de l'ombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Marquis de l'ombre"); put(Language.EN, "Dark Marquis Crown"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve0", "casques/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 521, true),
@@ -644,7 +644,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 9, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne du Duc Impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne du Duc Impérial"); put(Language.EN, "Imperial Duke Crown"); }},
 				new GradeName[] { GradeName.PALADIN, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 521, true),
@@ -652,7 +652,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Roi Diabolique (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Roi Diabolique (Reforgé)"); put(Language.EN, "(Reforged) Majin King Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp0R", "casques/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 585, true),
@@ -661,7 +661,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Roi Diabolique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Roi Diabolique"); put(Language.EN, "Majin King Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp0", "casques/65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 532, true),
@@ -670,7 +670,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense absolue (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense absolue (Reforgé)"); put(Language.EN, "(Reforged) Absolute Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp1R", "casques/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 580, true),
@@ -679,7 +679,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense Complète"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense Complète"); put(Language.EN, "Absolute Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp1", "casques/65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -688,7 +688,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Destructeur à Lame d'Acier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Destructeur à Lame d'Acier"); put(Language.EN, "Steel Destruction Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve0", "casques/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -696,7 +696,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Destructeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Destructeur"); put(Language.EN, "Saboteur Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve1", "casques/50pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -704,7 +704,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Général Diabolique (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Général Diabolique (Reforgé)"); put(Language.EN, "(Reforged) Majin General's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 45, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp0R", "casques/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 492, true),
@@ -713,7 +713,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Général Diabolique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Général Diabolique"); put(Language.EN, "Majin General's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 45, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "45pvp0", "casques/80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 447, true),
@@ -722,7 +722,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense Parfaite (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense Parfaite (Reforgé)"); put(Language.EN, "(Reforged) Perfect Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 45, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp1R", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 487, true),
@@ -731,7 +731,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense Parfaite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Défense Parfaite"); put(Language.EN, "Perfect Defense Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 45, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "45pvp1", "casques/100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 442, true),
@@ -740,7 +740,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Guerrier robuste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Guerrier robuste"); put(Language.EN, "Heavy Warrior's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve0", "casques/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -748,7 +748,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Chevalier du Fort"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Chevalier du Fort"); put(Language.EN, "Fortress Knight Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve1", "casques/40pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -756,7 +756,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Officier tactique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Officier tactique"); put(Language.EN, "Tactical Officer's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 31, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "30pve0", "casques/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
@@ -764,7 +764,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Hurlement de Conan (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Hurlement de Conan (Reforgé)"); put(Language.EN, "(Reforged) Armored Wolf Howl Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp0R", "casques/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -773,7 +773,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Hurlement de Conan"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Hurlement de Conan"); put(Language.EN, "Armored Wolf Howl Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp0", "casques/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -782,7 +782,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Défense de Lancelot (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Défense de Lancelot (Reforgé)"); put(Language.EN, "(Reforged) Rider Defense Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp1R", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 433, true),
@@ -791,7 +791,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Défense de Lancelot"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Défense de Lancelot"); put(Language.EN, "Rider Defense Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 393, true),
@@ -800,7 +800,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Garde d'Elite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Garde d'Elite"); put(Language.EN, "Elite Guard's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 21, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "20pve0", "casques/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 296, true),
@@ -808,7 +808,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Destructeur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Destructeur (Réincarné)"); put(Language.EN, "(Reincarnated) Destroyer's Soul Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo0R", "casques/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -892,7 +892,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 276),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de Destructeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de Destructeur"); put(Language.EN, "Destroyer's Soul Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo0", "casques/65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -976,7 +976,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 230),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Croisé (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Croisé (Réincarné)"); put(Language.EN, "(Reincarnated) Holy Knight's Soul Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo1R", "casques/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1060,7 +1060,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 522),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Croisé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Croisé"); put(Language.EN, "Holy Knight's Soul Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo1", "casques/100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1144,7 +1144,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 435),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Âme du Tigre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Âme du Tigre"); put(Language.EN, "Voracious Wartiger Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg0", "casques/80gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 725, true),
@@ -1154,7 +1154,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 840),
 					new Effect(TypeEffect.PM, false, 460),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Rhino Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Rhino Céleste"); put(Language.EN, "Sacred Sky Rhino Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg1", "casques/80gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 740, true),
@@ -1164,7 +1164,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 940),
 					new Effect(TypeEffect.PM, false, 360),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Gladiateur des Neiges"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Gladiateur des Neiges"); put(Language.EN, "Blizzard Warlord Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 87, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 709, true),
@@ -1173,7 +1173,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.PV, false, 950),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Cavalier Bestial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Cavalier Bestial"); put(Language.EN, "Beast Rider Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 86, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 717, true),
@@ -1183,7 +1183,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 625),
 					new Effect(TypeEffect.PM, false, 325),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Rage du Minotaure"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Rage du Minotaure"); put(Language.EN, "Bloodthirsty Berserker Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg0", "casques/80gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 670, true),
@@ -1193,7 +1193,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 710),
 					new Effect(TypeEffect.PM, false, 330),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Force des Titans"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Force des Titans"); put(Language.EN, "Radiant Wing Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg1", "casques/80gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 683, true),
@@ -1203,7 +1203,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 810),
 					new Effect(TypeEffect.PM, false, 230),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Bataille des Forêts"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Bataille des Forêts"); put(Language.EN, "Woodland Warrior's Battle Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 77, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 653, true),
@@ -1212,7 +1212,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.PV, false, 800),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Ravageur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Ravageur (Réincarné)"); put(Language.EN, "(Reincarnated) Deathknight's Soul Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "90evo0R", "casques/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1336,7 +1336,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Ravageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Ravageur"); put(Language.EN, "Death Knight's Soul Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo0", "casques/70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1460,7 +1460,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Templier (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Templier (Réincarné)"); put(Language.EN, "(Reincarnated) Crusader's Soul Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "90evo1R", "casques/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1584,7 +1584,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 390),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de Templier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de Templier"); put(Language.EN, "Crusader's Soul Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo1", "casques/70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1708,7 +1708,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 390),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Bataille Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Bataille Céleste"); put(Language.EN, "Sky Lord's Battle Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 660, true),
@@ -1718,7 +1718,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Conquête d'Attila"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Conquête d'Attila"); put(Language.EN, "Lunatic High Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg0", "casques/70gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 613, true),
@@ -1728,7 +1728,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Noblesse de Siegfried"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Noblesse de Siegfried"); put(Language.EN, "Stars of Glory Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg1", "casques/70gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 625, true),
@@ -1738,7 +1738,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Guerrier Démon"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Guerrier Démon"); put(Language.EN, "Warlord Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/75evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 590, true),
@@ -1747,7 +1747,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.PV, false, 700),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Chevalier Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Chevalier Céleste"); put(Language.EN, "Templar Combat Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/75evo1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 602, true),
@@ -1757,7 +1757,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Gladiateur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Gladiateur (Réincarné)"); put(Language.EN, "(Reincarnated) Warlord's Soul Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo0R", "casques/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -1881,7 +1881,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive du Gladiateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive du Gladiateur"); put(Language.EN, "Warlord's Soul Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo0", "casques/75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2005,7 +2005,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Vindicateur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Vindicateur (Réincarné)"); put(Language.EN, "(Reincarnated) Templar's Soul Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo1R", "casques/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2129,7 +2129,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Vindicateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Vindicateur"); put(Language.EN, "Templar's Soul Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo1", "casques/75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2253,7 +2253,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visage assoiffé de sang de la Bête Démoniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visage assoiffé de sang de la Bête Démoniaque"); put(Language.EN, "Merciless Beast's Mask"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -2262,7 +2262,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.PV, false, 450),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Héroïque du Noble"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Héroïque du Noble"); put(Language.EN, "Regal Hero Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
@@ -2271,7 +2271,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.PV, false, 550),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tête du Guerrier aux Os Noirs"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tête du Guerrier aux Os Noirs"); put(Language.EN, "Black Bone Warrior's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 42, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 448, true),
@@ -2280,7 +2280,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.PV, false, 150),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Sentinelle du Templier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Sentinelle du Templier"); put(Language.EN, "Templar Sentinel's Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 42, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 461, true),
@@ -2290,7 +2290,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 50),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Berserker (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Berserker (Réincarné)"); put(Language.EN, "(Reincarnated) Berserker's Soul War Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "60evo0R", "casques/60pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2524,7 +2524,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 180),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Berserker"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Berserker"); put(Language.EN, "Berserker's Soul War Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "60evo0", "casques/60pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2758,7 +2758,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 150),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Paladin (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Paladin (Réincarné)"); put(Language.EN, "(Reincarnated) Paladin's Soul Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "60evo1R", "casques/25pvp1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2992,7 +2992,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Paladin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Paladin"); put(Language.EN, "Paladin's Soul Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "60evo1", "casques/25pvp1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -3226,7 +3226,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Guerrier Courageux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Guerrier Courageux"); put(Language.EN, "Brave Warrior Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 26, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/26bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 347, true),
@@ -3234,7 +3234,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Guerrier (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Guerrier (Réincarné)"); put(Language.EN, "(Reincarnated) Warrior's Soul Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "30evo0R", "casques/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -3388,7 +3388,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 4, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Guerrier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume Évolutif du Guerrier"); put(Language.EN, "Warrior's Soul Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "30evo0", "casques/30pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -3542,14 +3542,14 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 3, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Assoiffé de Sang"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Assoiffé de Sang"); put(Language.EN, "Bloodthirsty Battler's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 58, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 488, true),
 					new Effect(TypeEffect.DefM, false, 348, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Chevalier Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Chevalier Céleste"); put(Language.EN, "Sky Knight's Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 58, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
@@ -3563,35 +3563,35 @@ class LoaderHelmet {
 					new Effect(TypeEffect.DefM, false, 89, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Fermé du Paladin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Fermé du Paladin"); put(Language.EN, "Paladin's Visored Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 50, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 457, true),
 					new Effect(TypeEffect.DefM, false, 326, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Militaire à Cornes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Militaire à Cornes"); put(Language.EN, "Horned Military Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 34, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 359, true),
 					new Effect(TypeEffect.DefM, false, 72, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Militaire de Lumière Sacrée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Militaire de Lumière Sacrée"); put(Language.EN, "Light Army Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 34, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
 					new Effect(TypeEffect.DefM, false, 263, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Combat"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Combat"); put(Language.EN, "Combat Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 18, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 261, true),
 					new Effect(TypeEffect.DefM, false, 186, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Feu de Météore"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Feu de Météore"); put(Language.EN, "Meteorfire Helm"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 615, true),
@@ -3605,43 +3605,43 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Sentinelle des Enfers"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Sentinelle des Enfers"); put(Language.EN, "Burning Sentry Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 86, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 578, true),
 					new Effect(TypeEffect.DefM, false, 426, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Gardien du Sanctuaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Gardien du Sanctuaire"); put(Language.EN, "Sanctuary Defender Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 86, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 590, true),
 					new Effect(TypeEffect.DefM, false, 418, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Orgueil"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Orgueil"); put(Language.EN, "Proud Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 81, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 558, true),
 					new Effect(TypeEffect.DefM, false, 408, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Silence Sacré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume du Silence Sacré"); put(Language.EN, "Holy Silence Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 81, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/86bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 569, true),
 					new Effect(TypeEffect.DefM, false, 400, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cimier de Bronze"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cimier de Bronze"); put(Language.EN, "War Spectre Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 66, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/70nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 493, true),
 					new Effect(TypeEffect.DefM, false, 356, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Guetteur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de Guetteur"); put(Language.EN, "Godly Glory Helmet"); }},
 				new GradeName[] { GradeName.PALADIN, }, 66, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/70nucleus1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 503, true),
 					new Effect(TypeEffect.DefM, false, 349, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Commandant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Commandant"); put(Language.EN, "Commander's Helmet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 26, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/30pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 294, true),
@@ -3652,7 +3652,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getArcher() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Assassin Ninja"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Hat"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red3", "casques/90red3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 689, true),
@@ -3684,7 +3684,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Orage de l'ombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio3", "casques/100vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 704, true),
@@ -3693,7 +3693,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.AGI, false, 27, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Assault des Kage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Assault des Kage"); put(Language.EN, "Strike Shadow Assault Hat"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio3", "casques/90vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 659, true),
@@ -3702,7 +3702,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur des Ombres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur des Ombres"); put(Language.EN, "Shadow Hunter Hat"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio3", "casques/80vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 613, true),
@@ -3711,7 +3711,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque furtif de Minato"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque furtif de Minato"); put(Language.EN, "Shadow Master's Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold3", "casques/100gold3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 682, true),
@@ -3720,7 +3720,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 27, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Furtivité du CP9"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Furtivité du CP9"); put(Language.EN, "Ghost Walker Helm"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold3", "casques/90gold3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 634, true),
@@ -3729,7 +3729,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque des Ombres de Loki"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque des Ombres de Loki"); put(Language.EN, "Cruel Senses Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold3", "casques/80gold3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 586, true),
@@ -3738,7 +3738,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Assassin scarifié"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Assassin scarifié"); put(Language.EN, "Necrotic Assassin's Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp3", "casques/100pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 651, true),
@@ -3749,7 +3749,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 			}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Bourreau Fantôme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Bourreau Fantôme"); put(Language.EN, "Ghost Executioner Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve3", "casques/100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 619, true),
@@ -3758,7 +3758,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 			}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Visage de Samouraï Fantôme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Visage de Samouraï Fantôme"); put(Language.EN, "Phantom Samurai's Faceguard"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp3", "casques/95pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 597, true),
@@ -3769,7 +3769,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Ninja Démoniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Ninja Démoniaque"); put(Language.EN, "Demonic Ninja Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve3", "casques/95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 597, true),
@@ -3778,7 +3778,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Ombres Éphémères"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Ombres Éphémères"); put(Language.EN, "Veiled Shadow Helmet"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve3", "casques/90pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 575, true),
@@ -3787,7 +3787,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Ninja de Konoha"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Ninja de Konoha"); put(Language.EN, "Ghost Slayer Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp3", "casques/85pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 553, true),
@@ -3798,7 +3798,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plume de l'Âme de la Panthère Ténébreuse"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plume de l'Âme de la Panthère Ténébreuse"); put(Language.EN, "Stealth Eagle Helmet"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve3", "casques/85pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 553, true),
@@ -3807,7 +3807,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de la Vision Nocturne"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de la Vision Nocturne"); put(Language.EN, "Shadowcraft Assassin Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus3", "casques/95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
@@ -3816,7 +3816,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ombre de Terreur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ombre de Terreur"); put(Language.EN, "Blackshroud Assassin Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot3", "casques/80pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
@@ -3825,7 +3825,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du 6ème Sens Ninja"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du 6ème Sens Ninja"); put(Language.EN, "Ninja's Senses Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve3", "casques/80pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
@@ -3834,7 +3834,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Fourberie de Lucrezia (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Fourberie de Lucrezia (Reforgé)"); put(Language.EN, "(Reforged) Illusion Warrior Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp3R", "casques/95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 559, true),
@@ -3845,7 +3845,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Fourberie de Lucrezia"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Fourberie de Lucrezia"); put(Language.EN, "Illusion Warrior Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp3", "casques/95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -3856,7 +3856,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Ombre Embrasée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Ombre Embrasée"); put(Language.EN, "Deviant Flaming Shadow Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve3", "casques/75pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -3865,7 +3865,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque des Crocs du Cobra"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque des Crocs du Cobra"); put(Language.EN, "Shadow Punisher Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus3", "casques/70nucleus3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -3874,7 +3874,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ombre Diabolique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ombre Diabolique"); put(Language.EN, "Diabolic Shadow Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot3", "casques/70pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -3883,7 +3883,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Rigueur d'al Sabah"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Rigueur d'al Sabah"); put(Language.EN, "Shadow Specter Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve3", "casques/70pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -3892,7 +3892,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule de Sabotage de Fawkes (Reforgée)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule de Sabotage de Fawkes (Reforgée)"); put(Language.EN, "(Reforged) Shura Warrior Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp3R", "casques/100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -3903,7 +3903,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule de Sabotage de Fawkes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule de Sabotage de Fawkes"); put(Language.EN, "Shura Warrior Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp3", "casques/100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -3914,7 +3914,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Assassin à la Lame Cachée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Assassin à la Lame Cachée"); put(Language.EN, "Dark Sun Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve3", "casques/65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -3923,7 +3923,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Samourai du Poison"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Samourai du Poison"); put(Language.EN, "Venom Elite Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus3", "casques/100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -3931,7 +3931,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Samourai du Tonnerre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Samourai du Tonnerre"); put(Language.EN, "Shadow Elite Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot3", "casques/65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -3939,7 +3939,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Protection du Samouraï Fantôme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Protection du Samouraï Fantôme"); put(Language.EN, "Shadow Warrior's Faceguard"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve3", "casques/60pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 434, true),
@@ -3947,7 +3947,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Combattant de l'Enfer (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Combattant de l'Enfer (Reforgé)"); put(Language.EN, "(Reforged) Hellblazer Headger"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp3R", "casques/100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 483, true),
@@ -3956,7 +3956,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Combattant de l'Enfer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Combattant de l'Enfer"); put(Language.EN, "Hellblazer Headger"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp3", "casques/100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -3965,7 +3965,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Royaume Ciselé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Royaume Ciselé"); put(Language.EN, "Sniper's Realm Hat"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve3", "casques/25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -3973,7 +3973,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Combattant au Lion Bleu (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Combattant au Lion Bleu (Reforgé)"); put(Language.EN, "(Reforged) Blue Lion Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 45, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp3R", "casques/95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 406, true),
@@ -3991,7 +3991,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau d'Embuscade"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau d'Embuscade"); put(Language.EN, "Ambush Hat"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve3", "casques/40pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -3999,7 +3999,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur de Vent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur de Vent"); put(Language.EN, "Windtracker Hat"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 31, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "30pve2", "casques/30pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 301, true),
@@ -4007,7 +4007,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Précision de Sogeking (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Précision de Sogeking (Reforgé)"); put(Language.EN, "(Reforged) Shoot the Breeze Hat"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp2R", "casques/25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 360, true),
@@ -4016,7 +4016,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Précision de Sogeking"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Précision de Sogeking"); put(Language.EN, "Shoot the Breeze Hat"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp2", "casques/25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 327, true),
@@ -4025,7 +4025,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Ombre de Kakashi (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Ombre de Kakashi (Reforgé)"); put(Language.EN, "(Reforged) Shadow Assassin Mask"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp3R", "casques/40pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 354, true),
@@ -4034,7 +4034,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Ombre de Kakashi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Ombre de Kakashi"); put(Language.EN, "Shadow Assassin Mask"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp3", "casques/40pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 321, true),
@@ -4043,7 +4043,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur de la Jungle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur de la Jungle"); put(Language.EN, "Jungle Hunter's Hat"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 21, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "20pve2", "casques/25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 247, true),
@@ -4051,7 +4051,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Kage (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Kage (Réincarné)"); put(Language.EN, "(Reincarnated) Shinobi's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo3R", "casques/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -4135,7 +4135,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 312),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Kage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Kage"); put(Language.EN, "Shinobi's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo3", "casques/100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -4219,7 +4219,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 260),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Chien-Loup Zombie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Chien-Loup Zombie"); put(Language.EN, "Ghostwalker Hound Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg3", "casques/80gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 605, true),
@@ -4229,7 +4229,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 740),
 					new Effect(TypeEffect.PM, false, 560),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Ninja Véloce"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Ninja Véloce"); put(Language.EN, "Flash Ninja Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 87, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 591, true),
@@ -4239,7 +4239,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 575),
 					new Effect(TypeEffect.PM, false, 375),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de la Frénésie du Lycan"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de la Frénésie du Lycan"); put(Language.EN, "Void Rift Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg3", "casques/80gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 558, true),
@@ -4249,7 +4249,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 610),
 					new Effect(TypeEffect.PM, false, 430),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque Assassin des Ténèbres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque Assassin des Ténèbres"); put(Language.EN, "Netherworld Killer Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 77, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 544, true),
@@ -4259,7 +4259,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Shinobi (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Shinobi (Réincarné)"); put(Language.EN, "(Reincarnated) Windshadow's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "90evo3R", "casques/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -4383,7 +4383,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 276),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Shinobi"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Shinobi"); put(Language.EN, "Windshadow's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo3", "casques/70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -4507,7 +4507,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 230),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Dragon Sombre Atma"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Dragon Sombre Atma"); put(Language.EN, "Mirage Crevice Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg3", "casques/70gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 511, true),
@@ -4517,7 +4517,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Homme de l'Ombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Homme de l'Ombre"); put(Language.EN, "Mark of Shadows Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/75evo3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 491, true),
@@ -4527,7 +4527,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Ninja (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif du Ninja (Réincarné)"); put(Language.EN, "(Reincarnated) Darkstalker's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo3R", "casques/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -4651,7 +4651,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule Évolutive du Ninja"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule Évolutive du Ninja"); put(Language.EN, "Darkstalker's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo3", "casques/75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -4775,7 +4775,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Regard Fantômatique de Brume Noire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Regard Fantômatique de Brume Noire"); put(Language.EN, "Black Mist Visor"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 471, true),
@@ -4785,7 +4785,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Fermé de l'Arracheur d'Âme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Fermé de l'Arracheur d'Âme"); put(Language.EN, "Soul Taker Helmet"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 42, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 374, true),
@@ -4795,7 +4795,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 180),
 					new Effect(TypeEffect.PM, false, 70),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif de l'Assassin (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque évolutif de l'Assassin (Réincarné)"); put(Language.EN, "(Reincarnated) Assassin's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "60evo3R", "casques/40pve3", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -5029,7 +5029,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 228),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque Évolutif de l'Assassin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque Évolutif de l'Assassin"); put(Language.EN, "Assassin's Soul Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "60evo3", "casques/40pve3", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -5263,7 +5263,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 190),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Halo du Vent Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Halo du Vent Céleste"); put(Language.EN, "Wind God's Halo"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 26, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/30pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -5271,7 +5271,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive de l'Archer (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive de l'Archer (Réincarné)"); put(Language.EN, "(Reincarnated) Archer's Soul Circlet"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "30evo2R", "casques/30pve2", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -5425,7 +5425,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.AGI, false, 6, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive de l'Archer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive de l'Archer"); put(Language.EN, "Archer's Soul Circlet"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "30evo2", "casques/30pve2", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -5579,35 +5579,35 @@ class LoaderHelmet {
 						new Effect(TypeEffect.AGI, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Boucher du Bourreau"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Boucher du Bourreau"); put(Language.EN, "Executioner's Hat"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 58, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
 					new Effect(TypeEffect.DefM, false, 386, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visière du Fantôme Tueur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Visière du Fantôme Tueur"); put(Language.EN, "Phantom Slayer's Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 50, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
 					new Effect(TypeEffect.DefM, false, 352, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Assassin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Assassin"); put(Language.EN, "Assassin's Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 34, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
 					new Effect(TypeEffect.DefM, false, 284, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Militaire de l'Archer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Militaire de l'Archer"); put(Language.EN, "Archer's Headgear"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 18, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/18vert", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 217, true),
 					new Effect(TypeEffect.DefM, false, 206, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ombre Sereine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Facemask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 512, true),
@@ -5615,31 +5615,31 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Garde Silencieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Garde Silencieux"); put(Language.EN, "Silent Guard Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 86, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 482, true),
 					new Effect(TypeEffect.DefM, false, 473, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Serpent d'Émeraude"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Serpent d'Émeraude"); put(Language.EN, "Green Magic Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 81, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 465, true),
 					new Effect(TypeEffect.DefM, false, 454, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule Rubiconde"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule Rubiconde"); put(Language.EN, "Darkmoon Walker Mask"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 66, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/70nucleus3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
 					new Effect(TypeEffect.DefM, false, 396, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Militaire de l'Officier des Affaires Spéciales"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Militaire de l'Officier des Affaires Spéciales"); put(Language.EN, "Spy Captain Headgear"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 42, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/18vert", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
 					new Effect(TypeEffect.DefM, false, 300, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème Ombre de Lune"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème Ombre de Lune"); put(Language.EN, "Moonshadow Circlet"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 26, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/30pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 245, true),
@@ -5650,7 +5650,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getPretre() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Mantra Sacré Salvateur"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red5", "casques/90red5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 761, true),
@@ -5683,7 +5683,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Auréole de Prière de l'Aube"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Auréole de Prière de l'Aube"); put(Language.EN, "Dawn Halo"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio5", "casques/100vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 780, true),
@@ -5692,7 +5692,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 29, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de la Vérité Divine"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de la Vérité Divine"); put(Language.EN, "Divine Truth Understanding Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio5", "casques/90vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 728, true),
@@ -5701,7 +5701,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 28, true),
 					new Effect(TypeEffect.INT, false, 26, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Prophète Omniscient"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Prophète Omniscient"); put(Language.EN, "World Prophet Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio5", "casques/80vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 679, true),
@@ -5710,7 +5710,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare tribale de Thrall"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare tribale de Thrall"); put(Language.EN, "Shapeshifer's Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold5", "casques/100gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 751, true),
@@ -5719,7 +5719,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Esprit de Tao Ren"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Crown"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold5", "casques/90gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 698, true),
@@ -5728,7 +5728,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de Fureur de Fenrir"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de Fureur de Fenrir"); put(Language.EN, "Comeback Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold5", "casques/80gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 644, true),
@@ -5737,7 +5737,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Intuition sauvage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Intuition sauvage"); put(Language.EN, "Feral Inspiration Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp5", "casques/100pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 716, true),
@@ -5748,7 +5748,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare du Cri Ancestral"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare du Cri Ancestral"); put(Language.EN, "Ancient Call Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve5", "casques/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 681, true),
@@ -5757,7 +5757,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Brute Psionique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Brute Psionique"); put(Language.EN, "Psionic Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp5", "casques/95pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 657, true),
@@ -5768,7 +5768,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Ode à la Vie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Ode à la Vie"); put(Language.EN, "Ode of Life Crown"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve5", "casques/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 670, true),
@@ -5777,7 +5777,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de l'Oracle Prolixe"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de l'Oracle Prolixe"); put(Language.EN, "Oracular Murmurs Forehead Guard"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve5", "casques/90pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 632, true),
@@ -5786,7 +5786,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Oracle d'Amestris"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Oracle d'Amestris"); put(Language.EN, "Beast Commander Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp5", "casques/85pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
@@ -5797,7 +5797,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Âme de l'Aigle Perspicace"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Âme de l'Aigle Perspicace"); put(Language.EN, "Nirvana Guard Headgear"); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve5", "casques/85pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
@@ -5806,7 +5806,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur de Tempêtes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Chasseur de Tempêtes"); put(Language.EN, "Gaia Seeker Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus5", "casques/80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 583, true),
@@ -5815,7 +5815,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Serre-tête de la Mélopée des Montagnes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Serre-tête de la Mélopée des Montagnes"); put(Language.EN, "Gale Seeker Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot5", "casques/80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 583, true),
@@ -5824,7 +5824,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau des Tables Tournantes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau des Tables Tournantes"); put(Language.EN, "Turn the Table Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve5", "casques/80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 583, true),
@@ -5833,7 +5833,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de Ruse de Sun Wukong (Reforgée)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de Ruse de Sun Wukong (Reforgée)"); put(Language.EN, "(Reforged) Holy Beastlord Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp5R", "casques/80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 615, true),
@@ -5844,7 +5844,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de Ruse de Sun Wukong"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de Ruse de Sun Wukong"); put(Language.EN, "Holy Beastlord Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp5", "casques/80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 559, true),
@@ -5855,7 +5855,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Jugement des Dieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Jugement des Dieux"); put(Language.EN, "Judge of Gods Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve5", "casques/75pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 559, true),
@@ -5864,7 +5864,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème du Totem des Ancêtres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème du Totem des Ancêtres"); put(Language.EN, "Nature Circle Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus5", "casques/70nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 533, true),
@@ -5873,7 +5873,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Oeil du Cyclone"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Oeil du Cyclone"); put(Language.EN, "Storm Circle Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot5", "casques/70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 533, true),
@@ -5882,7 +5882,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Secret de Chimère"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Secret de Chimère"); put(Language.EN, "Beast God's Wish Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve5", "casques/70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 533, true),
@@ -5891,7 +5891,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Illusion de Kuzunoha (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Illusion de Kuzunoha (Reforgé)"); put(Language.EN, "(Reforged) Pegasus Saint Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp5R", "casques/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 559, true),
@@ -5902,7 +5902,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Illusion de Kuzunoha"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Illusion de Kuzunoha"); put(Language.EN, "Pegasus Saint's Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp5", "casques/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -5913,7 +5913,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bague du Sage du Soleil Levant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bague du Sage du Soleil Levant"); put(Language.EN, "Rising Sun Sage's Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve5", "casques/65pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -5922,7 +5922,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Prix de la Raison"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Prix de la Raison"); put(Language.EN, "Peace Walker Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus5", "casques/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 483, true),
@@ -5930,7 +5930,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Équilibre de la Nature"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Équilibre de la Nature"); put(Language.EN, "Freeland Walker Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot5", "casques/65pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 483, true),
@@ -5938,7 +5938,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Promeneur Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Promeneur Céleste"); put(Language.EN, "Skywalker Cap"); }},
 				new GradeName[] { GradeName.SAGE, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve5", "casques/60pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 478, true),
@@ -5946,7 +5946,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Héraut Bestial Intelligent (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Héraut Bestial Intelligent (Reforgé)"); put(Language.EN, "(Reforged) Beast Herald Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp5R", "casques/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 531, true),
@@ -5955,7 +5955,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Héraut Bestial Intelligent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Héraut Bestial Intelligent"); put(Language.EN, "Beast Herald Helmet"); }},
 				new GradeName[] { GradeName.SAGE, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp5", "casques/100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 483, true),
@@ -5964,7 +5964,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne des Esprits Sacrés"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne des Esprits Sacrés"); put(Language.EN, "Sacred Spirit Crown"); }},
 				new GradeName[] { GradeName.SAGE, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve5", "casques/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 436, true),
@@ -5972,7 +5972,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Coursier céleste (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Coursier céleste (Reforgé)"); put(Language.EN, "(Reforged) Pegasus Messenger Helm"); }},
 				new GradeName[] { GradeName.SAGE, }, 45, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp5R", "casques/80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 446, true),
@@ -5981,7 +5981,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Coursier Céleste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Coursier Céleste"); put(Language.EN, "Pegasus Messenger Helm"); }},
 				new GradeName[] { GradeName.SAGE, }, 45, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "45pvp5", "casques/80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 405, true),
@@ -5990,7 +5990,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Magique de la Plume Colorée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Magique de la Plume Colorée"); put(Language.EN, "Colorful Feather Cap"); }},
 				new GradeName[] { GradeName.SAGE, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve5", "casques/40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -5998,7 +5998,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de la Lumière de la grâce"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de la Lumière de la grâce"); put(Language.EN, "Light of Grace Cap"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 31, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "30pve4", "casques/30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 331, true),
@@ -6006,7 +6006,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Saint Eto (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Saint Eto (Reforgé)"); put(Language.EN, "(Reforged) Theology of War Crown"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp4R", "casques/25pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -6015,7 +6015,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Éléments d'Asakura (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Éléments d'Asakura (Reforgé)"); put(Language.EN, "(Reforged) Divine Roman Helmet"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp5R", "casques/40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 389, true),
@@ -6024,7 +6024,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Saint Eto"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Saint Eto"); put(Language.EN, "Theology of War Crown"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp4", "casques/25pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 360, true),
@@ -6033,7 +6033,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Éléments d'Asakura"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Éléments d'Asakura"); put(Language.EN, "Divine Roman Helmet"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp5", "casques/40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 353, true),
@@ -6042,7 +6042,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Clerc Priant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Clerc Priant"); put(Language.EN, "Cleric's Prayer Crown"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 21, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "20pve4", "casques/25pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
@@ -6050,7 +6050,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Druide (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Druide (Réincarné)"); put(Language.EN, "(Reincarnated) Druid's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo5R", "casques/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -6134,7 +6134,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 336),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Druide"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Druide"); put(Language.EN, "Druid's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo5", "casques/100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -6218,7 +6218,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 280),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Bois Sacré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Bois Sacré"); put(Language.EN, "Divine Forest Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg5", "casques/80gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 665, true),
@@ -6228,7 +6228,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 840),
 					new Effect(TypeEffect.PM, false, 460),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau du Guide Fantastique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau du Guide Fantastique"); put(Language.EN, "Fantasy Guide Headband"); }},
 				new GradeName[] { GradeName.SAGE, }, 87, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 650, true),
@@ -6238,7 +6238,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 675),
 					new Effect(TypeEffect.PM, false, 275),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Envoûtement des Dryades"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Envoûtement des Dryades"); put(Language.EN, "North Star Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg5", "casques/80gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 614, true),
@@ -6248,7 +6248,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 710),
 					new Effect(TypeEffect.PM, false, 330),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de la Lune Rougeoyante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de la Lune Rougeoyante"); put(Language.EN, "Red Moon Sentinel's Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 77, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 598, true),
@@ -6258,7 +6258,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Shaman (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Shaman (Réincarné)"); put(Language.EN, "(Reincarnated) Shaman's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "90evo5R", "casques/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -6382,7 +6382,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 288),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Shaman"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Shaman"); put(Language.EN, "Shaman's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo5", "casques/70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -6506,7 +6506,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Érudition de Diviciacos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Érudition de Diviciacos"); put(Language.EN, "Future Guide's Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg5", "casques/70gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 562, true),
@@ -6516,7 +6516,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cassandre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cassandre"); put(Language.EN, "Nature's Precepts Mask"); }},
 				new GradeName[] { GradeName.SAGE, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/75evo5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 540, true),
@@ -6526,7 +6526,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive de l'Oracle (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive de l'Oracle (Réincarné)"); put(Language.EN, "(Reincarnated) Mystic's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo5R", "casques/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -6640,7 +6640,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet Évolutif de l'Oracle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet Évolutif de l'Oracle"); put(Language.EN, "Mystic's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo5", "casques/75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -6754,7 +6754,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cercle de Vie du Créateur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cercle de Vie du Créateur"); put(Language.EN, "Creator's Circlet of Life"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60evo5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 518, true),
@@ -6764,7 +6764,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bague du Murmure du Vent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bague du Murmure du Vent"); put(Language.EN, "Whisperwind Halo"); }},
 				new GradeName[] { GradeName.SAGE, }, 42, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
@@ -6774,7 +6774,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 150),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Sage (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Sage (Réincarné)"); put(Language.EN, "(Reincarnated) Sage's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "60evo5R", "casques/60evo5", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -7008,7 +7008,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive du Sage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive du Sage"); put(Language.EN, "Sage's Soul Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "60evo5", "casques/60evo5", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -7242,7 +7242,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Officier du Dispositif de Rituel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Officier du Dispositif de Rituel"); put(Language.EN, "Deity's Ritual Hat"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 26, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/26bleu4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -7250,7 +7250,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Prêtre (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne évolutive du Prêtre (Réincarné)"); put(Language.EN, "(Reincarnated) Priest's Soul Crown"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "30evo0R", "casques/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -7404,7 +7404,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 6, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive du Prêtre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne Évolutive du Prêtre"); put(Language.EN, "Priest's Soul Crown"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "30evo0", "casques/30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -7558,66 +7558,66 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de Vie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de Vie"); put(Language.EN, "Circlet of Life"); }},
 				new GradeName[] { GradeName.SAGE, }, 58, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 447, true),
 					new Effect(TypeEffect.DefM, false, 433, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de l'Esprit de l'Ancêtre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de l'Esprit de l'Ancêtre"); put(Language.EN, "Ancestral Spirit's Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 50, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
 					new Effect(TypeEffect.DefM, false, 394, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de la Terre Généreuse"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de la Terre Généreuse"); put(Language.EN, "Earth's Bounty Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 34, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 329, true),
 					new Effect(TypeEffect.DefM, false, 319, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare Ancienne du Prêtre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare Ancienne du Prêtre"); put(Language.EN, "Traditional Priest's Crown"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 18, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/18vert4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 239, true),
 					new Effect(TypeEffect.DefM, false, 227, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guirlande du Pays des Merveilles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Guirlande du Pays des Merveilles"); put(Language.EN, "Wonderland Garland"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 564, true),
 					new Effect(TypeEffect.DefM, false, 438, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Joueur de Flûte"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Joueur de Flûte"); put(Language.EN, "Beast Bellow Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 86, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
 					new Effect(TypeEffect.DefM, false, 412, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Astronome Fou"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Astronome Fou"); put(Language.EN, "Star Oracle Hat"); }},
 				new GradeName[] { GradeName.SAGE, }, 81, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 511, true),
 					new Effect(TypeEffect.DefM, false, 397, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare Enchantée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare Enchantée"); put(Language.EN, "Words of Truth Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 66, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/70nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 452, true),
 					new Effect(TypeEffect.DefM, false, 351, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème du Sprite des Arbres"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème du Sprite des Arbres"); put(Language.EN, "Wood Elf's Circlet"); }},
 				new GradeName[] { GradeName.SAGE, }, 42, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 348, true),
 					new Effect(TypeEffect.DefM, false, 279, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Magique de l'Evêque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Magique de l'Evêque"); put(Language.EN, "Bishop's Miter"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 26, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
@@ -7628,7 +7628,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getMage() {
 		return new Armor[] {
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare enchantée d'Elminster"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare enchantée d'Elminster"); put(Language.EN, "Arcanist's Circlet"); }},
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold6", "casques/100gold6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 614, true),
@@ -7637,7 +7637,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 31, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Fourvoyé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Fourvoyé"); put(Language.EN, "Demon Master's Helmet"); }},
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp6", "casques/100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 597, true),
@@ -7653,7 +7653,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getMeca() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Entaille ultime"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red8", "casques/90red8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 830, true),
@@ -7685,7 +7685,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Démon Frappe-pierre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Démon Frappe-pierre"); put(Language.EN, "Earthquake Helm"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio8", "casques/100vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 851, true),
@@ -7694,7 +7694,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 26, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Ailes célestes envoûtantes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Ailes célestes envoûtantes"); put(Language.EN, "Seraphic Helm"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio8", "casques/90vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 794, true),
@@ -7703,7 +7703,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 27, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Trépas de Glace et d'Étoiles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Trépas de Glace et d'Étoiles"); put(Language.EN, "Hyperborean Helm"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio8", "casques/80vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 741, true),
@@ -7712,7 +7712,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Général divin du centre de la Terre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Général divin du centre de la Terre"); put(Language.EN, "Terra Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold8", "casques/100gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 819, true),
@@ -7721,7 +7721,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 26, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Brume rugissante effrayante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Brume rugissante effrayante"); put(Language.EN, "Mistfall Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold8", "casques/90gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 761, true),
@@ -7730,7 +7730,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Arme de zone gelée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Arme de zone gelée"); put(Language.EN, "Glacial Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold8", "casques/80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 703, true),
@@ -7739,7 +7739,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Démon traqueur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Démon traqueur"); put(Language.EN, "Demon Stalker's Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp8", "casques/100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 781, true),
@@ -7751,7 +7751,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Excellent guerrier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Excellent guerrier"); put(Language.EN, "Warmonger Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve8", "casques/100pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 743, true),
@@ -7760,7 +7760,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Mort Dévoreuse d'Âmes"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Mort Dévoreuse d'Âmes"); put(Language.EN, "Deathsbane Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp8", "casques/95pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 716, true),
@@ -7772,7 +7772,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Garde impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Garde impérial"); put(Language.EN, "Imperial Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve8", "casques/95pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 716, true),
@@ -7781,7 +7781,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Ouragan du Val de la fissure"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Ouragan du Val de la fissure"); put(Language.EN, "Hurricane Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve8", "casques/90pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 690, true),
@@ -7790,7 +7790,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Mort désintégrante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Mort désintégrante"); put(Language.EN, "Soul Sealer Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp8", "casques/85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 698, true),
@@ -7802,7 +7802,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Péché du pénitent"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Péché du pénitent"); put(Language.EN, "Sinful Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve8", "casques/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 663, true),
@@ -7811,7 +7811,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Balayage radical"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Balayage radical"); put(Language.EN, "Mortal Sorrow Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus8", "casques/80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
@@ -7820,7 +7820,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Démogorgon pleureur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Démogorgon pleureur"); put(Language.EN, "Divine Sorrow Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot8", "casques/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
@@ -7829,7 +7829,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Flamme de glace bleue"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Flamme de glace bleue"); put(Language.EN, "Arctic Flame Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve8", "casques/80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
@@ -7838,7 +7838,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Ravageur de Massacre (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Ravageur de Massacre (Reforgé)"); put(Language.EN, "(Reforged) Slaughter Berserker Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp8R", "casques/75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 705, true),
@@ -7850,7 +7850,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Ravageur massacrant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Ravageur massacrant"); put(Language.EN, "Butcher's Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp8", "casques/75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 641, true),
@@ -7862,7 +7862,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Démon enragé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Démon enragé"); put(Language.EN, "Hellscream Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve8", "casques/85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -7871,7 +7871,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Chaînes Lumifer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Chaînes Lumifer"); put(Language.EN, "Lightspeed Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus8", "casques/70nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -7880,7 +7880,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Chaînes Mortefer"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Chaînes Mortefer"); put(Language.EN, "Fettered Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot8", "casques/70lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -7889,7 +7889,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Esprit dansant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Esprit dansant"); put(Language.EN, "Epiphany Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve8", "casques/75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -7898,7 +7898,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Combat Sanglant (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Combat Sanglant (Reforgé)"); put(Language.EN, "(Reforged) Blood Combat Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp8R", "casques/65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 642, true),
@@ -7910,7 +7910,7 @@ class LoaderHelmet {
 			        new Effect(TypeEffect.ReducPeneP, false, 3),
 			        new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fervent adepte de sacrifice sanglant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Fervent adepte de sacrifice sanglant"); put(Language.EN, "Bloodfighter Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp8", "casques/65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 584, true),
@@ -7922,7 +7922,7 @@ class LoaderHelmet {
 			        new Effect(TypeEffect.ReducPeneP, false, 3),
 			        new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Hémophilie"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Hémophilie"); put(Language.EN, "Bloodbath Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve8", "casques/65pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
@@ -7931,7 +7931,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur flamboyant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur flamboyant"); put(Language.EN, "Ruthless Warlord Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus8", "casques/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -7940,7 +7940,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur Ballarcane"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur Ballarcane"); put(Language.EN, "Profane Warlord Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot8", "casques/60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -7949,7 +7949,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Seigneur Bondinouri"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Seigneur Bondinouri"); put(Language.EN, "Blood Lord Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve8", "casques/60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 521, true),
@@ -7958,7 +7958,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Seigneur maniaque (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Seigneur maniaque (Reforgé)"); put(Language.EN, "(Reforged) Maniac Lord Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp8R", "casques/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 577, true),
@@ -7968,7 +7968,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Seigneur maniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Seigneur maniaque"); put(Language.EN, "Maniac Lord Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp8", "casques/60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 525, true),
@@ -7978,7 +7978,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Faucille de pillage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Faucille de pillage"); put(Language.EN, "Brigand Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve8", "casques/65pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -7987,7 +7987,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Assassin maniaque (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Assassin maniaque (Reforgé)"); put(Language.EN, "(Reforged) Maniac Assassin Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 44, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp8R", "casques/60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
@@ -7997,7 +7997,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Assassin maniaque"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Assassin maniaque"); put(Language.EN, "Maniac Assassin Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 44, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "45pvp8", "casques/60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 460, true),
@@ -8007,7 +8007,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur belliqueux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Gladiateur belliqueux"); put(Language.EN, "Gladiator Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve8", "casques/60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -8016,7 +8016,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Agent de renseignement"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'Agent de renseignement"); put(Language.EN, "Reconnaissance Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 31, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "30pve8", "casques/30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
@@ -8025,7 +8025,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Robuste samouraï (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Robuste samouraï (Reforgé)"); put(Language.EN, "(Reforged) Tough Samurai Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp8R", "casques/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 281, true),
@@ -8035,7 +8035,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Bretteur nomade (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Bretteur nomade (Reforgé)"); put(Language.EN, "(Reforged) Roaming Swordsman Fur Cap"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp9R", "casques/30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 267, true),
@@ -8045,7 +8045,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Robuste samouraï"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Robuste samouraï"); put(Language.EN, "Tough Samurai Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp8", "casques/25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 255, true),
@@ -8055,7 +8055,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Bretteur nomade"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Bretteur nomade"); put(Language.EN, "Roaming Swordsman Fur Cap"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp9", "casques/30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -8065,7 +8065,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Garde imposant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Garde imposant"); put(Language.EN, "Sentinel's Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 21, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "20pve8", "casques/20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 222, true),
@@ -8074,7 +8074,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 1, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de l'Oméga (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de l'Oméga (Réincarné)"); put(Language.EN, "(Reincarnated) Mechmaster's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo8R", "casques/100evo8", new MultiEffect(91, new Effect[][] {
 			        new Effect[] {
@@ -8158,7 +8158,7 @@ class LoaderHelmet {
 			            new Effect(TypeEffect.PM, false, 276),
 			        },
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume spirituel d'Oméga"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume spirituel d'Oméga"); put(Language.EN, "Mechmaster's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo8", "casques/100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -8242,7 +8242,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 230),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Maléfice nocturne des âmes damnées"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Maléfice nocturne des âmes damnées"); put(Language.EN, "Wretched Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg8", "casques/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 725, true),
@@ -8251,7 +8251,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Bretteur de la neige glacée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Bretteur de la neige glacée"); put(Language.EN, "Frost Warrior's Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 86, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/86bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 703, true),
@@ -8260,7 +8260,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Combat sans fin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Combat sans fin"); put(Language.EN, "Endless Battle Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg8", "casques/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 670, true),
@@ -8271,7 +8271,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 760),
 					new Effect(TypeEffect.PM, false, 280),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Molosse lunaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Molosse lunaire"); put(Language.EN, "Moonwolf Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 77, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 653, true),
@@ -8280,7 +8280,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Mégatron (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Mégatron (Réincarné)"); put(Language.EN, "(Reincarnated) Cogmaster's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo8R", "casques/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -8404,7 +8404,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume d'Essence de Prime"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume d'Essence de Prime"); put(Language.EN, "Cogmaster's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo8", "casques/90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -8528,7 +8528,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Puissance éternelle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Puissance éternelle"); put(Language.EN, "Eternal Power Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg8", "casques/80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 613, true),
@@ -8539,7 +8539,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Prime"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Prime"); put(Language.EN, "Gearmaster Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 602, true),
@@ -8549,7 +8549,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Prime (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Prime (Réincarné)"); put(Language.EN, "(Reincarnated) Gearmaster's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo8R", "casques/65pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -8673,7 +8673,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 204),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Essence du Métalleux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume de l'Essence du Métalleux"); put(Language.EN, "Gearmaster's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo8", "casques/65pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -8797,7 +8797,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 170),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque angulaire en acier de la Danse du sang"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque angulaire en acier de la Danse du sang"); put(Language.EN, "Sanguine Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
@@ -8806,7 +8806,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Métalleux (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Métalleux (Réincarné)"); put(Language.EN, "(Reincarnated) Engineer's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "60evo8R", "casques/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -9040,7 +9040,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 180),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque spirituel du Métalleux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque spirituel du Métalleux"); put(Language.EN, "Engineer's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "60evo8", "casques/65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -9274,7 +9274,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 150),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Machiniste (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif du Machiniste (Réincarné)"); put(Language.EN, "(Reincarnated) Machinist's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "30evo8R", "casques/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -9428,7 +9428,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 5, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque spirituel du Machiniste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque spirituel du Machiniste"); put(Language.EN, "Machinist's Soul Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "30evo8", "casques/20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -9582,25 +9582,25 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 4, true),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Bête à bain de sang"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Bête à bain de sang"); put(Language.EN, "Bloody Roar Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 615, true),
 					new Effect(TypeEffect.DefM, false, 456, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Chute"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Chute"); put(Language.EN, "Helmet of Ruin"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
 					new Effect(TypeEffect.DefM, false, 429, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Charge de taureau"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Charge de taureau"); put(Language.EN, "Bull Charge Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 82, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/82blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 562, true),
 					new Effect(TypeEffect.DefM, false, 412, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Roche fondue"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Roche fondue"); put(Language.EN, "Molten Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 67, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 497, true),
@@ -9611,7 +9611,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Danse Sauvage de Dimensionaliste"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Crown"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red10", "casques/90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 700, true),
@@ -9644,7 +9644,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Frappe Brise-Temps"); put(Language.EN, ""); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.RED, false, false,
 				ArmorType.CASQUE, "90red11", "casques/90red11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 622, true),
@@ -9677,7 +9677,7 @@ class LoaderHelmet {
 						add(new Effect(TypeEffect.ReducPeneM, false, 5));
 					}});
 				}}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Coiffe de juge d'outremonde"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Coiffe de juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio10", "casques/100vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 718, true),
@@ -9688,7 +9688,7 @@ class LoaderHelmet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.PV, true, 5),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume temporel - Coiffe du voyageur des ères"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume temporel - Coiffe du voyageur des ères"); put(Language.EN, "Time Realm - Era Traveler Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "100vio11", "casques/100vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 650, true),
@@ -9699,7 +9699,7 @@ class LoaderHelmet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.PM, true, 5),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Trou noir - Bandeau de dispersion Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Trou noir - Bandeau de dispersion Demis"); put(Language.EN, "Black Hole - Dimensional Scurry Circlet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio10", "casques/90vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 659, true),
@@ -9710,7 +9710,7 @@ class LoaderHelmet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 50),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Appareil - Coiffe de contrôle de pantin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Appareil - Coiffe de contrôle de pantin"); put(Language.EN, "Device - Puppetmaster Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "90vio11", "casques/90vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
@@ -9721,7 +9721,7 @@ class LoaderHelmet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 50),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Univers - Coiffe de pionnier"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Univers - Coiffe de pionnier"); put(Language.EN, "Universe - Trailblazer Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio10", "casques/80vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 613, true),
@@ -9732,7 +9732,7 @@ class LoaderHelmet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 10),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Temps - Chapeau de Gardien"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Temps - Chapeau de Gardien"); put(Language.EN, "Time-Keeper Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.PURPLE, true, false,
 				ArmorType.CASQUE, "80vio11", "casques/80vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 567, true),
@@ -9743,7 +9743,7 @@ class LoaderHelmet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.RegenPM, false, 10),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Stalactite de l'Ombre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Stalactite de l'Ombre"); put(Language.EN, "Icy Shadow Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold10", "casques/100gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 696, true),
@@ -9752,7 +9752,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 31, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal Spatio-temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal Spatio-temporel"); put(Language.EN, "Spacetime Crystal Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "100gold11", "casques/100gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 626, true),
@@ -9761,7 +9761,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de Prisme de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Anneau de Prisme de Cristal"); put(Language.EN, "Crystal Prism Ring"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold10", "casques/90gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 634, true),
@@ -9770,7 +9770,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Destructeur de l'Âme"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold11", "casques/90gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
@@ -9779,7 +9779,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 23, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe démoniaque d'éclat cristallin hérétique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe démoniaque d'éclat cristallin hérétique"); put(Language.EN, "Demonic Crystal Shard Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold10", "casques/80gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 586, true),
@@ -9788,7 +9788,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond du Lien de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond du Lien de Cristal"); put(Language.EN, "Crystal Bind Round Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "80gold11", "casques/80gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 538, true),
@@ -9797,7 +9797,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Cristal Jaillissant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Cristal Jaillissant"); put(Language.EN, "Molten Crystal Helmet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp10", "casques/100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 651, true),
@@ -9809,7 +9809,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Accessoire de coiffe de Cristal Chaotique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Accessoire de coiffe de Cristal Chaotique"); put(Language.EN, "Chaotic Crystal Hair Accessory"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp11", "casques/100pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 586, true),
@@ -9821,7 +9821,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 7),
 					new Effect(TypeEffect.ReducPeneM, false, 7),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de Mirage cristallin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Diadème de Mirage cristallin"); put(Language.EN, "Crystal Mirage Circlet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve10", "casques/100pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 631, true),
@@ -9830,7 +9830,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Panorama"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Panorama"); put(Language.EN, "Horizon Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "100pve11", "casques/100pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 568, true),
@@ -9839,7 +9839,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de voyageur Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de voyageur Demis"); put(Language.EN, "Dimensional Traveler Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp10", "casques/95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -9851,7 +9851,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Gardien du temps"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Gardien du temps"); put(Language.EN, "Chrono Keeper Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "95pvp11", "casques/95pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 548, true),
@@ -9863,7 +9863,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 6),
 					new Effect(TypeEffect.ReducPeneM, false, 6),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau de Malédiction du Cristal Runique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau de Malédiction du Cristal Runique"); put(Language.EN, "Runic Crystal Curse Circlet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve10", "casques/95pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -9872,7 +9872,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Fléau de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Fléau de Cristal"); put(Language.EN, "Crystal Blight Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "95pve11", "casques/95pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 548, true),
@@ -9881,7 +9881,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Cristal radieux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Cristal radieux"); put(Language.EN, "Brilliant Crystal Helmet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve10", "casques/90pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 575, true),
@@ -9890,7 +9890,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur du carnage"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur du carnage"); put(Language.EN, "Carnage Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "90pve11", "casques/90pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -9899,7 +9899,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur runique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur runique"); put(Language.EN, "Runic Traveler Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp10", "casques/85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 553, true),
@@ -9911,7 +9911,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Créateur du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Créateur du cristal"); put(Language.EN, "Crystalsmith's Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "85pvp11", "casques/85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
@@ -9923,7 +9923,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur Sprite"); put(Language.EN, "Spectral Ranger Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve10", "casques/85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 553, true),
@@ -9932,7 +9932,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Voyageur nocturne"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Voyageur nocturne"); put(Language.EN, "Midnight Hitchhiker's Top Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "85pve11", "casques/85pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
@@ -9941,7 +9941,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Gardien du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Gardien du cristal"); put(Language.EN, "Crystal Keeper Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus10", "casques/80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
@@ -9950,7 +9950,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Cristallin d'incantation"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Cristallin d'incantation"); put(Language.EN, "Incarnated Crystalline Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80nucleus11", "casques/80nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 487, true),
@@ -9959,7 +9959,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Porteur du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Porteur du cristal"); put(Language.EN, "Crystal Wielder Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot10", "casques/80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
@@ -9968,7 +9968,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur sur le déclin"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur sur le déclin"); put(Language.EN, "Waning Traveler Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80lingot11", "casques/80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 487, true),
@@ -9977,7 +9977,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'éclat cristallin hérétique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'éclat cristallin hérétique"); put(Language.EN, "Crystal Shard Heretic Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve10", "casques/85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
@@ -9986,7 +9986,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Cristal mortel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Cristal mortel"); put(Language.EN, "Deadly Crystal Steepe Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "80pve11", "casques/85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 487, true),
@@ -9995,7 +9995,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur rayonnant (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur rayonnant (Reforgé)"); put(Language.EN, "(Reforged) Incandescent Traveler Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp10R", "casques/80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 559, true),
@@ -10007,7 +10007,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur ténébreux (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur ténébreux (Reforgé)"); put(Language.EN, "(Reforged) Shadowy Traveler Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "75pvp11R", "casques/80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 513, true),
@@ -10019,7 +10019,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur rayonnant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur rayonnant"); put(Language.EN, "Luminous Traveler's Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp10", "casques/80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -10031,7 +10031,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur ténébreux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur ténébreux"); put(Language.EN, "Shadowy Traveler's Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "75pvp11", "casques/80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 466, true),
@@ -10043,7 +10043,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Grand Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Grand Voyageur"); put(Language.EN, "Lauded Adventurer's Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve10", "casques/80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -10052,7 +10052,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 			}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond d'éclat de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond d'éclat de Cristal"); put(Language.EN, "Crystal Shard Round Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "75pve11", "casques/80nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 466, true),
@@ -10061,7 +10061,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Robe de la Puissance du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Robe de la Puissance du cristal"); put(Language.EN, "Crystal Strength Robe"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus10", "casques/85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -10070,7 +10070,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Voyageur désespéré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Voyageur désespéré"); put(Language.EN, "Traveler in Despair Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70nucleus11", "casques/85pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -10079,7 +10079,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de la Puissance du cristal de givre"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de la Puissance du cristal de givre"); put(Language.EN, "Frostbitten Crystal Strength Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot10", "casques/70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -10088,7 +10088,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Roi de la catastrophe"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Roi de la catastrophe"); put(Language.EN, "Lord of Calamity Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70lingot11", "casques/70pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -10097,7 +10097,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal Mutant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal Mutant"); put(Language.EN, "Mutated Crystal Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve10", "casques/70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),
@@ -10106,7 +10106,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Roi des profondeurs cristallines"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Roi des profondeurs cristallines"); put(Language.EN, "Crystal Nether King Top Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "70pve11", "casques/70pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -10115,7 +10115,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur prismatique (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur prismatique (Reforgé)"); put(Language.EN, "(Reforged) Prismatic Traveler Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp10", "casques/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -10127,7 +10127,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Genèse spatio-temporelle (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Genèse spatio-temporelle (Reforgé)"); put(Language.EN, "(Reforged) Temporal Genesis Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "65pvp11R", "casques/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 466, true),
@@ -10139,7 +10139,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur prismatique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Voyageur prismatique"); put(Language.EN, "Prismic Wanderer's Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp10R", "casques/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -10151,7 +10151,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 			}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette de Genèse spatio-temporelle"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette de Genèse spatio-temporelle"); put(Language.EN, "Temporal Genesis Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "65pvp11", "casques/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -10163,7 +10163,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal Arc-en-Ciel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal Arc-en-Ciel"); put(Language.EN, "Radiant Crystal Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve10", "casques/65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -10172,7 +10172,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 			}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond de Cristal ténébreux"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond de Cristal ténébreux"); put(Language.EN, "Nebulous Crystal Round Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "65pve11", "casques/65pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -10181,7 +10181,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Cristal de célérité"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Cristal de célérité"); put(Language.EN, "Speedy Crystal Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus10", "casques/60nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -10190,7 +10190,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit chapeau de l'Esprit du voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit chapeau de l'Esprit du voyageur"); put(Language.EN, "Traveler's Spirit Small Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60nucleus11", "casques/60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -10199,7 +10199,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Gemme robuste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Gemme robuste"); put(Language.EN, "Sturdy Crystal Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot10", "casques/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -10208,7 +10208,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit chapeau de la Malédiction du voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit chapeau de la Malédiction du voyageur"); put(Language.EN, "Traveler's Curse Small Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60lingot11", "casques/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -10217,7 +10217,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal infini"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal infini"); put(Language.EN, "Infinite Crystalline Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve10", "casques/60nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 434, true),
@@ -10226,7 +10226,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit Chapeau du Voyageur magique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit Chapeau du Voyageur magique"); put(Language.EN, "Traveling Magician's Small Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 59, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "60pve11", "casques/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 391, true),
@@ -10235,7 +10235,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Ancien du cristal (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Ancien du cristal (Reforgé)"); put(Language.EN, "(Reforged) Crystal Elder Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp10R", "casques/55pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 483, true),
@@ -10245,7 +10245,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Genèse cristalline (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Genèse cristalline (Reforgé)"); put(Language.EN, "(Reforged) Crystal Genesis Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "55pvp11R", "casques/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 435, true),
@@ -10255,7 +10255,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Ancien du cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Ancien du cristal"); put(Language.EN, "Crystal Elder Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp10", "casques/55pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -10265,7 +10265,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette de Genèse cristalline"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette de Genèse cristalline"); put(Language.EN, "Crystal Genesis Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "55pvp11", "casques/65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 395, true),
@@ -10275,7 +10275,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur Temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur Temporel"); put(Language.EN, "Time Traveler Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve10", "casques/65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -10284,7 +10284,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau évolutif de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau évolutif de Cristal"); put(Language.EN, "Crystal Soul Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 51, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "50pve11", "casques/65pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
@@ -10293,7 +10293,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Reforgée du Sage de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Reforgée du Sage de Cristal"); put(Language.EN, "(Reforged) Crystal Sage Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 45, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp10R", "casques/45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 406, true),
@@ -10303,7 +10303,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit Chapeau Reforgé du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Petit Chapeau Reforgé du Voyageur"); put(Language.EN, "(Reforged) Adventurer's Small Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 45, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "45pvp11R", "casques/60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -10313,7 +10313,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Sage de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Sage de Cristal"); put(Language.EN, "Crystal Sage Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 45, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "45pvp10", "casques/45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -10323,7 +10323,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Voyageur"); put(Language.EN, "Adventurer's Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 45, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "45pvp11", "casques/60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 332, true),
@@ -10333,7 +10333,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal déviant"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cristal déviant"); put(Language.EN, "Devious Crystal Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve10", "casques/65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -10342,7 +10342,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Cristal"); put(Language.EN, "Crystal Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 41, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "40pve11", "casques/25pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 315, true),
@@ -10351,7 +10351,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'ermite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'ermite"); put(Language.EN, "Hermit's Hat"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 31, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "30pve10", "casques/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 268, true),
@@ -10359,7 +10359,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Reforgé de la Source de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Reforgé de la Source de Cristal"); put(Language.EN, "(Reforged) Crystal Spring Helmet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp10R", "casques/55pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
@@ -10370,7 +10370,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
 
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Reforgé de Runes Sacrificielles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Reforgé de Runes Sacrificielles"); put(Language.EN, "(Reforged) Sacrificial Rune Hat"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "25pvp11R", "casques/25pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 293, true),
@@ -10379,7 +10379,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Source de Cristal"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Source de Cristal"); put(Language.EN, "Crystal Spring Helmet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp10", "casques/55pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
@@ -10389,7 +10389,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Runes Sacrificielles"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Hat"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "25pvp11", "casques/25pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 266, true),
@@ -10398,7 +10398,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau cristallisé"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau cristallisé"); put(Language.EN, "Crystalline Hat"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 21, Quality.ORANGE, true, false,
 				ArmorType.CASQUE, "20pve10", "casques/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 240, true),
@@ -10406,7 +10406,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 2, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif d'outremonde réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif d'outremonde réincarné"); put(Language.EN, "Reincarnated Otherworld Warlock Soul Helmet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo10R", "casques/100evo10", new MultiEffect(91, new Effect[][] {
 				new Effect[] {
@@ -10490,7 +10490,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PM, false, 348),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de Pillard réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de Pillard réincarné"); put(Language.EN, "Reincarnated Plunderer Soul Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "100evo11R", "casques/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -10574,7 +10574,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 336),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque évolutif d'outremonde"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque évolutif d'outremonde"); put(Language.EN, "Otherworld Warlock Soul Helmet"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo10", "casques/100evo10", new MultiEffect(91, new Effect[][] {
 				new Effect[] {
@@ -10658,7 +10658,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PM, false, 290),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de Pillard"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de Pillard"); put(Language.EN, "Plunderer Soul Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "100evo11", "casques/100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -10742,7 +10742,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 280),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Agate mutante"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Agate mutante"); put(Language.EN, "Mutated Agate Mask"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg10", "casques/80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 605, true),
@@ -10753,7 +10753,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 640),
 					new Effect(TypeEffect.PM, false, 660),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Os de dragon Crystalis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Os de dragon Crystalis"); put(Language.EN, "Crystalline Dragon Bone Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg11", "casques/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 555, true),
@@ -10764,7 +10764,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 690),
 					new Effect(TypeEffect.PM, false, 610),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau d'âme du Feu Illusoire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau d'âme du Feu Illusoire"); put(Language.EN, "Flamesoul Illusory Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 87, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/87bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 543, true),
@@ -10775,7 +10775,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 575),
 					new Effect(TypeEffect.PM, false, 375),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'énergie illimitée"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'énergie illimitée"); put(Language.EN, "Unlimited Mana Mask"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 86, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/86bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 591, true),
@@ -10786,7 +10786,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 575),
 					new Effect(TypeEffect.PM, false, 375),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur Temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Voyageur Temporel"); put(Language.EN, "Time Traveler Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg10", "casques/80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 558, true),
@@ -10797,7 +10797,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 510),
 					new Effect(TypeEffect.PM, false, 530),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Cristal dégénéré"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Cristal dégénéré"); put(Language.EN, "Depraved Crystal Top Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "80gvg11", "casques/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 512, true),
@@ -10808,7 +10808,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 560),
 					new Effect(TypeEffect.PM, false, 480),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Sprite impérial"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Sprite impérial"); put(Language.EN, "Imperial Spirit Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 77, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/77bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 589, true),
@@ -10819,7 +10819,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive d'Occultiste réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive d'Occultiste réincarné"); put(Language.EN, "Reincarnated Occulist Soul Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "90evo10R", "casques/80gvg10", new MultiEffect(76, new Effect[][] {
 				new Effect[] {
@@ -10943,7 +10943,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PM, false, 300),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme évolutif d'Augure réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme évolutif d'Augure réincarné"); put(Language.EN, "Reincarnated Augerer Soul Top Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "90evo11R", "casques/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -11067,7 +11067,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 288),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive d'Occultiste"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive d'Occultiste"); put(Language.EN, "Occulist Soul Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo10", "casques/80gvg10", new MultiEffect(76, new Effect[][] {
 				new Effect[] {
@@ -11191,7 +11191,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PM, false, 250),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme évolutif d'Augure"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme évolutif d'Augure"); put(Language.EN, "Augerer Soul Top Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90evo11", "casques/80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -11315,7 +11315,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau Arc-en-Ciel d'Occlusion"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau Arc-en-Ciel d'Occlusion"); put(Language.EN, "Rainbow Occluded Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/70gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 544, true),
@@ -11326,7 +11326,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'univers éternel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'univers éternel"); put(Language.EN, "Eternal Expanse Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg10", "casques/70gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 511, true),
@@ -11337,7 +11337,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Cristal d'éternité"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Haut-de-forme du Cristal d'éternité"); put(Language.EN, "Eternal Crystal Top Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "70gvg11", "casques/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 468, true),
@@ -11348,7 +11348,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Occlusion"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe d'Occlusion"); put(Language.EN, "Occultist's Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 491, true),
@@ -11359,7 +11359,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur Temporel"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voyageur Temporel"); put(Language.EN, "Time Traveler Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 66, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/77bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 451, true),
@@ -11370,7 +11370,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de Maître Demis réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de Maître Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Master Soul Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo10R", "casques/75evo10", new MultiEffect(61, new Effect[][] {
 				new Effect[] {
@@ -11494,7 +11494,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PM, false, 258),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif de Maître Chronos réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif de Maître Chronos réincarné"); put(Language.EN, "Reincarnated Chronomaster Soul Round Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "75evo11R", "casques/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -11618,7 +11618,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de maître Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive de maître Demis"); put(Language.EN, "Dimensional Master Soul Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo10", "casques/75evo10", new MultiEffect(61, new Effect[][] {
 				new Effect[] {
@@ -11742,7 +11742,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PM, false, 215),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif de Maître Chronos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif de Maître Chronos"); put(Language.EN, "Chronomaster Soul Round Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "75evo11", "casques/75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -11866,7 +11866,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe obscure de Voyageur étranger"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe obscure de Voyageur étranger"); put(Language.EN, "Exotic Ranger's Arcane Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/60bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 471, true),
@@ -11877,7 +11877,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond de défense du Juge de l'Espace-Temps"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond de défense du Juge de l'Espace-Temps"); put(Language.EN, "Spacetime Judge's Defense Round Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -11888,7 +11888,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Messager accordeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Messager accordeur"); put(Language.EN, "Tuning Messenger Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 42, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/75evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 374, true),
@@ -11899,7 +11899,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 50),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Pirate Solaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Pirate Solaire"); put(Language.EN, "Sun Pirate Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 42, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/75evo11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 346, true),
@@ -11910,7 +11910,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.PV, false, 120),
 					new Effect(TypeEffect.PM, false, 80),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de Demis réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Heaume évolutif de Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Soul Helmet"); }},
 					new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, true,
 					ArmorType.CASQUE, "60evo10R", "casques/60evo10", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -12144,7 +12144,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 264),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Béret évolutif de Chronos réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Béret évolutif de Chronos réincarné"); put(Language.EN, "Reincarnated Chrono Soul Flat Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "60evo11R", "casques/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -12378,7 +12378,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive Demis"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe évolutive Demis"); put(Language.EN, "Dimensional Soul Headdress"); }},
 					new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, false,
 					ArmorType.CASQUE, "60evo10", "casques/60evo10", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -12612,7 +12612,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 220),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Béret évolutif de Chronos"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Béret évolutif de Chronos"); put(Language.EN, "Chrono Soul Flat Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "60evo11", "casques/60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -12846,7 +12846,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Cristal du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Cristal du Voyageur"); put(Language.EN, "Wanderer's Crystalline Hat"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 26, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "-1", "casques/30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 281, true),
@@ -12854,7 +12854,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif du Voyageur réincarné"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif du Voyageur réincarné"); put(Language.EN, "Reincarnated Traveler's Soul Round Cap"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, true,
 				ArmorType.CASQUE, "30evo10R", "casques/30evo10", new MultiEffect(6, new Effect[][] {
 				new Effect[] {
@@ -13008,7 +13008,7 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 6, true),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif du Voyageur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet rond évolutif du Voyageur"); put(Language.EN, "Traveler's Soul Round Cap"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "30evo10", "casques/30evo10", new MultiEffect(6, new Effect[][] {
 				new Effect[] {
@@ -13162,74 +13162,74 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 5, true),
 				},
 			}), null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Passeur de Domaines"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Passeur de Domaines"); put(Language.EN, "Realm Crosser Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 58, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/58vert10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
 					new Effect(TypeEffect.DefM, false, 514, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Voyeur"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Voyeur"); put(Language.EN, "Scientist's Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 58, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/60evo11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 377, true),
 					new Effect(TypeEffect.DefM, false, 463, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Manipulateur Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Manipulateur Sprite"); put(Language.EN, "Spirit Manipulator's Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 50, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/60bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
 					new Effect(TypeEffect.DefM, false, 467, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette en émeraude d'Illusoire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette en émeraude d'Illusoire"); put(Language.EN, "Emerald Illusory Cap"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 50, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/50vert11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
 					new Effect(TypeEffect.DefM, false, 422, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau Arc-en-ciel d'entraînement"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau Arc-en-ciel d'entraînement"); put(Language.EN, "Rainbow Spar Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 34, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/58vert10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 266, true),
 					new Effect(TypeEffect.DefM, false, 378, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Sprite"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Sprite"); put(Language.EN, "Sprite's Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 34, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/34vert11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 277, true),
 					new Effect(TypeEffect.DefM, false, 341, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Cristal de l'Artiste de rue"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Cristal de l'Artiste de rue"); put(Language.EN, "Street Artist's Crystal Cap"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 18, Quality.GREEN, false, false,
 				ArmorType.CASQUE, "-1", "casques/20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 229, true),
 					new Effect(TypeEffect.DefM, false, 268, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Souffle Exotique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Souffle Exotique"); put(Language.EN, "Exotic Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 81, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 465, true),
 					new Effect(TypeEffect.DefM, false, 439, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Solitaire"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Solitaire"); put(Language.EN, "Lonely Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 81, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 426, true),
 					new Effect(TypeEffect.DefM, false, 389, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Souffle Exotique"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe du Souffle Exotique"); put(Language.EN, "Exotic Headdress"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 66, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
 					new Effect(TypeEffect.DefM, false, 388, true),
 				}, null ),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voleur de Soleil"); put(Language.EN, ""); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Voleur de Soleil"); put(Language.EN, "Sun Thief's Steeple Hat"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 66, Quality.WHITE, false, false,
 				ArmorType.CASQUE, "-1", "casques/77bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 378, true),
@@ -13240,7 +13240,7 @@ class LoaderHelmet {
 	
 	private static Armor[] getAll() {
 		return new Armor[] {
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Résistance suprême de Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Résistance suprême de Tarot"); put(Language.EN, "Taro - Emperor's Crown"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 100, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "100tarot0", "casques/100tarot0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 819, true),
@@ -13249,7 +13249,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 25, true),
 						new Effect(TypeEffect.AGI, false, 19, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Piste de Roue de la fortune de Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Piste de Roue de la fortune de Tarot"); put(Language.EN, "Taro - Wheel of Fortune's Track"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 100, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "100tarot1", "casques/100tarot1", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 751, true),
@@ -13258,7 +13258,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.INT, false, 35, true),
 						new Effect(TypeEffect.VOL, false, 17, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Sombre présage de Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de Sombre présage de Tarot"); put(Language.EN, "Taro - Death's Mask"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 100, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "100tarot2", "casques/100tarot2", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 682, true),
@@ -13267,7 +13267,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 27, true),
 						new Effect(TypeEffect.AGI, false, 33, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de Force Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de Force Tarot"); put(Language.EN, "Taro Strength's Will"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 95, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "95tarot0", "casques/95tarot0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 790, true),
@@ -13276,7 +13276,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 23, true),
 						new Effect(TypeEffect.AGI, false, 17, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare Zodiaque Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare Zodiaque Tarot"); put(Language.EN, "Taro Zodiac's Light"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 95, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "95tarot1", "casques/95tarot1", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 593, true),
@@ -13285,7 +13285,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.INT, false, 32, true),
 						new Effect(TypeEffect.VOL, false, 15, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Broche clair de lune Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Broche clair de lune Tarot"); put(Language.EN, "Taro Moon's Gloom"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 95, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "95tarot2", "casques/95tarot2", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 806, true),
@@ -13294,7 +13294,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 29, true),
 						new Effect(TypeEffect.VOL, false, 14, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Baiser de l'Amant Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Baiser de l'Amant Tarot"); put(Language.EN, "Taro Lover Kiss"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 90, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "90tarot0", "casques/90tarot0", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 761, true),
@@ -13303,7 +13303,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.VIT, false, 27, true),
 						new Effect(TypeEffect.VOL, false, 16, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Murmure du Démon Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Murmure du Démon Tarot"); put(Language.EN, "Taro Demon Whisper"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 90, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "90tarot1", "casques/90tarot1", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 571, true),
@@ -13312,7 +13312,7 @@ class LoaderHelmet {
 						new Effect(TypeEffect.INT, false, 29, true),
 						new Effect(TypeEffect.VOL, false, 16, true),
 					}, null ),
-				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ermite Tarot"); put(Language.EN, ""); }},
+				new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Masque de l'Ermite Tarot"); put(Language.EN, "Taro Hermit Silence"); }},
 					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 90, Quality.GOLD, true, false,
 					ArmorType.CASQUE, "90tarot2", "casques/90tarot2", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 634, true),

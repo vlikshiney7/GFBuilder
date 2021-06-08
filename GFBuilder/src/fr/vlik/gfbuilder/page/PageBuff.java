@@ -39,8 +39,8 @@ public class PageBuff extends PagePanel {
 	private static PageBuff INSTANCE = new PageBuff();
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
-	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(6);
-	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(6);
+	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(11);
+	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(11);
 	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
 	private JCustomComboBox<GuildBuff> guildBuff;
 	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(13);
@@ -112,9 +112,9 @@ public class PageBuff extends PagePanel {
 		}
 		
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 11; i++) {
 			this.labelEnergy.add(new JCustomLabel<Energy>(Energy.getData()[i]));
-			this.labelEnergy.get(i).setPreferredSize(new Dimension(120, 32));
+			this.labelEnergy.get(i).setPreferredSize(new Dimension(210, 32));
 			
 			this.energy.add(new JCustomSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
 			this.energy.get(i).addChangeListener(e -> {
@@ -317,10 +317,10 @@ public class PageBuff extends PagePanel {
 		
 		this.showAndHideEnchant = listEnchant;
 		
-		JPanel energies = new JPanel(new GridLayout(6, 1, 5, 5));
+		JPanel energies = new JPanel(new GridLayout(11, 1, 5, 5));
 		energies.setBackground(Design.UIColor[1]);
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 11; i++) {
 			JPanel panelEnergy = new JPanel();
 			panelEnergy.setBackground(Design.UIColor[1]);
 			panelEnergy.add(this.labelEnergy.get(i));
