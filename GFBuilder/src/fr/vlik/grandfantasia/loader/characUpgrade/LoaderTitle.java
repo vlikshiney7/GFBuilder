@@ -238,7 +238,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VitComp, false, 10),
 				new Effect(TypeEffect.Parade, false, 10),
 				new Effect(TypeEffect.PM, false, -20),
-				new StaticEffect(TypeStaticEffect.x2STD, 20),
+				new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Maître de l'Île Populaire"); put(Language.EN, "Popular Island Master"); }}, Quality.P8TITLE, 15, false, GradeName.NONE, Tag.RANK, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, 4),
@@ -1323,7 +1323,7 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Confiseur de l'amour"); put(Language.EN, "Matchmaker"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, 5),
 				new Effect(TypeEffect.AtkM, true, 5),
-				new StaticEffect(TypeStaticEffect.Poisse, 5),
+				new Effect(TypeEffect.Poisse, false, 5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Corsaire Indomptable"); put(Language.EN, "Mighty Pirate"); }}, Quality.BLUE, 60, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.VOL, false, 1),
@@ -1544,11 +1544,11 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, false, 200),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Général Psychique"); put(Language.EN, "Psychic General"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 3),
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Goûteur de chocolat"); put(Language.EN, "Chocolate Gourmand"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 1),
-				new StaticEffect(TypeStaticEffect.x3STD, 1),
+				new StaticEffect(TypeStaticEffect.x2STD_old, 1),
+				new StaticEffect(TypeStaticEffect.x3STD_old, 1),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Grand Conquérant de Saphaël"); put(Language.EN, "X-Legend 10th Anniversary Conqueror"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.XP, false, 5),
@@ -2033,7 +2033,7 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "4e Dimension - Gardien sylvestre"); put(Language.EN, "Alternate Dimension Forest Keeper"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.CHRONO, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, 5),
 				new Effect(TypeEffect.AtkM, true, 5),
-				new StaticEffect(TypeStaticEffect.x2STD, 3),
+				new StaticEffect(TypeStaticEffect.x2STD_old, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "9e anniversaire de Muse Girl"); put(Language.EN, "9th Anniversary Muse Legend"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 900),

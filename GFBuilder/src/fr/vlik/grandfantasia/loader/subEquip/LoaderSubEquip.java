@@ -147,10 +147,10 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
 			new Runway("Lutte", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 5),
+				new StaticEffect(TypeStaticEffect.x2STD_old, 5),
 			}),
 			new Runway("Malédiction", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 5),
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 5),
 			}),
 			new Runway("Praetor", new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 6),

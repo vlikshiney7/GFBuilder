@@ -49,8 +49,12 @@ public class Souvenir extends CompleteBuff {
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
-	public static Souvenir[] getData() {
-		return Souvenir.data;
+	@Override
+	public String getInfo(Language lang) {
+		if(this.name.get(lang) == "") {
+			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
+		}
+		return "Lvl " + this.lvl + " - " + this.name.get(lang);
 	}
 	
 	public static Souvenir get(String name) {

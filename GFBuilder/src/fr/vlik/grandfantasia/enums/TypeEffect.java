@@ -40,12 +40,12 @@ public enum TypeEffect implements Colorable, Writable {
 	DegStdP("Dégât Standard Mêlée", "Melee Standard Damage", "Deg Std Mel", "Mel Std Dam", -1, true, Tools.EffectColor[10]),
 	DegStdD("Dégât Standard Distance", "Range Standard Damage", "Deg Std Dist", "Range Std Dam", -1, true, Tools.EffectColor[7]),
 	DegSkillP("Dégât Compétence Physique", "Physical Skill Damage", "Deg Comp Phys", "Phys Sk Dam", -1, true, Tools.EffectColor[10]),
-	DegSkillM("Dégât Compétence Magique", "Magical Skill Damage", "Deg Comp Mag", "Mag Sk Dam", -1, true, Tools.EffectColor[10]),
+	DegSkillM("Dégât Compétence Magique", "Magical Skill Damage", "Deg Comp Mag", "Mag Sk Dam", -1, true, Tools.EffectColor[11]),
 	
 	ReducStdP("Réduction Dégât Standard Mêlée", "Melee Standard Damage Reduction", "Red Std Mel", "Mel Std Red", -1, true, Tools.EffectColor[10]),
 	ReducStdD("Réduction Dégât Standard Distance", "Range Standard Damage Reduction", "Red Std Dist", "Range Std Red", -1, true, Tools.EffectColor[7]),
 	ReducSkillP("Réduction Dégât Compétence Physique", "Physical Skill Damage Reduction", "Red Comp Phys", "Phys Sk Red", -1, true, Tools.EffectColor[10]),
-	ReducSkillM("Réduction Dégât Compétence Magique", "Magical Skill Damage Reduction", "Red Comp Mag", "Mag Sk Red", -1, true, Tools.EffectColor[10]),
+	ReducSkillM("Réduction Dégât Compétence Magique", "Magical Skill Damage Reduction", "Red Comp Mag", "Mag Sk Red", -1, true, Tools.EffectColor[11]),
 	
 	DegP_old("Dégât Physique", "Physical Damage", "Deg Phys", "Phys Dam", -1, true, Tools.EffectColor[10]), // DELETE
 	DegM_old("Dégât Magique", "Magical Damage", "Deg Mag", "Mag Dam", -1, true, Tools.EffectColor[11]), // DELETE
@@ -159,6 +159,7 @@ public enum TypeEffect implements Colorable, Writable {
 	ReflectM("Dégât Magique Renvoyé", "", "Deg Mag Refl", "", -1, true, Tools.EffectColor[11]),
 	ReflectPene("Dégât Pénétration Renvoyé", "", "Deg Péné Refl", "", -1, true, Tools.EffectColor[7]),
 	Shield("Bouclier de dégât", "Shield damage", "Bouclier", "Shield", -1, true, Tools.EffectColor[0]),
+	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", 100, true, Tools.EffectColor[0]),
 	
 	BoostCraft("Taux de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Tools.EffectColor[0]),
 	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Tools.EffectColor[0]),

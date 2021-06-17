@@ -825,52 +825,52 @@ public class LoaderEnchant {
 				new Calculable[][] {
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 3, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 3, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 6, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 6, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 9, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 9, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 12, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 12, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 15, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 15, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 18, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 18, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 21, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 21, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 24, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 24, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 27, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 27, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(20, Activation.Attacked, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 30, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 30, Target.OPPONENT),
 						}),
 					},
 				}),
@@ -1439,52 +1439,52 @@ public class LoaderEnchant {
 				new Calculable[][] {
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 5, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 5, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 10, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 15, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 15, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 20, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 20, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 25, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 25, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 30, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 30, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 35, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 35, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 40, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 40, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 45, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 45, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 50, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 50, Target.OPPONENT),
 						}),
 					},
 				}),
@@ -2347,34 +2347,34 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 1),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 1),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 2),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 2),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 3),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 3),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 4),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 4),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 5),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 5),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 6),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 6),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 7),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 7),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 8),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 8),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 9),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 9),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 10),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 10),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Sauvage"); put(Language.EN, "Savage"); }}, 90, 100,
@@ -2729,27 +2729,27 @@ public class LoaderEnchant {
 				new Calculable[][] {
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 5, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 5, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 10, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 15, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 15, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 20, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 20, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Proc(3, Activation.Attack, 5, new Calculable[] {
-							new StaticEffect(TypeStaticEffect.Poisse, 25, Target.OPPONENT),
+							new Effect(TypeEffect.Poisse, false, 25, Target.OPPONENT),
 						}),
 					},
 				}),
@@ -9635,7 +9635,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 16, 25, Quality.BLUE,
@@ -9643,7 +9643,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 26, 35, Quality.BLUE,
@@ -9651,7 +9651,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 36, 45, Quality.BLUE,
@@ -9659,7 +9659,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 46, 55, Quality.BLUE,
@@ -9667,7 +9667,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 56, 100, Quality.BLUE,
@@ -9675,7 +9675,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Détermination"); put(Language.EN, "Perservering"); }}, 6, 100, Quality.BLUE,
@@ -10090,7 +10090,7 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de Vigueur"); put(Language.EN, "Health"); }}, 36, 45, Quality.BLUE,
@@ -10899,7 +10899,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 16, 25, Quality.BLUE,
@@ -10907,7 +10907,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 26, 35, Quality.BLUE,
@@ -10915,7 +10915,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 36, 45, Quality.BLUE,
@@ -10923,7 +10923,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 46, 55, Quality.BLUE,
@@ -10931,7 +10931,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 56, 100, Quality.BLUE,
@@ -10939,7 +10939,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fracas Osseux"); put(Language.EN, "Bonecrushing"); }}, 6, 90, Quality.BLUE,
@@ -10953,7 +10953,7 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Piège"); put(Language.EN, "Tricky"); }}, 6, 15, Quality.BLUE,
@@ -12337,7 +12337,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 16, 25, Quality.GREEN,
@@ -12345,7 +12345,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 26, 35, Quality.GREEN,
@@ -12353,7 +12353,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 36, 45, Quality.GREEN,
@@ -12361,7 +12361,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 46, 55, Quality.GREEN,
@@ -12369,7 +12369,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Contagion"); put(Language.EN, "Contagious"); }}, 56, 100, Quality.GREEN,
@@ -12377,7 +12377,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Détermination"); put(Language.EN, "Perservering"); }}, 6, 95, Quality.GREEN,
@@ -12792,7 +12792,7 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "de Vigueur"); put(Language.EN, "Health"); }}, 36, 45, Quality.GREEN,
@@ -13531,7 +13531,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -20, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 16, 25, Quality.GREEN,
@@ -13539,7 +13539,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 26, 35, Quality.GREEN,
@@ -13547,7 +13547,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 36, 45, Quality.GREEN,
@@ -13555,7 +13555,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 46, 55, Quality.GREEN,
@@ -13563,7 +13563,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fléau"); put(Language.EN, "Pestilence"); }}, 56, 100, Quality.GREEN,
@@ -13571,7 +13571,7 @@ public class LoaderEnchant {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Fracas Osseux"); put(Language.EN, "Bonecrushing"); }}, 6, 90, Quality.GREEN,
@@ -13585,7 +13585,7 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 60, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 60, Target.OPPONENT),
 					}),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Piège"); put(Language.EN, "Tricky"); }}, 6, 15, Quality.GREEN,

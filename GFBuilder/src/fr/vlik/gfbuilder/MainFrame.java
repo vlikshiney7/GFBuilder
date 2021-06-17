@@ -91,7 +91,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.18.5");
+		super("Grand Fantasia Builder - Version 0.18.7");
 		setCustomUI();
 		
 		try {
@@ -260,7 +260,7 @@ public class MainFrame extends JFrame {
 		content.add(this.scrollContent);
 		
 		/****************************************/
-		/*		****	   STATS	  	****	*/
+		/*		****	   FRAME	  	****	*/
 		/****************************************/
 		
 		progress.setValue(progress.getValue()+1);

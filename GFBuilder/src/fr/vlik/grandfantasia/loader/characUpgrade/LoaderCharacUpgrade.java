@@ -766,7 +766,7 @@ public class LoaderCharacUpgrade {
 				new Effect(TypeEffect.VitAtk, false, 5),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de Bénédiction de la Baie Bleue"); put(Language.EN, "Blue Bay Blessing Stone"); }}, Quality.GREEN, "blueBay", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 5),
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 5),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Gri-Gri porte-bonheur pour loterie"); put(Language.EN, ""); }} , Quality.WHITE, "grigri", new Calculable[] {
 				new Effect(TypeEffect.Loot, false, 5),
@@ -796,8 +796,9 @@ public class LoaderCharacUpgrade {
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de chance du Mauvais esprit"); put(Language.EN, "Fox Demon Lucky Stone"); }}, Quality.WHITE, "esprit", new Calculable[] {
 				new Effect(TypeEffect.TCCP, false, 5),
 				new Effect(TypeEffect.TCCM, false, 5),
-				new Effect(TypeEffect.Toucher, false, 5),
-				new Effect(TypeEffect.ESQ, false, 5),
+				new Effect(TypeEffect.ToucherP, false, 5),
+				new Effect(TypeEffect.ToucherD, false, 5),
+				new Effect(TypeEffect.ESQ, true, 5),
 			}),
 			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Corne de Bataille de Smulca"); put(Language.EN, "Smulca's Battle Horn"); }}, Quality.WHITE, "smulca", new Calculable[] {
 				new Effect(TypeEffect.DefP, true, 5),

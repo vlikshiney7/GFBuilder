@@ -230,13 +230,13 @@ public class LoaderProSkill {
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Sournoiserie maléfique 1"); put(Language.EN, "Devil's Cunning 1"); }}, 86, "3-2", new Calculable[] {
 				new Proc(5, Activation.Attack, 1.5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Sournoiserie maléfique 2"); put(Language.EN, "Devil's Cunning 2"); }}, 91, "3-2", new Calculable[] {
 				new Proc(15, Activation.Attack, 1.5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Tromperie"); put(Language.EN, ""); }}, 91, "3-3", new Calculable[] {
@@ -262,16 +262,16 @@ public class LoaderProSkill {
 				new RegenEffect(TypeEffect.PM, false, 40, TypeRegen.ABSORPTION),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Combo de lumière 1"); put(Language.EN, "Light Combo 1"); }}, 66, "4-1", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 10),
-				new StaticEffect(TypeStaticEffect.x3Skill, 2),
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 10),
+				new StaticEffect(TypeStaticEffect.x3Skill_old, 2),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Combo de lumière 2"); put(Language.EN, "Light Combo 2"); }}, 86, "4-1", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 15),
-				new StaticEffect(TypeStaticEffect.x3Skill, 5),
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
+				new StaticEffect(TypeStaticEffect.x3Skill_old, 5),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Combo de lumière 3"); put(Language.EN, "Light Combo 3"); }}, 91, "4-1", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill, 20),
-				new StaticEffect(TypeStaticEffect.x3Skill, 8),
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
+				new StaticEffect(TypeStaticEffect.x3Skill_old, 8),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Amnistie divine 1"); put(Language.EN, "Divine Amnesty 1"); }}, 86, "4-2", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -10),
@@ -349,20 +349,20 @@ public class LoaderProSkill {
 				new Effect(TypeEffect.MEN, false, -10),
 				new Proc(50, Activation.Crit, 2, new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, -5, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiItem, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoItem, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Cours du fleuve 2"); put(Language.EN, "Raging River 2"); }}, 91, "5-2", new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -20),
 				new Proc(50, Activation.Crit, 2, new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, -10, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiItem, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoItem, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Instinct primaire"); put(Language.EN, ""); }}, 91, "5-3", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
 					new Effect(TypeEffect.RegenCB, false, 20),
-					new StaticEffect(TypeStaticEffect.x2STD, 75),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 75),
 				}),
 			}),
 		};

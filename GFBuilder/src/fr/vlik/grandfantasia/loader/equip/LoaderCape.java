@@ -275,7 +275,7 @@ public class LoaderCape {
 		return new Cape[] {
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Fatale Sonique"); put(Language.EN, "Blueprint: Lethal Speed Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				90, Quality.GOLD, false, "-1", "green1", new Calculable[] {
+				90, Quality.GOLD, true, "-1", "green1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 176, true),
 					new Effect(TypeEffect.DefM, false, 149, true),
 					new Effect(TypeEffect.FCE, false, 55, true),
@@ -284,7 +284,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Divine : Cape du Vent Furtif"); put(Language.EN, "Blueprint: Divine: Windspeed Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				88, Quality.GOLD, false, "-1", "green1", new Calculable[] {
+				88, Quality.GOLD, true, "-1", "green1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 144, true),
 					new Effect(TypeEffect.DefM, false, 117, true),
 					new Effect(TypeEffect.FCE, false, 43, true),
@@ -293,7 +293,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape d'Agilité de Krang"); put(Language.EN, "Blueprint: Chariot's Swift Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				80, Quality.GOLD, false, "-1", "red2", new Calculable[] {
+				80, Quality.GOLD, true, "-1", "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 119, true),
 					new Effect(TypeEffect.DefM, false, 109, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
@@ -302,7 +302,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Mortelle de Krang"); put(Language.EN, "Blueprint: Chariot's Lethal Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				80, Quality.GOLD, false, "-1", "purple0", new Calculable[] {
+				80, Quality.GOLD, true, "-1", "purple0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 119, true),
 					new Effect(TypeEffect.DefM, false, 109, true),
 					new Effect(TypeEffect.FCE, false, 54, true),
@@ -311,7 +311,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de Furtivité de Meshuga"); put(Language.EN, "Blueprint: Justice's Leaping Cape"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				70, Quality.GOLD, false, "-1", "black1", new Calculable[] {
+				70, Quality.GOLD, true, "-1", "black1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 106, true),
 					new Effect(TypeEffect.DefM, false, 101, true),
 					new Effect(TypeEffect.FCE, false, 39, true),
@@ -320,7 +320,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de la Flèche d'Envie"); put(Language.EN, "Blueprint: Envy's Swift Arrow Shroud"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				70, Quality.GOLD, false, "-1", "blue", new Calculable[] {
+				70, Quality.GOLD, true, "-1", "blue", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 106, true),
 					new Effect(TypeEffect.DefM, false, 101, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
@@ -329,7 +329,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape de l'Ombre d'Envie"); put(Language.EN, "Blueprint: Envy's Lethal Shadow Shroud"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				70, Quality.GOLD, false, "-1", "red2", new Calculable[] {
+				70, Quality.GOLD, true, "-1", "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 106, true),
 					new Effect(TypeEffect.DefM, false, 101, true),
 					new Effect(TypeEffect.FCE, false, 50, true),
@@ -338,7 +338,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Légère Cape Tricotée de l'Alchimiste"); put(Language.EN, "Alchemist's Swift Arrow Cloak"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				60, Quality.GOLD, false, "-1", "blue", new Calculable[] {
+				60, Quality.GOLD, true, "-1", "blue", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
 					new Effect(TypeEffect.DefM, false, 92, true),
 					new Effect(TypeEffect.FCE, false, 18, true),
@@ -347,7 +347,7 @@ public class LoaderCape {
 				}, null ),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape Tricotée Mortelle de l'Alchimiste"); put(Language.EN, "Alchemist's Lethal Shadow Cloak"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
-				60, Quality.GOLD, false, "-1", "red2", new Calculable[] {
+				60, Quality.GOLD, true, "-1", "red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 97, true),
 					new Effect(TypeEffect.DefM, false, 92, true),
 					new Effect(TypeEffect.FCE, false, 44, true),

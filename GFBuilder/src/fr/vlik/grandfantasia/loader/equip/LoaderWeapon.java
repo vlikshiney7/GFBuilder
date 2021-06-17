@@ -178,7 +178,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 43, true),
 					new Effect(TypeEffect.RegenCB, false, 25),
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 25),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 						new Effect(TypeEffect.VitAtk, false, 25),
 						new Effect(TypeEffect.ESQ, false, 25),
 					}),
@@ -192,7 +192,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.VitAtk, false, 18),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 25),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 						new Effect(TypeEffect.ESQ, false, 15),
 						new Effect(TypeEffect.TCCP, false, 15),
 					}),
@@ -205,7 +205,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 44, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.DegOmbre, false, 1000),
 						new Effect(TypeEffect.DCCP, false, 30),
@@ -221,7 +221,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 44, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.DegOmbre, false, 1000),
 						new Effect(TypeEffect.DCCP, false, 30),
@@ -237,9 +237,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 45, true),
 					new Effect(TypeEffect.AGI, false, 50, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					new Proc(10, Activation.Attack, 5, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 						new Effect(TypeEffect.DefP, false, -100, Target.OPPONENT),
 					}),
 				}, null ),
@@ -301,7 +301,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.Toucher, false, 15),
-					new StaticEffect(TypeStaticEffect.x3Skill, 20),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegNature, false, 716),
 					}),
@@ -415,9 +415,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					new Proc(10, Activation.Attack, 5, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 						new Effect(TypeEffect.DefP, false, -100, Target.OPPONENT),
 					}),
 				}, null ),
@@ -527,7 +527,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 					new Effect(TypeEffect.Toucher, false, 8),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée des Promesses de Bodor"); put(Language.EN, "Bodor's Sword of Promises"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -536,7 +536,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.Toucher, false, 8),
-					new StaticEffect(TypeStaticEffect.x3Skill, 20),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegNature, false, 541),
 					}),
@@ -549,7 +549,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Effect(TypeEffect.Toucher, false, 6),
-					new StaticEffect(TypeStaticEffect.x2Skill, 15),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
 					new Proc(30, Activation.Attack, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -200, TypeRegen.POISON, 2),
 					}),
@@ -628,7 +628,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
-					new StaticEffect(TypeStaticEffect.x2Skill, 15),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegFeu, false, 294),
 					}),
@@ -650,7 +650,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
-					new StaticEffect(TypeStaticEffect.x2Skill, 15),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Mortelle Diabolique"); put(Language.EN, "Evil-Slaying Sword"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
@@ -1221,7 +1221,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 53, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x3STD, 8),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Roi Arctique"); put(Language.EN, "Arctic King - Fang of Light"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1420,7 +1420,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 18, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x3STD, 8),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Cactus des Hautes Terres"); put(Language.EN, "Jundo's Hammer of Exile"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -2166,7 +2166,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 45),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30),
-						new StaticEffect(TypeStaticEffect.x2STD, 36),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 36),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Décapiteur Funeste du Roi Squelette"); put(Language.EN, "Blood: Pulse"); }},
@@ -2273,7 +2273,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 26, true),
 					new Effect(TypeEffect.Toucher, false, 15),
 					new Effect(TypeEffect.MEN, false, 20),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de la Réincarnation"); put(Language.EN, "Seal of Transmigration Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2341,7 +2341,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 35),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30),
-						new StaticEffect(TypeStaticEffect.x2STD, 36),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 36),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Poison Douloureux - Damnation"); put(Language.EN, "Excruciating Poison - Damnation"); }},
@@ -2494,7 +2494,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Effect(TypeEffect.MEN, false, 20),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame du Corps Etranger Démoniaque"); put(Language.EN, "Otherworldly Horizon Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, },
@@ -2648,7 +2648,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Effect(TypeEffect.RegenCB, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Jade Brillante"); put(Language.EN, "Brilliant Jade Battleaxe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -3054,7 +3054,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 18),
 						new Effect(TypeEffect.TCCP, false, 15),
-						new StaticEffect(TypeStaticEffect.x2STD, 30),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 30),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Zangetsu des Flammes de l'Enfer"); put(Language.EN, "Burner: Extinguish"); }},
@@ -3099,7 +3099,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.AtkD, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 43, 115, TypeRegen.ABSORPTION),
 					}),
@@ -3270,7 +3270,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Effect(TypeEffect.AtkD, true, 10),
 					new Effect(TypeEffect.Depla, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 43, 115, TypeRegen.ABSORPTION),
 					}),
@@ -3495,7 +3495,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 44, true),
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD, 10),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Géante du Démon"); put(Language.EN, "Demon Chief Giant Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3512,7 +3512,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 80, true),
 					new Effect(TypeEffect.VIT, false, 36, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD, 15),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Froide de Pluto"); put(Language.EN, "Nether-King's Cold Sword"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3908,10 +3908,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 235, true),
 					new Effect(TypeEffect.VIT, false, 100, true),
 					new Effect(TypeEffect.INT, false, 129, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 40),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
 					new Proc(40, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -6, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.Poisse, 4, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 4, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau divin d'Héphaïstos"); put(Language.EN, "Hill Smasher"); }},
@@ -3922,7 +3922,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 220, true),
 					new Effect(TypeEffect.VIT, false, 98, true),
 					new Effect(TypeEffect.INT, false, 122, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 45),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 45),
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
@@ -3971,7 +3971,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 98, true),
 					new Effect(TypeEffect.INT, false, 100, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU1M),
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU2M),
@@ -4015,7 +4015,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 80, true),
 					new Effect(TypeEffect.VOL, false, 72, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x3STD, 25),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Frappe Assumée des Anges de l'Eglise"); put(Language.EN, "Merciless Angel's Strike"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4086,10 +4086,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 89, true),
 					new Effect(TypeEffect.VIT, false, 39, true),
 					new Effect(TypeEffect.INT, false, 43, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 40),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
 					new Proc(25, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.Poisse, 2, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 2, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau Mutant de Roton"); put(Language.EN, "Ronto - Mutated Duke Hammer"); }},
@@ -4116,7 +4116,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 84, true),
 					new Effect(TypeEffect.VIT, false, 35, true),
 					new Effect(TypeEffect.INT, false, 40, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 40),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
 					new Proc(25, Activation.Attack, 4, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
@@ -4159,7 +4159,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 45, true),
 					new Effect(TypeEffect.INT, false, 45, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU1M),
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU2M),
@@ -4214,7 +4214,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 50, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x3STD, 25),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Coup des Anges Ecclésiastiques"); put(Language.EN, "Angelic Slugger"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4285,7 +4285,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
 					}),
 				}, null ),
@@ -4853,7 +4853,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.DefP, true, 20),
 					new Proc(35, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ReflectP, false, 80),
-						new StaticEffect(TypeStaticEffect.x2STD, 50),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 50),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre sombre d'Athéna"); put(Language.EN, "Light: Rising Sun"); }},
@@ -4863,7 +4863,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 184, true),
 					new Effect(TypeEffect.VIT, false, 103, true),
 					new Effect(TypeEffect.AGI, false, 143, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 40),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
 					new Proc(25, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30, false, WeaponType.HACHE1M),
 						new Effect(TypeEffect.DCCP, false, 30, false, WeaponType.HACHE1M),
@@ -4879,7 +4879,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 90, true),
 					new Effect(TypeEffect.AGI, false, 81, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.Atk, true, 35),
 						new Effect(TypeEffect.VitAtk, false, 35),
@@ -4895,7 +4895,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 90, true),
 					new Effect(TypeEffect.AGI, false, 81, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.Atk, true, 35),
 						new Effect(TypeEffect.VitAtk, false, 35),
@@ -4916,7 +4916,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -300, TypeRegen.POISON, 2),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hymne de Valkyrie"); put(Language.EN, "Golden Seraphim - Quickening"); }},
@@ -4928,7 +4928,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 67, true),
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.RegenCB, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 					}),
@@ -5019,7 +5019,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 67, true),
 					new Effect(TypeEffect.DefP, true, 15),
 					new Proc(25, Activation.Attack, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 50),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 50),
 						new Effect(TypeEffect.ReflectP, false, 50),
 						new Effect(TypeEffect.ReflectM, false, 50),
 					}),
@@ -5046,7 +5046,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 135, true),
 					new Effect(TypeEffect.VIT, false, 50, true),
 					new Effect(TypeEffect.AGI, false, 80, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 40),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 15, false, WeaponType.HACHE1M),
 						new Effect(TypeEffect.DCCP, false, 15, false, WeaponType.HACHE1M),
@@ -5062,7 +5062,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 46, true),
 					new Effect(TypeEffect.AGI, false, 37, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 20),
 						new Effect(TypeEffect.Atk, true, 20),
@@ -5093,7 +5093,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -300, TypeRegen.POISON, 2),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ailes de la Fortune"); put(Language.EN, "Golden Wing - Flash"); }},
@@ -5105,7 +5105,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 29, true),
 					new Effect(TypeEffect.Toucher, false, 14),
 					new Effect(TypeEffect.RegenCB, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
@@ -5181,7 +5181,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 23, true),
 					new Effect(TypeEffect.VIT, false, 35, true),
 					new Effect(TypeEffect.Toucher, false, 8),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Indestructible Hache Diabolique d'Ewan"); put(Language.EN, "Ewan's Immortal Evil Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5262,7 +5262,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.Toucher, false, 4),
 					new Effect(TypeEffect.Ombre, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Aile du Dragon d'Or"); put(Language.EN, "Golden Dragon's Wing"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5708,7 +5708,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 70, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 56, true),
-					new StaticEffect(TypeStaticEffect.x3Skill, 20),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 35),
 						new Effect(TypeEffect.DefP, true, 15),
@@ -5769,10 +5769,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 46, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x3STD, 25),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
 					new Proc(20, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.DegStdPts, false, -150, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.Poisse, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Griffes tranchantes de Hibou despote bestial"); put(Language.EN, "Tyranical Owl Claw"); }},
@@ -5841,7 +5841,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 33, true),
 					new Effect(TypeEffect.Toucher, false, 15),
 					new Effect(TypeEffect.VitAtk, false, 15),
-					new StaticEffect(TypeStaticEffect.x3STD, 25),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
 					new Proc(10, Activation.Attack, new Calculable[] {
 						new Effect(TypeEffect.DegNature, false, 716),
 					}),
@@ -5855,7 +5855,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 24, true),
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Effect(TypeEffect.Foudre, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					new Proc(25, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, TypeRegen.POISON, 2),
@@ -5891,7 +5891,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 25),
 						new Effect(TypeEffect.DefP, true, 10),
@@ -5966,10 +5966,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 32, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.DegStdPts, false, 100),
-						new StaticEffect(TypeStaticEffect.Poisse, 10, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Griffes tranchantes de Hibou bestial"); put(Language.EN, "Bestial Owl Claw"); }},
@@ -6050,7 +6050,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 					new Effect(TypeEffect.ESQ, true, 5),
-					new StaticEffect(TypeStaticEffect.x2STD, 15),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée du Transcendeur"); put(Language.EN, "Transcendent Sword"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6060,7 +6060,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Effect(TypeEffect.VitAtk, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Malédiction de Brûlage"); put(Language.EN, "Profane Curse"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6069,7 +6069,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 15),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, TypeRegen.POISON, 2),
@@ -6121,7 +6121,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 					new Effect(TypeEffect.VitAtk, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 10),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Nuages roses crépusculaires"); put(Language.EN, "Fatal Twilight"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6131,7 +6131,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 3),
-					new StaticEffect(TypeStaticEffect.x2STD, 10),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau de fantôme tyrannique"); put(Language.EN, "Brute's Hammer"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6151,7 +6151,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 15),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
 					new Proc(10, Activation.Attack, 10, 10, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
 					}),
@@ -6561,7 +6561,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 150, true),
 					new Effect(TypeEffect.VIT, false, 98, true),
 					new Effect(TypeEffect.AGI, false, 80, true),
-					new StaticEffect(TypeStaticEffect.x3STD, 25),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
 					new Proc(25, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 25),
 						new Effect(TypeEffect.ESQ, true, 20),
@@ -6575,7 +6575,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 92, true),
 					new Effect(TypeEffect.AGI, false, 78, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 300),
 						new Effect(TypeEffect.VitAtk, false, 25),
@@ -6591,7 +6591,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 92, true),
 					new Effect(TypeEffect.AGI, false, 78, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 300),
 						new Effect(TypeEffect.VitAtk, false, 25),
@@ -6621,7 +6621,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 73, true),
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.VitAtk, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD, 15),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtkD, false, -40, Target.OPPONENT),
@@ -6674,7 +6674,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 57, true),
 					new Effect(TypeEffect.Toucher, false, 15),
 					new Effect(TypeEffect.Sacre, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD, 15),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.Atk, true, 10),
 						new Effect(TypeEffect.Depla, false, 10),
@@ -6690,7 +6690,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Proc(20, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 35),
-						new StaticEffect(TypeStaticEffect.x2STD, 10),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 10),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Briseroche de Ronto"); put(Language.EN, "Ronto's Mountain Cleaver"); }},
@@ -6748,7 +6748,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 65, true),
 					new Effect(TypeEffect.VIT, false, 50, true),
 					new Effect(TypeEffect.AGI, false, 44, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 30),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 30),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20),
 						new Effect(TypeEffect.ESQ, true, 15),
@@ -6761,7 +6761,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 56, true),
 					new Effect(TypeEffect.VIT, false, 49, true),
 					new Effect(TypeEffect.AGI, false, 42, true),
-					new StaticEffect(TypeStaticEffect.x2STD, 15),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 200),
 						new Effect(TypeEffect.VitAtk, false, 20),
@@ -6802,7 +6802,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 41, true),
 					new Effect(TypeEffect.AGI, false, 30, true),
 					new Effect(TypeEffect.VitAtk, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
@@ -6870,7 +6870,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
 					new Effect(TypeEffect.ESQ, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD, 20),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée destructrice dimensionnelle"); put(Language.EN, "Dimensional Sword of Destruction"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6879,7 +6879,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
-					new StaticEffect(TypeStaticEffect.x3STD, 15),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 10),
 						new Effect(TypeEffect.Depla, false, 10),
@@ -6893,7 +6893,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 5),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 5),
 						new Effect(TypeEffect.VitAtk, false, 20),
 					}),
 				}, null ),
@@ -6935,7 +6935,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 					new Effect(TypeEffect.MEN, false, 20),
-					new StaticEffect(TypeStaticEffect.x3STD, 15),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mâchoire du Requin de fer"); put(Language.EN, "Jaws of Death"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7247,7 +7247,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, false, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
@@ -7278,7 +7278,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, false, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
@@ -7361,7 +7361,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Atk, true, 20),
 					new Effect(TypeEffect.AtkD, true, 20),
 					new Proc(25, Activation.Attack, 6, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x3STD, 20),
+						new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 						new Effect(TypeEffect.VitAtkD, false, 6),
 					}),
 				}, null ),
@@ -7466,7 +7466,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
 					new Effect(TypeEffect.Toucher, false, 15),
-					new StaticEffect(TypeStaticEffect.x3STD, 20),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 					new StaticEffect(TypeStaticEffect.Push, 12, Target.OPPONENT),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marque du Dragon Noir Magique"); put(Language.EN, "Black Dragon Sigil Bow"); }},
@@ -7508,7 +7508,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Atk, true, 20),
 					new Effect(TypeEffect.AtkD, true, 20),
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD, 30),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 30),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Cyclone Solaire de Quill"); put(Language.EN, "Quill - Solar Cyclone Bow"); }},
@@ -7611,7 +7611,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x3STD, 8),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Grand Arc d'Ingénieur"); put(Language.EN, "Quill's Metal Gear Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7687,7 +7687,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
 					new Effect(TypeEffect.Toucher, false, 8),
-					new StaticEffect(TypeStaticEffect.x3STD, 20),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 					new StaticEffect(TypeStaticEffect.Push, 12, Target.OPPONENT),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Métal Tranchant"); put(Language.EN, "Sharp-Edge Bow"); }},
@@ -8143,7 +8143,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, false, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
@@ -8176,7 +8176,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, false, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
@@ -8259,9 +8259,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 94, true),
 					new Effect(TypeEffect.Depla, false, 5),
 					new Effect(TypeEffect.DegGun, false, 40),
-					new StaticEffect(TypeStaticEffect.x3STD, 20),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 					new Proc(15, Activation.Attack, 6, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 4),
+						new Effect(TypeEffect.Poisse, false, 4, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Parabellum de Cross Marian"); put(Language.EN, "Lion's Roar"); }},
@@ -8272,7 +8272,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 28, true),
 					new Effect(TypeEffect.AGI, false, 77, true),
 					new Effect(TypeEffect.DegAtkD, false, 30),
-					new StaticEffect(TypeStaticEffect.x3STD, 30),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 30),
 					new Proc(20, Activation.Attack, 6, 6, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -4, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -4, Target.OPPONENT),
@@ -8304,7 +8304,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.VitAtk, false, 10),
 					new Effect(TypeEffect.MEN, false, -20),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
 					}),
@@ -8411,9 +8411,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 39, true),
 					new Effect(TypeEffect.Depla, false, 10),
 					new Effect(TypeEffect.DegGun, false, 40),
-					new StaticEffect(TypeStaticEffect.x2STD, 30),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 30),
 					new Proc(10, Activation.Attack, 8, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 3),
+						new Effect(TypeEffect.Poisse, false, 3, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil d'Emprisonnement de Bahado"); put(Language.EN, "Bahado - Imprisoning Gun"); }},
@@ -8438,7 +8438,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AtkD, false, 3213, true),
 					new Effect(TypeEffect.AGI, false, 26, true),
 					new Effect(TypeEffect.DegAtkD, false, 25),
-					new StaticEffect(TypeStaticEffect.x2STD, 40),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
 					new Proc(15, Activation.Attack, 6, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -3, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -3, Target.OPPONENT),
@@ -8481,7 +8481,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Effect(TypeEffect.VitAtk, false, 10),
 					new Effect(TypeEffect.MEN, false, -20),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
 					}),
@@ -8729,7 +8729,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD, 15),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegP_old, false, 30),
 					}),
@@ -9022,7 +9022,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, false, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
@@ -9052,7 +9052,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, false, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
@@ -9130,7 +9130,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 52, true),
 					new Effect(TypeEffect.VOL, false, 41, true),
 					new Effect(TypeEffect.AGI, false, 75, true),
-					new StaticEffect(TypeStaticEffect.x3STD, 30),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 30),
 					new Proc(15, Activation.Attack, 10, 6, new Calculable[] {
 						new Effect(TypeEffect.DegAtkD, false, 6),
 					}),
@@ -9173,7 +9173,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 63, true),
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.ESQ, true, 15),
-					new StaticEffect(TypeStaticEffect.x3STD, 20),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 50),
 					}),
@@ -9289,7 +9289,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
 					new Effect(TypeEffect.Toucher, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD, 35),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 35),
 					new Proc(15, Activation.Attack, 10, 5, new Calculable[] {
 						new Effect(TypeEffect.DegAtkD, false, 5),
 					}),
@@ -9359,7 +9359,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 32, true),
 					new Effect(TypeEffect.ESQ, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCD, false, 50),
 					}),
@@ -9553,7 +9553,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Effect(TypeEffect.VitAtk, false, 15),
 					new Proc(12, Activation.Attack, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Son du traître"); put(Language.EN, "Traitor's Promise"); }},
@@ -9580,7 +9580,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 25, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD, 10),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 10),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.PeneP, false, 20),
 					}),
@@ -11637,7 +11637,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 20),
 						new Effect(TypeEffect.DCCM, false, 20),
-						new StaticEffect(TypeStaticEffect.x3Skill, 30),
+						new StaticEffect(TypeStaticEffect.x3Skill_old, 30),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre indestructible Soul-Edge"); put(Language.EN, ""); }},
@@ -11743,7 +11743,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 124, true),
 					new Effect(TypeEffect.VOL, false, 53, true),
 					new Effect(TypeEffect.Toucher, false, 25),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -150, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -3000, -6000, TypeRegen.POISON),
@@ -11800,7 +11800,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 40, true),
 					new Effect(TypeEffect.Toucher, false, 20),
 					new Effect(TypeEffect.MEN, false, -20),
-					new StaticEffect(TypeStaticEffect.x3Skill, 20),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton de l'Oeil Diabolique"); put(Language.EN, "Heaven's Eye Obliterator"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11847,7 +11847,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 20),
 						new Effect(TypeEffect.DCCM, false, 20),
-						new StaticEffect(TypeStaticEffect.x2Skill, 25),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton Plume Arc-en-Ciel"); put(Language.EN, "Rainbow Feather Staff"); }},
@@ -11860,7 +11860,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 52, true),
 					new Effect(TypeEffect.AtkM, true, 25),
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill, 50),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 50),
 						new RegenEffect(TypeEffect.PM, false, 500, TypeRegen.REGENERATION, 2),
 					}),
 				}, null ),
@@ -11923,7 +11923,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.DefM, true, 8),
 					new Effect(TypeEffect.VitComp, false, 8),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Aile Divine - Source de la Lame"); put(Language.EN, "Divine Wing - Source of Blade"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11981,7 +11981,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PV, true, 10),
 					new Effect(TypeEffect.Depla, false, 8),
 					new Effect(TypeEffect.MEN, false, -20),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Halo de la Transcendance"); put(Language.EN, "Dimension - Halo of Transcendence"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11992,7 +11992,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 50, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -150),
 						new RegenEffect(TypeEffect.PM, false, -3000, -6000, TypeRegen.POISON),
@@ -12210,7 +12210,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 16, true),
 					new Effect(TypeEffect.Toucher, false, 9),
 					new Effect(TypeEffect.Foudre, false, 5),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Malédiction du Cyclope"); put(Language.EN, "Cursed Evil Eye Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12299,7 +12299,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 10),
 					new Proc(25, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 2),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lune de Nuit Eternelle"); put(Language.EN, "Moon of Eternal Night"); }},
@@ -12373,7 +12373,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 64, true),
 					new Effect(TypeEffect.INT, false, 68, true),
 					new Effect(TypeEffect.Toucher, false, 15),
-					new StaticEffect(TypeStaticEffect.x2Skill, 15),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 150),
 						new Effect(TypeEffect.VOL, false, 150),
@@ -13048,7 +13048,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 129, true),
 					new Effect(TypeEffect.INT, false, 235, true),
 					new Effect(TypeEffect.VOL, false, 100, true),
-					new StaticEffect(TypeStaticEffect.x3Skill, 20),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 					new Proc(40, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -6, Target.OPPONENT),
 						new Effect(TypeEffect.IntComp, false, -4),
@@ -13064,7 +13064,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 122, true),
 					new Effect(TypeEffect.INT, false, 220, true),
 					new Effect(TypeEffect.VOL, false, 98, true),
-					new StaticEffect(TypeStaticEffect.x3Skill, 25),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 25),
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
@@ -13119,7 +13119,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 198, true),
 					new Effect(TypeEffect.VOL, false, 98, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50),
 						new Effect(TypeEffect.DCCM, false, 50),
@@ -13170,7 +13170,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 96, true),
 					new Effect(TypeEffect.VOL, false, 72, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x3Skill, 25),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 25),
 				}, new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 1),
 				}),
@@ -13240,10 +13240,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 43, true),
 					new Effect(TypeEffect.INT, false, 89, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 					new Proc(25, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
-						new StaticEffect(TypeStaticEffect.Poisse, 2, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 2, Target.OPPONENT),
 					}),
 				}, new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 10),
@@ -13274,7 +13274,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.INT, false, 84, true),
 					new Effect(TypeEffect.VOL, false, 35, true),
-					new StaticEffect(TypeStaticEffect.x2Skill, 20),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
 					new Proc(25, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
@@ -13324,7 +13324,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 146, true),
 					new Effect(TypeEffect.VOL, false, 44, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2Skill, 25),
+					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50),
 						new Effect(TypeEffect.DCCM, false, 50),
@@ -13388,7 +13388,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 50, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x3Skill, 25),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 25),
 				}, new Calculable[] {
 					new Effect(TypeEffect.FCE, true, 1),
 				}),
@@ -13461,7 +13461,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 3),
 					}),
 				}, null ),
@@ -13883,7 +13883,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, true, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
@@ -13916,7 +13916,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, true, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
@@ -13949,7 +13949,7 @@ public class LoaderWeapon {
 						add(new Effect(TypeEffect.Depla, true, 5));
 					}});
 					add(new ArrayList<Calculable>() {{
-						add(new StaticEffect(TypeStaticEffect.x2STD, 3));
+						add(new StaticEffect(TypeStaticEffect.x2STD_old, 3));
 					}});
 					add(new ArrayList<Calculable>() {{
 						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
@@ -14054,7 +14054,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 75, true),
 					new Effect(TypeEffect.VOL, false, 52, true),
 					new Effect(TypeEffect.AGI, false, 41, true),
-					new StaticEffect(TypeStaticEffect.x3STD, 30),
+					new StaticEffect(TypeStaticEffect.x3STD_old, 30),
 					new Proc(15, Activation.Attack, 10, 6, new Calculable[] {
 						new Effect(TypeEffect.DegAtkD, false, 6),
 					}),
@@ -14125,7 +14125,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 35, true),
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Effect(TypeEffect.ESQ, false, 15),
-					new StaticEffect(TypeStaticEffect.x3Skill, 20),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 50),
 					}),
@@ -14251,7 +14251,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 					new Effect(TypeEffect.Toucher, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD, 35),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 35),
 					new Proc(15, Activation.Attack, 10, 5, new Calculable[] {
 						new Effect(TypeEffect.DegAtkD, false, 5),
 					}),
@@ -14333,7 +14333,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
 					new Effect(TypeEffect.ESQ, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD, 25),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 50),
 					}),
@@ -14553,7 +14553,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Effect(TypeEffect.VitAtk, false, 15),
 					new Proc(12, Activation.Attack, 10, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Son du traître"); put(Language.EN, "Traitor's Promise"); }},
@@ -15536,7 +15536,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 20),
 					new Proc(15, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur de la Cruauté"); put(Language.EN, "Lord of Cruelty"); }},
@@ -15626,7 +15626,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 20),
 					new Proc(20, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
-						new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Visage d'Ares"); put(Language.EN, "War God's Visage"); }},

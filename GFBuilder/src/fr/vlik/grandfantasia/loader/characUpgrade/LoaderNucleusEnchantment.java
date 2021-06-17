@@ -797,19 +797,19 @@ public class LoaderNucleusEnchantment {
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Cruauté"); put(Language.EN, "Cruel"); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill, 7),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill, 7),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill, 7),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill, 7),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill, 7),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
 					},
 				}),
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Brute"); put(Language.EN, "Brute"); }},

@@ -307,27 +307,27 @@ public class Loader {
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 5"); put(Language.EN, "Quill's Punishment 5"); }}, new Calculable[] {
 				new Effect(TypeEffect.PV, false, -140),
 				new Effect(TypeEffect.PM, false, -140),
-				new StaticEffect(TypeStaticEffect.Poisse, 1),
+				new Effect(TypeEffect.Poisse, false, 1),
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 4"); put(Language.EN, "Quill's Punishment 4"); }}, new Calculable[] {
 				new Effect(TypeEffect.PV, false, -130),
 				new Effect(TypeEffect.PM, false, -130),
-				new StaticEffect(TypeStaticEffect.Poisse, 1),
+				new Effect(TypeEffect.Poisse, false, 1),
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 3"); put(Language.EN, "Quill's Punishment 3"); }}, new Calculable[] {
 				new Effect(TypeEffect.PV, false, -120),
 				new Effect(TypeEffect.PM, false, -120),
-				new StaticEffect(TypeStaticEffect.Poisse, 1),
+				new Effect(TypeEffect.Poisse, false, 1),
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 2"); put(Language.EN, "Quill's Punishment 2"); }}, new Calculable[] {
 				new Effect(TypeEffect.PV, false, -110),
 				new Effect(TypeEffect.PM, false, -110),
-				new StaticEffect(TypeStaticEffect.Poisse, 1),
+				new Effect(TypeEffect.Poisse, false, 1),
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de Quill 1"); put(Language.EN, "Quill's Punishment 1"); }}, new Calculable[] {
 				new Effect(TypeEffect.PV, false, -100),
 				new Effect(TypeEffect.PM, false, -100),
-				new StaticEffect(TypeStaticEffect.Poisse, 1),
+				new Effect(TypeEffect.Poisse, false, 1),
 			}),
 			new IslandBuff(new HashMap<Language, String>() {{ put(Language.FR, "Ermite Sprite 5"); put(Language.EN, "Sprite Hermit 5"); }}, new Calculable[] {
 				new Effect(TypeEffect.XP, false, 5),

@@ -6,12 +6,14 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.enums.TypeMultipleHit;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equipUpgrade.Pearl;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Condition.TypeCondition;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.MultipleHit;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
@@ -24,14 +26,17 @@ public class LoaderPearl {
 	static Pearl[] getWeapon() {
 		return new Pearl[] {
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque supérieure"); put(Language.EN, "Advanced Attack Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 20),
+				new Proc(20, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Enfermement"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de cage"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 2, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 100),
@@ -67,7 +72,7 @@ public class LoaderPearl {
 					new Effect(TypeEffect.DegOmbre, false, 100),
 				}),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Brèche"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de brèche"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, 5, new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 100, Target.OPPONENT),
 				}),
@@ -96,7 +101,7 @@ public class LoaderPearl {
 					new Effect(TypeEffect.DegGlace, false, 100),
 				}),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Magie"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de magie"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(10, Activation.Attack, 10, new Calculable[] {
 					new Effect(TypeEffect.INT, false, 200, true),
 					new Effect(TypeEffect.VitComp, false, 50),
@@ -111,7 +116,7 @@ public class LoaderPearl {
 					new Effect(TypeEffect.DegNature, false, 100),
 				}),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Métamorphose"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de métamorphose"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.Transfo, Target.OPPONENT),
 				}),
@@ -128,10 +133,10 @@ public class LoaderPearl {
 					new Effect(TypeEffect.DegOmbre, false, 100),
 				}),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Sceau"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de sceau"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
@@ -149,7 +154,7 @@ public class LoaderPearl {
 					new Effect(TypeEffect.DegFoudre, false, 100),
 				}),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique des Limbes"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique des limbes"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
 					new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 				}),
@@ -176,7 +181,9 @@ public class LoaderPearl {
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque dimensionnelle"); put(Language.EN, "Dimensional Attack Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "purple2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 18),
+				new Proc(18, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 200),
 				}),
@@ -278,17 +285,19 @@ public class LoaderPearl {
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de cruauté absolue"); put(Language.EN, "Absolute Cruelty Runestone"); }}, Quality.ORANGE, Quality.RED, false, "absolue", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 200),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de cruauté prestigieuse"); put(Language.EN, "Hero Cruelty Runestone"); }}, Quality.ORANGE, Quality.RED, false, "prestigieuse", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 8),
+				new Proc(8, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 300),
@@ -425,7 +434,7 @@ public class LoaderPearl {
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de sceau royale"); put(Language.EN, "Ancient Kings Seal Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 200),
@@ -435,7 +444,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.HealR, false, 10),
 				new Proc(15, Activation.Attack, 5, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.AntiHeal, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 300),
@@ -934,25 +943,33 @@ public class LoaderPearl {
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'attaque - Expert"); put(Language.EN, "Expert Attack Runestone"); }}, Quality.BLUE, Quality.PURPLE, false, "green2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 13),
+				new Proc(13, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque antique"); put(Language.EN, "Ancient Attack Runestone"); }}, Quality.BLUE, null, false, "orange2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 10),
+				new Proc(10, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque intermédiaire"); put(Language.EN, "Intermediate Attack Runestone"); }}, Quality.BLUE, Quality.PURPLE, false, "blue2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 15),
+				new Proc(15, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'attaque standard"); put(Language.EN, "Standard Attack Runestone"); }}, Quality.BLUE, Quality.PURPLE, false, "white2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 14),
+				new Proc(14, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 200),
 				}),
@@ -1283,13 +1300,17 @@ public class LoaderPearl {
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque du débutant"); put(Language.EN, "Beginner Attack Runestone"); }}, Quality.GREEN, Quality.PURPLE, false, "green2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 11),
+				new Proc(11, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque spéciale"); put(Language.EN, "Special Attack Runestone"); }}, Quality.GREEN, null, false, "black2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 8),
+				new Proc(8, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),
@@ -1435,7 +1456,9 @@ public class LoaderPearl {
 				new Effect(TypeEffect.DCCP, false, 1),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Attaque standard "); put(Language.EN, ""); }}, Quality.WHITE, Quality.PURPLE, false, "white2", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2STD, 8),
+				new Proc(8, Activation.Standard, new Calculable[] {
+					new MultipleHit(TypeMultipleHit.Double, 100),
+				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegSacre, false, 100),
 				}),

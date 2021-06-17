@@ -409,8 +409,8 @@ public class PageTalent extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.groupTalent.size(); i++) {
-			Talent talent = this.getTalent(i);
-			config.put("TalentSelect" + i, "" + talent.getName(Language.FR));
+			String value = this.getTalent(i) != null ? this.getTalent(i).getInfo(lang) : "";
+			config.put("TalentSelect" + i, "" + value);
 		}
 		
 		for(int i = 0; i < this.itemTalent.size(); i++) {

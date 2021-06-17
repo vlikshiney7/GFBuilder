@@ -20,7 +20,7 @@ var pieceCorrespondance = new Array();
 	pieceCorrespondance[5] = [ "BOTTE", "bottes" ];
 	
 var colorCorrespondance = new Array();
-	colorCorrespondance[0] = "GREY";
+	colorCorrespondance[0] = "WHITE";
 	colorCorrespondance[1] = "WHITE";
 	colorCorrespondance[2] = "GREEN";
 	colorCorrespondance[3] = "BLUE";
@@ -79,9 +79,12 @@ function ExtractArmor() {
 		lvl = "undefined";
 	}
 	
+	var pvp = false;
+	
 	var line = document.getElementsByClassName('item-general');
 	
 	var listClass = "";
+	var idClass;
 	var listEffect = "";
 	
 	for(var i = 0; i < line.length; i++) {
@@ -90,41 +93,61 @@ function ExtractArmor() {
 			
 			for(var j = 0; j < stat.length; j++) {
 				if(stat[j].innerHTML.trim().startsWith('DEF')) {
-					listEffect += "\t\tnew Effect(TypeEffect.DefP, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.DefP, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('M-DEF')) {
-					listEffect += "\t\tnew Effect(TypeEffect.DefM, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.DefM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('STR')) {
-					listEffect += "\t\tnew Effect(TypeEffect.FCE, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.FCE, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('VIT')) {
-					listEffect += "\t\tnew Effect(TypeEffect.VIT, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.VIT, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('INT')) {
-					listEffect += "\t\tnew Effect(TypeEffect.INT, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.INT, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('WIL')) {
-					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('AGI')) {
-					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('HP')) {
-					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('EN')) {
-					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				} else if(stat[j].innerHTML.match(/chance to hit/)) {
-					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				}
 			}
 		} else {
 			if(line[i].innerHTML.match(/Magic Critical Damage/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.DCCM, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				listEffect += "\t\tnew Effect(TypeEffect.DCCM, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 			} else if(line[i].innerHTML.match(/critical hit damage/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.DCCP, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				listEffect += "\t\tnew Effect(TypeEffect.DCCP, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 			} else if(line[i].innerHTML.match(/magic critical hit/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.TCCM, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				listEffect += "\t\tnew Effect(TypeEffect.TCCM, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 			} else if(line[i].innerHTML.match(/critical hit/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.TCCP, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
-			} else if(line[i].innerHTML.match(/\//) && !line[i].innerHTML.match(/([0-9])/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.TCCP, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+			} else if(line[i].innerHTML.match(/evade/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.ESQ, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				if(quality == 4) {
+					pvp = true;
+				}
+			} else if(line[i].innerHTML.match(/Physical PEN Reduction/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.ReducPeneP, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				if(quality == 4) {
+					pvp = true;
+				}
+			} else if(line[i].innerHTML.match(/Magic PEN Reduction/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.ReducPeneM, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				if(quality == 4) {
+					pvp = true;
+				}
+			} else if(!line[i].innerHTML.match(/([0-9])/) && !line[i].innerHTML.match(/color/)) {
 				for(var j = 0; j < getNameClass.length; j++) {
 					for(var k = 0; k < getNameClass[j].length; k++) {
 						if(line[i].innerHTML.match(getNameClass[j][k])) {
 							listClass += "GradeName." + gradeNameCorrespondance[j] + ", ";
+							
+							if(idClass == undefined) {
+								idClass = j;
+							}
+							
 							break;
 						}
 					}
@@ -133,14 +156,14 @@ function ExtractArmor() {
 		}
 	}
 	
-	var enchant;
-	var codearmor;
-	var iconpath = "";
+	var enchant = false;
+	var codearmor = "";
+	var iconpath = "ICONPATH";
 	
 	if(quality == 7) {
 		enchant = false;
-		codearmor = "90red" + idClasses.split(",")[0];
-		iconpath = "90red" + idClasses.split(",")[0];
+		codearmor = "90red" + idClass;
+		iconpath = "90red" + idClass;
 	} else if(quality == 6) {
 		var codeLvl = lvl;
 		while(codeLvl % 10 != 0) {
@@ -148,8 +171,8 @@ function ExtractArmor() {
 		}
 		
 		enchant = true;
-		codearmor = codeLvl + "vio" + idClasses.split(",")[0];
-		iconpath = codeLvl + "vio" + idClasses.split(",")[0];
+		codearmor = codeLvl + "vio" + idClass;
+		iconpath = codeLvl + "vio" + idClass;
 	} else if(quality == 5) {
 		var codeLvl = lvl;
 		while(codeLvl % 10 != 0) {
@@ -157,27 +180,49 @@ function ExtractArmor() {
 		}
 		
 		enchant = true;
-		codearmor = codeLvl + "gold" + idClasses.split(",")[0];
-		iconpath = codeLvl + "gold" + idClasses.split(",")[0];
+		codearmor = codeLvl + "gold" + idClass;
+		iconpath = codeLvl + "gold" + idClass;
 	} else if(quality == 4 && !pvp) {
-		enchant = true;
-	} else if(quality == 3) {
-		var codeLvl = lvl;
-		while(codeLvl % 10 != 0) {
+		var codeLvl = lvl - 1;
+		while(codeLvl % 5 != 0) {
 			codeLvl++;
 		}
 		
-		codearmor = codeLvl + "gvg" + idClasses.split(",")[0];
+		enchant = true;
+		codearmor = codeLvl + "pve" + idClass;
+		iconpath = codeLvl + "pve" + idClass;
+	} else if(quality == 3) {
+		var codeLvl = lvl;
+		if(lvl == 70 || lvl == 80 || lvl == 90) {
+			codearmor = codeLvl + "gvg" + idClass;
+		} else {
+			codearmor = "-1";
+		}
 	} else if(quality == 2) {
 		codearmor = "-1";
 	} else if(quality == 1) {
 		codearmor = "-1";
+	} else if(quality == 0) {
+		codearmor = "-1";
 	}
+	
+	if(pvp) {
+		codearmor = lvl + "pvp" + idClass;
+		iconpath = lvl + "pvp" + idClass;
+	}
+	
+	var reinca = false;
+	if(name.match(/eforgé/) || name.match(/éincarn/)) {
+		reinca = true;
+		codearmor += "R";
+	}
+	
+	var idPiece = document.getElementsByClassName("item-icon")[0].innerHTML.split("itemicon/A")[1].charAt(0);
 	
 	var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 	result += "\tnew GradeName[] { ";
 	result += listClass;
-	result += "},\n\t" + lvl + ", Quality." + colorCorrespondance[quality] + ", " + enchant + ", " + reinca + ",\n";
+	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", " + enchant + ", " + reinca + ",\n";
 	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
 	result += listEffect;
 	result += "\t}, null ),\n";
@@ -263,7 +308,6 @@ function ExtractEvo() {
 		codearmor += "R";
 	}
 	
-	// A REDEFINIR
 	var idPiece = document.getElementsByClassName("item-icon")[0].innerHTML.split("itemicon/A")[1].charAt(0);
 	
 	var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
@@ -280,7 +324,7 @@ function ExtractEvo() {
 function updateClock() {}
 
 if(document.URL.match(/grandfantasia-db/)) {
-	if(document.getElementById("itemGrowEquip").length > 0) {
+	if(document.getElementById("itemGrowEquip") != null) {
 		ExtractEvo();
 	} else {
 		ExtractArmor();

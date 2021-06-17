@@ -31,7 +31,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Glace, false, 32),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 30),
-						new StaticEffect(TypeStaticEffect.x3Skill, 15),
+						new StaticEffect(TypeStaticEffect.x3Skill_old, 15),
 						new Proc(100, Activation.Phys, new Calculable[] {
 							new Effect(TypeEffect.DegSacre, false, 2400),
 						}),
@@ -60,7 +60,7 @@ public class LoaderRing {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, 9),
 						new Effect(TypeEffect.VitComp, false, 6),
-						new StaticEffect(TypeStaticEffect.x3Skill, 15),
+						new StaticEffect(TypeStaticEffect.x3Skill_old, 15),
 					}),
 				}, null),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Fugacité de Roue de la fortune de Tarot ténébreux"); put(Language.EN, "Dark Taro - Wheel of Fortune's Charm"); }},
@@ -100,10 +100,12 @@ public class LoaderRing {
 					new Effect(TypeEffect.Nature, false, 32),
 					new Proc(15, Activation.Attacked, 7, new Calculable[] {
 						new Effect(TypeEffect.MEN, false, 1200),
-						new Effect(TypeEffect.ReducP_old, true, 9),
-						new Effect(TypeEffect.ReducM_old, true, 9),
+						new Effect(TypeEffect.ReducStdP, true, 9),
+						new Effect(TypeEffect.ReducStdD, true, 9),
+						new Effect(TypeEffect.ReducSkillP, true, 9),
+						new Effect(TypeEffect.ReducSkillM, true, 9),
 						new Proc(100, Activation.Phys, new Calculable[] {
-						new Effect(TypeEffect.DegOmbre, false, 900),
+							new Effect(TypeEffect.DegOmbre, false, 900),
 						}),
 					}),
 				}, null),
@@ -115,8 +117,9 @@ public class LoaderRing {
 					new Effect(TypeEffect.VOL, false, 16, true),
 					new Effect(TypeEffect.Glace, false, 30),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 8),
-						new StaticEffect(TypeStaticEffect.x2STD, 20),
+						new Effect(TypeEffect.DegStdP, false, 8),
+						new Effect(TypeEffect.DegStdD, false, 8),
+						new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					}),
 				}, null),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Force débordante de Tarot ténébreux"); put(Language.EN, "Dark Taro Strength's Overflow"); }},
@@ -140,7 +143,7 @@ public class LoaderRing {
 					new Effect(TypeEffect.Ombre, false, 30),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, 12),
-						new StaticEffect(TypeStaticEffect.x2Skill, 25),
+						new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
 					}),
 				}, null),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Zodiaque méprisant de Tarot ténébreux"); put(Language.EN, "Dark Taro Zodiac's Contempt"); }},
@@ -300,7 +303,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Toucher, false, -1, Target.OPPONENT),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 20, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 20, Target.OPPONENT),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Bravoure du Champion"); put(Language.EN, "Champion's Valor"); }},
@@ -898,7 +901,7 @@ public class LoaderRing {
 						new Effect(TypeEffect.Toucher, false, -1, Target.OPPONENT),
 					}),
 					new Proc(Activation.Attack, 10, TDB.TDB, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.Poisse, 20, Target.OPPONENT),
+						new Effect(TypeEffect.Poisse, false, 20, Target.OPPONENT),
 					}),
 				}, null ),
 			new Ring(new HashMap<Language, String>() {{ put(Language.FR, "Anneau d'érosion d'armure"); put(Language.EN, "Sunder Armor Ring"); }},

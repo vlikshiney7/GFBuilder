@@ -79,6 +79,10 @@ public enum TypeSkillEffect implements Writable {
 	Class4S12("Marteau du Jugement", "Hammer of Judgment"),
 	Class4S13("Censure Divine", "God's Censure"),
 	Class4S14("Esprits Enragés", "Rage of Spirits"),
+	Class4S15("Service de Soin", "Healing Barrier"),
+	Class4S16("Grand Service de Soin", "Great Healing Barrier"),
+	Class4S17("Toucher Régénérant", "Mending Touch"),
+	Class4S18("Prière Régénérante", "Mending Touch"),
 	
 	Class5S0("Bouclier d'Éternité", "Shield of Eternity"),
 	Class5S1("Vol du Gardien", "Guardian Flight"),

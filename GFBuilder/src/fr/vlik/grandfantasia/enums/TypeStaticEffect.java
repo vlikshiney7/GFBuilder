@@ -8,23 +8,23 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 
 public enum TypeStaticEffect implements Colorable, Writable {
 	
-	x2STD("Dégât x2 sur Coup Standard", "Damage x2 in standard hit", "DEG x2 STD", "DAM x2 STD", Tools.EffectColor[7]),
-	x3STD("Dégât x3 sur Coup Standard", "Damage x3 in standard hit", "DEG x3 STD", "DAM x3 STD", Tools.EffectColor[10]),
-	x2Skill("Dégât x2", "Damage x2", "DEG x2", "DAM x2", Tools.EffectColor[7]),
-	x3Skill("Dégât x3", "Damage x3", "DEG x3", "DAM x3", Tools.EffectColor[10]),
+	// TO DELETE
+	x2STD_old("Dégât x2 sur Coup Standard", "Damage x2 on standard hit", "Deg x2 STD", "Dam x2 STD", Tools.EffectColor[7]),
+	x3STD_old("Dégât x3 sur Coup Standard", "Damage x3 on standard hit", "Deg x3 STD", "Dam x3 STD", Tools.EffectColor[10]),
+	x2Skill_old("Dégât x2 sur Compétence", "Damage x2 on skill", "Deg x2 Comp", "Dam x2 SKL", Tools.EffectColor[7]),
+	x3Skill_old("Dégât x3 sur Compétence", "Damage x3 on skill", "Deg x3 Comp", "Dam x3 SKL", Tools.EffectColor[10]),
 	
-	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", Tools.EffectColor[8]),
 	NoMove("Immobilisation", "Immobilization", "Immobilisation", "Immobilization", Tools.EffectColor[8]),
 	NoSkill("Compétences bloquées", "Skills blocked", "Silence", "Anti Skills", Tools.EffectColor[8]),
 	NoPhys("Compétences physique bloquées", "Physical skills blocked", "Silence physique", "Anti Phys Skills", Tools.EffectColor[8]),
 	NoMag("Compétences magique bloquées", "Magical skills blocked", "Silence magique", "Anti Mag Skills", Tools.EffectColor[8]),
-	AntiItem("Objet bloqué", "Object blocked", "Anti Objet", "Anti Item", Tools.EffectColor[8]),
+	NoItem("Objet bloqué", "Object blocked", "Anti Objet", "Anti Item", Tools.EffectColor[8]),
+	NoHeal("Soin bloqué", "Heal blocked", "Anti Soin", "Anti Heal", Tools.EffectColor[8]),
 	Stun("Étourdissement", "Stun", "Stun", "Stun", Tools.EffectColor[8]),
 	Push("Ejection", "Push", "Push", "Push", Tools.EffectColor[8]),
 	Sleep("Endormissement", "Sleep", "Sommeil", "Sleep", Tools.EffectColor[8]),
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
-	AntiHeal("Soin bloqué", "Heal blocked", "Anti Soin", "Anti Heal", Tools.EffectColor[8]),
 	Dispel("Suppression aléatoire d'un état négatif", "Auto dispel one random negative statut", "Dispel d'un malus", "Dispel one malus", Tools.EffectColor[0]),
 	Block("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),
 	Transfo("Transformation", "Transformation", "Transformation", "Transformation", Tools.EffectColor[0]),

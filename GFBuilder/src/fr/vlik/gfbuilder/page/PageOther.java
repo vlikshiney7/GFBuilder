@@ -129,7 +129,9 @@ public class PageOther extends PagePanel {
 		list.addAll(this.getSouvenir());
 		
 		for(int i = 0; i < 3; i++) {
-			list.addAll(this.getSouvenirEnchantment(i));
+			if(this.souvenirEnchant.get(i).isVisible()) {
+				list.addAll(this.getSouvenirEnchantment(i));
+			}
 		}
 		
 		this.effects = list;
@@ -249,10 +251,9 @@ public class PageOther extends PagePanel {
 	public void updateSouvenir() {
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		Souvenir memory = this.getSouvenir();
-		this.souvenir.setItems(Souvenir.getPossibleSouvenir(lvl));
+		Souvenir[] tabSouvenir = Souvenir.getPossibleSouvenir(lvl);
 		
-		if(!this.getAnima().equals(memory)) {
+		if(!this.souvenir.setItems(tabSouvenir)) {
 			MainFrame.getInstance().setRedPane(NUM_PAGE);
 		}
 	}
@@ -268,7 +269,6 @@ public class PageOther extends PagePanel {
 			this.labelGFB[4].setVisible(false);
 			for(int i = 0; i < 3; i++) {
 				this.souvenirEnchant.get(i).setVisible(false);
-				this.souvenirEnchant.get(i).setSelectedIndex(0);
 			}
 		}
 	}
