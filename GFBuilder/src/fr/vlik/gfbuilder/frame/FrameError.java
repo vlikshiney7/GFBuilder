@@ -9,13 +9,13 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -32,7 +32,7 @@ public class FrameError extends JCustomFrame {
 	}
 	
 	private FrameError() {
-		this.setLayout(new BorderLayout());
+		super(new BorderLayout());
 		this.label = Lang.getDataLabel(17);
 		
 		try {
@@ -56,15 +56,11 @@ public class FrameError extends JCustomFrame {
 		
 		updateLanguage(Language.FR);
 		
-		JPanel pageError = new JPanel();
-		pageError.setLayout(new BoxLayout(pageError, BoxLayout.Y_AXIS));
+		JCustomPanel pageError = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageError.setBackground(Design.UIColor[2]);
-		pageError.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		pageError.add(this.label[0]);
+		pageError.addAll(this.label[0], Box.createVerticalStrut(10), this.zoneError);
 		this.label[0].setFont(Design.SUBTITLE);
-		pageError.add(Box.createVerticalStrut(10));
-		pageError.add(this.zoneError);
 		
 		this.add(pageError);
 	}

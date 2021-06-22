@@ -28,6 +28,7 @@ import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomTextPane;
 
@@ -55,8 +56,7 @@ public class PageTalent extends PagePanel {
 	}
 	
 	private PageTalent() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
@@ -154,10 +154,9 @@ public class PageTalent extends PagePanel {
 
 	@Override
 	protected void createPanel() {
-		JPanel chosenTalent = new JPanel();
-		chosenTalent.setLayout(new GridLayout(3, 3));
-		chosenTalent.setMaximumSize(new Dimension(108, 108));
+		JCustomPanel chosenTalent = new JCustomPanel(new GridLayout(3, 3));
 		chosenTalent.setBackground(Design.UIColor[0]);
+		chosenTalent.setMaximumSize(new Dimension(108, 108));
 		
 		int[] orderTalent = { 5, 0, 4, 1, 8, 2, 7, 3, 6 };
 		for(int i = 0; i < orderTalent.length; i++) {
@@ -165,41 +164,25 @@ public class PageTalent extends PagePanel {
 			chosenTalent.add(this.tabChosenTalent.get(orderTalent[i]));
 		}
 		
-		JPanel subElem1 = new JPanel();
-		subElem1.setBackground(Design.UIColor[1]);
-		subElem1.add(chosenTalent);
-		subElem1.add(this.combiTalentInfo);
-		
-		JPanel elem1 = new JPanel();
-		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelGFB[0]);
+		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), new JCustomPanel(chosenTalent, this.combiTalentInfo));
 		this.labelGFB[0].setFont(Design.TITLE);
-		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(subElem1);
 		
-		this.add(elem1);
-		this.add(Box.createVerticalStrut(10));
+		this.addAll(elem1, Box.createVerticalStrut(10));
 		
 		
-		JPanel elem2 = new JPanel(new GridLayout(1,2, 10, 10));
+		JCustomPanel elem2 = new JCustomPanel(new GridLayout(1,2, 10, 10));
 		elem2.setBackground(Design.UIColor[2]);
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel colTalent = new JPanel();
-			colTalent.setLayout(new BoxLayout(colTalent, BoxLayout.Y_AXIS));
-			colTalent.setBorder(new EmptyBorder(10, 10, 10, 10));
-			colTalent.setBackground(Design.UIColor[1]);
-			colTalent.add(this.labelGFB[i+1]);
+			JCustomPanel colTalent = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+			colTalent.add(this.labelGFB[i+1], Box.createVerticalStrut(10));
 			this.labelGFB[i+1].setFont(Design.TITLE);
-			colTalent.add(Box.createVerticalStrut(10));
 			
-			JPanel blocTalent = new JPanel(new GridLayout(4, 1, 10, 10));
-			blocTalent.setBackground(Design.UIColor[1]);
+			JCustomPanel blocTalent = new JCustomPanel(new GridLayout(4, 1, 10, 10));
 			
 			for(int j = 0; j < 4; j++) {
-				JPanel lineTalent = new JPanel(new GridLayout(1, 4, 5, 5));
+				JCustomPanel lineTalent = new JCustomPanel(new GridLayout(1, 4, 5, 5));
 				lineTalent.setBackground(Design.UIColor[0]);
 				
 				Enumeration<AbstractButton> itTalent = this.groupTalent.get(i*4+j).getElements();
@@ -208,25 +191,19 @@ public class PageTalent extends PagePanel {
 						if(k == 0) {
 							lineTalent.add(itTalent.nextElement());
 						} else {
-							JPanel singleTalent = new JPanel();
-							singleTalent.setLayout(new BoxLayout(singleTalent, BoxLayout.Y_AXIS));
+							JCustomPanel singleTalent = new JCustomPanel(BoxLayout.Y_AXIS);
 							singleTalent.setBackground(Design.UIColor[0]);
-							singleTalent.add(itTalent.nextElement());
-							singleTalent.add(Box.createVerticalStrut(5));
-							singleTalent.add(this.itemTalent.get(i*12+j*3+k-1));
+							singleTalent.addAll(itTalent.nextElement(), Box.createVerticalStrut(5), this.itemTalent.get(i*12+j*3+k-1));
 							
 							lineTalent.add(singleTalent);
 						}
 					}
 				} while(itTalent.hasMoreElements());
 				
-				JPanel subtitle = new JPanel();
-				subtitle.setLayout(new BoxLayout(subtitle, BoxLayout.Y_AXIS));
-				subtitle.setBorder(new EmptyBorder(5, 5, 5, 5));
+				JCustomPanel subtitle = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(5, 5, 5, 5));
 				subtitle.setBackground(Design.UIColor[0]);
-				subtitle.add(this.labelGFB[i*4+j+3]);
+				subtitle.addAll(this.labelGFB[i*4+j+3], lineTalent);
 				this.labelGFB[i*4+j+3].setFont(Design.SUBTITLE);
-				subtitle.add(lineTalent);
 				
 				this.showAndHideTalent.add(subtitle);
 				
@@ -238,8 +215,7 @@ public class PageTalent extends PagePanel {
 			elem2.add(colTalent);
 		}
 		
-		this.add(elem2);
-		this.add(Box.createVerticalStrut(10));
+		this.addAll(elem2, Box.createVerticalStrut(10));
 		
 		
 		this.reinitTalent.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -248,10 +224,9 @@ public class PageTalent extends PagePanel {
 		this.maxTalent.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.maxTalent.setMinimumSize(new Dimension(0, 30));
 		
-		JPanel elem3 = new JPanel(new GridLayout(1, 2, 10, 5));
+		JCustomPanel elem3 = new JCustomPanel(new GridLayout(1, 2, 10, 5));
 		elem3.setBackground(Design.UIColor[2]);
-		elem3.add(this.reinitTalent);
-		elem3.add(this.maxTalent);
+		elem3.addAll(this.reinitTalent, this.maxTalent);
 
 		for(JPanel panel : this.showAndHideTalent) {
 			panel.setVisible(false);

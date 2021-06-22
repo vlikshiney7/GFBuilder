@@ -35,6 +35,7 @@ import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
@@ -81,8 +82,7 @@ public class PageWeapon extends PagePanel {
 	}
 
 	public PageWeapon() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		setLabelAPI();
 		
 		for(int i = 0; i < 3; i++) {
@@ -449,95 +449,54 @@ public class PageWeapon extends PagePanel {
 	@Override
 	protected void createPanel() {
 		for(int i = 0; i < 3; i++) {
-			JPanel descWeapon = new JPanel();
-			descWeapon.setLayout(new BoxLayout(descWeapon, BoxLayout.X_AXIS));
-			descWeapon.setBackground(Design.UIColor[1]);
-			descWeapon.add(this.weapon.get(i));
-			descWeapon.add(this.enchant.get(i));
-			descWeapon.add(this.fortif.get(i));
-			descWeapon.add(this.redFortif.get(i));
+			JCustomPanel descWeapon = new JCustomPanel(BoxLayout.X_AXIS);
+			descWeapon.addAll(this.weapon.get(i), this.enchant.get(i), this.fortif.get(i), this.redFortif.get(i));
 			
-			JPanel enchantWeapon = new JPanel();
-			enchantWeapon.setLayout(new BoxLayout(enchantWeapon, BoxLayout.X_AXIS));
-			enchantWeapon.setBackground(Design.UIColor[1]);
+			JCustomPanel enchantWeapon = new JCustomPanel(BoxLayout.X_AXIS);
 			for(int j = 0; j < 3; j++) {
-				enchantWeapon.add(Box.createHorizontalStrut(10));
-				enchantWeapon.add(this.redEnchant.get(i*3+j));
-				enchantWeapon.add(this.redLvlEnchant.get(i*3+j));
+				enchantWeapon.addAll(Box.createHorizontalStrut(10), this.redEnchant.get(i*3+j), this.redLvlEnchant.get(i*3+j));
 			}
 			
-			JPanel fortifWeapon = new JPanel();
-			fortifWeapon.setLayout(new BoxLayout(fortifWeapon, BoxLayout.X_AXIS));
-			fortifWeapon.setBackground(Design.UIColor[1]);
-			fortifWeapon.add(this.valueFortif.get(i));
-			fortifWeapon.add(Box.createHorizontalStrut(5));
-			fortifWeapon.add(this.labelValue.get(i));
+			JCustomPanel fortifWeapon = new JCustomPanel(BoxLayout.X_AXIS);
+			fortifWeapon.addAll(this.valueFortif.get(i), Box.createHorizontalStrut(5), this.labelValue.get(i));
 			
-			JPanel pearlWeapon = new JPanel();
-			pearlWeapon.setLayout(new BoxLayout(pearlWeapon, BoxLayout.Y_AXIS));
-			pearlWeapon.setBackground(Design.UIColor[1]);
+			JCustomPanel pearlWeapon = new JCustomPanel(BoxLayout.Y_AXIS);
 			
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
-					pearlWeapon.add(this.pearl.get(j));
-					pearlWeapon.add(Box.createVerticalStrut(3));
+					pearlWeapon.addAll(this.pearl.get(j), Box.createVerticalStrut(3));
 				}
 			} else {
 				for(int j = 0; j < 3; j++) {
-					pearlWeapon.add(this.pearl.get(3*(i+1)+j));
-					pearlWeapon.add(Box.createVerticalStrut(3));
+					pearlWeapon.addAll(this.pearl.get(3*(i+1)+j), Box.createVerticalStrut(3));
 				}
 			}
 			
-			JPanel starPanel = new JPanel();
-			starPanel.setBackground(Design.UIColor[1]);
-			starPanel.add(this.labelGFB[i+6]);
+			JCustomPanel starPanel = new JCustomPanel(this.labelGFB[i+6], Box.createHorizontalStrut(10));
 			this.labelGFB[i+6].setFont(Design.SUBTITLE);
-			starPanel.add(Box.createHorizontalStrut(10));
+			starPanel.addAll(this.starPearl.get(i));
 			
-			for(int j = 0; j < 4; j++) {
-				starPanel.add(this.starPearl.get(i).get(j));
-			}
-			
-			JPanel listEnchant = new JPanel(new GridLayout(5, 2, 2, 5));
-			listEnchant.setBackground(Design.UIColor[1]);
+			JCustomPanel listEnchant = new JCustomPanel(new GridLayout(5, 2, 2, 5));
 			for(int j = 0; j < 5; j++) {
-				listEnchant.add(this.pearlEnchant.get(i*5+j));
-				listEnchant.add(this.pearlLvlEnchant.get(i*5+j));
+				listEnchant.addAll(this.pearlEnchant.get(i*5+j), this.pearlLvlEnchant.get(i*5+j));
 			}
 			
-			JPanel xpWeapon = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpWeapon.setBackground(Design.UIColor[1]);
+			JCustomPanel xpWeapon = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 			xpWeapon.add(this.labelGFB[i+3]);
 			this.labelGFB[i+3].setFont(Design.SUBTITLE);
 			
 			for(int j = 0; j < 2; j++) {
-				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Design.UIColor[1]);
-				xp.add(this.xpStuff.get(i*2+j));
-				xp.add(this.lvlXpStuff.get(i*2+j));
+				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
+				xp.addAll(this.xpStuff.get(i*2+j), this.lvlXpStuff.get(i*2+j));
 				xpWeapon.add(xp);
 			}
 			
-			JPanel elemI = new JPanel();
-			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
-			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.labelGFB[i]);
+			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+			elemI.addAll(this.labelGFB[i], Box.createVerticalStrut(10), descWeapon, Box.createVerticalStrut(2),
+					enchantWeapon, Box.createVerticalStrut(2), fortifWeapon, Box.createVerticalStrut(5),
+					pearlWeapon, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
+					xpWeapon);
 			this.labelGFB[i].setFont(Design.TITLE);
-			elemI.add(Box.createVerticalStrut(10));
-			elemI.add(descWeapon);
-			elemI.add(Box.createVerticalStrut(2));
-			elemI.add(enchantWeapon);
-			elemI.add(Box.createVerticalStrut(2));
-			elemI.add(fortifWeapon);
-			elemI.add(Box.createVerticalStrut(5));
-			elemI.add(pearlWeapon);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(starPanel);
-			elemI.add(listEnchant);
-			elemI.add(Box.createVerticalStrut(2));
-			elemI.add(xpWeapon);
 			
 			if(i == 1) {
 				this.showAndHide = elemI;
@@ -545,17 +504,11 @@ public class PageWeapon extends PagePanel {
 			this.showAndHideEnchant.add(listEnchant);
 			this.showAndHideXpStuff.add(xpWeapon);	
 			
-			this.add(elemI);
-			this.add(Box.createVerticalStrut(10));
+			this.addAll(elemI, Box.createVerticalStrut(10));
 		}
 		
-		JPanel elem1 = new JPanel();
-		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelAPI[0]);
-		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(this.bullet);
+		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem1.addAll(this.labelAPI[0], Box.createVerticalStrut(10), this.bullet);
 		
 		this.add(elem1);
 		

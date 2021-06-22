@@ -21,6 +21,7 @@ import fr.vlik.grandfantasia.subEquip.SouvenirEnchantment;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 
 public class PageOther extends PagePanel {
 
@@ -43,8 +44,7 @@ public class PageOther extends PagePanel {
 	}
 
 	private PageOther() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		
 		this.bague = new JCustomComboBox<Bague>(Bague.getData());
 		this.bague.addActionListener(e -> {
@@ -139,63 +139,34 @@ public class PageOther extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
-		JPanel page12Elem1 = new JPanel();
-		page12Elem1.setLayout(new BoxLayout(page12Elem1, BoxLayout.Y_AXIS));
-		page12Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page12Elem1.setBackground(Design.UIColor[1]);
-		page12Elem1.add(this.labelGFB[0]);
+		JCustomPanel page12Elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page12Elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), this.bague, Box.createVerticalStrut(15), this.labelGFB[1], Box.createVerticalStrut(10), this.loveCo);
 		this.labelGFB[0].setFont(Design.TITLE);
-		page12Elem1.add(Box.createVerticalStrut(10));
-		page12Elem1.add(this.bague);
-		page12Elem1.add(Box.createVerticalStrut(15));
-		page12Elem1.add(this.labelGFB[1]);
 		this.labelGFB[1].setFont(Design.TITLE);
-		page12Elem1.add(Box.createVerticalStrut(10));
-		page12Elem1.add(this.loveCo);
 		
 		this.showAndHide.add(page12Elem1);
 		
 		
-		JPanel page12Elem2 = new JPanel();
-		page12Elem2.setLayout(new BoxLayout(page12Elem2, BoxLayout.Y_AXIS));
-		page12Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page12Elem2.setBackground(Design.UIColor[1]);
-		page12Elem2.add(this.labelGFB[2]);
+		JCustomPanel page12Elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page12Elem2.addAll(this.labelGFB[2], Box.createVerticalStrut(10), this.anima);
 		this.labelGFB[2].setFont(Design.TITLE);
-		page12Elem2.add(Box.createVerticalStrut(10));
-		page12Elem2.add(this.anima);
 		
 		this.showAndHide.add(page12Elem2);
 		
 		
-		JPanel page12Elem3 = new JPanel();
-		page12Elem3.setLayout(new BoxLayout(page12Elem3, BoxLayout.Y_AXIS));
-		page12Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page12Elem3.setBackground(Design.UIColor[1]);
-		page12Elem3.add(this.labelGFB[3]);
+		JCustomPanel page12Elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page12Elem3.addAll(this.labelGFB[3], Box.createVerticalStrut(10), this.souvenir, Box.createVerticalStrut(5), this.labelGFB[4]);
 		this.labelGFB[3].setFont(Design.TITLE);
-		page12Elem3.add(Box.createVerticalStrut(10));
-		page12Elem3.add(this.souvenir);
-		page12Elem3.add(Box.createVerticalStrut(5));
-		page12Elem3.add(this.labelGFB[4]);
 		this.labelGFB[4].setFont(Design.SUBTITLE);
 		
-		JPanel enchant = new JPanel();
-		enchant.setLayout(new BoxLayout(enchant, BoxLayout.X_AXIS));
-		enchant.setBackground(Design.UIColor[1]);
+		JCustomPanel enchant = new JCustomPanel(BoxLayout.X_AXIS);
 		for(int i = 0; i < 3; i++) {
-			enchant.add(Box.createHorizontalStrut(10));
-			enchant.add(this.souvenirEnchant.get(i));
+			enchant.addAll(Box.createHorizontalStrut(10), this.souvenirEnchant.get(i));
 		}
 		
 		page12Elem3.add(enchant);
 		
-		
-		this.add(page12Elem1);
-		this.add(Box.createVerticalStrut(10));
-		this.add(page12Elem2);
-		this.add(Box.createVerticalStrut(10));
-		this.add(page12Elem3);
+		this.addAll(page12Elem1, Box.createVerticalStrut(10), page12Elem2, Box.createVerticalStrut(10), page12Elem3);
 	}
 	
 	@Override

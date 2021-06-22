@@ -10,7 +10,6 @@ import java.util.Map;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
@@ -22,6 +21,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 
 public class PageSpeciality extends PagePanel {
 
@@ -45,8 +45,9 @@ public class PageSpeciality extends PagePanel {
 	}
 	
 	private PageSpeciality() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		this.setBorder(new EmptyBorder(10, 10, 10, 10));
+		this.setBackground(Design.UIColor[1]);
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
@@ -111,28 +112,18 @@ public class PageSpeciality extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
-		this.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.setBackground(Design.UIColor[1]);
-		this.add(this.labelGFB[0]);
-		this.labelGFB[0].setFont(Design.TITLE);
-		this.add(Box.createVerticalStrut(10));
-		
-		JPanel remain = new JPanel();
-		remain.setBackground(Design.UIColor[1]);
-		remain.add(this.labelGFB[1]);
+		JCustomPanel remain = new JCustomPanel();
+		remain.addAll(this.labelGFB[1], this.nbSpePoint);
 		this.labelGFB[1].setFont(Design.SUBTITLE);
 		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
 		this.nbSpePoint.setForeground(Design.FontColor[0]);
-		remain.add(this.nbSpePoint);
 		
-		this.add(remain);
-		this.add(Box.createVerticalStrut(5));
+		this.addAll(this.labelGFB[0], Box.createVerticalStrut(10), remain, Box.createVerticalStrut(5));
+		this.labelGFB[0].setFont(Design.TITLE);
 		
 		
-		JPanel catSpe = new JPanel(new GridLayout(4, 1));
-		catSpe.setBackground(Design.UIColor[1]);
-		JPanel gridSpe = new JPanel(new GridLayout(4, 6, 5, 5));
-		gridSpe.setBackground(Design.UIColor[1]);
+		JCustomPanel catSpe = new JCustomPanel(new GridLayout(4, 1));
+		JCustomPanel gridSpe = new JCustomPanel(new GridLayout(4, 6, 5, 5));
 		
 		int numSpe = 0;
 		
@@ -143,35 +134,22 @@ public class PageSpeciality extends PagePanel {
 			
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
-				JPanel panelSpe = new JPanel();
-				panelSpe.setLayout(new BoxLayout(panelSpe, BoxLayout.Y_AXIS));
-				panelSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
-				panelSpe.setPreferredSize(new Dimension(50, 65));
+				JCustomPanel panelSpe = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(5, 5, 5, 5));
 				panelSpe.setBackground(Design.UIColor[0]);
+				panelSpe.setPreferredSize(new Dimension(50, 65));
 				this.iconSpe.get(numSpe).setAlignmentX(CENTER_ALIGNMENT);
-				panelSpe.add(this.iconSpe.get(numSpe));
-				panelSpe.add(Box.createVerticalStrut(5));
-				panelSpe.add(this.spePoint.get(numSpe));
+				panelSpe.addAll(this.iconSpe.get(numSpe), Box.createVerticalStrut(5), this.spePoint.get(numSpe));
 				
 				gridSpe.add(panelSpe);
 				
 				numSpe++;
 			}
 			for(int j = k; j < 6; j++) {
-				JPanel voidPanel = new JPanel();
-				voidPanel.setBackground(Design.UIColor[1]);
-				gridSpe.add(voidPanel);
+				gridSpe.add(new JCustomPanel());
 			}
 		}
 		
-		JPanel elem1 = new JPanel();
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(catSpe);
-		elem1.add(Box.createHorizontalStrut(10));
-		elem1.add(gridSpe);
-		
-		this.add(elem1);
-		this.add(Box.createVerticalStrut(5));
+		this.addAll(new JCustomPanel(catSpe, Box.createHorizontalStrut(10), gridSpe), Box.createVerticalStrut(5));
 		
 		
 		this.reinitSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -180,10 +158,8 @@ public class PageSpeciality extends PagePanel {
 		this.maxSpe.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.maxSpe.setMinimumSize(new Dimension(0, 30));
 		
-		JPanel elem2 = new JPanel(new GridLayout(1, 2, 10, 5));
-		elem2.setBackground(Design.UIColor[1]);
-		elem2.add(this.reinitSpe);
-		elem2.add(this.maxSpe);
+		JCustomPanel elem2 = new JCustomPanel(new GridLayout(1, 2, 10, 5));
+		elem2.addAll(this.reinitSpe, this.maxSpe);
 		
 		this.add(elem2);
 	}

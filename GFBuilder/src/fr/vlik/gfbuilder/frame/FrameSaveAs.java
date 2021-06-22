@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -22,8 +21,9 @@ import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
-import fr.vlik.uidesign.JLangLabel;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextField;
+import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveAs extends JCustomFrame {
 	
@@ -40,7 +40,7 @@ public class FrameSaveAs extends JCustomFrame {
 	}
 	
 	private FrameSaveAs() {
-		this.setLayout(new BorderLayout());
+		super(new BorderLayout());
 		this.label = Lang.getDataLabel(13);
 		
 		try {
@@ -82,19 +82,11 @@ public class FrameSaveAs extends JCustomFrame {
 		
 		updateLanguage(Language.FR);
 		
-		JPanel pageSave = new JPanel();
-		pageSave.setLayout(new BoxLayout(pageSave, BoxLayout.Y_AXIS));
+		JCustomPanel pageSave = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageSave.setBackground(Design.UIColor[2]);
-		pageSave.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		pageSave.add(this.label[0]);
+		pageSave.addAll(this.label[0], Box.createVerticalStrut(10), this.askName, Box.createVerticalStrut(10), this.submit, Box.createVerticalStrut(5), this.label[2]);
 		this.label[0].setFont(Design.TITLE);
-		pageSave.add(Box.createVerticalStrut(10));
-		pageSave.add(this.askName);
-		pageSave.add(Box.createVerticalStrut(10));
-		pageSave.add(this.submit);
-		pageSave.add(Box.createVerticalStrut(5));
-		pageSave.add(this.label[2]);
 		this.label[2].setFont(Design.SUBTITLE);
 		this.label[2].setForeground(Design.FontColor[1]);
 		

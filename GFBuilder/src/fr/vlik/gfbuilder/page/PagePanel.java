@@ -4,15 +4,14 @@ import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.Map;
 
-import javax.swing.JPanel;
-
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
-public abstract class PagePanel extends JPanel {
+public abstract class PagePanel extends JCustomPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -26,12 +25,18 @@ public abstract class PagePanel extends JPanel {
 		this.labelGFB = Lang.getDataLabel(caseTabLabel);
 	}
 	
+	public PagePanel(int layout, int caseTabLabel) {
+		super(layout);
+		this.setBackground(Design.UIColor[2]);
+		this.labelGFB = Lang.getDataLabel(caseTabLabel);
+	}
+	
 	public PagePanel(LayoutManager layout, int caseTabLabel) {
 		super(layout);
 		this.setBackground(Design.UIColor[2]);
 		this.labelGFB = Lang.getDataLabel(caseTabLabel);
 	}
-
+	
 	public ArrayList<Calculable> getEffects() {
 		return this.effects;
 	}

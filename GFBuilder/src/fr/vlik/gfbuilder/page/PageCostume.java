@@ -1,11 +1,9 @@
 package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -20,13 +18,14 @@ import fr.vlik.grandfantasia.equipUpgrade.Pearl;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.subEquip.CombiRunway;
 import fr.vlik.grandfantasia.subEquip.Costume;
-import fr.vlik.grandfantasia.subEquip.Runway;
 import fr.vlik.grandfantasia.subEquip.Costume.CostumeType;
+import fr.vlik.grandfantasia.subEquip.Runway;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JLangRadioButton;
@@ -53,8 +52,7 @@ public class PageCostume extends PagePanel {
 	}
 	
 	private PageCostume() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		setLabelAPI();
 		
 		for(int i = 0; i < 2; i++) {
@@ -302,11 +300,8 @@ public class PageCostume extends PagePanel {
 
 	@Override
 	protected void createPanel() {
-		JPanel costGroupPanel = new JPanel();
+		JCustomPanel costGroupPanel = new JCustomPanel(this.labelGFB[4]);
 		ButtonGroup costGroup = new ButtonGroup();
-		
-		costGroupPanel.setBackground(Design.UIColor[1]);
-		costGroupPanel.add(this.labelGFB[4]);
 		this.labelGFB[4].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
@@ -314,45 +309,22 @@ public class PageCostume extends PagePanel {
 			costGroupPanel.add(this.costWeapon.get(i));
 		}
 		
-		JPanel sectionCost = new JPanel();
-		sectionCost.setLayout(new BoxLayout(sectionCost, BoxLayout.Y_AXIS));
-		sectionCost.setBackground(Design.UIColor[1]);
+		JCustomPanel sectionCost = new JCustomPanel(BoxLayout.Y_AXIS);
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Design.UIColor[1]);
-			currentQualityPanel.add(this.labelGFB[i+7]);
+			JCustomPanel qualityPanel = new JCustomPanel(this.labelGFB[i+7]);
 			this.labelGFB[i+7].setFont(Design.SUBTITLE);
+			qualityPanel.addAll(this.groupQuality.get(i));
 			
-			Enumeration<AbstractButton> itQuality = this.groupQuality.get(i).getElements();
-			do {
-				currentQualityPanel.add(itQuality.nextElement());
-			} while(itQuality.hasMoreElements());
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI[i]);
+			synthesisPanel.addAll(this.groupSynthesis.get(i));
 			
-			JPanel currentSynthesisPanel = new JPanel();
-			currentSynthesisPanel.setBackground(Design.UIColor[1]);
-			currentSynthesisPanel.add(this.labelAPI[i]);
-			
-			Enumeration<AbstractButton> itSynthesis = this.groupSynthesis.get(i).getElements();
-			do {
-				currentSynthesisPanel.add(itSynthesis.nextElement());
-			} while(itSynthesis.hasMoreElements());
-			
-			JPanel itemCost = new JPanel();
-			itemCost.setLayout(new BoxLayout(itemCost, BoxLayout.Y_AXIS));
-			itemCost.setBackground(Design.UIColor[1]);
-			itemCost.add(Box.createVerticalStrut(10));
-			itemCost.add(currentQualityPanel);
-			itemCost.add(Box.createVerticalStrut(3));
-			itemCost.add(currentSynthesisPanel);
-			itemCost.add(Box.createVerticalStrut(3));
-			itemCost.add(this.costume.get(i));
+			JCustomPanel itemCost = new JCustomPanel(BoxLayout.Y_AXIS);
+			itemCost.addAll(Box.createVerticalStrut(10), qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3), this.costume.get(i));
 			if(i == 0) {
-				itemCost.add(Box.createVerticalStrut(3));
-				itemCost.add(this.costPearl.get(i));
+				itemCost.addAll(Box.createVerticalStrut(3), this.costPearl.get(i));
 			}
-			itemCost.add(Box.createVerticalStrut(3));
-			itemCost.add(this.costPearl.get(i+1));
+			itemCost.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+1));
 			
 			sectionCost.add(itemCost);
 			
@@ -361,87 +333,49 @@ public class PageCostume extends PagePanel {
 			}
 		}
 		
-		JPanel runway = new JPanel();
-		runway.setBackground(Design.UIColor[1]);
-		
-		for(int i = 0; i < 2; i++) {
-			runway.add(this.checkBoxRunway.get(i));
+		JCustomPanel runway = new JCustomPanel();
+		for(int j = 0; j < 2; j++) {
+			runway.add(this.checkBoxRunway.get(j));
 		}
+		
 		this.showAndHideRunway.add(runway);
 		
 			
-		JPanel elem1 = new JPanel();
-		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelGFB[0]);
+		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), costGroupPanel, Box.createVerticalStrut(3), sectionCost, runway);
 		this.labelGFB[0].setFont(Design.TITLE);
-		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(costGroupPanel);
-		elem1.add(Box.createVerticalStrut(3));
-		elem1.add(sectionCost);
-		elem1.add(runway);
 		
 		this.add(elem1);
 		
 		
 		for(int i = 0; i < 3; i++) {
-			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Design.UIColor[1]);
+			JCustomPanel qualityPanel = new JCustomPanel();
+			qualityPanel.addAll(this.groupQuality.get(i+2));
 			
-			Enumeration<AbstractButton> it = this.groupQuality.get(i+2).getElements();
-			do {
-				currentQualityPanel.add(it.nextElement());
-			} while(it.hasMoreElements());
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI[i+2]);
+			synthesisPanel.addAll(this.groupSynthesis.get(i+2));
 			
-			JPanel currentSynthesisPanel = new JPanel();
-			currentSynthesisPanel.setBackground(Design.UIColor[1]);
-			currentSynthesisPanel.add(this.labelAPI[i+2]);
-			
-			Enumeration<AbstractButton> itSynthesis = this.groupSynthesis.get(i+2).getElements();
-			do {
-				currentSynthesisPanel.add(itSynthesis.nextElement());
-			} while(itSynthesis.hasMoreElements());
-			
-			
-			JPanel runwayPanel = new JPanel();
-			runwayPanel.setBackground(Design.UIColor[1]);
-			
+			JCustomPanel runwayPanel = new JCustomPanel();
 			for(int j = 0; j < 2; j++) {
 				runwayPanel.add(this.checkBoxRunway.get(i*2+j+2));
 			}
 			this.showAndHideRunway.add(runwayPanel);
 			
-			JPanel elemI = new JPanel();
-			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
-			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.labelGFB[i+1]);
+			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+			elemI.addAll(this.labelGFB[i+1], Box.createVerticalStrut(10), qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3), this.costume.get(i+2));
 			this.labelGFB[i+1].setFont(Design.TITLE);
-			elemI.add(Box.createVerticalStrut(10));
-			elemI.add(currentQualityPanel);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(currentSynthesisPanel);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(this.costume.get(i+2));
 			
 			if(i == 0) {
-				elemI.add(Box.createVerticalStrut(3));
-				elemI.add(this.costPearl.get(i+3));
+				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+3));
 			} else if(i == 1) {
-				elemI.add(Box.createVerticalStrut(3));
-				elemI.add(this.costPearl.get(i+3));
-				elemI.add(Box.createVerticalStrut(3));
-				elemI.add(this.costPearl.get(i+4));
+				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+3), Box.createVerticalStrut(3), this.costPearl.get(i+4));
 			} else {
-				elemI.add(Box.createVerticalStrut(3));
-				elemI.add(this.costPearl.get(i+4));
+				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+4));
 			}
 			
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(runwayPanel);
-			this.add(Box.createVerticalStrut(10));
-			this.add(elemI);
+			elemI.addAll(Box.createVerticalStrut(3), runwayPanel);
+			
+			this.addAll(Box.createVerticalStrut(10), elemI);
 		}
 		
 		

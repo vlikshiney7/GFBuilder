@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
@@ -22,9 +21,10 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageOption extends JPanel {
+public class PageOption extends JCustomPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -44,8 +44,7 @@ public class PageOption extends JPanel {
 	}
 	
 	private PageOption() {
-		super();
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		this.setBackground(Design.UIColor[2]);
 		this.label = Lang.getDataLabel(NUM_PAGE);
 		
@@ -134,50 +133,25 @@ public class PageOption extends JPanel {
 	}
 	
 	protected void createPanel() {
-		JPanel savePanel = new JPanel(new GridLayout(2, 1, 10, 10));
-		savePanel.setBackground(Design.UIColor[1]);
-		savePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		
-		JPanel inline1 = new JPanel(new GridLayout(1, 3, 10, 0));
-		inline1.setBackground(Design.UIColor[1]);
-		inline1.add(this.label[0]);
+		JCustomPanel inline1 = new JCustomPanel(new GridLayout(1, 3, 10, 0));
+		inline1.addAll(this.label[0], this.save, new JLabel());
 		this.label[0].setFont(Design.TITLE);
-		inline1.add(this.save);
-		inline1.add(new JLabel());
 		
-		JPanel inline2 = new JPanel(new GridLayout(1, 3, 10, 0));
-		inline2.setBackground(Design.UIColor[1]);
-		inline2.add(this.newSave);
-		inline2.add(this.currentSave);
-		inline2.add(this.saveAs);
+		JCustomPanel inline2 = new JCustomPanel(new GridLayout(1, 3, 10, 0));
+		inline2.addAll(this.newSave, this.currentSave, this.saveAs);
 		
-		savePanel.add(inline1);
-		savePanel.add(inline2);
+		JCustomPanel savePanel = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		savePanel.addAll(inline1, inline2);
 		
-		JPanel equipPanel = new JPanel();
-		equipPanel.setLayout(new BoxLayout(equipPanel, BoxLayout.Y_AXIS));
-		equipPanel.setBackground(Design.UIColor[1]);
-		equipPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		JCustomPanel equipPanel = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		equipPanel.add(this.createCustom);
 		
-		JPanel creditPanel = new JPanel();
-		creditPanel.setLayout(new BoxLayout(creditPanel, BoxLayout.Y_AXIS));
-		creditPanel.setBackground(Design.UIColor[1]);
-		creditPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-		creditPanel.add(this.label[5]);
+		JCustomPanel creditPanel = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		creditPanel.addAll(this.label[5], Box.createVerticalStrut(10), this.label[6], Box.createVerticalStrut(5), this.parameter);
 		this.label[5].setFont(Design.TITLE);
-		creditPanel.add(Box.createVerticalStrut(10));
-		creditPanel.add(this.label[6]);
 		this.label[6].setFont(Design.SUBTITLE);
-		creditPanel.add(Box.createVerticalStrut(5));
-		creditPanel.add(this.parameter);
 		
-		this.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.add(savePanel);
-		this.add(Box.createVerticalStrut(10));
-		this.add(equipPanel);
-		this.add(Box.createVerticalStrut(10));
-		this.add(creditPanel);
+		this.addAll(savePanel, Box.createVerticalStrut(10), equipPanel, Box.createVerticalStrut(10), creditPanel);
 	}
 	
 	public void updateLanguage(Language lang) {

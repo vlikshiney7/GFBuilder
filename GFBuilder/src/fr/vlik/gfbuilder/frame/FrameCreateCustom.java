@@ -13,7 +13,6 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
@@ -41,6 +40,7 @@ import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
@@ -71,8 +71,8 @@ public class FrameCreateCustom extends JCustomFrame {
 	}
 	
 	public FrameCreateCustom() {
-		this.setLayout(new BorderLayout());
-		this.setBackground(Design.UIColor[2]);
+		super(new BorderLayout());
+		
 		this.label = Lang.getDataLabel(18);
 		
 		try {
@@ -234,59 +234,41 @@ public class FrameCreateCustom extends JCustomFrame {
 	}
 	
 	private void createPanel() {
-		JPanel pageCustom = new JPanel();
-		pageCustom.setLayout(new BoxLayout(pageCustom, BoxLayout.Y_AXIS));
+		JCustomPanel pageCustom = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageCustom.setBackground(Design.UIColor[2]);
-		pageCustom.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		pageCustom.add(this.label[0]);
+		pageCustom.add(this.label[0], Box.createVerticalStrut(10));
 		this.label[0].setFont(Design.TITLE);
-		pageCustom.add(Box.createVerticalStrut(10));
 		
 		ButtonGroup currentType = new ButtonGroup();
-		JPanel type = new JPanel(new GridLayout(1, 4, 10, 0));
+		JCustomPanel type = new JCustomPanel(new GridLayout(1, 4, 10, 0));
 		type.setBackground(Design.UIColor[2]);
 		for(int i = 0; i < 4; i++) {
 			currentType.add(this.typeEquipment.get(i));
 			type.add(this.typeEquipment.get(i));
 		}
 		
-		JPanel inline1 = new JPanel();
+		JCustomPanel inline1 = new JCustomPanel(new EmptyBorder(10, 10, 10, 10));
 		inline1.setBackground(Design.UIColor[2]);
-		inline1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		inline1.add(this.label[5]);
+		inline1.addAll(this.label[5], this.lvl, this.typeWeapon, this.typeArmor, this.grade, Box.createHorizontalStrut(20));
 		this.label[5].setFont(Design.SUBTITLE);
-		inline1.add(this.lvl);
-		inline1.add(this.typeWeapon);
-		inline1.add(this.typeArmor);
-		inline1.add(this.grade);
-		inline1.add(Box.createHorizontalStrut(20));
 		
 		ButtonGroup currentQuality = new ButtonGroup();
-		JPanel inline2 = new JPanel(new GridLayout(1, 3, 10, 0));
+		JCustomPanel inline2 = new JCustomPanel(new GridLayout(1, 3, 10, 0));
 		inline2.setBackground(Design.UIColor[2]);
 		for(int i = 0; i < 3; i++) {
 			currentQuality.add(this.quality.get(i));
 			inline2.add(this.quality.get(i));
 		}
 		
-		JPanel listEnchant = new JPanel(new GridLayout(2, 3, 10, 10));
+		JCustomPanel listEnchant = new JCustomPanel(new GridLayout(2, 3, 10, 10));
 		listEnchant.setBackground(Design.UIColor[2]);
 		for(int i = 0; i < 6; i++) {
 			listEnchant.add(this.enchantement.get(i));
 		}
 		
-		pageCustom.add(type);
-		pageCustom.add(Box.createVerticalStrut(10));
-		pageCustom.add(inline1);
-		pageCustom.add(Box.createVerticalStrut(10));
-		pageCustom.add(inline2);
-		pageCustom.add(Box.createVerticalStrut(10));
-		pageCustom.add(this.customEquipment);
-		pageCustom.add(Box.createVerticalStrut(10));
-		pageCustom.add(listEnchant);
-		pageCustom.add(Box.createVerticalStrut(10));
-		pageCustom.add(this.create);
+		pageCustom.addAll(type, Box.createVerticalStrut(10), inline1, Box.createVerticalStrut(10), inline2, Box.createVerticalStrut(10),
+				this.customEquipment, Box.createVerticalStrut(10), listEnchant, Box.createVerticalStrut(10), this.create);
 		
 		this.add(pageCustom);
 	}
@@ -347,7 +329,7 @@ public class FrameCreateCustom extends JCustomFrame {
 				this.customEquipment.setModel(new DefaultComboBoxModel<CustomEquipment>(tabArmor));
 				break;
 			case 2:
-				CustomCape[] tabCape= CustomCape.getPossibleCape(this.getGrade(), this.getLvl());
+				CustomCape[] tabCape = CustomCape.getPossibleCape(this.getGrade(), this.getLvl());
 				this.customEquipment.setModel(new DefaultComboBoxModel<CustomEquipment>(tabCape));
 				break;
 			case 3:

@@ -5,16 +5,16 @@ import java.awt.Dimension;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
-public class Overlay extends JPanel {
+public class Overlay extends JCustomPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static Overlay INSTANCE = new Overlay();
@@ -32,10 +32,9 @@ public class Overlay extends JPanel {
 	}
 	
 	private Overlay() {
-		super();
+		super(new EmptyBorder(5, 5, 5, 5));
 		this.setMaximumSize(new Dimension(400, 30));
 		this.setBackground(Design.UIColor[0]);
-		this.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setAlignmentX(LEFT_ALIGNMENT);
 		
 		this.setGrade(Grade.data[0]);
@@ -43,7 +42,8 @@ public class Overlay extends JPanel {
 		this.setReinca(Reinca.getData()[0]);
 		this.nameSave = JLangLabel.getSimpleLabel(SaveConfig.DEFAULT_NAME);
 		
-		createPanel();
+		this.addAll(this.iconGrade, Box.createHorizontalStrut(5), this.lvl, Box.createHorizontalStrut(5), this.iconReinca, Box.createHorizontalStrut(5),
+				JLangLabel.getSimpleLabel("-"), Box.createHorizontalStrut(5), this.nameSave, Box.createHorizontalStrut(5), this.iconSave);
 	}
 	
 	public String getSaveDefaultName() {
@@ -86,19 +86,5 @@ public class Overlay extends JPanel {
 	
 	public void setNameSave(String nameSave) {
 		this.nameSave.setText(nameSave);
-	}
-	
-	private void createPanel() {
-		this.add(this.iconGrade);
-		this.add(Box.createHorizontalStrut(5));
-		this.add(this.lvl);
-		this.add(Box.createHorizontalStrut(5));
-		this.add(this.iconReinca);
-		this.add(Box.createHorizontalStrut(5));
-		this.add(JLangLabel.getSimpleLabel("-"));
-		this.add(Box.createHorizontalStrut(5));
-		this.add(this.nameSave);
-		this.add(Box.createHorizontalStrut(5));
-		this.add(this.iconSave);
 	}
 }

@@ -741,7 +741,7 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.ReducSkillM, false, 1.5),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Épée Magique Gardienne"); put(Language.EN, ""); }}, 75, "10-13", new Calculable[] {
-				new Effect(TypeEffect.RDCCM, false, 3),
+				new Effect(TypeEffect.RTCCM, false, 3),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Ascension de Lame Magique"); put(Language.EN, ""); }}, 75, "10-14", new Calculable[] {
 				new Effect(TypeEffect.VIT, false, 4),

@@ -370,8 +370,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.ReducM_old, false, 5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vétéran d'Élite"); put(Language.EN, "Elite Warrior"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
-				new Effect(TypeEffect.Atk, true, -5),
-				new Effect(TypeEffect.AtkM, true, -5),
+				new Effect(TypeEffect.ReducStdP, false, 5),
+				new Effect(TypeEffect.ReducStdD, false, 5),
+				new Effect(TypeEffect.ReducSkillP, false, 5),
+				new Effect(TypeEffect.ReducSkillM, false, 5),
 				new Effect(TypeEffect.VitComp, false, 7),
 				new Effect(TypeEffect.VitAtk, false, 7),
 				new Effect(TypeEffect.VitAtkD, false, 7),

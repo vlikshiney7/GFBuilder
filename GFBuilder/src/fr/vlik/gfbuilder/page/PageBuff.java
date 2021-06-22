@@ -28,6 +28,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JIconCheckBox;
 
@@ -55,13 +56,16 @@ public class PageBuff extends PagePanel {
 	private ArrayList<JCustomButton> cross = new ArrayList<JCustomButton>(7);
 	private ArrayList<JCustomButton> remove = new ArrayList<JCustomButton>(7);
 	
+	private JCustomPanel colBuffLeft;
+	private JCustomPanel colBuffRight;
+	private JCustomPanel voidPanel;
+	
 	public static PageBuff getInstance() {
 		return INSTANCE;
 	}
 	
 	private PageBuff() {
 		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
 		for(int i = 0; i < 6; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
@@ -264,28 +268,21 @@ public class PageBuff extends PagePanel {
 		}
 		
 		this.effects = list;
+		
+		updateSize();
 	}
 	
 	@Override
 	protected void createPanel() {
-		JPanel page11Elem1 = new JPanel();
-		page11Elem1.setLayout(new BoxLayout(page11Elem1, BoxLayout.Y_AXIS));
-		page11Elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem1.setBackground(Design.UIColor[1]);
-		page11Elem1.add(this.labelGFB[0]);
+		JCustomPanel page11Elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page11Elem1.add(this.labelGFB[0], Box.createVerticalStrut(10));
 		this.labelGFB[0].setFont(Design.TITLE);
-		page11Elem1.add(Box.createVerticalStrut(10));
-		
 		
 		for(int i = 0; i < 6; i++) {
-			JPanel nucleus = new JPanel();
-			nucleus.setBackground(Design.UIColor[1]);
-			nucleus.add(this.labelGFB[i+1]);
+			JCustomPanel nucleus = new JCustomPanel(this.labelGFB[i+1], this.nucleus.get(i), Box.createVerticalStrut(5));
 			this.labelGFB[i+1].setFont(Design.SUBTITLE);
 			this.labelGFB[i+1].setPreferredSize(new Dimension(60, 20));
 			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
-			nucleus.add(this.nucleus.get(i));
-			nucleus.add(Box.createVerticalStrut(5));
 			
 			if(i == 1) {
 				this.showAndHide = nucleus;
@@ -294,141 +291,87 @@ public class PageBuff extends PagePanel {
 			page11Elem1.add(nucleus);
 		}
 		
-		JPanel starPanel = new JPanel();
-		starPanel.setBackground(Design.UIColor[1]);
-		starPanel.add(this.labelGFB[12]);
+		JCustomPanel starPanel = new JCustomPanel(this.labelGFB[12], Box.createHorizontalStrut(10));
 		this.labelGFB[12].setFont(Design.SUBTITLE);
-		starPanel.add(Box.createHorizontalStrut(10));
+		starPanel.addAll(this.starNucleus);
 		
-		for(int i = 0; i < 4; i++) {
-			starPanel.add(this.starNucleus.get(i));
-		}
-		
-		JPanel listEnchant = new JPanel(new GridLayout(3, 2, 2, 5));
-		listEnchant.setBackground(Design.UIColor[1]);
+		JCustomPanel listEnchant = new JCustomPanel(new GridLayout(3, 2, 2, 5));
 		for(int i = 0; i < 3; i++) {
-			listEnchant.add(this.nucleusEnchant.get(i));
-			listEnchant.add(this.nucleusLvlEnchant.get(i));
+			listEnchant.addAll(this.nucleusEnchant.get(i), this.nucleusLvlEnchant.get(i));
 		}
 		
-		page11Elem1.add(Box.createVerticalStrut(5));
-		page11Elem1.add(starPanel);
-		page11Elem1.add(listEnchant);
+		page11Elem1.addAll(Box.createVerticalStrut(5), starPanel, listEnchant);
 		
 		this.showAndHideEnchant = listEnchant;
 		
-		JPanel energies = new JPanel(new GridLayout(11, 1, 5, 5));
-		energies.setBackground(Design.UIColor[1]);
-		
+		JCustomPanel energies = new JCustomPanel(new GridLayout(11, 1));
 		for(int i = 0; i < 11; i++) {
-			JPanel panelEnergy = new JPanel();
-			panelEnergy.setBackground(Design.UIColor[1]);
-			panelEnergy.add(this.labelEnergy.get(i));
-			panelEnergy.add(this.energy.get(i));
-			
-			energies.add(panelEnergy);
+			energies.add(new JCustomPanel(this.labelEnergy.get(i), this.energy.get(i)));
 		}
 		
-		JPanel page11Elem2 = new JPanel();
-		page11Elem2.setLayout(new BoxLayout(page11Elem2, BoxLayout.Y_AXIS));
-		page11Elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem2.setBackground(Design.UIColor[1]);
-		page11Elem2.add(this.labelGFB[7]);
+		JCustomPanel page11Elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page11Elem2.addAll(this.labelGFB[7], Box.createVerticalStrut(10), energies);
 		this.labelGFB[7].setFont(Design.TITLE);
-		page11Elem2.add(Box.createVerticalStrut(10));
-		page11Elem2.add(energies);
 		
-		
-		JPanel page11Inter1 = new JPanel(new GridLayout(1, 2, 10, 10));
-		page11Inter1.setBackground(Design.UIColor[2]);
-		page11Inter1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Inter1.add(page11Elem1);
-		page11Inter1.add(page11Elem2);
-		
-		
-		JPanel blocBuffGuild = new JPanel();
-		blocBuffGuild.setLayout(new BoxLayout(blocBuffGuild, BoxLayout.Y_AXIS));
-		blocBuffGuild.setBackground(Design.UIColor[1]);
+		JCustomPanel blocBuffGuild = new JCustomPanel(BoxLayout.Y_AXIS);
 		blocBuffGuild.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 4; i++) {
-			JPanel lineBuff = new JPanel();
-			lineBuff.setLayout(new BoxLayout(lineBuff, BoxLayout.X_AXIS));
-			lineBuff.setBorder(new EmptyBorder(0, 0, 0, 0));
-			lineBuff.setOpaque(false);
-			
+			JCustomPanel lineBuff = new JCustomPanel(BoxLayout.X_AXIS, new EmptyBorder(0, 0, 0, 0));
 			lineBuff.setBackground(Design.UIColor[0]);
-			
-			lineBuff.add(this.guildBuffUsed.get(i));
+			lineBuff.setOpaque(false);
+			lineBuff.addAll(this.guildBuffUsed.get(i), this.cross.get(i));
 			this.cross.get(i).setHorizontalAlignment(JLabel.RIGHT);
-			lineBuff.add(this.cross.get(i));
 			
-			blocBuffGuild.add(lineBuff);
-			blocBuffGuild.add(Box.createVerticalStrut(3));
+			blocBuffGuild.addAll(lineBuff, Box.createVerticalStrut(3));
 		}
 		
 		
-		JPanel page11Elem3 = new JPanel();
-		page11Elem3.setLayout(new BoxLayout(page11Elem3, BoxLayout.Y_AXIS));
-		page11Elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem3.setBackground(Design.UIColor[1]);
-		page11Elem3.add(this.labelGFB[8]);
+		JCustomPanel page11Elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page11Elem3.addAll(this.labelGFB[8], Box.createVerticalStrut(10), blocBuffGuild, Box.createVerticalStrut(10),
+				this.labelGFB[9], Box.createVerticalStrut(5), this.guildBuff);
 		this.labelGFB[8].setFont(Design.TITLE);
-		page11Elem3.add(Box.createVerticalStrut(10));
-		page11Elem3.add(blocBuffGuild);
-		page11Elem3.add(Box.createVerticalStrut(10));
-		page11Elem3.add(this.labelGFB[9]);
 		this.labelGFB[9].setFont(Design.SUBTITLE);
-		page11Elem3.add(Box.createVerticalStrut(5));
-		page11Elem3.add(this.guildBuff);
 		
 		
-		JPanel blocStone = new JPanel();
-		blocStone.setLayout(new BoxLayout(blocStone, BoxLayout.Y_AXIS));
-		blocStone.setBackground(Design.UIColor[1]);
+		JCustomPanel blocStone = new JCustomPanel(BoxLayout.Y_AXIS);
 		blocStone.add(Box.createVerticalStrut(5));
 		
 		for(int i = 0; i < 13; i++) {
-			JPanel lineStone = new JPanel();
-			lineStone.setLayout(new BoxLayout(lineStone, BoxLayout.X_AXIS));
+			JCustomPanel lineStone = new JCustomPanel(BoxLayout.X_AXIS, new EmptyBorder(0, 0, 0, 0));
 			lineStone.setBackground(Design.UIColor[0]);
-			lineStone.setBorder(new EmptyBorder(0, 0, 0, 0));
 			lineStone.setOpaque(false);
-			
-			lineStone.add(this.stoneUsed.get(i));
+			lineStone.addAll(this.stoneUsed.get(i), this.cross.get(i+4));
 			this.cross.get(i+4).setHorizontalAlignment(JLabel.RIGHT);
-			lineStone.add(this.cross.get(i+4));
 			
-			blocStone.add(lineStone);
-			blocStone.add(Box.createVerticalStrut(3));
+			blocStone.addAll(lineStone, Box.createVerticalStrut(3));
 		}
 		
-		
-		JPanel page11Elem4 = new JPanel();
-		page11Elem4.setLayout(new BoxLayout(page11Elem4, BoxLayout.Y_AXIS));
-		page11Elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
-		page11Elem4.setBackground(Design.UIColor[1]);
-		page11Elem4.add(this.labelGFB[10]);
+		JCustomPanel page11Elem4 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		page11Elem4.addAll(this.labelGFB[10], Box.createVerticalStrut(10), blocStone, Box.createVerticalStrut(10),
+				this.labelGFB[11], Box.createVerticalStrut(5), this.stone);
 		this.labelGFB[10].setFont(Design.TITLE);
-		page11Elem4.add(Box.createVerticalStrut(10));
-		page11Elem4.add(blocStone);
-		page11Elem4.add(Box.createVerticalStrut(10));
-		page11Elem4.add(this.labelGFB[11]);
 		this.labelGFB[11].setFont(Design.SUBTITLE);
-		page11Elem4.add(Box.createVerticalStrut(5));
-		page11Elem4.add(this.stone);
 		
-		JPanel page11Inter2 = new JPanel(new GridLayout(1, 2, 10, 10));
-		page11Inter2.setBackground(Design.UIColor[2]);
-		page11Inter2.setBorder(new EmptyBorder(0, 10, 10, 10));
-		page11Inter2.add(page11Elem3);
-		page11Inter2.add(page11Elem4);
+		this.voidPanel = new JCustomPanel();
+		this.voidPanel.setBackground(Design.UIColor[2]);
 		
 		
-		this.setBackground(Design.UIColor[1]);
-		this.add(page11Inter1);
-		this.add(page11Inter2);
+		this.colBuffLeft = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 5));
+		this.colBuffLeft.setBackground(Design.UIColor[2]);
+		this.colBuffLeft.addAll(page11Elem1, Box.createVerticalStrut(10), page11Elem3);
 		
+		JCustomPanel resizedLeft = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(0, 0, 0, 0));
+		resizedLeft.addAll(this.colBuffLeft, this.voidPanel);
+		
+		this.colBuffRight = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 0, 10, 10));
+		this.colBuffRight.setBackground(Design.UIColor[2]);
+		this.colBuffRight.addAll(page11Elem2, Box.createVerticalStrut(10), page11Elem4);
+		
+		
+		this.addAll(resizedLeft, this.colBuffRight);
+		
+		this.showAndHide.setVisible(false);
 		this.showAndHideEnchant.setVisible(false);
 	}
 	
@@ -441,6 +384,11 @@ public class PageBuff extends PagePanel {
 		for(int i = 0; i < this.labelEnergy.size(); i++) {
 			this.labelEnergy.get(i).updateText(lang);
 		}
+	}
+	
+	private void updateSize() {
+		int newSize = this.colBuffRight.getMinimumSize().height - this.colBuffLeft.getMinimumSize().height - 10;
+		this.voidPanel.setBorder(new EmptyBorder(newSize, 0, 0, 0));
 	}
 	
 	public void updateNucleus() {
@@ -756,8 +704,10 @@ public class PageBuff extends PagePanel {
 			if(guildBuff != null) {
 				this.guildBuffUsed.get(i).setItem(guildBuff);
 				this.guildBuffUsed.get(i).setVisible(true);
+				this.cross.get(i).setVisible(true);
 			} else {
 				this.guildBuffUsed.get(i).setVisible(false);
+				this.cross.get(i).setVisible(false);
 			}
 		}
 		
@@ -766,13 +716,20 @@ public class PageBuff extends PagePanel {
 			if(stone != null) {
 				this.stoneUsed.get(i).setItem(stone);
 				this.stoneUsed.get(i).setVisible(true);
+				this.cross.get(i+4).setVisible(true);
 			} else {
 				this.stoneUsed.get(i).setVisible(false);
+				this.cross.get(i+4).setVisible(false);
 			}
 		}
 		
 		refreshGuildBuffList();
 		refreshStoneList();
 		setEffects();
+		
+		this.colBuffLeft.revalidate();
+		this.colBuffRight.revalidate();
+		
+		updateSize();
 	}
 }

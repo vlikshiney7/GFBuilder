@@ -38,6 +38,7 @@ import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JIconCheckBox;
@@ -75,7 +76,7 @@ public class PageArmor extends PagePanel {
 	private ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>(5);
 	private ArrayList<JLangLabel> labelValue = new ArrayList<JLangLabel>(5);
 	
-	private JPanel showAndHide = new JPanel();
+	private JCustomPanel showAndHide;
 	private ArrayList<JPanel> showAndHideEnchant = new ArrayList<JPanel>(5);
 	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(5);
 	
@@ -87,8 +88,7 @@ public class PageArmor extends PagePanel {
 	}
 
 	public PageArmor() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		
 		this.shortcutSet = new JCustomComboBox<EquipSet>(new EquipSet[] {});
 		this.shortcutSet.addActionListener(e -> {
@@ -499,123 +499,68 @@ public class PageArmor extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
-		
-		this.showAndHide.setLayout(new BoxLayout(this.showAndHide, BoxLayout.Y_AXIS));
-		this.showAndHide.setBorder(new EmptyBorder(10, 10, 10, 10));
-		this.showAndHide.setBackground(Design.UIColor[1]);
-		this.showAndHide.add(this.labelGFB[0]);
+		this.showAndHide = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		this.showAndHide.addAll(this.labelGFB[0], Box.createVerticalStrut(10),
+				this.shortcutSet, Box.createVerticalStrut(5), this.shortcutFortif, Box.createVerticalStrut(5), this.shortcutEnchant);
 		this.labelGFB[0].setFont(Design.TITLE);
-		this.showAndHide.add(Box.createVerticalStrut(10));
-		this.showAndHide.add(this.shortcutSet);
-		this.showAndHide.add(Box.createVerticalStrut(5));
-		this.showAndHide.add(this.shortcutFortif);
-		this.showAndHide.add(Box.createVerticalStrut(5));
-		this.showAndHide.add(this.shortcutEnchant);
 		this.showAndHide.setVisible(false);
 		
-		this.add(showAndHide);
+		this.add(this.showAndHide);
 		
 		for(int i = 0; i < 5; i++) {
-			JPanel descArmor = new JPanel();
-			descArmor.setLayout(new BoxLayout(descArmor, BoxLayout.X_AXIS));
-			descArmor.setBackground(Design.UIColor[1]);
-			descArmor.add(this.armor.get(i));
-			descArmor.add(this.enchant.get(i));
-			descArmor.add(this.fortif.get(i));
-			descArmor.add(this.redFortif.get(i));
+			JCustomPanel descArmor = new JCustomPanel(BoxLayout.X_AXIS);
+			descArmor.addAll(this.armor.get(i), this.enchant.get(i), this.fortif.get(i), this.redFortif.get(i));
 			
-			JPanel enchantArmor = new JPanel();
-			enchantArmor.setLayout(new BoxLayout(enchantArmor, BoxLayout.X_AXIS));
-			enchantArmor.setBackground(Design.UIColor[1]);
+			JCustomPanel enchantArmor = new JCustomPanel(BoxLayout.X_AXIS);
 			for(int j = 0; j < 3; j++) {
-				enchantArmor.add(Box.createHorizontalStrut(10));
-				enchantArmor.add(this.redEnchant.get(i*3+j));
-				enchantArmor.add(this.redLvlEnchant.get(i*3+j));
+				enchantArmor.addAll(Box.createHorizontalStrut(10), this.redEnchant.get(i*3+j), this.redLvlEnchant.get(i*3+j));
 			}
 			
-			JPanel fortifArmor = new JPanel();
-			fortifArmor.setLayout(new BoxLayout(fortifArmor, BoxLayout.X_AXIS));
-			fortifArmor.setBackground(Design.UIColor[1]);
-			fortifArmor.add(this.valueFortif.get(i));
-			fortifArmor.add(Box.createHorizontalStrut(5));
-			fortifArmor.add(this.labelValue.get(i));
+			JCustomPanel fortifArmor = new JCustomPanel(BoxLayout.X_AXIS);
+			fortifArmor.addAll(this.valueFortif.get(i), Box.createHorizontalStrut(5), this.labelValue.get(i));
 			
-			JPanel pearlArmor = new JPanel();
-			pearlArmor.setLayout(new BoxLayout(pearlArmor, BoxLayout.Y_AXIS));
-			pearlArmor.setBackground(Design.UIColor[1]);
-			
+			JCustomPanel pearlArmor = new JCustomPanel(BoxLayout.Y_AXIS);
 			if(i == 0) {
-				pearlArmor.add(this.pearl.get(i));
-				pearlArmor.add(Box.createVerticalStrut(3));
+				pearlArmor.addAll(this.pearl.get(i), Box.createVerticalStrut(3));
 			} else if (i == 1) {
-				pearlArmor.add(this.pearl.get(i));
-				pearlArmor.add(Box.createVerticalStrut(3));
-				pearlArmor.add(this.pearl.get(i+1));
-				pearlArmor.add(Box.createVerticalStrut(3));
+				pearlArmor.addAll(this.pearl.get(i), Box.createVerticalStrut(3), this.pearl.get(i+1), Box.createVerticalStrut(3));
 			} else {
-				pearlArmor.add(this.pearl.get(i+1));
-				pearlArmor.add(Box.createVerticalStrut(3));
+				pearlArmor.addAll(this.pearl.get(i+1), Box.createVerticalStrut(3));
 			}
 			
-			JPanel starPanel = new JPanel();
-			starPanel.setBackground(Design.UIColor[1]);
-			starPanel.add(this.labelGFB[i+11]);
+			JCustomPanel starPanel = new JCustomPanel(this.labelGFB[i+11], Box.createHorizontalStrut(10));
 			this.labelGFB[i+11].setFont(Design.SUBTITLE);
-			starPanel.add(Box.createHorizontalStrut(10));
+			starPanel.addAll(this.starPearl.get(i));
 			
-			for(int j = 0; j < 4; j++) {
-				starPanel.add(this.starPearl.get(i).get(j));
-			}
-			
-			JPanel listEnchant = new JPanel(new GridLayout(5, 2, 2, 5));
-			listEnchant.setBackground(Design.UIColor[1]);
+			JCustomPanel listEnchant = new JCustomPanel(new GridLayout(5, 2, 2, 5));
 			for(int j = 0; j < 5; j++) {
-				listEnchant.add(this.pearlEnchant.get(i*5+j));
-				listEnchant.add(this.pearlLvlEnchant.get(i*5+j));
+				listEnchant.addAll(this.pearlEnchant.get(i*5+j), this.pearlLvlEnchant.get(i*5+j));
 			}
 			
-			JPanel xpArmor = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpArmor.setBackground(Design.UIColor[1]);
+			JCustomPanel xpArmor = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 			xpArmor.add(this.labelGFB[i+6]);
 			this.labelGFB[i+6].setFont(Design.SUBTITLE);
 			
 			for(int j = 0; j < 2; j++) {
-				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Design.UIColor[1]);
-				xp.add(this.xpStuff.get(i*2+j));
-				xp.add(this.lvlXpStuff.get(i*2+j));
+				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
+				xp.addAll(this.xpStuff.get(i*2+j), this.lvlXpStuff.get(i*2+j));
 				xpArmor.add(xp);
 			}
 			
-			JPanel elemI = new JPanel();
-			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
-			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.labelGFB[i+1]);
+			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+			elemI.addAll(this.labelGFB[i+1], Box.createVerticalStrut(10), descArmor, Box.createVerticalStrut(2),
+					enchantArmor, Box.createVerticalStrut(2), fortifArmor, Box.createVerticalStrut(5),
+					pearlArmor, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
+					xpArmor);
 			this.labelGFB[i+1].setFont(Design.TITLE);
-			elemI.add(Box.createVerticalStrut(10));
-			elemI.add(descArmor);
-			elemI.add(Box.createVerticalStrut(2));
-			elemI.add(enchantArmor);
-			elemI.add(Box.createVerticalStrut(2));
-			elemI.add(fortifArmor);
-			elemI.add(Box.createVerticalStrut(5));
-			elemI.add(pearlArmor);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(starPanel);
-			elemI.add(listEnchant);
-			elemI.add(Box.createVerticalStrut(2));
-			elemI.add(xpArmor);
 			
 			this.showAndHideEnchant.add(listEnchant);
 			this.showAndHideXpStuff.add(xpArmor);	
 			
-			this.add(Box.createVerticalStrut(10));
-			this.add(elemI);
+			this.addAll(Box.createVerticalStrut(10), elemI);
 		}
 		
-		this.add(Box.createVerticalStrut(10));
-		this.add(this.armorSetInfo);
+		this.addAll(Box.createVerticalStrut(10), this.armorSetInfo);
 		
 		for(JPanel panel : this.showAndHideXpStuff) {
 			panel.setVisible(false);

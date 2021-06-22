@@ -26,6 +26,7 @@ import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Cape;
 import fr.vlik.grandfantasia.equip.Ring;
 import fr.vlik.grandfantasia.equip.Weapon;
+import fr.vlik.uidesign.JCustomPanel;
 
 public class SaveConfig {
 	
@@ -67,7 +68,7 @@ public class SaveConfig {
 	}
 	
 	public void applyConfig() {
-		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
+		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		int[] orderLoading = { 0, 6, 7, 8, 1, 2, 3, 4, 5, 9, 10, 11 };
 		
@@ -90,11 +91,11 @@ public class SaveConfig {
 	}
 	
 	public void overrideConfig() {
-		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
+		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		this.values.clear();
 		
-		for(JPanel panel : pages) {
+		for(JCustomPanel panel : pages) {
 			if(panel instanceof PagePanel) {
 				PagePanel page = (PagePanel) panel;
 				this.values.put(page.getSaveName(), page.getConfig(lang));
@@ -228,7 +229,7 @@ public class SaveConfig {
 	public static void writeData(String name, Language lang) {
 		Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
 		
-		ArrayList<JPanel> pages = MainFrame.getInstance().getPages();
+		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		for(JPanel panel : pages) {
 			if(panel instanceof PagePanel) {

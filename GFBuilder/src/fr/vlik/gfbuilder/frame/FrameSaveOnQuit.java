@@ -9,7 +9,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
@@ -18,6 +17,7 @@ import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveOnQuit extends JCustomFrame {
@@ -36,7 +36,7 @@ public class FrameSaveOnQuit extends JCustomFrame {
 	}
 	
 	private FrameSaveOnQuit() {
-		this.setLayout(new BorderLayout());
+		super(new BorderLayout());
 		this.label = Lang.getDataLabel(14);
 		
 		try {
@@ -77,21 +77,14 @@ public class FrameSaveOnQuit extends JCustomFrame {
 		
 		updateLanguage(Language.FR);
 		
-		JPanel pageQuit = new JPanel();
-		pageQuit.setLayout(new BoxLayout(pageQuit, BoxLayout.Y_AXIS));
+		JCustomPanel pageQuit = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageQuit.setBackground(Design.UIColor[2]);
-		pageQuit.setBorder(new EmptyBorder(10, 10, 10, 10));
-		
 		pageQuit.add(this.label[0]);
 		this.label[0].setFont(Design.TITLE);
 		
-		JPanel buttons = new JPanel(new GridLayout(1, 3, 10, 10));
+		JCustomPanel buttons = new JCustomPanel(new GridLayout(1, 3, 10, 10), new EmptyBorder(10, 10, 10, 10));
 		buttons.setBackground(Design.UIColor[2]);
-		buttons.setBorder(new EmptyBorder(10, 10, 10, 10));
-		
-		buttons.add(this.save);
-		buttons.add(this.leave);
-		buttons.add(this.cancel);
+		buttons.addAll(this.save, this.leave, this.cancel);
 		
 		pageQuit.add(buttons);
 		

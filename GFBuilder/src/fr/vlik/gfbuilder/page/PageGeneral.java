@@ -4,7 +4,6 @@ import java.awt.GridLayout;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
@@ -24,6 +23,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomDialog;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -202,90 +202,27 @@ public class PageGeneral extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
+		JCustomPanel elem1 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		elem1.addAll(new JCustomPanel(this.labelAPI[0]), this.grade);
 		
-		JPanel elem1 = new JPanel(new GridLayout(2, 1, 10, 10));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		
-		JPanel panelTitle1 = new JPanel();
-		panelTitle1.setBackground(Design.UIColor[1]);
-		panelTitle1.add(this.labelAPI[0]);
-		
-		elem1.add(panelTitle1);
-		elem1.add(this.grade);
-		
-		
-		JPanel elem2 = new JPanel(new GridLayout(2, 1, 10, 10));
-		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem2.setBackground(Design.UIColor[1]);
-		
-		JPanel panelTitle2 = new JPanel();
-		panelTitle2.setBackground(Design.UIColor[1]);
-		panelTitle2.add(this.labelGFB[0]);
+		JCustomPanel elem2 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		elem2.addAll(new JCustomPanel(this.labelGFB[0]), this.lvl);
 		this.labelGFB[0].setFont(Design.TITLE);
 		
-		elem2.add(panelTitle2);
-		elem2.add(this.lvl);
+		JCustomPanel elem3 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		elem3.addAll(new JCustomPanel(this.labelAPI[1]), this.reinca);
+		
+		JCustomPanel elem4 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		elem4.addAll(new JCustomPanel(this.labelAPI[2]), new JCustomPanel(this.filter, this.title));
+		
+		JCustomPanel elem5 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		elem5.addAll(new JCustomPanel(this.labelAPI[3]), this.yggdra);
+		
+		JCustomPanel elem6 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
+		elem6.addAll(new JCustomPanel(this.labelAPI[4]), this.archive);
 		
 		
-		JPanel elem3 = new JPanel(new GridLayout(2, 1, 10, 10));
-		elem3.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem3.setBackground(Design.UIColor[1]);
-		
-		JPanel panelTitle3 = new JPanel();
-		panelTitle3.setBackground(Design.UIColor[1]);
-		panelTitle3.add(this.labelAPI[1]);
-		
-		elem3.add(panelTitle3);
-		elem3.add(this.reinca);
-		
-		
-		JPanel elem4 = new JPanel(new GridLayout(2, 1, 10, 10));
-		elem4.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem4.setBackground(Design.UIColor[1]);
-		
-		JPanel panelTitle4 = new JPanel();
-		panelTitle4.setBackground(Design.UIColor[1]);
-		panelTitle4.add(this.labelAPI[2]);
-		
-		JPanel filterTitle = new JPanel();
-		filterTitle.setBackground(Design.UIColor[1]);
-		filterTitle.add(this.filter);
-		filterTitle.add(this.title);
-		
-		elem4.add(panelTitle4);
-		elem4.add(filterTitle);
-		
-		
-		JPanel elem5 = new JPanel(new GridLayout(2, 1, 10, 10));
-		elem5.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem5.setBackground(Design.UIColor[1]);
-		
-		JPanel panelTitle5 = new JPanel();
-		panelTitle5.setBackground(Design.UIColor[1]);
-		panelTitle5.add(this.labelAPI[3]);
-		
-		elem5.add(panelTitle5);
-		elem5.add(this.yggdra);
-		
-		
-		JPanel elem6 = new JPanel(new GridLayout(2, 1, 10, 10));
-		elem6.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem6.setBackground(Design.UIColor[1]);
-		
-		JPanel panelTitle6 = new JPanel();
-		panelTitle6.setBackground(Design.UIColor[1]);
-		panelTitle6.add(this.labelAPI[4]);
-		
-		elem6.add(panelTitle6);
-		elem6.add(this.archive);
-		
-		this.add(elem1);
-		this.add(elem2);
-		this.add(elem3);
-		this.add(elem4);
-		this.add(elem5);
-		this.add(elem6);
+		this.addAll(elem1, elem2, elem3, elem4, elem5, elem6);
 	}
 	
 	@Override

@@ -24,7 +24,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
@@ -62,6 +61,7 @@ import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomLabel;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTabPane;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -73,10 +73,10 @@ public class MainFrame extends JFrame {
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
 	private JCustomTabPane language;
 	
-	private JPanel overlay;
+	private JCustomPanel overlay;
 	private static int nbPages = 0;
 	private JScrollPane scrollContent;
-	private ArrayList<JPanel> pages = new ArrayList<JPanel>();
+	private ArrayList<JCustomPanel> pages = new ArrayList<JCustomPanel>();
 	private ArrayList<JCustomFrame> frames = new ArrayList<JCustomFrame>();
 	
 	private ArrayList<JCustomLabel<TypeEffect>> labelStat = new ArrayList<JCustomLabel<TypeEffect>>(TypeEffect.values().length);
@@ -91,7 +91,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.18.7");
+		super("Grand Fantasia Builder - Version 0.19.0");
 		setCustomUI();
 		
 		try {
@@ -117,9 +117,7 @@ public class MainFrame extends JFrame {
 		});
 		this.setLocationRelativeTo(null);
 		
-		JPanel progressPanel = new JPanel();
-		progressPanel.setLayout(new GridBagLayout());
-		progressPanel.setBackground(Design.UIColor[1]);
+		JCustomPanel progressPanel = new JCustomPanel(new GridBagLayout());
 		progressPanel.setSize(1325, 750);
 		
 		JProgressBar progress = new JProgressBar(0, 17);
@@ -140,10 +138,9 @@ public class MainFrame extends JFrame {
 		/*		****	   MENU		  	****	*/
 		/****************************************/
 		
-		JPanel menu = new JPanel();
-		menu.setPreferredSize(new Dimension(200, 0));
+		JCustomPanel menu = new JCustomPanel(new GridLayout(14, 1, 0, 0));
 		menu.setBackground(Design.UIColor[0]);
-		menu.setLayout(new GridLayout(14, 1, 0, 0));
+		menu.setPreferredSize(new Dimension(200, 0));
 		
 		for(int i = 0; i < Lang.getDataPane().length; i++) {
 			this.tabPaneMenu.add(new JCustomTabPane(Lang.getDataPane()[i]));
@@ -163,11 +160,29 @@ public class MainFrame extends JFrame {
 		
 		menu.add(this.language);
 		
+		
+		/****************************************/
+		/*		****	   FRAME	  	****	*/
+		/****************************************/
+		
+		progress.setValue(progress.getValue()+1);
+		progress.setString("Loading Frames");
+		
+		this.frames.add(FrameCreateCustom.getInstance());
+		this.frames.add(FrameError.getInstance());
+		this.frames.add(FrameSaveAs.getInstance());
+		this.frames.add(FrameSaveLoader.getInstance());
+		this.frames.add(FrameSaveOnNew.getInstance());
+		this.frames.add(FrameSaveOnQuit.getInstance());
+		
+		System.out.println("Fin Frames : " + Duration.between(this.start, Instant.now()).toMillis());
+		
+		
 		/****************************************/
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
 		
-		System.out.println("Chargement Page : " + Duration.between(this.start, Instant.now()).toMillis());
+		System.out.println("Loading Page : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Genenal Page");
@@ -237,8 +252,7 @@ public class MainFrame extends JFrame {
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Pages Display");
 		
-		JPanel allPages = new JPanel();
-		allPages.setBorder(new EmptyBorder(20, 20, 20, 20));
+		JCustomPanel allPages = new JCustomPanel(new EmptyBorder(20, 20, 20, 20));
 		allPages.setBackground(Design.UIColor[2]);
 		
 		this.scrollContent = new JScrollPane(allPages, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -253,27 +267,10 @@ public class MainFrame extends JFrame {
 		
 		this.overlay = Overlay.getInstance();
 		
-		JPanel content = new JPanel();
-		content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+		JCustomPanel content = new JCustomPanel(BoxLayout.Y_AXIS);
 		content.setBackground(Design.UIColor[2]);
 		content.add(this.overlay);
 		content.add(this.scrollContent);
-		
-		/****************************************/
-		/*		****	   FRAME	  	****	*/
-		/****************************************/
-		
-		progress.setValue(progress.getValue()+1);
-		progress.setString("Loading Frames");
-		
-		this.frames.add(FrameCreateCustom.getInstance());
-		this.frames.add(FrameError.getInstance());
-		this.frames.add(FrameSaveAs.getInstance());
-		this.frames.add(FrameSaveLoader.getInstance());
-		this.frames.add(FrameSaveOnNew.getInstance());
-		this.frames.add(FrameSaveOnQuit.getInstance());
-		
-		System.out.println("Fin Frames : " + Duration.between(this.start, Instant.now()).toMillis());
 		
 		
 		/****************************************/
@@ -283,9 +280,7 @@ public class MainFrame extends JFrame {
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Stats Display");
 		
-		JPanel stats = new JPanel();
-		stats.setLayout(new BoxLayout(stats, BoxLayout.Y_AXIS));
-		stats.setBackground(Design.UIColor[1]);
+		JCustomPanel stats = new JCustomPanel(BoxLayout.Y_AXIS);
 		
 		int sizeStat = 210;
 		int[] section = new int[] { 5, 3, 5, 6, 3 };
@@ -293,19 +288,13 @@ public class MainFrame extends JFrame {
 		int ordinal = 0;
 		
 		for(int i = 0; i < section.length; i++) {
-			JPanel blocStat = new JPanel();
-			blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
-			blocStat.setBorder(new EmptyBorder(10, 10, 0, 27));
-			blocStat.setBackground(Design.UIColor[1]);
+			JCustomPanel blocStat = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 0, 27));
 			blocStat.setSize(new Dimension(sizeStat, 25));
-			
 			blocStat.add(JLangLabel.getEmptyLabel(7, sizeStat));
 			
 			for(int j = 0; j < section[i]; j++) {
-				JPanel inline = new JPanel();
-				inline.setLayout(new BoxLayout(inline, BoxLayout.X_AXIS));
+				JCustomPanel inline = new JCustomPanel(BoxLayout.X_AXIS, new EmptyBorder(0, 0, 0, 0));
 				inline.setSize(new Dimension(sizeStat, 25));
-				inline.setBorder(new EmptyBorder(0, 0, 0, 0));
 				inline.setOpaque(false);
 				inline.setAlignmentX(LEFT_ALIGNMENT);
 				
@@ -320,8 +309,7 @@ public class MainFrame extends JFrame {
 				stat.setHorizontalAlignment(JLabel.RIGHT);
 				this.valueStat.add(stat);
 				
-				inline.add(name);
-				inline.add(stat);
+				inline.addAll(name, stat);
 				
 				blocStat.add(inline);
 				
@@ -333,19 +321,13 @@ public class MainFrame extends JFrame {
 			stats.add(blocStat);
 		}
 		
-		JPanel blocStat = new JPanel();
-		blocStat.setLayout(new BoxLayout(blocStat, BoxLayout.Y_AXIS));
-		blocStat.setBorder(new EmptyBorder(10, 10, 10, 10));
-		blocStat.setBackground(Design.UIColor[1]);
+		JCustomPanel blocStat = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		blocStat.setSize(new Dimension(sizeStat, 25));
-		
 		blocStat.add(JLangLabel.getEmptyLabel(7, sizeStat));
 		
 		while(ordinal < TypeEffect.values().length) {
-			JPanel inline = new JPanel();
-			inline.setLayout(new BoxLayout(inline, BoxLayout.X_AXIS));
+			JCustomPanel inline = new JCustomPanel(BoxLayout.X_AXIS, new EmptyBorder(0, 0, 0, 0));
 			inline.setSize(new Dimension(sizeStat, 25));
-			inline.setBorder(new EmptyBorder(0, 0, 0, 0));
 			inline.setOpaque(false);
 			inline.setAlignmentX(LEFT_ALIGNMENT);
 			
@@ -360,8 +342,7 @@ public class MainFrame extends JFrame {
 			stat.setHorizontalAlignment(JLabel.RIGHT);
 			this.valueStat.add(stat);
 			
-			inline.add(name);
-			inline.add(stat);
+			inline.addAll(name, stat);
 			
 			blocStat.add(inline);
 			
@@ -450,7 +431,7 @@ public class MainFrame extends JFrame {
 		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
 	}
 	
-	public ArrayList<JPanel> getPages() {
+	public ArrayList<JCustomPanel> getPages() {
 		return this.pages;
 	}
 
@@ -485,7 +466,7 @@ public class MainFrame extends JFrame {
 		
 		Build build = new Build(coefReinca, weaponType);
 		
-		for(JPanel page : this.pages) {
+		for(JCustomPanel page : this.pages) {
 			if(page instanceof PagePanel) {
 				build.addEffect(((PagePanel) page).getEffects());
 			}
@@ -584,7 +565,7 @@ public class MainFrame extends JFrame {
 			this.tabPaneMenu.get(i).updateText(lang);
 		}
 		
-		for(JPanel page : this.pages) {
+		for(JCustomPanel page : this.pages) {
 			if(page instanceof PagePanel) {
 				((PagePanel) page).updateLanguage(lang);
 			} else if(page instanceof PageOption) {

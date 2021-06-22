@@ -2,11 +2,9 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -26,6 +24,7 @@ import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
@@ -54,8 +53,7 @@ public class PageRide extends PagePanel {
 	}
 	
 	private PageRide() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		setLabelAPI();
 		
 		Ride[] tabRide = Ride.getPossibleRide(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
@@ -209,28 +207,18 @@ public class PageRide extends PagePanel {
 	protected void createPanel() {
 		int iLabelAPI = 0;
 		
-		JPanel xpRide = new JPanel(new GridLayout(1, 3, 10, 3));
-		xpRide.setBackground(Design.UIColor[1]);
+		JCustomPanel xpRide = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 		xpRide.add(this.labelGFB[0]);
 		this.labelGFB[0].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-			xp.setBackground(Design.UIColor[1]);
-			xp.add(this.xpStuff.get(i));
-			xp.add(this.lvlXpStuff.get(i));
+			JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
+			xp.addAll(this.xpStuff.get(i), this.lvlXpStuff.get(i));
 			xpRide.add(xp);
 		}
 		
-		JPanel elem1 = new JPanel();
-		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelAPI[iLabelAPI++]);
-		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(this.ride);
-		elem1.add(Box.createVerticalStrut(5));
-		elem1.add(xpRide);
+		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem1.addAll(this.labelAPI[iLabelAPI++], Box.createVerticalStrut(10), this.ride, Box.createVerticalStrut(5), xpRide);
 		
 		this.showAndHideXpStuff = xpRide;
 		this.showAndHide.add(elem1);
@@ -238,47 +226,22 @@ public class PageRide extends PagePanel {
 		this.add(elem1);
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel currentQualityPanel = new JPanel();
-			currentQualityPanel.setBackground(Design.UIColor[1]);
+			JCustomPanel qualityPanel = new JCustomPanel();
+			qualityPanel.addAll(this.groupQuality.get(i));
 			
-			Enumeration<AbstractButton> itQuality = this.groupQuality.get(i).getElements();
-			do {
-				currentQualityPanel.add(itQuality.nextElement());
-			} while(itQuality.hasMoreElements());
-			
-			JPanel currentSynthesisPanel = new JPanel();
-			currentSynthesisPanel.setBackground(Design.UIColor[1]);
-			currentSynthesisPanel.add(this.labelAPI[iLabelAPI++]);
-			
-			Enumeration<AbstractButton> itSynthesis = this.groupSynthesis.get(i).getElements();
-			do {
-				currentSynthesisPanel.add(itSynthesis.nextElement());
-			} while(itSynthesis.hasMoreElements());
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI[iLabelAPI++]);
+			synthesisPanel.addAll(this.groupSynthesis.get(i));
 			
 			
-			JPanel starPanel = new JPanel();
-			starPanel.setBackground(Design.UIColor[1]);
+			JCustomPanel starPanel = new JCustomPanel();
+			starPanel.addAll(this.starSynthesis.get(i));
 			
-			for(int j = 0; j < 5; j++) {
-				starPanel.add(this.starSynthesis.get(i).get(j));
-			}
+			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+			elemI.addAll(this.labelAPI[iLabelAPI++], Box.createVerticalStrut(10),
+					qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3),
+					starPanel, Box.createVerticalStrut(3), this.synthesis.get(i));
 			
-			JPanel elemI = new JPanel();
-			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
-			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.labelAPI[iLabelAPI++]);
-			elemI.add(Box.createVerticalStrut(10));
-			elemI.add(currentQualityPanel);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(currentSynthesisPanel);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(starPanel);
-			elemI.add(Box.createVerticalStrut(3));
-			elemI.add(this.synthesis.get(i));
-			
-			this.add(Box.createVerticalStrut(10));
-			this.add(elemI);
+			this.addAll(Box.createVerticalStrut(10), elemI);
 			
 			if(i == 1) {
 				this.showAndHide.add(elemI);

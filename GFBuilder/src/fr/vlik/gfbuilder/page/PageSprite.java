@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
@@ -18,6 +17,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 
 public class PageSprite extends PagePanel {
 
@@ -34,8 +34,7 @@ public class PageSprite extends PagePanel {
 	}
 
 	private PageSprite() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
@@ -85,39 +84,23 @@ public class PageSprite extends PagePanel {
 
 	@Override
 	protected void createPanel() {
-		JPanel elem1 = new JPanel();
-		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelGFB[0]);
+		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem1.add(this.labelGFB[0], Box.createVerticalStrut(10));
 		this.labelGFB[0].setFont(Design.TITLE);
-		elem1.add(Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel panelBlason = new JPanel();
-			panelBlason.setLayout(new BoxLayout(panelBlason, BoxLayout.Y_AXIS));
-			panelBlason.setBackground(Design.UIColor[1]);
-			panelBlason.add(this.labelGFB[i+1]);
+			JCustomPanel panelBlason = new JCustomPanel(BoxLayout.Y_AXIS);
+			panelBlason.addAll(this.labelGFB[i+1], Box.createVerticalStrut(3), this.blason.get(i), Box.createVerticalStrut(5));
 			this.labelGFB[i+1].setFont(Design.SUBTITLE);
-			panelBlason.add(Box.createVerticalStrut(3));
-			panelBlason.add(this.blason.get(i));
-			panelBlason.add(Box.createVerticalStrut(5));
 			
 			elem1.add(panelBlason);
 		}
 		
-		JPanel elem2 = new JPanel();
-		elem2.setLayout(new BoxLayout(elem2, BoxLayout.Y_AXIS));
-		elem2.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem2.setBackground(Design.UIColor[1]);
-		elem2.add(this.labelGFB[3]);
+		JCustomPanel elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem2.addAll(this.labelGFB[3], Box.createVerticalStrut(10), this.islandBuff);
 		this.labelGFB[3].setFont(Design.TITLE);
-		elem2.add(Box.createVerticalStrut(10));
-		elem2.add(this.islandBuff);
 		
-		this.add(elem1);
-		this.add(Box.createVerticalStrut(10));
-		this.add(elem2);
+		this.addAll(elem1, Box.createVerticalStrut(10), elem2);
 	}
 	
 	@Override

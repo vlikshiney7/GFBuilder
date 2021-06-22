@@ -27,6 +27,7 @@ import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
 
 public class PageCapeRing extends PagePanel {
@@ -51,8 +52,7 @@ public class PageCapeRing extends PagePanel {
 	}
 	
 	private PageCapeRing() {
-		super(NUM_PAGE);
-		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(tabCape);
@@ -255,79 +255,51 @@ public class PageCapeRing extends PagePanel {
 
 	@Override
 	protected void createPanel() {
-		JPanel descCape = new JPanel();
-		descCape.setLayout(new BoxLayout(descCape, BoxLayout.X_AXIS));
-		descCape.setBackground(Design.UIColor[1]);
-		descCape.add(this.cape);
-		descCape.add(this.enchant.get(0));
+		JCustomPanel descCape = new JCustomPanel(BoxLayout.X_AXIS);
+		descCape.addAll(this.cape, this.enchant.get(0));
 		
-		JPanel xpCape = new JPanel(new GridLayout(1, 3, 10, 3));
-		xpCape.setBackground(Design.UIColor[1]);
+		JCustomPanel xpCape = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 		xpCape.add(this.labelGFB[1]);
 		this.labelGFB[1].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-			xp.setBackground(Design.UIColor[1]);
-			xp.add(this.xpStuff.get(i));
-			xp.add(this.lvlXpStuff.get(i));
+			JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
+			xp.addAll(this.xpStuff.get(i), this.lvlXpStuff.get(i));
 			xpCape.add(xp);
 		}
 		
-		JPanel elem1 = new JPanel();
-		elem1.setLayout(new BoxLayout(elem1, BoxLayout.Y_AXIS));
-		elem1.setBorder(new EmptyBorder(10, 10, 10, 10));
-		elem1.setBackground(Design.UIColor[1]);
-		elem1.add(this.labelGFB[0]);
+		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), descCape, Box.createVerticalStrut(5), xpCape);
 		this.labelGFB[0].setFont(Design.TITLE);
-		elem1.add(Box.createVerticalStrut(10));
-		elem1.add(descCape);
-		elem1.add(Box.createVerticalStrut(5));
-		elem1.add(xpCape);
 		
 		this.showAndHideXpStuff.add(xpCape);
 		
 		this.add(elem1);
 		
 		for(int i = 0; i < 2; i++) {
-			JPanel descRing = new JPanel();
-			descRing.setLayout(new BoxLayout(descRing, BoxLayout.X_AXIS));
-			descRing.setBackground(Design.UIColor[1]);
-			descRing.add(this.ring.get(i));
-			descRing.add(this.enchant.get(i+1));
+			JCustomPanel descRing = new JCustomPanel(BoxLayout.X_AXIS);
+			descRing.addAll(this.ring.get(i), this.enchant.get(i+1));
 			
-			JPanel xpRing = new JPanel(new GridLayout(1, 3, 10, 3));
-			xpRing.setBackground(Design.UIColor[1]);
+			JCustomPanel xpRing = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 			xpRing.add(this.labelGFB[i+4]);
 			this.labelGFB[i+4].setFont(Design.SUBTITLE);
 			
 			for(int j = 0; j < 2; j++) {
-				JPanel xp = new JPanel(new GridLayout(1, 2, 5, 3));
-				xp.setBackground(Design.UIColor[1]);
-				xp.add(this.xpStuff.get(i*2+j+2));
-				xp.add(this.lvlXpStuff.get(i*2+j+2));
+				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
+				xp.addAll(this.xpStuff.get(i*2+j+2), this.lvlXpStuff.get(i*2+j+2));
 				xpRing.add(xp);
 			}
 			
-			JPanel elemI = new JPanel();
-			elemI.setLayout(new BoxLayout(elemI, BoxLayout.Y_AXIS));
-			elemI.setBorder(new EmptyBorder(10, 10, 10, 10));
-			elemI.setBackground(Design.UIColor[1]);
-			elemI.add(this.labelGFB[i+2]);
+			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+			elemI.addAll(this.labelGFB[i+2], Box.createVerticalStrut(10), descRing, Box.createVerticalStrut(5), xpRing);
 			this.labelGFB[i+2].setFont(Design.TITLE);
-			elemI.add(Box.createVerticalStrut(10));
-			elemI.add(descRing);
-			elemI.add(Box.createVerticalStrut(5));
-			elemI.add(xpRing);
 			
 			this.showAndHideXpStuff.add(xpRing);
 			
-			this.add(Box.createVerticalStrut(10));
-			this.add(elemI);
+			this.add(Box.createVerticalStrut(10), elemI);
 		}
 		
-		this.add(Box.createVerticalStrut(10));
-		this.add(this.capeRingSetInfo);
+		this.addAll(Box.createVerticalStrut(10), this.capeRingSetInfo);
 		
 		for(JPanel panel : this.showAndHideXpStuff) {
 			panel.setVisible(false);
