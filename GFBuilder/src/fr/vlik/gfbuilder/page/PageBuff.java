@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -31,6 +32,7 @@ import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JIconCheckBox;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageBuff extends PagePanel {
 	
@@ -66,6 +68,7 @@ public class PageBuff extends PagePanel {
 	
 	private PageBuff() {
 		super(NUM_PAGE);
+		setLabelAPI();
 		
 		for(int i = 0; i < 6; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
@@ -244,7 +247,9 @@ public class PageBuff extends PagePanel {
 		}
 		
 		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
-			list.addAll(this.getLvlNucleusEnchant(i));
+			if(this.nucleusEnchant.get(i).isVisible()) {
+				list.addAll(this.getLvlNucleusEnchant(i));
+			}
 		}
 		
 		for(int i = 0; i < this.energy.size(); i++) {
@@ -377,8 +382,12 @@ public class PageBuff extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 		
 		for(int i = 0; i < this.labelEnergy.size(); i++) {

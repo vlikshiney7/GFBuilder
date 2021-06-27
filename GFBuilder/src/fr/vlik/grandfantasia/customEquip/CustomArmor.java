@@ -84,7 +84,7 @@ public class CustomArmor extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomArmor.IncreaseValueGreen);
+						e.changeValue(CustomArmor.IncreaseValueGreen);
 					}
 					
 					mergeEffect[i] = e;
@@ -95,7 +95,7 @@ public class CustomArmor extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomArmor.IncreaseValueBlue);
+						e.changeValue(CustomArmor.IncreaseValueBlue);
 					}
 					
 					mergeEffect[i] = e;

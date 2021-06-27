@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.loader.equip;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -8,9 +7,9 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Armor;
+import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.equip.MultiEffect;
 import fr.vlik.grandfantasia.equip.RedArmor;
-import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 
@@ -71,29 +70,29 @@ class LoaderLegging {
 					new Effect(TypeEffect.VIT, false, 69, true),
 					new Effect(TypeEffect.AGI, false, 60, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 2));
-						add(new Effect(TypeEffect.TCCP, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.DCCP, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.RDCCP, false, 5));
-						add(new Effect(TypeEffect.RDCCM, false, 5));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.RDCCP, false, 5),
+						new Effect(TypeEffect.RDCCM, false, 5),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Pants"); }},
 					new GradeName[] { GradeName.PALADIN, }, 87, Quality.RED, false, false,
 					ArmorType.JAMBIERE, "90red1", "pantalons/90red1", new Calculable[] {
@@ -103,29 +102,29 @@ class LoaderLegging {
 						new Effect(TypeEffect.VIT, false, 72, true),
 						new Effect(TypeEffect.VOL, false, 56, true),
 					}, null,
-					new ArrayList<ArrayList<Calculable>>() {{
-						add(new ArrayList<Calculable>() {{
-							add(new Effect(TypeEffect.VIT, false, 6));
-						}});
-						add(new ArrayList<Calculable>() {{
-							add(new Effect(TypeEffect.PV, false, 600));
-							add(new Effect(TypeEffect.PM, false, 600));
-						}});
-						add(new ArrayList<Calculable>() {{
-							add(new Effect(TypeEffect.HealR, false, 2));
-							add(new Effect(TypeEffect.PV, true, 3));
-						}});
-						add(new ArrayList<Calculable>() {{
-							add(new Effect(TypeEffect.FCE, false, 10));
-							add(new Effect(TypeEffect.VIT, false, 10));
-							add(new Effect(TypeEffect.AGI, false, 10));
-							add(new Effect(TypeEffect.DefP, true, 2));
-						}});
-						add(new ArrayList<Calculable>() {{
-							add(new Effect(TypeEffect.RDCCP, false, 5));
-							add(new Effect(TypeEffect.RDCCM, false, 5));
-						}});
-					}}),
+					new Calculable[][] {
+						new Calculable[] {
+							new Effect(TypeEffect.VIT, false, 6),
+						},
+						new Calculable[] {
+							new Effect(TypeEffect.PV, false, 600),
+							new Effect(TypeEffect.PM, false, 600),
+						},
+						new Calculable[] {
+							new Effect(TypeEffect.HealR, false, 2),
+							new Effect(TypeEffect.PV, true, 3),
+						},
+						new Calculable[] {
+							new Effect(TypeEffect.FCE, false, 10),
+							new Effect(TypeEffect.VIT, false, 10),
+							new Effect(TypeEffect.AGI, false, 10),
+							new Effect(TypeEffect.DefP, true, 2),
+						},
+						new Calculable[] {
+							new Effect(TypeEffect.RDCCP, false, 5),
+							new Effect(TypeEffect.RDCCM, false, 5),
+						},
+					}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières de Fierté pétrifiante"); put(Language.EN, "Petrifying Greaves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 97, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "100vio0", "pantalons/100vio0", new Calculable[] {
@@ -3776,29 +3775,29 @@ class LoaderLegging {
 					new Effect(TypeEffect.VIT, false, 67, true),
 					new Effect(TypeEffect.VOL, false, 61, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.AGI, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.ESQ, false, 2));
-						add(new Effect(TypeEffect.PV, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.VitAtk, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.RDCCP, false, 5));
-						add(new Effect(TypeEffect.RDCCM, false, 5));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitAtk, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.RDCCP, false, 5),
+						new Effect(TypeEffect.RDCCM, false, 5),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Tibia d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Greaves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 97, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "100vio3", "pantalons/100vio3", new Calculable[] {
@@ -5903,30 +5902,30 @@ class LoaderLegging {
 					new Effect(TypeEffect.VIT, false, 70, true),
 					new Effect(TypeEffect.VOL, false, 64, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 300));
-						add(new Effect(TypeEffect.PM, false, 300));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Toucher, false, 2));
-						add(new Effect(TypeEffect.PM, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.INT, false, 10));
-						add(new Effect(TypeEffect.VOL, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.VitComp, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.RDCCP, false, 5));
-						add(new Effect(TypeEffect.RDCCM, false, 5));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitComp, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.RDCCP, false, 5),
+						new Effect(TypeEffect.RDCCM, false, 5),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon de Prière de l'Aube"); put(Language.EN, "Dawn Pants"); }},
 				new GradeName[] { GradeName.SAGE, }, 97, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "100vio5", "pantalons/100vio5", new Calculable[] {
@@ -8069,29 +8068,29 @@ class LoaderLegging {
 					new Effect(TypeEffect.VIT, false, 69, true),
 					new Effect(TypeEffect.AGI, false, 57, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 2));
-						add(new Effect(TypeEffect.TCCP, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.DCCP, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.RDCCP, false, 5));
-						add(new Effect(TypeEffect.RDCCM, false, 5));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.RDCCP, false, 5),
+						new Effect(TypeEffect.RDCCM, false, 5),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalons de Démon Frappe-pierre"); put(Language.EN, "Earthquake Pants"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 97, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "100vio8", "pantalons/100vio8", new Calculable[] {
@@ -10192,30 +10191,30 @@ class LoaderLegging {
 					new Effect(TypeEffect.INT, false, 69, true),
 					new Effect(TypeEffect.VOL, false, 61, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 150));
-						add(new Effect(TypeEffect.PM, false, 150));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 2));
-						add(new Effect(TypeEffect.TCCM, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.INT, false, 10));
-						add(new Effect(TypeEffect.VOL, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.TCCM, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.RDCCP, false, 5));
-						add(new Effect(TypeEffect.RDCCM, false, 5));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.RDCCP, false, 5),
+						new Effect(TypeEffect.RDCCM, false, 5),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Jambières de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Leggings"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 87, Quality.RED, false, false,
 				ArmorType.JAMBIERE, "90red11", "pantalons/90red11", new Calculable[] {
@@ -10225,30 +10224,30 @@ class LoaderLegging {
 					new Effect(TypeEffect.VOL, false, 62, true),
 					new Effect(TypeEffect.AGI, false, 60, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 150));
-						add(new Effect(TypeEffect.PM, false, 150));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 1));
-						add(new Effect(TypeEffect.TCCM, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.INT, false, 10));
-						add(new Effect(TypeEffect.VOL, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.TCCM, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.RDCCP, false, 5));
-						add(new Effect(TypeEffect.RDCCM, false, 5));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.RDCCP, false, 5),
+						new Effect(TypeEffect.RDCCM, false, 5),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Jambières du juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 97, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "100vio10", "pantalons/100vio10", new Calculable[] {

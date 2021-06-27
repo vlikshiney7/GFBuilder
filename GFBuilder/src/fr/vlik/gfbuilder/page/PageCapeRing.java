@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -29,6 +30,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageCapeRing extends PagePanel {
 	
@@ -53,6 +55,7 @@ public class PageCapeRing extends PagePanel {
 	
 	private PageCapeRing() {
 		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		setLabelAPI();
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(tabCape);
@@ -175,7 +178,7 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		
+		this.labelAPI.put("Cape", new JLangLabel(Cape.CLASS_NAME, Design.TITLE));
 	}
 
 	@Override
@@ -259,8 +262,8 @@ public class PageCapeRing extends PagePanel {
 		descCape.addAll(this.cape, this.enchant.get(0));
 		
 		JCustomPanel xpCape = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-		xpCape.add(this.labelGFB[1]);
-		this.labelGFB[1].setFont(Design.SUBTITLE);
+		xpCape.add(this.labelGFB[0]);
+		this.labelGFB[0].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -269,8 +272,7 @@ public class PageCapeRing extends PagePanel {
 		}
 		
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), descCape, Box.createVerticalStrut(5), xpCape);
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem1.addAll(this.labelAPI.get("Cape"), Box.createVerticalStrut(10), descCape, Box.createVerticalStrut(5), xpCape);
 		
 		this.showAndHideXpStuff.add(xpCape);
 		
@@ -281,8 +283,8 @@ public class PageCapeRing extends PagePanel {
 			descRing.addAll(this.ring.get(i), this.enchant.get(i+1));
 			
 			JCustomPanel xpRing = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-			xpRing.add(this.labelGFB[i+4]);
-			this.labelGFB[i+4].setFont(Design.SUBTITLE);
+			xpRing.add(this.labelGFB[i+3]);
+			this.labelGFB[i+3].setFont(Design.SUBTITLE);
 			
 			for(int j = 0; j < 2; j++) {
 				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -291,12 +293,12 @@ public class PageCapeRing extends PagePanel {
 			}
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelGFB[i+2], Box.createVerticalStrut(10), descRing, Box.createVerticalStrut(5), xpRing);
-			this.labelGFB[i+2].setFont(Design.TITLE);
+			elemI.addAll(this.labelGFB[i+1], Box.createVerticalStrut(10), descRing, Box.createVerticalStrut(5), xpRing);
+			this.labelGFB[i+1].setFont(Design.TITLE);
 			
 			this.showAndHideXpStuff.add(xpRing);
 			
-			this.add(Box.createVerticalStrut(10), elemI);
+			this.addAll(Box.createVerticalStrut(10), elemI);
 		}
 		
 		this.addAll(Box.createVerticalStrut(10), this.capeRingSetInfo);
@@ -308,8 +310,12 @@ public class PageCapeRing extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 	}
 	

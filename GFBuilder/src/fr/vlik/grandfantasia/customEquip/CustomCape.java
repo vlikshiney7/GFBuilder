@@ -80,7 +80,7 @@ public class CustomCape extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomCape.IncreaseValueGreen);
+						e.changeValue(CustomCape.IncreaseValueGreen);
 					}
 					
 					mergeEffect[i] = e;
@@ -91,7 +91,7 @@ public class CustomCape extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomCape.IncreaseValueBlue);
+						e.changeValue(CustomCape.IncreaseValueBlue);
 					}
 					
 					mergeEffect[i] = e;

@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -23,6 +24,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageSkill extends PagePanel {
 
@@ -46,6 +48,7 @@ public class PageSkill extends PagePanel {
 	
 	private PageSkill() {
 		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		setLabelAPI();
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		this.currentLvl = PageGeneral.getInstance().getLvl();
@@ -157,8 +160,12 @@ public class PageSkill extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 	}
 	

@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -171,15 +172,11 @@ public class PageRide extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		this.labelAPI = new JLangLabel[5];
-		this.labelAPI[0] = new JLangLabel(Ride.CLASS_NAME, Design.TITLE);
-		this.labelAPI[1] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[2] = new JLangLabel(Synthesis.CLASS_NAME_RIDE, Design.TITLE);
-		this.labelAPI[3] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[4] = new JLangLabel(Synthesis.CLASS_NAME_THRONE, Design.TITLE);
-		
-		this.labelAPI[1].setVisible(false);
-		this.labelAPI[3].setVisible(false);
+		this.labelAPI.put("Ride", new JLangLabel(Ride.CLASS_NAME, Design.TITLE));
+		this.labelAPI.put("Enchant0", new JLangLabel(Synthesis.CLASS_NAME_RIDE, Design.TITLE));
+		this.labelAPI.put("Enchant1", new JLangLabel(Synthesis.CLASS_NAME_THRONE, Design.TITLE));		
+		this.labelAPI.put("Synthesis0", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
+		this.labelAPI.put("Synthesis1", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
 	}
 
 	@Override
@@ -205,8 +202,6 @@ public class PageRide extends PagePanel {
 	
 	@Override
 	protected void createPanel() {
-		int iLabelAPI = 0;
-		
 		JCustomPanel xpRide = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 		xpRide.add(this.labelGFB[0]);
 		this.labelGFB[0].setFont(Design.SUBTITLE);
@@ -218,7 +213,7 @@ public class PageRide extends PagePanel {
 		}
 		
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelAPI[iLabelAPI++], Box.createVerticalStrut(10), this.ride, Box.createVerticalStrut(5), xpRide);
+		elem1.addAll(this.labelAPI.get("Ride"), Box.createVerticalStrut(10), this.ride, Box.createVerticalStrut(5), xpRide);
 		
 		this.showAndHideXpStuff = xpRide;
 		this.showAndHide.add(elem1);
@@ -229,7 +224,7 @@ public class PageRide extends PagePanel {
 			JCustomPanel qualityPanel = new JCustomPanel();
 			qualityPanel.addAll(this.groupQuality.get(i));
 			
-			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI[iLabelAPI++]);
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI.get("Synthesis" + i));
 			synthesisPanel.addAll(this.groupSynthesis.get(i));
 			
 			
@@ -237,7 +232,7 @@ public class PageRide extends PagePanel {
 			starPanel.addAll(this.starSynthesis.get(i));
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelAPI[iLabelAPI++], Box.createVerticalStrut(10),
+			elemI.addAll(this.labelAPI.get("Enchant" + i), Box.createVerticalStrut(10),
 					qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3),
 					starPanel, Box.createVerticalStrut(3), this.synthesis.get(i));
 			
@@ -252,6 +247,10 @@ public class PageRide extends PagePanel {
 			panel.setVisible(false);
 		}
 		this.showAndHideXpStuff.setVisible(false);
+		
+		for(int i = 0; i < 2; i++) {
+			this.labelAPI.get("Synthesis" + i).setVisible(false);
+		}
 		
 		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
 			quality.setSelectedItem(Quality.GREY);
@@ -273,8 +272,8 @@ public class PageRide extends PagePanel {
 			label.updateText(lang);
 		}
 		
-		for(JLangLabel label : this.labelAPI) {
-			label.updateText(lang);
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 		
 		for(int i = 0; i < this.groupQuality.size(); i++) {
@@ -380,14 +379,14 @@ public class PageRide extends PagePanel {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(false);
 			}
-			this.labelAPI[id*2+1].setVisible(false);
+			this.labelAPI.get("Synthesis" + id).setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.synthesis.get(id).setVisible(false);
 		} else {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(true);
 			}
-			this.labelAPI[id*2+1].setVisible(true);
+			this.labelAPI.get("Synthesis" + id).setVisible(true);
 			this.groupSynthesis.get(id).setVisible(true);
 			this.synthesis.get(id).setVisible(true);
 			

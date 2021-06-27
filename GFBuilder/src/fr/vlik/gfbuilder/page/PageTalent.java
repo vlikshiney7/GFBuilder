@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.AbstractButton;
 import javax.swing.Box;
@@ -31,6 +32,7 @@ import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomTextPane;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageTalent extends PagePanel {
 
@@ -57,6 +59,7 @@ public class PageTalent extends PagePanel {
 	
 	private PageTalent() {
 		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		setLabelAPI();
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
@@ -237,8 +240,12 @@ public class PageTalent extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 		
 		this.reinitTalent.updateText(lang);
@@ -384,7 +391,7 @@ public class PageTalent extends PagePanel {
 		Map<String, String> config = new HashMap<String, String>();
 		
 		for(int i = 0; i < this.groupTalent.size(); i++) {
-			String value = this.getTalent(i) != null ? this.getTalent(i).getInfo(lang) : "";
+			String value = this.getTalent(i) != null ? this.getTalent(i).getName(Language.FR) : "";
 			config.put("TalentSelect" + i, "" + value);
 		}
 		

@@ -37,7 +37,7 @@ public abstract class Buff implements Writable {
 	
 	@Override
 	public String getInfo(Language lang) {
-		if(this.name.get(lang) == "") {
+		if(this.name.get(lang).equals("")) {
 			return this.name.get(Language.FR);
 		}
 		return this.name.get(lang);

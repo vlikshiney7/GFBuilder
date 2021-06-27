@@ -1,8 +1,8 @@
 Général,General/Armes,Weapons/Armures,Armors/Cape - Anneaux,Cape - Rings/Monture - Trône,Ride - Throne/Costumes,Costumes/Talent,Talent/Spécialisation,Specialization/Compétence,Skill/Sprite,Sprite/Buff permanent,Permanent buff/Alliance - Anima,Marriage - Anima/Paramètres,Settings
 Niveau,Level
-Arme principale,Primary weapon/Arme secondaire,Secondary weapon/Arme tertiaire,Tertiary weapon/XP Arme,Weapon Exp/XP Arme,Weapon Exp/XP Arme,Weapon Exp/Enchantement de perle,Pearl enchantment/Enchantement de perle,Pearl enchantment/Enchantement de perle,Pearl enchantment
-Raccourci de set,Set shortcut/Casque,Helmet/Plastron,Breastplate/Jambière,Legging/Gantelet,Gauntlet/Botte,Boot/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/Enchantement de perle,Pearl enchantment/Enchantement de perle,Pearl enchantment/Enchantement de perle,Pearl enchantment/Enchantement de perle,Pearl enchantment/Enchantement de perle,Pearl enchantment
-Cape,Cape/XP Cape,Cape Exp/Anneau 1,Ring 1/Anneau 2,Ring 2/XP Anneau,Ring Exp/XP Anneau,Ring Exp/Aucun set actif,No active set
+Arme principale,Primary weapon/Arme secondaire,Secondary weapon/Arme tertiaire,Tertiary weapon/XP Arme,Weapon Exp/XP Arme,Weapon Exp/XP Arme,Weapon Exp
+Raccourci de set,Set shortcut/Casque,Helmet/Plastron,Breastplate/Jambière,Legging/Gantelet,Gauntlet/Botte,Boot/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp/XP Armure,Armor Exp
+XP Cape,Cape Exp/Anneau 1,Ring 1/Anneau 2,Ring 2/XP Anneau,Ring Exp/XP Anneau,Ring Exp/Aucun set actif,No active set
 XP Monture,Ride Exp
 Armes,Weapons/Tête,Head/Tenue,Body/Dos,Back/Type d'armes,Weapons type/Armes 1 main,1 hand weapons/Arme 2 mains,2 hands weapon/Arme 1,Weapon 1/Arme 2,Weapon 2/Runway Arme,Weapon Runway/Runway Tête,Head Runway/Runway Tenue,Body Runway/Runway Dos,Back Runway/Runway Nouveauté,New Runway
 Combinaison bonus,Bonus combination/Classique,Classic/Ancestraux,Ancestral/Terrestres,Earth/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Terrestres,Earth/Stellaires,Stellar/Lunaires,Lunar/Solaires,Solar/Tout mettre au minimum,Set all to minimum/Tout mettre au maximum,Set all to maximum
@@ -11,7 +11,7 @@ Compétences passives,Passive skills/Énergie professionnelle,Professional energ
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination
 Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Énergies,Energy/Buff de guilde,Guild buff/4 parmi :,4 from:/Pierre permanente,Permanent stone/Sélection :,Selection:/Enchantement de nucléus,Nucleus enchantment
 Bague de mariage,Wedding ring/État de la relation,Relationship status/Anima,Anima/Souvenir,Souvenir/Enchantement de souvenir,Souvenir enchantment
-Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.19.0,Version: 0.19.0
+Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.19.1,Version: 0.19.1
 Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé (caractère interdit : \*?":<>|),Empty name or already exist (forbidden character : \*?":<>|)
 Quitter sans sauvegarder ?,Quit without save ?/Sauvegarder,Save/Quitter,Leave/Annuler,Cancel
 Choisir l'action,Choose action/Charger,Load/Supprimer,Delete/Annuler,Cancel

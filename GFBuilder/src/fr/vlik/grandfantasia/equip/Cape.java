@@ -17,6 +17,12 @@ import fr.vlik.grandfantasia.stats.Calculable;
 
 public class Cape extends Equipment {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Cape");
+		put(Language.EN, "Cape");
+	}};
+	
 	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Cape[] data = LoaderEquip.getCape();

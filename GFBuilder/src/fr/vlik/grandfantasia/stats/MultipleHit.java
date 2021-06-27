@@ -13,6 +13,11 @@ public class MultipleHit implements Calculable {
 		this.damage = damage;
 	}
 	
+	public MultipleHit(MultipleHit multiple) {
+		this.effect = multiple.getEffect();
+		this.damage = multiple.getDamage();
+	}
+	
 	public TypeMultipleHit getEffect() {
 		return this.effect;
 	}

@@ -144,8 +144,7 @@ public class Pearl extends CompleteBuff {
 			}
 		}
 		
-		Pearl[] cast = new Pearl[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Pearl[result.size()]);
 	}
 	
 	public static Pearl[] getPossibleArmorPearl(Armor armor) {
@@ -163,8 +162,7 @@ public class Pearl extends CompleteBuff {
 			}
 		}
 		
-		Pearl[] cast = new Pearl[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Pearl[result.size()]);
 	}
 	
 	public static Pearl[] getWeaponCostPearl() {

@@ -14,12 +14,12 @@ public enum TypeEffect implements Colorable, Writable {
 	VOL("Volonté", "Will", "VOL", "WIL", 9999, true, Tools.EffectColor[4]),
 	AGI("Agilité", "Agility", "AGI", "AGI", 9999, true, Tools.EffectColor[5]),
 	
-	Atk("Attaque", "Attack", "ATQ", "ATK", 60000, true, Tools.EffectColor[1]),
-	AtkD("Attaque à Distance", "Range Attack", "ATQ D.", "R-ATK", 60000, true, Tools.EffectColor[5]),
-	AtkM("Attaque Magique", "Magic Attack", "ATQ M.", "M-ATK", 60000, true, Tools.EffectColor[3]),
+	Atk("Attaque", "Attack", "ATQ", "ATK", 60000, true, true, Tools.EffectColor[1]),
+	AtkD("Attaque à Distance", "Range Attack", "ATQ D.", "R-ATK", 60000, true, true, Tools.EffectColor[5]),
+	AtkM("Attaque Magique", "Magic Attack", "ATQ M.", "M-ATK", 60000, true, true, Tools.EffectColor[3]),
 	
-	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, true, Tools.EffectColor[2]),
-	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, true, Tools.EffectColor[4]),
+	DefP("Défense Physique", "Physical Defense", "DÉF", "DEF", 60000, true, true, Tools.EffectColor[2]),
+	DefM("Défense Magique", "Magical Defense", "DÉF M.", "M-DEF", 60000, true, true, Tools.EffectColor[4]),
 	TCCP("Taux Coup Critique Physique", "Chance of Physical Critical Hit", "TCCP", "CRIT", 100, false, Tools.EffectColor[5]),
 	TCCM("Taux Coup Critique Magique", "Chance of Magical Critical Hit", "TCCM", "M-CRIT", 100, false, Tools.EffectColor[3]),
 	ESQ("Esquive", "Evade", "ESQ", "Evade", -1, true, Tools.EffectColor[5]),
@@ -176,6 +176,7 @@ public enum TypeEffect implements Colorable, Writable {
 	public final String abbrevEN;
 	public final int max;
 	public final boolean entier;
+	public final boolean isUpgradable;
 	public final Color color;
 	
     private TypeEffect(String fr, String en, String abbrevFR, String abbrevEN, int max, boolean entier, Color color) {
@@ -185,6 +186,18 @@ public enum TypeEffect implements Colorable, Writable {
     	this.abbrevEN = abbrevEN;
         this.max = max;
         this.entier = entier;
+        this.isUpgradable = false;
+        this.color = color;
+    }
+    
+    private TypeEffect(String fr, String en, String abbrevFR, String abbrevEN, int max, boolean entier, boolean isUpgradable, Color color) {
+    	this.fr = fr;
+    	this.en = en;
+    	this.abbrevFR = abbrevFR;
+    	this.abbrevEN = abbrevEN;
+        this.max = max;
+        this.entier = entier;
+        this.isUpgradable = isUpgradable;
         this.color = color;
     }
 

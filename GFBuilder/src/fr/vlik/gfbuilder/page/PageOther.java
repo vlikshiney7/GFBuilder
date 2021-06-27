@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -22,6 +23,7 @@ import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageOther extends PagePanel {
 
@@ -45,6 +47,7 @@ public class PageOther extends PagePanel {
 
 	private PageOther() {
 		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		setLabelAPI();
 		
 		this.bague = new JCustomComboBox<Bague>(Bague.getData());
 		this.bague.addActionListener(e -> {
@@ -171,8 +174,12 @@ public class PageOther extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 	}
 	

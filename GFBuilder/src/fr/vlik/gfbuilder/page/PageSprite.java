@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -18,6 +19,7 @@ import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageSprite extends PagePanel {
 
@@ -35,6 +37,7 @@ public class PageSprite extends PagePanel {
 
 	private PageSprite() {
 		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		setLabelAPI();
 		
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
@@ -105,8 +108,12 @@ public class PageSprite extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 	}
 	

@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.LayoutManager;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.gfbuilder.Lang;
@@ -17,7 +18,7 @@ public abstract class PagePanel extends JCustomPanel {
 	
 	protected ArrayList<Calculable> effects;
 	protected JLangLabel[] labelGFB;
-	protected JLangLabel[] labelAPI;
+	protected Map<String, JLangLabel> labelAPI = new HashMap<String, JLangLabel>();
 	
 	public PagePanel(int caseTabLabel) {
 		super();

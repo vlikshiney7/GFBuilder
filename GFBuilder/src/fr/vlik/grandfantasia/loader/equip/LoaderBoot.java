@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.loader.equip;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -8,9 +7,9 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Armor;
+import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.equip.MultiEffect;
 import fr.vlik.grandfantasia.equip.RedArmor;
-import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.RegenEffect;
@@ -73,25 +72,25 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 25, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 2));
-						add(new Effect(TypeEffect.TCCP, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 20));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 20),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red1", "bottes/90red1", new Calculable[] {
@@ -101,25 +100,25 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 31, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.VIT, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 600));
-						add(new Effect(TypeEffect.PM, false, 600));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.HealR, false, 2));
-						add(new Effect(TypeEffect.PV, true, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 20));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.VIT, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 600),
+						new Effect(TypeEffect.PM, false, 600),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.HealR, false, 2),
+						new Effect(TypeEffect.PV, true, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 20),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Fierté pétrifiante"); put(Language.EN, "Petrifying Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio0", "bottes/100vio0", new Calculable[] {
@@ -3794,25 +3793,25 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 36, true),
 					new Effect(TypeEffect.AGI, false, 27, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.AGI, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.ESQ, false, 2));
-						add(new Effect(TypeEffect.PV, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 20));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 20),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Boots"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio3", "bottes/100vio3", new Calculable[] {
@@ -5916,26 +5915,26 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 31, true),
 					new Effect(TypeEffect.VOL, false, 30, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 300));
-						add(new Effect(TypeEffect.PM, false, 300));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Toucher, false, 2));
-						add(new Effect(TypeEffect.PM, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 20));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 20),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Prière de l'Aube"); put(Language.EN, "Dawn Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio5", "bottes/100vio5", new Calculable[] {
@@ -8073,25 +8072,25 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 31, true),
 					new Effect(TypeEffect.AGI, false, 27, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 2));
-						add(new Effect(TypeEffect.TCCP, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 10));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 10),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Démon Frappe-pierre"); put(Language.EN, "Earthquake Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio8", "bottes/100vio8", new Calculable[] {
@@ -10224,26 +10223,26 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 43, true),
 					new Effect(TypeEffect.VOL, false, 26, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 300));
-						add(new Effect(TypeEffect.PM, false, 300));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 2));
-						add(new Effect(TypeEffect.TCCM, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 10));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 10),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
 				ArmorType.BOTTE, "90red11", "bottes/90red11", new Calculable[] {
@@ -10253,26 +10252,26 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 30, true),
 					new Effect(TypeEffect.AGI, false, 22, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 150));
-						add(new Effect(TypeEffect.PM, false, 150));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 1));
-						add(new Effect(TypeEffect.TCCM, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Depla, false, 7));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 10));
-					}});
-				}}),
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 10),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Bottes de combat du juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio10", "bottes/100vio10", new Calculable[] {

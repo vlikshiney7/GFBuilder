@@ -79,7 +79,7 @@ public class CustomWeapon extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomWeapon.IncreaseValueGreen);
+						e.changeValue(CustomWeapon.IncreaseValueGreen);
 					}
 					
 					mergeEffect[i] = e;
@@ -90,7 +90,7 @@ public class CustomWeapon extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomWeapon.IncreaseValueBlue);
+						e.changeValue(CustomWeapon.IncreaseValueBlue);
 					}
 					
 					mergeEffect[i] = e;

@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -22,6 +23,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
+import fr.vlik.uidesign.JLangLabel;
 
 public class PageSpeciality extends PagePanel {
 
@@ -48,6 +50,7 @@ public class PageSpeciality extends PagePanel {
 		super(BoxLayout.Y_AXIS, NUM_PAGE);
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.setBackground(Design.UIColor[1]);
+		setLabelAPI();
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
@@ -166,8 +169,12 @@ public class PageSpeciality extends PagePanel {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.labelGFB.length; i++) {
-			this.labelGFB[i].updateText(lang);
+		for(JLangLabel label : this.labelGFB) {
+			label.updateText(lang);
+		}
+		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 		
 		this.reinitSpe.updateText(lang);

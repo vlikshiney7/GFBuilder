@@ -13,7 +13,6 @@ import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
@@ -77,7 +76,7 @@ public class Weapon extends Equipment {
 		LAME(13, "une lame", "", false), CLE(14, "une clé", "", false),
 		BOUCLIER(15, "un bouclier", "", false),
 		DEFAULT(16, "un défaut", "default", true),
-		NONE(-1, "vide", "void", true);
+		NONE(-1, "vide", "void", false);
 		
 		public final int index;
 		public final String fr;
@@ -123,48 +122,26 @@ public class Weapon extends Equipment {
 	}
 	
 	public void addFortif(Fortification fortif) {
-		if(this.effects == null) {
-			return;
-		}
-		
-		for(Calculable calculable : this.effects) {
-			if(calculable instanceof Effect) {
-				Effect effect = (Effect) calculable;
-				
-				if(effect.isPercent()) {
-					continue;
-				}
-				
-				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-					continue;
-				}
-				
-				effect.addFortifValue(fortif.getCoef());
-			}
+		if(this.effects != null) {
+			modifyAttack(fortif.getCoef());
 		}
 	}
 	
-	private void reduceEffect(TypeEffect type, double coef) {
-		if(this.effects == null) {
-			return;
-		}
-		
-		for(Calculable calculable : this.effects) {
-			if(calculable instanceof Effect) {
-				Effect effect = (Effect) calculable;
-				if(!effect.isPercent() && effect.getType() == type) {
-					effect.reduceCoef(coef);
-				}
-			}
+	public void doubleWeapon() {
+		if(this.effects != null) {
+			modifyAttack(0.75);
 		}
 	}
 	
-	public static void doubleWeapon(Weapon weap1, Weapon weap2) {
-		TypeEffect[] atks = new TypeEffect[] { TypeEffect.Atk, TypeEffect.AtkD, TypeEffect.AtkM };
-		
-		for(TypeEffect type : atks) {
-			weap1.reduceEffect(type, 0.75);
-			weap2.reduceEffect(type, 0.75);
+	protected void modifyAttack(double coef) {
+		for(Calculable c : this.effects) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				
+				if(e.getType().isUpgradable && !e.isPercent() && e.getWithReinca()) {
+					e.changeValue(coef);
+				}
+			}
 		}
 	}
 	

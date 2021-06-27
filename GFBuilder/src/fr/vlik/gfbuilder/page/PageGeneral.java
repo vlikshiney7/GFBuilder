@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.awt.GridLayout;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
@@ -180,12 +181,11 @@ public class PageGeneral extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		this.labelAPI = new JLangLabel[5];
-		this.labelAPI[0] = new JLangLabel(Grade.CLASS_NAME, Design.TITLE);
-		this.labelAPI[1] = new JLangLabel(Reinca.CLASS_NAME, Design.TITLE);
-		this.labelAPI[2] = new JLangLabel(Title.CLASS_NAME, Design.TITLE);
-		this.labelAPI[3] = new JLangLabel(Yggdrasil.CLASS_NAME, Design.TITLE);
-		this.labelAPI[4] = new JLangLabel(Archive.CLASS_NAME, Design.TITLE);
+		this.labelAPI.put("Grade", new JLangLabel(Grade.CLASS_NAME, Design.TITLE));
+		this.labelAPI.put("Reinca", new JLangLabel(Reinca.CLASS_NAME, Design.TITLE));
+		this.labelAPI.put("Title", new JLangLabel(Title.CLASS_NAME, Design.TITLE));
+		this.labelAPI.put("Yggdrasil", new JLangLabel(Yggdrasil.CLASS_NAME, Design.TITLE));
+		this.labelAPI.put("Archive", new JLangLabel(Archive.CLASS_NAME, Design.TITLE));
 	}
 	
 	@Override
@@ -203,23 +203,23 @@ public class PageGeneral extends PagePanel {
 	@Override
 	protected void createPanel() {
 		JCustomPanel elem1 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(new JCustomPanel(this.labelAPI[0]), this.grade);
+		elem1.addAll(new JCustomPanel(this.labelAPI.get("Grade")), this.grade);
 		
 		JCustomPanel elem2 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
 		elem2.addAll(new JCustomPanel(this.labelGFB[0]), this.lvl);
 		this.labelGFB[0].setFont(Design.TITLE);
 		
 		JCustomPanel elem3 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem3.addAll(new JCustomPanel(this.labelAPI[1]), this.reinca);
+		elem3.addAll(new JCustomPanel(this.labelAPI.get("Reinca")), this.reinca);
 		
 		JCustomPanel elem4 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem4.addAll(new JCustomPanel(this.labelAPI[2]), new JCustomPanel(this.filter, this.title));
+		elem4.addAll(new JCustomPanel(this.labelAPI.get("Title")), new JCustomPanel(this.filter, this.title));
 		
 		JCustomPanel elem5 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem5.addAll(new JCustomPanel(this.labelAPI[3]), this.yggdra);
+		elem5.addAll(new JCustomPanel(this.labelAPI.get("Yggdrasil")), this.yggdra);
 		
 		JCustomPanel elem6 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem6.addAll(new JCustomPanel(this.labelAPI[4]), this.archive);
+		elem6.addAll(new JCustomPanel(this.labelAPI.get("Archive")), this.archive);
 		
 		
 		this.addAll(elem1, elem2, elem3, elem4, elem5, elem6);
@@ -231,8 +231,8 @@ public class PageGeneral extends PagePanel {
 			label.updateText(lang);
 		}
 		
-		for(JLangLabel label : this.labelAPI) {
-			label.updateText(lang);
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 		
 		this.filterDialog.updateLanguage(lang);

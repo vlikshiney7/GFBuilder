@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -250,12 +251,9 @@ public class PageCostume extends PagePanel {
 	
 	@Override
 	protected void setLabelAPI() {
-		this.labelAPI = new JLangLabel[5];
-		this.labelAPI[0] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[1] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[2] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[3] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
-		this.labelAPI[4] = new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE);
+		for(int i = 0; i < 5; i++) {
+			this.labelAPI.put("Synthesis" + i, new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
+		}
 	}
 
 	@Override
@@ -316,7 +314,7 @@ public class PageCostume extends PagePanel {
 			this.labelGFB[i+7].setFont(Design.SUBTITLE);
 			qualityPanel.addAll(this.groupQuality.get(i));
 			
-			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI[i]);
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI.get("Synthesis" + i));
 			synthesisPanel.addAll(this.groupSynthesis.get(i));
 			
 			JCustomPanel itemCost = new JCustomPanel(BoxLayout.Y_AXIS);
@@ -352,7 +350,7 @@ public class PageCostume extends PagePanel {
 			JCustomPanel qualityPanel = new JCustomPanel();
 			qualityPanel.addAll(this.groupQuality.get(i+2));
 			
-			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI[i+2]);
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI.get("Synthesis" + (i+2)));
 			synthesisPanel.addAll(this.groupSynthesis.get(i+2));
 			
 			JCustomPanel runwayPanel = new JCustomPanel();
@@ -382,16 +380,16 @@ public class PageCostume extends PagePanel {
 		this.costWeapon.get(0).setSelected(false);
 		this.costWeapon.get(1).setSelected(true);
 		
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().setVisible(false);
+		}
+		
 		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
 			quality.setSelectedItem(Quality.GREY);
 		}
 		
 		for(JCustomButtonGroup<TypeSynthesis> typeSynthesis : this.groupSynthesis) {
 			typeSynthesis.setSelectedItem(TypeSynthesis.GENKI);
-		}
-		
-		for(JLangLabel label : this.labelAPI) {
-			label.setVisible(false);
 		}
 		
 		for(JPanel panel : this.showAndHideRunway) {
@@ -405,8 +403,8 @@ public class PageCostume extends PagePanel {
 			label.updateText(lang);
 		}
 		
-		for(JLangLabel label : this.labelAPI) {
-			label.updateText(lang);
+		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+			entry.getValue().updateText(lang);
 		}
 		
 		for(JLangRadioButton button : this.costWeapon) {
@@ -439,11 +437,11 @@ public class PageCostume extends PagePanel {
 		Costume[] cost = Costume.getPossibleCostume(this.getGroupSynthesis(id), type, this.getGroupQuality(id));
 		
 		if(cost == null) {
-			this.labelAPI[id].setVisible(false);
+			this.labelAPI.get("Synthesis" + id).setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.costume.get(id).setVisible(false);
 		} else {
-			this.labelAPI[id].setVisible(true);
+			this.labelAPI.get("Synthesis" + id).setVisible(true);
 			this.groupSynthesis.get(id).setVisible(true);
 			this.costume.get(id).setVisible(true);
 			

@@ -79,7 +79,7 @@ public class CustomRing extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomRing.IncreaseValueGreen);
+						e.changeValue(CustomRing.IncreaseValueGreen);
 					}
 					
 					mergeEffect[i] = e;
@@ -90,7 +90,7 @@ public class CustomRing extends CustomEquipment {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
 					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
-						e.addFortifValue(CustomRing.IncreaseValueBlue);
+						e.changeValue(CustomRing.IncreaseValueBlue);
 					}
 					
 					mergeEffect[i] = e;

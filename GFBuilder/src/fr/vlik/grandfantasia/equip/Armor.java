@@ -150,27 +150,19 @@ public class Armor extends Equipment {
 	}
 	
 	public void addFortif(Fortification fortif) {
-		if(this.effects == null) {
-			return;
+		if(this.effects != null) {
+			modifyDefense(fortif.getCoef());
 		}
-		
-		for(Calculable calculable : this.effects) {
-			if(calculable instanceof Effect) {
-				Effect effect = (Effect) calculable;
+	}
+	
+	protected void modifyDefense(double coef) {
+		for(Calculable c : this.effects) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
 				
-				if(effect.isPercent()) {
-					continue;
+				if(e.getType().isUpgradable && !e.isPercent() && e.getWithReinca()) {
+					e.changeValue(coef);
 				}
-				
-				if(!effect.getWithReinca()) {
-					continue;
-				}
-				
-				if(effect.getType().ordinal() < 5 || effect.getType().ordinal() > 9) {
-					continue;
-				}
-				
-				effect.addFortifValue(fortif.getCoef());
 			}
 		}
 	}

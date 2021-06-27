@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.loader.equip;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -74,30 +73,30 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VIT, false, 63, true),
 					new Effect(TypeEffect.AGI, false, 55, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 2));
-						add(new Effect(TypeEffect.TCCP, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.DCCP, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 3, new Calculable[] {
 							new Effect(TypeEffect.VitAtk, false, 70),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Armure de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Armor"); }},
 				new GradeName[] { GradeName.PALADIN, }, 89, Quality.RED, false, false,
 				ArmorType.PLASTRON, "90red1", "torses/90red1", new Calculable[] {
@@ -107,30 +106,30 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VIT, false, 71, true),
 					new Effect(TypeEffect.INT, false, 55, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.VIT, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 600));
-						add(new Effect(TypeEffect.PM, false, 600));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.HealR, false, 2));
-						add(new Effect(TypeEffect.PV, true, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.DefP, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 3, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.VIT, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 600),
+						new Effect(TypeEffect.PM, false, 600),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.HealR, false, 2),
+						new Effect(TypeEffect.PV, true, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DefP, true, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 3, new Calculable[] {
 							new Effect(TypeEffect.VitComp, false, 70),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Armure de Fierté pétrifiante"); put(Language.EN, "Petrifying Armor"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 99, Quality.PURPLE, true, false,
 				ArmorType.PLASTRON, "100vio0", "torses/100vio0", new Calculable[] {
@@ -3548,30 +3547,30 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VIT, false, 54, true),
 					new Effect(TypeEffect.AGI, false, 69, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.AGI, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.ESQ, false, 2));
-						add(new Effect(TypeEffect.PV, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.VitAtk, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitAtk, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
 							new Effect(TypeEffect.DefP, true, -50, Target.OPPONENT),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Armure d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Armor"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 99, Quality.PURPLE, true, false,
 				ArmorType.PLASTRON, "100vio3", "torses/100vio3", new Calculable[] {
@@ -5572,31 +5571,31 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VIT, false, 60, true),
 					new Effect(TypeEffect.INT, false, 69, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 300));
-						add(new Effect(TypeEffect.PM, false, 300));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.Toucher, false, 2));
-						add(new Effect(TypeEffect.PM, true, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.INT, false, 10));
-						add(new Effect(TypeEffect.VOL, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.VitComp, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitComp, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
 							new Effect(TypeEffect.DefP, true, -50, Target.OPPONENT),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Cape de Prière de l'Aube"); put(Language.EN, "Dawn Robe"); }},
 				new GradeName[] { GradeName.SAGE, }, 99, Quality.PURPLE, true, false,
 				ArmorType.PLASTRON, "100vio5", "torses/100vio5", new Calculable[] {
@@ -7616,30 +7615,30 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VIT, false, 61, true),
 					new Effect(TypeEffect.AGI, false, 57, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 6));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 400));
-						add(new Effect(TypeEffect.PM, false, 400));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, true, 2));
-						add(new Effect(TypeEffect.TCCP, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 10));
-						add(new Effect(TypeEffect.VIT, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.DCCP, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
 							new Effect(TypeEffect.VitComp, false, 70),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coque de Démon Frappe-pierre"); put(Language.EN, "Earthquake Shell"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 99, Quality.PURPLE, true, false,
 				ArmorType.PLASTRON, "100vio8", "torses/100vio8", new Calculable[] {
@@ -9560,32 +9559,32 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.INT, false, 71, true),
 					new Effect(TypeEffect.VOL, false, 58, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 300));
-						add(new Effect(TypeEffect.PM, false, 300));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 2));
-						add(new Effect(TypeEffect.TCCM, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.INT, false, 10));
-						add(new Effect(TypeEffect.VOL, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.TCCM, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
 							new Effect(TypeEffect.TCCP, false, -70, Target.OPPONENT),
 							new Effect(TypeEffect.TCCM, false, -70, Target.OPPONENT),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.RED, false, false,
 				ArmorType.PLASTRON, "90red11", "torses/90red11", new Calculable[] {
@@ -9595,31 +9594,31 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VOL, false, 64, true),
 					new Effect(TypeEffect.AGI, false, 61, true),
 				}, null,
-				new ArrayList<ArrayList<Calculable>>() {{
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.FCE, false, 3));
-						add(new Effect(TypeEffect.INT, false, 3));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PV, false, 150));
-						add(new Effect(TypeEffect.PM, false, 150));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.PM, true, 1));
-						add(new Effect(TypeEffect.TCCM, false, 1));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Effect(TypeEffect.INT, false, 10));
-						add(new Effect(TypeEffect.VOL, false, 10));
-						add(new Effect(TypeEffect.AGI, false, 10));
-						add(new Effect(TypeEffect.TCCM, false, 2));
-					}});
-					add(new ArrayList<Calculable>() {{
-						add(new Proc(3, Activation.Attack, 5, new Calculable[] {
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
 							new Effect(TypeEffect.VitComp, false, 70),
-						}));
-					}});
-				}}),
+						}),
+					},
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Cape de juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 99, Quality.PURPLE, true, false,
 				ArmorType.PLASTRON, "100vio10", "torses/100vio10", new Calculable[] {

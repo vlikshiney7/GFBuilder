@@ -14,6 +14,7 @@ import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.MultipleHit;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.SkillEffect;
@@ -70,7 +71,6 @@ public class Tools {
 			if(searchOnName(key, name)) {
 				return true;
 			}
-			
 		}
 		
 		return false;
@@ -111,6 +111,8 @@ public class Tools {
 				tab[i] = new Condition((Condition) tabEffects[i]);
 			} else if(tabEffects[i] instanceof Effect) {
 				tab[i] = new Effect((Effect) tabEffects[i]);
+			} else if(tabEffects[i] instanceof MultipleHit) {
+				tab[i] = new MultipleHit((MultipleHit) tabEffects[i]);
 			} else if(tabEffects[i] instanceof Proc) {
 				tab[i] = new Proc((Proc) tabEffects[i]);
 			} else if(tabEffects[i] instanceof RegenEffect) {

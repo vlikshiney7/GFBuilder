@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.equipUpgrade;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -10,6 +11,12 @@ import fr.vlik.grandfantasia.template.Buff;
 import fr.vlik.grandfantasia.template.InnerEffect;
 
 public class PearlEnchantment extends Buff {
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Enchantement de perle");
+		put(Language.EN, "Pearl enchantment");
+	}};
 	
 	protected static PearlEnchantment[] data = LoaderEquipUpgrade.getPearlEnchantment();
 	

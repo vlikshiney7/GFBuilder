@@ -123,16 +123,12 @@ public class Effect implements Calculable {
 		return this.typeCalcul;
 	}
 	
-	public void addFortifValue(double coef) {
+	public void changeValue(double coef) {
 		this.value = (int) (this.value * coef);
 	}
 	
 	public void addEnchantValue(double value) {
 		this.value = this.value + value;
-	}
-	
-	public void reduceCoef(double coef) {
-		this.value = (int) (this.value * coef);
 	}
 	
 	@Override
