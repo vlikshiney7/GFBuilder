@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
@@ -133,8 +132,8 @@ public class PageOption extends JCustomPanel {
 	}
 	
 	protected void createPanel() {
-		JCustomPanel inline1 = new JCustomPanel(new GridLayout(1, 3, 10, 0));
-		inline1.addAll(this.label[0], this.save, new JLabel());
+		JCustomPanel inline1 = new JCustomPanel(BoxLayout.X_AXIS);
+		inline1.addAll(this.label[0], Box.createVerticalStrut(10), this.save);
 		this.label[0].setFont(Design.TITLE);
 		
 		JCustomPanel inline2 = new JCustomPanel(new GridLayout(1, 3, 10, 0));

@@ -26,7 +26,7 @@ import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageSkill extends PagePanel {
+public class PageSkill extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();

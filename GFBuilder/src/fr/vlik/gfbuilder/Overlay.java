@@ -33,9 +33,9 @@ public class Overlay extends JCustomPanel {
 	
 	private Overlay() {
 		super(new EmptyBorder(5, 5, 5, 5));
-		this.setMaximumSize(new Dimension(400, 30));
+		this.setMaximumSize(new Dimension(2000, 30));
 		this.setBackground(Design.UIColor[0]);
-		this.setAlignmentX(LEFT_ALIGNMENT);
+		//this.setAlignmentX(LEFT_ALIGNMENT);
 		
 		this.setGrade(Grade.data[0]);
 		this.lvl = JLangLabel.getSimpleLabel("1");

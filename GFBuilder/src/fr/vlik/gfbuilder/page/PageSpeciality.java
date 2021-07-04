@@ -25,7 +25,7 @@ import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageSpeciality extends PagePanel {
+public class PageSpeciality extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();

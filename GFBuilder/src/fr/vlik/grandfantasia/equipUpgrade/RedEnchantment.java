@@ -143,7 +143,7 @@ public class RedEnchantment extends Enchantment {
 	}
 	
 
-	public static RedEnchantment[] getPossibleRefining(Equipment equip, RedEnchantment ignore) {
+	public static RedEnchantment[] getPossibleRefining(Equipment equip) {
 		ArrayList<RedEnchantment> result = new ArrayList<RedEnchantment>();
 		
 		result.add(new RedEnchantment());
@@ -158,10 +158,6 @@ public class RedEnchantment extends Enchantment {
 					}
 				}
 			}
-		}
-		
-		if(ignore != null && !ignore.equals(new RedEnchantment())) {
-			result.remove(ignore);
 		}
 		
 		return result.toArray(new RedEnchantment[result.size()]);

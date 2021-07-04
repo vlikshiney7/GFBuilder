@@ -30,7 +30,7 @@ import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageRide extends PagePanel {
+public class PageRide extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -43,10 +43,6 @@ public class PageRide extends PagePanel {
 	private ArrayList<ArrayList<JIconCheckBox>> starSynthesis = new ArrayList<ArrayList<JIconCheckBox>>(2);
 	private ArrayList<JCustomComboBox<Synthesis>> synthesis = new ArrayList<JCustomComboBox<Synthesis>>(2);
 	
-	private ArrayList<JCustomComboBox<XpStuff>> xpStuff = new ArrayList<JCustomComboBox<XpStuff>>(2);
-	private ArrayList<JCustomComboBox<InnerEffect>> lvlXpStuff = new ArrayList<JCustomComboBox<InnerEffect>>(2);
-
-	private JPanel showAndHideXpStuff;
 	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>(2);
 	
 	public static PageRide getInstance() {
@@ -54,7 +50,7 @@ public class PageRide extends PagePanel {
 	}
 	
 	private PageRide() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		super(BoxLayout.Y_AXIS, NUM_PAGE, 1);
 		setLabelAPI();
 		
 		Ride[] tabRide = Ride.getPossibleRide(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
@@ -65,29 +61,6 @@ public class PageRide extends PagePanel {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
-		
-		/* XP STUFF */
-		for(int i = 0; i < 2; i++) {
-			int duo = i;
-			
-			this.xpStuff.add(new JCustomComboBox<XpStuff>());
-			this.xpStuff.get(duo).addActionListener(e -> {
-				updateLvlXpStuff();
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.xpStuff.get(duo).setVisible(false);
-			
-			this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
-			this.lvlXpStuff.get(duo).addActionListener(e -> {
-				updateMaxLvlValue(duo);
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.lvlXpStuff.get(duo).setVisible(false);
-		}
 		
 		for(int i = 0; i < 2; i++) {
 			int id = i;
@@ -162,14 +135,6 @@ public class PageRide extends PagePanel {
 		return this.synthesis.get(id).getSelectedItem();
 	}
 	
-	public XpStuff getXpStuff(int id) {
-		return this.xpStuff.get(id).getSelectedItem();
-	}
-
-	public InnerEffect getLvlXpStuff(int id) {
-		return this.lvlXpStuff.get(id).getSelectedItem();
-	}
-	
 	@Override
 	protected void setLabelAPI() {
 		this.labelAPI.put("Ride", new JLangLabel(Ride.CLASS_NAME, Design.TITLE));
@@ -215,7 +180,7 @@ public class PageRide extends PagePanel {
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		elem1.addAll(this.labelAPI.get("Ride"), Box.createVerticalStrut(10), this.ride, Box.createVerticalStrut(5), xpRide);
 		
-		this.showAndHideXpStuff = xpRide;
+		this.showAndHideXpStuff.add(xpRide);
 		this.showAndHide.add(elem1);
 		
 		this.add(elem1);
@@ -243,10 +208,11 @@ public class PageRide extends PagePanel {
 			}
 		}
 		
+		initPanel();
+		
 		for(JPanel panel : this.showAndHide) {
 			panel.setVisible(false);
 		}
-		this.showAndHideXpStuff.setVisible(false);
 		
 		for(int i = 0; i < 2; i++) {
 			this.labelAPI.get("Synthesis" + i).setVisible(false);
@@ -292,7 +258,7 @@ public class PageRide extends PagePanel {
 		Ride tabRide[] = Ride.getPossibleRide(lvl, reinca);
 		
 		if(!this.ride.setItems(tabRide)) {
-			this.showAndHideXpStuff.setVisible(false);
+			this.showAndHideXpStuff.get(0).setVisible(false);
 			this.xpStuff.get(0).setVisible(false);
 			this.xpStuff.get(1).setVisible(false);
 			
@@ -305,7 +271,7 @@ public class PageRide extends PagePanel {
 		} else {
 			this.xpStuff.get(0).setVisible(true);
 			this.xpStuff.get(1).setVisible(true);
-			this.showAndHideXpStuff.setVisible(true);
+			this.showAndHideXpStuff.get(0).setVisible(true);
 		}
 		
 		if(tabRide.length > 1) {
@@ -322,11 +288,11 @@ public class PageRide extends PagePanel {
 			this.xpStuff.get(0).setItems(xpStuff);
 			this.xpStuff.get(1).setItems(xpStuff);
 			
-			this.showAndHideXpStuff.setVisible(true);	
+			this.showAndHideXpStuff.get(0).setVisible(true);	
 			this.xpStuff.get(0).setVisible(true);
 			this.xpStuff.get(1).setVisible(true);
 		} else {
-			this.showAndHideXpStuff.setVisible(false);
+			this.showAndHideXpStuff.get(0).setVisible(false);
 			this.xpStuff.get(0).setVisible(false);
 			this.xpStuff.get(1).setVisible(false);
 			
@@ -334,32 +300,6 @@ public class PageRide extends PagePanel {
 				this.xpStuff.get(0).setSelectedIndex(0);
 				this.xpStuff.get(1).setSelectedIndex(0);
 			}
-		}
-	}
-	
-	private void updateLvlXpStuff() {
-		if(!XpStuff.availableEffects(this.getXpStuff(0), this.getXpStuff(1))) {
-			
-			this.lvlXpStuff.get(0).setVisible(false);
-			this.lvlXpStuff.get(1).setVisible(false);
-		} else {
-			XpStuff xpStuff = this.getXpStuff(0);
-			XpStuff xpStuffDuo = this.getXpStuff(1);
-			
-			this.lvlXpStuff.get(0).setItems(xpStuff.getInnerEffect());
-			this.lvlXpStuff.get(1).setItems(xpStuffDuo.getInnerEffect());
-			
-			this.lvlXpStuff.get(0).setVisible(true);
-			this.lvlXpStuff.get(1).setVisible(true);
-		}
-	}
-	
-	private void updateMaxLvlValue(int id) {
-		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
-		
-		if(XpStuff.availableEffects(this.getXpStuff(0), this.getXpStuff(1))) {
-			InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
-			this.lvlXpStuff.get(indexPair).setItems(inner);
 		}
 	}
 	

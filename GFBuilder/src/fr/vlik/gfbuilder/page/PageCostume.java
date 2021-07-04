@@ -31,7 +31,7 @@ import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JLangRadioButton;
 
-public class PageCostume extends PagePanel {
+public class PageCostume extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();

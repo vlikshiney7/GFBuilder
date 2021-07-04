@@ -28,7 +28,7 @@ import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageGeneral extends PagePanel {
+public class PageGeneral extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();

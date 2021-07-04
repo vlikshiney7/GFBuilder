@@ -8,7 +8,6 @@ import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
@@ -32,7 +31,7 @@ import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageCapeRing extends PagePanel {
+public class PageCapeRing extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();
@@ -44,17 +43,13 @@ public class PageCapeRing extends PagePanel {
 	private JCustomTextPane capeRingSetInfo;
 	
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
-	private ArrayList<JCustomComboBox<XpStuff>> xpStuff = new ArrayList<JCustomComboBox<XpStuff>>(6);
-	private ArrayList<JCustomComboBox<InnerEffect>> lvlXpStuff = new ArrayList<JCustomComboBox<InnerEffect>>(6);
-	
-	private ArrayList<JPanel> showAndHideXpStuff = new ArrayList<JPanel>(3);
 	
 	public static PageCapeRing getInstance() {
 		return INSTANCE;
 	}
 	
 	private PageCapeRing() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		super(BoxLayout.Y_AXIS, NUM_PAGE, 3);
 		setLabelAPI();
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
@@ -74,29 +69,6 @@ public class PageCapeRing extends PagePanel {
 			MainFrame.getInstance().updateStat();
 		});
 		this.enchant.get(0).setVisible(false);
-		
-		/* XP STUFF */
-		for(int i = 0; i < 2; i++) {
-			int duo = i;
-			
-			this.xpStuff.add(new JCustomComboBox<XpStuff>());
-			this.xpStuff.get(duo).addActionListener(e -> {
-				updateLvlXpStuff(duo);
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.xpStuff.get(duo).setVisible(false);
-			
-			this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
-			this.lvlXpStuff.get(duo).addActionListener(e -> {
-				updateMaxLvlValue(duo);
-				
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.lvlXpStuff.get(duo).setVisible(false);
-		}
 		
 		
 		Ring[] tabRing = Ring.getPossibleRing(PageGeneral.getInstance().getLvl(), null);
@@ -120,29 +92,6 @@ public class PageCapeRing extends PagePanel {
 				MainFrame.getInstance().updateStat();
 			});
 			this.enchant.get(i+1).setVisible(false);
-			
-			/* XP STUFF */
-			for(int j = 0; j < 2; j++) {
-				int duo = i*2+j+2;
-				
-				this.xpStuff.add(new JCustomComboBox<XpStuff>());
-				this.xpStuff.get(duo).addActionListener(e -> {
-					updateLvlXpStuff(duo);
-					
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.xpStuff.get(duo).setVisible(false);
-				
-				this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
-				this.lvlXpStuff.get(duo).addActionListener(e -> {
-					updateMaxLvlValue(duo);
-					
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.lvlXpStuff.get(duo).setVisible(false);
-			}
 		}
 		
 		this.capeRingSetInfo = new JCustomTextPane();
@@ -166,14 +115,6 @@ public class PageCapeRing extends PagePanel {
 	
 	public Enchantment getEnchantment(int id) {
 		return this.enchant.get(id).getSelectedItem();
-	}
-
-	public XpStuff getXpStuff(int id) {
-		return this.xpStuff.get(id).getSelectedItem();
-	}
-
-	public InnerEffect getLvlXpStuff(int id) {
-		return this.lvlXpStuff.get(id).getSelectedItem();
 	}
 	
 	@Override
@@ -303,9 +244,7 @@ public class PageCapeRing extends PagePanel {
 		
 		this.addAll(Box.createVerticalStrut(10), this.capeRingSetInfo);
 		
-		for(JPanel panel : this.showAndHideXpStuff) {
-			panel.setVisible(false);
-		}
+		initPanel();
 	}
 	
 	@Override
@@ -380,72 +319,9 @@ public class PageCapeRing extends PagePanel {
 	
 	private void updateXpStuff(int id) {
 		if(id == 0) {
-			if(this.cape.getSelectedIndex() != 0) {
-				XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getCape());
-				
-				this.xpStuff.get(id*2).setItems(xpStuff);
-				this.xpStuff.get(id*2+1).setItems(xpStuff);
-				
-				this.showAndHideXpStuff.get(id).setVisible(true);	
-				this.xpStuff.get(id*2).setVisible(true);
-				this.xpStuff.get(id*2+1).setVisible(true);
-			} else {
-				this.showAndHideXpStuff.get(id).setVisible(false);
-				this.xpStuff.get(id*2).setVisible(false);
-				this.xpStuff.get(id*2+1).setVisible(false);
-				
-				if(this.getXpStuff(id*2) != null && this.getXpStuff(id*2+1) != null) {
-					this.xpStuff.get(id*2).setSelectedIndex(0);
-					this.xpStuff.get(id*2+1).setSelectedIndex(0);
-				}
-			}
+			updateXpStuff(this.getCape(), id);
 		} else {
-			if(this.ring.get(id-1).getSelectedIndex() != 0) {
-				XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getRing(id-1));
-				
-				this.xpStuff.get(id*2).setItems(xpStuff);
-				this.xpStuff.get(id*2+1).setItems(xpStuff);
-				
-				this.showAndHideXpStuff.get(id).setVisible(true);	
-				this.xpStuff.get(id*2).setVisible(true);
-				this.xpStuff.get(id*2+1).setVisible(true);
-			} else {
-				this.showAndHideXpStuff.get(id).setVisible(false);
-				this.xpStuff.get(id*2).setVisible(false);
-				this.xpStuff.get(id*2+1).setVisible(false);
-				
-				if(this.getXpStuff(id*2) != null && this.getXpStuff(id*2+1) != null) {
-					this.xpStuff.get(id*2).setSelectedIndex(0);
-					this.xpStuff.get(id*2+1).setSelectedIndex(0);
-				}
-			}
-		}
-	}
-	
-	private void updateLvlXpStuff(int id) {
-		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
-		
-		if(!XpStuff.availableEffects(this.getXpStuff(id), this.getXpStuff(indexPair))) {
-			this.lvlXpStuff.get(id).setVisible(false);
-			this.lvlXpStuff.get(indexPair).setVisible(false);
-		} else {
-			XpStuff xpStuff = this.getXpStuff(id);
-			XpStuff xpStuffDuo = this.getXpStuff(indexPair);
-			
-			this.lvlXpStuff.get(id).setItems(xpStuff.getInnerEffect());
-			this.lvlXpStuff.get(indexPair).setItems(xpStuffDuo.getInnerEffect());
-			
-			this.lvlXpStuff.get(id).setVisible(true);
-			this.lvlXpStuff.get(indexPair).setVisible(true);
-		}
-	}
-	
-	private void updateMaxLvlValue(int id) {
-		int indexPair = (id % 2 == 0) ? id + 1 : id -1;
-		
-		if(XpStuff.availableEffects(this.getXpStuff(id), this.getXpStuff(indexPair))) {
-			InnerEffect[] inner = this.getXpStuff(indexPair).getPossibleLvl(this.getLvlXpStuff(id));
-			this.lvlXpStuff.get(indexPair).setItems(inner);
+			updateXpStuff(this.getRing(id-1), id);
 		}
 	}
 	

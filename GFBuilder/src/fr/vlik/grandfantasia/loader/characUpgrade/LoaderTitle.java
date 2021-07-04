@@ -1359,6 +1359,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.TCCP, false, 10),
 				new Effect(TypeEffect.DefP, true, -10),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Des souvenirs d'été inoubliables"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.FCE, true, 2),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Détective désigné"); put(Language.EN, "Elected Investigator"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.Nature, false, 5),
 				new Effect(TypeEffect.Foudre, false, 5),

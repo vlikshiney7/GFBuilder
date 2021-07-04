@@ -46,7 +46,7 @@ import fr.vlik.gfbuilder.page.PageCostume;
 import fr.vlik.gfbuilder.page.PageGeneral;
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PageOther;
-import fr.vlik.gfbuilder.page.PagePanel;
+import fr.vlik.gfbuilder.page.PartialPage;
 import fr.vlik.gfbuilder.page.PageRide;
 import fr.vlik.gfbuilder.page.PageSkill;
 import fr.vlik.gfbuilder.page.PageSpeciality;
@@ -91,7 +91,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.19.1");
+		super("Grand Fantasia Builder - Version 0.19.2");
 		setCustomUI();
 		
 		try {
@@ -467,8 +467,8 @@ public class MainFrame extends JFrame {
 		Build build = new Build(coefReinca, weaponType);
 		
 		for(JCustomPanel page : this.pages) {
-			if(page instanceof PagePanel) {
-				build.addEffect(((PagePanel) page).getEffects());
+			if(page instanceof PartialPage) {
+				build.addEffect(((PartialPage) page).getEffects());
 			}
 		}
 		
@@ -566,8 +566,8 @@ public class MainFrame extends JFrame {
 		}
 		
 		for(JCustomPanel page : this.pages) {
-			if(page instanceof PagePanel) {
-				((PagePanel) page).updateLanguage(lang);
+			if(page instanceof PartialPage) {
+				((PartialPage) page).updateLanguage(lang);
 			} else if(page instanceof PageOption) {
 				((PageOption) page).updateLanguage(lang);
 			}

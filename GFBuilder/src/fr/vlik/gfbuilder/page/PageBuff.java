@@ -34,7 +34,7 @@ import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
 
-public class PageBuff extends PagePanel {
+public class PageBuff extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int NUM_PAGE = MainFrame.getNumPage();

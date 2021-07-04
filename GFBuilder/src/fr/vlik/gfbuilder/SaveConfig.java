@@ -15,7 +15,7 @@ import java.util.Map;
 import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.frame.FrameError;
-import fr.vlik.gfbuilder.page.PagePanel;
+import fr.vlik.gfbuilder.page.PartialPage;
 import fr.vlik.grandfantasia.customEquip.CustomArmor;
 import fr.vlik.grandfantasia.customEquip.CustomCape;
 import fr.vlik.grandfantasia.customEquip.CustomRing;
@@ -73,8 +73,8 @@ public class SaveConfig {
 		int[] orderLoading = { 0, 6, 7, 8, 1, 2, 3, 4, 5, 9, 10, 11 };
 		
 		for(int i = 0; i < orderLoading.length; i++) {
-			if(pages.get(orderLoading[i]) instanceof PagePanel) {
-				PagePanel page = (PagePanel) pages.get(orderLoading[i]);
+			if(pages.get(orderLoading[i]) instanceof PartialPage) {
+				PartialPage page = (PartialPage) pages.get(orderLoading[i]);
 				try {
 					Map<String, String> values = this.getValuesFromPage(page.getSaveName());
 					if(values != null) {
@@ -96,8 +96,8 @@ public class SaveConfig {
 		this.values.clear();
 		
 		for(JCustomPanel panel : pages) {
-			if(panel instanceof PagePanel) {
-				PagePanel page = (PagePanel) panel;
+			if(panel instanceof PartialPage) {
+				PartialPage page = (PartialPage) panel;
 				this.values.put(page.getSaveName(), page.getConfig(lang));
 			}
 		}
@@ -232,8 +232,8 @@ public class SaveConfig {
 		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		for(JPanel panel : pages) {
-			if(panel instanceof PagePanel) {
-				PagePanel page = (PagePanel) panel;
+			if(panel instanceof PartialPage) {
+				PartialPage page = (PartialPage) panel;
 				build.put(page.getSaveName(), page.getConfig(lang));
 			}
 		}

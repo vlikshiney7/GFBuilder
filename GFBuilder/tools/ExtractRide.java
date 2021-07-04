@@ -1,0 +1,1 @@
+new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Chat-citrouille gentleman de combat"); put(Language.EN, ""); }}, 40, false, "I02384", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
