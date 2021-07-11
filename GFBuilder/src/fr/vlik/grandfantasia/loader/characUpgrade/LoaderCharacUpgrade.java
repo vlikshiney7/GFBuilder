@@ -264,6 +264,7 @@ public class LoaderCharacUpgrade {
 					new Effect(TypeEffect.ReducP_old, false, 5),
 					new Effect(TypeEffect.ReducM_old, false, 5),
 					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM, TypeCalcul.CONVERT),
+					new Effect(TypeEffect.AtkD, 50, TypeEffect.AtkM, TypeCalcul.CONVERT),
 				}),
 			},
 			new Skill[] {

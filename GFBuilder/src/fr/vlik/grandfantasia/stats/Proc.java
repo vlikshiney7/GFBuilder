@@ -11,7 +11,13 @@ public class Proc implements Calculable {
 	private int cumul = 1;
 	private TDB tdb = TDB.NONE;
 	
-	
+
+	public Proc(Activation activation, double time, Calculable[] effects) {
+		this.activation = activation;
+		this.time = time;
+		this.effects = effects;
+	}
+
 	public Proc(double taux, Activation activation, Calculable[] effects) {
 		this.taux = taux;
 		this.activation = activation;
@@ -59,6 +65,8 @@ public class Proc implements Calculable {
 		Crited("sur critique reçu", "on receive critical"),
 		CritedPhys("sur critique physique reçu", "on receive physical critical"),
 		CritedMag("sur critique magique reçu", "on receive magical critical"),
+		
+		Sprite("avec Sprite", "with Sprite"),
 		
 		Meditation("en méditation", "on meditation"),
 		Nothing("", "");
@@ -120,7 +128,11 @@ public class Proc implements Calculable {
 		if(this.tdb == TDB.TDB) {
 			tooltip.append("Après " + this.cumul + " cumul " + this.activation.fr + " :");
 		} else {
-			tooltip.append(this.taux + "% d'activer " + this.activation.fr + " :");
+			if(this.activation == Activation.Sprite) {
+				tooltip.append("Activer " + this.activation.fr + ":\n");
+			} else {
+				tooltip.append(this.taux + "% d'activer " + this.activation.fr + " :");
+			}
 		}
 		
 		tooltip.append("<ul>");
@@ -148,7 +160,11 @@ public class Proc implements Calculable {
 			if(this.tdb == TDB.TDB) {
 				result.append("Après " + this.cumul + " cumul " + this.activation.fr + " :\n");
 			} else {
-				result.append(this.taux + "% d'activer " + this.activation.fr + " :\n");
+				if(this.activation == Activation.Sprite) {
+					result.append("Activer " + this.activation.fr + ":\n");
+				} else {
+					result.append(this.taux + "% d'activer " + this.activation.fr + " :\n");
+				}
 			}
 			
 			for(Calculable calculable : this.effects) {
@@ -184,7 +200,11 @@ public class Proc implements Calculable {
 			if(this.tdb == TDB.TDB) {
 				result.append("After " + this.cumul + " stacks " + this.activation.en + ":\n");
 			} else {
-				result.append(this.taux + "% to activate " + this.activation.en + ":\n");
+				if(this.activation == Activation.Sprite) {
+					result.append("Activation " + this.activation.en + ":\n");
+				} else {
+					result.append(this.taux + "% to activate " + this.activation.en + ":\n");
+				}
 			}
 			
 			for(Calculable calculable : this.effects) {

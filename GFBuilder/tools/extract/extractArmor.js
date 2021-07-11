@@ -58,14 +58,16 @@ var getNameClass = [["Luchador", "Guerrero", "Berserker", "Dios de Guerra", "Cab
 						"Mage", "Necromancer", "Demonologist", "Shadowlord", "Shinigami"],
 					
 					["Mecánico", "Ingeniero", "Artificiero", "Prime", "Megatron", "Omega",
-						"Mécanicien", "Machiniste", "Métalleux", "Prime", "Mégatron", "Oméga",
+						"Mécanicien", "Machiniste", "Métalleux", "Prime", "Mégatron", "Mechmaster",
 						"Machiniste", "Métalleux", "Prime", "Mégatron", "Oméga"],
 					["Mecánico", "Ingeniero", "Artillero", "Optimus", "Galvatron", "Domador Celestial",
-						"Mécanicien", "Machiniste", "Démolisseur", "Optimus", "Galvatron", "Suprême",
+						"Mécanicien", "Machiniste", "Démolisseur", "Optimus", "Galvatron", "Artillerist",
 						"Machiniste", "Démolisseur", "Optimus", "Galvatron", "Suprême"],
 					
-					["Viajero", "Nómada", "Duelista", "Samurai", "Dimensionalista", "Espectro Mortal"],
-					["Viajero", "Nómada", "Relojero", "Maestro del Tiempo", "Oráculo", "Alterador Cósmico"]];
+					["Viajero", "Nómada", "Duelista", "Samurai", "Dimensionalista", "Espectro Mortal",
+						"Ronin", "Occultiste", "Dimensionaliste", "Phantom"],
+					["Viajero", "Nómada", "Relojero", "Maestro del Tiempo", "Oráculo", "Alterador Cósmico",
+						"Horloger", "Augure", "Chronomancien", "Chronoshifter"]];
 
 
 function ExtractArmor() {

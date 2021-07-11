@@ -81,19 +81,15 @@ public class NucleusEnchantment extends Buff {
 		return null;
 	}
 	
-	public static NucleusEnchantment[] getPossibleNucleusEnchant(NucleusEnchantment ignore1, NucleusEnchantment ignore2) {
+	public static NucleusEnchantment[] getPossibleNucleusEnchant(NucleusEnchantment... ignore) {
 		ArrayList<NucleusEnchantment> result = new ArrayList<NucleusEnchantment>();
 		
 		for(NucleusEnchantment enchant : NucleusEnchantment.data) {
 			result.add(enchant);
 		}
 		
-		if(ignore1 != null) {
-			result.remove(ignore1);
-		}
-		
-		if(ignore2 != null) {
-			result.remove(ignore2);
+		for(NucleusEnchantment enchant : ignore) {
+			result.remove(enchant);
 		}
 		
 		return result.toArray(new NucleusEnchantment[result.size()]);

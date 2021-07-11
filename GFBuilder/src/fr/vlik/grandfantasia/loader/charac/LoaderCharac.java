@@ -7,6 +7,7 @@ import fr.vlik.grandfantasia.charac.Blason;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.charac.SpriteCost;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -567,6 +568,10 @@ public class LoaderCharac {
 	
 	public static Blason[] getBlason() {
 		return LoaderBlason.getBlason();
+	}
+	
+	public static SpriteCost[] getSpriteCost() {
+		return LoaderSpriteCost.getSpriteCost();
 	}
 	
 	public static int[][][] getBase() {

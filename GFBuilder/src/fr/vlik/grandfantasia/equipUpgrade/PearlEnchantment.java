@@ -118,27 +118,15 @@ public class PearlEnchantment extends Buff {
 		return null;
 	}
 	
-	public static PearlEnchantment[] getPossiblePearlEnchant(PearlEnchantment ignore1, PearlEnchantment ignore2, PearlEnchantment ignore3, PearlEnchantment ignore4) {
+	public static PearlEnchantment[] getPossiblePearlEnchant(PearlEnchantment... ignore) {
 		ArrayList<PearlEnchantment> result = new ArrayList<PearlEnchantment>();
 		
 		for(PearlEnchantment enchant : PearlEnchantment.data) {
 			result.add(enchant);
 		}
 		
-		if(ignore1 != null) {
-			result.remove(ignore1);
-		}
-		
-		if(ignore2 != null) {
-			result.remove(ignore2);
-		}
-		
-		if(ignore3 != null) {
-			result.remove(ignore3);
-		}
-		
-		if(ignore4 != null) {
-			result.remove(ignore4);
+		for(PearlEnchantment enchant : ignore) {
+			result.remove(enchant);
 		}
 		
 		return result.toArray(new PearlEnchantment[result.size()]);

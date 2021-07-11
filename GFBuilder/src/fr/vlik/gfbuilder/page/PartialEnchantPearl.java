@@ -113,10 +113,6 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 		for(int i = 0; i < this.pearlEnchant.size(); i++) {
 			this.pearlEnchant.get(i).setSelectedIndex(i%5);
 		}
-		
-		for(int i = 0; i < this.pearlEnchant.size(); i++) {
-			this.pearlEnchant.get(i).setSelectedIndex(0);
-		}
 	}
 	
 	protected void updateEnchantPearl(boolean showStar, int id) {
@@ -197,53 +193,90 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 	}
 	
 	private void updatePearlEnchant(int idPearl) {
-		int ignore1;
-		int ignore2;
-		int ignore3;
-		int ignore4;
-		
-		if(idPearl % 5 == 0) {
-			ignore1 = idPearl + 1;
-			ignore2 = idPearl + 2;
-			ignore3 = idPearl + 3;
-			ignore4 = idPearl + 4;
-		} else if(idPearl % 5 == 1) {
-			ignore1 = idPearl - 1;
-			ignore2 = idPearl + 1;
-			ignore3 = idPearl + 2;
-			ignore4 = idPearl + 3;
-		} else if(idPearl % 5 == 2) {
-			ignore1 = idPearl - 2;
-			ignore2 = idPearl - 1;
-			ignore3 = idPearl + 1;
-			ignore4 = idPearl + 2;
-		} else if(idPearl % 5 == 3) {
-			ignore1 = idPearl - 3;
-			ignore2 = idPearl - 2;
-			ignore3 = idPearl - 1;
-			ignore4 = idPearl + 1;
-		} else {
-			ignore1 = idPearl - 4;
-			ignore2 = idPearl - 3;
-			ignore3 = idPearl - 2;
-			ignore4 = idPearl - 1;
+		int nbStar = -1;
+		for(JIconCheckBox star : this.starPearl.get(idPearl/5)) {
+			if(!star.isSelected()) {
+				break;
+			}
+			
+			nbStar++;
 		}
 		
-		PearlEnchantment choice = this.getPearlEnchantment(idPearl);
-		PearlEnchantment memory1 = this.getPearlEnchantment(ignore1);
-		PearlEnchantment memory2 = this.getPearlEnchantment(ignore2);
-		PearlEnchantment memory3 = this.getPearlEnchantment(ignore3);
-		PearlEnchantment memory4 = this.getPearlEnchantment(ignore4);
-		
-		PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant(choice, memory2, memory3, memory4);
-		PearlEnchantment[] tabPearl2 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1, memory3, memory4);
-		PearlEnchantment[] tabPearl3 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1, memory2, memory4);
-		PearlEnchantment[] tabPearl4 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1, memory2, memory3);
-		
-		this.pearlEnchant.get(ignore1).setItems(tabPearl1, memory1);
-		this.pearlEnchant.get(ignore2).setItems(tabPearl2, memory2);
-		this.pearlEnchant.get(ignore3).setItems(tabPearl3, memory3);
-		this.pearlEnchant.get(ignore4).setItems(tabPearl4, memory4);
+		if(nbStar <= 1) {
+			return;
+		} else if(nbStar == 2) {
+			int ignore1;
+			int ignore2;
+			
+			if(idPearl % 5 == 0) {
+				ignore1 = idPearl + 1;
+				ignore2 = idPearl + 2;
+			} else if(idPearl % 5 == 1) {
+				ignore1 = idPearl - 1;
+				ignore2 = idPearl + 1;
+			} else {
+				ignore1 = idPearl - 2;
+				ignore2 = idPearl - 1;
+			}
+			
+			PearlEnchantment choice = this.getPearlEnchantment(idPearl);
+			PearlEnchantment memory1 = this.getPearlEnchantment(ignore1);
+			PearlEnchantment memory2 = this.getPearlEnchantment(ignore2);
+			
+			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant(choice, memory2);
+			PearlEnchantment[] tabPearl2 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1);
+			
+			this.pearlEnchant.get(ignore1).setItems(tabPearl1, memory1);
+			this.pearlEnchant.get(ignore2).setItems(tabPearl2, memory2);
+		} else if(nbStar == 3) {
+			int ignore1;
+			int ignore2;
+			int ignore3;
+			int ignore4;
+			
+			if(idPearl % 5 == 0) {
+				ignore1 = idPearl + 1;
+				ignore2 = idPearl + 2;
+				ignore3 = idPearl + 3;
+				ignore4 = idPearl + 4;
+			} else if(idPearl % 5 == 1) {
+				ignore1 = idPearl - 1;
+				ignore2 = idPearl + 1;
+				ignore3 = idPearl + 2;
+				ignore4 = idPearl + 3;
+			} else if(idPearl % 5 == 2) {
+				ignore1 = idPearl - 2;
+				ignore2 = idPearl - 1;
+				ignore3 = idPearl + 1;
+				ignore4 = idPearl + 2;
+			} else if(idPearl % 5 == 3) {
+				ignore1 = idPearl - 3;
+				ignore2 = idPearl - 2;
+				ignore3 = idPearl - 1;
+				ignore4 = idPearl + 1;
+			} else {
+				ignore1 = idPearl - 4;
+				ignore2 = idPearl - 3;
+				ignore3 = idPearl - 2;
+				ignore4 = idPearl - 1;
+			}
+			
+			PearlEnchantment choice = this.getPearlEnchantment(idPearl);
+			PearlEnchantment memory1 = this.getPearlEnchantment(ignore1);
+			PearlEnchantment memory2 = this.getPearlEnchantment(ignore2);
+			PearlEnchantment memory3 = this.getPearlEnchantment(ignore3);
+			PearlEnchantment memory4 = this.getPearlEnchantment(ignore4);
+			
+			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant(choice, memory2, memory3, memory4);
+			PearlEnchantment[] tabPearl2 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1, memory3, memory4);
+			PearlEnchantment[] tabPearl3 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1, memory2, memory4);
+			PearlEnchantment[] tabPearl4 = PearlEnchantment.getPossiblePearlEnchant(choice, memory1, memory2, memory3);
+			
+			this.pearlEnchant.get(ignore1).setItems(tabPearl1, memory1);
+			this.pearlEnchant.get(ignore2).setItems(tabPearl2, memory2);
+			this.pearlEnchant.get(ignore3).setItems(tabPearl3, memory3);
+			this.pearlEnchant.get(ignore4).setItems(tabPearl4, memory4);
+		}
 	}
 	
 	private void keepPearlEnchant(int id, int idCheck) {
@@ -251,16 +284,16 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 			return;
 		} else if(idCheck == 1) {
 			PearlEnchantment memory1 = this.getPearlEnchantment(id*5);
-			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant(null, null, null, null);
+			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant();
 			this.pearlEnchant.get(id*5).setItems(tabPearl1, memory1);
 		} else if(idCheck == 2) {
 			PearlEnchantment memory1 = this.getPearlEnchantment(id*5);
 			PearlEnchantment memory2 = this.getPearlEnchantment(id*5+1);
 			PearlEnchantment memory3 = this.getPearlEnchantment(id*5+2);
 			
-			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant(memory2, memory3, null, null);
-			PearlEnchantment[] tabPearl2 = PearlEnchantment.getPossiblePearlEnchant(memory1, memory3, null, null);
-			PearlEnchantment[] tabPearl3 = PearlEnchantment.getPossiblePearlEnchant(memory1, memory2, null, null);
+			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant(memory2, memory3);
+			PearlEnchantment[] tabPearl2 = PearlEnchantment.getPossiblePearlEnchant(memory1, memory3);
+			PearlEnchantment[] tabPearl3 = PearlEnchantment.getPossiblePearlEnchant(memory1, memory2);
 			
 			this.pearlEnchant.get(id*5).setItems(tabPearl1, memory1);
 			this.pearlEnchant.get(id*5+1).setItems(tabPearl2, memory2);

@@ -87,6 +87,7 @@ public class PageGeneral extends PartialPage {
 			PageTalent.getInstance().updateTalent();
 			PageSpeciality.getInstance().updateSpe();
 			PageSprite.getInstance().updateBlason();
+			PageSprite.getInstance().updateSpriteCost();
 			PageBuff.getInstance().updateEnergy();
 			PageOther.getInstance().updateMarried();
 			PageOther.getInstance().updateAnima();

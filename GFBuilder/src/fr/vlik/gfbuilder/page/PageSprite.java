@@ -12,6 +12,8 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Blason;
 import fr.vlik.grandfantasia.charac.Blason.BlasonType;
+import fr.vlik.grandfantasia.charac.SpriteCost;
+import fr.vlik.grandfantasia.charac.SpriteCost.SpriteCostType;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gameBuff.IslandBuff;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -29,6 +31,7 @@ public class PageSprite extends PartialPage {
 	private static PageSprite INSTANCE = new PageSprite();
 	
 	private ArrayList<JCustomComboBox<Blason>> blason = new ArrayList<JCustomComboBox<Blason>>(2);
+	private ArrayList<JCustomComboBox<SpriteCost>> spriteCost = new ArrayList<JCustomComboBox<SpriteCost>>(2);
 	private JCustomComboBox<IslandBuff> islandBuff;
 	
 	public static PageSprite getInstance() {
@@ -43,6 +46,15 @@ public class PageSprite extends PartialPage {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
 			this.blason.add(new JCustomComboBox<Blason>(tabBlason));
 			this.blason.get(i).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), SpriteCostType.values()[i]);
+			this.spriteCost.add(new JCustomComboBox<SpriteCost>(tabCost));
+			this.spriteCost.get(i).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
@@ -63,6 +75,10 @@ public class PageSprite extends PartialPage {
 		return this.blason.get(id).getSelectedItem();
 	}
 	
+	public SpriteCost getSpriteCost(int id) {
+		return this.spriteCost.get(id).getSelectedItem();
+	}
+	
 	public IslandBuff getIsleBuff() {
 		return this.islandBuff.getSelectedItem();
 	}
@@ -78,6 +94,10 @@ public class PageSprite extends PartialPage {
 		
 		for(int i = 0; i < this.blason.size(); i++) {
 			list.addAll(this.getBlason(i).getEffects());
+		}
+		
+		for(int i = 0; i < this.spriteCost.size(); i++) {
+			list.addAll(this.getSpriteCost(i).getEffects());
 		}
 		
 		list.addAll(this.getIsleBuff());
@@ -100,10 +120,22 @@ public class PageSprite extends PartialPage {
 		}
 		
 		JCustomPanel elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem2.addAll(this.labelGFB[3], Box.createVerticalStrut(10), this.islandBuff);
+		elem2.add(this.labelGFB[4], Box.createVerticalStrut(10));
+		this.labelGFB[4].setFont(Design.TITLE);
+		
+		for(int i = 0; i < 2; i++) {
+			JCustomPanel panelCost = new JCustomPanel(BoxLayout.Y_AXIS);
+			panelCost.addAll(this.labelGFB[i+5], Box.createVerticalStrut(3), this.spriteCost.get(i), Box.createVerticalStrut(5));
+			this.labelGFB[i+5].setFont(Design.SUBTITLE);
+			
+			elem2.add(panelCost);
+		}
+		
+		JCustomPanel elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
+		elem3.addAll(this.labelGFB[3], Box.createVerticalStrut(10), this.islandBuff);
 		this.labelGFB[3].setFont(Design.TITLE);
 		
-		this.addAll(elem1, Box.createVerticalStrut(10), elem2);
+		this.addAll(elem1, Box.createVerticalStrut(10), elem2, Box.createVerticalStrut(10), elem3);
 	}
 	
 	@Override
@@ -127,6 +159,14 @@ public class PageSprite extends PartialPage {
 		}
 	}
 	
+	public void updateSpriteCost() {
+		SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), SpriteCostType.values()[1]);
+		
+		if(!this.spriteCost.get(1).setItems(tabCost)) {
+			MainFrame.getInstance().setRedPane(NUM_PAGE);
+		}
+	}
+	
 	@Override
 	public String getSaveName() {
 		return SAVE_NAME;
@@ -140,6 +180,10 @@ public class PageSprite extends PartialPage {
 			config.put("Blason" + i, this.getBlason(i).getName(Language.FR));
 		}
 		
+		for(int i = 0; i < this.spriteCost.size(); i++) {
+			config.put("SpriteCost" + i, this.getSpriteCost(i).getName(Language.FR));
+		}
+		
 		config.put("Isle", this.getIsleBuff().getName(Language.FR));
 		
 		return config;
@@ -149,6 +193,10 @@ public class PageSprite extends PartialPage {
 	public void setConfig(Map<String, String> config, Language lang) {
 		for(int i = 0; i < this.blason.size(); i++) {
 			this.blason.get(i).setSelectedItem(Blason.get(config.get("Blason" + i)));
+		}
+		
+		for(int i = 0; i < this.spriteCost.size(); i++) {
+			this.spriteCost.get(i).setSelectedItem(SpriteCost.get(config.get("SpriteCost" + i)));
 		}
 		
 		this.islandBuff.setSelectedItem(IslandBuff.get(config.get("Isle")));

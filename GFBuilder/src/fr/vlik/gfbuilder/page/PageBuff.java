@@ -91,6 +91,7 @@ public class PageBuff extends PartialPage {
 			
 			this.starNucleus.get(i).addActionListener(e -> {
 				updateStarNucleus(idCheck);
+				keepNucleusEnchant(idCheck);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
@@ -413,10 +414,6 @@ public class PageBuff extends PartialPage {
 		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
 			this.nucleusEnchant.get(i).setSelectedIndex(i);
 		}
-		
-		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
-			this.nucleusEnchant.get(i).setSelectedIndex(0);
-		}
 	}
 	
 	private void updateStarNucleus(int idCheck) {
@@ -474,29 +471,88 @@ public class PageBuff extends PartialPage {
 	}
 	
 	private void updateNucleusEnchant(int idNucleus) {
-		int ignore1;
-		int ignore2;
-		
-		if(idNucleus == 0) {
-			ignore1 = idNucleus + 1;
-			ignore2 = idNucleus + 2;
-		} else if(idNucleus == 1) {
-			ignore1 = idNucleus - 1;
-			ignore2 = idNucleus + 1;
-		} else {
-			ignore1 = idNucleus - 2;
-			ignore2 = idNucleus - 1;
+		int nbStar = -1;
+		for(JIconCheckBox star : this.starNucleus) {
+			if(!star.isSelected()) {
+				break;
+			}
+			
+			nbStar++;
 		}
 		
-		NucleusEnchantment choice = this.getNucleusEnchantment(idNucleus);
-		NucleusEnchantment memory1 = this.getNucleusEnchantment(ignore1);
-		NucleusEnchantment memory2 = this.getNucleusEnchantment(ignore2);
-		
-		NucleusEnchantment[] tabNucleus1 = NucleusEnchantment.getPossibleNucleusEnchant(choice, memory2);
-		NucleusEnchantment[] tabNucleus2 = NucleusEnchantment.getPossibleNucleusEnchant(choice, memory1);
-		
-		this.nucleusEnchant.get(ignore1).setItems(tabNucleus1, memory1);
-		this.nucleusEnchant.get(ignore2).setItems(tabNucleus2, memory2);
+		if(nbStar <= 1) {
+			return;
+		} else if(nbStar == 2) {
+			int ignore1;
+			
+			if(idNucleus == 0) {
+				ignore1 = idNucleus + 1;
+			} else {
+				ignore1 = idNucleus - 1;
+			}
+			
+			NucleusEnchantment choice = this.getNucleusEnchantment(idNucleus);
+			NucleusEnchantment memory1 = this.getNucleusEnchantment(ignore1);
+			
+			NucleusEnchantment[] tabNucleus1 = NucleusEnchantment.getPossibleNucleusEnchant(choice);
+			
+			this.nucleusEnchant.get(ignore1).setItems(tabNucleus1, memory1);
+		} else if(nbStar == 3) {
+			int ignore1;
+			int ignore2;
+			
+			if(idNucleus == 0) {
+				ignore1 = idNucleus + 1;
+				ignore2 = idNucleus + 2;
+			} else if(idNucleus == 1) {
+				ignore1 = idNucleus - 1;
+				ignore2 = idNucleus + 1;
+			} else {
+				ignore1 = idNucleus - 2;
+				ignore2 = idNucleus - 1;
+			}
+			
+			NucleusEnchantment choice = this.getNucleusEnchantment(idNucleus);
+			NucleusEnchantment memory1 = this.getNucleusEnchantment(ignore1);
+			NucleusEnchantment memory2 = this.getNucleusEnchantment(ignore2);
+			
+			NucleusEnchantment[] tabNucleus1 = NucleusEnchantment.getPossibleNucleusEnchant(choice, memory2);
+			NucleusEnchantment[] tabNucleus2 = NucleusEnchantment.getPossibleNucleusEnchant(choice, memory1);
+			
+			this.nucleusEnchant.get(ignore1).setItems(tabNucleus1, memory1);
+			this.nucleusEnchant.get(ignore2).setItems(tabNucleus2, memory2);
+		}
+	}
+	
+	private void keepNucleusEnchant(int idCheck) {
+		if(idCheck == 0) {
+			return;
+		} else if(idCheck == 1) {
+			NucleusEnchantment memory1 = this.getNucleusEnchantment(0);
+			NucleusEnchantment[] tabPearl1 = NucleusEnchantment.getPossibleNucleusEnchant();
+			this.nucleusEnchant.get(0).setItems(tabPearl1, memory1);
+		} else if(idCheck == 2) {
+			NucleusEnchantment memory1 = this.getNucleusEnchantment(0);
+			NucleusEnchantment memory2 = this.getNucleusEnchantment(1);
+			
+			NucleusEnchantment[] tabPearl1 = NucleusEnchantment.getPossibleNucleusEnchant(memory2);
+			NucleusEnchantment[] tabPearl2 = NucleusEnchantment.getPossibleNucleusEnchant(memory1);
+			
+			this.nucleusEnchant.get(0).setItems(tabPearl1, memory1);
+			this.nucleusEnchant.get(1).setItems(tabPearl2, memory2);
+		} else {
+			NucleusEnchantment memory1 = this.getNucleusEnchantment(0);
+			NucleusEnchantment memory2 = this.getNucleusEnchantment(1);
+			NucleusEnchantment memory3 = this.getNucleusEnchantment(2);
+			
+			NucleusEnchantment[] tabPearl1 = NucleusEnchantment.getPossibleNucleusEnchant(memory2, memory3);
+			NucleusEnchantment[] tabPearl2 = NucleusEnchantment.getPossibleNucleusEnchant(memory1, memory3);
+			NucleusEnchantment[] tabPearl3 = NucleusEnchantment.getPossibleNucleusEnchant(memory1, memory2);
+			
+			this.nucleusEnchant.get(0).setItems(tabPearl1, memory1);
+			this.nucleusEnchant.get(1).setItems(tabPearl2, memory2);
+			this.nucleusEnchant.get(2).setItems(tabPearl3, memory3);
+		}
 	}
 	
 	private void updateNucleusLvlEnchant(int id) {
