@@ -528,7 +528,7 @@ public class PageWeapon extends PartialRedStuff {
 					
 					RedEnchantment[] tabRefining = RedEnchantment.getPossibleRefining(weapon);
 					for(int i = 0; i < 2; i++) {
-						this.refining.get(id*3+i).setItems(tabRefining);
+						this.refining.get(id*2+i).setItems(tabRefining);
 					}
 					
 					this.showAndHideRedEnchant.get(id).setVisible(true);
@@ -644,7 +644,7 @@ public class PageWeapon extends PartialRedStuff {
 	}
 	
 	protected void updateRedEnchant(int idRed) {
-		updateTooltipFortif(this.getWeapon(idRed/3), idRed);
+		updateRedEnchant(this.getWeapon(idRed/3), idRed);
 	}
 	
 	@Override

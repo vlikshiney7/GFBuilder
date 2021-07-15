@@ -62,7 +62,7 @@ class LoaderHelmet {
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Helmet"); }},
-				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red0", "casques/90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 830, true),
 					new Effect(TypeEffect.DefM, false, 616, true),
@@ -93,9 +93,73 @@ class LoaderHelmet {
 						new Effect(TypeEffect.ReducPeneM, false, 5),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Trembleur de terre"); put(Language.EN, "True Battle King 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red0", "casques/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 830, true),
+					new Effect(TypeEffect.DefM, false, 616, true),
+					new Effect(TypeEffect.FCE, false, 37, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.AGI, false, 28, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Helmet"); }},
-				new GradeName[] { GradeName.PALADIN, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.PALADIN, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red1", "casques/90red1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 846, true),
+					new Effect(TypeEffect.DefM, false, 603, true),
+					new Effect(TypeEffect.FCE, false, 31, true),
+					new Effect(TypeEffect.VIT, false, 35, true),
+					new Effect(TypeEffect.VOL, false, 30, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.VIT, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 600),
+						new Effect(TypeEffect.PM, false, 600),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.HealR, false, 2),
+						new Effect(TypeEffect.PV, true, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DefP, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Triomphe"); put(Language.EN, "True Honor 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.PALADIN, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red1", "casques/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 846, true),
 					new Effect(TypeEffect.DefM, false, 603, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
@@ -206,9 +270,27 @@ class LoaderHelmet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de Trembleur de terre"); put(Language.EN, "Battle King 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold0", "casques/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 761, true),
+					new Effect(TypeEffect.DefM, false, 542, true),
+					new Effect(TypeEffect.FCE, false, 23, true),
+					new Effect(TypeEffect.VIT, false, 21, true),
+					new Effect(TypeEffect.AGI, false, 20, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Helm"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold1", "casques/90gold1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 776, true),
+					new Effect(TypeEffect.DefM, false, 532, true),
+					new Effect(TypeEffect.FCE, false, 21, true),
+					new Effect(TypeEffect.VIT, false, 23, true),
+					new Effect(TypeEffect.VOL, false, 20, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de Triomphe"); put(Language.EN, "Honor 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.PALADIN, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold1", "casques/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 776, true),
 					new Effect(TypeEffect.DefM, false, 532, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
@@ -3718,8 +3800,40 @@ class LoaderHelmet {
 	private static Armor[] getArcher() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Hat"); }},
-				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red3", "casques/90red3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 689, true),
+					new Effect(TypeEffect.DefM, false, 664, true),
+					new Effect(TypeEffect.FCE, false, 37, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.AGI, false, 28, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitAtk, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Ninja assassin"); put(Language.EN, "True Ninja Assassin 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red3", "casques/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 689, true),
 					new Effect(TypeEffect.DefM, false, 664, true),
 					new Effect(TypeEffect.FCE, false, 37, true),
@@ -3788,6 +3902,15 @@ class LoaderHelmet {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Furtivité du CP9"); put(Language.EN, "Ghost Walker Helm"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold3", "casques/90gold3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 634, true),
+					new Effect(TypeEffect.DefM, false, 603, true),
+					new Effect(TypeEffect.FCE, false, 24, true),
+					new Effect(TypeEffect.VIT, false, 21, true),
+					new Effect(TypeEffect.AGI, false, 19, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de Ninja assassin"); put(Language.EN, "Ninja Assassin 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold3", "casques/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 634, true),
 					new Effect(TypeEffect.DefM, false, 603, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
@@ -5749,7 +5872,7 @@ class LoaderHelmet {
 	private static Armor[] getPretre() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau des Louanges de l'Esprit Sacré Gardien"); put(Language.EN, ""); }},
-				new GradeName[] { GradeName.CLERC, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.CLERC, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red4", "casques/90red4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 776, true),
 					new Effect(TypeEffect.DefM, false, 702, true),
@@ -5781,9 +5904,75 @@ class LoaderHelmet {
 						new Effect(TypeEffect.ReducPeneM, false, 5),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Esprit sacré"); put(Language.EN, "True Sacred Spirit 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.CLERC, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red4", "casques/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 776, true),
+					new Effect(TypeEffect.DefM, false, 702, true),
+					new Effect(TypeEffect.VIT, false, 37, true),
+					new Effect(TypeEffect.INT, false, 31, true),
+					new Effect(TypeEffect.VOL, false, 28, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.HealD, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitComp, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Hat"); }},
-				new GradeName[] { GradeName.SAGE, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.SAGE, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red5", "casques/90red5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 761, true),
+					new Effect(TypeEffect.DefM, false, 717, true),
+					new Effect(TypeEffect.FCE, false, 31, true),
+					new Effect(TypeEffect.VIT, false, 34, true),
+					new Effect(TypeEffect.INT, false, 31, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitComp, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Salvateur"); put(Language.EN, "True Savior 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.SAGE, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red5", "casques/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 761, true),
 					new Effect(TypeEffect.DefM, false, 717, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
@@ -5895,9 +6084,28 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null ),
+
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de l'Esprit sacré"); put(Language.EN, "Sacred Spirit 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.CLERC, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold4", "casques/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 712, true),
+					new Effect(TypeEffect.DefM, false, 650, true),
+					new Effect(TypeEffect.VIT, false, 24, true),
+					new Effect(TypeEffect.INT, false, 21, true),
+					new Effect(TypeEffect.VOL, false, 19, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Crown"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold5", "casques/90gold5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 698, true),
+					new Effect(TypeEffect.DefM, false, 663, true),
+					new Effect(TypeEffect.FCE, false, 21, true),
+					new Effect(TypeEffect.VIT, false, 22, true),
+					new Effect(TypeEffect.INT, false, 21, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de l'Esprit sacré"); put(Language.EN, "Sacred Spirit 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.SAGE, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold5", "casques/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 698, true),
 					new Effect(TypeEffect.DefM, false, 663, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
@@ -9401,8 +9609,40 @@ class LoaderHelmet {
 	private static Armor[] getMeca() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Helmet"); }},
-				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red8", "casques/90red8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 830, true),
+					new Effect(TypeEffect.DefM, false, 616, true),
+					new Effect(TypeEffect.FCE, false, 44, true),
+					new Effect(TypeEffect.VIT, false, 30, true),
+					new Effect(TypeEffect.VOL, false, 22, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Suradanceur"); put(Language.EN, "True Overclocking 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red8", "casques/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 830, true),
 					new Effect(TypeEffect.DefM, false, 616, true),
 					new Effect(TypeEffect.FCE, false, 44, true),
@@ -9471,6 +9711,15 @@ class LoaderHelmet {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Brume rugissante effrayante"); put(Language.EN, "Mistfall Helmet"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold8", "casques/90gold8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 761, true),
+					new Effect(TypeEffect.DefM, false, 542, true),
+					new Effect(TypeEffect.FCE, false, 32, true),
+					new Effect(TypeEffect.VIT, false, 19, true),
+					new Effect(TypeEffect.VOL, false, 17, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold8", "casques/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 761, true),
 					new Effect(TypeEffect.DefM, false, 542, true),
 					new Effect(TypeEffect.FCE, false, 32, true),
@@ -11395,7 +11644,7 @@ class LoaderHelmet {
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Crown"); }},
-				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red10", "casques/90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 700, true),
 					new Effect(TypeEffect.DefM, false, 701, true),
@@ -11427,9 +11676,75 @@ class LoaderHelmet {
 						new Effect(TypeEffect.ReducPeneM, false, 5),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Dimensionaliste"); put(Language.EN, "True Phantom 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red10", "casques/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 700, true),
+					new Effect(TypeEffect.DefM, false, 701, true),
+					new Effect(TypeEffect.FCE, false, 30, true),
+					new Effect(TypeEffect.INT, false, 42, true),
+					new Effect(TypeEffect.VOL, false, 24, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Headdress"); }},
-				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.RED, false, false,
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.RED, true, false,
 				ArmorType.CASQUE, "90red11", "casques/90red11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 622, true),
+					new Effect(TypeEffect.DefM, false, 778, true),
+					new Effect(TypeEffect.INT, false, 37, true),
+					new Effect(TypeEffect.VOL, false, 33, true),
+					new Effect(TypeEffect.AGI, false, 26, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ReducPeneP, false, 5),
+						new Effect(TypeEffect.ReducPeneM, false, 5),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire du véritable Brise-temps"); put(Language.EN, "True Timebreak 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.RED, false, false,
+				ArmorType.CASQUE, "10ans90red11", "casques/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 622, true),
 					new Effect(TypeEffect.DefM, false, 778, true),
 					new Effect(TypeEffect.INT, false, 37, true),
@@ -11553,9 +11868,27 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de Dimensionaliste"); put(Language.EN, "Phantom 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold10", "casques/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 634, true),
+					new Effect(TypeEffect.DefM, false, 780, true),
+					new Effect(TypeEffect.FCE, false, 20, true),
+					new Effect(TypeEffect.INT, false, 25, true),
+					new Effect(TypeEffect.VOL, false, 19, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Headdress"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.GOLD, true, false,
 				ArmorType.CASQUE, "90gold11", "casques/90gold11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 582, true),
+					new Effect(TypeEffect.DefM, false, 709, true),
+					new Effect(TypeEffect.INT, false, 25, true),
+					new Effect(TypeEffect.VOL, false, 23, true),
+					new Effect(TypeEffect.AGI, false, 16, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau stellaire de Brise-temps"); put(Language.EN, "Timebreak 10th Anniversary Star Circlet"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.GOLD, true, false,
+				ArmorType.CASQUE, "10ans90gold11", "casques/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
 					new Effect(TypeEffect.DefM, false, 709, true),
 					new Effect(TypeEffect.INT, false, 25, true),

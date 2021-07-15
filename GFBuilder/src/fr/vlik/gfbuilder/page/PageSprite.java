@@ -52,7 +52,7 @@ public class PageSprite extends PartialPage {
 		}
 		
 		for(int i = 0; i < 2; i++) {
-			SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), SpriteCostType.values()[i]);
+			SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), SpriteCostType.values()[i]);
 			this.spriteCost.add(new JCustomComboBox<SpriteCost>(tabCost));
 			this.spriteCost.get(i).addActionListener(e -> {
 				setEffects();
@@ -160,7 +160,7 @@ public class PageSprite extends PartialPage {
 	}
 	
 	public void updateSpriteCost() {
-		SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), SpriteCostType.values()[1]);
+		SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), SpriteCostType.values()[1]);
 		
 		if(!this.spriteCost.get(1).setItems(tabCost)) {
 			MainFrame.getInstance().setRedPane(NUM_PAGE);

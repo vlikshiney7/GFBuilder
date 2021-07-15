@@ -67,7 +67,7 @@ public class SpriteCost extends CompleteBuff {
 		return null;
 	}
 	
-	public static SpriteCost[] getPossibleSpriteCost(int lvl, SpriteCostType costType) {
+	public static SpriteCost[] getPossibleSpriteCost(int lvl, Reinca reinca, SpriteCostType costType) {
 		ArrayList<SpriteCost> result = new ArrayList<SpriteCost>();
 		
 		if(costType == SpriteCostType.HEAD) {
@@ -78,9 +78,9 @@ public class SpriteCost extends CompleteBuff {
 			}
 		} else {
 			result.add(new SpriteCost());
-			if(lvl > 20) {
+			if(lvl > 20 || reinca.getLvl() >= 1) {
 				for(SpriteCost spriteCost : SpriteCost.data) {
-					if(spriteCost.getType() == costType && lvl > 20) {
+					if(spriteCost.getType() == costType) {
 						result.add(spriteCost);
 					}
 				}

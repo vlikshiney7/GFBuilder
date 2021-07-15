@@ -68,6 +68,7 @@ public class LoaderEquipSet {
 	private static EquipSet[] getGuerrier() {
 		return new EquipSet[] {
 			new EquipSet("Tremblement de terre du roi de la bataille", "90red0", null, null, null),
+			new EquipSet("Trembleur de terre", "10ans90red0", null, null, null),
 			new EquipSet("Fierté pétrifiante", "100vio0", null, null, null),
 			new EquipSet("Seigneur Arlong", "90vio0", null, null, null),
 			new EquipSet("Belliqueux d'Aiolia", "80vio0", null, null, null),
@@ -90,6 +91,22 @@ public class LoaderEquipSet {
 					}),
 				}),
 			new EquipSet("Sanguinaire Kenpachi", "90gold0",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 30),
+					new Effect(TypeEffect.Toucher, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 35),
+					new Effect(TypeEffect.VIT, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 17),
+					new Effect(TypeEffect.VitAtk, false, 23),
+					new Proc(20, Activation.Attack, 5, new Calculable[] {
+						new Effect(TypeEffect.RegenCB, false, 10),
+					}),
+				}),
+			new EquipSet("Set stellaire de Trembleur de terre", "10ans90gold0",
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 30),
 					new Effect(TypeEffect.Toucher, false, 30),
@@ -850,6 +867,7 @@ public class LoaderEquipSet {
 				}),
 			
 			new EquipSet("Hymne de l'Honneur et du Triomphe", "90red1", null, null, null),
+			new EquipSet("Véritable Triomphe", "10ans90red1", null, null, null),
 			new EquipSet("Immortalité du damné", "100vio1", null, null, null),
 			new EquipSet("Templier Résolu", "90vio1", null, null, null),
 			new EquipSet("Défenseur Voldo", "80vio1", null, null, null),
@@ -886,6 +904,22 @@ public class LoaderEquipSet {
 					}),
 				}),
 			new EquipSet("Vertueux Parsifal", "90gold1",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 30),
+					new Effect(TypeEffect.MEN, false, 42),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 25),
+					new Effect(TypeEffect.VitAtk, false, 23),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Parade, false, 10),
+					new StaticEffect(TypeStaticEffect.x3Skill_old, 30),
+					new Proc(20, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.DefM, true, 40),
+					}),
+				}),
+			new EquipSet("Set stellaire de Triomphe", "10ans90gold1",
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 30),
 					new Effect(TypeEffect.MEN, false, 42),
@@ -1620,6 +1654,7 @@ public class LoaderEquipSet {
 	private static EquipSet[] getArcher() {
 		return new EquipSet[] {
 			new EquipSet("Percée de l'Assassin Ninja", "90red3", null, null, null),
+			new EquipSet("Véritable Ninja assassin", "10ans90red3", null, null, null),
 			new EquipSet("Orage de l'ombre", "100vio3", null, null, null),
 			new EquipSet("Assaut des Kage", "90vio3", null, null, null),
 			new EquipSet("Chasseur des Ombres", "80vio3", null, null, null),
@@ -1642,6 +1677,21 @@ public class LoaderEquipSet {
 					new StaticEffect(TypeStaticEffect.x3Skill_old),
 				}),
 			new EquipSet("Furtivité du CP9", "90gold3",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 30),
+					new Effect(TypeEffect.ESQ, false, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 17),
+					new Effect(TypeEffect.VitAtkDuo, false, 30),
+				},
+				new Calculable[] {
+					new Proc(20, Activation.Attacked, 5, new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 100),
+						new Effect(TypeEffect.Depla, false, 25),
+					}),
+				}),
+			new EquipSet("Set stellaire du Ninja assassin", "10ans90gold3",
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 30),
 					new Effect(TypeEffect.ESQ, false, 22),
@@ -2479,6 +2529,7 @@ public class LoaderEquipSet {
 	private static EquipSet[] getPretre() {
 		return new EquipSet[] {
 			new EquipSet("Louanges de l'Esprit Sacré Gardien", "90red4", null, null, null),
+			new EquipSet("Véritable Esprit Sacré", "10ans90red4", null, null, null),
 			new EquipSet("Bénédiction", "100vio4", null, null, null),
 			new EquipSet("Culte Solaire", "90vio4", null, null, null),
 			new EquipSet("Sage illuminé", "80vio4", null, null, null),
@@ -2499,6 +2550,22 @@ public class LoaderEquipSet {
 					new SkillEffect(TypeSkillEffect.Class4S2, 10, TypeValue.DURATION)
 				}),
 			new EquipSet("Purification de Zehel", "90gold4",
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 30),
+					new Effect(TypeEffect.ESQ, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefM, true, 17),
+					new Effect(TypeEffect.Toucher, false, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 23),
+					new Effect(TypeEffect.VitComp, false, 22),
+					new Proc(20, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, false, 3000, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Set stellaire de l'Esprit sacré", "10ans90gold4",
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 30),
 					new Effect(TypeEffect.ESQ, false, 25),
@@ -3299,6 +3366,7 @@ public class LoaderEquipSet {
 				}),
 			
 			new EquipSet("Mantra Sacré Salvateur", "90red5", null, null, null),
+			new EquipSet("Véritable Salvateur", "10ans90red5", null, null, null),
 			new EquipSet("Prière de l'Aube", "100vio5", null, null, null),
 			new EquipSet("Vérité Divine", "90vio5", null, null, null),
 			new EquipSet("Prophète Omniscient", "80vio5", null, null, null),
@@ -3324,6 +3392,24 @@ public class LoaderEquipSet {
 					}),
 				}),
 			new EquipSet("Esprit de Tao Ren", "90gold5",
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 25),
+					new Effect(TypeEffect.VitComp, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 30),
+					new Effect(TypeEffect.VitAtk, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 10),
+					new Effect(TypeEffect.TCCM, false, 10),
+					new StaticEffect(TypeStaticEffect.x3STD_old),
+					new Proc(20, Activation.Attacked, 8, new Calculable[] {
+						new Effect(TypeEffect.ReducP_old, false, 80),
+						new Effect(TypeEffect.ReducM_old, false, 80),
+					}),
+				}),
+			new EquipSet("Set stellaire de Salvateur", "10ans90gold5",
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 25),
 					new Effect(TypeEffect.VitComp, false, 18),
@@ -4124,6 +4210,7 @@ public class LoaderEquipSet {
 	private static EquipSet[] getMeca() {
 		return new EquipSet[] {
 			new EquipSet("Entaille ultime", "90red8", null, null, null),
+			new EquipSet("Véritable Suradanceur", "10ans90red8", null, null, null),
 			new EquipSet("Démon Frappe-pierre", "100vio8", null, null, null),
 			new EquipSet("Ailes Célestes Envoûtantes", "90vio8", null, null, null),
 			new EquipSet("Trépas de Glace et d'Étoiles", "80vio8", null, null, null),
@@ -4152,6 +4239,26 @@ public class LoaderEquipSet {
 					new Proc(20, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.ReflectP, false, 75, Target.OPPONENT),
 						new Effect(TypeEffect.ReflectM, false, 75, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Set stellaire de Suradanceur", "10ans90gold8",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 30),
+					new Effect(TypeEffect.DefP, true, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 20),
+					new Effect(TypeEffect.MEN, true, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 20),
+					new SkillEffect(TypeSkillEffect.Class8S0, 40, TypeValue.DAMAGE),
+					new Proc(20, Activation.Attacked, 8, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 60),
+						new StaticEffect(TypeStaticEffect.AntiStun),
+					}),
+					new Proc(20, Activation.Attacked, 10, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, false, -300, TypeRegen.POISON, 1),
 					}),
 				}),
 			new EquipSet("Brume rugissante effrayante", "90gold8",
@@ -5083,7 +5190,8 @@ public class LoaderEquipSet {
 
 	private static EquipSet[] getVoyageur() {
 		return new EquipSet[] {
-			new EquipSet("Danse Sauvage de Dimensionnaliste", "90red10", null, null, null),
+			new EquipSet("Danse Sauvage de Dimensionaliste", "90red10", null, null, null),
+			new EquipSet("Véritable Dimensionaliste", "10ans90red10", null, null, null),
 			new EquipSet("Royaume illusoire - Juge d'outremonde", "100vio10", null, null, null),
 			new EquipSet("Trou noir - Dispersion Demis", "90vio10", null, null, null),
 			new EquipSet("Univers - Aventurier de l'extrême", "80vio10", null, null, null),
@@ -5106,6 +5214,23 @@ public class LoaderEquipSet {
 					}),
 				}),
 			new EquipSet("Prisme de Cristal", "90gold10",
+				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 3),
+					new Effect(TypeEffect.DefM, true, 3),
+					new Effect(TypeEffect.VOL, false, 27),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitComp, false, 23),
+					new Effect(TypeEffect.VOL, false, 28),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkM, true, 12),
+					new Effect(TypeEffect.TCCM, false, 17),
+					new Proc(20, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PM, true, 30, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Set stellaire de Dimensionaliste", "10ans90gold10",
 				new Calculable[] {
 					new Effect(TypeEffect.DefP, true, 3),
 					new Effect(TypeEffect.DefM, true, 3),
@@ -5879,6 +6004,7 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.Depla, false, 20),
 				}),
 			new EquipSet("Frappe Brise-Temps", "90red11", null, null, null),
+			new EquipSet("Véritable Brise-temps", "10ans90red11", null, null, null),
 			new EquipSet("Royaume temporel - voyageur des ères", "100vio11", null, null, null),
 			new EquipSet("Appareil - contrôle de pantin", "90vio11", null, null, null),
 			new EquipSet("Temps - Gardien", "80vio11", null, null, null),
@@ -5901,6 +6027,23 @@ public class LoaderEquipSet {
 					}),
 				}),
 			new EquipSet("Destructeur de l'Âme", "90gold11",
+				new Calculable[] {
+					new Effect(TypeEffect.ESQ, false, 3),
+					new Effect(TypeEffect.DCCM, false, 10),
+					new Effect(TypeEffect.TCCM, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 30),
+					new Effect(TypeEffect.Depla, false, 5),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VOL, false, 25),
+					new Effect(TypeEffect.VitComp, false, 18),
+					new Proc(20, Activation.Attacked, 8, 3, new Calculable[] {
+						new Effect(TypeEffect.DegM_old, false, 15),
+					}),
+				}),
+			new EquipSet("Set stellaire de Brise-temps", "10ans90gold11",
 				new Calculable[] {
 					new Effect(TypeEffect.ESQ, false, 3),
 					new Effect(TypeEffect.DCCM, false, 10),

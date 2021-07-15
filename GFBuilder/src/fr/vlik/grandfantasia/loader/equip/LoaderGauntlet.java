@@ -69,7 +69,7 @@ class LoaderGauntlet {
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Fists"); }},
-				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red0", "gants/90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
 					new Effect(TypeEffect.DefM, false, 369, true),
@@ -101,9 +101,75 @@ class LoaderGauntlet {
 						}),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Trembleur de terre"); put(Language.EN, "True Battle King 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red0", "gants/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 498, true),
+					new Effect(TypeEffect.DefM, false, 369, true),
+					new Effect(TypeEffect.FCE, false, 39, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.VOL, false, 26, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Fists"); }},
-				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red1", "gants/90red1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 507, true),
+					new Effect(TypeEffect.DefM, false, 361, true),
+					new Effect(TypeEffect.FCE, false, 31, true),
+					new Effect(TypeEffect.VIT, false, 39, true),
+					new Effect(TypeEffect.INT, false, 26, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.VIT, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 600),
+						new Effect(TypeEffect.PM, false, 600),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.HealR, false, 2),
+						new Effect(TypeEffect.PV, true, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DefP, true, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Triomphe"); put(Language.EN, "True Honor 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red1", "gants/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
 					new Effect(TypeEffect.DefM, false, 361, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
@@ -215,9 +281,27 @@ class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Trembleur de terre"); put(Language.EN, "Battle King 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold0", "gants/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 450, true),
+					new Effect(TypeEffect.DefM, false, 320, true),
+					new Effect(TypeEffect.FCE, false, 27, true),
+					new Effect(TypeEffect.VIT, false, 21, true),
+					new Effect(TypeEffect.VOL, false, 16, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Bracers"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold1", "gants/90gold1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 459, true),
+					new Effect(TypeEffect.DefM, false, 314, true),
+					new Effect(TypeEffect.FCE, false, 21, true),
+					new Effect(TypeEffect.VIT, false, 26, true),
+					new Effect(TypeEffect.INT, false, 17, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Triomphe"); put(Language.EN, "Honor 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold1", "gants/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 459, true),
 					new Effect(TypeEffect.DefM, false, 314, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
@@ -3884,8 +3968,41 @@ class LoaderGauntlet {
 	private static Armor[] getArcher() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Hands"); }},
-				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red3", "gants/90red3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 413, true),
+					new Effect(TypeEffect.DefM, false, 399, true),
+					new Effect(TypeEffect.FCE, false, 34, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.AGI, false, 31, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitAtk, false, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Ninja assassin"); put(Language.EN, "True Ninja Assassin 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red3", "gants/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
 					new Effect(TypeEffect.DefM, false, 399, true),
 					new Effect(TypeEffect.FCE, false, 34, true),
@@ -3955,6 +4072,15 @@ class LoaderGauntlet {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Furtivité du CP9"); put(Language.EN, "Ghost Walker Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold3", "gants/90gold3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 375, true),
+					new Effect(TypeEffect.DefM, false, 356, true),
+					new Effect(TypeEffect.FCE, false, 24, true),
+					new Effect(TypeEffect.VIT, false, 21, true),
+					new Effect(TypeEffect.AGI, false, 19, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Ninja assassin"); put(Language.EN, "Ninja Assassin 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold3", "gants/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
 					new Effect(TypeEffect.DefM, false, 356, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
@@ -6045,8 +6171,42 @@ class LoaderGauntlet {
 	private static Armor[] getPretre() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Hold"); }},
-				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red5", "gants/90red5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 456, true),
+					new Effect(TypeEffect.DefM, false, 430, true),
+					new Effect(TypeEffect.FCE, false, 37, true),
+					new Effect(TypeEffect.VIT, false, 32, true),
+					new Effect(TypeEffect.INT, false, 27, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitComp, false, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Salvateur"); put(Language.EN, "True Savior 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red5", "gants/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 456, true),
 					new Effect(TypeEffect.DefM, false, 430, true),
 					new Effect(TypeEffect.FCE, false, 37, true),
@@ -6117,6 +6277,15 @@ class LoaderGauntlet {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold5", "gants/90gold5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 412, true),
+					new Effect(TypeEffect.DefM, false, 392, true),
+					new Effect(TypeEffect.FCE, false, 24, true),
+					new Effect(TypeEffect.VIT, false, 22, true),
+					new Effect(TypeEffect.INT, false, 18, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Salvateur"); put(Language.EN, "Savior 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold5", "gants/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 412, true),
 					new Effect(TypeEffect.DefM, false, 392, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
@@ -8248,8 +8417,41 @@ class LoaderGauntlet {
 	private static Armor[] getMeca() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Fists"); }},
-				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red8", "gants/90red8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 498, true),
+					new Effect(TypeEffect.DefM, false, 369, true),
+					new Effect(TypeEffect.FCE, false, 42, true),
+					new Effect(TypeEffect.VIT, false, 28, true),
+					new Effect(TypeEffect.VOL, false, 26, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Suradanceur"); put(Language.EN, "True Overclocking 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red8", "gants/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
 					new Effect(TypeEffect.DefM, false, 369, true),
 					new Effect(TypeEffect.FCE, false, 42, true),
@@ -8319,6 +8521,15 @@ class LoaderGauntlet {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Brume rugissante effrayante"); put(Language.EN, "Mistfall Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold8", "gants/90gold8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 450, true),
+					new Effect(TypeEffect.DefM, false, 320, true),
+					new Effect(TypeEffect.FCE, false, 28, true),
+					new Effect(TypeEffect.VIT, false, 20, true),
+					new Effect(TypeEffect.VOL, false, 16, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold8", "gants/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
 					new Effect(TypeEffect.DefM, false, 320, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
@@ -10408,7 +10619,7 @@ class LoaderGauntlet {
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Gloves"); }},
-				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red10", "gants/90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
 					new Effect(TypeEffect.DefM, false, 420, true),
@@ -10441,9 +10652,77 @@ class LoaderGauntlet {
 						}),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Dimensionaliste"); put(Language.EN, "True Phantom 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red10", "gants/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 420, true),
+					new Effect(TypeEffect.DefM, false, 420, true),
+					new Effect(TypeEffect.FCE, false, 28, true),
+					new Effect(TypeEffect.INT, false, 42, true),
+					new Effect(TypeEffect.VOL, false, 26, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
-				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red11", "gants/90red11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 373, true),
+					new Effect(TypeEffect.DefM, false, 467, true),
+					new Effect(TypeEffect.INT, false, 44, true),
+					new Effect(TypeEffect.VOL, false, 28, true),
+					new Effect(TypeEffect.AGI, false, 24, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Proc(5, Activation.Attack, 5, new Calculable[] {
+							new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Brise-temps"); put(Language.EN, "True Timebreak 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
+				ArmorType.GANT, "10ans90red11", "gants/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
 					new Effect(TypeEffect.DefM, false, 467, true),
 					new Effect(TypeEffect.INT, false, 44, true),
@@ -10568,9 +10847,27 @@ class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Dimensionaliste"); put(Language.EN, "Phantom 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold10", "gants/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 375, true),
+					new Effect(TypeEffect.DefM, false, 461, true),
+					new Effect(TypeEffect.FCE, false, 18, true),
+					new Effect(TypeEffect.INT, false, 29, true),
+					new Effect(TypeEffect.VOL, false, 17, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold11", "gants/90gold11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 344, true),
+					new Effect(TypeEffect.DefM, false, 419, true),
+					new Effect(TypeEffect.INT, false, 31, true),
+					new Effect(TypeEffect.VOL, false, 19, true),
+					new Effect(TypeEffect.AGI, false, 14, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Brise-temps"); put(Language.EN, "Timebreak 10th Anniversary Star Gloves"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
+				ArmorType.GANT, "10ans90gold11", "gants/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
 					new Effect(TypeEffect.DefM, false, 419, true),
 					new Effect(TypeEffect.INT, false, 31, true),

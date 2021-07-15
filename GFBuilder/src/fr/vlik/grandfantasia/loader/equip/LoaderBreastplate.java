@@ -65,7 +65,7 @@ class LoaderBreastplate {
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Armure du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Armor"); }},
-				new GradeName[] { GradeName.BERSERKER, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.BERSERKER, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red0", "torses/90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1078, true),
 					new Effect(TypeEffect.DefM, false, 800, true),
@@ -97,9 +97,75 @@ class LoaderBreastplate {
 						}),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Trembleur de terre"); put(Language.EN, "True Battle King 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red0", "torses/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 1078, true),
+					new Effect(TypeEffect.DefM, false, 800, true),
+					new Effect(TypeEffect.FCE, false, 74, true),
+					new Effect(TypeEffect.VIT, false, 63, true),
+					new Effect(TypeEffect.AGI, false, 55, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 3, new Calculable[] {
+							new Effect(TypeEffect.VitAtk, false, 70),
+						}),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Armure de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Armor"); }},
-				new GradeName[] { GradeName.PALADIN, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.PALADIN, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red1", "torses/90red1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 1099, true),
+					new Effect(TypeEffect.DefM, false, 784, true),
+					new Effect(TypeEffect.FCE, false, 66, true),
+					new Effect(TypeEffect.VIT, false, 71, true),
+					new Effect(TypeEffect.INT, false, 55, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.VIT, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 600),
+						new Effect(TypeEffect.PM, false, 600),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.HealR, false, 2),
+						new Effect(TypeEffect.PV, true, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DefP, true, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 3, new Calculable[] {
+							new Effect(TypeEffect.VitComp, false, 70),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Triomphe"); put(Language.EN, "True Honor 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.PALADIN, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red1", "torses/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1099, true),
 					new Effect(TypeEffect.DefM, false, 784, true),
 					new Effect(TypeEffect.FCE, false, 66, true),
@@ -211,9 +277,27 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 37, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Trembleur de terre"); put(Language.EN, "Battle King 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 89, Quality.GOLD, true, false,
+				ArmorType.PLASTRON, "10ans90gold0", "torses/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 982, true),
+					new Effect(TypeEffect.DefM, false, 700, true),
+					new Effect(TypeEffect.FCE, false, 49, true),
+					new Effect(TypeEffect.VIT, false, 42, true),
+					new Effect(TypeEffect.AGI, false, 37, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Armure du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Armor"); }},
 				new GradeName[] { GradeName.PALADIN, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold1", "torses/90gold1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 1002, true),
+					new Effect(TypeEffect.DefM, false, 686, true),
+					new Effect(TypeEffect.FCE, false, 45, true),
+					new Effect(TypeEffect.VIT, false, 48, true),
+					new Effect(TypeEffect.INT, false, 35, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Triomphe"); put(Language.EN, "Honor 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.PALADIN, }, 89, Quality.GOLD, true, false,
+				ArmorType.PLASTRON, "10ans90gold1", "torses/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1002, true),
 					new Effect(TypeEffect.DefM, false, 686, true),
 					new Effect(TypeEffect.FCE, false, 45, true),
@@ -3605,8 +3689,41 @@ class LoaderBreastplate {
 	private static Armor[] getArcher() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tunique de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Tunic"); }},
-				new GradeName[] { GradeName.ASSASSIN, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.ASSASSIN, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red3", "torses/90red3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 896, true),
+					new Effect(TypeEffect.DefM, false, 864, true),
+					new Effect(TypeEffect.FCE, false, 69, true),
+					new Effect(TypeEffect.VIT, false, 54, true),
+					new Effect(TypeEffect.AGI, false, 69, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitAtk, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
+							new Effect(TypeEffect.DefP, true, -50, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Ninja assassin"); put(Language.EN, "True Ninja Assassin 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red3", "torses/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 896, true),
 					new Effect(TypeEffect.DefM, false, 864, true),
 					new Effect(TypeEffect.FCE, false, 69, true),
@@ -3676,6 +3793,15 @@ class LoaderBreastplate {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Armure de Furtivité du CP9"); put(Language.EN, "Ghost Walker Armor"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold3", "torses/90gold3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 818, true),
+					new Effect(TypeEffect.DefM, false, 777, true),
+					new Effect(TypeEffect.FCE, false, 48, true),
+					new Effect(TypeEffect.VIT, false, 43, true),
+					new Effect(TypeEffect.AGI, false, 37, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Ninja assassin"); put(Language.EN, "Ninja Assassin 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 89, Quality.GOLD, true, false,
+				ArmorType.PLASTRON, "10ans90gold3", "torses/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 818, true),
 					new Effect(TypeEffect.DefM, false, 777, true),
 					new Effect(TypeEffect.FCE, false, 48, true),
@@ -5662,8 +5788,42 @@ class LoaderBreastplate {
 	private static Armor[] getPretre() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Robe du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Robe"); }},
-				new GradeName[] { GradeName.SAGE, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.SAGE, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red5", "torses/90red5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 989, true),
+					new Effect(TypeEffect.DefM, false, 933, true),
+					new Effect(TypeEffect.FCE, false, 63, true),
+					new Effect(TypeEffect.VIT, false, 60, true),
+					new Effect(TypeEffect.INT, false, 69, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.VitComp, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
+							new Effect(TypeEffect.DefP, true, -50, Target.OPPONENT),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Salvateur"); put(Language.EN, "True Savior 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.SAGE, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red5", "torses/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 989, true),
 					new Effect(TypeEffect.DefM, false, 933, true),
 					new Effect(TypeEffect.FCE, false, 63, true),
@@ -5734,6 +5894,15 @@ class LoaderBreastplate {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Robe de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Robe"); }},
 				new GradeName[] { GradeName.SAGE, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold5", "torses/90gold5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 900, true),
+					new Effect(TypeEffect.DefM, false, 855, true),
+					new Effect(TypeEffect.FCE, false, 42, true),
+					new Effect(TypeEffect.VIT, false, 39, true),
+					new Effect(TypeEffect.INT, false, 47, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Salvateur"); put(Language.EN, "Savior 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.SAGE, }, 89, Quality.GOLD, true, false,
+				ArmorType.PLASTRON, "10ans90gold5", "torses/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 900, true),
 					new Effect(TypeEffect.DefM, false, 855, true),
 					new Effect(TypeEffect.FCE, false, 42, true),
@@ -7739,8 +7908,41 @@ class LoaderBreastplate {
 	private static Armor[] getMeca() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Armure de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Armor"); }},
-				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red8", "torses/90red8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 1078, true),
+					new Effect(TypeEffect.DefM, false, 800, true),
+					new Effect(TypeEffect.FCE, false, 74, true),
+					new Effect(TypeEffect.VIT, false, 61, true),
+					new Effect(TypeEffect.AGI, false, 57, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.DCCP, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
+							new Effect(TypeEffect.VitComp, false, 70),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Suradanceur"); put(Language.EN, "True Overclocking 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red8", "torses/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1078, true),
 					new Effect(TypeEffect.DefM, false, 800, true),
 					new Effect(TypeEffect.FCE, false, 74, true),
@@ -7810,6 +8012,15 @@ class LoaderBreastplate {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron de Brume rugissante effrayante"); put(Language.EN, "Mistfall Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold8", "torses/90gold8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 982, true),
+					new Effect(TypeEffect.DefM, false, 700, true),
+					new Effect(TypeEffect.FCE, false, 58, true),
+					new Effect(TypeEffect.VIT, false, 37, true),
+					new Effect(TypeEffect.AGI, false, 33, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.GOLD, false, false,
+				ArmorType.PLASTRON, "10ans90gold8", "torses/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 982, true),
 					new Effect(TypeEffect.DefM, false, 700, true),
 					new Effect(TypeEffect.FCE, false, 58, true),
@@ -9719,7 +9930,7 @@ class LoaderBreastplate {
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Cape de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Cloak"); }},
-				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red10", "torses/90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 910, true),
 					new Effect(TypeEffect.DefM, false, 911, true),
@@ -9753,9 +9964,78 @@ class LoaderBreastplate {
 						}),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Dimensionaliste"); put(Language.EN, "True Phantom 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red10", "torses/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 910, true),
+					new Effect(TypeEffect.DefM, false, 911, true),
+					new Effect(TypeEffect.FCE, false, 63, true),
+					new Effect(TypeEffect.INT, false, 71, true),
+					new Effect(TypeEffect.VOL, false, 58, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
+							new Effect(TypeEffect.TCCP, false, -70, Target.OPPONENT),
+							new Effect(TypeEffect.TCCM, false, -70, Target.OPPONENT),
+						}),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
-				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.RED, false, false,
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red11", "torses/90red11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 809, true),
+					new Effect(TypeEffect.DefM, false, 1012, true),
+					new Effect(TypeEffect.INT, false, 67, true),
+					new Effect(TypeEffect.VOL, false, 64, true),
+					new Effect(TypeEffect.AGI, false, 61, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.TCCM, false, 2),
+					},
+					new Calculable[] {
+						new Proc(3, Activation.Attack, 5, new Calculable[] {
+							new Effect(TypeEffect.VitComp, false, 70),
+						}),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire du véritable Brise-temps"); put(Language.EN, "True Timebreak 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.RED, false, false,
+				ArmorType.PLASTRON, "10ans90red11", "torses/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 809, true),
 					new Effect(TypeEffect.DefM, false, 1012, true),
 					new Effect(TypeEffect.INT, false, 67, true),
@@ -9888,9 +10168,31 @@ class LoaderBreastplate {
 				}, new Calculable[] {
 					new Effect(TypeEffect.PM, true, 3),
 				}),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Dimensionaliste"); put(Language.EN, "Phantom 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.GOLD, true, false,
+				ArmorType.PLASTRON, "10ans90gold10", "torses/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 818, true),
+					new Effect(TypeEffect.DefM, false, 1007, true),
+					new Effect(TypeEffect.FCE, false, 42, true),
+					new Effect(TypeEffect.INT, false, 47, true),
+					new Effect(TypeEffect.VOL, false, 39, true),
+				}, new Calculable[] {
+					new Effect(TypeEffect.PM, true, 3),
+				}),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Suit"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold11", "torses/90gold11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 751, true),
+					new Effect(TypeEffect.DefM, false, 914, true),
+					new Effect(TypeEffect.FCE, false, 42, true),
+					new Effect(TypeEffect.INT, false, 49, true),
+					new Effect(TypeEffect.VOL, false, 37, true),
+				}, new Calculable[] {
+					new Effect(TypeEffect.PM, true, 3),
+				}),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Tenue stellaire de Brise-temps"); put(Language.EN, "Timebreak 10th Anniversary Star Suit"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.GOLD, true, false,
+				ArmorType.PLASTRON, "10ans90gold11", "torses/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 751, true),
 					new Effect(TypeEffect.DefM, false, 914, true),
 					new Effect(TypeEffect.FCE, false, 42, true),

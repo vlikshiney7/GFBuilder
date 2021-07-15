@@ -64,7 +64,7 @@ class LoaderBoot {
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Boots"); }},
-				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red0", "bottes/90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 581, true),
 					new Effect(TypeEffect.DefM, false, 431, true),
@@ -91,9 +91,65 @@ class LoaderBoot {
 						new Effect(TypeEffect.PV, true, 20),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Trembleur de terre"); put(Language.EN, "True Battle King 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "10ans90red0", "bottes/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 581, true),
+					new Effect(TypeEffect.DefM, false, 431, true),
+					new Effect(TypeEffect.FCE, false, 31, true),
+					new Effect(TypeEffect.VIT, false, 40, true),
+					new Effect(TypeEffect.AGI, false, 25, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 20),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Boots"); }},
-				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red1", "bottes/90red1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 592, true),
+					new Effect(TypeEffect.DefM, false, 422, true),
+					new Effect(TypeEffect.FCE, false, 35, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.INT, false, 30, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.VIT, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 600),
+						new Effect(TypeEffect.PM, false, 600),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.HealR, false, 2),
+						new Effect(TypeEffect.PV, true, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 20),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Triomphe"); put(Language.EN, "True Honor 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "10ans90red1", "bottes/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 592, true),
 					new Effect(TypeEffect.DefM, false, 422, true),
 					new Effect(TypeEffect.FCE, false, 35, true),
@@ -200,9 +256,27 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de Trembleur de terre"); put(Language.EN, "Battle King 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.GOLD, true, false,
+				ArmorType.BOTTE, "10ans90gold0", "bottes/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 525, true),
+					new Effect(TypeEffect.DefM, false, 374, true),
+					new Effect(TypeEffect.FCE, false, 23, true),
+					new Effect(TypeEffect.VIT, false, 25, true),
+					new Effect(TypeEffect.AGI, false, 16, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold1", "bottes/90gold1", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 535, true),
+					new Effect(TypeEffect.DefM, false, 366, true),
+					new Effect(TypeEffect.FCE, false, 24, true),
+					new Effect(TypeEffect.VIT, false, 21, true),
+					new Effect(TypeEffect.INT, false, 19, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de Triomphe"); put(Language.EN, "Honor 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
+				ArmorType.BOTTE, "10ans90gold1", "bottes/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 535, true),
 					new Effect(TypeEffect.DefM, false, 366, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
@@ -3851,8 +3925,36 @@ class LoaderBoot {
 	private static Armor[] getArcher() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chaussures de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Shoes"); }},
-				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red3", "bottes/90red3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 482, true),
+					new Effect(TypeEffect.DefM, false, 465, true),
+					new Effect(TypeEffect.FCE, false, 33, true),
+					new Effect(TypeEffect.VIT, false, 36, true),
+					new Effect(TypeEffect.AGI, false, 27, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.AGI, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, 2),
+						new Effect(TypeEffect.PV, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 20),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Ninja assassin"); put(Language.EN, "True Ninja Assassin 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "10ans90red3", "bottes/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 482, true),
 					new Effect(TypeEffect.DefM, false, 465, true),
 					new Effect(TypeEffect.FCE, false, 33, true),
@@ -3917,6 +4019,15 @@ class LoaderBoot {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Furtivité du CP9"); put(Language.EN, "Ghost Walker Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
 					ArmorType.BOTTE, "90gold3", "bottes/90gold3", new Calculable[] {
+						new Effect(TypeEffect.DefP, false, 437, true),
+						new Effect(TypeEffect.DefM, false, 415, true),
+						new Effect(TypeEffect.FCE, false, 23, true),
+						new Effect(TypeEffect.VIT, false, 24, true),
+						new Effect(TypeEffect.AGI, false, 17, true),
+					}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de Ninja assassin"); put(Language.EN, "Ninja Assassin 10th Anniversary Star Boots"); }},
+					new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
+					ArmorType.BOTTE, "10ans90gold3", "bottes/10ansGold", new Calculable[] {
 						new Effect(TypeEffect.DefP, false, 437, true),
 						new Effect(TypeEffect.DefM, false, 415, true),
 						new Effect(TypeEffect.FCE, false, 23, true),
@@ -6006,8 +6117,37 @@ class LoaderBoot {
 	private static Armor[] getPretre() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Boots"); }},
-				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red5", "bottes/90red5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 533, true),
+					new Effect(TypeEffect.DefM, false, 502, true),
+					new Effect(TypeEffect.FCE, false, 35, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.VOL, false, 30, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 2),
+						new Effect(TypeEffect.PM, true, 2),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 20),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Esprit sacré"); put(Language.EN, "True Sacred Spirit 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "10ans90red5", "bottes/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 533, true),
 					new Effect(TypeEffect.DefM, false, 502, true),
 					new Effect(TypeEffect.FCE, false, 35, true),
@@ -6073,6 +6213,15 @@ class LoaderBoot {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Boots"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold5", "bottes/90gold5", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 481, true),
+					new Effect(TypeEffect.DefM, false, 457, true),
+					new Effect(TypeEffect.FCE, false, 23, true),
+					new Effect(TypeEffect.VIT, false, 21, true),
+					new Effect(TypeEffect.VOL, false, 20, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de l'Esprit sacré"); put(Language.EN, "Sacred Spirit 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
+				ArmorType.BOTTE, "10ans90gold5", "bottes/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 481, true),
 					new Effect(TypeEffect.DefM, false, 457, true),
 					new Effect(TypeEffect.FCE, false, 23, true),
@@ -8196,8 +8345,36 @@ class LoaderBoot {
 	private static Armor[] getMeca() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Boots"); }},
-				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red8", "bottes/90red8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 581, true),
+					new Effect(TypeEffect.DefM, false, 431, true),
+					new Effect(TypeEffect.FCE, false, 38, true),
+					new Effect(TypeEffect.VIT, false, 31, true),
+					new Effect(TypeEffect.AGI, false, 27, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 6),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 400),
+						new Effect(TypeEffect.PM, false, 400),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 2),
+						new Effect(TypeEffect.TCCP, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, true, 10),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Suradanceur"); put(Language.EN, "True Overclocking 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "90red8", "bottes/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 581, true),
 					new Effect(TypeEffect.DefM, false, 431, true),
 					new Effect(TypeEffect.FCE, false, 38, true),
@@ -8260,8 +8437,17 @@ class LoaderBoot {
 					new Effect(TypeEffect.AGI, false, 17, true),
 				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes renforcées de Brume rugissante effrayante"); put(Language.EN, "Mistfall Armor Boots"); }},
-				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, false, false,
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold8", "bottes/90gold8", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 525, true),
+					new Effect(TypeEffect.DefM, false, 374, true),
+					new Effect(TypeEffect.FCE, false, 28, true),
+					new Effect(TypeEffect.VIT, false, 19, true),
+					new Effect(TypeEffect.AGI, false, 17, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
+				ArmorType.BOTTE, "10ans90gold8", "bottes/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 525, true),
 					new Effect(TypeEffect.DefM, false, 374, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
@@ -10383,7 +10569,7 @@ class LoaderBoot {
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Boots"); }},
-				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red10", "bottes/90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 490, true),
 					new Effect(TypeEffect.DefM, false, 490, true),
@@ -10411,9 +10597,67 @@ class LoaderBoot {
 						new Effect(TypeEffect.PM, true, 10),
 					},
 				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Dimensionaliste"); put(Language.EN, "True Phantom 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "10ans90red10", "bottes/10ansRed", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 490, true),
+					new Effect(TypeEffect.DefM, false, 490, true),
+					new Effect(TypeEffect.FCE, false, 27, true),
+					new Effect(TypeEffect.INT, false, 43, true),
+					new Effect(TypeEffect.VOL, false, 26, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 300),
+						new Effect(TypeEffect.PM, false, 300),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 2),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 10),
+					},
+				}),
 			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Boots"); }},
-				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, true, false,
 				ArmorType.BOTTE, "90red11", "bottes/90red11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 436, true),
+					new Effect(TypeEffect.DefM, false, 545, true),
+					new Effect(TypeEffect.INT, false, 44, true),
+					new Effect(TypeEffect.VOL, false, 30, true),
+					new Effect(TypeEffect.AGI, false, 22, true),
+				}, null,
+				new Calculable[][] {
+					new Calculable[] {
+						new Effect(TypeEffect.FCE, false, 3),
+						new Effect(TypeEffect.INT, false, 3),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 150),
+						new Effect(TypeEffect.PM, false, 150),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 1),
+						new Effect(TypeEffect.TCCM, false, 1),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 7),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PM, true, 10),
+					},
+				}),
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires du véritable Brise-temps"); put(Language.EN, "True Timebreak 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
+				ArmorType.BOTTE, "10ans90red11", "bottes/10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 436, true),
 					new Effect(TypeEffect.DefM, false, 545, true),
 					new Effect(TypeEffect.INT, false, 44, true),
@@ -10533,9 +10777,27 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de Dimensionaliste"); put(Language.EN, "Phantom 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.GOLD, true, false,
+				ArmorType.BOTTE, "10ans90gold10", "bottes/10ansGold", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 437, true),
+					new Effect(TypeEffect.DefM, false, 537, true),
+					new Effect(TypeEffect.FCE, false, 18, true),
+					new Effect(TypeEffect.INT, false, 29, true),
+					new Effect(TypeEffect.VOL, false, 17, true),
+				}, null ),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Long Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold11", "bottes/90gold11", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 401, true),
+					new Effect(TypeEffect.DefM, false, 488, true),
+					new Effect(TypeEffect.INT, false, 31, true),
+					new Effect(TypeEffect.VOL, false, 19, true),
+					new Effect(TypeEffect.AGI, false, 14, true),
+				}, null ),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes stellaires de Brise-temps"); put(Language.EN, "Timebreak 10th Anniversary Star Boots"); }},
+				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
+				ArmorType.BOTTE, "10ans90gold11", "bottes/10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 401, true),
 					new Effect(TypeEffect.DefM, false, 488, true),
 					new Effect(TypeEffect.INT, false, 31, true),

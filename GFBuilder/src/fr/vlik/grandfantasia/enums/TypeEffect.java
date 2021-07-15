@@ -114,7 +114,11 @@ public enum TypeEffect implements Colorable, Writable {
 	DegStdPts("Dégât Standard", "Stardard Damage", "Deg Std", "Std Dam", -1, true, Tools.EffectColor[0]), // DELETE
 	
 	DCCMa("Dégât Critique au Maillet", "", "Deg Crit Ma 1M", "", -1, true, Tools.EffectColor[0]),
+	DCCArc("Dégât Critique à l'Arc", "", "Deg Crit Arc", "", -1, true, Tools.EffectColor[0]),
+	DCCGun("Dégât Critique au Gun", "", "Deg Crit Gun", "", -1, true, Tools.EffectColor[0]),
 	TCCHa("Taux Critique à la Hache", "", "Taux Crit Ha 1M", "", -1, true, Tools.EffectColor[0]),
+	TCCArc("Taux Critique à l'Arc", "", "Taux Crit Arc", "", -1, true, Tools.EffectColor[0]),
+	TCCGun("Taux Critique au Gun", "", "Taux Crit Gun", "", -1, true, Tools.EffectColor[0]),
 	TCCCanon("Taux Critique au Canon", "", "Taux Crit Can", "", -1, true, Tools.EffectColor[0]),
 	
 	DegStdMeca("Dégât Standard à l'arme Mécanique", "", "Deg Std Mec 1M", "", -1, true, Tools.EffectColor[0]), // DELETE
@@ -200,17 +204,17 @@ public enum TypeEffect implements Colorable, Writable {
         this.isUpgradable = isUpgradable;
         this.color = color;
     }
-
+    
 	@Override
 	public Color getColor() {
 		return this.color;
 	}
-
+	
 	@Override
 	public String getInfo(Language lang) {
 		return lang == Language.FR ? this.abbrevFR : this.abbrevEN;
 	}
-
+	
 	@Override
 	public String getTooltip() {
 		return this.fr;

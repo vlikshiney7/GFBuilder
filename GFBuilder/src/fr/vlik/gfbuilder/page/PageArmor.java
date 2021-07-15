@@ -551,7 +551,7 @@ public class PageArmor extends PartialRedStuff {
 					
 					RedEnchantment[] tabRefining = RedEnchantment.getPossibleRefining(armor);
 					for(int i = 0; i < 2; i++) {
-						this.refining.get(id*3+i).setItems(tabRefining);
+						this.refining.get(id*2+i).setItems(tabRefining);
 					}
 					
 					this.showAndHideRedEnchant.get(id).setVisible(true);
@@ -601,7 +601,7 @@ public class PageArmor extends PartialRedStuff {
 	}
 	
 	protected void updateRedEnchant(int idRed) {
-		updateTooltipFortif(this.getArmor(idRed/3), idRed);
+		updateRedEnchant(this.getArmor(idRed/3), idRed);
 	}
 	
 	private void updateShortcutSet() {
