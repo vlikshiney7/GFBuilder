@@ -230,8 +230,10 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Insulaire Populaire"); put(Language.EN, "Popular Islander"); }}, Quality.P8TITLE, 15, false, GradeName.NONE, Tag.RANK, new Calculable[] {
 				new Effect(TypeEffect.DefP, true, 2),
 				new Effect(TypeEffect.DefM, true, 2),
-				new Effect(TypeEffect.ReducP_old, false, 2),
-				new Effect(TypeEffect.ReducM_old, false, 2),
+				new Effect(TypeEffect.ReducStdP, false, 2),
+				new Effect(TypeEffect.ReducStdD, false, 2),
+				new Effect(TypeEffect.ReducSkillP, false, 2),
+				new Effect(TypeEffect.ReducSkillM, false, 2),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Jiminy Cricket"); put(Language.EN, "Conscience Keeper"); }}, Quality.P8TITLE, 0, false, GradeName.NONE, Tag.OTHER, null),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Maître d'Armes"); put(Language.EN, "Master of Arms"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
@@ -248,8 +250,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DefP, true, 4),
 				new Effect(TypeEffect.DefM, true, 4),
 				new Effect(TypeEffect.ESQ, true, 4),
-				new Effect(TypeEffect.ReducP_old, false, 4),
-				new Effect(TypeEffect.ReducM_old, false, 4),
+				new Effect(TypeEffect.ReducStdP, false, 4),
+				new Effect(TypeEffect.ReducStdD, false, 4),
+				new Effect(TypeEffect.ReducSkillP, false, 4),
+				new Effect(TypeEffect.ReducSkillM, false, 4),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Maître des Éléments"); put(Language.EN, "Exterminator of the Abyss"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
 				new Effect(TypeEffect.DCCM, false, 5),
@@ -325,8 +329,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Toucher, false, 3),
 				new Effect(TypeEffect.DefP, true, 3),
 				new Effect(TypeEffect.DefM, true, 3),
-				new Effect(TypeEffect.ReducP_old, false, 3),
-				new Effect(TypeEffect.ReducM_old, false, 3),
+				new Effect(TypeEffect.ReducStdP, false, 3),
+				new Effect(TypeEffect.ReducStdD, false, 3),
+				new Effect(TypeEffect.ReducSkillP, false, 3),
+				new Effect(TypeEffect.ReducSkillM, false, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Rage du Berserk"); put(Language.EN, "Winds of Fury"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
 				new Effect(TypeEffect.PV, true, 10),
@@ -354,8 +360,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DefP, true, 5),
 				new Effect(TypeEffect.DefM, true, 5),
 				new Effect(TypeEffect.ESQ, true, 5),
-				new Effect(TypeEffect.ReducP_old, false, 5),
-				new Effect(TypeEffect.ReducM_old, false, 5),
+				new Effect(TypeEffect.ReducStdP, false, 5),
+				new Effect(TypeEffect.ReducStdD, false, 5),
+				new Effect(TypeEffect.ReducSkillP, false, 5),
+				new Effect(TypeEffect.ReducSkillM, false, 5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Express"); put(Language.EN, "Lightspeed"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 8),
@@ -366,8 +374,9 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Superhéros"); put(Language.EN, "Like a Boss"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
 				new Effect(TypeEffect.PV, true, 5),
 				new Effect(TypeEffect.PM, true, 5),
-				new Effect(TypeEffect.ReducP_old, false, 5),
-				new Effect(TypeEffect.ReducM_old, false, 5),
+				new Effect(TypeEffect.ReducSkillP, false, 5),
+				new Effect(TypeEffect.ReducSkillM, false, 5),
+				
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vétéran d'Élite"); put(Language.EN, "Elite Warrior"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
 				new Effect(TypeEffect.ReducStdP, false, 5),
@@ -475,29 +484,25 @@ public class LoaderTitle {
 				new Effect(TypeEffect.TCCM, false, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur de Monstres - Champion"); put(Language.EN, "Monster Conqueror Champion"); }}, Quality.PURPLE, 17, false, GradeName.NONE, Tag.RANK, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 5),
-				new Effect(TypeEffect.ReducM_old, false, 5),
+				new Effect(TypeEffect.ReducStdP, false, -5),
 				new Effect(TypeEffect.DCCP, false, 10),
 				new Effect(TypeEffect.DCCM, false, 10),
 				new Effect(TypeEffect.Depla, false, 8),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur de Monstres - Élite"); put(Language.EN, "Monster Conqueror Elite"); }}, Quality.PURPLE, 17, false, GradeName.NONE, Tag.RANK, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 3),
-				new Effect(TypeEffect.ReducM_old, false, 3),
+				new Effect(TypeEffect.ReducStdP, false, -3),
 				new Effect(TypeEffect.DCCP, false, 6),
 				new Effect(TypeEffect.DCCM, false, 6),
 				new Effect(TypeEffect.Depla, false, 4),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur de Monstres - Gladiateur"); put(Language.EN, "Monster Conqueror Gladiator"); }}, Quality.PURPLE, 17, false, GradeName.NONE, Tag.RANK, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 4),
-				new Effect(TypeEffect.ReducM_old, false, 4),
+				new Effect(TypeEffect.ReducStdP, false, -4),
 				new Effect(TypeEffect.DCCP, false, 8),
 				new Effect(TypeEffect.DCCM, false, 8),
 				new Effect(TypeEffect.Depla, false, 6),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur de Monstres - Mercenaire"); put(Language.EN, "Monster Conqueror Mercenary"); }}, Quality.PURPLE, 17, false, GradeName.NONE, Tag.RANK, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 2),
-				new Effect(TypeEffect.ReducM_old, false, 2),
+				new Effect(TypeEffect.ReducStdP, false, -2),
 				new Effect(TypeEffect.DCCP, false, 4),
 				new Effect(TypeEffect.DCCM, false, 4),
 				new Effect(TypeEffect.Depla, false, 2),
@@ -964,7 +969,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Héros des Terres du Nord"); put(Language.EN, "Northland Hero"); }}, Quality.ORANGE, 71, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.AGI, false, 5),
-				new Effect(TypeEffect.DegAtkD, false, -3),
+				new Effect(TypeEffect.ToucherD, false, -3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Inquisiteur de la Frégate du Désespoir"); put(Language.EN, "Ship of Despair Inquisitor"); }}, Quality.ORANGE, 177, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 6000),
@@ -1021,7 +1026,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Depla, false, 15),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Minotaure du Dédale"); put(Language.EN, "Forbidden Temple Conqueror"); }}, Quality.ORANGE, 78, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
-				new Effect(TypeEffect.VitAtkD, false, 10),
+				new Effect(TypeEffect.AtkD, true, 10),
 				new Effect(TypeEffect.DefP, true, -8),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Nakama Pirate"); put(Language.EN, "Condemned Island Pioneer"); }}, Quality.ORANGE, 188, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
@@ -1036,7 +1041,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Observateur de la Côte des Naufrages"); put(Language.EN, "Border Patrol"); }}, Quality.ORANGE, 69, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.AGI, false, 5),
-				new Effect(TypeEffect.DegAtkD, false, -3),
+				new Effect(TypeEffect.ToucherD, false, -3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Professionnel de SOS Fantômes"); put(Language.EN, "Ghost Buster"); }}, Quality.ORANGE, 69, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 5),
@@ -1095,20 +1100,24 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Sauveur du Sanctuaire"); put(Language.EN, "Temple Savior"); }}, Quality.ORANGE, 0, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
 				new Effect(TypeEffect.MEN, false, -10),
 				new Effect(TypeEffect.Depla, false, -2),
-				new Effect(TypeEffect.ReducP_old, false, 2),
-				new Effect(TypeEffect.ReducM_old, false, 2),
+				new Effect(TypeEffect.ReducStdP, false, -2),
+				new Effect(TypeEffect.ReducStdD, false, -2),
+				new Effect(TypeEffect.ReducSkillP, false, -2),
+				new Effect(TypeEffect.ReducSkillM, false, -2),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur du Sanctuaire de l'Abandon"); put(Language.EN, "Forsaken Temple Ruler"); }}, Quality.ORANGE, 0, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 20),
-				new Effect(TypeEffect.ReducP_old, false, -50),
-				new Effect(TypeEffect.ReducM_old, false, -50),
+				new Effect(TypeEffect.ReducStdP, false, -50),
+				new Effect(TypeEffect.ReducStdD, false, -50),
+				new Effect(TypeEffect.ReducSkillP, false, -50),
+				new Effect(TypeEffect.ReducSkillM, false, -50),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Sensei Zen"); put(Language.EN, "Legendary Knight"); }}, Quality.ORANGE, 72, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 5),
 				new Effect(TypeEffect.DefP, true, -3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Shaman"); put(Language.EN, "Shaman's Soul"); }}, Quality.ORANGE, 186, false, GradeName.SAGE, Tag.QUETE, new Calculable[] {
-				new Effect(TypeEffect.ReducAtkM, false, -80),
+				new Effect(TypeEffect.ReducPtsM, false, -80),
 				new Effect(TypeEffect.PV, false, 500),
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.AtkM, true, 2),
@@ -1218,7 +1227,8 @@ public class LoaderTitle {
 				new StaticEffect(TypeStaticEffect.NoMove),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Aujourd'hui, je n'ai pas de limites"); put(Language.EN, "Limitless"); }}, Quality.BLUE, 0, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
-				new Effect(TypeEffect.Depla, false, 5),
+				new Effect(TypeEffect.PV, false, 200),
+				new Effect(TypeEffect.VIT, false, 5),
 				new Effect(TypeEffect.ESQ, true, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction de Joline"); put(Language.EN, "Jolin's Blessing of Love"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
@@ -1286,8 +1296,8 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Chasseur du Monstrounet du Nouvel An"); put(Language.EN, "Little Year Monster Victor"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.PM, false, 200),
-				new Effect(TypeEffect.DegP_old, false, 2),
-				new Effect(TypeEffect.DegM_old, false, 2),
+				new Effect(TypeEffect.DegSkillP, false, 2),
+				new Effect(TypeEffect.DegSkillM, false, 2),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Chevalier du Cristal"); put(Language.EN, "Crystal Warrior"); }}, Quality.BLUE, 31, false, GradeName.NONE, Tag.PVP, new Calculable[] {
 				new Effect(TypeEffect.PM, false, 200),
@@ -1304,9 +1314,11 @@ public class LoaderTitle {
 				new RegenEffect(TypeEffect.PV, false, 10, 15, TypeRegen.REGENERATION, 10),
 				new RegenEffect(TypeEffect.PM, false, 10, 15, TypeRegen.REGENERATION, 10),
 			}),
-			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Coeur vagabond"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 5),
-				new Effect(TypeEffect.ReducM_old, false, 5),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Cœur vagabond"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.ReducStdP, false, 1),
+				new Effect(TypeEffect.ReducStdD, false, 1),
+				new Effect(TypeEffect.ReducSkillP, false, 1),
+				new Effect(TypeEffect.ReducSkillM, false, 1),
 				new RegenEffect(TypeEffect.PM, false, 10, TypeRegen.REGENERATION, 10),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur d'oeufs de Pâques"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
@@ -1479,8 +1491,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.DefP, true, -5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Exterminateur d'Halloween"); put(Language.EN, "Halloween Exterminator"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
-				new Effect(TypeEffect.Toucher, false, 20),
-				new Effect(TypeEffect.DegSacre, false, 200),
+				new Proc(20, Activation.Attack, new Calculable[] {
+					new Effect(TypeEffect.DegSacre, false, 200),
+				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Faisons la fête avec l'idole"); put(Language.EN, "Celebrate with Idol"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 2),
@@ -1509,8 +1522,10 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Garde démoniaque"); put(Language.EN, "Demonic Guard"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.RegenCB, false, 2),
-				new Effect(TypeEffect.ReducP_old, false, -10),
-				new Effect(TypeEffect.ReducM_old, false, -10),
+				new Effect(TypeEffect.ReducStdP, false, -10),
+				new Effect(TypeEffect.ReducStdD, false, -10),
+				new Effect(TypeEffect.ReducSkillP, false, -10),
+				new Effect(TypeEffect.ReducSkillM, false, -10),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Gardien de l'amour"); put(Language.EN, "Guardian of Love"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 300),
@@ -1773,7 +1788,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Maître du Dragon de Feu"); put(Language.EN, "Firefighter"); }}, Quality.BLUE, 56, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.AGI, false, 3),
-				new Effect(TypeEffect.DegAtkD, false, -2),
+				new Effect(TypeEffect.ToucherD, false, -2),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Maître en dissipation de désastres"); put(Language.EN, "Master of Dispelling Disasters"); }}, Quality.BLUE, 83, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 4),
@@ -1803,7 +1818,7 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Marathonien"); put(Language.EN, "Determination is Key"); }}, Quality.BLUE, 31, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 80),
 				new Effect(TypeEffect.PM, false, 80),
-				new Effect(TypeEffect.Depla, false, 4),
+				new Effect(TypeEffect.Depla, false, 5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Mégère Pirate"); put(Language.EN, "Good Pirate"); }}, Quality.BLUE, 186, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform2),
@@ -1914,6 +1929,8 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Roi de la friture"); put(Language.EN, "Dumpling Kaiser"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.PM, false, 500),
+				new Effect(TypeEffect.DegSkillP, false, 3),
+				new Effect(TypeEffect.DegSkillM, false, 3),
 				new Effect(TypeEffect.DCCP, false, 3),
 				new Effect(TypeEffect.DCCM, false, 3),
 				new Effect(TypeEffect.ESQ, true, 5),
@@ -2053,7 +2070,10 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Adepte de l'Agent"); put(Language.EN, "Agent's Follower"); }}, Quality.GREEN, 78, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 10),
 				new Effect(TypeEffect.Atk, true, -3),
+				new Effect(TypeEffect.AtkD, true, -3),
+				new Effect(TypeEffect.AtkM, true, -3),
 				new Effect(TypeEffect.DefP, true, -3),
+				new Effect(TypeEffect.DefM, true, -3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Agent Double"); put(Language.EN, "The Infiltrator"); }}, Quality.GREEN, 62, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.INT, false, 1),
@@ -2126,7 +2146,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Bannisseur de l'Esprit d'Epée"); put(Language.EN, "Sword Spirit Champion"); }}, Quality.GREEN, 71, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
 				new Proc(2, Activation.Mag, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 20),
+					new Effect(TypeEffect.DegMec, false, 20),
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Baron par Alliance"); put(Language.EN, "Grandbaron Liberator"); }}, Quality.GREEN, 0, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
@@ -2184,8 +2204,8 @@ public class LoaderTitle {
 				new Effect(TypeEffect.VitComp, false, -10),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Conquérant de la Caverne de l'Écho"); put(Language.EN, "Echo Cave Explorer"); }}, Quality.GREEN, 40, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
-				new Effect(TypeEffect.Loot, false, 10),
-				new Effect(TypeEffect.Depla, false, -5),
+				new Effect(TypeEffect.Loot, false, 5),
+				new Effect(TypeEffect.Depla, false, -10),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Cortex Maximus"); put(Language.EN, "Wish I Had My GPS"); }}, Quality.GREEN, 81, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.INT, false, 3),
@@ -2254,7 +2274,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Expert au Bras de Fer"); put(Language.EN, "Iron Ape Champion"); }}, Quality.GREEN, 66, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
 				new Proc(2, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 20),
+					new Effect(TypeEffect.DegMec, false, 20),
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Expert de la Colère"); put(Language.EN, "Wraith Expert"); }}, Quality.GREEN, 82, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
@@ -2272,8 +2292,8 @@ public class LoaderTitle {
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Explorateur de la Caverne"); put(Language.EN, "Spelunker"); }}, Quality.GREEN, 60, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
-				new Effect(TypeEffect.Loot, false, 10),
-				new Effect(TypeEffect.Depla, false, -5),
+				new Effect(TypeEffect.Loot, false, 5),
+				new Effect(TypeEffect.Depla, false, -10),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Explorateur de la Caverne de la Prairie"); put(Language.EN, "Spelunker"); }}, Quality.GREEN, 20, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
 				new Effect(TypeEffect.AtkM, true, 5),
@@ -2284,7 +2304,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Toucher, false, -3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Explorateur Intrépide"); put(Language.EN, "Treasure Appraisal Specialist"); }}, Quality.GREEN, 0, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
-				new Effect(TypeEffect.DegAtkD, false, 1),
+				new Effect(TypeEffect.ToucherD, false, 1),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Explorateurs de la Forêt lumineuse"); put(Language.EN, "Dazzledell Explorer"); }}, Quality.GREEN, 93, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
@@ -2374,7 +2394,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Guerriers combattant la Fuite d'essence"); put(Language.EN, "Grease Monkey"); }}, Quality.GREEN, 90, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
 				new Proc(3, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 30),
+					new Effect(TypeEffect.DegMec, false, 30),
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Guerriers combattant Sire Fungus"); put(Language.EN, "Fungicidal Tendencies"); }}, Quality.GREEN, 93, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
@@ -2393,7 +2413,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.ESQ, true, -10),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Héros de la Tribu des Dragons"); put(Language.EN, "Ally of the Dragon Tribe"); }}, Quality.GREEN, 45, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
-				new Effect(TypeEffect.DegAtkD, false, 1),
+				new Effect(TypeEffect.ToucherD, false, 1),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Héros des Côtes Dimensionnelles"); put(Language.EN, "Dimensional Beach Hero"); }}, Quality.GREEN, 76, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
@@ -2537,7 +2557,10 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Pote avec Kuda"); put(Language.EN, "Kuda's Comrade"); }}, Quality.GREEN, 88, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 3),
 				new Effect(TypeEffect.Atk, true, 3),
+				new Effect(TypeEffect.AtkD, true, 3),
+				new Effect(TypeEffect.AtkM, true, 3),
 				new Effect(TypeEffect.DefP, true, 3),
+				new Effect(TypeEffect.DefM, true, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Pourfendeur des Scythes"); put(Language.EN, "Scythes Slayer"); }}, Quality.GREEN, 90, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
 				new Proc(3, Activation.Phys, new Calculable[] {
@@ -2611,6 +2634,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Super-Touriste"); put(Language.EN, "Ignorant Tourist"); }}, Quality.GREEN, 81, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, -50),
+				new Effect(TypeEffect.AtkD, true, -50),
 				new Effect(TypeEffect.DefP, true, 2),
 				new Effect(TypeEffect.Depla, false, 10),
 			}),
@@ -2684,7 +2708,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vainqueur de Nagranok"); put(Language.EN, "Sword Spirit Victor"); }}, Quality.GREEN, 90, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
 				new Proc(2, Activation.Mag, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 20),
+					new Effect(TypeEffect.DegMec, false, 20),
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vainqueur de Pazuzu"); put(Language.EN, "Sameil Victor"); }}, Quality.GREEN, 90, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
@@ -2737,7 +2761,7 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vainqueur du Gorille d'Acier"); put(Language.EN, "Iron Ape Victor"); }}, Quality.GREEN, 85, false, GradeName.NONE, Tag.BOSS, new Calculable[] {
 				new Proc(2, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 20),
+					new Effect(TypeEffect.DegMec, false, 20),
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vainqueur du Lion"); put(Language.EN, "Lion Victor"); }}, Quality.GREEN, 50, false, GradeName.NONE, Tag.BOSS, new Calculable[] {

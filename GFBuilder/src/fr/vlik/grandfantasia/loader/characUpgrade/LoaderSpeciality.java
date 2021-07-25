@@ -596,7 +596,7 @@ public class LoaderSpeciality {
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Étude robotique"); put(Language.EN, ""); }}, 45, "8-5", new Calculable[] {
 				new Proc(1, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 50),
+					new Effect(TypeEffect.DegMec, false, 50),
 				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Accélération Mécanique"); put(Language.EN, ""); }}, 60, "8-6", new Calculable[] {
@@ -667,7 +667,7 @@ public class LoaderSpeciality {
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Étude robotique"); put(Language.EN, ""); }}, 45, "9-5", new Calculable[] {
 				new Proc(1, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 50),
+					new Effect(TypeEffect.DegMec, false, 50),
 				}),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Chargement Rapide"); put(Language.EN, ""); }}, 60, "9-6", new Calculable[] {

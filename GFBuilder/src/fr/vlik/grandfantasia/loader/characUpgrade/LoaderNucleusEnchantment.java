@@ -222,24 +222,34 @@ public class LoaderNucleusEnchantment {
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Foi"); put(Language.EN, ""); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 1),
-						new Effect(TypeEffect.ReducM_old, false, 1),
+						new Effect(TypeEffect.ReducStdP, false, 1),
+						new Effect(TypeEffect.ReducStdD, false, 1),
+						new Effect(TypeEffect.ReducSkillP, false, 1),
+						new Effect(TypeEffect.ReducSkillM, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 2),
-						new Effect(TypeEffect.ReducM_old, false, 2),
+						new Effect(TypeEffect.ReducStdP, false, 2),
+						new Effect(TypeEffect.ReducStdD, false, 2),
+						new Effect(TypeEffect.ReducSkillP, false, 2),
+						new Effect(TypeEffect.ReducSkillM, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 3),
-						new Effect(TypeEffect.ReducM_old, false, 3),
+						new Effect(TypeEffect.ReducStdP, false, 3),
+						new Effect(TypeEffect.ReducStdD, false, 3),
+						new Effect(TypeEffect.ReducSkillP, false, 3),
+						new Effect(TypeEffect.ReducSkillM, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 4),
-						new Effect(TypeEffect.ReducM_old, false, 4),
+						new Effect(TypeEffect.ReducStdP, false, 4),
+						new Effect(TypeEffect.ReducStdD, false, 4),
+						new Effect(TypeEffect.ReducSkillP, false, 4),
+						new Effect(TypeEffect.ReducSkillM, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 5),
-						new Effect(TypeEffect.ReducM_old, false, 5),
+						new Effect(TypeEffect.ReducStdP, false, 5),
+						new Effect(TypeEffect.ReducStdD, false, 5),
+						new Effect(TypeEffect.ReducSkillP, false, 5),
+						new Effect(TypeEffect.ReducSkillM, false, 5),
 					},
 				}),
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Renard spirituel"); put(Language.EN, ""); }},
@@ -815,37 +825,37 @@ public class LoaderNucleusEnchantment {
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Brute"); put(Language.EN, "Brute"); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 1),
+						new Effect(TypeEffect.DegSkillP, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 2),
+						new Effect(TypeEffect.DegSkillP, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 3),
+						new Effect(TypeEffect.DegSkillP, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 4),
+						new Effect(TypeEffect.DegSkillP, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegP_old, false, 5),
+						new Effect(TypeEffect.DegSkillP, false, 5),
 					},
 				}),
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de la Sagesse"); put(Language.EN, "Sagacious"); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.DegM_old, false, 1),
+						new Effect(TypeEffect.DegSkillM, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM_old, false, 2),
+						new Effect(TypeEffect.DegSkillM, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM_old, false, 3),
+						new Effect(TypeEffect.DegSkillM, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM_old, false, 4),
+						new Effect(TypeEffect.DegSkillM, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.DegM_old, false, 5),
+						new Effect(TypeEffect.DegSkillM, false, 5),
 					},
 				}),
 		};

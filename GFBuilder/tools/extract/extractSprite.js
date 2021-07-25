@@ -26,6 +26,8 @@ function ExtractSprite() {
 	
 	var result = "new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 	result += "\tQuality." + colorCorrespondance[quality] + ", SpriteCostType." + type + ", \"" + iconpath + "\", new Calculable[] {\n";
+	result += "\t\tnew Proc(Activation.Sprite, 12, new Calculable[] {\n\t\t\t\n";
+	result += "\t\t}),\n";
 	result += "\t}),\n";
 	
 	console.log(result);

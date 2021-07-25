@@ -25,6 +25,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	Sleep("Endormissement", "Sleep", "Sommeil", "Sleep", Tools.EffectColor[8]),
 	AntiStun("Immunité au coma et étourdissement", "Immune to dizziness and stun", "Anti Stun", "Anti Stun", Tools.EffectColor[12]),
 	AntiDodo("Immunité à l'endormissement", "Immune to sleep", "Anti Dodo", "Anti Sleep", Tools.EffectColor[12]),
+	AntiPush("Immunité au repousse", "Immune to push", "Anti Push", "Anti Push", Tools.EffectColor[12]),
 	Dispel("Suppression aléatoire d'un état négatif", "Auto dispel one random negative statut", "Dispel d'un malus", "Dispel one malus", Tools.EffectColor[0]),
 	Block("Bloque un dégât", "Bloc one damage", "Bloque un dégât", "Bloc one damage", Tools.EffectColor[0]),
 	Transfo("Transformation", "Transformation", "Transformation", "Transformation", Tools.EffectColor[0]),

@@ -41,16 +41,19 @@ public enum TypeEffect implements Colorable, Writable {
 	DegStdD("Dégât Standard Distance", "Range Standard Damage", "Deg Std Dist", "Range Std Dam", -1, true, Tools.EffectColor[7]),
 	DegSkillP("Dégât Compétence Physique", "Physical Skill Damage", "Deg Comp Phys", "Phys Sk Dam", -1, true, Tools.EffectColor[10]),
 	DegSkillM("Dégât Compétence Magique", "Magical Skill Damage", "Deg Comp Mag", "Mag Sk Dam", -1, true, Tools.EffectColor[11]),
+	DegPtsStdP("Dégât Point Standard Mêlée", "Melee Standard Point Damage", "Deg Pts Std Mel", "Mel Std Pts Dam", -1, true, Tools.EffectColor[10]),
+	DegPtsStdD("Dégât Point Standard Distance", "Range Standard Point Damage", "Deg Pts Std Dist", "Range Std Pts Dam", -1, true, Tools.EffectColor[10]),
+	DegPtsP("Dégât Point Phyique", "Physical Point Damage", "Deg Pts Phys", "Phys Pts Dam", -1, true, Tools.EffectColor[10]),
+	DegPtsM("Dégât Point Magique", "Magical Point Damage", "Deg Pts Mag", "Mag Pts Dam", -1, true, Tools.EffectColor[11]),
 	
 	ReducStdP("Réduction Dégât Standard Mêlée", "Melee Standard Damage Reduction", "Red Std Mel", "Mel Std Red", -1, true, Tools.EffectColor[10]),
 	ReducStdD("Réduction Dégât Standard Distance", "Range Standard Damage Reduction", "Red Std Dist", "Range Std Red", -1, true, Tools.EffectColor[7]),
 	ReducSkillP("Réduction Dégât Compétence Physique", "Physical Skill Damage Reduction", "Red Comp Phys", "Phys Sk Red", -1, true, Tools.EffectColor[10]),
 	ReducSkillM("Réduction Dégât Compétence Magique", "Magical Skill Damage Reduction", "Red Comp Mag", "Mag Sk Red", -1, true, Tools.EffectColor[11]),
-	
-	DegP_old("Dégât Physique", "Physical Damage", "Deg Phys", "Phys Dam", -1, true, Tools.EffectColor[10]), // DELETE
-	DegM_old("Dégât Magique", "Magical Damage", "Deg Mag", "Mag Dam", -1, true, Tools.EffectColor[11]), // DELETE
-	ReducP_old("Réduction Physique", "Physical Reduction", "Reduc Phys", "Phys Reduc", -1, true, Tools.EffectColor[10]), // DELETE
-	ReducM_old("Réduction Magique", "Magical Reduction", "Reduc Mag", "Mag Reduc", -1, true, Tools.EffectColor[11]), // DELETE
+	ReducPtsStdP("Réduction Point Standard Mêlée", "Melee Standard Point Reduction", "Red Pts Std Mel", "Mel Std Pts Red", -1, true, Tools.EffectColor[10]),
+	ReducPtsStdD("Réduction Point Standard Distance", "Range Standard Point Reduction", "Red Pts Std Dist", "Range Std Pts Red", -1, true, Tools.EffectColor[10]),
+	ReducPtsP("Réduction Point Phyique", "Physical Point Reduction", "Red Pts Phys", "Phys Pts Red", -1, true, Tools.EffectColor[10]),
+	ReducPtsM("Réduction Point Magique", "Magical Point Reduction", "Red Pts Mag", "Mag Pts Red", -1, true, Tools.EffectColor[11]),
 	
 	PeneP("Pénétration Physique", "Physical Penetration", "Péné Phys", "Phys Pene", 100, false, Tools.EffectColor[10]),
 	PeneM("Pénétration Magique", "Magical Penetration", "Péné Mag", "Mag Pene", 100, false, Tools.EffectColor[11]),
@@ -74,22 +77,6 @@ public enum TypeEffect implements Colorable, Writable {
 	VitAtkArc("Vitesse d'Attaque à l'Arc", "Bow Attack Speed", "Vit Atk Arc", "Bow Atk Sp", -1, true, Tools.EffectColor[10]),
 	VitAtkGun("Vitesse d'Attaque au Gun/Canon", "Gun/Canon Attack Speed", "Vit Atk Gun/Can", "Gun/Can Atk Sp", -1, true, Tools.EffectColor[10]),
 	
-	DegAtkAll("Dégât d'attaque augmenté", "", "Deg Atq Aug", "", -1, true, Tools.EffectColor[0]),
-	DegAtk("Dégât d'Attaque", "", "Deg Atq", "", -1, true, Tools.EffectColor[7]),
-	DegAtkD("Dégât d'Attaque Distance", "", "Deg Atq Dist", "", -1, true, Tools.EffectColor[7]),
-	DegAtkM("Dégât d'Attaque Magique", "", "Deg Atq Mag", "", -1, true, Tools.EffectColor[7]),
-	
-	ReducAtk("Réduction d'Attaque Mêlée", "", "Reduc Atq Mel", "", -1, true, Tools.EffectColor[10]), // DELETE
-	ReducAtkD("Réduction d'Attaque Distance", "", "Reduc Atq Dist", "", -1, true, Tools.EffectColor[7]), // DELETE
-	ReducAtkM("Réduction d'Attaque Magique", "", "Reduc Atq Mag", "", -1, true, Tools.EffectColor[11]), // DELETE
-	
-	RDegAtkD("Réduction de Dégât d'Attaque Distance", "", "Red Dg Dist", "", -1, true, Tools.EffectColor[7]), // DELETE
-
-	ReducPtsP("Réduction Point Phyique", "", "Red Pts Phys", "", -1, true, Tools.EffectColor[10]),
-	ReducPtsM("Réduction Point Magique", "", "Red Pts Mag", "", -1, true, Tools.EffectColor[11]),
-	ReducStd("Réduction Standard", "", "Reduc Std", "", -1, true, Tools.EffectColor[0]),
-	ReducComp("Réduction Compétence", "", "Reduc Comp", "", -1, true, Tools.EffectColor[0]),
-	
 	DegSacre("Dégât Sacré", "Holy Damage", "Deg Sacre", "Holy Dam", -1, true, Tools.EffectColor[7]),
 	DegOmbre("Dégât Ombre", "Dark Damage", "Deg Ombre", "Dark Dam", -1, true, Tools.EffectColor[8]),
 	DegFoudre("Dégât Foudre", "Lighting Damage", "Deg Foudre", "Lighting Dam", -1, true, Tools.EffectColor[9]),
@@ -107,11 +94,9 @@ public enum TypeEffect implements Colorable, Writable {
 	TCCD("Taux Critique à Distance", "", "Taux Crit Dist", "", -1, true, Tools.EffectColor[0]),
 	DCC1M("Dégât Critique Arme 1 Main", "", "Deg Crit 1M", "", -1, true, Tools.EffectColor[0]),
 	DCC2M("Dégât Critique Arme 2 Main", "", "Deg Crit 2M", "", -1, true, Tools.EffectColor[0]),
+	
 	RegenCB("Régénération Coup Standard", "Standard Hit Regeneration", "Regen Coup Std", "Std Hit Regen", -1, false, Tools.EffectColor[0]),
 	RegenM("Régénération Magique", "Magical Regeneration", "Regen Coup Mag", "Mag Regen", -1, false, Tools.EffectColor[0]),
-	
-	DegStd("Dégât Standard", "Stardard Damage", "Deg Std", "Std Dam", -1, true, Tools.EffectColor[0]), // DELETE
-	DegStdPts("Dégât Standard", "Stardard Damage", "Deg Std", "Std Dam", -1, true, Tools.EffectColor[0]), // DELETE
 	
 	DCCMa("Dégât Critique au Maillet", "", "Deg Crit Ma 1M", "", -1, true, Tools.EffectColor[0]),
 	DCCArc("Dégât Critique à l'Arc", "", "Deg Crit Arc", "", -1, true, Tools.EffectColor[0]),
@@ -121,16 +106,13 @@ public enum TypeEffect implements Colorable, Writable {
 	TCCGun("Taux Critique au Gun", "", "Taux Crit Gun", "", -1, true, Tools.EffectColor[0]),
 	TCCCanon("Taux Critique au Canon", "", "Taux Crit Can", "", -1, true, Tools.EffectColor[0]),
 	
-	DegStdMeca("Dégât Standard à l'arme Mécanique", "", "Deg Std Mec 1M", "", -1, true, Tools.EffectColor[0]), // DELETE
-	DegStdMeca2M("Dégât Standard à l'arme Mécanique 2 Main", "", "Deg Std Mec 2M", "", -1, true, Tools.EffectColor[0]), // DELETE
-
 	DegEp("Dégât à l'Épée", "", "Deg Ep 1M", "", -1, false, Tools.EffectColor[0]),
 	DegMa("Dégât au Maillet", "", "Deg Ma 1M", "", -1, false, Tools.EffectColor[0]),
 	DegHa("Dégât à la Hache", "", "Deg Ha 1M", "", -1, false, Tools.EffectColor[0]),
 	DegEp2M("Dégât à l'Épée 2 Main", "", "Deg Ep 2M", "", -1, false, Tools.EffectColor[0]),
 	DegMa2M("Dégât au Maillet 2 Main", "", "Deg Ma 2M", "", -1, false, Tools.EffectColor[0]),
 	DegHa2M("Dégât à la Hache 2 Main", "", "Deg Ha 2M", "", -1, false, Tools.EffectColor[0]),
-	DegMeca1M("Dégât à l'arme Méca", "", "Deg Meca 1M", "", -1, false, Tools.EffectColor[0]),
+	DegMeca("Dégât à l'arme Méca", "", "Deg Meca 1M", "", -1, false, Tools.EffectColor[0]),
 	DegMeca2M("Dégât à l'arme Méca 2 Main", "", "Deg Meca 2M", "", -1, false, Tools.EffectColor[0]),
 	DegArc("Dégât à l'Arc", "", "Deg Arc", "", -1, true, Tools.EffectColor[0]),
 	DegGun("Dégât au Pistolet", "", "Deg Gun", "", -1, true, Tools.EffectColor[0]),
@@ -142,7 +124,7 @@ public enum TypeEffect implements Colorable, Writable {
 	DegPlante("Dégât sur Plante", "", "Deg Plante", "", -1, true, Tools.EffectColor[0]),
 	DegHuma("Dégât sur Humanoïde", "", "Deg Huma", "", -1, true, Tools.EffectColor[0]),
 	DegElem("Dégât sur Élémentaire", "", "Deg Elem", "", -1, true, Tools.EffectColor[0]),
-	DegMeca("Dégât sur Mécanique", "", "Deg Meca", "", -1, true, Tools.EffectColor[0]),
+	DegMec("Dégât sur Mécanique", "", "Deg Meca", "", -1, true, Tools.EffectColor[0]),
 	DegMort("Dégât sur Mort-Vivant", "", "Deg Mort", "", -1, true, Tools.EffectColor[0]),
 	DegDemon("Dégât sur Démon", "", "Deg Demon", "", -1, true, Tools.EffectColor[0]),
 	

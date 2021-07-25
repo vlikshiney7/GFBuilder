@@ -502,44 +502,64 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 1),
-						new Effect(TypeEffect.ReducM_old, false, 1),
+						new Effect(TypeEffect.ReducStdP, false, 1),
+						new Effect(TypeEffect.ReducStdD, false, 1),
+						new Effect(TypeEffect.ReducSkillP, false, 1),
+						new Effect(TypeEffect.ReducSkillM, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 2),
-						new Effect(TypeEffect.ReducM_old, false, 2),
+						new Effect(TypeEffect.ReducStdP, false, 2),
+						new Effect(TypeEffect.ReducStdD, false, 2),
+						new Effect(TypeEffect.ReducSkillP, false, 2),
+						new Effect(TypeEffect.ReducSkillM, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 3),
-						new Effect(TypeEffect.ReducM_old, false, 3),
+						new Effect(TypeEffect.ReducStdP, false, 3),
+						new Effect(TypeEffect.ReducStdD, false, 3),
+						new Effect(TypeEffect.ReducSkillP, false, 3),
+						new Effect(TypeEffect.ReducSkillM, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 4),
-						new Effect(TypeEffect.ReducM_old, false, 4),
+						new Effect(TypeEffect.ReducStdP, false, 4),
+						new Effect(TypeEffect.ReducStdD, false, 4),
+						new Effect(TypeEffect.ReducSkillP, false, 4),
+						new Effect(TypeEffect.ReducSkillM, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 5),
-						new Effect(TypeEffect.ReducM_old, false, 5),
+						new Effect(TypeEffect.ReducStdP, false, 5),
+						new Effect(TypeEffect.ReducStdD, false, 5),
+						new Effect(TypeEffect.ReducSkillP, false, 5),
+						new Effect(TypeEffect.ReducSkillM, false, 5),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 6),
-						new Effect(TypeEffect.ReducM_old, false, 6),
+						new Effect(TypeEffect.ReducStdP, false, 6),
+						new Effect(TypeEffect.ReducStdD, false, 6),
+						new Effect(TypeEffect.ReducSkillP, false, 6),
+						new Effect(TypeEffect.ReducSkillM, false, 6),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 7),
-						new Effect(TypeEffect.ReducM_old, false, 7),
+						new Effect(TypeEffect.ReducStdP, false, 7),
+						new Effect(TypeEffect.ReducStdD, false, 7),
+						new Effect(TypeEffect.ReducSkillP, false, 7),
+						new Effect(TypeEffect.ReducSkillM, false, 7),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 8),
-						new Effect(TypeEffect.ReducM_old, false, 8),
+						new Effect(TypeEffect.ReducStdP, false, 8),
+						new Effect(TypeEffect.ReducStdD, false, 8),
+						new Effect(TypeEffect.ReducSkillP, false, 8),
+						new Effect(TypeEffect.ReducSkillM, false, 8),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 9),
-						new Effect(TypeEffect.ReducM_old, false, 9),
+						new Effect(TypeEffect.ReducStdP, false, 9),
+						new Effect(TypeEffect.ReducStdD, false, 9),
+						new Effect(TypeEffect.ReducSkillP, false, 9),
+						new Effect(TypeEffect.ReducSkillM, false, 9),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 10),
-						new Effect(TypeEffect.ReducM_old, false, 10),
+						new Effect(TypeEffect.ReducStdP, false, 10),
+						new Effect(TypeEffect.ReducStdD, false, 10),
+						new Effect(TypeEffect.ReducSkillP, false, 10),
+						new Effect(TypeEffect.ReducSkillM, false, 10),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de Molilada"); put(Language.EN, "Coordinated"); }}, 87, 100,
@@ -2382,32 +2402,42 @@ public class LoaderEnchant {
 				new Calculable[][] {
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, Target.OPPONENT, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 2),
-							new Effect(TypeEffect.DegM_old, false, 2),
+							new Effect(TypeEffect.ReducStdP, false, -2, Target.OPPONENT),
+							new Effect(TypeEffect.ReducStdD, false, -2, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillP, false, -2, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillM, false, -2, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, Target.OPPONENT, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 4),
-							new Effect(TypeEffect.DegM_old, false, 4),
+							new Effect(TypeEffect.ReducStdP, false, -4, Target.OPPONENT),
+							new Effect(TypeEffect.ReducStdD, false, -4, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillP, false, -4, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillM, false, -4, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, Target.OPPONENT, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 6),
-							new Effect(TypeEffect.DegM_old, false, 6),
+							new Effect(TypeEffect.ReducStdP, false, -6, Target.OPPONENT),
+							new Effect(TypeEffect.ReducStdD, false, -6, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillP, false, -6, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillM, false, -6, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, Target.OPPONENT, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 8),
-							new Effect(TypeEffect.DegM_old, false, 8),
+							new Effect(TypeEffect.ReducStdP, false, -8, Target.OPPONENT),
+							new Effect(TypeEffect.ReducStdD, false, -8, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillP, false, -8, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillM, false, -8, Target.OPPONENT),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, Target.OPPONENT, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 10),
-							new Effect(TypeEffect.DegM_old, false, 10),
+							new Effect(TypeEffect.ReducStdP, false, -10, Target.OPPONENT),
+							new Effect(TypeEffect.ReducStdD, false, -10, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillP, false, -10, Target.OPPONENT),
+							new Effect(TypeEffect.ReducSkillM, false, -10, Target.OPPONENT),
 						}),
 					},
 				}),
@@ -2416,32 +2446,42 @@ public class LoaderEnchant {
 				new Calculable[][] {
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 2),
-							new Effect(TypeEffect.DegM_old, false, 2),
+							new Effect(TypeEffect.DegStdP, false, 2),
+							new Effect(TypeEffect.DegStdD, false, 2),
+							new Effect(TypeEffect.DegSkillP, false, 2),
+							new Effect(TypeEffect.DegSkillM, false, 2),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 4),
-							new Effect(TypeEffect.DegM_old, false, 4),
+							new Effect(TypeEffect.DegStdP, false, 4),
+							new Effect(TypeEffect.DegStdD, false, 4),
+							new Effect(TypeEffect.DegSkillP, false, 4),
+							new Effect(TypeEffect.DegSkillM, false, 4),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 6),
-							new Effect(TypeEffect.DegM_old, false, 6),
+							new Effect(TypeEffect.DegStdP, false, 6),
+							new Effect(TypeEffect.DegStdD, false, 6),
+							new Effect(TypeEffect.DegSkillP, false, 6),
+							new Effect(TypeEffect.DegSkillM, false, 6),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 8),
-							new Effect(TypeEffect.DegM_old, false, 8),
+							new Effect(TypeEffect.DegStdP, false, 8),
+							new Effect(TypeEffect.DegStdD, false, 8),
+							new Effect(TypeEffect.DegSkillP, false, 8),
+							new Effect(TypeEffect.DegSkillM, false, 8),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegP_old, false, 10),
-							new Effect(TypeEffect.DegM_old, false, 10),
+							new Effect(TypeEffect.DegStdP, false, 10),
+							new Effect(TypeEffect.DegStdD, false, 10),
+							new Effect(TypeEffect.DegSkillP, false, 10),
+							new Effect(TypeEffect.DegSkillM, false, 10),
 						}),
 					},
 				}),
@@ -6983,8 +7023,10 @@ public class LoaderEnchant {
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Bonheur Pur"); put(Language.EN, "Blessed"); }}, 6, 100, Quality.GOLD,
 					new EquipType[] { WeaponType.BATON, WeaponType.LAME, WeaponType.BOUCLIER, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 1),
-						new Effect(TypeEffect.ReducM_old, false, 1),
+						new Effect(TypeEffect.ReducStdP, false, 1),
+						new Effect(TypeEffect.ReducStdD, false, 1),
+						new Effect(TypeEffect.ReducSkillP, false, 1),
+						new Effect(TypeEffect.ReducSkillM, false, 1),
 					}),
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Feu"); put(Language.EN, "Enflamed"); }}, 6, 100, Quality.GOLD,
 					new EquipType[] { WeaponType.RELIQUE, WeaponType.BOUCLIER, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, RingType.RING, },
@@ -8533,8 +8575,10 @@ public class LoaderEnchant {
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Bonheur Pur"); put(Language.EN, "Blessed"); }}, 6, 100, Quality.ORANGE,
 					new EquipType[] { WeaponType.BATON, WeaponType.LAME, WeaponType.BOUCLIER, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 					new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 1),
-						new Effect(TypeEffect.ReducM_old, false, 1),
+						new Effect(TypeEffect.ReducStdP, false, 1),
+						new Effect(TypeEffect.ReducStdD, false, 1),
+						new Effect(TypeEffect.ReducSkillP, false, 1),
+						new Effect(TypeEffect.ReducSkillM, false, 1),
 					}),
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Feu"); put(Language.EN, "Enflamed"); }}, 6, 100, Quality.ORANGE,
 					new EquipType[] { WeaponType.RELIQUE, WeaponType.BOUCLIER, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, RingType.RING, },
@@ -9473,7 +9517,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -20, -30, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -9481,7 +9527,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, -60, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -9489,7 +9537,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, -90, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -9497,7 +9547,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -110, -120, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -9505,7 +9557,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -9513,7 +9567,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -170, -180, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -11030,8 +11086,10 @@ public class LoaderEnchant {
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Bonheur Pur"); put(Language.EN, "Blessed"); }}, 6, 100, Quality.BLUE,
 				new EquipType[] { WeaponType.BATON, WeaponType.LAME, WeaponType.BOUCLIER, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 1),
-					new Effect(TypeEffect.ReducM_old, false, 1),
+					new Effect(TypeEffect.ReducStdP, false, 1),
+					new Effect(TypeEffect.ReducStdD, false, 1),
+					new Effect(TypeEffect.ReducSkillP, false, 1),
+					new Effect(TypeEffect.ReducSkillM, false, 1),
 				}),
 
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Casse-Tête"); put(Language.EN, "Headsmasher"); }}, 6, 15, Quality.BLUE,
@@ -11339,7 +11397,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -20, -30, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -11347,7 +11407,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, -60, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -11355,7 +11417,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, -90, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -11363,7 +11427,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -110, -120, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -11371,7 +11437,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -11379,7 +11447,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -170, -180, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -12215,7 +12285,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -20, -30, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -12223,7 +12295,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, -60, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -12231,7 +12305,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, -90, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -12239,7 +12315,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -110, -120, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -12247,7 +12325,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -12255,7 +12335,9 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, },
 				new Calculable[] {
 					new Proc(3, Activation.Attack, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -170, -180, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -13662,8 +13744,10 @@ public class LoaderEnchant {
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Bonheur Pur"); put(Language.EN, "Blessed"); }}, 6, 95, Quality.GREEN,
 				new EquipType[] { WeaponType.BATON, WeaponType.LAME, WeaponType.BOUCLIER, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
-					new Effect(TypeEffect.ReducP_old, false, 1),
-					new Effect(TypeEffect.ReducM_old, false, 1),
+					new Effect(TypeEffect.ReducStdP, false, 1),
+					new Effect(TypeEffect.ReducStdD, false, 1),
+					new Effect(TypeEffect.ReducSkillP, false, 1),
+					new Effect(TypeEffect.ReducSkillM, false, 1),
 				}),
 
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "du Casse-Tête"); put(Language.EN, "Headsmasher"); }}, 6, 15, Quality.GREEN,
@@ -13971,7 +14055,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -20, -30, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -13979,7 +14065,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, -60, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -13987,7 +14075,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, -90, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -13995,7 +14085,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -110, -120, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -14003,7 +14095,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 1),
 					}),
 				}),
@@ -14011,7 +14105,9 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 4, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -170, -180, TypeRegen.POISON, 1),
 					}),
 				}),

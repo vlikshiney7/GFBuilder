@@ -71,6 +71,7 @@ var getNameClass = [["Luchador", "Guerrero", "Berserker", "Dios de Guerra", "Cab
 
 
 function ExtractArmor() {
+	var found = true;
 	var nameHTML = document.getElementsByClassName('item-name')[0].getElementsByTagName('h6')[0]
 	var name = nameHTML.innerHTML;
 	var quality = nameHTML.outerHTML.charAt(19);
@@ -163,9 +164,16 @@ function ExtractArmor() {
 	var iconpath = "ICONPATH";
 	
 	if(quality == 7) {
-		enchant = false;
-		codearmor = "90red" + idClass;
-		iconpath = "90red" + idClass;
+		if(name.match(/10e/)) {
+			name = name.replace("&nbsp;- 10e anniversaire", "");
+			enchant = false;
+			codearmor = "10ans90red" + idClass;
+			iconpath = "10ansRed";
+		} else {
+			enchant = true;
+			codearmor = "90red" + idClass;
+			iconpath = "90red" + idClass;
+		}
 	} else if(quality == 6) {
 		var codeLvl = lvl;
 		while(codeLvl % 10 != 0) {
@@ -182,8 +190,15 @@ function ExtractArmor() {
 		}
 		
 		enchant = true;
-		codearmor = codeLvl + "gold" + idClass;
-		iconpath = codeLvl + "gold" + idClass;
+		
+		if(name.match(/10e/)) {
+			name = name.replace("&nbsp;- 10e anniversaire", "");
+			codearmor = "10ans90gold" + idClass;
+			iconpath = "10ansGold";
+		} else {
+			codearmor = codeLvl + "gold" + idClass;
+			iconpath = codeLvl + "gold" + idClass;
+		}
 	} else if(quality == 4 && !pvp) {
 		var codeLvl = lvl - 1;
 		while(codeLvl % 5 != 0) {
@@ -197,14 +212,27 @@ function ExtractArmor() {
 		var codeLvl = lvl;
 		if(lvl == 70 || lvl == 80 || lvl == 90) {
 			codearmor = codeLvl + "gvg" + idClass;
+			iconpath = codeLvl + "gvg" + idClass;
 		} else {
 			codearmor = "-1";
 		}
+		
+		listEffect += "\t\tnew Effect(TypeEffect.PV, false, TODO),\n";
+		listEffect += "\t\tnew Effect(TypeEffect.PM, false, TODO),\n";
 	} else if(quality == 2) {
 		codearmor = "-1";
-	} else if(quality == 1) {
-		codearmor = "-1";
-	} else if(quality == 0) {
+	} else if(quality == 1 || quality == 0) {
+		found = false;
+		
+		var section = document.getElementsByClassName('card-header');
+		
+		for(var i = 0; i < section.length; i++) {
+			if(section[i].innerHTML.match(/Merchants/)) {
+				found = true;
+				break;
+			}
+		}
+		
 		codearmor = "-1";
 	}
 	
@@ -227,9 +255,11 @@ function ExtractArmor() {
 	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", " + enchant + ", " + reinca + ",\n";
 	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
 	result += listEffect;
-	result += "\t}, null ),\n";
+	result += "\t}, null),\n";
 	
-	console.log(result);
+	if(found == true) {
+		console.log(result);
+	}
 }
 
 function ExtractEvo() {
@@ -318,7 +348,7 @@ function ExtractEvo() {
 	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", false, " + reinca + ",\n";
 	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/ICONPATH\", new MultiEffect(" + lvl + ", new Effect[][] {\n";
 	result += listEffect;
-	result += "\t}), null ),\n";
+	result += "\t}), null),\n";
 	
 	console.log(result);
 }

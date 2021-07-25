@@ -23,7 +23,9 @@ public class LoaderCombiTalent {
 	static CombiTalent[] getClass0() {
 		return new CombiTalent[] {
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Tank Lourd"); put(Language.EN, "Heavy Tank"); }}, new int[] { 1, 1, 1, 1, }, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 3),
+				new Effect(TypeEffect.ReducStdP, false, 3),
+				new Effect(TypeEffect.ReducStdD, false, 3),
+				new Effect(TypeEffect.ReducSkillP, false, 3),
 				new Effect(TypeEffect.DefP, true, 7),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Tank de Lumière"); put(Language.EN, "Light Tank"); }}, new int[] { 1, 2, 1, 1, }, new Calculable[] {
@@ -97,7 +99,9 @@ public class LoaderCombiTalent {
 				new Effect(TypeEffect.Parade, false, 18),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Tank Lourd"); put(Language.EN, "Heavy Tank"); }}, new int[] { 1, 1, 2, 3, }, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 3),
+				new Effect(TypeEffect.ReducStdP, false, 3),
+				new Effect(TypeEffect.ReducStdD, false, 3),
+				new Effect(TypeEffect.ReducSkillP, false, 3),
 				new Effect(TypeEffect.DefM, true, 7),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier du Vent"); put(Language.EN, "Wind Warrior"); }}, new int[] { 1, 3, 3, }, new Calculable[] {
@@ -385,7 +389,9 @@ public class LoaderCombiTalent {
 				new Effect(TypeEffect.AtkM, true, 4),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Chercheur en Sorcellerie"); put(Language.EN, "Sorcery Researcher"); }}, new int[] { 1, 3, }, new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 7),
+				new Effect(TypeEffect.ReducStdP, false, 7),
+				new Effect(TypeEffect.ReducStdD, false, 7),
+				new Effect(TypeEffect.ReducSkillP, false, 7),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Erudit Spirituel"); put(Language.EN, "Spiritual Scholar"); }}, new int[] { 2, 1, }, new Calculable[] {
 				new Effect(TypeEffect.PV, true, 5),

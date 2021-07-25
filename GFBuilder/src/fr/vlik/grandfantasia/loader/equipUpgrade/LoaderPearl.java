@@ -306,7 +306,7 @@ public class LoaderPearl {
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de destruction absolue"); put(Language.EN, ""); }}, Quality.ORANGE, Quality.RED, false, "absolue", new Calculable[] {
 				new Proc(10, Activation.Attack, 10, new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 50),
-					new Effect(TypeEffect.DegAtkM, false, 200),
+					new Effect(TypeEffect.DegPtsM, false, 200),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegNature, false, 200),
@@ -316,7 +316,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.PeneM, false, 10),
 				new Proc(15, Activation.Attack, 10, new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 50),
-					new Effect(TypeEffect.DegAtkM, false, 200),
+					new Effect(TypeEffect.DegPtsM, false, 200),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegNature, false, 300),
@@ -483,7 +483,7 @@ public class LoaderPearl {
 				new Proc(10, Activation.Attack, 10, new Calculable[] {
 					new Effect(TypeEffect.VitAtk, false, 50),
 					new Effect(TypeEffect.VitAtkD, false, 50),
-					new Effect(TypeEffect.DegAtk, false, 200),
+					new Effect(TypeEffect.DegPtsP, false, 200),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegFoudre, false, 200),
@@ -494,7 +494,7 @@ public class LoaderPearl {
 				new Proc(15, Activation.Attack, 10, new Calculable[] {
 					new Effect(TypeEffect.VitAtk, false, 50),
 					new Effect(TypeEffect.VitAtkD, false, 50),
-					new Effect(TypeEffect.DegAtk, false, 200),
+					new Effect(TypeEffect.DegPtsP, false, 200),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegFoudre, false, 300),
@@ -544,7 +544,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance d'Oxydoréduction"); put(Language.EN, "Metal Corrosion Resonance Stone"); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
 				new Proc(3.5, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 65),
+					new Effect(TypeEffect.DegMec, false, 65),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance de Décomposition"); put(Language.EN, "Sprite's Degeneration Resonance Stone"); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
@@ -784,22 +784,22 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Fusionneur de Métal"); put(Language.EN, "Metal Explosion Shining Stone"); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
 				new Proc(6, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 85),
+					new Effect(TypeEffect.DegMec, false, 85),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Fusionneur de Métal 4"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
 				new Proc(2.5, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 65),
+					new Effect(TypeEffect.DegMec, false, 65),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Fusionneur de Métal 3"); put(Language.EN, "Metal-Breaking Resonance Stone (Variant)"); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
 				new Proc(4.5, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 55),
+					new Effect(TypeEffect.DegMec, false, 55),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Fusionneur de Métal 2"); put(Language.EN, "Metal-Breaking Resonance Stone"); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
 				new Proc(4, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 50),
+					new Effect(TypeEffect.DegMec, false, 50),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Purificateur de Morts-Vivants"); put(Language.EN, "Spirit Explosion Shining Stone"); }}, Quality.BLUE, null, true, "red2", new Calculable[] {
@@ -1261,7 +1261,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Fusionneur de Métal 1"); put(Language.EN, "Metal-Weakening Resonance Stone"); }}, Quality.GREEN, null, true, "red1", new Calculable[] {
 				new Proc(3, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 25),
+					new Effect(TypeEffect.DegMec, false, 25),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Perle de Résonance du Purificateur de Morts-Vivants 1"); put(Language.EN, "Spiritual Form Disruption Resonance Stone"); }}, Quality.GREEN, null, true, "red1", new Calculable[] {
@@ -2460,7 +2460,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Rayonnance Anéantisseur de Machines"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "yellow4", new Calculable[] {
 				new Proc(2.5, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 255),
+					new Effect(TypeEffect.DegMec, false, 255),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Rayonnance Anéantisseur de Magie"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "purple4", new Calculable[] {
@@ -2503,7 +2503,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance Affaiblisseur de Métaux"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "turquoise3", new Calculable[] {
 				new Proc(4, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 150),
+					new Effect(TypeEffect.DegMec, false, 150),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance Affaiblisseur de Morts"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "turquoise3", new Calculable[] {
@@ -2533,7 +2533,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance Anéantisseur de Métaux"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "yellow4", new Calculable[] {
 				new Proc(2.5, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 195),
+					new Effect(TypeEffect.DegMec, false, 195),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance Anéantisseur de Morts"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "black4", new Calculable[] {
@@ -2568,7 +2568,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance Combatteur de Métaux"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "turquoise4", new Calculable[] {
 				new Proc(4.5, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 165),
+					new Effect(TypeEffect.DegMec, false, 165),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance Combatteur de Morts"); put(Language.EN, ""); }}, Quality.BLUE, null, true, "turquoise4", new Calculable[] {
@@ -2791,7 +2791,7 @@ public class LoaderPearl {
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance de l'Appel des Métaux"); put(Language.EN, ""); }}, Quality.GREEN, null, true, "turquoise4", new Calculable[] {
 				new Proc(3, Activation.Phys, new Calculable[] {
-					new Effect(TypeEffect.DegMeca, false, 75),
+					new Effect(TypeEffect.DegMec, false, 75),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Joyau de Résonance de l'Appel des Morts"); put(Language.EN, ""); }}, Quality.GREEN, null, true, "turquoise4", new Calculable[] {

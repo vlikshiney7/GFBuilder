@@ -137,7 +137,9 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.BoostCraft, false, 2),
 			}),
 			new Runway("Gardien", new Calculable[] {
-				new Effect(TypeEffect.ReducP_old, false, 3),
+				new Effect(TypeEffect.ReducStdP, false, 3),
+				new Effect(TypeEffect.ReducStdD, false, 3),
+				new Effect(TypeEffect.ReducSkillP, false, 3),
 			}),
 			new Runway("Hymne", new Calculable[] {
 				new Effect(TypeEffect.VitComp, false, 4),
@@ -162,7 +164,7 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.DefM, true, 3),
 			}),
 			new Runway("Prêtre", new Calculable[] {
-				new Effect(TypeEffect.ReducM_old, false, 3),
+				new Effect(TypeEffect.ReducSkillM, false, 3),
 			}),
 			new Runway("Ranger", new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 5),
@@ -182,7 +184,7 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.DefM, true, 2),
 			}),
 			new Runway("Sorcier", new Calculable[] {
-				new Effect(TypeEffect.DegM_old, false, 3),
+				new Effect(TypeEffect.DegSkillM, false, 3),
 			}),
 			new Runway("Synthétisation", new Calculable[] {
 				new Effect(TypeEffect.BoostCraft, false, 2),

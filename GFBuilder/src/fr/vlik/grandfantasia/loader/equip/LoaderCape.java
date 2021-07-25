@@ -1494,8 +1494,10 @@ public class LoaderCape {
 					new Effect(TypeEffect.AGI, false, 38, true),
 				}, new Calculable[] {
 					new Proc(5, Activation.Crit, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 2),
-						new Effect(TypeEffect.ReducM_old, false, 2),
+						new Effect(TypeEffect.ReducStdP, false, 2),
+						new Effect(TypeEffect.ReducStdD, false, 2),
+						new Effect(TypeEffect.ReducSkillP, false, 2),
+						new Effect(TypeEffect.ReducSkillM, false, 2),
 					}),
 				}),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape d'esprit ancestral"); put(Language.EN, "Ancient Spirit Cape"); }},
@@ -1792,8 +1794,10 @@ public class LoaderCape {
 				80, Quality.BLUE, false, "-1", "tdb1", new Calculable[] {
 				}, new Calculable[] {
 					new Proc(5, Activation.Crit, 5, new Calculable[] {
-						new Effect(TypeEffect.ReducP_old, false, 2),
-						new Effect(TypeEffect.ReducM_old, false, 2),
+						new Effect(TypeEffect.ReducStdP, false, 2),
+						new Effect(TypeEffect.ReducStdD, false, 2),
+						new Effect(TypeEffect.ReducSkillP, false, 2),
+						new Effect(TypeEffect.ReducSkillM, false, 2),
 					}),
 				}),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Cape hydrophobe"); put(Language.EN, "Rainy Cape"); }},
