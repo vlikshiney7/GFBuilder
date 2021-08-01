@@ -42,6 +42,7 @@ public enum NameTransform implements Writable {
 	Invoc0("Dinde rôtie", "Roast Turkey"),
 	Invoc1("Enfant du Miracle", "Miracle Child"),
 	Invoc2("Ardenis", "Ardenis"),
+	Invoc3("Baha", "Baha"),
 	
 	;
 	

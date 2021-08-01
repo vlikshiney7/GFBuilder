@@ -87,7 +87,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Atk, true, 5),
 				new Effect(TypeEffect.AtkD, true, 5),
 				new Effect(TypeEffect.AtkM, true, 5),
-				new Effect(TypeEffect.ESQ, true, 5),
+				new Effect(TypeEffect.ESQ, false, 5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Artiste du Coup Critique"); put(Language.EN, "Critical Assault"); }}, Quality.P8TITLE, 1, false, GradeName.NONE, Tag.TITLEP8, new Calculable[] {
 				new Effect(TypeEffect.PV, true, 7),
@@ -827,7 +827,7 @@ public class LoaderTitle {
 				new Effect(TypeEffect.INT, true, 5),
 				new Effect(TypeEffect.VOL, true, 5),
 				new Effect(TypeEffect.AGI, true, 5),
-				new Effect(TypeEffect.ESQ, true, 5),
+				new Effect(TypeEffect.ESQ, false, 5),
 				new Effect(TypeEffect.HealR, false, 5),
 				new Proc(5, Activation.Attacked, 12, new Calculable[] {
 					new Effect(TypeEffect.ReducPeneP, false, 50),
@@ -1419,6 +1419,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.ESQ, true, 3),
 				new Effect(TypeEffect.Nature, false, 5),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Ensemble malgré la distance"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.Loot, false, 5),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Entremetteur de Saphaël"); put(Language.EN, "Interspecies Friendship"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 200),
 				new Effect(TypeEffect.Atk, true, 2),
@@ -1734,9 +1737,10 @@ public class LoaderTitle {
 				new Effect(TypeEffect.Nature, false, 1),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Le glas de la victoire à l'aube"); put(Language.EN, "The bell of victory at dawn"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
-				new Effect(TypeEffect.ESQ, true, 8),
+				new Effect(TypeEffect.ESQ, false, 8),
 				new Effect(TypeEffect.PM, true, 5),
 				new Effect(TypeEffect.Depla, false, 3),
+				new Effect(TypeEffect.VitAtk, false, 3),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Le Grand Sauveur"); put(Language.EN, "Hope's Savior"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 5),
@@ -2040,6 +2044,9 @@ public class LoaderTitle {
 					new Effect(TypeEffect.DegFeu, false, 1000),
 					new Effect(TypeEffect.DegGlace, false, 1000),
 				}),
+			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "VIP de l'île de vacances"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.VIT, true, 2),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Vous cherchez quelque chose ?"); put(Language.EN, "Lost and Found"); }}, Quality.BLUE, 72, false, GradeName.NONE, Tag.QUETE, new Calculable[] {
 				new Effect(TypeEffect.ESQ, true, 9),

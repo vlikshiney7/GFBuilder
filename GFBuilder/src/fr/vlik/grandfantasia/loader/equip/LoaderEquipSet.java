@@ -1724,7 +1724,7 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Proc(20, Activation.Attacked, 5, new Calculable[] {
-						new Effect(TypeEffect.ESQ, false, 100),
+						new Effect(TypeEffect.ESQ, true, 100),
 						new Effect(TypeEffect.Depla, false, 25),
 					}),
 				}),
@@ -1739,7 +1739,7 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Proc(20, Activation.Attacked, 5, new Calculable[] {
-						new Effect(TypeEffect.ESQ, false, 100),
+						new Effect(TypeEffect.ESQ, true, 100),
 						new Effect(TypeEffect.Depla, false, 25),
 					}),
 				}),
@@ -2593,7 +2593,7 @@ public class LoaderEquipSet {
 			new EquipSet("Purification de Zehel", "90gold4",
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 30),
-					new Effect(TypeEffect.ESQ, false, 25),
+					new Effect(TypeEffect.ESQ, true, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DefM, true, 17),
@@ -2609,7 +2609,7 @@ public class LoaderEquipSet {
 			new EquipSet("Set stellaire de l'Esprit sacré", "10ans90gold4",
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 30),
-					new Effect(TypeEffect.ESQ, false, 25),
+					new Effect(TypeEffect.ESQ, true, 25),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DefM, true, 17),
@@ -2625,7 +2625,7 @@ public class LoaderEquipSet {
 			new EquipSet("Ferveur de Freya", "80gold4",
 				new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 15),
-					new Effect(TypeEffect.ESQ, false, 10),
+					new Effect(TypeEffect.ESQ, true, 10),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 45),
@@ -3475,7 +3475,7 @@ public class LoaderEquipSet {
 			new EquipSet("Fureur de Fenrir", "80gold5",
 				new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 15),
-					new Effect(TypeEffect.ESQ, false, 20),
+					new Effect(TypeEffect.ESQ, true, 20),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, 30),
@@ -3539,7 +3539,7 @@ public class LoaderEquipSet {
 					new Effect(TypeEffect.INT, false, 40),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 20),
+					new Effect(TypeEffect.ESQ, true, 20),
 					new Effect(TypeEffect.PV, true, 10),
 				},
 				new Calculable[] {
@@ -3988,7 +3988,7 @@ public class LoaderEquipSet {
 				}),
 			new EquipSet("Totem des Ancêtres", "70nucleus5",
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 20),
+					new Effect(TypeEffect.ESQ, true, 20),
 					new Effect(TypeEffect.ReducSkillM, false, 20),
 				},
 				new Calculable[] {
@@ -4974,7 +4974,7 @@ public class LoaderEquipSet {
 				}),
 			new EquipSet("Faucille de pillage", "50pve8",
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 10),
+					new Effect(TypeEffect.ESQ, true, 10),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 7),
@@ -5011,7 +5011,7 @@ public class LoaderEquipSet {
 				},
 				null,
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 10),
+					new Effect(TypeEffect.ESQ, true, 10),
 				}),
 			new EquipSet("Balayage radical", "80nucleus8",
 				new Calculable[] {
@@ -5487,7 +5487,7 @@ public class LoaderEquipSet {
 				}),
 			new EquipSet("Voyageur Temporel", "50pve10",
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 20),
+					new Effect(TypeEffect.ESQ, true, 20),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 15),
@@ -5615,7 +5615,7 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 44),
 					new Proc(15, Activation.Attack, 7, new Calculable[] {
-						new Effect(TypeEffect.ESQ, false, -55, Target.OPPONENT),
+						new Effect(TypeEffect.ESQ, true, -55, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
@@ -5636,7 +5636,7 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 40),
 					new Proc(15, Activation.Attack, 7, new Calculable[] {
-						new Effect(TypeEffect.ESQ, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.ESQ, true, -50, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
@@ -6148,7 +6148,7 @@ public class LoaderEquipSet {
 				}),
 			new EquipSet("Destructeur de l'Âme", "90gold11",
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 3),
+					new Effect(TypeEffect.ESQ, true, 3),
 					new Effect(TypeEffect.DCCM, false, 10),
 					new Effect(TypeEffect.TCCM, false, 10),
 				},
@@ -6165,7 +6165,7 @@ public class LoaderEquipSet {
 				}),
 			new EquipSet("Set stellaire de Brise-temps", "10ans90gold11",
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 3),
+					new Effect(TypeEffect.ESQ, true, 3),
 					new Effect(TypeEffect.DCCM, false, 10),
 					new Effect(TypeEffect.TCCM, false, 10),
 				},
@@ -6710,7 +6710,7 @@ public class LoaderEquipSet {
 				}),
 			new EquipSet("Esprit du voyageur", "60nucleus11",
 				new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 3),
+					new Effect(TypeEffect.ESQ, true, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 10),
@@ -7135,7 +7135,7 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Proc(5, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
-						new Effect(TypeEffect.ESQ, false, -25, Target.OPPONENT),
+						new Effect(TypeEffect.ESQ, true, -25, Target.OPPONENT),
 					}),
 				}),
 			new EquipSet("Set de la Foi Ancestrale", "tdb2",

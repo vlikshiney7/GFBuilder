@@ -122,15 +122,55 @@ public class LoaderCharacUpgrade {
 				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Endurance au combat"); put(Language.EN, "Battle Stamina"); }}, 16, "0-1", new Calculable[] {
 					new Effect(TypeEffect.RegenPV, false, 20),
 				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en paladin"); put(Language.EN, "Evolution on paladin"); }}, 31, "31-1", new Calculable[] {
-					new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
-					new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
-				}),
-				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Défense du paladin"); put(Language.EN, "Paladin defense"); }}, new int[] { 31, 46, }, "31-1", new Calculable[][] {
+				new Skill(new HashMap<Language, String>() {{ put(Language.FR, "Évolution en paladin"); put(Language.EN, "Evolution on paladin"); }}, new int[] { 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, }, "31-1", new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.DefP, false, 360, TypeCalcul.BASE),
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 140, TypeCalcul.BASE),
 					},
 					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 180, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 220, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 260, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 300, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 340, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 380, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 420, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
+						new Effect(TypeEffect.DefP, false, 460, TypeCalcul.BASE),
+					},
+					new Calculable[] {
+						new Effect(TypeEffect.PV, false, 800, TypeCalcul.BASE),
+						new Effect(TypeEffect.PM, false, 400, TypeCalcul.BASE),
 						new Effect(TypeEffect.DefP, false, 500, TypeCalcul.BASE),
 					},
 				}),
@@ -657,6 +697,36 @@ public class LoaderCharacUpgrade {
 						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc2),
 					}),
 				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "FCE +8% - Baha"); put(Language.EN, "STR +8% - Baha"); }}, Quality.ORANGE, "FCEorange", new Calculable[] {
+					new Effect(TypeEffect.FCE, true, 8),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc3),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VIT +6% - Baha"); put(Language.EN, "VIT +6% - Baha"); }}, Quality.ORANGE, "VITorange", new Calculable[] {
+					new Effect(TypeEffect.VIT, true, 6),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc3),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "INT +8% - Baha"); put(Language.EN, "INT +8% - Baha"); }}, Quality.ORANGE, "INTorange", new Calculable[] {
+					new Effect(TypeEffect.INT, true, 8),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc3),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "VOL +6% - Baha"); put(Language.EN, "WIL +6% - Baha"); }}, Quality.ORANGE, "VOLorange", new Calculable[] {
+					new Effect(TypeEffect.VOL, true, 6),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc3),
+					}),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +8% - Baha"); put(Language.EN, "AGI +8% - Baha"); }}, Quality.ORANGE, "AGIorange", new Calculable[] {
+					new Effect(TypeEffect.AGI, true, 8),
+					new Proc(0, Activation.Attack, 3, new Calculable[] {
+						new TransformEffect(TypeTransformation.INVOCATION, NameTransform.Invoc3),
+					}),
+				}),
 			},
 			new Nucleus[] {
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", null),
@@ -792,6 +862,30 @@ public class LoaderCharacUpgrade {
 				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "AGI +12% - Depla +15%"); put(Language.EN, "AGI +12% - Speed +15%"); }}, Quality.PURPLE, "AGIpurple", new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 12),
 					new Effect(TypeEffect.Depla, false, 15),
+				}),
+			},
+			new Nucleus[] {
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, "null", null),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Pierre de Soif Sanguine"); put(Language.EN, ""); }}, Quality.ORANGE, "skill0", new Calculable[] {
+					new Effect(TypeEffect.DegStdP, false, 10),
+					new Effect(TypeEffect.DegStdP, false, 10),
+					new Effect(TypeEffect.MEN, false, -30),
+				}),
+				new Nucleus(new HashMap<Language, String>() {{ put(Language.FR, "Pierre d'Oriflamme de Confrontation"); put(Language.EN, ""); }}, Quality.ORANGE, "skill1", new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 20),
+					new Effect(TypeEffect.Ombre, false, 20),
+					new Effect(TypeEffect.Foudre, false, 20),
+					new Effect(TypeEffect.Feu, false, 20),
+					new Effect(TypeEffect.Glace, false, 20),
+					new Effect(TypeEffect.Nature, false, 20),
+					new Effect(TypeEffect.ReducStdP, false, 5),
+					new Effect(TypeEffect.ReducStdD, false, 5),
+					new Effect(TypeEffect.ReducSkillP, false, 5),
+					new Effect(TypeEffect.ReducSkillM, false, 5),
+					new Effect(TypeEffect.ReducPtsStdP, false, 20),
+					new Effect(TypeEffect.ReducPtsStdD, false, 20),
+					new Effect(TypeEffect.ReducPtsP, false, 20),
+					new Effect(TypeEffect.ReducPtsM, false, 20),
 				}),
 			},
 		};

@@ -9,9 +9,9 @@ Combinaison bonus,Bonus combination/Classique,Classic/Ancestraux,Ancestral/Terre
 Spécialité,Speciality/Points restants : ,Remaining points: /Maître,Master/Mythique,Mythical/Légendaire,Legendary/Ultime,Ultimate/Tout mettre à 0,Set all to 0/Tout mettre à 10,Set all to 10
 Compétences passives,Passive skills/Énergie professionnelle,Professional energy
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination/Costume,Costume/Tête,Head/Corps,Body
-Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Énergies,Energy/Buff de guilde,Guild buff/4 parmi :,4 from:/Pierre permanente,Permanent stone/Sélection :,Selection:/Enchantement de nucléus,Nucleus enchantment
+Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Compétence,Skill/Énergies,Energy/Buff de guilde,Guild buff/4 parmi :,4 from:/Pierre permanente,Permanent stone/Sélection :,Selection:/Enchantement de nucléus,Nucleus enchantment
 Bague de mariage,Wedding ring/État de la relation,Relationship status/Anima,Anima/Souvenir,Souvenir/Enchantement de souvenir,Souvenir enchantment
-Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.20.2,Version: 0.20.2
+Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.20.3,Version: 0.20.3
 Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé (caractère interdit : \*?":<>|),Empty name or already exist (forbidden character : \*?":<>|)
 Quitter sans sauvegarder ?,Quit without save ?/Sauvegarder,Save/Quitter,Leave/Annuler,Cancel
 Choisir l'action,Choose action/Charger,Load/Supprimer,Delete/Annuler,Cancel

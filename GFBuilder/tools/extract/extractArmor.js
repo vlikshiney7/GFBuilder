@@ -206,8 +206,17 @@ function ExtractArmor() {
 		}
 		
 		enchant = true;
-		codearmor = codeLvl + "pve" + idClass;
-		iconpath = codeLvl + "pve" + idClass;
+		
+		if(document.getElementsByClassName('item-information-table')[2].innerHTML.match(/Nucléus/)) {
+			codearmor = codeLvl + "nucleus" + idClass;
+			iconpath = codeLvl + "nucleus" + idClass;
+		} else if(document.getElementsByClassName('item-information-table')[2].innerHTML.match(/Lingot/)) {
+			codearmor = codeLvl + "lingot" + idClass;
+			iconpath = codeLvl + "lingot" + idClass;
+		} else {
+			codearmor = codeLvl + "pve" + idClass;
+			iconpath = codeLvl + "pve" + idClass;
+		}
 	} else if(quality == 3) {
 		var codeLvl = lvl;
 		if(lvl == 70 || lvl == 80 || lvl == 90) {
@@ -217,8 +226,8 @@ function ExtractArmor() {
 			codearmor = "-1";
 		}
 		
-		listEffect += "\t\tnew Effect(TypeEffect.PV, false, TODO),\n";
-		listEffect += "\t\tnew Effect(TypeEffect.PM, false, TODO),\n";
+		listEffect += "\t\tnew Effect(TypeEffect.PV, false, 999),\n";
+		listEffect += "\t\tnew Effect(TypeEffect.PM, false, 999),\n";
 	} else if(quality == 2) {
 		codearmor = "-1";
 	} else if(quality == 1 || quality == 0) {
@@ -233,12 +242,21 @@ function ExtractArmor() {
 			}
 		}
 		
+		if(document.getElementsByClassName('item-information-table')[2].innerHTML.match(/Materials/)) {
+			found = true;
+		}
+		
 		codearmor = "-1";
 	}
 	
 	if(pvp) {
-		codearmor = lvl + "pvp" + idClass;
-		iconpath = lvl + "pvp" + idClass;
+		var codeLvl = lvl - 1;
+		while(codeLvl % 5 != 0) {
+			codeLvl++;
+		}
+		
+		codearmor = codeLvl + "pvp" + idClass;
+		iconpath = codeLvl + "pvp" + idClass;
 	}
 	
 	var reinca = false;
@@ -249,13 +267,25 @@ function ExtractArmor() {
 	
 	var idPiece = document.getElementsByClassName("item-icon")[0].innerHTML.split("itemicon/A")[1].charAt(0);
 	
-	var result = "new Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
+	var result = "new " + (quality == 7 ? "Red" : "") + "Armor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 	result += "\tnew GradeName[] { ";
 	result += listClass;
 	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", " + enchant + ", " + reinca + ",\n";
 	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
 	result += listEffect;
-	result += "\t}, null),\n";
+	result += "\t}, null" + (quality == 7 ? "" : ")") + ",\n";
+	
+	if(quality == 7) {
+		result += "\tnew Calculable[][] {\n";
+		
+		for(var i = 0; i < 5; i++) {
+			result += "\t\tnew Calculable[] {\n";
+			result += "\t\t\t\n";
+			result += "\t\t},\n";
+		}
+		
+		result += "\t}),\n";
+	}
 	
 	if(found == true) {
 		console.log(result);
@@ -270,7 +300,7 @@ function ExtractEvo() {
 	if(lvl[0] != undefined) {
 		lvl = lvl[0].innerHTML;
 	} else {
-		lvl = "undefined";
+		lvl = 31;
 	}
 	
 	var line = document.getElementsByClassName('item-general');

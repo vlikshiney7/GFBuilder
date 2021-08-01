@@ -41,7 +41,7 @@ public class PageBuff extends PartialPage {
 	private static final String SAVE_NAME = "BUFF";
 	private static PageBuff INSTANCE = new PageBuff();
 	
-	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(6);
+	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(7);
 	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(11);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(11);
 	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
@@ -70,7 +70,7 @@ public class PageBuff extends PartialPage {
 		super(NUM_PAGE);
 		setLabelAPI();
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 7; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
 			this.nucleus.get(i).addActionListener(e -> {
 				setEffects();
@@ -284,10 +284,10 @@ public class PageBuff extends PartialPage {
 		page11Elem1.add(this.labelGFB[0], Box.createVerticalStrut(10));
 		this.labelGFB[0].setFont(Design.TITLE);
 		
-		for(int i = 0; i < 6; i++) {
+		for(int i = 0; i < 7; i++) {
 			JCustomPanel nucleus = new JCustomPanel(this.labelGFB[i+1], this.nucleus.get(i), Box.createVerticalStrut(5));
 			this.labelGFB[i+1].setFont(Design.SUBTITLE);
-			this.labelGFB[i+1].setPreferredSize(new Dimension(60, 20));
+			this.labelGFB[i+1].setPreferredSize(new Dimension(90, 20));
 			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
 			
 			if(i == 1) {
@@ -297,8 +297,8 @@ public class PageBuff extends PartialPage {
 			page11Elem1.add(nucleus);
 		}
 		
-		JCustomPanel starPanel = new JCustomPanel(this.labelGFB[12], Box.createHorizontalStrut(10));
-		this.labelGFB[12].setFont(Design.SUBTITLE);
+		JCustomPanel starPanel = new JCustomPanel(this.labelGFB[13], Box.createHorizontalStrut(10));
+		this.labelGFB[13].setFont(Design.SUBTITLE);
 		starPanel.addAll(this.starNucleus);
 		
 		JCustomPanel listEnchant = new JCustomPanel(new GridLayout(3, 2, 2, 5));
@@ -316,8 +316,8 @@ public class PageBuff extends PartialPage {
 		}
 		
 		JCustomPanel page11Elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem2.addAll(this.labelGFB[7], Box.createVerticalStrut(10), energies);
-		this.labelGFB[7].setFont(Design.TITLE);
+		page11Elem2.addAll(this.labelGFB[8], Box.createVerticalStrut(10), energies);
+		this.labelGFB[8].setFont(Design.TITLE);
 		
 		JCustomPanel blocBuffGuild = new JCustomPanel(BoxLayout.Y_AXIS);
 		blocBuffGuild.add(Box.createVerticalStrut(5));
@@ -334,10 +334,10 @@ public class PageBuff extends PartialPage {
 		
 		
 		JCustomPanel page11Elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem3.addAll(this.labelGFB[8], Box.createVerticalStrut(10), blocBuffGuild, Box.createVerticalStrut(10),
-				this.labelGFB[9], Box.createVerticalStrut(5), this.guildBuff);
-		this.labelGFB[8].setFont(Design.TITLE);
-		this.labelGFB[9].setFont(Design.SUBTITLE);
+		page11Elem3.addAll(this.labelGFB[9], Box.createVerticalStrut(10), blocBuffGuild, Box.createVerticalStrut(10),
+				this.labelGFB[10], Box.createVerticalStrut(5), this.guildBuff);
+		this.labelGFB[9].setFont(Design.TITLE);
+		this.labelGFB[10].setFont(Design.SUBTITLE);
 		
 		
 		JCustomPanel blocStone = new JCustomPanel(BoxLayout.Y_AXIS);
@@ -354,10 +354,10 @@ public class PageBuff extends PartialPage {
 		}
 		
 		JCustomPanel page11Elem4 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem4.addAll(this.labelGFB[10], Box.createVerticalStrut(10), blocStone, Box.createVerticalStrut(10),
-				this.labelGFB[11], Box.createVerticalStrut(5), this.stone);
-		this.labelGFB[10].setFont(Design.TITLE);
-		this.labelGFB[11].setFont(Design.SUBTITLE);
+		page11Elem4.addAll(this.labelGFB[11], Box.createVerticalStrut(10), blocStone, Box.createVerticalStrut(10),
+				this.labelGFB[12], Box.createVerticalStrut(5), this.stone);
+		this.labelGFB[11].setFont(Design.TITLE);
+		this.labelGFB[12].setFont(Design.SUBTITLE);
 		
 		this.voidPanel = new JCustomPanel();
 		this.voidPanel.setBackground(Design.UIColor[2]);
