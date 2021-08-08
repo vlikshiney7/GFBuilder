@@ -109,9 +109,9 @@ function ExtractArmor() {
 					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('AGI')) {
 					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
-				} else if(stat[j].innerHTML.trim().startsWith('HP')) {
+				} else if(stat[j].innerHTML.trim().match('HP')) {
 					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
-				} else if(stat[j].innerHTML.trim().startsWith('EN')) {
+				} else if(stat[j].innerHTML.trim().match('EN')) {
 					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				} else if(stat[j].innerHTML.match(/chance to hit/)) {
 					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
@@ -224,6 +224,7 @@ function ExtractArmor() {
 			iconpath = codeLvl + "gvg" + idClass;
 		} else {
 			codearmor = "-1";
+			iconpath = codeLvl + "bleu" + idClass;
 		}
 		
 		listEffect += "\t\tnew Effect(TypeEffect.PV, false, 999),\n";
@@ -250,7 +251,7 @@ function ExtractArmor() {
 	}
 	
 	if(pvp) {
-		var codeLvl = lvl - 1;
+		var codeLvl = lvl;
 		while(codeLvl % 5 != 0) {
 			codeLvl++;
 		}
@@ -316,10 +317,10 @@ function ExtractEvo() {
 		listEffect += "\t\tnew Effect[] {\n";
 		
 		for(var i = 0; i < currentLvl.length; i++) {
-			if(currentLvl[i].innerHTML.trim().match('DEF')) {
-				listEffect += "\t\t\tnew Effect(TypeEffect.DefP, false, " + currentLvl[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
-			} else if(currentLvl[i].innerHTML.trim().match('M-DEF')) {
+			if(currentLvl[i].innerHTML.trim().match('M-DEF')) {
 				listEffect += "\t\t\tnew Effect(TypeEffect.DefM, false, " + currentLvl[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+			} else if(currentLvl[i].innerHTML.trim().match('DEF')) {
+				listEffect += "\t\t\tnew Effect(TypeEffect.DefP, false, " + currentLvl[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 			} else if(currentLvl[i].innerHTML.trim().match('STR')) {
 				listEffect += "\t\t\tnew Effect(TypeEffect.FCE, false, " + currentLvl[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 			} else if(currentLvl[i].innerHTML.trim().match('VIT')) {

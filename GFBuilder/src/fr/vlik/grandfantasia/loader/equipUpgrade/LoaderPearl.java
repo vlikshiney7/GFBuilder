@@ -36,7 +36,7 @@ public class LoaderPearl {
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de cage"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "yellow2", new Calculable[] {
 				new Proc(5, Activation.Attack, 2, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 100),
@@ -260,7 +260,7 @@ public class LoaderPearl {
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de cage royale"); put(Language.EN, "Ancient Kings Cage Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
 				new Proc(10, Activation.Attack, 2, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 200),
@@ -270,7 +270,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.ReducPtsP, false, 100),
 				new Proc(15, Activation.Attack, 2, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegOmbre, false, 300),

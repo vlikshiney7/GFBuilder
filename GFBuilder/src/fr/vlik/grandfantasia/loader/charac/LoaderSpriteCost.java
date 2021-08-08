@@ -1035,6 +1035,413 @@ public class LoaderSpriteCost {
 						new Effect(TypeEffect.Nature, false, 15),
 					}),
 				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Noël du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10036", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.RTCCM, false, -10, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de dentelle rose du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "A10071", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume Noir Formel"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20026", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoMove),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Capitaine Pirate"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20027", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Porte-Bonheur de Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10040", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkM, true, -8, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau-vache de Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10045", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -15, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume-vache de Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20028", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.RTCCP, false, 20),
+						new Effect(TypeEffect.RTCCM, false, 20),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Lunettes pour Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10037", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkD, true, -8, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Casquette de mandarin rouge"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10038", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.RTCCP, false, 20),
+						new Effect(TypeEffect.RTCCM, false, 20),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tablier Cœur de Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20029", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.MEN, false, 12),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Cléopâtre"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10046", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de dentelle bleu du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "A10090", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau rouge de Capitaine Pirate Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "A10061", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Atk, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue rouge de Capitaine Pirate Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20046", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Sprite Démoniaque"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10051", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DegStdP, false, 5),
+						new Effect(TypeEffect.DegStdD, false, 5),
+						new Effect(TypeEffect.DegSkillP, false, 5),
+						new Effect(TypeEffect.DegSkillM, false, 5),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Sprite Démoniaque"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20052", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 35),
+						new Effect(TypeEffect.ReflectM, false, 35),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Noël du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20053", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 35),
+						new Effect(TypeEffect.ReflectM, false, 35),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Perruque de Brute Lee"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10053", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.MEN, false, -5),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Brute Lee"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20054", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.MEN, false, -10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Explorateur"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10054", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReducSkillM, false, 10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume d'Explorateur"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20055", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReducSkillM, false, 10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bandeau Sprite Ninja de l'Ouragan"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10055", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DefM, true, -30, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tunique Sprite Ninja de l'Ouragan"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20056", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkM, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau OGM"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10056", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitComp, false, 13),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue Tahitienne"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20057", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.MEN, false, -10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule à Écailles de Dragon Z"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10057", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Parade, false, 10, WeaponType.BOUCLIER),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tunique à Écailles de Dragon Z"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20058", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Parade, false, 5, WeaponType.BOUCLIER),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Masque du Capitaine de Kaslow"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10058", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Sacre, false, -30, Target.OPPONENT),
+						new Effect(TypeEffect.Ombre, false, -30, Target.OPPONENT),
+						new Effect(TypeEffect.Foudre, false, -30, Target.OPPONENT),
+						new Effect(TypeEffect.Feu, false, -30, Target.OPPONENT),
+						new Effect(TypeEffect.Glace, false, -30, Target.OPPONENT),
+						new Effect(TypeEffect.Nature, false, -30, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume du Capitaine de Kaslow"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20059", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Sacre, false, 15),
+						new Effect(TypeEffect.Ombre, false, 15),
+						new Effect(TypeEffect.Foudre, false, 15),
+						new Effect(TypeEffect.Feu, false, 15),
+						new Effect(TypeEffect.Glace, false, 15),
+						new Effect(TypeEffect.Nature, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Diplômé"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10059", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -60, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -60, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Toge de Diplômé"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20060", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Moumoute à Rubans Roses"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10060", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Casquette des Forces Spéciales"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10061", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 8),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Uniforme des Forces Spéciales"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20061", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tignasse Goku du Maître Dragon Z"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10062", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ESQ, false, -8),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Kimono Goku du Maître Dragon Z"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20062", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Jeune Prince Chinois"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10063", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -60, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -60, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Jeune Prince Chinois"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20063", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tête de Conserve"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10025", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.MEN, false, 12),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Couche-Culotte Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20018", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkD, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Petit Tigre"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20064", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReducSkillM, false, 10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de Petit Tigre"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10064", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Chef Cuistot"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20065", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoMove),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Toque de Chef Cuistot"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10065", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de BatSprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20066", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 35),
+						new Effect(TypeEffect.ReflectM, false, 35),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Maillot de Joueur de Basket"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20067", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Serre-tête du Seigneur des Arcs-en-Ciel pour Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10072", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitComp, false, 13),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Pêche Mûre"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10069", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Atk, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Tenue de Campagne Japonaise"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20069", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkD, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Takoyaki Chaud"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10070", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Petit Fantôme Terrifiant"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10071", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -60, Target.OPPONENT),
+						new Effect(TypeEffect.VitAtk, false, -60, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bavoir de Petit Poulpe Rouge"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20070", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReducStdP, false, 10),
+						new Effect(TypeEffect.ReducStdD, false, 10),
+						new Effect(TypeEffect.ReducSkillP, false, 10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Samouraï Oni"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20071", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkM, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Ballon de Foot de Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10077", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 8),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tête de Melon pour Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10068", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.AtkD, true, 7),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Poire pour Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20068", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReducSkillM, false, 10),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Coiffure Japonaise pour Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10073", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitComp, false, 13),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Mignon Petit Kimono"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20072", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 35),
+						new Effect(TypeEffect.ReflectM, false, 35),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Rizières"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10074", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Commandant Solennel"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20073", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Toucher, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Crevette Dorée"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10075", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitComp, false, 13),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Armure d'Écailles de Dragon"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20074", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 35),
+						new Effect(TypeEffect.ReflectM, false, 35),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de la Tour Rouge"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10076", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, 15),
+					}),
+				}),
 		};
 	}
 }

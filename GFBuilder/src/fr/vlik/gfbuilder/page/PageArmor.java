@@ -881,33 +881,41 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
-			this.redFortif.get(i).setSelectedItem(RedFortification.get(config.get("RedFortif" + i)));
+			if(this.getArmor(i).getQuality() == Quality.RED) {
+				this.redFortif.get(i).setSelectedItem(RedFortification.get(config.get("RedFortif" + i)));
+			}
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {
-			this.redEnchant.get(i).setSelectedItem(Enchantment.get(this.getArmor(i/3), config.get("RedEnchantment" + i)));
-			
-			RedEnchantment redEnchant = this.getRedEnchantment(i);
-			
-			if(redEnchant != null) {
-				InnerEffect inner = redEnchant.getInnerEffect(Integer.valueOf(config.get("RedLvlEnchantment" + i)));
-				this.redLvlEnchant.get(i).setSelectedItem(inner);
+			if(this.getArmor(i/3).getQuality() == Quality.RED) {
+				this.redEnchant.get(i).setSelectedItem(Enchantment.get(this.getArmor(i/3), config.get("RedEnchantment" + i)));
+				
+				RedEnchantment redEnchant = this.getRedEnchantment(i);
+				
+				if(redEnchant != null) {
+					InnerEffect inner = redEnchant.getInnerEffect(Integer.valueOf(config.get("RedLvlEnchantment" + i)));
+					this.redLvlEnchant.get(i).setSelectedItem(inner);
+				}
 			}
 		}
 		
 		for(int i = 0; i < this.refining.size(); i++) {
-			this.refining.get(i).setSelectedItem(Enchantment.get(this.getArmor(i/3), config.get("Refining" + i)));
-			
-			RedEnchantment refining = this.getRefining(i);
-			
-			if(refining != null) {
-				InnerEffect inner = refining.getInnerEffect(Integer.valueOf(config.get("RefiningLvl" + i)));
-				this.refiningLvl.get(i).setSelectedItem(inner);
+			if(this.getArmor(i/3).getQuality() == Quality.RED) {
+				this.refining.get(i).setSelectedItem(Enchantment.get(this.getArmor(i/3), config.get("Refining" + i)));
+				
+				RedEnchantment refining = this.getRefining(i);
+				
+				if(refining != null) {
+					InnerEffect inner = refining.getInnerEffect(Integer.valueOf(config.get("RefiningLvl" + i)));
+					this.refiningLvl.get(i).setSelectedItem(inner);
+				}
 			}
 		}
 
 		for(int i = 0; i < this.valueFortif.size(); i++) {
-			this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));
+			if(this.getArmor(i).getQuality() == Quality.RED) {
+				this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));
+			}
 		}
 		
 		for(int i = 0; i < this.armor.size(); i++) {
