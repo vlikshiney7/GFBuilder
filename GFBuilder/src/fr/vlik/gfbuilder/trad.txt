@@ -11,11 +11,11 @@ Compétences passives,Passive skills/Énergie professionnelle,Professional energ
 Blason,Blazon/Offensif,Aggressive/Défensif,Defensive/Divination Île des Sprites,Isle Sprite Divination/Costume,Costume/Tête,Head/Corps,Body
 Nucléus,Nucleus/Vert,Green/Trésor,Treasure/Bleu,Blue/Orange,Orange/Jaune,Gold/Violet,Purple/Compétence,Skill/Énergies,Energy/Buff de guilde,Guild buff/4 parmi :,4 from:/Pierre permanente,Permanent stone/Sélection :,Selection:/Enchantement de nucléus,Nucleus enchantment
 Bague de mariage,Wedding ring/État de la relation,Relationship status/Anima,Anima/Souvenir,Souvenir/Enchantement de souvenir,Souvenir enchantment
-Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.20.4,Version: 0.20.4
+Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.20.5,Version: 0.20.5
 Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé (caractère interdit : \*?":<>|),Empty name or already exist (forbidden character : \*?":<>|)
 Quitter sans sauvegarder ?,Quit without save ?/Sauvegarder,Save/Quitter,Leave/Annuler,Cancel
 Choisir l'action,Choose action/Charger,Load/Supprimer,Delete/Annuler,Cancel
 Fichier non sauvegardé,File not save/Sauvegarder,Save/Ne pas sauvegarder,Not save/Annuler,Cancel
-Une erreur est survenu !,An error occurred !/Création du dossier "GFBuilderSave" impossible. Veuillez le créer manuellement.,Impossible creation of the folder "GFBuilderSave". You should create it manually.
+Une erreur est survenu !,An error occurred !/Création du dossier "GFBuilderSave" impossible (problème de droit administrateur). Veuillez le créer manuellement.,Impossible creation of the folder "GFBuilderSave" (administrator right problem). You should create it manually.
 Création d'équipement,Equipment creation/Arme,Weapon/Armure,Armor/Cape,Cape/Accessoire,Ring/Niveau :,Level:/Qualité :,Quality:/Enchantements,Enhancements/Créer,Create
 Tout décocher,Uncheck all/Tout cocher,Check all

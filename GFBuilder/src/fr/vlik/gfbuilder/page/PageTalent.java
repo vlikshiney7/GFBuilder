@@ -86,6 +86,7 @@ public class PageTalent extends PartialPage {
 						updateGroupTalent(id);
 						updateSelectedTalent(global);
 						updateCombiTalent();
+						updateTooltipRadio(global, id);
 						
 						setEffects();
 						MainFrame.getInstance().updateStat();
@@ -359,6 +360,11 @@ public class PageTalent extends PartialPage {
 		}
 		
 		this.combiTalentInfo.setText(combiInfo);
+	}
+	
+	private void updateTooltipRadio(int index32, int index24) {
+		String selectedTooltip = this.itemTalent.get(index24).getSelectedItem().getTooltip();
+		this.groupTalent.get(index32/4).getButton(index32%4).setTooltip(selectedTooltip);
 	}
 	
 	private void setMinCBoxTalent() {

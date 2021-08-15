@@ -70,7 +70,7 @@ public class Talent extends IconBuff {
 	
 	@Override
 	public String getTooltip() {
-		return "<html>" + this.name.get(Language.FR) + "</html>";
+		return "<html><b>" + this.name.get(Language.FR) + "</b></html>";
 	}
 	
 	public InnerColorEffect[] getInnerTalent(int lvl) {

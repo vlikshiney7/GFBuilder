@@ -47,6 +47,17 @@ public enum TypeSkillEffect implements Writable {
 	
 	Class2S0("Tir puissant", "Power Shot"),
 	Class2S1("Réflexes de Mangouste", "Mongoose Reflexes"),
+	Class2S2("Chasse Mortelle", "Fatal Pursuit"),
+	Class2S3("Réflexes Vifs", "Quick Reflexes"),
+	Class2S4("Attaque du Faucon", "Twin Fang Shot"),
+	Class2S5("Pluie de météorites", "Meteor Shower"),
+	Class2S6("Réflexe Foudroyant", "Lightning Reflex"),
+	Class2S7("Attaque Démoniaque", "Superdemon Shot"),
+	Class2S8("Mitraillette", "Desperado"),
+	Class2S9("Lame des Tempêtes", "Blade of the Gales"),
+	Class2S10("Coup Perçant", "Piercing blow"),
+	Class2S11("Ouragan Dévastateur", "Blade of the Hurricane"),
+	Class2S12("Attaque du Faucon", "Swallow's Glide Shot"),
 	
 	Class3S0("Lame des Ténèbres", "Dark Stab"),
 	Class3S1("Épine de l'Ombre Trouble", "Blurred Shadow Thorn"),

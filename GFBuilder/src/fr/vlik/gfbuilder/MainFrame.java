@@ -91,13 +91,13 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.20.4");
+		super("Grand Fantasia Builder - Version 0.20.5");
 		setCustomUI();
 		
 		try {
 			this.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Image introuvable : itemIcon.png");
 		}
 		
 		this.setSize(1325, 750);

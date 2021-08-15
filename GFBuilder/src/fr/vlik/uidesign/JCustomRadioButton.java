@@ -66,6 +66,13 @@ public class JCustomRadioButton<T> extends JRadioButton {
 		}
 	}
 	
+	public void setTooltip(String tooltip) {
+		if(this.object instanceof Writable) {
+			String rebuild = ((Writable) this.object).getTooltip() + tooltip;
+			this.setToolTipText(rebuild.replace("</html><html>", ""));
+		}
+	}
+	
 	public void setVoidUI() {
 		this.setBackground(Design.UIColor[0]);
 		this.setBorder(null);

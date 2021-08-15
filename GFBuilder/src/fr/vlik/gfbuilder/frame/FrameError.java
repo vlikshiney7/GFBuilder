@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomPanel;
@@ -73,7 +72,6 @@ public class FrameError extends JCustomFrame {
 	
 	@Override
 	public void popup() {
-		MainFrame.getInstance().setEnabled(false);
 		this.setVisible(true);
 	}
 }

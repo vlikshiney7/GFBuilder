@@ -1688,6 +1688,861 @@ public class LoaderEquipSet {
 
 	private static EquipSet[] getArcher() {
 		return new EquipSet[] {
+			new EquipSet("Tir du Prédateur Silencieux", "90red2", null, null, null),
+			new EquipSet("Véritable Prédateur", "10ans90red2", null, null, null),
+			new EquipSet("Faucon tempétueux", "100vio2", null, null, null),
+			new EquipSet("Dévastateur de Mihawk", "90vio2", null, null, null),
+			new EquipSet("Cavalier du Vent", "80vio2", null, null, null),
+			new EquipSet("Céleste de Kikyo", "100gold2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 60),
+					new Effect(TypeEffect.Depla, false, 10),
+					new Effect(TypeEffect.RegenCB, false, 8),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S2, 35, TypeValue.DAMAGE),
+					new Proc(18, Activation.Attack, 4, new Calculable[] {
+						new Effect(TypeEffect.DegStdP, false, -18, Target.OPPONENT),
+						new Effect(TypeEffect.DegStdD, false, -18, Target.OPPONENT),
+						new Effect(TypeEffect.DegSkillP, false, -18, Target.OPPONENT),
+						new Effect(TypeEffect.Toucher, false, -18, Target.OPPONENT),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 60),
+					new RegenEffect(TypeEffect.PM, false, 35, TypeRegen.ABSORPTION),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
+				}),
+			new EquipSet("Visée Quincy", "90gold2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 30),
+					new Effect(TypeEffect.ReducStdP, false, 12),
+					new Effect(TypeEffect.ReducStdD, false, 12),
+					new Effect(TypeEffect.ReducSkillP, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.ESQ, true, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 16),
+					new Proc(20, Activation.Attacked, 8, new Calculable[] {
+						new Effect(TypeEffect.TCCP, false, -40, Target.OPPONENT),
+						new Effect(TypeEffect.TCCM, false, -40, Target.OPPONENT),
+					}),
+				}),
+
+			new EquipSet("Set stellaire de Prédateur", "10ans90gold2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 30),
+					new Effect(TypeEffect.ReducStdP, false, 12),
+					new Effect(TypeEffect.ReducStdD, false, 12),
+					new Effect(TypeEffect.ReducSkillP, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.ESQ, true, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 16),
+					new Proc(20, Activation.Attacked, 8, new Calculable[] {
+						new Effect(TypeEffect.TCCP, false, -40, Target.OPPONENT),
+						new Effect(TypeEffect.TCCM, false, -40, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Évolution du Glorieux Traqueur", "80gold2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 21),
+					new Effect(TypeEffect.ESQ, true, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 10),
+					new Effect(TypeEffect.ReducStdD, false, 10),
+					new Effect(TypeEffect.ReducSkillP, false, 10),
+					new Effect(TypeEffect.PV, true, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegStdP, false, 10),
+					new SkillEffect(TypeSkillEffect.Class2S1, 8, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S3, 8, TypeValue.DURATION),
+				}),
+			new EquipSet("Soleil Hurlant", "100pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 30),
+					new Effect(TypeEffect.DegStdP, false, 10),
+					new Effect(TypeEffect.DegStdD, false, 10),
+					new Effect(TypeEffect.DegSkillP, false, 10),
+					new Effect(TypeEffect.TCCP, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 40),
+					new Effect(TypeEffect.VitAtkD, false, 10),
+					new Proc(100, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.DegNature, false, 300),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 15),
+					new Proc(20, Activation.Attack, 6, new Calculable[] {
+						new Effect(TypeEffect.VitAtk, false, -20, Target.OPPONENT),
+						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Hymne des Vents", "95pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 20),
+					new Effect(TypeEffect.AGI, false, 40),
+					new Effect(TypeEffect.VitAtkD, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 15),
+					new Effect(TypeEffect.DCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 40),
+					new Effect(TypeEffect.ESQ, true, 10),
+					new Proc(10, Activation.Attack, 7, 5, new Calculable[] {
+						new Effect(TypeEffect.DegStdP, false, 2),
+						new Effect(TypeEffect.DegStdD, false, 2),
+						new Effect(TypeEffect.DegSkillP, false, 2),
+					}),
+				}),
+			new EquipSet("Coup Lunaire", "90pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 25),
+					new Effect(TypeEffect.DefP, true, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 10),
+					new Effect(TypeEffect.ReducStdD, false, 10),
+					new Effect(TypeEffect.ReducSkillP, false, 10),
+					new Effect(TypeEffect.ReducSkillM, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 14),
+					new Effect(TypeEffect.CostComp, false, -60),
+				}),
+			new EquipSet("Âme de l'Onyx Intrépide", "85pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 21),
+					new Effect(TypeEffect.Toucher, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DegEp2M, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 10),
+					new Effect(TypeEffect.DCCP, false, 30),
+				}),
+			new EquipSet("Glorieux Traqueur", "80pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 21),
+					new Effect(TypeEffect.ESQ, true, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PM, true, 10),
+					new Effect(TypeEffect.ReducStdP, false, 10),
+					new Effect(TypeEffect.ReducStdD, false, 10),
+					new Effect(TypeEffect.ReducSkillP, false, 10),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 8, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S3, 8, TypeValue.DURATION),
+				}),
+			new EquipSet("Sniper Météoritique", "75pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 14),
+					new Effect(TypeEffect.TCCP, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 30),
+					new Effect(TypeEffect.Depla, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 21),
+					new Effect(TypeEffect.CostComp, false, -60),
+				}),
+			new EquipSet("Fougue de Manco Capac", "70pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 20),
+					new Effect(TypeEffect.ESQ, true, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 21),
+					new Effect(TypeEffect.AtkD, true, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 20),
+					new Effect(TypeEffect.DCCP, false, 45),
+				}),
+			new EquipSet("Ranger Distant", "65pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 16),
+					new Effect(TypeEffect.Toucher, false, 10),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 12, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 10),
+					new Effect(TypeEffect.DCCP, false, 30),
+				}),
+			new EquipSet("Ailes Célestes", "60pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 4),
+					new Effect(TypeEffect.Toucher, false, 20),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S4, 30, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 15),
+					new Effect(TypeEffect.AGI, false, 10),
+				}),
+			new EquipSet("Set de canonnier", "50pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 5),
+					new Effect(TypeEffect.ESQ, false, 10),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S5, 40, TypeValue.DAMAGE),
+				}),
+			new EquipSet("Regard d'Aigle", "40pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 45),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 3),
+					new Effect(TypeEffect.Toucher, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.AtkD, true, 15),
+				}),
+			new EquipSet("Chasseur de Vent", "30pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 4),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 45),
+				}),
+			new EquipSet("Chasseur de la Jungle", "20pve2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 2),
+				},
+				null,
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S0, 35, TypeValue.DAMAGE),
+				}),
+			new EquipSet("(Reforgé) Sombretrappeur", "100pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 42),
+					new Effect(TypeEffect.RTCCM, false, 42),
+					new Effect(TypeEffect.AGI, false, 44),
+					new Effect(TypeEffect.VIT, false, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 94),
+					new Effect(TypeEffect.Toucher, false, 33),
+					new Effect(TypeEffect.ESQ, false, 33),
+					new Effect(TypeEffect.TCCP, false, 33),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 33),
+					new Effect(TypeEffect.PeneP, false, 17),
+					new SkillEffect(TypeSkillEffect.Class2S3, 28, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 28, TypeValue.DURATION),
+					new Proc(65, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -193, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -193, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Sombretrappeur", "100pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 38),
+					new Effect(TypeEffect.RTCCM, false, 38),
+					new Effect(TypeEffect.AGI, false, 40),
+					new Effect(TypeEffect.VIT, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 85),
+					new Effect(TypeEffect.Toucher, false, 30),
+					new Effect(TypeEffect.ESQ, false, 30),
+					new Effect(TypeEffect.TCCP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 30),
+					new Effect(TypeEffect.PeneP, false, 15),
+					new SkillEffect(TypeSkillEffect.Class2S3, 25, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 25, TypeValue.DURATION),
+					new Proc(65, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -175, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -175, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("(Reforgé) Héros Fantôme", "95pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 39),
+					new Effect(TypeEffect.RTCCM, false, 39),
+					new Effect(TypeEffect.AGI, false, 39),
+					new Effect(TypeEffect.VIT, false, 17),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 83),
+					new Effect(TypeEffect.Toucher, false, 28),
+					new Effect(TypeEffect.ESQ, false, 28),
+					new Effect(TypeEffect.TCCP, false, 28),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 24),
+					new Effect(TypeEffect.CostComp, false, -88),
+					new SkillEffect(TypeSkillEffect.Class2S3, 18, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 18, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -165, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -165, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Héros Fantôme", "95pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 35),
+					new Effect(TypeEffect.RTCCM, false, 35),
+					new Effect(TypeEffect.AGI, false, 35),
+					new Effect(TypeEffect.VIT, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 75),
+					new Effect(TypeEffect.Toucher, false, 25),
+					new Effect(TypeEffect.ESQ, false, 25),
+					new Effect(TypeEffect.TCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 25),
+					new Effect(TypeEffect.CostComp, false, -80),
+					new SkillEffect(TypeSkillEffect.Class2S3, 20, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 20, TypeValue.DURATION),
+					new Proc(60, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -150, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -150, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Héros Fantôme", "95pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 35),
+					new Effect(TypeEffect.RTCCM, false, 35),
+					new Effect(TypeEffect.AGI, false, 35),
+					new Effect(TypeEffect.VIT, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 75),
+					new Effect(TypeEffect.Toucher, false, 25),
+					new Effect(TypeEffect.ESQ, false, 25),
+					new Effect(TypeEffect.TCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 25),
+					new Effect(TypeEffect.CostComp, false, -80),
+					new SkillEffect(TypeSkillEffect.Class2S3, 20, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 20, TypeValue.DURATION),
+					new Proc(60, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -150, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -150, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("(Reforgé) Traqueur de Grand Line", "85pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 33),
+					new Effect(TypeEffect.RTCCM, false, 33),
+					new Effect(TypeEffect.AGI, false, 31),
+					new Effect(TypeEffect.VIT, false, 13),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 83),
+					new Effect(TypeEffect.Toucher, false, 30),
+					new Effect(TypeEffect.TCCP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 24),
+					new Effect(TypeEffect.CostComp, false, -88),
+					new SkillEffect(TypeSkillEffect.Class2S3, 18, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 18, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -138, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -138, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Traqueur de Grand Line", "85pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 30),
+					new Effect(TypeEffect.RTCCM, false, 30),
+					new Effect(TypeEffect.AGI, false, 28),
+					new Effect(TypeEffect.VIT, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 75),
+					new Effect(TypeEffect.Toucher, false, 27),
+					new Effect(TypeEffect.TCCP, false, 27),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 22),
+					new Effect(TypeEffect.CostComp, false, -80),
+					new SkillEffect(TypeSkillEffect.Class2S3, 16, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 16, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -125, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -125, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Roi céleste (Reforgé)", "75pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 33),
+					new Effect(TypeEffect.RTCCM, false, 33),
+					new Effect(TypeEffect.AGI, false, 29),
+					new Effect(TypeEffect.VIT, false, 11),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 77),
+					new Effect(TypeEffect.Toucher, false, 28),
+					new Effect(TypeEffect.TCCP, false, 28),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 22),
+					new SkillEffect(TypeSkillEffect.Class2S3, 18, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 10, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -138, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -138, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Roi céleste", "75pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 30),
+					new Effect(TypeEffect.RTCCM, false, 30),
+					new Effect(TypeEffect.AGI, false, 26),
+					new Effect(TypeEffect.VIT, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 70),
+					new Effect(TypeEffect.Toucher, false, 25),
+					new Effect(TypeEffect.TCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PV, true, 20),
+					new SkillEffect(TypeSkillEffect.Class2S3, 16, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 10, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -125, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -125, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Vigilance d'Häyhä (Reforgée)", "65pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 28),
+					new Effect(TypeEffect.RTCCM, false, 28),
+					new Effect(TypeEffect.AGI, false, 31),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 66),
+					new Effect(TypeEffect.TCCP, false, 22),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 16, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S3, 18, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 10, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -110, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -110, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Vigilance d'Häyhä", "65pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 25),
+					new Effect(TypeEffect.RTCCM, false, 25),
+					new Effect(TypeEffect.AGI, false, 28),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 60),
+					new Effect(TypeEffect.Toucher, false, 20),
+					new Effect(TypeEffect.TCCP, false, 20),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 16, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S3, 16, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 10, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -100, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -100, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Héros Céleste (Reforgée)", "55pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 33),
+					new Effect(TypeEffect.RTCCM, false, 33),
+					new Effect(TypeEffect.AGI, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 55),
+					new Effect(TypeEffect.ESQ, false, 13),
+					new Effect(TypeEffect.Toucher, false, 13),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 10, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -82, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -82, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Héros Céleste", "55pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 30),
+					new Effect(TypeEffect.RTCCM, false, 30),
+					new Effect(TypeEffect.AGI, false, 22),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 50),
+					new Effect(TypeEffect.Toucher, false, 12),
+					new Effect(TypeEffect.Depla, false, 6),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 8, TypeValue.DURATION),
+					new Proc(75, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -50, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Hardi Céleste (Reforgé)", "45pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 22),
+					new Effect(TypeEffect.RTCCM, false, 22),
+					new Effect(TypeEffect.AGI, false, 17),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 34),
+					new Effect(TypeEffect.ESQ, false, 6),
+					new Effect(TypeEffect.Toucher, false, 6),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 7, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -55, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -55, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Hardi Céleste", "45pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 20),
+					new Effect(TypeEffect.RTCCM, false, 20),
+					new Effect(TypeEffect.AGI, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 30),
+					new Effect(TypeEffect.Toucher, false, 6),
+					new Effect(TypeEffect.Depla, false, 6),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 6, TypeValue.DURATION),
+					new Proc(75, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -50, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -50, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Précision de Sogeking (Reforgé)", "25pvp2R",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 17),
+					new Effect(TypeEffect.RTCCM, false, 17),
+					new Effect(TypeEffect.AGI, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 22),
+					new Effect(TypeEffect.Toucher, false, 6),
+					new Effect(TypeEffect.ESQ, false, 6),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 7, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -34, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -34, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Précision de Sogeking", "25pvp2",
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 15),
+					new Effect(TypeEffect.RTCCM, false, 15),
+					new Effect(TypeEffect.AGI, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 20),
+					new Effect(TypeEffect.Toucher, false, 5),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S1, 6, TypeValue.DURATION),
+					new Proc(50, Activation.Attack, 15, new Calculable[] {
+						new Effect(TypeEffect.FCE, false, -30, Target.OPPONENT),
+						new Effect(TypeEffect.INT, false, -30, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Agilité Surnaturelle", "80nucleus2",
+				new Calculable[] {
+					new Effect(TypeEffect.DegEp, false, 22),
+					new Effect(TypeEffect.Nature, false, 70),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S7, 60, TypeValue.DAMAGE),
+					new Proc(42, Activation.Attacked, new Calculable[] {
+						new Effect(TypeEffect.ReflectM, false, 60),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VOL, false, 25),
+					new Effect(TypeEffect.TCCGun, false, 28),
+				}),
+			new EquipSet("Chant des Sylves", "70nucleus2",
+				new Calculable[] {
+					new Proc(20, Activation.Attacked, 7, new Calculable[] {
+						new Effect(TypeEffect.TCCP, false, 10),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 20),
+					new SkillEffect(TypeSkillEffect.Class2S8, 20, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 18),
+					new Proc(40, Activation.Attack, 13, new Calculable[] {
+						new Effect(TypeEffect.CostComp, false, 900, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Chuchoteur des Soupirs", "60nucleus2",
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 22),
+					new Proc(23, Activation.Attack, 11, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoSkill),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 25),
+					new SkillEffect(TypeSkillEffect.Class2S9, 40, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefM, true, 10),
+					new Proc(35, Activation.Attack, 9, new Calculable[] {
+						new Effect(TypeEffect.Poisse, false, 70, Target.OPPONENT), // TODO Uniquement sur Skill HEAL
+					}),
+				}),
+			new EquipSet("Vogueur de Vent", "80lingot2",
+				new Calculable[] {
+					new Effect(TypeEffect.DefM, true, 30),
+					new Effect(TypeEffect.Sacre, false, 70),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S10, 4, TypeValue.DURATION),
+					new StaticEffect(TypeStaticEffect.x2STD_old, 26),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 25),
+					new Effect(TypeEffect.PV, true, 15),
+					new Proc(40, Activation.Attack, 9, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoHeal),
+					}),
+				}),
+			new EquipSet("Souffle des Limbes", "70lingot2",
+				new Calculable[] {
+					new Proc(50, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.DegOmbre, false, 800),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 18),
+					new SkillEffect(TypeSkillEffect.Class2S11, 40, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 30),
+					new Proc(32, Activation.Attack, 7, new Calculable[] {
+						new Effect(TypeEffect.ReflectP, false, 25),
+						new Effect(TypeEffect.ReflectM, false, 25),
+					}),
+				}),
+			new EquipSet("Promeneur des Nuages", "60lingot2",
+				new Calculable[] {
+					new Effect(TypeEffect.FCE, false, 20),
+					new Proc(50, Activation.Attack, new Calculable[] {
+						new Effect(TypeEffect.DegGlace, false, 700),
+					}),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DefM, true, 30),
+					new SkillEffect(TypeSkillEffect.Class2S12, 25, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new Proc(30, Activation.Attack, 6, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoHeal),
+					}),
+				}),
+			new EquipSet("Grand Oiseau Bleu", "90gvg2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 27),
+					new Effect(TypeEffect.RTCCP, false, 27),
+					new Effect(TypeEffect.RTCCM, false, 27),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 70),
+					new Effect(TypeEffect.AtkD, true, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 40),
+					new Proc(30, Activation.Attack, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Maléfices de la Harpie", "80gvg2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 27),
+					new Effect(TypeEffect.RTCCP, false, 27),
+					new Effect(TypeEffect.RTCCM, false, 27),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 65),
+					new Effect(TypeEffect.AtkD, true, 17),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 40),
+					new Proc(27, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Feinte de Geronimo", "70gvg2",
+				new Calculable[] {
+					new Effect(TypeEffect.AGI, false, 25),
+					new Effect(TypeEffect.RTCCP, false, 25),
+					new Effect(TypeEffect.RTCCM, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Sacre, false, 60),
+					new Effect(TypeEffect.AtkD, true, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 40),
+					new Proc(15, Activation.Attack, 8, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
+					}),
+				}),
+			new EquipSet("Évolution du Prédateur (Réincarné)", "100evo3R",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 24),
+					new Proc(20, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 10, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Âme Obscure", "100evo3",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 20),
+				}),
+			new EquipSet("Évolution du Sniper (Réincarné)", "90evo3R",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 24),
+					new Proc(16, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 10, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Évolution du Sniper", "90evo3",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 20),
+				}),
+			new EquipSet("Évolution du Traqueur (Réincarné)", "75evo3R",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 24),
+					new Proc(14, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 10, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Évolution du Traqueur", "75evo3",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 20),
+				}),
+			new EquipSet("Évolution du Ranger (Réincarné)", "60evo3R",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 24),
+					new Proc(12, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 10, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Évolution du Ranger", "60evo3",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 20),
+				}),
+			new EquipSet("Évolution de l'Archer (Réincarné)", "30evo2R",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 30),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 24),
+					new Proc(10, Activation.Attacked, new Calculable[] {
+						new RegenEffect(TypeEffect.PV, true, 10, TypeRegen.REGENERATION),
+					}),
+				}),
+			new EquipSet("Évolution de l'Archer", "30evo2",
+				new Calculable[] {
+					new Effect(TypeEffect.Loot, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.XP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 20),
+				}),
+			
 			new EquipSet("Percée de l'Assassin Ninja", "90red3", null, null, null),
 			new EquipSet("Véritable Ninja assassin", "10ans90red3", null, null, null),
 			new EquipSet("Orage de l'ombre", "100vio3", null, null, null),
@@ -1912,24 +2767,6 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegDuo, false, 15),
-				}),
-			new EquipSet("Chasseur de Vent", "30pve2",
-				new Calculable[] {
-					new Effect(TypeEffect.AGI, false, 4),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 20),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.DCCP, false, 45),
-				}),
-			new EquipSet("Chasseur de la Jungle", "20pve2",
-				new Calculable[] {
-					new Effect(TypeEffect.AGI, false, 2),
-				},
-				null,
-				new Calculable[] {
-					new SkillEffect(TypeSkillEffect.Class2S0, 35, TypeValue.DAMAGE),
 				}),
 			new EquipSet("(Reforgé) Assassin scarifié", "100pvp3R",
 				new Calculable[] {
@@ -2235,41 +3072,6 @@ public class LoaderEquipSet {
 						new Effect(TypeEffect.ESQ, false, 15),
 					}),
 				}),
-			new EquipSet("Précision de Sogeking (Reforgé)", "25pvp2R",
-				new Calculable[] {
-					new Effect(TypeEffect.RTCCP, false, 17),
-					new Effect(TypeEffect.RTCCM, false, 17),
-					new Effect(TypeEffect.AGI, false, 12),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.Nature, false, 22),
-					new Effect(TypeEffect.Toucher, false, 6),
-					new Effect(TypeEffect.ESQ, false, 6),
-				},
-				new Calculable[] {
-					new SkillEffect(TypeSkillEffect.Class2S1, 7, TypeValue.DURATION),
-					new Proc(50, Activation.Attack, 15, new Calculable[] {
-						new Effect(TypeEffect.FCE, false, -34, Target.OPPONENT),
-						new Effect(TypeEffect.INT, false, -34, Target.OPPONENT),
-					}),
-				}),
-			new EquipSet("Précision de Sogeking", "25pvp2",
-				new Calculable[] {
-					new Effect(TypeEffect.RTCCP, false, 15),
-					new Effect(TypeEffect.RTCCM, false, 15),
-					new Effect(TypeEffect.AGI, false, 10),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.Nature, false, 20),
-					new Effect(TypeEffect.Toucher, false, 5),
-				},
-				new Calculable[] {
-					new SkillEffect(TypeSkillEffect.Class2S1, 6, TypeValue.DURATION),
-					new Proc(50, Activation.Attack, 15, new Calculable[] {
-						new Effect(TypeEffect.FCE, false, -30, Target.OPPONENT),
-						new Effect(TypeEffect.INT, false, -30, Target.OPPONENT),
-					}),
-				}),
 			new EquipSet("Ombre de Kakashi (Reforgé)", "25pvp3R",
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 10),
@@ -2532,29 +3334,6 @@ public class LoaderEquipSet {
 					}),
 				}),
 			new EquipSet("Évolution de l'Assassin", "60evo3",
-				new Calculable[] {
-					new Effect(TypeEffect.Loot, false, 15),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.XP, false, 25),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.Depla, false, 20),
-				}),
-			new EquipSet("Évolution de l'Archer (Réincarné)", "30evo2R",
-				new Calculable[] {
-					new Effect(TypeEffect.Loot, false, 18),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.XP, false, 30),
-				},
-				new Calculable[] {
-					new Effect(TypeEffect.Depla, false, 24),
-					new Proc(10, Activation.Attacked, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 10, TypeRegen.REGENERATION),
-					}),
-				}),
-			new EquipSet("Évolution de l'Archer", "30evo2",
 				new Calculable[] {
 					new Effect(TypeEffect.Loot, false, 15),
 				},

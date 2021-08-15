@@ -117,7 +117,7 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+			System.out.println("Error override config");
 		}
 	}
 	
@@ -133,6 +133,7 @@ public class SaveConfig {
 			} else {
 				System.out.println("Création impossible, droit d'administration nécessaire.");
 				FrameError.getInstance().popup();
+				return;
 			}
 		}
 		
@@ -162,7 +163,7 @@ public class SaveConfig {
 					
 					SaveConfig.data.add(new SaveConfig(header[0], Language.valueOf(header[1]), build));
 				} catch (IOException e) {
-					System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+					System.out.println("Error on loading save data");
 				}
 			}
 		}
@@ -222,7 +223,7 @@ public class SaveConfig {
 			
 			SaveConfig.overrideCustom();
 		} catch (IOException e) {
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+			System.out.println("Error loading custom equipment");
 		}
 	}
 	
@@ -256,7 +257,7 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+			System.out.println("Error write data");
 		}
 	}
 	
@@ -316,7 +317,7 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			System.out.println("Error with " + SaveConfig.class.getClass().getSimpleName() + " class");
+			System.out.println("Error override custom equipment");
 		}
 	}
 }
