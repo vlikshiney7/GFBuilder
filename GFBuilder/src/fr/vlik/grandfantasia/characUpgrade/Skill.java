@@ -13,6 +13,12 @@ import fr.vlik.grandfantasia.template.InnerIconEffect;
 
 public class Skill extends Buff {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME_PASSIVE = new HashMap<Language, String>() {{
+		put(Language.FR, "Compétences passives");
+		put(Language.EN, "Passive skills");
+	}};
+	
 	private static Skill[][] dataPassive = LoaderCharacUpgrade.getPassiveSkill();
 	private static Skill[] dataUpgrade = LoaderCharacUpgrade.getUpgradeSkill();
 	

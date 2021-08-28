@@ -45,7 +45,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageArmor extends PartialRedStuff {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "ARMOR";
 	private static PageArmor INSTANCE = new PageArmor();
 	
@@ -68,8 +67,7 @@ public class PageArmor extends PartialRedStuff {
 	}
 
 	public PageArmor() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE, 5);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS, 5);
 		
 		this.shortcutSet = new JCustomComboBox<EquipSet>(new EquipSet[] {});
 		this.shortcutSet.addActionListener(e -> {
@@ -202,11 +200,21 @@ public class PageArmor extends PartialRedStuff {
 		return this.pearl.get(id).getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
+	@SuppressWarnings("serial")
+	protected void setLabel() {
 		for(int i = 0; i < 5; i++) {
-			this.labelAPI.put("PearlEnchant" + i, new JLangLabel(PearlEnchantment.CLASS_NAME, Design.SUBTITLE));
-			this.labelAPI.put("Refining" + i, new JLangLabel(RedEnchantment.SUB_CLASS_NAME, Design.SUBTITLE));
+			this.labels.put("PearlEnchant" + i, new JLangLabel(PearlEnchantment.CLASS_NAME, Design.SUBTITLE));
+			this.labels.put("Refining" + i, new JLangLabel(RedEnchantment.SUB_CLASS_NAME, Design.SUBTITLE));
+		}
+		
+		this.labels.put("ShortCut", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Raccourci de set"); put(Language.EN, "Set shortcut"); }}, Design.TITLE));
+		this.labels.put("Armor0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Casque"); put(Language.EN, "Helmet"); }}, Design.TITLE));
+		this.labels.put("Armor1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Plastron"); put(Language.EN, "Breastplate"); }}, Design.TITLE));
+		this.labels.put("Armor2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Jambière"); put(Language.EN, "Legging"); }}, Design.TITLE));
+		this.labels.put("Armor3", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Gantelet"); put(Language.EN, "Gauntlet"); }}, Design.TITLE));
+		this.labels.put("Armor4", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Botte"); put(Language.EN, "Boot"); }}, Design.TITLE));
+		for(int i = 0; i < 5; i++) {
+			this.labels.put("ArmorXP" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Armure"); put(Language.EN, "Armor Exp"); }}, Design.SUBTITLE));
 		}
 	}
 
@@ -348,9 +356,8 @@ public class PageArmor extends PartialRedStuff {
 	@Override
 	protected void createPanel() {
 		this.showAndHide = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		this.showAndHide.addAll(this.labelGFB[0], Box.createVerticalStrut(10),
+		this.showAndHide.addAll(this.labels.get("ShortCut"), Box.createVerticalStrut(10),
 				this.shortcutSet, Box.createVerticalStrut(5), this.shortcutFortif, Box.createVerticalStrut(5), this.shortcutEnchant);
-		this.labelGFB[0].setFont(Design.TITLE);
 		this.showAndHide.setVisible(false);
 		
 		this.add(this.showAndHide);
@@ -370,7 +377,7 @@ public class PageArmor extends PartialRedStuff {
 			}
 			
 			JCustomPanel enchantArmor = new JCustomPanel(BoxLayout.Y_AXIS);
-			enchantArmor.addAll(redEnchantArmor, this.labelAPI.get("Refining" + i), refiningArmor);
+			enchantArmor.addAll(redEnchantArmor, this.labels.get("Refining" + i), refiningArmor);
 			
 			JCustomPanel fortifArmor = new JCustomPanel(BoxLayout.X_AXIS);
 			fortifArmor.addAll(this.valueFortif.get(i), Box.createHorizontalStrut(5), this.labelValue.get(i));
@@ -384,7 +391,7 @@ public class PageArmor extends PartialRedStuff {
 				pearlArmor.addAll(this.pearl.get(i+1), Box.createVerticalStrut(3));
 			}
 			
-			JCustomPanel starPanel = new JCustomPanel(this.labelAPI.get("PearlEnchant" + i), Box.createHorizontalStrut(10));
+			JCustomPanel starPanel = new JCustomPanel(this.labels.get("PearlEnchant" + i), Box.createHorizontalStrut(10));
 			starPanel.addAll(this.starPearl.get(i));
 			
 			JCustomPanel listEnchant = new JCustomPanel(new GridLayout(5, 2, 2, 5));
@@ -393,8 +400,7 @@ public class PageArmor extends PartialRedStuff {
 			}
 			
 			JCustomPanel xpArmor = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-			xpArmor.add(this.labelGFB[i+6]);
-			this.labelGFB[i+6].setFont(Design.SUBTITLE);
+			xpArmor.add(this.labels.get("ArmorXP" + i));
 			
 			for(int j = 0; j < 2; j++) {
 				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -403,11 +409,10 @@ public class PageArmor extends PartialRedStuff {
 			}
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelGFB[i+1], Box.createVerticalStrut(10), descArmor, Box.createVerticalStrut(2),
+			elemI.addAll(this.labels.get("Armor" + i), Box.createVerticalStrut(10), descArmor, Box.createVerticalStrut(2),
 					enchantArmor, Box.createVerticalStrut(2), fortifArmor, Box.createVerticalStrut(5),
 					pearlArmor, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
 					xpArmor);
-			this.labelGFB[i+1].setFont(Design.TITLE);
 			
 			this.showAndHideEnchant.add(listEnchant);
 			this.showAndHideRedEnchant.add(enchantArmor);
@@ -421,17 +426,13 @@ public class PageArmor extends PartialRedStuff {
 		initPanel();
 		
 		for(int i = 0; i < 5; i++) {
-			this.labelAPI.get("PearlEnchant" + i).setVisible(false);
+			this.labels.get("PearlEnchant" + i).setVisible(false);
 		}
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 	}
@@ -459,7 +460,7 @@ public class PageArmor extends PartialRedStuff {
 					this.pearl.get(i+1).setSelectedIndex(0);
 				}
 				
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(2);
 			}
 		}
 	}

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.Design;
@@ -17,32 +16,31 @@ public abstract class PartialPage extends JCustomPanel {
 	private static final long serialVersionUID = 1L;
 	
 	protected ArrayList<Calculable> effects;
-	protected JLangLabel[] labelGFB;
-	protected Map<String, JLangLabel> labelAPI = new HashMap<String, JLangLabel>();
+	protected Map<String, JLangLabel> labels = new HashMap<String, JLangLabel>();
 	
-	protected PartialPage(int caseTabLabel) {
+	protected PartialPage() {
 		super();
 		this.setBackground(Design.UIColor[2]);
-		this.labelGFB = Lang.getDataLabel(caseTabLabel);
+		setLabel();
 	}
 	
-	protected PartialPage(int layout, int caseTabLabel) {
+	protected PartialPage(int layout) {
 		super(layout);
 		this.setBackground(Design.UIColor[2]);
-		this.labelGFB = Lang.getDataLabel(caseTabLabel);
+		setLabel();
 	}
 	
-	protected PartialPage(LayoutManager layout, int caseTabLabel) {
+	protected PartialPage(LayoutManager layout) {
 		super(layout);
 		this.setBackground(Design.UIColor[2]);
-		this.labelGFB = Lang.getDataLabel(caseTabLabel);
+		setLabel();
 	}
 	
 	public ArrayList<Calculable> getEffects() {
 		return this.effects;
 	}
 	
-	abstract protected void setLabelAPI();
+	abstract protected void setLabel();
 	
 	abstract protected void setEffects();
 	

@@ -26,7 +26,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageSprite extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "SPRITE";
 	private static PageSprite INSTANCE = new PageSprite();
 	
@@ -39,8 +38,7 @@ public class PageSprite extends PartialPage {
 	}
 
 	private PageSprite() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS);
 		
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
@@ -83,9 +81,16 @@ public class PageSprite extends PartialPage {
 		return this.islandBuff.getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Blason", new JLangLabel(Blason.CLASS_NAME, Design.TITLE));
+		this.labels.put("Isle", new JLangLabel(IslandBuff.CLASS_NAME, Design.TITLE));
 		
+		this.labels.put("Type0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Offensif"); put(Language.EN, "Aggressive"); }}, Design.SUBTITLE));
+		this.labels.put("Type1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Défensif"); put(Language.EN, "Defensive"); }}, Design.SUBTITLE));
+		this.labels.put("Costume", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Costume"); put(Language.EN, "Costume"); }}, Design.TITLE));
+		this.labels.put("SpriteCost0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tête"); put(Language.EN, "Head"); }}, Design.SUBTITLE));
+		this.labels.put("SpriteCost1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Corps"); put(Language.EN, "Body"); }}, Design.SUBTITLE));
 	}
 
 	@Override
@@ -108,43 +113,34 @@ public class PageSprite extends PartialPage {
 	@Override
 	protected void createPanel() {
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.add(this.labelGFB[0], Box.createVerticalStrut(10));
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem1.add(this.labels.get("Blason"), Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel panelBlason = new JCustomPanel(BoxLayout.Y_AXIS);
-			panelBlason.addAll(this.labelGFB[i+1], Box.createVerticalStrut(3), this.blason.get(i), Box.createVerticalStrut(5));
-			this.labelGFB[i+1].setFont(Design.SUBTITLE);
+			panelBlason.addAll(this.labels.get("Type" + i), Box.createVerticalStrut(3), this.blason.get(i), Box.createVerticalStrut(5));
 			
 			elem1.add(panelBlason);
 		}
 		
 		JCustomPanel elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem2.add(this.labelGFB[4], Box.createVerticalStrut(10));
-		this.labelGFB[4].setFont(Design.TITLE);
+		elem2.add(this.labels.get("Costume"), Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel panelCost = new JCustomPanel(BoxLayout.Y_AXIS);
-			panelCost.addAll(this.labelGFB[i+5], Box.createVerticalStrut(3), this.spriteCost.get(i), Box.createVerticalStrut(5));
-			this.labelGFB[i+5].setFont(Design.SUBTITLE);
+			panelCost.addAll(this.labels.get("SpriteCost" + i), Box.createVerticalStrut(3), this.spriteCost.get(i), Box.createVerticalStrut(5));
 			
 			elem2.add(panelCost);
 		}
 		
 		JCustomPanel elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem3.addAll(this.labelGFB[3], Box.createVerticalStrut(10), this.islandBuff);
-		this.labelGFB[3].setFont(Design.TITLE);
+		elem3.addAll(this.labels.get("Isle"), Box.createVerticalStrut(10), this.islandBuff);
 		
 		this.addAll(elem1, Box.createVerticalStrut(10), elem2, Box.createVerticalStrut(10), elem3);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 	}
@@ -154,7 +150,7 @@ public class PageSprite extends PartialPage {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
 			
 			if(!this.blason.get(i).setItems(tabBlason)) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(9);
 			}
 		}
 	}
@@ -163,7 +159,7 @@ public class PageSprite extends PartialPage {
 		SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), SpriteCostType.values()[1]);
 		
 		if(!this.spriteCost.get(1).setItems(tabCost)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(9);
 		}
 	}
 	

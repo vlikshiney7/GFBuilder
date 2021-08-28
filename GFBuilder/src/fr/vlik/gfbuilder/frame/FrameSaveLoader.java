@@ -40,7 +40,7 @@ public class FrameSaveLoader extends JCustomFrame {
 	
 	private FrameSaveLoader() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(15);
+		this.label = Lang.getDataLabel(3);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveOnQuit.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));

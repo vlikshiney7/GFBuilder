@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.characUpgrade;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -10,6 +11,12 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Stone extends CompleteBuff {
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Pierre permanente");
+		put(Language.EN, "Permanent stone");
+	}};
 	
 	private static Stone[] data = LoaderCharacUpgrade.getStone();
 	

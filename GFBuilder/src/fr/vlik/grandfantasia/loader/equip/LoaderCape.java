@@ -1215,7 +1215,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.INT, false, 59, true),
 					new Effect(TypeEffect.VOL, false, 49, true),
 				}, new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 2),
+					new Effect(TypeEffect.ESQ, true, 2),
 				}),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Insouciant : Cape du Chant des Ténèbres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -1238,7 +1238,7 @@ public class LoaderCape {
 					new Effect(TypeEffect.INT, false, 56, true),
 					new Effect(TypeEffect.VOL, false, 32, true),
 				}, new Calculable[] {
-					new Effect(TypeEffect.ESQ, false, 1),
+					new Effect(TypeEffect.ESQ, true, 1),
 				}),
 			new Cape(new HashMap<Language, String>() {{ put(Language.FR, "Manteau de Chronos de Nanoq"); put(Language.EN, "Nanoq's Chrono Mantle"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },

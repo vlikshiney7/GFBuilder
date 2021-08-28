@@ -37,7 +37,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageBuff extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "BUFF";
 	private static PageBuff INSTANCE = new PageBuff();
 	
@@ -67,8 +66,7 @@ public class PageBuff extends PartialPage {
 	}
 	
 	private PageBuff() {
-		super(NUM_PAGE);
-		setLabelAPI();
+		super();
 		
 		for(int i = 0; i < 7; i++) {
 			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
@@ -234,9 +232,23 @@ public class PageBuff extends PartialPage {
 		return this.stone.getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Nucleus", new JLangLabel(Nucleus.CLASS_NAME, Design.TITLE));
+		this.labels.put("Energy", new JLangLabel(Energy.CLASS_NAME, Design.TITLE));
+		this.labels.put("Guild", new JLangLabel(GuildBuff.CLASS_NAME, Design.TITLE));
+		this.labels.put("Stone", new JLangLabel(Stone.CLASS_NAME, Design.TITLE));
+		this.labels.put("NucleusEnchant", new JLangLabel(NucleusEnchantment.CLASS_NAME, Design.SUBTITLE));
 		
+		this.labels.put("Nucleus0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Vert"); put(Language.EN, "Green"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Trésor"); put(Language.EN, "Treasure"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Bleu"); put(Language.EN, "Blue"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus3", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Orange"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus4", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Jaune"); put(Language.EN, "Gold"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus5", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Violet"); put(Language.EN, "Purple"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus6", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Compétence"); put(Language.EN, "Skill"); }}, Design.SUBTITLE));
+		this.labels.put("4from", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "4 parmi :"); put(Language.EN, "4 from:"); }}, Design.SUBTITLE));
+		this.labels.put("Select", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Sélection :"); put(Language.EN, "Selection:"); }}, Design.SUBTITLE));
 	}
 	
 	@Override
@@ -281,13 +293,11 @@ public class PageBuff extends PartialPage {
 	@Override
 	protected void createPanel() {
 		JCustomPanel page11Elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem1.add(this.labelGFB[0], Box.createVerticalStrut(10));
-		this.labelGFB[0].setFont(Design.TITLE);
+		page11Elem1.add(this.labels.get("Nucleus"), Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 7; i++) {
-			JCustomPanel nucleus = new JCustomPanel(this.labelGFB[i+1], this.nucleus.get(i), Box.createVerticalStrut(5));
-			this.labelGFB[i+1].setFont(Design.SUBTITLE);
-			this.labelGFB[i+1].setPreferredSize(new Dimension(90, 20));
+			JCustomPanel nucleus = new JCustomPanel(this.labels.get("Nucleus" + i), this.nucleus.get(i), Box.createVerticalStrut(5));
+			this.labels.get("Nucleus" + i).setPreferredSize(new Dimension(90, 20));
 			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
 			
 			if(i == 1) {
@@ -297,8 +307,7 @@ public class PageBuff extends PartialPage {
 			page11Elem1.add(nucleus);
 		}
 		
-		JCustomPanel starPanel = new JCustomPanel(this.labelGFB[13], Box.createHorizontalStrut(10));
-		this.labelGFB[13].setFont(Design.SUBTITLE);
+		JCustomPanel starPanel = new JCustomPanel(this.labels.get("NucleusEnchant"), Box.createHorizontalStrut(10));
 		starPanel.addAll(this.starNucleus);
 		
 		JCustomPanel listEnchant = new JCustomPanel(new GridLayout(3, 2, 2, 5));
@@ -316,8 +325,7 @@ public class PageBuff extends PartialPage {
 		}
 		
 		JCustomPanel page11Elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem2.addAll(this.labelGFB[8], Box.createVerticalStrut(10), energies);
-		this.labelGFB[8].setFont(Design.TITLE);
+		page11Elem2.addAll(this.labels.get("Energy"), Box.createVerticalStrut(10), energies);
 		
 		JCustomPanel blocBuffGuild = new JCustomPanel(BoxLayout.Y_AXIS);
 		blocBuffGuild.add(Box.createVerticalStrut(5));
@@ -334,10 +342,8 @@ public class PageBuff extends PartialPage {
 		
 		
 		JCustomPanel page11Elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem3.addAll(this.labelGFB[9], Box.createVerticalStrut(10), blocBuffGuild, Box.createVerticalStrut(10),
-				this.labelGFB[10], Box.createVerticalStrut(5), this.guildBuff);
-		this.labelGFB[9].setFont(Design.TITLE);
-		this.labelGFB[10].setFont(Design.SUBTITLE);
+		page11Elem3.addAll(this.labels.get("Guild"), Box.createVerticalStrut(10), blocBuffGuild, Box.createVerticalStrut(10),
+				this.labels.get("4from"), Box.createVerticalStrut(5), this.guildBuff);
 		
 		
 		JCustomPanel blocStone = new JCustomPanel(BoxLayout.Y_AXIS);
@@ -354,10 +360,8 @@ public class PageBuff extends PartialPage {
 		}
 		
 		JCustomPanel page11Elem4 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page11Elem4.addAll(this.labelGFB[11], Box.createVerticalStrut(10), blocStone, Box.createVerticalStrut(10),
-				this.labelGFB[12], Box.createVerticalStrut(5), this.stone);
-		this.labelGFB[11].setFont(Design.TITLE);
-		this.labelGFB[12].setFont(Design.SUBTITLE);
+		page11Elem4.addAll(this.labels.get("Stone"), Box.createVerticalStrut(10), blocStone, Box.createVerticalStrut(10),
+				this.labels.get("Select"), Box.createVerticalStrut(5), this.stone);
 		
 		this.voidPanel = new JCustomPanel();
 		this.voidPanel.setBackground(Design.UIColor[2]);
@@ -383,11 +387,7 @@ public class PageBuff extends PartialPage {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 		
@@ -592,7 +592,7 @@ public class PageBuff extends PartialPage {
 			}
 			
 			if(this.energy.get(i).getIntValue() != memory) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(10);
 			}
 		}
 	}

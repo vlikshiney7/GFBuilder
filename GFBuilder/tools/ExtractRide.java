@@ -1,2 +1,0 @@
-new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Dragon cyan Griffes de ciel de combat"); put(Language.EN, ""); }}, 40, false, "I02385", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
-new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Parchemin paint Papillon floral de combat"); put(Language.EN, ""); }}, 40, false, "I02461", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),

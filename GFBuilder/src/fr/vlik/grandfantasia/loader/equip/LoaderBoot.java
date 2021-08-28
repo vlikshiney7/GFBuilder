@@ -12437,7 +12437,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.VOL, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Prisme de Cristal"); put(Language.EN, "Crystal Prism Long Boots"); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Prisme de Cristal"); put(Language.EN, "Crystal Prism Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold10", "bottes/90gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 437, true),
@@ -13154,7 +13154,7 @@ class LoaderBoot {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes évolutives de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Long Boots"); }},
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp11", "bottes/40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 174, true),

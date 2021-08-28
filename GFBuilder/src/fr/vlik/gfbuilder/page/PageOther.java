@@ -28,7 +28,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageOther extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "OTHER";
 	private static PageOther INSTANCE = new PageOther();
 	
@@ -46,8 +45,7 @@ public class PageOther extends PartialPage {
 	}
 
 	private PageOther() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS);
 		
 		this.bague = new JCustomComboBox<Bague>(Bague.getData());
 		this.bague.addActionListener(e -> {
@@ -118,8 +116,12 @@ public class PageOther extends PartialPage {
 	}
 	
 	@Override
-	protected void setLabelAPI() {
-		
+	protected void setLabel() {
+		this.labels.put("Bague", new JLangLabel(Bague.CLASS_NAME, Design.TITLE));
+		this.labels.put("LoveCo", new JLangLabel(LoveBuff.CLASS_NAME, Design.TITLE));
+		this.labels.put("Anima", new JLangLabel(Anima.CLASS_NAME, Design.TITLE));
+		this.labels.put("Souvenir", new JLangLabel(Souvenir.CLASS_NAME, Design.TITLE));
+		this.labels.put("SouvenirEnchant", new JLangLabel(SouvenirEnchantment.CLASS_NAME, Design.SUBTITLE));
 	}
 
 	@Override
@@ -143,24 +145,15 @@ public class PageOther extends PartialPage {
 	@Override
 	protected void createPanel() {
 		JCustomPanel page12Elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page12Elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), this.bague, Box.createVerticalStrut(15), this.labelGFB[1], Box.createVerticalStrut(10), this.loveCo);
-		this.labelGFB[0].setFont(Design.TITLE);
-		this.labelGFB[1].setFont(Design.TITLE);
-		
+		page12Elem1.addAll(this.labels.get("Bague"), Box.createVerticalStrut(10), this.bague, Box.createVerticalStrut(15), this.labels.get("LoveCo"), Box.createVerticalStrut(10), this.loveCo);
 		this.showAndHide.add(page12Elem1);
 		
-		
 		JCustomPanel page12Elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page12Elem2.addAll(this.labelGFB[2], Box.createVerticalStrut(10), this.anima);
-		this.labelGFB[2].setFont(Design.TITLE);
-		
+		page12Elem2.addAll(this.labels.get("Anima"), Box.createVerticalStrut(10), this.anima);
 		this.showAndHide.add(page12Elem2);
 		
-		
 		JCustomPanel page12Elem3 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		page12Elem3.addAll(this.labelGFB[3], Box.createVerticalStrut(10), this.souvenir, Box.createVerticalStrut(5), this.labelGFB[4]);
-		this.labelGFB[3].setFont(Design.TITLE);
-		this.labelGFB[4].setFont(Design.SUBTITLE);
+		page12Elem3.addAll(this.labels.get("Souvenir"), Box.createVerticalStrut(10), this.souvenir, Box.createVerticalStrut(5), this.labels.get("SouvenirEnchant"));
 		
 		JCustomPanel enchant = new JCustomPanel(BoxLayout.X_AXIS);
 		for(int i = 0; i < 3; i++) {
@@ -170,15 +163,13 @@ public class PageOther extends PartialPage {
 		page12Elem3.add(enchant);
 		
 		this.addAll(page12Elem1, Box.createVerticalStrut(10), page12Elem2, Box.createVerticalStrut(10), page12Elem3);
+		
+		this.labels.get("SouvenirEnchant").setVisible(false);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 	}
@@ -199,11 +190,11 @@ public class PageOther extends PartialPage {
 		}
 		
 		if(!this.getBague().equals(memoryBague)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(11);
 		}
 
 		if(!this.getLoveCo().equals(memoryLoveCo)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(11);
 		}
 	}
 	
@@ -222,7 +213,7 @@ public class PageOther extends PartialPage {
 		}
 		
 		if(!this.getAnima().equals(memory)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(11);
 		}
 	}
 	
@@ -232,19 +223,19 @@ public class PageOther extends PartialPage {
 		Souvenir[] tabSouvenir = Souvenir.getPossibleSouvenir(lvl);
 		
 		if(!this.souvenir.setItems(tabSouvenir)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(11);
 		}
 	}
 	
 	private void updateEnchantSouvenir() {
 		if(this.souvenir.getSelectedIndex() > 0) {
-			this.labelGFB[4].setVisible(true);
+			this.labels.get("SouvenirEnchant").setVisible(true);
 			for(int i = 0; i < 3; i++) {
 				this.souvenirEnchant.get(i).setVisible(true);
 				updateSouvenirEnchant(i);
 			}
 		} else {
-			this.labelGFB[4].setVisible(false);
+			this.labels.get("SouvenirEnchant").setVisible(false);
 			for(int i = 0; i < 3; i++) {
 				this.souvenirEnchant.get(i).setVisible(false);
 			}

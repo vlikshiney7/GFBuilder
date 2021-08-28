@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.subEquip;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -14,6 +15,12 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Souvenir extends CompleteBuff {
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Souvenir");
+		put(Language.EN, "Souvenir");
+	}};
 	
 	private static final String PATH = Tools.RESOURCE + Souvenir.class.getSimpleName().toLowerCase() + "/";
 	private static Souvenir[] data = LoaderSubEquip.getSouvenir();

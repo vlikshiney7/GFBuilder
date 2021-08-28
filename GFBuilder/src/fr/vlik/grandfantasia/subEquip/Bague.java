@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia.subEquip;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -13,6 +14,12 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Bague extends CompleteBuff {
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Bague de mariage");
+		put(Language.EN, "Wedding ring");
+	}};
 	
 	private static final String PATH = Tools.RESOURCE + Bague.class.getSimpleName().toLowerCase() + "/";
 	private static Bague[] data = LoaderSubEquip.getBague();

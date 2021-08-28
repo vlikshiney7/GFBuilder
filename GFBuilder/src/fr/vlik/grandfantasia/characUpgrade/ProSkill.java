@@ -16,6 +16,12 @@ import fr.vlik.grandfantasia.template.IconBuff;
 
 public class ProSkill extends IconBuff {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Énergie professionnelle");
+		put(Language.EN, "Professional energy");
+	}};
+	
 	private static final String PATH = Tools.RESOURCE + ProSkill.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static ProSkill[][] data = LoaderCharacUpgrade.getProSkill();

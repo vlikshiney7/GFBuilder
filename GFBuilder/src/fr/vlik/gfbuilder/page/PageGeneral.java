@@ -31,7 +31,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageGeneral extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "GENERAL";
 	private static PageGeneral INSTANCE = new PageGeneral();
 	
@@ -50,8 +49,7 @@ public class PageGeneral extends PartialPage {
 	}
 	
 	private PageGeneral() {
-		super(new GridLayout(3, 2, 10, 10), NUM_PAGE);
-		setLabelAPI();
+		super(new GridLayout(3, 2, 10, 10));
 		
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleGrade(0));
 		this.grade.addActionListener(e -> {
@@ -181,13 +179,15 @@ public class PageGeneral extends PartialPage {
 		return this.archive.getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
-		this.labelAPI.put("Grade", new JLangLabel(Grade.CLASS_NAME, Design.TITLE));
-		this.labelAPI.put("Reinca", new JLangLabel(Reinca.CLASS_NAME, Design.TITLE));
-		this.labelAPI.put("Title", new JLangLabel(Title.CLASS_NAME, Design.TITLE));
-		this.labelAPI.put("Yggdrasil", new JLangLabel(Yggdrasil.CLASS_NAME, Design.TITLE));
-		this.labelAPI.put("Archive", new JLangLabel(Archive.CLASS_NAME, Design.TITLE));
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Grade", new JLangLabel(Grade.CLASS_NAME, Design.TITLE));
+		this.labels.put("Reinca", new JLangLabel(Reinca.CLASS_NAME, Design.TITLE));
+		this.labels.put("Title", new JLangLabel(Title.CLASS_NAME, Design.TITLE));
+		this.labels.put("Yggdrasil", new JLangLabel(Yggdrasil.CLASS_NAME, Design.TITLE));
+		this.labels.put("Archive", new JLangLabel(Archive.CLASS_NAME, Design.TITLE));
+		
+		this.labels.put("Level", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Niveau"); put(Language.EN, "Level"); }}, Design.TITLE));
 	}
 	
 	@Override
@@ -205,23 +205,22 @@ public class PageGeneral extends PartialPage {
 	@Override
 	protected void createPanel() {
 		JCustomPanel elem1 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(new JCustomPanel(this.labelAPI.get("Grade")), this.grade);
+		elem1.addAll(new JCustomPanel(this.labels.get("Grade")), this.grade);
 		
 		JCustomPanel elem2 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem2.addAll(new JCustomPanel(this.labelGFB[0]), this.lvl);
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem2.addAll(new JCustomPanel(this.labels.get("Level")), this.lvl);
 		
 		JCustomPanel elem3 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem3.addAll(new JCustomPanel(this.labelAPI.get("Reinca")), this.reinca);
+		elem3.addAll(new JCustomPanel(this.labels.get("Reinca")), this.reinca);
 		
 		JCustomPanel elem4 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem4.addAll(new JCustomPanel(this.labelAPI.get("Title")), new JCustomPanel(this.filter, this.title));
+		elem4.addAll(new JCustomPanel(this.labels.get("Title")), new JCustomPanel(this.filter, this.title));
 		
 		JCustomPanel elem5 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem5.addAll(new JCustomPanel(this.labelAPI.get("Yggdrasil")), this.yggdra);
+		elem5.addAll(new JCustomPanel(this.labels.get("Yggdrasil")), this.yggdra);
 		
 		JCustomPanel elem6 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem6.addAll(new JCustomPanel(this.labelAPI.get("Archive")), this.archive);
+		elem6.addAll(new JCustomPanel(this.labels.get("Archive")), this.archive);
 		
 		
 		this.addAll(elem1, elem2, elem3, elem4, elem5, elem6);
@@ -229,11 +228,11 @@ public class PageGeneral extends PartialPage {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
+		/*for(JLangLabel label : this.labelGFB) {
 			label.updateText(lang);
-		}
+		}*/
 		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 		

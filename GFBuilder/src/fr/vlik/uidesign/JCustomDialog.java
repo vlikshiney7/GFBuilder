@@ -35,7 +35,7 @@ public class JCustomDialog extends JDialog {
 		this.setUndecorated(true);
 		this.setSize(500, 220);
 		
-		this.label = Lang.getDataLabel(19);
+		this.label = Lang.getDataLabel(7);
 		
 		this.check = new ArrayList<ArrayList<JCustomCheckBox<Filtrable>>>(2);
 		this.check.add(toList(tags));

@@ -1647,7 +1647,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.Toucher, false, 6),
-					new Proc(20, Activation.Attack, 8, new Calculable[] {
+					new Proc(20, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 40),
 					}),
 				}, null ),
@@ -16340,7 +16340,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Feu, false, 10),
 					new Effect(TypeEffect.Glace, false, 10),
 					new Effect(TypeEffect.Nature, false, 10),
-					new Proc(15, Activation.Attack, 4, new Calculable[] {
+					new Proc(15, Activation.Attacked, 4, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 					}),
 				}, null ),

@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia.characUpgrade;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -9,8 +10,13 @@ import fr.vlik.grandfantasia.template.IconBuff;
 
 public class LoveBuff extends IconBuff {
 	
-	private static LoveBuff[] data = Loader.getLoveBuff();
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "État de la relation");
+		put(Language.EN, "Relationship status");
+	}};
 	
+	private static LoveBuff[] data = Loader.getLoveBuff();
 	
 	public LoveBuff(Map<Language, String> name, String path, Calculable[] effects) {
 		super(name, path, effects);

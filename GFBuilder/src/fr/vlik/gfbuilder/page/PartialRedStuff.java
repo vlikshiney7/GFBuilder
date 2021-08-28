@@ -33,18 +33,18 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 	
 	protected CustomList<InnerEffect> redEnchants = new CustomList<InnerEffect>();
 
-	protected PartialRedStuff(int caseTabLabel, int nbStuffRed) {
-		super(caseTabLabel, nbStuffRed);
+	protected PartialRedStuff(int nbStuffRed) {
+		super(nbStuffRed);
 		initRedStuff(nbStuffRed);
 	}
 	
-	protected PartialRedStuff(int layout, int caseTabLabel, int nbStuffRed) {
-		super(layout, caseTabLabel, nbStuffRed);
+	protected PartialRedStuff(int layout, int nbStuffRed) {
+		super(layout, nbStuffRed);
 		initRedStuff(nbStuffRed);
 	}
 	
-	protected PartialRedStuff(LayoutManager layout, int caseTabLabel, int nbStuffRed) {
-		super(layout, caseTabLabel, nbStuffRed);
+	protected PartialRedStuff(LayoutManager layout, int nbStuffRed) {
+		super(layout, nbStuffRed);
 		initRedStuff(nbStuffRed);
 	}
 	

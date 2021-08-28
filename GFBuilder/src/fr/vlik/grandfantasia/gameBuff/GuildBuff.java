@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.gameBuff;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -9,6 +10,12 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.IconBuff;
 
 public class GuildBuff extends IconBuff {
+	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Buff de guilde");
+		put(Language.EN, "Guild buff");
+	}};
 	
 	private static GuildBuff[] data = Loader.getGuildBuff();
 	

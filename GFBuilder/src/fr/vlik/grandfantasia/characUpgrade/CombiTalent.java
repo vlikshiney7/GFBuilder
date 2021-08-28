@@ -15,6 +15,12 @@ import fr.vlik.grandfantasia.template.IconBuff;
 
 public final class CombiTalent extends IconBuff {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Spécialité");
+		put(Language.EN, "Speciality");
+	}};
+	
 	private static String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static CombiTalent[][] data = LoaderCharacUpgrade.getCombiTalent();

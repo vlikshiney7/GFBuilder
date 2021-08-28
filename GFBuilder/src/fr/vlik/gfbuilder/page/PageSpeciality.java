@@ -28,7 +28,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageSpeciality extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "SPECIALITY";
 	private static PageSpeciality INSTANCE = new PageSpeciality();
 	
@@ -47,10 +46,9 @@ public class PageSpeciality extends PartialPage {
 	}
 	
 	private PageSpeciality() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
+		super(BoxLayout.Y_AXIS);
 		this.setBorder(new EmptyBorder(10, 10, 10, 10));
 		this.setBackground(Design.UIColor[1]);
-		setLabelAPI();
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
@@ -80,12 +78,12 @@ public class PageSpeciality extends PartialPage {
 			}
 		}
 		
-		this.reinitSpe = new JCustomButton(this.labelGFB[6].getLang(), Design.RED_COLOR);
+		this.reinitSpe = new JCustomButton(this.labels.get("Min").getLang(), Design.RED_COLOR);
 		this.reinitSpe.addActionListener(e -> {
 			setMinSpe();
 		});
 		
-		this.maxSpe = new JCustomButton(this.labelGFB[7].getLang(), Design.GREEN_COLOR);
+		this.maxSpe = new JCustomButton(this.labels.get("Max").getLang(), Design.GREEN_COLOR);
 		this.maxSpe.addActionListener(e -> {
 			setMaxSpe();
 		});
@@ -95,9 +93,17 @@ public class PageSpeciality extends PartialPage {
 		setEffects();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Speciality", new JLangLabel(Speciality.CLASS_NAME, Design.TITLE));
 		
+		this.labels.put("Remain", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Points restants : "); put(Language.EN, "Remaining points: "); }}, Design.SUBTITLE));
+		this.labels.put("Type0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Maître"); put(Language.EN, "Master"); }}, Design.SUBTITLE));
+		this.labels.put("Type1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Mythique"); put(Language.EN, "Mythical"); }}, Design.SUBTITLE));
+		this.labels.put("Type2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Légendaire"); put(Language.EN, "Legendary"); }}, Design.SUBTITLE));
+		this.labels.put("Type3", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Ultime"); put(Language.EN, "Ultimate"); }}, Design.SUBTITLE));
+		this.labels.put("Min", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre à 0"); put(Language.EN, "Set all to 0"); }}, Design.TEXT));
+		this.labels.put("Max", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre à 10"); put(Language.EN, "Set all to 10"); }}, Design.TEXT));
 	}
 	
 	@Override
@@ -116,13 +122,11 @@ public class PageSpeciality extends PartialPage {
 	@Override
 	protected void createPanel() {
 		JCustomPanel remain = new JCustomPanel();
-		remain.addAll(this.labelGFB[1], this.nbSpePoint);
-		this.labelGFB[1].setFont(Design.SUBTITLE);
+		remain.addAll(this.labels.get("Remain"), this.nbSpePoint);
 		this.nbSpePoint.setFont(new Font("Open Sans", Font.BOLD, 14));
 		this.nbSpePoint.setForeground(Design.FontColor[0]);
 		
-		this.addAll(this.labelGFB[0], Box.createVerticalStrut(10), remain, Box.createVerticalStrut(5));
-		this.labelGFB[0].setFont(Design.TITLE);
+		this.addAll(this.labels.get("Speciality"), Box.createVerticalStrut(10), remain, Box.createVerticalStrut(5));
 		
 		
 		JCustomPanel catSpe = new JCustomPanel(new GridLayout(4, 1));
@@ -131,9 +135,8 @@ public class PageSpeciality extends PartialPage {
 		int numSpe = 0;
 		
 		for(int i = 0; i < 4; i++) {
-			catSpe.add(this.labelGFB[i+2]);
-			this.labelGFB[i+2].setFont(Design.SUBTITLE);
-			this.labelGFB[i+2].setPreferredSize(new Dimension(76, 70));
+			catSpe.add(this.labels.get("Type" + i));
+			this.labels.get("Type" + i).setPreferredSize(new Dimension(76, 70));
 			
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
@@ -169,11 +172,7 @@ public class PageSpeciality extends PartialPage {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 		

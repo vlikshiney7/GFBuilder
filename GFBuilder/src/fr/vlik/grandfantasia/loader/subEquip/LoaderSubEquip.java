@@ -151,10 +151,7 @@ public class LoaderSubEquip {
 			new Runway("Lutte", new Calculable[] {
 				new StaticEffect(TypeStaticEffect.x2STD_old, 5),
 			}),
-			new Runway("Malédiction", new Calculable[] {
-				new StaticEffect(TypeStaticEffect.x2Skill_old, 5),
-			}),
-			new Runway("Praetor", new Calculable[] {
+			new Runway("Magistrat", new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 6),
 				new Effect(TypeEffect.VIT, false, 6),
 				new Effect(TypeEffect.INT, false, 6),
@@ -162,6 +159,9 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.AGI, false, 6),
 				new Effect(TypeEffect.DefP, true, 3),
 				new Effect(TypeEffect.DefM, true, 3),
+			}),
+			new Runway("Malédiction", new Calculable[] {
+				new StaticEffect(TypeStaticEffect.x2Skill_old, 5),
 			}),
 			new Runway("Prêtre", new Calculable[] {
 				new Effect(TypeEffect.ReducSkillM, false, 3),
@@ -232,7 +232,7 @@ public class LoaderSubEquip {
 				new Runway[] {
 					Runway.get("Bravoure"),
 					Runway.get("Ranger"),
-					Runway.get("Praetor"),
+					Runway.get("Magistrat"),
 				}),
 		};
 	}

@@ -74,7 +74,6 @@ public class MainFrame extends JFrame {
 	private JCustomTabPane language;
 	
 	private JCustomPanel overlay;
-	private static int nbPages = 0;
 	private JScrollPane scrollContent;
 	private ArrayList<JCustomPanel> pages = new ArrayList<JCustomPanel>();
 	private ArrayList<JCustomFrame> frames = new ArrayList<JCustomFrame>();
@@ -91,7 +90,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.20.5");
+		super("Grand Fantasia Builder - Version 0.20.6");
 		setCustomUI();
 		
 		try {
@@ -522,10 +521,6 @@ public class MainFrame extends JFrame {
 		}
 		
 		Overlay.getInstance().setSave(false);
-	}
-	
-	public static int getNumPage() {
-		return nbPages++;
 	}
 	
 	public void setRedPane(int page) {

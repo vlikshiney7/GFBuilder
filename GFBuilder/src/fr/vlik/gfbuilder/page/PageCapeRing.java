@@ -34,7 +34,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageCapeRing extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "CAPERING";
 	private static PageCapeRing INSTANCE = new PageCapeRing();
 	
@@ -49,8 +48,7 @@ public class PageCapeRing extends PartialXpStuff {
 	}
 	
 	private PageCapeRing() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE, 3);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS, 3);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
 		this.cape = new JCustomComboBox<Cape>(tabCape);
@@ -117,9 +115,16 @@ public class PageCapeRing extends PartialXpStuff {
 		return this.enchant.get(id).getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
-		this.labelAPI.put("Cape", new JLangLabel(Cape.CLASS_NAME, Design.TITLE));
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Cape", new JLangLabel(Cape.CLASS_NAME, Design.TITLE));
+		
+		this.labels.put("Ring0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Anneau 1"); put(Language.EN, "Ring 1"); }}, Design.TITLE));
+		this.labels.put("Ring1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Anneau 2"); put(Language.EN, "Ring 2"); }}, Design.TITLE));
+		this.labels.put("CapeXP", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Cape"); put(Language.EN, "Cape Exp"); }}, Design.SUBTITLE));
+		for(int i = 0; i < 2; i++) {
+			this.labels.put("RingXP" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Anneau"); put(Language.EN, "Ring Exp"); }}, Design.SUBTITLE));
+		}
 	}
 
 	@Override
@@ -203,8 +208,7 @@ public class PageCapeRing extends PartialXpStuff {
 		descCape.addAll(this.cape, this.enchant.get(0));
 		
 		JCustomPanel xpCape = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-		xpCape.add(this.labelGFB[0]);
-		this.labelGFB[0].setFont(Design.SUBTITLE);
+		xpCape.add(this.labels.get("CapeXP"));
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -213,7 +217,7 @@ public class PageCapeRing extends PartialXpStuff {
 		}
 		
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelAPI.get("Cape"), Box.createVerticalStrut(10), descCape, Box.createVerticalStrut(5), xpCape);
+		elem1.addAll(this.labels.get("Cape"), Box.createVerticalStrut(10), descCape, Box.createVerticalStrut(5), xpCape);
 		
 		this.showAndHideXpStuff.add(xpCape);
 		
@@ -224,8 +228,7 @@ public class PageCapeRing extends PartialXpStuff {
 			descRing.addAll(this.ring.get(i), this.enchant.get(i+1));
 			
 			JCustomPanel xpRing = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-			xpRing.add(this.labelGFB[i+3]);
-			this.labelGFB[i+3].setFont(Design.SUBTITLE);
+			xpRing.add(this.labels.get("RingXP" + i));
 			
 			for(int j = 0; j < 2; j++) {
 				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -234,8 +237,7 @@ public class PageCapeRing extends PartialXpStuff {
 			}
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelGFB[i+1], Box.createVerticalStrut(10), descRing, Box.createVerticalStrut(5), xpRing);
-			this.labelGFB[i+1].setFont(Design.TITLE);
+			elemI.addAll(this.labels.get("Ring" + i), Box.createVerticalStrut(10), descRing, Box.createVerticalStrut(5), xpRing);
 			
 			this.showAndHideXpStuff.add(xpRing);
 			
@@ -249,11 +251,7 @@ public class PageCapeRing extends PartialXpStuff {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 	}
@@ -268,7 +266,7 @@ public class PageCapeRing extends PartialXpStuff {
 			updateXpStuff(0);
 			updateEnchant(0);
 			
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(3);
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -278,7 +276,7 @@ public class PageCapeRing extends PartialXpStuff {
 				updateXpStuff(i+1);
 				updateEnchant(i+1);
 				
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(3);
 			}
 		}
 	}

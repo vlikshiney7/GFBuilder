@@ -39,7 +39,7 @@ public class FrameSaveOnNew extends JCustomFrame {
 	
 	private FrameSaveOnNew() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(16);
+		this.label = Lang.getDataLabel(4);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveOnQuit.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));

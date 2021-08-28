@@ -73,7 +73,7 @@ public class FrameCreateCustom extends JCustomFrame {
 	public FrameCreateCustom() {
 		super(new BorderLayout());
 		
-		this.label = Lang.getDataLabel(18);
+		this.label = Lang.getDataLabel(6);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveAs.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));

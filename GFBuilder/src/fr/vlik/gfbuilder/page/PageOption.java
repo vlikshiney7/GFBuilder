@@ -9,7 +9,6 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
-import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.frame.FrameCreateCustom;
@@ -26,7 +25,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageOption extends JCustomPanel {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final PageOption INSTANCE = new PageOption();
 	
 	private JCustomComboBox<SaveConfig> save;
@@ -45,7 +43,7 @@ public class PageOption extends JCustomPanel {
 	private PageOption() {
 		super(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		this.setBackground(Design.UIColor[2]);
-		this.label = Lang.getDataLabel(NUM_PAGE);
+		this.label = Lang.getDataLabel(0);
 		
 		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.getData());
 		this.save.addActionListener(e -> {

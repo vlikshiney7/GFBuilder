@@ -21,18 +21,18 @@ public abstract class PartialXpStuff extends PartialPage {
 
 	protected ArrayList<JPanel> showAndHideXpStuff;
 
-	protected PartialXpStuff(int caseTabLabel, int nbXpStuff) {
-		super(caseTabLabel);
+	protected PartialXpStuff(int nbXpStuff) {
+		super();
 		initXpStuff(nbXpStuff);
 	}
 	
-	protected PartialXpStuff(int layout, int caseTabLabel, int nbXpStuff) {
-		super(layout, caseTabLabel);
+	protected PartialXpStuff(int layout, int nbXpStuff) {
+		super(layout);
 		initXpStuff(nbXpStuff);
 	}
 	
-	protected PartialXpStuff(LayoutManager layout, int caseTabLabel, int nbXpStuff) {
-		super(layout, caseTabLabel);
+	protected PartialXpStuff(LayoutManager layout, int nbXpStuff) {
+		super(layout);
 		initXpStuff(nbXpStuff);
 	}
 	

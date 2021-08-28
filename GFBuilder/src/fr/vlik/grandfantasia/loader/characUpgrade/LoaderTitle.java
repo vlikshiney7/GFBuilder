@@ -2045,6 +2045,11 @@ public class LoaderTitle {
 					new Effect(TypeEffect.DegGlace, false, 1000),
 				}),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Victoire ! Le Démon Intérieur est KO !"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 5),
+				new Effect(TypeEffect.AtkD, true, 5),
+				new Effect(TypeEffect.AtkM, true, 5),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "VIP de l'île de vacances"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.VIT, true, 2),
 			}),

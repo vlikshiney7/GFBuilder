@@ -29,7 +29,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageSkill extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "SKILL";
 	private static PageSkill INSTANCE = new PageSkill();
 	
@@ -47,8 +46,7 @@ public class PageSkill extends PartialPage {
 	}
 	
 	private PageSkill() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS);
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		this.currentLvl = PageGeneral.getInstance().getLvl();
@@ -95,8 +93,9 @@ public class PageSkill extends PartialPage {
 	}
 	
 	@Override
-	protected void setLabelAPI() {
-		
+	protected void setLabel() {
+		this.labels.put("Skill", new JLangLabel(Skill.CLASS_NAME_PASSIVE, Design.TITLE));
+		this.labels.put("ProSkill", new JLangLabel(ProSkill.CLASS_NAME, Design.TITLE));
 	}
 
 	@Override
@@ -125,8 +124,7 @@ public class PageSkill extends PartialPage {
 	@Override
 	protected void createPanel() {
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10));
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem1.addAll(this.labels.get("Skill"), Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 4; i++) {
 			elem1.add(new JCustomPanel(this.passiveSkill.get(i)));
@@ -137,8 +135,7 @@ public class PageSkill extends PartialPage {
 		}
 		
 		JCustomPanel elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem2.addAll(this.labelGFB[1], Box.createVerticalStrut(10), this.proSkill);
-		this.labelGFB[1].setFont(Design.TITLE);
+		elem2.addAll(this.labels.get("ProSkill"), Box.createVerticalStrut(10), this.proSkill);
 		
 		this.showAndHide.add(elem1);
 		this.showAndHide.add(elem2);
@@ -160,11 +157,7 @@ public class PageSkill extends PartialPage {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 	}
@@ -195,7 +188,7 @@ public class PageSkill extends PartialPage {
 			}
 			
 			if(this.getPassiveSkill(i) != null && !this.getPassiveSkill(i).equals(memory)) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(8);
 			}
 		}
 		
@@ -216,7 +209,7 @@ public class PageSkill extends PartialPage {
 			}
 		
 			if(!this.upgradeSkill.get(0).setItems(innerSkill)) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(8);
 			}
 		} else {
 			this.upgradeSkill.get(0).setVisible(false);
@@ -239,7 +232,7 @@ public class PageSkill extends PartialPage {
 			}
 			
 			if(!this.upgradeSkill.get(1).setItems(innerSkill)) {
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(8);
 			}
 		} else {
 			this.upgradeSkill.get(1).setVisible(false);
@@ -261,7 +254,7 @@ public class PageSkill extends PartialPage {
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
 		
 		if(!this.proSkill.setItems(tabProSkill)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(8);
 		}
 	}
 	

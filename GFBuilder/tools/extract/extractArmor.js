@@ -226,9 +226,6 @@ function ExtractArmor() {
 			codearmor = "-1";
 			iconpath = codeLvl + "bleu" + idClass;
 		}
-		
-		listEffect += "\t\tnew Effect(TypeEffect.PV, false, 999),\n";
-		listEffect += "\t\tnew Effect(TypeEffect.PM, false, 999),\n";
 	} else if(quality == 2) {
 		codearmor = "-1";
 	} else if(quality == 1 || quality == 0) {

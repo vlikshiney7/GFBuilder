@@ -16,6 +16,12 @@ import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Anima extends CompleteBuff {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Anima");
+		put(Language.EN, "Anima");
+	}};
+	
 	private static final String PATH = Tools.RESOURCE + Anima.class.getSimpleName().toLowerCase() + "/";
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	private static Anima[] data = LoaderSubEquip.getAnima();

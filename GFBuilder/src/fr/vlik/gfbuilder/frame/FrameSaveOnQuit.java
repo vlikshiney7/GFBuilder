@@ -37,7 +37,7 @@ public class FrameSaveOnQuit extends JCustomFrame {
 	
 	private FrameSaveOnQuit() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(14);
+		this.label = Lang.getDataLabel(2);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveOnQuit.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));

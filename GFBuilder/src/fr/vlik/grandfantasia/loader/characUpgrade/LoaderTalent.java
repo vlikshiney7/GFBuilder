@@ -4866,37 +4866,37 @@ public class LoaderTalent {
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 1),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 2),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.2, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.2, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 3),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.4, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.4, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 4),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.6, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.6, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 5),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.8, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.8, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 6),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 2, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 2, TypeRegen.REGENERATION),
 					}),
 				},
 			}),
@@ -5366,37 +5366,37 @@ public class LoaderTalent {
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 1),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 2),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.2, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.2, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 3),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.4, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.4, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 4),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.6, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.6, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 5),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 1.8, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 1.8, TypeRegen.REGENERATION),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 6),
 					new Proc(0, Activation.Attack, new Calculable[] {
-						new RegenEffect(TypeEffect.PV, true, 2, TypeRegen.REGENERATION),
+						new RegenEffect(TypeEffect.PM, true, 2, TypeRegen.REGENERATION),
 					}),
 				},
 			}),

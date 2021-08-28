@@ -34,7 +34,6 @@ import fr.vlik.uidesign.JLangRadioButton;
 public class PageCostume extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "COSTUME";
 	private static PageCostume INSTANCE = new PageCostume();
 	
@@ -53,11 +52,10 @@ public class PageCostume extends PartialPage {
 	}
 	
 	private PageCostume() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS);
 		
 		for(int i = 0; i < 2; i++) {
-			this.costWeapon.add(new JLangRadioButton(this.labelGFB[i+5].getLang()));
+			this.costWeapon.add(new JLangRadioButton(this.labels.get("WeaponHand" + i).getLang()));
 			this.costWeapon.get(i).setBackground(Design.UIColor[1]);
 			this.costWeapon.get(i).setForeground(Design.FontColor[0]);
 			this.costWeapon.get(i).addActionListener(e -> {
@@ -249,11 +247,22 @@ public class PageCostume extends PartialPage {
 		return this.checkBoxRunway.get(i).getItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
+	@SuppressWarnings("serial")
+	protected void setLabel() {
 		for(int i = 0; i < 5; i++) {
-			this.labelAPI.put("Synthesis" + i, new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
+			this.labels.put("Synthesis" + i, new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
 		}
+		
+		this.labels.put("Weapons", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Armes"); put(Language.EN, "Weapons"); }}, Design.TITLE));
+		this.labels.put("Cost0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tête"); put(Language.EN, "Head"); }}, Design.TITLE));
+		this.labels.put("Cost1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tenue"); put(Language.EN, "Body"); }}, Design.TITLE));
+		this.labels.put("Cost2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Dos"); put(Language.EN, "Back"); }}, Design.TITLE));
+		this.labels.put("WeaponsType", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Type d'armes"); put(Language.EN, "Weapons type"); }}, Design.SUBTITLE));
+		this.labels.put("WeaponHand0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Armes 1 main"); put(Language.EN, "1 hand weapons"); }}, Design.TEXT));
+		this.labels.put("WeaponHand1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme 2 mains"); put(Language.EN, "2 hands weapon"); }}, Design.TEXT));
+		this.labels.put("Weapon0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme 1"); put(Language.EN, "Weapon 1"); }}, Design.SUBTITLE));
+		this.labels.put("Weapon1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme 2"); put(Language.EN, "Weapon 2"); }}, Design.SUBTITLE));
+		
 	}
 
 	@Override
@@ -298,9 +307,8 @@ public class PageCostume extends PartialPage {
 
 	@Override
 	protected void createPanel() {
-		JCustomPanel costGroupPanel = new JCustomPanel(this.labelGFB[4]);
+		JCustomPanel costGroupPanel = new JCustomPanel(this.labels.get("WeaponsType"));
 		ButtonGroup costGroup = new ButtonGroup();
-		this.labelGFB[4].setFont(Design.SUBTITLE);
 		
 		for(int i = 0; i < 2; i++) {
 			costGroup.add(this.costWeapon.get(i));
@@ -310,11 +318,10 @@ public class PageCostume extends PartialPage {
 		JCustomPanel sectionCost = new JCustomPanel(BoxLayout.Y_AXIS);
 		
 		for(int i = 0; i < 2; i++) {
-			JCustomPanel qualityPanel = new JCustomPanel(this.labelGFB[i+7]);
-			this.labelGFB[i+7].setFont(Design.SUBTITLE);
+			JCustomPanel qualityPanel = new JCustomPanel(this.labels.get("Weapon" + i));
 			qualityPanel.addAll(this.groupQuality.get(i));
 			
-			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI.get("Synthesis" + i));
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labels.get("Synthesis" + i));
 			synthesisPanel.addAll(this.groupSynthesis.get(i));
 			
 			JCustomPanel itemCost = new JCustomPanel(BoxLayout.Y_AXIS);
@@ -340,8 +347,7 @@ public class PageCostume extends PartialPage {
 		
 			
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), costGroupPanel, Box.createVerticalStrut(3), sectionCost, runway);
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem1.addAll(this.labels.get("Weapons"), Box.createVerticalStrut(10), costGroupPanel, Box.createVerticalStrut(3), sectionCost, runway);
 		
 		this.add(elem1);
 		
@@ -350,7 +356,7 @@ public class PageCostume extends PartialPage {
 			JCustomPanel qualityPanel = new JCustomPanel();
 			qualityPanel.addAll(this.groupQuality.get(i+2));
 			
-			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI.get("Synthesis" + (i+2)));
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labels.get("Synthesis" + (i+2)));
 			synthesisPanel.addAll(this.groupSynthesis.get(i+2));
 			
 			JCustomPanel runwayPanel = new JCustomPanel();
@@ -360,8 +366,7 @@ public class PageCostume extends PartialPage {
 			this.showAndHideRunway.add(runwayPanel);
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelGFB[i+1], Box.createVerticalStrut(10), qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3), this.costume.get(i+2));
-			this.labelGFB[i+1].setFont(Design.TITLE);
+			elemI.addAll(this.labels.get("Cost" + i), Box.createVerticalStrut(10), qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3), this.costume.get(i+2));
 			
 			if(i == 0) {
 				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+3));
@@ -380,8 +385,8 @@ public class PageCostume extends PartialPage {
 		this.costWeapon.get(0).setSelected(false);
 		this.costWeapon.get(1).setSelected(true);
 		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
-			entry.getValue().setVisible(false);
+		for(int i = 0; i < 5; i++) {
+			this.labels.get("Synthesis" + i).setVisible(false);
 		}
 		
 		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
@@ -399,11 +404,7 @@ public class PageCostume extends PartialPage {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 		
@@ -437,11 +438,11 @@ public class PageCostume extends PartialPage {
 		Costume[] cost = Costume.getPossibleCostume(this.getGroupSynthesis(id), type, this.getGroupQuality(id));
 		
 		if(cost == null) {
-			this.labelAPI.get("Synthesis" + id).setVisible(false);
+			this.labels.get("Synthesis" + id).setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.costume.get(id).setVisible(false);
 		} else {
-			this.labelAPI.get("Synthesis" + id).setVisible(true);
+			this.labels.get("Synthesis" + id).setVisible(true);
 			this.groupSynthesis.get(id).setVisible(true);
 			this.costume.get(id).setVisible(true);
 			

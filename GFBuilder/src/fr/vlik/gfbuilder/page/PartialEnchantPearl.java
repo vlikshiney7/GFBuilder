@@ -24,18 +24,18 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 	
 	protected CustomList<InnerEffect> pearlEnchants = new CustomList<InnerEffect>();
 
-	protected PartialEnchantPearl(int caseTabLabel, int nbEnchantPearl) {
-		super(caseTabLabel, nbEnchantPearl);
+	protected PartialEnchantPearl(int nbEnchantPearl) {
+		super(nbEnchantPearl);
 		initEnchantPearl(nbEnchantPearl);
 	}
 	
-	protected PartialEnchantPearl(int layout, int caseTabLabel, int nbEnchantPearl) {
-		super(layout, caseTabLabel, nbEnchantPearl);
+	protected PartialEnchantPearl(int layout, int nbEnchantPearl) {
+		super(layout, nbEnchantPearl);
 		initEnchantPearl(nbEnchantPearl);
 	}
 	
-	protected PartialEnchantPearl(LayoutManager layout, int caseTabLabel, int nbEnchantPearl) {
-		super(layout, caseTabLabel, nbEnchantPearl);
+	protected PartialEnchantPearl(LayoutManager layout, int nbEnchantPearl) {
+		super(layout, nbEnchantPearl);
 		initEnchantPearl(nbEnchantPearl);
 	}
 	
@@ -121,7 +121,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 		int idCheck = -1;
 		for(int i = 0; i < 4; i++) {
 			this.starPearl.get(id).get(i).setVisible(showStar);
-			this.labelAPI.get("PearlEnchant" + id).setVisible(showStar);
+			this.labels.get("PearlEnchant" + id).setVisible(showStar);
 			
 			if(this.starPearl.get(id).get(i).isSelected()) {
 				idCheck++;

@@ -37,7 +37,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageTalent extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "TALENT";
 	private static PageTalent INSTANCE = new PageTalent();
 	
@@ -58,8 +57,7 @@ public class PageTalent extends PartialPage {
 	}
 	
 	private PageTalent() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS);
 		
 		this.currentGrade = PageGeneral.getInstance().getGrade();
 		
@@ -113,12 +111,12 @@ public class PageTalent extends PartialPage {
 		this.tabChosenTalent.add(new JCustomLabel<IconBuff>(new CombiTalent()));
 		this.combiTalentInfo = new JCustomTextPane();
 		
-		this.reinitTalent = new JCustomButton(this.labelGFB[11].getLang(), Design.RED_COLOR);
+		this.reinitTalent = new JCustomButton(this.labels.get("Min").getLang(), Design.RED_COLOR);
 		this.reinitTalent.addActionListener(e -> {
 			setMinCBoxTalent();
 		});
 
-		this.maxTalent = new JCustomButton(this.labelGFB[12].getLang(), Design.GREEN_COLOR);
+		this.maxTalent = new JCustomButton(this.labels.get("Max").getLang(), Design.GREEN_COLOR);
 		this.maxTalent.addActionListener(e -> {
 			setMaxCBoxTalent();
 		});
@@ -140,9 +138,20 @@ public class PageTalent extends PartialPage {
 		return this.itemTalent.get(id).getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Combi", new JLangLabel(CombiTalent.CLASS_NAME, Design.TITLE));
 		
+		this.labels.put("Category0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Classique"); put(Language.EN, "Classic"); }}, Design.TITLE));
+		this.labels.put("Category1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Ancestraux"); put(Language.EN, "Ancestral"); }}, Design.TITLE));
+		for(int i = 0; i < 2; i++) {
+			this.labels.put("Type" + (i*4), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Terrestres"); put(Language.EN, "Earth"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4+1), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Stellaires"); put(Language.EN, "Stellar"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4+2), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Lunaires"); put(Language.EN, "Lunar"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4+3), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Solaires"); put(Language.EN, "Solar"); }}, Design.SUBTITLE));
+		}
+		this.labels.put("Min", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre au minimum"); put(Language.EN, "Set all to minimum"); }}, Design.TEXT));
+		this.labels.put("Max", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre au maximum"); put(Language.EN, "Set all to maximum"); }}, Design.TEXT));
 	}
 	
 	@Override
@@ -169,8 +178,7 @@ public class PageTalent extends PartialPage {
 		}
 		
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelGFB[0], Box.createVerticalStrut(10), new JCustomPanel(chosenTalent, this.combiTalentInfo));
-		this.labelGFB[0].setFont(Design.TITLE);
+		elem1.addAll(this.labels.get("Combi"), Box.createVerticalStrut(10), new JCustomPanel(chosenTalent, this.combiTalentInfo));
 		
 		this.addAll(elem1, Box.createVerticalStrut(10));
 		
@@ -180,8 +188,7 @@ public class PageTalent extends PartialPage {
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel colTalent = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			colTalent.add(this.labelGFB[i+1], Box.createVerticalStrut(10));
-			this.labelGFB[i+1].setFont(Design.TITLE);
+			colTalent.add(this.labels.get("Category" + i), Box.createVerticalStrut(10));
 			
 			JCustomPanel blocTalent = new JCustomPanel(new GridLayout(4, 1, 10, 10));
 			
@@ -206,8 +213,7 @@ public class PageTalent extends PartialPage {
 				
 				JCustomPanel subtitle = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(5, 5, 5, 5));
 				subtitle.setBackground(Design.UIColor[0]);
-				subtitle.addAll(this.labelGFB[i*4+j+3], lineTalent);
-				this.labelGFB[i*4+j+3].setFont(Design.SUBTITLE);
+				subtitle.addAll(this.labels.get("Type" + (i*4+j)), lineTalent);
 				
 				this.showAndHideTalent.add(subtitle);
 				
@@ -241,11 +247,7 @@ public class PageTalent extends PartialPage {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 		

@@ -2141,6 +2141,21 @@ public class LoaderSpriteCost {
 						new Effect(TypeEffect.ReducSkillP, false, 12),
 					}),
 				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Machiniste du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F12604", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.ReducStdP, false, 12),
+						new Effect(TypeEffect.ReducStdD, false, 12),
+						new Effect(TypeEffect.ReducSkillP, false, 12),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Machiniste du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20264", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.TCCP, false, -12, Target.OPPONENT),
+						new Effect(TypeEffect.TCCM, false, -12, Target.OPPONENT),
+					}),
+				}),
 		};
 	}
 }

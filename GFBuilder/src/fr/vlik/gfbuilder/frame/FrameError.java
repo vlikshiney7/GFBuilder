@@ -32,7 +32,7 @@ public class FrameError extends JCustomFrame {
 	
 	private FrameError() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(17);
+		this.label = Lang.getDataLabel(5);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameError.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));

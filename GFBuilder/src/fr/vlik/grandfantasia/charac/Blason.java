@@ -15,6 +15,12 @@ import fr.vlik.grandfantasia.template.IconBuff;
 
 public class Blason extends IconBuff {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Blason");
+		put(Language.EN, "Blazon");
+	}};
+	
 	private static final String PATH = Tools.RESOURCE + "sprite/";
 	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
 	private static Blason[] data = LoaderCharac.getBlason();

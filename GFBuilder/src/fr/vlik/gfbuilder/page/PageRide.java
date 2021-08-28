@@ -33,7 +33,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageRide extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "RIDE";
 	private static PageRide INSTANCE = new PageRide();
 	
@@ -50,8 +49,7 @@ public class PageRide extends PartialXpStuff {
 	}
 	
 	private PageRide() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE, 1);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS, 1);
 		
 		Ride[] tabRide = Ride.getPossibleRide(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 		this.ride = new JCustomComboBox<Ride>(tabRide);
@@ -135,13 +133,15 @@ public class PageRide extends PartialXpStuff {
 		return this.synthesis.get(id).getSelectedItem();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
-		this.labelAPI.put("Ride", new JLangLabel(Ride.CLASS_NAME, Design.TITLE));
-		this.labelAPI.put("Enchant0", new JLangLabel(Synthesis.CLASS_NAME_RIDE, Design.TITLE));
-		this.labelAPI.put("Enchant1", new JLangLabel(Synthesis.CLASS_NAME_THRONE, Design.TITLE));		
-		this.labelAPI.put("Synthesis0", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
-		this.labelAPI.put("Synthesis1", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Ride", new JLangLabel(Ride.CLASS_NAME, Design.TITLE));
+		this.labels.put("Enchant0", new JLangLabel(Synthesis.CLASS_NAME_RIDE, Design.TITLE));
+		this.labels.put("Enchant1", new JLangLabel(Synthesis.CLASS_NAME_THRONE, Design.TITLE));		
+		this.labels.put("Synthesis0", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
+		this.labels.put("Synthesis1", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
+		
+		this.labels.put("RideXP", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Monture"); put(Language.EN, "Ride Exp"); }}, Design.SUBTITLE));
 	}
 
 	@Override
@@ -168,8 +168,7 @@ public class PageRide extends PartialXpStuff {
 	@Override
 	protected void createPanel() {
 		JCustomPanel xpRide = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-		xpRide.add(this.labelGFB[0]);
-		this.labelGFB[0].setFont(Design.SUBTITLE);
+		xpRide.add(this.labels.get("RideXP"));
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -178,7 +177,7 @@ public class PageRide extends PartialXpStuff {
 		}
 		
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelAPI.get("Ride"), Box.createVerticalStrut(10), this.ride, Box.createVerticalStrut(5), xpRide);
+		elem1.addAll(this.labels.get("Ride"), Box.createVerticalStrut(10), this.ride, Box.createVerticalStrut(5), xpRide);
 		
 		this.showAndHideXpStuff.add(xpRide);
 		this.showAndHide.add(elem1);
@@ -189,7 +188,7 @@ public class PageRide extends PartialXpStuff {
 			JCustomPanel qualityPanel = new JCustomPanel();
 			qualityPanel.addAll(this.groupQuality.get(i));
 			
-			JCustomPanel synthesisPanel = new JCustomPanel(this.labelAPI.get("Synthesis" + i));
+			JCustomPanel synthesisPanel = new JCustomPanel(this.labels.get("Synthesis" + i));
 			synthesisPanel.addAll(this.groupSynthesis.get(i));
 			
 			
@@ -197,7 +196,7 @@ public class PageRide extends PartialXpStuff {
 			starPanel.addAll(this.starSynthesis.get(i));
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelAPI.get("Enchant" + i), Box.createVerticalStrut(10),
+			elemI.addAll(this.labels.get("Enchant" + i), Box.createVerticalStrut(10),
 					qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3),
 					starPanel, Box.createVerticalStrut(3), this.synthesis.get(i));
 			
@@ -215,7 +214,7 @@ public class PageRide extends PartialXpStuff {
 		}
 		
 		for(int i = 0; i < 2; i++) {
-			this.labelAPI.get("Synthesis" + i).setVisible(false);
+			this.labels.get("Synthesis" + i).setVisible(false);
 		}
 		
 		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
@@ -234,11 +233,7 @@ public class PageRide extends PartialXpStuff {
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 		
@@ -267,7 +262,7 @@ public class PageRide extends PartialXpStuff {
 				this.xpStuff.get(1).setSelectedIndex(0);
 			}
 			
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(4);
 		} else {
 			this.xpStuff.get(0).setVisible(true);
 			this.xpStuff.get(1).setVisible(true);
@@ -319,14 +314,14 @@ public class PageRide extends PartialXpStuff {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(false);
 			}
-			this.labelAPI.get("Synthesis" + id).setVisible(false);
+			this.labels.get("Synthesis" + id).setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.synthesis.get(id).setVisible(false);
 		} else {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(true);
 			}
-			this.labelAPI.get("Synthesis" + id).setVisible(true);
+			this.labels.get("Synthesis" + id).setVisible(true);
 			this.groupSynthesis.get(id).setVisible(true);
 			this.synthesis.get(id).setVisible(true);
 			

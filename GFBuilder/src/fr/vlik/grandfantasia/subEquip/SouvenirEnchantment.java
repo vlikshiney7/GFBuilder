@@ -11,6 +11,12 @@ import fr.vlik.grandfantasia.template.Buff;
 
 public class SouvenirEnchantment extends Buff {
 	
+	@SuppressWarnings("serial")
+	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+		put(Language.FR, "Enchantement de souvenir");
+		put(Language.EN, "Souvenir enchantment");
+	}};
+	
 	private static SouvenirEnchantment[] data = LoaderSubEquip.getSouvenirEnchantment();
 	
 	private int lvlMin;

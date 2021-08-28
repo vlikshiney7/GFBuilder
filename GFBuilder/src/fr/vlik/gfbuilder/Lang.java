@@ -37,9 +37,11 @@ public class Lang {
 				for(int i = 0; i < lineSplit.length; i++) {
 					Map<Language, String> lang = new HashMap<Language, String>();
 					String[] trad = lineSplit[i].split(",");
-
-					lang.put(Language.FR, trad[0]);
-					lang.put(Language.EN, trad[1]);
+					
+					if(trad.length == 2) {
+						lang.put(Language.FR, trad[0]);
+						lang.put(Language.EN, trad[1]);
+					}
 					
 					list.get(lineCount).add(new JLangLabel(lang, Design.TEXT));
 				}

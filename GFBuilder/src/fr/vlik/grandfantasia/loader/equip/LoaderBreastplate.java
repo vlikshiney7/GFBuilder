@@ -11672,7 +11672,7 @@ class LoaderBreastplate {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
+			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Cape de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 89, Quality.RED, true, false,
 				ArmorType.PLASTRON, "90red11", "torses/90red11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 809, true),

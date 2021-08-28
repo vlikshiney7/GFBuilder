@@ -43,7 +43,6 @@ import fr.vlik.uidesign.JLangLabel;
 public class PageWeapon extends PartialRedStuff {
 
 	private static final long serialVersionUID = 1L;
-	private static final int NUM_PAGE = MainFrame.getNumPage();
 	private static final String SAVE_NAME = "WEAPON";
 	private static PageWeapon INSTANCE = new PageWeapon();
 	
@@ -64,8 +63,7 @@ public class PageWeapon extends PartialRedStuff {
 	}
 
 	public PageWeapon() {
-		super(BoxLayout.Y_AXIS, NUM_PAGE, 3);
-		setLabelAPI();
+		super(BoxLayout.Y_AXIS, 3);
 		
 		for(int i = 0; i < 3; i++) {
 			int id = i;
@@ -176,12 +174,19 @@ public class PageWeapon extends PartialRedStuff {
 		updateWeapon();
 	}
 	
-	@Override
-	protected void setLabelAPI() {
-		this.labelAPI.put("Bullet", new JLangLabel(Bullet.CLASS_NAME, Design.TITLE));
+	@SuppressWarnings("serial")
+	protected void setLabel() {
+		this.labels.put("Bullet", new JLangLabel(Bullet.CLASS_NAME, Design.TITLE));
 		for(int i = 0; i < 3; i++) {
-			this.labelAPI.put("PearlEnchant" + i, new JLangLabel(PearlEnchantment.CLASS_NAME, Design.SUBTITLE));
-			this.labelAPI.put("Refining" + i, new JLangLabel(RedEnchantment.SUB_CLASS_NAME, Design.SUBTITLE));
+			this.labels.put("PearlEnchant" + i, new JLangLabel(PearlEnchantment.CLASS_NAME, Design.SUBTITLE));
+			this.labels.put("Refining" + i, new JLangLabel(RedEnchantment.SUB_CLASS_NAME, Design.SUBTITLE));
+		}
+		
+		this.labels.put("Weapon0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme principale"); put(Language.EN, "Primary weapon"); }}, Design.TITLE));
+		this.labels.put("Weapon1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme secondaire"); put(Language.EN, "Secondary weapon"); }}, Design.TITLE));
+		this.labels.put("Weapon2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme tertiaire"); put(Language.EN, "Tertiary weapon"); }}, Design.TITLE));
+		for(int i = 0; i < 3; i++) {
+			this.labels.put("WeaponXP" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Arme"); put(Language.EN, "Weapon Exp"); }}, Design.SUBTITLE));
 		}
 	}
 	
@@ -314,7 +319,7 @@ public class PageWeapon extends PartialRedStuff {
 			}
 			
 			JCustomPanel enchantWeapon = new JCustomPanel(BoxLayout.Y_AXIS);
-			enchantWeapon.addAll(redEnchantWeapon, this.labelAPI.get("Refining" + i), refiningWeapon);
+			enchantWeapon.addAll(redEnchantWeapon, this.labels.get("Refining" + i), refiningWeapon);
 			
 			JCustomPanel fortifWeapon = new JCustomPanel(BoxLayout.X_AXIS);
 			fortifWeapon.addAll(this.valueFortif.get(i), Box.createHorizontalStrut(5), this.labelValue.get(i));
@@ -331,7 +336,7 @@ public class PageWeapon extends PartialRedStuff {
 				}
 			}
 			
-			JCustomPanel starPanel = new JCustomPanel(this.labelAPI.get("PearlEnchant" + i), Box.createHorizontalStrut(10));
+			JCustomPanel starPanel = new JCustomPanel(this.labels.get("PearlEnchant" + i), Box.createHorizontalStrut(10));
 			starPanel.addAll(this.starPearl.get(i));
 			
 			JCustomPanel listEnchant = new JCustomPanel(new GridLayout(5, 2, 2, 5));
@@ -340,8 +345,7 @@ public class PageWeapon extends PartialRedStuff {
 			}
 			
 			JCustomPanel xpWeapon = new JCustomPanel(new GridLayout(1, 3, 10, 3));
-			xpWeapon.add(this.labelGFB[i+3]);
-			this.labelGFB[i+3].setFont(Design.SUBTITLE);
+			xpWeapon.add(this.labels.get("WeaponXP" + i));
 			
 			for(int j = 0; j < 2; j++) {
 				JCustomPanel xp = new JCustomPanel(new GridLayout(1, 2, 5, 3));
@@ -350,11 +354,10 @@ public class PageWeapon extends PartialRedStuff {
 			}
 			
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-			elemI.addAll(this.labelGFB[i], Box.createVerticalStrut(10), descWeapon, Box.createVerticalStrut(2),
+			elemI.addAll(this.labels.get("Weapon" + i), Box.createVerticalStrut(10), descWeapon, Box.createVerticalStrut(2),
 					enchantWeapon, Box.createVerticalStrut(2), fortifWeapon, Box.createVerticalStrut(5),
 					pearlWeapon, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
 					xpWeapon);
-			this.labelGFB[i].setFont(Design.TITLE);
 			
 			if(i == 1) {
 				this.showAndHide = elemI;
@@ -367,24 +370,20 @@ public class PageWeapon extends PartialRedStuff {
 		}
 		
 		JCustomPanel elem1 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
-		elem1.addAll(this.labelAPI.get("Bullet"), Box.createVerticalStrut(10), this.bullet);
+		elem1.addAll(this.labels.get("Bullet"), Box.createVerticalStrut(10), this.bullet);
 		
 		this.add(elem1);
 		
 		initPanel();
 		
 		for(int i = 0; i < 3; i++) {
-			this.labelAPI.get("PearlEnchant" + i).setVisible(false);
+			this.labels.get("PearlEnchant" + i).setVisible(false);
 		}
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}
-		
-		for(Entry<String, JLangLabel> entry : this.labelAPI.entrySet()) {
+		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
 	}
@@ -409,14 +408,14 @@ public class PageWeapon extends PartialRedStuff {
 				this.pearl.get(i*3+1).setSelectedIndex(0);
 				this.pearl.get(i*3+2).setSelectedIndex(0);
 				
-				MainFrame.getInstance().setRedPane(NUM_PAGE);
+				MainFrame.getInstance().setRedPane(1);
 			}
 		}
 		
 		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl, reinca);
 		
 		if(!this.bullet.setItems(tabBullet)) {
-			MainFrame.getInstance().setRedPane(NUM_PAGE);
+			MainFrame.getInstance().setRedPane(1);
 		}
 	}
 	
