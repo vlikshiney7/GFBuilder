@@ -1,7 +1,6 @@
 package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -106,29 +105,6 @@ public class PageOption extends JCustomPanel {
 		return this.save.getSelectedItem();
 	}
 	
-	public void setSave(String name) {
-		boolean set = false;
-		
-		for(SaveConfig save : SaveConfig.getData()) {
-			if(name.equals(save.getName())) {
-				ActionListener action = this.save.getActionListeners()[0];
-				this.save.removeActionListener(action);
-				this.save.setSelectedItem(save);
-				this.save.addActionListener(action);
-				
-				save.applyConfig();
-				
-				set = true;
-				System.out.println("Save " + save.getName() + " loaded");
-				break;
-			}
-		}
-		
-		if(!set) {
-			System.out.println("Error, save not found");
-		}
-	}
-	
 	protected void createPanel() {
 		JCustomPanel inline1 = new JCustomPanel(BoxLayout.X_AXIS);
 		inline1.addAll(this.label[0], Box.createVerticalStrut(10), this.save);
@@ -177,8 +153,8 @@ public class PageOption extends JCustomPanel {
 		this.save.setItems(SaveConfig.getData());
 	}
 	
-	public void refreshSave(String nameSave) {
+	public void refreshSave(String buildNameSave) {
 		refreshSave();
-		this.save.setSelectedItem(SaveConfig.getSave(nameSave));
+		this.save.setSelectedItem(SaveConfig.getSave(buildNameSave));
 	}
 }

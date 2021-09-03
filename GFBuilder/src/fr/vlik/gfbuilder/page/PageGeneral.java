@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
@@ -19,9 +21,11 @@ import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gameBuff.Yggdrasil;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
+import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomDialog;
 import fr.vlik.uidesign.JCustomPanel;
@@ -41,6 +45,8 @@ public class PageGeneral extends PartialPage {
 	private JCustomComboBox<Yggdrasil> yggdra;
 	private JCustomComboBox<Archive> archive;
 	
+	private JCustomCheckBox<ProcEffect> proc;
+	
 	private JCustomButton filter;
 	private JCustomDialog filterDialog;
 	
@@ -49,7 +55,7 @@ public class PageGeneral extends PartialPage {
 	}
 	
 	private PageGeneral() {
-		super(new GridLayout(3, 2, 10, 10));
+		super(BoxLayout.X_AXIS);
 		
 		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleGrade(0));
 		this.grade.addActionListener(e -> {
@@ -121,6 +127,8 @@ public class PageGeneral extends PartialPage {
 		
 		this.title = new JCustomComboBox<Title>(Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca()));
 		this.title.addActionListener(e -> {
+			activeProc();
+			
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
@@ -148,6 +156,13 @@ public class PageGeneral extends PartialPage {
 		
 		this.filter.addActionListener(e -> {
 			this.filterDialog.popup(this.filter);
+		});
+		
+		this.proc = new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getTitle()));
+		this.proc.setIconUI("procOn16", "procOff16");
+		this.proc.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
 		});
 		
 		updateLanguage(Language.FR);
@@ -199,6 +214,10 @@ public class PageGeneral extends PartialPage {
 		list.addAll(this.getYggdrasil());
 		list.addAll(this.getArchive());
 		
+		if(this.proc.isVisible() && this.proc.isSelected()) {
+			list.addAll(this.proc.getItem().getEffects());
+		}
+		
 		this.effects = list;
 	}
 	
@@ -214,7 +233,7 @@ public class PageGeneral extends PartialPage {
 		elem3.addAll(new JCustomPanel(this.labels.get("Reinca")), this.reinca);
 		
 		JCustomPanel elem4 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem4.addAll(new JCustomPanel(this.labels.get("Title")), new JCustomPanel(this.filter, this.title));
+		elem4.addAll(new JCustomPanel(this.labels.get("Title")), new JCustomPanel(this.filter, this.title, this.proc));
 		
 		JCustomPanel elem5 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
 		elem5.addAll(new JCustomPanel(this.labels.get("Yggdrasil")), this.yggdra);
@@ -223,15 +242,21 @@ public class PageGeneral extends PartialPage {
 		elem6.addAll(new JCustomPanel(this.labels.get("Archive")), this.archive);
 		
 		
-		this.addAll(elem1, elem2, elem3, elem4, elem5, elem6);
+		JCustomPanel leftCol = new JCustomPanel(new GridLayout(3, 1, 10, 10));
+		leftCol.setBackground(Design.UIColor[2]);
+		leftCol.addAll(elem1, elem3, elem5);
+		
+		JCustomPanel rightCol = new JCustomPanel(new GridLayout(3, 1, 10, 10));
+		rightCol.setBackground(Design.UIColor[2]);
+		rightCol.addAll(elem2, elem4, elem6);
+		
+		this.addAll(leftCol, Box.createHorizontalStrut(10), rightCol);
+		
+		this.proc.setVisible(false);
 	}
 	
 	@Override
 	public void updateLanguage(Language lang) {
-		/*for(JLangLabel label : this.labelGFB) {
-			label.updateText(lang);
-		}*/
-		
 		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
 		}
@@ -275,12 +300,29 @@ public class PageGeneral extends PartialPage {
 	private void updateTitle() {
 		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getSearch(), this.filterDialog.getFilters(), this.getTitle());
 		
-		this.title.setItems(tabTitle);
+		if(!this.title.setItems(tabTitle)) {
+			this.proc.setSelected(false);
+		}
+	}
+	
+	private void activeProc() {
+		ProcEffect proc = new ProcEffect(this.getTitle());
+		
+		if(proc.getEffects().length > 0) {
+			this.proc.setItem(proc);
+			this.proc.setVisible(true);
+		} else {
+			this.proc.setVisible(false);
+		}
+		
+		this.proc.setSelected(false);
 	}
 	
 	public void popoff() {
-		this.filterDialog.popoff();
-		updateTitle();
+		if(this.filterDialog.isVisible()) {
+			this.filterDialog.popoff();
+			updateTitle();
+		}
 	}
 	
 	@Override
@@ -298,6 +340,7 @@ public class PageGeneral extends PartialPage {
 		config.put("Title", this.getTitle().getName(Language.FR));
 		config.put("Yggdrasil", this.getYggdrasil().getName(lang));
 		config.put("Archive", this.getArchive().getName(Language.FR));
+		config.put("Proc", "" + this.proc.isSelected());
 		
 		return config;
 	}
@@ -310,5 +353,6 @@ public class PageGeneral extends PartialPage {
 		this.title.setSelectedItem(Title.get(config.get("Title")));
 		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
 		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
+		this.proc.setSelected(Boolean.valueOf(config.get("Proc")));
 	}
 }

@@ -634,7 +634,7 @@ public class PageArmor extends PartialRedStuff {
 		if(tabEquip.length == 1) {
 			this.showAndHide.setVisible(false);
 		} else {
-			this.shortcutSet.setItems(tabEquip);
+			this.shortcutSet.setItems(tabEquip, null);
 			this.showAndHide.setVisible(true);
 		}
 	}

@@ -115,14 +115,15 @@ public class FrameSaveAs extends JCustomFrame {
 	}
 	
 	private void checkValidity() {
-		if(this.askName.getText().equals("") || this.askName.getText().matches(".*[\\/\\\\\\*\\?\"<>\\|:].*")) {
+		String formatFileName = this.askName.getText().replace(" ", "_");
+		if(formatFileName.equals("") || formatFileName.matches(".*[\\/\\\\\\*\\?\"<>\\|:].*")) {
 			this.submit.setVisible(false);
 			this.label[2].setVisible(true);
 			return;
 		}
 		
 		for(SaveConfig config : SaveConfig.getData()) {
-			if(this.askName.getText().equals(config.getName())) {
+			if(formatFileName.equals(config.getFileName())) {
 				this.submit.setVisible(false);
 				this.label[2].setVisible(true);
 				return;
@@ -134,10 +135,11 @@ public class FrameSaveAs extends JCustomFrame {
 	}
 	
 	private void createSaveConfig() {
-		SaveConfig.writeData(this.askName.getText(), MainFrame.getInstance().getLanguage());
+		String formatFileName = this.askName.getText().replace(" ", "_");
+		SaveConfig.writeData(formatFileName, MainFrame.getInstance().getLanguage());
 		
 		FrameSaveLoader.setBlocker(true);
-		PageOption.getInstance().refreshSave(this.askName.getText());
+		PageOption.getInstance().refreshSave(formatFileName.replace("_", " "));
 		FrameSaveLoader.setBlocker(false);
 		
 		PageOption.getInstance().updateSave();

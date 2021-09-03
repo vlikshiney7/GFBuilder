@@ -603,7 +603,7 @@ public class PageCostume extends PartialPage {
 		}
 		
 		for(int i = 0; i < this.checkBoxRunway.size(); i++) {
-			config.put("CheckboxRunway" + i, "" + (this.checkBoxRunway.get(i).isSelected() ? true : false));
+			config.put("CheckboxRunway" + i, "" + this.checkBoxRunway.get(i).isSelected());
 		}
 		
 		return config;

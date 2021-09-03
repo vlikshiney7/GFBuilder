@@ -66,7 +66,7 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 			else
 				renderer.setForeground(Tools.speColor[0]);
 		} else if(value instanceof SaveConfig) {
-			renderer.setText(((SaveConfig) value).getName());
+			renderer.setText(((SaveConfig) value).getBuildName());
 		}
 		
 		if (cellHasFocus || isSelected) {

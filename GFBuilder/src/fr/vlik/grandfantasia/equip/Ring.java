@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.EquipType;
@@ -91,8 +92,24 @@ public final class Ring extends Equipment {
 		return (object != null) ? Tools.constructIcon(back, object) : back;
 	}
 	
-	public static void addCustom(Ring cape) {
-		Ring.customData.add(cape);
+	public static void addCustom(Ring ring) {
+		if(getCustom(ring.getName(Language.FR), ring.getQuality(), ring.getSignature()) == null) {
+			int i = 1;
+			boolean found = true;
+			
+			while(found) {
+				found = false;
+				for(Ring custom : Ring.customData) {
+					if(custom.getName(Language.FR).equals(ring.getName(Language.FR))) {
+						ring.addNumberName(i++);
+						found = true;
+						break;
+					}
+				}
+			}
+			
+			Ring.customData.add(ring);
+		}
 	}
 	
 	public static Ring get(String name, Language lang) {
@@ -117,7 +134,7 @@ public final class Ring extends Equipment {
 	
 	public static Ring getCustom(String name, Quality quality, String signature) {
 		for(Ring ring : Ring.customData) {
-			if(ring.getName(Language.FR).equals(name) && ring.getQuality() == quality && ring.getSignature().equals(signature)) {
+			if(CustomEquipment.deleteNumber(ring.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name)) && ring.getQuality() == quality && ring.getSignature().equals(signature)) {
 				return ring;
 			}
 		}

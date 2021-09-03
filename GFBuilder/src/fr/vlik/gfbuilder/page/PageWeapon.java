@@ -33,8 +33,10 @@ import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JIconCheckBox;
@@ -52,6 +54,8 @@ public class PageWeapon extends PartialRedStuff {
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
 	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(3);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(12);
+	
+	private ArrayList<JCustomCheckBox<ProcEffect>> proc = new ArrayList<JCustomCheckBox<ProcEffect>>(15);
 	
 	private WeaponType[] weaponType = new WeaponType[3];
 	private boolean doubleWeapon = false;
@@ -71,6 +75,8 @@ public class PageWeapon extends PartialRedStuff {
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), null, false);
 			this.weapon.add(new JCustomComboBox<Weapon>(tabWeapon));
 			this.weapon.get(i).addActionListener(e -> {
+				activeProc(id);
+				
 				updateXpStuff(id);
 				updateDetails(id);
 				updatePearl(id);
@@ -97,13 +103,23 @@ public class PageWeapon extends PartialRedStuff {
 			});
 			this.fortif.get(i).setVisible(false);
 			
+			/* PROC */
+			this.proc.add(new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getWeapon(i))));
+			this.proc.get(i).setIconUI("procOn32", "procOff32");
+			this.proc.get(i).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+			
 			/* PEARL */
 			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i));
 			
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
+					int idPearl = j+3;
 					this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 					this.pearl.get(j).addActionListener(e -> {
+						activeProc(idPearl);
 						updateEnchantPearl(id);
 						
 						setEffects();
@@ -113,8 +129,10 @@ public class PageWeapon extends PartialRedStuff {
 				}
 			} else {
 				for(int j = 0; j < 3; j++) {
+					int idPearl = 3*(i+1)+j+3;
 					this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 					this.pearl.get(3*(i+1)+j).addActionListener(e -> {
+						activeProc(idPearl);
 						updateEnchantPearl(id);
 						
 						setEffects();
@@ -123,6 +141,16 @@ public class PageWeapon extends PartialRedStuff {
 					this.pearl.get(3*(i+1)+j).setVisible(false);
 				}
 			}
+		}
+		
+		for(int i = 0; i < 12; i++) {
+			/* PROC */
+			this.proc.add(new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getPearl(i))));
+			this.proc.get(i+3).setIconUI("procOn24", "procOff24");
+			this.proc.get(i+3).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
 		}
 		
 		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
@@ -299,6 +327,12 @@ public class PageWeapon extends PartialRedStuff {
 			}
 		}
 		
+		for(int i = 0; i < 15; i++) {
+			if(this.proc.get(i).isVisible() && this.proc.get(i).isSelected()) {
+				list.addAll(this.proc.get(i).getItem().getEffects());
+			}
+		}
+		
 		this.effects = list;
 	}
 	
@@ -306,7 +340,7 @@ public class PageWeapon extends PartialRedStuff {
 	protected void createPanel() {
 		for(int i = 0; i < 3; i++) {
 			JCustomPanel descWeapon = new JCustomPanel(BoxLayout.X_AXIS);
-			descWeapon.addAll(this.weapon.get(i), this.enchant.get(i), this.fortif.get(i), this.redFortif.get(i));
+			descWeapon.addAll(this.weapon.get(i), this.enchant.get(i), this.fortif.get(i), this.redFortif.get(i), Box.createHorizontalStrut(5), this.proc.get(i));
 			
 			JCustomPanel redEnchantWeapon = new JCustomPanel(new GridLayout(3, 2, 2, 5));
 			for(int j = 0; j < 3; j++) {
@@ -324,15 +358,18 @@ public class PageWeapon extends PartialRedStuff {
 			JCustomPanel fortifWeapon = new JCustomPanel(BoxLayout.X_AXIS);
 			fortifWeapon.addAll(this.valueFortif.get(i), Box.createHorizontalStrut(5), this.labelValue.get(i));
 			
-			JCustomPanel pearlWeapon = new JCustomPanel(BoxLayout.Y_AXIS);
+			JCustomPanel pearlsWeapon = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(0, 0, 0, 0));
 			
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
-					pearlWeapon.addAll(this.pearl.get(j), Box.createVerticalStrut(3));
+					JCustomPanel pearlWeapon = new JCustomPanel(BoxLayout.X_AXIS);
+					pearlWeapon.addAll(this.pearl.get(j), Box.createHorizontalStrut(3), this.proc.get(j+3));
+					pearlsWeapon.addAll(pearlWeapon, Box.createVerticalStrut(3));
 				}
 			} else {
 				for(int j = 0; j < 3; j++) {
-					pearlWeapon.addAll(this.pearl.get(3*(i+1)+j), Box.createVerticalStrut(3));
+					JCustomPanel pearlWeapon = new JCustomPanel(this.pearl.get(3*(i+1)+j), Box.createHorizontalStrut(3), this.proc.get(3*(i+1)+j+3));
+					pearlsWeapon.addAll(pearlWeapon, Box.createVerticalStrut(3));
 				}
 			}
 			
@@ -356,7 +393,7 @@ public class PageWeapon extends PartialRedStuff {
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 			elemI.addAll(this.labels.get("Weapon" + i), Box.createVerticalStrut(10), descWeapon, Box.createVerticalStrut(2),
 					enchantWeapon, Box.createVerticalStrut(2), fortifWeapon, Box.createVerticalStrut(5),
-					pearlWeapon, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
+					pearlsWeapon, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
 					xpWeapon);
 			
 			if(i == 1) {
@@ -375,6 +412,10 @@ public class PageWeapon extends PartialRedStuff {
 		this.add(elem1);
 		
 		initPanel();
+		
+		for(int i = 0; i < 15; i++) {
+			this.proc.get(i).setVisible(false);
+		}
 		
 		for(int i = 0; i < 3; i++) {
 			this.labels.get("PearlEnchant" + i).setVisible(false);
@@ -638,6 +679,19 @@ public class PageWeapon extends PartialRedStuff {
 		}
 	}
 	
+	private void activeProc(int index15) {
+		ProcEffect proc = new ProcEffect(index15 < 3 ? this.getWeapon(index15) : this.getPearl(index15-3));
+		
+		if(proc.getEffects().length > 0) {
+			this.proc.get(index15).setItem(proc);
+			this.proc.get(index15).setVisible(true);
+		} else {
+			this.proc.get(index15).setVisible(false);
+		}
+		
+		this.proc.get(index15).setSelected(false);
+	}
+	
 	protected void updateTooltipFortif(int id) {
 		updateTooltipFortif(this.getWeapon(id), id);
 	}
@@ -739,6 +793,10 @@ public class PageWeapon extends PartialRedStuff {
 		
 		for(int i = 0; i < this.valueFortif.size(); i++) {
 			config.put("ValueFortif" + i, "" + this.valueFortif.get(i).getValue());
+		}
+		
+		for(int i = 0; i < this.proc.size(); i++) {
+			config.put("Proc" + i, "" + this.proc.get(i).isSelected());
 		}
 		
 		return config;
@@ -875,6 +933,10 @@ public class PageWeapon extends PartialRedStuff {
 			if(this.getWeapon(i).getQuality() == Quality.RED) {
 				this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));
 			}
+		}
+		
+		for(int i = 0; i < this.proc.size(); i++) {
+			this.proc.get(i).setSelected(Boolean.valueOf(config.get("Proc" + i)));
 		}
 		
 		for(int i = 0; i < this.weapon.size(); i++) {

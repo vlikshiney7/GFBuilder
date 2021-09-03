@@ -29,7 +29,7 @@ public class CustomWeapon extends CustomEquipment {
 	protected WeaponType type;
 	
 	public CustomWeapon(CustomWeapon weapon) {
-		super(weapon.getMap(), weapon.getGrades(), weapon.getLvl(), weapon.getEffects());
+		super(weapon);
 		
 		this.type = weapon.getType();
 		this.icon = weapon.getIcon();
@@ -78,7 +78,7 @@ public class CustomWeapon extends CustomEquipment {
 			if(quality == Quality.GREEN) {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
-					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
+					if(e.getType().isUpgradable) {
 						e.changeValue(CustomWeapon.IncreaseValueGreen);
 					}
 					
@@ -89,7 +89,7 @@ public class CustomWeapon extends CustomEquipment {
 			} else if(quality == Quality.BLUE) {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
-					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
+					if(e.getType().isUpgradable) {
 						e.changeValue(CustomWeapon.IncreaseValueBlue);
 					}
 					
@@ -136,7 +136,7 @@ public class CustomWeapon extends CustomEquipment {
 	}
 	
 	public static boolean constructCustom(String name, Quality quality, String enchants) {
-		CustomWeapon custom = CustomWeapon.get(name, Language.FR);
+		CustomWeapon custom = CustomWeapon.get(CustomEquipment.deleteNumber(name), Language.FR);
 		
 		if(custom == null) {
 			return false;

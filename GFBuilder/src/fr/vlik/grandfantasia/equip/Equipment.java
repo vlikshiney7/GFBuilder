@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.equip;
 
 import java.util.Map;
+import java.util.Map.Entry;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -146,6 +147,18 @@ public abstract class Equipment extends CompleteBuff {
 				&& this.quality == equip.quality;
 		
 		return b;
+	}
+	
+	protected void addNumberName(int num) {
+		if(num == 1) {
+			for(Entry<Language, String> entry : this.name.entrySet()) {
+				this.name.put(entry.getKey(), entry.getValue() + " (1)");
+			}
+		} else {
+			for(Entry<Language, String> entry : this.name.entrySet()) {
+				this.name.put(entry.getKey(), entry.getValue().replace("(" + (num-1) + ")", "(" + num + ")"));
+			}
+		}
 	}
 	
 	@Override

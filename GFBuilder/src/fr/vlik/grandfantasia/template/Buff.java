@@ -24,7 +24,7 @@ public abstract class Buff implements Writable {
 	}
 	
 	public Map<Language, String> getMap() {
-		return this.name;
+		return new HashMap<Language, String>(this.name);
 	}
 	
 	public String getName(Language lang) {

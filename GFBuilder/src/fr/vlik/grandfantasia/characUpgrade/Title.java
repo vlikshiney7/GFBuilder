@@ -190,8 +190,7 @@ public class Title extends ColorBuff {
 			}
 		}
 		
-		Title[] cast = new Title[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new Title[result.size()]);
 	}
 	
 	public static Tag[] getTags() {

@@ -3083,170 +3083,170 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 5),
+						new Effect(TypeEffect.FCE, false, 5, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 10),
+						new Effect(TypeEffect.FCE, false, 10, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 15),
+						new Effect(TypeEffect.FCE, false, 15, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 20),
+						new Effect(TypeEffect.FCE, false, 20, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 25),
+						new Effect(TypeEffect.FCE, false, 25, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 30),
+						new Effect(TypeEffect.FCE, false, 30, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 35),
+						new Effect(TypeEffect.FCE, false, 35, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 40),
+						new Effect(TypeEffect.FCE, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 45),
+						new Effect(TypeEffect.FCE, false, 45, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 50),
+						new Effect(TypeEffect.FCE, false, 50, true),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de Vitalité"); put(Language.EN, "Vitality"); }}, 87, 100,
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 10),
+						new Effect(TypeEffect.VIT, false, 10, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 20),
+						new Effect(TypeEffect.VIT, false, 20, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 30),
+						new Effect(TypeEffect.VIT, false, 30, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 40),
+						new Effect(TypeEffect.VIT, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 50),
+						new Effect(TypeEffect.VIT, false, 50, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 60),
+						new Effect(TypeEffect.VIT, false, 60, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 70),
+						new Effect(TypeEffect.VIT, false, 70, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 80),
+						new Effect(TypeEffect.VIT, false, 80, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 90),
+						new Effect(TypeEffect.VIT, false, 90, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 100),
+						new Effect(TypeEffect.VIT, false, 100, true),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Intelligence"); put(Language.EN, "Intelligence"); }}, 87, 100,
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 5),
+						new Effect(TypeEffect.INT, false, 5, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 10),
+						new Effect(TypeEffect.INT, false, 10, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 15),
+						new Effect(TypeEffect.INT, false, 15, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 20),
+						new Effect(TypeEffect.INT, false, 20, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 25),
+						new Effect(TypeEffect.INT, false, 25, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 30),
+						new Effect(TypeEffect.INT, false, 30, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 35),
+						new Effect(TypeEffect.INT, false, 35, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 40),
+						new Effect(TypeEffect.INT, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 45),
+						new Effect(TypeEffect.INT, false, 45, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 50),
+						new Effect(TypeEffect.INT, false, 50, true),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "de Volonté"); put(Language.EN, "Will"); }}, 87, 100,
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 10),
+						new Effect(TypeEffect.VOL, false, 10, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 20),
+						new Effect(TypeEffect.VOL, false, 20, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 30),
+						new Effect(TypeEffect.VOL, false, 30, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 40),
+						new Effect(TypeEffect.VOL, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 50),
+						new Effect(TypeEffect.VOL, false, 50, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 60),
+						new Effect(TypeEffect.VOL, false, 60, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 70),
+						new Effect(TypeEffect.VOL, false, 70, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 80),
+						new Effect(TypeEffect.VOL, false, 80, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 90),
+						new Effect(TypeEffect.VOL, false, 90, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 100),
+						new Effect(TypeEffect.VOL, false, 100, true),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Agilité"); put(Language.EN, "Agility"); }}, 87, 100,
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 5),
+						new Effect(TypeEffect.AGI, false, 5, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 10),
+						new Effect(TypeEffect.AGI, false, 10, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 15),
+						new Effect(TypeEffect.AGI, false, 15, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 20),
+						new Effect(TypeEffect.AGI, false, 20, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 25),
+						new Effect(TypeEffect.AGI, false, 25, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 30),
+						new Effect(TypeEffect.AGI, false, 30, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 35),
+						new Effect(TypeEffect.AGI, false, 35, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 40),
+						new Effect(TypeEffect.AGI, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 45),
+						new Effect(TypeEffect.AGI, false, 45, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 50),
+						new Effect(TypeEffect.AGI, false, 50, true),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Antoraya"); put(Language.EN, "Sprint"); }}, 87, 100,
@@ -4681,57 +4681,57 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.RELIQUE, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, WeaponType.BOUCLIER, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 66),
+						new Effect(TypeEffect.FCE, false, 66, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 79),
+						new Effect(TypeEffect.FCE, false, 79, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 99),
+						new Effect(TypeEffect.FCE, false, 99, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 132),
+						new Effect(TypeEffect.FCE, false, 132, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.FCE, false, 198),
+						new Effect(TypeEffect.FCE, false, 198, true),
 					},
 				}, true),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "INT"); put(Language.EN, "INT"); }}, 6, 100,
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.RELIQUE, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, WeaponType.BOUCLIER, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 66),
+						new Effect(TypeEffect.INT, false, 66, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 79),
+						new Effect(TypeEffect.INT, false, 79, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 99),
+						new Effect(TypeEffect.INT, false, 99, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 132),
+						new Effect(TypeEffect.INT, false, 132, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.INT, false, 198),
+						new Effect(TypeEffect.INT, false, 198, true),
 					},
 				}, true),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "AGI"); put(Language.EN, "AGI"); }}, 6, 100,
 				new EquipType[] { WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M, WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M, WeaponType.MECA1M, WeaponType.MECA2M, WeaponType.ARC, WeaponType.GUN, WeaponType.CANON, WeaponType.RELIQUE, WeaponType.BATON, WeaponType.LAME, WeaponType.CLE, WeaponType.BOUCLIER, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 33),
+						new Effect(TypeEffect.AGI, false, 33, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 40),
+						new Effect(TypeEffect.AGI, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 50),
+						new Effect(TypeEffect.AGI, false, 50, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 66),
+						new Effect(TypeEffect.AGI, false, 66, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 99),
+						new Effect(TypeEffect.AGI, false, 99, true),
 					},
 				}, true),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "PV"); put(Language.EN, "HP"); }}, 6, 100,
@@ -4789,57 +4789,57 @@ public class LoaderEnchant {
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 33),
+						new Effect(TypeEffect.VIT, false, 33, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 40),
+						new Effect(TypeEffect.VIT, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 50),
+						new Effect(TypeEffect.VIT, false, 50, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 66),
+						new Effect(TypeEffect.VIT, false, 66, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VIT, false, 99),
+						new Effect(TypeEffect.VIT, false, 99, true),
 					},
 				}, true),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "VOL"); put(Language.EN, "WIL"); }}, 6, 100,
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 33),
+						new Effect(TypeEffect.VOL, false, 33, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 40),
+						new Effect(TypeEffect.VOL, false, 40, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 50),
+						new Effect(TypeEffect.VOL, false, 50, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 66),
+						new Effect(TypeEffect.VOL, false, 66, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.VOL, false, 99),
+						new Effect(TypeEffect.VOL, false, 99, true),
 					},
 				}, true),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "AGI"); put(Language.EN, "AGI"); }}, 6, 100,
 				new EquipType[] { ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 17),
+						new Effect(TypeEffect.AGI, false, 17, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 20),
+						new Effect(TypeEffect.AGI, false, 20, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 25),
+						new Effect(TypeEffect.AGI, false, 25, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 33),
+						new Effect(TypeEffect.AGI, false, 33, true),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.AGI, false, 50),
+						new Effect(TypeEffect.AGI, false, 50, true),
 					},
 				}, true),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "PV"); put(Language.EN, "HP"); }}, 6, 100,

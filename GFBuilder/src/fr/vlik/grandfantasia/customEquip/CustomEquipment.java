@@ -28,6 +28,14 @@ public abstract class CustomEquipment extends IconBuff {
 		this.signature = "";
 	}
 	
+	public CustomEquipment(CustomEquipment equipment) {
+		this.name = equipment.getMap();
+		this.grades = equipment.getGrades();
+		this.lvl = equipment.getLvl();
+		this.effects = equipment.getEffects();
+		this.signature = "";
+	}
+	
 	public String getName(Language lang) {
 		return this.name.get(lang);
 	}
@@ -111,5 +119,13 @@ public abstract class CustomEquipment extends IconBuff {
 		}
 		
 		return listEffects.toArray(new Calculable[listEffects.size()]);
+	}
+	
+	public static String deleteNumber(String name) {
+		if(name.matches(".* \\([0-9]*\\)$")) {
+			return name.replaceFirst(" \\([0-9]*\\)", "");
+		}
+		
+		return name;
 	}
 }

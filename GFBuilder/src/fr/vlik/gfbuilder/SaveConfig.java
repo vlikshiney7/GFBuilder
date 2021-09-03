@@ -39,24 +39,31 @@ public class SaveConfig {
 		loadData();
 	}
 	
-	private String name;
+	private String filename;
+	private String buildname;
 	private Language lang;
 	private Map<String, Map<String, String>> values = new HashMap<String, Map<String, String>>();
 	private int[][] indexSelector;
 	
 	public SaveConfig(String name, int[][] tabConfig) {
-		this.name = name;
+		this.filename = name.replace(" ", "_");
+		this.buildname = name.replace("_", " ");
 		this.indexSelector = tabConfig;
 	}
 	
 	public SaveConfig(String name, Language lang, Map<String, Map<String, String>> values) {
-		this.name = name;
+		this.filename = name.replace(" ", "_");
+		this.buildname = name.replace("_", " ");
 		this.lang = lang;
 		this.values = values;
 	}
 	
-	public String getName() {
-		return this.name;
+	public String getFileName() {
+		return this.filename;
+	}
+	
+	public String getBuildName() {
+		return this.buildname;
 	}
 	
 	public Map<String, String> getValuesFromPage(String page) {
@@ -86,7 +93,7 @@ public class SaveConfig {
 			}
 		}
 		
-		Overlay.getInstance().setNameSave(this.name);
+		Overlay.getInstance().setNameSave(this.buildname);
 		Overlay.getInstance().setSave(true);
 	}
 	
@@ -103,9 +110,9 @@ public class SaveConfig {
 		}
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.name + EXTENSION, false), "UTF-8"));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.filename + EXTENSION, false), "UTF-8"));
 		) {
-			writer.append(this.name + "/" + this.lang.name() + "\n");
+			writer.append(this.buildname + "/" + this.lang.name() + "\n");
 			
 			for(String pageName : this.values.keySet()) {
 				writer.append(pageName + "\n");
@@ -138,6 +145,21 @@ public class SaveConfig {
 		}
 		
 		for(File file : folder.listFiles()) {
+			if(file.getName().matches(".* .*")) {
+				File rename = new File(SAVE_FOLDER_NAME + File.separator + file.getName().replace(" ", "_"));
+				
+				if(!rename.exists()) {
+					if(file.renameTo(rename)) {
+						System.out.println("Renommage du fichier " + file.getName() + " réussi.");
+						file = rename;
+					} else {
+						System.out.println("Renommage impossible du fichier " + file.getName() + ", droit d'administration nécessaire.");
+					}
+				} else {
+					System.out.println("Renommage du fichier " + file.getName() + " impossible, renommage existant.");
+				}
+			}
+			
 			if(file.getName().endsWith(EXTENSION)) {
 				try (
 					BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
@@ -245,7 +267,7 @@ public class SaveConfig {
 		try (
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false), "UTF-8"));
 		) {
-			writer.append(name + "/" + lang.name() + "\n");
+			writer.append(name.replace("_", " ") + "/" + lang.name() + "\n");
 			
 			for(String pageName : build.keySet()) {
 				writer.append(pageName + "\n");
@@ -263,7 +285,7 @@ public class SaveConfig {
 	
 	public static SaveConfig getSave(String name) {
 		for(SaveConfig save : SaveConfig.data) {
-			if(name.equals(save.getName())) {
+			if(name.equals(save.getFileName())) {
 				return save;
 			}
 		}
@@ -283,7 +305,7 @@ public class SaveConfig {
 	public static void deleteData(SaveConfig delete) {
 		SaveConfig.data.remove(delete);
 		
-		File remove = new File(SAVE_FOLDER_NAME + File.separator + delete.getName() + EXTENSION);
+		File remove = new File(SAVE_FOLDER_NAME + File.separator + delete.getFileName() + EXTENSION);
 		
 		if(remove.exists()) {
 			remove.delete();
@@ -291,7 +313,7 @@ public class SaveConfig {
 	}
 	
 	public static boolean fileExist() {
-		File file = new File(SAVE_FOLDER_NAME + File.separator + Overlay.getInstance().getCurrentName() + EXTENSION);
+		File file = new File(SAVE_FOLDER_NAME + File.separator + Overlay.getInstance().getCurrentName().replace(" ", "_") + EXTENSION);
 		return file.exists();
 	}
 	

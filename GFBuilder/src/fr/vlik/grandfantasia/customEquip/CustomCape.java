@@ -28,7 +28,7 @@ public class CustomCape extends CustomEquipment {
 	public final static double IncreaseValueBlue = 1.18;
 	
 	public CustomCape(CustomCape cape) {
-		super(cape.getMap(), cape.getGrades(), cape.getLvl(), cape.getEffects());
+		super(cape);
 		
 		this.icon = cape.getIcon();
 		this.iconName = cape.getIconName();
@@ -79,7 +79,7 @@ public class CustomCape extends CustomEquipment {
 			if(quality == Quality.GREEN) {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
-					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
+					if(e.getType().isUpgradable) {
 						e.changeValue(CustomCape.IncreaseValueGreen);
 					}
 					
@@ -90,7 +90,7 @@ public class CustomCape extends CustomEquipment {
 			} else if(quality == Quality.BLUE) {
 				if(newCustom.getEffects()[i] instanceof Effect) {
 					Effect e = (Effect) newCustom.getEffects()[i];
-					if(e.getType().ordinal() >= 5 && e.getType().ordinal() <= 9) {
+					if(e.getType().isUpgradable) {
 						e.changeValue(CustomCape.IncreaseValueBlue);
 					}
 					
@@ -135,7 +135,7 @@ public class CustomCape extends CustomEquipment {
 	}
 	
 	public static boolean constructCustom(String name, Quality quality, String enchants) {
-		CustomCape custom = CustomCape.get(name, Language.FR);
+		CustomCape custom = CustomCape.get(CustomEquipment.deleteNumber(name), Language.FR);
 		
 		if(custom == null) {
 			return false;

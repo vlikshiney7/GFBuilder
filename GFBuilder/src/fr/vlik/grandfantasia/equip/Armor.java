@@ -11,6 +11,7 @@ import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
@@ -168,7 +169,23 @@ public class Armor extends Equipment {
 	}
 	
 	public static void addCustom(Armor armor) {
-		Armor.customData.add(armor);
+		if(getCustom(armor.getName(Language.FR), armor.getQuality(), armor.getSignature()) == null) {
+			int i = 1;
+			boolean found = true;
+			
+			while(found) {
+				found = false;
+				for(Armor custom : Armor.customData) {
+					if(custom.getName(Language.FR).equals(armor.getName(Language.FR))) {
+						armor.addNumberName(i++);
+						found = true;
+						break;
+					}
+				}
+			}
+			
+			Armor.customData.add(armor);
+		}
 	}
 	
 	public static Armor get(String name, Language lang, int list) {
@@ -193,7 +210,7 @@ public class Armor extends Equipment {
 	
 	public static Armor getCustom(String name, Quality quality, String signature) {
 		for(Armor armor : Armor.customData) {
-			if(armor.getName(Language.FR).equals(name) && armor.getQuality() == quality && armor.getSignature().equals(signature)) {
+			if(CustomEquipment.deleteNumber(armor.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name)) && armor.getQuality() == quality && armor.getSignature().equals(signature)) {
 				return armor;
 			}
 		}

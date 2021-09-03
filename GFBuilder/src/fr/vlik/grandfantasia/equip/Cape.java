@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.EquipType;
@@ -119,7 +120,23 @@ public class Cape extends Equipment {
 	}
 	
 	public static void addCustom(Cape cape) {
-		Cape.customData.add(cape);
+		if(getCustom(cape.getName(Language.FR), cape.getQuality(), cape.getSignature()) == null) {
+			int i = 1;
+			boolean found = true;
+			
+			while(found) {
+				found = false;
+				for(Cape custom : Cape.customData) {
+					if(custom.getName(Language.FR).equals(cape.getName(Language.FR))) {
+						cape.addNumberName(i++);
+						found = true;
+						break;
+					}
+				}
+			}
+			
+			Cape.customData.add(cape);
+		}
 	}
 	
 	public static Cape get(String name, Language lang) {
@@ -144,7 +161,7 @@ public class Cape extends Equipment {
 	
 	public static Cape getCustom(String name, Quality quality, String signature) {
 		for(Cape cape : Cape.customData) {
-			if(cape.getName(Language.FR).equals(name) && cape.getQuality() == quality && cape.getSignature().equals(signature)) {
+			if(CustomEquipment.deleteNumber(cape.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name)) && cape.getQuality() == quality && cape.getSignature().equals(signature)) {
 				return cape;
 			}
 		}

@@ -37,6 +37,11 @@ public class JCustomCheckBox<T> extends JCheckBox {
 		return this.object;
 	}
 	
+	public void setItem(T obj) {
+		this.object = obj;
+		updateText(Language.FR);
+	}
+	
 	public void updateText(Language lang) {
 		if(this.object instanceof Writable) {
 			this.setText(((Writable) this.object).getInfo(lang));

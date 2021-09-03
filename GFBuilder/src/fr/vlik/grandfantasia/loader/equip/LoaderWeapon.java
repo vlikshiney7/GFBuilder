@@ -12239,8 +12239,8 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 12),
 					new Effect(TypeEffect.VitComp, false, 30),
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
-						new Effect(TypeEffect.DefP, true, -30),
-						new Effect(TypeEffect.DefM, true, -20),
+						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
+						new Effect(TypeEffect.DefM, true, -20, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Vortex Portatif Sacré"); put(Language.EN, "Otherworld - Breakthrough"); }},
