@@ -1810,22 +1810,22 @@ public class LoaderTalent {
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 15),
 					new Proc(50, Activation.Attacked, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 20),
 					new Proc(50, Activation.Attacked, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 25),
 					new Proc(50, Activation.Attacked, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 			}),
@@ -5233,22 +5233,22 @@ public class LoaderTalent {
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 15),
 					new Proc(50, Activation.Attack, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 20),
 					new Proc(50, Activation.Attack, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 25),
 					new Proc(50, Activation.Attack, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 			}),
@@ -5745,22 +5745,22 @@ public class LoaderTalent {
 				new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 15),
 					new Proc(50, Activation.Attacked, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 20),
 					new Proc(50, Activation.Attacked, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 25),
 					new Proc(50, Activation.Attacked, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 100),
-						new Effect(TypeEffect.ReflectM, false, 100),
+						new Effect(TypeEffect.ReflectP_old, false, 100),
+						new Effect(TypeEffect.ReflectM_old, false, 100),
 					}),
 				},
 			}),

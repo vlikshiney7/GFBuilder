@@ -825,8 +825,8 @@ public class Loader {
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Force Sismique de Smulca"); put(Language.EN, "Smulca, Highland Lord"); }}, "3-0", new Calculable[] {
 				new Proc(15, Activation.Attack, 8, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 100),
-					new Effect(TypeEffect.ReflectM, false, 100),
+					new Effect(TypeEffect.ReflectP_old, false, 100),
+					new Effect(TypeEffect.ReflectM_old, false, 100),
 				}),
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Forme de Bœuf de Smulca"); put(Language.EN, "Smulca, Highland Lord"); }}, "3-1", new Calculable[] {
@@ -862,8 +862,8 @@ public class Loader {
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Retour de Tsunami de Bahadolo"); put(Language.EN, ""); }}, "5-1", new Calculable[] {
 				new Proc(15, Activation.Attack, 6, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 70),
-					new Effect(TypeEffect.ReflectM, false, 70),
+					new Effect(TypeEffect.ReflectP_old, false, 70),
+					new Effect(TypeEffect.ReflectM_old, false, 70),
 				}),
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Tempête Enragée de Bahadolo"); put(Language.EN, ""); }}, "5-2", new Calculable[] {

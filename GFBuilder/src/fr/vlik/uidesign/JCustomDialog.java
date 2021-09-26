@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import fr.vlik.gfbuilder.Lang;
+import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
@@ -26,6 +27,7 @@ public class JCustomDialog extends JDialog {
 	private ArrayList<ArrayList<JCustomCheckBox<Filtrable>>> check;
 	private JCustomButton uncheck;
 	private JCustomButton allcheck;
+	private JCustomButton close;
 	
 	private JLangLabel[] label;
 
@@ -60,6 +62,13 @@ public class JCustomDialog extends JDialog {
 		this.allcheck.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.allcheck.setMinimumSize(new Dimension(0, 30));
 		
+		this.close = new JCustomButton(this.label[2].getLang(), Design.YELLOW_COLOR);
+		this.close.addActionListener(e -> {
+			MainFrame.getInstance().requestFocus();
+		});
+		this.close.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.close.setMinimumSize(new Dimension(0, 30));
+		
 		
 		JPanel panelSearch = new JPanel();
 		panelSearch.setLayout(new BoxLayout(panelSearch, BoxLayout.Y_AXIS));
@@ -91,11 +100,12 @@ public class JCustomDialog extends JDialog {
 			panelQuality.add(fake);
 		}
 		
-		JPanel panelButton = new JPanel(new GridLayout(1, 2, 10, 5));
+		JPanel panelButton = new JPanel(new GridLayout(1, 3, 10, 5));
 		panelButton.setBackground(Design.UIColor[2]);
 		panelButton.setBorder(new EmptyBorder(0, 10, 10, 10));
 		panelButton.add(this.uncheck);
 		panelButton.add(this.allcheck);
+		panelButton.add(this.close);
 		
 		
 		JPanel page = new JPanel();
@@ -171,10 +181,7 @@ public class JCustomDialog extends JDialog {
 			}
 		}
 		
-		Filtrable[] cast = new Filtrable[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new Filtrable[result.size()]);
 	}
 	
 	private void setCheck(boolean toCheck) {

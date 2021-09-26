@@ -34,8 +34,10 @@ import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
@@ -59,6 +61,8 @@ public class PageArmor extends PartialRedStuff {
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
 	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(5);
 	private ArrayList<JCustomComboBox<Pearl>> pearl = new ArrayList<JCustomComboBox<Pearl>>(6);
+	
+	private ArrayList<JCustomCheckBox<ProcEffect>> proc = new ArrayList<JCustomCheckBox<ProcEffect>>(6);
 	
 	private JCustomPanel showAndHide;
 	
@@ -124,6 +128,7 @@ public class PageArmor extends PartialRedStuff {
 			
 			if(i == 0) {
 				this.pearl.get(i).addActionListener(e -> {
+					activeProc(id);
 					updateEnchantPearl(id);
 					
 					setEffects();
@@ -133,12 +138,14 @@ public class PageArmor extends PartialRedStuff {
 			} else if(i == 1) {
 				this.pearl.add(new JCustomComboBox<Pearl>(tabPearl));
 				this.pearl.get(i).addActionListener(e -> {
+					activeProc(id);
 					updateEnchantPearl(id);
 					
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
 				this.pearl.get(i+1).addActionListener(e -> {
+					activeProc(id+1);
 					updateEnchantPearl(id);
 					
 					setEffects();
@@ -148,6 +155,7 @@ public class PageArmor extends PartialRedStuff {
 				this.pearl.get(i+1).setVisible(false);
 			} else {
 				this.pearl.get(i+1).addActionListener(e -> {
+					activeProc(id+1);
 					updateEnchantPearl(id);
 					
 					setEffects();
@@ -158,6 +166,16 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		this.armorSetInfo = new JCustomTextPane();
+		
+		for(int i = 0; i < 6; i++) {
+			/* PROC */
+			this.proc.add(new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getPearl(i))));
+			this.proc.get(i).setIconUI("procOn24", "procOff24");
+			this.proc.get(i).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
+		}
 		
 		updateLanguage(Language.FR);
 		createPanel();
@@ -350,6 +368,12 @@ public class PageArmor extends PartialRedStuff {
 			}
 		}
 		
+		for(int i = 0; i < 6; i++) {
+			if(this.proc.get(i).isVisible() && this.proc.get(i).isSelected()) {
+				list.addAll(this.proc.get(i).getItem().getEffects());
+			}
+		}
+		
 		this.effects = list;
 	}
 	
@@ -382,13 +406,23 @@ public class PageArmor extends PartialRedStuff {
 			JCustomPanel fortifArmor = new JCustomPanel(BoxLayout.X_AXIS);
 			fortifArmor.addAll(this.valueFortif.get(i), Box.createHorizontalStrut(5), this.labelValue.get(i));
 			
-			JCustomPanel pearlArmor = new JCustomPanel(BoxLayout.Y_AXIS);
+			JCustomPanel pearlsArmor = new JCustomPanel(BoxLayout.Y_AXIS);
 			if(i == 0) {
-				pearlArmor.addAll(this.pearl.get(i), Box.createVerticalStrut(3));
+				JCustomPanel pearlArmor = new JCustomPanel(BoxLayout.X_AXIS);
+				pearlArmor.addAll(this.pearl.get(i), Box.createHorizontalStrut(3), this.proc.get(i));
+				pearlsArmor.addAll(pearlArmor, Box.createVerticalStrut(3));
 			} else if (i == 1) {
-				pearlArmor.addAll(this.pearl.get(i), Box.createVerticalStrut(3), this.pearl.get(i+1), Box.createVerticalStrut(3));
+				JCustomPanel pearlArmor1 = new JCustomPanel(BoxLayout.X_AXIS);
+				pearlArmor1.addAll(this.pearl.get(i), Box.createHorizontalStrut(3), this.proc.get(i));
+				pearlsArmor.addAll(pearlArmor1, Box.createVerticalStrut(3));
+				
+				JCustomPanel pearlArmor2 = new JCustomPanel(BoxLayout.X_AXIS);
+				pearlArmor2.addAll(this.pearl.get(i+1), Box.createHorizontalStrut(3), this.proc.get(i+1));
+				pearlsArmor.addAll(pearlArmor2, Box.createVerticalStrut(3));
 			} else {
-				pearlArmor.addAll(this.pearl.get(i+1), Box.createVerticalStrut(3));
+				JCustomPanel pearlArmor = new JCustomPanel(BoxLayout.X_AXIS);
+				pearlArmor.addAll(this.pearl.get(i+1), Box.createHorizontalStrut(3), this.proc.get(i+1));
+				pearlsArmor.addAll(pearlArmor, Box.createVerticalStrut(3));
 			}
 			
 			JCustomPanel starPanel = new JCustomPanel(this.labels.get("PearlEnchant" + i), Box.createHorizontalStrut(10));
@@ -411,7 +445,7 @@ public class PageArmor extends PartialRedStuff {
 			JCustomPanel elemI = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 			elemI.addAll(this.labels.get("Armor" + i), Box.createVerticalStrut(10), descArmor, Box.createVerticalStrut(2),
 					enchantArmor, Box.createVerticalStrut(2), fortifArmor, Box.createVerticalStrut(5),
-					pearlArmor, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
+					pearlsArmor, Box.createVerticalStrut(3), starPanel, listEnchant, Box.createVerticalStrut(2),
 					xpArmor);
 			
 			this.showAndHideEnchant.add(listEnchant);
@@ -422,6 +456,10 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		this.addAll(Box.createVerticalStrut(10), this.armorSetInfo);
+		
+		for(int i = 0; i < 6; i++) {
+			this.proc.get(i).setVisible(false);
+		}
 		
 		initPanel();
 		
@@ -595,6 +633,19 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		updateEnchantPearl(showStar, id);
+	}
+	
+	private void activeProc(int index6) {
+		ProcEffect proc = new ProcEffect(index6 < 6 ? this.getPearl(index6) : null);
+		
+		if(proc.getEffects().length > 0) {
+			this.proc.get(index6).setItem(proc);
+			this.proc.get(index6).setVisible(true);
+		} else {
+			this.proc.get(index6).setVisible(false);
+		}
+		
+		this.proc.get(index6).setSelected(false);
 	}
 	
 	protected void updateTooltipFortif(int id) {
@@ -787,6 +838,10 @@ public class PageArmor extends PartialRedStuff {
 			config.put("ValueFortif" + i, "" + this.valueFortif.get(i).getValue());
 		}
 		
+		for(int i = 0; i < this.proc.size(); i++) {
+			config.put("Proc" + i, "" + this.proc.get(i).isSelected());
+		}
+		
 		return config;
 	}
 	
@@ -917,6 +972,10 @@ public class PageArmor extends PartialRedStuff {
 			if(this.getArmor(i).getQuality() == Quality.RED) {
 				this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));
 			}
+		}
+		
+		for(int i = 0; i < this.proc.size(); i++) {
+			this.proc.get(i).setSelected(Boolean.valueOf(config.get("Proc" + i)));
 		}
 		
 		for(int i = 0; i < this.armor.size(); i++) {

@@ -111,7 +111,7 @@ function ExtractArmor() {
 					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().match('HP')) {
 					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
-				} else if(stat[j].innerHTML.trim().match('EN')) {
+				} else if(stat[j].innerHTML.trim().match('MP')) {
 					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				} else if(stat[j].innerHTML.match(/chance to hit/)) {
 					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
@@ -234,7 +234,7 @@ function ExtractArmor() {
 		var section = document.getElementsByClassName('card-header');
 		
 		for(var i = 0; i < section.length; i++) {
-			if(section[i].innerHTML.match(/Merchants/)) {
+			if(section[i].innerHTML.match(/Merchants/) || section[i].innerHTML.match(/Missions/)) {
 				found = true;
 				break;
 			}

@@ -88,7 +88,7 @@ public class Effect implements Calculable {
 	}
 	
 	public enum TypeCalcul {
-		BASE, ALLSTATS, CONVERTBASE, CLASSIC, CONVERT, ADDITIONAL,
+		BASE, ALLSTATS, CONVERTBASE, CONVERTSPE, CLASSIC, CONVERT, ADDITIONAL,
 	}
 	
 	public TypeEffect getType() {

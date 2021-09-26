@@ -1,9 +1,9 @@
 Général,General/Armes,Weapons/Armures,Armors/Cape - Anneaux,Cape - Rings/Monture - Trône,Ride - Throne/Costumes,Costumes/Talent,Talent/Spécialisation,Specialization/Compétence,Skill/Sprite,Sprite/Buff permanent,Permanent buff/Alliance - Anima,Marriage - Anima/Paramètres,Settings
-Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.21.0,Version: 0.21.0
+Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.21.1,Version: 0.21.1
 Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé (caractère interdit : \*?":<>|),Empty name or already exist (forbidden character : \*?":<>|)
 Quitter sans sauvegarder ?,Quit without save ?/Sauvegarder,Save/Quitter,Leave/Annuler,Cancel
 Choisir l'action,Choose action/Charger,Load/Supprimer,Delete/Annuler,Cancel
 Fichier non sauvegardé,File not save/Sauvegarder,Save/Ne pas sauvegarder,Not save/Annuler,Cancel
 Une erreur est survenu !,An error occurred !/Création du dossier "GFBuilderSave" impossible (problème de droit administrateur). Veuillez le créer manuellement.,Impossible creation of the folder "GFBuilderSave" (administrator right problem). You should create it manually.
 Création d'équipement,Equipment creation/Arme,Weapon/Armure,Armor/Cape,Cape/Accessoire,Ring/Niveau :,Level:/Qualité :,Quality:/Enchantements,Enhancements/Créer,Create
-Tout décocher,Uncheck all/Tout cocher,Check all
+Tout décocher,Uncheck all/Tout cocher,Check all/Fermer,Close

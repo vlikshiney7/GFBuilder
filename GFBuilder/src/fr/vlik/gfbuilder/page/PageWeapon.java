@@ -368,7 +368,8 @@ public class PageWeapon extends PartialRedStuff {
 				}
 			} else {
 				for(int j = 0; j < 3; j++) {
-					JCustomPanel pearlWeapon = new JCustomPanel(this.pearl.get(3*(i+1)+j), Box.createHorizontalStrut(3), this.proc.get(3*(i+1)+j+3));
+					JCustomPanel pearlWeapon = new JCustomPanel(BoxLayout.X_AXIS);
+					pearlWeapon.addAll(this.pearl.get(3*(i+1)+j), Box.createHorizontalStrut(3), this.proc.get(3*(i+1)+j+3));
 					pearlsWeapon.addAll(pearlWeapon, Box.createVerticalStrut(3));
 				}
 			}

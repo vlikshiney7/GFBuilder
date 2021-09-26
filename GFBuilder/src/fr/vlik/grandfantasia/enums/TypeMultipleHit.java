@@ -10,6 +10,8 @@ public enum TypeMultipleHit implements Colorable, Writable {
 	
 	Double("Dégât x2", "Damage x2", "Deg x2", "Dam x2", Tools.EffectColor[7]),
 	Triple("Dégât x3", "Damage x3", "Deg x3", "Dam x3", Tools.EffectColor[10]),
+	ReflectP("Dégât Physique Renvoyé", "", "Deg Phys Refl", "", Tools.EffectColor[10]),
+	ReflectM("Dégât Magique Renvoyé", "", "Deg Mag Refl", "", Tools.EffectColor[11]),
 	;
 	
 	public final String fr;

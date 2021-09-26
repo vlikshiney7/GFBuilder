@@ -36,7 +36,7 @@ public class PageSpeciality extends PartialPage {
 	private Speciality[] tabSpeciality;
 	private JLabel nbSpePoint = new JLabel("1775");
 	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
-	private ArrayList<JCustomComboBox<Integer>> spePoint = new ArrayList<JCustomComboBox<Integer>>(20);
+	private ArrayList<JCustomComboBox<Integer>> spePoint = new ArrayList<JCustomComboBox<Integer>>(26);
 	
 	private JCustomButton reinitSpe;
 	private JCustomButton maxSpe;
@@ -56,7 +56,7 @@ public class PageSpeciality extends PartialPage {
 		
 		int numSpe = 0;
 		
-		for(int i = 0; i < 4; i++) {
+		for(int i = 0; i < 5; i++) {
 			
 			int k = i % 2 == 0 ? 6 : 4;
 			for(int j = 0; j < k; j++) {
@@ -102,6 +102,7 @@ public class PageSpeciality extends PartialPage {
 		this.labels.put("Type1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Mythique"); put(Language.EN, "Mythical"); }}, Design.SUBTITLE));
 		this.labels.put("Type2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Légendaire"); put(Language.EN, "Legendary"); }}, Design.SUBTITLE));
 		this.labels.put("Type3", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Ultime"); put(Language.EN, "Ultimate"); }}, Design.SUBTITLE));
+		this.labels.put("Type4", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Infini"); put(Language.EN, "Infinity"); }}, Design.SUBTITLE));
 		this.labels.put("Min", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre à 0"); put(Language.EN, "Set all to 0"); }}, Design.TEXT));
 		this.labels.put("Max", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre à 10"); put(Language.EN, "Set all to 10"); }}, Design.TEXT));
 	}
@@ -129,12 +130,12 @@ public class PageSpeciality extends PartialPage {
 		this.addAll(this.labels.get("Speciality"), Box.createVerticalStrut(10), remain, Box.createVerticalStrut(5));
 		
 		
-		JCustomPanel catSpe = new JCustomPanel(new GridLayout(4, 1));
-		JCustomPanel gridSpe = new JCustomPanel(new GridLayout(4, 6, 5, 5));
+		JCustomPanel catSpe = new JCustomPanel(new GridLayout(5, 1));
+		JCustomPanel gridSpe = new JCustomPanel(new GridLayout(5, 6, 5, 5));
 		
 		int numSpe = 0;
 		
-		for(int i = 0; i < 4; i++) {
+		for(int i = 0; i < 5; i++) {
 			catSpe.add(this.labels.get("Type" + i));
 			this.labels.get("Type" + i).setPreferredSize(new Dimension(76, 70));
 			
@@ -276,7 +277,7 @@ public class PageSpeciality extends PartialPage {
 		}
 		
 		this.nbSpePoint.setText("" + remain);
-		for(int i = 0; i < 20; i++) {
+		for(int i = 0; i < 26; i++) {
 			if(this.spePoint.get(i).getItemCount()-1 != this.spePoint.get(i).getSelectedIndex()) {
 				if(this.tabSpeciality[i].getLvl() == 45) {
 					adjustSpeCombobox(i, remain, 2);
@@ -286,6 +287,8 @@ public class PageSpeciality extends PartialPage {
 					adjustSpeCombobox(i, remain, 6);
 				} else if(this.tabSpeciality[i].getLvl() == 91) {
 					adjustSpeCombobox(i, remain, 8);
+				} else if(this.tabSpeciality[i].getLvl() == 100) {
+					adjustSpeCombobox(i, remain, 10);
 				}
 			}
 		}
@@ -391,7 +394,7 @@ public class PageSpeciality extends PartialPage {
 	}
 	
 	private void rescaleSpeComboBox(int rescale) {
-		for(int i = 0; i < 20; i++) {
+		for(int i = 0; i < 26; i++) {
 			int itemCount = this.spePoint.get(i).getItemCount();
 			if(itemCount < rescale) {
 				while(itemCount != rescale) {
@@ -408,7 +411,7 @@ public class PageSpeciality extends PartialPage {
 	}
 	
 	private void rescaleSpeComboBox10SupOnly(int rescale) {
-		for(int i = 0; i < 20; i++) {
+		for(int i = 0; i < 26; i++) {
 			int itemCount = this.spePoint.get(i).getItemCount();
 			if(this.spePoint.get(i).getSelectedIndex() > 11) {
 				while(itemCount != rescale) {
@@ -454,7 +457,7 @@ public class PageSpeciality extends PartialPage {
 	public String getSaveName() {
 		return SAVE_NAME;
 	}
-
+	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new HashMap<String, String>();

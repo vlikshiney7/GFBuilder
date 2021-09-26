@@ -231,8 +231,8 @@ public class LoaderPearl {
 					new Effect(TypeEffect.DefP, false, -100, Target.OPPONENT),
 				}),
 				new Proc(20, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 10),
-					new Effect(TypeEffect.ReflectM, false, 10),
+					new Effect(TypeEffect.ReflectP_old, false, 10),
+					new Effect(TypeEffect.ReflectM_old, false, 10),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegGlace, false, 300),
@@ -366,7 +366,7 @@ public class LoaderPearl {
 					new StaticEffect(TypeStaticEffect.Transfo, Target.OPPONENT),
 				}),
 				new Proc(20, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectM, false, 15),
+					new Effect(TypeEffect.ReflectM_old, false, 15),
 				}),
 				new Proc(3.5, Activation.Phys, new Calculable[] {
 					new Effect(TypeEffect.DegFoudre, false, 300),
@@ -1635,7 +1635,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.ReducPeneP, false, 20),
 				new Effect(TypeEffect.Glace, false, 300),
 				new Proc(10, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 30),
+					new Effect(TypeEffect.ReflectP_old, false, 30),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Armure Chaotique"); put(Language.EN, "Chaos Armor Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
@@ -1704,7 +1704,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.ReducPeneM, false, 20),
 				new Effect(TypeEffect.Foudre, false, 300),
 				new Proc(10, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectM, false, 30),
+					new Effect(TypeEffect.ReflectM_old, false, 30),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de guérison de l'âme chaotique"); put(Language.EN, "Chaos Soul Healing Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "black2", new Calculable[] {
@@ -1778,7 +1778,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.DefP, true, 12),
 				new Effect(TypeEffect.Glace, false, 100),
 				new Proc(20, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 10),
+					new Effect(TypeEffect.ReflectP_old, false, 10),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique inchangée dimensionnelle"); put(Language.EN, "Dimensional Static Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "purple2", new Calculable[] {
@@ -1789,7 +1789,7 @@ public class LoaderPearl {
 				new Effect(TypeEffect.DefM, true, 12),
 				new Effect(TypeEffect.Foudre, false, 100),
 				new Proc(20, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectM, false, 10),
+					new Effect(TypeEffect.ReflectM_old, false, 10),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique pacifique dimensionnelle"); put(Language.EN, "Dimensional Peace Runestone"); }}, Quality.ORANGE, Quality.PURPLE, false, "purple2", new Calculable[] {

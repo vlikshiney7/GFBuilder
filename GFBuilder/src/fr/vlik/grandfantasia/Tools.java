@@ -62,7 +62,7 @@ public class Tools {
 			return false;
 		}
 		
-		return name.matches(".*(" + key + ").*");
+		return name.matches(".*" + key + ".*");
 	}
 	
 	public static boolean searchOnName(String key, Map<Language, String> names) {

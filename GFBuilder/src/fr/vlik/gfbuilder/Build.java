@@ -21,6 +21,7 @@ public class Build {
 	private ArrayList<Effect> baseEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> yggdrasil = new ArrayList<Effect>();
 	private ArrayList<Effect> convertBaseEffects = new ArrayList<Effect>();
+	private ArrayList<Effect> convertSpeEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> classicPointEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> classicPercentEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> convertEffects = new ArrayList<Effect>();
@@ -53,6 +54,7 @@ public class Build {
 						case BASE: 			this.baseEffects.add(e);		break;
 						case ALLSTATS:		this.yggdrasil.add(e);			break;
 						case CONVERTBASE:	this.convertBaseEffects.add(e);	break;
+						case CONVERTSPE:	this.convertSpeEffects.add(e);	break;
 						case CLASSIC:
 							if(e.isPercent()) {
 								this.classicPercentEffects.add(e);
@@ -115,7 +117,8 @@ public class Build {
 		double[] convertBase = convertEffect(this.convertBaseEffects, base, yggdra);
 		double[] point = combineEffect(this.classicPointEffects);
 		double[] percent = combineEffect(this.classicPercentEffects);
-		double[] convert = convertEffect(this.convertEffects, base, yggdra, convertBase, point, percent);
+		double[] convertSpe = convertEffect(this.convertSpeEffects, base, yggdra, percent);
+		double[] convert = convertEffect(this.convertEffects, base, yggdra, convertBase, convertSpe, point, percent);
 		double[] additional = combineEffect(this.additionalEffects);
 		
 		double[] result = new double[TypeEffect.values().length];
@@ -123,7 +126,7 @@ public class Build {
 		
 		/* FCE VIT INT VOL AGI */
 		for(int i = 0; i < 5; i++) {
-			result[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i] + convert[i] + additional[i]);
+			result[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i] + convertSpe[i] + convert[i] + additional[i]);
 		}
 		
 		/* Atk AtkD AtkM */
@@ -176,13 +179,13 @@ public class Build {
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra) {
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] redefinedBase = Arrays.copyOf(base, base.length);
 		
 		/* PV PM */
-		redefinedBase[19] = Math.floor(base[1] * (yggdra[1] / 100 +1) * 40) + base[19];
-		redefinedBase[20] = Math.floor(base[3] * (yggdra[3] / 100 +1) * 20) + base[20];
+		redefinedBase[19] = Math.floor(base[1] * (percent[1] / 100 +1) * 40) + base[19];
+		redefinedBase[20] = Math.floor(base[3] * (percent[3] / 100 +1) * 20) + base[20];
 		
 		for(Effect e : effects) {
 			int indexTypeOrTranfert = e.getTransfert() != TypeEffect.NONE ? e.getTransfert().ordinal() : e.getType().ordinal();
@@ -192,23 +195,42 @@ public class Build {
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra, double[] convertBase, double[] point, double[] percent) {
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra, double[] percent) {
+		double[] combine = new double[TypeEffect.values().length];
+		double[] redefinedBase = Arrays.copyOf(base, base.length);
+		
+		/* PV PM */
+		redefinedBase[19] = Math.floor(base[1] * 40) + base[19];
+		redefinedBase[20] = Math.floor(base[3] * 20) + base[20];
+		
+		for(Effect e : effects) {
+			double value = redefinedBase[e.getTransfert().ordinal()] * (e.getValue() / 100);
+			combine[e.getType().ordinal()] += Math.round(value * ((yggdra[e.getType().ordinal()] + percent[e.getType().ordinal()]) / 100 +1));
+		}
+		
+		return combine;
+	}
+	
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra, double[] convertBase, double[] convertSpe, double[] point, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] merge = Arrays.copyOf(base, base.length);
 		
 		for(int i = 0; i < 5; i++) {
-			merge[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i]);
+			merge[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i] + convertSpe[i]);
 		}
 		
 		/* Atk AtkD AtkM */
-		merge[5] = Math.floor((base[0] + point[0] + convertBase[0]) * 3 + point[5] * (percent[5] / 100 +1) + convertBase[5]);
-		merge[6] = Math.floor((base[4] + point[4] + convertBase[4]) * 3 + point[6] * (percent[6] / 100 +1) + convertBase[6]);
-		merge[7] = Math.floor((base[2] + point[2] + convertBase[2]) * 3 + point[7] * (percent[7] / 100 +1) + convertBase[7]);
+		merge[5] = Math.floor((base[0] + point[0] + convertBase[0]) * 3 + point[5] * (percent[5] / 100 +1) + convertBase[5] + convertSpe[5]);
+		merge[6] = Math.floor((base[4] + point[4] + convertBase[4]) * 3 + point[6] * (percent[6] / 100 +1) + convertBase[6] + convertSpe[6]);
+		merge[7] = Math.floor((base[2] + point[2] + convertBase[2]) * 3 + point[7] * (percent[7] / 100 +1) + convertBase[7] + convertSpe[7]);
 		
 		/* TCCP TCCM */
-		merge[10] = Math.floor((Math.min((base[4] + point[4] + convertBase[4]), 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10];
-		merge[11] = Math.floor((Math.min((base[2] + point[2] + convertBase[2]), 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11];
+		merge[10] = Math.floor((Math.min((base[4] + point[4] + convertBase[4]), 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10] + convertSpe[10];
+		merge[11] = Math.floor((Math.min((base[2] + point[2] + convertBase[2]), 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11] + convertSpe[11];
 		
+		/* PV PM */
+		merge[19] = Math.floor((base[1] + point[1] + convertBase[1]) * 40 + point[19] * (percent[19] / 100 +1) + convertBase[19] + convertSpe[19]);
+		merge[20] = Math.floor((base[3] + point[3] + convertBase[3]) * 20 + point[20] * (percent[20] / 100 +1) + convertBase[20] + convertSpe[20]);
 		
 		for(Effect e : effects) {
 			double value = merge[e.getTransfert().ordinal()] * (e.getValue() / 100);

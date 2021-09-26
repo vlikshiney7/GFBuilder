@@ -688,68 +688,68 @@ public class LoaderEnchant {
 				new EquipType[] { WeaponType.RELIQUE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 1),
+						new Effect(TypeEffect.ReflectP_old, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 2),
+						new Effect(TypeEffect.ReflectP_old, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 3),
+						new Effect(TypeEffect.ReflectP_old, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 4),
+						new Effect(TypeEffect.ReflectP_old, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 5),
+						new Effect(TypeEffect.ReflectP_old, false, 5),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 6),
+						new Effect(TypeEffect.ReflectP_old, false, 6),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 7),
+						new Effect(TypeEffect.ReflectP_old, false, 7),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 8),
+						new Effect(TypeEffect.ReflectP_old, false, 8),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 9),
+						new Effect(TypeEffect.ReflectP_old, false, 9),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 10),
+						new Effect(TypeEffect.ReflectP_old, false, 10),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Contre-attaque"); put(Language.EN, "Counter-attacker"); }}, 90, 100,
 				new EquipType[] { WeaponType.RELIQUE, },
 				new Calculable[][] {
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 1),
+						new Effect(TypeEffect.ReflectM_old, false, 1),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 2),
+						new Effect(TypeEffect.ReflectM_old, false, 2),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 3),
+						new Effect(TypeEffect.ReflectM_old, false, 3),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 4),
+						new Effect(TypeEffect.ReflectM_old, false, 4),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 5),
+						new Effect(TypeEffect.ReflectM_old, false, 5),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 6),
+						new Effect(TypeEffect.ReflectM_old, false, 6),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 7),
+						new Effect(TypeEffect.ReflectM_old, false, 7),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 8),
+						new Effect(TypeEffect.ReflectM_old, false, 8),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 9),
+						new Effect(TypeEffect.ReflectM_old, false, 9),
 					},
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectM, false, 10),
+						new Effect(TypeEffect.ReflectM_old, false, 10),
 					},
 				}),
 			new RedEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur"); put(Language.EN, "Protective"); }}, 87, 100,
@@ -5865,8 +5865,8 @@ public class LoaderEnchant {
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Adversité"); put(Language.EN, "Counter"); }}, 6, 100, Quality.GOLD,
 					new EquipType[] { WeaponType.RELIQUE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 10),
-						new Effect(TypeEffect.ReflectM, false, 10),
+						new Effect(TypeEffect.ReflectP_old, false, 10),
+						new Effect(TypeEffect.ReflectM_old, false, 10),
 					}),
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Agilité"); put(Language.EN, "Agility"); }}, 36, 55, Quality.GOLD,
 					new EquipType[] { ArmorType.CASQUE, ArmorType.GANT, ArmorType.BOTTE, },
@@ -7157,8 +7157,8 @@ public class LoaderEnchant {
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Adversité"); put(Language.EN, "Counter"); }}, 6, 100, Quality.ORANGE,
 					new EquipType[] { WeaponType.RELIQUE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 					new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 10),
-						new Effect(TypeEffect.ReflectM, false, 10),
+						new Effect(TypeEffect.ReflectP_old, false, 10),
+						new Effect(TypeEffect.ReflectM_old, false, 10),
 					}),
 				new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Agilité"); put(Language.EN, "Agility"); }}, 16, 25, Quality.ORANGE,
 					new EquipType[] { ArmorType.CASQUE, ArmorType.GANT, ArmorType.BOTTE, RingType.RING, },
@@ -8716,8 +8716,8 @@ public class LoaderEnchant {
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Adversité"); put(Language.EN, "Counter"); }}, 6, 100, Quality.BLUE,
 				new EquipType[] { WeaponType.RELIQUE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 10),
-					new Effect(TypeEffect.ReflectM, false, 10),
+					new Effect(TypeEffect.ReflectP_old, false, 10),
+					new Effect(TypeEffect.ReflectM_old, false, 10),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Agilité"); put(Language.EN, "Agility"); }}, 6, 15, Quality.BLUE,
 				new EquipType[] { ArmorType.CASQUE, ArmorType.GANT, ArmorType.BOTTE, RingType.RING, },
@@ -11569,8 +11569,8 @@ public class LoaderEnchant {
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Adversité"); put(Language.EN, "Counter"); }}, 6, 95, Quality.GREEN,
 				new EquipType[] { WeaponType.RELIQUE, ArmorType.CASQUE, ArmorType.PLASTRON, ArmorType.JAMBIERE, ArmorType.GANT, ArmorType.BOTTE, CapeType.CAPE, },
 				new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 10),
-					new Effect(TypeEffect.ReflectM, false, 10),
+					new Effect(TypeEffect.ReflectP_old, false, 10),
+					new Effect(TypeEffect.ReflectM_old, false, 10),
 				}),
 			new Enchantment(new HashMap<Language, String>() {{ put(Language.FR, "d'Agilité"); put(Language.EN, "Agility"); }}, 6, 15, Quality.GREEN,
 				new EquipType[] { ArmorType.CASQUE, ArmorType.GANT, ArmorType.BOTTE, RingType.RING, },

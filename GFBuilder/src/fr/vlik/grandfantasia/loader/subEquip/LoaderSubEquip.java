@@ -107,8 +107,8 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.ReducSkillP, false, 3),
 				new Effect(TypeEffect.ReducSkillM, false, 3),
 				new Proc(0, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 100),
-					new Effect(TypeEffect.ReflectM, false, 100),
+					new Effect(TypeEffect.ReflectP_old, false, 100),
+					new Effect(TypeEffect.ReflectM_old, false, 100),
 				}),
 			}),
 			new Runway("Bravoure", new Calculable[] {

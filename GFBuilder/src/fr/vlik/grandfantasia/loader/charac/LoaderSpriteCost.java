@@ -136,8 +136,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Vêtement Fantomatique du Sprite"); put(Language.EN, ""); }},
 				Quality.GREEN, SpriteCostType.BODY, "A20038", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 36),
-						new Effect(TypeEffect.ReflectM, false, 36),
+						new Effect(TypeEffect.ReflectP_old, false, 36),
+						new Effect(TypeEffect.ReflectM_old, false, 36),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe Fantomatique du Sprite"); put(Language.EN, ""); }},
@@ -241,8 +241,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Vêtement d'Âme Damnée du Sprite"); put(Language.EN, ""); }},
 				Quality.GREEN, SpriteCostType.BODY, "A20042", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 37),
-						new Effect(TypeEffect.ReflectM, false, 37),
+						new Effect(TypeEffect.ReflectP_old, false, 37),
+						new Effect(TypeEffect.ReflectM_old, false, 37),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Masque d'Âme Damnée du Sprite"); put(Language.EN, ""); }},
@@ -272,8 +272,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de Catch Blanche"); put(Language.EN, ""); }},
 				Quality.GREEN, SpriteCostType.BODY, "F20077", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 		};
@@ -407,29 +407,29 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Équipement grenouille pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20111", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 2),
-						new Effect(TypeEffect.ReflectM, false, 2),
+						new Effect(TypeEffect.ReflectP_old, false, 2),
+						new Effect(TypeEffect.ReflectM_old, false, 2),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Équipement grenouille adorable pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20111", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 4),
-						new Effect(TypeEffect.ReflectM, false, 4),
+						new Effect(TypeEffect.ReflectP_old, false, 4),
+						new Effect(TypeEffect.ReflectM_old, false, 4),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Équipement grenouille fashion pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20111", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 8),
-						new Effect(TypeEffect.ReflectM, false, 8),
+						new Effect(TypeEffect.ReflectP_old, false, 8),
+						new Effect(TypeEffect.ReflectM_old, false, 8),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Équipement grenouille de luxe pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20111", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 16),
-						new Effect(TypeEffect.ReflectM, false, 16),
+						new Effect(TypeEffect.ReflectP_old, false, 16),
+						new Effect(TypeEffect.ReflectM_old, false, 16),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe poisson-globe pour Sprite"); put(Language.EN, ""); }},
@@ -634,8 +634,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Afro Arc-en-Ciel"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.HEAD, "F10012", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Casquette du Duc"); put(Language.EN, ""); }},
@@ -731,8 +731,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume Citrouille pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20078", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Jolie Robe de Sprite"); put(Language.EN, ""); }},
@@ -795,8 +795,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Casque d'alien"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.HEAD, "F10019", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Perruque de Mafalda"); put(Language.EN, ""); }},
@@ -990,8 +990,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Super-Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20022", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Combinaison de Kung Fu"); put(Language.EN, ""); }},
@@ -1135,15 +1135,15 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Sprite Démoniaque"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20052", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Noël du Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20053", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Perruque de Brute Lee"); put(Language.EN, ""); }},
@@ -1325,8 +1325,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue de BatSprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20066", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Maillot de Joueur de Basket"); put(Language.EN, ""); }},
@@ -1407,8 +1407,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Mignon Petit Kimono"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20072", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Rizières"); put(Language.EN, ""); }},
@@ -1432,8 +1432,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Armure d'Écailles de Dragon"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20074", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de la Tour Rouge"); put(Language.EN, ""); }},
@@ -1700,8 +1700,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Vêtement Streetwear"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20098", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Seigneur Lion"); put(Language.EN, ""); }},
@@ -1758,8 +1758,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet d'écureuil pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.HEAD, "F10111", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume d'écureuil pour Sprite"); put(Language.EN, ""); }},
@@ -1811,8 +1811,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Cagoule porte-bonheur"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20107", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 37),
-						new Effect(TypeEffect.ReflectM, false, 37),
+						new Effect(TypeEffect.ReflectP_old, false, 37),
+						new Effect(TypeEffect.ReflectM_old, false, 37),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau pour Sprite Peluche démoniaque"); put(Language.EN, ""); }},
@@ -1857,8 +1857,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau à clochettes de Noël"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.HEAD, "F10130", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue à clochettes de Noël"); put(Language.EN, ""); }},
@@ -1918,8 +1918,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue Sushi Master"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20116", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Yummy Kifli"); put(Language.EN, ""); }},
@@ -2003,8 +2003,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume du Sprite zombie"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20109", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Tapir endormi pour Sprite"); put(Language.EN, ""); }},
@@ -2016,15 +2016,15 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume Tapir endormi pour Sprite"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20126", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 37),
-						new Effect(TypeEffect.ReflectM, false, 37),
+						new Effect(TypeEffect.ReflectP_old, false, 37),
+						new Effect(TypeEffect.ReflectM_old, false, 37),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Roi Sprite de la Gâchette"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.HEAD, "F10138", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue du Roi Sprite de la Gâchette"); put(Language.EN, ""); }},
@@ -2044,8 +2044,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Costume de Sprite spationaute"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.BODY, "F20129", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
-						new Effect(TypeEffect.ReflectP, false, 35),
-						new Effect(TypeEffect.ReflectM, false, 35),
+						new Effect(TypeEffect.ReflectP_old, false, 35),
+						new Effect(TypeEffect.ReflectM_old, false, 35),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Masque de biochimie pour Sprite"); put(Language.EN, ""); }},

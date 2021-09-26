@@ -1142,8 +1142,8 @@ public class LoaderTitle {
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Témoin d'un destin brisé"); put(Language.EN, ""); }}, Quality.ORANGE, 98, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
 				new Proc(5, Activation.Attacked, new Calculable[] {
-					new Effect(TypeEffect.ReflectP, false, 5),
-					new Effect(TypeEffect.ReflectM, false, 5),
+					new Effect(TypeEffect.ReflectP_old, false, 5),
+					new Effect(TypeEffect.ReflectM_old, false, 5),
 				}),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Templier"); put(Language.EN, "Crusader's Soul"); }}, Quality.ORANGE, 186, false, GradeName.PALADIN, Tag.QUETE, new Calculable[] {
@@ -1230,6 +1230,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, false, 200),
 				new Effect(TypeEffect.VIT, false, 5),
 				new Effect(TypeEffect.ESQ, true, 3),
+			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Beauté éternelle"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.Loot, false, 5),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction de Joline"); put(Language.EN, "Jolin's Blessing of Love"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 3),

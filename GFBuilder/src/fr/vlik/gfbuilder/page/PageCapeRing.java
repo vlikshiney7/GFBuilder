@@ -24,8 +24,10 @@ import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
 import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
+import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
@@ -42,6 +44,8 @@ public class PageCapeRing extends PartialXpStuff {
 	private JCustomTextPane capeRingSetInfo;
 	
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
+	
+	private ArrayList<JCustomCheckBox<ProcEffect>> proc = new ArrayList<JCustomCheckBox<ProcEffect>>(2);
 	
 	public static PageCapeRing getInstance() {
 		return INSTANCE;
@@ -75,6 +79,7 @@ public class PageCapeRing extends PartialXpStuff {
 			
 			this.ring.add(new JCustomComboBox<Ring>(tabRing));
 			this.ring.get(i).addActionListener(e -> {
+				activeProc(id);
 				updateXpStuff(id+1);
 				updateEnchant(id+1);
 				updateDoubleRing(id);
@@ -90,6 +95,14 @@ public class PageCapeRing extends PartialXpStuff {
 				MainFrame.getInstance().updateStat();
 			});
 			this.enchant.get(i+1).setVisible(false);
+			
+			/* PROC */
+			this.proc.add(new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getRing(i))));
+			this.proc.get(i).setIconUI("procOn32", "procOff32");
+			this.proc.get(i).addActionListener(e -> {
+				setEffects();
+				MainFrame.getInstance().updateStat();
+			});
 		}
 		
 		this.capeRingSetInfo = new JCustomTextPane();
@@ -199,6 +212,12 @@ public class PageCapeRing extends PartialXpStuff {
 			}
 		}
 		
+		for(int i = 0; i < 2; i++) {
+			if(this.proc.get(i).isVisible() && this.proc.get(i).isSelected()) {
+				list.addAll(this.proc.get(i).getItem().getEffects());
+			}
+		}
+		
 		this.effects = list;
 	}
 
@@ -225,7 +244,7 @@ public class PageCapeRing extends PartialXpStuff {
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel descRing = new JCustomPanel(BoxLayout.X_AXIS);
-			descRing.addAll(this.ring.get(i), this.enchant.get(i+1));
+			descRing.addAll(this.ring.get(i), this.enchant.get(i+1), Box.createHorizontalStrut(5), this.proc.get(i));
 			
 			JCustomPanel xpRing = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 			xpRing.add(this.labels.get("RingXP" + i));
@@ -245,6 +264,10 @@ public class PageCapeRing extends PartialXpStuff {
 		}
 		
 		this.addAll(Box.createVerticalStrut(10), this.capeRingSetInfo);
+		
+		for(int i = 0; i < 2; i++) {
+			this.proc.get(i).setVisible(false);
+		}
 		
 		initPanel();
 	}
@@ -331,6 +354,19 @@ public class PageCapeRing extends PartialXpStuff {
 		this.ring.get(other).setItems(tabRing);
 	}
 	
+	private void activeProc(int index2) {
+		ProcEffect proc = new ProcEffect(this.getRing(index2));
+		
+		if(proc.getEffects().length > 0) {
+			this.proc.get(index2).setItem(proc);
+			this.proc.get(index2).setVisible(true);
+		} else {
+			this.proc.get(index2).setVisible(false);
+		}
+		
+		this.proc.get(index2).setSelected(false);
+	}
+	
 	@Override
 	public String getSaveName() {
 		return SAVE_NAME;
@@ -367,6 +403,10 @@ public class PageCapeRing extends PartialXpStuff {
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
 			Integer value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).getLvlbuff() : 0;
 			config.put("LvlXpStuff" + i, "" + value);
+		}
+		
+		for(int i = 0; i < this.proc.size(); i++) {
+			config.put("Proc" + i, "" + this.proc.get(i).isSelected());
 		}
 		
 		return config;
@@ -465,6 +505,10 @@ public class PageCapeRing extends PartialXpStuff {
 				InnerEffect inner = xpStuff.getInnerEffect(Integer.valueOf(config.get("LvlXpStuff" + i)));
 				this.lvlXpStuff.get(i).setSelectedItem(inner);
 			}
+		}
+		
+		for(int i = 0; i < this.proc.size(); i++) {
+			this.proc.get(i).setSelected(Boolean.valueOf(config.get("Proc" + i)));
 		}
 	}
 }
