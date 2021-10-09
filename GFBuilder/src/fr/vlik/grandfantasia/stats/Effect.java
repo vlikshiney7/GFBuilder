@@ -139,6 +139,11 @@ public class Effect implements Calculable {
 	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder(this.type.abbrevFR);
+		
+		if(this.target == Target.OPPONENT) {
+			tooltip.append("Enn : ");
+		}
+		
 		tooltip.append(this.value > 0 ? " +" : " ");
 		tooltip.append(this.value);
 		tooltip.append(this.isPercent ? "%" : "");

@@ -18,7 +18,9 @@ import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.Speciality;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -66,6 +68,7 @@ public class PageSpeciality extends PartialPage {
 					updateSpePoint();
 					
 					setEffects();
+					PageWeapon.getInstance().setEffects();
 					MainFrame.getInstance().updateStat();
 				});
 				this.spePoint.get(numSpe).setVisible(false);
@@ -433,6 +436,24 @@ public class PageSpeciality extends PartialPage {
 				}
 			}
 		}
+	}
+	
+	public double getShieldBonus(TypeEffect type) {
+		double result = 0;
+		
+		for(int i = 0; i < this.tabSpeciality.length; i++) {
+			for(Calculable c : this.tabSpeciality[i].getEffects()) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					
+					if(e.getType() == type) {
+						result += e.getValue() * this.spePoint.get(i).getSelectedIndex();
+					}
+				}
+			}
+		}
+		
+		return result;
 	}
 	
 	private void setMinSpe() {

@@ -14,6 +14,7 @@ import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
@@ -125,6 +126,20 @@ public class Weapon extends Equipment {
 	public void addFortif(Fortification fortif) {
 		if(this.effects != null) {
 			modifyAttack(fortif.getCoef());
+		}
+	}
+
+	public void addShieldBonus(double shieldDefP, double shieldDefM) {
+		for(Calculable c : this.effects) {
+			if(c instanceof Effect) {
+				Effect e = (Effect) c;
+				
+				if(e.getType() == TypeEffect.DefP && !e.isPercent() && e.getWithReinca()) {
+					e.changeValue(shieldDefP / 100 + 1);
+				} else if(e.getType() == TypeEffect.DefM && !e.isPercent() && e.getWithReinca()) {
+					e.changeValue(shieldDefM / 100 + 1);
+				}
+			}
 		}
 	}
 	

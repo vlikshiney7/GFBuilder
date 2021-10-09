@@ -17,7 +17,9 @@ import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.characUpgrade.ProSkill;
 import fr.vlik.grandfantasia.characUpgrade.Skill;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerIconEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
@@ -72,6 +74,7 @@ public class PageSkill extends PartialPage {
 		this.proSkill = new JCustomComboBox<ProSkill>(tabProSkill);
 		this.proSkill.addActionListener(e -> {
 			setEffects();
+			PageWeapon.getInstance().setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
@@ -256,6 +259,24 @@ public class PageSkill extends PartialPage {
 		if(!this.proSkill.setItems(tabProSkill)) {
 			MainFrame.getInstance().setRedPane(8);
 		}
+	}
+	
+	public double getShieldBonus(TypeEffect type) {
+		double result = 0;
+		
+		if(this.showAndHide.get(1).isVisible()) {
+			for(Calculable c : this.getProSkill().getEffects()) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					
+					if(e.getType() == type) {
+						result += e.getValue();
+					}
+				}
+			}
+		}
+		
+		return result;
 	}
 	
 	@Override

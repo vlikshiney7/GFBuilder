@@ -147,6 +147,9 @@ public enum TypeEffect implements Colorable, Writable {
 	Shield("Bouclier de dégât", "Shield damage", "Bouclier", "Shield", -1, true, Tools.EffectColor[0]),
 	Poisse("Taux d'échec de compétence", "Casting Fail Rate", "Taux Poisse", "Fail Rate", 100, true, Tools.EffectColor[0]),
 	
+	ShieldDefP("Défense Physique du bouclier", "Physical Defense of shield", "Déf Phys bouclier", "Phys Def shield", -1, true, Tools.EffectColor[0]),
+	ShieldDefM("Défense Magique du bouclier", "Magical Defense of shield", "Déf Mag bouclier", "Mag Def shield", -1, true, Tools.EffectColor[0]),
+	
 	BoostCraft("Taux de réussite au Craft/Fortification", "", "Boost Craft", "", -1, true, Tools.EffectColor[0]),
 	TimeCraft("Temps de Récolte/Entraînement/Craft", "", "Temps Craft", "", -1, true, Tools.EffectColor[0]),
 	Mine("Matériaux Bonus Mine", "", "Mine", "", -1, true, Tools.EffectColor[0]),

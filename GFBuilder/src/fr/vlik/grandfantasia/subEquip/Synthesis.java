@@ -81,6 +81,10 @@ public class Synthesis extends ColorBuff {
 	}
 	
 	public static Synthesis getFromList(String serie, Synthesis[] tabSynthesis) {
+		if(tabSynthesis == null || tabSynthesis.length == 0) {
+			return null;
+		}
+		
 		if(tabSynthesis != null) {
 			for(Synthesis synthesis : tabSynthesis) {
 				if(synthesis.getSerie().equals(serie)) {
@@ -89,7 +93,7 @@ public class Synthesis extends ColorBuff {
 			}
 		}
 		
-		return tabSynthesis == null ? null : tabSynthesis[0];
+		return tabSynthesis[0];
 	}
 	
 	public static Synthesis[] getPossibleRide(TypeSynthesis typeSynthesis, Quality quality, int star) {

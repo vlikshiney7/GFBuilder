@@ -122,13 +122,13 @@ public class LoaderProSkill {
 				new Effect(TypeEffect.MEN, false, 35),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Pavois du Roi 1"); put(Language.EN, "King's Bulwark 1"); }}, 86, "1-2", new Calculable[] {
-				new Effect(TypeEffect.DefP, true, 7),
-				new Effect(TypeEffect.DefM, true, 7),
+				new Effect(TypeEffect.ShieldDefP, false, 7),
+				new Effect(TypeEffect.ShieldDefM, false, 7),
 				new Effect(TypeEffect.RParade, false, 7),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Pavois du Roi 2"); put(Language.EN, "King's Bulwark 2"); }}, 91, "1-2", new Calculable[] {
-				new Effect(TypeEffect.DefP, true, 15),
-				new Effect(TypeEffect.DefM, true, 15),
+				new Effect(TypeEffect.ShieldDefP, false, 15),
+				new Effect(TypeEffect.ShieldDefM, false, 15),
 				new Effect(TypeEffect.RParade, false, 15),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Château blindé"); put(Language.EN, ""); }}, 91, "1-3", new Calculable[] {
@@ -754,14 +754,14 @@ public class LoaderProSkill {
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Charge temporelle 1"); put(Language.EN, "Time Charge 1"); }}, 86, "11-2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.VitComp, false, 10, Target.OPPONENT),
-					new Effect(TypeEffect.DefM, true, 20, Target.OPPONENT),
+					new Effect(TypeEffect.VitComp, false, 10),
+					new Effect(TypeEffect.DefM, true, -20, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Charge temporelle 2"); put(Language.EN, "Time Charge 2"); }}, 91, "11-2", new Calculable[] {
 				new Proc(10, Activation.Attack, 5, new Calculable[] {
-					new Effect(TypeEffect.VitComp, false, 15, Target.OPPONENT),
-					new Effect(TypeEffect.DefM, true, 20, Target.OPPONENT),
+					new Effect(TypeEffect.VitComp, false, 15),
+					new Effect(TypeEffect.DefM, true, -20, Target.OPPONENT),
 				}),
 			}),
 			new ProSkill(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de Soif de sang"); put(Language.EN, ""); }}, 91, "11-3", new Calculable[] {

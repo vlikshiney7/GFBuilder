@@ -64,7 +64,7 @@ public class LoaderEquipSet {
 		
 		return result;
 	}
-
+	
 	private static EquipSet[] getGuerrier() {
 		return new EquipSet[] {
 			new EquipSet("Tremblement de terre du roi de la bataille", "90red0", null, null, null),

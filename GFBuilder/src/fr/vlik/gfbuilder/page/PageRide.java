@@ -308,12 +308,18 @@ public class PageRide extends PartialXpStuff {
 			nbStar++;
 		}
 		
+		if(nbStar < 1) {
+			updateStarGenki(id, nbStar);
+			nbStar = 1;
+		}
+		
 		Synthesis[] tabSynthesis = (id == 0 ? Synthesis.getPossibleRide(this.getGroupSynthesis(id), this.getGroupQuality(id), nbStar) : Synthesis.getPossibleThrone(this.getGroupSynthesis(id), this.getGroupQuality(id), nbStar));
 		
 		if(tabSynthesis == null) {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(false);
 			}
+			
 			this.labels.get("Synthesis" + id).setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.synthesis.get(id).setVisible(false);
@@ -321,6 +327,7 @@ public class PageRide extends PartialXpStuff {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(true);
 			}
+			
 			this.labels.get("Synthesis" + id).setVisible(true);
 			this.groupSynthesis.get(id).setVisible(true);
 			this.synthesis.get(id).setVisible(true);
