@@ -31,7 +31,8 @@ public class SkillEffect implements Calculable {
 		NUMBER("Nombre", "number"),
 		PARA("Durée paralysie", "paralysis duration"),
 		FUFU("Mouvement non réduite", "No reduce movement"),
-		RELOAD("Rechargement", "Reload");
+		RELOAD("Rechargement", "Reload"),
+		LEVEL("Niveau", "Level");
 		
 		public final String fr;
 		public final String en;

@@ -1077,22 +1077,22 @@ public class LoaderSpeciality {
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Rupture Temporelle"); put(Language.EN, ""); }}, 91, "11-19", new Calculable[] {
 				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Conversion d'énergie magique"); put(Language.EN, ""); }}, 100, "10-20", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Conversion d'énergie magique"); put(Language.EN, ""); }}, 100, "11-20", new Calculable[] {
 				new Effect(TypeEffect.INT, 0.2, TypeEffect.PM, TypeCalcul.CONVERTSPE),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise Lumière divine"); put(Language.EN, ""); }}, 100, "10-21", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise Lumière divine"); put(Language.EN, ""); }}, 100, "11-21", new Calculable[] {
 				new Effect(TypeEffect.AGI, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Polyvalence de la Poupée Magique"); put(Language.EN, ""); }}, 100, "10-22", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Polyvalence de la Poupée Magique"); put(Language.EN, ""); }}, 100, "11-22", new Calculable[] {
 				new Effect(TypeEffect.VOL, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Clef de l'esprit"); put(Language.EN, ""); }}, 100, "10-23", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Clef de l'esprit"); put(Language.EN, ""); }}, 100, "11-23", new Calculable[] {
 				new Effect(TypeEffect.DegSkillM, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier du temps"); put(Language.EN, ""); }}, 100, "10-24", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier du temps"); put(Language.EN, ""); }}, 100, "11-24", new Calculable[] {
 				new Effect(TypeEffect.RDCCP, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Retour de bâton magique"); put(Language.EN, ""); }}, 100, "10-25", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Retour de bâton magique"); put(Language.EN, ""); }}, 100, "11-25", new Calculable[] {
 				new Proc(1, Activation.Attacked, new Calculable[] {
 					new MultipleHit(TypeMultipleHit.ReflectM, 2),
 				}),

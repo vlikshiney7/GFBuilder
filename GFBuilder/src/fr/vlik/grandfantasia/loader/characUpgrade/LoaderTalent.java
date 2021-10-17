@@ -1229,184 +1229,304 @@ public class LoaderTalent {
 					new Effect(TypeEffect.Depla, false, 18),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-6", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Prémonition"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-6", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 8),
+					new Effect(TypeEffect.RDCCP, false, 15),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 13),
+					new Effect(TypeEffect.RDCCP, false, 25),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 18),
+					new Effect(TypeEffect.RDCCP, false, 35),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 23),
+					new Effect(TypeEffect.RDCCP, false, 45),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 28),
+					new Effect(TypeEffect.RDCCP, false, 55),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-7", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 32),
+					new Effect(TypeEffect.RDCCP, false, 65),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-8", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Tir Rapide"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-7", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 12),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 16),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 20),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 22),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 24),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-9", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.VitAtkD, false, 26),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-10", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Visée"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-8", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 2),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 8),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 16),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-11", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 20),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-12", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Fuite Explosive Magique"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-9", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCM, false, 6),
+					new Effect(TypeEffect.ESQ, false, 2),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCM, false, 12),
+					new Effect(TypeEffect.ESQ, false, 5),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-13", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCM, false, 18),
+					new Effect(TypeEffect.ESQ, false, 8),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.RTCCM, false, 24),
+					new Effect(TypeEffect.ESQ, false, 10),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "0-20", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCM, false, 30),
+					new Effect(TypeEffect.ESQ, false, 12),
 				},
 				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-14", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.RTCCM, false, 36),
+					new Effect(TypeEffect.ESQ, false, 14),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "2-16", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Précision"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-10", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 1),
+					new Effect(TypeEffect.DCCP, false, 7),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 3),
+					new Effect(TypeEffect.DCCP, false, 10),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-13", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
+					new Effect(TypeEffect.DCCP, false, 13),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 7),
+					new Effect(TypeEffect.DCCP, false, 15),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-18", new Calculable[][] {
-				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 9),
+					new Effect(TypeEffect.DCCP, false, 17),
 				},
 				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-19", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 11),
+					new Effect(TypeEffect.DCCP, false, 19),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-12", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Art de la Défense"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-11", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -10),
+					new Effect(TypeEffect.DegEp, false, 20),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -20),
+					new Effect(TypeEffect.DegEp, false, 40),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -30),
+					new Effect(TypeEffect.DegEp, false, 60),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -35),
+					new Effect(TypeEffect.DegEp, false, 80),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -40),
+					new Effect(TypeEffect.DegEp, false, 100),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -45),
+					new Effect(TypeEffect.DegEp, false, 120),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-23", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Génie du Combat"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-12", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Atk, true, 15),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Atk, true, 16),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-20", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.Atk, true, 17),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "2-23", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Expert en Destruction"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-13", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 5),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.TCCP, false, 7),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Raid d'Élite"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "0-20", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 7),
+					new Effect(TypeEffect.Toucher, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 7),
+					new Effect(TypeEffect.Toucher, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VitAtk, false, 8),
+					new Effect(TypeEffect.Toucher, false, 25),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Résistance au Malin"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-14", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.ReducSkillM, false, 6),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ReducSkillM, false, 7),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ReducSkillM, false, 8),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Ombre du Vent"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "2-16", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 5),
+					new Effect(TypeEffect.ESQ, false, 6),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 5),
+					new Effect(TypeEffect.ESQ, false, 8),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 6),
+					new Effect(TypeEffect.ESQ, false, 10),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise de Menace"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-13", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -18),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -22),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Réaction de Survie"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-18", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.VOL, false, 10),
+					new Effect(TypeEffect.AGI, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VOL, false, 10),
+					new Effect(TypeEffect.AGI, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VOL, false, 15),
+					new Effect(TypeEffect.AGI, false, 30),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Endurance Suprême"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-19", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 10),
+					new Effect(TypeEffect.AGI, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 10),
+					new Effect(TypeEffect.AGI, false, 15),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 15),
+					new Effect(TypeEffect.AGI, false, 20),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Coup Mortel"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-12", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 28),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.DCCP, false, 30),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Bond Transcendant"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-23", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S3, 1, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 1, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S3, 2.5, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 2.5, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S3, 4, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class2S6, 4, TypeValue.DURATION),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Visée du Point Faible"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-20", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S13, 15, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class2S14, 15, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S13, 25, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class2S14, 25, TypeValue.DAMAGE),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class2S13, 35, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class2S14, 35, TypeValue.DAMAGE),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Triple Enchaînement"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "2-23", new Calculable[][] {
+				new Calculable[] {
+					new Proc(2, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 70, 50),
+					}),
+				},
+				new Calculable[] {
+					new Proc(5, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 70, 50),
+					}),
+				},
+				new Calculable[] {
+					new Proc(8, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 70, 50),
+					}),
 				},
 			}),
 		};
@@ -3553,184 +3673,379 @@ public class LoaderTalent {
 					new Effect(TypeEffect.CostComp, false, -70),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "5-8", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Défense au Bâton"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "5-8", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 8, WeaponType.BATON),
+					new Effect(TypeEffect.ReducStdD, false, 8, WeaponType.BATON),
+					new Effect(TypeEffect.ReducSkillP, false, 8, WeaponType.BATON),
+					new Effect(TypeEffect.ESQ, false, 2),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 12, WeaponType.BATON),
+					new Effect(TypeEffect.ReducStdD, false, 12, WeaponType.BATON),
+					new Effect(TypeEffect.ReducSkillP, false, 12, WeaponType.BATON),
+					new Effect(TypeEffect.ESQ, false, 4),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 18, WeaponType.BATON),
+					new Effect(TypeEffect.ReducStdD, false, 18, WeaponType.BATON),
+					new Effect(TypeEffect.ReducSkillP, false, 18, WeaponType.BATON),
+					new Effect(TypeEffect.ESQ, false, 6),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 20, WeaponType.BATON),
+					new Effect(TypeEffect.ReducStdD, false, 20, WeaponType.BATON),
+					new Effect(TypeEffect.ReducSkillP, false, 20, WeaponType.BATON),
+					new Effect(TypeEffect.ESQ, false, 8),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 22, WeaponType.BATON),
+					new Effect(TypeEffect.ReducStdD, false, 22, WeaponType.BATON),
+					new Effect(TypeEffect.ReducSkillP, false, 22, WeaponType.BATON),
+					new Effect(TypeEffect.ESQ, false, 10),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "6-8", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "7-8", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 24, WeaponType.BATON),
+					new Effect(TypeEffect.ReducStdD, false, 24, WeaponType.BATON),
+					new Effect(TypeEffect.ReducSkillP, false, 24, WeaponType.BATON),
+					new Effect(TypeEffect.ESQ, false, 12),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "7-9", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Envoûtement Focalisé"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "6-8", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.IntComp, false, -15),
+					new Effect(TypeEffect.VitComp, false, 10),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.IntComp, false, -25),
+					new Effect(TypeEffect.VitComp, false, 15),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.IntComp, false, -35),
+					new Effect(TypeEffect.VitComp, false, 20),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.IntComp, false, -45),
+					new Effect(TypeEffect.VitComp, false, 22),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.IntComp, false, -55),
+					new Effect(TypeEffect.VitComp, false, 24),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "7-10", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.IntComp, false, -65),
+					new Effect(TypeEffect.VitComp, false, 26),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "7-11", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Obscure Magie"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "7-8", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 5),
+					new SkillEffect(TypeSkillEffect.Class7S0, 5, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class7S1, 5, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 7),
+					new SkillEffect(TypeSkillEffect.Class7S0, 7, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class7S1, 7, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 9),
+					new SkillEffect(TypeSkillEffect.Class7S0, 9, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class7S1, 9, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 12),
+					new SkillEffect(TypeSkillEffect.Class7S0, 12, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class7S1, 12, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 15),
+					new SkillEffect(TypeSkillEffect.Class7S0, 15, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class7S1, 15, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-19", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "4-20", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "0-13", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new Effect(TypeEffect.Toucher, false, 18),
+					new SkillEffect(TypeSkillEffect.Class7S0, 18, TypeValue.DAMAGE),
+					new SkillEffect(TypeSkillEffect.Class7S1, 18, TypeValue.DAMAGE),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "1-18", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Appel de l'Enfer"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "7-9", new Calculable[][] {
 				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S2, 1, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S3, 1, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S4, 15, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S5, 15, TypeValue.DURATION),
 				},
 				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S2, 2, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S3, 2, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S4, 25, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S5, 25, TypeValue.DURATION),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-19", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S2, 3, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S3, 3, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S4, 35, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S5, 35, TypeValue.DURATION),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "2-18", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S2, 4, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S3, 4, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S4, 40, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S5, 40, TypeValue.DURATION),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "1-20", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S2, 5, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S3, 5, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S4, 45, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S5, 45, TypeValue.DURATION),
 				},
 				new Calculable[] {
-				},
-			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "6-20", new Calculable[][] {
-				new Calculable[] {
-				},
-				new Calculable[] {
-				},
-				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S2, 6, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S3, 6, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S4, 50, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S5, 50, TypeValue.DURATION),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "1-12", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Vent de la Sorcière"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "7-10", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 5),
+					new SkillEffect(TypeSkillEffect.Class7S6, 1, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S7, 1, TypeValue.LEVEL),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 7),
+					new SkillEffect(TypeSkillEffect.Class7S6, 2, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S7, 2, TypeValue.LEVEL),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 9),
+					new SkillEffect(TypeSkillEffect.Class7S6, 3, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S7, 3, TypeValue.LEVEL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 11),
+					new SkillEffect(TypeSkillEffect.Class7S6, 4, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S7, 4, TypeValue.LEVEL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 13),
+					new SkillEffect(TypeSkillEffect.Class7S6, 5, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S7, 5, TypeValue.LEVEL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 15),
+					new SkillEffect(TypeSkillEffect.Class7S6, 6, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S7, 6, TypeValue.LEVEL),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-21", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Ténèbres"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "7-11", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -7),
+					new SkillEffect(TypeSkillEffect.Class7S8, 1, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S9, 1, TypeValue.LEVEL),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -10),
+					new SkillEffect(TypeSkillEffect.Class7S8, 2, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S9, 2, TypeValue.LEVEL),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -13),
+					new SkillEffect(TypeSkillEffect.Class7S8, 3, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S9, 3, TypeValue.LEVEL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -15),
+					new SkillEffect(TypeSkillEffect.Class7S8, 4, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S9, 4, TypeValue.LEVEL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -17),
+					new SkillEffect(TypeSkillEffect.Class7S8, 5, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S9, 5, TypeValue.LEVEL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -19),
+					new SkillEffect(TypeSkillEffect.Class7S8, 6, TypeValue.LEVEL),
+					new SkillEffect(TypeSkillEffect.Class7S9, 6, TypeValue.LEVEL),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "1-17", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Corps de Bronze"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-19", new Calculable[][] {
 				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 5),
+					new Effect(TypeEffect.VIT, false, 10),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 5),
+					new Effect(TypeEffect.VIT, false, 15),
 				},
 				new Calculable[] {
+					new Effect(TypeEffect.DefP, true, 6),
+					new Effect(TypeEffect.VIT, false, 20),
 				},
 			}),
-			new Talent(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "3-21", new Calculable[][] {
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Malédiction Ancestrale"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "4-20", new Calculable[][] {
 				new Calculable[] {
+					new Proc(5, Activation.Attack, 5, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoSkill),
+					}),
 				},
 				new Calculable[] {
+					new Proc(5, Activation.Attack, 6, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoSkill),
+					}),
 				},
 				new Calculable[] {
+					new Proc(6, Activation.Attack, 7, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.NoSkill),
+					}),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Protection des Ancêtres"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "0-13", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 5),
+					new Effect(TypeEffect.RDCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 6),
+					new Effect(TypeEffect.RDCCP, false, 25),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.RTCCP, false, 7),
+					new Effect(TypeEffect.RDCCP, false, 26),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Choc Retentissant"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "1-18", new Calculable[][] {
+				new Calculable[] {
+					new Proc(5, Activation.Attack, 2, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Stun),
+					}),
+				},
+				new Calculable[] {
+					new Proc(6, Activation.Attack, 2, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Stun),
+					}),
+				},
+				new Calculable[] {
+					new Proc(7, Activation.Attack, 3, new Calculable[] {
+						new StaticEffect(TypeStaticEffect.Stun),
+					}),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Ombre Volante"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "0-19", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.Ombre, false, 10),
+					new Effect(TypeEffect.ESQ, false, 8),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Ombre, false, 10),
+					new Effect(TypeEffect.ESQ, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Ombre, false, 20),
+					new Effect(TypeEffect.ESQ, false, 12),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Forme Fantôme"); put(Language.EN, ""); }}, new int[] { 70, 83, 93 }, "2-18", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 8),
+					new Effect(TypeEffect.ReducStdD, false, 8),
+					new Effect(TypeEffect.ReducSkillP, false, 8),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 9),
+					new Effect(TypeEffect.ReducStdD, false, 9),
+					new Effect(TypeEffect.ReducSkillP, false, 9),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.ReducStdP, false, 10),
+					new Effect(TypeEffect.ReducStdD, false, 10),
+					new Effect(TypeEffect.ReducSkillP, false, 10),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Pacte de l'Enfer"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "1-20", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.PM, true, 5),
+					new Effect(TypeEffect.INT, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PM, true, 6),
+					new Effect(TypeEffect.INT, false, 20),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.PM, true, 7),
+					new Effect(TypeEffect.INT, false, 30),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Couverture Surnaturelle"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "6-20", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 20),
+					new Effect(TypeEffect.ESQ, false, 10),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 20),
+					new Effect(TypeEffect.ESQ, false, 12),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.Nature, false, 30),
+					new Effect(TypeEffect.ESQ, false, 15),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Démon Vivace"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "1-12", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -15),
+					new Effect(TypeEffect.Depla, false, 5),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -18),
+					new Effect(TypeEffect.Depla, false, 5),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.MEN, false, -21),
+					new Effect(TypeEffect.Depla, false, 6),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Illusionniste"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "0-21", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S10, 1, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S11, 1, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S10, 2, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S11, 2, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S10, 3, TypeValue.DURATION),
+					new SkillEffect(TypeSkillEffect.Class7S11, 3, TypeValue.DURATION),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Ordre du Sang Noir"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "1-17", new Calculable[][] {
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 10),
+					new SkillEffect(TypeSkillEffect.Class7S12, 10, TypeValue.HEAL),
+					new SkillEffect(TypeSkillEffect.Class7S13, 10, TypeValue.HEAL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 15),
+					new SkillEffect(TypeSkillEffect.Class7S12, 13, TypeValue.HEAL),
+					new SkillEffect(TypeSkillEffect.Class7S13, 13, TypeValue.HEAL),
+				},
+				new Calculable[] {
+					new Effect(TypeEffect.INT, false, 20),
+					new SkillEffect(TypeSkillEffect.Class7S12, 15, TypeValue.HEAL),
+					new SkillEffect(TypeSkillEffect.Class7S13, 15, TypeValue.HEAL),
+				},
+			}),
+			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Commandant Spectral"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "3-21", new Calculable[][] {
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S14, 4, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S14, 9, TypeValue.DURATION),
+				},
+				new Calculable[] {
+					new SkillEffect(TypeSkillEffect.Class7S14, 12, TypeValue.DURATION),
 				},
 			}),
 		};

@@ -361,6 +361,7 @@ function ExtractEvo() {
 	
 	var codeLvl = Number(lvl) + document.getElementById("itemGrowEquip").length - 1;
 	var codearmor = codeLvl + "evo" + codeFirstClass;
+	var itemicon = codeLvl + "evo" + codeFirstClass;
 	
 	var reinca = false;
 	if(name.match(/eforgé/) || name.match(/éincarn/)) {
@@ -374,7 +375,7 @@ function ExtractEvo() {
 	result += "\tnew GradeName[] { ";
 	result += listClass;
 	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", false, " + reinca + ",\n";
-	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/ICONPATH\", new MultiEffect(" + lvl + ", new Effect[][] {\n";
+	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + itemicon + "\", new MultiEffect(" + lvl + ", new Effect[][] {\n";
 	result += listEffect;
 	result += "\t}), null),\n";
 	

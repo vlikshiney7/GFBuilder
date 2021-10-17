@@ -267,8 +267,8 @@ public class PageWeapon extends PartialRedStuff {
 				weapons[i].addFortif(this.getFortif(i));
 				
 				if(weapons[i].getType() == WeaponType.BOUCLIER) {
-					double shieldDefP = PageSpeciality.getInstance().getShieldBonus(TypeEffect.ShieldDefP);
-					double shieldDefM = PageSpeciality.getInstance().getShieldBonus(TypeEffect.ShieldDefM);
+					double shieldDefP = PageSpeciality.getInstance().getShieldBonus(TypeEffect.ShieldDefP) + PageSkill.getInstance().getShieldBonus(TypeEffect.ShieldDefP);
+					double shieldDefM = PageSpeciality.getInstance().getShieldBonus(TypeEffect.ShieldDefM) + PageSkill.getInstance().getShieldBonus(TypeEffect.ShieldDefM);
 					
 					weapons[i].addShieldBonus(shieldDefP, shieldDefM);
 				}
