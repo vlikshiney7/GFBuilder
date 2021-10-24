@@ -1497,25 +1497,741 @@ public class LoaderCustomWeapon {
 	
 	static CustomWeapon[] getMeca2M() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourd coupe-tête de héros"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				100, WeaponType.MECA2M, "meca2M/92sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3736, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Large épée du diable pleureur lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				96, WeaponType.MECA2M, "meca2M/icon1", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3540, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde faucille du diable brûlant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				95, WeaponType.MECA2M, "meca2M/icon0", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3491, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde hache double lunaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				91, WeaponType.MECA2M, "meca2M/91blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3299, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hallebarde assassine géante du Feu Solaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				90, WeaponType.MECA2M, "meca2M/87bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3251, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hachette contondante d'armure lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				90, WeaponType.MECA2M, "meca2M/87bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3251, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Large lame grognante lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				86, WeaponType.MECA2M, "meca2M/86blanc", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3062, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache démente d'Hiver en cristal "); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				85, WeaponType.MECA2M, "meca2M/80pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 3016, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Antique hache à chaîne lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				81, WeaponType.MECA2M, "meca2M/80pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2831, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée sauvage tourbillonnante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				80, WeaponType.MECA2M, "meca2M/85pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2785, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée frénétique du bourreau"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				76, WeaponType.MECA2M, "meca2M/85pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2605, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache lourde de l'Exterminateur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				75, WeaponType.MECA2M, "meca2M/80pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2560, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache lourde malchanceuse"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				71, WeaponType.MECA2M, "meca2M/80pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2384, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde machette de phénix chantant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				70, WeaponType.MECA2M, "meca2M/85pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2340, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde lame de pique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				66, WeaponType.MECA2M, "meca2M/85pre", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2168, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde lame edelweiss"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				65, WeaponType.MECA2M, "meca2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 2126, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame lourde de Décapitation"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				57, WeaponType.MECA2M, "meca2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1795, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Grande claymore lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				56, WeaponType.MECA2M, "meca2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1755, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache lourde du massacre pourpre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				54, WeaponType.MECA2M, "meca2M/51bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1676, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance rouge gravitationnelle"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				51, WeaponType.MECA2M, "meca2M/54bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1558, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache lourde de Trancheur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				48, WeaponType.MECA2M, "meca2M/51bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1443, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde épée lunaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				46, WeaponType.MECA2M, "meca2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1368, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde lame plate du cercle magique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				45, WeaponType.MECA2M, "meca2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1331, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pique furtive du commandant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				41, WeaponType.MECA2M, "meca2M/54bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1185, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache lourde d'homme-bête"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				38, WeaponType.MECA2M, "meca2M/51bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1079, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Tueur en acier composite"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				36, WeaponType.MECA2M, "meca2M/icon2", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 1010, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourd marteau chancelant d'assaut"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				32, WeaponType.MECA2M, "meca2M/30ora", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 876, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde baïonnette classique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				31, WeaponType.MECA2M, "meca2M/54bleu", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 843, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du valeureux combattant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				26, WeaponType.MECA2M, "meca2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 686, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du combattant rodé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				24, WeaponType.MECA2M, "meca2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 626, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde masse raffinée"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				21, WeaponType.MECA2M, "meca2M/30ora", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 540, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache croissant de lune en laiton"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				16, WeaponType.MECA2M, "meca2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 405, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Large hache du protecteur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				12, WeaponType.MECA2M, "meca2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 308, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde hache corrosive"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				7, WeaponType.MECA2M, "meca2M/26sprite", new Calculable[] {
+					new Effect(TypeEffect.Atk, false, 203, true),
+				}),
 		};
 	}
 	
 	static CustomWeapon[] getArc() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Crépuscule"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				100, WeaponType.ARC, "arc/icon1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2135, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Voleur de Cœur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				100, WeaponType.ARC, "arc/70gvg", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2135, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Long Œil de Lynx"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				95, WeaponType.ARC, "arc/38ora0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1995, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Court Polaris"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				95, WeaponType.ARC, "arc/59bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1995, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Tueur d'Oiseau"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				90, WeaponType.ARC, "arc/86bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1858, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Enflammé du Traqueur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				89, WeaponType.ARC, "arc/79pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1831, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Chant des Sirènes"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				85, WeaponType.ARC, "arc/86bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1723, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Corail Rouge"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				84, WeaponType.ARC, "arc/86bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1697, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Chasseur de Chimères - Capture"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				80, WeaponType.ARC, "arc/83bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1592, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Chimère"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				79, WeaponType.ARC, "arc/83bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1566, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Grand Arc à Plumes"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				75, WeaponType.ARC, "arc/icon2", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1463, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Paradis"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				74, WeaponType.ARC, "arc/icon2", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1438, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Chasse à l'Ours"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				70, WeaponType.ARC, "arc/72bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1337, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Trappeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				69, WeaponType.ARC, "arc/72bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1313, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Fossile de l'Echine"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				65, WeaponType.ARC, "arc/38ora0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1215, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Cristal Bleu"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				64, WeaponType.ARC, "arc/38ora0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1191, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Protection"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				60, WeaponType.ARC, "arc/18ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1096, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Souffle Céleste"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				60, WeaponType.ARC, "arc/icon1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1145, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Guerre de la Navette Volante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				59, WeaponType.ARC, "arc/28ora1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1072, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Combat de Fête"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				59, WeaponType.ARC, "arc/48ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1098, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Sniper Dragon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				59, WeaponType.ARC, "arc/28ora1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1070, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Explosif"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				51, WeaponType.ARC, "arc/24sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 890, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Long Arc Météore"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				51, WeaponType.ARC, "arc/28ora1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 905, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Long Arc sans Ombre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				51, WeaponType.ARC, "arc/24sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 891, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Sniper"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				43, WeaponType.ARC, "arc/27bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 718, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Tranchant du Chasseur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				43, WeaponType.ARC, "arc/18ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 726, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Guerre de l'Aile volante"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				43, WeaponType.ARC, "arc/27bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 720, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Guerre Renforcé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				35, WeaponType.ARC, "arc/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 558, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Ailé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				35, WeaponType.ARC, "arc/icon1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 570, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Long Arc à Champ de Bataille Particulier"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				35, WeaponType.ARC, "arc/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 557, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Chasseur Précis"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				28, WeaponType.ARC, "arc/24sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 427, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Ciselé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				27, WeaponType.ARC, "arc/28ora1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 410, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Barbare"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				27, WeaponType.ARC, "arc/34sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 424, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Chasseur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				20, WeaponType.ARC, "arc/18ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 292, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Long Arc de l'Archer"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				19, WeaponType.ARC, "arc/18ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 277, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Long Arc Classique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				19, WeaponType.ARC, "arc/43bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 282, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc d'Entraînement"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				13, WeaponType.ARC, "arc/27bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 189, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc Puissant"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				7, WeaponType.ARC, "arc/8blanc", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 116, true),
+				}),
 		};
 	}
 	
 	static CustomWeapon[] getGun() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance-flamme"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				100, WeaponType.GUN, "gun/81sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2490, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Cerberus Arquebus"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				100, WeaponType.GUN, "gun/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2490, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Courte Poussiéreuse"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				95, WeaponType.GUN, "gun/81sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2327, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance Cherche-cœur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				95, WeaponType.GUN, "gun/70gvg", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2327, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Imitateur Classique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				90, WeaponType.GUN, "gun/88bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2167, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Mousquet du Promeneur Lunaire"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				86, WeaponType.GUN, "gun/81sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2042, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Tireur Fou"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				85, WeaponType.GUN, "gun/88bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1949, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil de l'Orage Éternel"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				81, WeaponType.GUN, "gun/88bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1887, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Viseur de l'Invisible - Profondeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				80, WeaponType.GUN, "gun/83bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1857, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil du Coup Parfait"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				76, WeaponType.GUN, "gun/83bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1737, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Mousquet à Triple Baïonnette"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				75, WeaponType.GUN, "gun/81sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1707, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet-Harpon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				71, WeaponType.GUN, "gun/81sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1589, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Calibre 12mm"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				70, WeaponType.GUN, "gun/70bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1560, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Revolver Plombé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				66, WeaponType.GUN, "gun/70bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1446, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Carabine de Chasse en Argent de Milirus"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				65, WeaponType.GUN, "gun/48pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1417, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde Lance d'Argent"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				61, WeaponType.GUN, "gun/48pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1306, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Carabine Runique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				60, WeaponType.GUN, "gun/63bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1278, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet Décapiteur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				60, WeaponType.GUN, "gun/38ora1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1304, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Tromblon d'Ingénieur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				52, WeaponType.GUN, "gun/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1065, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet Électromagnétique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				52, WeaponType.GUN, "gun/96sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1100, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet de Métal à Haute Pression"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				52, WeaponType.GUN, "gun/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1066, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet d'Acier Orné"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				44, WeaponType.GUN, "gun/24sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 862, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Carabine de Sniper"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				44, WeaponType.GUN, "gun/44sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 887, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil des Cadavres du Templier"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				44, WeaponType.GUN, "gun/24sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 860, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet Renforcé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				36, WeaponType.GUN, "gun/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 673, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet de Combat"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				36, WeaponType.GUN, "gun/icon1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 688, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance du Collectionneur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
+				36, WeaponType.GUN, "gun/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 675, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet du Chasseur Remodelé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				28, WeaponType.GUN, "gun/24sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 499, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil à Lunette"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				28, WeaponType.GUN, "gun/28ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 505, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil à Double Canon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				28, WeaponType.GUN, "gun/icon2", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 513, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil du Sniper Embusqué"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				28, WeaponType.GUN, "gun/28ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 500, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet du Chasseur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				20, WeaponType.GUN, "gun/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 341, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Tromblon de Combat"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				20, WeaponType.GUN, "gun/50blanc", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 352, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet Arrondi"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				20, WeaponType.GUN, "gun/18ora", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 330, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Carabine de Tir Rapide"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				20, WeaponType.GUN, "gun/50blanc", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 355, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Carabine de Trappeur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				14, WeaponType.GUN, "gun/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 237, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil simple"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
+				8, WeaponType.GUN, "gun/8blanc", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 157, true),
+				}),
 		};
 	}
 	
 	static CustomWeapon[] getCanon() {
 		return new CustomWeapon[] {
-			
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde divine"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				100, WeaponType.CANON, "canon/91sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2490, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie du couloir de la mort"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				96, WeaponType.CANON, "canon/icon2", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2360, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie surnaturelle"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				95, WeaponType.CANON, "canon/icon1", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2327, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie de l'ombre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				91, WeaponType.CANON, "canon/91blanc", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2199, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde astrale"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				90, WeaponType.CANON, "canon/88bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2167, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde des pionniers"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				90, WeaponType.CANON, "canon/88bleu", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2167, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie d'artilleurs en armure lourde"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				86, WeaponType.CANON, "canon/86blanc", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2042, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie d'Hiver du sol gelé"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				85, WeaponType.CANON, "canon/80pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 2010, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon lourd d'archimage invocateur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				81, WeaponType.CANON, "canon/80pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1887, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde de Gill"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				80, WeaponType.CANON, "canon/84pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1857, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie du bourreau"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				76, WeaponType.CANON, "canon/84pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1737, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Tir d'artillerie"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				75, WeaponType.CANON, "canon/80pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1707, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon lourd d'archimage"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				71, WeaponType.CANON, "canon/80pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1589, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon lourd peau de dragon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				70, WeaponType.CANON, "canon/84pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1560, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie de l'observateur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				66, WeaponType.CANON, "canon/84pre", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1446, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie du blizzard"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				65, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1417, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde baïonnette de soufre"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				62, WeaponType.CANON, "canon/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1333, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon lourd tape-à-l'œil"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				59, WeaponType.CANON, "canon/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1251, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie-bouclier"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				56, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1170, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde azur sans limites"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				52, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1065, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon lourd intelligent"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				51, WeaponType.CANON, "canon/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 1039, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie de Couvert léger"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				49, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 987, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie déraisonnable"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				46, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 912, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourd canon ésotérique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				42, WeaponType.CANON, "canon/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 814, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon directif"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				41, WeaponType.CANON, "canon/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 790, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie en alliage"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				36, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 673, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie légère du pécheur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				36, WeaponType.CANON, "canon/54sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 673, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Vieux canon lourd"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				31, WeaponType.CANON, "canon/icon0", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 562, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie de sniper silencieuse"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				28, WeaponType.CANON, "canon/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 499, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie du gardien"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				26, WeaponType.CANON, "canon/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 457, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie magnifique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				21, WeaponType.CANON, "canon/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 360, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie de la cavalerie légère"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				20, WeaponType.CANON, "canon/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 341, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde en fer blanc"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				16, WeaponType.CANON, "canon/14sprite", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 270, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie lourde de défense"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				12, WeaponType.CANON, "canon/31reinca", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 205, true),
+				}),
+			new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde bombe calorimétrique"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				7, WeaponType.CANON, "canon/31reinca", new Calculable[] {
+					new Effect(TypeEffect.AtkD, false, 135, true),
+				}),
 		};
 	}
 	

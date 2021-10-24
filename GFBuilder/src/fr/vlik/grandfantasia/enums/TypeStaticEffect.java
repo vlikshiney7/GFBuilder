@@ -40,6 +40,7 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	ProSkillC8("20% réduction de dégât, maximum 5 coups", "20% damage reduction, 5 hits maximum", "20% reduc, max 5 coups", "20% reduc, 5 hits max", Tools.EffectColor[0]),
 	ProSkillC10L1("30% réduction de dégât, maximum 3 coups", "30% damage reduction, 3 hits maximum", "30% reduc, max 3 coups", "30% reduc, 3 hits max", Tools.EffectColor[0]),
 	ProSkillC10L2("40% réduction de dégât, maximum 3 coups", "40% damage reduction, 3 hits maximum", "40% reduc, max 3 coups", "40% reduc, 3 hits max", Tools.EffectColor[0]),
+	SetClass9("50% réduction de dégât, maximum 2 coups", "50% damage reduction, 2 hits maximum", "50% reduc, max 2 coups", "50% reduc, 2 hits max", Tools.EffectColor[0]),
 	
 	;
 	

@@ -171,6 +171,20 @@ public class Loader {
 				new Effect(TypeEffect.PeneP, false, 7),
 				new Effect(TypeEffect.PeneM, false, 7),
 			}),
+			new Yggdrasil(new HashMap<Language, String>() {{ put(Language.FR, "12 - Eugénie"); put(Language.EN, "12 - Ginny"); }}, "boss12", new Effect[] {
+				new Effect(TypeEffect.FCE, true, 15, TypeCalcul.ALLSTATS),
+				new Effect(TypeEffect.VIT, true, 15, TypeCalcul.ALLSTATS),
+				new Effect(TypeEffect.INT, true, 15, TypeCalcul.ALLSTATS),
+				new Effect(TypeEffect.VOL, true, 15, TypeCalcul.ALLSTATS),
+				new Effect(TypeEffect.AGI, true, 15, TypeCalcul.ALLSTATS),
+				new Effect(TypeEffect.XP, false, 15),
+				new Effect(TypeEffect.DegStdP, false, 10),
+				new Effect(TypeEffect.DegStdD, false, 10),
+				new Effect(TypeEffect.DegSkillP, false, 10),
+				new Effect(TypeEffect.DegSkillM, false, 10),
+				new Effect(TypeEffect.PeneP, false, 10),
+				new Effect(TypeEffect.PeneM, false, 10),
+			}),
 		};
 	}
 	

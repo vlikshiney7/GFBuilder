@@ -1388,6 +1388,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.RTCCP, false, -10),
 				new Effect(TypeEffect.RTCCM, false, -10),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Disciple en chef de la Sectrouille"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
+				new Effect(TypeEffect.Depla, false, 5),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Dieu du Cristal"); put(Language.EN, "Crystal Hero"); }}, Quality.BLUE, 31, false, GradeName.NONE, Tag.PVP, new Calculable[] {
 				new Effect(TypeEffect.PV, false, 300),
 			}),

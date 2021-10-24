@@ -159,11 +159,15 @@ public enum TypeSkillEffect implements Writable {
 	Class8S8("Cœur de transformation - Vie", "Transforming Core - Life additionally"),
 	
 	Class9S0("Surcadençage - Noyau glacé", "Overclocking - Frost Core"),
-	Class9S1("Frappe foudroyante", "Lightning Stab"),
+	Class9S1("Coup de poignard de givre ultime", "Ultimate Frostcore Stab abilities"),
 	Class9S2("Téléportation de phase", "Phase Teleport"),
 	Class9S3("Téléportation de phase ß", "Phase Teleport £"),
 	Class9S4("Furtif Kilgo", "Stealth Kilgo"),
 	Class9S5("Kilgo lourdement blindé", "Heavy Armored Kilgo"),
+	Class9S6("Balles Perdues", "Stray Bullets"),
+	Class9S7("Bombe Nucléaire Corrosive", "Corrosive Nuclear Bomb"),
+	Class9S8("Surcadençage", "Overclocking"),
+	Class9S9("Bombe fissile", "Fission Bomb"),
 	
 	Class10S0("Marcheur du Royaume du Vide", "Empty Realm Walker"),
 	Class10S1("Libération Cristalline", "Crystal Burst"),

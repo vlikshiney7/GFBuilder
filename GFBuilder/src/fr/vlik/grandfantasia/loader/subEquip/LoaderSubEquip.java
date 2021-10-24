@@ -94,6 +94,12 @@ public class LoaderSubEquip {
 			new Runway("Aurore", new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 			}),
+			new Runway("Balance", new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 4),
+				new Effect(TypeEffect.INT, false, 4),
+				new Effect(TypeEffect.VOL, false, 4),
+				new Effect(TypeEffect.ESQ, false, 2),
+			}),
 			new Runway("Berserker", new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
 				new Effect(TypeEffect.AGI, false, 7),
@@ -148,6 +154,10 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.VitAtk, false, 3),
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
+			new Runway("L'art de la cupidité", new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 4),
+				new Effect(TypeEffect.VitComp, false, 5),
+			}),
 			new Runway("Lutte", new Calculable[] {
 				new StaticEffect(TypeStaticEffect.x2STD_old, 5),
 			}),
@@ -173,6 +183,9 @@ public class LoaderSubEquip {
 			}),
 			new Runway("Rapidité", new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 5),
+			}),
+			new Runway("Sang", new Calculable[] {
+				new Effect(TypeEffect.RegenCB, false, 1),
 			}),
 			new Runway("Sagesse", new Calculable[] {
 				new Effect(TypeEffect.INT, false, 7),
@@ -203,6 +216,12 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.VitAtk, false, 2),
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
+			new Runway("Vive la cupidité", new Calculable[] {
+				new Effect(TypeEffect.Atk, true, 4),
+				new Effect(TypeEffect.AtkD, true, 4),
+				new Effect(TypeEffect.VitAtk, false, 4),
+				new Effect(TypeEffect.VitAtkD, false, 4),
+			}),
 		};
 	}
 	
@@ -216,22 +235,22 @@ public class LoaderSubEquip {
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tête"); put(Language.EN, "Head Runway"); }},
 				new Runway[] {
 					Runway.get("Prêtre"),
-					Runway.get("Hymne"),
+					Runway.get("L'art de la cupidité"),
 				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tenue"); put(Language.EN, "Body Runway"); }},
 				new Runway[] {
-					Runway.get("Sceau de VOL"),
-					Runway.get("Tempête"),
+					Runway.get("Balance"),
+					Runway.get("Vive la cupidité"),
 				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Dos"); put(Language.EN, "Back Runway"); }},
 				new Runway[] {
-					Runway.get("Turbo"),
+					Runway.get("Sang"),
 					Runway.get("Synthétisation"),
 				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Nouveauté"); put(Language.EN, "New Runway"); }},
 				new Runway[] {
 					Runway.get("Bravoure"),
-					Runway.get("Ranger"),
+					Runway.get("Chance"),
 					Runway.get("Magistrat"),
 				}),
 		};

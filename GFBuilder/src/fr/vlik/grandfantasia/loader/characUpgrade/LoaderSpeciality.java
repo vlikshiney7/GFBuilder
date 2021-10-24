@@ -677,45 +677,71 @@ public class LoaderSpeciality {
 	
 	static Speciality[] getClass7() {
 		return new Speciality[] {
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "7-0", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Connaissance en Magie Noire"); put(Language.EN, ""); }}, 45, "7-0", new Calculable[] {
+				new Effect(TypeEffect.AtkM, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "7-1", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Transfert de Menace"); put(Language.EN, ""); }}, 45, "7-1", new Calculable[] {
+				new Effect(TypeEffect.MEN, false, -1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "7-2", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Rituel de l'Âme Sanguinaire"); put(Language.EN, ""); }}, 45, "7-2", new Calculable[] {
+				new Effect(TypeEffect.PV, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "7-3", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Eclatement de l'Esprit"); put(Language.EN, ""); }}, 45, "7-3", new Calculable[] {
+				new Effect(TypeEffect.TCCM, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "7-4", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Corrosion du Métal"); put(Language.EN, ""); }}, 45, "7-4", new Calculable[] {
+				new Proc(1, Activation.Mag, new Calculable[] {
+					new Effect(TypeEffect.DegMeca, false, 50),
+				}),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 45, "7-5", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Esprit Maléfique"); put(Language.EN, ""); }}, 45, "7-5", new Calculable[] {
+				new Effect(TypeEffect.Ombre, false, 3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "7-6", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Coeur de la Sorcière"); put(Language.EN, ""); }}, 60, "7-6", new Calculable[] {
+				new Effect(TypeEffect.INT, false, 9),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "7-7", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Envoûtement Rapide"); put(Language.EN, ""); }}, 60, "7-7", new Calculable[] {
+				new Effect(TypeEffect.VitComp, false, 1.7),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "7-8", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Renforcement Physique"); put(Language.EN, ""); }}, 60, "7-8", new Calculable[] {
+				new Effect(TypeEffect.RTCCP, false, 3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 60, "7-9", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Brume Fantôme Noire"); put(Language.EN, ""); }}, 60, "7-9", new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "7-10", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Coeur de Sorcière"); put(Language.EN, ""); }}, 75, "7-10", new Calculable[] {
+				new Effect(TypeEffect.PM, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "7-11", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Protection des Os"); put(Language.EN, ""); }}, 75, "7-11", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "7-12", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Barrière Spirituelle"); put(Language.EN, ""); }}, 75, "7-12", new Calculable[] {
+				new Effect(TypeEffect.DefM, true, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "7-13", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Attaque Psychique"); put(Language.EN, ""); }}, 75, "7-13", new Calculable[] {
+				new Effect(TypeEffect.Toucher, false, 2),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "7-14", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Protection de la Chair"); put(Language.EN, ""); }}, 75, "7-14", new Calculable[] {
+				new Effect(TypeEffect.ReducStdP, false, 1),
+				new Effect(TypeEffect.ReducStdD, false, 1),
+				new Effect(TypeEffect.ReducSkillP, false, 1),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 75, "7-15", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Invocation interdite"); put(Language.EN, ""); }}, 75, "7-15", new Calculable[] {
+				new Effect(TypeEffect.DCCM, false, 3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "7-16", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Sang du démon"); put(Language.EN, ""); }}, 91, "7-16", new Calculable[] {
+				new Effect(TypeEffect.VIT, false, 9),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "7-17", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Malédiction des ombres"); put(Language.EN, ""); }}, 91, "7-17", new Calculable[] {
+				new Effect(TypeEffect.VOL, false, 9),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "7-18", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Dissipation d'énergie"); put(Language.EN, ""); }}, 91, "7-18", new Calculable[] {
+				new Effect(TypeEffect.RDCCM, false, 3),
 			}),
-			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, ""); put(Language.EN, ""); }}, 91, "7-19", new Calculable[] {
+			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Dissolution de Brume noire"); put(Language.EN, ""); }}, 91, "7-19", new Calculable[] {
+				new Effect(TypeEffect.ReducStdP, false, 1, WeaponType.BATON),
+				new Effect(TypeEffect.ReducStdD, false, 1, WeaponType.BATON),
+				new Effect(TypeEffect.ReducSkillP, false, 1, WeaponType.BATON),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Malédiction du mal"); put(Language.EN, ""); }}, 100, "7-20", new Calculable[] {
 				new Effect(TypeEffect.INT, 0.2, TypeEffect.PM, TypeCalcul.CONVERTSPE),
