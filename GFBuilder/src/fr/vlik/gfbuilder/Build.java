@@ -19,12 +19,10 @@ public class Build {
 	private WeaponType[] weaponType;
 	
 	private ArrayList<Effect> baseEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> yggdrasil = new ArrayList<Effect>();
-	private ArrayList<Effect> convertBaseEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> convertSpeEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> classicPointEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> classicPercentEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> convertEffects = new ArrayList<Effect>();
+	private ArrayList<Effect> convertBaseEffects = new ArrayList<Effect>();
+	private ArrayList<Effect> convertAllEffects = new ArrayList<Effect>();
 	private ArrayList<Effect> additionalEffects = new ArrayList<Effect>();
 	
 	public Build(double coefReinca, WeaponType[] weaponType) {
@@ -52,9 +50,7 @@ public class Build {
 				if(containIdWeapon(e.getWithWeapon())) {
 					switch(e.getCalcul()) {
 						case BASE: 			this.baseEffects.add(e);		break;
-						case ALLSTATS:		this.yggdrasil.add(e);			break;
 						case CONVERTBASE:	this.convertBaseEffects.add(e);	break;
-						case CONVERTSPE:	this.convertSpeEffects.add(e);	break;
 						case CLASSIC:
 							if(e.isPercent()) {
 								this.classicPercentEffects.add(e);
@@ -63,7 +59,7 @@ public class Build {
 							}
 							
 							break;
-						case CONVERT:		this.convertEffects.add(e);		break;
+						case CONVERTALL:	this.convertAllEffects.add(e);	break;
 						case ADDITIONAL:	this.additionalEffects.add(e);	break;
 						
 					default:
@@ -113,52 +109,53 @@ public class Build {
 	
 	public double[] calculStatFromEffect() {
 		double[] base = combineEffect(this.baseEffects);
-		double[] yggdra = combineEffect(this.yggdrasil);
-		double[] convertBase = convertEffect(this.convertBaseEffects, base, yggdra);
 		double[] point = combineEffect(this.classicPointEffects);
 		double[] percent = combineEffect(this.classicPercentEffects);
-		double[] convertSpe = convertEffect(this.convertSpeEffects, base, yggdra, percent);
-		double[] convert = convertEffect(this.convertEffects, base, yggdra, convertBase, convertSpe, point, percent);
+		double[] convertBase = convertEffect(this.convertBaseEffects, base, percent);
+		double[] convertAll = convertEffect(this.convertAllEffects, base, convertBase, point, percent);
 		double[] additional = combineEffect(this.additionalEffects);
+		
+		double[] allPoint = merge(base, point);
+		double[] convertAndAdd = merge(convertBase, convertAll, additional);
 		
 		double[] result = new double[TypeEffect.values().length];
 		
 		
 		/* FCE VIT INT VOL AGI */
 		for(int i = 0; i < 5; i++) {
-			result[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i] + convertSpe[i] + convert[i] + additional[i]);
+			result[i] = Math.floor(allPoint[i] * (percent[i] / 100 +1) + convertAndAdd[i]);
 		}
 		
 		/* Atk AtkD AtkM */
-		result[5] = Math.floor((result[0] * 3 + base[5] + point[5]) * (percent[5] / 100 +1) + convertBase[5] + convert[5] + additional[5]);
-		result[6] = Math.floor((result[4] * 3 + base[6] + point[6]) * (percent[6] / 100 +1) + convertBase[6] + convert[6] + additional[6]);
-		result[7] = Math.floor((result[2] * 3 + base[7] + point[7]) * (percent[7] / 100 +1) + convertBase[7] + convert[7] + additional[7]);
+		result[5] = Math.floor((result[0] * 3 + allPoint[5]) * (percent[5] / 100 +1) + convertAndAdd[5]);
+		result[6] = Math.floor((result[4] * 3 + allPoint[6]) * (percent[6] / 100 +1) + convertAndAdd[6]);
+		result[7] = Math.floor((result[2] * 3 + allPoint[7]) * (percent[7] / 100 +1) + convertAndAdd[7]);
 		
 		/* DefP DefM */
-		result[8] = Math.floor(Math.round((result[1] * 1.5) + base[8] + point[8]) * (percent[8] / 100 +1) + convertBase[8] + convert[8] + additional[8]);
-		result[9] = Math.floor(Math.round((result[3] * 1.5) + base[9] + point[9]) * (percent[9] / 100 +1) + convertBase[9] + convert[9] + additional[9]);
+		result[8] = Math.floor(Math.round((result[1] * 1.5) + allPoint[8]) * (percent[8] / 100 +1) + convertAndAdd[8]);
+		result[9] = Math.floor(Math.round((result[3] * 1.5) + allPoint[9]) * (percent[9] / 100 +1) + convertAndAdd[9]);
 		
 		/* TCCP TCCM */
-		result[10] = Math.floor((Math.min(result[4], 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10] + convert[10] + additional[10];
-		result[11] = Math.floor((Math.min(result[2], 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11] + convert[11] + additional[11];
+		result[10] = Math.floor((Math.min(result[4], 2646) + 14 ) / 28) + allPoint[10] + convertAndAdd[10];
+		result[11] = Math.floor((Math.min(result[2], 2646) + 14 ) / 28) + allPoint[11] + convertAndAdd[11];
 		
 		/* ESQ */
-		result[12] = Math.floor(Math.floor((result[4] + 5) / 10) * (percent[12] / 100 +1)) + base[12] + point[12] + convertBase[12] + convert[12] + additional[12];
+		result[12] = Math.floor(Math.floor((result[4] + 5) / 10) * (percent[12] / 100 +1)) + allPoint[12] + convertAndAdd[12];
 		
 		/* RES */
 		for(int i = 0; i < 6; i++) {
-			result[i+13] = Math.floor(base[i+13] + point[i+13] + convertBase[i+13] + convert[i+13] + additional[i+13]);
+			result[i+13] = Math.floor(allPoint[i+13] + convertAndAdd[i+13]);
 		}
 		
 		/* PV PM */
-		result[19] = Math.floor((Math.round(result[1] * 40) + base[19] + point[19]) * (percent[19] / 100 +1) + convertBase[19] + convert[19] + additional[19]);
-		result[20] = Math.floor((Math.round(result[3] * 20) + base[20] + point[20]) * (percent[20] / 100 +1) + convertBase[20] + convert[20] + additional[20]);
+		result[19] = Math.floor((result[1] * 40 + allPoint[19]) * (percent[19] / 100 +1) + convertAndAdd[19]);
+		result[20] = Math.floor((result[3] * 20 + allPoint[20]) * (percent[20] / 100 +1) + convertAndAdd[20]);
 		
 		for(int i = 21; i < result.length; i++) {
 			if(TypeEffect.values()[i].entier) {
-				result[i] = Math.floor(base[i] + point[i] + convertBase[i] + convert[i] + additional[i]);
+				result[i] = Math.floor(allPoint[i] + convertAndAdd[i]);
 			} else {
-				result[i] = base[i] + point[i] + convertBase[i] + convert[i] + additional[i];
+				result[i] = allPoint[i] + convertAndAdd[i];
 			}
 		}
 		
@@ -179,23 +176,19 @@ public class Build {
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] percent) {
-		double[] combine = new double[TypeEffect.values().length];
-		double[] redefinedBase = Arrays.copyOf(base, base.length);
+	private double[] merge(double[]... tabs) {
+		double[] merge = new double[TypeEffect.values().length];
 		
-		/* PV PM */
-		redefinedBase[19] = Math.floor(base[1] * (percent[1] / 100 +1) * 40) + base[19];
-		redefinedBase[20] = Math.floor(base[3] * (percent[3] / 100 +1) * 20) + base[20];
-		
-		for(Effect e : effects) {
-			int indexTypeOrTranfert = e.getTransfert() != TypeEffect.NONE ? e.getTransfert().ordinal() : e.getType().ordinal();
-			combine[e.getType().ordinal()] += Math.round(redefinedBase[indexTypeOrTranfert] * (e.getValue() / 100));
+		for(double[] tab : tabs) {
+			for(int i = 0; i < merge.length; i++) {
+				merge[i] += tab[i];
+			}
 		}
 		
-		return combine;
+		return merge;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra, double[] percent) {
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] redefinedBase = Arrays.copyOf(base, base.length);
 		
@@ -205,36 +198,36 @@ public class Build {
 		
 		for(Effect e : effects) {
 			double value = redefinedBase[e.getTransfert().ordinal()] * (e.getValue() / 100);
-			combine[e.getType().ordinal()] += Math.round(value * ((yggdra[e.getType().ordinal()] + percent[e.getType().ordinal()]) / 100 +1));
+			combine[e.getType().ordinal()] += Math.round(value * (percent[e.getType().ordinal()] / 100 +1));
 		}
 		
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] yggdra, double[] convertBase, double[] convertSpe, double[] point, double[] percent) {
+	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] convertBase, double[] point, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] merge = Arrays.copyOf(base, base.length);
 		
 		for(int i = 0; i < 5; i++) {
-			merge[i] = Math.floor((base[i] + point[i]) * ((yggdra[i] + percent[i]) / 100 +1) + convertBase[i] + convertSpe[i]);
+			merge[i] = Math.floor((base[i] + point[i]) * (percent[i] / 100 +1) + convertBase[i]);
 		}
 		
 		/* Atk AtkD AtkM */
-		merge[5] = Math.floor((base[0] + point[0] + convertBase[0]) * 3 + point[5] * (percent[5] / 100 +1) + convertBase[5] + convertSpe[5]);
-		merge[6] = Math.floor((base[4] + point[4] + convertBase[4]) * 3 + point[6] * (percent[6] / 100 +1) + convertBase[6] + convertSpe[6]);
-		merge[7] = Math.floor((base[2] + point[2] + convertBase[2]) * 3 + point[7] * (percent[7] / 100 +1) + convertBase[7] + convertSpe[7]);
+		merge[5] = Math.floor((base[0] + point[0] + convertBase[0]) * 3 + point[5] * (percent[5] / 100 +1) + convertBase[5]);
+		merge[6] = Math.floor((base[4] + point[4] + convertBase[4]) * 3 + point[6] * (percent[6] / 100 +1) + convertBase[6]);
+		merge[7] = Math.floor((base[2] + point[2] + convertBase[2]) * 3 + point[7] * (percent[7] / 100 +1) + convertBase[7]);
 		
 		/* TCCP TCCM */
-		merge[10] = Math.floor((Math.min((base[4] + point[4] + convertBase[4]), 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10] + convertSpe[10];
-		merge[11] = Math.floor((Math.min((base[2] + point[2] + convertBase[2]), 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11] + convertSpe[11];
+		merge[10] = Math.floor((Math.min((base[4] + point[4] + convertBase[4]), 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10];
+		merge[11] = Math.floor((Math.min((base[2] + point[2] + convertBase[2]), 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11];
 		
 		/* PV PM */
-		merge[19] = Math.floor((base[1] + point[1] + convertBase[1]) * 40 + point[19] * (percent[19] / 100 +1) + convertBase[19] + convertSpe[19]);
-		merge[20] = Math.floor((base[3] + point[3] + convertBase[3]) * 20 + point[20] * (percent[20] / 100 +1) + convertBase[20] + convertSpe[20]);
+		merge[19] = Math.floor((base[1] + point[1] + convertBase[1]) * 40 + point[19] * (percent[19] / 100 +1) + convertBase[19]);
+		merge[20] = Math.floor((base[3] + point[3] + convertBase[3]) * 20 + point[20] * (percent[20] / 100 +1) + convertBase[20]);
 		
 		for(Effect e : effects) {
 			double value = merge[e.getTransfert().ordinal()] * (e.getValue() / 100);
-			combine[e.getType().ordinal()] += Math.floor(value * ((yggdra[e.getType().ordinal()] + percent[e.getType().ordinal()]) / 100 +1));
+			combine[e.getType().ordinal()] += Math.floor(value * (percent[e.getType().ordinal()] / 100 +1));
 		}
 		
 		return combine;

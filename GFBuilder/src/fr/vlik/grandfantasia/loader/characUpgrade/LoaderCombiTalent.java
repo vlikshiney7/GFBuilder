@@ -680,7 +680,7 @@ public class LoaderCombiTalent {
 				new Effect(TypeEffect.CostComp, false, -15),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Lame de la Faille de Cristal"); put(Language.EN, "Crystal Rift Blade"); }}, new int[] { 1, 1, }, new Calculable[] {
-				new Effect(TypeEffect.TCCP, false, 8),
+				new Effect(TypeEffect.TCCM, false, 8),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur de la Lame Démoniaque"); put(Language.EN, "Demon Blade Lord"); }}, new int[] { 1, 2, }, new Calculable[] {
 				new Effect(TypeEffect.AtkM, true, 4),
@@ -730,7 +730,7 @@ public class LoaderCombiTalent {
 				new Effect(TypeEffect.TCCM, false, 6),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Lame de la Faille de Cristal"); put(Language.EN, "Crystal Rift Blade"); }}, new int[] { 1, 1, }, new Calculable[] {
-				new Effect(TypeEffect.TCCP, false, 8),
+				new Effect(TypeEffect.TCCM, false, 8),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur de la Lame Démoniaque"); put(Language.EN, "Demon Blade Lord"); }}, new int[] { 1, 2, }, new Calculable[] {
 				new Effect(TypeEffect.AtkM, true, 4),

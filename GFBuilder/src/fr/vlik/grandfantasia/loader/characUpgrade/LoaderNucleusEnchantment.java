@@ -5,11 +5,13 @@ import java.util.HashMap;
 import fr.vlik.grandfantasia.characUpgrade.NucleusEnchantment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.enums.TypeStaticEffect;
+import fr.vlik.grandfantasia.enums.TypeMultipleHit;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Effect.TypeCalcul;
-import fr.vlik.grandfantasia.stats.StaticEffect;
+import fr.vlik.grandfantasia.stats.MultipleHit;
+import fr.vlik.grandfantasia.stats.Proc;
+import fr.vlik.grandfantasia.stats.Proc.Activation;
 
 @SuppressWarnings("serial")
 public class LoaderNucleusEnchantment {
@@ -807,19 +809,29 @@ public class LoaderNucleusEnchantment {
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Cruauté"); put(Language.EN, "Cruel"); }},
 				new Calculable[][] {
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
+						new Proc(7, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 1),
+						}),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
+						new Proc(7, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 2),
+						}),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
+						new Proc(7, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 3),
+						}),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
+						new Proc(7, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 4),
+						}),
 					},
 					new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 7),
+						new Proc(7, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 5),
+						}),
 					},
 				}),
 			new NucleusEnchantment(new HashMap<Language, String>() {{ put(Language.FR, "Brute"); put(Language.EN, "Brute"); }},

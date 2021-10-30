@@ -243,8 +243,8 @@ public class LoaderSkill {
 					new Effect(TypeEffect.ReducStdD, false, 5),
 					new Effect(TypeEffect.ReducSkillP, false, 5),
 					new Effect(TypeEffect.ReducSkillM, false, 5),
-					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM, TypeCalcul.CONVERT),
-					new Effect(TypeEffect.AtkD, 50, TypeEffect.AtkM, TypeCalcul.CONVERT),
+					new Effect(TypeEffect.Atk, 50, TypeEffect.AtkM, TypeCalcul.CONVERTALL),
+					new Effect(TypeEffect.AtkD, 50, TypeEffect.AtkM, TypeCalcul.CONVERTALL),
 				}),
 			},
 			new Skill[] {

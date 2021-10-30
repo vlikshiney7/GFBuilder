@@ -2446,18 +2446,10 @@ public class LoaderEnchant {
 				new Calculable[][] {
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegStdP, false, 2),
-							new Effect(TypeEffect.DegStdD, false, 2),
-							new Effect(TypeEffect.DegSkillP, false, 2),
-							new Effect(TypeEffect.DegSkillM, false, 2),
-						}),
-					},
-					new Calculable[] {
-						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegStdP, false, 4),
-							new Effect(TypeEffect.DegStdD, false, 4),
-							new Effect(TypeEffect.DegSkillP, false, 4),
-							new Effect(TypeEffect.DegSkillM, false, 4),
+							new Effect(TypeEffect.DegStdP, false, 3),
+							new Effect(TypeEffect.DegStdD, false, 3),
+							new Effect(TypeEffect.DegSkillP, false, 3),
+							new Effect(TypeEffect.DegSkillM, false, 3),
 						}),
 					},
 					new Calculable[] {
@@ -2470,18 +2462,26 @@ public class LoaderEnchant {
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegStdP, false, 8),
-							new Effect(TypeEffect.DegStdD, false, 8),
-							new Effect(TypeEffect.DegSkillP, false, 8),
-							new Effect(TypeEffect.DegSkillM, false, 8),
+							new Effect(TypeEffect.DegStdP, false, 9),
+							new Effect(TypeEffect.DegStdD, false, 9),
+							new Effect(TypeEffect.DegSkillP, false, 9),
+							new Effect(TypeEffect.DegSkillM, false, 9),
 						}),
 					},
 					new Calculable[] {
 						new Condition(TypeEffect.PV, 33, new Calculable[] {
-							new Effect(TypeEffect.DegStdP, false, 10),
-							new Effect(TypeEffect.DegStdD, false, 10),
-							new Effect(TypeEffect.DegSkillP, false, 10),
-							new Effect(TypeEffect.DegSkillM, false, 10),
+							new Effect(TypeEffect.DegStdP, false, 12),
+							new Effect(TypeEffect.DegStdD, false, 12),
+							new Effect(TypeEffect.DegSkillP, false, 12),
+							new Effect(TypeEffect.DegSkillM, false, 12),
+						}),
+					},
+					new Calculable[] {
+						new Condition(TypeEffect.PV, 33, new Calculable[] {
+							new Effect(TypeEffect.DegStdP, false, 15),
+							new Effect(TypeEffect.DegStdD, false, 15),
+							new Effect(TypeEffect.DegSkillP, false, 15),
+							new Effect(TypeEffect.DegSkillM, false, 15),
 						}),
 					},
 				}),

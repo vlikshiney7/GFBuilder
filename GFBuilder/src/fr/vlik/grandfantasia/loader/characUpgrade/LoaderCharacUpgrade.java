@@ -185,6 +185,14 @@ public class LoaderCharacUpgrade {
 				new Effect(TypeEffect.Depla, false, 40),
 				new RegenEffect(TypeEffect.PV, true, -6, TypeRegen.REGENERATION, 1),
 			}),
+			new Stone(new HashMap<Language, String>() {{ put(Language.FR, "Pierre du Roi des Océans"); put(Language.EN, ""); }}, Quality.WHITE, "ocean", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 3),
+				new Effect(TypeEffect.Ombre, false, 3),
+				new Effect(TypeEffect.Foudre, false, 3),
+				new Effect(TypeEffect.Feu, false, 3),
+				new Effect(TypeEffect.Glace, false, 3),
+				new Effect(TypeEffect.Nature, false, 3),
+			}),
 		};
 	}
 	

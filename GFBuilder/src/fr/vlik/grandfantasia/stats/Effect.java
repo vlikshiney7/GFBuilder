@@ -88,7 +88,7 @@ public class Effect implements Calculable {
 	}
 	
 	public enum TypeCalcul {
-		BASE, ALLSTATS, CONVERTBASE, CONVERTSPE, CLASSIC, CONVERT, ADDITIONAL,
+		BASE, PERCENTSPE, CONVERTBASE, CLASSIC, CONVERTALL, ADDITIONAL,
 	}
 	
 	public TypeEffect getType() {
@@ -259,7 +259,11 @@ public class Effect implements Calculable {
 		Effect[] tabEffect = new Effect[values.length];
 		
 		for(int i = 0; i < values.length; i++) {
-			tabEffect[i] = new Effect(type, isPercent, values[i], withReinca);
+			if(i != 0 && values[i] == 0) {
+				tabEffect[i] = new Effect(type, isPercent, tabEffect[i-1].getValue(), withReinca);
+			} else {
+				tabEffect[i] = new Effect(type, isPercent, values[i], withReinca);
+			}
 		}
 		
 		return tabEffect;

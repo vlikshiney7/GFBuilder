@@ -28,6 +28,9 @@ import fr.vlik.grandfantasia.equip.Ring;
 import fr.vlik.grandfantasia.equip.Weapon;
 import fr.vlik.uidesign.JCustomPanel;
 
+import com.sun.jna.platform.win32.Kernel32;
+import com.sun.jna.platform.win32.Shell32;
+
 public class SaveConfig {
 	
 	private static final String SAVE_FOLDER_NAME = "GFBuilderSave";
@@ -138,9 +141,16 @@ public class SaveConfig {
 			if(folder.mkdir()) {
 				System.out.println("Création terminée");
 			} else {
-				System.out.println("Création impossible, droit d'administration nécessaire.");
-				FrameError.getInstance().popup();
-				return;
+				System.out.println("Création impossible, droit d'administration nécessaire. Tentative admin...");
+				
+				//elevate();
+				//System.exit(0);
+				
+				if(!folder.exists()) {
+					System.out.println("Création impossible.");
+					FrameError.getInstance().popup();
+					return;
+				}
 			}
 		}
 		
@@ -340,6 +350,33 @@ public class SaveConfig {
 			writer.flush();
 		} catch (IOException e) {
 			System.out.println("Error override custom equipment");
+		}
+	}
+	
+	/*
+	 * All credits to KaBe, source here : https://stackoverflow.com/a/35863653/15599820
+	 * */
+	public static void elevate() {
+		// Get the command.
+		String command = System.getProperty("sun.java.command");
+		
+		// Get class path and default java home.
+		String classPath = System.getProperty("java.class.path");
+		String javaHome = System.getProperty("java.home");
+		String vm = javaHome + "\\bin\\java.exe";
+		
+		// Check for alternate VM for elevation. Full path to the VM may be passed with: -Delevation.vm=...
+		if(System.getProperties().contains("elevation.vm")) {
+			vm = System.getProperty("elevation.vm");
+		}
+		
+		String parameters = "-cp " + classPath;
+		parameters += " " + command;
+		
+		//Shell32.INSTANCE.ShellExecute(null, "runas", vm, parameters, null, 0);
+		
+		if(Kernel32.INSTANCE.GetLastError() != 0) {
+			System.exit(0);
 		}
 	}
 }

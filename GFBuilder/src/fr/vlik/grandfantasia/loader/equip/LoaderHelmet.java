@@ -11278,6 +11278,17 @@ class LoaderHelmet {
 					new Effect(TypeEffect.INT, false, 31, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Casque de Maître-démon"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, true,
+				ArmorType.CASQUE, "100pvp6R", "casques/100pvp6", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 657, true),
+					new Effect(TypeEffect.DefM, false, 799, true),
+					new Effect(TypeEffect.VIT, false, 40, true),
+					new Effect(TypeEffect.INT, false, 21, true),
+					new Effect(TypeEffect.ESQ, false, 8),
+					new Effect(TypeEffect.ReducPeneP, false, 7),
+					new Effect(TypeEffect.ReducPeneM, false, 7),
+				}, null),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Fourvoyé"); put(Language.EN, "Demon Master's Helmet"); }},
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.CASQUE, "100pvp6", "casques/100pvp6", new Calculable[] {

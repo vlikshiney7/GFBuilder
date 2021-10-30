@@ -4,6 +4,20 @@ Utilisation sans condition pour tout contenu créatif
 
 Discord du projet : https://discord.gg/CY8sC5d
 GitHub du projet : https://github.com/vlikshiney7/GFBuilder
+
+Recherche de statistique pour l'xp stuff :
+- Arme 1M (Épée 1M, Marteau 1M, Hache 1M, Méca 1M, Arc, Gun, Canon, Relique, Clé, Bouclier)
+	FCE / VIT / INT / AGI : 52+
+	CRIT (Phy ou Mag) : 34+
+- Arme 2M (Épée 2M, Marteau 2M, Hache 2M, Méca 2M, Bâton, Lame)
+	FCE / VIT / INT / AGI : 54, 55, 58+
+	CRIT (Phy ou Mag) : 34+
+- Casque Gant Botte
+	CRIT (Phys ou Mag) : 27, 36, 38+
+-Torse
+	FCE / VIT / INT / VOL / AGI : 49, 51, 52, 53, 54, 55, 56, 58+
+-Pantalon
+	FCE / VIT / INT / VOL / AGI : 44+
 /
 Beginning of the project : January 13th 2019
 
@@ -11,4 +25,18 @@ Free use for all creative content (Image, video)
 
 Discord of the project : https://discord.gg/CY8sC5d
 GitHub of the project : https://github.com/vlikshiney7/GFBuilder
+
+Research of exp stuff statistic :
+- Weapon 1M (Sword 1M, Hammer 1M, Axe 1M, Meca 1M, Bow, Gun, Canon, Relic, Key, Shield)
+	STR / VIT / INT / AGI : 52+
+	CRIT (Phy or Mag) : 34+
+- Weapon 2M (Sword 2M, Hammer 2M, Axe 2M, Meca 2M, Staff, Blade)
+	STR / VIT / INT / AGI : 54, 55, 58+
+	CRIT (Phy or Mag) : 34+
+- Helmet Gauntlet Boot
+	CRIT (Phys or Mag) : 27, 36, 38+
+- Breastplate
+	STR / VIT / INT / VOL / AGI : 49, 51, 52, 53, 54, 55, 56, 58+
+- Legging
+	STR / VIT / INT / VOL / AGI : 44+
 /
