@@ -929,7 +929,7 @@ public class Loader {
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Vision Ardente de Siropas"); put(Language.EN, "Siropas, Underworld King"); }}, "9-0", new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 12),
-				new Effect(TypeEffect.ESQ, false, 12),
+				new Effect(TypeEffect.ESQ, true, 12),
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Protection Enflammée de Siropas"); put(Language.EN, "Siropas, Underworld King"); }}, "9-1", new Calculable[] {
 				new Proc(15, Activation.Attack, 6, new Calculable[] {

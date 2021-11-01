@@ -11,6 +11,7 @@ import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.subEquip.LoaderSubEquip;
+import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.CompleteBuff;
 
@@ -30,6 +31,11 @@ public class Souvenir extends CompleteBuff {
 	public Souvenir() {
 		super();
 		this.lvl = 0;
+	}
+	
+	public Souvenir(Souvenir souvenir) {
+		super(souvenir.getMap(), souvenir.getQuality(), souvenir.getEffects());
+		this.lvl = this.getLvl();
 	}
 	
 	public Souvenir(Map<Language, String> name, int lvl, Quality quality, String path, Effect[] effects) {
@@ -54,6 +60,20 @@ public class Souvenir extends CompleteBuff {
 		}
 		
 		return (object != null) ? Tools.constructIcon(back, object) : back;
+	}
+	
+	public void addStarBonus(double coef) {
+		if(this.effects != null) {
+			for(Calculable c : this.effects) {
+				if(c instanceof Effect) {
+					Effect e = (Effect) c;
+					
+					if(e.getType().isUpgradable && !e.isPercent() && e.getWithReinca()) {
+						e.changeValue(coef);
+					}
+				}
+			}
+		}
 	}
 	
 	@Override

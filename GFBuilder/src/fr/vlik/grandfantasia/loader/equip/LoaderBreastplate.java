@@ -12541,6 +12541,8 @@ class LoaderBreastplate {
 					new Effect(TypeEffect.FCE, false, 35, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
+					new Effect(TypeEffect.PV, false, 890),
+					new Effect(TypeEffect.PM, false, 460),
 				}, null),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Plastron d'Aigle démon dévoreur de cœurs"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 90, Quality.BLUE, false, false,

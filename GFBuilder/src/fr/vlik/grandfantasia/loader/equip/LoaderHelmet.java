@@ -12583,10 +12583,12 @@ class LoaderHelmet {
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
 				ArmorType.CASQUE, "90gvg8", "casques/85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 725, true),
-					new Effect(TypeEffect.DefM, false, 516, true),
+					new Effect(TypeEffect.DefM, false, 517, true),
 					new Effect(TypeEffect.FCE, false, 19, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
+					new Effect(TypeEffect.PV, false, 890),
+					new Effect(TypeEffect.PM, false, 410),
 				}, null),
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure d'Aigle démon dévoreur de cœurs"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 90, Quality.BLUE, false, false,

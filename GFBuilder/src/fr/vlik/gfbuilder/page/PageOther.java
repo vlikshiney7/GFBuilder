@@ -131,13 +131,21 @@ public class PageOther extends PartialPage {
 		list.addAll(this.getBague());
 		list.addAll(this.getLoveCo());
 		list.addAll(this.getAnima());
-		list.addAll(this.getSouvenir());
 		
+		double defBonusCoef = 1;
 		for(int i = 0; i < 3; i++) {
 			if(this.souvenirEnchant.get(i).isVisible()) {
+				if(!this.getSouvenirEnchantment(i).getName(Language.FR).equals(" ")) {
+					defBonusCoef += 0.03;
+				}
+				
 				list.addAll(this.getSouvenirEnchantment(i));
 			}
 		}
+		
+		Souvenir souvenir = new Souvenir(this.getSouvenir());
+		souvenir.addStarBonus(defBonusCoef);
+		list.addAll(souvenir);
 		
 		this.effects = list;
 	}
