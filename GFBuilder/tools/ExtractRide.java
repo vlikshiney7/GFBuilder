@@ -1,4 +1,0 @@
-new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Dark Tomb Watcher Combat Mount"); put(Language.EN, ""); }}, 40, false, "I02460", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
-new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Sky-Ripping Cyan Dragon Combat Mount"); put(Language.EN, ""); }}, 40, false, "I02385", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
-new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Floral Butterfly Scroll Painting Combat Mount"); put(Language.EN, ""); }}, 40, false, "I02461", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
-new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Gentleman Pumpkin Cat Combat Mount"); put(Language.EN, ""); }}, 40, false, "I02384", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),

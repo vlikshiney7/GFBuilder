@@ -284,6 +284,8 @@ public class LoaderSpriteCost {
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Sprite maternel"); put(Language.EN, ""); }},
 				Quality.WHITE, SpriteCostType.HEAD, "F10145", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DegStdP, false, 5),
+						new Effect(TypeEffect.DegStdD, false, 5),
 						new Effect(TypeEffect.DegSkillP, false, 5),
 						new Effect(TypeEffect.DegSkillM, false, 5),
 					}),
@@ -689,6 +691,15 @@ public class LoaderSpriteCost {
 				Quality.WHITE, SpriteCostType.BODY, "F20005", new Calculable[] {
 					new Proc(Activation.Sprite, 12, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 15),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Débutant du Jardin d'enfant"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10032", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DegStdP, false, 5),
+						new Effect(TypeEffect.DegStdD, false, 5),
+						new Effect(TypeEffect.DegSkillP, false, 5),
+						new Effect(TypeEffect.DegSkillM, false, 5),
 					}),
 				}),
 			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bavoir du Jardin d'Enfant"); put(Language.EN, ""); }},

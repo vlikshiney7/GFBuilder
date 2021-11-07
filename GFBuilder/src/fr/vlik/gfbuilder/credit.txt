@@ -17,7 +17,7 @@ Recherche de statistique pour l'xp stuff :
 -Torse
 	FCE / VIT / INT / VOL / AGI : 49, 51, 52, 53, 54, 55, 56, 58+
 -Pantalon
-	FCE / VIT / INT / VOL / AGI : 44+
+	FCE / VIT / INT / VOL / AGI : 44, 45, 47, 48, 49, 50, 51, 53+
 /
 Beginning of the project : January 13th 2019
 
@@ -36,7 +36,7 @@ Research of exp stuff statistic :
 - Helmet Gauntlet Boot
 	CRIT (Phys or Mag) : 27, 36, 38+
 - Breastplate
-	STR / VIT / INT / VOL / AGI : 49, 51, 52, 53, 54, 55, 56, 58+
+	STR / VIT / INT / WIL / AGI : 49, 51, 52, 53, 54, 55, 56, 58+
 - Legging
-	STR / VIT / INT / VOL / AGI : 44+
+	STR / VIT / INT / WIL / AGI : 44, 45, 47, 48, 49, 50, 51, 53+
 /

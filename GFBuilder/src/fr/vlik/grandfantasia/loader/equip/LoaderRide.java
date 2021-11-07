@@ -18,6 +18,7 @@ public class LoaderRide {
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup Spectral de Combat"); put(Language.EN, ""); }}, 60, false, RideType.NERF, "loup0", new Effect[] { new Effect(TypeEffect.Depla, false, 60), }),
 			
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Aérowing de combat"); put(Language.EN, "Skylord Wing Combat Mount"); }}, 40, false, "airwing1", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
+			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Ailes d'Oiseau vermeilles"); put(Language.EN, ""); }}, 40, false, "canon", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Alpaga Étincelant de combat"); put(Language.EN, "Radiant Sanctified Alpaca Combat Mount"); }}, 40, false, "alpaga", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Canidé osseux de combat"); put(Language.EN, "Skeleton Hellhound Combat Mount"); }}, 40, false, "loup8", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Chat-citrouille gentleman de combat"); put(Language.EN, ""); }}, 40, false, "chat3", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
@@ -50,7 +51,6 @@ public class LoaderRide {
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup de Combat de la Flamme mystique"); put(Language.EN, "Mystic Flame Wolf Combat Mount"); }}, 40, false, "loup6", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup de Combat de la Flamme opaline"); put(Language.EN, "Silver Wolf Combat Mount"); }}, 40, false, "loup5", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Loup des ténèbres"); put(Language.EN, "Frostfire Wolf"); }}, 40, false, "loup3", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
-			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Monture de Combat : Artillerie Mobile Baroque"); put(Language.EN, "Baroque Mobile Artillery Combat Mount"); }}, 40, false, "canon", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Monture de Combat - Chariot du Dessert"); put(Language.EN, "Dessert Cart Combat Mount"); }}, 40, false, "chariot", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Monture de Combat : Scorpions Jumeaux de Bataille"); put(Language.EN, "Battle Scorpion Twin Combat Mount"); }}, 40, false, "scorpion3", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),
 			new Ride(new HashMap<Language, String>() {{ put(Language.FR, "Monture de combat de Miyamoto"); put(Language.EN, "Miyamoto Battle Mount"); }}, 40, false, "chevalier1", new Effect[] { new Effect(TypeEffect.Depla, false, 100), }),

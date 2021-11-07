@@ -71,36 +71,46 @@ function ExtractCustomWeaponNew() {
 			var stat = line[i].getElementsByClassName('stat');
 			
 			for(var j = 0; j < stat.length; j++) {
-				if(stat[j].innerHTML.trim().startsWith('ATK')) {
-					listEffect += "\t\tnew Effect(TypeEffect.Atk, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				if(stat[j].innerHTML.trim().startsWith('DEF')) {
+					listEffect += "\t\tnew Effect(TypeEffect.DefP, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('M-DEF')) {
+					listEffect += "\t\tnew Effect(TypeEffect.DefM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().startsWith('ATK')) {
+					listEffect += "\t\tnew Effect(TypeEffect.Atk, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('R-ATK')) {
-					listEffect += "\t\tnew Effect(TypeEffect.AtkD, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.AtkD, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('M-ATK')) {
-					listEffect += "\t\tnew Effect(TypeEffect.AtkM, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.AtkM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('STR')) {
-					listEffect += "\t\tnew Effect(TypeEffect.FCE, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.FCE, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('VIT')) {
-					listEffect += "\t\tnew Effect(TypeEffect.VIT, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.VIT, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('INT')) {
-					listEffect += "\t\tnew Effect(TypeEffect.INT, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.INT, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('WIL')) {
-					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.VOL, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
 				} else if(stat[j].innerHTML.trim().startsWith('AGI')) {
-					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
-				} else if(stat[j].innerHTML.match(/golpear/)) {
-					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+					listEffect += "\t\tnew Effect(TypeEffect.AGI, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + ", true),\n";
+				} else if(stat[j].innerHTML.trim().match('HP')) {
+					listEffect += "\t\tnew Effect(TypeEffect.PV, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.trim().match('MP')) {
+					listEffect += "\t\tnew Effect(TypeEffect.PM, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.match(/chance to hit/)) {
+					listEffect += "\t\tnew Effect(TypeEffect.Toucher, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				} else if(stat[j].innerHTML.match(/chance to block/)) {
+					listEffect += "\t\tnew Effect(TypeEffect.Parade, false, " + stat[j].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 				}
 			}
 		} else {
 			if(line[i].innerHTML.match(/Magic Critical Damage/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.DCCM, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				listEffect += "\t\tnew Effect(TypeEffect.DCCM, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 			} else if(line[i].innerHTML.match(/critical hit damage/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.DCCP, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				listEffect += "\t\tnew Effect(TypeEffect.DCCP, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 			} else if(line[i].innerHTML.match(/magic critical hit/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.TCCM, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+				listEffect += "\t\tnew Effect(TypeEffect.TCCM, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
 			} else if(line[i].innerHTML.match(/critical hit/)) {
-				listEffect += "\t\tnew Effect(TypeEffect.TCCP, false, " + line[i].innerHTML.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
-			} else if(line[i].innerHTML.match(/\//) && !line[i].innerHTML.match(/([0-9])/)) {
+				listEffect += "\t\tnew Effect(TypeEffect.TCCP, false, " + line[i].innerText.match(/[0-9]+(\.[0-9])?/)[0] + "),\n";
+			} else if(line[i].innerHTML.match(/\//) && !line[i].innerText.match(/([0-9])/)) {
 				for(var j = 0; j < getNameClass.length; j++) {
 					for(var k = 0; k < getNameClass[j].length; k++) {
 						if(line[i].innerHTML.match(getNameClass[j][k])) {
@@ -116,7 +126,7 @@ function ExtractCustomWeaponNew() {
 	var result = "new CustomWeapon(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 	result += "\tnew GradeName[] { ";
 	result += listClass;
-	result += "},\n\t" + lvl + ", WeaponType.CANON, \"canon/ITEMICON\", new Calculable[] {\n";
+	result += "},\n\t" + lvl + ", WeaponType.BOUCLIER, \"bouclier/ITEMICON\", new Calculable[] {\n";
 	result += listEffect;
 	result += "\t}),\n";
 	
@@ -133,6 +143,8 @@ function ExtractCustomWeaponNew() {
 	
 	if(found == true) {
 		console.log(result);
+	} else {
+		window.close();
 	}
 }
 

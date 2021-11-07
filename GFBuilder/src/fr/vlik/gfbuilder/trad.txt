@@ -1,5 +1,5 @@
 Général,General/Armes,Weapons/Armures,Armors/Cape - Anneaux,Cape - Rings/Monture - Trône,Ride - Throne/Costumes,Costumes/Talent,Talent/Spécialisation,Specialization/Compétence,Skill/Sprite,Sprite/Buff permanent,Permanent buff/Alliance - Anima,Marriage - Anima/Paramètres,Settings
-Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.21.6,Version: 0.21.6
+Charger,Load/Nouveau fichier,New file/Sauvegarder,Save/Sauv. sous...,Save as.../Créer un équipement,Create an equipment/Crédit,Credit/Version : 0.21.7,Version: 0.21.7
 Nom de la configuration,Configuration name/Valider,Submit/Nom vide ou déjà utilisé (caractère interdit : \*?":<>|),Empty name or already exist (forbidden character : \*?":<>|)
 Quitter sans sauvegarder ?,Quit without save ?/Sauvegarder,Save/Quitter,Leave/Annuler,Cancel
 Choisir l'action,Choose action/Charger,Load/Supprimer,Delete/Annuler,Cancel

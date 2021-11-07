@@ -287,6 +287,8 @@ function ExtractArmor() {
 	
 	if(found == true) {
 		console.log(result);
+	} else {
+		window.close();
 	}
 }
 
