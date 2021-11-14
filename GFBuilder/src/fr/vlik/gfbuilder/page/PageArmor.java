@@ -648,6 +648,11 @@ public class PageArmor extends PartialRedStuff {
 		this.proc.get(index6).setSelected(false);
 	}
 	
+	public void initDefaultStuff() {
+		this.armor.get(1).setSelectedItem(Armor.get("Veste du Néophyte", Language.FR, 1));
+		this.armor.get(2).setSelectedItem(Armor.get("Short du Néophyte", Language.FR, 2));
+	}
+	
 	protected void updateTooltipFortif(int id) {
 		updateTooltipFortif(this.getArmor(id), id);
 	}
@@ -731,8 +736,9 @@ public class PageArmor extends PartialRedStuff {
 	}
 	
 	private void updateShorcut() {
-		if(!this.equipSet.getName().equals("-1")) {
+		if(!this.equipSet.getCode().equals("-1")) {
 			Equipment equip = null;
+			
 			for(int i = 0; i < this.armor.size(); i++) {
 				if(this.getArmor(i).getSetCode().equals(this.equipSet.getCode())) {
 					equip = this.getArmor(i);

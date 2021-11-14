@@ -700,6 +700,10 @@ public class PageWeapon extends PartialRedStuff {
 		this.proc.get(index15).setSelected(false);
 	}
 	
+	public void initDefaultStuff() {
+		this.weapon.get(0).setSelectedItem(Weapon.get("Épée de Bronze du Néophyte", Language.FR));
+	}
+	
 	protected void updateTooltipFortif(int id) {
 		updateTooltipFortif(this.getWeapon(id), id);
 	}

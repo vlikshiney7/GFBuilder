@@ -13,11 +13,11 @@ var gradeNameCorrespondance = new Array();
 	gradeNameCorrespondance[11] = "CHRONODERIVEUR";
 
 var pieceCorrespondance = new Array();
-	pieceCorrespondance[1] = [ "CASQUE", "casques" ];
-	pieceCorrespondance[2] = [ "PLASTRON", "torses" ];
-	pieceCorrespondance[3] = [ "JAMBIERE", "pantalons" ];
-	pieceCorrespondance[4] = [ "GANT", "gants" ];
-	pieceCorrespondance[5] = [ "BOTTE", "bottes" ];
+	pieceCorrespondance[1] = "CASQUE";
+	pieceCorrespondance[2] = "PLASTRON";
+	pieceCorrespondance[3] = "JAMBIERE";
+	pieceCorrespondance[4] = "GANT";
+	pieceCorrespondance[5] = "BOTTE";
 	
 var colorCorrespondance = new Array();
 	colorCorrespondance[0] = "WHITE";
@@ -269,7 +269,7 @@ function ExtractArmor() {
 	result += "\tnew GradeName[] { ";
 	result += listClass;
 	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", " + enchant + ", " + reinca + ",\n";
-	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + iconpath + "\", new Calculable[] {\n";
+	result += "\tArmorType." + pieceCorrespondance[idPiece] + ", \"" + codearmor + "\", ICONPATH + \"" + iconpath + "\", new Calculable[] {\n";
 	result += listEffect;
 	result += "\t}, null" + (quality == 7 ? "" : ")") + ",\n";
 	
@@ -377,7 +377,7 @@ function ExtractEvo() {
 	result += "\tnew GradeName[] { ";
 	result += listClass;
 	result += "}, " + lvl + ", Quality." + colorCorrespondance[quality] + ", false, " + reinca + ",\n";
-	result += "\tArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + codearmor + "\", \"" + pieceCorrespondance[idPiece][1] + "/" + itemicon + "\", new MultiEffect(" + lvl + ", new Effect[][] {\n";
+	result += "\tArmorType." + pieceCorrespondance[idPiece] + ", \"" + codearmor + "\", ICONPATH + \"" + itemicon + "\", new MultiEffect(" + lvl + ", new Effect[][] {\n";
 	result += listEffect;
 	result += "\t}), null),\n";
 	

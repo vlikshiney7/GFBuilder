@@ -13,11 +13,11 @@ var gradeNameCorrespondance = new Array();
 	gradeNameCorrespondance[11] = "CHRONODERIVEUR";
 
 var pieceCorrespondance = new Array();
-	pieceCorrespondance[1] = [ "CASQUE", "casques" ];
-	pieceCorrespondance[2] = [ "PLASTRON", "torses" ];
-	pieceCorrespondance[3] = [ "JAMBIERE", "pantalons" ];
-	pieceCorrespondance[4] = [ "GANT", "gants" ];
-	pieceCorrespondance[5] = [ "BOTTE", "bottes" ];
+	pieceCorrespondance[1] = [ "CASQUE", "Helmet" ];
+	pieceCorrespondance[2] = [ "PLASTRON", "Breastplate" ];
+	pieceCorrespondance[3] = [ "JAMBIERE", "Legging" ];
+	pieceCorrespondance[4] = [ "GANT", "Gauntlet" ];
+	pieceCorrespondance[5] = [ "BOTTE", "Boot" ];
 
 var getNameClass = [["Luchador", "Guerrero", "Berserker", "Dios de Guerra", "Caballero de la Muerte", "Destructor",
 						"Combattant", "Guerrier", "Berserker", "Gladiateur", "Ravageur", "Destructeur",
@@ -152,7 +152,7 @@ function ExtractCustomArmor() {
 	var result = "new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, \"" + name + "\"); put(Language.EN, \"\"); }},\n";
 	result += "\tnew GradeName[] { ";
 	result += listClass;
-	result += "},\n\t" + lvl + ", ArmorType." + pieceCorrespondance[idPiece][0] + ", \"" + pieceCorrespondance[idPiece][1] + "/ICONPATH\", new Calculable[] {\n";
+	result += "},\n\t" + lvl + ", ArmorType." + pieceCorrespondance[idPiece][0] + ", Loader" + pieceCorrespondance[idPiece][1] + ".ICONPATH + \"ICONPATH\", new Calculable[] {\n";
 	result += listEffect;
 	result += "\t}),\n";
 	
@@ -169,6 +169,8 @@ function ExtractCustomArmor() {
 	
 	if(found == true) {
 		console.log(result);
+	} else {
+		window.close();
 	}
 }
 

@@ -45,7 +45,7 @@ public class PageBuff extends PartialPage {
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(11);
 	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
 	private JCustomComboBox<GuildBuff> guildBuff;
-	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(13);
+	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(14);
 	private JCustomComboBox<Stone> stone;
 	
 	private ArrayList<JIconCheckBox> starNucleus = new ArrayList<JIconCheckBox>(4);
@@ -166,7 +166,7 @@ public class PageBuff extends PartialPage {
 		});
 		
 		
-		for(int i = 0; i < 13; i++) {
+		for(int i = 0; i < 14; i++) {
 			this.stoneUsed.add(new JCustomLabel<Stone>(null));
 			this.stoneUsed.get(i).setBackground(Design.UIColor[0]);
 			this.stoneUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
@@ -349,7 +349,7 @@ public class PageBuff extends PartialPage {
 		JCustomPanel blocStone = new JCustomPanel(BoxLayout.Y_AXIS);
 		blocStone.add(Box.createVerticalStrut(5));
 		
-		for(int i = 0; i < 13; i++) {
+		for(int i = 0; i < 14; i++) {
 			JCustomPanel lineStone = new JCustomPanel(BoxLayout.X_AXIS, new EmptyBorder(0, 0, 0, 0));
 			lineStone.setBackground(Design.UIColor[0]);
 			lineStone.setOpaque(false);
@@ -652,7 +652,7 @@ public class PageBuff extends PartialPage {
 		}
 		
 		int slot = 0;
-		while(slot < 13 && this.stoneUsed.get(slot).isVisible()) {
+		while(slot < 14 && this.stoneUsed.get(slot).isVisible()) {
 			slot++;
 		}
 		
@@ -673,7 +673,7 @@ public class PageBuff extends PartialPage {
 	private void refreshStoneList() {
 		ArrayList<Stone> stone = new ArrayList<Stone>();
 		
-		for(int i = 0; i < 13; i++) {
+		for(int i = 0; i < 14; i++) {
 			if(this.stoneUsed.get(i).isVisible()) {
 				stone.add(this.stoneUsed.get(i).getItem());
 			}

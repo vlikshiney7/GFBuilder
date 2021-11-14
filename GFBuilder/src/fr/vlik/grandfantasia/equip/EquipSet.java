@@ -28,7 +28,7 @@ public class EquipSet implements Writable {
 	private Calculable[] with5;
 	
 	public EquipSet() {
-		this.name = "Rien";
+		this.name = "Aucun";
 		this.code = "-1";
 		this.nbCurrentUsed = 0;
 	}

@@ -10128,7 +10128,7 @@ public class LoaderEquipSet {
 	
 	private static EquipSet[] getAll() {
 		return new EquipSet[] {
-			new EquipSet("Rien", "-1", null, null, null),
+			new EquipSet(),
 			new EquipSet("Résistance suprême de Tarot", "100tarot0",
 				new Calculable[] {
 					new Effect(TypeEffect.VIT, false, 60),
@@ -10138,7 +10138,8 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
 					new Proc(100, Activation.Attack, 6, 5, new Calculable[] {
-						new Effect(TypeEffect.DCCP, false, 3),
+						new Effect(TypeEffect.Atk, false, 3),
+						new Effect(TypeEffect.AtkD, false, 3),
 					}),
 				},
 				new Calculable[] {
@@ -10324,7 +10325,7 @@ public class LoaderEquipSet {
 
 	static EquipSet[] getCapeRing() {
 		return new EquipSet[] {
-			new EquipSet("Aucun", "-1", null, null),
+			new EquipSet(),
 			new EquipSet("Set de la Gloire Meurtrière", "tdb0",
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 60),
