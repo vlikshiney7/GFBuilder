@@ -1212,6 +1212,9 @@ public class LoaderTitle {
 				new Effect(TypeEffect.PV, true, 3),
 				new Effect(TypeEffect.PM, true, 3),
 			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Apocalypse de la dinde"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
+				new Effect(TypeEffect.VIT, true, 5),
+			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Apôtre des Profondeurs"); put(Language.EN, "Deep Sea Apostle"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.EVENT, new Calculable[] {
 				new Effect(TypeEffect.PV, true, 5),
 				new Proc(5, Activation.Attack, new Calculable[] {
@@ -1966,6 +1969,9 @@ public class LoaderTitle {
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Singe de mon coeur"); put(Language.EN, "Primate Love"); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.CHRONO, new Calculable[] {
 				new Effect(TypeEffect.ReducPeneP, false, 5),
 				new Effect(TypeEffect.Depla, false, -5),
+			}),
+			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Souhait d'anniversaire du Sprite"); put(Language.EN, ""); }}, Quality.BLUE, 15, false, GradeName.NONE, Tag.OTHER, new Calculable[] {
+				new TransformEffect(TypeTransformation.TRANSFORMATION, NameTransform.Transform34),
 			}),
 			new Title(new HashMap<Language, String>() {{ put(Language.FR, "Sprite magique de l'amour"); put(Language.EN, ""); }}, Quality.BLUE, 31, false, GradeName.NONE, Tag.DONJON, new Calculable[] {
 				new Condition(TypeCondition.FIGHT, new Calculable[] {

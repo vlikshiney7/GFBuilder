@@ -100,6 +100,20 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.VOL, false, 4),
 				new Effect(TypeEffect.ESQ, false, 2),
 			}),
+			new Runway("Bénédiction de l'univers", new Calculable[] {
+				new Effect(TypeEffect.FCE, false, 15),
+				new Effect(TypeEffect.VIT, false, 15),
+				new Effect(TypeEffect.INT, false, 15),
+				new Effect(TypeEffect.VOL, false, 15),
+				new Effect(TypeEffect.AGI, false, 15),
+				new Effect(TypeEffect.PV, true, 4),
+				new Effect(TypeEffect.PM, true, 4),
+			}),
+			new Runway("Bénédiction rapide", new Calculable[] {
+				new Effect(TypeEffect.ESQ, false, 6),
+				new Effect(TypeEffect.Toucher, false, 6),
+				new Effect(TypeEffect.Depla, false, 10),
+			}),
 			new Runway("Berserker", new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
 				new Effect(TypeEffect.AGI, false, 7),
@@ -133,6 +147,14 @@ public class LoaderSubEquip {
 				new Effect(TypeEffect.VIT, false, 7),
 				new Effect(TypeEffect.INT, false, 7),
 				new Effect(TypeEffect.VitComp, false, 2),
+			}),
+			new Runway("Expert des arcanes", new Calculable[] {
+				new Effect(TypeEffect.DegSkillM, false, 8),
+				new Effect(TypeEffect.PeneM, false, 4),
+			}),
+			new Runway("Expert en physique", new Calculable[] {
+				new Effect(TypeEffect.DegSkillP, false, 8),
+				new Effect(TypeEffect.PeneP, false, 4),
 			}),
 			new Runway("Folie", new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 10),
@@ -235,21 +257,21 @@ public class LoaderSubEquip {
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tête"); put(Language.EN, "Head Runway"); }},
 				new Runway[] {
 					Runway.get("Prêtre"),
-					Runway.get("L'art de la cupidité"),
+					Runway.get("Hymne"),
 				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Tenue"); put(Language.EN, "Body Runway"); }},
 				new Runway[] {
-					Runway.get("Balance"),
-					Runway.get("Vive la cupidité"),
+					Runway.get("Sceau de VOL"),
+					Runway.get("Tempête"),
 				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Dos"); put(Language.EN, "Back Runway"); }},
 				new Runway[] {
-					Runway.get("Sang"),
+					Runway.get("Turbo"),
 					Runway.get("Synthétisation"),
 				}),
 			new CombiRunway(new HashMap<Language, String>() {{ put(Language.FR, "Runway Nouveauté"); put(Language.EN, "New Runway"); }},
 				new Runway[] {
-					Runway.get("Bravoure"),
+					Runway.get("Expert en physique"),
 					Runway.get("Chance"),
 					Runway.get("Magistrat"),
 				}),
