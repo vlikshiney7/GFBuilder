@@ -127,20 +127,20 @@ public class Build {
 		}
 		
 		/* Atk AtkD AtkM */
-		result[5] = Math.floor((result[0] * 3 + allPoint[5]) * (percent[5] / 100 +1) + convertAndAdd[5]);
-		result[6] = Math.floor((result[4] * 3 + allPoint[6]) * (percent[6] / 100 +1) + convertAndAdd[6]);
-		result[7] = Math.floor((result[2] * 3 + allPoint[7]) * (percent[7] / 100 +1) + convertAndAdd[7]);
+		result[5] = Math.floor((Math.min(result[0], 9999) * 3 + allPoint[5]) * (percent[5] / 100 +1) + convertAndAdd[5]);
+		result[6] = Math.floor((Math.min(result[4], 9999) * 3 + allPoint[6]) * (percent[6] / 100 +1) + convertAndAdd[6]);
+		result[7] = Math.floor((Math.min(result[2], 9999) * 3 + allPoint[7]) * (percent[7] / 100 +1) + convertAndAdd[7]);
 		
 		/* DefP DefM */
-		result[8] = Math.floor(Math.round((result[1] * 1.5) + allPoint[8]) * (percent[8] / 100 +1) + convertAndAdd[8]);
-		result[9] = Math.floor(Math.round((result[3] * 1.5) + allPoint[9]) * (percent[9] / 100 +1) + convertAndAdd[9]);
+		result[8] = Math.floor(Math.round((Math.min(result[1], 9999) * 1.5) + allPoint[8]) * (percent[8] / 100 +1) + convertAndAdd[8]);
+		result[9] = Math.floor(Math.round((Math.min(result[3], 9999) * 1.5) + allPoint[9]) * (percent[9] / 100 +1) + convertAndAdd[9]);
 		
 		/* TCCP TCCM */
 		result[10] = Math.floor((Math.min(result[4], 2646) + 14 ) / 28) + allPoint[10] + convertAndAdd[10];
 		result[11] = Math.floor((Math.min(result[2], 2646) + 14 ) / 28) + allPoint[11] + convertAndAdd[11];
 		
 		/* ESQ */
-		result[12] = Math.floor(Math.floor((result[4] + 5) / 10) * (percent[12] / 100 +1)) + allPoint[12] + convertAndAdd[12];
+		result[12] = Math.floor(Math.floor((Math.min(result[4], 9999) + 5) / 10) * (percent[12] / 100 +1)) + allPoint[12] + convertAndAdd[12];
 		
 		/* RES */
 		for(int i = 0; i < 6; i++) {
@@ -148,8 +148,8 @@ public class Build {
 		}
 		
 		/* PV PM */
-		result[19] = Math.floor((result[1] * 40 + allPoint[19]) * (percent[19] / 100 +1) + convertAndAdd[19]);
-		result[20] = Math.floor((result[3] * 20 + allPoint[20]) * (percent[20] / 100 +1) + convertAndAdd[20]);
+		result[19] = Math.floor((Math.min(result[1], 9999) * 40 + allPoint[19]) * (percent[19] / 100 +1) + convertAndAdd[19]);
+		result[20] = Math.floor((Math.min(result[3], 9999) * 20 + allPoint[20]) * (percent[20] / 100 +1) + convertAndAdd[20]);
 		
 		for(int i = 21; i < result.length; i++) {
 			if(TypeEffect.values()[i].entier) {
@@ -218,8 +218,8 @@ public class Build {
 		merge[7] = Math.floor((base[2] + point[2] + convertBase[2]) * 3 + point[7] * (percent[7] / 100 +1) + convertBase[7]);
 		
 		/* TCCP TCCM */
-		merge[10] = Math.floor((Math.min((base[4] + point[4] + convertBase[4]), 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10];
-		merge[11] = Math.floor((Math.min((base[2] + point[2] + convertBase[2]), 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11];
+		merge[10] = Math.floor((Math.min(base[4] + point[4] + convertBase[4], 2646) + 14 ) / 28) + base[10] + point[10] + convertBase[10];
+		merge[11] = Math.floor((Math.min(base[2] + point[2] + convertBase[2], 2646) + 14 ) / 28) + base[11] + point[11] + convertBase[11];
 		
 		/* PV PM */
 		merge[19] = Math.floor((base[1] + point[1] + convertBase[1]) * 40 + point[19] * (percent[19] / 100 +1) + convertBase[19]);

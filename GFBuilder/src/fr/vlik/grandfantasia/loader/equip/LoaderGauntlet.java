@@ -21,7 +21,7 @@ import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 
 @SuppressWarnings("serial")
-class LoaderGauntlet {
+public class LoaderGauntlet {
 	
 	public static final String ICONPATH = "3-gants/";
 

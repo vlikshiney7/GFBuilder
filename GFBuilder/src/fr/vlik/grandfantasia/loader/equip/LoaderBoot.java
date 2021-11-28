@@ -23398,6 +23398,21 @@ class LoaderBoot {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de l'Apprenti"); put(Language.EN, ""); }},
+					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.WHITE, false, false,
+				ArmorType.BOTTE, "-1", ICONPATH + "30bleu0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 102, true),
+				}, null),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Combat Renforcées"); put(Language.EN, ""); }},
+					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 4, Quality.WHITE, false, false,
+				ArmorType.BOTTE, "-1", ICONPATH + "50pve0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 90, true),
+				}, null),
+			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bottes de Toile"); put(Language.EN, ""); }},
+					new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 3, Quality.WHITE, false, false,
+				ArmorType.BOTTE, "-1", ICONPATH + "40pve3", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 84, true),
+				}, null),
 		};
 	}
 }
