@@ -16,7 +16,7 @@ import fr.vlik.grandfantasia.stats.RegenEffect;
 import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 
 @SuppressWarnings("serial")
-class LoaderBoot {
+public class LoaderBoot {
 	
 	public static final String ICONPATH = "4-bottes/";
 	

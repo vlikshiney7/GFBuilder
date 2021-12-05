@@ -150,11 +150,11 @@ public class PageOption extends JCustomPanel {
 	}
 	
 	public void refreshSave() {
-		this.save.setItems(SaveConfig.getData());
+		this.save.placeItems(SaveConfig.getData());
 	}
 	
-	public void refreshSave(String buildNameSave) {
+	public void refreshSave(String fileNameSave) {
 		refreshSave();
-		this.save.setSelectedItem(SaveConfig.getSave(buildNameSave));
+		this.save.setSelectedItem(SaveConfig.getSave(fileNameSave));
 	}
 }

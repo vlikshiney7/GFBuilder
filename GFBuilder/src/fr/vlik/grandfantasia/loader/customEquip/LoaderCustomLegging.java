@@ -412,6 +412,11 @@ class LoaderCustomLegging {
 					new Effect(TypeEffect.DefP, false, 210, true),
 					new Effect(TypeEffect.DefM, false, 149, true),
 				}),
+			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon du Voyageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
+				2, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 143, true),
+				}),
 		};
 	}
 	
@@ -774,6 +779,11 @@ class LoaderCustomLegging {
 				8, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 175, true),
 					new Effect(TypeEffect.DefM, false, 166, true),
+				}),
+			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon du Voyageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, },
+				2, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 143, true),
 				}),
 		};
 	}
@@ -1140,6 +1150,11 @@ class LoaderCustomLegging {
 					new Effect(TypeEffect.DefP, false, 199, true),
 					new Effect(TypeEffect.DefM, false, 154, true),
 				}),
+			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon du Voyageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
+				2, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 143, true),
+				}),
 		};
 	}
 	
@@ -1505,6 +1520,11 @@ class LoaderCustomLegging {
 					new Effect(TypeEffect.DefP, false, 158, true),
 					new Effect(TypeEffect.DefM, false, 154, true),
 				}),
+			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon du Voyageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
+				2, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 143, true),
+				}),
 		};
 	}
 	
@@ -1831,6 +1851,11 @@ class LoaderCustomLegging {
 				7, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "14sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 150, true),
 					new Effect(TypeEffect.DefM, false, 143, true),
+				}),
+			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon du Voyageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
+				2, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 143, true),
 				}),
 		};
 	}
@@ -2184,6 +2209,11 @@ class LoaderCustomLegging {
 				8, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "14sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 199, true),
 					new Effect(TypeEffect.DefM, false, 170, true),
+				}),
+			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Pantalon du Voyageur"); put(Language.EN, ""); }},
+				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
+				2, ArmorType.JAMBIERE, LoaderLegging.ICONPATH + "7vert0", new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 143, true),
 				}),
 		};
 	}

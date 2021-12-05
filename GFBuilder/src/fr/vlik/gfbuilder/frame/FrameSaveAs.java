@@ -139,7 +139,7 @@ public class FrameSaveAs extends JCustomFrame {
 		SaveConfig.writeData(formatFileName, MainFrame.getInstance().getLanguage());
 		
 		FrameSaveLoader.setBlocker(true);
-		PageOption.getInstance().refreshSave(formatFileName.replace("_", " "));
+		PageOption.getInstance().refreshSave(formatFileName);
 		FrameSaveLoader.setBlocker(false);
 		
 		PageOption.getInstance().updateSave();

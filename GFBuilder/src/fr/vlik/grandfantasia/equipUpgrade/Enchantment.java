@@ -63,7 +63,7 @@ public class Enchantment extends ColorBuff {
 	}
 	
 	public static Enchantment get(Equipment equip, String name) {
-		if(equip.getQuality() != Quality.GREY) {
+		if(Enchantment.data.get(equip.getQuality()) != null) {
 			for(Enchantment enchant : Enchantment.data.get(equip.getQuality())) {
 				if(enchant.getName(Language.FR).equals(name)
 					&& equip.getLvl() >= enchant.getLvlMin() && equip.getLvl() <= enchant.getLvlMax()
