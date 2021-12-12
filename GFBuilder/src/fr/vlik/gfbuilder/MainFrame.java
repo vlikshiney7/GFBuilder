@@ -90,7 +90,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 0.21.10");
+		super("Grand Fantasia Builder - Version 1.0.0");
 		setCustomUI();
 		
 		try {

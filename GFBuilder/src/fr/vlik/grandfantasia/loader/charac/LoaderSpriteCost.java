@@ -2167,6 +2167,18 @@ public class LoaderSpriteCost {
 						new Effect(TypeEffect.TCCM, false, -12, Target.OPPONENT),
 					}),
 				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de Noël des Sprites"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10036", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.TCCM, false, -10, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de Noël du Sprite"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F10036", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.TCCM, false, -10, Target.OPPONENT),
+					}),
+				}),
 		};
 	}
 }

@@ -859,7 +859,7 @@ public class Loader {
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Forme Morbide d'Ewan"); put(Language.EN, "Ewan, General of Spirits"); }}, "4-1", new Calculable[] {
 				new Effect(TypeEffect.Toucher, true, 8),
-				new Effect(TypeEffect.ESQ, false, 8),
+				new Effect(TypeEffect.ESQ, true, 8),
 			}),
 			new GuildBuff(new HashMap<Language, String>() {{ put(Language.FR, "Regard Noir d'Ewan"); put(Language.EN, "Ewan, General of Spirits"); }}, "4-2", new Calculable[] {
 				new Effect(TypeEffect.Ombre, false, 50),
