@@ -217,20 +217,50 @@ public class LoaderCharacUpgrade {
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Rose"); put(Language.EN, "Peach"); }}, "pink", new Effect[] {
 				new Effect(TypeEffect.DefM, false, 5, TypeCalcul.ADDITIONAL),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume de FCE"); put(Language.EN, ""); }}, "FCEgreen", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume de FCE"); put(Language.EN, ""); }}, "FCE1", new Effect[] {
 				new Effect(TypeEffect.FCE, false, 1),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume de VIT"); put(Language.EN, ""); }}, "VITgreen", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume de VIT"); put(Language.EN, ""); }}, "VIT1", new Effect[] {
 				new Effect(TypeEffect.VIT, false, 1),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume d'INT"); put(Language.EN, ""); }}, "INTgreen", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume d'INT"); put(Language.EN, ""); }}, "INT1", new Effect[] {
 				new Effect(TypeEffect.INT, false, 1),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume de VOL"); put(Language.EN, ""); }}, "VOLgreen", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume de VOL"); put(Language.EN, ""); }}, "VOL1", new Effect[] {
 				new Effect(TypeEffect.VOL, false, 1),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume d'AGI"); put(Language.EN, ""); }}, "AGIgreen", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume d'AGI"); put(Language.EN, ""); }}, "AGI1", new Effect[] {
 				new Effect(TypeEffect.AGI, false, 1),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de FCE ultime (3)"); put(Language.EN, ""); }}, "FCE3", new Effect[] {
+				new Effect(TypeEffect.FCE, false, 3),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VIT ultime (3)"); put(Language.EN, ""); }}, "VIT3", new Effect[] {
+				new Effect(TypeEffect.VIT, false, 3),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'INT ultime (3)"); put(Language.EN, ""); }}, "INT3", new Effect[] {
+				new Effect(TypeEffect.INT, false, 3),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VOL ultime (3)"); put(Language.EN, ""); }}, "VOL3", new Effect[] {
+				new Effect(TypeEffect.VOL, false, 3),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'AGI ultime (3)"); put(Language.EN, ""); }}, "AGI3", new Effect[] {
+				new Effect(TypeEffect.AGI, false, 3),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de FCE ultime (6)"); put(Language.EN, ""); }}, "FCE6", new Effect[] {
+				new Effect(TypeEffect.FCE, false, 6),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VIT ultime (6)"); put(Language.EN, ""); }}, "VIT6", new Effect[] {
+				new Effect(TypeEffect.VIT, false, 6),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'INT ultime (6)"); put(Language.EN, ""); }}, "INT6", new Effect[] {
+				new Effect(TypeEffect.INT, false, 6),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VOL ultime (6)"); put(Language.EN, ""); }}, "VOL6", new Effect[] {
+				new Effect(TypeEffect.VOL, false, 6),
+			}),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'AGI ultime (6)"); put(Language.EN, ""); }}, "AGI6", new Effect[] {
+				new Effect(TypeEffect.AGI, false, 6),
 			}),
 		};
 	}

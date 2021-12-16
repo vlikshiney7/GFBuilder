@@ -96,9 +96,9 @@ public class Title extends ColorBuff {
 		return b;
 	}
 	
-	public static Title get(String name) {
+	public static Title get(String name, Language lang) {
 		for(Title title : Title.data) {
-			if(title.getName(Language.FR).equals(name)) {
+			if(title.getName(lang).equals(name)) {
 				return title;
 			}
 		}

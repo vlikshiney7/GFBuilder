@@ -75,7 +75,9 @@ public class Condition implements Calculable {
 		INTER3("3 charges", "3 charges"),
 		PREPA("Préparation", "Preparation"),
 		
-		FIGHT("Bataille du Royaume Sprite", "Battle of the Sprite Kingdom"),
+		FIGHT1("Bataille du Royaume Sprite", "Battle of the Sprite Kingdom"),
+		FIGHT2("Bal d'hiver du Palais Royal polaire", "Winter Ball at the Polar Royal Palace"),
+		
 		SANCTU1("Sanctuaire Forêt", "Forest Sanctuary"),
 		SANCTU2("Sanctuaire Sable", "Sand Sanctuary"),
 		SANCTU3("Sanctuaire Prairie", "Grassland Sanctuary"),

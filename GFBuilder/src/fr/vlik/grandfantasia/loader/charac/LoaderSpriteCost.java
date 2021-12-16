@@ -2179,6 +2179,18 @@ public class LoaderSpriteCost {
 						new Effect(TypeEffect.TCCM, false, -10, Target.OPPONENT),
 					}),
 				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Oreilles de Chat Rock'n'roll bleu foncé"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.HEAD, "F12571", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
+					}),
+				}),
+			new SpriteCost(new HashMap<Language, String>() {{ put(Language.FR, "Tenue Rock'n'roll bleu foncé"); put(Language.EN, ""); }},
+				Quality.WHITE, SpriteCostType.BODY, "F20259", new Calculable[] {
+					new Proc(Activation.Sprite, 12, new Calculable[] {
+						new Effect(TypeEffect.Depla, false, 8),
+					}),
+				}),
 		};
 	}
 }

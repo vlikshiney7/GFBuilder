@@ -42,7 +42,7 @@ public class PageBuff extends PartialPage {
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(7);
 	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(11);
-	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(11);
+	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(21);
 	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
 	private JCustomComboBox<GuildBuff> guildBuff;
 	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(14);
@@ -59,7 +59,8 @@ public class PageBuff extends PartialPage {
 	
 	private JCustomPanel colBuffLeft;
 	private JCustomPanel colBuffRight;
-	private JCustomPanel voidPanel;
+	private JCustomPanel voidPanelLeft;
+	private JCustomPanel voidPanelRight;
 	
 	public static PageBuff getInstance() {
 		return INSTANCE;
@@ -118,7 +119,7 @@ public class PageBuff extends PartialPage {
 		}
 		
 		
-		for(int i = 0; i < 11; i++) {
+		for(int i = 0; i < 21; i++) {
 			this.labelEnergy.add(new JCustomLabel<Energy>(Energy.getData()[i]));
 			this.labelEnergy.get(i).setPreferredSize(new Dimension(210, 32));
 			
@@ -319,8 +320,8 @@ public class PageBuff extends PartialPage {
 		
 		this.showAndHideEnchant = listEnchant;
 		
-		JCustomPanel energies = new JCustomPanel(new GridLayout(11, 1));
-		for(int i = 0; i < 11; i++) {
+		JCustomPanel energies = new JCustomPanel(new GridLayout(21, 1));
+		for(int i = 0; i < 21; i++) {
 			energies.add(new JCustomPanel(this.labelEnergy.get(i), this.energy.get(i)));
 		}
 		
@@ -363,23 +364,29 @@ public class PageBuff extends PartialPage {
 		page11Elem4.addAll(this.labels.get("Stone"), Box.createVerticalStrut(10), blocStone, Box.createVerticalStrut(10),
 				this.labels.get("Select"), Box.createVerticalStrut(5), this.stone);
 		
-		this.voidPanel = new JCustomPanel();
-		this.voidPanel.setBackground(Design.UIColor[2]);
 		
+		this.voidPanelLeft = new JCustomPanel();
+		this.voidPanelLeft.setBackground(Design.UIColor[2]);
 		
 		this.colBuffLeft = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 5));
 		this.colBuffLeft.setBackground(Design.UIColor[2]);
-		this.colBuffLeft.addAll(page11Elem1, Box.createVerticalStrut(10), page11Elem3);
+		this.colBuffLeft.addAll(page11Elem1, Box.createVerticalStrut(10), page11Elem3, Box.createVerticalStrut(10), page11Elem4);
 		
 		JCustomPanel resizedLeft = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(0, 0, 0, 0));
-		resizedLeft.addAll(this.colBuffLeft, this.voidPanel);
+		resizedLeft.addAll(this.colBuffLeft, this.voidPanelLeft);
+		
+		this.voidPanelRight = new JCustomPanel();
+		this.voidPanelRight.setBackground(Design.UIColor[2]);
 		
 		this.colBuffRight = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 0, 10, 10));
 		this.colBuffRight.setBackground(Design.UIColor[2]);
-		this.colBuffRight.addAll(page11Elem2, Box.createVerticalStrut(10), page11Elem4);
+		this.colBuffRight.addAll(page11Elem2);
+
+		JCustomPanel resizedRight = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(0, 0, 0, 0));
+		resizedRight.addAll(this.colBuffRight, this.voidPanelRight);
 		
 		
-		this.addAll(resizedLeft, this.colBuffRight);
+		this.addAll(resizedLeft, resizedRight);
 		
 		this.showAndHide.setVisible(false);
 		this.showAndHideEnchant.setVisible(false);
@@ -398,7 +405,13 @@ public class PageBuff extends PartialPage {
 	
 	private void updateSize() {
 		int newSize = this.colBuffRight.getMinimumSize().height - this.colBuffLeft.getMinimumSize().height - 10;
-		this.voidPanel.setBorder(new EmptyBorder(newSize, 0, 0, 0));
+		if(newSize > 0) {
+			this.voidPanelLeft.setBorder(new EmptyBorder(newSize, 0, 0, 0));
+			this.voidPanelRight.setBorder(new EmptyBorder(0, 0, 0, 0));
+		} else {
+			this.voidPanelLeft.setBorder(new EmptyBorder(0, 0, 0, 0));
+			this.voidPanelRight.setBorder(new EmptyBorder(-newSize, 0, 0, 0));
+		}
 	}
 	
 	public void updateNucleus() {

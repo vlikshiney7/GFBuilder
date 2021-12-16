@@ -25,7 +25,9 @@ public class ExtractRideData {
 		"Armure Méca Élite", "Loup Élite", "Chocobo de Combat Élite",
 	};
 	
-	public static void main(String[] args) {
+	public static void launch() {
+		System.out.println("--- Extract Ride ---");
+		
 		System.out.println("Read Item TW");
 		readItemTW();
 		

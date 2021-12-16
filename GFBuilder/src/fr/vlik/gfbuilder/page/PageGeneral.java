@@ -350,7 +350,7 @@ public class PageGeneral extends PartialPage {
 		this.lvl.setValue(Integer.valueOf(config.get("Lvl")));
 		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
 		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
-		this.title.setSelectedItem(Title.get(config.get("Title")));
+		this.title.setSelectedItem(Title.get(config.get("Title"), lang));
 		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
 		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
 		this.proc.setSelected(Boolean.valueOf(config.get("Proc")));

@@ -25,7 +25,9 @@ public class ExtractSpriteData {
 		"Armure d'Acier de Destruction  de Sprite",
 	};
 	
-	public static void main(String[] args) {
+	public static void launch() {
+		System.out.println("--- Extract Sprite ---");
+		
 		System.out.println("Read Item TW");
 		readItemTW();
 		

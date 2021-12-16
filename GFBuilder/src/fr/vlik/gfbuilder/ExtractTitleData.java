@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 import fr.vlik.grandfantasia.characUpgrade.Title;
+import fr.vlik.grandfantasia.enums.Language;
 
 public class ExtractTitleData {
 	
@@ -31,7 +32,7 @@ public class ExtractTitleData {
 			"Marche-Lune", "Maître des Arènes", "Maître en Arts Martiaux", "Meilleur Messager de Saphaël", "Messager Ultime", "Messager au Cœur pur", "Messager de l'Amour", "Modèle de Santé", "Mystère",
 			"Perturbateur Irritant", "Petite Poupée", "Prince Protecteur de Kaslow", "Protecteur des Débutants",
 			"Rencontre Inévitable", "Romantique Désespéré", "Rêveur Impénitent", "Service client d'Aeria Games", "Sportif de l'Extrême", "Sprite dans l'Âme", "Spritophile Fanatique",
-			"Titre 8648", "Troll Sauvage des Forums", "Tête Dure", "Vieux de la Vieille", "Yakuza Impitoyable",
+			"Titre 8648", "Troll Sauvage des Forums", "Tête Dure", "Vieux de la Vieille", "Yakuza Impitoyable", "Titre familial",
 			"Élite de Clair de Lune", "Étoile Élue", "Cœur de Démon", "Cœur de Pierre", "Collectionneur d'œufs de Pâques", "Cœur vagabond", "Maître de l'Œuf de Pâques Magique", "Voyageur au Cœur Brisé",
 			"GF Grand Fantasia", "GFWT 2016 - DO NOT USE", "Titre du concours PvP 2015", "Titre du tournoi PvP 2018",
 			"Héraut de Cœur de Lion Embrasé", "Nouveau titre de serveur étranger",
@@ -39,7 +40,8 @@ public class ExtractTitleData {
 			"Pro de la Production", "Pro de la Synthèse", "Pro de l'Amélioration", "Pro des Bijoux", "Pro des titres", "Artisan Professionnel",
 		};
 
-	public static void main(String[] args) {
+	public static void launch() {
+		System.out.println("--- Extract Title ---");
 		
 		System.out.println("Read Title TW");
 		readTitleTW();
@@ -251,6 +253,7 @@ public class ExtractTitleData {
 	}
 	
 	public static boolean notInData(String name, int lvl) {
-		return Title.get(name) == null || (Title.get(name).getLvl() == 0 && lvl != 0);
+		Title checkData = Title.get(name, Language.FR) != null ? Title.get(name, Language.FR) : Title.get(name, Language.EN);
+		return checkData == null || (checkData.getLvl() == 0 && lvl != 0);
 	}
 }
