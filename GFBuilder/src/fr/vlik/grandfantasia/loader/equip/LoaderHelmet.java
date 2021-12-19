@@ -7821,7 +7821,7 @@ public class LoaderHelmet {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Cagoule du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, true,
 				ArmorType.CASQUE, "100pvp4R", ICONPATH + "100pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 804, true),
+					new Effect(TypeEffect.DefP, false, 803, true),
 					new Effect(TypeEffect.DefM, false, 733, true),
 					new Effect(TypeEffect.VIT, false, 38, true),
 					new Effect(TypeEffect.INT, false, 21, true),

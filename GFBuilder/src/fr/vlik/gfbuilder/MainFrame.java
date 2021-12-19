@@ -90,7 +90,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 1.0.1");
+		super("Grand Fantasia Builder - Version 1.1.0");
 		setCustomUI();
 		
 		try {
@@ -256,8 +256,8 @@ public class MainFrame extends JFrame {
 		
 		this.scrollContent = new JScrollPane(allPages, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.scrollContent.setBorder(null);
-		this.scrollContent.getVerticalScrollBar().setUnitIncrement(10);
-		this.scrollContent.getHorizontalScrollBar().setUnitIncrement(10);
+		this.scrollContent.getVerticalScrollBar().setUnitIncrement(15);
+		this.scrollContent.getHorizontalScrollBar().setUnitIncrement(15);
 		
 		for(int i = 0; i < this.pages.size(); i++) {
 			allPages.add(this.pages.get(i));
@@ -354,7 +354,7 @@ public class MainFrame extends JFrame {
 		
 		JScrollPane scrollStats = new JScrollPane(stats, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollStats.setBorder(null);
-		scrollStats.getVerticalScrollBar().setUnitIncrement(10);
+		scrollStats.getVerticalScrollBar().setUnitIncrement(15);
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading finished");
@@ -433,6 +433,10 @@ public class MainFrame extends JFrame {
 	public ArrayList<JCustomPanel> getPages() {
 		return this.pages;
 	}
+	
+	public JScrollPane getScrollContent() {
+		return this.scrollContent;
+	}
 
 	private void setCustomUI() {
 		try {
@@ -457,9 +461,6 @@ public class MainFrame extends JFrame {
 		PageWeapon.getInstance().initPearlEnchant();
 		PageArmor.getInstance().initPearlEnchant();
 		PageBuff.getInstance().initNucleusEnchant();
-		
-		PageWeapon.getInstance().initDefaultStuff();
-		PageArmor.getInstance().initDefaultStuff();
 	}
 	
 	public void updateStat() {

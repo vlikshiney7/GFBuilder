@@ -10,7 +10,6 @@ import java.util.Map.Entry;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
@@ -30,6 +29,7 @@ import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
+import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
@@ -41,8 +41,10 @@ public class PageBuff extends PartialPage {
 	private static PageBuff INSTANCE = new PageBuff();
 	
 	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(7);
-	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(11);
+	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(21);
+	private ArrayList<JCustomRadioButton<Energy>> labelVoidEnergy = new ArrayList<JCustomRadioButton<Energy>>(3);
 	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(21);
+	
 	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
 	private JCustomComboBox<GuildBuff> guildBuff;
 	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(14);
@@ -52,10 +54,15 @@ public class PageBuff extends PartialPage {
 	private ArrayList<JCustomComboBox<NucleusEnchantment>> nucleusEnchant = new ArrayList<JCustomComboBox<NucleusEnchantment>>(3);
 	private ArrayList<JCustomComboBox<InnerEffect>> nucleusLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>(3);
 	
-	private JPanel showAndHide;
-	private JPanel showAndHideEnchant;
+	private JCustomPanel showAndHide;
+	private JCustomPanel showAndHideEnchant;
+	private ArrayList<JCustomPanel> showAndHideEnergy = new ArrayList<JCustomPanel>(3);
+	
 	private ArrayList<JCustomButton> cross = new ArrayList<JCustomButton>(7);
 	private ArrayList<JCustomButton> remove = new ArrayList<JCustomButton>(7);
+	
+	private ArrayList<JCustomButton> reinitEnergy = new ArrayList<JCustomButton>(4);
+	private ArrayList<JCustomButton> maxEnergy = new ArrayList<JCustomButton>(4);
 	
 	private JCustomPanel colBuffLeft;
 	private JCustomPanel colBuffRight;
@@ -130,6 +137,17 @@ public class PageBuff extends PartialPage {
 			});
 		}
 		
+		for(int i = 0; i < 3; i++) {
+			int id = i;
+			
+			this.labelVoidEnergy.add(new JCustomRadioButton<Energy>(Energy.getVoidData()[i]));
+			this.labelVoidEnergy.get(i).setPreferredSize(new Dimension(240, 32));
+			
+			this.labelVoidEnergy.get(i).addChangeListener(e -> {
+				showAndHideEnergies(id);
+			});
+		}
+		
 		
 		for(int i = 0; i < 4; i++) {
 			this.guildBuffUsed.add(new JCustomLabel<GuildBuff>(null));
@@ -200,6 +218,20 @@ public class PageBuff extends PartialPage {
         	MainFrame.getInstance().updateStat();
 		});
 		
+		for(int i = 0; i < 4; i++) {
+			int id = i;
+			
+			this.reinitEnergy.add(new JCustomButton(this.labels.get("Min" + i).getLang(), Design.RED_COLOR));
+			this.reinitEnergy.get(i).addActionListener(e -> {
+				setMinSpinnerEnergy(id);
+			});
+			
+			this.maxEnergy.add(new JCustomButton(this.labels.get("Max" + i).getLang(), Design.GREEN_COLOR));
+			this.maxEnergy.get(i).addActionListener(e -> {
+				setMaxSpinnerEnergy(id);
+			});
+		}
+		
 		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
@@ -250,6 +282,11 @@ public class PageBuff extends PartialPage {
 		this.labels.put("Nucleus6", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Compétence"); put(Language.EN, "Skill"); }}, Design.SUBTITLE));
 		this.labels.put("4from", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "4 parmi :"); put(Language.EN, "4 from:"); }}, Design.SUBTITLE));
 		this.labels.put("Select", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Sélection :"); put(Language.EN, "Selection:"); }}, Design.SUBTITLE));
+		
+		for(int i = 0; i < 4; i++) {
+			this.labels.put("Min" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout à 0"); put(Language.EN, "All to 0"); }}, Design.TEXT));
+			this.labels.put("Max" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout à 200"); put(Language.EN, "All to 200"); }}, Design.TEXT));
+		}
 	}
 	
 	@Override
@@ -320,13 +357,41 @@ public class PageBuff extends PartialPage {
 		
 		this.showAndHideEnchant = listEnchant;
 		
-		JCustomPanel energies = new JCustomPanel(new GridLayout(21, 1));
-		for(int i = 0; i < 21; i++) {
-			energies.add(new JCustomPanel(this.labelEnergy.get(i), this.energy.get(i)));
+		
+		JCustomPanel energies = new JCustomPanel(BoxLayout.Y_AXIS);
+		
+		JCustomPanel classicEnergies = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(0, 0, 0, 0));
+		for(int i = 0; i < 6; i++) {
+			classicEnergies.add(new JCustomPanel(this.labelEnergy.get(i), this.energy.get(i)));
+		}
+		
+		JCustomPanel shortCut = new JCustomPanel(new GridLayout(1, 2, 10, 5));
+		shortCut.addAll(this.reinitEnergy.get(0), this.maxEnergy.get(0));
+		classicEnergies.addAll(shortCut);
+		
+		energies.add(classicEnergies);
+		
+		for(int i = 0; i < 3; i++) {
+			JCustomPanel button = new JCustomPanel(this.labelVoidEnergy.get(i));
+			button.setBackground(Design.UIColor[0]);
+			energies.addAll(Box.createVerticalStrut(10), button);
+			
+			this.showAndHideEnergy.add(new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(0, 0, 0, 0)));
+			
+			for(int j = 0; j < 5; j++) {
+				this.showAndHideEnergy.get(i).add(new JCustomPanel(this.labelEnergy.get(i*5+j+6), this.energy.get(i*5+j+6)));
+			}
+			
+			JCustomPanel shortCutSection = new JCustomPanel(new GridLayout(1, 2, 10, 5));
+			shortCutSection.addAll(this.reinitEnergy.get(i+1), this.maxEnergy.get(i+1));
+			this.showAndHideEnergy.get(i).add(shortCutSection);
+			
+			energies.add(this.showAndHideEnergy.get(i));
 		}
 		
 		JCustomPanel page11Elem2 = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		page11Elem2.addAll(this.labels.get("Energy"), Box.createVerticalStrut(10), energies);
+		
 		
 		JCustomPanel blocBuffGuild = new JCustomPanel(BoxLayout.Y_AXIS);
 		blocBuffGuild.add(Box.createVerticalStrut(5));
@@ -390,6 +455,11 @@ public class PageBuff extends PartialPage {
 		
 		this.showAndHide.setVisible(false);
 		this.showAndHideEnchant.setVisible(false);
+		
+		for(int i = 0; i < 3; i++) {
+			this.labelVoidEnergy.get(i).setSelected(false);
+			showAndHideEnergies(i);
+		}
 	}
 	
 	@Override
@@ -401,9 +471,16 @@ public class PageBuff extends PartialPage {
 		for(int i = 0; i < this.labelEnergy.size(); i++) {
 			this.labelEnergy.get(i).updateText(lang);
 		}
+		
+		for(int i = 0; i < this.labelVoidEnergy.size(); i++) {
+			this.labelVoidEnergy.get(i).updateText(lang);
+		}
 	}
 	
 	private void updateSize() {
+		this.colBuffLeft.revalidate();
+		this.colBuffRight.revalidate();
+		
 		int newSize = this.colBuffRight.getMinimumSize().height - this.colBuffLeft.getMinimumSize().height - 10;
 		if(newSize > 0) {
 			this.voidPanelLeft.setBorder(new EmptyBorder(newSize, 0, 0, 0));
@@ -610,6 +687,16 @@ public class PageBuff extends PartialPage {
 		}
 	}
 	
+	private void showAndHideEnergies(int index3) {
+		if(this.labelVoidEnergy.get(index3).isSelected()) {
+			this.showAndHideEnergy.get(index3).setVisible(true);
+		} else {
+			this.showAndHideEnergy.get(index3).setVisible(false);
+		}
+		
+		updateSize();
+	}
+	
 	private void updateGuildBuff() {
 		GuildBuff choice = this.getGuildBuff();
 		
@@ -693,6 +780,33 @@ public class PageBuff extends PartialPage {
 		}
 		
 		this.stone.placeItems(Stone.getListStone(stone));
+	}
+	
+	private void setMinSpinnerEnergy(int index4) {
+		if(index4 == 0) {
+			for(int i = 0; i < 6; i++) {
+				this.energy.get(i).setValue(0);
+			}
+		} else {
+			for(int i = 0; i < 5; i++) {
+				this.energy.get(index4*5+i+1).setValue(0);
+			}
+		}
+	}
+	
+	private void setMaxSpinnerEnergy(int index4) {
+		int lvl = PageGeneral.getInstance().getLvl();
+		boolean reinca = PageGeneral.getInstance().getReinca().getLvl() > 0;
+		
+		if(index4 == 0) {
+			for(int i = 0; i < 6; i++) {
+				this.energy.get(i).setValue(reinca ? 200 : lvl*2);
+			}
+		} else {
+			for(int i = 0; i < 5; i++) {
+				this.energy.get(index4*5+i+1).setValue(reinca ? 200 : lvl*2);
+			}
+		}
 	}
 	
 	@Override
@@ -804,9 +918,6 @@ public class PageBuff extends PartialPage {
 		refreshGuildBuffList();
 		refreshStoneList();
 		setEffects();
-		
-		this.colBuffLeft.revalidate();
-		this.colBuffRight.revalidate();
 		
 		updateSize();
 	}

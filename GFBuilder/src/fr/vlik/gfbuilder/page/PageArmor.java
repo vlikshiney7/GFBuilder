@@ -11,6 +11,8 @@ import java.util.Set;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
@@ -22,6 +24,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Armor.ArmorType;
+import fr.vlik.grandfantasia.equip.BonusEquipSet;
 import fr.vlik.grandfantasia.equip.EquipSet;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.equip.RedArmor;
@@ -56,7 +59,7 @@ public class PageArmor extends PartialRedStuff {
 	
 	private ArrayList<JCustomComboBox<Armor>> armor = new ArrayList<JCustomComboBox<Armor>>(5);
 	private EquipSet equipSet;
-	private JCustomTextPane armorSetInfo;
+	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<JCustomTextPane<BonusEquipSet>>(3);
 	
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
 	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(5);
@@ -93,12 +96,13 @@ public class PageArmor extends PartialRedStuff {
 			
 			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
 			this.armor.add(new JCustomComboBox<Armor>(tabArmor));
-			this.armor.get(i).addActionListener(e -> {				
+			this.armor.get(i).addActionListener(e -> {
 				updateXpStuff(id);
 				updateDetails(id);
 				updatePearl(id);
 				updateEnchant(id);
 				
+				updateEquipSet();
 				updateShortcutSet();
 				
 				setEffects();
@@ -165,8 +169,6 @@ public class PageArmor extends PartialRedStuff {
 			}
 		}
 		
-		this.armorSetInfo = new JCustomTextPane();
-		
 		for(int i = 0; i < 6; i++) {
 			/* PROC */
 			this.proc.add(new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getPearl(i))));
@@ -175,6 +177,10 @@ public class PageArmor extends PartialRedStuff {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			this.equipSetBonus.add(new JCustomTextPane<BonusEquipSet>(new BonusEquipSet()));
 		}
 		
 		updateLanguage(Language.FR);
@@ -202,8 +208,8 @@ public class PageArmor extends PartialRedStuff {
 		return this.equipSet;
 	}
 	
-	public JCustomTextPane getArmorSetInfo() {
-		return this.armorSetInfo;
+	public JCustomTextPane<BonusEquipSet> getEquipSetBonus(int id) {
+		return this.equipSetBonus.get(id);
 	}
 	
 	public Enchantment getEnchantment(int id) {
@@ -319,52 +325,9 @@ public class PageArmor extends PartialRedStuff {
 			}
 		}
 		
-		EquipSet armorSet = new EquipSet(armors);
-		
-		if(!armorSet.equals(this.equipSet)) {
-			if(armorSet.getNbCurrentUsed() >= 3 && !armorSet.getName().equals("Rien")) {
-				String setInfo = armorSet.getName() + "\n";
-				
-				setInfo += "3 pièces équipées " + (armorSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
-				if(armorSet.getWith3() != null) {
-					for(int i = 0; i < armorSet.getWith3().length; i++) {
-						setInfo += "\t- " + armorSet.getWith3()[i].toString(Language.FR) + "\n";
-					}
-				}
-				
-				setInfo += "4 pièces équipées " + (armorSet.getNbCurrentUsed() >= 4 ? "(Actif) " : "") + ":\n";
-				if(armorSet.getWith4() != null) {
-					for(int i = 0; i < armorSet.getWith4().length; i++) {
-						setInfo += "\t- " + armorSet.getWith4()[i].toString(Language.FR) + "\n";
-					}
-				}
-				
-				setInfo += "5 pièces équipées " + (armorSet.getNbCurrentUsed() >= 5 ? "(Actif) " : "") + ":\n";
-				if(armorSet.getWith5() != null) {
-					for(int i = 0; i < armorSet.getWith5().length; i++) {
-						setInfo += "\t- " + armorSet.getWith5()[i].toString(Language.FR) + "\n";
-					}
-				}
-				
-				this.armorSetInfo.setText(setInfo);
-				this.armorSetInfo.setVisible(true);
-				
-				this.equipSet = armorSet;
-				updateShorcut();
-			} else {
-				this.armorSetInfo.setVisible(false);
-			}
-		}
-		
-		if(armorSet.getNbCurrentUsed() >= 3) {
-			list.addAll(armorSet.getWith3());
-			
-			if(armorSet.getNbCurrentUsed() >= 4) {
-				list.addAll(armorSet.getWith4());
-				
-				if(armorSet.getNbCurrentUsed() == 5) {
-					list.addAll(armorSet.getWith5());
-				}
+		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
+			if(textPane.getItem().isActivate()) {
+				list.addAll(textPane.getItem());
 			}
 		}
 		
@@ -455,7 +418,9 @@ public class PageArmor extends PartialRedStuff {
 			this.addAll(Box.createVerticalStrut(10), elemI);
 		}
 		
-		this.addAll(Box.createVerticalStrut(10), this.armorSetInfo);
+		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
+			this.addAll(Box.createVerticalStrut(10), textPane);
+		}
 		
 		for(int i = 0; i < 6; i++) {
 			this.proc.get(i).setVisible(false);
@@ -472,6 +437,10 @@ public class PageArmor extends PartialRedStuff {
 	public void updateLanguage(Language lang) {
 		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
+		}
+		
+		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
+			textPane.updateText(lang);
 		}
 	}
 	
@@ -501,6 +470,45 @@ public class PageArmor extends PartialRedStuff {
 				MainFrame.getInstance().setRedPane(2);
 			}
 		}
+	}
+	
+	private void updateEquipSet() {
+		JScrollPane scroll = MainFrame.getInstance().getScrollContent();
+		int valueScroll = scroll.getVerticalScrollBar().getValue();
+		
+		Armor[] armors = new Armor[5];
+		
+		for(int i = 0; i < 5; i++) {
+			armors[i] = this.getArmor(i);
+		}
+		
+		EquipSet armorSet = new EquipSet(armors);
+		
+		if(!armorSet.equals(this.equipSet)) {
+			if(armorSet.getCode().equals("-1")) {
+				for(int i = 0; i < 3; i++) {
+					this.equipSetBonus.get(i).setItem(new BonusEquipSet());
+					this.equipSetBonus.get(i).setVisible(false);
+				}
+			} else {
+				this.equipSetBonus.get(0).setItem(armorSet.getBonus3());
+				this.equipSetBonus.get(1).setItem(armorSet.getBonus4());
+				this.equipSetBonus.get(2).setItem(armorSet.getBonus5());
+				
+				this.equipSetBonus.get(0).setVisible(true);
+				this.equipSetBonus.get(1).setVisible(true);
+				this.equipSetBonus.get(2).setVisible(true);
+			}
+		}
+		
+		this.equipSet = armorSet;
+		updateShorcut();
+		
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				scroll.getVerticalScrollBar().setValue(valueScroll);
+			}
+		});
 	}
 	
 	private void updateDetails(int id) {
@@ -646,11 +654,6 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		this.proc.get(index6).setSelected(false);
-	}
-	
-	public void initDefaultStuff() {
-		this.armor.get(1).setSelectedItem(Armor.get("Veste du Néophyte", Language.FR, 1));
-		this.armor.get(2).setSelectedItem(Armor.get("Short du Néophyte", Language.FR, 2));
 	}
 	
 	protected void updateTooltipFortif(int id) {

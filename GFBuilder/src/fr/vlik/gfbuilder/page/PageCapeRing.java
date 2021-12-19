@@ -8,6 +8,8 @@ import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
@@ -17,6 +19,7 @@ import fr.vlik.grandfantasia.customEquip.CustomCape;
 import fr.vlik.grandfantasia.customEquip.CustomRing;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equip.BonusEquipSet;
 import fr.vlik.grandfantasia.equip.Cape;
 import fr.vlik.grandfantasia.equip.EquipSet;
 import fr.vlik.grandfantasia.equip.Ring;
@@ -41,7 +44,8 @@ public class PageCapeRing extends PartialXpStuff {
 	
 	private JCustomComboBox<Cape> cape;
 	private ArrayList<JCustomComboBox<Ring>> ring = new ArrayList<JCustomComboBox<Ring>>(2);
-	private JCustomTextPane capeRingSetInfo;
+	private EquipSet equipSet;
+	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<JCustomTextPane<BonusEquipSet>>(3);
 	
 	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
 	
@@ -59,6 +63,8 @@ public class PageCapeRing extends PartialXpStuff {
 		this.cape.addActionListener(e -> {
 			updateXpStuff(0);
 			updateEnchant(0);
+			
+			updateEquipSet();
 			
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -83,7 +89,9 @@ public class PageCapeRing extends PartialXpStuff {
 				updateXpStuff(id+1);
 				updateEnchant(id+1);
 				updateDoubleRing(id);
-
+				
+				updateEquipSet();
+				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
@@ -105,7 +113,9 @@ public class PageCapeRing extends PartialXpStuff {
 			});
 		}
 		
-		this.capeRingSetInfo = new JCustomTextPane();
+		for(int i = 0; i < 2; i++) {
+			this.equipSetBonus.add(new JCustomTextPane<BonusEquipSet>(new BonusEquipSet()));
+		}
 		
 		updateLanguage(Language.FR);
 		createPanel();
@@ -120,8 +130,8 @@ public class PageCapeRing extends PartialXpStuff {
 		return this.ring.get(id).getSelectedItem();
 	}
 	
-	public JCustomTextPane getArmorSetInfo() {
-		return this.capeRingSetInfo;
+	public JCustomTextPane<BonusEquipSet> getEquipSetBonus(int id) {
+		return this.equipSetBonus.get(id);
 	}
 	
 	public Enchantment getEnchantment(int id) {
@@ -177,38 +187,9 @@ public class PageCapeRing extends PartialXpStuff {
 			}
 		}
 		
-		EquipSet capeRingSet = new EquipSet(rings, cape);
-		if(capeRingSet.getNbCurrentUsed() >= 2 && !capeRingSet.getName().equals("Rien")) {
-			String setInfo = capeRingSet.getName() + "\n";
-			
-			setInfo += "2 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 2 ? "(Actif) " : "") + ":\n";
-			if(capeRingSet.getWith2() != null) {
-				for(int i = 0; i < capeRingSet.getWith2().length; i++) {
-					Calculable c = (Calculable) capeRingSet.getWith2()[i];
-					setInfo += "\t- " + c.toString(Language.FR) + "\n";
-				}
-			}
-			
-			setInfo += "3 pièces équipées " + (capeRingSet.getNbCurrentUsed() >= 3 ? "(Actif) " : "") + ":\n";
-			if(capeRingSet.getWith3() != null) {
-				for(int i = 0; i < capeRingSet.getWith3().length; i++) {
-					Calculable c = (Calculable) capeRingSet.getWith3()[i];
-					setInfo += "\t- " + c.toString(Language.FR) + "\n";
-				}
-			}
-			
-			
-			this.capeRingSetInfo.setText(setInfo);
-			this.capeRingSetInfo.setVisible(true);
-		} else {
-			this.capeRingSetInfo.setVisible(false);
-		}
-		
-		if(capeRingSet.getNbCurrentUsed() >= 2) {
-			list.addAll(capeRingSet.getWith2());
-			
-			if(capeRingSet.getNbCurrentUsed() >= 3) {
-				list.addAll(capeRingSet.getWith3());
+		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
+			if(textPane.getItem().isActivate()) {
+				list.addAll(textPane.getItem());
 			}
 		}
 		
@@ -263,7 +244,9 @@ public class PageCapeRing extends PartialXpStuff {
 			this.addAll(Box.createVerticalStrut(10), elemI);
 		}
 		
-		this.addAll(Box.createVerticalStrut(10), this.capeRingSetInfo);
+		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
+			this.addAll(Box.createVerticalStrut(10), textPane);
+		}
 		
 		for(int i = 0; i < 2; i++) {
 			this.proc.get(i).setVisible(false);
@@ -302,6 +285,43 @@ public class PageCapeRing extends PartialXpStuff {
 				MainFrame.getInstance().setRedPane(3);
 			}
 		}
+	}
+	
+	private void updateEquipSet() {
+		JScrollPane scroll = MainFrame.getInstance().getScrollContent();
+		int valueScroll = scroll.getVerticalScrollBar().getValue();
+		
+		Cape cape = this.getCape();
+		Ring[] rings = new Ring[2];
+		
+		for(int i = 0; i < 2; i++) {
+			rings[i] = this.getRing(i);
+		}
+		
+		EquipSet armorSet = new EquipSet(rings, cape);
+		
+		if(!armorSet.equals(this.equipSet)) {
+			if(armorSet.getCode().equals("-1")) {
+				for(int i = 0; i < 2; i++) {
+					this.equipSetBonus.get(i).setItem(new BonusEquipSet());
+					this.equipSetBonus.get(i).setVisible(false);
+				}
+			} else {
+				this.equipSetBonus.get(0).setItem(armorSet.getBonus2());
+				this.equipSetBonus.get(1).setItem(armorSet.getBonus3());
+				
+				this.equipSetBonus.get(0).setVisible(true);
+				this.equipSetBonus.get(1).setVisible(true);
+			}
+		}
+		
+		this.equipSet = armorSet;
+		
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				scroll.getVerticalScrollBar().setValue(valueScroll);
+			}
+		});
 	}
 	
 	public void updateEnchant(int id) {

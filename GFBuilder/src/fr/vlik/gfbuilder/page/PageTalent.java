@@ -31,7 +31,7 @@ import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
-import fr.vlik.uidesign.JCustomTextPane;
+import fr.vlik.uidesign.JLabelTextPane;
 import fr.vlik.uidesign.JLangLabel;
 
 public class PageTalent extends PartialPage {
@@ -45,7 +45,7 @@ public class PageTalent extends PartialPage {
 	private ArrayList<JCustomLabel<IconBuff>> tabChosenTalent = new ArrayList<JCustomLabel<IconBuff>>(9);
 	private ArrayList<JCustomButtonGroup<Talent>> groupTalent = new ArrayList<JCustomButtonGroup<Talent>>(8);
 	private ArrayList<JCustomComboBox<InnerColorEffect>> itemTalent = new ArrayList<JCustomComboBox<InnerColorEffect>>(24);
-	private JCustomTextPane combiTalentInfo;
+	private JLabelTextPane combiTalentInfo;
 	
 	private JCustomButton reinitTalent;
 	private JCustomButton maxTalent;
@@ -109,7 +109,7 @@ public class PageTalent extends PartialPage {
 		}
 		
 		this.tabChosenTalent.add(new JCustomLabel<IconBuff>(new CombiTalent()));
-		this.combiTalentInfo = new JCustomTextPane();
+		this.combiTalentInfo = new JLabelTextPane();
 		
 		this.reinitTalent = new JCustomButton(this.labels.get("Min").getLang(), Design.RED_COLOR);
 		this.reinitTalent.addActionListener(e -> {

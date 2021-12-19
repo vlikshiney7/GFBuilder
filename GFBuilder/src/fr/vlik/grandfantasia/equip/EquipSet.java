@@ -1,55 +1,57 @@
 package fr.vlik.grandfantasia.equip;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.interfaces.Writable;
+import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
 
-public class EquipSet implements Writable {
+public class EquipSet {
 	
-	private static EquipSet[] dataArmor;
-	private static EquipSet[] dataCapeRing;
-	static {
-		dataArmor = LoaderEquip.getArmorSet();
-		dataCapeRing = LoaderEquip.getCapeRingSet();
-	}
+	private static EquipSet[] dataArmor = LoaderEquip.getArmorSet();
+	private static EquipSet[] dataCapeRing = LoaderEquip.getCapeRingSet();
 	
 	private String name;
 	private String code;
 	private int nbCurrentUsed;
-	private Calculable[] with2;
-	private Calculable[] with3;
-	private Calculable[] with4;
-	private Calculable[] with5;
+	
+	private BonusEquipSet bonus2pieces;
+	private BonusEquipSet bonus3pieces;
+	private BonusEquipSet bonus4pieces;
+	private BonusEquipSet bonus5pieces;
 	
 	public EquipSet() {
 		this.name = "Aucun";
 		this.code = "-1";
 		this.nbCurrentUsed = 0;
+		
+		this.bonus2pieces = new BonusEquipSet();
+		this.bonus3pieces = new BonusEquipSet();
+		this.bonus4pieces = new BonusEquipSet();
+		this.bonus5pieces = new BonusEquipSet();
 	}
 	
+	@SuppressWarnings("serial")
 	public EquipSet(String name, String code, Calculable[] with3, Calculable[] with4, Calculable[] with5) {
 		this.name = name;
 		this.code = code;
 		this.nbCurrentUsed = 0;
 		
-		this.with3 = with3;
-		this.with4 = with4;
-		this.with5 = with5;
+		this.bonus3pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 3 pièces de set"); put(Language.EN, "3 Piece Set Bonus"); }}, Quality.BLUE, with3);
+		this.bonus4pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 4 pièces de set"); put(Language.EN, "4 Piece Set Bonus"); }}, Quality.ORANGE, with4);
+		this.bonus5pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 5 pièces de set"); put(Language.EN, "5 Piece Set Bonus"); }}, Quality.GOLD, with5);
 	}
 	
+	@SuppressWarnings("serial")
 	public EquipSet(String name, String code, Calculable[] with2, Calculable[] with3) {
 		this.name = name;
 		this.code = code;
 		this.nbCurrentUsed = 0;
 		
-		this.with2 = with2;
-		this.with3 = with3;
+		this.bonus2pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 2 pièces de set"); put(Language.EN, "2 Piece Set Bonus"); }}, Quality.GREEN, with2);
+		this.bonus3pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 3 pièces de set"); put(Language.EN, "3 Piece Set Bonus"); }}, Quality.BLUE, with3);
 	}
 	
 	public EquipSet(Armor[] armors) {
@@ -57,12 +59,17 @@ public class EquipSet implements Writable {
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
 		
+		if(this.nbCurrentUsed < 3) {
+			this.code = "-1";
+		}
+		
 		for(int i = 0; i < EquipSet.dataArmor.length; i++) {
 			if(EquipSet.dataArmor[i].getCode().equals(this.code)) {
 				this.name = EquipSet.dataArmor[i].getName();
-				this.with3 = EquipSet.dataArmor[i].getWith3();
-				this.with4 = EquipSet.dataArmor[i].getWith4();
-				this.with5 = EquipSet.dataArmor[i].getWith5();
+				
+				this.bonus3pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus3(), this.nbCurrentUsed >= 3);
+				this.bonus4pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus4(), this.nbCurrentUsed >= 4);
+				this.bonus5pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus5(), this.nbCurrentUsed >= 5);
 				break;
 			}
 		}
@@ -76,11 +83,17 @@ public class EquipSet implements Writable {
 			this.nbCurrentUsed--;
 		}
 		
+		if(this.nbCurrentUsed < 2) {
+			this.code = "-1";
+		}
+		
 		for(int i = 0; i < EquipSet.dataCapeRing.length; i++) {
 			if(EquipSet.dataCapeRing[i].getCode().equals(this.code)) {
 				this.name = EquipSet.dataCapeRing[i].getName();
-				this.with2 = EquipSet.dataCapeRing[i].getWith2();
-				this.with3 = EquipSet.dataCapeRing[i].getWith3();
+				
+				this.bonus2pieces = new BonusEquipSet(EquipSet.dataCapeRing[i].getBonus2(), this.nbCurrentUsed >= 2);
+				this.bonus3pieces = new BonusEquipSet(EquipSet.dataCapeRing[i].getBonus3(), this.nbCurrentUsed >= 3);
+				
 				break;
 			}
 		}
@@ -94,20 +107,20 @@ public class EquipSet implements Writable {
 		return this.code;
 	}
 	
-	public Calculable[] getWith2() {
-		return Tools.getEffects(this.with2);
+	public BonusEquipSet getBonus2() {
+		return this.bonus2pieces;
 	}
 	
-	public Calculable[] getWith3() {
-		return Tools.getEffects(this.with3);
+	public BonusEquipSet getBonus3() {
+		return this.bonus3pieces;
 	}
 	
-	public Calculable[] getWith4() {
-		return Tools.getEffects(this.with4);
+	public BonusEquipSet getBonus4() {
+		return this.bonus4pieces;
 	}
 	
-	public Calculable[] getWith5() {
-		return Tools.getEffects(this.with5);
+	public BonusEquipSet getBonus5() {
+		return this.bonus5pieces;
 	}
 	
 	public int getNbCurrentUsed() {
@@ -138,59 +151,6 @@ public class EquipSet implements Writable {
 		this.code = currentCode;
 		
 		return max_count;
-	}
-	
-	@Override
-	public String getInfo(Language lang) {
-		return this.name;
-	}
-
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		tooltip.append("3 pièces :");
-		if(this.with3 != null) {
-			for(Calculable c : this.with3) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					if(e.getType() != TypeEffect.NONE) {
-						tooltip.append("<br>");
-						tooltip.append(e.getTooltip());
-					}
-				}
-			}
-		}
-		
-		tooltip.append("<br><br>");
-		tooltip.append("4 pièces :");
-		if(this.with4 != null) {
-			for(Calculable c : this.with4) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					if(e.getType() != TypeEffect.NONE) {
-						tooltip.append("<br>");
-						tooltip.append(e.getTooltip());
-					}
-				}
-			}
-		}
-		
-		tooltip.append("<br><br>");
-		tooltip.append("5 pièces :");
-		if(this.with5 != null) {
-			for(Calculable c : this.with5) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					if(e.getType() != TypeEffect.NONE) {
-						tooltip.append("<br>");
-						tooltip.append(e.getTooltip());
-					}
-				}
-			}
-		}
-		
-		return "<html>" + tooltip + "</html>";
 	}
 	
 	@Override

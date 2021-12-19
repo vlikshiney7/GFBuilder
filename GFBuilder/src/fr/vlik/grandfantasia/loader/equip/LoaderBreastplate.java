@@ -7729,7 +7729,7 @@ public class LoaderBreastplate {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Robe du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp4R", ICONPATH + "100pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 1037, true),
+					new Effect(TypeEffect.DefP, false, 1036, true),
 					new Effect(TypeEffect.DefM, false, 946, true),
 					new Effect(TypeEffect.VIT, false, 56, true),
 					new Effect(TypeEffect.INT, false, 41, true),

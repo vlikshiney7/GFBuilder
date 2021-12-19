@@ -303,6 +303,14 @@ public class PageWeapon extends PartialRedStuff {
 							
 							if(duoWeapon && (e.getType() == TypeEffect.Atk || e.getType() == TypeEffect.AtkD || e.getType() == TypeEffect.AtkM)) {
 								e.changeValue(0.75);
+							} else if(weapons[i].getType() == WeaponType.BOUCLIER) {
+								if(e.getType() == TypeEffect.DefP) {
+									double shieldDefP = PageSpeciality.getInstance().getShieldBonus(TypeEffect.ShieldDefP) + PageSkill.getInstance().getShieldBonus(TypeEffect.ShieldDefP);
+									e.changeValue(shieldDefP / 100 + 1);
+								} else if(e.getType() == TypeEffect.DefM) {
+									double shieldDefM = PageSpeciality.getInstance().getShieldBonus(TypeEffect.ShieldDefM) + PageSkill.getInstance().getShieldBonus(TypeEffect.ShieldDefM);
+									e.changeValue(shieldDefM / 100 + 1);
+								}
 							}
 							
 							list.add(e);
@@ -698,10 +706,6 @@ public class PageWeapon extends PartialRedStuff {
 		}
 		
 		this.proc.get(index15).setSelected(false);
-	}
-	
-	public void initDefaultStuff() {
-		this.weapon.get(0).setSelectedItem(Weapon.get("Épée de Bronze du Néophyte", Language.FR));
 	}
 	
 	protected void updateTooltipFortif(int id) {

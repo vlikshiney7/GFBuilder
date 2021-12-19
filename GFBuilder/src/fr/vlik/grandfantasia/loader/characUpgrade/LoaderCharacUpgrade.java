@@ -264,4 +264,12 @@ public class LoaderCharacUpgrade {
 			}),
 		};
 	}
+	
+	public static Energy[] getVoidEnergy() {
+		return new Energy[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume"); put(Language.EN, ""); }}, "VOID1"),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal ultime (3)"); put(Language.EN, ""); }}, "VOID3"),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal ultime (6)"); put(Language.EN, ""); }}, "VOID6"),
+		};
+	}
 }

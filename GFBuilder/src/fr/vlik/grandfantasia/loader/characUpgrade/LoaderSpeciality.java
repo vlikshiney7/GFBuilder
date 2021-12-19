@@ -460,7 +460,7 @@ public class LoaderSpeciality {
 				new Effect(TypeEffect.VOL, false, 12),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Prophétie divine"); put(Language.EN, ""); }}, 91, "4-19", new Calculable[] {
-				new Effect(TypeEffect.ESQ, false, 1.5),
+				new Effect(TypeEffect.ESQ, false, 1),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Bénédiction de la foi"); put(Language.EN, ""); }}, 100, "4-20", new Calculable[] {
 				new Effect(TypeEffect.VIT, 3, TypeEffect.VOL, TypeCalcul.CONVERTALL),

@@ -8031,7 +8031,7 @@ public class LoaderBoot {
 			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Bottines du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp4R", ICONPATH + "100pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 554, true),
+					new Effect(TypeEffect.DefP, false, 553, true),
 					new Effect(TypeEffect.DefM, false, 505, true),
 					new Effect(TypeEffect.VIT, false, 38, true),
 					new Effect(TypeEffect.INT, false, 21, true),

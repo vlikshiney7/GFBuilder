@@ -15,7 +15,7 @@ import fr.vlik.gfbuilder.Lang;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomPanel;
-import fr.vlik.uidesign.JCustomTextPane;
+import fr.vlik.uidesign.JLabelTextPane;
 import fr.vlik.uidesign.JLangLabel;
 
 public class FrameError extends JCustomFrame {
@@ -24,7 +24,7 @@ public class FrameError extends JCustomFrame {
 	private static final FrameError INSTANCE = new FrameError();
 	
 	private JLangLabel[] label;
-	private JCustomTextPane zoneError;
+	private JLabelTextPane zoneError;
 	
 	public static FrameError getInstance() {
 		return INSTANCE;
@@ -51,7 +51,7 @@ public class FrameError extends JCustomFrame {
 			}
 		});
 	    
-		this.zoneError = new JCustomTextPane(this.label[1]);
+		this.zoneError = new JLabelTextPane(this.label[1]);
 		
 		updateLanguage(Language.FR);
 		

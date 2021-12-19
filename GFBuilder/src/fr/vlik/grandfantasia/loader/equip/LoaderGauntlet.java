@@ -8126,7 +8126,7 @@ public class LoaderGauntlet {
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp4R", ICONPATH + "100pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
-					new Effect(TypeEffect.DefM, false, 434, true),
+					new Effect(TypeEffect.DefM, false, 433, true),
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.ESQ, false, 6),
