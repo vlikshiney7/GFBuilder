@@ -10,8 +10,10 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Weapon;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.CompleteBuff;
@@ -26,14 +28,23 @@ public class Pearl extends CompleteBuff {
 	private static Pearl[] dataWeaponCost = LoaderEquipUpgrade.getWeaponCostPearl();
 	private static Pearl[] dataArmorCost = LoaderEquipUpgrade.getArmorCostPearl();
 	
+	private static Tag[] tags = new Tag[] { Tag.FORMULE, Tag.GVG, Tag.MARCHAND, Tag.QUETE, Tag.REPUTATION, Tag.TDB, };
+	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD };
+	
 	private Quality restricStuff;
 	private boolean cumulable;
 	
+	private Tag[] tag;
 	
 	public Pearl() {
 		super();
 		this.restricStuff = Quality.GREY;
 		this.cumulable = true;
+	}
+	
+	public Pearl(Map<Language, String> name, Quality quality, Quality restricStuff, boolean cumulable, String path, Tag[] tags, Calculable[] effects) {
+		this(name, quality, restricStuff, cumulable, path, effects);
+		this.tag = tags;
 	}
 	
 	public Pearl(Map<Language, String> name, Quality quality, Quality restricStuff, boolean cumulable, String path, Calculable[] effects) {
@@ -49,6 +60,10 @@ public class Pearl extends CompleteBuff {
 	
 	public boolean isCumulable() {
 		return this.cumulable;
+	}
+
+	public Tag[] getTag() {
+		return this.tag;
 	}
 	
 	@Override
@@ -147,6 +162,59 @@ public class Pearl extends CompleteBuff {
 		return result.toArray(new Pearl[result.size()]);
 	}
 	
+	public static Pearl[] getPossibleWeaponPearl(Weapon weapon, String key, Filtrable[] filter, Pearl choice, boolean andValue) {
+		ArrayList<Pearl> result = new ArrayList<Pearl>();
+		
+		result.add(new Pearl());
+		if(!choice.equals(new Pearl())) {
+			result.add(choice);
+		}
+		
+		for(Pearl pearl : Pearl.dataWeapon) {
+			if(pearl.getRestricStuff() != null) {
+				if(weapon.getQuality() == pearl.getRestricStuff()) {
+					if(andValue) {
+						if(Tools.searchOnName(key, pearl.getMap(), andValue)
+							&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
+							
+							if(!choice.equals(pearl)) {
+								result.add(pearl);
+							}
+						}
+					} else {
+						if(Tools.searchOnName(key, pearl.getMap(), andValue)
+							|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
+							
+							if(!choice.equals(pearl)) {
+								result.add(pearl);
+							}
+						}
+					}
+				}
+			} else {
+				if(andValue) {
+					if(Tools.searchOnName(key, pearl.getMap(), andValue)
+						&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
+						
+						if(!choice.equals(pearl)) {
+							result.add(pearl);
+						}
+					}
+				} else {
+					if(Tools.searchOnName(key, pearl.getMap(), andValue)
+						|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
+						
+						if(!choice.equals(pearl)) {
+							result.add(pearl);
+						}
+					}
+				}
+			}
+		}
+		
+		return result.toArray(new Pearl[result.size()]);
+	}
+	
 	public static Pearl[] getPossibleArmorPearl(Armor armor) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
@@ -156,6 +224,43 @@ public class Pearl extends CompleteBuff {
 			if(pearl.getRestricStuff() != null) {
 				if(armor.getQuality() == pearl.getRestricStuff()) {
 					result.add(pearl);
+				}
+			} else {
+				result.add(pearl);
+			}
+		}
+		
+		return result.toArray(new Pearl[result.size()]);
+	}
+	
+	public static Pearl[] getPossibleArmorPearl(Weapon weapon, String key, Filtrable[] filter, Pearl choice, boolean andValue) {
+		ArrayList<Pearl> result = new ArrayList<Pearl>();
+		
+		result.add(new Pearl());
+		if(!choice.equals(new Pearl())) {
+			result.add(choice);
+		}
+		
+		for(Pearl pearl : Pearl.dataArmor) {
+			if(pearl.getRestricStuff() != null) {
+				if(weapon.getQuality() == pearl.getRestricStuff()) {
+					if(andValue) {
+						if(Tools.searchOnName(key, pearl.getMap(), andValue)
+							&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
+							
+							if(!choice.equals(pearl)) {
+								result.add(pearl);
+							}
+						}
+					} else {
+						if(Tools.searchOnName(key, pearl.getMap(), andValue)
+							|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
+							
+							if(!choice.equals(pearl)) {
+								result.add(pearl);
+							}
+						}
+					}
 				}
 			} else {
 				result.add(pearl);
@@ -184,5 +289,13 @@ public class Pearl extends CompleteBuff {
 		}
 		
 		return result;
+	}
+	
+	public static Tag[] getTags() {
+		return Pearl.tags;
+	}
+	
+	public static Quality[] getQualities() {
+		return Pearl.qualities;
 	}
 }

@@ -42,10 +42,7 @@ public class Title extends ColorBuff {
 	}
 	
 	public Title(Map<Language, String> name, Quality quality, int lvl, boolean reinca, GradeName grade, Tag tag, Calculable[] effects) {
-		super(name, quality, effects);
-		this.lvl = lvl;
-		this.reinca = reinca;
-		this.grade = grade;
+		this(name, quality, lvl, reinca, grade, effects);
 		this.tag = tag;
 	}
 	
@@ -106,6 +103,29 @@ public class Title extends ColorBuff {
 		return null;
 	}
 	
+	public static Title[] getPossibleData() {
+		ArrayList<Title> result = new ArrayList<Title>();
+		
+		result.add(new Title());
+		
+		for(Title title : Title.data) {
+			if(title.isReinca()) {
+				continue;
+			}
+			
+			if(title.getGrade() == GradeName.NONE) {
+				if(title.getLvl() <= 1) {
+					result.add(title);
+				} else if(title.getLvl() > 100
+						&& title.getLvl()-100 <= 1)
+					
+					result.add(title);
+			}
+		}
+		
+		return result.toArray(new Title[result.size()]);
+	}
+	
 	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
@@ -143,7 +163,7 @@ public class Title extends ColorBuff {
 		return result.toArray(new Title[result.size()]);
 	}
 	
-	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Title choice) {
+	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Title choice, boolean andValue) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
 		result.add(new Title());
@@ -156,10 +176,21 @@ public class Title extends ColorBuff {
 			
 			for(Title title : Title.data) {
 				if(title.getLvl() <= lvl && (title.getGrade() == GradeName.NONE || title.getGrade() == grade)) {
-					
-					if(Tools.searchOnName(key, title.getName(Language.FR)) || Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
-						if(!choice.equals(title)) {
-							result.add(title);
+					if(andValue) {
+						if(Tools.searchOnName(key, title.getMap(), andValue)
+							&& Tools.contains(filter, title.getQuality()) && Tools.contains(filter, title.getTag())) {
+							
+							if(!choice.equals(title)) {
+								result.add(title);
+							}
+						}
+					} else {
+						if(Tools.searchOnName(key, title.getMap(), andValue)
+							|| Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
+							
+							if(!choice.equals(title)) {
+								result.add(title);
+							}
 						}
 					}
 				}
@@ -171,18 +202,40 @@ public class Title extends ColorBuff {
 				}
 				
 				if(title.getGrade() == GradeName.NONE || title.getGrade() == grade) {
-					
 					if(title.getLvl() <= lvl) {
-						if(Tools.searchOnName(key, title.getName(Language.FR)) || Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
-							if(!choice.equals(title)) {
-								result.add(title);
+						if(andValue) {
+							if(Tools.searchOnName(key, title.getMap(), andValue)
+								&& Tools.contains(filter, title.getQuality()) && Tools.contains(filter, title.getTag())) {
+								
+								if(!choice.equals(title)) {
+									result.add(title);
+								}
+							}
+						} else {
+							if(Tools.searchOnName(key, title.getMap(), andValue)
+								|| Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
+								
+								if(!choice.equals(title)) {
+									result.add(title);
+								}
 							}
 						}
 					} else if(title.getLvl() > 100 && title.getLvl()-100 <= lvl) {
-						
-						if(Tools.searchOnName(key, title.getName(Language.FR)) || Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
-							if(!choice.equals(title)) {
-								result.add(title);
+						if(andValue) {
+							if(Tools.searchOnName(key, title.getMap(), andValue)
+								&& Tools.contains(filter, title.getQuality()) && Tools.contains(filter, title.getTag())) {
+								
+								if(!choice.equals(title)) {
+									result.add(title);
+								}
+							}
+						} else {
+							if(Tools.searchOnName(key, title.getMap(), andValue)
+								|| Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
+								
+								if(!choice.equals(title)) {
+									result.add(title);
+								}
 							}
 						}
 					}

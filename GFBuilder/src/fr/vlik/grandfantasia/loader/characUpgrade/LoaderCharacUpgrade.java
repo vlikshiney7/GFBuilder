@@ -232,34 +232,34 @@ public class LoaderCharacUpgrade {
 			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume d'AGI"); put(Language.EN, ""); }}, "AGI1", new Effect[] {
 				new Effect(TypeEffect.AGI, false, 1),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de FCE ultime (3)"); put(Language.EN, ""); }}, "FCE3", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de FCE ultime"); put(Language.EN, ""); }}, "FCE3", new Effect[] {
 				new Effect(TypeEffect.FCE, false, 3),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VIT ultime (3)"); put(Language.EN, ""); }}, "VIT3", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VIT ultime"); put(Language.EN, ""); }}, "VIT3", new Effect[] {
 				new Effect(TypeEffect.VIT, false, 3),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'INT ultime (3)"); put(Language.EN, ""); }}, "INT3", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'INT ultime"); put(Language.EN, ""); }}, "INT3", new Effect[] {
 				new Effect(TypeEffect.INT, false, 3),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VOL ultime (3)"); put(Language.EN, ""); }}, "VOL3", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VOL ultime"); put(Language.EN, ""); }}, "VOL3", new Effect[] {
 				new Effect(TypeEffect.VOL, false, 3),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'AGI ultime (3)"); put(Language.EN, ""); }}, "AGI3", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'AGI ultime"); put(Language.EN, ""); }}, "AGI3", new Effect[] {
 				new Effect(TypeEffect.AGI, false, 3),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de FCE ultime (6)"); put(Language.EN, ""); }}, "FCE6", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de FCE ultime avancé"); put(Language.EN, ""); }}, "FCE6", new Effect[] {
 				new Effect(TypeEffect.FCE, false, 6),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VIT ultime (6)"); put(Language.EN, ""); }}, "VIT6", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VIT ultime avancé"); put(Language.EN, ""); }}, "VIT6", new Effect[] {
 				new Effect(TypeEffect.VIT, false, 6),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'INT ultime (6)"); put(Language.EN, ""); }}, "INT6", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'INT ultime avancé"); put(Language.EN, ""); }}, "INT6", new Effect[] {
 				new Effect(TypeEffect.INT, false, 6),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VOL ultime (6)"); put(Language.EN, ""); }}, "VOL6", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal de VOL ultime avancé"); put(Language.EN, ""); }}, "VOL6", new Effect[] {
 				new Effect(TypeEffect.VOL, false, 6),
 			}),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'AGI ultime (6)"); put(Language.EN, ""); }}, "AGI6", new Effect[] {
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal d'AGI ultime avancé"); put(Language.EN, ""); }}, "AGI6", new Effect[] {
 				new Effect(TypeEffect.AGI, false, 6),
 			}),
 		};
@@ -267,9 +267,9 @@ public class LoaderCharacUpgrade {
 	
 	public static Energy[] getVoidEnergy() {
 		return new Energy[] {
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume"); put(Language.EN, ""); }}, "VOID1"),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal ultime (3)"); put(Language.EN, ""); }}, "VOID3"),
-			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal ultime (6)"); put(Language.EN, ""); }}, "VOID6"),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Crystal de plume"); put(Language.EN, ""); }}, "void1"),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal ultime"); put(Language.EN, ""); }}, "void3"),
+			new Energy(new HashMap<Language, String>() {{ put(Language.FR, "Cristal ultime avancé"); put(Language.EN, ""); }}, "void6"),
 		};
 	}
 }

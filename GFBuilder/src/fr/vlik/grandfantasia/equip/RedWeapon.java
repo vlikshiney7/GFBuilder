@@ -7,6 +7,7 @@ import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.stats.Calculable;
 
 public class RedWeapon extends Weapon {
@@ -16,6 +17,11 @@ public class RedWeapon extends Weapon {
 	public RedWeapon(RedWeapon redWeapon) {
 		super(redWeapon);
 		this.starEffects = redWeapon.getStarEffects();
+	}
+	
+	public RedWeapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, Tag[] tags, Calculable[] effects, Calculable[] bonusXP, Calculable[][] starEffects) {
+		super(name, grades, lvl, quality, enchantable, type, uniqueEquip, reinca, iconPath, tags, effects, bonusXP);
+		this.starEffects = starEffects;
 	}
 	
 	public RedWeapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String iconPath, Calculable[] effects, Calculable[] bonusXP, Calculable[][] starEffects) {

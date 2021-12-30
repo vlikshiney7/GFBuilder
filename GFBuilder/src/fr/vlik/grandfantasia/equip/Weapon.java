@@ -9,14 +9,17 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade;
-import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -28,9 +31,14 @@ public class Weapon extends Equipment {
 	private static Weapon[][] data = LoaderEquip.getWeapon();
 	private static ArrayList<Weapon> customData = new ArrayList<Weapon>();
 	
+	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.DONJON, Tag.EVENT, Tag.FORMULE, Tag.GVG, Tag.PVP, Tag.QUETE, Tag.SPRITE, Tag.OTHER, };
+	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD, Quality.PURPLE, Quality.RED };
+	
 	protected WeaponType type;
 	protected boolean uniqueEquip;
 	protected boolean reinca;
+	
+	private Tag[] tag;
 	
 	public Weapon() {
 		super();
@@ -51,6 +59,11 @@ public class Weapon extends Equipment {
 		this.effects = weapon.getEffects();
 	}
 	
+	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, Tag[] tags, Calculable[] effects, Calculable[] bonusXP) {
+		this(name, grades, lvl, quality, enchantable, type, uniqueEquip, reinca, path, effects, bonusXP);
+		this.tag = tags;
+	}
+	
 	public Weapon(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, WeaponType type, boolean uniqueEquip, boolean reinca, String path, Calculable[] effects, Calculable[] bonusXP) {
 		super(name, grades, lvl, quality, enchantable, effects, bonusXP);
 		
@@ -69,28 +82,46 @@ public class Weapon extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum WeaponType implements EquipType {
-		EPEE1M(0, "une épée une main", "", true), MARTEAU1M(1, "un marteau une main", "", true), HACHE1M(2, "une hache une main", "", true),
-		EPEE2M(3, "une épée à deux mains", "", false), MARTEAU2M(4, "un marteau à deux mains", "", false), HACHE2M(5, "une hache à deux mains", "", false),
-		MECA1M(6, "une arme mécanique une main", "", true), MECA2M(7, "une arme mécanique à deux mains", "", false),
-		ARC(8, "un arc", "", false), GUN(9, "un pistolet", "", false), CANON(10, "un canon", "", false),
-		RELIQUE(11, "une relique", "", false), BATON(12, "un bâton", "", false),
-		LAME(13, "une lame", "", false), CLE(14, "une clé", "", false),
-		BOUCLIER(15, "un bouclier", "", false),
-		DEFAULT(16, "un défaut", "default", true),
-		NONE(-1, "vide", "void", false);
+	@SuppressWarnings("serial")
+	public static enum WeaponType implements EquipType, Filtrable, Writable {
+		EPEE1M(0, new HashMap<Language, String>() {{ put(Language.FR, "Épée 1M"); put(Language.EN, "1H Sword"); }}, true),
+		MARTEAU1M(1, new HashMap<Language, String>() {{ put(Language.FR, "Marteau 1M"); put(Language.EN, "1H Hammer"); }}, true),
+		HACHE1M(2, new HashMap<Language, String>() {{ put(Language.FR, "Hache 1M"); put(Language.EN, "1H Axe"); }}, true),
+		EPEE2M(3, new HashMap<Language, String>() {{ put(Language.FR, "Épée 2M"); put(Language.EN, "2H Sword"); }}, false),
+		MARTEAU2M(4, new HashMap<Language, String>() {{ put(Language.FR, "Marteau 2M"); put(Language.EN, "2H Hammer"); }}, false),
+		HACHE2M(5, new HashMap<Language, String>() {{ put(Language.FR, "Hache 2M"); put(Language.EN, "2H Axe"); }}, false),
+		MECA1M(6, new HashMap<Language, String>() {{ put(Language.FR, "Arme Méca 1M"); put(Language.EN, "1H Meca Weapon"); }}, true),
+		MECA2M(7, new HashMap<Language, String>() {{ put(Language.FR, "Arme Méca 2M"); put(Language.EN, "2H Meca Weapon"); }}, false),
+		ARC(8, new HashMap<Language, String>() {{ put(Language.FR, "Arc"); put(Language.EN, "Bow"); }}, false),
+		GUN(9, new HashMap<Language, String>() {{ put(Language.FR, "Pistolet"); put(Language.EN, "Gun"); }}, false),
+		CANON(10, new HashMap<Language, String>() {{ put(Language.FR, "Canon"); put(Language.EN, "Canon"); }}, false),
+		RELIQUE(11, new HashMap<Language, String>() {{ put(Language.FR, "Relique"); put(Language.EN, "Relic"); }}, false),
+		BATON(12, new HashMap<Language, String>() {{ put(Language.FR, "Bâton"); put(Language.EN, "Staff"); }}, false),
+		LAME(13, new HashMap<Language, String>() {{ put(Language.FR, "Lame"); put(Language.EN, "Blade"); }}, false),
+		CLE(14, new HashMap<Language, String>() {{ put(Language.FR, "Clé"); put(Language.EN, "Key"); }}, false),
+		BOUCLIER(15, new HashMap<Language, String>() {{ put(Language.FR, "Bouclier"); put(Language.EN, "Shield"); }}, false),
+		DEFAULT(16, new HashMap<Language, String>() {{ put(Language.FR, "Défaut"); put(Language.EN, "Default"); }}, true),
+		NONE(-1, new HashMap<Language, String>() {{ put(Language.FR, "Vide"); put(Language.EN, "Void"); }}, false);
 		
 		public final int index;
-		public final String fr;
-		public final String en;
+		public Map<Language, String> lang;
 		public final boolean isMainOneHand;
-		 
-	    private WeaponType(int index, String fr, String en, boolean isMainOneHand) {
+		
+	    private WeaponType(int index, Map<Language, String> lang, boolean isMainOneHand) {
 	        this.index = index;
-	        this.fr = fr;
-	        this.en = en;
+	        this.lang = lang;
 	        this.isMainOneHand = isMainOneHand;
 	    }
+	    
+		@Override
+		public String getInfo(Language lang) {
+			return this.lang.get(lang);
+		}
+		
+		@Override
+		public String getTooltip() {
+			return this.lang.get(Language.FR);
+		}
 	}
 	
 	@Override
@@ -104,6 +135,10 @@ public class Weapon extends Equipment {
 	
 	public boolean isReinca() {
 		return this.reinca;
+	}
+	
+	public Tag[] getTag() {
+		return this.tag;
 	}
 	
 	@Override
@@ -291,5 +326,177 @@ public class Weapon extends Equipment {
 		}
 		
 		return result.toArray(new Weapon[result.size()]);
+	}
+	
+	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon, String key, Filtrable[] filter, Weapon choice, boolean andValue) {
+		ArrayList<Weapon> result = new ArrayList<Weapon>();
+		int[] weaponType = null;
+		switch (idList) {
+			case 0 :
+				weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };
+				break;
+			case 1 : 
+				weaponType = doubleWeapon ? new int[] { 0, 1, 2, 6, 15, 16 } : new int[] { 15 };
+				break;
+			case 2 :
+				weaponType = new int[] { 8, 9, 10, 11, 14 };
+				break;
+		}
+		
+		result.add(new Weapon());
+		if(!choice.equals(new Weapon())) {
+			result.add(choice);
+		}
+		
+		for(Weapon custom : Weapon.customData) {
+			if(!custom.containGrade(grade.getGrade())) {
+				continue;
+			}
+			
+			boolean allowType = false;
+			for(int checkType : weaponType) {
+				if(checkType == custom.getType().index) {
+					allowType = true;
+					break;
+				}
+			}
+				 
+			if(!allowType) {
+				continue;
+			}
+			
+			if(custom.getLvl() <= lvl) {
+				if(!custom.isReinca()) {
+					if(andValue) {
+						if(Tools.searchOnName(key, custom.getMap(), andValue)
+							&& Tools.contains(filter, custom.getQuality()) && /*Tools.contains(filter, custom.getTag()) &&*/ Tools.contains(filter, custom.getType())) {
+							
+							if(!choice.equals(custom)) {
+								result.add(custom);
+							}
+						}
+					} else {
+						if(Tools.searchOnName(key, custom.getMap(), andValue)
+							|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag()) || Tools.contains(filter, custom.getType())) {
+							
+							if(!choice.equals(custom)) {
+								result.add(custom);
+							}
+						}
+					}
+				} else {
+					if(reinca.getLvl() > 0) {
+						if(andValue) {
+							if(Tools.searchOnName(key, custom.getMap(), andValue)
+								&& Tools.contains(filter, custom.getQuality()) && /*Tools.contains(filter, custom.getTag()) && */Tools.contains(filter, custom.getType())) {
+								
+								if(!choice.equals(custom)) {
+									result.add(custom);
+								}
+							}
+						} else {
+							if(Tools.searchOnName(key, custom.getMap(), andValue)
+								|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag()) || Tools.contains(filter, custom.getType())) {
+								
+								if(!choice.equals(custom)) {
+									result.add(custom);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		for(int i = 0; i < weaponType.length; i++) {
+			Weapon[] oneWeaponType = Weapon.data[weaponType[i]];
+			for(int j = 0; j < oneWeaponType.length; j++) {
+				if(!oneWeaponType[j].containGrade(grade.getGrade())) {
+					continue;
+				}
+				
+				if(oneWeaponType[j].getLvl() <= lvl) {
+					if(!oneWeaponType[j].isReinca()) {
+						if(andValue) {
+							if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
+								&& Tools.contains(filter, oneWeaponType[j].getQuality()) && /*Tools.contains(filter, oneWeaponType[j].getTag()) &&*/ Tools.contains(filter, oneWeaponType[j].getType())) {
+								
+								if(!choice.equals(oneWeaponType[j])) {
+									result.add(oneWeaponType[j]);
+								}
+							}
+						} else {
+							if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
+								|| Tools.contains(filter, oneWeaponType[j].getQuality()) || Tools.contains(filter, oneWeaponType[j].getTag()) || Tools.contains(filter, oneWeaponType[j].getType())) {
+								
+								if(!choice.equals(oneWeaponType[j])) {
+									result.add(oneWeaponType[j]);
+								}
+							}
+						}
+					} else {
+						if(reinca.getLvl() > 0) {
+							if(andValue) {
+								if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
+									&& Tools.contains(filter, oneWeaponType[j].getQuality()) && /*Tools.contains(filter, oneWeaponType[j].getTag()) &&*/ Tools.contains(filter, oneWeaponType[j].getType())) {
+									
+									if(!choice.equals(oneWeaponType[j])) {
+										result.add(oneWeaponType[j]);
+									}
+								}
+							} else {
+								if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
+									|| Tools.contains(filter, oneWeaponType[j].getQuality()) || Tools.contains(filter, oneWeaponType[j].getTag()) || Tools.contains(filter, oneWeaponType[j].getType())) {
+									
+									if(!choice.equals(oneWeaponType[j])) {
+										result.add(oneWeaponType[j]);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		if(toIgnore != null && toIgnore.isUniqueEquip()) {
+			result.remove(toIgnore);
+		}
+		
+		return result.toArray(new Weapon[result.size()]);
+	}
+	
+	public static Tag[] getTags() {
+		return Weapon.tags;
+	}
+	
+	public static Quality[] getQualities() {
+		return Weapon.qualities;
+	}
+	
+	public static WeaponType[] getWeaponType(int idList) {
+		WeaponType[] typeList = null;
+		int[] id = null;
+		
+		switch (idList) {
+			case 0 :
+				typeList = new WeaponType[11];
+				id = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };
+				break;
+			case 1 :
+				typeList = new WeaponType[6];
+				id = new int[] { 0, 1, 2, 6, 15, 16 };
+				break;
+			case 2 :
+				typeList = new WeaponType[5];
+				id = new int[] { 8, 9, 10, 11, 14 };
+				break;
+		}
+		
+		for(int i = 0; i < typeList.length; i++) {
+			typeList[i] = WeaponType.values()[id[i]];
+		}
+		
+		return typeList;
 	}
 }

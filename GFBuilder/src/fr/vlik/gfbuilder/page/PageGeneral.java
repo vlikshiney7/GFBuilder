@@ -21,13 +21,11 @@ import fr.vlik.grandfantasia.characUpgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gameBuff.Yggdrasil;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
-import fr.vlik.uidesign.JCustomButton;
-import fr.vlik.uidesign.JCustomCheckBox;
+import fr.vlik.uidesign.JCompleteBox;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomDialog;
+import fr.vlik.uidesign.JCustomDialog.Logic;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
@@ -41,14 +39,9 @@ public class PageGeneral extends PartialPage {
 	private JCustomComboBox<Grade> grade;
 	private JCustomSpinner lvl;
 	private JCustomComboBox<Reinca> reinca;
-	private JCustomComboBox<Title> title;
+	private JCompleteBox<Title> title;
 	private JCustomComboBox<Yggdrasil> yggdra;
 	private JCustomComboBox<Archive> archive;
-	
-	private JCustomCheckBox<ProcEffect> proc;
-	
-	private JCustomButton filter;
-	private JCustomDialog filterDialog;
 	
 	public static PageGeneral getInstance() {
 		return INSTANCE;
@@ -125,14 +118,17 @@ public class PageGeneral extends PartialPage {
 		});
 		
 		
-		this.title = new JCustomComboBox<Title>(Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca()));
+		this.title = new JCompleteBox<Title>(Title.getPossibleData(), JCompleteBox.FILTER16, JCompleteBox.PROC16, 5, Title.getTags(), Title.getQualities());
 		this.title.addActionListener(e -> {
-			activeProc();
+			this.title.activeProc();
 			
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
-		
+		this.title.addProcActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
 		this.yggdra = new JCustomComboBox<Yggdrasil>(Yggdrasil.getData());
 		this.yggdra.addActionListener(e -> {
@@ -143,24 +139,6 @@ public class PageGeneral extends PartialPage {
 		
 		this.archive = new JCustomComboBox<Archive>(Archive.getData());
 		this.archive.addActionListener(e -> {
-			setEffects();
-			MainFrame.getInstance().updateStat();
-		});
-		
-		
-		this.filterDialog = new JCustomDialog(Title.getTags(), Title.getQualities(), true, 5);
-		
-		this.filter = new JCustomButton("filter16", "filter16", "filter16", Design.GREY_COLOR);
-		this.filter.setBorder(Design.UIColor[3]);
-		this.filter.setToolTipText("Filtre");
-		
-		this.filter.addActionListener(e -> {
-			this.filterDialog.popup(this.filter);
-		});
-		
-		this.proc = new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getTitle()));
-		this.proc.setIconUI("procOn16", "procOff16");
-		this.proc.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
@@ -214,8 +192,8 @@ public class PageGeneral extends PartialPage {
 		list.addAll(this.getYggdrasil());
 		list.addAll(this.getArchive());
 		
-		if(this.proc.isVisible() && this.proc.isSelected()) {
-			list.addAll(this.proc.getItem().getEffects());
+		if(this.title.isProcActive()) {
+			list.addAll(this.title.getProc().getItem().getEffects());
 		}
 		
 		this.effects = list;
@@ -233,7 +211,7 @@ public class PageGeneral extends PartialPage {
 		elem3.addAll(new JCustomPanel(this.labels.get("Reinca")), this.reinca);
 		
 		JCustomPanel elem4 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
-		elem4.addAll(new JCustomPanel(this.labels.get("Title")), new JCustomPanel(this.filter, this.title, this.proc));
+		elem4.addAll(new JCustomPanel(this.labels.get("Title")), new JCustomPanel(this.title.getButton(), this.title, this.title.getProc()));
 		
 		JCustomPanel elem5 = new JCustomPanel(new GridLayout(2, 1, 10, 10), new EmptyBorder(10, 10, 10, 10));
 		elem5.addAll(new JCustomPanel(this.labels.get("Yggdrasil")), this.yggdra);
@@ -251,8 +229,6 @@ public class PageGeneral extends PartialPage {
 		rightCol.addAll(elem2, elem4, elem6);
 		
 		this.addAll(leftCol, Box.createHorizontalStrut(10), rightCol);
-		
-		this.proc.setVisible(false);
 	}
 	
 	@Override
@@ -261,7 +237,7 @@ public class PageGeneral extends PartialPage {
 			entry.getValue().updateText(lang);
 		}
 		
-		this.filterDialog.updateLanguage(lang);
+		this.title.updateLanguage(lang);
 	}
 	
 	private void updateGrade() {
@@ -298,29 +274,16 @@ public class PageGeneral extends PartialPage {
 	}
 	
 	private void updateTitle() {
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.filterDialog.getSearch(), this.filterDialog.getFilters(), this.getTitle());
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.title.getSearch(), this.title.getFilters(), this.getTitle(), this.title.getLogic() == Logic.AND);
 		
 		if(!this.title.setItems(tabTitle)) {
-			this.proc.setSelected(false);
+			this.title.getProc().setSelected(false);
 		}
-	}
-	
-	private void activeProc() {
-		ProcEffect proc = new ProcEffect(this.getTitle());
-		
-		if(proc.getEffects().length > 0) {
-			this.proc.setItem(proc);
-			this.proc.setVisible(true);
-		} else {
-			this.proc.setVisible(false);
-		}
-		
-		this.proc.setSelected(false);
 	}
 	
 	public void popoff() {
-		if(this.filterDialog.isVisible()) {
-			this.filterDialog.popoff();
+		if(this.title.isDialogVisible()) {
+			this.title.popoff();
 			updateTitle();
 		}
 	}
@@ -340,7 +303,7 @@ public class PageGeneral extends PartialPage {
 		config.put("Title", this.getTitle().getName(Language.FR));
 		config.put("Yggdrasil", this.getYggdrasil().getName(lang));
 		config.put("Archive", this.getArchive().getName(Language.FR));
-		config.put("Proc", "" + this.proc.isSelected());
+		config.put("Proc", "" + this.title.getProc().isSelected());
 		
 		return config;
 	}
@@ -353,6 +316,6 @@ public class PageGeneral extends PartialPage {
 		this.title.setSelectedItem(Title.get(config.get("Title"), lang));
 		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
 		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
-		this.proc.setSelected(Boolean.valueOf(config.get("Proc")));
+		this.title.getProc().setSelected(Boolean.valueOf(config.get("Proc")));
 	}
 }

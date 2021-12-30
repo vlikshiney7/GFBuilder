@@ -128,7 +128,7 @@ public class PageBuff extends PartialPage {
 		
 		for(int i = 0; i < 21; i++) {
 			this.labelEnergy.add(new JCustomLabel<Energy>(Energy.getData()[i]));
-			this.labelEnergy.get(i).setPreferredSize(new Dimension(210, 32));
+			this.labelEnergy.get(i).setPreferredSize(new Dimension(240, 32));
 			
 			this.energy.add(new JCustomSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
 			this.energy.get(i).addChangeListener(e -> {
@@ -141,7 +141,7 @@ public class PageBuff extends PartialPage {
 			int id = i;
 			
 			this.labelVoidEnergy.add(new JCustomRadioButton<Energy>(Energy.getVoidData()[i]));
-			this.labelVoidEnergy.get(i).setPreferredSize(new Dimension(240, 32));
+			this.labelVoidEnergy.get(i).setPreferredSize(new Dimension(270, 32));
 			
 			this.labelVoidEnergy.get(i).addChangeListener(e -> {
 				showAndHideEnergies(id);

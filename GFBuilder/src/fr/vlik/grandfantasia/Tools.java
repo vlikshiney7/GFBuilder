@@ -54,21 +54,21 @@ public class Tools {
 		return result;
 	}
 	
-	public static boolean searchOnName(String key, String name) {
+	public static boolean searchOnName(String key, String name, boolean andValue) {
 		key = Tools.simplifyString(key);
 		name = Tools.simplifyString(name);
 		
 		if(key.equals("")) {
-			return false;
+			return andValue;
 		}
 		
 		return name.matches(".*" + key + ".*");
 	}
 	
-	public static boolean searchOnName(String key, Map<Language, String> names) {
+	public static boolean searchOnName(String key, Map<Language, String> names, boolean andValue) {
 		
 		for(String name : names.values()) {
-			if(searchOnName(key, name)) {
+			if(searchOnName(key, name, andValue)) {
 				return true;
 			}
 		}

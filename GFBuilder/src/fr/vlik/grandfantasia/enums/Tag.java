@@ -16,6 +16,7 @@ public enum Tag implements Filtrable, Writable {
 	FORMULE(new HashMap<Language, String>() {{ put(Language.FR, "Formule"); put(Language.EN, "Formula"); }}),
 	GT(new HashMap<Language, String>() {{ put(Language.FR, "GT"); put(Language.EN, "TW"); }}),
 	GVG(new HashMap<Language, String>() {{ put(Language.FR, "GvG"); put(Language.EN, "GvG"); }}),
+	MARCHAND(new HashMap<Language, String>() {{ put(Language.FR, "Marchand"); put(Language.EN, "Trader"); }}),
 	PVP(new HashMap<Language, String>() {{ put(Language.FR, "PvP"); put(Language.EN, "PvP"); }}),
 	QUETE(new HashMap<Language, String>() {{ put(Language.FR, "Quête"); put(Language.EN, "Quest"); }}),
 	RANK(new HashMap<Language, String>() {{ put(Language.FR, "Classement"); put(Language.EN, "Ranking"); }}),
@@ -29,7 +30,7 @@ public enum Tag implements Filtrable, Writable {
 	OTHER(new HashMap<Language, String>() {{ put(Language.FR, "Autre"); put(Language.EN, "Other"); }}),
 	;
 	
-	public Map<Language, String> lang = new HashMap<Language, String>();
+	public Map<Language, String> lang;
 	
 	private Tag(Map<Language, String> lang) {
         this.lang = lang;

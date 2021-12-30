@@ -207,13 +207,11 @@ public class Effect implements Calculable {
 		
 		if(this.withWeapon != WeaponType.NONE) {
 			if(lang == Language.FR) {
-				result += " si équipé d'";
-				result += this.withWeapon.fr;
+				result += " si équipé de ";
 			} else {
 				result += " if equip with ";
-				result += this.withWeapon.en;
 			}
-			
+			result += this.withWeapon.getInfo(lang);
 		}
 		
 		if(this.transfert != TypeEffect.NONE) {
