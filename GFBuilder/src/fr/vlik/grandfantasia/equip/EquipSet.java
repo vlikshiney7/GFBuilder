@@ -5,10 +5,11 @@ import java.util.HashMap;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 
-public class EquipSet {
+public class EquipSet implements Writable {
 	
 	private static EquipSet[] dataArmor = LoaderEquip.getArmorSet();
 	private static EquipSet[] dataCapeRing = LoaderEquip.getCapeRingSet();
@@ -125,6 +126,16 @@ public class EquipSet {
 	
 	public int getNbCurrentUsed() {
 		return this.nbCurrentUsed;
+	}
+	
+	@Override
+	public String getInfo(Language lang) {
+		return this.name;
+	}
+
+	@Override
+	public String getTooltip() {
+		return this.name;
 	}
 	
 	private int getMaxCount(String[] equipCode) {

@@ -40,7 +40,6 @@ import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
-import fr.vlik.uidesign.JCustomDialog.Logic;
 
 public class PageWeapon extends PartialRedStuff {
 
@@ -455,7 +454,8 @@ public class PageWeapon extends PartialRedStuff {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < 3; i++) {
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade, lvl, reinca, null, this.doubleWeapon, this.weapon.get(i).getSearch(), this.weapon.get(i).getFilters(), this.getWeapon(i), this.weapon.get(i).getLogic() == Logic.AND);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, grade, lvl, reinca, null, this.doubleWeapon,
+				this.weapon.get(i).getSearch(), this.weapon.get(i).getFilters(), this.getWeapon(i), this.weapon.get(i).isAndValue());
 			
 			if(!this.weapon.get(i).setItems(tabWeapon)) {
 				updateXpStuff(i);
@@ -473,7 +473,8 @@ public class PageWeapon extends PartialRedStuff {
 			}
 		}
 		
-		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl, reinca, this.bullet.getSearch(), this.bullet.getFilters(), this.getBullet(), this.bullet.getLogic() == Logic.AND);
+		Bullet[] tabBullet = Bullet.getPossibleBullet(lvl, reinca,
+			this.bullet.getSearch(), this.bullet.getFilters(), this.getBullet(), this.bullet.isAndValue());
 		
 		if(!this.bullet.setItems(tabBullet)) {
 			MainFrame.getInstance().setRedPane(1);
@@ -564,13 +565,17 @@ public class PageWeapon extends PartialRedStuff {
 	private void updatePearl(int index3) {
 		if(index3 == 0) {
 			for(int i = 0; i < 3; i++) {
-				Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(index3), this.pearl.get(index3*3+i).getSearch(), this.pearl.get(index3*3+i).getFilters(), this.getPearl(index3*3+i), this.pearl.get(index3*3+i).getLogic() == Logic.AND);
+				Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(index3),
+					this.pearl.get(index3*3+i).getSearch(), this.pearl.get(index3*3+i).getFilters(), this.getPearl(index3*3+i), this.pearl.get(index3*3+i).isAndValue());
+				
 				this.pearl.get(index3*3+i).setItems(tabPearl);
 			}
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(index3), this.pearl.get(3*(index3+1)+i).getSearch(), this.pearl.get(3*(index3+1)+i).getFilters(), this.getPearl(3*(index3+1)+i), this.pearl.get(3*(index3+1)+i).getLogic() == Logic.AND);
+			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(index3),
+				this.pearl.get(3*(index3+1)+i).getSearch(), this.pearl.get(3*(index3+1)+i).getFilters(), this.getPearl(3*(index3+1)+i), this.pearl.get(3*(index3+1)+i).isAndValue());
+			
 			this.pearl.get(3*(index3+1)+i).setItems(tabPearl);
 		}
 	}
@@ -653,7 +658,9 @@ public class PageWeapon extends PartialRedStuff {
 			Enchantment keepEnchant = this.getEnchantment(1);
 			
 			if(choice.getType().isMainOneHand || choice.getType() == WeaponType.NONE) {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade, lvl, reinca, choice, this.doubleWeapon, this.weapon.get(1).getSearch(), this.weapon.get(1).getFilters(), this.getWeapon(1), this.weapon.get(1).getLogic() == Logic.AND);
+				Weapon[] tabWeapon = Weapon.getPossibleWeapon(1, grade, lvl, reinca, choice, this.doubleWeapon,
+					this.weapon.get(1).getSearch(), this.weapon.get(1).getFilters(), this.getWeapon(1), this.weapon.get(1).isAndValue());
+				
 				this.weapon.get(1).setItems(tabWeapon);
 				
 				for(int i = 0; i < 3; i++) {
@@ -670,7 +677,9 @@ public class PageWeapon extends PartialRedStuff {
 				
 				this.showAndHide.setVisible(true);
 			} else {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null, this.doubleWeapon, this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.getWeapon(0), this.weapon.get(0).getLogic() == Logic.AND);
+				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null, this.doubleWeapon,
+					this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.getWeapon(0), this.weapon.get(0).isAndValue());
+				
 				this.weapon.get(0).setItems(tabWeapon);
 				this.weapon.get(1).setItems(new Weapon[] { new Weapon() });
 				
@@ -687,7 +696,9 @@ public class PageWeapon extends PartialRedStuff {
 		} else if(id == 1) {
 			Enchantment keepEnchant = this.getEnchantment(0);
 			
-			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, choice, this.doubleWeapon, this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.getWeapon(0), this.weapon.get(0).getLogic() == Logic.AND);
+			Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, choice, this.doubleWeapon,
+				this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.getWeapon(0), this.weapon.get(0).isAndValue());
+			
 			this.weapon.get(0).setItems(tabWeapon);
 			
 			this.enchant.get(0).setSelectedItem(keepEnchant);
@@ -725,10 +736,14 @@ public class PageWeapon extends PartialRedStuff {
 				this.pearl.get(i).popoff();
 				
 				if(i < 6) {
-					Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(0), this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.getPearl(i), this.pearl.get(i).getLogic() == Logic.AND);
+					Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(0),
+						this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.getPearl(i), this.pearl.get(i).isAndValue());
+					
 					this.pearl.get(i).setItems(tabPearl);
 				} else {
-					Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i/3 -1), this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.getPearl(i), this.pearl.get(i).getLogic() == Logic.AND);
+					Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i/3 -1),
+						this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.getPearl(i), this.pearl.get(i).isAndValue());
+					
 					this.pearl.get(i).setItems(tabPearl);
 				}
 			}

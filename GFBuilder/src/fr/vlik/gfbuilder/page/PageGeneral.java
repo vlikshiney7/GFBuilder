@@ -25,7 +25,6 @@ import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCompleteBox;
 import fr.vlik.uidesign.JCustomComboBox;
-import fr.vlik.uidesign.JCustomDialog.Logic;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomSpinner;
 import fr.vlik.uidesign.JLangLabel;
@@ -274,7 +273,8 @@ public class PageGeneral extends PartialPage {
 	}
 	
 	private void updateTitle() {
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(), this.title.getSearch(), this.title.getFilters(), this.getTitle(), this.title.getLogic() == Logic.AND);
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(),
+				this.title.getSearch(), this.title.getFilters(), this.getTitle(), this.title.isAndValue());
 		
 		if(!this.title.setItems(tabTitle)) {
 			this.title.getProc().setSelected(false);

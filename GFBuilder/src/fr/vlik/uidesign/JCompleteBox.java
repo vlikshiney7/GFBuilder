@@ -6,7 +6,6 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.template.Buff;
 import fr.vlik.grandfantasia.template.ProcEffect;
-import fr.vlik.uidesign.JCustomDialog.Logic;
 
 public class JCompleteBox<E> extends JCustomComboBox<E> {
 
@@ -66,8 +65,8 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 		return this.filterDialog.getSearch();
 	}
 	
-	public Logic getLogic() {
-		return this.filterDialog.getLogic();
+	public boolean isAndValue() {
+		return this.filterDialog.isAndValue();
 	}
 	
 	public Filtrable[] getFilters() {

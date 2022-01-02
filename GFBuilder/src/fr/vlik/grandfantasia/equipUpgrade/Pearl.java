@@ -233,7 +233,7 @@ public class Pearl extends CompleteBuff {
 		return result.toArray(new Pearl[result.size()]);
 	}
 	
-	public static Pearl[] getPossibleArmorPearl(Weapon weapon, String key, Filtrable[] filter, Pearl choice, boolean andValue) {
+	public static Pearl[] getPossibleArmorPearl(Armor armor, String key, Filtrable[] filter, Pearl choice, boolean andValue) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
 		result.add(new Pearl());
@@ -243,7 +243,7 @@ public class Pearl extends CompleteBuff {
 		
 		for(Pearl pearl : Pearl.dataArmor) {
 			if(pearl.getRestricStuff() != null) {
-				if(weapon.getQuality() == pearl.getRestricStuff()) {
+				if(armor.getQuality() == pearl.getRestricStuff()) {
 					if(andValue) {
 						if(Tools.searchOnName(key, pearl.getMap(), andValue)
 							&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
@@ -263,7 +263,23 @@ public class Pearl extends CompleteBuff {
 					}
 				}
 			} else {
-				result.add(pearl);
+				if(andValue) {
+					if(Tools.searchOnName(key, pearl.getMap(), andValue)
+						&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
+						
+						if(!choice.equals(pearl)) {
+							result.add(pearl);
+						}
+					}
+				} else {
+					if(Tools.searchOnName(key, pearl.getMap(), andValue)
+						|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
+						
+						if(!choice.equals(pearl)) {
+							result.add(pearl);
+						}
+					}
+				}
 			}
 		}
 		

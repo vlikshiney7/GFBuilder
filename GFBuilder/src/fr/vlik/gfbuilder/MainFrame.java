@@ -90,7 +90,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 1.2.0");
+		super("Grand Fantasia Builder - Version 1.2.1");
 		setCustomUI();
 		
 		try {
@@ -375,6 +375,7 @@ public class MainFrame extends JFrame {
 			@Override public void windowGainedFocus(WindowEvent e) {
 				PageGeneral.getInstance().popoff();
 				PageWeapon.getInstance().popoff();
+				PageArmor.getInstance().popoff();
 			}
 		});
 		

@@ -163,8 +163,8 @@ public class JCustomDialog extends JDialog {
 		return this.filter;
 	}
 	
-	public Logic getLogic() {
-		return this.orAnd.getSelectedItem();
+	public boolean isAndValue() {
+		return this.orAnd.getSelectedItem() == Logic.AND;
 	}
 	
 	private ArrayList<JCustomCheckBox<Filtrable>> toList(Filtrable[] filter) {

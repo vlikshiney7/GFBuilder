@@ -9,13 +9,15 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade;
-import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
+import fr.vlik.grandfantasia.interfaces.Filtrable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -26,12 +28,17 @@ public class Armor extends Equipment {
 	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
 	public static Armor[][] data = LoaderEquip.getArmor();
 	private static ArrayList<Armor> customData = new ArrayList<Armor>();
+
+	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.DONJON, Tag.EVENT, Tag.FORMULE, Tag.GVG, Tag.PVP, Tag.QUETE, Tag.SPRITE, Tag.TAROT, Tag.OTHER, };
+	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD, Quality.PURPLE, Quality.RED };
 	
 	private ArmorType type;
 	private String setCode;
 	private boolean reinca;
 	private boolean isMultiEffect;
 	private MultiEffect multiEffects;
+	
+	private Tag[] tag;
 	
 	public Armor() {
 		super();
@@ -52,6 +59,12 @@ public class Armor extends Equipment {
 		this.isMultiEffect = armor.isMultiEffect();
 		this.multiEffects = armor.getMultiEffect();
 		this.icon = armor.getIcon();
+	}
+	
+	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, Tag[] tags, Calculable[] effects, Calculable[] bonusXP) {
+		this(name, grades, lvl, quality, enchantable, reinca, type, setCode, path, effects, bonusXP);
+		
+		this.tag = tags;
 	}
 	
 	public Armor(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, boolean reinca, ArmorType type, String setCode, String path, Calculable[] effects, Calculable[] bonusXP) {
@@ -115,6 +128,10 @@ public class Armor extends Equipment {
 	
 	public boolean isReinca() {
 		return this.reinca;
+	}
+
+	public Tag[] getTag() {
+		return this.tag;
 	}
 	
 	public boolean isMultiEffect() {
@@ -232,6 +249,26 @@ public class Armor extends Equipment {
 		
 		result.add(new Armor());
 		
+		for(Armor custom : Armor.customData) {
+			if(!custom.containGrade(grade.getGrade())) {
+				continue;
+			}
+			
+			if(idList != custom.getType().index) {
+				continue;
+			}
+			
+			if(custom.getLvl() <= lvl) {
+				if(!custom.isReinca()) {
+					result.add(custom);
+				} else {
+					if(reinca.getLvl() > 0) {
+						result.add(custom);
+					}
+				}
+			}
+		}
+		
 		for(Armor armor : Armor.data[idList]) {
 			if(armor.getLvl() <= lvl && armor.containGrade(grade.getGrade())) {
 				if(!armor.isReinca()) {
@@ -251,5 +288,128 @@ public class Armor extends Equipment {
 		}
 		
 		return result.toArray(new Armor[result.size()]);
+	}
+	
+	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Armor choice, boolean andValue) {
+		ArrayList<Armor> result = new ArrayList<Armor>();
+		
+		result.add(new Armor());
+		if(!choice.equals(new Armor())) {
+			result.add(choice);
+		}
+		
+		for(Armor custom : Armor.customData) {
+			if(!custom.containGrade(grade.getGrade())) {
+				continue;
+			}
+			
+			if(idList != custom.getType().index) {
+				continue;
+			}
+			
+			if(custom.getLvl() <= lvl) {
+				if(!custom.isReinca()) {
+					if(andValue) {
+						if(Tools.searchOnName(key, custom.getMap(), andValue)
+							&& Tools.contains(filter, custom.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
+							
+							if(!choice.equals(custom)) {
+								result.add(custom);
+							}
+						}
+					} else {
+						if(Tools.searchOnName(key, custom.getMap(), andValue)
+							|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag())) {
+							
+							if(!choice.equals(custom)) {
+								result.add(custom);
+							}
+						}
+					}
+				} else {
+					if(reinca.getLvl() > 0) {
+						if(andValue) {
+							if(Tools.searchOnName(key, custom.getMap(), andValue)
+								&& Tools.contains(filter, custom.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
+								
+								if(!choice.equals(custom)) {
+									result.add(custom);
+								}
+							}
+						} else {
+							if(Tools.searchOnName(key, custom.getMap(), andValue)
+								|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag())) {
+								
+								if(!choice.equals(custom)) {
+									result.add(custom);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		for(Armor armor : Armor.data[idList]) {
+			if(armor.getLvl() <= lvl && armor.containGrade(grade.getGrade())) {
+				if(!armor.isReinca()) {
+					if(armor.isMultiEffect()) {
+						armor.setEffects(lvl);
+					}
+					
+					if(andValue) {
+						if(Tools.searchOnName(key, armor.getMap(), andValue)
+							&& Tools.contains(filter, armor.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
+							
+							if(!choice.equals(armor)) {
+								result.add(armor);
+							}
+						}
+					} else {
+						if(Tools.searchOnName(key, armor.getMap(), andValue)
+							|| Tools.contains(filter, armor.getQuality()) || Tools.contains(filter, armor.getTag())) {
+							
+							if(!choice.equals(armor)) {
+								result.add(armor);
+							}
+						}
+					}
+				} else {
+					if(reinca.getLvl() > 0) {
+						if(armor.isMultiEffect()) {
+							armor.setEffects(lvl);
+						}
+						
+						if(andValue) {
+							if(Tools.searchOnName(key, armor.getMap(), andValue)
+								&& Tools.contains(filter, armor.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
+								
+								if(!choice.equals(armor)) {
+									result.add(armor);
+								}
+							}
+						} else {
+							if(Tools.searchOnName(key, armor.getMap(), andValue)
+								|| Tools.contains(filter, armor.getQuality()) || Tools.contains(filter, armor.getTag())) {
+								
+								if(!choice.equals(armor)) {
+									result.add(armor);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return result.toArray(new Armor[result.size()]);
+	}
+	
+	public static Tag[] getTags() {
+		return Armor.tags;
+	}
+	
+	public static Quality[] getQualities() {
+		return Armor.qualities;
 	}
 }
