@@ -295,7 +295,19 @@ public class Armor extends Equipment {
 		
 		result.add(new Armor());
 		if(!choice.equals(new Armor())) {
-			result.add(choice);
+			if(choice.containGrade(grade.getGrade())) {
+				if(idList == choice.getType().index) {
+					if(choice.getLvl() <= lvl) {
+						if(!choice.isReinca()) {
+							result.add(choice);
+						} else {
+							if(reinca.getLvl() > 0) {
+								result.add(choice);
+							}
+						}
+					}
+				}
+			}
 		}
 		
 		for(Armor custom : Armor.customData) {

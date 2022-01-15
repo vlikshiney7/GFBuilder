@@ -167,12 +167,15 @@ public class Title extends ColorBuff {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
 		result.add(new Title());
-		if(!choice.equals(new Title())) {
-			result.add(choice);
-		}
 		
 		if(reinca.getLvl() > 0) {
 			lvl += 100;
+			
+			if(!choice.equals(new Title())) {
+				if(choice.getLvl() <= lvl && (choice.getGrade() == GradeName.NONE || choice.getGrade() == grade)) {
+					result.add(choice);
+				}
+			}
 			
 			for(Title title : Title.data) {
 				if(title.getLvl() <= lvl && (title.getGrade() == GradeName.NONE || title.getGrade() == grade)) {
@@ -196,6 +199,22 @@ public class Title extends ColorBuff {
 				}
 			}
 		} else {
+			if(!choice.equals(new Title())) {
+				if(!choice.isReinca()) {
+					if(choice.getLvl() <= lvl && (choice.getGrade() == GradeName.NONE || choice.getGrade() == grade)) {
+						result.add(choice);
+					}
+				} else {
+					if(choice.getGrade() == GradeName.NONE || choice.getGrade() == grade) {
+						if(choice.getLvl() <= lvl) {
+							result.add(choice);
+						} else if(choice.getLvl() > 100 && choice.getLvl()-100 <= lvl) {
+							result.add(choice);
+						}
+					}
+				}
+			}
+			
 			for(Title title : Title.data) {
 				if(title.isReinca()) {
 					continue;

@@ -77,6 +77,7 @@ public class PageWeapon extends PartialRedStuff {
 				updateXpStuff(id);
 				updateDetails(id);
 				updatePearl(id);
+				updateEnchantPearl(id);
 				updateEnchant(id);
 				weaponType(id);
 				

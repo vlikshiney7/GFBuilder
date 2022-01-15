@@ -345,7 +345,27 @@ public class Weapon extends Equipment {
 		
 		result.add(new Weapon());
 		if(!choice.equals(new Weapon())) {
-			result.add(choice);
+			if(choice.containGrade(grade.getGrade())) {
+				boolean allowType = false;
+				for(int checkType : weaponType) {
+					if(checkType == choice.getType().index) {
+						allowType = true;
+						break;
+					}
+				}
+					 
+				if(allowType) {
+					if(choice.getLvl() <= lvl) {
+						if(!choice.isReinca()) {
+							result.add(choice);
+						} else {
+							if(reinca.getLvl() > 0) {
+								result.add(choice);
+							}
+						}
+					}
+				}
+			}
 		}
 		
 		for(Weapon custom : Weapon.customData) {

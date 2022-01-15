@@ -1552,13 +1552,13 @@ public class LoaderPearl {
 				new Proc(8, Activation.Attacked, 3, new Calculable[] {
 					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					new RegenEffect(TypeEffect.PM, false, -570, TypeRegen.POISON),
 				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique astrale de parade"); put(Language.EN, "Astral Barricade Runestone"); }}, Quality.GOLD, Quality.RED, false, "purple1", new Calculable[] {
 				new Effect(TypeEffect.Ombre, false, 200),
 				new Proc(15, Activation.Attacked, 10, new Calculable[] {
-					new Effect(TypeEffect.DCCP, false, 100),
+					new Effect(TypeEffect.RDCCP, false, 100),
+					new Effect(TypeEffect.RDCCM, false, 100),
 					new Effect(TypeEffect.Parade, false, 50),
 				}),
 			}),
@@ -1582,6 +1582,18 @@ public class LoaderPearl {
 					new RegenEffect(TypeEffect.PM, false, -570, TypeRegen.POISON),
 				}),
 			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Accélération"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Feu, false, 100),
+				new Proc(10, Activation.Attacked, 5, new Calculable[] {
+					new Effect(TypeEffect.Depla, false, 50),
+				}),
+			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Armure"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Glace, false, 100),
+				new Proc(10, Activation.Attacked, 10, 5, new Calculable[] {
+					new Effect(TypeEffect.DefP, false, 200),
+				}),
+			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique d'Endurance Supérieure"); put(Language.EN, "Advanced Stamina Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
 				new Effect(TypeEffect.PV, true, 18),
 				new Effect(TypeEffect.Sacre, false, 100),
@@ -1590,13 +1602,57 @@ public class LoaderPearl {
 				new Effect(TypeEffect.ESQ, false, 18),
 				new Effect(TypeEffect.Foudre, false, 100),
 			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Blocage"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Ombre, false, 100),
+				new Proc(10, Activation.Attacked, 10, new Calculable[] {
+					new Effect(TypeEffect.RDCCP, false, 100),
+					new Effect(TypeEffect.RDCCM, false, 100),
+					new Effect(TypeEffect.Parade, false, 50),
+				}),
+			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Défense Supérieure"); put(Language.EN, "Advanced Defense Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
 				new Effect(TypeEffect.RTCCP, false, 15),
 				new Effect(TypeEffect.Nature, false, 100),
 			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Force"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Nature, false, 100),
+				new Proc(10, Activation.Attacked, 10, new Calculable[] {
+					new Effect(TypeEffect.VIT, false, 200),
+					new Effect(TypeEffect.VitAtk, false, 50),
+				}),
+			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Forme"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Foudre, false, 100),
+				new Proc(5, Activation.Attacked, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.Transfo, Target.OPPONENT),
+				}),
+			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Forteresse Supérieure"); put(Language.EN, "Advanced Fortress Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
 				new Effect(TypeEffect.RTCCM, false, 15),
 				new Effect(TypeEffect.Ombre, false, 100),
+			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Panique"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Ombre, false, 100),
+				new Proc(5, Activation.Attacked, 2, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+				}),
+			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Renaissance Supérieure"); put(Language.EN, "Advanced Rebirth Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.RegenPV, false, 999),
+				new Effect(TypeEffect.RegenPM, false, 999),
+				new Effect(TypeEffect.Feu, false, 100),
+			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Sécurité Supérieure"); put(Language.EN, "Advanced Safety Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.DefP, true, 20),
+				new Effect(TypeEffect.Glace, false, 100),
+			}),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique Divine"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 100),
+				new Proc(10, Activation.Attacked, 10, new Calculable[] {
+					new Effect(TypeEffect.VOL, false, 200),
+					new Effect(TypeEffect.VitComp, false, 50),
+				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique Éclair Supérieure"); put(Language.EN, "Advanced Lightning Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 15),
@@ -1610,14 +1666,12 @@ public class LoaderPearl {
 				new Effect(TypeEffect.RDCCM, false, 20),
 				new Effect(TypeEffect.Feu, false, 100),
 			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Renaissance Supérieure"); put(Language.EN, "Advanced Rebirth Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
-				new Effect(TypeEffect.RegenPV, false, 999),
-				new Effect(TypeEffect.RegenPM, false, 999),
-				new Effect(TypeEffect.Feu, false, 100),
-			}),
-			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique de Sécurité Supérieure"); put(Language.EN, "Advanced Safety Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
-				new Effect(TypeEffect.DefP, true, 20),
-				new Effect(TypeEffect.Glace, false, 100),
+			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique Silencieuse"); put(Language.EN, ""); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
+				new Effect(TypeEffect.Sacre, false, 100),
+				new Proc(5, Activation.Attacked, 5, new Calculable[] {
+					new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
+					new RegenEffect(TypeEffect.PM, false, -380, TypeRegen.POISON),
+				}),
 			}),
 			new Pearl(new HashMap<Language, String>() {{ put(Language.FR, "Pierre runique Spirituelle Supérieure"); put(Language.EN, "Advanced Spirit Runestone"); }}, Quality.GOLD, Quality.PURPLE, false, "purple1", new Calculable[] {
 				new Effect(TypeEffect.PM, true, 18),

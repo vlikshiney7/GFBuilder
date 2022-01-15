@@ -149,7 +149,15 @@ public class Bullet extends CompleteBuff {
 		
 		result.add(new Bullet());
 		if(!choice.equals(new Bullet())) {
-			result.add(choice);
+			if(choice.getLvl() <= lvl) {
+				if(!choice.isReinca()) {
+					result.add(choice);
+				} else {
+					if(reinca.getLvl() > 0) {
+						result.add(choice);
+					}
+				}
+			}
 		}
 		
 		for(Bullet bullet : Bullet.data) {

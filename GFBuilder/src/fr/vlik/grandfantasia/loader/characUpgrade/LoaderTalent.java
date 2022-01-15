@@ -1107,22 +1107,28 @@ public class LoaderTalent {
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Spécialité Tir"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "2-1", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.AtkD, true, 6),
+					new Effect(TypeEffect.DegArc, false, 6),
+					new Effect(TypeEffect.DegGun, false, 6),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.AtkD, true, 8),
+					new Effect(TypeEffect.DegArc, false, 8),
+					new Effect(TypeEffect.DegGun, false, 8),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.AtkD, true, 10),
+					new Effect(TypeEffect.DegArc, false, 10),
+					new Effect(TypeEffect.DegGun, false, 10),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.AtkD, true, 13),
+					new Effect(TypeEffect.DegArc, false, 13),
+					new Effect(TypeEffect.DegGun, false, 13),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.AtkD, true, 16),
+					new Effect(TypeEffect.DegArc, false, 16),
+					new Effect(TypeEffect.DegGun, false, 16),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.AtkD, true, 18),
+					new Effect(TypeEffect.DegArc, false, 18),
+					new Effect(TypeEffect.DegGun, false, 18),
 				},
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Spécialité Sniper"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "2-2", new Calculable[][] {

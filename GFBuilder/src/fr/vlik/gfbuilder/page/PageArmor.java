@@ -98,6 +98,7 @@ public class PageArmor extends PartialRedStuff {
 				updateDetails(id);
 				updatePearl(id);
 				updateEnchant(id);
+				updateEnchantPearl(id);
 				
 				updateEquipSet();
 				updateShortcutSet();

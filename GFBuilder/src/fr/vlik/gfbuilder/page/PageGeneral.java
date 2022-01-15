@@ -276,9 +276,7 @@ public class PageGeneral extends PartialPage {
 		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(),
 				this.title.getSearch(), this.title.getFilters(), this.getTitle(), this.title.isAndValue());
 		
-		if(!this.title.setItems(tabTitle)) {
-			this.title.getProc().setSelected(false);
-		}
+		this.title.setItems(tabTitle);
 	}
 	
 	public void popoff() {

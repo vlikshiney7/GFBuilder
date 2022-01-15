@@ -167,7 +167,13 @@ public class Pearl extends CompleteBuff {
 		
 		result.add(new Pearl());
 		if(!choice.equals(new Pearl())) {
-			result.add(choice);
+			if(choice.getRestricStuff() != null) {
+				if(weapon.getQuality() == choice.getRestricStuff()) {
+					result.add(choice);
+				}
+			} else {
+				result.add(choice);
+			}
 		}
 		
 		for(Pearl pearl : Pearl.dataWeapon) {
@@ -238,7 +244,13 @@ public class Pearl extends CompleteBuff {
 		
 		result.add(new Pearl());
 		if(!choice.equals(new Pearl())) {
-			result.add(choice);
+			if(choice.getRestricStuff() != null) {
+				if(armor.getQuality() == choice.getRestricStuff()) {
+					result.add(choice);
+				}
+			} else {
+				result.add(choice);
+			}
 		}
 		
 		for(Pearl pearl : Pearl.dataArmor) {

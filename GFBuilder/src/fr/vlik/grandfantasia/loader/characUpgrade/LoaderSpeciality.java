@@ -269,6 +269,7 @@ public class LoaderSpeciality {
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Amélioration des munitions"); put(Language.EN, ""); }}, 91, "2-18", new Calculable[] {
 				new Effect(TypeEffect.DegGun, false, 1.5),
+				new Effect(TypeEffect.DCCGun, false, 1),
 			}),
 			new Speciality(new HashMap<Language, String>() {{ put(Language.FR, "Exercice"); put(Language.EN, ""); }}, 91, "2-19", new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 5),

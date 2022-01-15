@@ -7430,7 +7430,9 @@ public class LoaderEquipSet {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.AGI, false, 30),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 35),
+					new Proc(35, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VitAtk, false, 15),
@@ -7440,6 +7442,9 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 5),
 					new StaticEffect(TypeStaticEffect.x2STD_old, 30),
+					new Proc(30, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double),
+					}),
 				},
 				new Calculable[] {
 					new Proc(30, Activation.Attack, 10, new Calculable[] {
