@@ -17,7 +17,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -246,170 +246,59 @@ public class Armor extends Equipment {
 	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {
 		ArrayList<Armor> result = new ArrayList<Armor>();
+		ArmorType armorType = ArmorType.values()[idList];
 		
 		result.add(new Armor());
 		
 		for(Armor custom : Armor.customData) {
-			if(!custom.containGrade(grade.getGrade())) {
-				continue;
-			}
+			Map<Object, Object> properties = new HashMap<Object, Object>();
+			properties.put(custom.getGrades(), grade.getGrade());
+			properties.put(custom.getLvl(), lvl);
+			properties.put(custom.isReinca(), reinca);
+			properties.put(custom.getType(), armorType);
 			
-			if(idList != custom.getType().index) {
-				continue;
-			}
-			
-			if(custom.getLvl() <= lvl) {
-				if(!custom.isReinca()) {
-					result.add(custom);
-				} else {
-					if(reinca.getLvl() > 0) {
-						result.add(custom);
-					}
-				}
+			if(Tools.evaluateProperties(properties)) {
+				result.add(custom);
 			}
 		}
 		
 		for(Armor armor : Armor.data[idList]) {
-			if(armor.getLvl() <= lvl && armor.containGrade(grade.getGrade())) {
-				if(!armor.isReinca()) {
-					if(armor.isMultiEffect()) {
-						armor.setEffects(lvl);
-					}
-					result.add(armor);
-				} else {
-					if(reinca.getLvl() > 0) {
-						if(armor.isMultiEffect()) {
-							armor.setEffects(lvl);
-						}
-						result.add(armor);
-					}
+			Map<Object, Object> properties = new HashMap<Object, Object>();
+			properties.put(armor.getGrades(), grade.getGrade());
+			properties.put(armor.getLvl(), lvl);
+			properties.put(armor.isReinca(), reinca);
+			
+			if(Tools.evaluateProperties(properties)) {
+				if(armor.isMultiEffect()) {
+					armor.setEffects(lvl);
 				}
+				result.add(armor);
 			}
 		}
 		
 		return result.toArray(new Armor[result.size()]);
 	}
 	
-	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Armor choice, boolean andValue) {
+	public static Armor[] applyFilters(Armor[] possible, Armor choice, String key, Filterable[] filter, boolean andValue) {
 		ArrayList<Armor> result = new ArrayList<Armor>();
 		
 		result.add(new Armor());
 		if(!choice.equals(new Armor())) {
-			if(choice.containGrade(grade.getGrade())) {
-				if(idList == choice.getType().index) {
-					if(choice.getLvl() <= lvl) {
-						if(!choice.isReinca()) {
-							result.add(choice);
-						} else {
-							if(reinca.getLvl() > 0) {
-								result.add(choice);
-							}
-						}
-					}
-				}
+			if(Tools.containObject(possible, choice)) {
+				result.add(choice);
 			}
 		}
 		
-		for(Armor custom : Armor.customData) {
-			if(!custom.containGrade(grade.getGrade())) {
-				continue;
-			}
+		for(Armor armor : possible) {
+			boolean[] filters = new boolean[] {
+				Tools.searchOnName(key, armor.getMap(), andValue),
+				Tools.containObject(filter, armor.getQuality()),
+				//Tools.containFilter(filter, armor.getTag()),
+			};
 			
-			if(idList != custom.getType().index) {
-				continue;
-			}
-			
-			if(custom.getLvl() <= lvl) {
-				if(!custom.isReinca()) {
-					if(andValue) {
-						if(Tools.searchOnName(key, custom.getMap(), andValue)
-							&& Tools.contains(filter, custom.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
-							
-							if(!choice.equals(custom)) {
-								result.add(custom);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, custom.getMap(), andValue)
-							|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag())) {
-							
-							if(!choice.equals(custom)) {
-								result.add(custom);
-							}
-						}
-					}
-				} else {
-					if(reinca.getLvl() > 0) {
-						if(andValue) {
-							if(Tools.searchOnName(key, custom.getMap(), andValue)
-								&& Tools.contains(filter, custom.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
-								
-								if(!choice.equals(custom)) {
-									result.add(custom);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, custom.getMap(), andValue)
-								|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag())) {
-								
-								if(!choice.equals(custom)) {
-									result.add(custom);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		for(Armor armor : Armor.data[idList]) {
-			if(armor.getLvl() <= lvl && armor.containGrade(grade.getGrade())) {
-				if(!armor.isReinca()) {
-					if(armor.isMultiEffect()) {
-						armor.setEffects(lvl);
-					}
-					
-					if(andValue) {
-						if(Tools.searchOnName(key, armor.getMap(), andValue)
-							&& Tools.contains(filter, armor.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
-							
-							if(!choice.equals(armor)) {
-								result.add(armor);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, armor.getMap(), andValue)
-							|| Tools.contains(filter, armor.getQuality()) || Tools.contains(filter, armor.getTag())) {
-							
-							if(!choice.equals(armor)) {
-								result.add(armor);
-							}
-						}
-					}
-				} else {
-					if(reinca.getLvl() > 0) {
-						if(armor.isMultiEffect()) {
-							armor.setEffects(lvl);
-						}
-						
-						if(andValue) {
-							if(Tools.searchOnName(key, armor.getMap(), andValue)
-								&& Tools.contains(filter, armor.getQuality()) /*&& Tools.contains(filter, custom.getTag())*/) {
-								
-								if(!choice.equals(armor)) {
-									result.add(armor);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, armor.getMap(), andValue)
-								|| Tools.contains(filter, armor.getQuality()) || Tools.contains(filter, armor.getTag())) {
-								
-								if(!choice.equals(armor)) {
-									result.add(armor);
-								}
-							}
-						}
-					}
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
+				if(!choice.equals(armor)) {
+					result.add(armor);
 				}
 			}
 		}

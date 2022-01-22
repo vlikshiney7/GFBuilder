@@ -13,7 +13,7 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Weapon;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.loader.equipUpgrade.LoaderEquipUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.CompleteBuff;
@@ -150,88 +150,27 @@ public class Pearl extends CompleteBuff {
 		result.add(new Pearl());
 		
 		for(Pearl pearl : Pearl.dataWeapon) {
-			if(pearl.getRestricStuff() != null) {
-				if(weapon.getQuality() == pearl.getRestricStuff()) {
-					result.add(pearl);
-				}
-			} else {
+			Map<Object, Object> properties = new HashMap<Object, Object>();
+			properties.put(pearl.getRestricStuff(), weapon.getQuality());
+			
+			if(Tools.evaluateProperties(properties)) {
 				result.add(pearl);
 			}
 		}
 		
 		return result.toArray(new Pearl[result.size()]);
 	}
-	
-	public static Pearl[] getPossibleWeaponPearl(Weapon weapon, String key, Filtrable[] filter, Pearl choice, boolean andValue) {
-		ArrayList<Pearl> result = new ArrayList<Pearl>();
-		
-		result.add(new Pearl());
-		if(!choice.equals(new Pearl())) {
-			if(choice.getRestricStuff() != null) {
-				if(weapon.getQuality() == choice.getRestricStuff()) {
-					result.add(choice);
-				}
-			} else {
-				result.add(choice);
-			}
-		}
-		
-		for(Pearl pearl : Pearl.dataWeapon) {
-			if(pearl.getRestricStuff() != null) {
-				if(weapon.getQuality() == pearl.getRestricStuff()) {
-					if(andValue) {
-						if(Tools.searchOnName(key, pearl.getMap(), andValue)
-							&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
-							
-							if(!choice.equals(pearl)) {
-								result.add(pearl);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, pearl.getMap(), andValue)
-							|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
-							
-							if(!choice.equals(pearl)) {
-								result.add(pearl);
-							}
-						}
-					}
-				}
-			} else {
-				if(andValue) {
-					if(Tools.searchOnName(key, pearl.getMap(), andValue)
-						&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
-						
-						if(!choice.equals(pearl)) {
-							result.add(pearl);
-						}
-					}
-				} else {
-					if(Tools.searchOnName(key, pearl.getMap(), andValue)
-						|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
-						
-						if(!choice.equals(pearl)) {
-							result.add(pearl);
-						}
-					}
-				}
-			}
-		}
-		
-		return result.toArray(new Pearl[result.size()]);
-	}
-	
+
 	public static Pearl[] getPossibleArmorPearl(Armor armor) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
 		result.add(new Pearl());
 		
 		for(Pearl pearl : Pearl.dataArmor) {
-			if(pearl.getRestricStuff() != null) {
-				if(armor.getQuality() == pearl.getRestricStuff()) {
-					result.add(pearl);
-				}
-			} else {
+			Map<Object, Object> properties = new HashMap<Object, Object>();
+			properties.put(pearl.getRestricStuff(), armor.getQuality());
+			
+			if(Tools.evaluateProperties(properties)) {
 				result.add(pearl);
 			}
 		}
@@ -239,58 +178,26 @@ public class Pearl extends CompleteBuff {
 		return result.toArray(new Pearl[result.size()]);
 	}
 	
-	public static Pearl[] getPossibleArmorPearl(Armor armor, String key, Filtrable[] filter, Pearl choice, boolean andValue) {
+	public static Pearl[] applyFilters(Pearl[] possible, Pearl choice, String key, Filterable[] filter, boolean andValue) {
 		ArrayList<Pearl> result = new ArrayList<Pearl>();
 		
 		result.add(new Pearl());
 		if(!choice.equals(new Pearl())) {
-			if(choice.getRestricStuff() != null) {
-				if(armor.getQuality() == choice.getRestricStuff()) {
-					result.add(choice);
-				}
-			} else {
+			if(Tools.containObject(possible, choice)) {
 				result.add(choice);
 			}
 		}
 		
-		for(Pearl pearl : Pearl.dataArmor) {
-			if(pearl.getRestricStuff() != null) {
-				if(armor.getQuality() == pearl.getRestricStuff()) {
-					if(andValue) {
-						if(Tools.searchOnName(key, pearl.getMap(), andValue)
-							&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
-							
-							if(!choice.equals(pearl)) {
-								result.add(pearl);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, pearl.getMap(), andValue)
-							|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
-							
-							if(!choice.equals(pearl)) {
-								result.add(pearl);
-							}
-						}
-					}
-				}
-			} else {
-				if(andValue) {
-					if(Tools.searchOnName(key, pearl.getMap(), andValue)
-						&& Tools.contains(filter, pearl.getQuality()) /*&& Tools.contains(filter, pearl.getTag())*/) {
-						
-						if(!choice.equals(pearl)) {
-							result.add(pearl);
-						}
-					}
-				} else {
-					if(Tools.searchOnName(key, pearl.getMap(), andValue)
-						|| Tools.contains(filter, pearl.getQuality()) || Tools.contains(filter, pearl.getTag())) {
-						
-						if(!choice.equals(pearl)) {
-							result.add(pearl);
-						}
-					}
+		for(Pearl pearl : possible) {
+			boolean[] filters = new boolean[] {
+				Tools.searchOnName(key, pearl.getMap(), andValue),
+				Tools.containObject(filter, pearl.getQuality()),
+				//Tools.containFilter(filter, armor.getTag()),
+			};
+			
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
+				if(!choice.equals(pearl)) {
+					result.add(pearl);
 				}
 			}
 		}

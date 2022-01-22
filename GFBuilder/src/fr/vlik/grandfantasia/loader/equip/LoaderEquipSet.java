@@ -9097,7 +9097,7 @@ public class LoaderEquipSet {
 				new Calculable[] {
 					new Proc(50, Activation.Attacked, 12, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 50),
-						new Effect(TypeEffect.DefP, true, 50, Target.OPPONENT),
+						new Effect(TypeEffect.DefM, true, -50, Target.OPPONENT),
 					}),
 				}),
 			new EquipSet("Cristal de célérité", "60nucleus10",

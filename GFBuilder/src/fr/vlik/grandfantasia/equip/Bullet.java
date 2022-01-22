@@ -12,7 +12,7 @@ import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.CompleteBuff;
@@ -130,76 +130,38 @@ public class Bullet extends CompleteBuff {
 		result.add(new Bullet());
 		
 		for(Bullet bullet : Bullet.data) {
-			if(bullet.getLvl() <= lvl) {
-				if(!bullet.isReinca()) {
-					result.add(bullet);
-				} else {
-					if(reinca.getLvl() > 0) {
-						result.add(bullet);
-					}
-				}
+			Map<Object, Object> properties = new HashMap<Object, Object>();
+			properties.put(bullet.getLvl(), lvl);
+			properties.put(bullet.isReinca(), reinca);
+			
+			if(Tools.evaluateProperties(properties)) {
+				result.add(bullet);
 			}
 		}
 		
 		return result.toArray(new Bullet[result.size()]);
 	}
 	
-	public static Bullet[] getPossibleBullet(int lvl, Reinca reinca, String key, Filtrable[] filter, Bullet choice, boolean andValue) {
+	public static Bullet[] applyFilters(Bullet[] possible, Bullet choice, String key, Filterable[] filter, boolean andValue) {
 		ArrayList<Bullet> result = new ArrayList<Bullet>();
 		
 		result.add(new Bullet());
 		if(!choice.equals(new Bullet())) {
-			if(choice.getLvl() <= lvl) {
-				if(!choice.isReinca()) {
-					result.add(choice);
-				} else {
-					if(reinca.getLvl() > 0) {
-						result.add(choice);
-					}
-				}
+			if(Tools.containObject(possible, choice)) {
+				result.add(choice);
 			}
 		}
 		
-		for(Bullet bullet : Bullet.data) {
-			if(bullet.getLvl() <= lvl) {
-				if(!bullet.isReinca()) {
-					if(andValue) {
-						if(Tools.searchOnName(key, bullet.getMap(), andValue)
-							&& Tools.contains(filter, bullet.getQuality()) && Tools.contains(filter, bullet.getTag())) {
-							
-							if(!choice.equals(bullet)) {
-								result.add(bullet);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, bullet.getMap(), andValue)
-							|| Tools.contains(filter, bullet.getQuality()) || Tools.contains(filter, bullet.getTag())) {
-							
-							if(!choice.equals(bullet)) {
-								result.add(bullet);
-							}
-						}
-					}
-				} else {
-					if(reinca.getLvl() > 0) {
-						if(andValue) {
-							if(Tools.searchOnName(key, bullet.getMap(), andValue)
-								&& Tools.contains(filter, bullet.getQuality()) && Tools.contains(filter, bullet.getTag())) {
-								
-								if(!choice.equals(bullet)) {
-									result.add(bullet);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, bullet.getMap(), andValue)
-								|| Tools.contains(filter, bullet.getQuality()) || Tools.contains(filter, bullet.getTag())) {
-								
-								if(!choice.equals(bullet)) {
-									result.add(bullet);
-								}
-							}
-						}
-					}
+		for(Bullet bullet : possible) {
+			boolean[] filters = new boolean[] {
+				Tools.searchOnName(key, bullet.getMap(), andValue),
+				Tools.containObject(filter, bullet.getQuality()),
+				Tools.containObject(filter, bullet.getTag()),
+			};
+			
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
+				if(!choice.equals(bullet)) {
+					result.add(bullet);
 				}
 			}
 		}

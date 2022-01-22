@@ -98,7 +98,6 @@ public class ProSkill extends IconBuff {
 			}
 		}
 		
-		ProSkill[] cast = new ProSkill[result.size()];
-		return result.toArray(cast);
+		return result.toArray(new ProSkill[result.size()]);
 	}
 }

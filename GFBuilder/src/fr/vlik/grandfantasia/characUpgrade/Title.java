@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
-import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.loader.characUpgrade.LoaderCharacUpgrade;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.ColorBuff;
@@ -147,8 +147,7 @@ public class Title extends ColorBuff {
 					continue;
 				}
 				
-				if(title.getGrade() == GradeName.NONE
-						|| title.getGrade() == grade) {
+				if(title.getGrade() == GradeName.NONE || title.getGrade() == grade) {
 					
 					if(title.getLvl() <= lvl) {
 						result.add(title);
@@ -163,101 +162,26 @@ public class Title extends ColorBuff {
 		return result.toArray(new Title[result.size()]);
 	}
 	
-	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca, String key, Filtrable[] filter, Title choice, boolean andValue) {
+	public static Title[] applyFilters(Title[] possible, Title choice, String key, Filterable[] filter, boolean andValue) {
 		ArrayList<Title> result = new ArrayList<Title>();
 		
 		result.add(new Title());
+		if(!choice.equals(new Title())) {
+			if(Tools.containObject(possible, choice)) {
+				result.add(choice);
+			}
+		}
 		
-		if(reinca.getLvl() > 0) {
-			lvl += 100;
+		for(Title title : possible) {
+			boolean[] filters = new boolean[] {
+				Tools.searchOnName(key, title.getMap(), andValue),
+				Tools.containObject(filter, title.getQuality()),
+				Tools.containObject(filter, title.getTag()),
+			};
 			
-			if(!choice.equals(new Title())) {
-				if(choice.getLvl() <= lvl && (choice.getGrade() == GradeName.NONE || choice.getGrade() == grade)) {
-					result.add(choice);
-				}
-			}
-			
-			for(Title title : Title.data) {
-				if(title.getLvl() <= lvl && (title.getGrade() == GradeName.NONE || title.getGrade() == grade)) {
-					if(andValue) {
-						if(Tools.searchOnName(key, title.getMap(), andValue)
-							&& Tools.contains(filter, title.getQuality()) && Tools.contains(filter, title.getTag())) {
-							
-							if(!choice.equals(title)) {
-								result.add(title);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, title.getMap(), andValue)
-							|| Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
-							
-							if(!choice.equals(title)) {
-								result.add(title);
-							}
-						}
-					}
-				}
-			}
-		} else {
-			if(!choice.equals(new Title())) {
-				if(!choice.isReinca()) {
-					if(choice.getLvl() <= lvl && (choice.getGrade() == GradeName.NONE || choice.getGrade() == grade)) {
-						result.add(choice);
-					}
-				} else {
-					if(choice.getGrade() == GradeName.NONE || choice.getGrade() == grade) {
-						if(choice.getLvl() <= lvl) {
-							result.add(choice);
-						} else if(choice.getLvl() > 100 && choice.getLvl()-100 <= lvl) {
-							result.add(choice);
-						}
-					}
-				}
-			}
-			
-			for(Title title : Title.data) {
-				if(title.isReinca()) {
-					continue;
-				}
-				
-				if(title.getGrade() == GradeName.NONE || title.getGrade() == grade) {
-					if(title.getLvl() <= lvl) {
-						if(andValue) {
-							if(Tools.searchOnName(key, title.getMap(), andValue)
-								&& Tools.contains(filter, title.getQuality()) && Tools.contains(filter, title.getTag())) {
-								
-								if(!choice.equals(title)) {
-									result.add(title);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, title.getMap(), andValue)
-								|| Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
-								
-								if(!choice.equals(title)) {
-									result.add(title);
-								}
-							}
-						}
-					} else if(title.getLvl() > 100 && title.getLvl()-100 <= lvl) {
-						if(andValue) {
-							if(Tools.searchOnName(key, title.getMap(), andValue)
-								&& Tools.contains(filter, title.getQuality()) && Tools.contains(filter, title.getTag())) {
-								
-								if(!choice.equals(title)) {
-									result.add(title);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, title.getMap(), andValue)
-								|| Tools.contains(filter, title.getQuality()) || Tools.contains(filter, title.getTag())) {
-								
-								if(!choice.equals(title)) {
-									result.add(title);
-								}
-							}
-						}
-					}
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
+				if(!choice.equals(title)) {
+					result.add(title);
 				}
 			}
 		}

@@ -444,8 +444,8 @@ public class PageArmor extends PartialRedStuff {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		for(int i = 0; i < 5; i++) {
-			Armor[] tabArmor = Armor.getPossibleArmor(i, grade, lvl, reinca,
-				this.armor.get(i).getSearch(), this.armor.get(i).getFilters(), this.getArmor(i), this.armor.get(i).isAndValue());
+			Armor[] tabArmor = Armor.getPossibleArmor(i, grade, lvl, reinca);
+			tabArmor = Armor.applyFilters(tabArmor, this.getArmor(i), this.armor.get(i).getSearch(), this.armor.get(i).getFilters(), this.armor.get(i).isAndValue());
 			
 			if(!this.armor.get(i).setItems(tabArmor)) {
 				updateXpStuff(i);
@@ -569,22 +569,22 @@ public class PageArmor extends PartialRedStuff {
 	
 	private void updatePearl(int index5) {
 		if(index5 == 0) {
-			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(index5),
-				this.pearl.get(index5).getSearch(), this.pearl.get(index5).getFilters(), this.getPearl(index5), this.pearl.get(index5).isAndValue());
+			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(index5));
+			tabPearl = Pearl.applyFilters(tabPearl, this.getPearl(index5), this.pearl.get(index5).getSearch(), this.pearl.get(index5).getFilters(), this.pearl.get(index5).isAndValue());
 			
 			this.pearl.get(index5).setItems(tabPearl);
 		} else if (index5 == 1) {
-			Pearl[] tabPearl1 = Pearl.getPossibleArmorPearl(this.getArmor(index5),
-				this.pearl.get(index5).getSearch(), this.pearl.get(index5).getFilters(), this.getPearl(index5), this.pearl.get(index5).isAndValue());
+			Pearl[] tabPearl1 = Pearl.getPossibleArmorPearl(this.getArmor(index5));
+			tabPearl1 = Pearl.applyFilters(tabPearl1, this.getPearl(index5), this.pearl.get(index5).getSearch(), this.pearl.get(index5).getFilters(), this.pearl.get(index5).isAndValue());
 			
-			Pearl[] tabPearl2 = Pearl.getPossibleArmorPearl(this.getArmor(index5),
-				this.pearl.get(index5+1).getSearch(), this.pearl.get(index5+1).getFilters(), this.getPearl(index5+1), this.pearl.get(index5+1).isAndValue());
+			Pearl[] tabPearl2 = Pearl.getPossibleArmorPearl(this.getArmor(index5));
+			tabPearl2 = Pearl.applyFilters(tabPearl2, this.getPearl(index5+1), this.pearl.get(index5+1).getSearch(), this.pearl.get(index5+1).getFilters(), this.pearl.get(index5+1).isAndValue());
 			
 			this.pearl.get(index5).setItems(tabPearl1);
 			this.pearl.get(index5+1).setItems(tabPearl2);
 		} else {
-			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(index5),
-				this.pearl.get(index5+1).getSearch(), this.pearl.get(index5+1).getFilters(), this.getPearl(index5+1), this.pearl.get(index5+1).isAndValue());
+			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(index5));
+			tabPearl = Pearl.applyFilters(tabPearl, this.getPearl(index5+1), this.pearl.get(index5+1).getSearch(), this.pearl.get(index5+1).getFilters(), this.pearl.get(index5+1).isAndValue());
 			
 			this.pearl.get(index5+1).setItems(tabPearl);
 		}
@@ -759,13 +759,13 @@ public class PageArmor extends PartialRedStuff {
 				this.pearl.get(i).popoff();
 				
 				if(i < 2) {
-					Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i),
-						this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.getPearl(i), this.pearl.get(i).isAndValue());
+					Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i));
+					tabPearl = Pearl.applyFilters(tabPearl, this.getPearl(i), this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.pearl.get(i).isAndValue());
 					
 					this.pearl.get(i).setItems(tabPearl);
 				} else {
-					Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i-1),
-						this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.getPearl(i), this.pearl.get(i).isAndValue());
+					Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i-1));
+					tabPearl = Pearl.applyFilters(tabPearl, this.getPearl(i), this.pearl.get(i).getSearch(), this.pearl.get(i).getFilters(), this.pearl.get(i).isAndValue());
 					
 					this.pearl.get(i).setItems(tabPearl);
 				}

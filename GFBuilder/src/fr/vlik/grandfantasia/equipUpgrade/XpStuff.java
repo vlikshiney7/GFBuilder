@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Equipment;
@@ -96,13 +97,7 @@ public class XpStuff implements Colorable, Writable {
 			return false;
 		}
 		
-		for(EquipType element : this.tabType) {
-			if(element == type) {
-				return true;
-			}
-		}
-		
-		return false;
+		return Tools.containObject(this.tabType, type);
 	}
 	
 	public static boolean availableEffects(XpStuff xpStuff1, XpStuff xpStuff2) {

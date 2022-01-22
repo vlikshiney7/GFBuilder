@@ -60,8 +60,8 @@ public enum TypeEffect implements Colorable, Writable {
 	ReducPeneP("Réduction Pénétration Physique", "Physical Penetration Reduction", "Red Pén Phys", "Phys Pene Red", -1, true, Tools.EffectColor[10]),
 	ReducPeneM("Réduction Pénétration Magique", "Magical Penetration Reduction", "Red Pén Mag", "Mag Pene Red", -1, true, Tools.EffectColor[11]),
 	
-	DCCP("Dégât Coup Critique Physique", "Critical Physical Hit Damage", "Deg Crit Phys", "Crit Phys Dam", 150, false, Tools.EffectColor[10]),
-	DCCM("Dégât Coup Critique Magique", "Critical Magical Hit Damage", "Deg Crit Mag", "Crit Mag Dam", 150, false, Tools.EffectColor[11]),
+	DCCP("Dégât Coup Critique Physique", "Critical Physical Hit Damage", "Deg Crit Phys", "Crit Phys Dam", 200, false, Tools.EffectColor[10]),
+	DCCM("Dégât Coup Critique Magique", "Critical Magical Hit Damage", "Deg Crit Mag", "Crit Mag Dam", 200, false, Tools.EffectColor[11]),
 	RDCCP("Réduction Dégât Coup Critique Physique", "Critical Physical Hit Damage Reduction", "Red Dg Crt Ph", "Crt Ph Dam Red", -1, false, Tools.EffectColor[10]),
 	RDCCM("Réduction Dégât Coup Critique Magique", "Critical Magical Hit Damage Reduction", "Red Dg Crt Mg", "Crt Mg Dam Red", -1, false, Tools.EffectColor[11]),
 	RTCCP("Réduction Taux Coup Critique Physique", "Critical Physical Hit Rate Reduction", "Red Tx Crt Ph", "Crt Ph Rate Red", -1, true, Tools.EffectColor[10]),

@@ -23,6 +23,8 @@ public class Base {
 		result.add(new Effect(TypeEffect.TCCM, false, 5, TypeCalcul.BASE));
 		result.add(new Effect(TypeEffect.PV, false, 100, TypeCalcul.BASE));
 		result.add(new Effect(TypeEffect.PM, false, 50, TypeCalcul.BASE));
+		result.add(new Effect(TypeEffect.DCCP, false, 50, TypeCalcul.BASE));
+		result.add(new Effect(TypeEffect.DCCM, false, 50, TypeCalcul.BASE));
 		
 		return result.toArray(new Effect[result.size()]);
 	}

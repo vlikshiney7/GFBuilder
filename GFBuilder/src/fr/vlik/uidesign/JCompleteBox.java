@@ -3,7 +3,7 @@ package fr.vlik.uidesign;
 import java.awt.event.ActionListener;
 
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.template.Buff;
 import fr.vlik.grandfantasia.template.ProcEffect;
 
@@ -21,7 +21,7 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 	private JCustomDialog filterDialog;
 	private JCustomCheckBox<ProcEffect> proc;
 	
-	public JCompleteBox(E[] object, String iconFilter, String[] iconProc, int gridValue, Filtrable[]... filters) {
+	public JCompleteBox(E[] object, String iconFilter, String[] iconProc, int gridValue, Filterable[]... filters) {
 		super(object);
 		this.filterDialog = new JCustomDialog(iconFilter, gridValue, filters);
 		
@@ -30,7 +30,7 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 		this.proc.setVisible(false);
 	}
 	
-	public JCompleteBox(E[] object, String iconFilter, int gridValue, Filtrable[]... filters) {
+	public JCompleteBox(E[] object, String iconFilter, int gridValue, Filterable[]... filters) {
 		super(object);
 		this.filterDialog = new JCustomDialog(iconFilter, gridValue, filters);
 	}
@@ -69,7 +69,7 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 		return this.filterDialog.isAndValue();
 	}
 	
-	public Filtrable[] getFilters() {
+	public Filterable[] getFilters() {
 		return this.filterDialog.getFilters();
 	}
 	

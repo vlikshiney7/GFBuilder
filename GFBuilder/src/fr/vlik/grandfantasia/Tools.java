@@ -5,12 +5,17 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.text.Normalizer;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.charac.Reinca;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.equip.Armor.ArmorType;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Condition;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -76,23 +81,13 @@ public class Tools {
 		return false;
 	}
 	
-	public static boolean contains(Filtrable[] tabFilter, Filtrable filter) {
-		for(Filtrable element : tabFilter) {
-			if(filter.equals(element)) {
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	public static boolean contains(Filtrable[] tabFilter, Filtrable[] filter) {
+	public static boolean containFilter(Filterable[] tabFilter, Filterable[] filter) {
 		if(filter == null) {
 			return false;
 		}
 		
-		for(Filtrable element : filter) {
-			if(contains(tabFilter, element)) {
+		for(Filterable element : filter) {
+			if(containObject(tabFilter, element)) {
 				return true;
 			}
 		}
@@ -127,5 +122,61 @@ public class Tools {
 		}
 		
 		return tab;
+	}
+	
+	public static boolean containObject(Object[] tab, Object element) {
+		for(Object tabElement : tab) {
+			if(tabElement.equals(element)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public static boolean evaluateProperties(Map<Object, Object> properties) {
+		for(Entry<Object, Object> entry : properties.entrySet()) {
+			if(!evaluateProperty(entry)) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	private static boolean evaluateProperty(Entry<Object, Object> entry) {
+		if(entry.getKey() instanceof Integer) {
+			return (Integer) entry.getKey() <= (Integer) entry.getValue();
+		} else if(entry.getKey() instanceof Boolean) {
+			if(!(Boolean) entry.getKey()) {
+				return true;
+			} else {
+				return ((Reinca) entry.getValue()).getLvl() > 0;
+			}
+		} else if(entry.getValue() instanceof Quality) {
+			if((Quality) entry.getKey() != null) {
+				return (Quality) entry.getKey() == (Quality) entry.getValue();
+			} else {
+				return true;
+			}
+		} else if(entry.getKey() instanceof GradeName) {
+			return (GradeName) entry.getKey() == (GradeName) entry.getValue() || (GradeName) entry.getValue() == GradeName.NONE;
+		} else if(entry.getKey() instanceof ArmorType) {
+			return (ArmorType) entry.getKey() == (ArmorType) entry.getValue();
+		} else if(entry.getKey() instanceof Object[]) {
+			boolean compare = containObject((Object[]) entry.getKey(), entry.getValue());
+			
+			if(!compare) {
+				if(entry.getValue() instanceof GradeName) {
+					return (GradeName) entry.getValue() == GradeName.NONE;
+				}
+			} else {
+				return compare;
+			}
+		} else {
+			System.out.println("Type non reconnu : " + entry.getKey().getClass().getSimpleName());
+		}
+		
+		return false;
 	}
 }

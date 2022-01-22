@@ -18,7 +18,7 @@ import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equipUpgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -83,7 +83,7 @@ public class Weapon extends Equipment {
 	}
 	
 	@SuppressWarnings("serial")
-	public static enum WeaponType implements EquipType, Filtrable, Writable {
+	public static enum WeaponType implements EquipType, Filterable, Writable {
 		EPEE1M(0, new HashMap<Language, String>() {{ put(Language.FR, "Épée 1M"); put(Language.EN, "1H Sword"); }}, true),
 		MARTEAU1M(1, new HashMap<Language, String>() {{ put(Language.FR, "Marteau 1M"); put(Language.EN, "1H Hammer"); }}, true),
 		HACHE1M(2, new HashMap<Language, String>() {{ put(Language.FR, "Hache 1M"); put(Language.EN, "1H Axe"); }}, true),
@@ -259,64 +259,34 @@ public class Weapon extends Equipment {
 	
 	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
-		int[] weaponType = null;
-		switch (idList) {
-			case 0 :
-				weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };
-				break;
-			case 1 : 
-				weaponType = doubleWeapon ? new int[] { 0, 1, 2, 6, 15, 16 } : new int[] { 15 };
-				break;
-			case 2 :
-				weaponType = new int[] { 8, 9, 10, 11, 14 };
-				break;
-		}
+		WeaponType[] weaponType = Weapon.getWeaponType(idList, doubleWeapon);
 		
 		result.add(new Weapon());
 		
 		for(Weapon custom : Weapon.customData) {
-			if(!custom.containGrade(grade.getGrade())) {
-				continue;
-			}
 			
-			boolean allowType = false;
-			for(int checkType : weaponType) {
-				if(checkType == custom.getType().index) {
-					allowType = true;
-					break;
-				}
-			}
-				 
-			if(!allowType) {
-				continue;
-			}
+			Map<Object, Object> properties = new HashMap<Object, Object>();
+			properties.put(custom.getGrades(), grade.getGrade());
+			properties.put(custom.getLvl(), lvl);
+			properties.put(custom.isReinca(), reinca);
+			properties.put(weaponType, custom.getType());
 			
-			if(custom.getLvl() <= lvl) {
-				if(!custom.isReinca()) {
-					result.add(custom);
-				} else {
-					if(reinca.getLvl() > 0) {
-						result.add(custom);
-					}
-				}
+			if(Tools.evaluateProperties(properties)) {
+				result.add(custom);
 			}
 		}
 		
 		for(int i = 0; i < weaponType.length; i++) {
-			Weapon[] oneWeaponType = Weapon.data[weaponType[i]];
+			Weapon[] oneWeaponType = Weapon.data[weaponType[i].index];
+			
 			for(int j = 0; j < oneWeaponType.length; j++) {
-				if(!oneWeaponType[j].containGrade(grade.getGrade())) {
-					continue;
-				}
+				Map<Object, Object> properties = new HashMap<Object, Object>();
+				properties.put(oneWeaponType[j].getGrades(), grade.getGrade());
+				properties.put(oneWeaponType[j].getLvl(), lvl);
+				properties.put(oneWeaponType[j].isReinca(), reinca);
 				
-				if(oneWeaponType[j].getLvl() <= lvl) {
-					if(!oneWeaponType[j].isReinca()) {
-						result.add(oneWeaponType[j]);
-					} else {
-						if(reinca.getLvl() > 0) {
-							result.add(oneWeaponType[j]);
-						}
-					}
+				if(Tools.evaluateProperties(properties)) {
+					result.add(oneWeaponType[j]);
 				}
 			}
 		}
@@ -328,159 +298,29 @@ public class Weapon extends Equipment {
 		return result.toArray(new Weapon[result.size()]);
 	}
 	
-	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon, String key, Filtrable[] filter, Weapon choice, boolean andValue) {
+	public static Weapon[] applyFilters(Weapon[] possible, Weapon choice, String key, Filterable[] filter, boolean andValue) {
 		ArrayList<Weapon> result = new ArrayList<Weapon>();
-		int[] weaponType = null;
-		switch (idList) {
-			case 0 :
-				weaponType = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };
-				break;
-			case 1 : 
-				weaponType = doubleWeapon ? new int[] { 0, 1, 2, 6, 15, 16 } : new int[] { 15 };
-				break;
-			case 2 :
-				weaponType = new int[] { 8, 9, 10, 11, 14 };
-				break;
-		}
 		
 		result.add(new Weapon());
 		if(!choice.equals(new Weapon())) {
-			if(choice.containGrade(grade.getGrade())) {
-				boolean allowType = false;
-				for(int checkType : weaponType) {
-					if(checkType == choice.getType().index) {
-						allowType = true;
-						break;
-					}
-				}
-					 
-				if(allowType) {
-					if(choice.getLvl() <= lvl) {
-						if(!choice.isReinca()) {
-							result.add(choice);
-						} else {
-							if(reinca.getLvl() > 0) {
-								result.add(choice);
-							}
-						}
-					}
-				}
+			if(Tools.containObject(possible, choice)) {
+				result.add(choice);
 			}
 		}
 		
-		for(Weapon custom : Weapon.customData) {
-			if(!custom.containGrade(grade.getGrade())) {
-				continue;
-			}
+		for(Weapon weapon : possible) {
+			boolean[] filters = new boolean[] {
+				Tools.searchOnName(key, weapon.getMap(), andValue),
+				Tools.containObject(filter, weapon.getQuality()),
+				//Tools.containFilter(filter, weapon.getTag()),
+				Tools.containObject(filter, weapon.getType()),
+			};
 			
-			boolean allowType = false;
-			for(int checkType : weaponType) {
-				if(checkType == custom.getType().index) {
-					allowType = true;
-					break;
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
+				if(!choice.equals(weapon)) {
+					result.add(weapon);
 				}
 			}
-				 
-			if(!allowType) {
-				continue;
-			}
-			
-			if(custom.getLvl() <= lvl) {
-				if(!custom.isReinca()) {
-					if(andValue) {
-						if(Tools.searchOnName(key, custom.getMap(), andValue)
-							&& Tools.contains(filter, custom.getQuality()) && /*Tools.contains(filter, custom.getTag()) &&*/ Tools.contains(filter, custom.getType())) {
-							
-							if(!choice.equals(custom)) {
-								result.add(custom);
-							}
-						}
-					} else {
-						if(Tools.searchOnName(key, custom.getMap(), andValue)
-							|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag()) || Tools.contains(filter, custom.getType())) {
-							
-							if(!choice.equals(custom)) {
-								result.add(custom);
-							}
-						}
-					}
-				} else {
-					if(reinca.getLvl() > 0) {
-						if(andValue) {
-							if(Tools.searchOnName(key, custom.getMap(), andValue)
-								&& Tools.contains(filter, custom.getQuality()) && /*Tools.contains(filter, custom.getTag()) && */Tools.contains(filter, custom.getType())) {
-								
-								if(!choice.equals(custom)) {
-									result.add(custom);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, custom.getMap(), andValue)
-								|| Tools.contains(filter, custom.getQuality()) || Tools.contains(filter, custom.getTag()) || Tools.contains(filter, custom.getType())) {
-								
-								if(!choice.equals(custom)) {
-									result.add(custom);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		for(int i = 0; i < weaponType.length; i++) {
-			Weapon[] oneWeaponType = Weapon.data[weaponType[i]];
-			for(int j = 0; j < oneWeaponType.length; j++) {
-				if(!oneWeaponType[j].containGrade(grade.getGrade())) {
-					continue;
-				}
-				
-				if(oneWeaponType[j].getLvl() <= lvl) {
-					if(!oneWeaponType[j].isReinca()) {
-						if(andValue) {
-							if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
-								&& Tools.contains(filter, oneWeaponType[j].getQuality()) && /*Tools.contains(filter, oneWeaponType[j].getTag()) &&*/ Tools.contains(filter, oneWeaponType[j].getType())) {
-								
-								if(!choice.equals(oneWeaponType[j])) {
-									result.add(oneWeaponType[j]);
-								}
-							}
-						} else {
-							if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
-								|| Tools.contains(filter, oneWeaponType[j].getQuality()) || Tools.contains(filter, oneWeaponType[j].getTag()) || Tools.contains(filter, oneWeaponType[j].getType())) {
-								
-								if(!choice.equals(oneWeaponType[j])) {
-									result.add(oneWeaponType[j]);
-								}
-							}
-						}
-					} else {
-						if(reinca.getLvl() > 0) {
-							if(andValue) {
-								if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
-									&& Tools.contains(filter, oneWeaponType[j].getQuality()) && /*Tools.contains(filter, oneWeaponType[j].getTag()) &&*/ Tools.contains(filter, oneWeaponType[j].getType())) {
-									
-									if(!choice.equals(oneWeaponType[j])) {
-										result.add(oneWeaponType[j]);
-									}
-								}
-							} else {
-								if(Tools.searchOnName(key, oneWeaponType[j].getMap(), andValue)
-									|| Tools.contains(filter, oneWeaponType[j].getQuality()) || Tools.contains(filter, oneWeaponType[j].getTag()) || Tools.contains(filter, oneWeaponType[j].getType())) {
-									
-									if(!choice.equals(oneWeaponType[j])) {
-										result.add(oneWeaponType[j]);
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		
-		if(toIgnore != null && toIgnore.isUniqueEquip()) {
-			result.remove(toIgnore);
 		}
 		
 		return result.toArray(new Weapon[result.size()]);
@@ -494,29 +334,34 @@ public class Weapon extends Equipment {
 		return Weapon.qualities;
 	}
 	
-	public static WeaponType[] getWeaponType(int idList) {
-		WeaponType[] typeList = null;
-		int[] id = null;
-		
+	public static WeaponType[] getWeaponType(int idList, boolean doubleWeapon) {
 		switch (idList) {
 			case 0 :
-				typeList = new WeaponType[11];
-				id = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 16 };
-				break;
+				return new WeaponType[] {
+					WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M,
+					WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M,
+					WeaponType.MECA1M, WeaponType.MECA2M,
+					WeaponType.BATON, WeaponType.LAME,
+					WeaponType.DEFAULT,
+				};
 			case 1 :
-				typeList = new WeaponType[6];
-				id = new int[] { 0, 1, 2, 6, 15, 16 };
-				break;
+				if(doubleWeapon) {
+					return new WeaponType[] {
+						WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M,
+						WeaponType.MECA1M, WeaponType.BOUCLIER, WeaponType.DEFAULT,
+					};
+				} else {
+					return new WeaponType[] {
+						WeaponType.BOUCLIER,
+					};
+				}
 			case 2 :
-				typeList = new WeaponType[5];
-				id = new int[] { 8, 9, 10, 11, 14 };
-				break;
+				return new WeaponType[] {
+					WeaponType.ARC, WeaponType.GUN, WeaponType.CANON,
+					WeaponType.RELIQUE, WeaponType.CLE,
+				};
 		}
 		
-		for(int i = 0; i < typeList.length; i++) {
-			typeList[i] = WeaponType.values()[id[i]];
-		}
-		
-		return typeList;
+		return null;
 	}
 }

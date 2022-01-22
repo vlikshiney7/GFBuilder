@@ -118,13 +118,7 @@ public abstract class Equipment extends CompleteBuff {
 			return true;
 		}
 		
-		for(GradeName element : this.grades) {
-			if(element == grade) {
-				return true;
-			}
-		}
-		
-		return false;
+		return Tools.containObject(this.grades, grade);
 	}
 	
 	@Override

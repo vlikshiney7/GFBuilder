@@ -8,12 +8,14 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.enums.TypeMultipleHit;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equip.RedWeapon;
 import fr.vlik.grandfantasia.equip.Weapon;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.grandfantasia.stats.MultipleHit;
 import fr.vlik.grandfantasia.stats.Proc;
 import fr.vlik.grandfantasia.stats.Proc.Activation;
 import fr.vlik.grandfantasia.stats.RegenEffect;
@@ -1178,7 +1180,8 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 41, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.DegMa, false, 40),
-					new Effect(TypeEffect.DCCMa, false, 40),
+					new Effect(TypeEffect.DCCP, false, 40),
+					new Effect(TypeEffect.DCCM, false, 40),
 					new Effect(TypeEffect.MEN, false, 40),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
@@ -1379,7 +1382,8 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 26, true),
 					new Effect(TypeEffect.DegMa, false, 20),
-					new Effect(TypeEffect.DCCMa, false, 20),
+					new Effect(TypeEffect.DCCP, false, 20),
+					new Effect(TypeEffect.DCCM, false, 20),
 					new Proc(10, Activation.Attack, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
@@ -10639,7 +10643,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 858),
 					new Effect(TypeEffect.DegSkillM, false, 20),
 					new Proc(20, Activation.Attack, 5, 5, new Calculable[] {
-						new Effect(TypeEffect.DefM, true, 5),
+						new Effect(TypeEffect.DefM, true, -5, Target.OPPONENT),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Testament Sacré de Messiah"); put(Language.EN, "Rune: Isolate"); }},
@@ -12147,7 +12151,9 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 20),
 						new Effect(TypeEffect.DCCM, false, 20),
-						new StaticEffect(TypeStaticEffect.x3Skill_old, 30),
+						new Proc(30, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double),
+						}),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre indestructible Soul-Edge"); put(Language.EN, ""); }},
@@ -12253,7 +12259,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 124, true),
 					new Effect(TypeEffect.VOL, false, 53, true),
 					new Effect(TypeEffect.Toucher, false, 25),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+					new Proc(25, Activation.Attack, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double),
+					}),
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -150, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -3000, -6000, TypeRegen.POISON),
@@ -12379,7 +12387,9 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 20),
 						new Effect(TypeEffect.DCCM, false, 20),
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+						new Proc(25, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double),
+						}),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton Plume Arc-en-Ciel"); put(Language.EN, "Rainbow Feather Staff"); }},
@@ -12392,8 +12402,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 52, true),
 					new Effect(TypeEffect.AtkM, true, 25),
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2Skill_old, 50),
 						new RegenEffect(TypeEffect.PM, false, 500, TypeRegen.REGENERATION, 2),
+						new Proc(50, Activation.Skill, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double),
+						}),
 					}),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Bâton des longues mémoires de Mosunk"); put(Language.EN, "(Reforged) Mosunk - Stick of Memories"); }},
@@ -13611,7 +13623,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 129, true),
 					new Effect(TypeEffect.INT, false, 235, true),
 					new Effect(TypeEffect.VOL, false, 100, true),
-					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
+					new Proc(20, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 40),
+					}),
 					new Proc(40, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -6, Target.OPPONENT),
 						new Effect(TypeEffect.IntComp, false, -4),
@@ -13627,7 +13641,9 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 122, true),
 					new Effect(TypeEffect.INT, false, 220, true),
 					new Effect(TypeEffect.VOL, false, 98, true),
-					new StaticEffect(TypeStaticEffect.x3Skill_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 40),
+					}),
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),

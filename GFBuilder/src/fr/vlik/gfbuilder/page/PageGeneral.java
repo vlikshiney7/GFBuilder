@@ -273,8 +273,8 @@ public class PageGeneral extends PartialPage {
 	}
 	
 	private void updateTitle() {
-		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca(),
-				this.title.getSearch(), this.title.getFilters(), this.getTitle(), this.title.isAndValue());
+		Title[] tabTitle = Title.getPossibleData(this.getGrade().getGrade(), this.getLvl(), this.getReinca());
+		tabTitle = Title.applyFilters(tabTitle, this.getTitle(), this.title.getSearch(), this.title.getFilters(), this.title.isAndValue());
 		
 		this.title.setItems(tabTitle);
 	}

@@ -3,11 +3,11 @@ package fr.vlik.grandfantasia.enums;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 @SuppressWarnings("serial")
-public enum Tag implements Filtrable, Writable {
+public enum Tag implements Filterable, Writable {
 	
 	BOSS(new HashMap<Language, String>() {{ put(Language.FR, "WB/Boss de Guilde"); put(Language.EN, "WB/Guild Boss"); }}),
 	CHRONO(new HashMap<Language, String>() {{ put(Language.FR, "Défi chrono"); put(Language.EN, "Chrono challenge"); }}),

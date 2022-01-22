@@ -17,7 +17,7 @@ import javax.swing.border.LineBorder;
 import fr.vlik.gfbuilder.Lang;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.interfaces.Filtrable;
+import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
 public class JCustomDialog extends JDialog {
@@ -27,7 +27,7 @@ public class JCustomDialog extends JDialog {
 	private JCustomTextField search;
 	private JCustomButtonGroup<Logic> orAnd;
 	
-	private ArrayList<ArrayList<JCustomCheckBox<Filtrable>>> check;
+	private ArrayList<ArrayList<JCustomCheckBox<Filterable>>> check;
 	
 	private JCustomButton uncheck;
 	private JCustomButton allcheck;
@@ -37,7 +37,7 @@ public class JCustomDialog extends JDialog {
 	
 	private JLangLabel[] label;
 	
-	public JCustomDialog(String icon, int gridValue, Filtrable[]... filters) {
+	public JCustomDialog(String icon, int gridValue, Filterable[]... filters) {
 		this.setLayout(new BorderLayout());
 		this.setBlackUI();
 		this.setUndecorated(true);
@@ -52,8 +52,8 @@ public class JCustomDialog extends JDialog {
 		
 		this.label = Lang.getDataLabel(7);
 		
-		this.check = new ArrayList<ArrayList<JCustomCheckBox<Filtrable>>>(filters.length);
-		for(Filtrable[] filterGroup : filters) {
+		this.check = new ArrayList<ArrayList<JCustomCheckBox<Filterable>>>(filters.length);
+		for(Filterable[] filterGroup : filters) {
 			this.check.add(toList(filterGroup));
 		}
 		
@@ -105,7 +105,7 @@ public class JCustomDialog extends JDialog {
 		
 		page.add(panelSearch);
 		
-		for(ArrayList<JCustomCheckBox<Filtrable>> filterGroup : this.check) {
+		for(ArrayList<JCustomCheckBox<Filterable>> filterGroup : this.check) {
 			JCustomPanel panelFilter = new JCustomPanel(new GridLayout(filterGroup.size() / gridValue + (filterGroup.size() % gridValue == 0 ? 0 : 1), gridValue), new EmptyBorder(0, 10, 10, 10));
 			panelFilter.setBackground(Design.UIColor[2]);
 			
@@ -167,10 +167,10 @@ public class JCustomDialog extends JDialog {
 		return this.orAnd.getSelectedItem() == Logic.AND;
 	}
 	
-	private ArrayList<JCustomCheckBox<Filtrable>> toList(Filtrable[] filter) {
-		ArrayList<JCustomCheckBox<Filtrable>> listFilter = new ArrayList<JCustomCheckBox<Filtrable>>(filter.length);
+	private ArrayList<JCustomCheckBox<Filterable>> toList(Filterable[] filter) {
+		ArrayList<JCustomCheckBox<Filterable>> listFilter = new ArrayList<JCustomCheckBox<Filterable>>(filter.length);
 		for(int i = 0; i < filter.length; i++) {
-			listFilter.add(new JCustomCheckBox<Filtrable>(filter[i]));
+			listFilter.add(new JCustomCheckBox<Filterable>(filter[i]));
 			listFilter.get(i).setSelected(true);
 		}
 		
@@ -180,8 +180,8 @@ public class JCustomDialog extends JDialog {
 	public void updateLanguage(Language lang) {
 		this.orAnd.updateText(lang);
 		
-		for(ArrayList<JCustomCheckBox<Filtrable>> checkBoxList : this.check) {
-			for(JCustomCheckBox<Filtrable> checkBox : checkBoxList) {
+		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
+			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
 				checkBox.updateText(lang);
 			}
 		}
@@ -215,23 +215,23 @@ public class JCustomDialog extends JDialog {
 		return this.search.getText();
 	}
 	
-	public Filtrable[] getFilters() {
-		ArrayList<Filtrable> result = new ArrayList<Filtrable>();
+	public Filterable[] getFilters() {
+		ArrayList<Filterable> result = new ArrayList<Filterable>();
 		
-		for(ArrayList<JCustomCheckBox<Filtrable>> checkBoxList : this.check) {
-			for(JCustomCheckBox<Filtrable> checkBox : checkBoxList) {
+		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
+			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
 				if(checkBox.isSelected()) {
 					result.add(checkBox.getItem());
 				}
 			}
 		}
 		
-		return result.toArray(new Filtrable[result.size()]);
+		return result.toArray(new Filterable[result.size()]);
 	}
 	
 	private void setCheck(boolean toCheck) {
-		for(ArrayList<JCustomCheckBox<Filtrable>> checkBoxList : this.check) {
-			for(JCustomCheckBox<Filtrable> checkBox : checkBoxList) {
+		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
+			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
 				checkBox.setSelected(toCheck);
 			}
 		}
