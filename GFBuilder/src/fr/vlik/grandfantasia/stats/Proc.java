@@ -9,6 +9,7 @@ public class Proc implements Calculable {
 	private double taux;
 	private double time = 0;
 	private int cumul = 1;
+	private double cooldown = 0;
 	private TDB tdb = TDB.NONE;
 	
 
@@ -24,13 +25,29 @@ public class Proc implements Calculable {
 		this.effects = effects;
 	}
 	
+	public Proc(double taux, Activation activation, Calculable[] effects, double cooldown) {
+		this(taux, activation, effects);
+		this.cooldown = cooldown;
+	}
+	
 	public Proc(double taux, Activation activation, double time, Calculable[] effects) {
 		this(taux, activation, effects);
 		this.time = time;
 	}
 	
+	public Proc(double taux, Activation activation, double time, Calculable[] effects, double cooldown) {
+		this(taux, activation, effects);
+		this.time = time;
+		this.cooldown = cooldown;
+	}
+	
 	public Proc(double taux, Activation activation, double time, int cumul, Calculable[] effects) {
 		this(taux, activation, time, effects);
+		this.cumul = cumul;
+	}
+	
+	public Proc(double taux, Activation activation, double time, int cumul, Calculable[] effects, double cooldown) {
+		this(taux, activation, time, effects, cooldown);
 		this.cumul = cumul;
 	}
 	
@@ -100,6 +117,10 @@ public class Proc implements Calculable {
 		return this.cumul;
 	}
 	
+	public double getCooldown() {
+		return this.cooldown;
+	}
+	
 	public TDB getTDB() {
 		return this.tdb;
 	}
@@ -146,6 +167,10 @@ public class Proc implements Calculable {
 		
 		if(this.cumul > 1 && this.tdb != TDB.TDB) {
 			tooltip.append("<li>Cumulable " + this.cumul + " fois</li>");
+		}
+		
+		if(this.cooldown != 0) {
+			tooltip.append("<li>Rechargement : " + this.cooldown + "s</li>");
 		}
 		
 		tooltip.append("</ul>");
@@ -196,6 +221,10 @@ public class Proc implements Calculable {
 			if(this.cumul != 1 && this.tdb != TDB.TDB) {
 				result.append("\t\tCumulable " + this.cumul + " fois\n");
 			}
+			
+			if(this.cooldown != 0) {
+				result.append("\t\tRechargement : " + this.cooldown + "s\n");
+			}
 		} else {
 			if(this.tdb == TDB.TDB) {
 				result.append("After " + this.cumul + " stacks " + this.activation.en + ":\n");
@@ -226,6 +255,10 @@ public class Proc implements Calculable {
 			
 			if(this.cumul != 1 && this.tdb != TDB.TDB) {
 				result.append("\t\tStacks up to " + this.cumul + " times\n");
+			}
+			
+			if(this.cooldown != 0) {
+				result.append("\t\tCooldown : " + this.cooldown + "s\n");
 			}
 		}
 		

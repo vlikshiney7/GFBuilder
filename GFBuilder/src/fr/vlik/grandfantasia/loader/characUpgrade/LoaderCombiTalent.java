@@ -292,8 +292,8 @@ public class LoaderCombiTalent {
 				new SkillEffect(TypeSkillEffect.Class4S18, 30, TypeValue.HEAL),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Juge Sacré"); put(Language.EN, "Holy Judge"); }}, new int[] { 1, 2, }, new Calculable[] {
-				new Effect(TypeEffect.Atk, true, 4),
-				new Effect(TypeEffect.DefP, true, 6),
+				new Effect(TypeEffect.Atk, true, 6),
+				new Effect(TypeEffect.DefP, true, 4),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Erudit en Mots Sacrés"); put(Language.EN, "Scholar of the Word"); }}, new int[] { 1, 3, }, new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 10),
@@ -363,8 +363,8 @@ public class LoaderCombiTalent {
 				new Effect(TypeEffect.ESQ, false, 15),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Juge Sacré"); put(Language.EN, "Holy Judge"); }}, new int[] { 1, 2, }, new Calculable[] {
-				new Effect(TypeEffect.Atk, true, 4),
-				new Effect(TypeEffect.DefP, true, 6),
+				new Effect(TypeEffect.Atk, true, 6),
+				new Effect(TypeEffect.DefP, true, 4),
 			}),
 			new CombiTalent(new HashMap<Language, String>() {{ put(Language.FR, "Erudit en Mots Sacrés"); put(Language.EN, "Scholar of the Word"); }}, new int[] { 1, 3, }, new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 10),

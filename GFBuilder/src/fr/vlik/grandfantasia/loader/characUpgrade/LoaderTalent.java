@@ -2249,37 +2249,37 @@ public class LoaderTalent {
 			}),
 			new Talent(new HashMap<Language, String>() {{ put(Language.FR, "Barrière Bénie"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "4-9", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.Parade, false, 11),
+					new Effect(TypeEffect.RParade, false, 11),
 					new Effect(TypeEffect.ReducStdP, false, 5),
 					new Effect(TypeEffect.ReducStdD, false, 5),
 					new Effect(TypeEffect.ReducSkillP, false, 5),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Parade, false, 13),
+					new Effect(TypeEffect.RParade, false, 13),
 					new Effect(TypeEffect.ReducStdP, false, 7),
 					new Effect(TypeEffect.ReducStdD, false, 7),
 					new Effect(TypeEffect.ReducSkillP, false, 7),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Parade, false, 16),
+					new Effect(TypeEffect.RParade, false, 16),
 					new Effect(TypeEffect.ReducStdP, false, 9),
 					new Effect(TypeEffect.ReducStdD, false, 9),
 					new Effect(TypeEffect.ReducSkillP, false, 9),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Parade, false, 18),
+					new Effect(TypeEffect.RParade, false, 18),
 					new Effect(TypeEffect.ReducStdP, false, 11),
 					new Effect(TypeEffect.ReducStdD, false, 11),
 					new Effect(TypeEffect.ReducSkillP, false, 11),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Parade, false, 20),
+					new Effect(TypeEffect.RParade, false, 20),
 					new Effect(TypeEffect.ReducStdP, false, 13),
 					new Effect(TypeEffect.ReducStdD, false, 13),
 					new Effect(TypeEffect.ReducSkillP, false, 13),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Parade, false, 22),
+					new Effect(TypeEffect.RParade, false, 22),
 					new Effect(TypeEffect.ReducStdP, false, 15),
 					new Effect(TypeEffect.ReducStdD, false, 15),
 					new Effect(TypeEffect.ReducSkillP, false, 15),

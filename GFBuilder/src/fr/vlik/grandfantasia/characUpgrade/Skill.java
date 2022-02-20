@@ -30,7 +30,11 @@ public class Skill extends Buff {
 		super(name, effects);
 		this.lvl = new int[] { lvl };
 		String lvlSkill = "Lvl " + lvl + " - ";
-		this.lvlEffect = new InnerIconEffect[] { new InnerIconEffect(new HashMap<Language, String>() {{ put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN)); }}, "skill/" + path, 0, effects) };
+		this.lvlEffect = new InnerIconEffect[] {
+			new InnerIconEffect(new HashMap<Language, String>() {{
+				put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN));
+			}}, "skill/" + path, 0, effects)
+		};
 	}
 	
 	@SuppressWarnings("serial")
@@ -43,7 +47,7 @@ public class Skill extends Buff {
 			int lvlEffect = i+1;
 			String lvlSkill = "Lvl " + this.lvl[i] + " - ";
 			Calculable[] effect = lvlEffects[i];
-			this.lvlEffect[i] = new InnerIconEffect(new HashMap<Language, String>() {{ put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN)); }}, "skill/" + path, lvlEffect, effect);
+			this.lvlEffect[i] = new InnerIconEffect(new HashMap<Language, String>() {{put(Language.FR, lvlSkill + name.get(Language.FR)); put(Language.EN, lvlSkill + name.get(Language.EN)); }}, "skill/" + path, lvlEffect, effect);
 		}
 	}
 	

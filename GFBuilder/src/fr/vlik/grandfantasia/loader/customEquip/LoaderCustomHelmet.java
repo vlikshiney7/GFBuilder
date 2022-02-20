@@ -57,7 +57,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Tyrannique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "80nucleus0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 635, true),
+					new Effect(TypeEffect.DefP, false, 634, true),
 					new Effect(TypeEffect.DefM, false, 473, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2),
@@ -73,7 +73,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Gladiateur Barbare"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50vert0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 635, true),
+					new Effect(TypeEffect.DefP, false, 634, true),
 					new Effect(TypeEffect.DefM, false, 473, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2),
@@ -89,7 +89,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Feu de Météore"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "40pve0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 456, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
@@ -105,7 +105,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Feu Solaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "60pve0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 456, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
@@ -410,7 +410,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Coucher de Lune"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "65pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 540, true),
+					new Effect(TypeEffect.DefP, false, 539, true),
 					new Effect(TypeEffect.DefM, false, 515, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2),
@@ -426,7 +426,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau du Promeneur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50vert2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 540, true),
+					new Effect(TypeEffect.DefP, false, 539, true),
 					new Effect(TypeEffect.DefM, false, 515, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2),
@@ -442,8 +442,8 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau de l'Araignée Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "25pvp2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 523, true),
-					new Effect(TypeEffect.DefM, false, 497, true),
+					new Effect(TypeEffect.DefP, false, 522, true),
+					new Effect(TypeEffect.DefM, false, 496, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
 				}),
@@ -458,8 +458,8 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau Étoile Filante"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 523, true),
-					new Effect(TypeEffect.DefM, false, 497, true),
+					new Effect(TypeEffect.DefP, false, 522, true),
+					new Effect(TypeEffect.DefM, false, 496, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
 				}),
@@ -771,7 +771,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare de la Suprématie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "75evo4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 582, true),
+					new Effect(TypeEffect.DefP, false, 581, true),
 					new Effect(TypeEffect.DefM, false, 452, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 15),
@@ -787,7 +787,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare du Dompteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "40pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 582, true),
+					new Effect(TypeEffect.DefP, false, 581, true),
 					new Effect(TypeEffect.DefM, false, 452, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 15),
@@ -795,7 +795,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne du Croissant d'Argent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 575, true),
+					new Effect(TypeEffect.DefP, false, 574, true),
 					new Effect(TypeEffect.DefM, false, 429, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
@@ -803,7 +803,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Guirlande du Pays des Merveilles"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "95pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 564, true),
+					new Effect(TypeEffect.DefP, false, 563, true),
 					new Effect(TypeEffect.DefM, false, 438, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
@@ -811,7 +811,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Couronne de la Lune Pure"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "30pve4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 575, true),
+					new Effect(TypeEffect.DefP, false, 574, true),
 					new Effect(TypeEffect.DefM, false, 429, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
@@ -819,7 +819,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Tiare du Rêve Arc-en-Ciel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 564, true),
+					new Effect(TypeEffect.DefP, false, 563, true),
 					new Effect(TypeEffect.DefM, false, 438, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
@@ -1124,7 +1124,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque Croc de Zombie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "80nucleus7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 486, true),
+					new Effect(TypeEffect.DefP, false, 485, true),
 					new Effect(TypeEffect.DefM, false, 443, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2),
@@ -1140,7 +1140,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Survivant de l'Apocalypse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "40pve1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 486, true),
+					new Effect(TypeEffect.DefP, false, 485, true),
 					new Effect(TypeEffect.DefM, false, 443, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2),
@@ -1469,7 +1469,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Loup-spectre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 635, true),
+					new Effect(TypeEffect.DefP, false, 634, true),
 					new Effect(TypeEffect.DefM, false, 473, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Pâle hibou des ombres"); put(Language.EN, ""); }},
@@ -1481,7 +1481,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Profondes aspirations au repos éternel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 635, true),
+					new Effect(TypeEffect.DefP, false, 634, true),
 					new Effect(TypeEffect.DefM, false, 473, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure des Pleurs amers"); put(Language.EN, ""); }},
@@ -1493,7 +1493,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Bête à bain de sang"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 456, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Démon dévore-cœur"); put(Language.EN, ""); }},
@@ -1505,7 +1505,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Immobilité mortelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon21", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 456, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de la Présence d'esprit"); put(Language.EN, ""); }},
@@ -1517,13 +1517,13 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Morale corrompue"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				90, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "86bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 595, true),
+					new Effect(TypeEffect.DefP, false, 594, true),
 					new Effect(TypeEffect.DefM, false, 439, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de l'Aimable tueur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				90, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "87bleu9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 496, true),
+					new Effect(TypeEffect.DefP, false, 495, true),
 					new Effect(TypeEffect.DefM, false, 488, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Chute"); put(Language.EN, ""); }},
@@ -1557,7 +1557,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Charge de taureau"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				82, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "82blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 562, true),
+					new Effect(TypeEffect.DefP, false, 561, true),
 					new Effect(TypeEffect.DefM, false, 412, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure des Falaises"); put(Language.EN, ""); }},
@@ -1585,13 +1585,13 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Anneau tranchant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				77, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 541, true),
+					new Effect(TypeEffect.DefP, false, 540, true),
 					new Effect(TypeEffect.DefM, false, 395, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure d'Acupuncture"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				77, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "80lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 451, true),
+					new Effect(TypeEffect.DefP, false, 450, true),
 					new Effect(TypeEffect.DefM, false, 438, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Ordre"); put(Language.EN, ""); }},
@@ -1619,13 +1619,13 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de l'Esprit lunaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				72, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "82blanc9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 433, true),
+					new Effect(TypeEffect.DefP, false, 432, true),
 					new Effect(TypeEffect.DefM, false, 419, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de la Tortue-dragon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				70, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "82blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 511, true),
+					new Effect(TypeEffect.DefP, false, 510, true),
 					new Effect(TypeEffect.DefM, false, 370, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 					new Effect(TypeEffect.TCCP, false, 1),
@@ -1665,7 +1665,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque léger"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				61, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 471, true),
+					new Effect(TypeEffect.DefP, false, 470, true),
 					new Effect(TypeEffect.DefM, false, 338, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Sans douleur"); put(Language.EN, ""); }},
@@ -1701,13 +1701,13 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Ombre de minuit"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				58, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 457, true),
+					new Effect(TypeEffect.DefP, false, 456, true),
 					new Effect(TypeEffect.DefM, false, 327, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Plaisir crépusculaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				58, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 381, true),
+					new Effect(TypeEffect.DefP, false, 380, true),
 					new Effect(TypeEffect.DefM, false, 364, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque des Éclats de fer"); put(Language.EN, ""); }},
@@ -1743,7 +1743,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Rapacité"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				43, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 321, true),
+					new Effect(TypeEffect.DefP, false, 320, true),
 					new Effect(TypeEffect.DefM, false, 304, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Voyageur sans attache"); put(Language.EN, ""); }},
@@ -1755,25 +1755,25 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de Visiteur des Terres vierges"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				42, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 317, true),
+					new Effect(TypeEffect.DefP, false, 316, true),
 					new Effect(TypeEffect.DefM, false, 300, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de l'Ancien mausolée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				35, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 344, true),
+					new Effect(TypeEffect.DefP, false, 343, true),
 					new Effect(TypeEffect.DefM, false, 245, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure de la Tombe ancestrale"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				35, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon20", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 287, true),
+					new Effect(TypeEffect.DefP, false, 286, true),
 					new Effect(TypeEffect.DefM, false, 272, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Lion à crinière"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				34, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 339, true),
+					new Effect(TypeEffect.DefP, false, 338, true),
 					new Effect(TypeEffect.DefM, false, 241, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Bonnet de fourrure du Tigre des neiges"); put(Language.EN, ""); }},
@@ -1802,15 +1802,15 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de la Voix Irréelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon24", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 664, true),
-					new Effect(TypeEffect.DefM, false, 500, true),
+					new Effect(TypeEffect.DefP, false, 663, true),
+					new Effect(TypeEffect.DefM, false, 499, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCM, false, 15),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau pointu de Chronos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon25", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 486, true),
+					new Effect(TypeEffect.DefP, false, 485, true),
 					new Effect(TypeEffect.DefM, false, 443, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2),
@@ -1818,15 +1818,15 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque du Marcheur de Rêves"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon26", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 540, true),
-					new Effect(TypeEffect.DefM, false, 500, true),
+					new Effect(TypeEffect.DefP, false, 539, true),
+					new Effect(TypeEffect.DefM, false, 499, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCM, false, 15),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Coiffe de Pirate du Temps"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
 				100, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon27", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 486, true),
+					new Effect(TypeEffect.DefP, false, 485, true),
 					new Effect(TypeEffect.DefM, false, 443, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2),
@@ -1850,7 +1850,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casque de Nuages Psychédéliques"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				95, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "100evo10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 523, true),
+					new Effect(TypeEffect.DefP, false, 522, true),
 					new Effect(TypeEffect.DefM, false, 484, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCM, false, 13),
@@ -1867,7 +1867,7 @@ class LoaderCustomHelmet {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				90, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "icon29", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 496, true),
-					new Effect(TypeEffect.DefM, false, 469, true),
+					new Effect(TypeEffect.DefM, false, 468, true),
 					new Effect(TypeEffect.ESQ, false, 4),
 					new Effect(TypeEffect.DCCM, false, 11),
 				}),
@@ -1951,7 +1951,7 @@ class LoaderCustomHelmet {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				75, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "70gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 443, true),
-					new Effect(TypeEffect.DefM, false, 419, true),
+					new Effect(TypeEffect.DefM, false, 418, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 					new Effect(TypeEffect.DCCM, false, 5),
 				}),
@@ -1967,7 +1967,7 @@ class LoaderCustomHelmet {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				71, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
-					new Effect(TypeEffect.DefM, false, 406, true),
+					new Effect(TypeEffect.DefM, false, 405, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Chapeau d'extincteur du Temps"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2138,7 +2138,7 @@ class LoaderCustomHelmet {
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette de Poupée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				26, ArmorType.CASQUE, LoaderHelmet.ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 239, true),
+					new Effect(TypeEffect.DefP, false, 238, true),
 					new Effect(TypeEffect.DefM, false, 238, true),
 				}),
 			new CustomArmor(new HashMap<Language, String>() {{ put(Language.FR, "Casquette d'Illusionniste"); put(Language.EN, ""); }},

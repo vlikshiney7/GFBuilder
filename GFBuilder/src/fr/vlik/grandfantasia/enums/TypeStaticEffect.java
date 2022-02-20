@@ -42,6 +42,9 @@ public enum TypeStaticEffect implements Colorable, Writable {
 	ProSkillC10L2("40% réduction de dégât, maximum 3 coups", "40% damage reduction, 3 hits maximum", "40% reduc, max 3 coups", "40% reduc, 3 hits max", Tools.EffectColor[0]),
 	SetClass9("50% réduction de dégât, maximum 2 coups", "50% damage reduction, 2 hits maximum", "50% reduc, max 2 coups", "50% reduc, 2 hits max", Tools.EffectColor[0]),
 	
+	AddCharge("Ajoute un point de charge", "Add one charge point", "+1 pt charge", "+1 charge pts", Tools.EffectColor[0]),
+	DelCharge("Consomme les points de charge", "Consume charge points", "Util. pts charge", "Use charge pts", Tools.EffectColor[0]),
+	
 	;
 	
 	public final String fr;

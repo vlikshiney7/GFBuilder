@@ -180,10 +180,12 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 43, true),
 					new Effect(TypeEffect.RegenCB, false, 25),
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+						new Proc(25, Activation.Standard, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double),
+						}),
 						new Effect(TypeEffect.VitAtk, false, 25),
 						new Effect(TypeEffect.ESQ, false, 25),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée buster de Zack"); put(Language.EN, "Holy Avenger"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -194,10 +196,12 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.VitAtk, false, 18),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+						new Proc(25, Activation.Standard, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double),
+						}),
 						new Effect(TypeEffect.ESQ, false, 15),
 						new Effect(TypeEffect.TCCP, false, 15),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Équarrisseur de Zodd Nosferatu"); put(Language.EN, "Soul: Cut"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -207,13 +211,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 44, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
+					new Proc(20, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 100),
+					}),
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.DegOmbre, false, 1000),
 						new Effect(TypeEffect.DCCP, false, 30),
 						new Effect(TypeEffect.DefP, true, -10),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau stellaire de Jugement - 10e anniversaire"); put(Language.EN, "Judgment 10th Anniversary Star Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -223,13 +229,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 44, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
+					new Proc(20, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 100),
+					}),
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.DegOmbre, false, 1000),
 						new Effect(TypeEffect.DCCP, false, 30),
 						new Effect(TypeEffect.DefP, true, -10),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Zanpakuto Enflammé du Dragon"); put(Language.EN, "Dragonbane Dark Rock"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -239,11 +247,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 45, true),
 					new Effect(TypeEffect.AGI, false, 50, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+					new Proc(25, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 						new Effect(TypeEffect.DefP, false, -100, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Vierge Immaculée"); put(Language.EN, "Absolute Tyrant - Ice Lord"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -257,7 +267,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -180, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -3500, -5000, TypeRegen.POISON),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Royale de la Providence"); put(Language.EN, "Royal Sword - Holy Salvation"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -269,7 +279,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Proc(5, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 100),
-					}),
+					}, 2.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Empereur Déchu"); put(Language.EN, "Fallen Emperor - Dark Night"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -293,7 +303,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20),
 						new Effect(TypeEffect.Depla, false, 20),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de l'Eternité de Bodor"); put(Language.EN, "Bodor's Sword of Eternity"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -319,7 +329,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Foudre, false, 15),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Lâme victorieuse de Bodor"); put(Language.EN, "(Reforged) Bodor's Victorious Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -419,7 +429,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 10),
 						new Effect(TypeEffect.TCCP, false, 10),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Divine - Aile en Or"); put(Language.EN, "Divine Blade - Golden Wing"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -433,7 +443,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegEp, false, 25),
 						new Effect(TypeEffect.VitAtk, false, 10),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Lame Glaciale d'Hitsugaya"); put(Language.EN, "(Reforged) Bodor - Icefrost Sword"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -467,11 +477,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+					new Proc(25, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
 						new Effect(TypeEffect.DefP, false, -100, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Invincible Tyrannie"); put(Language.EN, "Unbeatable Tyrant - Icebound"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -485,7 +497,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -180, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -3500, -5000, TypeRegen.POISON),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Châtiment de l'Empereur"); put(Language.EN, "Emperor's Sword - Ruthless Sanction"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -497,7 +509,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Proc(5, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sabre en Écailles de Dragon Rouge"); put(Language.EN, "Bodor's Lunatic Blade"); }},
 				new GradeName[] { GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -541,7 +553,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20),
 						new Effect(TypeEffect.Depla, false, 20),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée du Marquis Bodor (Reforgée)"); put(Language.EN, "(Reforged) Bodor's Marquis Sword"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -601,10 +613,12 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Effect(TypeEffect.Toucher, false, 6),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
+					new Proc(15, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(30, Activation.Attack, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -200, TypeRegen.POISON, 2),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lumière Dorée"); put(Language.EN, "Golden Lightning"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -616,7 +630,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Foudre, false, 15),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Spectrale; Flamme du Dragon de Glace"); put(Language.EN, "Phantom Sword - Ice Dragon Flame"); }},
 				new GradeName[] { GradeName.ASSASSIN, },
@@ -737,7 +751,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 4.5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Double Lame du Levant"); put(Language.EN, "Sunset Double Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -764,7 +778,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 1.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Rituelle de Décapitation"); put(Language.EN, "Beheading Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -1186,7 +1200,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Kiseru terrassant Ultime"); put(Language.EN, "Bonechewer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1201,7 +1215,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.RegenCB, false, 30),
 						new Effect(TypeEffect.DefP, true, 40),
 						new Effect(TypeEffect.MEN, false, 30),
-					}),
+					}, 16),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Briseur de Crânes d'Ifrit"); put(Language.EN, "Field: Shatter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1217,7 +1231,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau stellaire du Proverbe - 10e anniversaire"); put(Language.EN, "Rumor 10th Anniversary Star Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1233,7 +1247,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Blizzard Funeste de la Liche"); put(Language.EN, "Phantasmic Crystal Hammer Insignia"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1249,7 +1263,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCP, false, 25),
 						new Effect(TypeEffect.DCCP, false, 25),
 						new Effect(TypeEffect.VitComp, false, 20),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maléfice des Enfers"); put(Language.EN, "Eightfold Hammer - Returner"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1288,7 +1302,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitComp, false, 15),
 					new Proc(20, Activation.Attacked, 5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Pipe du Chef Titan"); put(Language.EN, "Titan King's Pipe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1302,7 +1316,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.IntComp, false, -60),
 					new Proc(30, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -50, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Sacré de la Création de Jundo"); put(Language.EN, "Jundo's Holy Hammer of Creation"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1317,7 +1331,7 @@ public class LoaderWeapon {
 					new Proc(1, Activation.Attacked, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 99999, TypeRegen.REGENERATION),
 						new RegenEffect(TypeEffect.PM, false, 99999, TypeRegen.REGENERATION),
-					}),
+					}, 30),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre de la Foi"); put(Language.EN, "Pontiff's Faith Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1330,7 +1344,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegDemon, false, 615),
 					})
@@ -1387,7 +1401,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Marteau de Colère de Jundo"); put(Language.EN, "(Reforged) Jundo - Wrath Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1443,7 +1457,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 25),
 						new Effect(TypeEffect.DefP, true, 40),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ancien Marteau Magique - Seigneur des Bêtes"); put(Language.EN, "Ancient Magic Hammer - Beast Lord"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1457,7 +1471,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitComp, false, 10),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Marteau Géant d'Azazel"); put(Language.EN, "(Reforged) Jundo - Insane Warhammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1509,7 +1523,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCP, false, 25),
 						new Effect(TypeEffect.DCCP, false, 25),
 						new Effect(TypeEffect.VitComp, false, 20),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Spectre Mythique"); put(Language.EN, "Spectral Hammer - Proteus"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1559,7 +1573,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitComp, false, 15),
 					new Proc(20, Activation.Attacked, 5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton du Messager de l'Eveil"); put(Language.EN, "Awakening Messenger's Mace"); }},
 				new GradeName[] { GradeName.PALADIN, GradeName.CLERC, },
@@ -1583,7 +1597,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.IntComp, false, -60),
 					new Proc(30, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -50, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Oeil de la Bête de Jundo (Reforgé)"); put(Language.EN, "(Reforged) Jundo's Dragon Eye Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1630,7 +1644,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau Ancestral; Papillon de Lumière"); put(Language.EN, "Ancient Hammer - Symphony of Butterflies"); }},
 				new GradeName[] { GradeName.PALADIN, GradeName.CLERC, },
@@ -1654,7 +1668,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(20, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 40),
-					}),
+					}, 16),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre du Grand Prêtre"); put(Language.EN, "Archbishop's Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -1666,7 +1680,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegDemon, false, 562),
 					}),
@@ -1769,7 +1783,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 2, true),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau d'Impulsion Enflammée"); put(Language.EN, "Pulsing Fire Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -1809,7 +1823,7 @@ public class LoaderWeapon {
 					new Proc(14, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.ESQ, true, 50),
 						new Effect(TypeEffect.Depla, false, 20),
-					}),
+					}, 12),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegNature, false, 686),
 					}),
@@ -1833,7 +1847,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(25, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 70),
-					}),
+					}, 12),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegNature, false, 592),
 					}),
@@ -2268,7 +2282,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hachette affûtée de Bahamut"); put(Language.EN, "Season's Ruler"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2281,7 +2295,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30),
 						new StaticEffect(TypeStaticEffect.x2STD_old, 36),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Décapiteur Funeste du Roi Squelette"); put(Language.EN, "Blood: Pulse"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2295,7 +2309,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 35),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau stellaire de Déferlement - 10e anniversaire"); put(Language.EN, "Skybreaker 10th Anniversary Star Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2309,7 +2323,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 35),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Foudroyante du Chidori"); put(Language.EN, "Frozen Rage Flame"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2324,7 +2338,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCP, false, 30),
 						new Effect(TypeEffect.DCCP, false, 30),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de Golgotha"); put(Language.EN, "Proud Tearstream"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2338,7 +2352,7 @@ public class LoaderWeapon {
 					new Proc(12, Activation.Attack, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rugissement Déchirant de Haine"); put(Language.EN, "Hateful Roar - Gash"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2350,7 +2364,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Proc(10, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 250),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Baiser Mortel"); put(Language.EN, "Bloodlust Queen - Climax Kiss"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2362,7 +2376,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 25),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de l'Aurore Ailée"); put(Language.EN, "Winged Aurora Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2376,7 +2390,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 50),
 						new Effect(TypeEffect.DCCP, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de la Vérité de Smulca"); put(Language.EN, "Smulca's Battleaxe of Truth"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2445,7 +2459,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Smulca - Hâche à sang froid"); put(Language.EN, "(Reforged) Smulca - Cold-Blooded Killer's Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2490,7 +2504,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30),
 						new StaticEffect(TypeStaticEffect.x2STD_old, 36),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Poison Douloureux - Damnation"); put(Language.EN, "Excruciating Poison - Damnation"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2504,7 +2518,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, 80),
 						new Effect(TypeEffect.Atk, true, 20),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Hachoir de Balrog"); put(Language.EN, "(Reforged) Smulca - Vicious Combat Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2545,7 +2559,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCP, false, 30),
 						new Effect(TypeEffect.TCCP, false, 30),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fierté du Survivant"); put(Language.EN, "Unrelenting Pride - Bloodfang"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2559,7 +2573,7 @@ public class LoaderWeapon {
 					new Proc(12, Activation.Attack, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Larme de Sang"); put(Language.EN, "Bloody Roar - Render"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2571,7 +2585,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Proc(10, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 250),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hachoir de Cannibale"); put(Language.EN, "Smulca's Underworld Soulreaver"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2593,7 +2607,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Proc(12, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 25),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rugissement Blasphématoire"); put(Language.EN, "Bloody Fang's Roar"); }},
 				new GradeName[] { GradeName.BERSERKER, },
@@ -2615,7 +2629,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 50),
 						new Effect(TypeEffect.DCCP, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Guerrier de Smulca (Reforgée)"); put(Language.EN, "Reforges Smulca's Warrior Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2645,7 +2659,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30),
 						new Effect(TypeEffect.Toucher, false, 30),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de la Justice de Smulca"); put(Language.EN, "Smulca's Axe of Justice"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2675,7 +2689,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 1.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Sceau de Réincarnation"); put(Language.EN, "Reincarnation Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2726,7 +2740,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 15),
 						new Effect(TypeEffect.Toucher, false, 15),
-					}),
+					}, 7.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur de la Jungle à la Hache Abominable"); put(Language.EN, "Jungle Beast Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -2738,7 +2752,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 10),
 					new Proc(10, Activation.Attack, 25, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, 30),
-					}),
+					}, 12.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée Alliée Mortelle"); put(Language.EN, "Alloy Killing Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, },
@@ -3200,7 +3214,7 @@ public class LoaderWeapon {
 					new Proc(25, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
 						new Effect(TypeEffect.Depla, false, -40, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée amazone d'Edolas"); put(Language.EN, "Devour: Soul"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3216,7 +3230,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, 18),
 						new Effect(TypeEffect.TCCP, false, 15),
 						new StaticEffect(TypeStaticEffect.x2STD_old, 30),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Zangetsu des Flammes de l'Enfer"); put(Language.EN, "Burner: Extinguish"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3233,7 +3247,7 @@ public class LoaderWeapon {
 						new Proc(100, Activation.Attack, new Calculable[] {
 							new Effect(TypeEffect.DegFeu, false, 300),
 						}),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre stellaire de la Colombe - 10e anniversaire"); put(Language.EN, "Sparrow 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3250,7 +3264,7 @@ public class LoaderWeapon {
 						new Proc(100, Activation.Attack, new Calculable[] {
 							new Effect(TypeEffect.DegFeu, false, 300),
 						}),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Claymore de la Rancoeur de Zabuza"); put(Language.EN, "Imperial Sun Power"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3265,7 +3279,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 43, 115, TypeRegen.ABSORPTION),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Anduril"); put(Language.EN, "Shattered Void - Worldeater"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3288,7 +3302,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Proc(5, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegEp2M, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Nuit Éternelle"); put(Language.EN, "Hegemon's Blade - Eternal Night"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3301,7 +3315,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -30),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.AntiStun),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame des Cadavres Ensanglantés"); put(Language.EN, "Crimson Legion Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3325,7 +3339,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 100, false, WeaponType.EPEE2M),
 						new Effect(TypeEffect.DCCP, false, 100, false, WeaponType.EPEE2M),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Armageddon des Dieux"); put(Language.EN, "Godslayer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3383,7 +3397,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -30, Target.OPPONENT),
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 100),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Lame valeureuse de Siropas"); put(Language.EN, "(Reforged) Siropas - Mighty Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3428,7 +3442,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 15),
 						new Effect(TypeEffect.TCCP, false, 5),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur Mech - Balayage d'Acier"); put(Language.EN, "Mech Lord - Super Steel Swipe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3442,7 +3456,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -25, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Lame d'Omnislash"); put(Language.EN, "(Reforged) Siropas - Battlefield Overlord Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3481,7 +3495,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 43, 115, TypeRegen.ABSORPTION),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Dévoreuse de l'Ombre"); put(Language.EN, "Primal Mind - Devourer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3504,7 +3518,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Proc(5, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegEp2M, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Flamberge Resplendissante"); put(Language.EN, "Siropas's Golden Brand"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3527,7 +3541,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -30),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.AntiStun),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Rouge Géante"); put(Language.EN, "Giant Red Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3570,7 +3584,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegOmbre, false, 557),
 					}),
@@ -3586,7 +3600,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 100, false, WeaponType.EPEE2M),
 						new Effect(TypeEffect.DCCP, false, 100, false, WeaponType.EPEE2M),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Totem de l'épée Destructrice d'Ares"); put(Language.EN, "War God's Sword of Destruction"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3597,7 +3611,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Crépuscule Divin"); put(Language.EN, "Twilight of the Gods"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3659,7 +3673,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, -90, TypeRegen.POISON, 2),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Géante du Tueur Diabolique"); put(Language.EN, "Evil Slaying Great Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -3680,7 +3694,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 11, true),
 					new Proc(30, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 20),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Dague du Vent Sauvage"); put(Language.EN, "Wild Wind Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
@@ -4118,11 +4132,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 235, true),
 					new Effect(TypeEffect.VIT, false, 100, true),
 					new Effect(TypeEffect.INT, false, 129, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
+					new Proc(40, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 70),
+					}),
 					new Proc(40, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -6, Target.OPPONENT),
 						new Effect(TypeEffect.Poisse, false, 4, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau divin d'Héphaïstos"); put(Language.EN, "Hill Smasher"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4132,11 +4148,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 220, true),
 					new Effect(TypeEffect.VIT, false, 98, true),
 					new Effect(TypeEffect.INT, false, 122, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 45),
+					new Proc(45, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Grand Marteau à Particules d'Arthas"); put(Language.EN, "Space: Separate"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4153,7 +4171,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, 30),
 						new Effect(TypeEffect.DefP, true, -10),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre stellaire de Fureur - 10e anniversaire"); put(Language.EN, "Fury 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4170,7 +4188,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, 30),
 						new Effect(TypeEffect.DefP, true, -10),
 						new Effect(TypeEffect.DefM, true, -10),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Masse de la 36e Chambre de Shaolin"); put(Language.EN, "First Sound"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4181,12 +4199,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 98, true),
 					new Effect(TypeEffect.INT, false, 100, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU1M),
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU2M),
 						new Effect(TypeEffect.VitAtk, false, 30),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fléau du Mordor"); put(Language.EN, "Prophet's Thunder - Initiative"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4201,7 +4221,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau du Tremblement Sacré"); put(Language.EN, "Holy Hammer - Earthsplitting Might"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4254,7 +4274,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, 150, TypeRegen.POISON, 1),
-					}),
+					}, 1.2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet du Grand Aîné"); put(Language.EN, "Great Elder's Commander Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4319,11 +4339,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 89, true),
 					new Effect(TypeEffect.VIT, false, 39, true),
 					new Effect(TypeEffect.INT, false, 43, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
+					new Proc(40, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(25, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
 						new Effect(TypeEffect.Poisse, false, 2, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Marteau Mutant de Roton"); put(Language.EN, "(Reforged) Ronto - Mutated Duke Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4365,11 +4387,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 84, true),
 					new Effect(TypeEffect.VIT, false, 35, true),
 					new Effect(TypeEffect.INT, false, 40, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
+					new Proc(40, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(25, Activation.Attack, 4, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Gravures de Dragon - Coup Divin"); put(Language.EN, "Dragon Carvings - Divine Strike"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4384,7 +4408,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ESQ, false, -25, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Ronto - Maillet Brutal du Comte"); put(Language.EN, "(Reforged) Ronto - Brute's Slaughter Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4421,12 +4445,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 45, true),
 					new Effect(TypeEffect.INT, false, 45, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU1M),
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.MARTEAU2M),
 						new Effect(TypeEffect.VitAtk, false, 30),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Explosion Fractale"); put(Language.EN, "Warning Sign - Thunderburst"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4441,7 +4467,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Écho des Origines"); put(Language.EN, "Holy Hammer - Gospel of Creation"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4538,7 +4564,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 1),
-					}),
+					}, 1.2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Nucléaire"); put(Language.EN, "Megaton Mallet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4551,7 +4577,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 1),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet de Vengeance du Grand Chef"); put(Language.EN, "Big Boss's Revenge"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4598,7 +4624,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 1),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Maillet Léger Chevalier des Templiers"); put(Language.EN, "Templar's Hammer of Light"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4617,7 +4643,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 10),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, 80),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Engrenage Géant"); put(Language.EN, "Giant Gear Wheel"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4629,7 +4655,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 11, true),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 4),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegFoudre, false, 310),
 					}),
@@ -4647,7 +4673,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new Effect(TypeEffect.ReducSkillP, false, 30),
 						new Effect(TypeEffect.ReducSkillM, false, 30),
-					}),
+					}, 4),
 					new Proc(10, Activation.Phys, new Calculable[] {
 						new Effect(TypeEffect.DegMort, false, 276),
 					}),
@@ -4679,7 +4705,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 4, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Massue d'Argent des Neiges"); put(Language.EN, "Silver Snow Hunter Darts"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -4700,7 +4726,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Tête de Dragon Bleu"); put(Language.EN, "Blue Dragon Skull"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
@@ -5120,7 +5146,7 @@ public class LoaderWeapon {
 					new Proc(35, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 80),
 						new StaticEffect(TypeStaticEffect.x2STD_old, 50),
-					}),
+					}, 16),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre sombre d'Athéna"); put(Language.EN, "Light: Rising Sun"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5129,13 +5155,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 184, true),
 					new Effect(TypeEffect.VIT, false, 103, true),
 					new Effect(TypeEffect.AGI, false, 143, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
+					new Proc(40, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(25, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30, false, WeaponType.HACHE1M),
 						new Effect(TypeEffect.DCCP, false, 30, false, WeaponType.HACHE1M),
 						new Effect(TypeEffect.TCCP, false, 30, false, WeaponType.HACHE2M),
 						new Effect(TypeEffect.DCCP, false, 30, false, WeaponType.HACHE2M),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hallebarde Légendaire de Seong Mi-Na"); put(Language.EN, "Zodiac: Dissipate"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5151,7 +5179,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, 35),
 						new Effect(TypeEffect.DefP, true, -15),
 						new Effect(TypeEffect.Toucher, false, -15),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre stellaire des Vents violents - 10e anniversaire"); put(Language.EN, "Stormy Gale 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5167,7 +5195,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitAtk, false, 35),
 						new Effect(TypeEffect.DefP, true, -15),
 						new Effect(TypeEffect.Toucher, false, -15),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hachoir de la Folie d'Astaroth"); put(Language.EN, "Wrathful Wight Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5183,7 +5211,7 @@ public class LoaderWeapon {
 						new RegenEffect(TypeEffect.PV, false, -300, TypeRegen.POISON, 2),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hymne de Valkyrie"); put(Language.EN, "Golden Seraphim - Quickening"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5197,7 +5225,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Colère de la Reine des Océans"); put(Language.EN, "Wrath of the Sea Queen"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5232,7 +5260,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 250),
 						new Effect(TypeEffect.VitAtk, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Immortelle Diabolique d'Ewan"); put(Language.EN, "Ewan's Immortal Demon Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5245,7 +5273,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20, false, WeaponType.HACHE2M),
 						new Effect(TypeEffect.Depla, false, 30),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Sanglante de l'Enfer"); put(Language.EN, "Blood Prison Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5258,7 +5286,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Ombre, false, 10),
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 50),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Hache Morneflamme d'Ewan"); put(Language.EN, "(Reforged) Ewan's Hellfire Waraxe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5306,7 +5334,7 @@ public class LoaderWeapon {
 						new StaticEffect(TypeStaticEffect.x2STD_old, 50),
 						new Effect(TypeEffect.ReflectP_old, false, 50),
 						new Effect(TypeEffect.ReflectM_old, false, 50),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Hâche Âme de feu d'Ewan"); put(Language.EN, "(Reforged) Ewan - Soulfire Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5345,13 +5373,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 135, true),
 					new Effect(TypeEffect.VIT, false, 50, true),
 					new Effect(TypeEffect.AGI, false, 80, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 40),
+					new Proc(40, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 40),
+					}),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 15, false, WeaponType.HACHE1M),
 						new Effect(TypeEffect.DCCP, false, 15, false, WeaponType.HACHE1M),
 						new Effect(TypeEffect.TCCP, false, 15, false, WeaponType.HACHE2M),
 						new Effect(TypeEffect.DCCP, false, 15, false, WeaponType.HACHE2M),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache d'Argent - Six Ailes"); put(Language.EN, "Silver Axe - Six Wings"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5361,11 +5391,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 46, true),
 					new Effect(TypeEffect.AGI, false, 37, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 20),
 						new Effect(TypeEffect.Atk, true, 20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Hallebarde du Lotus Rouge"); put(Language.EN, "(Reforged) Ewan - Netherworld Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5405,7 +5437,7 @@ public class LoaderWeapon {
 						new RegenEffect(TypeEffect.PV, false, -300, TypeRegen.POISON, 2),
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ailes de la Fortune"); put(Language.EN, "Golden Wing - Flash"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5419,7 +5451,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rugissement Terrible"); put(Language.EN, "Overlord- Gaia's Fang"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5464,7 +5496,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 250),
 						new Effect(TypeEffect.VitAtk, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache Royale du Lion Blanc d'Ewan (Reforgée)"); put(Language.EN, "(Reforged) Ewan's White Lion Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5505,7 +5537,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30, false, WeaponType.HACHE2M),
 						new Effect(TypeEffect.Depla, false, 30),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Tranchante du Vide"); put(Language.EN, "Void-Rending Blade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5519,7 +5551,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(20, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 30, false, WeaponType.HACHE2M),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Purgatoire"); put(Language.EN, "Purgatory Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5531,7 +5563,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Ombre, false, 10),
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 50),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache de l'Avant-Garde du Lion Vert d'Ewan (Reforgé)"); put(Language.EN, "(Reforged) Ewan's Green Lion Vanguard Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5584,7 +5616,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, 30),
-					}),
+					}, 2.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Tempête Violette"); put(Language.EN, "Purple Storm"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5595,7 +5627,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Tyran"); put(Language.EN, "Tyrant Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5622,7 +5654,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -170, Target.OPPONENT),
 						new Effect(TypeEffect.AGI, false, -170, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Hache du Cauchemar"); put(Language.EN, "Nightmare Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -5641,7 +5673,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 250),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Echec Impossible"); put(Language.EN, "Undefeated"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
@@ -6019,11 +6051,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 70, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 56, true),
-					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
+					new Proc(30, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 50),
+					}),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 35),
 						new Effect(TypeEffect.DefP, true, 15),
-					}),
+					}, 16),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Déesse du Blizzard rugissante"); put(Language.EN, "Raging Blizzard's Aria"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6039,7 +6073,7 @@ public class LoaderWeapon {
 						new Proc(100, Activation.Standard, new Calculable[] {
 							new Effect(TypeEffect.DegGlace, false, 750),
 						}),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Écoutant du Murmure éolien"); put(Language.EN, "Whisper of the Wind"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6054,7 +6088,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 10),
 						new Effect(TypeEffect.TCCP, false, 25),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau stellaire de la Flamme bleue- 10e anniversaire"); put(Language.EN, "Cyan 10th Anniversary Star Hammer"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6069,7 +6103,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 10),
 						new Effect(TypeEffect.TCCP, false, 25),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Éclat de souvenirs de Mosunk"); put(Language.EN, "Mosunk's Blinding Memories"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6080,12 +6114,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 46, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 50, 40),
+					}),
 					new Proc(20, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.ReducPtsStdP, false, -150, Target.OPPONENT),
 						new Effect(TypeEffect.ReducPtsStdD, false, -150, Target.OPPONENT),
 						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Griffes tranchantes de Hibou despote bestial"); put(Language.EN, "Tyranical Owl Claw"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6100,7 +6136,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.ESQ, false, -30, Target.OPPONENT),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Canine de Dragon sauvage"); put(Language.EN, "Savage Dragon Beast's Fang"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6114,7 +6150,7 @@ public class LoaderWeapon {
 					new Proc(5, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 40),
 						new Effect(TypeEffect.VitAtk, false, 40),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Chant du Cauchemar des ombres"); put(Language.EN, "Shadow Nightmare Song"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6129,7 +6165,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.CostComp, false, -55),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -20, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lanterne du Voyageur des rêves"); put(Language.EN, "Dreamwalker's Lantern"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6142,7 +6178,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 25),
 						new Effect(TypeEffect.ESQ, true, 10),
-					}),
+					}, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Avatar de Quatrième dimension"); put(Language.EN, "Alternate Dimension Avatar"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6167,13 +6203,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 24, true),
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Effect(TypeEffect.Foudre, false, 15),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 20),
+					new Proc(20, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(25, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, TypeRegen.POISON, 2),
-					}),
+					}, 40),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Sabre-de-spectre d'Eugénie"); put(Language.EN, "(Reforged) Ginny's Spectral Saber"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6217,11 +6255,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 25),
 						new Effect(TypeEffect.DefP, true, 10),
-					}),
+					}, 16),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Lame stellaire d'Eugénie"); put(Language.EN, "(Reforged) Ginny - Starlight Blade"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6271,7 +6311,7 @@ public class LoaderWeapon {
 						new Proc(100, Activation.Standard, new Calculable[] {
 							new Effect(TypeEffect.DegGlace, false, 500),
 						}),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de Visionnaire"); put(Language.EN, "Stratagem Blade"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6285,7 +6325,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 10),
 						new Effect(TypeEffect.TCCP, false, 25),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Marteau-espoir d'Eugénie"); put(Language.EN, "(Reforged) Ginny's Hope Hammer"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6323,12 +6363,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 32, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(15, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.ReducPtsStdP, false, -100, Target.OPPONENT),
 						new Effect(TypeEffect.ReducPtsStdD, false, -100, Target.OPPONENT),
 						new Effect(TypeEffect.Poisse, false, 10, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Griffes tranchantes de Hibou bestial"); put(Language.EN, "Bestial Owl Claw"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6342,7 +6384,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.ESQ, false, -30, Target.OPPONENT),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Canine de Bête sauvage"); put(Language.EN, "Savage Beast's Fang"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6355,7 +6397,7 @@ public class LoaderWeapon {
 					new Proc(5, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 40),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Choriste de Cauchemar"); put(Language.EN, "Nightmare Chanter"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6378,7 +6420,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20),
 						new Effect(TypeEffect.ESQ, true, 5),
-					}),
+					}, 25),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Claymore miracle d'Eugénie (Reforgée)"); put(Language.EN, "(Reforged) Ginny's Miracles Claymore"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6427,13 +6469,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
+					new Proc(15, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 55),
+					}),
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.ReducStdP, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -50, TypeRegen.POISON, 2),
-					}),
+					}, 40),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de scie de voyage d'Eugénie (Reforgé)"); put(Language.EN, "(Reforged) Ginny's Blade"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6511,10 +6555,12 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
+					new Proc(15, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 10, 10, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée de charge"); put(Language.EN, "Charge Armed Sword"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6528,7 +6574,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.ESQ, true, -20, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Couperet du non repenti"); put(Language.EN, "Blasphemer's Cleaver"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6912,7 +6958,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReflectP_old, false, 30),
 						new Effect(TypeEffect.ReflectM_old, false, 30),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ouragan de Poussière jaune de Châtelain"); put(Language.EN, "Sandstorm's Rage"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6921,11 +6967,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 150, true),
 					new Effect(TypeEffect.VIT, false, 98, true),
 					new Effect(TypeEffect.AGI, false, 80, true),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 70),
+					}),
 					new Proc(25, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 25),
 						new Effect(TypeEffect.ESQ, true, 20),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Messager de la Voix divine"); put(Language.EN, "Divine Apostle"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6935,13 +6983,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 92, true),
 					new Effect(TypeEffect.AGI, false, 78, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 300),
 						new Effect(TypeEffect.VitAtk, false, 25),
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -15, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre stellaire du Lotus - 10e anniversaire"); put(Language.EN, "Red Lotus 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6951,13 +7001,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 92, true),
 					new Effect(TypeEffect.AGI, false, 78, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
+					new Proc(25, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 300),
 						new Effect(TypeEffect.VitAtk, false, 25),
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -15, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Paume du Mal cupide"); put(Language.EN, "Palm of Avarice"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6970,7 +7022,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 10),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Aile de feu du Seigneur des Phénix"); put(Language.EN, "Phoenix Lord's Blazing Wing"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -6985,7 +7037,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtkD, false, -40, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Flammes du Démon de fureur de Siropas"); put(Language.EN, "Siropas's Demonic Flame"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7023,7 +7075,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, 200),
 						new Effect(TypeEffect.DCCP, false, 50),
-					}),
+					}, 35),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Polymères d'Énergie dimensionnels"); put(Language.EN, "Dimensional Energy"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7034,11 +7086,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 57, true),
 					new Effect(TypeEffect.Toucher, false, 15),
 					new Effect(TypeEffect.Sacre, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
+					new Proc(15, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 65),
+					}),
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.Atk, true, 10),
 						new Effect(TypeEffect.Depla, false, 10),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Flammes démoniaques corrompues"); put(Language.EN, "Demonic Corruption"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7050,8 +7104,10 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Proc(20, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 35),
-						new StaticEffect(TypeStaticEffect.x2STD_old, 10),
-					}),
+						new Proc(10, Activation.Standard, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 60),
+						}),
+					}, 26),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Briseroche de Ronto"); put(Language.EN, "(Reforged) Ronto's Mountain Cleaver"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7100,7 +7156,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReflectP_old, false, 20),
 						new Effect(TypeEffect.ReflectM_old, false, 20),
 						new Effect(TypeEffect.VitAtk, false, 15),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Hâche sans fin de Ronto"); put(Language.EN, "(Reforged) Ronto - Unyielding Axe"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7141,11 +7197,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 65, true),
 					new Effect(TypeEffect.VIT, false, 50, true),
 					new Effect(TypeEffect.AGI, false, 44, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 30),
+					new Proc(30, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 70),
+					}),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20),
 						new Effect(TypeEffect.ESQ, true, 15),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame lourde du Gardien"); put(Language.EN, "Guardian's Heavy Blade"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7154,13 +7212,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 56, true),
 					new Effect(TypeEffect.VIT, false, 49, true),
 					new Effect(TypeEffect.AGI, false, 42, true),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
+					new Proc(15, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 200),
 						new Effect(TypeEffect.VitAtk, false, 20),
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -15, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Épée de Gaia de Ronto"); put(Language.EN, "(Reforged) Ronto's Gaia Sword"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7198,7 +7258,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 10),
 					new Proc(10, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ailes de fer et en plumes de roselin"); put(Language.EN, "Iron Wing"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7212,7 +7272,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -40, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épée lourde de Feu obscur de Siropas"); put(Language.EN, "Siropas's Blackfire Sword"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7246,7 +7306,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, 200),
 						new Effect(TypeEffect.DCCP, false, 50),
-					}),
+					}, 35),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Tomahawk nuage de sable de Roton (Reforgé)"); put(Language.EN, "(Reforged) Ronto's Sand Storm Tomahawk"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7285,11 +7345,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 15),
+					new Proc(15, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 65),
+					}),
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 10),
 						new Effect(TypeEffect.Depla, false, 10),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marteau ardent du Démon"); put(Language.EN, "Scorching Demon Hammer"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7299,9 +7361,11 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.x2STD_old, 5),
+						new Proc(5, Activation.Standard, new Calculable[] {
+							new MultipleHit(TypeMultipleHit.Double, 60),
+						}),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 26),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lourde hache croissante de Roton (Reforgé)"); put(Language.EN, "(Reforged) Ronto's Crescent Axe"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7352,7 +7416,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 7, true),
 					new Proc(20, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 15),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Corbeaux ululant du Crépuscule"); put(Language.EN, "Harbinger of Death"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7363,7 +7427,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Proc(15, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Gardien des cauchemars"); put(Language.EN, "Living Nightmare"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7420,7 +7484,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.FCE, false, 100),
 						new Effect(TypeEffect.VIT, false, 100),
 						new Effect(TypeEffect.AGI, false, 100),
-					}),
+					}, 45),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Pistolet de la lumineuse lune croissante"); put(Language.EN, "Crescent Gun"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -7769,7 +7833,7 @@ public class LoaderWeapon {
 					new Proc(25, Activation.Attack, 6, 5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 						new Effect(TypeEffect.VitAtkD, false, 6),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc infaillible d'Icarus"); put(Language.EN, "Heaven: Sky Piercer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7782,7 +7846,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.ReducStdD, false, 15),
 					new Proc(15, Activation.Attack, 6, 6, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, -6, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lumière Sacrée du Démon Irvine"); put(Language.EN, "Lightning: Channel"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7797,7 +7861,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DegNature, false, 1500),
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -25, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Cataclysme de Quetzalcoalt"); put(Language.EN, "Phoenix Bloodlust Lord"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7811,7 +7875,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(20, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -40, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clair de Lune Gibbeuse"); put(Language.EN, "Hidden One - Serenity"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7824,7 +7888,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, 50),
 						new Effect(TypeEffect.VitAtkD, false, 50),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ailes de Vertu de l'Archange"); put(Language.EN, "Sage's Wings"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7836,7 +7900,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 18),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtkD, false, 50),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mistral Merveilleux"); put(Language.EN, "Shining Wind - Brilliant Jade"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7862,7 +7926,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 30),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de la Bête Céleste de Quill"); put(Language.EN, "Quill's Heavenly Beast Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7885,7 +7949,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 50, false, WeaponType.ARC),
 						new Effect(TypeEffect.DCCP, false, 50, false, WeaponType.ARC),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Arc de chaos de Quinn"); put(Language.EN, "(Reforged) Quill's Maelstrom Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7906,7 +7970,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc tempétueux de Quill"); put(Language.EN, "Quill's Maelstrom Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
 				100, Quality.ORANGE, false, WeaponType.ARC, false, false, "arc/100pvp", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 3397, true),
+					new Effect(TypeEffect.AtkD, false, 3396, true),
 					new Effect(TypeEffect.FCE, false, 34, true),
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.AGI, false, 30, true),
@@ -7931,7 +7995,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AtkD, true, 20),
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.x2STD_old, 30),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Arc de cyclone-soleil de Quinn"); put(Language.EN, "(Reforged) Quill - Solar Cyclone Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7974,7 +8038,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.ReducStdD, false, 10),
 					new Proc(15, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, -3, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ailes Sacrées - Dans le mille"); put(Language.EN, "Holy Wing - Piercer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -7987,7 +8051,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.ReducStdD, false, 20),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ReducStdD, false, -20, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Arc du Clan Quincy"); put(Language.EN, "(Reforged) Quill - Hurricane Destruction Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8025,7 +8089,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(20, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -40, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Massacre de Rêves"); put(Language.EN, "Illusion - Dreamslayer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8038,7 +8102,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, 50),
 						new Effect(TypeEffect.VitAtk, false, 50),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Aile Sacrée"); put(Language.EN, "Wings of Purity"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8050,7 +8114,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 12),
 					new Proc(8, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 50),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fureur des Dragons"); put(Language.EN, "Nether Dragon King's Rage"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8096,7 +8160,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 30),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Roi Dragon de Quill (Reforgé)"); put(Language.EN, "(Reforged) Quill's Dragon King Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8161,7 +8225,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.DegArc, false, 50),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Chef Dragon de Quill (Reforgé)"); put(Language.EN, "(Reforged) Quill's Dragon Chief Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8192,7 +8256,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 30, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 625, 1250, TypeRegen.REGENERATION),
 						new Effect(TypeEffect.Depla, false, 10),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc des Dieux Protecteurs"); put(Language.EN, "Watchkeeper's Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8207,7 +8271,7 @@ public class LoaderWeapon {
 					new Proc(12, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 50, false, WeaponType.ARC),
 						new Effect(TypeEffect.Toucher, false, 20),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Serpent Noir"); put(Language.EN, "Black Serpent"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8218,7 +8282,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 5, true),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove),
-					}),
+					}, 1.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Vue"); put(Language.EN, "Eye of the Heart Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8228,7 +8292,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 8, true),
 					new Proc(10, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Nobles Célestes"); put(Language.EN, "Heavenly Noble"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8239,7 +8303,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Proc(10, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 50, false, WeaponType.ARC),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc du Feu Sacré"); put(Language.EN, "Holy Fire Light Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8266,7 +8330,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 15),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de la Grâce"); put(Language.EN, "Bow of Grace"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8294,7 +8358,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arc de Tempête de Neige"); put(Language.EN, "Snow Wing Recurve Bow"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8711,7 +8775,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 					new Proc(15, Activation.Attack, 6, 6, new Calculable[] {
 						new Effect(TypeEffect.Poisse, false, 4, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Parabellum de Cross Marian"); put(Language.EN, "Lion's Roar"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8726,7 +8790,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 6, 6, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -4, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -4, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Calibre à Rayons Gamma"); put(Language.EN, "Radiance: Guide"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8742,7 +8806,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
 						new Effect(TypeEffect.Depla, false, -20),
 						new Effect(TypeEffect.VitAtk, false, -20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Golden Gun de Scaramanga"); put(Language.EN, "Falcon's Strike Sniper"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8757,7 +8821,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Carboniseur Azimuté"); put(Language.EN, "Absolute Sniper - Evolution"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8771,7 +8835,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 50),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épilogue de l'Obscurité Infinie"); put(Language.EN, "Dark Shadow - Endless Finale"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8795,7 +8859,7 @@ public class LoaderWeapon {
 					new Proc(12, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.VitAtkD, false, 50, false, WeaponType.GUN),
 						new Effect(TypeEffect.Toucher, false, 45),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Flamme Eternelle"); put(Language.EN, "Eternal Flame"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8811,7 +8875,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30, false, WeaponType.GUN),
 						new Effect(TypeEffect.MEN, false, -100),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance du Héros de Bahadolo"); put(Language.EN, "Bahado's Hero Gun"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8822,7 +8886,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 15),
 					new Proc(12, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegGun, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Comte Sacré"); put(Language.EN, "Sacred Count"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8833,7 +8897,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Proc(30, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Mousquet du maraudeur de Bahadolo"); put(Language.EN, "(Reforged) Bahado's Marauder Musket"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8855,7 +8919,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mousquet du maraudeur de Bahadolo"); put(Language.EN, "Bahado's Marauder Musket"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
 				100, Quality.ORANGE, false, WeaponType.GUN, false, false, "gun/100pvp", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 3962, true),
+					new Effect(TypeEffect.AtkD, false, 3961, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.AGI, false, 34, true),
@@ -8881,7 +8945,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 30),
 					new Proc(10, Activation.Attack, 8, 5, new Calculable[] {
 						new Effect(TypeEffect.Poisse, false, 3, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Fusil d'Emprisonnement de Bahadolo"); put(Language.EN, "(Reforged) Bahado - Imprisoning Gun"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8926,7 +8990,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -3, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -3, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fantastique - Destructeur"); put(Language.EN, "Fantasy - Destructor"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8940,7 +9004,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 25, false, WeaponType.GUN),
 						new Effect(TypeEffect.DCCP, false, 25, false, WeaponType.GUN),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gatling Gun Ailé"); put(Language.EN, "(Reforged) Bahado - Cursed Gun"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8981,7 +9045,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Alpha - Sniper du Néant"); put(Language.EN, "Absolute Sniper - Alpha DC"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -8995,7 +9059,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 50),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Traque Mortelle"); put(Language.EN, "Sniper Hunter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9008,7 +9072,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, 50),
 						new Effect(TypeEffect.VitAtk, false, 50),
-					}),
+					}, 3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lande Obscure"); put(Language.EN, "Dark Shadow - Barren Prelude"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9042,7 +9106,7 @@ public class LoaderWeapon {
 					new Proc(12, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.VitAtkD, false, 50, false, WeaponType.GUN),
 						new Effect(TypeEffect.Toucher, false, 45),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil à Pompe Possédé"); put(Language.EN, "Line of Fire"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9058,7 +9122,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 30, false, WeaponType.GUN),
 						new Effect(TypeEffect.MEN, false, -100),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance du Dragon Marin de Bahadolo (Reforgée)"); put(Language.EN, "(Reforged) Bahado's Leviathan Rifle"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9099,7 +9163,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 8),
 					new Proc(12, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegGun, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Œil du Roi Pirate"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9121,7 +9185,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(30, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lance du Requin Rouge de Bahadolo (Reforgé)"); put(Language.EN, "(Reforged) Bahado's Red Shark Shotgun"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9158,7 +9222,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 25),
 						new Effect(TypeEffect.ReducSkillP, false, 25),
 						new Effect(TypeEffect.ReducSkillM, false, 25),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Queue de Mille-Pattes"); put(Language.EN, "Centipede's Tail"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9173,7 +9237,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(12, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.DegGun, false, 30),
-					}),
+					}, 7.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Doigt d'Assassin"); put(Language.EN, "Assassin's Finger"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9228,12 +9292,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x2STD_old, 15),
+					new Proc(15, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegStdP, false, 30),
 						new Effect(TypeEffect.DegStdD, false, 30),
 						new Effect(TypeEffect.DegSkillP, false, 30),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil d'Élite d'Argent"); put(Language.EN, "Silverwing Sniper's Gun"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9260,7 +9326,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DegGun, false, 100),
-					}),
+					}, 3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fusil de l'Éxécuteur"); put(Language.EN, "Tri-Cannon"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.RANGER, GradeName.ASSASSIN, },
@@ -9636,7 +9702,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x3STD_old, 30),
 					new Proc(15, Activation.Attack, 10, 6, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 6),
-					}),
+					}, 0.3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rancune des Noyés"); put(Language.EN, "Mortal Tide"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9651,7 +9717,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -5, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Soldat pionnier de la Tyrannie"); put(Language.EN, "Pioneer Soldier of Tyranny"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9665,7 +9731,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 2),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Prières murmurantes d'Eugénie"); put(Language.EN, "Ginny's Divine Supplication"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9679,7 +9745,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x3STD_old, 20),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 50),
-					}),
+					}, 22),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Colère ardente du Tyrannosaure"); put(Language.EN, "Draconic Anger"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9693,7 +9759,7 @@ public class LoaderWeapon {
 					new Proc(30, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 50),
 						new Effect(TypeEffect.VitAtkD, false, 40),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Requiem du Démon des ombres"); put(Language.EN, "Dark Demon Key"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9707,7 +9773,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 80),
 						new Effect(TypeEffect.Toucher, false, 20),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Feu dévorant du Péché"); put(Language.EN, "Profane Fire"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9720,7 +9786,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 30),
 						new Effect(TypeEffect.Toucher, false, 10),
-					}),
+					}, 35),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Paroles de Tisseurs de rêves"); put(Language.EN, "Dreamweaver's Wisdom"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9734,7 +9800,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCP, false, 50),
 						new Effect(TypeEffect.VitAtkD, false, 30),
 						new Effect(TypeEffect.DefP, true, 30),
-					}),
+					}, 18),
 					new Proc(10, Activation.Attack, new Calculable[] {
 						new Effect(TypeEffect.DegFeu, false, 766)
 					}),
@@ -9751,7 +9817,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VitAtkD, false, 20),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Dragon ardent géant et déboisant"); put(Language.EN, "Dragon Flame"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9761,13 +9827,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 34, true),
 					new Effect(TypeEffect.Toucher, false, 8),
-					new Proc(20, Activation.Attack, 8, new Calculable[] {
+					new Proc(20, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.ReducStdP, false, 30),
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new Effect(TypeEffect.ReducSkillP, false, 30),
 						new Effect(TypeEffect.ReducSkillM, false, 30),
 						new Effect(TypeEffect.DegCanon, false, 25),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Canon Brise-planète de Quinn"); put(Language.EN, "(Reforged) Quill's Earthshatter Cannon"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9789,7 +9855,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon sismique de Quill"); put(Language.EN, "Quill's Earthshatter Cannon"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				100, Quality.ORANGE, false, WeaponType.CANON, false, false, "canon/100pvp", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 3962, true),
+					new Effect(TypeEffect.AtkD, false, 3961, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 					new Effect(TypeEffect.VOL, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 42, true),
@@ -9815,7 +9881,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 35),
 					new Proc(15, Activation.Attack, 10, 5, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 5),
-					}),
+					}, 0.3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Canon du Tourbillon de Quinn"); put(Language.EN, "(Reforged) Quill - Whirlwind Cannon"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9862,7 +9928,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -4, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -4, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Canon lourd magique de Bombardement"); put(Language.EN, "Enchanted Heavy Cannon of Bombardment"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9875,7 +9941,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 2),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Arme à souffle de Quinn"); put(Language.EN, "(Reforged) Quill's Gale Artillery"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9914,7 +9980,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCD, false, 50),
-					}),
+					}, 22),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Dent du Roi dragon"); put(Language.EN, "Dragon King's Tooth"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9927,7 +9993,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 50),
 						new Effect(TypeEffect.VitAtkD, false, 40),
-					}),
+					}, 12.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bec de Grand griffon"); put(Language.EN, "Griffin Beak"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9939,7 +10005,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 10),
 						new Effect(TypeEffect.VitAtkD, false, 10),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Démon des Cieux"); put(Language.EN, "Diabolic Decree"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9952,7 +10018,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 50),
 						new Effect(TypeEffect.Toucher, false, 20),
-					}),
+					}, 20),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bombe abandonnée, contient le diable"); put(Language.EN, "Explosive Corruption"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9964,7 +10030,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 20),
 						new Effect(TypeEffect.Toucher, false, 10),
-					}),
+					}, 35),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Chercheurs de Doux rêves"); put(Language.EN, "Devout Dreamseaker"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -9977,7 +10043,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCD, false, 40),
 						new Effect(TypeEffect.VitAtkD, false, 30),
 						new Effect(TypeEffect.DefP, true, -30),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie ouragan de Quill (Reforgée)"); put(Language.EN, "(Reforged) Quill's Hurricane Artillery"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -10030,7 +10096,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducSkillP, false, 25),
 						new Effect(TypeEffect.ReducSkillM, false, 25),
 						new Effect(TypeEffect.DegCanon, false, 20),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie violente de Quill (Reforgé)"); put(Language.EN, "(Reforged) Quill's Violent Artillery"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -10061,7 +10127,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.AGI, false, 11, true),
 					new Proc(20, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Arme hurlante du Loup de l'ouragan"); put(Language.EN, "Desert Wolf's Gun"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -10108,12 +10174,12 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 15),
 					new Proc(12, Activation.Attack, 10, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Son du traître"); put(Language.EN, "Traitor's Promise"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				78, Quality.BLUE, false, WeaponType.CANON, false, false, "canon/80pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2874, true),
+					new Effect(TypeEffect.AtkD, false, 2873, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 28, true),
@@ -10134,10 +10200,12 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 25, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 10),
+					new Proc(10, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 40),
+					}),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.PeneP, false, 20),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Artillerie du dernier festin"); put(Language.EN, "Deathrain Artillery"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
@@ -10578,7 +10646,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PV, true, 15),
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 30),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bourgeon éternel de l'arbre-Mana"); put(Language.EN, "Tree of Life: Bud"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10592,7 +10660,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 15),
 					new Proc(20, Activation.Attacked, 15, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sabot Ultime de Skiddo"); put(Language.EN, "Capricorn Hooves"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10605,7 +10673,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, true, 15),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCM, false, 50),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Insigne émérite d'allen Walker"); put(Language.EN, "Hell's Purifier"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10619,7 +10687,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -20, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Grimoire ancestral de Deckard Cain"); put(Language.EN, "Heaven's Hymn"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10644,7 +10712,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.DegSkillM, false, 20),
 					new Proc(20, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.DefM, true, -5, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Testament Sacré de Messiah"); put(Language.EN, "Rune: Isolate"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10658,7 +10726,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attacked, 10, new Calculable[] {
 						new Effect(TypeEffect.ESQ, true, 25),
 						new Effect(TypeEffect.DefM, true, 25),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Parchemin Interdit d'Orochimaru"); put(Language.EN, "Aura: Flicker"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10673,7 +10741,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, -30, Target.OPPONENT),
 						new Effect(TypeEffect.TCCM, false, -30, Target.OPPONENT),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Manuscrit Antique de Byaku"); put(Language.EN, "Magic: Ripple"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10686,7 +10754,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, 35),
 						new Effect(TypeEffect.ESQ, true, 30),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Codex d'Eternité de Van Hellsing"); put(Language.EN, "Priest's Purple Demonic Forbidden Book"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10699,7 +10767,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(10, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, -30, Target.OPPONENT),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fairy Law de Makarof"); put(Language.EN, "Illusionist's Shackling Spell"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10714,7 +10782,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ESQ, false, 20),
 						new Effect(TypeEffect.Toucher, false, 20),
 						new Effect(TypeEffect.TCCM, false, -15, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Death Note du Dieu de la Mort"); put(Language.EN, "Holy Jewel Encrusted Tome"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10727,7 +10795,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, 20),
 						new Effect(TypeEffect.AtkM, true, 30),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Chapelet de la Sainteté"); put(Language.EN, "Buster Baron Seal"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10740,7 +10808,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 20),
 						new Effect(TypeEffect.TCCP, false, 20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Gospel Éternel de Saphael"); put(Language.EN, "Book of Sacrificial Offerings"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10764,7 +10832,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DefP, true, -10, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -10, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Stigmates du Puissant Mystique"); put(Language.EN, "Ascetic Sage's Stigmata"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10776,7 +10844,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
 						new Effect(TypeEffect.AGI, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rune de l'Espoir des Rois"); put(Language.EN, "Mystic Emperor's Rune of Blessing"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10797,7 +10865,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 594),
 					new Proc(30, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Icône Sainte"); put(Language.EN, "Saintly Icon - Platinum"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10809,7 +10877,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.CostComp, false, -30),
 					new Proc(15, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.ReducSkillM, false, 100),
-					}),
+					}, 11),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Grimoire Infini"); put(Language.EN, "Book of Infinity - Oracle"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10822,7 +10890,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(20, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 50),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Exécuteur Sans Merci"); put(Language.EN, "Annihilator - Zero"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10835,7 +10903,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 30),
 						new Effect(TypeEffect.DCCM, false, 30),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Livre du Bouclier de Lumière"); put(Language.EN, "Bright Shield Book"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10858,7 +10926,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 323),
 					new Proc(25, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.IntComp, false, -100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Regard du Dragon Fougueux"); put(Language.EN, "Glassy Dragon's Eye"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10870,7 +10938,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Feu, false, 20),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, 30),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Main Loyale du Chevalier"); put(Language.EN, "Hand of the Heavenly Knight"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10901,7 +10969,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 5),
 					new Proc(25, Activation.Attacked, 12, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 250, TypeRegen.REGENERATION, 2),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Livre Déchu de l'Essence"); put(Language.EN, "The Fallen's Book of Essence"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10912,7 +10980,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 396),
 					new Proc(8, Activation.Attacked, 10, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marque de Réprimande"); put(Language.EN, "Order of the Sanctuary Seal"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10923,7 +10991,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PV, false, 660),
 					new Proc(12, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Parade, false, 100),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marque de Réincarnation"); put(Language.EN, "Seal of Unremembered Reincarnation"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10945,7 +11013,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 330),
 					new Proc(35, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 200, TypeRegen.REGENERATION, 2),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sabots de Capricorne"); put(Language.EN, "Capricorn Hooves"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -10958,7 +11026,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PV, true, 10),
 					new Proc(20, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCM, false, 40),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bois de Renne d'Hiver"); put(Language.EN, "Winter Reindeer Antlers"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -10971,7 +11039,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PV, true, 10),
 					new Proc(10, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 50),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Racine de Purification Spectrale"); put(Language.EN, "Wraith Purification Root"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -10985,7 +11053,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(5, Activation.Attacked, 10, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sage Illuminé"); put(Language.EN, "Holy Light Prayer"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11009,7 +11077,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.DegSkillM, false, 10),
 					new Proc(15, Activation.Attack, 4, 5, new Calculable[] {
 						new Effect(TypeEffect.DefM, true, -5, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ancien Mantra"); put(Language.EN, "Ancient Mantra"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11022,7 +11090,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -10, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -10, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Chant de l'Espace Fantastique"); put(Language.EN, "Fantastic Cosmos Chant"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11036,7 +11104,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefM, true, -25, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -15, Target.OPPONENT),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Pierre Sacrée Explosive"); put(Language.EN, "Explosive Sacred Stone"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11048,7 +11116,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.TCCP, false, 10),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Tablette Sacrée Abîmée"); put(Language.EN, "Damaged Holy Tablet"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11063,7 +11131,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.INT, false, 50),
 						new Effect(TypeEffect.VOL, false, 50),
 						new Effect(TypeEffect.Toucher, false, 25),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Livre de l'Illusioniste Sacré"); put(Language.EN, "Holy Illusionist's Shining Book"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11076,7 +11144,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, 20),
 						new Effect(TypeEffect.AtkM, true, 30),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Livre Interdit des Prêtres Proscrits"); put(Language.EN, "Priest's Bluewoods Forbidden Book"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11089,7 +11157,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(10, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, -30, Target.OPPONENT),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Parchemin du Maître des Vents"); put(Language.EN, "Skywalker's Binding Spell"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11104,7 +11172,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ESQ, false, 20),
 						new Effect(TypeEffect.Toucher, false, 20),
 						new Effect(TypeEffect.TCCM, false, -15, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Foudre du Vainqueur"); put(Language.EN, "Burst Warrior's Brand"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11117,7 +11185,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 20),
 						new Effect(TypeEffect.TCCP, false, 20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Poing Furieux de la Jungle"); put(Language.EN, "Book of Iron Vigor"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11141,7 +11209,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DefP, true, -10, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -10, Target.OPPONENT),
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Griffe du Roi Diabolique"); put(Language.EN, "Evil King's Hell Claw"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11152,7 +11220,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 475),
 					new Proc(30, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Stigmates du Puissant Guerrier"); put(Language.EN, "Mighty Warrior's Stigmata"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11164,7 +11232,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
 						new Effect(TypeEffect.AGI, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rune Sacrée du Roi Divin"); put(Language.EN, "Mystic Emperor's Holy Rune"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11186,7 +11254,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.CostComp, false, -30),
 					new Proc(15, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.ReducSkillM, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Livre Sans Fin du Devin"); put(Language.EN, "Enlightened's Book of Infinity"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11199,7 +11267,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(20, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 50),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Main du Terminateur"); put(Language.EN, "Annihilator's Hand"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11212,7 +11280,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 30),
 						new Effect(TypeEffect.DCCM, false, 30),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceau de Lumière de la Défense"); put(Language.EN, "Defense Seal of Light"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11235,7 +11303,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 259),
 					new Proc(25, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.IntComp, false, -100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Yeux Féroces du Dragon"); put(Language.EN, "Eyes of Tiamat"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11247,7 +11315,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Feu, false, 20),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.AtkM, false, 30),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Main du Chevalier Céleste"); put(Language.EN, "Hand of the Heavenly Knight"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11279,7 +11347,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 5),
 					new Proc(25, Activation.Attacked, 12, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 250, TypeRegen.REGENERATION, 2),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Livre Perdu sans attache"); put(Language.EN, "Lost Book of the Endless"); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -11290,7 +11358,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 317),
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Emblème des Yeux Célestes"); put(Language.EN, "Eye of God Emblem"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11301,7 +11369,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, 10),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sanctuaire de Lumière Sacrée"); put(Language.EN, "Sanctuary of Light"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11331,7 +11399,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PV, false, 528),
 					new Proc(12, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Parade, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Marque de la Réincarnation"); put(Language.EN, "Emblem of Reincarnation"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, },
@@ -11354,7 +11422,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(35, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PM, false, 200, TypeRegen.REGENERATION, 2),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Chevalier de Lumière"); put(Language.EN, "Shining Knight"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -11383,7 +11451,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.PM, false, 211),
 					new Proc(20, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.ReducSkillM, false, 100),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lumière Bleue"); put(Language.EN, "Sapphire Light"); }},
 				new GradeName[] { GradeName.PALADIN, },
@@ -12154,7 +12222,7 @@ public class LoaderWeapon {
 						new Proc(30, Activation.Skill, new Calculable[] {
 							new MultipleHit(TypeMultipleHit.Double),
 						}),
-					}),
+					}, 16),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre indestructible Soul-Edge"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12169,7 +12237,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -50, Target.OPPONENT),
-					}),
+					}, 13),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre maléfique de Jafar"); put(Language.EN, "Broken: Everlasting"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12186,7 +12254,7 @@ public class LoaderWeapon {
 							new Effect(TypeEffect.DegFeu, false, 3000),
 						}),
 						new Effect(TypeEffect.AtkM, true, 45),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre de Pureté d'Aeris"); put(Language.EN, "Rainbow: Flicker"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12202,7 +12270,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.Depla, false, -45),
 						new Effect(TypeEffect.AtkM, true, 20),
 						new Effect(TypeEffect.VitComp, false, 15),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Torche Maléfique de Daku Shunaida"); put(Language.EN, "Rainbow: Jump"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12217,7 +12285,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -45),
 						new Effect(TypeEffect.DefM, true, -35, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre stellaire de l'Apocalypse - 10e anniversaire"); put(Language.EN, "Doomsday 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12232,7 +12300,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -45),
 						new Effect(TypeEffect.DefM, true, -35, Target.OPPONENT),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Œil Sinistre du Roi Sorcier Sauron"); put(Language.EN, "Heretical Winged Eye"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12248,7 +12316,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -20, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Vortex Portatif Sacré"); put(Language.EN, "Otherworld - Breakthrough"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12265,7 +12333,7 @@ public class LoaderWeapon {
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -150, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PM, false, -3000, -6000, TypeRegen.POISON),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mirage de la Création"); put(Language.EN, "Sky Demon - Heaven of Creation"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12294,7 +12362,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 50),
 						new Effect(TypeEffect.ReducSkillP, false, 50),
 						new Effect(TypeEffect.ReducSkillM, false, 50),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Oeil de Vérité"); put(Language.EN, "Eye of Truth"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12308,7 +12376,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 200),
 						new Effect(TypeEffect.VitComp, false, 50),
-					}),
+					}, 7.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mystérieux Bâton de Mosunk"); put(Language.EN, "Mosunk's Rod of Mysteries"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12334,7 +12402,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 100),
 						new Effect(TypeEffect.VitComp, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Sceptre de purification de Mosunk"); put(Language.EN, "(Reforged) Mosunk's Staff of Purification"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12390,7 +12458,7 @@ public class LoaderWeapon {
 						new Proc(25, Activation.Skill, new Calculable[] {
 							new MultipleHit(TypeMultipleHit.Double),
 						}),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton Plume Arc-en-Ciel"); put(Language.EN, "Rainbow Feather Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12406,7 +12474,7 @@ public class LoaderWeapon {
 						new Proc(50, Activation.Skill, new Calculable[] {
 							new MultipleHit(TypeMultipleHit.Double),
 						}),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Bâton des longues mémoires de Mosunk"); put(Language.EN, "(Reforged) Mosunk - Stick of Memories"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12455,7 +12523,7 @@ public class LoaderWeapon {
 							new Effect(TypeEffect.DegFeu, false, 1500),
 						}),
 						new Effect(TypeEffect.AtkM, true, 30),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton Arracheur d'Âme"); put(Language.EN, "Soul Reaper Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12470,7 +12538,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, 20),
 						new Effect(TypeEffect.VitAtk, false, 50),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Aile Divine - Cicatrice de l'Esprit"); put(Language.EN, "Divine Wing - Spirit's Scar"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12498,7 +12566,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.DCCM, false, 10),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 20),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Flamme Ardente du Phoenix"); put(Language.EN, "(Reforged) Mosunk - Wand of Ancient Will"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12540,7 +12608,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -30, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -20, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Épiphanie Divine"); put(Language.EN, "Divine Inspiration"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12569,7 +12637,7 @@ public class LoaderWeapon {
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -150),
 						new RegenEffect(TypeEffect.PM, false, -3000, -6000, TypeRegen.POISON),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ondes de Sagesse"); put(Language.EN, "Wings of Wisdom - Eagle"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12634,7 +12702,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 50),
 						new Effect(TypeEffect.ReducSkillP, false, 50),
 						new Effect(TypeEffect.ReducSkillM, false, 50),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Écrin de Perle d'Angoya"); put(Language.EN, "Enlightened Staff of Guidance"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12648,7 +12716,7 @@ public class LoaderWeapon {
 					new Proc(12, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 100),
 						new StaticEffect(TypeStaticEffect.AntiStun),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Oeil des Lumières"); put(Language.EN, "Eye of Enlightenment"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12662,7 +12730,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 200),
 						new Effect(TypeEffect.VitComp, false, 50),
-					}),
+					}, 7.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre de Capture de Lumière"); put(Language.EN, "Staff of Imprisoned Light"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12676,7 +12744,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(25, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 50),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton à Griffe Doré et Magique de Mosunk (Reforgé)"); put(Language.EN, "(Reforged) Mosunk's Golden-Claw Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12711,7 +12779,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Glace, false, 15),
 					new Proc(23, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton Infini de Mosunk"); put(Language.EN, "Mosunk's Rod of Infinity"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12735,7 +12803,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Sacre, false, 20),
 					new Proc(30, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 250, TypeRegen.REGENERATION, 2),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Voyageur des Rêves"); put(Language.EN, "Dreamwalker"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12749,7 +12817,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 20),
 					new Proc(25, Activation.Attacked, 6, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Serpent des Jachères"); put(Language.EN, "Serpent of the Wasteland"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12799,7 +12867,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 100),
 						new Effect(TypeEffect.VitComp, false, 100),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton au Pouvoir Magique Sombre de Mosunk (Reforgé)"); put(Language.EN, "(Reforged) Mosunk's Dark Pall Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12835,7 +12903,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCM, false, 50),
 						new Effect(TypeEffect.VitComp, false, 50),
 						new Effect(TypeEffect.MEN, false, -100),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Style des Ténèbres"); put(Language.EN, "Black Wind"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12847,7 +12915,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(20, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.ReducSkillM, false, 100),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Volonté du Mentor Magique"); put(Language.EN, "Sorcerer King's Will"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12875,7 +12943,7 @@ public class LoaderWeapon {
 					new Proc(25, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -60, TypeRegen.POISON, 2),
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lune de Nuit Eternelle"); put(Language.EN, "Moon of Eternal Night"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12886,7 +12954,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VOL, false, 11, true),
 					new Proc(25, Activation.Attacked, 5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Sleep, Target.OPPONENT),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton du Baiser Innocent"); put(Language.EN, "Apostle of Light Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12909,7 +12977,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Ombre, false, 10),
 					new Proc(45, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -50, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Messager Mana"); put(Language.EN, "Mana Messenger"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12948,11 +13016,13 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, false, 64, true),
 					new Effect(TypeEffect.INT, false, 68, true),
 					new Effect(TypeEffect.Toucher, false, 15),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
+					new Proc(15, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 150),
 						new Effect(TypeEffect.VOL, false, 150),
-					}),
+					}, 5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bâton Magique des Contrées Oubliées"); put(Language.EN, "Forgotten Key Magic Staff"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -12983,7 +13053,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.AntiDodo),
 					new Proc(15, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.INT, false, 250),
-					}),
+					}, 7.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre du Magicien de l'Oubli"); put(Language.EN, "Oblivion's Curse Scepter"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, },
@@ -13558,7 +13628,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.PURPLE, true, WeaponType.LAME, false, false, "lame/90vio", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 5944, true),
-					new Effect(TypeEffect.AtkM, false, 3604, true),
+					new Effect(TypeEffect.AtkM, false, 3603, true),
 					new Effect(TypeEffect.FCE, false, 115, true),
 					new Effect(TypeEffect.INT, false, 241, true),
 					new Effect(TypeEffect.VOL, false, 106, true),
@@ -13582,8 +13652,8 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Taille - Dent à corne"); put(Language.EN, "Serrated Tooth"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.PURPLE, true, WeaponType.LAME, false, false, "lame/80vio", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 5094, true),
-					new Effect(TypeEffect.AtkM, false, 3088, true),
+					new Effect(TypeEffect.Atk, false, 5093, true),
+					new Effect(TypeEffect.AtkM, false, 3087, true),
 					new Effect(TypeEffect.FCE, false, 93, true),
 					new Effect(TypeEffect.INT, false, 184, true),
 					new Effect(TypeEffect.VOL, false, 87, true),
@@ -13594,7 +13664,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Limite de l'Ombre - Coupure des ténèbres"); put(Language.EN, "Nebulous Edge"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				75, Quality.PURPLE, true, WeaponType.LAME, false, false, "lame/75vio", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4681, true),
+					new Effect(TypeEffect.Atk, false, 4680, true),
 					new Effect(TypeEffect.AtkM, false, 2838, true),
 					new Effect(TypeEffect.FCE, false, 112, true),
 					new Effect(TypeEffect.INT, false, 143, true),
@@ -13619,7 +13689,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				100, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/100gold", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 6147, true),
-					new Effect(TypeEffect.AtkM, false, 3712, true),
+					new Effect(TypeEffect.AtkM, false, 3711, true),
 					new Effect(TypeEffect.FCE, false, 129, true),
 					new Effect(TypeEffect.INT, false, 235, true),
 					new Effect(TypeEffect.VOL, false, 100, true),
@@ -13629,14 +13699,14 @@ public class LoaderWeapon {
 					new Proc(40, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -6, Target.OPPONENT),
 						new Effect(TypeEffect.IntComp, false, -4),
-					}),
+					}, 2),
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 5),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Destruction de bataille - Lame d'effondrement"); put(Language.EN, "Demolition Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				95, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/95gold", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 5746, true),
+					new Effect(TypeEffect.Atk, false, 5745, true),
 					new Effect(TypeEffect.AtkM, false, 3469, true),
 					new Effect(TypeEffect.FCE, false, 122, true),
 					new Effect(TypeEffect.INT, false, 220, true),
@@ -13647,14 +13717,14 @@ public class LoaderWeapon {
 					new Proc(30, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
-					}),
+					}, 18),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DCCM, false, 10),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Espace - Coupe"); put(Language.EN, "Astral Rift"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/90gold", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 5350, true),
+					new Effect(TypeEffect.Atk, false, 5349, true),
 					new Effect(TypeEffect.AtkM, false, 3230, true),
 					new Effect(TypeEffect.FCE, false, 91, true),
 					new Effect(TypeEffect.INT, false, 231, true),
@@ -13666,14 +13736,14 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DefP, true, -10),
 						new Effect(TypeEffect.DefM, true, -10),
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
-					}),
+					}, 12),
 				}, new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 3),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sceptre stellaire Dansant - 10e anniversaire"); put(Language.EN, "Dancing 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.GOLD, true, WeaponType.LAME, false, false, "default/10ansGold2M", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 5350, true),
+					new Effect(TypeEffect.Atk, false, 5349, true),
 					new Effect(TypeEffect.AtkM, false, 3230, true),
 					new Effect(TypeEffect.FCE, false, 91, true),
 					new Effect(TypeEffect.INT, false, 231, true),
@@ -13685,7 +13755,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DefP, true, -10),
 						new Effect(TypeEffect.DefM, true, -10),
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
-					}),
+					}, 12),
 				}, new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 3),
 				}),
@@ -13698,12 +13768,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.INT, false, 198, true),
 					new Effect(TypeEffect.VOL, false, 98, true),
 					new Effect(TypeEffect.Toucher, false, 18),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+					new Proc(25, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50),
 						new Effect(TypeEffect.DCCM, false, 50),
 						new Effect(TypeEffect.VitAtk, false, 30),
-					}),
+					}, 6),
 				}, new Calculable[] {
 					new Effect(TypeEffect.INT, true, 1),
 				}),
@@ -13721,14 +13793,14 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Atk, true, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 4),
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 1),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Sacrée - Puissance Céleste Infinie"); put(Language.EN, "Heavenly Meteor Shower"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				75, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/75gold", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4214, true),
+					new Effect(TypeEffect.Atk, false, 4213, true),
 					new Effect(TypeEffect.AtkM, false, 2544, true),
 					new Effect(TypeEffect.FCE, false, 90, true),
 					new Effect(TypeEffect.INT, false, 114, true),
@@ -13744,7 +13816,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				70, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/70gold", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 3852, true),
-					new Effect(TypeEffect.AtkM, false, 2326, true),
+					new Effect(TypeEffect.AtkM, false, 2325, true),
 					new Effect(TypeEffect.FCE, false, 80, true),
 					new Effect(TypeEffect.INT, false, 96, true),
 					new Effect(TypeEffect.VOL, false, 72, true),
@@ -13768,7 +13840,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/60gold", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 3155, true),
-					new Effect(TypeEffect.AtkM, false, 1906, true),
+					new Effect(TypeEffect.AtkM, false, 1905, true),
 					new Effect(TypeEffect.FCE, false, 70, true),
 					new Effect(TypeEffect.INT, false, 80, true),
 					new Effect(TypeEffect.VOL, false, 50, true),
@@ -13778,13 +13850,13 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 25),
 						new Effect(TypeEffect.ReducSkillP, false, 25),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 2),
-					}),
+					}, 1.2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de commandant ancestral"); put(Language.EN, "Great Elder's Commander Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				50, Quality.GOLD, true, WeaponType.LAME, false, false, "lame/50gold", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 2502, true),
-					new Effect(TypeEffect.AtkM, false, 1510, true),
+					new Effect(TypeEffect.Atk, false, 2501, true),
+					new Effect(TypeEffect.AtkM, false, 1509, true),
 					new Effect(TypeEffect.FCE, false, 48, true),
 					new Effect(TypeEffect.INT, false, 84, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
@@ -13818,7 +13890,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame-vortex de Bahadolo"); put(Language.EN, "Bahado's Vortex Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				100, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/100pvp", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 5473, true),
+					new Effect(TypeEffect.Atk, false, 5472, true),
 					new Effect(TypeEffect.AtkM, false, 3300, true),
 					new Effect(TypeEffect.FCE, false, 67, true),
 					new Effect(TypeEffect.INT, false, 76, true),
@@ -13840,16 +13912,18 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de la double tête de Lion"); put(Language.EN, "Twin Lionhead Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				100, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/100pre", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4782, true),
+					new Effect(TypeEffect.Atk, false, 4781, true),
 					new Effect(TypeEffect.AtkM, false, 2887, true),
 					new Effect(TypeEffect.FCE, false, 43, true),
 					new Effect(TypeEffect.INT, false, 89, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
+					new Proc(20, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 40),
+					}),
 					new Proc(25, Activation.Attack, 5, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
 						new Effect(TypeEffect.Poisse, false, 2, Target.OPPONENT),
-					}),
+					}, 1),
 				}, new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 10),
 				}),
@@ -13874,8 +13948,8 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de surtension de Bahadolo"); put(Language.EN, "Bahado's Surge Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				95, Quality.ORANGE, false, WeaponType.LAME, false, false, "lame/100pvp", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4469, true),
-					new Effect(TypeEffect.AtkM, false, 2698, true),
+					new Effect(TypeEffect.Atk, false, 4468, true),
+					new Effect(TypeEffect.AtkM, false, 2697, true),
 					new Effect(TypeEffect.FCE, false, 55, true),
 					new Effect(TypeEffect.INT, false, 64, true),
 					new Effect(TypeEffect.VOL, false, 40, true),
@@ -13892,24 +13966,26 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de la dent noire détruite"); put(Language.EN, "Broken Blacktooth Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				95, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/100pvp", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4469, true),
-					new Effect(TypeEffect.AtkM, false, 2698, true),
+					new Effect(TypeEffect.Atk, false, 4468, true),
+					new Effect(TypeEffect.AtkM, false, 2697, true),
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.INT, false, 84, true),
 					new Effect(TypeEffect.VOL, false, 35, true),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
+					new Proc(20, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 40),
+					}),
 					new Proc(25, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
 						new Effect(TypeEffect.Toucher, false, -30, Target.OPPONENT),
-					}),
+					}, 10),
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 5),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Gravure de Dragon - Découpe Divine"); put(Language.EN, "Divine Dragon Carver"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/90pre", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4161, true),
-					new Effect(TypeEffect.AtkM, false, 2513, true),
+					new Effect(TypeEffect.Atk, false, 4160, true),
+					new Effect(TypeEffect.AtkM, false, 2512, true),
 					new Effect(TypeEffect.FCE, false, 47, true),
 					new Effect(TypeEffect.INT, false, 147, true),
 					new Effect(TypeEffect.VOL, false, 46, true),
@@ -13918,7 +13994,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ESQ, false, -25, Target.OPPONENT),
-					}),
+					}, 10),
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 3),
 				}),
@@ -13941,7 +14017,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de Bahadolo, Seigneur de la cruauté"); put(Language.EN, "Bahado's Lord of Cruelty Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				85, Quality.ORANGE, false, WeaponType.LAME, false, false, "lame/85pvp", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 3861, true),
+					new Effect(TypeEffect.Atk, false, 3860, true),
 					new Effect(TypeEffect.AtkM, false, 2330, true),
 					new Effect(TypeEffect.FCE, false, 47, true),
 					new Effect(TypeEffect.INT, false, 56, true),
@@ -13957,26 +14033,28 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Griffure de monstre - Extinction"); put(Language.EN, "Claws of Extinction"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				85, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/85pre", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 3861, true),
+					new Effect(TypeEffect.Atk, false, 3860, true),
 					new Effect(TypeEffect.AtkM, false, 2330, true),
 					new Effect(TypeEffect.FCE, false, 45, true),
 					new Effect(TypeEffect.INT, false, 146, true),
 					new Effect(TypeEffect.VOL, false, 44, true),
 					new Effect(TypeEffect.Toucher, false, 12),
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+					new Proc(25, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 60),
+					}),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.DCCP, false, 50),
 						new Effect(TypeEffect.DCCM, false, 50),
 						new Effect(TypeEffect.VitAtk, false, 30),
-					}),
+					}, 6),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DegSkillM, false, 12),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Torpille illimitée - Découpe"); put(Language.EN, "Torpedo Volley"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/80pre", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 3565, true),
-					new Effect(TypeEffect.AtkM, false, 2153, true),
+					new Effect(TypeEffect.Atk, false, 3564, true),
+					new Effect(TypeEffect.AtkM, false, 2152, true),
 					new Effect(TypeEffect.FCE, false, 41, true),
 					new Effect(TypeEffect.INT, false, 42, true),
 					new Effect(TypeEffect.VOL, false, 40, true),
@@ -13986,15 +14064,15 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 20),
 					new Proc(15, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 4),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DegSkillM, false, 8),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Sacrée - Découpe de Génèse"); put(Language.EN, "Genesis Holy Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				75, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/75pre", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 3277, true),
-					new Effect(TypeEffect.AtkM, false, 1979, true),
+					new Effect(TypeEffect.Atk, false, 3276, true),
+					new Effect(TypeEffect.AtkM, false, 1978, true),
 					new Effect(TypeEffect.FCE, false, 37, true),
 					new Effect(TypeEffect.INT, false, 38, true),
 					new Effect(TypeEffect.VOL, false, 36, true),
@@ -14009,7 +14087,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				69, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/69ora", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 2940, true),
-					new Effect(TypeEffect.AtkM, false, 1775, true),
+					new Effect(TypeEffect.AtkM, false, 1774, true),
 					new Effect(TypeEffect.FCE, false, 35, true),
 					new Effect(TypeEffect.INT, false, 44, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
@@ -14022,7 +14100,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				67, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/80pre", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 2830, true),
-					new Effect(TypeEffect.AtkM, false, 1709, true),
+					new Effect(TypeEffect.AtkM, false, 1708, true),
 					new Effect(TypeEffect.FCE, false, 29, true),
 					new Effect(TypeEffect.INT, false, 50, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
@@ -14066,7 +14144,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame du Dieu de la Foudre"); put(Language.EN, "Thunder God's Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/60ora", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 2454, true),
+					new Effect(TypeEffect.Atk, false, 2453, true),
 					new Effect(TypeEffect.AtkM, false, 1482, true),
 					new Effect(TypeEffect.FCE, false, 23, true),
 					new Effect(TypeEffect.INT, false, 27, true),
@@ -14091,26 +14169,26 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, -25, Target.OPPONENT),
 						new Effect(TypeEffect.ReducSkillP, false, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -140, -150, TypeRegen.POISON, 2),
-					}),
+					}, 1.2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Atomique"); put(Language.EN, "Irradiated Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				50, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/60ora", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 1946, true),
-					new Effect(TypeEffect.AtkM, false, 1175, true),
+					new Effect(TypeEffect.Atk, false, 1945, true),
+					new Effect(TypeEffect.AtkM, false, 1174, true),
 					new Effect(TypeEffect.FCE, false, 19, true),
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.Toucher, false, 6),
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 3),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de Vengeance du Grand Chef"); put(Language.EN, "Big Boss's Revenge Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				50, Quality.ORANGE, true, WeaponType.LAME, false, false, "lame/65gold", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 1952, true),
-					new Effect(TypeEffect.AtkM, false, 1175, true),
+					new Effect(TypeEffect.AtkM, false, 1174, true),
 					new Effect(TypeEffect.FCE, false, 19, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
@@ -14153,7 +14231,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -120, TypeRegen.POISON, 4),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de Lumière - Samura Sacré"); put(Language.EN, "Blessed Smaurai's Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14173,7 +14251,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.ReflectM_old, false, 40),
 					new Proc(15, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, 80),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Géante"); put(Language.EN, "Giant Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14188,7 +14266,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Moissonneuse"); put(Language.EN, "Harvester"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14206,13 +14284,13 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new Effect(TypeEffect.ReducSkillP, false, 30),
 						new Effect(TypeEffect.ReducSkillM, false, 30),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Endormie"); put(Language.EN, "Sleeping Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				89, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/89bleu", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 4686, true),
-					new Effect(TypeEffect.AtkM, false, 2830, true),
+					new Effect(TypeEffect.AtkM, false, 2829, true),
 					new Effect(TypeEffect.FCE, false, 70, true),
 					new Effect(TypeEffect.INT, false, 78, true),
 					new Effect(TypeEffect.Toucher, false, 15),
@@ -14220,7 +14298,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame démoniaque assoiffée de sang"); put(Language.EN, "Bloodthirsty Demon Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				83, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/80gvg", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 4277, true),
+					new Effect(TypeEffect.Atk, false, 4276, true),
 					new Effect(TypeEffect.AtkM, false, 2581, true),
 					new Effect(TypeEffect.FCE, false, 68, true),
 					new Effect(TypeEffect.INT, false, 72, true),
@@ -14235,7 +14313,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 4, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame d'Argent des Neiges"); put(Language.EN, "Silver Snow Hunter Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14256,7 +14334,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Toucher, false, 10),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 1.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Croc de Dragon Bleu"); put(Language.EN, "Blue Dragon Fang"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14270,7 +14348,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Fureur de la Sorcière"); put(Language.EN, "Witch's Fury"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/60bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 2805, true),
+					new Effect(TypeEffect.Atk, false, 2804, true),
 					new Effect(TypeEffect.AtkM, false, 1693, true),
 					new Effect(TypeEffect.FCE, false, 44, true),
 					new Effect(TypeEffect.INT, false, 48, true),
@@ -14296,7 +14374,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Typhon"); put(Language.EN, "Typhoon Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				40, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/62bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 1697, true),
+					new Effect(TypeEffect.Atk, false, 1696, true),
 					new Effect(TypeEffect.AtkM, false, 1015, true),
 					new Effect(TypeEffect.FCE, false, 22, true),
 					new Effect(TypeEffect.INT, false, 36, true),
@@ -14305,7 +14383,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de la Marque du Sort Brisé"); put(Language.EN, "Spellbreaker's Mark Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				40, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/56bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 1681, true),
+					new Effect(TypeEffect.Atk, false, 1680, true),
 					new Effect(TypeEffect.AtkM, false, 1015, true),
 					new Effect(TypeEffect.INT, false, 44, true),
 					new Effect(TypeEffect.Toucher, false, 6),
@@ -14313,7 +14391,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Massive en Mithril"); put(Language.EN, "Heavy Mithril Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				32, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/32bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 1282, true),
+					new Effect(TypeEffect.Atk, false, 1281, true),
 					new Effect(TypeEffect.AtkM, false, 774, true),
 					new Effect(TypeEffect.FCE, false, 18, true),
 					new Effect(TypeEffect.INT, false, 24, true),
@@ -14329,14 +14407,14 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame du Brave de Siwa"); put(Language.EN, "Brave Katana of Siwa Village"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				6, Quality.BLUE, false, WeaponType.LAME, false, false, "lame/6bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 445, true),
-					new Effect(TypeEffect.AtkM, false, 269, true),
+					new Effect(TypeEffect.Atk, false, 444, true),
+					new Effect(TypeEffect.AtkM, false, 268, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame d'acier de Sprite"); put(Language.EN, "Sprite's Steel Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				97, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/97sprite", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 3937, true),
+					new Effect(TypeEffect.Atk, false, 3936, true),
 					new Effect(TypeEffect.AtkM, false, 2377, true),
 					new Effect(TypeEffect.INT, false, 53, true),
 				}, null ),
@@ -14358,8 +14436,8 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame d'étoile de Sprite"); put(Language.EN, "Sprite's Star Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				82, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/85pvp", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 3157, true),
-					new Effect(TypeEffect.AtkM, false, 1906, true),
+					new Effect(TypeEffect.Atk, false, 3156, true),
+					new Effect(TypeEffect.AtkM, false, 1905, true),
 					new Effect(TypeEffect.INT, false, 45, true),
 					new Effect(TypeEffect.Toucher, false, 10),
 				}, null ),
@@ -14367,7 +14445,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				77, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/80gvg", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 2907, true),
-					new Effect(TypeEffect.AtkM, false, 1756, true),
+					new Effect(TypeEffect.AtkM, false, 1755, true),
 					new Effect(TypeEffect.INT, false, 41, true),
 					new Effect(TypeEffect.Toucher, false, 12),
 				}, null ),
@@ -14383,21 +14461,21 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				62, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/60bleu", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 2194, true),
-					new Effect(TypeEffect.AtkM, false, 1325, true),
+					new Effect(TypeEffect.AtkM, false, 1324, true),
 					new Effect(TypeEffect.INT, false, 29, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Chimérique du Sprite"); put(Language.EN, "Sprite's Chimeric Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				56, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/56sprite", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 1926, true),
-					new Effect(TypeEffect.AtkM, false, 1163, true),
+					new Effect(TypeEffect.Atk, false, 1925, true),
+					new Effect(TypeEffect.AtkM, false, 1162, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.Toucher, false, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame du Maître Mage des Sprites"); put(Language.EN, "Sprite's Magimaster Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				46, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/60bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 1501, true),
+					new Effect(TypeEffect.Atk, false, 1500, true),
 					new Effect(TypeEffect.AtkM, false, 906, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.Toucher, false, 4),
@@ -14413,28 +14491,28 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Chute de la Montagne"); put(Language.EN, "Landslide Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				32, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/32vert", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 961, true),
-					new Effect(TypeEffect.AtkM, false, 580, true),
+					new Effect(TypeEffect.Atk, false, 960, true),
+					new Effect(TypeEffect.AtkM, false, 579, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame d'Écho des Sprites"); put(Language.EN, "Sprite's Echo Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				26, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/26sprite", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 753, true),
-					new Effect(TypeEffect.AtkM, false, 455, true),
+					new Effect(TypeEffect.Atk, false, 752, true),
+					new Effect(TypeEffect.AtkM, false, 454, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Spéciale Endurcie des Sprites"); put(Language.EN, "Sprite's Special Heavy Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				16, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/26sprite", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 445, true),
-					new Effect(TypeEffect.AtkM, false, 269, true),
+					new Effect(TypeEffect.Atk, false, 444, true),
+					new Effect(TypeEffect.AtkM, false, 268, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame Endurcie des Sprites"); put(Language.EN, "Sprite's Heavy Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				10, Quality.GREEN, false, WeaponType.LAME, false, false, "lame/6bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 289, true),
+					new Effect(TypeEffect.Atk, false, 288, true),
 					new Effect(TypeEffect.AtkM, false, 174, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null ),
@@ -14442,7 +14520,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				82, Quality.WHITE, false, WeaponType.LAME, false, false, "lame/82blanc", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 2630, true),
-					new Effect(TypeEffect.AtkM, false, 1463, true),
+					new Effect(TypeEffect.AtkM, false, 1462, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame d'Apparat"); put(Language.EN, "Forged Giant Steel Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14466,7 +14544,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				32, Quality.WHITE, false, WeaponType.LAME, false, false, "lame/36sprite", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 816, true),
-					new Effect(TypeEffect.AtkM, false, 484, true),
+					new Effect(TypeEffect.AtkM, false, 483, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame élaborée complexe"); put(Language.EN, "Hard Engineered Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14489,7 +14567,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame massive spéciale"); put(Language.EN, "Special Heavy Katana"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				12, Quality.WHITE, false, WeaponType.LAME, false, false, "lame/6bleu", new Calculable[] {
-					new Effect(TypeEffect.Atk, false, 282, true),
+					new Effect(TypeEffect.Atk, false, 281, true),
 					new Effect(TypeEffect.AtkM, false, 170, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame massive"); put(Language.EN, "Heavy Katana"); }},
@@ -14605,7 +14683,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de l'ombre - Clef de foudre"); put(Language.EN, "Thunderous Shadow Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				100, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/100vio", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 3487, true),
+					new Effect(TypeEffect.AtkD, false, 3486, true),
 					new Effect(TypeEffect.AtkM, false, 1494, true),
 					new Effect(TypeEffect.INT, false, 95, true),
 					new Effect(TypeEffect.VOL, false, 65, true),
@@ -14618,8 +14696,8 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lame de fond - Vaste océan"); put(Language.EN, "Infinite Tsunami"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				95, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/95vio", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 3259, true),
-					new Effect(TypeEffect.AtkM, false, 1397, true),
+					new Effect(TypeEffect.AtkD, false, 3258, true),
+					new Effect(TypeEffect.AtkM, false, 1396, true),
 					new Effect(TypeEffect.INT, false, 90, true),
 					new Effect(TypeEffect.VOL, false, 62, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
@@ -14630,7 +14708,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Ciel fier - Les ennemis aux portes"); put(Language.EN, "Prideful Heavenly Gates"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				90, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/90vio", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 3034, true),
+					new Effect(TypeEffect.AtkD, false, 3033, true),
 					new Effect(TypeEffect.AtkM, false, 1300, true),
 					new Effect(TypeEffect.INT, false, 86, true),
 					new Effect(TypeEffect.VOL, false, 59, true),
@@ -14643,7 +14721,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rêve - Chemin du salut"); put(Language.EN, "Dream of Salvation"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				85, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/85vio", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2815, true),
+					new Effect(TypeEffect.AtkD, false, 2814, true),
 					new Effect(TypeEffect.AtkM, false, 1206, true),
 					new Effect(TypeEffect.INT, false, 80, true),
 					new Effect(TypeEffect.VOL, false, 57, true),
@@ -14655,7 +14733,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mégatron - Dominance"); put(Language.EN, "Cogmaster's Charm"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/80vio", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2600, true),
+					new Effect(TypeEffect.AtkD, false, 2599, true),
 					new Effect(TypeEffect.AtkM, false, 1114, true),
 					new Effect(TypeEffect.INT, false, 76, true),
 					new Effect(TypeEffect.VOL, false, 54, true),
@@ -14669,7 +14747,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				75, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/75vio", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2389, true),
-					new Effect(TypeEffect.AtkM, false, 1024, true),
+					new Effect(TypeEffect.AtkM, false, 1023, true),
 					new Effect(TypeEffect.INT, false, 70, true),
 					new Effect(TypeEffect.VOL, false, 52, true),
 					new Effect(TypeEffect.AGI, false, 38, true),
@@ -14680,7 +14758,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Pleurs du fantôme - Tristesse solitaire"); put(Language.EN, "Ghostly Sorrow"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				70, Quality.PURPLE, true, WeaponType.CLE, false, false, "cle/70vio", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2185, true),
+					new Effect(TypeEffect.AtkD, false, 2184, true),
 					new Effect(TypeEffect.AtkM, false, 936, true),
 					new Effect(TypeEffect.INT, false, 62, true),
 					new Effect(TypeEffect.VOL, false, 52, true),
@@ -14693,7 +14771,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				100, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/100gold", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 3137, true),
-					new Effect(TypeEffect.AtkM, false, 1345, true),
+					new Effect(TypeEffect.AtkM, false, 1344, true),
 					new Effect(TypeEffect.INT, false, 75, true),
 					new Effect(TypeEffect.VOL, false, 52, true),
 					new Effect(TypeEffect.AGI, false, 41, true),
@@ -14702,7 +14780,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x3STD_old, 30),
 					new Proc(15, Activation.Attack, 10, 6, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 6),
-					}),
+					}, 0.3),
 				}, new Calculable[] {
 					new Effect(TypeEffect.Depla, false, 5),
 				}),
@@ -14710,7 +14788,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				95, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/95gold", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2932, true),
-					new Effect(TypeEffect.AtkM, false, 1257, true),
+					new Effect(TypeEffect.AtkM, false, 1256, true),
 					new Effect(TypeEffect.INT, false, 70, true),
 					new Effect(TypeEffect.VOL, false, 54, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
@@ -14720,7 +14798,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -5, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -5, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, new Calculable[] {
 					new Effect(TypeEffect.TCCM, false, 10),
 				}),
@@ -14738,7 +14816,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 2),
-					}),
+					}, 200),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DegSkillM, false, 15),
 				}),
@@ -14756,14 +14834,14 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
 						new Effect(TypeEffect.DefM, true, -25, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -80, TypeRegen.POISON, 2),
-					}),
+					}, 200),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DegSkillM, false, 15),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef murmurante d'Eugénie"); put(Language.EN, "Ginny's Whispering Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				85, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/85gold", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2533, true),
+					new Effect(TypeEffect.AtkD, false, 2532, true),
 					new Effect(TypeEffect.AtkM, false, 1085, true),
 					new Effect(TypeEffect.INT, false, 63, true),
 					new Effect(TypeEffect.VOL, false, 46, true),
@@ -14773,7 +14851,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x3Skill_old, 20),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 50),
-					}),
+					}, 22),
 				}, new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, 1),
 				}),
@@ -14781,7 +14859,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/80gold", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2340, true),
-					new Effect(TypeEffect.AtkM, false, 1003, true),
+					new Effect(TypeEffect.AtkM, false, 1002, true),
 					new Effect(TypeEffect.INT, false, 59, true),
 					new Effect(TypeEffect.VOL, false, 44, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -14795,7 +14873,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				75, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/75gold", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2151, true),
-					new Effect(TypeEffect.AtkM, false, 922, true),
+					new Effect(TypeEffect.AtkM, false, 921, true),
 					new Effect(TypeEffect.INT, false, 56, true),
 					new Effect(TypeEffect.VOL, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 32, true),
@@ -14804,14 +14882,14 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 80),
 						new Effect(TypeEffect.Toucher, false, 20),
-					}),
+					}, 20),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DegSkillM, false, 12),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef d'absorption de volonté"); put(Language.EN, "Will Glutton Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				70, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/70gold", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1966, true),
+					new Effect(TypeEffect.AtkD, false, 1965, true),
 					new Effect(TypeEffect.AtkM, false, 842, true),
 					new Effect(TypeEffect.INT, false, 50, true),
 					new Effect(TypeEffect.VOL, false, 40, true),
@@ -14820,14 +14898,14 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 30),
 						new Effect(TypeEffect.Toucher, false, 10),
-					}),
+					}, 35),
 				}, new Calculable[] {
 					new Effect(TypeEffect.VOL, true, 1),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de tisse-rêve"); put(Language.EN, "Dreamweaver Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				65, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/65gold", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1786, true),
+					new Effect(TypeEffect.AtkD, false, 1785, true),
 					new Effect(TypeEffect.AtkM, false, 765, true),
 					new Effect(TypeEffect.INT, false, 50, true),
 					new Effect(TypeEffect.VOL, false, 38, true),
@@ -14840,7 +14918,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.TCCM, false, 50),
 						new Effect(TypeEffect.VitComp, false, 30),
 						new Effect(TypeEffect.DefP, true, -30),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef d'apparition"); put(Language.EN, "Spectral Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14857,7 +14935,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				50, Quality.GOLD, true, WeaponType.CLE, false, false, "cle/50gold", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1276, true),
-					new Effect(TypeEffect.AtkM, false, 547, true),
+					new Effect(TypeEffect.AtkM, false, 546, true),
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.VOL, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -14868,7 +14946,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducSkillP, false, 20),
 						new Effect(TypeEffect.ReducSkillM, false, 20),
 						new Effect(TypeEffect.DegSkillM, false, 25),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Clef florale d'Alice"); put(Language.EN, "(Reforged) Alice's Floral Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -14911,7 +14989,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef du loup Aurora"); put(Language.EN, "Aurora Wolf Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				99, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/99pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2409, true),
+					new Effect(TypeEffect.AtkD, false, 2408, true),
 					new Effect(TypeEffect.AtkM, false, 1032, true),
 					new Effect(TypeEffect.INT, false, 40, true),
 					new Effect(TypeEffect.VOL, false, 26, true),
@@ -14921,7 +14999,7 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 35),
 					new Proc(15, Activation.Attack, 10, 5, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 5),
-					}),
+					}, 0.3),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DCCM, false, 10),
 				}),
@@ -14946,7 +15024,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de l'herbe nouvelle d'Alice"); put(Language.EN, "Alice's New Herb Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				95, Quality.ORANGE, false, WeaponType.CLE, false, false, "cle/100pvp", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 2281, true),
+					new Effect(TypeEffect.AtkD, false, 2280, true),
 					new Effect(TypeEffect.AtkM, false, 977, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
@@ -14965,7 +15043,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				94, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/94pre", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2249, true),
-					new Effect(TypeEffect.AtkM, false, 964, true),
+					new Effect(TypeEffect.AtkM, false, 963, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.VOL, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -14974,7 +15052,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -4, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -4, Target.OPPONENT),
-					}),
+					}, 0.5),
 				}, new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, 3),
 				}),
@@ -14990,7 +15068,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -20, Target.OPPONENT),
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 2),
-					}),
+					}, 20),
 				}, new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 3),
 				}),
@@ -15012,7 +15090,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Alice - Clef marine florale"); put(Language.EN, "Alice's Floral Sea Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				85, Quality.ORANGE, false, WeaponType.CLE, false, false, "cle/85pvp", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1970, true),
+					new Effect(TypeEffect.AtkD, false, 1969, true),
 					new Effect(TypeEffect.AtkM, false, 844, true),
 					new Effect(TypeEffect.INT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
@@ -15027,7 +15105,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef miraculeuse d'Eugénie"); put(Language.EN, "Ginny's Miraculous Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				84, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/85pvp", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1940, true),
+					new Effect(TypeEffect.AtkD, false, 1939, true),
 					new Effect(TypeEffect.AtkM, false, 831, true),
 					new Effect(TypeEffect.INT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
@@ -15036,14 +15114,14 @@ public class LoaderWeapon {
 					new StaticEffect(TypeStaticEffect.x2STD_old, 25),
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 50),
-					}),
+					}, 22),
 				}, new Calculable[] {
 					new Effect(TypeEffect.AGI, true, 1),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé du Roi Dragon"); put(Language.EN, "Dragon King's Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/80pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1791, true),
+					new Effect(TypeEffect.AtkD, false, 1790, true),
 					new Effect(TypeEffect.AtkM, false, 767, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
@@ -15056,7 +15134,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef du bec"); put(Language.EN, "Beak Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				74, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/80pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1644, true),
+					new Effect(TypeEffect.AtkD, false, 1643, true),
 					new Effect(TypeEffect.AtkM, false, 704, true),
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.VOL, false, 15, true),
@@ -15064,14 +15142,14 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 10),
 						new Effect(TypeEffect.VitAtkD, false, 10),
-					}),
+					}, 20),
 				}, new Calculable[] {
 					new Effect(TypeEffect.DCCM, false, 1),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef du vide"); put(Language.EN, "Emptiness Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				74, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/74pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1644, true),
+					new Effect(TypeEffect.AtkD, false, 1643, true),
 					new Effect(TypeEffect.AtkM, false, 704, true),
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
@@ -15080,7 +15158,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 20),
 						new Effect(TypeEffect.VOL, false, 50),
-					}),
+					}, 20),
 				}, new Calculable[] {
 					new Effect(TypeEffect.PeneP, false, 1),
 					new Effect(TypeEffect.PeneM, false, 1),
@@ -15088,7 +15166,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef fainéante"); put(Language.EN, "Lazy Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				66, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/80pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1417, true),
+					new Effect(TypeEffect.AtkD, false, 1416, true),
 					new Effect(TypeEffect.AtkM, false, 607, true),
 					new Effect(TypeEffect.INT, false, 24, true),
 					new Effect(TypeEffect.VOL, false, 14, true),
@@ -15096,15 +15174,15 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.AtkD, true, 20),
 						new Effect(TypeEffect.Toucher, false, 10),
-					}),
+					}, 35),
 				}, new Calculable[] {
 					new Effect(TypeEffect.INT, true, 1),
 				}),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé des beaux rêves"); put(Language.EN, "Wonderous Dream Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				63, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/63pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1334, true),
-					new Effect(TypeEffect.AtkM, false, 572, true),
+					new Effect(TypeEffect.AtkD, false, 1333, true),
+					new Effect(TypeEffect.AtkM, false, 571, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
@@ -15112,7 +15190,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.VitComp, false, 30),
 						new Effect(TypeEffect.TCCM, false, 40),
 						new Effect(TypeEffect.DefP, true, -30),
-					}),
+					}, 18),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de brise d'Alice (Reforgé)"); put(Language.EN, "(Reforged) Alice's Breeze Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -15129,7 +15207,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				60, Quality.ORANGE, false, WeaponType.CLE, false, false, "cle/60pvp", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1252, true),
-					new Effect(TypeEffect.AtkM, false, 537, true),
+					new Effect(TypeEffect.AtkM, false, 536, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -15139,7 +15217,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef des Revenants"); put(Language.EN, "Revenant Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				58, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/58pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1200, true),
+					new Effect(TypeEffect.AtkD, false, 1199, true),
 					new Effect(TypeEffect.AtkM, false, 514, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -15151,7 +15229,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				48, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/48pre", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 869, true),
-					new Effect(TypeEffect.AtkM, false, 373, true),
+					new Effect(TypeEffect.AtkM, false, 372, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
@@ -15159,7 +15237,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de serpent de feu"); put(Language.EN, "Searing Viper Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				48, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/48pre", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 943, true),
+					new Effect(TypeEffect.AtkD, false, 942, true),
 					new Effect(TypeEffect.AtkM, false, 404, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -15170,13 +15248,13 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducSkillP, false, 15),
 						new Effect(TypeEffect.ReducSkillM, false, 15),
 						new Effect(TypeEffect.DegSkillM, false, 20),
-					}),
+					}, 14),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de floraison d'Alice reforgée"); put(Language.EN, "(Reforged) Alice's Bloom Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				45, Quality.ORANGE, false, WeaponType.CLE, false, true, "cle/48pre", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 956, true),
-					new Effect(TypeEffect.AtkM, false, 410, true),
+					new Effect(TypeEffect.AtkM, false, 409, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -15187,7 +15265,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				45, Quality.ORANGE, false, WeaponType.CLE, false, false, "cle/45pvp", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 869, true),
-					new Effect(TypeEffect.AtkM, false, 373, true),
+					new Effect(TypeEffect.AtkM, false, 372, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
@@ -15197,20 +15275,20 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de l'ombre"); put(Language.EN, "Shadow Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				38, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/38ora", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 705, true),
+					new Effect(TypeEffect.AtkD, false, 704, true),
 					new Effect(TypeEffect.AtkM, false, 302, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Proc(20, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de poussière"); put(Language.EN, "Dust Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				28, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/28ora", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 489, true),
-					new Effect(TypeEffect.AtkM, false, 210, true),
+					new Effect(TypeEffect.AtkM, false, 209, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
@@ -15220,7 +15298,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de la Nuit Noire"); put(Language.EN, "Nocturnal Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				18, Quality.ORANGE, true, WeaponType.CLE, false, false, "cle/28ora", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 299, true),
+					new Effect(TypeEffect.AtkD, false, 298, true),
 					new Effect(TypeEffect.AtkM, false, 128, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -15230,7 +15308,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				88, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/80gvg", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2356, true),
-					new Effect(TypeEffect.AtkM, false, 1010, true),
+					new Effect(TypeEffect.AtkM, false, 1009, true),
 					new Effect(TypeEffect.INT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
@@ -15239,7 +15317,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				82, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/82bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2148, true),
-					new Effect(TypeEffect.AtkM, false, 921, true),
+					new Effect(TypeEffect.AtkM, false, 920, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
@@ -15248,7 +15326,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				80, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/80gvg", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 2046, true),
-					new Effect(TypeEffect.AtkM, false, 877, true),
+					new Effect(TypeEffect.AtkM, false, 876, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
@@ -15256,7 +15334,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VitAtk, false, 15),
 					new Proc(12, Activation.Attack, 10, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 3),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Son du traître"); put(Language.EN, "Traitor's Promise"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
@@ -15271,7 +15349,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				76, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/76bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1945, true),
-					new Effect(TypeEffect.AtkM, false, 834, true),
+					new Effect(TypeEffect.AtkM, false, 833, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 					new Effect(TypeEffect.VOL, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
@@ -15280,21 +15358,23 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				70, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/58pre", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1747, true),
-					new Effect(TypeEffect.AtkM, false, 749, true),
+					new Effect(TypeEffect.AtkM, false, 748, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 					new Effect(TypeEffect.Toucher, false, 10),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 10),
+					new Proc(10, Activation.Standard, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 60, 40),
+					}),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DegSkillM, false, 20),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de félicité"); put(Language.EN, "Bliss Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				62, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/62bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1493, true),
-					new Effect(TypeEffect.AtkM, false, 640, true),
+					new Effect(TypeEffect.AtkM, false, 639, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -15303,7 +15383,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				39, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/39bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 832, true),
-					new Effect(TypeEffect.AtkM, false, 357, true),
+					new Effect(TypeEffect.AtkM, false, 356, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -15312,14 +15392,14 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				31, Quality.BLUE, false, WeaponType.CLE, false, true, "cle/62bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 606, true),
-					new Effect(TypeEffect.AtkM, false, 260, true),
+					new Effect(TypeEffect.AtkM, false, 259, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef du Brave de Siwa"); put(Language.EN, "Brave Key of Siwa Village"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				6, Quality.BLUE, false, WeaponType.CLE, false, false, "cle/6bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 199, true),
+					new Effect(TypeEffect.AtkD, false, 198, true),
 					new Effect(TypeEffect.AtkM, false, 85, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null ),
@@ -15327,7 +15407,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				96, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/96sprite", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1982, true),
-					new Effect(TypeEffect.AtkM, false, 850, true),
+					new Effect(TypeEffect.AtkM, false, 849, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -15336,7 +15416,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				91, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/91sprite", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1847, true),
-					new Effect(TypeEffect.AtkM, false, 792, true),
+					new Effect(TypeEffect.AtkM, false, 791, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -15353,7 +15433,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef Sprite de sort arcanique"); put(Language.EN, "Sprite's Arcane Spell Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				81, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/78bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1585, true),
+					new Effect(TypeEffect.AtkD, false, 1584, true),
 					new Effect(TypeEffect.AtkM, false, 679, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -15362,7 +15442,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef Sprite de gargouille"); put(Language.EN, "Sprite's Gargoyle Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				71, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/78bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1335, true),
+					new Effect(TypeEffect.AtkD, false, 1334, true),
 					new Effect(TypeEffect.AtkM, false, 572, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
@@ -15371,7 +15451,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef Sprite de prière"); put(Language.EN, "Sprite's Prayerful Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				61, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/62bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1097, true),
+					new Effect(TypeEffect.AtkD, false, 1096, true),
 					new Effect(TypeEffect.AtkM, false, 470, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
@@ -15389,7 +15469,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef Sprite de feu cruelle"); put(Language.EN, "Sprite's Cruel Fire Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				44, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/44sprite", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 724, true),
+					new Effect(TypeEffect.AtkD, false, 723, true),
 					new Effect(TypeEffect.AtkM, false, 310, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -15398,7 +15478,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef Sprite de Brume Noire"); put(Language.EN, "Sprite's Black Mist Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				34, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/39bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 528, true),
+					new Effect(TypeEffect.AtkD, false, 527, true),
 					new Effect(TypeEffect.AtkM, false, 226, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -15408,7 +15488,7 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				24, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/24sprite", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 351, true),
-					new Effect(TypeEffect.AtkM, false, 151, true),
+					new Effect(TypeEffect.AtkM, false, 150, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
@@ -15416,7 +15496,7 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé grossière de Sprite"); put(Language.EN, "Sprite's Crude Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				14, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/6bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 199, true),
+					new Effect(TypeEffect.AtkD, false, 198, true),
 					new Effect(TypeEffect.AtkM, false, 85, true),
 					new Effect(TypeEffect.INT, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
@@ -15424,57 +15504,57 @@ public class LoaderWeapon {
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé en bois de Sprite"); put(Language.EN, "Sprite's Wooden Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				10, Quality.GREEN, false, WeaponType.CLE, false, false, "cle/6bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 148, true),
+					new Effect(TypeEffect.AtkD, false, 147, true),
 					new Effect(TypeEffect.AtkM, false, 63, true),
 					new Effect(TypeEffect.INT, false, 1, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null ),
-			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de dragon de feu"); put(Language.EN, "Fire Dragon Key"); }},
+			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clé de dragon de feu "); put(Language.EN, "Fire Dragon Key "); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				86, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/82bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1429, true),
-					new Effect(TypeEffect.AtkM, false, 613, true),
+					new Effect(TypeEffect.AtkM, false, 612, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef aux ailes magiques"); put(Language.EN, "Magical Wing Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				81, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/82bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 1321, true),
+					new Effect(TypeEffect.AtkD, false, 1320, true),
 					new Effect(TypeEffect.AtkM, false, 566, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef du représentant de la loi"); put(Language.EN, "Lawman's Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				66, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/80gvg", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 1012, true),
-					new Effect(TypeEffect.AtkM, false, 434, true),
+					new Effect(TypeEffect.AtkM, false, 433, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de fer sombre"); put(Language.EN, "Gloomy Iron Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				50, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/39bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 709, true),
-					new Effect(TypeEffect.AtkM, false, 304, true),
+					new Effect(TypeEffect.AtkM, false, 303, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de feu cruelle"); put(Language.EN, "Cruel Fire Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				40, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/44sprite", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 536, true),
-					new Effect(TypeEffect.AtkM, false, 230, true),
+					new Effect(TypeEffect.AtkM, false, 229, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de Brume Noire"); put(Language.EN, "Black Mist Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				30, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/24sprite", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 379, true),
+					new Effect(TypeEffect.AtkD, false, 378, true),
 					new Effect(TypeEffect.AtkM, false, 162, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef d'acier"); put(Language.EN, "Steel Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				24, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/24sprite", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 293, true),
+					new Effect(TypeEffect.AtkD, false, 292, true),
 					new Effect(TypeEffect.AtkM, false, 125, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef du chasseur"); put(Language.EN, "Hunter Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				20, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/24sprite", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 239, true),
+					new Effect(TypeEffect.AtkD, false, 238, true),
 					new Effect(TypeEffect.AtkM, false, 102, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef standard d'Ilya"); put(Language.EN, "Ilya Standard Key"); }},
@@ -15487,18 +15567,18 @@ public class LoaderWeapon {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				10, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/6bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 123, true),
-					new Effect(TypeEffect.AtkM, false, 53, true),
+					new Effect(TypeEffect.AtkM, false, 52, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef grossière"); put(Language.EN, "Crude Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				10, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/6bleu", new Calculable[] {
 					new Effect(TypeEffect.AtkD, false, 123, true),
-					new Effect(TypeEffect.AtkM, false, 53, true),
+					new Effect(TypeEffect.AtkM, false, 52, true),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Clef de bois"); put(Language.EN, "Wooden Key"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				8, Quality.WHITE, false, WeaponType.CLE, false, false, "cle/6bleu", new Calculable[] {
-					new Effect(TypeEffect.AtkD, false, 104, true),
+					new Effect(TypeEffect.AtkD, false, 103, true),
 					new Effect(TypeEffect.AtkM, false, 44, true),
 				}, null ),
 		};
@@ -15736,7 +15816,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, 25),
 					new Proc(20, Activation.Attacked, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier mythique Hylien"); put(Language.EN, "Greed: Engulfer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15753,7 +15833,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DegStdP, false, -30, Target.OPPONENT),
 						new Effect(TypeEffect.DegStdD, false, -30, Target.OPPONENT),
 						new Effect(TypeEffect.DegSkillP, false, -30, Target.OPPONENT),
-					}),
+					}, 15),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Défense Parfaite de Susanoo"); put(Language.EN, "Damage: Denial"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15768,7 +15848,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -20),
 					new Proc(10, Activation.Attacked, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 13),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Pavois Indestructible de Shiryu"); put(Language.EN, "Avalanche: Defense"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15783,7 +15863,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, 20),
 					new Proc(10, Activation.Attacked, 3, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 35),
-					}),
+					}, 13),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier Implacable de Brennus"); put(Language.EN, "Shining Diamond Guardian"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15799,7 +15879,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new StaticEffect(TypeStaticEffect.Push),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Megingjord Sacré"); put(Language.EN, "Sainted Steel Shield - Sunblaze"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15814,7 +15894,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attacked, 20, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lumière de la Galaxie"); put(Language.EN, "Luminous Galaxy"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15827,7 +15907,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Parade, false, 30),
 					new Proc(5, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Phénix Noir Ailé"); put(Language.EN, "Black Phoenix - Falling Star"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15841,7 +15921,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 100),
 						new Effect(TypeEffect.VitComp, false, 100),
-					}),
+					}, 7),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Royaumes Divins Eternels"); put(Language.EN, "Realm of Eternity (Useless)"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15871,7 +15951,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new Effect(TypeEffect.ReducSkillP, false, 30),
 						new Effect(TypeEffect.ReducSkillM, false, 30),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Roi de la Cruauté"); put(Language.EN, "Lord of Cruelty"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15885,7 +15965,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, 10),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Mur de Viveflamme d'Ilannia"); put(Language.EN, "(Reforged) Ilannia's Wall of Eternal Fire"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15933,7 +16013,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.VIT, true, 5),
 					new Proc(15, Activation.Attacked, 1, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier Défense de Mammouth"); put(Language.EN, "Mammoth Tusk Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15951,7 +16031,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 60),
 						new Effect(TypeEffect.ReflectM_old, false, 60),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Bouclier Pare-soleil d'Ilannia"); put(Language.EN, "(Reforged) Ilannia - Sunblaze Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -15994,7 +16074,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.DegStdD, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.DegSkillP, false, -20, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -20, Target.OPPONENT),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier Ancestral"); put(Language.EN, "Shield of Ages"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16011,7 +16091,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 20),
 						new Effect(TypeEffect.ReducSkillP, false, 20),
 						new Effect(TypeEffect.ReducSkillM, false, 20),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Règne Absolu - Linne"); put(Language.EN, "Absolute Realm - Linne"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16026,7 +16106,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, 20),
 					new Proc(10, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Parade, false, 15),
-					}),
+					}, 13),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Sanction Absolue - Athènes"); put(Language.EN, "Absolute Sanction - Athen"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16044,7 +16124,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new Effect(TypeEffect.ReducSkillP, false, 30),
 						new Effect(TypeEffect.ReducSkillM, false, 30),
-					}),
+					}, 13),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Protection de Grand Cross"); put(Language.EN, "(Reforged) Ilannia - Rose Barrier Divine Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16081,7 +16161,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new StaticEffect(TypeStaticEffect.AntiPush),
-					}),
+					}, 6),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Rancune du Justicier"); put(Language.EN, "Enforcer's Wrath"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16096,7 +16176,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -20),
 					new Proc(10, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, 50),
-					}),
+					}, 8),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Lune d'Argent"); put(Language.EN, "Unidentified Silver Moon Map Fragment"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16111,7 +16191,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attacked, 20, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 100),
 						new Effect(TypeEffect.VitAtk, false, 20),
-					}),
+					}, 24),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Éclat du Phénix"); put(Language.EN, "Frostwing Defender - Imminent Death"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16125,7 +16205,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, -10),
 					new Proc(10, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 20),
-					}),
+					}, 12),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur de l'Ombre"); put(Language.EN, "Iron Prison - Shadow Lord"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16138,7 +16218,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Parade, false, 28),
 					new Proc(5, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Éclat du Roi Soleil"); put(Language.EN, "Sun King's Brilliance"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16151,7 +16231,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Parade, false, 28),
 					new Proc(5, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 100),
-					}),
+					}, 7),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Écu de Rorschach"); put(Language.EN, "Alice's Shield of Promises"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16174,7 +16254,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 100),
 						new Effect(TypeEffect.VitComp, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Mur de Flammes"); put(Language.EN, "Phoenix's Shrouding Feather"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16188,7 +16268,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.RDCCM, false, 40),
 					new Proc(10, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 1.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier des Dieux Indestructible"); put(Language.EN, "Indestructible Shield of Gods"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16214,7 +16294,7 @@ public class LoaderWeapon {
 					new Proc(10, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 20),
 						new Effect(TypeEffect.Depla, false, 20),
-					}),
+					}, 7.5),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier de l'Aile Angélique d'Alice (Reforgé)"); put(Language.EN, "(Reforged) Alice's Angelic Wing Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16248,7 +16328,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 30),
 						new Effect(TypeEffect.ReducSkillP, false, 30),
 						new Effect(TypeEffect.ReducSkillM, false, 30),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Étreinte du Créateur"); put(Language.EN, "Creator's Embrace"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16262,7 +16342,7 @@ public class LoaderWeapon {
 					new Proc(8, Activation.Attack, 20, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, 200),
 						new Effect(TypeEffect.VitAtk, false, 100),
-					}),
+					}, 10),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Plastron des Mots Divins"); put(Language.EN, "God's Word Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16278,7 +16358,7 @@ public class LoaderWeapon {
 					}),
 					new Proc(15, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 250, TypeRegen.REGENERATION, 1),
-					}),
+					}, 2),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier du Défenseur Ancestral"); put(Language.EN, "Ancient Defender Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16298,7 +16378,7 @@ public class LoaderWeapon {
 					new Proc(15, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -100, TypeRegen.POISON, 1),
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Seigneur de la Cruauté"); put(Language.EN, "Lord of Cruelty"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16311,7 +16391,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.MEN, false, 10),
 					new Proc(10, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Toucher, false, 100),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier du Crâne de la Bête"); put(Language.EN, "Beastbone Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16359,7 +16439,7 @@ public class LoaderWeapon {
 					new Effect(TypeEffect.Nature, false, 10),
 					new Proc(15, Activation.Attacked, 4, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Défenseur du Château"); put(Language.EN, "Castle Defender"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16376,7 +16456,7 @@ public class LoaderWeapon {
 						new Effect(TypeEffect.ReducStdD, false, 20),
 						new Effect(TypeEffect.ReducSkillP, false, 20),
 						new Effect(TypeEffect.ReducSkillM, false, 20),
-					}),
+					}, 4),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Bouclier du Dragon des Marais Obscurs"); put(Language.EN, "Dark Swamp Dragon Shield"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, },
@@ -16390,7 +16470,7 @@ public class LoaderWeapon {
 					new Proc(20, Activation.Attacked, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, -40, TypeRegen.POISON, 1),
 						new StaticEffect(TypeStaticEffect.NoHeal, Target.OPPONENT),
-					}),
+					}, 1),
 				}, null ),
 			new Weapon(new HashMap<Language, String>() {{ put(Language.FR, "Visage d'Ares"); put(Language.EN, "War God's Visage"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
