@@ -8,7 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
@@ -43,7 +43,7 @@ public class FrameError extends JCustomFrame {
 		this.setSize(500, 200);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent event) {

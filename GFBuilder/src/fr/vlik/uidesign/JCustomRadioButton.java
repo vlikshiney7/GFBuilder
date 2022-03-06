@@ -14,7 +14,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class JCustomRadioButton<T> extends JRadioButton {
 	
 	private static final long serialVersionUID = 1L;
-	private T object;
+	private transient T object;
 	
 	public JCustomRadioButton(T obj) {
 		this.object = obj;

@@ -1,6 +1,8 @@
 package fr.vlik.grandfantasia.charac;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,14 +18,14 @@ import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
 public class Grade implements Iconable, Writable {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Classe");
 		put(Language.EN, "Class");
 	}};
 	
-	public static String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	public static Grade[] data = LoaderCharac.getGrade();
+	public static final String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, Icon> ICONS = new HashMap<>();
+	public static final Grade[] data = LoaderCharac.getGrade();
 	
 	private Map<Language, String> name;
 	private GradeName grade;
@@ -39,7 +41,7 @@ public class Grade implements Iconable, Writable {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum GradeName {
+	public enum GradeName {
 		BERSERKER(0), PALADIN(1),
 		RANGER(2), ASSASSIN(3),
 		CLERC(4), SAGE(5),
@@ -78,15 +80,15 @@ public class Grade implements Iconable, Writable {
 	
 	@Override
 	public Icon setIcon(String path) {
-		if(ICONS.get(path) == null) {
-			try {
-				ICONS.put(path, new ImageIcon(Grade.class.getResource(PATH + path + Tools.PNG)));
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		Icon object = null;
+		
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Grade.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return ICONS.get(path);
+		return object;
 	}
 	
 	@Override
@@ -114,7 +116,7 @@ public class Grade implements Iconable, Writable {
 	}
 	
 	public static Grade[] getPossibleGrade(int lvl) {
-		ArrayList<Grade> result = new ArrayList<Grade>();
+		ArrayList<Grade> result = new ArrayList<>();
 		
 		for(Grade grade : Grade.data) {
 			if(grade.getLvlMin() <= lvl

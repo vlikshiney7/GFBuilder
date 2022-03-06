@@ -15,12 +15,12 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
-import fr.vlik.grandfantasia.equipUpgrade.Pearl;
+import fr.vlik.grandfantasia.equipupgrade.Pearl;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.subEquip.CombiRunway;
-import fr.vlik.grandfantasia.subEquip.Costume;
-import fr.vlik.grandfantasia.subEquip.Costume.CostumeType;
-import fr.vlik.grandfantasia.subEquip.Runway;
+import fr.vlik.grandfantasia.subequip.CombiRunway;
+import fr.vlik.grandfantasia.subequip.Costume;
+import fr.vlik.grandfantasia.subequip.Runway;
+import fr.vlik.grandfantasia.subequip.Costume.CostumeType;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
@@ -437,7 +437,7 @@ public class PageCostume extends PartialPage {
 		
 		Costume[] cost = Costume.getPossibleCostume(this.getGroupSynthesis(id), type, this.getGroupQuality(id));
 		
-		if(cost == null) {
+		if(cost.length == 0) {
 			this.labels.get("Synthesis" + id).setVisible(false);
 			this.groupSynthesis.get(id).setVisible(false);
 			this.costume.get(id).setVisible(false);

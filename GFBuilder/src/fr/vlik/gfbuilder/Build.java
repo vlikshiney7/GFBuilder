@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -18,12 +19,12 @@ public class Build {
 	private boolean isDoubleWeapon = false;
 	private WeaponType[] weaponType;
 	
-	private ArrayList<Effect> baseEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> classicPointEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> classicPercentEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> convertBaseEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> convertAllEffects = new ArrayList<Effect>();
-	private ArrayList<Effect> additionalEffects = new ArrayList<Effect>();
+	private ArrayList<Effect> baseEffects = new ArrayList<>();
+	private ArrayList<Effect> classicPointEffects = new ArrayList<>();
+	private ArrayList<Effect> classicPercentEffects = new ArrayList<>();
+	private ArrayList<Effect> convertBaseEffects = new ArrayList<>();
+	private ArrayList<Effect> convertAllEffects = new ArrayList<>();
+	private ArrayList<Effect> additionalEffects = new ArrayList<>();
 	
 	public Build(double coefReinca, WeaponType[] weaponType) {
 		this.coefReinca = coefReinca;
@@ -46,28 +47,26 @@ public class Build {
 		if(c instanceof Effect) {
 			Effect e = (Effect) c;
 			
-			if(e.getTarget() == Target.SELF) {
-				if(containIdWeapon(e.getWithWeapon())) {
-					switch(e.getCalcul()) {
-						case BASE: 			this.baseEffects.add(e);		break;
-						case CONVERTBASE:	this.convertBaseEffects.add(e);	break;
-						case CLASSIC:
-							if(e.isPercent()) {
-								this.classicPercentEffects.add(e);
-							} else {
-								this.classicPointEffects.add(e);
-							}
-							
-							break;
-						case CONVERTALL:	this.convertAllEffects.add(e);	break;
-						case ADDITIONAL:	this.additionalEffects.add(e);	break;
-						
-					default:
+			if(e.getTarget() == Target.SELF && containIdWeapon(e.getWithWeapon())) {
+				switch(e.getCalcul()) {
+					case BASE: 			this.baseEffects.add(e);		break;
+					case CONVERTBASE:	this.convertBaseEffects.add(e);	break;
+					case CLASSIC:
 						if(e.isPercent()) {
 							this.classicPercentEffects.add(e);
 						} else {
 							this.classicPointEffects.add(e);
 						}
+						
+						break;
+					case CONVERTALL:	this.convertAllEffects.add(e);	break;
+					case ADDITIONAL:	this.additionalEffects.add(e);	break;
+					
+				default:
+					if(e.isPercent()) {
+						this.classicPercentEffects.add(e);
+					} else {
+						this.classicPointEffects.add(e);
 					}
 				}
 			}
@@ -86,7 +85,7 @@ public class Build {
 		}
 	}
 	
-	public void addEffect(ArrayList<Calculable> effects) {
+	public void addEffect(List<Calculable> effects) {
 		for(Calculable c : effects) {
 			addEffect(c);
 		}

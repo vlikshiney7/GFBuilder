@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -19,7 +20,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.customEquip.CustomArmor;
+import fr.vlik.grandfantasia.customequip.CustomArmor;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
@@ -28,19 +29,20 @@ import fr.vlik.grandfantasia.equip.BonusEquipSet;
 import fr.vlik.grandfantasia.equip.EquipSet;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.equip.RedArmor;
-import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
-import fr.vlik.grandfantasia.equipUpgrade.Fortification;
-import fr.vlik.grandfantasia.equipUpgrade.Pearl;
-import fr.vlik.grandfantasia.equipUpgrade.PearlEnchantment;
-import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
-import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
-import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
+import fr.vlik.grandfantasia.equipupgrade.Enchantment;
+import fr.vlik.grandfantasia.equipupgrade.Fortification;
+import fr.vlik.grandfantasia.equipupgrade.Pearl;
+import fr.vlik.grandfantasia.equipupgrade.PearlEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.RedEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.RedFortification;
+import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCompleteBox;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JIconCheckBox;
@@ -50,19 +52,19 @@ public class PageArmor extends PartialRedStuff {
 
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "ARMOR";
-	private static PageArmor INSTANCE = new PageArmor();
+	private static final PageArmor INSTANCE = new PageArmor();
 	
 	private JCustomComboBox<EquipSet> shortcutSet;
 	private JCustomComboBox<Fortification> shortcutFortif;
 	private JCustomComboBox<Enchantment> shortcutEnchant;
 	
-	private ArrayList<JCompleteBox<Armor>> armor = new ArrayList<JCompleteBox<Armor>>(5);
-	private EquipSet equipSet;
-	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<JCustomTextPane<BonusEquipSet>>(3);
+	private ArrayList<JCompleteBox<Armor>> armor = new ArrayList<>(5);
+	private transient EquipSet equipSet;
+	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<>(3);
 	
-	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(5);
-	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(5);
-	private ArrayList<JCompleteBox<Pearl>> pearl = new ArrayList<JCompleteBox<Pearl>>(6);
+	private transient JCustomComboBoxList<Enchantment> enchant;
+	private transient JCustomComboBoxList<Fortification> fortif;
+	private ArrayList<JCompleteBox<Pearl>> pearl = new ArrayList<>(6);
 	
 	private JCustomPanel showAndHide;
 	
@@ -73,26 +75,20 @@ public class PageArmor extends PartialRedStuff {
 	public PageArmor() {
 		super(BoxLayout.Y_AXIS, 5);
 		
-		this.shortcutSet = new JCustomComboBox<EquipSet>(new EquipSet[] {});
-		this.shortcutSet.addActionListener(e -> {
-			applySet();
-		});
+		this.shortcutSet = new JCustomComboBox<>(new EquipSet[] {});
+		this.shortcutSet.addActionListener(e -> applySet() );
 		
-		this.shortcutFortif = new JCustomComboBox<Fortification>(Fortification.getData());
-		this.shortcutFortif.addActionListener(e -> {
-			applyFortif();
-		});
+		this.shortcutFortif = new JCustomComboBox<>(Fortification.getData());
+		this.shortcutFortif.addActionListener(e -> applyFortif() );
 		
-		this.shortcutEnchant = new JCustomComboBox<Enchantment>();
-		this.shortcutEnchant.addActionListener(e -> {
-			applyEnchant();
-		});
+		this.shortcutEnchant = new JCustomComboBox<>();
+		this.shortcutEnchant.addActionListener(e -> applyEnchant() );
 		
 		for(int i = 0; i < 5; i++) {
 			int id = i;
 			
 			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-			this.armor.add(new JCompleteBox<Armor>(tabArmor, JCompleteBox.FILTER32, 5, /*Armor.getTags(), */Armor.getQualities()));
+			this.armor.add(new JCompleteBox<>(tabArmor, JCompleteBox.FILTER32, 5, /*Armor.getTags(), */Armor.getQualities()));
 			this.armor.get(i).addActionListener(e -> {
 				updateXpStuff(id);
 				updateDetails(id);
@@ -107,26 +103,10 @@ public class PageArmor extends PartialRedStuff {
 				MainFrame.getInstance().updateStat();
 			});
 			
-			/* ENCHANTEMENT */
-			this.enchant.add(new JCustomComboBox<Enchantment>());
-			this.enchant.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.enchant.get(i).setVisible(false);
-			
-			/* FORTIF */
-			this.fortif.add(new JCustomComboBox<Fortification>(Fortification.getData()));
-			this.fortif.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.fortif.get(i).setVisible(false);
-			
 			/* PERLE */
 			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i));
 			
-			this.pearl.add(new JCompleteBox<Pearl>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
+			this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
 			
 			if(i == 0) {
 				this.pearl.get(i).addActionListener(e -> {
@@ -138,7 +118,7 @@ public class PageArmor extends PartialRedStuff {
 				});
 				this.pearl.get(i).setVisible(false);
 			} else if(i == 1) {
-				this.pearl.add(new JCompleteBox<Pearl>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
+				this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
 				this.pearl.get(i).addActionListener(e -> {
 					this.pearl.get(id).activeProc();
 					updateEnchantPearl(id);
@@ -167,8 +147,24 @@ public class PageArmor extends PartialRedStuff {
 			}
 		}
 		
+		/* ENCHANTEMENT */
+		this.enchant = new JCustomComboBoxList<>(5);
+		this.enchant.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		this.enchant.setVisible(false);
+		
+		/* FORTIF */
+		this.fortif = new JCustomComboBoxList<>(5, Fortification.getData());
+		this.fortif.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		this.fortif.setVisible(false);
+		
 		for(int i = 0; i < 3; i++) {
-			this.equipSetBonus.add(new JCustomTextPane<BonusEquipSet>(new BonusEquipSet()));
+			this.equipSetBonus.add(new JCustomTextPane<>(new BonusEquipSet()));
 		}
 		
 		updateLanguage(Language.FR);
@@ -219,20 +215,20 @@ public class PageArmor extends PartialRedStuff {
 			this.labels.put("Refining" + i, new JLangLabel(RedEnchantment.SUB_CLASS_NAME, Design.SUBTITLE));
 		}
 		
-		this.labels.put("ShortCut", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Raccourci de set"); put(Language.EN, "Set shortcut"); }}, Design.TITLE));
-		this.labels.put("Armor0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Casque"); put(Language.EN, "Helmet"); }}, Design.TITLE));
-		this.labels.put("Armor1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Plastron"); put(Language.EN, "Breastplate"); }}, Design.TITLE));
-		this.labels.put("Armor2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Jambière"); put(Language.EN, "Legging"); }}, Design.TITLE));
-		this.labels.put("Armor3", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Gantelet"); put(Language.EN, "Gauntlet"); }}, Design.TITLE));
-		this.labels.put("Armor4", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Botte"); put(Language.EN, "Boot"); }}, Design.TITLE));
+		this.labels.put("ShortCut", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Raccourci de set"); put(Language.EN, "Set shortcut"); }}, Design.TITLE));
+		this.labels.put("Armor0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Casque"); put(Language.EN, "Helmet"); }}, Design.TITLE));
+		this.labels.put("Armor1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron"); put(Language.EN, "Breastplate"); }}, Design.TITLE));
+		this.labels.put("Armor2", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambière"); put(Language.EN, "Legging"); }}, Design.TITLE));
+		this.labels.put("Armor3", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelet"); put(Language.EN, "Gauntlet"); }}, Design.TITLE));
+		this.labels.put("Armor4", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Botte"); put(Language.EN, "Boot"); }}, Design.TITLE));
 		for(int i = 0; i < 5; i++) {
-			this.labels.put("ArmorXP" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Armure"); put(Language.EN, "Armor Exp"); }}, Design.SUBTITLE));
+			this.labels.put("ArmorXP" + i, new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "XP Armure"); put(Language.EN, "Armor Exp"); }}, Design.SUBTITLE));
 		}
 	}
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		this.redEnchants.clear();
 		this.pearlEnchants.clear();
 		
@@ -246,11 +242,11 @@ public class PageArmor extends PartialRedStuff {
 			}
 			
 			if(armors[i] instanceof RedArmor) {
-				RedFortification fortif = this.getRedFortif(i);
+				RedFortification redFortif = this.getRedFortif(i);
 				
-				if(fortif.getCoef() != 1) {
+				if(redFortif.getCoef() != 1) {
 					((RedArmor) armors[i]).addFortif(this.valueFortif.get(i).getDoubleValue());
-					list.addAll(((RedArmor) armors[i]).getStarEffects(fortif.getStar()));
+					list.addAll(((RedArmor) armors[i]).getStarEffects(redFortif.getStar()));
 				}
 				
 				if(this.showAndHideRedEnchant.get(i).isVisible()) {
@@ -302,18 +298,18 @@ public class PageArmor extends PartialRedStuff {
 			}
 		}
 		
-		ArrayList<Pearl> notCombinablePearl = new ArrayList<Pearl>();
+		ArrayList<Pearl> notCombinablePearl = new ArrayList<>();
 		for(int i = 0; i < this.pearl.size(); i++) {
-			Pearl pearl = this.getPearl(i);
-			if(pearl.isCumulable()) {
-				list.addAll(pearl);
+			Pearl pearlEffect = this.getPearl(i);
+			if(pearlEffect.isCumulable()) {
+				list.addAll(pearlEffect);
 				
 				if(this.pearl.get(i).isProcActive()) {
 					list.addAll(this.pearl.get(i).getProc().getItem().getEffects());
 				}
-			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
-				notCombinablePearl.add(pearl);
-				list.addAll(pearl);
+			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearlEffect)) {
+				notCombinablePearl.add(pearlEffect);
+				list.addAll(pearlEffect);
 				
 				if(this.pearl.get(i).isProcActive()) {
 					list.addAll(this.pearl.get(i).getProc().getItem().getEffects());
@@ -499,11 +495,7 @@ public class PageArmor extends PartialRedStuff {
 		this.equipSet = armorSet;
 		updateShorcut();
 		
-		SwingUtilities.invokeLater(new Runnable(){
-			public void run(){
-				scroll.getVerticalScrollBar().setValue(valueScroll);
-			}
-		});
+		SwingUtilities.invokeLater( () -> scroll.getVerticalScrollBar().setValue(valueScroll) );
 	}
 	
 	private void updateDetails(int id) {
@@ -512,11 +504,7 @@ public class PageArmor extends PartialRedStuff {
 				this.fortif.get(id).setVisible(false);
 				this.redFortif.get(id).setVisible(true);
 				
-				if(this.getArmor(id).isEnchantable()) {
-					this.showAndHideRedEnchant.get(id).setVisible(true);
-				} else {
-					this.showAndHideRedEnchant.get(id).setVisible(false);
-				}
+				this.showAndHideRedEnchant.get(id).setVisible(this.getArmor(id).isEnchantable());
 				
 				if(this.redFortif.get(id).getSelectedIndex() != 0) {
 					this.valueFortif.get(id).setVisible(true);
@@ -592,16 +580,16 @@ public class PageArmor extends PartialRedStuff {
 	
 	private void updateEnchant(int id) {
 		if(this.armor.get(id).getSelectedIndex() != 0) {
-			Armor armor = this.getArmor(id);
+			Armor idArmor = this.getArmor(id);
 			
-			if(armor.isEnchantable()) {
-				if(armor.getQuality() == Quality.RED) {
-					RedEnchantment[] tabRed = RedEnchantment.getPossibleRedEnchant(armor, null, null);
+			if(idArmor.isEnchantable()) {
+				if(idArmor.getQuality() == Quality.RED) {
+					RedEnchantment[] tabRed = RedEnchantment.getPossibleRedEnchant(idArmor, null, null);
 					for(int i = 0; i < 3; i++) {
 						this.redEnchant.get(id*3+i).setItems(tabRed);
 					}
 					
-					RedEnchantment[] tabRefining = RedEnchantment.getPossibleRefining(armor);
+					RedEnchantment[] tabRefining = RedEnchantment.getPossibleRefining(idArmor);
 					for(int i = 0; i < 2; i++) {
 						this.refining.get(id*2+i).setItems(tabRefining);
 					}
@@ -609,7 +597,7 @@ public class PageArmor extends PartialRedStuff {
 					this.showAndHideRedEnchant.get(id).setVisible(true);
 					this.enchant.get(id).setVisible(false);
 				} else {
-					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(armor);
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(idArmor);
 					this.enchant.get(id).setItems(tabEnchant);
 					
 					this.enchant.get(id).setVisible(true);
@@ -657,12 +645,11 @@ public class PageArmor extends PartialRedStuff {
 	}
 	
 	private void updateShortcutSet() {
-		Set<String> setCode = new LinkedHashSet<String>();
+		Set<String> setCode = new LinkedHashSet<>();
 		setCode.add("-1");
 		
 		for(int i = 0; i < 5; i++) {
-			Armor armor = this.getArmor(i);
-			setCode.add(armor.getSetCode());
+			setCode.add(this.getArmor(i).getSetCode());
 		}
 		
 		EquipSet[] tabEquip = new EquipSet[setCode.size()];
@@ -673,9 +660,9 @@ public class PageArmor extends PartialRedStuff {
 		while(it.hasNext()) {
 			String currentCode = it.next();
 			
-			for(EquipSet equipSet : EquipSet.getDataArmor()) {
-				if(equipSet.getCode().equals(currentCode)) {
-					tabEquip[indexTab] = equipSet;
+			for(EquipSet eachEquipSet : EquipSet.getDataArmor()) {
+				if(eachEquipSet.getCode().equals(currentCode)) {
+					tabEquip[indexTab] = eachEquipSet;
 				}
 			}
 			
@@ -691,9 +678,9 @@ public class PageArmor extends PartialRedStuff {
 	}
 	
 	private void applySet() {
-		EquipSet equipSet = this.getShortcutSet();
+		EquipSet shortcutEquipSet = this.getShortcutSet();
 		
-		if(equipSet.getCode().equals("-1")) {
+		if(shortcutEquipSet.getCode().equals("-1")) {
 			return;
 		}
 		
@@ -701,29 +688,28 @@ public class PageArmor extends PartialRedStuff {
 			JCustomComboBox<Armor> piece = this.armor.get(i);
 			
 			for(int j = 0; j < piece.getItemCount(); j++) {
-				if(piece.getItemAt(j).getSetCode().equals(equipSet.getCode())) {
+				if(piece.getItemAt(j).getSetCode().equals(shortcutEquipSet.getCode())) {
 					piece.setSelectedIndex(j);
 				}
 			}
 		}
 		
-		this.shortcutSet.setSelectedItem(equipSet);
+		this.shortcutSet.setSelectedItem(shortcutEquipSet);
 	}
 	
 	private void applyFortif() {
-		for(JCustomComboBox<Fortification> fortif : this.fortif) {
-			fortif.setSelectedItem(this.getShortcutFortif());
-		}
+		this.fortif.setSelectedItem(this.getShortcutFortif());
 	}
 	
 	private void applyEnchant() {
 		Enchantment choice = this.getShortcutEnchant();
-		for(JCustomComboBox<Enchantment> listEnchant : this.enchant) {
+		
+		for(JCustomComboBox<Enchantment> listEnchant : this.enchant.getList()) {
 			for (int i = 0; i < listEnchant.getItemCount(); i++) {
-				Enchantment enchant = listEnchant.getItemAt(i);
+				Enchantment eachEnchant = listEnchant.getItemAt(i);
 				
-				if(enchant.getName(Language.FR).equals(choice.getName(Language.FR))) {
-					listEnchant.setSelectedItem(enchant);
+				if(eachEnchant.getName(Language.FR).equals(choice.getName(Language.FR))) {
+					listEnchant.setSelectedItem(eachEnchant);
 					break;
 				}
 			}
@@ -780,7 +766,7 @@ public class PageArmor extends PartialRedStuff {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new HashMap<>();
 		
 		for(int i = 0; i < this.armor.size(); i++) {
 			if(this.getArmor(i).isCustom()) {
@@ -884,18 +870,18 @@ public class PageArmor extends PartialRedStuff {
 				}
 				
 				if(quality != null) {
-					Armor armor = Armor.getCustom(valueSplit[1], quality, valueSplit[3]);
+					Armor custom = Armor.getCustom(valueSplit[1], quality, valueSplit[3]);
 					
-					if(armor == null) {
+					if(custom == null) {
 						if(CustomArmor.constructCustom(valueSplit[1], quality, valueSplit[3])) {
 							SaveConfig.overrideCustom();
 							PageArmor.getInstance().updateArmor();
 							
-							armor = Armor.getCustom(valueSplit[1], quality, valueSplit[3]);
-							this.armor.get(i).setSelectedItem(armor);
+							custom = Armor.getCustom(valueSplit[1], quality, valueSplit[3]);
+							this.armor.get(i).setSelectedItem(custom);
 						}
 					} else {
-						this.armor.get(i).setSelectedItem(armor);
+						this.armor.get(i).setSelectedItem(custom);
 					}
 				}
 			} else {
@@ -918,7 +904,7 @@ public class PageArmor extends PartialRedStuff {
 		
 		for(int i = 0; i < this.starPearl.size(); i++) {
 			ArrayList<JIconCheckBox> buttons = this.starPearl.get(i);
-			int select = Integer.valueOf(config.get("StarPearl" + i));
+			int select = Integer.parseInt(config.get("StarPearl" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {
 				if(j == select) {
@@ -930,6 +916,7 @@ public class PageArmor extends PartialRedStuff {
 				}
 			}
 		}
+		
 		for(int i = 0; i < this.pearlEnchant.size(); i++) {
 			this.pearlEnchant.get(i).setSelectedItem(PearlEnchantment.get(config.get("PearlEnchant" + i)));
 			

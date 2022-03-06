@@ -12,7 +12,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class JCustomCheckBox<T> extends JCheckBox {
 	
 	private static final long serialVersionUID = 1L;
-	private T object;
+	private transient T object;
 	
 	public JCustomCheckBox(T obj) {
 		this.object = obj;

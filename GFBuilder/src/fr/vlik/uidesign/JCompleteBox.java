@@ -25,7 +25,7 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 		super(object);
 		this.filterDialog = new JCustomDialog(iconFilter, gridValue, filters);
 		
-		this.proc = new JCustomCheckBox<ProcEffect>(new ProcEffect((Buff) this.getSelectedItem()));
+		this.proc = new JCustomCheckBox<>(new ProcEffect((Buff) this.getSelectedItem()));
 		this.proc.setIconUI(iconProc[0], iconProc[1]);
 		this.proc.setVisible(false);
 	}
@@ -86,10 +86,10 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 	}
 	
 	public void activeProc() {
-		ProcEffect proc = new ProcEffect((Buff) this.getSelectedItem());
+		ProcEffect procEffect = new ProcEffect((Buff) this.getSelectedItem());
 		
-		if(proc.getEffects().length > 0) {
-			this.getProc().setItem(proc);
+		if(procEffect.getEffects().length > 0) {
+			this.getProc().setItem(procEffect);
 			this.getProc().setVisible(true);
 		} else {
 			this.getProc().setVisible(false);

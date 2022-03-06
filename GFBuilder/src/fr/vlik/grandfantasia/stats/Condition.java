@@ -62,7 +62,11 @@ public class Condition implements Calculable {
 		this.effects = condition.getEffects();
 	}
 	
-	public static enum TypeCondition {
+	public Calculable copy() {
+		return new Condition(this);
+	}
+	
+	public enum TypeCondition {
 		STATUT("A chaque statut reçu", "For each receive status"),
 		RAYON16("Dans les 16 mètres", "On the 16 meters"),
 		RAYON("Autour de soi", "Around you"),
@@ -123,14 +127,18 @@ public class Condition implements Calculable {
 	}
 	
 	public Calculable[] getEffects() {
-		Calculable[] list = new Calculable[this.effects.length];	
-		for(int i = 0; i < this.effects.length; i++) {
-			list[i] = this.effects[i];
+		if(this.effects == null) {
+			return new Calculable[0];
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = this.effects[i].copy();
+		}
+		
+		return tab;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {
 		this.percent *= factor;
 
@@ -139,7 +147,6 @@ public class Condition implements Calculable {
 		}
 	}
 	
-	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
@@ -202,25 +209,7 @@ public class Condition implements Calculable {
 			result.append(" :");
 			
 			for(Calculable calculable : this.effects) {
-				if(calculable instanceof Effect) {
-					Effect e = (Effect) calculable;
-					result.append("\t\t- " + e.toString(lang) + "\n");
-				} else if(calculable instanceof Proc) {
-					Proc s = (Proc) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof RegenEffect) {
-					RegenEffect s = (RegenEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof SkillEffect) {
-					SkillEffect s = (SkillEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof StaticEffect) {
-					StaticEffect s = (StaticEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof TransformEffect) {
-					TransformEffect r = (TransformEffect) calculable;
-					result.append("\t\t- " + r.toString(lang) + "\n");
-				}
+				result.append("\t\t- " + calculable.toString(lang) + "\n");
 			}
 			
 			if(this.cumul != 1) {
@@ -248,25 +237,7 @@ public class Condition implements Calculable {
 			result.append(":");
 			
 			for(Calculable calculable : this.effects) {
-				if(calculable instanceof Effect) {
-					Effect e = (Effect) calculable;
-					result.append("\t\t- " + e.toString(lang) + "\n");
-				} else if(calculable instanceof Proc) {
-					Proc s = (Proc) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof RegenEffect) {
-					RegenEffect s = (RegenEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof SkillEffect) {
-					SkillEffect s = (SkillEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof StaticEffect) {
-					StaticEffect s = (StaticEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof TransformEffect) {
-					TransformEffect r = (TransformEffect) calculable;
-					result.append("\t\t- " + r.toString(lang) + "\n");
-				}
+				result.append("\t\t- " + calculable.toString(lang) + "\n");
 			}
 			
 			if(this.cumul != 1) {

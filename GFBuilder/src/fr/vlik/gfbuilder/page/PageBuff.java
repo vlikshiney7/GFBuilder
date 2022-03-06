@@ -3,30 +3,32 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.Energy;
-import fr.vlik.grandfantasia.characUpgrade.Nucleus;
-import fr.vlik.grandfantasia.characUpgrade.NucleusEnchantment;
-import fr.vlik.grandfantasia.characUpgrade.Stone;
+import fr.vlik.grandfantasia.characupgrade.Energy;
+import fr.vlik.grandfantasia.characupgrade.Nucleus;
+import fr.vlik.grandfantasia.characupgrade.NucleusEnchantment;
+import fr.vlik.grandfantasia.characupgrade.Stone;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.gameBuff.GuildBuff;
+import fr.vlik.grandfantasia.gamebuff.GuildBuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
@@ -38,31 +40,31 @@ public class PageBuff extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "BUFF";
-	private static PageBuff INSTANCE = new PageBuff();
+	private static final PageBuff INSTANCE = new PageBuff();
 	
-	private ArrayList<JCustomComboBox<Nucleus>> nucleus = new ArrayList<JCustomComboBox<Nucleus>>(7);
-	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<JCustomLabel<Energy>>(21);
-	private ArrayList<JCustomRadioButton<Energy>> labelVoidEnergy = new ArrayList<JCustomRadioButton<Energy>>(3);
-	private ArrayList<JCustomSpinner> energy = new ArrayList<JCustomSpinner>(21);
+	private transient JCustomComboBoxList<Nucleus> nucleus;
+	private ArrayList<JCustomLabel<Energy>> labelEnergy = new ArrayList<>(21);
+	private ArrayList<JCustomRadioButton<Energy>> labelVoidEnergy = new ArrayList<>(3);
+	private ArrayList<JCustomSpinner> energy = new ArrayList<>(21);
 	
-	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<JCustomLabel<GuildBuff>>(4);
+	private ArrayList<JCustomLabel<GuildBuff>> guildBuffUsed = new ArrayList<>(4);
 	private JCustomComboBox<GuildBuff> guildBuff;
-	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<JCustomLabel<Stone>>(14);
+	private ArrayList<JCustomLabel<Stone>> stoneUsed = new ArrayList<>(14);
 	private JCustomComboBox<Stone> stone;
 	
-	private ArrayList<JIconCheckBox> starNucleus = new ArrayList<JIconCheckBox>(4);
-	private ArrayList<JCustomComboBox<NucleusEnchantment>> nucleusEnchant = new ArrayList<JCustomComboBox<NucleusEnchantment>>(3);
-	private ArrayList<JCustomComboBox<InnerEffect>> nucleusLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>(3);
+	private ArrayList<JIconCheckBox> starNucleus = new ArrayList<>(4);
+	private transient JCustomComboBoxList<NucleusEnchantment> nucleusEnchant;
+	private transient JCustomComboBoxList<InnerEffect> nucleusLvlEnchant;
 	
 	private JCustomPanel showAndHide;
 	private JCustomPanel showAndHideEnchant;
-	private ArrayList<JCustomPanel> showAndHideEnergy = new ArrayList<JCustomPanel>(3);
+	private ArrayList<JCustomPanel> showAndHideEnergy = new ArrayList<>(3);
 	
-	private ArrayList<JCustomButton> cross = new ArrayList<JCustomButton>(7);
-	private ArrayList<JCustomButton> remove = new ArrayList<JCustomButton>(7);
+	private ArrayList<JCustomButton> cross = new ArrayList<>(7);
+	private ArrayList<JCustomButton> remove = new ArrayList<>(7);
 	
-	private ArrayList<JCustomButton> reinitEnergy = new ArrayList<JCustomButton>(4);
-	private ArrayList<JCustomButton> maxEnergy = new ArrayList<JCustomButton>(4);
+	private ArrayList<JCustomButton> reinitEnergy = new ArrayList<>(4);
+	private ArrayList<JCustomButton> maxEnergy = new ArrayList<>(4);
 	
 	private JCustomPanel colBuffLeft;
 	private JCustomPanel colBuffRight;
@@ -76,13 +78,14 @@ public class PageBuff extends PartialPage {
 	private PageBuff() {
 		super();
 		
+		this.nucleus = new JCustomComboBoxList<>();
 		for(int i = 0; i < 7; i++) {
-			this.nucleus.add(new JCustomComboBox<Nucleus>(Nucleus.getData(i)));
-			this.nucleus.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
+			this.nucleus.add(new JCustomComboBox<>(Nucleus.getData(i)));
 		}
+		this.nucleus.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
 		/* ENCHANT NUCLEUS */
 		for(int i = 0; i < 4; i++) {
@@ -104,10 +107,12 @@ public class PageBuff extends PartialPage {
 			});
 		}
 		
+		this.nucleusEnchant = new JCustomComboBoxList<>(3, NucleusEnchantment.getData());
+		this.nucleusLvlEnchant = new JCustomComboBoxList<>(3);
+		
 		for(int j = 0; j < 3; j++) {
 			int idNucleus = j;
 			
-			this.nucleusEnchant.add(new JCustomComboBox<NucleusEnchantment>(NucleusEnchantment.getData()));
 			this.nucleusEnchant.get(idNucleus).addActionListener(e -> {
 				updateNucleusLvlEnchant(idNucleus);
 				updateNucleusEnchant(idNucleus);
@@ -115,19 +120,19 @@ public class PageBuff extends PartialPage {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.nucleusEnchant.get(idNucleus).setVisible(false);
 			
-			this.nucleusLvlEnchant.add(new JCustomComboBox<InnerEffect>());
 			this.nucleusLvlEnchant.get(idNucleus).addActionListener(e -> {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.nucleusLvlEnchant.get(idNucleus).setVisible(false);
 		}
+		
+		this.nucleusEnchant.setVisible(false);
+		this.nucleusLvlEnchant.setVisible(false);
 		
 		
 		for(int i = 0; i < 21; i++) {
-			this.labelEnergy.add(new JCustomLabel<Energy>(Energy.getData()[i]));
+			this.labelEnergy.add(new JCustomLabel<>(Energy.getData()[i]));
 			this.labelEnergy.get(i).setPreferredSize(new Dimension(240, 32));
 			
 			this.energy.add(new JCustomSpinner(new SpinnerNumberModel(0, 0, 2, 1)));
@@ -140,17 +145,15 @@ public class PageBuff extends PartialPage {
 		for(int i = 0; i < 3; i++) {
 			int id = i;
 			
-			this.labelVoidEnergy.add(new JCustomRadioButton<Energy>(Energy.getVoidData()[i]));
+			this.labelVoidEnergy.add(new JCustomRadioButton<>(Energy.getVoidData()[i]));
 			this.labelVoidEnergy.get(i).setPreferredSize(new Dimension(270, 32));
 			
-			this.labelVoidEnergy.get(i).addChangeListener(e -> {
-				showAndHideEnergies(id);
-			});
+			this.labelVoidEnergy.get(i).addChangeListener(e -> showAndHideEnergies(id) );
 		}
 		
 		
 		for(int i = 0; i < 4; i++) {
-			this.guildBuffUsed.add(new JCustomLabel<GuildBuff>(null));
+			this.guildBuffUsed.add(new JCustomLabel<>(null));
 			this.guildBuffUsed.get(i).setBackground(Design.UIColor[0]);
 			this.guildBuffUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
 			this.guildBuffUsed.get(i).setMaximumSize(new Dimension(335, 32));
@@ -175,7 +178,7 @@ public class PageBuff extends PartialPage {
 			this.cross.get(i).setVisible(false);
 		}
 		
-		this.guildBuff = new JCustomComboBox<GuildBuff>(GuildBuff.getData());
+		this.guildBuff = new JCustomComboBox<>(GuildBuff.getData());
 		this.guildBuff.setMaximumSize(new Dimension(320, 36));
 		this.guildBuff.addActionListener(e -> {
 			updateGuildBuff();
@@ -186,7 +189,7 @@ public class PageBuff extends PartialPage {
 		
 		
 		for(int i = 0; i < 14; i++) {
-			this.stoneUsed.add(new JCustomLabel<Stone>(null));
+			this.stoneUsed.add(new JCustomLabel<>(null));
 			this.stoneUsed.get(i).setBackground(Design.UIColor[0]);
 			this.stoneUsed.get(i).setBorder(new EmptyBorder(0, 0, 0, 10));
 			this.stoneUsed.get(i).setMaximumSize(new Dimension(306, 32));
@@ -209,7 +212,7 @@ public class PageBuff extends PartialPage {
 			this.cross.get(i+4).setVisible(false);
 		}
 		
-		this.stone = new JCustomComboBox<Stone>(Stone.getData());
+		this.stone = new JCustomComboBox<>(Stone.getData());
 		this.stone.setMaximumSize(new Dimension(280, 36));
 		this.stone.addActionListener(e -> {
 			updateStoneBuff();
@@ -222,14 +225,10 @@ public class PageBuff extends PartialPage {
 			int id = i;
 			
 			this.reinitEnergy.add(new JCustomButton(this.labels.get("Min" + i).getLang(), Design.RED_COLOR));
-			this.reinitEnergy.get(i).addActionListener(e -> {
-				setMinSpinnerEnergy(id);
-			});
+			this.reinitEnergy.get(i).addActionListener(e -> setMinSpinnerEnergy(id) );
 			
 			this.maxEnergy.add(new JCustomButton(this.labels.get("Max" + i).getLang(), Design.GREEN_COLOR));
-			this.maxEnergy.get(i).addActionListener(e -> {
-				setMaxSpinnerEnergy(id);
-			});
+			this.maxEnergy.get(i).addActionListener(e -> setMaxSpinnerEnergy(id) );
 		}
 		
 		updateLanguage(Language.FR);
@@ -273,25 +272,25 @@ public class PageBuff extends PartialPage {
 		this.labels.put("Stone", new JLangLabel(Stone.CLASS_NAME, Design.TITLE));
 		this.labels.put("NucleusEnchant", new JLangLabel(NucleusEnchantment.CLASS_NAME, Design.SUBTITLE));
 		
-		this.labels.put("Nucleus0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Vert"); put(Language.EN, "Green"); }}, Design.SUBTITLE));
-		this.labels.put("Nucleus1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Trésor"); put(Language.EN, "Treasure"); }}, Design.SUBTITLE));
-		this.labels.put("Nucleus2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Bleu"); put(Language.EN, "Blue"); }}, Design.SUBTITLE));
-		this.labels.put("Nucleus3", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Orange"); put(Language.EN, "Orange"); }}, Design.SUBTITLE));
-		this.labels.put("Nucleus4", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Jaune"); put(Language.EN, "Gold"); }}, Design.SUBTITLE));
-		this.labels.put("Nucleus5", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Violet"); put(Language.EN, "Purple"); }}, Design.SUBTITLE));
-		this.labels.put("Nucleus6", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Compétence"); put(Language.EN, "Skill"); }}, Design.SUBTITLE));
-		this.labels.put("4from", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "4 parmi :"); put(Language.EN, "4 from:"); }}, Design.SUBTITLE));
-		this.labels.put("Select", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Sélection :"); put(Language.EN, "Selection:"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Vert"); put(Language.EN, "Green"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Trésor"); put(Language.EN, "Treasure"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus2", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bleu"); put(Language.EN, "Blue"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus3", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Orange"); put(Language.EN, "Orange"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus4", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jaune"); put(Language.EN, "Gold"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus5", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Violet"); put(Language.EN, "Purple"); }}, Design.SUBTITLE));
+		this.labels.put("Nucleus6", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Compétence"); put(Language.EN, "Skill"); }}, Design.SUBTITLE));
+		this.labels.put("4from", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "4 parmi :"); put(Language.EN, "4 from:"); }}, Design.SUBTITLE));
+		this.labels.put("Select", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sélection :"); put(Language.EN, "Selection:"); }}, Design.SUBTITLE));
 		
 		for(int i = 0; i < 4; i++) {
-			this.labels.put("Min" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout à 0"); put(Language.EN, "All to 0"); }}, Design.TEXT));
-			this.labels.put("Max" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout à 200"); put(Language.EN, "All to 200"); }}, Design.TEXT));
+			this.labels.put("Min" + i, new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tout à 0"); put(Language.EN, "All to 0"); }}, Design.TEXT));
+			this.labels.put("Max" + i, new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tout à 200"); put(Language.EN, "All to 200"); }}, Design.TEXT));
 		}
 	}
 	
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			list.addAll(this.getNucleus(i));
@@ -317,9 +316,9 @@ public class PageBuff extends PartialPage {
 			}
 		}
 		
-		for(JCustomLabel<Stone> stone : this.stoneUsed) {
-			if(stone.isVisible()) {
-				list.addAll(stone.getItem());
+		for(JCustomLabel<Stone> stoneEffect : this.stoneUsed) {
+			if(stoneEffect.isVisible()) {
+				list.addAll(stoneEffect.getItem());
 			}
 		}
 		
@@ -334,15 +333,15 @@ public class PageBuff extends PartialPage {
 		page11Elem1.add(this.labels.get("Nucleus"), Box.createVerticalStrut(10));
 		
 		for(int i = 0; i < 7; i++) {
-			JCustomPanel nucleus = new JCustomPanel(this.labels.get("Nucleus" + i), this.nucleus.get(i), Box.createVerticalStrut(5));
+			JCustomPanel nucleusPanel = new JCustomPanel(this.labels.get("Nucleus" + i), this.nucleus.get(i), Box.createVerticalStrut(5));
 			this.labels.get("Nucleus" + i).setPreferredSize(new Dimension(90, 20));
 			this.nucleus.get(i).setPreferredSize(new Dimension(200, 36));
 			
 			if(i == 1) {
-				this.showAndHide = nucleus;
+				this.showAndHide = nucleusPanel;
 			}
 			
-			page11Elem1.add(nucleus);
+			page11Elem1.add(nucleusPanel);
 		}
 		
 		JCustomPanel starPanel = new JCustomPanel(this.labels.get("NucleusEnchant"), Box.createHorizontalStrut(10));
@@ -401,7 +400,7 @@ public class PageBuff extends PartialPage {
 			lineBuff.setBackground(Design.UIColor[0]);
 			lineBuff.setOpaque(false);
 			lineBuff.addAll(this.guildBuffUsed.get(i), this.cross.get(i));
-			this.cross.get(i).setHorizontalAlignment(JLabel.RIGHT);
+			this.cross.get(i).setHorizontalAlignment(SwingConstants.RIGHT);
 			
 			blocBuffGuild.addAll(lineBuff, Box.createVerticalStrut(3));
 		}
@@ -420,7 +419,7 @@ public class PageBuff extends PartialPage {
 			lineStone.setBackground(Design.UIColor[0]);
 			lineStone.setOpaque(false);
 			lineStone.addAll(this.stoneUsed.get(i), this.cross.get(i+4));
-			this.cross.get(i+4).setHorizontalAlignment(JLabel.RIGHT);
+			this.cross.get(i+4).setHorizontalAlignment(SwingConstants.RIGHT);
 			
 			blocStone.addAll(lineStone, Box.createVerticalStrut(3));
 		}
@@ -508,54 +507,49 @@ public class PageBuff extends PartialPage {
 	
 	private void updateStarNucleus(int idCheck) {
 		for(int i = 0; i < this.starNucleus.size(); i++) {
-			if(i <= idCheck) {
-				this.starNucleus.get(i).setSelected(true);
-			} else {
-				this.starNucleus.get(i).setSelected(false);
-			}
+			this.starNucleus.get(i).setSelected(i <= idCheck);
 		}
 		
 		switch (idCheck) {
 			case 0:
 				this.showAndHideEnchant.setVisible(false);
-				for(int i = 0; i < 3; i++) {
-					this.nucleusEnchant.get(i).setVisible(false);
-					this.nucleusLvlEnchant.get(i).setVisible(false);
-				}
+				this.nucleusEnchant.setVisible(false);
+				this.nucleusLvlEnchant.setVisible(false);
 				break;
 			case 1:
-				for(int i = 0; i < 3; i++) {
-					this.showAndHideEnchant.setVisible(true);
-					if(i < 1) {
-						this.nucleusEnchant.get(i).setVisible(true);
-						this.nucleusLvlEnchant.get(i).setVisible(true);
-						updateNucleusLvlEnchant(i);
-					} else {
-						this.nucleusEnchant.get(i).setVisible(false);
-						this.nucleusLvlEnchant.get(i).setVisible(false);
-					}
-				}
+				this.showAndHideEnchant.setVisible(true);
+				
+				this.nucleusEnchant.get(0).setVisible(true);
+				this.nucleusLvlEnchant.get(0).setVisible(true);
+				updateNucleusLvlEnchant(0);
+				
+				this.nucleusEnchant.setRangeVisible(1, 3, false);
+				this.nucleusLvlEnchant.setRangeVisible(1, 3, false);
+				
 				break;
 			case 2:
-				for(int i = 0; i < 3; i++) {
-					this.showAndHideEnchant.setVisible(true);
-					if(i < 2) {
-						this.nucleusEnchant.get(i).setVisible(true);
-						this.nucleusLvlEnchant.get(i).setVisible(true);
-						updateNucleusLvlEnchant(i);
-					} else {
-						this.nucleusEnchant.get(i).setVisible(false);
-						this.nucleusLvlEnchant.get(i).setVisible(false);
-					}
-				}
+				this.showAndHideEnchant.setVisible(true);
+				
+				this.nucleusEnchant.setRangeVisible(0, 2, true);
+				this.nucleusLvlEnchant.setRangeVisible(0, 2, true);
+				updateNucleusLvlEnchant(0);
+				updateNucleusLvlEnchant(1);
+				
+				this.nucleusEnchant.get(2).setVisible(false);
+				this.nucleusLvlEnchant.get(2).setVisible(false);
+				
 				break;
 			case 3:
 				this.showAndHideEnchant.setVisible(true);
+				this.nucleusEnchant.setVisible(true);
+				this.nucleusLvlEnchant.setVisible(true);
+				
 				for(int i = 0; i < 3; i++) {
-					this.nucleusEnchant.get(i).setVisible(true);
-					this.nucleusLvlEnchant.get(i).setVisible(true);
 					updateNucleusLvlEnchant(i);
 				}
+				
+				break;
+			default:
 				break;
 		}
 	}
@@ -570,9 +564,7 @@ public class PageBuff extends PartialPage {
 			nbStar++;
 		}
 		
-		if(nbStar <= 1) {
-			return;
-		} else if(nbStar == 2) {
+		if(nbStar == 2) {
 			int ignore1;
 			
 			if(idNucleus == 0) {
@@ -615,9 +607,7 @@ public class PageBuff extends PartialPage {
 	}
 	
 	private void keepNucleusEnchant(int idCheck) {
-		if(idCheck == 0) {
-			return;
-		} else if(idCheck == 1) {
+		if(idCheck == 1) {
 			NucleusEnchantment memory1 = this.getNucleusEnchantment(0);
 			NucleusEnchantment[] tabPearl1 = NucleusEnchantment.getPossibleNucleusEnchant();
 			this.nucleusEnchant.get(0).setItems(tabPearl1, memory1);
@@ -655,10 +645,10 @@ public class PageBuff extends PartialPage {
 			nbStar++;
 		}
 		
-		NucleusEnchantment nucleusEnchant = this.getNucleusEnchantment(id);
+		NucleusEnchantment idNucleusEnchant = this.getNucleusEnchantment(id);
 		
-		if(nucleusEnchant != null) {
-			this.nucleusLvlEnchant.get(id).setItems(nucleusEnchant.getInnerLvlEffect(nbStar));
+		if(idNucleusEnchant != null) {
+			this.nucleusLvlEnchant.get(id).setItems(idNucleusEnchant.getInnerLvlEffect(nbStar));
 			this.nucleusLvlEnchant.get(id).setVisible(this.nucleusEnchant.get(id).isVisible());
 		} else {
 			this.nucleusLvlEnchant.get(id).setVisible(false);
@@ -671,6 +661,7 @@ public class PageBuff extends PartialPage {
 		
 		for(int i = 0; i < this.energy.size(); i++) {
 			int memory = this.energy.get(i).getIntValue();
+			
 			if(reinca.getLvl() == 0) {
 				if(memory > lvl*2) {
 					memory = lvl*2;
@@ -685,14 +676,12 @@ public class PageBuff extends PartialPage {
 				MainFrame.getInstance().setRedPane(10);
 			}
 		}
+		
+		setEffects();
 	}
 	
 	private void showAndHideEnergies(int index3) {
-		if(this.labelVoidEnergy.get(index3).isSelected()) {
-			this.showAndHideEnergy.get(index3).setVisible(true);
-		} else {
-			this.showAndHideEnergy.get(index3).setVisible(false);
-		}
+		this.showAndHideEnergy.get(index3).setVisible(this.labelVoidEnergy.get(index3).isSelected());
 		
 		updateSize();
 	}
@@ -732,15 +721,15 @@ public class PageBuff extends PartialPage {
 	}
 	
 	private void refreshGuildBuffList() {
-		ArrayList<GuildBuff> guildBuff = new ArrayList<GuildBuff>();
+		ArrayList<GuildBuff> guildBuffList = new ArrayList<>();
 		
 		for(int i = 0; i < 4; i++) {
 			if(this.guildBuffUsed.get(i).isVisible()) {
-				guildBuff.add(this.guildBuffUsed.get(i).getItem());
+				guildBuffList.add(this.guildBuffUsed.get(i).getItem());
 			}
 		}
 		
-		GuildBuff[] tabGuildBuff = GuildBuff.getListGuildBuff(guildBuff);
+		GuildBuff[] tabGuildBuff = GuildBuff.getListGuildBuff(guildBuffList);
 		this.guildBuff.placeItems(tabGuildBuff);
 	}
 	
@@ -771,15 +760,15 @@ public class PageBuff extends PartialPage {
 	}
 	
 	private void refreshStoneList() {
-		ArrayList<Stone> stone = new ArrayList<Stone>();
+		ArrayList<Stone> stoneList = new ArrayList<>();
 		
 		for(int i = 0; i < 14; i++) {
 			if(this.stoneUsed.get(i).isVisible()) {
-				stone.add(this.stoneUsed.get(i).getItem());
+				stoneList.add(this.stoneUsed.get(i).getItem());
 			}
 		}
 		
-		this.stone.placeItems(Stone.getListStone(stone));
+		this.stone.placeItems(Stone.getListStone(stoneList));
 	}
 	
 	private void setMinSpinnerEnergy(int index4) {
@@ -816,7 +805,7 @@ public class PageBuff extends PartialPage {
 
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new HashMap<>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			config.put("Nucleus" + i, this.getNucleus(i).getName(Language.FR));
@@ -865,7 +854,7 @@ public class PageBuff extends PartialPage {
 			this.nucleus.get(i).setSelectedItem(Nucleus.get(config.get("Nucleus" + i), i));
 		}
 		
-		int select = Integer.valueOf(config.get("StarNucleus"));
+		int select = Integer.parseInt(config.get("StarNucleus"));
 		for(int i = 0; i < this.starNucleus.size(); i++) {
 			if(i == select) {
 				this.starNucleus.get(i).setSelected(true);
@@ -879,10 +868,10 @@ public class PageBuff extends PartialPage {
 		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
 			this.nucleusEnchant.get(i).setSelectedItem(NucleusEnchantment.get(config.get("NucleusEnchant" + i)));
 			
-			NucleusEnchantment nucleusEnchant = this.getNucleusEnchantment(i);
+			NucleusEnchantment idNucleusEnchant = this.getNucleusEnchantment(i);
 			
-			if(nucleusEnchant != null) {
-				InnerEffect inner = nucleusEnchant.getInnerEffect(Integer.valueOf(config.get("NucleusLvlEnchant" + i)));
+			if(idNucleusEnchant != null) {
+				InnerEffect inner = idNucleusEnchant.getInnerEffect(Integer.valueOf(config.get("NucleusLvlEnchant" + i)));
 				this.nucleusLvlEnchant.get(i).setSelectedItem(inner);
 			}
 		}
@@ -892,9 +881,9 @@ public class PageBuff extends PartialPage {
 		}
 		
 		for(int i = 0; i < this.guildBuffUsed.size(); i++) {
-			GuildBuff guildBuff = GuildBuff.get(config.get("GuildBuff" + i));
-			if(guildBuff != null) {
-				this.guildBuffUsed.get(i).setItem(guildBuff);
+			GuildBuff setGuildBuff = GuildBuff.get(config.get("GuildBuff" + i));
+			if(setGuildBuff != null) {
+				this.guildBuffUsed.get(i).setItem(setGuildBuff);
 				this.guildBuffUsed.get(i).setVisible(true);
 				this.cross.get(i).setVisible(true);
 			} else {
@@ -904,9 +893,9 @@ public class PageBuff extends PartialPage {
 		}
 		
 		for(int i = 0; i < this.stoneUsed.size(); i++) {
-			Stone stone = Stone.get(config.get("Stone" + i));
-			if(stone != null) {
-				this.stoneUsed.get(i).setItem(stone);
+			Stone setStone = Stone.get(config.get("Stone" + i));
+			if(setStone != null) {
+				this.stoneUsed.get(i).setItem(setStone);
 				this.stoneUsed.get(i).setVisible(true);
 				this.cross.get(i+4).setVisible(true);
 			} else {

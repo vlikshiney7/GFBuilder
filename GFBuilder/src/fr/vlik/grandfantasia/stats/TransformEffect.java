@@ -19,7 +19,11 @@ public class TransformEffect implements Calculable {
 		this.transform = transformEffect.getTransform();
 	}
 	
-	public static enum TypeTransformation {
+	public Calculable copy() {
+		return new TransformEffect(this);
+	}
+	
+	public enum TypeTransformation {
 		TRANSFORMATION("Transformation", "Transformation"),
 		INVOCATION("Invocation", "Invocation");
 		
@@ -40,10 +44,8 @@ public class TransformEffect implements Calculable {
 		return this.transform;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {}
 	
-	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		

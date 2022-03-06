@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
-import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
+import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.JCustomComboBox;
 

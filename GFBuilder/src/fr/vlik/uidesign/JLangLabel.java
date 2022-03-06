@@ -2,7 +2,6 @@ package fr.vlik.uidesign;
 
 import java.awt.Dimension;
 import java.awt.Font;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JLabel;
@@ -14,7 +13,7 @@ public class JLangLabel extends JLabel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Map<Language, String> lang = new HashMap<Language, String>();
+	private Map<Language, String> lang;
 	
 	public JLangLabel() {
 		setBlackUI();

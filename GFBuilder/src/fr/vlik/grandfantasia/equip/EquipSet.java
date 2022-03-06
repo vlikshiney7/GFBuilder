@@ -1,7 +1,7 @@
 package fr.vlik.grandfantasia.equip;
 
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.EnumMap;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -40,9 +40,9 @@ public class EquipSet implements Writable {
 		this.code = code;
 		this.nbCurrentUsed = 0;
 		
-		this.bonus3pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 3 pièces de set"); put(Language.EN, "3 Piece Set Bonus"); }}, Quality.BLUE, with3);
-		this.bonus4pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 4 pièces de set"); put(Language.EN, "4 Piece Set Bonus"); }}, Quality.ORANGE, with4);
-		this.bonus5pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 5 pièces de set"); put(Language.EN, "5 Piece Set Bonus"); }}, Quality.GOLD, with5);
+		this.bonus3pieces = new BonusEquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bonus pour 3 pièces de set"); put(Language.EN, "3 Piece Set Bonus"); }}, Quality.BLUE, with3);
+		this.bonus4pieces = new BonusEquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bonus pour 4 pièces de set"); put(Language.EN, "4 Piece Set Bonus"); }}, Quality.ORANGE, with4);
+		this.bonus5pieces = new BonusEquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bonus pour 5 pièces de set"); put(Language.EN, "5 Piece Set Bonus"); }}, Quality.GOLD, with5);
 	}
 	
 	@SuppressWarnings("serial")
@@ -51,12 +51,12 @@ public class EquipSet implements Writable {
 		this.code = code;
 		this.nbCurrentUsed = 0;
 		
-		this.bonus2pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 2 pièces de set"); put(Language.EN, "2 Piece Set Bonus"); }}, Quality.GREEN, with2);
-		this.bonus3pieces = new BonusEquipSet(new HashMap<Language, String>() {{ put(Language.FR, "Bonus pour 3 pièces de set"); put(Language.EN, "3 Piece Set Bonus"); }}, Quality.BLUE, with3);
+		this.bonus2pieces = new BonusEquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bonus pour 2 pièces de set"); put(Language.EN, "2 Piece Set Bonus"); }}, Quality.GREEN, with2);
+		this.bonus3pieces = new BonusEquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bonus pour 3 pièces de set"); put(Language.EN, "3 Piece Set Bonus"); }}, Quality.BLUE, with3);
 	}
 	
 	public EquipSet(Armor[] armors) {
-		String equipCode[] = { armors[0].getSetCode(), armors[1].getSetCode(), armors[2].getSetCode(), armors[3].getSetCode(), armors[4].getSetCode() };
+		String[] equipCode = { armors[0].getSetCode(), armors[1].getSetCode(), armors[2].getSetCode(), armors[3].getSetCode(), armors[4].getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
 		
@@ -77,7 +77,7 @@ public class EquipSet implements Writable {
 	}
 	
 	public EquipSet(Ring[] rings, Cape cape) {
-		String equipCode[] = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
+		String[] equipCode = { rings[0].getSetCode(), rings[1].getSetCode(), cape.getSetCode() };
 		
 		this.nbCurrentUsed = getMaxCount(equipCode);
 		if(rings[0].getName(Language.FR).trim().equals(rings[1].getName(Language.FR).trim())) {
@@ -140,50 +140,29 @@ public class EquipSet implements Writable {
 	
 	private int getMaxCount(String[] equipCode) {
 		Arrays.sort(equipCode);
-		int max_count = 1;
-		int curr_count = 1;
+		int maxCount = 1;
+		int currCount = 1;
 		String currentCode = equipCode[0];
 		
 		for(int i = 1; i < equipCode.length; i++) {
-			if(equipCode[i].equals(equipCode[i-1])) curr_count++;
-			else {
-				if(curr_count > max_count) {
-					max_count = curr_count;
+			if(equipCode[i].equals(equipCode[i-1])) {
+				currCount++;
+			} else {
+				if(currCount > maxCount) {
+					maxCount = currCount;
 					currentCode = equipCode[i-1];
 				}
-				curr_count = 1;
+				currCount = 1;
 			}
 		}
-		if(curr_count > max_count) {
-			max_count = curr_count;
+		if(currCount > maxCount) {
+			maxCount = currCount;
 			currentCode = equipCode[equipCode.length-1];
 		}
 		
 		this.code = currentCode;
 		
-		return max_count;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if(this == obj) {
-			return true;
-		}
-		
-		if(obj == null) {
-			return false;
-		}
-		
-		if (!(obj instanceof EquipSet)) {
-			return false;
-		}
-		
-		EquipSet set = (EquipSet) obj;
-		boolean b = this.name.equals(set.name)
-				&& this.code == set.code
-				&& this.nbCurrentUsed == set.nbCurrentUsed;
-		
-		return b;
+		return maxCount;
 	}
 	
 	public static EquipSet[] getDataArmor() {
@@ -192,5 +171,76 @@ public class EquipSet implements Writable {
 	
 	public static EquipSet[] getDataCapeRing() {
 		return EquipSet.dataCapeRing;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((this.bonus2pieces == null) ? 0 : this.bonus2pieces.hashCode());
+		result = prime * result + ((this.bonus3pieces == null) ? 0 : this.bonus3pieces.hashCode());
+		result = prime * result + ((this.bonus4pieces == null) ? 0 : this.bonus4pieces.hashCode());
+		result = prime * result + ((this.bonus5pieces == null) ? 0 : this.bonus5pieces.hashCode());
+		result = prime * result + ((this.code == null) ? 0 : this.code.hashCode());
+		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+		result = prime * result + this.nbCurrentUsed;
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		EquipSet other = (EquipSet) obj;
+		if (this.bonus2pieces == null) {
+			if (other.bonus2pieces != null) {
+				return false;
+			}
+		} else if (!this.bonus2pieces.equals(other.bonus2pieces)) {
+			return false;
+		}
+		if (this.bonus3pieces == null) {
+			if (other.bonus3pieces != null) {
+				return false;
+			}
+		} else if (!this.bonus3pieces.equals(other.bonus3pieces)) {
+			return false;
+		}
+		if (this.bonus4pieces == null) {
+			if (other.bonus4pieces != null) {
+				return false;
+			}
+		} else if (!this.bonus4pieces.equals(other.bonus4pieces)) {
+			return false;
+		}
+		if (this.bonus5pieces == null) {
+			if (other.bonus5pieces != null) {
+				return false;
+			}
+		} else if (!this.bonus5pieces.equals(other.bonus5pieces)) {
+			return false;
+		}
+		if (this.code == null) {
+			if (other.code != null) {
+				return false;
+			}
+		} else if (!this.code.equals(other.code)) {
+			return false;
+		}
+		if (this.name == null) {
+			if (other.name != null) {
+				return false;
+			}
+		} else if (!this.name.equals(other.name)) {
+			return false;
+		}
+		return this.nbCurrentUsed == other.nbCurrentUsed;
 	}
 }

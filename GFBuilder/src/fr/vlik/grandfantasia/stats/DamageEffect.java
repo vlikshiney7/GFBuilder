@@ -22,6 +22,10 @@ public class DamageEffect implements Calculable {
 		this.value = damage.getValue();
 	}
 	
+	public Calculable copy() {
+		return new DamageEffect(this);
+	}
+	
 	public TypeDamage getType() {
 		return this.type;
 	}
@@ -29,13 +33,11 @@ public class DamageEffect implements Calculable {
 	public int getValue() {
 		return this.value;
 	}
-
-	@Override
+	
 	public void multiplyValue(int factor) {
 		this.value *= factor;
 	}
-
-	@Override
+	
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
@@ -57,8 +59,7 @@ public class DamageEffect implements Calculable {
 		
 		return "<li>" + tooltip + "</li>";
 	}
-
-	@Override
+	
 	public String toString(Language lang) {
 		String result = "";
 		

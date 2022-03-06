@@ -16,21 +16,12 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor.ArmorType;
 import fr.vlik.grandfantasia.interfaces.Filterable;
-import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Condition;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.MultipleHit;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.RegenEffect;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
-import fr.vlik.grandfantasia.stats.TransformEffect;
 
 public class Tools {
 	public static final String RESOURCE = "/fr/vlik/grandfantasia/resources/";
-	public static final String PATH32 = "/fr/vlik/grandfantasia/resources/default/32-";
-	public static final String PATH24 = "/fr/vlik/grandfantasia/resources/default/24-";
-	public static final String PATH16 = "/fr/vlik/grandfantasia/resources/default/16-";
+	public static final String PATH32 = RESOURCE + "default/32-";
+	public static final String PATH24 = RESOURCE + "default/24-";
+	public static final String PATH16 = RESOURCE + "default/16-";
 	
 	public static final Color[] itemColor = { new Color(147, 147, 147), new Color(255, 255, 255), new Color(111, 225, 28), new Color(33, 171, 235), new Color(255, 123, 0), new Color(234, 225, 0), new Color(252, 20, 236), new Color(255, 0, 0) };
 	public static final Color[] reincaColor = { new Color(147, 147, 147), new Color(111, 225, 28) };
@@ -41,7 +32,13 @@ public class Tools {
 	public static final Color[] EffectColor = { new Color(215, 221, 222), new Color(235, 0, 0), new Color(91, 205, 8), new Color(13, 151, 215), new Color(232, 0, 216), new Color(214, 205, 0), new Color(147, 147, 147), new Color(255, 255, 100), new Color(150, 100, 150), new Color(100, 100, 255), new Color(255, 100, 100), new Color(113, 251, 255), new Color(191, 255, 108) };
 	public static final String PNG = ".png";
 	
+	private Tools() {}
+	
 	public static Icon constructIcon(ImageIcon back, ImageIcon front) {
+		if(front == null) {
+			return back;
+		}
+		
 		BufferedImage result = new BufferedImage(back.getIconWidth(), back.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
 		Graphics g = result.createGraphics();
 		g.drawImage(back.getImage(), 0, 0, null);
@@ -52,7 +49,7 @@ public class Tools {
 	}
 	
 	public static String simplifyString(String entry) {
-		String result = entry.replaceAll(" ", "").toLowerCase();
+		String result = entry.replace(" ", "").toLowerCase();
 		result = Normalizer.normalize(result, Normalizer.Form.NFD);
 		result = result.replaceAll("[^\\p{ASCII}]", "");
 		
@@ -95,35 +92,6 @@ public class Tools {
 		return false;
 	}
 	
-	public static Calculable[] getEffects(Calculable[] tabEffects) {
-		if(tabEffects == null) {
-			return null;
-		}
-		
-		Calculable[] tab = new Calculable[tabEffects.length];
-		for(int i = 0; i < tab.length; i++) {
-			if(tabEffects[i] instanceof Condition) {
-				tab[i] = new Condition((Condition) tabEffects[i]);
-			} else if(tabEffects[i] instanceof Effect) {
-				tab[i] = new Effect((Effect) tabEffects[i]);
-			} else if(tabEffects[i] instanceof MultipleHit) {
-				tab[i] = new MultipleHit((MultipleHit) tabEffects[i]);
-			} else if(tabEffects[i] instanceof Proc) {
-				tab[i] = new Proc((Proc) tabEffects[i]);
-			} else if(tabEffects[i] instanceof RegenEffect) {
-				tab[i] = new RegenEffect((RegenEffect) tabEffects[i]);
-			} else if(tabEffects[i] instanceof SkillEffect) {
-				tab[i] = new SkillEffect((SkillEffect) tabEffects[i]);
-			} else if(tabEffects[i] instanceof StaticEffect) {
-				tab[i] = new StaticEffect((StaticEffect) tabEffects[i]);
-			} else if(tabEffects[i] instanceof TransformEffect) {
-				tab[i] = new TransformEffect((TransformEffect) tabEffects[i]);
-			}
-		}
-		
-		return tab;
-	}
-	
 	public static boolean containObject(Object[] tab, Object element) {
 		for(Object tabElement : tab) {
 			if(tabElement.equals(element)) {
@@ -148,7 +116,7 @@ public class Tools {
 		if(entry.getKey() instanceof Integer) {
 			return (Integer) entry.getKey() <= (Integer) entry.getValue();
 		} else if(entry.getKey() instanceof Boolean) {
-			if(!(Boolean) entry.getKey()) {
+			if(Boolean.FALSE.equals(entry.getKey())) {
 				return true;
 			} else {
 				return ((Reinca) entry.getValue()).getLvl() > 0;

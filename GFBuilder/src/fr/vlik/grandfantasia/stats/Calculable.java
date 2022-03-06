@@ -4,6 +4,8 @@ import fr.vlik.grandfantasia.enums.Language;
 
 public interface Calculable {
 	
+	public Calculable copy();
+	
 	public void multiplyValue(int factor);
 	
 	public String getTooltip();

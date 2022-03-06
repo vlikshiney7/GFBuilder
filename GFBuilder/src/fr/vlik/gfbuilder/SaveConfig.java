@@ -8,18 +8,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
-import javax.swing.JPanel;
+import java.util.Map.Entry;
 
 import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.page.PartialPage;
-import fr.vlik.grandfantasia.customEquip.CustomArmor;
-import fr.vlik.grandfantasia.customEquip.CustomCape;
-import fr.vlik.grandfantasia.customEquip.CustomRing;
-import fr.vlik.grandfantasia.customEquip.CustomWeapon;
+import fr.vlik.grandfantasia.customequip.CustomArmor;
+import fr.vlik.grandfantasia.customequip.CustomCape;
+import fr.vlik.grandfantasia.customequip.CustomRing;
+import fr.vlik.grandfantasia.customequip.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
@@ -34,6 +35,7 @@ public class SaveConfig {
 	private static final String EXTENSION = ".gfb";
 	private static final String CUSTOM_FILENAME = "CustomEquipmentCreation.gfbc";
 	public static final String DEFAULT_NAME = "New build *";
+	
 	private static ArrayList<SaveConfig> data;
 	static {
 		loadData();
@@ -42,7 +44,7 @@ public class SaveConfig {
 	private String filename;
 	private String buildname;
 	private Language lang;
-	private Map<String, Map<String, String>> values = new HashMap<String, Map<String, String>>();
+	private Map<String, Map<String, String>> values = new HashMap<>();
 	private int[][] indexSelector;
 	
 	public SaveConfig(String name, int[][] tabConfig) {
@@ -75,7 +77,7 @@ public class SaveConfig {
 	}
 	
 	public void applyConfig() {
-		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
+		List<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		int[] orderLoading = { 0, 6, 7, 8, 1, 2, 3, 4, 5, 9, 10, 11 };
 		
@@ -83,9 +85,9 @@ public class SaveConfig {
 			if(pages.get(orderLoading[i]) instanceof PartialPage) {
 				PartialPage page = (PartialPage) pages.get(orderLoading[i]);
 				try {
-					Map<String, String> values = this.getValuesFromPage(page.getSaveName());
-					if(values != null) {
-						page.setConfig(values, this.lang);
+					Map<String, String> pageValues = this.getValuesFromPage(page.getSaveName());
+					if(pageValues != null) {
+						page.setConfig(pageValues, this.lang);
 					}
 				} catch (IllegalArgumentException e) {
 					System.out.println("Out of range on page : " + page.getSaveName());
@@ -98,7 +100,7 @@ public class SaveConfig {
 	}
 	
 	public void overrideConfig() {
-		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
+		List<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		this.values.clear();
 		
@@ -110,15 +112,18 @@ public class SaveConfig {
 		}
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.filename + EXTENSION, false), "UTF-8"));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.filename + EXTENSION, false), StandardCharsets.UTF_8));
 		) {
 			writer.append(this.buildname + "/" + this.lang.name() + "\n");
 			
-			for(String pageName : this.values.keySet()) {
-				writer.append(pageName + "\n");
+			for(Entry<String, Map<String, String>> entry : this.values.entrySet()) {
+				String key = entry.getKey();
+				Map<String, String> value = entry.getValue();
 				
-				for(String selectorName : this.values.get(pageName).keySet()) {
-					writer.append("\t" + selectorName + "=" + this.values.get(pageName).get(selectorName) + "\n");
+				writer.append(key + "\n");
+				
+				for(Entry<String, String> innerEntry : value.entrySet()) {
+					writer.append("\t" + innerEntry.getKey() + "=" + innerEntry.getValue() + "\n");
 				}
 			}
 			
@@ -129,7 +134,7 @@ public class SaveConfig {
 	}
 	
 	private static void loadData() {
-		SaveConfig.data = new ArrayList<SaveConfig>();
+		SaveConfig.data = new ArrayList<>();
 		
 		File folder = new File(SAVE_FOLDER_NAME);
 		
@@ -162,9 +167,9 @@ public class SaveConfig {
 			
 			if(file.getName().endsWith(EXTENSION)) {
 				try (
-					BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+					BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
 				) {
-					Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
+					Map<String, Map<String, String>> build = new HashMap<>();
 					
 					String[] header = reader.readLine().split("/");
 					String line = reader.readLine();
@@ -177,7 +182,7 @@ public class SaveConfig {
 							build.get(page).put(element[0], element.length != 1 ? element[1] : "");
 						} else {
 							page = line;
-							build.put(page, new HashMap<String, String>());
+							build.put(page, new HashMap<>());
 						}
 						
 						line = reader.readLine();
@@ -196,7 +201,7 @@ public class SaveConfig {
 		}
 		
 		try (
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME), "UTF-8"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME), StandardCharsets.UTF_8));
 		) {
 			String line = reader.readLine();
 			
@@ -250,11 +255,11 @@ public class SaveConfig {
 	}
 	
 	public static void writeData(String name, Language lang) {
-		Map<String, Map<String, String>> build = new HashMap<String, Map<String, String>>();
+		Map<String, Map<String, String>> build = new HashMap<>();
 		
-		ArrayList<JCustomPanel> pages = MainFrame.getInstance().getPages();
+		List<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
-		for(JPanel panel : pages) {
+		for(JCustomPanel panel : pages) {
 			if(panel instanceof PartialPage) {
 				PartialPage page = (PartialPage) panel;
 				build.put(page.getSaveName(), page.getConfig(lang));
@@ -265,15 +270,18 @@ public class SaveConfig {
 		SaveConfig.data.add(save);
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false), "UTF-8"));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false), StandardCharsets.UTF_8));
 		) {
 			writer.append(name.replace("_", " ") + "/" + lang.name() + "\n");
 			
-			for(String pageName : build.keySet()) {
-				writer.append(pageName + "\n");
+			for(Entry<String, Map<String, String>> entry : build.entrySet()) {
+				String key = entry.getKey();
+				Map<String, String> value = entry.getValue();
 				
-				for(String selectorName : build.get(pageName).keySet()) {
-					writer.append("\t" + selectorName + "=" + build.get(pageName).get(selectorName) + "\n");
+				writer.append(key + "\n");
+				
+				for(Entry<String, String> innerEntry : value.entrySet()) {
+					writer.append("\t" + innerEntry.getKey() + "=" + innerEntry.getValue() + "\n");
 				}
 			}
 			
@@ -302,14 +310,16 @@ public class SaveConfig {
 		return result;
 	}
 	
-	public static void deleteData(SaveConfig delete) {
+	public static boolean deleteData(SaveConfig delete) {
 		SaveConfig.data.remove(delete);
 		
 		File remove = new File(SAVE_FOLDER_NAME + File.separator + delete.getFileName() + EXTENSION);
 		
 		if(remove.exists()) {
-			remove.delete();
+			return remove.delete();
 		}
+		
+		return false;
 	}
 	
 	public static boolean fileExist() {
@@ -319,7 +329,7 @@ public class SaveConfig {
 	
 	public static void overrideCustom() {
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME, false), "UTF-8"));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME, false), StandardCharsets.UTF_8));
 		) {
 			for(Weapon weapon : Weapon.getCustomData()) {
 				writer.append("Weapon::" + weapon.getName(Language.FR) + "::" + weapon.getQuality() + "::" + weapon.getSignature() + "\n");

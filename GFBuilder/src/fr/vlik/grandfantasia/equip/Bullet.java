@@ -1,6 +1,8 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,13 +22,13 @@ import fr.vlik.grandfantasia.template.CompleteBuff;
 public class Bullet extends CompleteBuff {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Projectile");
 		put(Language.EN, "Projectile");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final String PATH = Tools.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Bullet[] data = LoaderEquip.getBullet();
 	
 	private static Tag[] tags = new Tag[] { Tag.GVG, Tag.MARCHAND, Tag.SPRITE, };
@@ -70,45 +72,20 @@ public class Bullet extends CompleteBuff {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Bullet.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(Bullet.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Bullet.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if(this == obj) {
-			return true;
-		}
-		
-		if(obj == null) {
-			return false;
-		}
-		
-		if (!(obj instanceof Bullet)) {
-			return false;
-		}
-		
-		Bullet bullet = (Bullet) obj;
-		boolean b = this.name.equals(bullet.name)
-				&& this.lvl == bullet.lvl
-				&& this.quality == bullet.quality;
-		
-		return b;
+		return Tools.constructIcon(back, object);
 	}
 	
 	@Override
 	public String getInfo(Language lang) {
-		if(this.name.get(lang) == "") {
+		if("".equals(this.name.get(lang))) {
 			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}
 		return "Lvl " + this.lvl + " - " + this.name.get(lang);
@@ -125,12 +102,12 @@ public class Bullet extends CompleteBuff {
 	}
 	
 	public static Bullet[] getPossibleBullet(int lvl, Reinca reinca) {
-		ArrayList<Bullet> result = new ArrayList<Bullet>();
+		ArrayList<Bullet> result = new ArrayList<>();
 		
 		result.add(new Bullet());
 		
 		for(Bullet bullet : Bullet.data) {
-			Map<Object, Object> properties = new HashMap<Object, Object>();
+			Map<Object, Object> properties = new HashMap<>();
 			properties.put(bullet.getLvl(), lvl);
 			properties.put(bullet.isReinca(), reinca);
 			
@@ -143,13 +120,13 @@ public class Bullet extends CompleteBuff {
 	}
 	
 	public static Bullet[] applyFilters(Bullet[] possible, Bullet choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Bullet> result = new ArrayList<Bullet>();
+		ArrayList<Bullet> result = new ArrayList<>();
 		
 		result.add(new Bullet());
-		if(!choice.equals(new Bullet())) {
-			if(Tools.containObject(possible, choice)) {
-				result.add(choice);
-			}
+		if(!choice.equals(new Bullet())
+				&& Tools.containObject(possible, choice)) {
+			
+			result.add(choice);
 		}
 		
 		for(Bullet bullet : possible) {
@@ -159,10 +136,10 @@ public class Bullet extends CompleteBuff {
 				Tools.containObject(filter, bullet.getTag()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
-				if(!choice.equals(bullet)) {
-					result.add(bullet);
-				}
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+					&& !choice.equals(bullet)) {
+				
+				result.add(bullet);
 			}
 		}
 		
@@ -175,5 +152,36 @@ public class Bullet extends CompleteBuff {
 	
 	public static Quality[] getQualities() {
 		return Bullet.qualities;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + this.lvl;
+		result = prime * result + (this.reinca ? 1231 : 1237);
+		result = prime * result + ((this.tag == null) ? 0 : this.tag.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Bullet other = (Bullet) obj;
+		if (this.lvl != other.lvl) {
+			return false;
+		}
+		if (this.reinca != other.reinca) {
+			return false;
+		}
+		return this.tag == other.tag;
 	}
 }

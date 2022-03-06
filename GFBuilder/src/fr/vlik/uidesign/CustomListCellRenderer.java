@@ -1,6 +1,5 @@
 package fr.vlik.uidesign;
 
-import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.DefaultListCellRenderer;
@@ -22,7 +21,7 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 	
 	public CustomListCellRenderer() {
 		super();
-	};
+	}
 	
 	@Override
 	public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
@@ -46,25 +45,21 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 			}
 			
 			if(value instanceof Writable) {
-				renderer.setText(((Writable) value).getInfo(lang));
+				renderer.setText(((Writable) value).getInfo(CustomListCellRenderer.lang));
 				renderer.setToolTipText(((Writable) value).getTooltip());
 			}
 		}
 		
-		if(value instanceof String) {
-			String object = (String) value;
-			renderer.setText(object);
-			
-			index++;
-			renderer.setForeground(new Color(255, 255-index*2, 255-index*2));
-		} else if(value instanceof Integer) {
+		if(value instanceof Integer) {
 			renderer.setText(value.toString());
-			if(index > 15)
+			
+			if(index > 15) {
 				renderer.setForeground(Tools.speColor[2]);
-			else if(index > 10)
+			} else if(index > 10) {
 				renderer.setForeground(Tools.speColor[1]);
-			else
+			} else {
 				renderer.setForeground(Tools.speColor[0]);
+			}
 		} else if(value instanceof SaveConfig) {
 			renderer.setText(((SaveConfig) value).getBuildName());
 		}

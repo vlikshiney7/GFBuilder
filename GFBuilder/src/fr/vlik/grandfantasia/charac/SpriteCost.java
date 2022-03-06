@@ -17,14 +17,13 @@ import fr.vlik.grandfantasia.template.CompleteBuff;
 public class SpriteCost extends CompleteBuff {
 	
 	private static final String PATH = Tools.RESOURCE + "sprite/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static SpriteCost[] data = LoaderCharac.getSpriteCost();
 	
 	private SpriteCostType costType;
 	
 	public SpriteCost() {
 		super();
-		this.costType = SpriteCostType.BODY;
 	}
 	
 	public SpriteCost(Map<Language, String> name, Quality quality, SpriteCostType costType, String path, Calculable[] effects) {
@@ -32,7 +31,7 @@ public class SpriteCost extends CompleteBuff {
 		this.costType = costType;
 	}
 	
-	public static enum SpriteCostType {
+	public enum SpriteCostType {
 		HEAD, BODY;
 	}
 	
@@ -43,18 +42,15 @@ public class SpriteCost extends CompleteBuff {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(SpriteCost.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(SpriteCost.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(SpriteCost.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
+		return Tools.constructIcon(back, object);
 	}
 	
 	public static SpriteCost get(String name) {
@@ -68,7 +64,9 @@ public class SpriteCost extends CompleteBuff {
 	}
 	
 	public static SpriteCost[] getPossibleSpriteCost(int lvl, Reinca reinca, SpriteCostType costType) {
-		ArrayList<SpriteCost> result = new ArrayList<SpriteCost>();
+		ArrayList<SpriteCost> result = new ArrayList<>();
+		
+		result.add(new SpriteCost());
 		
 		if(costType == SpriteCostType.HEAD) {
 			for(SpriteCost spriteCost : SpriteCost.data) {
@@ -77,7 +75,6 @@ public class SpriteCost extends CompleteBuff {
 				}
 			}
 		} else {
-			result.add(new SpriteCost());
 			if(lvl > 20 || reinca.getLvl() >= 1) {
 				for(SpriteCost spriteCost : SpriteCost.data) {
 					if(spriteCost.getType() == costType) {

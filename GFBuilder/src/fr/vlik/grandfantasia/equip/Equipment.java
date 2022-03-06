@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -7,7 +8,7 @@ import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
-import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
+import fr.vlik.grandfantasia.equipupgrade.Enchantment;
 import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
@@ -23,14 +24,14 @@ public abstract class Equipment extends CompleteBuff {
 	protected boolean isCustom = false;
 	protected String signature = "";
 	
-	public Equipment() {
+	protected Equipment() {
 		super();
 		this.grades = new GradeName[] {	GradeName.NONE };
 		this.lvl = 0;
 		this.enchantable = false;
 	}
 	
-	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, Calculable[] effects, Calculable[] bonusXP) {
+	protected Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, boolean enchantable, Calculable[] effects, Calculable[] bonusXP) {
 		super(name, quality, effects);
 		this.grades = grades;
 		this.lvl = lvl;
@@ -38,7 +39,7 @@ public abstract class Equipment extends CompleteBuff {
 		this.bonusXP = bonusXP;
 	}
 	
-	public Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, Calculable[] effects, String signature) {
+	protected Equipment(Map<Language, String> name, GradeName[] grades, int lvl, Quality quality, Calculable[] effects, String signature) {
 		super(name, quality, effects);
 		this.grades = grades;
 		this.lvl = lvl;
@@ -61,7 +62,16 @@ public abstract class Equipment extends CompleteBuff {
 	}
 	
 	public Calculable[] getBonusXP() {
-		return Tools.getEffects(this.bonusXP);
+		if(this.bonusXP == null) {
+			return new Calculable[0];
+		}
+		
+		Calculable[] tab = new Calculable[this.bonusXP.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = this.bonusXP[i].copy();
+		}
+		
+		return tab;
 	}
 	
 	public void addEnchant(Enchantment enchant) {
@@ -89,12 +99,7 @@ public abstract class Equipment extends CompleteBuff {
 				}
 				
 				if(!found) {
-					Calculable[] newTab = new Calculable[this.effects.length + 1];
-					
-					for(int i = 0; i < this.effects.length; i++) {
-						newTab[i] = this.effects[i];
-					}
-					
+					Calculable[] newTab = Arrays.copyOf(this.effects, this.effects.length + 1);
 					newTab[this.effects.length] = e;
 					
 					this.effects = newTab;
@@ -121,28 +126,6 @@ public abstract class Equipment extends CompleteBuff {
 		return Tools.containObject(this.grades, grade);
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		if(this == obj) {
-			return true;
-		}
-		
-		if(obj == null) {
-			return false;
-		}
-		
-		if (!(obj instanceof Equipment)) {
-			return false;
-		}
-		
-		Equipment equip = (Equipment) obj;
-		boolean b = this.name.equals(equip.name)
-				&& this.lvl == equip.lvl
-				&& this.quality == equip.quality;
-		
-		return b;
-	}
-	
 	protected void addNumberName(int num) {
 		if(num == 1) {
 			for(Entry<Language, String> entry : this.name.entrySet()) {
@@ -157,7 +140,7 @@ public abstract class Equipment extends CompleteBuff {
 	
 	@Override
 	public String getInfo(Language lang) {
-		if(this.name.get(lang) == "") {
+		if("".equals(this.name.get(lang))) {
 			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}
 		return "Lvl " + this.lvl + " - " + this.name.get(lang);
@@ -183,5 +166,55 @@ public abstract class Equipment extends CompleteBuff {
 		}
 		
 		return "<html>" + tooltip + "</html>";
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Arrays.hashCode(this.bonusXP);
+		result = prime * result + (this.enchantable ? 1231 : 1237);
+		result = prime * result + Arrays.hashCode(this.grades);
+		result = prime * result + (this.isCustom ? 1231 : 1237);
+		result = prime * result + this.lvl;
+		result = prime * result + ((this.signature == null) ? 0 : this.signature.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Equipment other = (Equipment) obj;
+		if (!Arrays.equals(this.bonusXP, other.bonusXP)) {
+			return false;
+		}
+		if (this.enchantable != other.enchantable) {
+			return false;
+		}
+		if (!Arrays.equals(this.grades, other.grades)) {
+			return false;
+		}
+		if (this.isCustom != other.isCustom) {
+			return false;
+		}
+		if (this.lvl != other.lvl) {
+			return false;
+		}
+		if (this.signature == null) {
+			if (other.signature != null) {
+				return false;
+			}
+		} else if (!this.signature.equals(other.signature)) {
+			return false;
+		}
+		return true;
 	}
 }

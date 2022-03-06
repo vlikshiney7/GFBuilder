@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.JSpinner;
-import javax.swing.JTextField;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 public class JCustomSpinner extends JSpinner {
@@ -19,6 +19,7 @@ public class JCustomSpinner extends JSpinner {
 		setBlackUI();
 	}
 	
+	@Override
 	public void setModel(SpinnerModel spinnerModel) {
 		super.setModel(spinnerModel);
 		
@@ -34,7 +35,7 @@ public class JCustomSpinner extends JSpinner {
 		
 		this.putClientProperty("caretWidth", 2);
 		this.setBorder(new LineBorder(new Color(199, 199, 199), 2));
-		((JSpinner.DefaultEditor) this.getEditor()).getTextField().setHorizontalAlignment(JTextField.LEFT);
+		((JSpinner.DefaultEditor) this.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.LEFT);
 	}
 
 	public int getIntValue() {

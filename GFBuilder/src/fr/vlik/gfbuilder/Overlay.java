@@ -17,7 +17,7 @@ import fr.vlik.uidesign.JLangLabel;
 public class Overlay extends JCustomPanel {
 	
 	private static final long serialVersionUID = 1L;
-	private static Overlay INSTANCE = new Overlay();
+	private static final Overlay INSTANCE = new Overlay();
 	
 	private boolean save = true;
 	

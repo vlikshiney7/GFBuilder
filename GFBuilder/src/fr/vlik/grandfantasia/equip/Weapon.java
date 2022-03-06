@@ -1,6 +1,9 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,13 +13,13 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.enums.TypeEffect;
-import fr.vlik.grandfantasia.equipUpgrade.Fortification;
+import fr.vlik.grandfantasia.equipupgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.interfaces.Writable;
@@ -26,10 +29,10 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Weapon extends Equipment {
 	
-	private static final String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Weapon[][] data = LoaderEquip.getWeapon();
-	private static ArrayList<Weapon> customData = new ArrayList<Weapon>();
+	private static ArrayList<Weapon> customData = new ArrayList<>();
 	
 	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.DONJON, Tag.EVENT, Tag.FORMULE, Tag.GVG, Tag.PVP, Tag.QUETE, Tag.SPRITE, Tag.OTHER, };
 	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD, Quality.PURPLE, Quality.RED };
@@ -83,28 +86,28 @@ public class Weapon extends Equipment {
 	}
 	
 	@SuppressWarnings("serial")
-	public static enum WeaponType implements EquipType, Filterable, Writable {
-		EPEE1M(0, new HashMap<Language, String>() {{ put(Language.FR, "Épée 1M"); put(Language.EN, "1H Sword"); }}, true),
-		MARTEAU1M(1, new HashMap<Language, String>() {{ put(Language.FR, "Marteau 1M"); put(Language.EN, "1H Hammer"); }}, true),
-		HACHE1M(2, new HashMap<Language, String>() {{ put(Language.FR, "Hache 1M"); put(Language.EN, "1H Axe"); }}, true),
-		EPEE2M(3, new HashMap<Language, String>() {{ put(Language.FR, "Épée 2M"); put(Language.EN, "2H Sword"); }}, false),
-		MARTEAU2M(4, new HashMap<Language, String>() {{ put(Language.FR, "Marteau 2M"); put(Language.EN, "2H Hammer"); }}, false),
-		HACHE2M(5, new HashMap<Language, String>() {{ put(Language.FR, "Hache 2M"); put(Language.EN, "2H Axe"); }}, false),
-		MECA1M(6, new HashMap<Language, String>() {{ put(Language.FR, "Arme Méca 1M"); put(Language.EN, "1H Meca Weapon"); }}, true),
-		MECA2M(7, new HashMap<Language, String>() {{ put(Language.FR, "Arme Méca 2M"); put(Language.EN, "2H Meca Weapon"); }}, false),
-		ARC(8, new HashMap<Language, String>() {{ put(Language.FR, "Arc"); put(Language.EN, "Bow"); }}, false),
-		GUN(9, new HashMap<Language, String>() {{ put(Language.FR, "Pistolet"); put(Language.EN, "Gun"); }}, false),
-		CANON(10, new HashMap<Language, String>() {{ put(Language.FR, "Canon"); put(Language.EN, "Canon"); }}, false),
-		RELIQUE(11, new HashMap<Language, String>() {{ put(Language.FR, "Relique"); put(Language.EN, "Relic"); }}, false),
-		BATON(12, new HashMap<Language, String>() {{ put(Language.FR, "Bâton"); put(Language.EN, "Staff"); }}, false),
-		LAME(13, new HashMap<Language, String>() {{ put(Language.FR, "Lame"); put(Language.EN, "Blade"); }}, false),
-		CLE(14, new HashMap<Language, String>() {{ put(Language.FR, "Clé"); put(Language.EN, "Key"); }}, false),
-		BOUCLIER(15, new HashMap<Language, String>() {{ put(Language.FR, "Bouclier"); put(Language.EN, "Shield"); }}, false),
-		DEFAULT(16, new HashMap<Language, String>() {{ put(Language.FR, "Défaut"); put(Language.EN, "Default"); }}, true),
-		NONE(-1, new HashMap<Language, String>() {{ put(Language.FR, "Vide"); put(Language.EN, "Void"); }}, false);
+	public enum WeaponType implements EquipType, Filterable, Writable {
+		EPEE1M(0, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Épée 1M"); put(Language.EN, "1H Sword"); }}, true),
+		MARTEAU1M(1, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Marteau 1M"); put(Language.EN, "1H Hammer"); }}, true),
+		HACHE1M(2, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Hache 1M"); put(Language.EN, "1H Axe"); }}, true),
+		EPEE2M(3, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Épée 2M"); put(Language.EN, "2H Sword"); }}, false),
+		MARTEAU2M(4, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Marteau 2M"); put(Language.EN, "2H Hammer"); }}, false),
+		HACHE2M(5, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Hache 2M"); put(Language.EN, "2H Axe"); }}, false),
+		MECA1M(6, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme Méca 1M"); put(Language.EN, "1H Meca Weapon"); }}, true),
+		MECA2M(7, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme Méca 2M"); put(Language.EN, "2H Meca Weapon"); }}, false),
+		ARC(8, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arc"); put(Language.EN, "Bow"); }}, false),
+		GUN(9, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pistolet"); put(Language.EN, "Gun"); }}, false),
+		CANON(10, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Canon"); put(Language.EN, "Canon"); }}, false),
+		RELIQUE(11, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Relique"); put(Language.EN, "Relic"); }}, false),
+		BATON(12, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bâton"); put(Language.EN, "Staff"); }}, false),
+		LAME(13, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Lame"); put(Language.EN, "Blade"); }}, false),
+		CLE(14, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Clé"); put(Language.EN, "Key"); }}, false),
+		BOUCLIER(15, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bouclier"); put(Language.EN, "Shield"); }}, false),
+		DEFAULT(16, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Défaut"); put(Language.EN, "Default"); }}, true),
+		NONE(-1, new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Vide"); put(Language.EN, "Void"); }}, false);
 		
 		public final int index;
-		public Map<Language, String> lang;
+		public final Map<Language, String> lang;
 		public final boolean isMainOneHand;
 		
 	    private WeaponType(int index, Map<Language, String> lang, boolean isMainOneHand) {
@@ -144,18 +147,15 @@ public class Weapon extends Equipment {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Weapon.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(Weapon.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Weapon.class.getResource(PATH + path + Tools.PNG)) );
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
+		return Tools.constructIcon(back, object);
 	}
 	
 	public void addFortif(Fortification fortif) {
@@ -240,7 +240,10 @@ public class Weapon extends Equipment {
 	
 	public static Weapon getCustom(String name, Quality quality, String signature) {
 		for(Weapon weapon : Weapon.customData) {
-			if(CustomEquipment.deleteNumber(weapon.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name)) && weapon.getQuality() == quality && weapon.getSignature().equals(signature)) {
+			if(CustomEquipment.deleteNumber(weapon.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name))
+					&& weapon.getQuality() == quality
+					&& weapon.getSignature().equals(signature)) {
+				
 				return weapon;
 			}
 		}
@@ -258,14 +261,14 @@ public class Weapon extends Equipment {
 	}
 	
 	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
-		ArrayList<Weapon> result = new ArrayList<Weapon>();
+		ArrayList<Weapon> result = new ArrayList<>();
 		WeaponType[] weaponType = Weapon.getWeaponType(idList, doubleWeapon);
 		
 		result.add(new Weapon());
 		
 		for(Weapon custom : Weapon.customData) {
 			
-			Map<Object, Object> properties = new HashMap<Object, Object>();
+			Map<Object, Object> properties = new HashMap<>();
 			properties.put(custom.getGrades(), grade.getGrade());
 			properties.put(custom.getLvl(), lvl);
 			properties.put(custom.isReinca(), reinca);
@@ -280,7 +283,7 @@ public class Weapon extends Equipment {
 			Weapon[] oneWeaponType = Weapon.data[weaponType[i].index];
 			
 			for(int j = 0; j < oneWeaponType.length; j++) {
-				Map<Object, Object> properties = new HashMap<Object, Object>();
+				Map<Object, Object> properties = new HashMap<>();
 				properties.put(oneWeaponType[j].getGrades(), grade.getGrade());
 				properties.put(oneWeaponType[j].getLvl(), lvl);
 				properties.put(oneWeaponType[j].isReinca(), reinca);
@@ -299,13 +302,13 @@ public class Weapon extends Equipment {
 	}
 	
 	public static Weapon[] applyFilters(Weapon[] possible, Weapon choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Weapon> result = new ArrayList<Weapon>();
+		ArrayList<Weapon> result = new ArrayList<>();
 		
 		result.add(new Weapon());
-		if(!choice.equals(new Weapon())) {
-			if(Tools.containObject(possible, choice)) {
-				result.add(choice);
-			}
+		if(!choice.equals(new Weapon())
+				&& Tools.containObject(possible, choice)) {
+			
+			result.add(choice);
 		}
 		
 		for(Weapon weapon : possible) {
@@ -316,10 +319,10 @@ public class Weapon extends Equipment {
 				Tools.containObject(filter, weapon.getType()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
-				if(!choice.equals(weapon)) {
-					result.add(weapon);
-				}
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+					&& !choice.equals(weapon)) {
+				
+				result.add(weapon);
 			}
 		}
 		
@@ -360,8 +363,45 @@ public class Weapon extends Equipment {
 					WeaponType.ARC, WeaponType.GUN, WeaponType.CANON,
 					WeaponType.RELIQUE, WeaponType.CLE,
 				};
+			default:
+				break;
 		}
 		
-		return null;
+		return new WeaponType[0];
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (this.reinca ? 1231 : 1237);
+		result = prime * result + Arrays.hashCode(this.tag);
+		result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
+		result = prime * result + (this.uniqueEquip ? 1231 : 1237);
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Weapon other = (Weapon) obj;
+		if (this.reinca != other.reinca) {
+			return false;
+		}
+		if (!Arrays.equals(this.tag, other.tag)) {
+			return false;
+		}
+		if (this.type != other.type) {
+			return false;
+		}
+		return this.uniqueEquip == other.uniqueEquip;
 	}
 }

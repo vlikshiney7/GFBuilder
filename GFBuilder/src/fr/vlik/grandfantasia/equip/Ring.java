@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +10,7 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
-import fr.vlik.grandfantasia.customEquip.CustomEquipment;
+import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.EquipType;
@@ -18,10 +19,10 @@ import fr.vlik.grandfantasia.stats.Calculable;
 
 public final class Ring extends Equipment {
 	
-	private static final String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Ring[] data = LoaderEquip.getRing();
-	private static ArrayList<Ring> customData = new ArrayList<Ring>();
+	private static ArrayList<Ring> customData = new ArrayList<>();
 	
 	private String setCode;
 	private boolean uniqueEquip;
@@ -58,7 +59,7 @@ public final class Ring extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum RingType implements EquipType {
+	public enum RingType implements EquipType {
 		RING;
 	}
 	
@@ -78,18 +79,15 @@ public final class Ring extends Equipment {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Ring.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(Ring.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Ring.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
+		return Tools.constructIcon(back, object);
 	}
 	
 	public static void addCustom(Ring ring) {
@@ -152,7 +150,7 @@ public final class Ring extends Equipment {
 	}
 	
 	public static Ring[] getPossibleRing(int lvl, Ring toIgnore) {
-		ArrayList<Ring> result = new ArrayList<Ring>();
+		ArrayList<Ring> result = new ArrayList<>();
 		
 		result.add(new Ring());
 		

@@ -6,14 +6,15 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JFrame;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
@@ -23,11 +24,11 @@ import fr.vlik.gfbuilder.page.PageArmor;
 import fr.vlik.gfbuilder.page.PageCapeRing;
 import fr.vlik.gfbuilder.page.PageWeapon;
 import fr.vlik.grandfantasia.charac.Grade;
-import fr.vlik.grandfantasia.customEquip.CustomArmor;
-import fr.vlik.grandfantasia.customEquip.CustomCape;
-import fr.vlik.grandfantasia.customEquip.CustomEquipment;
-import fr.vlik.grandfantasia.customEquip.CustomRing;
-import fr.vlik.grandfantasia.customEquip.CustomWeapon;
+import fr.vlik.grandfantasia.customequip.CustomArmor;
+import fr.vlik.grandfantasia.customequip.CustomCape;
+import fr.vlik.grandfantasia.customequip.CustomEquipment;
+import fr.vlik.grandfantasia.customequip.CustomRing;
+import fr.vlik.grandfantasia.customequip.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Armor;
@@ -36,10 +37,12 @@ import fr.vlik.grandfantasia.equip.Cape;
 import fr.vlik.grandfantasia.equip.Ring;
 import fr.vlik.grandfantasia.equip.Weapon;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
-import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
+import fr.vlik.grandfantasia.equipupgrade.Enchantment;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
+import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomSpinner;
@@ -51,16 +54,16 @@ public class FrameCreateCustom extends JCustomFrame {
 	private static final long serialVersionUID = 1L;
 	private static final FrameCreateCustom INSTANCE = new FrameCreateCustom();
 	
-	private ArrayList<JLangRadioButton> typeEquipment = new ArrayList<JLangRadioButton>(4);
+	private ArrayList<JLangRadioButton> typeEquipment = new ArrayList<>(4);
 	
 	private JCustomSpinner lvl;
 	private JCustomComboBox<WeaponType> typeWeapon;
 	private JCustomComboBox<ArmorType> typeArmor;
 	private JCustomComboBox<Grade> grade;
-	private ArrayList<JCustomRadioButton<Quality>> quality = new ArrayList<JCustomRadioButton<Quality>>(3);
+	private JCustomButtonGroup<Quality> quality;
 	
 	private JCustomComboBox<CustomEquipment> customEquipment;
-	private ArrayList<JCustomComboBox<Enchantment>> enchantement = new ArrayList<JCustomComboBox<Enchantment>>(6);
+	private transient JCustomComboBoxList<Enchantment> enchantement;
 	
 	private JCustomButton create;
 	
@@ -84,7 +87,7 @@ public class FrameCreateCustom extends JCustomFrame {
 		this.setSize(540, 350);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent we) {
@@ -116,11 +119,8 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		WeaponType[] weaponTypeChoice = new WeaponType[WeaponType.values().length-2];
-		for(int i = 0; i < weaponTypeChoice.length; i++) {
-			weaponTypeChoice[i] = WeaponType.values()[i];
-		}
-		this.typeWeapon = new JCustomComboBox<WeaponType>(new DefaultComboBoxModel<WeaponType>(weaponTypeChoice));
+		WeaponType[] weaponTypeChoice = Arrays.copyOf(WeaponType.values(), WeaponType.values().length-2);
+		this.typeWeapon = new JCustomComboBox<>(new DefaultComboBoxModel<>(weaponTypeChoice));
 		this.typeWeapon.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -128,11 +128,8 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		ArmorType[] armorTypeChoice = new ArmorType[ArmorType.values().length-1];
-		for(int i = 0; i < armorTypeChoice.length; i++) {
-			armorTypeChoice[i] = ArmorType.values()[i];
-		}
-		this.typeArmor = new JCustomComboBox<ArmorType>(new DefaultComboBoxModel<ArmorType>(armorTypeChoice));
+		ArmorType[] armorTypeChoice = Arrays.copyOf(ArmorType.values(), ArmorType.values().length-1);
+		this.typeArmor = new JCustomComboBox<>(new DefaultComboBoxModel<>(armorTypeChoice));
 		this.typeArmor.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -140,7 +137,7 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		this.grade = new JCustomComboBox<Grade>(new DefaultComboBoxModel<Grade>(Grade.getPossibleGrade(31)));
+		this.grade = new JCustomComboBox<>(new DefaultComboBoxModel<>(Grade.getPossibleGrade(31)));
 		this.grade.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -148,17 +145,20 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		for(int i = 0; i < 3; i++) {
-			this.quality.add(new JCustomRadioButton<Quality>(Quality.values()[i+1]));
-			this.quality.get(i).addActionListener(e -> {
+		this.quality = new JCustomButtonGroup<>();
+		
+		for(int i = 1; i < 4; i++) {
+			JCustomRadioButton<Quality> radio = new JCustomRadioButton<>(Quality.values()[i]);
+			radio.addActionListener(e -> {
 				updateNbEnchant();
 				updateEnchant();
 				
 				checkValidity();
 			});
+			this.quality.add(radio);
 		}
 		
-		this.customEquipment = new JCustomComboBox<CustomEquipment>(new DefaultComboBoxModel<CustomEquipment>());
+		this.customEquipment = new JCustomComboBox<>(new DefaultComboBoxModel<>());
 		this.customEquipment.addActionListener(e -> {
 			updateNbEnchant();
 			updateEnchant();
@@ -166,19 +166,13 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		for(int i = 0; i < 6; i++) {
-			this.enchantement.add(new JCustomComboBox<Enchantment>(new DefaultComboBoxModel<Enchantment>()));
-			this.enchantement.get(i).addActionListener(e -> {
-				checkValidity();
-			});
-			this.enchantement.get(i).setVisible(false);
-		}
+		this.enchantement = new JCustomComboBoxList<>(6);
+		this.enchantement.addActionListener(e -> checkValidity() );
+		this.enchantement.setVisible(false);
 		
 		this.create = new JCustomButton(this.label[8].getLang(), Design.GREEN_COLOR);
 		this.create.setAlignmentX(CENTER_ALIGNMENT);
-		this.create.addActionListener(e -> {
-			createEquipment();
-		});
+		this.create.addActionListener(e -> createEquipment() );
 	    
 		updateLanguage(Language.FR);
 		createPanel();
@@ -212,17 +206,7 @@ public class FrameCreateCustom extends JCustomFrame {
 	}
 	
 	private Quality getQuality() {
-		for(int i = 0; i < this.quality.size(); i++) {
-			if(this.quality.get(i).isSelected()) {
-				switch (i) {
-					case 0:	return Quality.WHITE;
-					case 1:	return Quality.GREEN;
-					case 2:	return Quality.BLUE;
-				}
-			}
-		}
-		
-		return Quality.WHITE;
+		return this.quality.getSelectedItem();
 	}
 	
 	private CustomEquipment getCustomEquipment() {
@@ -253,19 +237,13 @@ public class FrameCreateCustom extends JCustomFrame {
 		inline1.addAll(this.label[5], this.lvl, this.typeWeapon, this.typeArmor, this.grade, Box.createHorizontalStrut(20));
 		this.label[5].setFont(Design.SUBTITLE);
 		
-		ButtonGroup currentQuality = new ButtonGroup();
 		JCustomPanel inline2 = new JCustomPanel(new GridLayout(1, 3, 10, 0));
 		inline2.setBackground(Design.UIColor[2]);
-		for(int i = 0; i < 3; i++) {
-			currentQuality.add(this.quality.get(i));
-			inline2.add(this.quality.get(i));
-		}
+		inline2.addAll(this.quality);
 		
 		JCustomPanel listEnchant = new JCustomPanel(new GridLayout(2, 3, 10, 10));
 		listEnchant.setBackground(Design.UIColor[2]);
-		for(int i = 0; i < 6; i++) {
-			listEnchant.add(this.enchantement.get(i));
-		}
+		listEnchant.addAll(this.enchantement.getList());
 		
 		pageCustom.addAll(type, Box.createVerticalStrut(10), inline1, Box.createVerticalStrut(10), inline2, Box.createVerticalStrut(10),
 				this.customEquipment, Box.createVerticalStrut(10), listEnchant, Box.createVerticalStrut(10), this.create);
@@ -285,9 +263,7 @@ public class FrameCreateCustom extends JCustomFrame {
 			button.updateText(lang);
 		}
 		
-		for(JCustomRadioButton<Quality> button : this.quality) {
-			button.updateText(lang);
-		}
+		this.quality.updateText(lang);
 	}
 	
 	private void updateForm(int idList) {
@@ -312,6 +288,8 @@ public class FrameCreateCustom extends JCustomFrame {
 				this.typeArmor.setVisible(false);
 				this.grade.setVisible(false);
 				break;
+			default:
+				break;
 		}
 	}
 	
@@ -322,19 +300,21 @@ public class FrameCreateCustom extends JCustomFrame {
 		switch (optionType) {
 			case 0:
 				CustomWeapon[] tabWeapon = CustomWeapon.getPossibleWeapon(this.getWeaponType(), this.getLvl());
-				this.customEquipment.setModel(new DefaultComboBoxModel<CustomEquipment>(tabWeapon));
+				this.customEquipment.setModel(new DefaultComboBoxModel<>(tabWeapon));
 				break;
 			case 1:
 				CustomArmor[] tabArmor = CustomArmor.getPossibleArmor(this.getArmorType(), this.getGrade(), this.getLvl());
-				this.customEquipment.setModel(new DefaultComboBoxModel<CustomEquipment>(tabArmor));
+				this.customEquipment.setModel(new DefaultComboBoxModel<>(tabArmor));
 				break;
 			case 2:
 				CustomCape[] tabCape = CustomCape.getPossibleCape(this.getGrade(), this.getLvl());
-				this.customEquipment.setModel(new DefaultComboBoxModel<CustomEquipment>(tabCape));
+				this.customEquipment.setModel(new DefaultComboBoxModel<>(tabCape));
 				break;
 			case 3:
 				CustomRing[] tabRing = CustomRing.getPossibleRing(this.getLvl());
-				this.customEquipment.setModel(new DefaultComboBoxModel<CustomEquipment>(tabRing));
+				this.customEquipment.setModel(new DefaultComboBoxModel<>(tabRing));
+				break;
+			default:
 				break;
 		}
 		
@@ -346,13 +326,9 @@ public class FrameCreateCustom extends JCustomFrame {
 		Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(equipment, this.getQuality());
 		
 		if(equipment == null) {
-			for(int i = 0; i < 6; i++) {
-				this.enchantement.get(i).setVisible(false);
-			}
+			this.enchantement.setVisible(false);
 		} else {
-			for(int i = 0; i < 6; i++) {
-				this.enchantement.get(i).setModel(new DefaultComboBoxModel<Enchantment>(tabEnchant));
-			}
+			this.enchantement.setModel(tabEnchant);
 		}
 		
 	}
@@ -360,25 +336,15 @@ public class FrameCreateCustom extends JCustomFrame {
 	private void updateNbEnchant() {
 		if(this.getCustomEquipment() != null) {
 			if(this.getQuality() == Quality.WHITE) {
-				for(int i = 0; i < 6; i++) {
-					this.enchantement.get(i).setVisible(false);
-				}
+				this.enchantement.setVisible(false);
 			} else if(this.getQuality() == Quality.GREEN) {
-				for(int i = 0; i < 3; i++) {
-					this.enchantement.get(i).setVisible(true);
-				}
-				for(int i = 3; i < 6; i++) {
-					this.enchantement.get(i).setVisible(false);
-				}
+				this.enchantement.setRangeVisible(0, 3, true);
+				this.enchantement.setRangeVisible(3, 6, false);
 			} else if(this.getQuality() == Quality.BLUE) {
-				for(int i = 0; i < 6; i++) {
-					this.enchantement.get(i).setVisible(true);
-				}
+				this.enchantement.setVisible(true);
 			}
 		} else {
-			for(int i = 0; i < 6; i++) {
-				this.enchantement.get(i).setVisible(false);
-			}
+			this.enchantement.setVisible(false);
 		}
 	}
 	
@@ -433,7 +399,7 @@ public class FrameCreateCustom extends JCustomFrame {
 		updateForm(0);
 		
 		this.lvl.setValue(1);
-		this.quality.get(0).setSelected(true);
+		this.quality.setSelectedIndex(0);
 		
 		this.setVisible(true);
 	}
@@ -445,18 +411,14 @@ public class FrameCreateCustom extends JCustomFrame {
 		updateForm(option);
 		
 		this.lvl.setValue(lvl);
-		this.quality.get(0).setSelected(true);
+		this.quality.setSelectedIndex(0);
 		
 		this.setVisible(true);
 	}
 	
 	private void checkValidity() {
 		if(this.getQuality() == Quality.WHITE) {
-			if(this.getCustomEquipment() != null) {
-				this.create.setVisible(true);
-			} else {
-				this.create.setVisible(false);
-			}
+			this.create.setVisible(this.getCustomEquipment() != null);
 		} else if(this.getQuality() == Quality.GREEN) {
 			if(this.getCustomEquipment() != null) {
 				this.create.setVisible(true);

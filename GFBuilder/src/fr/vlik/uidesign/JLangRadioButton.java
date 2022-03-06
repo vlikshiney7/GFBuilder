@@ -1,6 +1,5 @@
 package fr.vlik.uidesign;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -13,7 +12,7 @@ public class JLangRadioButton extends JRadioButton {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Map<Language, String> lang = new HashMap<Language, String>();
+	private Map<Language, String> lang;
 	
 	public JLangRadioButton(Map<Language, String> lang) {
 		this.lang = lang;

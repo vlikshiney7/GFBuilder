@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.charac;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -12,7 +12,7 @@ import fr.vlik.grandfantasia.template.ColorBuff;
 public class Archive extends ColorBuff {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Bonus Archive");
 		put(Language.EN, "Archive Bonus");
 	}};

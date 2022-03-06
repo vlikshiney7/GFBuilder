@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -17,6 +18,7 @@ import java.text.NumberFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
@@ -27,8 +29,11 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
@@ -46,17 +51,17 @@ import fr.vlik.gfbuilder.page.PageCostume;
 import fr.vlik.gfbuilder.page.PageGeneral;
 import fr.vlik.gfbuilder.page.PageOption;
 import fr.vlik.gfbuilder.page.PageOther;
-import fr.vlik.gfbuilder.page.PartialPage;
 import fr.vlik.gfbuilder.page.PageRide;
 import fr.vlik.gfbuilder.page.PageSkill;
 import fr.vlik.gfbuilder.page.PageSpeciality;
 import fr.vlik.gfbuilder.page.PageSprite;
 import fr.vlik.gfbuilder.page.PageTalent;
 import fr.vlik.gfbuilder.page.PageWeapon;
+import fr.vlik.gfbuilder.page.PartialPage;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
-import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.RedEnchantment;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomListCellRenderer;
 import fr.vlik.uidesign.Design;
@@ -67,26 +72,26 @@ import fr.vlik.uidesign.JLangLabel;
 
 public class MainFrame extends JFrame {
 	
-	private static MainFrame INSTANCE = new MainFrame();
+	private static MainFrame instance = new MainFrame();
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<JCustomTabPane>();
+	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<>();
 	private JCustomTabPane language;
 	
 	private JCustomPanel overlay;
 	private JScrollPane scrollContent;
-	private ArrayList<JCustomPanel> pages = new ArrayList<JCustomPanel>();
-	private ArrayList<JCustomFrame> frames = new ArrayList<JCustomFrame>();
+	private ArrayList<JCustomPanel> pages = new ArrayList<>();
+	private ArrayList<JCustomFrame> frames = new ArrayList<>();
 	
-	private ArrayList<JCustomLabel<TypeEffect>> labelStat = new ArrayList<JCustomLabel<TypeEffect>>(TypeEffect.values().length);
-	private ArrayList<JLabel> valueStat = new ArrayList<JLabel>(TypeEffect.values().length);
+	private ArrayList<JCustomLabel<TypeEffect>> labelStat = new ArrayList<>(TypeEffect.values().length);
+	private ArrayList<JLabel> valueStat = new ArrayList<>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
 	private boolean unlock = false;
 	
 	
 	public static MainFrame getInstance() {
-		return MainFrame.INSTANCE;
+		return MainFrame.instance;
 	}
 	
 	private MainFrame() {
@@ -101,15 +106,13 @@ public class MainFrame extends JFrame {
 		
 		this.setSize(1325, 750);
 		this.setMinimumSize(new Dimension(780, 470));
-		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent event) {
-				if(unlock) {
-					if(!Overlay.getInstance().isSave()) {
-						FrameSaveOnQuit.getInstance().popup();
-						return;
-					}
+				if(unlock && !Overlay.getInstance().isSave()) {
+					FrameSaveOnQuit.getInstance().popup();
+					return;
 				}
 				System.exit(0);
 			}
@@ -142,20 +145,16 @@ public class MainFrame extends JFrame {
 		menu.setPreferredSize(new Dimension(200, 0));
 		
 		for(int i = 0; i < Lang.getDataPane().length; i++) {
-			this.tabPaneMenu.add(new JCustomTabPane(Lang.getDataPane()[i]));
 			int id = i;
-			this.tabPaneMenu.get(i).addActionListener(e -> {
-				updateTabPane(id);
-			});
+			this.tabPaneMenu.add(new JCustomTabPane(Lang.getDataPane()[i]));
+			this.tabPaneMenu.get(i).addActionListener(e -> updateTabPane(id) );
 			
 			menu.add(this.tabPaneMenu.get(i));
 		}
 		
 		this.language = new JCustomTabPane("fr", "en");
 		this.language.setSelected(true);
-		this.language.addActionListener(e -> {
-			updateLanguage();
-		});
+		this.language.addActionListener(e -> updateLanguage() );
 		
 		menu.add(this.language);
 		
@@ -254,7 +253,7 @@ public class MainFrame extends JFrame {
 		JCustomPanel allPages = new JCustomPanel(new EmptyBorder(20, 20, 20, 20));
 		allPages.setBackground(Design.UIColor[2]);
 		
-		this.scrollContent = new JScrollPane(allPages, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		this.scrollContent = new JScrollPane(allPages, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		this.scrollContent.setBorder(null);
 		this.scrollContent.getVerticalScrollBar().setUnitIncrement(15);
 		this.scrollContent.getHorizontalScrollBar().setUnitIncrement(15);
@@ -297,7 +296,7 @@ public class MainFrame extends JFrame {
 				inline.setOpaque(false);
 				inline.setAlignmentX(LEFT_ALIGNMENT);
 				
-				JCustomLabel<TypeEffect> name = new JCustomLabel<TypeEffect>(TypeEffect.values()[ordinal]);
+				JCustomLabel<TypeEffect> name = new JCustomLabel<>(TypeEffect.values()[ordinal]);
 				name.toStatLabel(widthName[i], 10, 0);
 				
 				this.labelStat.add(name);
@@ -305,7 +304,7 @@ public class MainFrame extends JFrame {
 				JLabel stat = JLangLabel.getStatLabel(sizeStat - widthName[i], 0, 10);
 				stat.setText("0");
 				stat.setForeground(TypeEffect.values()[ordinal].color);
-				stat.setHorizontalAlignment(JLabel.RIGHT);
+				stat.setHorizontalAlignment(SwingConstants.RIGHT);
 				this.valueStat.add(stat);
 				
 				inline.addAll(name, stat);
@@ -330,7 +329,7 @@ public class MainFrame extends JFrame {
 			inline.setOpaque(false);
 			inline.setAlignmentX(LEFT_ALIGNMENT);
 			
-			JCustomLabel<TypeEffect> name = new JCustomLabel<TypeEffect>(TypeEffect.values()[ordinal]);
+			JCustomLabel<TypeEffect> name = new JCustomLabel<>(TypeEffect.values()[ordinal]);
 			name.toStatLabel(widthName[5], 10, 0);
 			
 			this.labelStat.add(name);
@@ -338,7 +337,7 @@ public class MainFrame extends JFrame {
 			JLabel stat = JLangLabel.getStatLabel(sizeStat - widthName[5], 0, 10);
 			stat.setText("0");
 			stat.setForeground(TypeEffect.values()[ordinal].color);
-			stat.setHorizontalAlignment(JLabel.RIGHT);
+			stat.setHorizontalAlignment(SwingConstants.RIGHT);
 			this.valueStat.add(stat);
 			
 			inline.addAll(name, stat);
@@ -352,7 +351,7 @@ public class MainFrame extends JFrame {
 		
 		stats.add(blocStat);
 		
-		JScrollPane scrollStats = new JScrollPane(stats, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		JScrollPane scrollStats = new JScrollPane(stats, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollStats.setBorder(null);
 		scrollStats.getVerticalScrollBar().setUnitIncrement(15);
 		
@@ -371,7 +370,7 @@ public class MainFrame extends JFrame {
 		
 		this.addWindowFocusListener(new WindowFocusListener() {
 			
-			@Override public void windowLostFocus(WindowEvent e) {}
+			@Override public void windowLostFocus(WindowEvent arg0) {}
 			@Override public void windowGainedFocus(WindowEvent e) {
 				PageGeneral.getInstance().popoff();
 				PageWeapon.getInstance().popoff();
@@ -380,9 +379,9 @@ public class MainFrame extends JFrame {
 		});
 		
 		
-		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_MASK), "newFile");
-		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_MASK), "save");
-		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.SHIFT_MASK | KeyEvent.CTRL_MASK), "saveAs");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK), "newFile");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK), "save");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.SHIFT_MASK | InputEvent.CTRL_MASK), "saveAs");
 		
 		this.getRootPane().getActionMap().put("newFile", new AbstractAction() {
 			private static final long serialVersionUID = 1L;
@@ -432,7 +431,7 @@ public class MainFrame extends JFrame {
 		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
 	}
 	
-	public ArrayList<JCustomPanel> getPages() {
+	public List<JCustomPanel> getPages() {
 		return this.pages;
 	}
 	
@@ -477,14 +476,14 @@ public class MainFrame extends JFrame {
 			}
 		}
 		
-		ArrayList<InnerEffect> redEnchant = new ArrayList<InnerEffect>();
+		ArrayList<InnerEffect> redEnchant = new ArrayList<>();
 		redEnchant.addAll(PageWeapon.getInstance().getRedEnchant());
 		redEnchant.addAll(PageArmor.getInstance().getRedEnchant());
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(redEnchant)) {
 			build.addEffect(effects.getEffects());
 		}
 		
-		ArrayList<InnerEffect> pearlEnchant = new ArrayList<InnerEffect>();
+		ArrayList<InnerEffect> pearlEnchant = new ArrayList<>();
 		pearlEnchant.addAll(PageWeapon.getInstance().getPearlEnchant());
 		pearlEnchant.addAll(PageArmor.getInstance().getPearlEnchant());
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(pearlEnchant)) {

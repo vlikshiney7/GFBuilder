@@ -3,8 +3,9 @@ package fr.vlik.gfbuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -20,22 +21,24 @@ public class Lang {
 		loadData();
 	}
 	
+	private Lang() {}
+	
 	public static void loadData() {
-		ArrayList<ArrayList<JLangLabel>> list = new ArrayList<ArrayList<JLangLabel>>();
+		ArrayList<ArrayList<JLangLabel>> list = new ArrayList<>();
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/trad.txt"), "UTF-8"));
+					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/trad.txt"), StandardCharsets.UTF_8));
 			String line = reader.readLine();
 			
 			int lineCount = 0;
 			while(line != null) {
-				list.add(new ArrayList<JLangLabel>());
+				list.add(new ArrayList<>());
 				
 				String[] lineSplit = line.split("/");
 				
 				for(int i = 0; i < lineSplit.length; i++) {
-					Map<Language, String> lang = new HashMap<Language, String>();
+					Map<Language, String> lang = new EnumMap<>(Language.class);
 					String[] trad = lineSplit[i].split(",");
 					
 					if(trad.length == 2) {
@@ -53,23 +56,22 @@ public class Lang {
 			System.out.println("Error with " + Lang.class.getClass().getSimpleName() + " class, File trad.txt");
 		}
 		
-		ArrayList<ArrayList<String>> credit = new ArrayList<ArrayList<String>>();
+		ArrayList<ArrayList<String>> credit = new ArrayList<>();
 		
 		try(
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/credit.txt"), "UTF-8"));
+					MainFrame.class.getResourceAsStream("/fr/vlik/gfbuilder/credit.txt"), StandardCharsets.UTF_8));
 		) {
 			String line = reader.readLine();
 			
 			for(int i = 0; i < 2; i++) {
-				credit.add(new ArrayList<String>());
+				credit.add(new ArrayList<>());
 				while(!line.equals("/")) {
 					credit.get(i).add(line);
 					line = reader.readLine();
 				}
 				line = reader.readLine();
 			}
-			reader.close();
 		} catch (IOException e) {
 			System.out.println("Error with " + Lang.class.getClass().getSimpleName() + " class, File credit.txt");
 		}

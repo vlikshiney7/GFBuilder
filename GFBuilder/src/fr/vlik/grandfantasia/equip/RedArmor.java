@@ -1,8 +1,8 @@
 package fr.vlik.grandfantasia.equip;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
-import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -24,13 +24,22 @@ public class RedArmor extends Armor {
 	
 	public Calculable[][] getStarEffects() {
 		if(this.starEffects == null) {
-			return null;
+			return new Calculable[0][0];
 		}
 		
 		Calculable[][] list = new Calculable[this.starEffects.length][];
 		
 		for(int i = 0; i < this.starEffects.length; i++) {
-			list[i] = Tools.getEffects(this.starEffects[i]);
+			if(this.starEffects[i] == null) {
+				list[i] = new Calculable[0];
+			}
+			
+			Calculable[] tab = new Calculable[this.starEffects[i].length];
+			for(int j = 0; j < tab.length; j++) {
+				tab[j] = this.starEffects[i][j].copy();
+			}
+			
+			list[i] = tab;
 		}
 		
 		return list;
@@ -38,19 +47,18 @@ public class RedArmor extends Armor {
 	
 	public Calculable[] getStarEffects(int nbStar) {
 		if(this.starEffects == null) {
-			return null;
+			return new Calculable[0];
 		}
 		
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		ArrayList<Calculable> list = new ArrayList<>();
 		
 		for(int i = 0; i < nbStar; i++) {
-			Calculable[] tab = Tools.getEffects(this.starEffects[i]);
-			
-			if(tab != null) {
-				for(Calculable c : tab) {
-					list.add(c);
-				}
+			Calculable[] tab = new Calculable[this.starEffects[i].length];
+			for(int j = 0; j < tab.length; j++) {
+				tab[j] = this.starEffects[i][j].copy();
 			}
+			
+			list.addAll(Arrays.asList(tab));
 		}
 		
 		return list.toArray(new Calculable[list.size()]);
@@ -61,5 +69,28 @@ public class RedArmor extends Armor {
 			double coefFortif = (value - 100) / 100 + 1;
 			modifyDefense(coefFortif);
 		}
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Arrays.deepHashCode(this.starEffects);
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		RedArmor other = (RedArmor) obj;
+		return Arrays.deepEquals(this.starEffects, other.starEffects);
 	}
 }

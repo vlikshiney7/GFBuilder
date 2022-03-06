@@ -15,7 +15,7 @@ import fr.vlik.grandfantasia.charac.Blason.BlasonType;
 import fr.vlik.grandfantasia.charac.SpriteCost;
 import fr.vlik.grandfantasia.charac.SpriteCost.SpriteCostType;
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.gameBuff.IslandBuff;
+import fr.vlik.grandfantasia.gamebuff.IslandBuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;

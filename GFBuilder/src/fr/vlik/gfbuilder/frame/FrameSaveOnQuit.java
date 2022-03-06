@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
@@ -48,7 +48,7 @@ public class FrameSaveOnQuit extends JCustomFrame {
 		this.setSize(450, 120);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent we) {
@@ -64,9 +64,7 @@ public class FrameSaveOnQuit extends JCustomFrame {
 		});
 		
 		this.leave = new JCustomButton(this.label[2].getLang(), Design.RED_COLOR);
-		this.leave.addActionListener(e -> {
-			end();
-		});
+		this.leave.addActionListener(e -> end() );
 		
 		this.cancel = new JCustomButton(this.label[3].getLang(), Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> {

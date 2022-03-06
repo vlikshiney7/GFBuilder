@@ -1,6 +1,8 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +12,12 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
+import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.customEquip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
-import fr.vlik.grandfantasia.equipUpgrade.Fortification;
+import fr.vlik.grandfantasia.equipupgrade.Fortification;
 import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
@@ -24,10 +26,10 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Armor extends Equipment {
 	
-	private static final String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	public static Armor[][] data = LoaderEquip.getArmor();
-	private static ArrayList<Armor> customData = new ArrayList<Armor>();
+	private static ArrayList<Armor> customData = new ArrayList<>();
 
 	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.DONJON, Tag.EVENT, Tag.FORMULE, Tag.GVG, Tag.PVP, Tag.QUETE, Tag.SPRITE, Tag.TAROT, Tag.OTHER, };
 	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD, Quality.PURPLE, Quality.RED };
@@ -98,7 +100,7 @@ public class Armor extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum ArmorType implements EquipType {
+	public enum ArmorType implements EquipType {
 		CASQUE(0, "casque", "helmet"),
 		PLASTRON(1, "plastron", "breastplate"),
 		JAMBIERE(2, "jambière", "legging"),
@@ -153,18 +155,15 @@ public class Armor extends Equipment {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Armor.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(Armor.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Armor.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
+		return Tools.constructIcon(back, object);
 	}
 	
 	public void addFortif(Fortification fortif) {
@@ -227,7 +226,10 @@ public class Armor extends Equipment {
 	
 	public static Armor getCustom(String name, Quality quality, String signature) {
 		for(Armor armor : Armor.customData) {
-			if(CustomEquipment.deleteNumber(armor.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name)) && armor.getQuality() == quality && armor.getSignature().equals(signature)) {
+			if(CustomEquipment.deleteNumber(armor.getName(Language.FR)).equals(CustomEquipment.deleteNumber(name))
+					&& armor.getQuality() == quality
+					&& armor.getSignature().equals(signature)) {
+				
 				return armor;
 			}
 		}
@@ -245,13 +247,13 @@ public class Armor extends Equipment {
 	}
 	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {
-		ArrayList<Armor> result = new ArrayList<Armor>();
+		ArrayList<Armor> result = new ArrayList<>();
 		ArmorType armorType = ArmorType.values()[idList];
 		
 		result.add(new Armor());
 		
 		for(Armor custom : Armor.customData) {
-			Map<Object, Object> properties = new HashMap<Object, Object>();
+			Map<Object, Object> properties = new HashMap<>();
 			properties.put(custom.getGrades(), grade.getGrade());
 			properties.put(custom.getLvl(), lvl);
 			properties.put(custom.isReinca(), reinca);
@@ -263,7 +265,7 @@ public class Armor extends Equipment {
 		}
 		
 		for(Armor armor : Armor.data[idList]) {
-			Map<Object, Object> properties = new HashMap<Object, Object>();
+			Map<Object, Object> properties = new HashMap<>();
 			properties.put(armor.getGrades(), grade.getGrade());
 			properties.put(armor.getLvl(), lvl);
 			properties.put(armor.isReinca(), reinca);
@@ -280,13 +282,13 @@ public class Armor extends Equipment {
 	}
 	
 	public static Armor[] applyFilters(Armor[] possible, Armor choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Armor> result = new ArrayList<Armor>();
+		ArrayList<Armor> result = new ArrayList<>();
 		
 		result.add(new Armor());
-		if(!choice.equals(new Armor())) {
-			if(Tools.containObject(possible, choice)) {
-				result.add(choice);
-			}
+		if(!choice.equals(new Armor())
+				&& Tools.containObject(possible, choice)) {
+			
+			result.add(choice);
 		}
 		
 		for(Armor armor : possible) {
@@ -296,10 +298,10 @@ public class Armor extends Equipment {
 				//Tools.containFilter(filter, armor.getTag()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)) {
-				if(!choice.equals(armor)) {
-					result.add(armor);
-				}
+			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+					&& !choice.equals(armor)) {
+				
+				result.add(armor);
 			}
 		}
 		
@@ -312,5 +314,56 @@ public class Armor extends Equipment {
 	
 	public static Quality[] getQualities() {
 		return Armor.qualities;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (this.isMultiEffect ? 1231 : 1237);
+		result = prime * result + ((this.multiEffects == null) ? 0 : this.multiEffects.hashCode());
+		result = prime * result + (this.reinca ? 1231 : 1237);
+		result = prime * result + ((this.setCode == null) ? 0 : this.setCode.hashCode());
+		result = prime * result + Arrays.hashCode(this.tag);
+		result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Armor other = (Armor) obj;
+		if (this.isMultiEffect != other.isMultiEffect) {
+			return false;
+		}
+		if (this.multiEffects == null) {
+			if (other.multiEffects != null) {
+				return false;
+			}
+		} else if (!this.multiEffects.equals(other.multiEffects)) {
+			return false;
+		}
+		if (this.reinca != other.reinca) {
+			return false;
+		}
+		if (this.setCode == null) {
+			if (other.setCode != null) {
+				return false;
+			}
+		} else if (!this.setCode.equals(other.setCode)) {
+			return false;
+		}
+		if (!Arrays.equals(this.tag, other.tag)) {
+			return false;
+		}
+		return this.type == other.type;
 	}
 }

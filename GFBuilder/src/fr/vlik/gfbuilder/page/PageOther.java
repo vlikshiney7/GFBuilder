@@ -12,13 +12,13 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.LoveBuff;
+import fr.vlik.grandfantasia.characupgrade.LoveBuff;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.subEquip.Anima;
-import fr.vlik.grandfantasia.subEquip.Bague;
-import fr.vlik.grandfantasia.subEquip.Souvenir;
-import fr.vlik.grandfantasia.subEquip.SouvenirEnchantment;
+import fr.vlik.grandfantasia.subequip.Anima;
+import fr.vlik.grandfantasia.subequip.Bague;
+import fr.vlik.grandfantasia.subequip.Souvenir;
+import fr.vlik.grandfantasia.subequip.SouvenirEnchantment;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -29,16 +29,16 @@ public class PageOther extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "OTHER";
-	private static PageOther INSTANCE = new PageOther();
+	private static final PageOther INSTANCE = new PageOther();
 	
-	private JCustomComboBox<Bague> bague = new JCustomComboBox<Bague>();
-	private JCustomComboBox<LoveBuff> loveCo = new JCustomComboBox<LoveBuff>();
-	private JCustomComboBox<Anima> anima = new JCustomComboBox<Anima>();
-	private JCustomComboBox<Souvenir> souvenir = new JCustomComboBox<Souvenir>();
+	private JCustomComboBox<Bague> bague = new JCustomComboBox<>();
+	private JCustomComboBox<LoveBuff> loveCo = new JCustomComboBox<>();
+	private JCustomComboBox<Anima> anima = new JCustomComboBox<>();
+	private JCustomComboBox<Souvenir> souvenir = new JCustomComboBox<>();
 	
-	private ArrayList<JCustomComboBox<SouvenirEnchantment>> souvenirEnchant = new ArrayList<JCustomComboBox<SouvenirEnchantment>>(3);
+	private ArrayList<JCustomComboBox<SouvenirEnchantment>> souvenirEnchant = new ArrayList<>(3);
 	
-	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
+	private ArrayList<JPanel> showAndHide = new ArrayList<>();
 	
 	public static PageOther getInstance() {
 		return INSTANCE;
@@ -47,13 +47,13 @@ public class PageOther extends PartialPage {
 	private PageOther() {
 		super(BoxLayout.Y_AXIS);
 		
-		this.bague = new JCustomComboBox<Bague>(Bague.getData());
+		this.bague = new JCustomComboBox<>(Bague.getData());
 		this.bague.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.loveCo = new JCustomComboBox<LoveBuff>(LoveBuff.getData());
+		this.loveCo = new JCustomComboBox<>(LoveBuff.getData());
 		this.loveCo.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -61,14 +61,14 @@ public class PageOther extends PartialPage {
 		
 		
 		Anima[] tabAnima = Anima.getData(PageGeneral.getInstance().getLvl());
-		this.anima = new JCustomComboBox<Anima>(tabAnima);
+		this.anima = new JCustomComboBox<>(tabAnima);
 		this.anima.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
 		
-		this.souvenir = new JCustomComboBox<Souvenir>(Souvenir.getPossibleSouvenir(PageGeneral.getInstance().getLvl()));
+		this.souvenir = new JCustomComboBox<>(Souvenir.getPossibleSouvenir(PageGeneral.getInstance().getLvl()));
 		this.souvenir.addActionListener(e -> {
 			updateEnchantSouvenir();
 			
@@ -80,7 +80,7 @@ public class PageOther extends PartialPage {
 		for(int j = 0; j < 3; j++) {
 			int idSouvenir = j;
 			
-			this.souvenirEnchant.add(new JCustomComboBox<SouvenirEnchantment>());
+			this.souvenirEnchant.add(new JCustomComboBox<>());
 			this.souvenirEnchant.get(idSouvenir).addActionListener(e -> {
 				updateSouvenirEnchant(idSouvenir);
 				
@@ -126,7 +126,7 @@ public class PageOther extends PartialPage {
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		list.addAll(this.getBague());
 		list.addAll(this.getLoveCo());
@@ -143,9 +143,9 @@ public class PageOther extends PartialPage {
 			}
 		}
 		
-		Souvenir souvenir = new Souvenir(this.getSouvenir());
-		souvenir.addStarBonus(defBonusCoef);
-		list.addAll(souvenir);
+		Souvenir upgradeSouvenir = new Souvenir(this.getSouvenir());
+		upgradeSouvenir.addStarBonus(defBonusCoef);
+		list.addAll(upgradeSouvenir);
 		
 		this.effects = list;
 	}
@@ -283,7 +283,7 @@ public class PageOther extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new HashMap<>();
 		
 		config.put("Bague", this.getBague().getName(lang));
 		config.put("LoveBuff", this.getLoveCo().getName(Language.FR));

@@ -2,8 +2,8 @@ package fr.vlik.uidesign;
 
 import java.awt.Component;
 import java.awt.LayoutManager;
-import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
@@ -68,15 +68,15 @@ public class JCustomPanel extends JPanel {
 			}
 		}
 	}
-
-	public void addAll(ArrayList<?> items) {
+	
+	public void addAll(List<?> items) {
 		for(Object item : items) {
 			if(item instanceof Component) {
 				this.add((Component) item);
 			}
 		}
 	}
-
+	
 	public void addAll(JCustomButtonGroup<?> items) {
 		Enumeration<AbstractButton> it = items.getElements();
 		do {

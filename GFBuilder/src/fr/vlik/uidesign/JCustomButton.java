@@ -2,7 +2,6 @@ package fr.vlik.uidesign;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.ImageIcon;
@@ -18,7 +17,7 @@ public class JCustomButton extends JButton {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Map<Language, String> lang = new HashMap<Language, String>();
+	private Map<Language, String> lang;
 	
 	private Color hoverBackgroundColor;
 	private Color pressedBackgroundColor;

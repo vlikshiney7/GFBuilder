@@ -11,9 +11,11 @@ public class Base {
 	
 	private static TypeEffect[] effect = { TypeEffect.FCE, TypeEffect.VIT, TypeEffect.INT, TypeEffect.VOL, TypeEffect.AGI };
 	private static int[][][] data = LoaderCharac.getBase();
+	
+	private Base() {}
 
 	public static Effect[] getBase(Grade grade, int lvl) {
-		ArrayList<Effect> result = new ArrayList<Effect>();
+		ArrayList<Effect> result = new ArrayList<>();
 		
 		for(int i = 0; i < 5; i++) {
 			result.add(new Effect(Base.effect[i], false, Base.data[i][grade.getGrade().index][lvl-1], true, TypeCalcul.BASE));

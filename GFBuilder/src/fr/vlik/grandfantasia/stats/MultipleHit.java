@@ -30,6 +30,10 @@ public class MultipleHit implements Calculable {
 		this.secondValue = multiple.getSecondValue();
 	}
 	
+	public Calculable copy() {
+		return new MultipleHit(this);
+	}
+	
 	public TypeMultipleHit getEffect() {
 		return this.effect;
 	}
@@ -42,10 +46,8 @@ public class MultipleHit implements Calculable {
 		return this.secondValue;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {}
-
-	@Override
+	
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
@@ -59,8 +61,7 @@ public class MultipleHit implements Calculable {
 		
 		return "<li>" + tooltip + "</li>";
 	}
-
-	@Override
+	
 	public String toString(Language lang) {
 		String result = "";
 		

@@ -5,7 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import javax.swing.Box;
@@ -46,13 +46,11 @@ public class JCustomDialog extends JDialog {
 		this.filter.setBorder(Design.UIColor[3]);
 		this.filter.setToolTipText("Filtre");
 		
-		this.filter.addActionListener(e -> {
-			this.popup(this.filter);
-		});
+		this.filter.addActionListener(e -> this.popup(this.filter) );
 		
 		this.label = Lang.getDataLabel(7);
 		
-		this.check = new ArrayList<ArrayList<JCustomCheckBox<Filterable>>>(filters.length);
+		this.check = new ArrayList<>(filters.length);
 		for(Filterable[] filterGroup : filters) {
 			this.check.add(toList(filterGroup));
 		}
@@ -60,36 +58,26 @@ public class JCustomDialog extends JDialog {
 		this.search = new JCustomTextField();
 		this.search.setBorder(new EmptyBorder(10, 10, 10, 10));
 		
-		this.orAnd = new JCustomButtonGroup<Logic>();
+		this.orAnd = new JCustomButtonGroup<>();
 		for(int i = 0; i < Logic.values().length; i++) {
-			JCustomRadioButton<Logic> logic = new JCustomRadioButton<Logic>(Logic.values()[i]);
-			logic.addActionListener(e -> {
-				
-			});
-			this.orAnd.add(logic);
+			this.orAnd.add(new JCustomRadioButton<>(Logic.values()[i]));
 		}
 		this.orAnd.setSelectedItem(Logic.OR);
 		
 		this.uncheck = new JCustomButton(this.label[0].getLang(), Design.RED_COLOR);
 		this.uncheck.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.uncheck.setMinimumSize(new Dimension(0, 30));
-		this.uncheck.addActionListener(e -> {
-			setCheck(false);
-		});
+		this.uncheck.addActionListener(e -> setCheck(false) );
 		
 		this.allcheck = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
 		this.allcheck.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.allcheck.setMinimumSize(new Dimension(0, 30));
-		this.allcheck.addActionListener(e -> {
-			setCheck(true);
-		});
+		this.allcheck.addActionListener(e -> setCheck(true) );
 		
 		this.close = new JCustomButton(this.label[2].getLang(), Design.YELLOW_COLOR);
 		this.close.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.close.setMinimumSize(new Dimension(0, 30));
-		this.close.addActionListener(e -> {
-			MainFrame.getInstance().requestFocus();
-		});
+		this.close.addActionListener(e -> MainFrame.getInstance().requestFocus() );
 		
 		
 		int nbLigne = 0;
@@ -137,11 +125,11 @@ public class JCustomDialog extends JDialog {
 	}
 	
 	@SuppressWarnings("serial")
-	public static enum Logic implements Writable {
-		OR(new HashMap<Language, String>() {{ put(Language.FR, "OU"); put(Language.EN, "OR"); }}),
-		AND(new HashMap<Language, String>() {{ put(Language.FR, "ET"); put(Language.EN, "AND"); }});
+	public enum Logic implements Writable {
+		OR(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "OU"); put(Language.EN, "OR"); }}),
+		AND(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "ET"); put(Language.EN, "AND"); }});
 		
-		public Map<Language, String> lang;
+		public final Map<Language, String> lang;
 		
 		private Logic(Map<Language, String> lang) {
 	        this.lang = lang;
@@ -168,9 +156,9 @@ public class JCustomDialog extends JDialog {
 	}
 	
 	private ArrayList<JCustomCheckBox<Filterable>> toList(Filterable[] filter) {
-		ArrayList<JCustomCheckBox<Filterable>> listFilter = new ArrayList<JCustomCheckBox<Filterable>>(filter.length);
+		ArrayList<JCustomCheckBox<Filterable>> listFilter = new ArrayList<>(filter.length);
 		for(int i = 0; i < filter.length; i++) {
-			listFilter.add(new JCustomCheckBox<Filterable>(filter[i]));
+			listFilter.add(new JCustomCheckBox<>(filter[i]));
 			listFilter.get(i).setSelected(true);
 		}
 		
@@ -216,7 +204,7 @@ public class JCustomDialog extends JDialog {
 	}
 	
 	public Filterable[] getFilters() {
-		ArrayList<Filterable> result = new ArrayList<Filterable>();
+		ArrayList<Filterable> result = new ArrayList<>();
 		
 		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
 			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {

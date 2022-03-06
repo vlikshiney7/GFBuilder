@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.loader.charac;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 
 import fr.vlik.grandfantasia.charac.Archive;
 import fr.vlik.grandfantasia.charac.Blason;
@@ -11,264 +11,265 @@ import fr.vlik.grandfantasia.charac.SpriteCost;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
+import fr.vlik.grandfantasia.loader.LoaderTemplate;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.stats.Effect.TypeCalcul;
 
 @SuppressWarnings("serial")
-public class LoaderCharac {
+public class LoaderCharac extends LoaderTemplate {
 	
 	public static Grade[] getGrade() {
 		return new Grade[] {
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Novice"); put(Language.EN, "Novice"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Novice"); put(Language.EN, "Novice"); }},
 				GradeName.NONE, 0, 5, "novice"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Combattant"); put(Language.EN, "Fighter"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Combattant"); put(Language.EN, "Fighter"); }},
 				GradeName.BERSERKER, 6, 15, "0-0"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Chasseur"); put(Language.EN, "Hunter"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chasseur"); put(Language.EN, "Hunter"); }},
 				GradeName.RANGER, 6, 15, "0-2"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Acolyte"); put(Language.EN, "Acolyte"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Acolyte"); put(Language.EN, "Acolyte"); }},
 				GradeName.CLERC, 6, 15, "0-4"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Ensorceleur"); put(Language.EN, "Spellcaster"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ensorceleur"); put(Language.EN, "Spellcaster"); }},
 				GradeName.SORCIER, 6, 15, "0-6"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Mécanicien"); put(Language.EN, "Mechanic"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mécanicien"); put(Language.EN, "Mechanic"); }},
 				GradeName.METALLEUX, 6, 15, "0-8"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Voyageur"); put(Language.EN, "Wanderer"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Voyageur"); put(Language.EN, "Wanderer"); }},
 				GradeName.SPATIODERIVEUR, 6, 15, "0-10"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Guerrier"); put(Language.EN, "Warrior"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guerrier"); put(Language.EN, "Warrior"); }},
 				GradeName.BERSERKER, 16, 30, "1-0"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Archer"); put(Language.EN, "Archer"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Archer"); put(Language.EN, "Archer"); }},
 				GradeName.RANGER, 16, 30, "1-2"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Prêtre"); put(Language.EN, "Priest"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Prêtre"); put(Language.EN, "Priest"); }},
 				GradeName.CLERC, 16, 30, "1-4"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Magicien"); put(Language.EN, "Mage"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Magicien"); put(Language.EN, "Mage"); }},
 				GradeName.SORCIER, 16, 30, "1-6"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Machiniste"); put(Language.EN, "Machinist"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Machiniste"); put(Language.EN, "Machinist"); }},
 				GradeName.METALLEUX, 16, 30, "1-8"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Explorateur"); put(Language.EN, "Drifter"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Explorateur"); put(Language.EN, "Drifter"); }},
 				GradeName.SPATIODERIVEUR, 16, 30, "1-10"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Berserker"); put(Language.EN, "Berserker"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Berserker"); put(Language.EN, "Berserker"); }},
 				GradeName.BERSERKER, 31, 65, "2-0"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Paladin"); put(Language.EN, "Paladin"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Paladin"); put(Language.EN, "Paladin"); }},
 				GradeName.PALADIN, 31, 65, "2-1"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Ranger"); put(Language.EN, "Ranger"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ranger"); put(Language.EN, "Ranger"); }},
 				GradeName.RANGER, 31, 65, "2-2"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Assassin"); put(Language.EN, "Assassin"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Assassin"); put(Language.EN, "Assassin"); }},
 				GradeName.ASSASSIN, 31, 65, "2-3"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Clerc"); put(Language.EN, "Cleric"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Clerc"); put(Language.EN, "Cleric"); }},
 				GradeName.CLERC, 31, 65, "2-4"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Sage"); put(Language.EN, "Sage"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sage"); put(Language.EN, "Sage"); }},
 				GradeName.SAGE, 31, 65, "2-5"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Sorcier"); put(Language.EN, "Wizard"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sorcier"); put(Language.EN, "Wizard"); }},
 				GradeName.SORCIER, 31, 65, "2-6"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Nécromancien"); put(Language.EN, "Necromancer"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Nécromancien"); put(Language.EN, "Necromancer"); }},
 				GradeName.NECROMANCIEN, 31, 65, "2-7"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Métalleux"); put(Language.EN, "Engineer"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Métalleux"); put(Language.EN, "Engineer"); }},
 				GradeName.METALLEUX, 31, 65, "2-8"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Démolisseur"); put(Language.EN, "Demolitionist"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Démolisseur"); put(Language.EN, "Demolitionist"); }},
 				GradeName.DEMOLISSEUR, 31, 65, "2-9"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Spatiodériveur"); put(Language.EN, "Void Runner"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spatiodériveur"); put(Language.EN, "Void Runner"); }},
 				GradeName.SPATIODERIVEUR, 31, 65, "2-10"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Chronodériveur"); put(Language.EN, "Time Traveler"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chronodériveur"); put(Language.EN, "Time Traveler"); }},
 				GradeName.CHRONODERIVEUR, 31, 65, "2-11"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Gladiateur"); put(Language.EN, "Warlord"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gladiateur"); put(Language.EN, "Warlord"); }},
 				GradeName.BERSERKER, 66, 85, "3-0"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Vindicateur"); put(Language.EN, "Templar"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Vindicateur"); put(Language.EN, "Templar"); }},
 				GradeName.PALADIN, 66, 85, "3-1"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Traqueur"); put(Language.EN, "Sharpshooter"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Traqueur"); put(Language.EN, "Sharpshooter"); }},
 				GradeName.RANGER, 66, 85, "3-2"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Ninja"); put(Language.EN, "Darkstalker"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ninja"); put(Language.EN, "Darkstalker"); }},
 				GradeName.ASSASSIN, 66, 85, "3-3"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Rédempteur"); put(Language.EN, "Prophet"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Rédempteur"); put(Language.EN, "Prophet"); }},
 				GradeName.CLERC, 66, 85, "3-4"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Oracle"); put(Language.EN, "Mystic"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Oracle"); put(Language.EN, "Mystic"); }},
 				GradeName.SAGE, 66, 85, "3-5"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Archimage"); put(Language.EN, "Archmage"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Archimage"); put(Language.EN, "Archmage"); }},
 				GradeName.SORCIER, 66, 85, "3-6"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Démoniste"); put(Language.EN, "Demonologist"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Démoniste"); put(Language.EN, "Demonologist"); }},
 				GradeName.NECROMANCIEN, 66, 85, "3-7"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Prime"); put(Language.EN, "Gearmaster"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Prime"); put(Language.EN, "Gearmaster"); }},
 				GradeName.METALLEUX, 66, 85, "3-8"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Optimus"); put(Language.EN, "Gunner"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Optimus"); put(Language.EN, "Gunner"); }},
 				GradeName.DEMOLISSEUR, 66, 85, "3-9"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Ronin"); put(Language.EN, "Dimensionalist"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ronin"); put(Language.EN, "Dimensionalist"); }},
 				GradeName.SPATIODERIVEUR, 66, 85, "3-10"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Horloger"); put(Language.EN, "Key master"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Horloger"); put(Language.EN, "Key master"); }},
 				GradeName.CHRONODERIVEUR, 66, 85, "3-11"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Ravageur"); put(Language.EN, "Deathknight"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ravageur"); put(Language.EN, "Deathknight"); }},
 				GradeName.BERSERKER, 86, 90, "4-0"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Templier"); put(Language.EN, "Crusader"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Templier"); put(Language.EN, "Crusader"); }},
 				GradeName.PALADIN, 86, 90, "4-1"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Sniper"); put(Language.EN, "Hawkeye"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sniper"); put(Language.EN, "Hawkeye"); }},
 				GradeName.RANGER, 86, 90, "4-2"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Shinobi"); put(Language.EN, "Windshadow"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Shinobi"); put(Language.EN, "Windshadow"); }},
 				GradeName.ASSASSIN, 86, 90, "4-3"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Exorciste"); put(Language.EN, "Saint"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Exorciste"); put(Language.EN, "Saint"); }},
 				GradeName.CLERC, 86, 90, "4-4"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Shaman"); put(Language.EN, "Shaman"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Shaman"); put(Language.EN, "Shaman"); }},
 				GradeName.SAGE, 86, 90, "4-5"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Avatar"); put(Language.EN, "Avatar"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Avatar"); put(Language.EN, "Avatar"); }},
 				GradeName.SORCIER, 86, 90, "4-6"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Shinigami"); put(Language.EN, "Shadowlord"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Shinigami"); put(Language.EN, "Shadowlord"); }},
 				GradeName.NECROMANCIEN, 86, 90, "4-7"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Mégatron"); put(Language.EN, "Cogmaster"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mégatron"); put(Language.EN, "Cogmaster"); }},
 				GradeName.METALLEUX, 86, 90, "4-8"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Galvatron"); put(Language.EN, "Bombardier"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Galvatron"); put(Language.EN, "Bombardier"); }},
 				GradeName.DEMOLISSEUR, 86, 90, "4-9"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Occultiste"); put(Language.EN, "Reaper"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Occultiste"); put(Language.EN, "Reaper"); }},
 				GradeName.SPATIODERIVEUR, 86, 90, "4-10"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Augure"); put(Language.EN, "Chronomancer"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Augure"); put(Language.EN, "Chronomancer"); }},
 				GradeName.CHRONODERIVEUR, 86, 90, "4-11"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Destructeur"); put(Language.EN, "Destroyer"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Destructeur"); put(Language.EN, "Destroyer"); }},
 				GradeName.BERSERKER, 91, 100, "5-0"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Croisé"); put(Language.EN, "Holy Knight"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Croisé"); put(Language.EN, "Holy Knight"); }},
 				GradeName.PALADIN, 91, 100, "5-1"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Prédateur"); put(Language.EN, "Predator"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Prédateur"); put(Language.EN, "Predator"); }},
 				GradeName.RANGER, 91, 100, "5-2"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Kage"); put(Language.EN, "Shinobi"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Kage"); put(Language.EN, "Shinobi"); }},
 				GradeName.ASSASSIN, 91, 100, "5-3"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Archange"); put(Language.EN, "Archangel"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Archange"); put(Language.EN, "Archangel"); }},
 				GradeName.CLERC, 91, 100, "5-4"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Druide"); put(Language.EN, "Druid"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Druide"); put(Language.EN, "Druid"); }},
 				GradeName.SAGE, 91, 100, "5-5"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Arcaniste"); put(Language.EN, "Warlock"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arcaniste"); put(Language.EN, "Warlock"); }},
 				GradeName.SORCIER, 91, 100, "5-6"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Faucheur"); put(Language.EN, "Shinigami"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Faucheur"); put(Language.EN, "Shinigami"); }},
 				GradeName.NECROMANCIEN, 91, 100, "5-7"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Oméga"); put(Language.EN, "Mechmaster"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Oméga"); put(Language.EN, "Mechmaster"); }},
 				GradeName.METALLEUX, 91, 100, "5-8"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Suprême"); put(Language.EN, "Artillerist"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Suprême"); put(Language.EN, "Artillerist"); }},
 				GradeName.DEMOLISSEUR, 91, 100, "5-9"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Dimensionaliste"); put(Language.EN, "Phantom"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dimensionaliste"); put(Language.EN, "Phantom"); }},
 				GradeName.SPATIODERIVEUR, 91, 100, "5-10"),
-			new Grade(new HashMap<Language, String>() {{ put(Language.FR, "Chronomancien"); put(Language.EN, "Chronoshifter"); }},
+			new Grade(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chronomancien"); put(Language.EN, "Chronoshifter"); }},
 				GradeName.CHRONODERIVEUR, 91, 100, "5-11"),
 		};
 	}
 	
 	public static Reinca[] getReinca() {
 		return new Reinca[] {
-			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, 1, 1, 100, 0, "none"),
-			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 1"); put(Language.EN, "Level 1 - Eval 1"); }}, 1.045, 1, 65, 1, "lvl1"),
-			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 2"); put(Language.EN, "Level 1 - Eval 2"); }}, 1.08, 66, 85, 1, "lvl1"),
-			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 3"); put(Language.EN, "Level 1 - Eval 3"); }}, 1.12, 86, 90, 1, "lvl1"),
-			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 4"); put(Language.EN, "Level 1 - Eval 4"); }}, 1.16, 91, 99, 1, "lvl1"),
-			new Reinca(new HashMap<Language, String>() {{ put(Language.FR, "Niveau 1 - Éval 5"); put(Language.EN, "Level 1 - Eval 5"); }}, 1.2, 100, 100, 1, "lvl1")
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, 1, 1, 100, 0, "none"),
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 1"); put(Language.EN, "Level 1 - Eval 1"); }}, 1.045, 1, 65, 1, "lvl1"),
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 2"); put(Language.EN, "Level 1 - Eval 2"); }}, 1.08, 66, 85, 1, "lvl1"),
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 3"); put(Language.EN, "Level 1 - Eval 3"); }}, 1.12, 86, 90, 1, "lvl1"),
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 4"); put(Language.EN, "Level 1 - Eval 4"); }}, 1.16, 91, 99, 1, "lvl1"),
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 5"); put(Language.EN, "Level 1 - Eval 5"); }}, 1.2, 100, 100, 1, "lvl1")
 		};
 	}
 	
 	public static Archive[] getArchive() {
 		return new Archive[] {
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, null),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Architecte Débutant"); put(Language.EN, "Rookie Island Decorator"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, Quality.GREY, null),
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Architecte Débutant"); put(Language.EN, "Rookie Island Decorator"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 432, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 180, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Architecte Amateur"); put(Language.EN, "Basic Island Decorator"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Architecte Amateur"); put(Language.EN, "Basic Island Decorator"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 864, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 360, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Architecte Confirmé"); put(Language.EN, "Intermediate Decorator"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Architecte Confirmé"); put(Language.EN, "Intermediate Decorator"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1296, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 540, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Décorateur Professionnel de l'Île"); put(Language.EN, "Advanced Island Decorator"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Décorateur Professionnel de l'Île"); put(Language.EN, "Advanced Island Decorator"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1728, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 720, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île"); put(Language.EN, "Island Artist"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Artiste de l'Île"); put(Language.EN, "Island Artist"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2160, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 900, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Superstar"); put(Language.EN, "Superstar Island Artist"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Artiste de l'Île - Superstar"); put(Language.EN, "Superstar Island Artist"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2592, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1080, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Expert"); put(Language.EN, "Expert Island Artist"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Artiste de l'Île - Expert"); put(Language.EN, "Expert Island Artist"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3024, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1260, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Talentueux"); put(Language.EN, "Talented Island Artist"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Artiste de l'Île - Talentueux"); put(Language.EN, "Talented Island Artist"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3456, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1440, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Chef"); put(Language.EN, "Chief Island Artist"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Artiste de l'Île - Chef"); put(Language.EN, "Chief Island Artist"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3888, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1620, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Artiste de l'Île - Maître"); put(Language.EN, "Master Island Artist"); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Artiste de l'Île - Maître"); put(Language.EN, "Master Island Artist"); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.PV, false, 4320, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1800, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Top-Model Débutant"); put(Language.EN, "Rookie Organizer"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Top-Model Débutant"); put(Language.EN, "Rookie Organizer"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 234, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 180, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 180, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Top-Model Amateur"); put(Language.EN, "Basic Organizer"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Top-Model Amateur"); put(Language.EN, "Basic Organizer"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 468, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 360, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 360, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Top-Model Confirmé"); put(Language.EN, "Intermediate Organizer"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Top-Model Confirmé"); put(Language.EN, "Intermediate Organizer"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 702, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 540, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 540, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur Professionnel"); put(Language.EN, "Advanced Organizer"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur Professionnel"); put(Language.EN, "Advanced Organizer"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 936, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 720, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 720, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur"); put(Language.EN, "Organizer"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur"); put(Language.EN, "Organizer"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1170, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 900, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 900, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Superstar"); put(Language.EN, "Superstar Organizer"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur - Superstar"); put(Language.EN, "Superstar Organizer"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1404, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 1080, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 1080, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Expert"); put(Language.EN, "Expert Organizer"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur - Expert"); put(Language.EN, "Expert Organizer"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1638, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 1260, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 1260, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Talentueux"); put(Language.EN, "Talented Organizer"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur - Talentueux"); put(Language.EN, "Talented Organizer"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 1872, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 1440, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 1440, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Chef"); put(Language.EN, "Chief Organizer"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur - Chef"); put(Language.EN, "Chief Organizer"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 2106, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 1620, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 1620, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Organisateur - Maître"); put(Language.EN, "Master Organizer"); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Organisateur - Maître"); put(Language.EN, "Master Organizer"); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.Atk, false, 2340, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkD, false, 1800, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AtkM, false, 1800, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Philatéliste Débutant"); put(Language.EN, "Rookie Gatherer"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Philatéliste Débutant"); put(Language.EN, "Rookie Gatherer"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 20, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 10, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Philatéliste Amateur"); put(Language.EN, "Basic Gatherer"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Philatéliste Amateur"); put(Language.EN, "Basic Gatherer"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 40, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 20, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Philatéliste Confirmé"); put(Language.EN, "Intermediate Gatherer"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Philatéliste Confirmé"); put(Language.EN, "Intermediate Gatherer"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 60, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 30, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Récolteur Professionnel"); put(Language.EN, "Advanced Gatherer"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Récolteur Professionnel"); put(Language.EN, "Advanced Gatherer"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 80, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 40, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur "); put(Language.EN, "Collector "); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur "); put(Language.EN, "Collector "); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 100, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 50, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Superstar "); put(Language.EN, "Superstar Collector "); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Superstar "); put(Language.EN, "Superstar Collector "); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 110, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 55, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.FCE, false, 5, true, TypeCalcul.ADDITIONAL),
@@ -277,7 +278,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.VOL, false, 5, true, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AGI, false, 5, true, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Expert "); put(Language.EN, "Expert Collector "); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Expert "); put(Language.EN, "Expert Collector "); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 120, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 60, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.FCE, false, 10, true, TypeCalcul.ADDITIONAL),
@@ -286,7 +287,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.VOL, false, 10, true, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AGI, false, 10, true, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Talentueux "); put(Language.EN, "Talented Collector "); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Talentueux "); put(Language.EN, "Talented Collector "); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 130, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 65, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.FCE, false, 15, true, TypeCalcul.ADDITIONAL),
@@ -295,7 +296,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.VOL, false, 15, true, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AGI, false, 15, true, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Chef "); put(Language.EN, "Chief Collector "); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Chef "); put(Language.EN, "Chief Collector "); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 140, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 70, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.FCE, false, 20, true, TypeCalcul.ADDITIONAL),
@@ -304,7 +305,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.VOL, false, 20, true, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AGI, false, 20, true, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Maître "); put(Language.EN, "Master Collector "); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Maître "); put(Language.EN, "Master Collector "); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.Toucher, false, 150, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.ESQ, false, 75, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.FCE, false, 25, true, TypeCalcul.ADDITIONAL),
@@ -313,77 +314,77 @@ public class LoaderCharac {
 				new Effect(TypeEffect.VOL, false, 25, true, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.AGI, false, 25, true, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Débutant"); put(Language.EN, "Rookie Sprite Nanny"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sprite Débutant"); put(Language.EN, "Rookie Sprite Nanny"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 108, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 90, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Amateur"); put(Language.EN, "Basic Sprite Nanny"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sprite Amateur"); put(Language.EN, "Basic Sprite Nanny"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 216, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 180, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Sprite Confirmé"); put(Language.EN, "Intermediate Nanny"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sprite Confirmé"); put(Language.EN, "Intermediate Nanny"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 324, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 270, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Nounou Sprite Professionnelle"); put(Language.EN, "Advanced Sprite Nanny"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Nounou Sprite Professionnelle"); put(Language.EN, "Advanced Sprite Nanny"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 432, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 360, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite"); put(Language.EN, "Sprite Protector"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protecteur des Sprite"); put(Language.EN, "Sprite Protector"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 540, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 450, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Superstar"); put(Language.EN, "Superstar Sprite Protector"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protecteur des Sprite - Superstar"); put(Language.EN, "Superstar Sprite Protector"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 648, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 540, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Expert"); put(Language.EN, "Expert Sprite Protector"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protecteur des Sprite - Expert"); put(Language.EN, "Expert Sprite Protector"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 756, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 630, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Talentueux"); put(Language.EN, "Talented Sprite Protector"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protecteur des Sprite - Talentueux"); put(Language.EN, "Talented Sprite Protector"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 864, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 720, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Chef"); put(Language.EN, "Chief Sprite Protector"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protecteur des Sprite - Chef"); put(Language.EN, "Chief Sprite Protector"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 972, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 810, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Protecteur des Sprite - Maître"); put(Language.EN, "Master Sprite Protector"); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protecteur des Sprite - Maître"); put(Language.EN, "Master Sprite Protector"); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.DefP, false, 1080, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 900, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur Débutant"); put(Language.EN, "Rookie Garage"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dompteur Débutant"); put(Language.EN, "Rookie Garage"); }}, Quality.WHITE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 2, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur Amateur"); put(Language.EN, "Basic Garage"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dompteur Amateur"); put(Language.EN, "Basic Garage"); }}, Quality.GREEN, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 4, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Dompteur Confirmé"); put(Language.EN, "Intermediate Garage"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dompteur Confirmé"); put(Language.EN, "Intermediate Garage"); }}, Quality.GREEN, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 6, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Parking de Professionnel"); put(Language.EN, "Advanced Garage"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Parking de Professionnel"); put(Language.EN, "Advanced Garage"); }}, Quality.BLUE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 8, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Parking de Luxe"); put(Language.EN, "Luxury Garage"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Parking de Luxe"); put(Language.EN, "Luxury Garage"); }}, Quality.BLUE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 10, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Apprenti"); put(Language.EN, "Apprentice Dockyard"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chantier naval - Apprenti"); put(Language.EN, "Apprentice Dockyard"); }}, Quality.BLUE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 12, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Débutant"); put(Language.EN, "Beginner Dockyard"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chantier naval - Débutant"); put(Language.EN, "Beginner Dockyard"); }}, Quality.ORANGE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 14, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Avancé"); put(Language.EN, "Intermediate Dockyard"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chantier naval - Avancé"); put(Language.EN, "Intermediate Dockyard"); }}, Quality.ORANGE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 16, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval - Senior"); put(Language.EN, "Advanced Dockyard"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chantier naval - Senior"); put(Language.EN, "Advanced Dockyard"); }}, Quality.ORANGE, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 18, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Chantier naval luxueux"); put(Language.EN, "Flawless Dockyard"); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chantier naval luxueux"); put(Language.EN, "Flawless Dockyard"); }}, Quality.GOLD, new Effect[] {
 					new Effect(TypeEffect.Depla, false, 20, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Débutant"); put(Language.EN, "Rookie Collector"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur Débutant"); put(Language.EN, "Rookie Collector"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 432, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 180, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 234, TypeCalcul.ADDITIONAL),
@@ -394,7 +395,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 108, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 90, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Amateur"); put(Language.EN, "Basic Collector"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur Amateur"); put(Language.EN, "Basic Collector"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 864, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 360, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 468, TypeCalcul.ADDITIONAL),
@@ -405,7 +406,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 216, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 180, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Confirmé"); put(Language.EN, "Intermediate Collector"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur Confirmé"); put(Language.EN, "Intermediate Collector"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1296, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 540, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 702, TypeCalcul.ADDITIONAL),
@@ -416,7 +417,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 324, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 270, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur Professionnel"); put(Language.EN, "Advanced Collector"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur Professionnel"); put(Language.EN, "Advanced Collector"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 1728, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 720, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 936, TypeCalcul.ADDITIONAL),
@@ -427,7 +428,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 432, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 360, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur"); put(Language.EN, "Collector"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur"); put(Language.EN, "Collector"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2160, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 900, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 1170, TypeCalcul.ADDITIONAL),
@@ -438,7 +439,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 540, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 450, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Superstar"); put(Language.EN, "Superstar Collector"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Superstar"); put(Language.EN, "Superstar Collector"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 2592, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1080, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 1404, TypeCalcul.ADDITIONAL),
@@ -449,7 +450,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 648, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 540, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Expert"); put(Language.EN, "Expert Collector"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Expert"); put(Language.EN, "Expert Collector"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3024, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1260, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 1638, TypeCalcul.ADDITIONAL),
@@ -460,7 +461,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 756, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 630, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Talentueux"); put(Language.EN, "Talented Collector"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Talentueux"); put(Language.EN, "Talented Collector"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3456, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1440, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 1872, TypeCalcul.ADDITIONAL),
@@ -471,7 +472,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 864, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 720, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Chef"); put(Language.EN, "Chief Collector"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Chef"); put(Language.EN, "Chief Collector"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.PV, false, 3888, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1620, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 2106, TypeCalcul.ADDITIONAL),
@@ -482,7 +483,7 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 972, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 810, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Collectionneur - Maître"); put(Language.EN, "Master Collector"); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collectionneur - Maître"); put(Language.EN, "Master Collector"); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.PV, false, 4320, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.PM, false, 1800, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.Atk, false, 2340, TypeCalcul.ADDITIONAL),
@@ -493,71 +494,71 @@ public class LoaderCharac {
 				new Effect(TypeEffect.DefP, false, 1080, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DefM, false, 900, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur novice"); put(Language.EN, "Novice News Blogger"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Blogueur novice"); put(Language.EN, "Novice News Blogger"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 8, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.TCCM, false, 8, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur amateur"); put(Language.EN, "Basic News Blogger"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Blogueur amateur"); put(Language.EN, "Basic News Blogger"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 16, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.TCCM, false, 16, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur intermédiaire"); put(Language.EN, "Intermediate News Blogger"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Blogueur intermédiaire"); put(Language.EN, "Intermediate News Blogger"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 20, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.TCCM, false, 20, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RTCCP, false, 5, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RTCCM, false, 5, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Blogueur confirmé"); put(Language.EN, "Professional News Blogger"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Blogueur confirmé"); put(Language.EN, "Professional News Blogger"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.TCCP, false, 24, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.TCCM, false, 24, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RTCCP, false, 10, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RTCCM, false, 10, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Apprenti"); put(Language.EN, "Apprentice Food Critic"); }}, Quality.WHITE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Critique culinaire - Apprenti"); put(Language.EN, "Apprentice Food Critic"); }}, Quality.WHITE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 2, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 2, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Débutant"); put(Language.EN, "Beginner Food Critic"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Critique culinaire - Débutant"); put(Language.EN, "Beginner Food Critic"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 4, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 4, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Avancé"); put(Language.EN, "Advanced Food Critic"); }}, Quality.GREEN, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Critique culinaire - Avancé"); put(Language.EN, "Advanced Food Critic"); }}, Quality.GREEN, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 6, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 6, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Critique culinaire - Professionnel"); put(Language.EN, "Professional Food Critic"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Critique culinaire - Professionnel"); put(Language.EN, "Professional Food Critic"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 8, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 8, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand"); put(Language.EN, "Foodie"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gourmand"); put(Language.EN, "Foodie"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 10, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 10, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Superstar"); put(Language.EN, "Superstar Foodie"); }}, Quality.BLUE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gourmand - Superstar"); put(Language.EN, "Superstar Foodie"); }}, Quality.BLUE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 10, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 10, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCP, false, 2, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCM, false, 2, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Expert"); put(Language.EN, "Expert Foodie"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gourmand - Expert"); put(Language.EN, "Expert Foodie"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 11, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 11, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCP, false, 3, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCM, false, 3, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Talentueux"); put(Language.EN, "Talented Foodie"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gourmand - Talentueux"); put(Language.EN, "Talented Foodie"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 12, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 12, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCP, false, 5, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCM, false, 5, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Chef"); put(Language.EN, "Chief Foodie"); }}, Quality.ORANGE, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gourmand - Chef"); put(Language.EN, "Chief Foodie"); }}, Quality.ORANGE, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 13, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 13, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCP, false, 6, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCM, false, 6, TypeCalcul.ADDITIONAL),
 			}),
-			new Archive(new HashMap<Language, String>() {{ put(Language.FR, "Gourmand - Maître"); put(Language.EN, "Master Foodie"); }}, Quality.GOLD, new Effect[] {
+			new Archive(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gourmand - Maître"); put(Language.EN, "Master Foodie"); }}, Quality.GOLD, new Effect[] {
 				new Effect(TypeEffect.DCCP, false, 14, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.DCCM, false, 14, TypeCalcul.ADDITIONAL),
 				new Effect(TypeEffect.RDCCP, false, 7, TypeCalcul.ADDITIONAL),

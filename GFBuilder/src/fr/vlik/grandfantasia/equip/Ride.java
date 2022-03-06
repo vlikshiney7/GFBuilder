@@ -1,6 +1,8 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,13 +21,13 @@ import fr.vlik.grandfantasia.template.CompleteBuff;
 public class Ride extends CompleteBuff {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Monture");
 		put(Language.EN, "Ride");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Ride[] data = LoaderEquip.getRide();
 	
 	private int lvl;
@@ -54,7 +56,7 @@ public class Ride extends CompleteBuff {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum RideType implements EquipType {
+	public enum RideType implements EquipType {
 		NORMAL, NERF;
 	}
 	
@@ -73,23 +75,20 @@ public class Ride extends CompleteBuff {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Ride.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(Ride.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Ride.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
+		return Tools.constructIcon(back, object);
 	}
 	
 	@Override
 	public String getInfo(Language lang) {
-		if(this.name.get(lang) == "") {
+		if("".equals(this.name.get(lang))) {
 			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}
 		return "Lvl " + this.lvl + " - " + this.name.get(lang);
@@ -106,7 +105,7 @@ public class Ride extends CompleteBuff {
 	}
 	
 	public static Ride[] getPossibleRide(int lvl, Reinca reinca) {
-		ArrayList<Ride> result = new ArrayList<Ride>();
+		ArrayList<Ride> result = new ArrayList<>();
 		
 		result.add(new Ride());
 		
@@ -125,5 +124,39 @@ public class Ride extends CompleteBuff {
 		}
 		
 		return result.toArray(new Ride[result.size()]);
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + this.lvl;
+		result = prime * result + (this.reinca ? 1231 : 1237);
+		result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Ride other = (Ride) obj;
+		if (this.lvl != other.lvl) {
+			return false;
+		}
+		if (this.reinca != other.reinca) {
+			return false;
+		}
+		if (this.type != other.type) {
+			return false;
+		}
+		return true;
 	}
 }

@@ -12,10 +12,6 @@ public class JCustomButtonGroup<T> extends ButtonGroup {
 
 	private static final long serialVersionUID = 1L;
 	
-	public void add(JCustomRadioButton<T> radio) {
-		super.add(radio);
-	}
-	
 	public T getElement(int i) {
 		int count = 0;
 		Enumeration<AbstractButton> it = this.getElements();
@@ -86,11 +82,8 @@ public class JCustomButtonGroup<T> extends ButtonGroup {
 		Enumeration<AbstractButton> it = this.getElements();
 		do {
 			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
-			if(count == index) {
-				element.setSelected(true);
-			} else {
-				element.setSelected(false);
-			}
+			element.setSelected(count == index);
+			
 			count++;
 		} while(it.hasMoreElements());
 	}

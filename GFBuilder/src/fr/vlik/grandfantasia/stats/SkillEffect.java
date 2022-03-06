@@ -22,7 +22,11 @@ public class SkillEffect implements Calculable {
 		this.type = skillEffect.getType();
 	}
 	
-	public static enum TypeValue {
+	public Calculable copy() {
+		return new SkillEffect(this);
+	}
+	
+	public enum TypeValue {
 		DAMAGE("Dégât", "damage"),
 		DURATION("Durée", "duration"),
 		HEAL("Soin", "heal"),
@@ -55,12 +59,10 @@ public class SkillEffect implements Calculable {
 		return this.type;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {
 		this.value *= factor;
 	}
 	
-	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
@@ -69,7 +71,6 @@ public class SkillEffect implements Calculable {
 		} else {
 			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
 		}
-		//tooltip.append("\"" + this.skill.en + "\" " + this.type.en + " +" + this.value);
 		
 		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
 			tooltip.append("%");
@@ -79,7 +80,7 @@ public class SkillEffect implements Calculable {
 		
 		return "<li>" + tooltip + "</li>";
 	}
-
+	
 	public String toString(Language lang) {
 		StringBuilder result = new StringBuilder();
 		

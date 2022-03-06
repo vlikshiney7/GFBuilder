@@ -34,6 +34,10 @@ public class StaticEffect implements Calculable {
 		this.taux = staticEffect.getTaux();
 	}
 	
+	public Calculable copy() {
+		return new StaticEffect(this);
+	}
+	
 	public TypeStaticEffect getType() {
 		return this.type;
 	}
@@ -46,12 +50,10 @@ public class StaticEffect implements Calculable {
 		return this.target;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {
 		this.taux *= factor;
 	}
 	
-	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
@@ -62,7 +64,7 @@ public class StaticEffect implements Calculable {
 		}
 		return "<li>" + tooltip + "</li>";
 	}
-
+	
 	public String toString(Language lang) {
 		String result = "";
 		

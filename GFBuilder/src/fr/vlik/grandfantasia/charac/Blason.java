@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.charac;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,13 +17,13 @@ import fr.vlik.grandfantasia.template.IconBuff;
 public class Blason extends IconBuff {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Blason");
 		put(Language.EN, "Blazon");
 	}};
 	
 	private static final String PATH = Tools.RESOURCE + "sprite/";
-	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
+	private static final Map<String, Icon> ICONS = new HashMap<>();
 	private static Blason[] data = LoaderCharac.getBlason();
 	
 	private int lvl;
@@ -40,7 +41,7 @@ public class Blason extends IconBuff {
 		this.icon = setIcon(type == BlasonType.OFFENSIVE ? "atk" : "def");
 	}
 	
-	public static enum BlasonType {
+	public enum BlasonType {
 		OFFENSIVE(0), DEFENSIVE(1);
 		
 		public final int type;
@@ -60,41 +61,20 @@ public class Blason extends IconBuff {
 	
 	@Override
 	public Icon setIcon(String path) {
-		if(ICONS.get(path) == null) {
-			try {
-				ICONS.put(path, new ImageIcon(Blason.class.getResource(PATH + path + Tools.PNG)));
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		Icon object = null;
+		
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Blason.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return ICONS.get(path);
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if(this == obj) {
-			return true;
-		}
-		
-		if(obj == null) {
-			return false;
-		}
-		
-		if (!(obj instanceof Blason)) {
-			return false;
-		}
-		
-		Blason equip = (Blason) obj;
-		boolean b = this.name.equals(equip.name)
-				&& this.lvl == equip.lvl;
-		
-		return b;
+		return object;
 	}
 	
 	@Override
 	public String getInfo(Language lang) {
-		if(this.name.get(lang) == "") {
+		if("".equals(this.name.get(lang))) {
 			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}
 		return "Lvl " + this.lvl + " - " + this.name.get(lang);
@@ -111,7 +91,7 @@ public class Blason extends IconBuff {
 	}
 	
 	public static Blason[] getPossibleBlason(int lvl, BlasonType type) {
-		ArrayList<Blason> result = new ArrayList<Blason>();
+		ArrayList<Blason> result = new ArrayList<>();
 		
 		result.add(new Blason());
 		
@@ -122,5 +102,32 @@ public class Blason extends IconBuff {
 		}
 		
 		return result.toArray(new Blason[result.size()]);
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + this.lvl;
+		result = prime * result + ((this.type == null) ? 0 : this.type.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Blason other = (Blason) obj;
+		if (this.lvl != other.lvl) {
+			return false;
+		}
+		return this.type == other.type;
 	}
 }

@@ -1,5 +1,3 @@
 package fr.vlik.grandfantasia.interfaces;
 
-public interface EquipType {
-	
-}
+public interface EquipType { }

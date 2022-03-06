@@ -34,25 +34,48 @@ public class BonusEquipSet extends ColorBuff {
 	
 	@Override
 	public String getInfo(Language lang) {
-		String info = "";
+		StringBuilder result = new StringBuilder();
 		
 		if(this.name.get(lang).equals("")) {
-			info += this.name.get(Language.FR);
+			result.append(this.name.get(Language.FR));
 		} else {
-			info += this.name.get(lang);
+			result.append(this.name.get(lang));
 		}
 		
 		if(this.effects != null) {
 			for(Calculable e : this.effects) {
-				info += "\n\t- " + e.toString(lang);
+				result.append("\n\t- " + e.toString(lang));
 			}
 		}
 		
-		return info.replaceAll("\n$", "");
+		return result.toString().replaceAll("\n$", "");
 	}
 	
 	@Override
 	public Color getColor() {
 		return this.isActivate ? Tools.itemColor[this.quality.index] : Tools.itemColor[0];
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (this.isActivate ? 1231 : 1237);
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		BonusEquipSet other = (BonusEquipSet) obj;
+		return this.isActivate == other.isActivate;
 	}
 }

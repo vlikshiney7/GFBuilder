@@ -15,7 +15,7 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.customEquip.CustomWeapon;
+import fr.vlik.grandfantasia.customequip.CustomWeapon;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -23,13 +23,13 @@ import fr.vlik.grandfantasia.equip.Bullet;
 import fr.vlik.grandfantasia.equip.RedWeapon;
 import fr.vlik.grandfantasia.equip.Weapon;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
-import fr.vlik.grandfantasia.equipUpgrade.Enchantment;
-import fr.vlik.grandfantasia.equipUpgrade.Fortification;
-import fr.vlik.grandfantasia.equipUpgrade.Pearl;
-import fr.vlik.grandfantasia.equipUpgrade.PearlEnchantment;
-import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
-import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
-import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
+import fr.vlik.grandfantasia.equipupgrade.Enchantment;
+import fr.vlik.grandfantasia.equipupgrade.Fortification;
+import fr.vlik.grandfantasia.equipupgrade.Pearl;
+import fr.vlik.grandfantasia.equipupgrade.PearlEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.RedEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.RedFortification;
+import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerEffect;
@@ -70,7 +70,7 @@ public class PageWeapon extends PartialRedStuff {
 			int id = i;
 			
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), null, false);
-			this.weapon.add(new JCompleteBox<Weapon>(tabWeapon, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, Weapon.getWeaponType(i, true), /*Weapon.getTags(),*/ Weapon.getQualities()));
+			this.weapon.add(new JCompleteBox<>(tabWeapon, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, Weapon.getWeaponType(i, true), /*Weapon.getTags(),*/ Weapon.getQualities()));
 			this.weapon.get(i).addActionListener(e -> {
 				this.weapon.get(id).activeProc();
 				

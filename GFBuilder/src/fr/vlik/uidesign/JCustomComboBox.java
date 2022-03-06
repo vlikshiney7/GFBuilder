@@ -30,13 +30,13 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 	}
 	
 	public void placeItems(T[] tabItems) {
-		this.setModel(new DefaultComboBoxModel<T>(tabItems));
+		this.setModel(new DefaultComboBoxModel<>(tabItems));
 	}
 	
 	public boolean setItems(T[] tabItems) {
 		T memory = this.getSelectedItem();
 		
-		this.setModel(new DefaultComboBoxModel<T>(tabItems));
+		this.setModel(new DefaultComboBoxModel<>(tabItems));
 		
 		if(memory != null) {
 			this.setSelectedItem(memory);
@@ -55,7 +55,7 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 	}
 	
 	public void setItems(T[] tabItems, T item) {
-		this.setModel(new DefaultComboBoxModel<T>(tabItems));
+		this.setModel(new DefaultComboBoxModel<>(tabItems));
 		
 		if(item != null) {
 			this.setSelectedItem(item);
@@ -66,6 +66,7 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 		}
 	}
 	
+	@Override
 	public void setSelectedItem(Object item) {
 		if(item == null) {
 			if(this.getItemCount() > 0) {

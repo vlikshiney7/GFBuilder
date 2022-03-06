@@ -1,6 +1,6 @@
 package fr.vlik.grandfantasia.enums;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.interfaces.Writable;
@@ -8,15 +8,15 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 @SuppressWarnings("serial")
 public enum TypeSynthesis implements Writable {
 	
-	CLASSIC(new HashMap<Language, String>() {{ put(Language.FR, "Classique"); put(Language.EN, "Classic"); }}),
-	GENKI(new HashMap<Language, String>() {{ put(Language.FR, "Genki"); put(Language.EN, "Genki"); }});
+	CLASSIC(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Classique"); put(Language.EN, "Classic"); }}),
+	GENKI(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Genki"); put(Language.EN, "Genki"); }});
 	
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Synthétisation");
 		put(Language.EN, "Synthesis");
 	}};
 	
-	public Map<Language, String> lang = new HashMap<Language, String>();
+	public final Map<Language, String> lang;
 	
 	private TypeSynthesis(Map<Language, String> lang) {
         this.lang = lang;

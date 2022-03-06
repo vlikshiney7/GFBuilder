@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.loader.equip;
 
-import java.util.HashMap;
+import java.util.EnumMap;
+import java.util.stream.Stream;
 
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.enums.Language;
@@ -10,6 +11,7 @@ import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 import fr.vlik.grandfantasia.equip.Armor;
 import fr.vlik.grandfantasia.equip.Armor.ArmorType;
+import fr.vlik.grandfantasia.loader.LoaderTemplate;
 import fr.vlik.grandfantasia.equip.MultiEffect;
 import fr.vlik.grandfantasia.equip.RedArmor;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -21,56 +23,17 @@ import fr.vlik.grandfantasia.stats.RegenEffect.TypeRegen;
 import fr.vlik.grandfantasia.stats.StaticEffect;
 
 @SuppressWarnings("serial")
-public class LoaderGauntlet {
+public class LoaderGauntlet extends LoaderTemplate {
 	
 	public static final String ICONPATH = "3-gants/";
 
 	static Armor[] getGauntlet() {
-		Armor[] class1 = getGuerrier();
-		Armor[] class2 = getArcher();
-		Armor[] class3 = getPretre();
-		Armor[] class4 = getMage();
-		Armor[] class5 = getMeca();
-		Armor[] class6 = getVoyageur();
-		Armor[] classAll = getAll();
-		
-		Armor[] result = new Armor[class1.length + class2.length + class3.length + class4.length + class5.length + class6.length + classAll.length];
-		
-		int i = 0;
-		for(; i < class1.length; i++) {
-			result[i] = class1[i];
-		}
-
-		for(int j = 0; j < class2.length; i++, j++) {
-			result[i] = class2[j];
-		}
-
-		for(int j = 0; j < class3.length; i++, j++) {
-			result[i] = class3[j];
-		}
-		
-		for(int j = 0; j < class4.length; i++, j++) {
-			result[i] = class4[j];
-		}
-
-		for(int j = 0; j < class5.length; i++, j++) {
-			result[i] = class5[j];
-		}
-		
-		for(int j = 0; j < class6.length; i++, j++) {
-			result[i] = class6[j];
-		}
-		
-		for(int j = 0; j < classAll.length; i++, j++) {
-			result[i] = classAll[j];
-		}
-		
-		return result;
+		return Stream.of(getGuerrier(), getArcher(), getPretre(), getMage(), getMeca(), getVoyageur(), getAll()).flatMap(Stream::of).toArray(Armor[]::new);
 	}
 
 	private static Armor[] getGuerrier() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Fists"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings du Tremblement de terre"); put(Language.EN, "Battle King Earthquake Roar Fists"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red0", ICONPATH + "90red0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
@@ -103,7 +66,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Trembleur de terre"); put(Language.EN, "True Battle King 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Trembleur de terre"); put(Language.EN, "True Battle King 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red0", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
@@ -136,7 +99,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Fists"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings de l'Hymne de l'Honneur et du Triomphe"); put(Language.EN, "Honor Triumphant Hymn Fists"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red1", ICONPATH + "90red1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
@@ -169,7 +132,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Triomphe"); put(Language.EN, "True Honor 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Triomphe"); put(Language.EN, "True Honor 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red1", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 507, true),
@@ -202,7 +165,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Fierté pétrifiante"); put(Language.EN, "Petrifying Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Fierté pétrifiante"); put(Language.EN, "Petrifying Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio0", ICONPATH + "100vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 511, true),
@@ -211,7 +174,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 25, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Immortalité du damné"); put(Language.EN, "Immortal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Immortalité du damné"); put(Language.EN, "Immortal Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio1", ICONPATH + "100vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 614, true),
@@ -220,7 +183,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 36, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poings du Seigneur Arlong"); put(Language.EN, "Berserk Warlord Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings du Seigneur Arlong"); put(Language.EN, "Berserk Warlord Fists"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio0", ICONPATH + "90vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 476, true),
@@ -229,7 +192,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poings du Templier Résolu"); put(Language.EN, "Resolute Templar Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings du Templier Résolu"); put(Language.EN, "Resolute Templar Fists"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio1", ICONPATH + "90vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 486, true),
@@ -238,7 +201,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poings belliqueux d'Aiolia"); put(Language.EN, "Belligerent Rider Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings belliqueux d'Aiolia"); put(Language.EN, "Belligerent Rider Fists"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio0", ICONPATH + "80vio0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 445, true),
@@ -247,7 +210,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poings du Défenseur Voldo"); put(Language.EN, "Rampager Defender Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings du Défenseur Voldo"); put(Language.EN, "Rampager Defender Fists"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio1", ICONPATH + "80vio1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 454, true),
@@ -256,7 +219,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants puissants de Khal Drogo"); put(Language.EN, "Ravaging Destroyer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants puissants de Khal Drogo"); put(Language.EN, "Ravaging Destroyer's Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold0", ICONPATH + "100gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 484, true),
@@ -265,7 +228,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants épique de Brienne"); put(Language.EN, "Holy Oath's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants épique de Brienne"); put(Language.EN, "Holy Oath's Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold1", ICONPATH + "100gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 581, true),
@@ -274,7 +237,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards du Sanguinaire Kenpachi"); put(Language.EN, "Proud Berserker Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards du Sanguinaire Kenpachi"); put(Language.EN, "Proud Berserker Bracers"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold0", ICONPATH + "90gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
@@ -283,7 +246,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Trembleur de terre"); put(Language.EN, "Battle King 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Trembleur de terre"); put(Language.EN, "Battle King 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold0", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
@@ -292,7 +255,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards du Vertueux de Parsifal"); put(Language.EN, "Templar's Song Bracers"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold1", ICONPATH + "90gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 459, true),
@@ -301,7 +264,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Triomphe"); put(Language.EN, "Honor 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Triomphe"); put(Language.EN, "Honor 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold1", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 459, true),
@@ -310,7 +273,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Vengeance de Mordred"); put(Language.EN, "Fiery Warrior Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Vengeance de Mordred"); put(Language.EN, "Fiery Warrior Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold0", ICONPATH + "80gold0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 415, true),
@@ -319,7 +282,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 15, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Châtiment de Baldur"); put(Language.EN, "Spirit Shock Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Châtiment de Baldur"); put(Language.EN, "Spirit Shock Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold1", ICONPATH + "80gold1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -328,7 +291,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gantelets de l'Apostat"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gantelets de l'Apostat"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp0R", ICONPATH + "100pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -339,7 +302,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Apostat"); put(Language.EN, "Unholy Frenzy Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Apostat"); put(Language.EN, "Unholy Frenzy Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp0", ICONPATH + "100pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -350,7 +313,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gantelets du Gardien éclairé"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gantelets du Gardien éclairé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp1R", ICONPATH + "100pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
@@ -361,7 +324,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Gardien éclairé"); put(Language.EN, "Light Guardian's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Gardien éclairé"); put(Language.EN, "Light Guardian's Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp1", ICONPATH + "100pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
@@ -372,7 +335,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Héros Bestial"); put(Language.EN, "Beast Warrior Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Héros Bestial"); put(Language.EN, "Beast Warrior Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve0", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -381,7 +344,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants à Plume Verte"); put(Language.EN, "Green Feather Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants à Plume Verte"); put(Language.EN, "Green Feather Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve1", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
@@ -390,7 +353,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Courroux Sanguinaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Courroux Sanguinaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp0R", ICONPATH + "95pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 473, true),
@@ -401,7 +364,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Courroux Sanguinaire"); put(Language.EN, "Blood Wrath Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Courroux Sanguinaire"); put(Language.EN, "Blood Wrath Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp0", ICONPATH + "95pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
@@ -412,7 +375,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Bouclier planétaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Bouclier planétaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp1R", ICONPATH + "95pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 568, true),
@@ -423,7 +386,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Bouclier du Monde Encyclique"); put(Language.EN, "Planetary Shield Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Bouclier du Monde Encyclique"); put(Language.EN, "Planetary Shield Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp1", ICONPATH + "95pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 516, true),
@@ -434,7 +397,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Explorateur Fondus"); put(Language.EN, "Molten Explorer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Explorateur Fondus"); put(Language.EN, "Molten Explorer Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve0", ICONPATH + "95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -443,7 +406,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Chevalier Béni"); put(Language.EN, "Blessed Knight Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Chevalier Béni"); put(Language.EN, "Blessed Knight Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -452,7 +415,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protèges-poignet du Feu Fanatique"); put(Language.EN, "Fanatical Fire Armguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protèges-poignet du Feu Fanatique"); put(Language.EN, "Fanatical Fire Armguards"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve0", ICONPATH + "90pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -461,7 +424,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protèges-poignet aux Ailes Divines"); put(Language.EN, "Divine Wings Armguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protèges-poignet aux Ailes Divines"); put(Language.EN, "Divine Wings Armguards"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve1", ICONPATH + "90pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 416, true),
@@ -470,7 +433,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Gladiateur du Hokuto"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Gladiateur du Hokuto"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp0R", ICONPATH + "85pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 438, true),
@@ -481,7 +444,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Gladiateur du Hokuto"); put(Language.EN, "Shura's Wrath Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Gladiateur du Hokuto"); put(Language.EN, "Shura's Wrath Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp0", ICONPATH + "85pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 398, true),
@@ -492,7 +455,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Vindicateur Shichibukai"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Vindicateur Shichibukai"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp1R", ICONPATH + "85pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 447, true),
@@ -503,7 +466,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Vindicateur Shichibukai"); put(Language.EN, "Heavenly Shield Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Vindicateur Shichibukai"); put(Language.EN, "Heavenly Shield Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp1", ICONPATH + "85pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 406, true),
@@ -514,7 +477,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Âme de l'Ours Terrifiant"); put(Language.EN, "Shark's Frenzy Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Âme de l'Ours Terrifiant"); put(Language.EN, "Shark's Frenzy Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve0", ICONPATH + "85pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 391, true),
@@ -523,7 +486,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Âme du Lion Glorieux"); put(Language.EN, "Sunbeam Crest Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Âme du Lion Glorieux"); put(Language.EN, "Sunbeam Crest Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve1", ICONPATH + "85pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 399, true),
@@ -532,7 +495,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Dieu de la Guerre"); put(Language.EN, "Ares Impact Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Dieu de la Guerre"); put(Language.EN, "Ares Impact Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus0", ICONPATH + "80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -541,7 +504,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Thaumaturge Exalté"); put(Language.EN, "Sundering Blow Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Thaumaturge Exalté"); put(Language.EN, "Sundering Blow Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus1", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 390, true),
@@ -550,7 +513,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassières du Hurlement Divin"); put(Language.EN, "Violent Mars Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassières du Hurlement Divin"); put(Language.EN, "Violent Mars Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot0", ICONPATH + "80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -559,7 +522,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voix de la Création"); put(Language.EN, "Kingstrike Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voix de la Création"); put(Language.EN, "Kingstrike Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot1", ICONPATH + "80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 390, true),
@@ -568,7 +531,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Furie du Maître"); put(Language.EN, "Fury Master Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Furie du Maître"); put(Language.EN, "Fury Master Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "78pve0", ICONPATH + "80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -577,7 +540,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Colère Divine"); put(Language.EN, "Divine Impact Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Colère Divine"); put(Language.EN, "Divine Impact Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve1", ICONPATH + "80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 383, true),
@@ -586,7 +549,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Puissance d'Héraclès (Reforgés)"); put(Language.EN, "(Reforged) Emperor of Destruction Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Puissance d'Héraclès (Reforgés)"); put(Language.EN, "(Reforged) Emperor of Destruction Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp0R", ICONPATH + "80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -597,7 +560,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Puissance d'Héraclès"); put(Language.EN, "Emperor of Destruction Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Puissance d'Héraclès"); put(Language.EN, "Emperor of Destruction Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp0", ICONPATH + "80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -608,7 +571,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Ardeur de Zatoichi (Reforgés)"); put(Language.EN, "(Reforged) Infinite Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Ardeur de Zatoichi (Reforgés)"); put(Language.EN, "(Reforged) Infinite Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp1R", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 410, true),
@@ -619,7 +582,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Ardeur de Zatoichi"); put(Language.EN, "Infinite Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Ardeur de Zatoichi"); put(Language.EN, "Infinite Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp1", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -630,7 +593,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Fureur du Berserker"); put(Language.EN, "Supreme War Deity Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Fureur du Berserker"); put(Language.EN, "Supreme War Deity Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve0", ICONPATH + "75pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 359, true),
@@ -639,7 +602,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Guerrier Céleste"); put(Language.EN, "Heavenly Warrior Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Guerrier Céleste"); put(Language.EN, "Heavenly Warrior Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve1", ICONPATH + "75pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -648,7 +611,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Armée Sanguinaire"); put(Language.EN, "Crushing Gladiator Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Armée Sanguinaire"); put(Language.EN, "Crushing Gladiator Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus0", ICONPATH + "70nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -657,7 +620,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Licorne Céleste"); put(Language.EN, "Iron Wall Rider Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Licorne Céleste"); put(Language.EN, "Iron Wall Rider Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus1", ICONPATH + "70nucleus1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 356, true),
@@ -666,7 +629,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Soif de Mort"); put(Language.EN, "Determined Gladiator Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Soif de Mort"); put(Language.EN, "Determined Gladiator Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot0", ICONPATH + "70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -675,7 +638,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chevalier des Saints"); put(Language.EN, "Blitzing Rider Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chevalier des Saints"); put(Language.EN, "Blitzing Rider Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot1", ICONPATH + "70pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 356, true),
@@ -684,7 +647,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Guerrier Suprême"); put(Language.EN, "Supreme Warrior Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Guerrier Suprême"); put(Language.EN, "Supreme Warrior Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve0", ICONPATH + "70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
@@ -693,7 +656,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Pureté du Paladin"); put(Language.EN, "King's Heart Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Pureté du Paladin"); put(Language.EN, "King's Heart Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve1", ICONPATH + "70pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -702,7 +665,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Stratégie de Sun Tzu (Reforgés)"); put(Language.EN, "(Reforged) Emperor of Terror Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Stratégie de Sun Tzu (Reforgés)"); put(Language.EN, "(Reforged) Emperor of Terror Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp0R", ICONPATH + "65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -713,7 +676,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Stratégie de Sun Tzu"); put(Language.EN, "Emperor of Terror Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Stratégie de Sun Tzu"); put(Language.EN, "Emperor of Terror Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp0", ICONPATH + "65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -724,7 +687,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Vertu de Galahad (Reforgés)"); put(Language.EN, "(Reforged) Immovable Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Vertu de Galahad (Reforgés)"); put(Language.EN, "(Reforged) Immovable Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp1R", ICONPATH + "65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 374, true),
@@ -735,7 +698,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Vertu de Galahad"); put(Language.EN, "Immovable Defense Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Vertu de Galahad"); put(Language.EN, "Immovable Defense Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp1", ICONPATH + "65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -746,7 +709,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main Armée du Boucher de Saphaël"); put(Language.EN, "Blood Frenzy Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main Armée du Boucher de Saphaël"); put(Language.EN, "Blood Frenzy Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve0", ICONPATH + "95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -755,7 +718,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Mains du Chevalier de l'Eclipse Blanche"); put(Language.EN, "White Eclipse Knight Handguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protège-Mains du Chevalier de l'Eclipse Blanche"); put(Language.EN, "White Eclipse Knight Handguards"); }},
 				new GradeName[] { GradeName.PALADIN, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve1", ICONPATH + "71vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -764,7 +727,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Marquis du Chaos"); put(Language.EN, "Marquis of Slaughter Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Marquis du Chaos"); put(Language.EN, "Marquis of Slaughter Wristguards"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus0", ICONPATH + "65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 316, true),
@@ -772,7 +735,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Juge Impérial"); put(Language.EN, "Imperial Inquisitor Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Juge Impérial"); put(Language.EN, "Imperial Inquisitor Wristguards"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus1", ICONPATH + "71vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 322, true),
@@ -780,7 +743,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Marquis de Destruction"); put(Language.EN, "Marquis of Destruction Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Marquis de Destruction"); put(Language.EN, "Marquis of Destruction Wristguards"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot0", ICONPATH + "95pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 316, true),
@@ -788,7 +751,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Gardien Impérial"); put(Language.EN, "Imperial Guardian Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Gardien Impérial"); put(Language.EN, "Imperial Guardian Wristguards"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot1", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 322, true),
@@ -796,7 +759,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Marquis de l'ombre"); put(Language.EN, "Dark Marquis Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Marquis de l'ombre"); put(Language.EN, "Dark Marquis Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve0", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 309, true),
@@ -804,7 +767,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Duc Impérial"); put(Language.EN, "Imperial Duke Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Duc Impérial"); put(Language.EN, "Imperial Duke Bangle"); }},
 				new GradeName[] { GradeName.PALADIN, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -812,7 +775,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Roi Diabolique (Reforgés)"); put(Language.EN, "(Reforged) Majin King Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Roi Diabolique (Reforgés)"); put(Language.EN, "(Reforged) Majin King Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp0R", ICONPATH + "65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 353, true),
@@ -821,7 +784,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Roi Diabolique"); put(Language.EN, "Majin King Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Roi Diabolique"); put(Language.EN, "Majin King Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp0", ICONPATH + "65pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 321, true),
@@ -830,7 +793,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Défense absolue (Reforgés)"); put(Language.EN, "(Reforged) Absolute Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Défense absolue (Reforgés)"); put(Language.EN, "(Reforged) Absolute Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp1R", ICONPATH + "65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 348, true),
@@ -839,7 +802,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Défense Absolue"); put(Language.EN, "Absolute Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Défense Absolue"); put(Language.EN, "Absolute Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp1", ICONPATH + "65pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 316, true),
@@ -848,7 +811,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main Destructrice à Lame d'Acier"); put(Language.EN, "Steel Destruction Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main Destructrice à Lame d'Acier"); put(Language.EN, "Steel Destruction Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve0", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
@@ -856,7 +819,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Saboteur"); put(Language.EN, "Saboteur Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Saboteur"); put(Language.EN, "Saboteur Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve1", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
@@ -864,7 +827,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Général Diabolique (Reforgé)"); put(Language.EN, "(Reforged) Majin General's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Général Diabolique (Reforgé)"); put(Language.EN, "(Reforged) Majin General's Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp0R", ICONPATH + "80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -873,7 +836,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Général Diabolique"); put(Language.EN, "Majin General's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Général Diabolique"); put(Language.EN, "Majin General's Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp0", ICONPATH + "80nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 270, true),
@@ -882,7 +845,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Défense Parfaite (Reforgé)"); put(Language.EN, "(Reforged) Perfect Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Défense Parfaite (Reforgé)"); put(Language.EN, "(Reforged) Perfect Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp1R", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
@@ -891,7 +854,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Défense Parfaite"); put(Language.EN, "Perfect Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Défense Parfaite"); put(Language.EN, "Perfect Defense Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp1", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 265, true),
@@ -900,7 +863,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Guerrier robuste"); put(Language.EN, "Heavy Warrior's Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Guerrier robuste"); put(Language.EN, "Heavy Warrior's Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve0", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -908,7 +871,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Mains du Chevalier du Fort"); put(Language.EN, "Fortress Knight Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protège-Mains du Chevalier du Fort"); put(Language.EN, "Fortress Knight Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve1", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 239, true),
@@ -916,7 +879,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main de l'Officier tactique"); put(Language.EN, "Tactical Officer's Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main de l'Officier tactique"); put(Language.EN, "Tactical Officer's Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 28, Quality.ORANGE, true, false,
 				ArmorType.GANT, "30pve0", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 205, true),
@@ -924,7 +887,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Hurlement de Conan (Reforgé)"); put(Language.EN, "(Reforged) Armored Wolf Howl Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Hurlement de Conan (Reforgé)"); put(Language.EN, "(Reforged) Armored Wolf Howl Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp0R", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -933,7 +896,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Hurlement de Conan"); put(Language.EN, "Armored Wolf Howl Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Hurlement de Conan"); put(Language.EN, "Armored Wolf Howl Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp0", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 220, true),
@@ -942,7 +905,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Défense de Lancelot (Reforgé)"); put(Language.EN, "(Reforged) Rider Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Défense de Lancelot (Reforgé)"); put(Language.EN, "(Reforged) Rider Defense Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp1R", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 248, true),
@@ -951,7 +914,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Défense de Lancelot"); put(Language.EN, "Rider Defense Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Défense de Lancelot"); put(Language.EN, "Rider Defense Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 225, true),
@@ -960,7 +923,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Garde d'Elite"); put(Language.EN, "Elite Guard's Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Garde d'Elite"); put(Language.EN, "Elite Guard's Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 18, Quality.ORANGE, true, false,
 				ArmorType.GANT, "20pve0", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 165, true),
@@ -968,7 +931,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Destructeur (Réincarné)"); put(Language.EN, "(Reincarnated) Destroyer's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Destructeur (Réincarné)"); put(Language.EN, "(Reincarnated) Destroyer's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo0R", ICONPATH + "65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1052,7 +1015,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 378),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Destructeur"); put(Language.EN, "Destroyer's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Destructeur"); put(Language.EN, "Destroyer's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo0", ICONPATH + "65pvp0", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1136,7 +1099,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 315),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Croisé (Réincarné)"); put(Language.EN, "(Reincarnated) Holy Knight's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Croisé (Réincarné)"); put(Language.EN, "(Reincarnated) Holy Knight's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo1R", ICONPATH + "100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1220,7 +1183,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 198),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Croisé"); put(Language.EN, "Holy Knight's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Croisé"); put(Language.EN, "Holy Knight's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo1", ICONPATH + "100pve1", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -1304,7 +1267,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 165),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme du Tigre"); put(Language.EN, "Voracious Wartiger Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme du Tigre"); put(Language.EN, "Voracious Wartiger Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg0", ICONPATH + "80gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 435, true),
@@ -1314,7 +1277,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 790),
 					new Effect(TypeEffect.PM, false, 510),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Rhino Céleste"); put(Language.EN, "Sacred Sky Rhino Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Rhino Céleste"); put(Language.EN, "Sacred Sky Rhino Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg1", ICONPATH + "80gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 444, true),
@@ -1324,7 +1287,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 740),
 					new Effect(TypeEffect.PM, false, 560),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Étrange Confusion"); put(Language.EN, "Confusion Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Étrange Confusion"); put(Language.EN, "Confusion Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 438, true),
@@ -1334,7 +1297,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 475),
 					new Effect(TypeEffect.PM, false, 475),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Bombe Atomique"); put(Language.EN, "Powerbomb Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Bombe Atomique"); put(Language.EN, "Powerbomb Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 86, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 422, true),
@@ -1344,7 +1307,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 375),
 					new Effect(TypeEffect.PM, false, 575),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Soleil Levant"); put(Language.EN, "Rising Sun Ghost Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Soleil Levant"); put(Language.EN, "Rising Sun Ghost Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 82, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -1354,7 +1317,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 550),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Mur de Fer"); put(Language.EN, "Iron Wall Defense Armor"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Mur de Fer"); put(Language.EN, "Iron Wall Defense Armor"); }},
 				new GradeName[] { GradeName.PALADIN, }, 82, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 416, true),
@@ -1364,7 +1327,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 450),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Rage du Minotaure"); put(Language.EN, "Bloodthirsty Berserker Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Rage du Minotaure"); put(Language.EN, "Bloodthirsty Berserker Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg0", ICONPATH + "80gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -1374,7 +1337,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 660),
 					new Effect(TypeEffect.PM, false, 380),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Force des Titans"); put(Language.EN, "Radiant Wing Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Force des Titans"); put(Language.EN, "Radiant Wing Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg1", ICONPATH + "80gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 410, true),
@@ -1384,7 +1347,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 610),
 					new Effect(TypeEffect.PM, false, 430),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Chevalier de la Lune d'Argent"); put(Language.EN, "Silver Moon Knight Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Chevalier de la Lune d'Argent"); put(Language.EN, "Silver Moon Knight Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 78, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -1394,7 +1357,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 400),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Ravageur (Réincarné)"); put(Language.EN, "(Reincarnated) Deathknight's Soul Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Ravageur (Réincarné)"); put(Language.EN, "(Reincarnated) Deathknight's Soul Vambraces"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo0R", ICONPATH + "70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1518,7 +1481,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 318),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Ravageur"); put(Language.EN, "Death Knight's Soul Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Ravageur"); put(Language.EN, "Death Knight's Soul Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo0", ICONPATH + "70nucleus0", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1642,7 +1605,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 265),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Templier (Réincarné)"); put(Language.EN, "(Reincarnated) Crusader's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Templier (Réincarné)"); put(Language.EN, "(Reincarnated) Crusader's Soul Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo1R", ICONPATH + "70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1766,7 +1729,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 174),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de Templier"); put(Language.EN, "Crusader's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de Templier"); put(Language.EN, "Crusader's Soul Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo1", ICONPATH + "70nucleus1", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -1890,7 +1853,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 145),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Guerrier des Forêts"); put(Language.EN, "Forest Warrior Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Guerrier des Forêts"); put(Language.EN, "Forest Warrior Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -1900,7 +1863,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 500),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Conquête d'Attila"); put(Language.EN, "Lunatic High Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Conquête d'Attila"); put(Language.EN, "Lunatic High Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg0", ICONPATH + "70gvg0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 368, true),
@@ -1910,7 +1873,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 400),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Noblesse de Siegfried"); put(Language.EN, "Stars of Glory Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Noblesse de Siegfried"); put(Language.EN, "Stars of Glory Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg1", ICONPATH + "70gvg1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -1920,7 +1883,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Moufles d'Ours des Cavernes"); put(Language.EN, "While Bear Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Moufles d'Ours des Cavernes"); put(Language.EN, "While Bear Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 368, true),
@@ -1930,7 +1893,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 500),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Chevalier Errant"); put(Language.EN, "Roaring Knight Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Chevalier Errant"); put(Language.EN, "Roaring Knight Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 69, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
@@ -1940,7 +1903,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Gladiateur (Réincarné)"); put(Language.EN, "(Reincarnated) Warlord's Soul Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Gladiateur (Réincarné)"); put(Language.EN, "(Reincarnated) Warlord's Soul Vambraces"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo0R", ICONPATH + "75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2064,7 +2027,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Gladiateur"); put(Language.EN, "Warlord's Soul Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Évolutifs du Gladiateur"); put(Language.EN, "Warlord's Soul Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo0", ICONPATH + "75evo0", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2188,7 +2151,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Vindicateur (Réincarné)"); put(Language.EN, "(Reincarnated) Templar's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Vindicateur (Réincarné)"); put(Language.EN, "(Reincarnated) Templar's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo1R", ICONPATH + "75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2312,7 +2275,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 150),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Vindicateur"); put(Language.EN, "Templar's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Évolutifs du Vindicateur"); put(Language.EN, "Templar's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo1", ICONPATH + "75evo1", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -2436,7 +2399,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 125),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main Symbolique de la Bête Démoniaque"); put(Language.EN, "Merciless Beast's Handguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main Symbolique de la Bête Démoniaque"); put(Language.EN, "Merciless Beast's Handguards"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -2446,7 +2409,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 400),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mains Métalliques du Noble"); put(Language.EN, "Regal Hero Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mains Métalliques du Noble"); put(Language.EN, "Regal Hero Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -2456,7 +2419,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Commandeur de l'Enfer"); put(Language.EN, "Hell Commander's Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Commandeur de l'Enfer"); put(Language.EN, "Hell Commander's Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 308, true),
@@ -2466,7 +2429,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Aîné de la Loi"); put(Language.EN, "Elder of Law Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Aîné de la Loi"); put(Language.EN, "Elder of Law Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 308, true),
@@ -2476,7 +2439,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Epaulettes Romeo"); put(Language.EN, "Romeo Shoulder Armor"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Epaulettes Romeo"); put(Language.EN, "Romeo Shoulder Armor"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 48, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 298, true),
@@ -2486,7 +2449,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 50),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Feu Ardent"); put(Language.EN, "Wildfire Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Feu Ardent"); put(Language.EN, "Wildfire Bangle"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 251, true),
@@ -2496,7 +2459,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 180),
 					new Effect(TypeEffect.PM, false, 70),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Lumière Violette"); put(Language.EN, "Purple Prism Light Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Lumière Violette"); put(Language.EN, "Purple Prism Light Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 251, true),
@@ -2505,7 +2468,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.PV, false, 250),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poing de Fer évolutif du Berserker (Réincarné)"); put(Language.EN, "(Reincarnated) Berserker's Soul Iron Fist"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poing de Fer évolutif du Berserker (Réincarné)"); put(Language.EN, "(Reincarnated) Berserker's Soul Iron Fist"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo0R", ICONPATH + "60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2739,7 +2702,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poing de Fer Évolutif du Berserker"); put(Language.EN, "Berserker's Soul Iron Fist"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poing de Fer Évolutif du Berserker"); put(Language.EN, "Berserker's Soul Iron Fist"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo0", ICONPATH + "60evo0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -2973,7 +2936,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Paladin (Réincarné)"); put(Language.EN, "(Reincarnated) Paladin's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Paladin (Réincarné)"); put(Language.EN, "(Reincarnated) Paladin's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo1R", ICONPATH + "25pvp1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -3207,7 +3170,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 120),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Paladin"); put(Language.EN, "Paladin's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Évolutifs du Paladin"); put(Language.EN, "Paladin's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.PALADIN, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo1", ICONPATH + "25pvp1", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -3441,7 +3404,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 100),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Guerrier (Réincarné)"); put(Language.EN, "(Reincarnated) Warrior's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Guerrier (Réincarné)"); put(Language.EN, "(Reincarnated) Warrior's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, true,
 				ArmorType.GANT, "30evo0R", ICONPATH + "60pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -3595,7 +3558,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.VIT, false, 9, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Guerrier"); put(Language.EN, "Warrior's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Évolutifs du Guerrier"); put(Language.EN, "Warrior's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 6, Quality.BLUE, false, false,
 				ArmorType.GANT, "30evo0", ICONPATH + "60pve0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -3749,139 +3712,139 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.VIT, false, 7, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Bestiaux de Sprite"); put(Language.EN, "Sprite's Bestial Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Bestiaux de Sprite"); put(Language.EN, "Sprite's Bestial Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 96, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
 					new Effect(TypeEffect.DefM, false, 293, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Pourpres de Sprite"); put(Language.EN, "Sprite's Crimson Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Pourpres de Sprite"); put(Language.EN, "Sprite's Crimson Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 91, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
 					new Effect(TypeEffect.DefM, false, 282, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sprite Inquisiteur"); put(Language.EN, "Sprite's Inquisition Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sprite Inquisiteur"); put(Language.EN, "Sprite's Inquisition Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 86, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "85pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 380, true),
 					new Effect(TypeEffect.DefM, false, 271, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sprite Sombre"); put(Language.EN, "Sprite's Dark Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sprite Sombre"); put(Language.EN, "Sprite's Dark Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 81, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
 					new Effect(TypeEffect.DefM, false, 260, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Pontife des Sprites"); put(Language.EN, "Sprite's Pontiff Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Pontife des Sprites"); put(Language.EN, "Sprite's Pontiff Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 76, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
 					new Effect(TypeEffect.DefM, false, 249, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Gravées d'Altesse"); put(Language.EN, "Sprite's Holy Warrior Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Gravées d'Altesse"); put(Language.EN, "Sprite's Holy Warrior Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 71, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "71vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
 					new Effect(TypeEffect.DefM, false, 238, true),
 					new Effect(TypeEffect.FCE, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Ornés d'Aristocrate"); put(Language.EN, "Sprite's Sky Overload Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Ornés d'Aristocrate"); put(Language.EN, "Sprite's Sky Overload Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 66, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "71vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
 					new Effect(TypeEffect.DefM, false, 227, true),
 					new Effect(TypeEffect.FCE, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Lourd Mercenaire des Sprites"); put(Language.EN, "Sprite's Heavy Mercenary Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Lourd Mercenaire des Sprites"); put(Language.EN, "Sprite's Heavy Mercenary Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 61, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 302, true),
 					new Effect(TypeEffect.DefM, false, 215, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelet du Régent des Sprites"); put(Language.EN, "Sprite's Regent Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelet du Régent des Sprites"); put(Language.EN, "Sprite's Regent Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 55, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
 					new Effect(TypeEffect.DefM, false, 202, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Coudes du Découpeur"); put(Language.EN, "Slash Armguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protège-Coudes du Découpeur"); put(Language.EN, "Slash Armguards"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 276, true),
 					new Effect(TypeEffect.DefM, false, 197, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Plats du Défenseur"); put(Language.EN, "Plate Gloves of the Defender"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Plats du Défenseur"); put(Language.EN, "Plate Gloves of the Defender"); }},
 				new GradeName[] { GradeName.PALADIN, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 284, true),
 					new Effect(TypeEffect.DefM, false, 203, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelet à Lame d'Acier des Sprites"); put(Language.EN, "Sprite's Steelblade Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelet à Lame d'Acier des Sprites"); put(Language.EN, "Sprite's Steelblade Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 45, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 251, true),
 					new Effect(TypeEffect.DefM, false, 179, true),
 					new Effect(TypeEffect.FCE, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Endurcis des Sprites"); put(Language.EN, "Sprite's Heavy Forged Gauntlet"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Endurcis des Sprites"); put(Language.EN, "Sprite's Heavy Forged Gauntlet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 35, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 219, true),
 					new Effect(TypeEffect.DefM, false, 156, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Fer Spéciaux du Forgeron"); put(Language.EN, "Smithy's Special Iron Gauntlet"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Fer Spéciaux du Forgeron"); put(Language.EN, "Smithy's Special Iron Gauntlet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 32, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 214, true),
 					new Effect(TypeEffect.DefM, false, 153, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Stratégiques des Sprites"); put(Language.EN, "Sprite's Strategist's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Stratégiques des Sprites"); put(Language.EN, "Sprite's Strategist's Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 25, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 183, true),
 					new Effect(TypeEffect.DefM, false, 131, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Fer du Juste"); put(Language.EN, "Iron Hands of Justice"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Fer du Juste"); put(Language.EN, "Iron Hands of Justice"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 22, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 172, true),
 					new Effect(TypeEffect.DefM, false, 123, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Garde des Sprites"); put(Language.EN, "Sprite's Guard's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Garde des Sprites"); put(Language.EN, "Sprite's Guard's Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 15, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 144, true),
 					new Effect(TypeEffect.DefM, false, 103, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants renforcés des Sprites"); put(Language.EN, "Sprite's Sturdy Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants renforcés des Sprites"); put(Language.EN, "Sprite's Sturdy Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 8, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 111, true),
 					new Effect(TypeEffect.DefM, false, 79, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Feu de Météore"); put(Language.EN, "Meteorfire Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Feu de Météore"); put(Language.EN, "Meteorfire Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
 					new Effect(TypeEffect.DefM, false, 269, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Précipice"); put(Language.EN, "Precipice Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Précipice"); put(Language.EN, "Precipice Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
@@ -3889,7 +3852,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Couchant"); put(Language.EN, "Sunset Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Couchant"); put(Language.EN, "Sunset Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
@@ -3897,69 +3860,69 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Sentinelle des Enfers"); put(Language.EN, "Burning Sentry Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Sentinelle des Enfers"); put(Language.EN, "Burning Sentry Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 354, true),
 					new Effect(TypeEffect.DefM, false, 261, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Gardien du Sanctuaire"); put(Language.EN, "Sanctuary Defender Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Gardien du Sanctuaire"); put(Language.EN, "Sanctuary Defender Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
 					new Effect(TypeEffect.DefM, false, 256, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Orgueil"); put(Language.EN, "Proud Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Orgueil"); put(Language.EN, "Proud Gloves"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
 					new Effect(TypeEffect.DefM, false, 251, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Silence Sacré"); put(Language.EN, "Holy Silence Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Silence Sacré"); put(Language.EN, "Holy Silence Gloves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
 					new Effect(TypeEffect.DefM, false, 246, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Fourrés"); put(Language.EN, "War Spectre Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Fourrés"); put(Language.EN, "War Spectre Vambrace"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
 					new Effect(TypeEffect.DefM, false, 220, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Articulés"); put(Language.EN, "Godly Glory Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Articulés"); put(Language.EN, "Godly Glory Vambrace"); }},
 				new GradeName[] { GradeName.PALADIN, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 310, true),
 					new Effect(TypeEffect.DefM, false, 216, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelet du Régent"); put(Language.EN, "Regent Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelet du Régent"); put(Language.EN, "Regent Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 52, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants à Lame d'Acier"); put(Language.EN, "Steelblade Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants à Lame d'Acier"); put(Language.EN, "Steelblade Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 42, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 225, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Endurcis"); put(Language.EN, "Heavy Forged Gauntlet"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Endurcis"); put(Language.EN, "Heavy Forged Gauntlet"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 32, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 195, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Stratégiques"); put(Language.EN, "Strategist's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Stratégiques"); put(Language.EN, "Strategist's Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 22, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25vert0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 160, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Élite"); put(Language.EN, "Elite Army Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Élite"); put(Language.EN, "Elite Army Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 15, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 136, true),
 					new Effect(TypeEffect.DefM, false, 96, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Garde"); put(Language.EN, "Guard's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Garde"); put(Language.EN, "Guard's Gauntlets"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, }, 12, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 121, true),
@@ -3969,7 +3932,7 @@ public class LoaderGauntlet {
 	
 	private static Armor[] getArcher() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Prédateur Silencieux"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Prédateur Silencieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red2", ICONPATH + "90red2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 421, true),
@@ -4002,7 +3965,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Prédateur"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Prédateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red2", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 421, true),
@@ -4035,7 +3998,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Hands"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Assassin Ninja"); put(Language.EN, "Ninja Assassin Piercer Hands"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red3", ICONPATH + "90red3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
@@ -4068,7 +4031,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Ninja assassin"); put(Language.EN, "True Ninja Assassin 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Ninja assassin"); put(Language.EN, "True Ninja Assassin 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red3", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
@@ -4101,7 +4064,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Faucon tempétueux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Faucon tempétueux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio2", ICONPATH + "100vio2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
@@ -4110,7 +4073,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 29, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Orage de l'ombre"); put(Language.EN, "Shadowstorm Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio3", ICONPATH + "100vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 422, true),
@@ -4119,7 +4082,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.AGI, false, 29, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines Dévastateur de Mihawk"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines Dévastateur de Mihawk"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio2", ICONPATH + "90vio2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -4128,7 +4091,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.AGI, false, 26, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines de l'Assaut des Kage"); put(Language.EN, "Strike Shadow Assault Hands"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines de l'Assaut des Kage"); put(Language.EN, "Strike Shadow Assault Hands"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio3", ICONPATH + "90vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 395, true),
@@ -4137,7 +4100,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 26, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du cavalier du vent"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du cavalier du vent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio2", ICONPATH + "80vio2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -4146,7 +4109,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 27, true),
 					new Effect(TypeEffect.AGI, false, 25, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poings du Chasseur des Ombres"); put(Language.EN, "Shadow Hunter Hands"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings du Chasseur des Ombres"); put(Language.EN, "Shadow Hunter Hands"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio3", ICONPATH + "80vio3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 368, true),
@@ -4155,7 +4118,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets célestes de Kikyo"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets célestes de Kikyo"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold2", ICONPATH + "100gold2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 412, true),
@@ -4164,7 +4127,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants furtifs de Minato"); put(Language.EN, "Shadow Master's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants furtifs de Minato"); put(Language.EN, "Shadow Master's Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold3", ICONPATH + "100gold3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 404, true),
@@ -4173,7 +4136,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Visée Quincy"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Visée Quincy"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold2", ICONPATH + "90gold2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -4182,7 +4145,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 21, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Prédateur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Prédateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold2", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -4191,7 +4154,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 21, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Furtivité du CP9"); put(Language.EN, "Ghost Walker Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Furtivité du CP9"); put(Language.EN, "Ghost Walker Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold3", ICONPATH + "90gold3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -4200,7 +4163,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Ninja assassin"); put(Language.EN, "Ninja Assassin 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Ninja assassin"); put(Language.EN, "Ninja Assassin 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold3", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -4209,7 +4172,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Sauvagerie d'Artémis"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Sauvagerie d'Artémis"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold2", ICONPATH + "80gold2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 351, true),
@@ -4218,7 +4181,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Ombres de Loki"); put(Language.EN, "Cruel Senses Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Ombres de Loki"); put(Language.EN, "Cruel Senses Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold3", ICONPATH + "80gold3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 345, true),
@@ -4227,7 +4190,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Sombretrappeur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Sombretrappeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp2R", ICONPATH + "100pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 432, true),
@@ -4238,7 +4201,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sombretrappeur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sombretrappeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp2", ICONPATH + "100pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 393, true),
@@ -4249,7 +4212,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants d'Assassin nécrotique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants d'Assassin nécrotique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp3R", ICONPATH + "100pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -4260,7 +4223,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Assassin scarifié"); put(Language.EN, "Necrotic Assassin's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Assassin scarifié"); put(Language.EN, "Necrotic Assassin's Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp3", ICONPATH + "100pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -4271,7 +4234,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Soleil Hurlant"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Soleil Hurlant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve2", ICONPATH + "100pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -4280,7 +4243,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Bourreau Fantôme"); put(Language.EN, "Ghost Executioner Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Bourreau Fantôme"); put(Language.EN, "Ghost Executioner Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve3", ICONPATH + "100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -4289,7 +4252,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Héros Fantôme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Héros Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp2R", ICONPATH + "95pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -4300,7 +4263,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Héros Fantôme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Héros Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp2", ICONPATH + "95pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -4311,7 +4274,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Samouraï Fantôme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Samouraï Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp3R", ICONPATH + "95pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 394, true),
@@ -4322,7 +4285,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Samouraï Fantôme"); put(Language.EN, "Phantom Samurai Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Samouraï Fantôme"); put(Language.EN, "Phantom Samurai Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp3", ICONPATH + "95pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 358, true),
@@ -4333,7 +4296,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Hymne des Vents"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Hymne des Vents"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve2", ICONPATH + "95pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 360, true),
@@ -4342,7 +4305,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Ninja Démoniaque"); put(Language.EN, "Demonic Ninja Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Ninja Démoniaque"); put(Language.EN, "Demonic Ninja Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve3", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 353, true),
@@ -4351,7 +4314,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Coup Lunaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Coup Lunaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve2", ICONPATH + "90pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 347, true),
@@ -4360,7 +4323,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets des Ombres Éphémères"); put(Language.EN, "Veiled Shadow Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets des Ombres Éphémères"); put(Language.EN, "Veiled Shadow Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve3", ICONPATH + "90pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -4369,7 +4332,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Traqueur de Grand Line"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Traqueur de Grand Line"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp2R", ICONPATH + "85pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -4380,7 +4343,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Traqueur de Grand Line"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Traqueur de Grand Line"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp2", ICONPATH + "85pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 339, true),
@@ -4391,7 +4354,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Ninja de Konoha"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Ninja de Konoha"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp3R", ICONPATH + "85pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -4402,7 +4365,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Ninja de Konoha"); put(Language.EN, "Ghost Slayer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Ninja de Konoha"); put(Language.EN, "Ghost Slayer Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp3", ICONPATH + "85pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 332, true),
@@ -4413,7 +4376,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme de l'Onyx Intrépide"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme de l'Onyx Intrépide"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve2", ICONPATH + "85pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -4422,7 +4385,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme de la Panthère Ténébreuse"); put(Language.EN, "Stealth Eagle Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme de la Panthère Ténébreuse"); put(Language.EN, "Stealth Eagle Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve3", ICONPATH + "85pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -4431,7 +4394,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Agilité Surnaturelle"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Agilité Surnaturelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus2", ICONPATH + "80nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 324, true),
@@ -4440,7 +4403,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Vision Nocturne"); put(Language.EN, "Shadowcraft Assassin Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Vision Nocturne"); put(Language.EN, "Shadowcraft Assassin Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus3", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -4449,7 +4412,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Vogueur de Vent"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Vogueur de Vent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot2", ICONPATH + "80pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 324, true),
@@ -4458,7 +4421,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ombre de Terreur"); put(Language.EN, "Blackshroud Assassin Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ombre de Terreur"); put(Language.EN, "Blackshroud Assassin Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot3", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -4467,7 +4430,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Glorieux Traqueur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Glorieux Traqueur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve2", ICONPATH + "80pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 319, true),
@@ -4476,7 +4439,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du 6ème Sens Ninja"); put(Language.EN, "Ninja's Senses Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du 6ème Sens Ninja"); put(Language.EN, "Ninja's Senses Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve3", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 313, true),
@@ -4485,7 +4448,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Acuité de Loxley (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Acuité de Loxley (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp2R", ICONPATH + "80nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
@@ -4496,7 +4459,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Acuité de Loxley"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Acuité de Loxley"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp2", ICONPATH + "80nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -4507,7 +4470,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffes de Fourberie de Lucrezia (Reforgées)"); put(Language.EN, "(Reforged) Illusion Warrior Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Griffes de Fourberie de Lucrezia (Reforgées)"); put(Language.EN, "(Reforged) Illusion Warrior Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp3R", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -4518,7 +4481,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffes de Fourberie de Lucrezia"); put(Language.EN, "Illusion Warrior Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Griffes de Fourberie de Lucrezia"); put(Language.EN, "Illusion Warrior Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp3", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -4529,7 +4492,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sniper Météoritique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sniper Météoritique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve2", ICONPATH + "75pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -4538,7 +4501,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Ombre Embrasée"); put(Language.EN, "Deviant Flaming Shadow Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Ombre Embrasée"); put(Language.EN, "Deviant Flaming Shadow Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve3", ICONPATH + "75pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
@@ -4547,7 +4510,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chant des Sylves"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chant des Sylves"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus2", ICONPATH + "70nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -4556,7 +4519,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Crocs du Cobra"); put(Language.EN, "Shadow Punisher Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Crocs du Cobra"); put(Language.EN, "Shadow Punisher Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus3", ICONPATH + "70nucleus3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -4565,7 +4528,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Souffle des Limbes"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Souffle des Limbes"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot2", ICONPATH + "100pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -4574,7 +4537,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Ombre Diabolique"); put(Language.EN, "Diabolic Shadow Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Ombre Diabolique"); put(Language.EN, "Diabolic Shadow Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot3", ICONPATH + "70pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -4582,7 +4545,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 18, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Fougue de Manco Capac"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Fougue de Manco Capac"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve2", ICONPATH + "100pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -4591,7 +4554,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Rigueur d'al Sabah"); put(Language.EN, "Shadow Specter Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Rigueur d'al Sabah"); put(Language.EN, "Shadow Specter Wristguards"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve3", ICONPATH + "70pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 285, true),
@@ -4599,7 +4562,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 18, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Vigilance d'Häyhä (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Vigilance d'Häyhä (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp2R", ICONPATH + "95pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -4610,7 +4573,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Vigilance d'Häyhä"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Vigilance d'Häyhä"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp2", ICONPATH + "95pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -4621,7 +4584,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Sabotage de Fawkes (Reforgés)"); put(Language.EN, "(Reforged) Shura Warrior Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Sabotage de Fawkes (Reforgés)"); put(Language.EN, "(Reforged) Shura Warrior Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp3R", ICONPATH + "100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -4632,7 +4595,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Sabotage de Fawkes"); put(Language.EN, "Shura Warrior Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Sabotage de Fawkes"); put(Language.EN, "Shura Warrior Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp3", ICONPATH + "100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 277, true),
@@ -4643,7 +4606,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Protection de l'Ancien Ranger"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Protection de l'Ancien Ranger"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve2", ICONPATH + "65pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
@@ -4652,7 +4615,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-Bras de l'Assassin à la Lame Cachée"); put(Language.EN, "Dark Sun Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protège-Bras de l'Assassin à la Lame Cachée"); put(Language.EN, "Dark Sun Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve3", ICONPATH + "65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
@@ -4661,7 +4624,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chuchoteur des Soupirs"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chuchoteur des Soupirs"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus2", ICONPATH + "95pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 268, true),
@@ -4669,7 +4632,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Samourai du Poison"); put(Language.EN, "Venom Elite Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Samourai du Poison"); put(Language.EN, "Venom Elite Wristguards"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus3", ICONPATH + "100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -4677,7 +4640,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Promeneur des Nuages"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Promeneur des Nuages"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot2", ICONPATH + "65pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 268, true),
@@ -4685,7 +4648,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Samourai du Tonnerre"); put(Language.EN, "Shadow Elite Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Samourai du Tonnerre"); put(Language.EN, "Shadow Elite Wristguards"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot3", ICONPATH + "65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -4693,7 +4656,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets des Ailes Célestes"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets des Ailes Célestes"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve2", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -4701,7 +4664,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Samouraï Fantôme"); put(Language.EN, "Shadow Warrior Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Samouraï Fantôme"); put(Language.EN, "Shadow Warrior Gauntlets"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve3", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
@@ -4709,7 +4672,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Héros Céleste (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Héros Céleste (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp2R", ICONPATH + "95pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 295, true),
@@ -4718,7 +4681,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Héros Céleste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Héros Céleste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp2", ICONPATH + "95pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 268, true),
@@ -4727,7 +4690,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Combattant de l'Enfer (Reforgés)"); put(Language.EN, "(Reforged) Hellblazer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Combattant de l'Enfer (Reforgés)"); put(Language.EN, "(Reforged) Hellblazer Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp3R", ICONPATH + "100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 289, true),
@@ -4736,7 +4699,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Combattant de l'Enfer"); put(Language.EN, "Hellblazer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Combattant de l'Enfer"); put(Language.EN, "Hellblazer Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp3", ICONPATH + "100pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -4745,7 +4708,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Canonnier"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Canonnier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve2", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 233, true),
@@ -4753,7 +4716,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Royaume Ciselé"); put(Language.EN, "Sniper's Realm Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Royaume Ciselé"); put(Language.EN, "Sniper's Realm Bangle"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve3", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 229, true),
@@ -4761,7 +4724,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Hardi Céleste (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Hardi Céleste (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp2R", ICONPATH + "80nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
@@ -4770,7 +4733,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Hardi Céleste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Hardi Céleste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp2", ICONPATH + "80nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 226, true),
@@ -4779,7 +4742,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Combattant au Lion Bleu (Reforgé)"); put(Language.EN, "(Reforged) Blue Lion Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Combattant au Lion Bleu (Reforgé)"); put(Language.EN, "(Reforged) Blue Lion Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp3R", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 244, true),
@@ -4789,7 +4752,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Combattant au Lion Bleu"); put(Language.EN, "Blue Lion Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Combattant au Lion Bleu"); put(Language.EN, "Blue Lion Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp3", ICONPATH + "95pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 221, true),
@@ -4799,7 +4762,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Regard d'Aigle"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Regard d'Aigle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve2", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 205, true),
@@ -4807,7 +4770,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Embuscade"); put(Language.EN, "Ambush Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Embuscade"); put(Language.EN, "Ambush Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve3", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 201, true),
@@ -4815,7 +4778,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chasseur de vent"); put(Language.EN, "Windtracker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chasseur de vent"); put(Language.EN, "Windtracker Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 28, Quality.ORANGE, true, false,
 				ArmorType.GANT, "30pve2", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 171, true),
@@ -4823,7 +4786,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Précision de Sogeking (Reforgé)"); put(Language.EN, "(Reforged) Shoot the Breeze Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Précision de Sogeking (Reforgé)"); put(Language.EN, "(Reforged) Shoot the Breeze Bracers"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp2R", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 206, true),
@@ -4832,7 +4795,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Précision de Sogeking"); put(Language.EN, "Shoot the Breeze Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Précision de Sogeking"); put(Language.EN, "Shoot the Breeze Bracers"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp2", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 187, true),
@@ -4841,7 +4804,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards d'Ombre de Kakashi (Reforgé)"); put(Language.EN, "(Reforged) Shadow Assassin Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards d'Ombre de Kakashi (Reforgé)"); put(Language.EN, "(Reforged) Shadow Assassin Vambraces"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp3R", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 203, true),
@@ -4851,7 +4814,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards d'Ombre de Kakashi"); put(Language.EN, "Shadow Assassin Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards d'Ombre de Kakashi"); put(Language.EN, "Shadow Assassin Vambrace"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp3", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 184, true),
@@ -4861,7 +4824,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Chasseur de la Jungle"); put(Language.EN, "Jungle Hunter's Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Chasseur de la Jungle"); put(Language.EN, "Jungle Hunter's Bangle"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 18, Quality.ORANGE, true, false,
 				ArmorType.GANT, "20pve2", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 138, true),
@@ -4869,7 +4832,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Prédateur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Prédateur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo2R", ICONPATH + "95pve2", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -4953,7 +4916,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Prédateur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Prédateur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo2", ICONPATH + "95pve2", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -5037,7 +5000,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Kage (Réincarné)"); put(Language.EN, "(Reincarnated) Shinobi's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Kage (Réincarné)"); put(Language.EN, "(Reincarnated) Shinobi's Soul Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo3R", ICONPATH + "100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -5121,7 +5084,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 312),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Kage"); put(Language.EN, "Shinobi's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Kage"); put(Language.EN, "Shinobi's Soul Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo3", ICONPATH + "100pve3", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -5205,7 +5168,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 260),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Grand Oiseau Bleu"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Grand Oiseau Bleu"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg2", ICONPATH + "90gvg2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
@@ -5215,7 +5178,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 640),
 					new Effect(TypeEffect.PM, false, 660),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chien-Loup Zombie"); put(Language.EN, "Ghostwalker Hound Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chien-Loup Zombie"); put(Language.EN, "Ghostwalker Hound Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg3", ICONPATH + "80gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 363, true),
@@ -5225,7 +5188,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 590),
 					new Effect(TypeEffect.PM, false, 710),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Halo Éclatant"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Halo Éclatant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
@@ -5235,7 +5198,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 625),
 					new Effect(TypeEffect.PM, false, 325),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Combattant des Rues"); put(Language.EN, "Backdraft Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Combattant des Rues"); put(Language.EN, "Backdraft Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 86, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 352, true),
@@ -5244,7 +5207,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 18, true),
 					new Effect(TypeEffect.PV, false, 950),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Aigle Solitaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Aigle Solitaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 83, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -5254,7 +5217,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ombre Assassine"); put(Language.EN, "Shadow Killer Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ombre Assassine"); put(Language.EN, "Shadow Killer Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 83, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
@@ -5263,7 +5226,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 17, true),
 					new Effect(TypeEffect.PV, false, 900),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Maléfices de la Harpie"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Maléfices de la Harpie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg2", ICONPATH + "90gvg2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
@@ -5273,7 +5236,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 510),
 					new Effect(TypeEffect.PM, false, 530),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Frénésie du Lycan"); put(Language.EN, "Void Rift Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Frénésie du Lycan"); put(Language.EN, "Void Rift Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg3", ICONPATH + "80gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
@@ -5283,7 +5246,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 460),
 					new Effect(TypeEffect.PM, false, 580),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Messager du Vent"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Messager du Vent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 78, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -5293,7 +5256,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Sniper (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Sniper (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo2R", ICONPATH + "70nucleus2", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -5417,7 +5380,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 270),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Sniper"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Sniper"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo2", ICONPATH + "70nucleus2", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -5541,7 +5504,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 225),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Shinobi (Réincarné)"); put(Language.EN, "(Reincarnated) Windshadow's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Shinobi (Réincarné)"); put(Language.EN, "(Reincarnated) Windshadow's Soul Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo3R", ICONPATH + "70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -5665,7 +5628,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 276),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Shinobi"); put(Language.EN, "Windshadow's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Shinobi"); put(Language.EN, "Windshadow's Soul Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo3", ICONPATH + "70nucleus3", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -5789,7 +5752,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 230),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Tueur Sombre"); put(Language.EN, "Dark Killer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Tueur Sombre"); put(Language.EN, "Dark Killer's Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 323, true),
@@ -5798,7 +5761,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 16, true),
 					new Effect(TypeEffect.PV, false, 800),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Feinte de Geronimo"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Feinte de Geronimo"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg2", ICONPATH + "70gvg2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
@@ -5808,7 +5771,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Dragon Sombre Atma"); put(Language.EN, "Mirage Crevice Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Dragon Sombre Atma"); put(Language.EN, "Mirage Crevice Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg3", ICONPATH + "70gvg3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -5818,7 +5781,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 450),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Poigne de Traqueur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poigne de Traqueur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg2", ICONPATH + "75evo2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
@@ -5828,7 +5791,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cuir de Loup"); put(Language.EN, "Mournful Wind Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cuir de Loup"); put(Language.EN, "Mournful Wind Gauntlets"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 69, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 303, true),
@@ -5837,7 +5800,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 20, true),
 					new Effect(TypeEffect.PV, false, 700),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Traqueur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Traqueur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo2R", ICONPATH + "75evo2", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -5961,7 +5924,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Traqueur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Évolutifs du Traqueur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo2", ICONPATH + "75evo2", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -6085,7 +6048,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Ninja (Réincarné)"); put(Language.EN, "(Reincarnated) Darkstalker's Soul Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Ninja (Réincarné)"); put(Language.EN, "(Reincarnated) Darkstalker's Soul Vambraces"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo3R", ICONPATH + "75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -6209,7 +6172,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffes Évolutives du Ninja"); put(Language.EN, "Darkstalker's Soul Vambrace"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Griffes Évolutives du Ninja"); put(Language.EN, "Darkstalker's Soul Vambrace"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo3", ICONPATH + "75evo3", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -6333,7 +6296,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Trésor Secret"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Trésor Secret"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -6343,7 +6306,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines à griffes de Brume Noire"); put(Language.EN, "Black Mist Clawed Wristguard"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines à griffes de Brume Noire"); put(Language.EN, "Black Mist Clawed Wristguard"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -6353,7 +6316,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chant de la Dérive"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chant de la Dérive"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -6363,7 +6326,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 280),
 					new Effect(TypeEffect.PM, false, 120),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines Mystiques"); put(Language.EN, "Mystical Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines Mystiques"); put(Language.EN, "Mystical Bracers"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 256, true),
@@ -6373,7 +6336,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Sans Ombre"); put(Language.EN, "Shadowless Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Sans Ombre"); put(Language.EN, "Shadowless Gauntlets"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 48, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
@@ -6382,7 +6345,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 320),
 					new Effect(TypeEffect.PM, false, 80),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Léopard Noir"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Léopard Noir"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60evo0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 215, true),
@@ -6392,7 +6355,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 130),
 					new Effect(TypeEffect.PM, false, 120),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Militaires Spéciaux"); put(Language.EN, "Special Military Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Militaires Spéciaux"); put(Language.EN, "Special Military Gauntlets"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
@@ -6402,7 +6365,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 50),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Ranger (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Ranger (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo2R", ICONPATH + "50pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -6636,7 +6599,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 216),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Ranger"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Ranger"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo2", ICONPATH + "50pve0", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -6870,7 +6833,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 180),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Assassin (Réincarné)"); put(Language.EN, "(Reincarnated) Assassin's Soul Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs de l'Assassin (Réincarné)"); put(Language.EN, "(Reincarnated) Assassin's Soul Vambraces"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo3R", ICONPATH + "25pvp2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -7104,7 +7067,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 180),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards Évolutifs de l'Assassin"); put(Language.EN, "Assassin's Soul Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards Évolutifs de l'Assassin"); put(Language.EN, "Assassin's Soul Vambraces"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo3", ICONPATH + "25pvp2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -7338,7 +7301,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 150),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Archer (Réincarné)"); put(Language.EN, "(Reincarnated) Archer's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs de l'Archer (Réincarné)"); put(Language.EN, "(Reincarnated) Archer's Soul Bracers"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, true,
 				ArmorType.GANT, "30evo2R", ICONPATH + "37bleu0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -7492,7 +7455,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.AGI, false, 6, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards Évolutifs de l'Archer"); put(Language.EN, "Archer's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards Évolutifs de l'Archer"); put(Language.EN, "Archer's Soul Bracers"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 6, Quality.BLUE, false, false,
 				ArmorType.GANT, "30evo2", ICONPATH + "37bleu0", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -7646,133 +7609,133 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.AGI, false, 5, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Volants de Sprite"); put(Language.EN, "Sprite's Flying Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Volants de Sprite"); put(Language.EN, "Sprite's Flying Gauntlets"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 96, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
 					new Effect(TypeEffect.DefM, false, 325, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Feuillus de Sprite"); put(Language.EN, "Sprite's Leafy Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Feuillus de Sprite"); put(Language.EN, "Sprite's Leafy Gauntlets"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 91, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 330, true),
 					new Effect(TypeEffect.DefM, false, 313, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sprite Furtif"); put(Language.EN, "Sprite's Stealthy Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sprite Furtif"); put(Language.EN, "Sprite's Stealthy Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 86, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "85pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
 					new Effect(TypeEffect.DefM, false, 301, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Roi des Sprites"); put(Language.EN, "Sprite King's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Roi des Sprites"); put(Language.EN, "Sprite King's Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 81, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
 					new Effect(TypeEffect.DefM, false, 289, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Malédiction des Sprites"); put(Language.EN, "Sprite's Star-Crossed Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Malédiction des Sprites"); put(Language.EN, "Sprite's Star-Crossed Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 76, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
 					new Effect(TypeEffect.DefM, false, 277, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Serres Effilées d'Espionnage"); put(Language.EN, "Sprite's Leaper Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Serres Effilées d'Espionnage"); put(Language.EN, "Sprite's Leaper Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 71, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
 					new Effect(TypeEffect.DefM, false, 264, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffes Acérées d'Embuscade"); put(Language.EN, "Sprite's Forest Patroller Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Griffes Acérées d'Embuscade"); put(Language.EN, "Sprite's Forest Patroller Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 66, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 265, true),
 					new Effect(TypeEffect.DefM, false, 252, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Chasseur de Prime des Sprites"); put(Language.EN, "Sprite's Bounty Hunter Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Chasseur de Prime des Sprites"); put(Language.EN, "Sprite's Bounty Hunter Gauntlets"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 61, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 252, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelet des Sprites du Coeur de Lion"); put(Language.EN, "Sprite's Lionheart Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelet des Sprites du Coeur de Lion"); put(Language.EN, "Sprite's Lionheart Gauntlets"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 55, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 236, true),
 					new Effect(TypeEffect.DefM, false, 224, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Vifs Gants Métalliques"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Vifs Gants Métalliques"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
 					new Effect(TypeEffect.DefM, false, 217, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines Brise-Coeur"); put(Language.EN, "Heart-Piercing Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines Brise-Coeur"); put(Language.EN, "Heart-Piercing Wristguards"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 230, true),
 					new Effect(TypeEffect.DefM, false, 219, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ombre des Sprites"); put(Language.EN, "Sprite's Flying Shadow Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ombre des Sprites"); put(Language.EN, "Sprite's Flying Shadow Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 45, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
 					new Effect(TypeEffect.DefM, false, 199, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Faucon des Sprites"); put(Language.EN, "Sprite's Falcon Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Faucon des Sprites"); put(Language.EN, "Sprite's Falcon Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 35, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 182, true),
 					new Effect(TypeEffect.DefM, false, 173, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Eclatants"); put(Language.EN, "Burst Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Eclatants"); put(Language.EN, "Burst Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 32, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 174, true),
 					new Effect(TypeEffect.DefM, false, 165, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Traqueur des Sprites"); put(Language.EN, "Sprite's Tracker's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Traqueur des Sprites"); put(Language.EN, "Sprite's Tracker's Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 25, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 153, true),
 					new Effect(TypeEffect.DefM, false, 145, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cuir de la Sentinelle"); put(Language.EN, "Sentry's Leather Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cuir de la Sentinelle"); put(Language.EN, "Sentry's Leather Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 22, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 144, true),
 					new Effect(TypeEffect.DefM, false, 136, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chasseur des Sprites"); put(Language.EN, "Sprite's Hunter's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chasseur des Sprites"); put(Language.EN, "Sprite's Hunter's Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 15, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 120, true),
 					new Effect(TypeEffect.DefM, false, 114, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'agilité des Sprites"); put(Language.EN, "Sprite's Agile Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'agilité des Sprites"); put(Language.EN, "Sprite's Agile Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 8, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "8vert2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 93, true),
 					new Effect(TypeEffect.DefM, false, 88, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Araignée Fantôme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Araignée Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 309, true),
@@ -7780,7 +7743,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 18),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "65pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 303, true),
@@ -7788,69 +7751,69 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Archer Sauvage"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Archer Sauvage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 301, true),
 					new Effect(TypeEffect.DefM, false, 284, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Garde Silencieux"); put(Language.EN, "Silent Guard Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Garde Silencieux"); put(Language.EN, "Silent Guard Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 295, true),
 					new Effect(TypeEffect.DefM, false, 290, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Pêcheur de Nuages"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Pêcheur de Nuages"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
 					new Effect(TypeEffect.DefM, false, 273, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Serpent d'Émeraude"); put(Language.EN, "Green Magic Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Serpent d'Émeraude"); put(Language.EN, "Green Magic Gloves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 285, true),
 					new Effect(TypeEffect.DefM, false, 279, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Chasse"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Chasse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffes Carmines"); put(Language.EN, "Darkmoon Walker Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Griffes Carmines"); put(Language.EN, "Darkmoon Walker Wristguards"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 253, true),
 					new Effect(TypeEffect.DefM, false, 244, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Coeur de Lion"); put(Language.EN, "Lionheart Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Coeur de Lion"); put(Language.EN, "Lionheart Gauntlets"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 52, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 211, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ombre Volante"); put(Language.EN, "Flying Shadow Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ombre Volante"); put(Language.EN, "Flying Shadow Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 42, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Faucon"); put(Language.EN, "Falcon Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Faucon"); put(Language.EN, "Falcon Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 32, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 162, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Traqueur"); put(Language.EN, "Tracker's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Traqueur"); put(Language.EN, "Tracker's Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 22, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 133, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bracelet de la Concentration"); put(Language.EN, "Focus Wristguards"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelet de la Concentration"); put(Language.EN, "Focus Wristguards"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 15, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 113, true),
 					new Effect(TypeEffect.DefM, false, 107, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chasseur"); put(Language.EN, "Hunter's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chasseur"); put(Language.EN, "Hunter's Gloves"); }},
 				new GradeName[] { GradeName.RANGER, GradeName.ASSASSIN, }, 12, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),
@@ -7860,7 +7823,7 @@ public class LoaderGauntlet {
 	
 	private static Armor[] getPretre() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Louanges de l'Esprit Sacré Gardien"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Louanges de l'Esprit Sacré Gardien"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red4", ICONPATH + "90red4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 465, true),
@@ -7894,7 +7857,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Esprit sacré"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Esprit sacré"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red4", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 465, true),
@@ -7928,7 +7891,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Hold"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Mantra Sacré Salvateur"); put(Language.EN, "Savior Holy Mantra Hold"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red5", ICONPATH + "90red5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 456, true),
@@ -7962,7 +7925,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Salvateur"); put(Language.EN, "True Savior 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Salvateur"); put(Language.EN, "True Savior 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red5", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 456, true),
@@ -7996,7 +7959,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Bénédiction"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Bénédiction"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio4", ICONPATH + "100vio4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 477, true),
@@ -8005,7 +7968,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 33, true),
 					new Effect(TypeEffect.VOL, false, 28, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Prière de l'Aube"); put(Language.EN, "Dawn Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Prière de l'Aube"); put(Language.EN, "Dawn Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio5", ICONPATH + "100vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 468, true),
@@ -8014,7 +7977,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.INT, false, 26, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Culte Solaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Culte Solaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio4", ICONPATH + "90vio4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 446, true),
@@ -8023,7 +7986,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 25, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Vérité Divine"); put(Language.EN, "Divine Truth Understanding Hold"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Vérité Divine"); put(Language.EN, "Divine Truth Understanding Hold"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio5", ICONPATH + "90vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 437, true),
@@ -8032,7 +7995,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 27, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du sage illuminé"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du sage illuminé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio4", ICONPATH + "80vio4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 416, true),
@@ -8041,7 +8004,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Prophète Omniscient"); put(Language.EN, "World Prophet Hold"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Prophète Omniscient"); put(Language.EN, "World Prophet Hold"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio5", ICONPATH + "80vio5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -8050,7 +8013,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants divins de l'ordre des Istaris"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants divins de l'ordre des Istaris"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold4", ICONPATH + "100gold4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 453, true),
@@ -8059,7 +8022,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 28, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants tribaux de Thrall"); put(Language.EN, "Shapeshifer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants tribaux de Thrall"); put(Language.EN, "Shapeshifer's Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold5", ICONPATH + "100gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 444, true),
@@ -8068,7 +8031,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Purification de Zehel"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Purification de Zehel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold4", ICONPATH + "90gold4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -8077,7 +8040,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de l'Esprit sacré"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de l'Esprit sacré"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold4", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -8086,7 +8049,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Esprit de Tao Ren"); put(Language.EN, "Gaia's Revelation Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold5", ICONPATH + "90gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 412, true),
@@ -8095,7 +8058,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Salvateur"); put(Language.EN, "Savior 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Salvateur"); put(Language.EN, "Savior 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold5", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 412, true),
@@ -8104,7 +8067,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Ferveur de Freya"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Ferveur de Freya"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold4", ICONPATH + "80gold4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -8113,7 +8076,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines de Fureur de Fenrir"); put(Language.EN, "Comeback Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines de Fureur de Fenrir"); put(Language.EN, "Comeback Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold5", ICONPATH + "80gold5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 380, true),
@@ -8122,7 +8085,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Sauveur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp4R", ICONPATH + "100pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
@@ -8133,7 +8096,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sauveur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp4", ICONPATH + "100pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 432, true),
@@ -8144,7 +8107,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de l'Intuition sauvage"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de l'Intuition sauvage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp5R", ICONPATH + "100pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 466, true),
@@ -8155,7 +8118,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Intuition sauvage"); put(Language.EN, "Feral Inspiration Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Intuition sauvage"); put(Language.EN, "Feral Inspiration Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp5", ICONPATH + "100pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -8166,7 +8129,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Gardien Miraculeux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Gardien Miraculeux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve4", ICONPATH + "71sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 411, true),
@@ -8175,7 +8138,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cri Ancestral"); put(Language.EN, "Ancient Call Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cri Ancestral"); put(Language.EN, "Ancient Call Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve5", ICONPATH + "100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
@@ -8184,7 +8147,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Secte Originelle"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Secte Originelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp4R", ICONPATH + "95pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 442, true),
@@ -8195,7 +8158,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Secte Originelle"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Secte Originelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp4", ICONPATH + "95pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -8206,7 +8169,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Psionique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Psionique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp5R", ICONPATH + "95pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 433, true),
@@ -8217,7 +8180,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Brute Psionique"); put(Language.EN, "Psionic Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Brute Psionique"); put(Language.EN, "Psionic Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp5", ICONPATH + "95pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 394, true),
@@ -8228,7 +8191,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ouragan Nordique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ouragan Nordique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve4", ICONPATH + "70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -8237,7 +8200,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ode à la Vie"); put(Language.EN, "Ode of Life Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ode à la Vie"); put(Language.EN, "Ode of Life Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve5", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
@@ -8246,7 +8209,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chaste Messager"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chaste Messager"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve4", ICONPATH + "90pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -8255,7 +8218,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Oracle Prolixe"); put(Language.EN, "Oracular Murmurs Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Oracle Prolixe"); put(Language.EN, "Oracular Murmurs Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve5", ICONPATH + "90pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 374, true),
@@ -8264,7 +8227,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Rédempteur de Shibusen"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Rédempteur de Shibusen"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp4R", ICONPATH + "85pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 409, true),
@@ -8275,7 +8238,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Rédempteur de Shibusen"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Rédempteur de Shibusen"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp4", ICONPATH + "85pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 372, true),
@@ -8286,7 +8249,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de l'Oracle d'Amestris"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de l'Oracle d'Amestris"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp5R", ICONPATH + "85pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -8297,7 +8260,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Oracle d'Amestris"); put(Language.EN, "Beast Commander Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Oracle d'Amestris"); put(Language.EN, "Beast Commander Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp5", ICONPATH + "85pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -8308,7 +8271,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme de la Colombe Bienfaisante"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme de la Colombe Bienfaisante"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve4", ICONPATH + "86sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -8317,7 +8280,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme de l'Aigle Perspicace"); put(Language.EN, "Nirvana Guard Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme de l'Aigle Perspicace"); put(Language.EN, "Nirvana Guard Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve5", ICONPATH + "85pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 359, true),
@@ -8326,7 +8289,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Supplique de la Déesse"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Supplique de la Déesse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus4", ICONPATH + "80nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
@@ -8335,7 +8298,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chasseur de Tempêtes"); put(Language.EN, "Gaia Seeker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chasseur de Tempêtes"); put(Language.EN, "Gaia Seeker Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus5", ICONPATH + "80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -8344,7 +8307,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Ailes de la Sérénité"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Ailes de la Sérénité"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot4", ICONPATH + "81sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
@@ -8353,7 +8316,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Mélopée des Montagnes"); put(Language.EN, "Gale Seeker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Mélopée des Montagnes"); put(Language.EN, "Gale Seeker Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot5", ICONPATH + "80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -8362,7 +8325,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Grande Rédemption"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Grande Rédemption"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve4", ICONPATH + "81sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 351, true),
@@ -8371,7 +8334,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Tables Tournantes"); put(Language.EN, "Turn the Table Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Tables Tournantes"); put(Language.EN, "Turn the Table Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve5", ICONPATH + "80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -8380,7 +8343,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Dévotion de Zenaïda (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Dévotion de Zenaïda (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp4R", ICONPATH + "80nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 376, true),
@@ -8391,7 +8354,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Dévotion de Zenaïda"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Dévotion de Zenaïda"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp4", ICONPATH + "80nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
@@ -8402,7 +8365,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Ruse de Sun Wukong (Reforgés)"); put(Language.EN, "(Reforged) Holy Beastlord Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Ruse de Sun Wukong (Reforgés)"); put(Language.EN, "(Reforged) Holy Beastlord Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp5R", ICONPATH + "80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -8413,7 +8376,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Ruse de Sun Wukong"); put(Language.EN, "Holy Beastlord Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Ruse de Sun Wukong"); put(Language.EN, "Holy Beastlord Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp5", ICONPATH + "80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
@@ -8424,7 +8387,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Chants de Voix Divine"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Chants de Voix Divine"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve4", ICONPATH + "75pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -8433,7 +8396,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Jugement des Dieux"); put(Language.EN, "Judge of Gods Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Jugement des Dieux"); put(Language.EN, "Judge of Gods Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve5", ICONPATH + "75pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 329, true),
@@ -8442,7 +8405,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Piété Millénaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Piété Millénaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus4", ICONPATH + "70nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -8451,7 +8414,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Totem des Ancêtres"); put(Language.EN, "Nature Circle Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Totem des Ancêtres"); put(Language.EN, "Nature Circle Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus5", ICONPATH + "70nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 320, true),
@@ -8460,7 +8423,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Prière de Vierge"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Prière de Vierge"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot4", ICONPATH + "76sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -8468,7 +8431,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Oeil du Cyclone"); put(Language.EN, "Storm Circle Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Oeil du Cyclone"); put(Language.EN, "Storm Circle Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot5", ICONPATH + "70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 320, true),
@@ -8477,7 +8440,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Hymne Guerrier"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Hymne Guerrier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve4", ICONPATH + "76sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 320, true),
@@ -8485,7 +8448,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Secret de Chimère"); put(Language.EN, "Beast God's Wish Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Secret de Chimère"); put(Language.EN, "Beast God's Wish Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve5", ICONPATH + "70pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 314, true),
@@ -8494,7 +8457,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Apaisement de Galien (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Apaisement de Galien (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp4R", ICONPATH + "65pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
@@ -8505,7 +8468,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Apaisement de Galien"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Apaisement de Galien"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp4", ICONPATH + "65pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -8516,7 +8479,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Illusion de Kuzunoha (Reforgés)"); put(Language.EN, "(Reforged) Pegasus Saint Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Illusion de Kuzunoha (Reforgés)"); put(Language.EN, "(Reforged) Pegasus Saint Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp5R", ICONPATH + "100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -8527,7 +8490,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards d'Illusion de Kuzunoha"); put(Language.EN, "Pegasus Saint's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards d'Illusion de Kuzunoha"); put(Language.EN, "Pegasus Saint's Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp5", ICONPATH + "100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -8538,7 +8501,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Templier Sacré"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Templier Sacré"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve4", ICONPATH + "71sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -8547,7 +8510,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sage du Soleil Levant"); put(Language.EN, "Rising Sun Sage's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sage du Soleil Levant"); put(Language.EN, "Rising Sun Sage's Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve5", ICONPATH + "65pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
@@ -8556,7 +8519,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Jugement du Fanatique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Jugement du Fanatique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus4", ICONPATH + "80nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 296, true),
@@ -8564,7 +8527,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Prix de la Raison"); put(Language.EN, "Peace Walker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Prix de la Raison"); put(Language.EN, "Peace Walker Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus5", ICONPATH + "100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 290, true),
@@ -8572,7 +8535,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Fanatique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Fanatique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot4", ICONPATH + "71sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 296, true),
@@ -8580,7 +8543,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines de l'Équilibre de la Nature"); put(Language.EN, "Freeland Walker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines de l'Équilibre de la Nature"); put(Language.EN, "Freeland Walker Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot5", ICONPATH + "65pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 290, true),
@@ -8588,7 +8551,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ordre Originel"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ordre Originel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve4", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 288, true),
@@ -8596,7 +8559,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Marcheur Céleste"); put(Language.EN, "Skywalker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Marcheur Céleste"); put(Language.EN, "Skywalker Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve5", ICONPATH + "60pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -8604,7 +8567,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Secte du Secret Suprême (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Secte du Secret Suprême (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp4R", ICONPATH + "80nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 325, true),
@@ -8613,7 +8576,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Secte du Secret Suprême"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Secte du Secret Suprême"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp4", ICONPATH + "80nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 295, true),
@@ -8622,7 +8585,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Héraut Bestial Intelligent (Reforgés)"); put(Language.EN, "(Reforged) Beast Herald Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Héraut Bestial Intelligent (Reforgés)"); put(Language.EN, "(Reforged) Beast Herald Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp5R", ICONPATH + "100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 319, true),
@@ -8631,7 +8594,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Héraut Bestial Intelligent"); put(Language.EN, "Beast Herald Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Héraut Bestial Intelligent"); put(Language.EN, "Beast Herald Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp5", ICONPATH + "100pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 290, true),
@@ -8640,7 +8603,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Déesse de l'Aube"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Déesse de l'Aube"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve4", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 257, true),
@@ -8648,7 +8611,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main des Esprits Sacrés"); put(Language.EN, "Sacred Spirit Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main des Esprits Sacrés"); put(Language.EN, "Sacred Spirit Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve5", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 252, true),
@@ -8656,7 +8619,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ancienne Secte Secrète (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ancienne Secte Secrète (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp4R", ICONPATH + "65pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 273, true),
@@ -8666,7 +8629,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ancienne Secte Secrète"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ancienne Secte Secrète"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp4", ICONPATH + "65pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 248, true),
@@ -8676,7 +8639,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Coursier céleste (Reforgé)"); put(Language.EN, "(Reforged) Pegasus Messenger Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Coursier céleste (Reforgé)"); put(Language.EN, "(Reforged) Pegasus Messenger Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp5R", ICONPATH + "80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 268, true),
@@ -8685,7 +8648,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Coursier céleste"); put(Language.EN, "Pegasus Messenger Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Coursier céleste"); put(Language.EN, "Pegasus Messenger Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp5", ICONPATH + "80nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 243, true),
@@ -8694,7 +8657,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Soleil Levant"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Soleil Levant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve4", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 226, true),
@@ -8702,7 +8665,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants à Plumes Colorées"); put(Language.EN, "Colorful Feather Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants à Plumes Colorées"); put(Language.EN, "Colorful Feather Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve5", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 222, true),
@@ -8710,7 +8673,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Lumière de la grâce"); put(Language.EN, "Light of Grace Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Lumière de la grâce"); put(Language.EN, "Light of Grace Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 28, Quality.ORANGE, true, false,
 				ArmorType.GANT, "30pve4", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
@@ -8718,7 +8681,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Saint Eto (Reforgé)"); put(Language.EN, "(Reforged) Theology of War Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Saint Eto (Reforgé)"); put(Language.EN, "(Reforged) Theology of War Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp4R", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 227, true),
@@ -8728,7 +8691,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Éléments d'Asakura (Reforgé)"); put(Language.EN, "(Reforged) Divine Roman Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Éléments d'Asakura (Reforgé)"); put(Language.EN, "(Reforged) Divine Roman Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp5R", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 223, true),
@@ -8737,7 +8700,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Saint Eto"); put(Language.EN, "Theology of War Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Saint Eto"); put(Language.EN, "Theology of War Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp4", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 206, true),
@@ -8747,7 +8710,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Éléments d'Asakura"); put(Language.EN, "Divine Roman Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Éléments d'Asakura"); put(Language.EN, "Divine Roman Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp5", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 202, true),
@@ -8756,7 +8719,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Clerc Priant"); put(Language.EN, "Cleric's Prayer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Clerc Priant"); put(Language.EN, "Cleric's Prayer Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 18, Quality.ORANGE, true, false,
 				ArmorType.GANT, "20pve4", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 151, true),
@@ -8764,7 +8727,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Archange (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs de l'Archange (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo4R", ICONPATH + "80nucleus4", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -8848,7 +8811,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 360),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Archange"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs de l'Archange"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo4", ICONPATH + "80nucleus4", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -8932,7 +8895,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Druide (Réincarné)"); put(Language.EN, "(Reincarnated) Druid's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Druide (Réincarné)"); put(Language.EN, "(Reincarnated) Druid's Soul Bracers"); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo5R", ICONPATH + "100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -9016,7 +8979,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 330),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Druide"); put(Language.EN, "Druid's Soul Bracers"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Druide"); put(Language.EN, "Druid's Soul Bracers"); }},
 				new GradeName[] { GradeName.SAGE, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo5", ICONPATH + "100pve5", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -9100,7 +9063,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 275),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Lotus Sacré"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Lotus Sacré"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg4", ICONPATH + "90gvg4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 407, true),
@@ -9110,7 +9073,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 590),
 					new Effect(TypeEffect.PM, false, 710),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Bois Sacré"); put(Language.EN, "Divine Forest Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Bois Sacré"); put(Language.EN, "Divine Forest Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg5", ICONPATH + "80gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 399, true),
@@ -9120,7 +9083,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 840),
 					new Effect(TypeEffect.PM, false, 460),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Ténacité"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Ténacité"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 401, true),
@@ -9130,7 +9093,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 375),
 					new Effect(TypeEffect.PM, false, 575),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Imagination"); put(Language.EN, "Fathom Messenger Hands"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Imagination"); put(Language.EN, "Fathom Messenger Hands"); }},
 				new GradeName[] { GradeName.SAGE, }, 86, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 387, true),
@@ -9140,7 +9103,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 575),
 					new Effect(TypeEffect.PM, false, 375),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Marteau du Juge"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Marteau du Juge"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 82, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 381, true),
@@ -9150,7 +9113,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 350),
 					new Effect(TypeEffect.PM, false, 550),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Imagination "); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Imagination "); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 82, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 374, true),
@@ -9160,7 +9123,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 550),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Vaillance du Léviathan"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Vaillance du Léviathan"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg4", ICONPATH + "90gvg4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -9170,7 +9133,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 460),
 					new Effect(TypeEffect.PM, false, 580),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Envoûtement des Dryades"); put(Language.EN, "North Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Envoûtement des Dryades"); put(Language.EN, "North Star Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg5", ICONPATH + "80gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 368, true),
@@ -9180,7 +9143,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 710),
 					new Effect(TypeEffect.PM, false, 330),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Levant Scellé"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Levant Scellé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 78, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
@@ -9190,7 +9153,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 300),
 					new Effect(TypeEffect.PM, false, 500),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Exorciste (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Exorciste (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo4R", ICONPATH + "70nucleus4", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -9314,7 +9277,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Exorciste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Exorciste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo4", ICONPATH + "70nucleus4", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -9438,7 +9401,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 250),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Shaman (Réincarné)"); put(Language.EN, "(Reincarnated) Shaman's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Shaman (Réincarné)"); put(Language.EN, "(Reincarnated) Shaman's Soul Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo5R", ICONPATH + "70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -9562,7 +9525,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 288),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Shaman"); put(Language.EN, "Shaman's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Shaman"); put(Language.EN, "Shaman's Soul Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo5", ICONPATH + "70nucleus5", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -9686,7 +9649,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Aurore"); put(Language.EN, "Light of Dusk Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Aurore"); put(Language.EN, "Light of Dusk Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 356, true),
@@ -9696,7 +9659,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Pureté du Clerc"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Pureté du Clerc"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg4", ICONPATH + "70gvg4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -9706,7 +9669,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 450),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Érudition de Diviciacos"); put(Language.EN, "Future Guide's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Érudition de Diviciacos"); put(Language.EN, "Future Guide's Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg5", ICONPATH + "70gvg5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 337, true),
@@ -9716,7 +9679,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Apôtre Royal"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Apôtre Royal"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -9726,7 +9689,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 500),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Peau Écarlate"); put(Language.EN, "Sea Breeze Wishes Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Peau Écarlate"); put(Language.EN, "Sea Breeze Wishes Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 69, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
@@ -9736,7 +9699,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 500),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Rédempteur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Rédempteur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo4R", ICONPATH + "75evo4", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -9860,7 +9823,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Rédempteur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Rédempteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo4", ICONPATH + "75evo4", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -9984,7 +9947,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Oracle (Réincarné)"); put(Language.EN, "(Reincarnated) Mystic's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Oracle (Réincarné)"); put(Language.EN, "(Reincarnated) Mystic's Soul Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo5R", ICONPATH + "75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -10108,7 +10071,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Mitaines Évolutives de l'Oracle"); put(Language.EN, "Mystic's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Mitaines Évolutives de l'Oracle"); put(Language.EN, "Mystic's Soul Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo5", ICONPATH + "75evo5", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -10232,7 +10195,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Magiques du Prospecteur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Magiques du Prospecteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -10242,7 +10205,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main Régénatrice du Créateur"); put(Language.EN, "Creator's Hand of Rebirth"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main Régénatrice du Créateur"); put(Language.EN, "Creator's Hand of Rebirth"); }},
 				new GradeName[] { GradeName.SAGE, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -10252,7 +10215,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 450),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Visages des Dieux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Visages des Dieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 290, true),
@@ -10262,7 +10225,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ancien de la Secte Secrète"); put(Language.EN, "Secret Society Elder Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ancien de la Secte Secrète"); put(Language.EN, "Secret Society Elder Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 282, true),
@@ -10272,7 +10235,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main de l'Esprit Saint"); put(Language.EN, "Holy Spirit Bangle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main de l'Esprit Saint"); put(Language.EN, "Holy Spirit Bangle"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 48, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 274, true),
@@ -10282,7 +10245,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Bénédiction Déchue"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Bénédiction Déchue"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
@@ -10292,7 +10255,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 100),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets des Anciens de la Forêt"); put(Language.EN, "Forest Elder Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets des Anciens de la Forêt"); put(Language.EN, "Forest Elder Gauntlets"); }},
 				new GradeName[] { GradeName.SAGE, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 230, true),
@@ -10302,7 +10265,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 150),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Clerc (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Clerc (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo4R", ICONPATH + "25pvp2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -10536,7 +10499,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 264),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Clerc"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Clerc"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo4", ICONPATH + "25pvp2", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -10770,7 +10733,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 220),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Sage (Réincarné)"); put(Language.EN, "(Reincarnated) Sage's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Sage (Réincarné)"); put(Language.EN, "(Reincarnated) Sage's Soul Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo5R", ICONPATH + "53vert3", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -11004,7 +10967,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 324),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Sage"); put(Language.EN, "Sage's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Sage"); put(Language.EN, "Sage's Soul Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo5", ICONPATH + "53vert3", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -11238,7 +11201,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 270),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Prêtre (Réincarné)"); put(Language.EN, "(Reincarnated) Priest's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Prêtre (Réincarné)"); put(Language.EN, "(Reincarnated) Priest's Soul Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, true,
 				ArmorType.GANT, "30evo0R", ICONPATH + "30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -11392,7 +11355,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.VIT, false, 9, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Prêtre"); put(Language.EN, "Priest's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Prêtre"); put(Language.EN, "Priest's Soul Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 6, Quality.BLUE, false, false,
 				ArmorType.GANT, "30evo0", ICONPATH + "30pve4", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -11546,133 +11509,133 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.VIT, false, 7, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Fête de Sprite"); put(Language.EN, "Sprite's Festive Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Fête de Sprite"); put(Language.EN, "Sprite's Festive Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 96, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 376, true),
 					new Effect(TypeEffect.DefM, false, 358, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Purifiants de Sprite"); put(Language.EN, "Sprite's Purifying Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Purifiants de Sprite"); put(Language.EN, "Sprite's Purifying Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 91, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 363, true),
 					new Effect(TypeEffect.DefM, false, 344, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Oracle Sprite"); put(Language.EN, "Sprite's Oracle Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Oracle Sprite"); put(Language.EN, "Sprite's Oracle Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 86, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
 					new Effect(TypeEffect.DefM, false, 331, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Renaissance des Sprites"); put(Language.EN, "Sprite Revival Light Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Renaissance des Sprites"); put(Language.EN, "Sprite Revival Light Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 81, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
 					new Effect(TypeEffect.DefM, false, 318, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Prophétie des Sprites"); put(Language.EN, "Sprite's Sacred Prophecy Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Prophétie des Sprites"); put(Language.EN, "Sprite's Sacred Prophecy Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 76, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "76sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 320, true),
 					new Effect(TypeEffect.DefM, false, 304, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Soie Consacrée"); put(Language.EN, "Sprite's Hexagram Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Soie Consacrée"); put(Language.EN, "Sprite's Hexagram Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 71, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "71sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
 					new Effect(TypeEffect.DefM, false, 291, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Velours Béni"); put(Language.EN, "Sprite's Holy Walker Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Velours Béni"); put(Language.EN, "Sprite's Holy Walker Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 66, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "71sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
 					new Effect(TypeEffect.DefM, false, 277, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Disciples des Sprites"); put(Language.EN, "Sprite's Gloves of Discipline"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Disciples des Sprites"); put(Language.EN, "Sprite's Gloves of Discipline"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 61, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 277, true),
 					new Effect(TypeEffect.DefM, false, 263, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Pape des Sprites"); put(Language.EN, "Sprite's Pontiff Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Pape des Sprites"); put(Language.EN, "Sprite's Pontiff Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 55, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 259, true),
 					new Effect(TypeEffect.DefM, false, 246, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Eveilleur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Eveilleur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 260, true),
 					new Effect(TypeEffect.DefM, false, 241, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Primitifs du Chef"); put(Language.EN, "Tribal Chief's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Primitifs du Chef"); put(Language.EN, "Tribal Chief's Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 253, true),
 					new Effect(TypeEffect.DefM, false, 246, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Esprits Célestes des Sprites"); put(Language.EN, "Sprite's Heavenly Spirit Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Esprits Célestes des Sprites"); put(Language.EN, "Sprite's Heavenly Spirit Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 45, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 230, true),
 					new Effect(TypeEffect.DefM, false, 219, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Brumeux des Sprites"); put(Language.EN, "Sprite's Mist Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Brumeux des Sprites"); put(Language.EN, "Sprite's Mist Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 35, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 201, true),
 					new Effect(TypeEffect.DefM, false, 190, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Protection du Sénateur"); put(Language.EN, "Elder's Sanctuary Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Protection du Sénateur"); put(Language.EN, "Elder's Sanctuary Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 32, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 191, true),
 					new Effect(TypeEffect.DefM, false, 182, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Grâce des Sprites"); put(Language.EN, "Sprite's Grace Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Grâce des Sprites"); put(Language.EN, "Sprite's Grace Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 25, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 168, true),
 					new Effect(TypeEffect.DefM, false, 160, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Élégants Gants de Soie"); put(Language.EN, "Elegant Silk Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Élégants Gants de Soie"); put(Language.EN, "Elegant Silk Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 22, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 158, true),
 					new Effect(TypeEffect.DefM, false, 150, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Prière des Sprites"); put(Language.EN, "Sprite's Prayer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Prière des Sprites"); put(Language.EN, "Sprite's Prayer Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 15, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 132, true),
 					new Effect(TypeEffect.DefM, false, 125, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Foi des Sprites"); put(Language.EN, "Sprite's Pious Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Foi des Sprites"); put(Language.EN, "Sprite's Pious Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 8, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "40pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),
 					new Effect(TypeEffect.DefM, false, 97, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Croissant d'Argent"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Croissant d'Argent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -11680,7 +11643,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCM, false, 1.8),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Pays des Merveilles"); put(Language.EN, "Wonderland Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Pays des Merveilles"); put(Language.EN, "Wonderland Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
@@ -11688,73 +11651,73 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sage Solaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sage Solaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 331, true),
 					new Effect(TypeEffect.DefM, false, 247, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Joueur de Flûte"); put(Language.EN, "Beast Bellow Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Joueur de Flûte"); put(Language.EN, "Beast Bellow Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 325, true),
 					new Effect(TypeEffect.DefM, false, 253, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Idylle Aérienne"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Idylle Aérienne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 320, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Astronome Fou"); put(Language.EN, "Star Oracle Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Astronome Fou"); put(Language.EN, "Star Oracle Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 314, true),
 					new Effect(TypeEffect.DefM, false, 244, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Fins de Cyan"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Fins de Cyan"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 284, true),
 					new Effect(TypeEffect.DefM, false, 212, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Lin Épais"); put(Language.EN, "Words of Truth Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Lin Épais"); put(Language.EN, "Words of Truth Gloves"); }},
 				new GradeName[] { GradeName.SAGE, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
 					new Effect(TypeEffect.DefM, false, 216, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Pape"); put(Language.EN, "Pontiff Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Pape"); put(Language.EN, "Pontiff Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 52, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 233, true),
 					new Effect(TypeEffect.DefM, false, 186, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Esprits Célestes"); put(Language.EN, "Heavenly Spirit Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Esprits Célestes"); put(Language.EN, "Heavenly Spirit Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 42, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 207, true),
 					new Effect(TypeEffect.DefM, false, 165, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Brumeux"); put(Language.EN, "Mist Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Brumeux"); put(Language.EN, "Mist Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 32, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 178, true),
 					new Effect(TypeEffect.DefM, false, 143, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Grâce"); put(Language.EN, "Grace Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Grâce"); put(Language.EN, "Grace Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 22, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 147, true),
 					new Effect(TypeEffect.DefM, false, 118, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Gospel"); put(Language.EN, "Gospel Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Gospel"); put(Language.EN, "Gospel Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 15, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 127, true),
 					new Effect(TypeEffect.DefM, false, 100, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Prière"); put(Language.EN, "Prayer Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Prière"); put(Language.EN, "Prayer Gloves"); }},
 				new GradeName[] { GradeName.CLERC, GradeName.SAGE, }, 12, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 112, true),
@@ -11765,7 +11728,7 @@ public class LoaderGauntlet {
 	
 	private static Armor[] getMage() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Avatar du Guide Magique"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Avatar du Guide Magique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red6", ICONPATH + "90red6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -11798,7 +11761,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Archimage"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Archimage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red6", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -11831,7 +11794,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Malédiction Psychique de l'Apôtre"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Malédiction Psychique de l'Apôtre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red7", ICONPATH + "90red7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 380, true),
@@ -11864,7 +11827,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Apôtre"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Apôtre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red7", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 380, true),
@@ -11897,7 +11860,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Étoiles de l'enfer"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Étoiles de l'enfer"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio6", ICONPATH + "100vio6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -11906,7 +11869,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 38, true),
 					new Effect(TypeEffect.VOL, false, 27, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Hérésie démoniaque"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Hérésie démoniaque"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio7", ICONPATH + "100vio7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 390, true),
@@ -11915,7 +11878,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 40, true),
 					new Effect(TypeEffect.VOL, false, 27, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Psynergie Élémentaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Psynergie Élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio6", ICONPATH + "90vio6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
@@ -11924,7 +11887,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cavalier de Thanatos"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cavalier de Thanatos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio7", ICONPATH + "90vio7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
@@ -11933,7 +11896,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du disciple de Gaia"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du disciple de Gaia"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio6", ICONPATH + "80vio6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
@@ -11942,7 +11905,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Dresseur Shinigami"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Dresseur Shinigami"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio7", ICONPATH + "80vio7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 341, true),
@@ -11951,7 +11914,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants enchantés d'Elminster"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants enchantés d'Elminster"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold6", ICONPATH + "100gold6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 363, true),
@@ -11960,7 +11923,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 33, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants démoniaques d'Hassaï"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants démoniaques d'Hassaï"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold7", ICONPATH + "100gold7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
@@ -11969,7 +11932,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Mystogan L'Exilé"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Mystogan L'Exilé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold6", ICONPATH + "90gold6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 337, true),
@@ -11978,7 +11941,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires d'Archimage"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires d'Archimage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold6", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 337, true),
@@ -11987,7 +11950,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Ombres de Gekko Moriah"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Ombres de Gekko Moriah"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold7", ICONPATH + "90gold7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -11996,7 +11959,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 31, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires d'Apôtre"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires d'Apôtre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold7", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -12005,7 +11968,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 31, true),
 					new Effect(TypeEffect.VOL, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Arcanes de Cronos"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Arcanes de Cronos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold6", ICONPATH + "80gold6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 311, true),
@@ -12014,7 +11977,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Spectraux de l'Ankou"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Spectraux de l'Ankou"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold7", ICONPATH + "80gold7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
@@ -12023,7 +11986,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Maître-démon"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Maître-démon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp6R", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -12034,7 +11997,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Fourvoyé"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Fourvoyé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp6", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 353, true),
@@ -12045,7 +12008,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Chaos élémentaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Chaos élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp7R", ICONPATH + "100pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 381, true),
@@ -12056,7 +12019,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chaos élémentaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chaos élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp7", ICONPATH + "100pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 346, true),
@@ -12067,7 +12030,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Illusion de Verre"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Illusion de Verre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve6", ICONPATH + "100pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 329, true),
@@ -12076,7 +12039,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 15, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Œil de Démon"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Œil de Démon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve7", ICONPATH + "100pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -12085,7 +12048,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 15, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Doyen Sorcier"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Doyen Sorcier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp6R", ICONPATH + "95pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 354, true),
@@ -12096,7 +12059,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Doyen Sorcier"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Doyen Sorcier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp6", ICONPATH + "95pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 322, true),
@@ -12107,7 +12070,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Faucheur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Faucheur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp7R", ICONPATH + "95pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
@@ -12118,7 +12081,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Créateur de Faucheur d'Âmes"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Créateur de Faucheur d'Âmes"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp7", ICONPATH + "95pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
@@ -12129,7 +12092,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Forme Enchantée"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Forme Enchantée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve6", ICONPATH + "95pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -12138,7 +12101,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Corruption Spirituelle"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Corruption Spirituelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve7", ICONPATH + "8vert2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 324, true),
@@ -12147,7 +12110,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Poussière d'Étoile Filante"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Poussière d'Étoile Filante"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve6", ICONPATH + "90pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -12156,7 +12119,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Armée des Morts"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Armée des Morts"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve7", ICONPATH + "90pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
@@ -12165,7 +12128,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de l'Archimage du Royaume de Fiore"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de l'Archimage du Royaume de Fiore"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp6R", ICONPATH + "85pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
@@ -12176,7 +12139,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Archimage du Royaume de Fiore"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Archimage du Royaume de Fiore"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp6", ICONPATH + "85pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 298, true),
@@ -12187,7 +12150,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Démoniste de Soul Society"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Démoniste de Soul Society"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp7R", ICONPATH + "85pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
@@ -12198,7 +12161,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Démoniste de Soul Society"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Démoniste de Soul Society"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp7", ICONPATH + "85pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
@@ -12209,7 +12172,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme de l'Hibou Impassible"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme de l'Hibou Impassible"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve6", ICONPATH + "85pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 294, true),
@@ -12218,7 +12181,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Âme du Corbeau Éternel"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Âme du Corbeau Éternel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve7", ICONPATH + "85pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 300, true),
@@ -12227,7 +12190,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Connaissance Ultime"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Connaissance Ultime"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus6", ICONPATH + "80nucleus6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 286, true),
@@ -12235,7 +12198,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Malédiction de l'Au-Delà"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Malédiction de l'Au-Delà"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus7", ICONPATH + "80nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
@@ -12243,7 +12206,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Dieu du Savoir"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Dieu du Savoir"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot6", ICONPATH + "80pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 286, true),
@@ -12252,7 +12215,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Râle du Dieu Agonisant"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Râle du Dieu Agonisant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot7", ICONPATH + "80pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
@@ -12261,7 +12224,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Déviation de la Mana"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Déviation de la Mana"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve6", ICONPATH + "80pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 282, true),
@@ -12270,7 +12233,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Chaînes Mortelles"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Chaînes Mortelles"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve7", ICONPATH + "80pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 288, true),
@@ -12279,7 +12242,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Envoûtement de Calypso (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Envoûtement de Calypso (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp6R", ICONPATH + "80nucleus6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 301, true),
@@ -12290,7 +12253,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Envoûtement de Calypso"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Envoûtement de Calypso"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp6", ICONPATH + "80nucleus6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 274, true),
@@ -12301,7 +12264,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Damnation de Raspoutine Gants (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Damnation de Raspoutine Gants (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp7R", ICONPATH + "80nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 308, true),
@@ -12312,7 +12275,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Damnation de Raspoutine"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Damnation de Raspoutine"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp7", ICONPATH + "80nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 280, true),
@@ -12323,7 +12286,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Élément Astral"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Élément Astral"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve6", ICONPATH + "75pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 269, true),
@@ -12331,7 +12294,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Dragon Destructeur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Dragon Destructeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve7", ICONPATH + "75pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
@@ -12339,7 +12302,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Colère de Thor"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Colère de Thor"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus6", ICONPATH + "70pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -12348,7 +12311,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gant des Pleurs des Damnés"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gant des Pleurs des Damnés"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus7", ICONPATH + "70nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 267, true),
@@ -12357,7 +12320,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Tourbillon de Glace"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Tourbillon de Glace"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot6", ICONPATH + "70lingot6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -12365,7 +12328,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Doigt d'Hadès"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Doigt d'Hadès"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot7", ICONPATH + "70pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 267, true),
@@ -12373,7 +12336,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Quatrièmùe Dimension"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Quatrièmùe Dimension"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve6", ICONPATH + "70pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 257, true),
@@ -12381,7 +12344,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Férocité d'Erik le Rouge"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Férocité d'Erik le Rouge"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve7", ICONPATH + "70pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -12389,7 +12352,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Pouvoir de Melchior (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Pouvoir de Melchior (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp6R", ICONPATH + "65pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 274, true),
@@ -12400,7 +12363,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Pouvoir de Melchior"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Pouvoir de Melchior"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp6", ICONPATH + "65pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
@@ -12411,7 +12374,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Occultisme de Faust (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Occultisme de Faust (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp7R", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 279, true),
@@ -12422,7 +12385,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Occultisme de Faust"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Occultisme de Faust"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp7", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
@@ -12433,7 +12396,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Élément Glorieux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Élément Glorieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve6", ICONPATH + "100pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 244, true),
@@ -12442,7 +12405,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Enfer Profond"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Enfer Profond"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve7", ICONPATH + "100pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
@@ -12451,7 +12414,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Essence de la Magie"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Essence de la Magie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus6", ICONPATH + "65pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
@@ -12459,7 +12422,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Messager de l'Épouvante"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Messager de l'Épouvante"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus7", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -12467,7 +12430,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chant de l'Univers"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chant de l'Univers"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot6", ICONPATH + "100pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
@@ -12475,7 +12438,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Messager de l'Horreur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Messager de l'Horreur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot7", ICONPATH + "100pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -12483,7 +12446,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Voie Lactée"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Voie Lactée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve6", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 232, true),
@@ -12491,7 +12454,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main du Disciple du Diable"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main du Disciple du Diable"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve7", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 232, true),
@@ -12499,7 +12462,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Doyen Mana (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Doyen Mana (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp6R", ICONPATH + "65pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 266, true),
@@ -12508,7 +12471,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Ancien Mana"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Ancien Mana"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp6", ICONPATH + "65pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -12517,7 +12480,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Destructeur du Trou Noir (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Destructeur du Trou Noir (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp7R", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 261, true),
@@ -12526,7 +12489,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Destroyer du Trou Noir"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Destroyer du Trou Noir"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp7", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
@@ -12535,7 +12498,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur Spatial"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur Spatial"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve6", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 206, true),
@@ -12543,7 +12506,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Esprit"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Esprit"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve7", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 206, true),
@@ -12551,7 +12514,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sage de l'Énergie (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sage de l'Énergie (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp6R", ICONPATH + "80nucleus6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 225, true),
@@ -12561,7 +12524,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sage de l'Énergie"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sage de l'Énergie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp6", ICONPATH + "80nucleus6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 204, true),
@@ -12571,7 +12534,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Alien (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Alien (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp7R", ICONPATH + "80nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 219, true),
@@ -12580,7 +12543,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Alien"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Alien"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp7", ICONPATH + "80nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 199, true),
@@ -12589,7 +12552,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Prisme de Cristal Coloré"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Prisme de Cristal Coloré"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve6", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 181, true),
@@ -12597,7 +12560,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Chaos"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Chaos"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve7", ICONPATH + "8vert2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 181, true),
@@ -12605,7 +12568,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bracelet de l'Adepte"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelet de l'Adepte"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 28, Quality.ORANGE, true, false,
 				ArmorType.GANT, "30pve6", ICONPATH + "37bleu3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 154, true),
@@ -12613,7 +12576,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Énergie d'Elric (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Énergie d'Elric (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp6R", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 182, true),
@@ -12623,7 +12586,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Énergie d'Elric"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Énergie d'Elric"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp6", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 165, true),
@@ -12633,7 +12596,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Charme d'Hellscythe (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Charme d'Hellscythe (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp7R", ICONPATH + "8vert2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 186, true),
@@ -12642,7 +12605,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Charme d'Hellscythe"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Charme d'Hellscythe"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp7", ICONPATH + "8vert2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 169, true),
@@ -12651,7 +12614,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Maître Mage"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Maître Mage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 18, Quality.ORANGE, true, false,
 				ArmorType.GANT, "20pve6", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 124, true),
@@ -12659,7 +12622,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 1, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Arcaniste (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Arcaniste (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo6R", ICONPATH + "65pvp6", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -12743,7 +12706,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 378),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Arcaniste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Arcaniste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo6", ICONPATH + "65pvp6", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -12827,7 +12790,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 315),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Faucheur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Faucheur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo7R", ICONPATH + "65pvp7", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -12911,7 +12874,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 360),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Faucheur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Faucheur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo7", ICONPATH + "65pvp7", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -12995,7 +12958,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Fruit d'Agate"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Fruit d'Agate"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg6", ICONPATH + "90gvg6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -13005,7 +12968,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 640),
 					new Effect(TypeEffect.PM, false, 660),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Dragon Fantôme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Dragon Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg7", ICONPATH + "90gvg7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -13015,7 +12978,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 590),
 					new Effect(TypeEffect.PM, false, 710),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Attrape-Pouvoir"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Attrape-Pouvoir"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 321, true),
@@ -13024,7 +12987,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.PV, false, 950),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Apparition"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Apparition"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 86, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 322, true),
@@ -13034,7 +12997,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 675),
 					new Effect(TypeEffect.PM, false, 275),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Gardien de la Dimension"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Gardien de la Dimension"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 83, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 309, true),
@@ -13043,7 +13006,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.PV, false, 900),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Trou Noir"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Trou Noir"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 83, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 315, true),
@@ -13053,7 +13016,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 650),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Mirage des Djinns"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Mirage des Djinns"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg6", ICONPATH + "90gvg6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 301, true),
@@ -13063,7 +13026,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 510),
 					new Effect(TypeEffect.PM, false, 530),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Effroi de la Banshee"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Effroi de la Banshee"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg7", ICONPATH + "90gvg7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
@@ -13073,7 +13036,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 460),
 					new Effect(TypeEffect.PM, false, 580),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Bénis de la Forêt"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Bénis de la Forêt"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 78, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 296, true),
@@ -13082,7 +13045,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.PV, false, 800),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Avatar (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Avatar (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo6R", ICONPATH + "70lingot6", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -13206,7 +13169,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 336),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs d'Avatar"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs d'Avatar"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo6", ICONPATH + "70lingot6", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -13330,7 +13293,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 280),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Shinigami (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Shinigami (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo7R", ICONPATH + "70nucleus7", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -13454,7 +13417,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 324),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Shinigami"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Shinigami"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo7", ICONPATH + "70nucleus7", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -13578,7 +13541,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 270),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Chaînes Obscures"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Chaînes Obscures"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -13588,7 +13551,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Oracle d'Hécate"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Oracle d'Hécate"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg6", ICONPATH + "70gvg6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 276, true),
@@ -13598,7 +13561,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Savoir Interdit de Frankenstein"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Savoir Interdit de Frankenstein"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg7", ICONPATH + "70gvg7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 282, true),
@@ -13608,7 +13571,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 450),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Exilé Solitaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Exilé Solitaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "95pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 276, true),
@@ -13617,7 +13580,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.PV, false, 700),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Ange Déchu"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Ange Déchu"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 69, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 279, true),
@@ -13627,7 +13590,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de l'Archimage (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de l'Archimage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo6R", ICONPATH + "95pve6", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -13751,7 +13714,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs de l'Archimage"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs de l'Archimage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo6", ICONPATH + "95pve6", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -13875,7 +13838,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Démoniste (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Démoniste (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo7R", ICONPATH + "75evo7", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -13999,7 +13962,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Évolutifs du Démoniste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Évolutifs du Démoniste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo7", ICONPATH + "75evo7", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -14123,7 +14086,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Main Régénératrice Magique du Grand Magicien"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Main Régénératrice Magique du Grand Magicien"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
@@ -14133,7 +14096,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Protège-mains de l'Âme du Juge de l'Enfer"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Protège-mains de l'Âme du Juge de l'Enfer"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
@@ -14143,7 +14106,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Roi du Domaine Magique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Roi du Domaine Magique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 231, true),
@@ -14153,7 +14116,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Gardien des Esprits"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Gardien des Esprits"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 231, true),
@@ -14163,7 +14126,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 180),
 					new Effect(TypeEffect.PM, false, 220),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Juliette"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Juliette"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 48, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53vert3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 218, true),
@@ -14173,7 +14136,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Poussière d'Etoiles"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Poussière d'Etoiles"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
@@ -14183,7 +14146,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 80),
 					new Effect(TypeEffect.PM, false, 170),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Ombre Nocturne"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Ombre Nocturne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
@@ -14193,7 +14156,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 100),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Sorcier (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Sorcier (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo6R", ICONPATH + "30pve4", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -14427,7 +14390,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Sorcier"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Sorcier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo6", ICONPATH + "30pve4", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -14661,7 +14624,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 250),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Nécromancien (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Nécromancien (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo7R", ICONPATH + "30pve4", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -14895,7 +14858,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Nécromancien"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Nécromancien"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo7", ICONPATH + "30pve4", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -15129,7 +15092,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 250),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Mage (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Mage (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 6, Quality.BLUE, false, true,
 				ArmorType.GANT, "30evo6R", ICONPATH + "37bleu3", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -15283,7 +15246,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.DefM, false, 256, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Évolutifs du Mage"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Évolutifs du Mage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 6, Quality.BLUE, false, false,
 				ArmorType.GANT, "30evo6", ICONPATH + "37bleu3", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -15437,133 +15400,133 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.DefM, false, 213, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Flammefière de Sprite"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Flammefière de Sprite"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 96, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 308, true),
 					new Effect(TypeEffect.DefM, false, 390, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Océaniques de Sprite"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Océaniques de Sprite"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 91, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
 					new Effect(TypeEffect.DefM, false, 376, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Maudits des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Maudits des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 86, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "85pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 285, true),
 					new Effect(TypeEffect.DefM, false, 361, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Illusion des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Illusion des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 81, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 274, true),
 					new Effect(TypeEffect.DefM, false, 347, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Mutants des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Mutants des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 76, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
 					new Effect(TypeEffect.DefM, false, 332, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Satin Immaculé"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Satin Immaculé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 71, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 543, true),
 					new Effect(TypeEffect.DefM, false, 687, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Toile Soyeuse"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Toile Soyeuse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 66, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "100pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 517, true),
 					new Effect(TypeEffect.DefM, false, 655, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Messager Temporel des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Messager Temporel des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 61, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 227, true),
 					new Effect(TypeEffect.DefM, false, 287, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Comète des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Comète des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 55, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 212, true),
 					new Effect(TypeEffect.DefM, false, 269, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Planète Reculée"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Planète Reculée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 207, true),
 					new Effect(TypeEffect.DefM, false, 271, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Incorruptible"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Incorruptible"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 213, true),
 					new Effect(TypeEffect.DefM, false, 263, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Énergétiques des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Énergétiques des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 45, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Arc-en-Ciel des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Arc-en-Ciel des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 35, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 164, true),
 					new Effect(TypeEffect.DefM, false, 208, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Oeie"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Oeie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 32, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 156, true),
 					new Effect(TypeEffect.DefM, false, 198, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Oeil Magique des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Oeil Magique des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 25, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 138, true),
 					new Effect(TypeEffect.DefM, false, 174, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Puissants Gants Magiques Ancestraux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Puissants Gants Magiques Ancestraux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 22, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 129, true),
 					new Effect(TypeEffect.DefM, false, 164, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Fantastiques des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Fantastiques des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 15, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 108, true),
 					new Effect(TypeEffect.DefM, false, 137, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Magiques des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Magiques des Sprites"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 8, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "8vert2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 84, true),
 					new Effect(TypeEffect.DefM, false, 106, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Forge Élémentaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Forge Élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 273, true),
@@ -15571,7 +15534,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCM, false, 13),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Fureur Noire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Fureur Noire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
@@ -15579,73 +15542,73 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCM, false, 1.8),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Atlas"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Atlas"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 266, true),
 					new Effect(TypeEffect.DefM, false, 253, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des Esprits Lyriques"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des Esprits Lyriques"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 89, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 271, true),
 					new Effect(TypeEffect.DefM, false, 247, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Toucher de la Déesse"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Toucher de la Déesse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 257, true),
 					new Effect(TypeEffect.DefM, false, 244, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Mal Diabolique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Mal Diabolique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cuir Léger"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cuir Léger"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70lingot6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 228, true),
 					new Effect(TypeEffect.DefM, false, 216, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Peau"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Peau"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "70nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 233, true),
 					new Effect(TypeEffect.DefM, false, 212, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Comète"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Comète"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 52, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 193, true),
 					new Effect(TypeEffect.DefM, false, 183, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Énergétiques"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Énergétiques"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 42, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "50pve3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 171, true),
 					new Effect(TypeEffect.DefM, false, 162, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Arc-en-Ciel"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Arc-en-Ciel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 32, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 147, true),
 					new Effect(TypeEffect.DefM, false, 140, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'œil Magique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'œil Magique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 22, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 122, true),
 					new Effect(TypeEffect.DefM, false, 116, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Élémentaires"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Élémentaires"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 15, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),
 					new Effect(TypeEffect.DefM, false, 100, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Fantastiques"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Fantastiques"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 12, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 93, true),
@@ -15656,7 +15619,7 @@ public class LoaderGauntlet {
 	
 	private static Armor[] getMeca() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Fists"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings de l'Entaille ultime"); put(Language.EN, "Ultimate Pulse Slash Fists"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red8", ICONPATH + "90red8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
@@ -15689,7 +15652,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Suradanceur"); put(Language.EN, "True Overclocking 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Suradanceur"); put(Language.EN, "True Overclocking 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red8", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
@@ -15722,7 +15685,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Poings de l'Horloge de Foudre Galvatron"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Poings de l'Horloge de Foudre Galvatron"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red9", ICONPATH + "90red9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
@@ -15755,7 +15718,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Galvatron"); put(Language.EN, ""); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Galvatron"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red9", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
@@ -15788,7 +15751,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Démon Frappe-pierre"); put(Language.EN, "Earthquake Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Démon Frappe-pierre"); put(Language.EN, "Earthquake Fists"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio8", ICONPATH + "100vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 504, true),
@@ -15797,7 +15760,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Loup Marchelune"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Loup Marchelune"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio9", ICONPATH + "100vio9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 417, true),
@@ -15806,7 +15769,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Ailes célestes envoûtantes"); put(Language.EN, "Seraphic Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Ailes célestes envoûtantes"); put(Language.EN, "Seraphic Fists"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio8", ICONPATH + "90vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 470, true),
@@ -15815,7 +15778,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Démon du Requiem"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Démon du Requiem"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio9", ICONPATH + "90vio9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 390, true),
@@ -15824,7 +15787,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 37, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Trépas de Glace et d'Étoiles"); put(Language.EN, "Hyperborean Fists"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Trépas de Glace et d'Étoiles"); put(Language.EN, "Hyperborean Fists"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio8", ICONPATH + "80vio8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 438, true),
@@ -15833,7 +15796,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Seigneur chevauchant les Âmes en feu"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Seigneur chevauchant les Âmes en feu"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio9", ICONPATH + "80vio9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 362, true),
@@ -15842,7 +15805,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 32, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Général divin du centre de la Terre"); put(Language.EN, "Terra Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Général divin du centre de la Terre"); put(Language.EN, "Terra Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold8", ICONPATH + "100gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 484, true),
@@ -15851,7 +15814,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Combattant loup lunaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Combattant loup lunaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold9", ICONPATH + "100gold9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 404, true),
@@ -15860,7 +15823,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 34, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Brume rugissante effrayante"); put(Language.EN, "Mistfall Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Brume rugissante effrayante"); put(Language.EN, "Mistfall Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold8", ICONPATH + "90gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
@@ -15869,7 +15832,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold8", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
@@ -15878,7 +15841,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Adieu aux Sables jaunes"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Adieu aux Sables jaunes"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold9", ICONPATH + "90gold9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -15887,7 +15850,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 28, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Galvatron"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Galvatron"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold9", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -15896,7 +15859,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 28, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Arme de zone gelée"); put(Language.EN, "Glacial Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Arme de zone gelée"); put(Language.EN, "Glacial Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold8", ICONPATH + "80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 415, true),
@@ -15905,7 +15868,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Bête des Flammes du Démon"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Bête des Flammes du Démon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold9", ICONPATH + "90evo8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 345, true),
@@ -15914,7 +15877,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 27, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gantelets du Démon traqueur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gantelets du Démon traqueur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp8R", ICONPATH + "100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 508, true),
@@ -15926,7 +15889,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Démon traqueur"); put(Language.EN, "Demon Stalker's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Démon traqueur"); put(Language.EN, "Demon Stalker's Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp8", ICONPATH + "100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 462, true),
@@ -15938,7 +15901,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Brassards du Rédempteur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Brassards du Rédempteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp9R", ICONPATH + "100pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -15950,7 +15913,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards du Prophète sain"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards du Prophète sain"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp9", ICONPATH + "100pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -15962,7 +15925,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Excellent guerrier"); put(Language.EN, "Warmonger Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Excellent guerrier"); put(Language.EN, "Warmonger Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve8", ICONPATH + "100pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 439, true),
@@ -15971,7 +15934,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Ranger astral malicieux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Ranger astral malicieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve9", ICONPATH + "96sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -15980,7 +15943,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gantelets de Mortel-fléau"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gantelets de Mortel-fléau"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp8R", ICONPATH + "95pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 473, true),
@@ -15992,7 +15955,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Mort Dévoreuse d'Âmes"); put(Language.EN, "Deathsbane Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Mort Dévoreuse d'Âmes"); put(Language.EN, "Deathsbane Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp8", ICONPATH + "95pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
@@ -16004,7 +15967,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Brassards de Héraut royal"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Brassards de Héraut royal"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp9R", ICONPATH + "95pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 394, true),
@@ -16016,7 +15979,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Messager Nigimitama"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Messager Nigimitama"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp9", ICONPATH + "95pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 358, true),
@@ -16028,7 +15991,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Garde impérial"); put(Language.EN, "Imperial Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Garde impérial"); put(Language.EN, "Imperial Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve8", ICONPATH + "95pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -16037,7 +16000,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Défenseur spectral"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Défenseur spectral"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve9", ICONPATH + "95pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 353, true),
@@ -16046,7 +16009,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Ouragan du Val de la fissure"); put(Language.EN, "Hurricane Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Ouragan du Val de la fissure"); put(Language.EN, "Hurricane Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve8", ICONPATH + "90pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -16055,7 +16018,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de l'Aile de la Tempête de Sable"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de l'Aile de la Tempête de Sable"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve9", ICONPATH + "86sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -16064,7 +16027,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gantelets de Scelleur d'âme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gantelets de Scelleur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp8R", ICONPATH + "85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 460, true),
@@ -16076,7 +16039,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Mort désintégrante"); put(Language.EN, "Soul Sealer Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Mort désintégrante"); put(Language.EN, "Soul Sealer Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp8", ICONPATH + "85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 419, true),
@@ -16088,7 +16051,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Brassards de Pilleur d'âme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Brassards de Pilleur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp9R", ICONPATH + "85pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 384, true),
@@ -16100,7 +16063,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Apôtre de l'arracheur d'âme"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Apôtre de l'arracheur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp9", ICONPATH + "85pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -16112,7 +16075,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Péché du pénitent"); put(Language.EN, "Sinful Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Péché du pénitent"); put(Language.EN, "Sinful Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve8", ICONPATH + "85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 391, true),
@@ -16121,7 +16084,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de l'Oriflamme du Tonnerre"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de l'Oriflamme du Tonnerre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve9", ICONPATH + "85pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -16130,7 +16093,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Balayage radical"); put(Language.EN, "Mortal Sorrow Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Balayage radical"); put(Language.EN, "Mortal Sorrow Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus8", ICONPATH + "80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -16139,7 +16102,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Excellence ultime"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Excellence ultime"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus9", ICONPATH + "81sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -16148,7 +16111,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Démogorgon pleureur"); put(Language.EN, "Divine Sorrow Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Démogorgon pleureur"); put(Language.EN, "Divine Sorrow Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot8", ICONPATH + "80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 382, true),
@@ -16157,7 +16120,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Excellence divine"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Excellence divine"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot9", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -16166,7 +16129,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Flamme de glace bleue"); put(Language.EN, "Arctic Flame Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Flamme de glace bleue"); put(Language.EN, "Arctic Flame Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve8", ICONPATH + "80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -16175,7 +16138,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Bombardement ardent"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Bombardement ardent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve9", ICONPATH + "90evo8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 313, true),
@@ -16184,7 +16147,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Ravageur de Massacre (Reforgés)"); put(Language.EN, "(Reforged) Slaughter Berserker Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Ravageur de Massacre (Reforgés)"); put(Language.EN, "(Reforged) Slaughter Berserker Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp8R", ICONPATH + "75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 423, true),
@@ -16196,7 +16159,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Ravageur massacrant"); put(Language.EN, "Butcher's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Ravageur massacrant"); put(Language.EN, "Butcher's Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp8", ICONPATH + "75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -16208,7 +16171,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Danseur des rafales hivernales (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Danseur des rafales hivernales (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp9R", ICONPATH + "75pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 353, true),
@@ -16220,7 +16183,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Danseur des rafales hivernales"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Danseur des rafales hivernales"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp9", ICONPATH + "75pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 321, true),
@@ -16232,7 +16195,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Démon enragé"); put(Language.EN, "Hellscream Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Démon enragé"); put(Language.EN, "Hellscream Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve8", ICONPATH + "85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 359, true),
@@ -16241,7 +16204,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de la Cavalerie céleste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de la Cavalerie céleste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve9", ICONPATH + "85pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
@@ -16250,7 +16213,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Chaînes Lumifer"); put(Language.EN, "Lightspeed Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Chaînes Lumifer"); put(Language.EN, "Lightspeed Vambraces"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus8", ICONPATH + "70nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -16259,7 +16222,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Chanoine du Crépuscule"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Chanoine du Crépuscule"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus9", ICONPATH + "71sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -16268,7 +16231,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard des Chaînes Mortefer"); put(Language.EN, "Fettered Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard des Chaînes Mortefer"); put(Language.EN, "Fettered Vambraces"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot8", ICONPATH + "70lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
@@ -16277,7 +16240,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Chanoine Grognecieux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Chanoine Grognecieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot9", ICONPATH + "76sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -16286,7 +16249,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Esprit dansant"); put(Language.EN, "Epiphany Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Esprit dansant"); put(Language.EN, "Epiphany Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve8", ICONPATH + "75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
@@ -16295,7 +16258,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de la Fracture"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de la Fracture"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve9", ICONPATH + "75pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 285, true),
@@ -16304,7 +16267,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Combat Sanglant (Reforgés)"); put(Language.EN, "(Reforged) Blood Combat Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Combat Sanglant (Reforgés)"); put(Language.EN, "(Reforged) Blood Combat Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp8R", ICONPATH + "65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -16316,7 +16279,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Fervent adepte de sacrifice sanglant"); put(Language.EN, "Bloodfighter Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Fervent adepte de sacrifice sanglant"); put(Language.EN, "Bloodfighter Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp8", ICONPATH + "65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -16328,7 +16291,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards du Danseur des Rafales Automnales (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards du Danseur des Rafales Automnales (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp9R", ICONPATH + "65pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 321, true),
@@ -16340,7 +16303,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Danseur des rafales automnales"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Danseur des rafales automnales"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp9", ICONPATH + "65pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
@@ -16352,7 +16315,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Hémophilie"); put(Language.EN, "Bloodbath Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Hémophilie"); put(Language.EN, "Bloodbath Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve8", ICONPATH + "65pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -16361,7 +16324,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Espion Aile de la nuit"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Espion Aile de la nuit"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve9", ICONPATH + "65pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
@@ -16370,7 +16333,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Gladiateur flamboyant"); put(Language.EN, "Ruthless Warlord Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Gladiateur flamboyant"); put(Language.EN, "Ruthless Warlord Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus8", ICONPATH + "60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 316, true),
@@ -16379,7 +16342,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard du Guide nocturne"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard du Guide nocturne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus9", ICONPATH + "60nucleus9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -16388,7 +16351,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Gladiateur Ballarcane"); put(Language.EN, "Profane Warlord Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Gladiateur Ballarcane"); put(Language.EN, "Profane Warlord Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot8", ICONPATH + "60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 316, true),
@@ -16397,7 +16360,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard du Chef nocturne"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard du Chef nocturne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot9", ICONPATH + "60lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -16406,7 +16369,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Seigneur Bondinouri"); put(Language.EN, "Blood Lord Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Seigneur Bondinouri"); put(Language.EN, "Blood Lord Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve8", ICONPATH + "60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 309, true),
@@ -16415,7 +16378,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard du Glorieux Seigneur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard du Glorieux Seigneur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve9", ICONPATH + "60pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
@@ -16424,7 +16387,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Seigneur maniaque (Reforgés)"); put(Language.EN, "(Reforged) Maniac Lord Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Seigneur maniaque (Reforgés)"); put(Language.EN, "(Reforged) Maniac Lord Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp8R", ICONPATH + "60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 346, true),
@@ -16434,7 +16397,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Seigneur maniaque"); put(Language.EN, "Maniac Lord Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Seigneur maniaque"); put(Language.EN, "Maniac Lord Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp8", ICONPATH + "60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 315, true),
@@ -16444,7 +16407,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards de Boucher de l'Ombre (Reforgés)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards de Boucher de l'Ombre (Reforgés)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp9R", ICONPATH + "60pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 289, true),
@@ -16454,7 +16417,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 11, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Sombre boucher des ombres"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Sombre boucher des ombres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp9", ICONPATH + "60pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -16464,7 +16427,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 9, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Faucille de pillage"); put(Language.EN, "Brigand Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Faucille de pillage"); put(Language.EN, "Brigand Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 49, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve8", ICONPATH + "50pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
@@ -16473,7 +16436,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Maraudeur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Maraudeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve9", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 229, true),
@@ -16482,7 +16445,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Assassin maniaque (Reforgé)"); put(Language.EN, "(Reforged) Maniac Assassin Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Assassin maniaque (Reforgé)"); put(Language.EN, "(Reforged) Maniac Assassin Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 44, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp8R", ICONPATH + "60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
@@ -16492,7 +16455,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Assassin maniaque"); put(Language.EN, "Maniac Assassin Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Assassin maniaque"); put(Language.EN, "Maniac Assassin Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 44, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp8", ICONPATH + "60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 276, true),
@@ -16502,7 +16465,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Sombre chasseur des ombres (Reforgé)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Sombre chasseur des ombres (Reforgé)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 44, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp9R", ICONPATH + "45pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
@@ -16512,7 +16475,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 8, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Sombre chasseur des ombres"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Sombre chasseur des ombres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 44, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp9", ICONPATH + "45pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 230, true),
@@ -16522,7 +16485,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 7, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Gladiateur belliqueux"); put(Language.EN, "Gladiator Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Gladiateur belliqueux"); put(Language.EN, "Gladiator Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve8", ICONPATH + "60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -16531,7 +16494,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Pilleurs du fort"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Pilleurs du fort"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve9", ICONPATH + "60lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 201, true),
@@ -16540,7 +16503,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Agent de renseignement"); put(Language.EN, "Reconnaissance Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Agent de renseignement"); put(Language.EN, "Reconnaissance Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 28, Quality.ORANGE, true, false,
 				ArmorType.GANT, "30pve8", ICONPATH + "30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 154, true),
@@ -16549,7 +16512,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Robuste samouraï (Reforgé)"); put(Language.EN, "(Reforged) Tough Samurai Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Robuste samouraï (Reforgé)"); put(Language.EN, "(Reforged) Tough Samurai Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp8R", ICONPATH + "25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 169, true),
@@ -16559,7 +16522,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Robuste samouraï"); put(Language.EN, "Tough Samurai Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Robuste samouraï"); put(Language.EN, "Tough Samurai Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp8", ICONPATH + "25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 153, true),
@@ -16569,7 +16532,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Bretteur nomade (Reforgé)"); put(Language.EN, "(Reforged) Roaming Swordsman Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Bretteur nomade (Reforgé)"); put(Language.EN, "(Reforged) Roaming Swordsman Vambraces"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp9R", ICONPATH + "30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 160, true),
@@ -16579,7 +16542,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 4, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Bretteur nomade"); put(Language.EN, "Roaming Swordsman Vambraces"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Bretteur nomade"); put(Language.EN, "Roaming Swordsman Vambraces"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp9", ICONPATH + "30pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 145, true),
@@ -16589,7 +16552,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Garde imposant"); put(Language.EN, "Sentinel's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Garde imposant"); put(Language.EN, "Sentinel's Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 18, Quality.ORANGE, true, false,
 				ArmorType.GANT, "20pve8", ICONPATH + "20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 124, true),
@@ -16598,7 +16561,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 2, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de l'Oméga (Réincarné)"); put(Language.EN, "(Reincarnated) Mechmaster's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de l'Oméga (Réincarné)"); put(Language.EN, "(Reincarnated) Mechmaster's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo8R", ICONPATH + "100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -16682,7 +16645,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 378),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets spirituels d'Oméga"); put(Language.EN, "Mechmaster's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets spirituels d'Oméga"); put(Language.EN, "Mechmaster's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo8", ICONPATH + "100evo8", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -16766,7 +16729,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 315),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Suprême (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Suprême (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo9R", ICONPATH + "100evo9", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -16850,7 +16813,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bracelets spirituels de Suzerain céleste"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelets spirituels de Suzerain céleste"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo9", ICONPATH + "100evo9", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -16934,7 +16897,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Maléfice nocturne des âmes damnées"); put(Language.EN, "Wretched Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Maléfice nocturne des âmes damnées"); put(Language.EN, "Wretched Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg8", ICONPATH + "85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 435, true),
@@ -16945,7 +16908,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 765),
 					new Effect(TypeEffect.PM, false, 535),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard d'Aigle démon dévoreur de cœurs"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard d'Aigle démon dévoreur de cœurs"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg9", ICONPATH + "85pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 363, true),
@@ -16956,7 +16919,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 640),
 					new Effect(TypeEffect.PM, false, 660),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Bretteur de la neige glacée"); put(Language.EN, "Frost Warrior's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Bretteur de la neige glacée"); put(Language.EN, "Frost Warrior's Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
@@ -16965,7 +16928,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard du Molosse de tonnerre blanc"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard du Molosse de tonnerre blanc"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "88bleu9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
@@ -16974,7 +16937,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Massacre crépusculaire"); put(Language.EN, "Duskfall Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Massacre crépusculaire"); put(Language.EN, "Duskfall Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 82, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 408, true),
@@ -16983,7 +16946,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de la Marche du coucher de lune"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de la Marche du coucher de lune"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 82, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -16992,7 +16955,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Combat sans fin"); put(Language.EN, "Endless Battle Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Combat sans fin"); put(Language.EN, "Endless Battle Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg8", ICONPATH + "85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -17003,7 +16966,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 635),
 					new Effect(TypeEffect.PM, false, 405),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Feu de crevasse"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Feu de crevasse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg9", ICONPATH + "85pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
@@ -17014,7 +16977,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 510),
 					new Effect(TypeEffect.PM, false, 530),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Coups de feu précis"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Coups de feu précis"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 78, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 329, true),
@@ -17023,7 +16986,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Mégatron (Réincarné)"); put(Language.EN, "(Reincarnated) Cogmaster's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Mégatron (Réincarné)"); put(Language.EN, "(Reincarnated) Cogmaster's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo8R", ICONPATH + "90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -17147,7 +17110,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 318),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Essence de Prime"); put(Language.EN, "Cogmaster's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Essence de Prime"); put(Language.EN, "Cogmaster's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo8", ICONPATH + "90evo8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -17271,7 +17234,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 265),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Galvatron (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Galvatron (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo9R", ICONPATH + "80gold8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -17395,7 +17358,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 270),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bracelets spirituels d'Optimus"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelets spirituels d'Optimus"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo9", ICONPATH + "80gold8", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -17519,7 +17482,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 225),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Molosse lunaire"); put(Language.EN, "Moonwolf Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Molosse lunaire"); put(Language.EN, "Moonwolf Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
@@ -17528,7 +17491,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Puissance éternelle"); put(Language.EN, "Eternal Power Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Puissance éternelle"); put(Language.EN, "Eternal Power Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg8", ICONPATH + "80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 368, true),
@@ -17539,7 +17502,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 375),
 					new Effect(TypeEffect.PM, false, 275),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Tireur d'élite invisible"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Tireur d'élite invisible"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg9", ICONPATH + "81sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -17550,7 +17513,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard des Gardes du palais du Renard fougueux"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard des Gardes du palais du Renard fougueux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -17559,7 +17522,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Prime (Réincarné)"); put(Language.EN, "(Reincarnated) Gearmaster's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Prime (Réincarné)"); put(Language.EN, "(Reincarnated) Gearmaster's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo8R", ICONPATH + "50pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -17683,7 +17646,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de l'Essence du Métalleux"); put(Language.EN, "Gearmaster's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de l'Essence du Métalleux"); put(Language.EN, "Gearmaster's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo8", ICONPATH + "50pve8", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -17807,7 +17770,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs de l'Optimus (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs de l'Optimus (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo9R", ICONPATH + "75evo9", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -17931,7 +17894,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 258),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Bracelets d'Essence du Démolisseur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelets d'Essence du Démolisseur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo9", ICONPATH + "75evo9", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -18055,7 +18018,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 215),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de verrouillage de la Danse du sang"); put(Language.EN, "Sanguine Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de verrouillage de la Danse du sang"); put(Language.EN, "Sanguine Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -18064,7 +18027,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Maltraitance de Pluie neigeuse"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Maltraitance de Pluie neigeuse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 277, true),
@@ -18073,7 +18036,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Brume rugissante"); put(Language.EN, "Gauntlets of Roaring Mist"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Brume rugissante"); put(Language.EN, "Gauntlets of Roaring Mist"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 308, true),
@@ -18082,7 +18045,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Sentinelle de repaire"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Sentinelle de repaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60nucleus9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
@@ -18091,7 +18054,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Métalleux (Réincarné)"); put(Language.EN, "(Reincarnated) Engineer's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Métalleux (Réincarné)"); put(Language.EN, "(Reincarnated) Engineer's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo8R", ICONPATH + "65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -18325,7 +18288,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 240),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets spirituels du Métalleux"); put(Language.EN, "Engineer's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets spirituels du Métalleux"); put(Language.EN, "Engineer's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo8", ICONPATH + "65pvp8", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -18559,7 +18522,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 200),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Démolisseur (Réincarné)"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Démolisseur (Réincarné)"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo9R", ICONPATH + "60pve9", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -18793,7 +18756,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 216),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassards évolutifs du Démolisseur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassards évolutifs du Démolisseur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo9", ICONPATH + "60pve9", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -19027,7 +18990,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 180),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs du Machiniste (Réincarné)"); put(Language.EN, "(Reincarnated) Machinist's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs du Machiniste (Réincarné)"); put(Language.EN, "(Reincarnated) Machinist's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, true,
 				ArmorType.GANT, "30evo8R", ICONPATH + "20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -19181,7 +19144,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.VIT, false, 8, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets spirituels du Machiniste"); put(Language.EN, "Machinist's Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets spirituels du Machiniste"); put(Language.EN, "Machinist's Soul Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 6, Quality.BLUE, false, false,
 				ArmorType.GANT, "30evo8", ICONPATH + "20pve8", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -19335,7 +19298,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.VIT, false, 6, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants primitives de Sprite"); put(Language.EN, "Sprite's Primitive Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants primitives de Sprite"); put(Language.EN, "Sprite's Primitive Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 96, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
@@ -19344,7 +19307,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants en Plumes vert jade de Sprite"); put(Language.EN, "Sprite's Jade Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants en Plumes vert jade de Sprite"); put(Language.EN, "Sprite's Jade Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 91, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 330, true),
@@ -19353,7 +19316,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Pic embrumé de Sprite"); put(Language.EN, "Sprite's Mist Peak Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Pic embrumé de Sprite"); put(Language.EN, "Sprite's Mist Peak Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 86, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
@@ -19362,7 +19325,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cauchemars de Sprite"); put(Language.EN, "Sprite's Nightmare Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cauchemars de Sprite"); put(Language.EN, "Sprite's Nightmare Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 81, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
@@ -19371,7 +19334,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Froide canicule de Sprite"); put(Language.EN, "Sprite's Frostbite Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Froide canicule de Sprite"); put(Language.EN, "Sprite's Frostbite Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 76, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "76sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -19380,7 +19343,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Soldats précurseurs de Sprite"); put(Language.EN, "Sprite's Vanguard Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Soldats précurseurs de Sprite"); put(Language.EN, "Sprite's Vanguard Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 71, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "71sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
@@ -19389,7 +19352,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Bois nocturnes de Sprite"); put(Language.EN, "Sprite's Nightwood Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Bois nocturnes de Sprite"); put(Language.EN, "Sprite's Nightwood Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 66, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "66sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 265, true),
@@ -19398,7 +19361,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Mercenaire sanguinaire de Sprite"); put(Language.EN, "Sprite's Bloodthirsty Mercenary Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Mercenaire sanguinaire de Sprite"); put(Language.EN, "Sprite's Bloodthirsty Mercenary Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 61, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 252, true),
@@ -19407,7 +19370,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Garde du corps sanglant de Sprite"); put(Language.EN, "Sprite's Bloody Bodyguard Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Garde du corps sanglant de Sprite"); put(Language.EN, "Sprite's Bloody Bodyguard Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 55, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "55sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 236, true),
@@ -19416,7 +19379,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Lune argentée de Sprite"); put(Language.EN, "Sprite's Silver Moon Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Lune argentée de Sprite"); put(Language.EN, "Sprite's Silver Moon Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 45, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
@@ -19425,7 +19388,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Armes à deux mains de Sprite"); put(Language.EN, "Sprite's Bolstered Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Armes à deux mains de Sprite"); put(Language.EN, "Sprite's Bolstered Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 35, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "55sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 182, true),
@@ -19434,7 +19397,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Pratique de Sprite"); put(Language.EN, "Sprite's Stratagem Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Pratique de Sprite"); put(Language.EN, "Sprite's Stratagem Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 138, true),
@@ -19442,99 +19405,99 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 1, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Cité murée de Sprite"); put(Language.EN, "Sprite's Bastion Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Cité murée de Sprite"); put(Language.EN, "Sprite's Bastion Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 15, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "15sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 108, true),
 					new Effect(TypeEffect.DefM, false, 137, true),
 					new Effect(TypeEffect.FCE, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Exercice de Sprite"); put(Language.EN, "Sprite's Workout Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Exercice de Sprite"); put(Language.EN, "Sprite's Workout Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 8, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "8sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 84, true),
 					new Effect(TypeEffect.DefM, false, 106, true),
 					new Effect(TypeEffect.FCE, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Bête à bain de sang"); put(Language.EN, "Bloody Roar Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Bête à bain de sang"); put(Language.EN, "Bloody Roar Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 369, true),
 					new Effect(TypeEffect.DefM, false, 273, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Démon dévore-cœur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Démon dévore-cœur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
 					new Effect(TypeEffect.DefM, false, 304, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Chute"); put(Language.EN, "Gauntlets of Ruin"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Chute"); put(Language.EN, "Gauntlets of Ruin"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "87blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
 					new Effect(TypeEffect.DefM, false, 257, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard de Splendeur"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard de Splendeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 87, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "87blanc9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
 					new Effect(TypeEffect.DefM, false, 286, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Charge de taureau"); put(Language.EN, "Bull Charge Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Charge de taureau"); put(Language.EN, "Bull Charge Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 82, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "82blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 337, true),
 					new Effect(TypeEffect.DefM, false, 247, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard des Falaises"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard des Falaises"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 82, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "66sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 281, true),
 					new Effect(TypeEffect.DefM, false, 274, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Roche fondue"); put(Language.EN, "Molten Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Roche fondue"); put(Language.EN, "Molten Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 67, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 298, true),
 					new Effect(TypeEffect.DefM, false, 216, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Brassard du Blanc glacial"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Brassard du Blanc glacial"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 67, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
 					new Effect(TypeEffect.DefM, false, 240, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Garde du corps sanglant"); put(Language.EN, "Bloody Bodyguard Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Garde du corps sanglant"); put(Language.EN, "Bloody Bodyguard Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 52, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "55sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 214, true),
 					new Effect(TypeEffect.DefM, false, 204, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Lune argentée"); put(Language.EN, "Silver Moon Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Lune argentée"); put(Language.EN, "Silver Moon Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 42, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 190, true),
 					new Effect(TypeEffect.DefM, false, 180, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Armes à deux mains"); put(Language.EN, "Bolstered Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Armes à deux mains"); put(Language.EN, "Bolstered Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 32, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "55sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 164, true),
 					new Effect(TypeEffect.DefM, false, 155, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Pratique"); put(Language.EN, "Stratagem Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Pratique"); put(Language.EN, "Stratagem Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "25pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 122, true),
 					new Effect(TypeEffect.DefM, false, 116, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Cité murée"); put(Language.EN, "Bastion Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Cité murée"); put(Language.EN, "Bastion Gauntlets"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 12, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "15sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 93, true),
 					new Effect(TypeEffect.DefM, false, 88, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Soldat de forage"); put(Language.EN, "Drill Soldier Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Soldat de forage"); put(Language.EN, "Drill Soldier Gloves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 5, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "8sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 67, true),
@@ -19545,7 +19508,7 @@ public class LoaderGauntlet {
 	
 	private static Armor[] getVoyageur() {
 		return new Armor[] {
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Danse Sauvage de Dimensionaliste"); put(Language.EN, "Phantom Wild Dance Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red10", ICONPATH + "90red10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -19579,7 +19542,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Dimensionaliste"); put(Language.EN, "True Phantom 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Dimensionaliste"); put(Language.EN, "True Phantom 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red10", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 420, true),
@@ -19613,7 +19576,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Frappe Brise-Temps"); put(Language.EN, "Timebreak Keystrike Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, true, false,
 				ArmorType.GANT, "90red11", ICONPATH + "90red11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -19647,7 +19610,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new RedArmor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires du véritable Brise-temps"); put(Language.EN, "True Timebreak 10th Anniversary Star Gloves"); }},
+			new RedArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires du véritable Brise-temps"); put(Language.EN, "True Timebreak 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.RED, false, false,
 				ArmorType.GANT, "10ans90red11", ICONPATH + "10ansRed", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -19681,7 +19644,7 @@ public class LoaderGauntlet {
 						}),
 					},
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume illusoire - Gants du juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Royaume illusoire - Gants du juge d'outremonde"); put(Language.EN, "Illusionary Realm - Otherworld Judge Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio10", ICONPATH + "100vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 430, true),
@@ -19692,7 +19655,7 @@ public class LoaderGauntlet {
 				}, new Calculable[] {
 					new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Royaume temporel - Gants de voyageur des ères"); put(Language.EN, "Time Realm - Era Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Royaume temporel - Gants de voyageur des ères"); put(Language.EN, "Time Realm - Era Traveler Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.GANT, "100vio11", ICONPATH + "100vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 390, true),
@@ -19703,7 +19666,7 @@ public class LoaderGauntlet {
 				}, new Calculable[] {
 					new RegenEffect(TypeEffect.PM, false, 100, TypeRegen.REGENERATION, 1),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Trou noir - Gants de dispersion Demis"); put(Language.EN, "Black Hole - Dimensional Scurry Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Trou noir - Gants de dispersion Demis"); put(Language.EN, "Black Hole - Dimensional Scurry Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio10", ICONPATH + "90vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 395, true),
@@ -19714,7 +19677,7 @@ public class LoaderGauntlet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.INT, false, 50),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Appareil - Gants de contrôle de pantin"); put(Language.EN, "Device - Puppetmaster Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Appareil - Gants de contrôle de pantin"); put(Language.EN, "Device - Puppetmaster Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.PURPLE, true, false,
 				ArmorType.GANT, "90vio11", ICONPATH + "90vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
@@ -19725,7 +19688,7 @@ public class LoaderGauntlet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.INT, false, 50),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Univers - Gantelets de pionnier"); put(Language.EN, "Universal Trailblazer Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Univers - Gantelets de pionnier"); put(Language.EN, "Universal Trailblazer Gauntlets"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio10", ICONPATH + "80vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 368, true),
@@ -19736,7 +19699,7 @@ public class LoaderGauntlet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.INT, false, 10),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Temps - Gantelets de Gardien"); put(Language.EN, "Time-Keeper Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Temps - Gantelets de Gardien"); put(Language.EN, "Time-Keeper Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 78, Quality.PURPLE, true, false,
 				ArmorType.GANT, "80vio11", ICONPATH + "80vio11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 341, true),
@@ -19747,7 +19710,7 @@ public class LoaderGauntlet {
 				}, new Calculable[] {
 					new Effect(TypeEffect.INT, false, 10),
 				}),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Stalactite de l'Ombre"); put(Language.EN, "Icy Shadow Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Stalactite de l'Ombre"); put(Language.EN, "Icy Shadow Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold10", ICONPATH + "100gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
@@ -19756,7 +19719,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 33, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal Spatio-temporel"); put(Language.EN, "Spacetime Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal Spatio-temporel"); put(Language.EN, "Spacetime Crystal Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100gold11", ICONPATH + "100gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 370, true),
@@ -19765,7 +19728,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Prisme de Cristal"); put(Language.EN, "Crystal Prism Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Prisme de Cristal"); put(Language.EN, "Crystal Prism Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold10", ICONPATH + "90gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -19774,7 +19737,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Dimensionaliste"); put(Language.EN, "Phantom 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Dimensionaliste"); put(Language.EN, "Phantom 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold10", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),
@@ -19783,7 +19746,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 29, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Destructeur de l'Âme"); put(Language.EN, "Soul Annihilator Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90gold11", ICONPATH + "90gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -19792,7 +19755,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants stellaires de Brise-temps"); put(Language.EN, "Timebreak 10th Anniversary Star Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants stellaires de Brise-temps"); put(Language.EN, "Timebreak 10th Anniversary Star Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "10ans90gold11", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 344, true),
@@ -19801,7 +19764,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets d'Hérétique Cristallin"); put(Language.EN, "Crystal Heretic Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets d'Hérétique Cristallin"); put(Language.EN, "Crystal Heretic Gauntlets"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold10", ICONPATH + "80gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 345, true),
@@ -19810,7 +19773,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Lien de Cristal"); put(Language.EN, "Crystal Bind Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Lien de Cristal"); put(Language.EN, "Crystal Bind Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 78, Quality.GOLD, true, false,
 				ArmorType.GANT, "80gold11", ICONPATH + "80gold11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
@@ -19819,7 +19782,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants d'Explosion cristalline printanière"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants d'Explosion cristalline printanière"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp10R", ICONPATH + "100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 424, true),
@@ -19831,7 +19794,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal Jaillissant"); put(Language.EN, "Molten Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal Jaillissant"); put(Language.EN, "Molten Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp10", ICONPATH + "100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 385, true),
@@ -19843,7 +19806,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Cristal Chaotique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Cristal Chaotique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.GANT, "100pvp11R", ICONPATH + "100pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 381, true),
@@ -19855,7 +19818,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal Chaotique"); put(Language.EN, "Chaotic Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal Chaotique"); put(Language.EN, "Chaotic Crystal Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.GANT, "100pvp11", ICONPATH + "100pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 346, true),
@@ -19867,7 +19830,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 5),
 					new Effect(TypeEffect.ReducPeneM, false, 5),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Mirage cristallin"); put(Language.EN, "Crystal Mirage Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Mirage cristallin"); put(Language.EN, "Crystal Mirage Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve10", ICONPATH + "100pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 366, true),
@@ -19876,7 +19839,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Panorama"); put(Language.EN, "Horizon Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Panorama"); put(Language.EN, "Horizon Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 98, Quality.ORANGE, true, false,
 				ArmorType.GANT, "100pve11", ICONPATH + "100pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -19885,7 +19848,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de voyageur temporel"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de voyageur temporel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp10R", ICONPATH + "95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 402, true),
@@ -19897,7 +19860,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de voyageur Demis"); put(Language.EN, "Dimensional Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de voyageur Demis"); put(Language.EN, "Dimensional Traveler Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp10", ICONPATH + "95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -19909,7 +19872,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants de Gardien du temps"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants de Gardien du temps"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.GANT, "95pvp11R", ICONPATH + "95pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 361, true),
@@ -19921,7 +19884,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Gardien du temps"); put(Language.EN, "Chrono Keeper Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Gardien du temps"); put(Language.EN, "Chrono Keeper Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.GANT, "95pvp11", ICONPATH + "95pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
@@ -19933,7 +19896,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 4),
 					new Effect(TypeEffect.ReducPeneM, false, 4),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Malédiction du Cristal Runique"); put(Language.EN, "Runic Crystal Curse Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Malédiction du Cristal Runique"); put(Language.EN, "Runic Crystal Curse Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve10", ICONPATH + "95pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 360, true),
@@ -19942,7 +19905,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Fléau de Cristal"); put(Language.EN, "Crystal Blight Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Fléau de Cristal"); put(Language.EN, "Crystal Blight Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 93, Quality.ORANGE, true, false,
 				ArmorType.GANT, "95pve11", ICONPATH + "95pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 324, true),
@@ -19951,7 +19914,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal radieux"); put(Language.EN, "Brilliant Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal radieux"); put(Language.EN, "Brilliant Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve10", ICONPATH + "90pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
@@ -19960,7 +19923,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur du carnage"); put(Language.EN, "Carnage Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur du carnage"); put(Language.EN, "Carnage Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 88, Quality.ORANGE, true, false,
 				ArmorType.GANT, "90pve11", ICONPATH + "90pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
@@ -19969,7 +19932,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Voyageur runique"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Voyageur runique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp10R", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
@@ -19981,7 +19944,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur runique"); put(Language.EN, "Runic Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur runique"); put(Language.EN, "Runic Traveler Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 332, true),
@@ -19993,7 +19956,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "(Reforgé) Gants du Cristalier"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Gants du Cristalier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.GANT, "85pvp11R", ICONPATH + "85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 334, true),
@@ -20005,7 +19968,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Créateur du cristal"); put(Language.EN, "Crystalsmith's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Créateur du cristal"); put(Language.EN, "Crystalsmith's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.GANT, "85pvp11", ICONPATH + "85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
@@ -20017,7 +19980,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 3),
 					new Effect(TypeEffect.ReducPeneM, false, 3),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur Sprite"); put(Language.EN, "Spectral Ranger Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur Sprite"); put(Language.EN, "Spectral Ranger Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve10", ICONPATH + "85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 326, true),
@@ -20026,7 +19989,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur nocturne"); put(Language.EN, "Midnight Hitchhiker's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur nocturne"); put(Language.EN, "Midnight Hitchhiker's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 83, Quality.ORANGE, true, false,
 				ArmorType.GANT, "85pve11", ICONPATH + "85pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 300, true),
@@ -20035,7 +19998,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Gardien du cristal"); put(Language.EN, "Crystal Keeper Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Gardien du cristal"); put(Language.EN, "Crystal Keeper Gauntlets"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus10", ICONPATH + "80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -20044,7 +20007,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Cristallins d'incantation"); put(Language.EN, "Incarnated Crystalline Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Cristallins d'incantation"); put(Language.EN, "Incarnated Crystalline Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80nucleus11", ICONPATH + "80nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
@@ -20053,7 +20016,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Porteur du cristal"); put(Language.EN, "Crystal Wielder Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Porteur du cristal"); put(Language.EN, "Crystal Wielder Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot10", ICONPATH + "80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 318, true),
@@ -20062,7 +20025,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voyageur sur le déclin"); put(Language.EN, "Waning Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voyageur sur le déclin"); put(Language.EN, "Waning Traveler Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80lingot11", ICONPATH + "80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 292, true),
@@ -20071,7 +20034,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'éclat cristallin hérétique"); put(Language.EN, "Crystal Shard Heretic Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'éclat cristallin hérétique"); put(Language.EN, "Crystal Shard Heretic Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 313, true),
@@ -20080,7 +20043,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal mortel"); put(Language.EN, "Deadly Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal mortel"); put(Language.EN, "Deadly Crystal Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.GANT, "80pve11", ICONPATH + "85pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 288, true),
@@ -20089,7 +20052,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voyageur rayonnant (Reforgé)"); put(Language.EN, "(Reforged) Incandescent Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voyageur rayonnant (Reforgé)"); put(Language.EN, "(Reforged) Incandescent Traveler Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp10R", ICONPATH + "80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 336, true),
@@ -20101,7 +20064,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voyageur rayonnant"); put(Language.EN, "Luminous Traveler's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voyageur rayonnant"); put(Language.EN, "Luminous Traveler's Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp10", ICONPATH + "80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -20113,7 +20076,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur ténébreux (Reforgé)"); put(Language.EN, "(Reforged) Shadowy Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur ténébreux (Reforgé)"); put(Language.EN, "(Reforged) Shadowy Traveler Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, false, true,
 				ArmorType.GANT, "75pvp11R", ICONPATH + "80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 308, true),
@@ -20125,7 +20088,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur ténébreux"); put(Language.EN, "Shadowy Traveler's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur ténébreux"); put(Language.EN, "Shadowy Traveler's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.GANT, "75pvp11", ICONPATH + "80lingot11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 280, true),
@@ -20137,7 +20100,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 2),
 					new Effect(TypeEffect.ReducPeneM, false, 2),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Grand Voyageur"); put(Language.EN, "Lauded Adventurer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Grand Voyageur"); put(Language.EN, "Lauded Adventurer's Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve10", ICONPATH + "80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 299, true),
@@ -20146,7 +20109,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'éclat de Cristal"); put(Language.EN, "Crystal Shard Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'éclat de Cristal"); put(Language.EN, "Crystal Shard Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 73, Quality.ORANGE, true, false,
 				ArmorType.GANT, "75pve11", ICONPATH + "80nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
@@ -20155,7 +20118,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la Puissance du cristal"); put(Language.EN, "Crystal Strength Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la Puissance du cristal"); put(Language.EN, "Crystal Strength Gauntlets"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus10", ICONPATH + "85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -20164,7 +20127,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets du Voyageur désespéré"); put(Language.EN, "Traveler in Despair Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets du Voyageur désespéré"); put(Language.EN, "Traveler in Despair Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70nucleus11", ICONPATH + "85pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 267, true),
@@ -20173,7 +20136,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Puissance du cristal de givre"); put(Language.EN, "Frostbitten Crystal Strength Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Puissance du cristal de givre"); put(Language.EN, "Frostbitten Crystal Strength Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot10", ICONPATH + "70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
@@ -20182,7 +20145,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Roi de la catastrophe"); put(Language.EN, "Lord of Calamity Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Roi de la catastrophe"); put(Language.EN, "Lord of Calamity Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70lingot11", ICONPATH + "70pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 267, true),
@@ -20191,7 +20154,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cristal Mutant"); put(Language.EN, "Mutated Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cristal Mutant"); put(Language.EN, "Mutated Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve10", ICONPATH + "70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 285, true),
@@ -20200,7 +20163,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Roi des profondeurs cristallines"); put(Language.EN, "Crystal Nether King Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Roi des profondeurs cristallines"); put(Language.EN, "Crystal Nether King Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 68, Quality.ORANGE, true, false,
 				ArmorType.GANT, "70pve11", ICONPATH + "70pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
@@ -20209,7 +20172,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voyageur prismatique (Reforgé)"); put(Language.EN, "(Reforged) Prismatic Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voyageur prismatique (Reforgé)"); put(Language.EN, "(Reforged) Prismatic Traveler Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp10R", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 305, true),
@@ -20221,7 +20184,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voyageur prismatique"); put(Language.EN, "Prismic Wanderer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voyageur prismatique"); put(Language.EN, "Prismic Wanderer's Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp10", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 277, true),
@@ -20233,7 +20196,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Genèse spatio-temporelle (Reforgé)"); put(Language.EN, "(Reforged) Temporal Genesis Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Genèse spatio-temporelle (Reforgé)"); put(Language.EN, "(Reforged) Temporal Genesis Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, false, true,
 				ArmorType.GANT, "65pvp11R", ICONPATH + "65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 279, true),
@@ -20245,7 +20208,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Genèse spatio-temporelle"); put(Language.EN, "Temporal Genesis Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Genèse spatio-temporelle"); put(Language.EN, "Temporal Genesis Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.GANT, "65pvp11", ICONPATH + "65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
@@ -20257,7 +20220,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.ReducPeneP, false, 1),
 					new Effect(TypeEffect.ReducPeneM, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Cristal Arc-en-Ciel"); put(Language.EN, "Radiant Crystal Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Cristal Arc-en-Ciel"); put(Language.EN, "Radiant Crystal Gauntlets"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve10", ICONPATH + "65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
@@ -20266,7 +20229,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Cristal ténébreux"); put(Language.EN, "Nebulous Crystal Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Cristal ténébreux"); put(Language.EN, "Nebulous Crystal Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.GANT, "65pve11", ICONPATH + "65pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
@@ -20275,7 +20238,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cristal de célérité"); put(Language.EN, "Speedy Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cristal de célérité"); put(Language.EN, "Speedy Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus10", ICONPATH + "60nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -20284,7 +20247,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Esprit du voyageur"); put(Language.EN, "Traveler's Spirit Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Esprit du voyageur"); put(Language.EN, "Traveler's Spirit Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60nucleus11", ICONPATH + "60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -20293,7 +20256,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Gemme robuste"); put(Language.EN, "Sturdy Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Gemme robuste"); put(Language.EN, "Sturdy Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot10", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -20302,7 +20265,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Malédiction du voyageur"); put(Language.EN, "Traveler's Curse Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Malédiction du voyageur"); put(Language.EN, "Traveler's Curse Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60lingot11", ICONPATH + "65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
@@ -20311,7 +20274,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Cristal infini"); put(Language.EN, "Infinite Crystalline Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Cristal infini"); put(Language.EN, "Infinite Crystalline Gauntlets"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve10", ICONPATH + "60nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
@@ -20320,7 +20283,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voyageur magique"); put(Language.EN, "Traveling Magician's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voyageur magique"); put(Language.EN, "Traveling Magician's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 58, Quality.ORANGE, true, false,
 				ArmorType.GANT, "60pve11", ICONPATH + "65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 232, true),
@@ -20329,7 +20292,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Ancien du cristal (Reforgé)"); put(Language.EN, "(Reforged) Crystal Elder Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Ancien du cristal (Reforgé)"); put(Language.EN, "(Reforged) Crystal Elder Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp10R", ICONPATH + "25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 289, true),
@@ -20339,7 +20302,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Ancien du cristal"); put(Language.EN, "Crystal Elder Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Ancien du cristal"); put(Language.EN, "Crystal Elder Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp10", ICONPATH + "25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 263, true),
@@ -20349,7 +20312,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Genèse cristalline (Reforgé)"); put(Language.EN, "(Reforged) Crystal Genesis Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Genèse cristalline (Reforgé)"); put(Language.EN, "(Reforged) Crystal Genesis Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 55, Quality.ORANGE, false, true,
 				ArmorType.GANT, "55pvp11R", ICONPATH + "65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 261, true),
@@ -20359,7 +20322,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantes de Genèse cristalline"); put(Language.EN, "Crystal Genesis Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantes de Genèse cristalline"); put(Language.EN, "Crystal Genesis Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.GANT, "55pvp11", ICONPATH + "65pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 237, true),
@@ -20369,7 +20332,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur Temporel"); put(Language.EN, "Time Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur Temporel"); put(Language.EN, "Time Traveler Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve10", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 229, true),
@@ -20378,7 +20341,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de Cristal"); put(Language.EN, "Crystal Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de Cristal"); put(Language.EN, "Crystal Soul Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 48, Quality.ORANGE, true, false,
 				ArmorType.GANT, "50pve11", ICONPATH + "65pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 206, true),
@@ -20387,7 +20350,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Reforgées du Sage de Cristal"); put(Language.EN, "(Reforged) Crystal Sage Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Reforgées du Sage de Cristal"); put(Language.EN, "(Reforged) Crystal Sage Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp10R", ICONPATH + "45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 244, true),
@@ -20397,7 +20360,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Sage de Cristal"); put(Language.EN, "Crystal Sage Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Sage de Cristal"); put(Language.EN, "Crystal Sage Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp10", ICONPATH + "45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 221, true),
@@ -20407,7 +20370,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Reforgés du Voyageur"); put(Language.EN, "(Reforged) Adventurer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Reforgés du Voyageur"); put(Language.EN, "(Reforged) Adventurer's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 42, Quality.ORANGE, false, true,
 				ArmorType.GANT, "45pvp11R", ICONPATH + "60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 219, true),
@@ -20417,7 +20380,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 3, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur"); put(Language.EN, "Adventurer's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur"); put(Language.EN, "Adventurer's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 42, Quality.ORANGE, false, false,
 				ArmorType.GANT, "45pvp11", ICONPATH + "60nucleus11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 199, true),
@@ -20427,7 +20390,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.AGI, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal déviant"); put(Language.EN, "Devious Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal déviant"); put(Language.EN, "Devious Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve10", ICONPATH + "65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 201, true),
@@ -20436,7 +20399,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Cristal"); put(Language.EN, "Crystal Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Cristal"); put(Language.EN, "Crystal Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 38, Quality.ORANGE, true, false,
 				ArmorType.GANT, "40pve11", ICONPATH + "40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 181, true),
@@ -20445,7 +20408,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'ermite"); put(Language.EN, "Hermit's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'ermite"); put(Language.EN, "Hermit's Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 28, Quality.ORANGE, true, false,
 				ArmorType.GANT, "30pve10", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 166, true),
@@ -20453,7 +20416,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Reforgés de la Source de Cristal"); put(Language.EN, "(Reforged) Crystal Spring Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Reforgés de la Source de Cristal"); put(Language.EN, "(Reforged) Crystal Spring Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp10R", ICONPATH + "25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 197, true),
@@ -20463,7 +20426,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Source de Cristal"); put(Language.EN, "Crystal Spring Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Source de Cristal"); put(Language.EN, "Crystal Spring Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp10", ICONPATH + "25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 178, true),
@@ -20473,7 +20436,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Reforgés de Runes Sacrificielles"); put(Language.EN, "(Reforged) Sacrificial Rune Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Reforgés de Runes Sacrificielles"); put(Language.EN, "(Reforged) Sacrificial Rune Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.GANT, "25pvp11R", ICONPATH + "40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 167, true),
@@ -20482,7 +20445,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.GANT, "25pvp11", ICONPATH + "40pve11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 152, true),
@@ -20491,7 +20454,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Cristallisées"); put(Language.EN, "Crystallized Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Cristallisées"); put(Language.EN, "Crystallized Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 18, Quality.ORANGE, true, false,
 				ArmorType.GANT, "20pve10", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 145, true),
@@ -20499,7 +20462,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.FCE, false, 1, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs d'outremonde réincarné"); put(Language.EN, "Reincarnated Otherworld Warlock Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs d'outremonde réincarné"); put(Language.EN, "Reincarnated Otherworld Warlock Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo10R", ICONPATH + "96sprite10", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -20583,7 +20546,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 378),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs d'outremonde"); put(Language.EN, "Otherworld Warlock Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs d'outremonde"); put(Language.EN, "Otherworld Warlock Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo10", ICONPATH + "96sprite10", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -20667,7 +20630,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 315),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de Pillard réincarné"); put(Language.EN, "Reincarnated Plunderer Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de Pillard réincarné"); put(Language.EN, "Reincarnated Plunderer Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, true,
 				ArmorType.GANT, "100evo11R", ICONPATH + "100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -20751,7 +20714,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 360),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de Pillard"); put(Language.EN, "Plunderer Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de Pillard"); put(Language.EN, "Plunderer Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 91, Quality.BLUE, false, false,
 				ArmorType.GANT, "100evo11", ICONPATH + "100evo11", new MultiEffect(91, new Effect[][] {
 					new Effect[] {
@@ -20835,7 +20798,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Agate mutante"); put(Language.EN, "Mutated Agate Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Agate mutante"); put(Language.EN, "Mutated Agate Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg10", ICONPATH + "90gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 363, true),
@@ -20846,7 +20809,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 640),
 					new Effect(TypeEffect.PM, false, 660),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Os de dragon Crystalis"); put(Language.EN, "Crystalline Dragon Bone Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Os de dragon Crystalis"); put(Language.EN, "Crystalline Dragon Bone Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.GANT, "90gvg11", ICONPATH + "90gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 333, true),
@@ -20857,7 +20820,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 590),
 					new Effect(TypeEffect.PM, false, 710),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'orbite Chronos"); put(Language.EN, "Chrono Orbit Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'orbite Chronos"); put(Language.EN, "Chrono Orbit Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "90gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 352, true),
@@ -20867,7 +20830,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.PV, false, 950),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voleur Chronos"); put(Language.EN, "Chrono Thief Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voleur Chronos"); put(Language.EN, "Chrono Thief Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 86, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 322, true),
@@ -20878,7 +20841,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 675),
 					new Effect(TypeEffect.PM, false, 275),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Gouverneur de l'Espace"); put(Language.EN, "Cosmic Governor Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Gouverneur de l'Espace"); put(Language.EN, "Cosmic Governor Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 83, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "83bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
@@ -20888,7 +20851,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.PV, false, 900),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyeur de l'Espace-Temps"); put(Language.EN, "Spacetime Scientist's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyeur de l'Espace-Temps"); put(Language.EN, "Spacetime Scientist's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 83, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "83bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 315, true),
@@ -20899,7 +20862,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 650),
 					new Effect(TypeEffect.PM, false, 250),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Voyageur Temporel"); put(Language.EN, "Time Traveler Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Voyageur Temporel"); put(Language.EN, "Time Traveler Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg10", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 335, true),
@@ -20910,7 +20873,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 510),
 					new Effect(TypeEffect.PM, false, 530),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cristal dégénéré"); put(Language.EN, "Depraved Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cristal dégénéré"); put(Language.EN, "Depraved Crystal Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.GANT, "80gvg11", ICONPATH + "80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
@@ -20921,7 +20884,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 460),
 					new Effect(TypeEffect.PM, false, 580),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Bénis du Temps"); put(Language.EN, "Temporal Bliss Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Bénis du Temps"); put(Language.EN, "Temporal Bliss Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "83bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 345, true),
@@ -20931,7 +20894,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.PV, false, 800),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs d'Occultiste réincarné"); put(Language.EN, "Reincarnated Occulist Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs d'Occultiste réincarné"); put(Language.EN, "Reincarnated Occulist Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo10R", ICONPATH + "81sprite10", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -21055,7 +21018,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 336),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs d'Occultiste"); put(Language.EN, "Occulist Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs d'Occultiste"); put(Language.EN, "Occulist Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo10", ICONPATH + "81sprite10", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -21179,7 +21142,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 280),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs d'Augure réincarné"); put(Language.EN, "Reincarnated Augerer Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs d'Augure réincarné"); put(Language.EN, "Reincarnated Augerer Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, true,
 				ArmorType.GANT, "90evo11R", ICONPATH + "80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -21303,7 +21266,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 324),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs d'Augure"); put(Language.EN, "Augerer Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs d'Augure"); put(Language.EN, "Augerer Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "90evo11", ICONPATH + "80gvg11", new MultiEffect(76, new Effect[][] {
 					new Effect[] {
@@ -21427,7 +21390,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 270),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal ténébreux"); put(Language.EN, "Dark Crystal Chain Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal ténébreux"); put(Language.EN, "Dark Crystal Chain Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 76, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "83bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
@@ -21438,7 +21401,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'univers éternel"); put(Language.EN, "Eternal Expanse Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'univers éternel"); put(Language.EN, "Eternal Expanse Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg10", ICONPATH + "83bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
@@ -21449,7 +21412,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 400),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal d'éternité"); put(Language.EN, "Eternal Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal d'éternité"); put(Language.EN, "Eternal Crystal Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "70gvg11", ICONPATH + "80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 282, true),
@@ -21460,7 +21423,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 450),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cristal runique"); put(Language.EN, "Rune Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cristal runique"); put(Language.EN, "Rune Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 248, true),
@@ -21470,7 +21433,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.PV, false, 700),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de la porte du Pirate Solaire"); put(Language.EN, "Sun Pirate Gate Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de la porte du Pirate Solaire"); put(Language.EN, "Sun Pirate Gate Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 69, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "83bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 279, true),
@@ -21481,7 +21444,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 600),
 					new Effect(TypeEffect.PM, false, 100),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de Maître Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Master Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de Maître Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Master Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo10R", ICONPATH + "75evo10", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -21605,7 +21568,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de maître Demis"); put(Language.EN, "Dimensional Master Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de maître Demis"); put(Language.EN, "Dimensional Master Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo10", ICONPATH + "75evo10", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -21729,7 +21692,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de Maître Chronos réincarné"); put(Language.EN, "Reincarnated Chronomaster Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de Maître Chronos réincarné"); put(Language.EN, "Reincarnated Chronomaster Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, true,
 				ArmorType.GANT, "75evo11R", ICONPATH + "75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -21853,7 +21816,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 306),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de Maître Chronos"); put(Language.EN, "Chronomaster Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de Maître Chronos"); put(Language.EN, "Chronomaster Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 61, Quality.BLUE, false, false,
 				ArmorType.GANT, "75evo11", ICONPATH + "75evo11", new MultiEffect(61, new Effect[][] {
 					new Effect[] {
@@ -21977,7 +21940,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 255),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants CRIT M de Voyageur étranger"); put(Language.EN, "Exotic Ranger's M-CRIT Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants CRIT M de Voyageur étranger"); put(Language.EN, "Exotic Ranger's M-CRIT Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "60bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 283, true),
@@ -21988,7 +21951,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 300),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Juge de l'Espace-Temps"); put(Language.EN, "Spacetime Judge's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Juge de l'Espace-Temps"); put(Language.EN, "Spacetime Judge's Soul Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 254, true),
@@ -21999,7 +21962,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 350),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Pirate Solaire"); put(Language.EN, "Sun Pirate Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Pirate Solaire"); put(Language.EN, "Sun Pirate Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 256, true),
@@ -22010,7 +21973,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 200),
 					new Effect(TypeEffect.PM, false, 200),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Gardien du Temps"); put(Language.EN, "Timekeeper's Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Gardien du Temps"); put(Language.EN, "Timekeeper's Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 53, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 231, true),
@@ -22021,7 +21984,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 180),
 					new Effect(TypeEffect.PM, false, 220),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Cristallisées de Juliette"); put(Language.EN, "Juliet's Crystalline Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Cristallisées de Juliette"); put(Language.EN, "Juliet's Crystalline Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 48, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "48bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
@@ -22031,7 +21994,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 250),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Poussière de Cristal"); put(Language.EN, "Crystal Dust Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Poussière de Cristal"); put(Language.EN, "Crystal Dust Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "75evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
@@ -22042,7 +22005,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 80),
 					new Effect(TypeEffect.PM, false, 170),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de réglementation du Temps"); put(Language.EN, "Measured Tick Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de réglementation du Temps"); put(Language.EN, "Measured Tick Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 37, Quality.BLUE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
@@ -22053,7 +22016,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.PV, false, 100),
 					new Effect(TypeEffect.PM, false, 150),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs de Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs de Demis réincarné"); put(Language.EN, "Reincarnated Dimensional Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo10R", ICONPATH + "48bleu11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -22287,7 +22250,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs Demis"); put(Language.EN, "Dimensional Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs Demis"); put(Language.EN, "Dimensional Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo10", ICONPATH + "48bleu11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -22521,7 +22484,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 250),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de Chronos réincarné"); put(Language.EN, "Reincarnated Chrono Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de Chronos réincarné"); put(Language.EN, "Reincarnated Chrono Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, true,
 				ArmorType.GANT, "60evo11R", ICONPATH + "60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -22755,7 +22718,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 300),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets évolutifs de Chronos"); put(Language.EN, "Chrono Soul Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets évolutifs de Chronos"); put(Language.EN, "Chrono Soul Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 31, Quality.BLUE, false, false,
 				ArmorType.GANT, "60evo11", ICONPATH + "60evo11", new MultiEffect(31, new Effect[][] {
 					new Effect[] {
@@ -22989,7 +22952,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.PM, false, 250),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Voyageur réincarné"); put(Language.EN, "Reincarnated Traveler's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Voyageur réincarné"); put(Language.EN, "Reincarnated Traveler's Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, true,
 				ArmorType.GANT, "30evo10R", ICONPATH + "30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -23143,7 +23106,7 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.INT, false, 6, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants évolutifs du Voyageur"); put(Language.EN, "Traveler's Soul Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants évolutifs du Voyageur"); put(Language.EN, "Traveler's Soul Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 6, Quality.BLUE, false, false,
 				ArmorType.GANT, "30evo10", ICONPATH + "30evo10", new MultiEffect(6, new Effect[][] {
 					new Effect[] {
@@ -23297,181 +23260,181 @@ public class LoaderGauntlet {
 						new Effect(TypeEffect.INT, false, 5, true),
 					},
 				}), null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de la Marque du Temps des Sprites"); put(Language.EN, "Sprite's Timestamp Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de la Marque du Temps des Sprites"); put(Language.EN, "Sprite's Timestamp Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 96, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "96sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 342, true),
 					new Effect(TypeEffect.DefM, false, 421, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de l'Illusion du Sprite"); put(Language.EN, "Sprite's Illusory Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de l'Illusion du Sprite"); put(Language.EN, "Sprite's Illusory Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 91, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "91sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 330, true),
 					new Effect(TypeEffect.DefM, false, 406, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Rune de Cristal de Sprite"); put(Language.EN, "Sprite's Crystal Rune Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Rune de Cristal de Sprite"); put(Language.EN, "Sprite's Crystal Rune Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 86, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "86sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
 					new Effect(TypeEffect.DefM, false, 390, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants d'Enchantement du Sprite"); put(Language.EN, "Sprite's Enchantment Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants d'Enchantement du Sprite"); put(Language.EN, "Sprite's Enchantment Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 81, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 304, true),
 					new Effect(TypeEffect.DefM, false, 374, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal Sprite à propagation"); put(Language.EN, "Sprite's Flattened Crystalline Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal Sprite à propagation"); put(Language.EN, "Sprite's Flattened Crystalline Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 76, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 291, true),
 					new Effect(TypeEffect.DefM, false, 358, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Magiques des Sprites"); put(Language.EN, "Sprite's Magic Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Magiques des Sprites"); put(Language.EN, "Sprite's Magic Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 71, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 278, true),
 					new Effect(TypeEffect.DefM, false, 741, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de rune des Sprites"); put(Language.EN, "Sprite's Rune Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de rune des Sprites"); put(Language.EN, "Sprite's Rune Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 66, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 265, true),
 					new Effect(TypeEffect.DefM, false, 707, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Messager Chorno des Sprite"); put(Language.EN, "Sprite's Chrono Messenger Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Messager Chorno des Sprite"); put(Language.EN, "Sprite's Chrono Messenger Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 61, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 252, true),
 					new Effect(TypeEffect.DefM, false, 310, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal brisé des Sprites"); put(Language.EN, "Sprite's Shattered Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal brisé des Sprites"); put(Language.EN, "Sprite's Shattered Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 55, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "48bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 236, true),
 					new Effect(TypeEffect.DefM, false, 290, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cristal profond"); put(Language.EN, "Shimmering Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cristal profond"); put(Language.EN, "Shimmering Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 230, true),
 					new Effect(TypeEffect.DefM, false, 292, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets impérissables"); put(Language.EN, "Imperishable Gauntlets"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets impérissables"); put(Language.EN, "Imperishable Gauntlets"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 53, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "53bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 213, true),
 					new Effect(TypeEffect.DefM, false, 263, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 45, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
 					new Effect(TypeEffect.DefM, false, 258, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 35, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 162, true),
 					new Effect(TypeEffect.DefM, false, 224, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants Obscurs"); put(Language.EN, "Arcane Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants Obscurs"); put(Language.EN, "Arcane Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 32, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "37bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 154, true),
 					new Effect(TypeEffect.DefM, false, 214, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal à grain des Sprites"); put(Language.EN, "Sprite's Crystal Grain Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal à grain des Sprites"); put(Language.EN, "Sprite's Crystal Grain Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 149, true),
 					new Effect(TypeEffect.DefM, false, 188, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Cristal Ancien"); put(Language.EN, "Worn Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Cristal Ancien"); put(Language.EN, "Worn Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 22, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 139, true),
 					new Effect(TypeEffect.DefM, false, 177, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal léger des Sprites"); put(Language.EN, "Sprite's Slender Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal léger des Sprites"); put(Language.EN, "Sprite's Slender Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 15, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "15sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 126, true),
 					new Effect(TypeEffect.DefM, false, 148, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants des anomalies Sprites"); put(Language.EN, "Sprite's Odd Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants des anomalies Sprites"); put(Language.EN, "Sprite's Odd Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 8, Quality.GREEN, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "15sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 106, true),
 					new Effect(TypeEffect.DefM, false, 114, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Souffle Exotique"); put(Language.EN, "Exotic Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Souffle Exotique"); put(Language.EN, "Exotic Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 285, true),
 					new Effect(TypeEffect.DefM, false, 270, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Solitaire"); put(Language.EN, "Lonely Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Solitaire"); put(Language.EN, "Lonely Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 84, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "80gvg11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 262, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants du Souffle Exotique"); put(Language.EN, "Exotic Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants du Souffle Exotique"); put(Language.EN, "Exotic Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 253, true),
 					new Effect(TypeEffect.DefM, false, 239, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Voleur de Soleil"); put(Language.EN, "Sun Thief's Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Voleur de Soleil"); put(Language.EN, "Sun Thief's Gloves"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 69, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "83bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 233, true),
 					new Effect(TypeEffect.DefM, false, 212, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal brisé"); put(Language.EN, "Shattered Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal brisé"); put(Language.EN, "Shattered Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 52, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "48bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 211, true),
 					new Effect(TypeEffect.DefM, false, 202, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Sanctification"); put(Language.EN, "Sanctified Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Sanctification"); put(Language.EN, "Sanctified Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 42, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "45sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 188, true),
 					new Effect(TypeEffect.DefM, false, 179, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Sanctification"); put(Language.EN, "Sanctified Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Sanctification"); put(Language.EN, "Sanctified Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 32, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "61sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 146, true),
 					new Effect(TypeEffect.DefM, false, 155, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal à grain"); put(Language.EN, "Crystal Grain Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal à grain"); put(Language.EN, "Crystal Grain Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 132, true),
 					new Effect(TypeEffect.DefM, false, 128, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gants de Cristal léger"); put(Language.EN, "Slender Crystal Gloves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gants de Cristal léger"); put(Language.EN, "Slender Crystal Gloves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 12, Quality.WHITE, false, false,
 				ArmorType.GANT, "-1", ICONPATH + "15sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 109, true),
@@ -23482,7 +23445,7 @@ public class LoaderGauntlet {
 	
 	private static Armor[] getAll() {
 		return new Armor[] {
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Maîtrise de Résistance suprême de Tarot"); put(Language.EN, "Taro - Emperor's Mastery"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Maîtrise de Résistance suprême de Tarot"); put(Language.EN, "Taro - Emperor's Mastery"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100tarot0", ICONPATH + "100tarot0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 484, true),
@@ -23491,7 +23454,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Grosse griffe de Roue de la fortune de Tarot"); put(Language.EN, "Taro - Wheel of Fortune's Big Claw"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Grosse griffe de Roue de la fortune de Tarot"); put(Language.EN, "Taro - Wheel of Fortune's Big Claw"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100tarot1", ICONPATH + "100tarot1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 444, true),
@@ -23500,7 +23463,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Faux mortelle de Sombre présage de Tarot"); put(Language.EN, "Taro - Death's Sickle"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Faux mortelle de Sombre présage de Tarot"); put(Language.EN, "Taro - Death's Sickle"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.GANT, "100tarot2", ICONPATH + "100tarot2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 404, true),
@@ -23509,7 +23472,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 36, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets de Force Tarot"); put(Language.EN, "Taro Strength's Taming"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets de Force Tarot"); put(Language.EN, "Taro Strength's Taming"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 93, Quality.GOLD, true, false,
 				ArmorType.GANT, "95tarot0", ICONPATH + "95tarot0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 467, true),
@@ -23518,7 +23481,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets Zodiaque Tarot"); put(Language.EN, "Taro Zodiac's Rays"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets Zodiaque Tarot"); put(Language.EN, "Taro Zodiac's Rays"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 93, Quality.GOLD, true, false,
 				ArmorType.GANT, "95tarot1", ICONPATH + "95tarot1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 350, true),
@@ -23527,7 +23490,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 32, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Gantelets clair de lune Tarot"); put(Language.EN, "Taro Moon's Disorder"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gantelets clair de lune Tarot"); put(Language.EN, "Taro Moon's Disorder"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 93, Quality.GOLD, true, false,
 				ArmorType.GANT, "95tarot2", ICONPATH + "95tarot2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 477, true),
@@ -23536,7 +23499,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Choix de l'Amant Tarot"); put(Language.EN, "Taro Lover Choice"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Choix de l'Amant Tarot"); put(Language.EN, "Taro Lover Choice"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90tarot0", ICONPATH + "90tarot0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 450, true),
@@ -23545,7 +23508,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.VIT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 21, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Frisson du Démon Tarot"); put(Language.EN, "Taro Demon Shiver"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Frisson du Démon Tarot"); put(Language.EN, "Taro Demon Shiver"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90tarot1", ICONPATH + "90tarot1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 337, true),
@@ -23554,7 +23517,7 @@ public class LoaderGauntlet {
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
 				}, null),
-			new Armor(new HashMap<Language, String>() {{ put(Language.FR, "Griffe de l'Ermite Tarot"); put(Language.EN, "Taro Hermit Claw"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Griffe de l'Ermite Tarot"); put(Language.EN, "Taro Hermit Claw"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, GradeName.ASSASSIN, GradeName.CLERC, GradeName.SAGE, GradeName.SORCIER, GradeName.NECROMANCIEN, GradeName.METALLEUX, GradeName.DEMOLISSEUR, GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 88, Quality.GOLD, true, false,
 				ArmorType.GANT, "90tarot2", ICONPATH + "90tarot2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 375, true),

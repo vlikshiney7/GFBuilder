@@ -31,4 +31,27 @@ public class ColorBuff extends Buff implements Colorable {
 	public Color getColor() {
 		return Tools.itemColor[this.quality.index];
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((this.quality == null) ? 0 : this.quality.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		ColorBuff other = (ColorBuff) obj;
+		return this.quality == other.quality;
+	}
 }

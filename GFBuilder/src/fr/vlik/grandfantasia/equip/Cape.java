@@ -1,6 +1,8 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +11,7 @@ import javax.swing.ImageIcon;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
-import fr.vlik.grandfantasia.customEquip.CustomEquipment;
+import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.interfaces.EquipType;
@@ -19,15 +21,15 @@ import fr.vlik.grandfantasia.stats.Calculable;
 public class Cape extends Equipment {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Cape");
 		put(Language.EN, "Cape");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, ImageIcon> ICONS = new HashMap<String, ImageIcon>();
+	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Cape[] data = LoaderEquip.getCape();
-	private static ArrayList<Cape> customData = new ArrayList<Cape>();
+	private static ArrayList<Cape> customData = new ArrayList<>();
 	
 	private String setCode;
 	private boolean isMultiEffect;
@@ -73,7 +75,7 @@ public class Cape extends Equipment {
 		this.icon = setIcon(path);
 	}
 	
-	public static enum CapeType implements EquipType {
+	public enum CapeType implements EquipType {
 		CAPE;
 	}
 	
@@ -105,18 +107,15 @@ public class Cape extends Equipment {
 	@Override
 	public Icon setIcon(String path) {
 		ImageIcon back = new ImageIcon(Cape.class.getResource(Tools.PATH32 + (this.quality != null ? this.quality.index : 0) + Tools.PNG));
-		ImageIcon object = ICONS.get(path);
+		ImageIcon object = null;
 		
-		if(object == null) {
-			try {
-				object = new ImageIcon(Cape.class.getResource(PATH + path + Tools.PNG));
-				ICONS.put(path, object);
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Cape.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return (object != null) ? Tools.constructIcon(back, object) : back;
+		return Tools.constructIcon(back, object);
 	}
 	
 	public static void addCustom(Cape cape) {
@@ -179,7 +178,7 @@ public class Cape extends Equipment {
 	}
 	
 	public static Cape[] getPossibleCape(GradeName grade, int lvl) {
-		ArrayList<Cape> result = new ArrayList<Cape>();
+		ArrayList<Cape> result = new ArrayList<>();
 		
 		result.add(new Cape());
 		
@@ -199,5 +198,47 @@ public class Cape extends Equipment {
 		}
 		
 		return result.toArray(new Cape[result.size()]);
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (this.isMultiEffect ? 1231 : 1237);
+		result = prime * result + ((this.multiEffects == null) ? 0 : this.multiEffects.hashCode());
+		result = prime * result + ((this.setCode == null) ? 0 : this.setCode.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Cape other = (Cape) obj;
+		if (this.isMultiEffect != other.isMultiEffect) {
+			return false;
+		}
+		if (this.multiEffects == null) {
+			if (other.multiEffects != null) {
+				return false;
+			}
+		} else if (!this.multiEffects.equals(other.multiEffects)) {
+			return false;
+		}
+		if (this.setCode == null) {
+			if (other.setCode != null) {
+				return false;
+			}
+		} else if (!this.setCode.equals(other.setCode)) {
+			return false;
+		}
+		return true;
 	}
 }

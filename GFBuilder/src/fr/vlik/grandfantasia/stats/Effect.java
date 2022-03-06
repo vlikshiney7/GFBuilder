@@ -23,18 +23,6 @@ public class Effect implements Calculable {
 		this.value = value;
 		
 		this.typeCalcul = TypeCalcul.CLASSIC;
-		
-		if(this.isPercent) {
-			if(type != TypeEffect.FCE && type != TypeEffect.VIT && type != TypeEffect.INT && type != TypeEffect.VOL && type != TypeEffect.AGI 
-					&& type != TypeEffect.Atk && type != TypeEffect.AtkD && type != TypeEffect.AtkM
-					&& type != TypeEffect.DefP && type != TypeEffect.DefM && type != TypeEffect.ESQ
-					&& type != TypeEffect.PV && type != TypeEffect.PM
-					&& type.ordinal() < 53 && type.ordinal() > 58) {
-				
-				this.isPercent = false;
-				System.out.println("Un effet a été corrigé : " + type + ", true, " + value);
-			}
-		}
 	}
 	
 	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca) {
@@ -87,6 +75,10 @@ public class Effect implements Calculable {
 		this.typeCalcul = effect.getCalcul();
 	}
 	
+	public Calculable copy() {
+		return new Effect(this);
+	}
+	
 	public enum TypeCalcul {
 		BASE, PERCENTSPE, CONVERTBASE, CLASSIC, CONVERTALL, ADDITIONAL,
 	}
@@ -131,12 +123,10 @@ public class Effect implements Calculable {
 		this.value = this.value + value;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {
 		this.value *= factor;
 	}
 	
-	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder(this.type.abbrevFR);
 		
@@ -156,7 +146,6 @@ public class Effect implements Calculable {
 		return "<li>" + tooltip.toString().replace(".0", "") + "</li>";
 	}
 	
-	@Override
 	public String toString() {
 		String result = this.type.fr + (this.value > 0 ? " +" : " ") + this.value + (this.isPercent ? "%" :"");
 		if(this.withWeapon != WeaponType.NONE) {
@@ -225,32 +214,6 @@ public class Effect implements Calculable {
 		}
 		
 		return result.replace(".0", "");
-	}
-	
-	public String toCode() {
-		String code = "\tnew Effect(TypeEffect." + this.type + ", " + this.isPercent + ", " + this.value;
-		
-		if(this.transfert != null) {
-			code += ", " + this.withReinca;
-			code += ", WeaponType." + this.withWeapon;
-			code += ", TypeEffect." + this.transfert;
-		}
-		
-		if(this.withWeapon != WeaponType.NONE) {
-			code += ", " + this.withReinca;
-			code += ", WeaponType." + this.withWeapon;
-		}
-		
-		if(this.withReinca) {
-			code += ", " + this.withReinca;
-		}
-		
-		code += "),\n";
-		
-		code = code.replace(".0)", ")");
-		code = code.replace(".0,", ",");
-		
-		return code;
 	}
 	
 	public static Effect[] tabEffect(TypeEffect type, boolean isPercent, double[] values, boolean withReinca) {

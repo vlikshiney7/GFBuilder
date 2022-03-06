@@ -1,7 +1,9 @@
 package fr.vlik.grandfantasia.charac;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,15 +18,15 @@ import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
 public class Reinca implements FullRenderer {
 	
 	@SuppressWarnings("serial")
-	public static final Map<Language, String> CLASS_NAME = new HashMap<Language, String>() {{
+	public static final Map<Language, String> CLASS_NAME = new EnumMap<Language, String>(Language.class) {{
 		put(Language.FR, "Réincarnation");
 		put(Language.EN, "Rebirth");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + "/";
+	private static final String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + File.separator;
 	private static final Color[] LEVEL = { new Color(147, 147, 147), new Color(111, 225, 28) };
-	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
-	public static Reinca[] data = LoaderCharac.getReinca();
+	private static final Map<String, Icon> ICONS = new HashMap<>();
+	public static final Reinca[] data = LoaderCharac.getReinca();
 	
 	private final Map<Language, String> name;
 	private final double coef;
@@ -74,15 +76,15 @@ public class Reinca implements FullRenderer {
 	
 	@Override
 	public Icon setIcon(String path) {
-		if(ICONS.get(path) == null) {
-			try {
-				ICONS.put(path, new ImageIcon(Reinca.class.getResource(PATH + path + Tools.PNG)));
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		Icon object = null;
+		
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(Reinca.class.getResource(PATH + path + Tools.PNG)));
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return ICONS.get(path);
+		return object;
 	}
 	
 	@Override
@@ -116,7 +118,7 @@ public class Reinca implements FullRenderer {
 	}
 
 	public static Reinca[] getPossibleReinca(int lvl) {
-		ArrayList<Reinca> result = new ArrayList<Reinca>();
+		ArrayList<Reinca> result = new ArrayList<>();
 		
 		for(Reinca reinca : Reinca.data) {
 			if(reinca.getLvlMin() <= lvl

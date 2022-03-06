@@ -65,7 +65,11 @@ public class Proc implements Calculable {
 		this.effects = proc.getEffects();
 	}
 	
-	public static enum Activation {
+	public Calculable copy() {
+		return new Proc(this);
+	}
+	
+	public enum Activation {
 		Attack("en attaquant", "attacking"),
 		Attacked("quand attaqué", "when attacked"),
 		
@@ -97,8 +101,8 @@ public class Proc implements Calculable {
 	    }
 	}
 	
-	public static enum TDB {
-		NONE,TDB;
+	public enum TDB {
+		NONE, TDB;
 	}
 	
 	public double getTaux() {
@@ -126,14 +130,18 @@ public class Proc implements Calculable {
 	}
 	
 	public Calculable[] getEffects() {
-		Calculable[] list = new Calculable[this.effects.length];	
-		for(int i = 0; i < this.effects.length; i++) {
-			list[i] = this.effects[i];
+		if(this.effects == null) {
+			return new Calculable[0];
 		}
-		return list;
+		
+		Calculable[] tab = new Calculable[this.effects.length];
+		for(int i = 0; i < tab.length; i++) {
+			tab[i] = this.effects[i].copy();
+		}
+		
+		return tab;
 	}
 	
-	@Override
 	public void multiplyValue(int factor) {
 		this.taux *= factor;
 		
@@ -142,7 +150,6 @@ public class Proc implements Calculable {
 		}
 	}
 	
-	@Override
 	public String getTooltip() {
 		StringBuilder tooltip = new StringBuilder();
 		
@@ -193,25 +200,7 @@ public class Proc implements Calculable {
 			}
 			
 			for(Calculable calculable : this.effects) {
-				if(calculable instanceof Effect) {
-					Effect e = (Effect) calculable;
-					result.append("\t\t- " + e.toString(lang) + "\n");
-				} else if(calculable instanceof Proc) {
-					Proc s = (Proc) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof RegenEffect) {
-					RegenEffect s = (RegenEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof SkillEffect) {
-					SkillEffect s = (SkillEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof StaticEffect) {
-					StaticEffect s = (StaticEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof TransformEffect) {
-					TransformEffect r = (TransformEffect) calculable;
-					result.append("\t\t- " + r.toString(lang) + "\n");
-				}
+				result.append("\t\t- " + calculable.toString(lang) + "\n");
 			}
 			
 			if(this.time != 0) {
@@ -237,16 +226,7 @@ public class Proc implements Calculable {
 			}
 			
 			for(Calculable calculable : this.effects) {
-				if(calculable instanceof Effect) {
-					Effect e = (Effect) calculable;
-					result.append("\t\t- " + e.toString(lang) + "\n");
-				} else if(calculable instanceof StaticEffect) {
-					StaticEffect s = (StaticEffect) calculable;
-					result.append("\t\t- " + s.toString(lang) + "\n");
-				} else if(calculable instanceof RegenEffect) {
-					RegenEffect r = (RegenEffect) calculable;
-					result.append("\t\t- " + r.toString(lang) + "\n");
-				}
+				result.append("\t\t- " + calculable.toString(lang) + "\n");
 			}
 			
 			if(this.time != 0) {

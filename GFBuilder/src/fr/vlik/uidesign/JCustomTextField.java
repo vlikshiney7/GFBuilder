@@ -1,6 +1,7 @@
 package fr.vlik.uidesign;
 
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class JCustomTextField extends JTextField {
 
@@ -9,7 +10,7 @@ public class JCustomTextField extends JTextField {
 	public JCustomTextField() {
 		super();
 		this.setFont(Design.EDIT);
-		this.setHorizontalAlignment(JTextField.CENTER);
+		this.setHorizontalAlignment(SwingConstants.CENTER);
 		this.setCaretColor(Design.FontColor[0]);
 		this.putClientProperty("caretWidth", 2);
 		

@@ -11,12 +11,12 @@ public abstract class JCustomFrame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public JCustomFrame(LayoutManager layout) {
+	protected JCustomFrame(LayoutManager layout) {
 		this.setLayout(layout);
 		this.setBackground(Design.UIColor[2]);
 	}
 	
-	abstract public void popup();
+	protected abstract void popup();
 	
-	abstract public void updateLanguage(Language lang);
+	public abstract void updateLanguage(Language lang);
 }

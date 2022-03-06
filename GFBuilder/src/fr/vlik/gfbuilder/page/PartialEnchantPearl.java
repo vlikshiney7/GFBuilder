@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.MainFrame;
-import fr.vlik.grandfantasia.equipUpgrade.PearlEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.PearlEnchantment;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.JCustomComboBox;

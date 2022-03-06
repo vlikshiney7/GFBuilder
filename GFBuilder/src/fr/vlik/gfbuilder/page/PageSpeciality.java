@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Reinca;
-import fr.vlik.grandfantasia.characUpgrade.Speciality;
+import fr.vlik.grandfantasia.characupgrade.Speciality;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.stats.Calculable;

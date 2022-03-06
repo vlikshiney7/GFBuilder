@@ -10,7 +10,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class JCustomTextPane<T> extends JTextPane {
 	
 	private static final long serialVersionUID = 1L;
-	private T object;
+	private transient T object;
 	
 	public JCustomTextPane(T obj) {
 		super();

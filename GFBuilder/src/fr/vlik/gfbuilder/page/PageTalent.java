@@ -16,9 +16,9 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.charac.Grade;
-import fr.vlik.grandfantasia.characUpgrade.CombiTalent;
-import fr.vlik.grandfantasia.characUpgrade.SingleTalent;
-import fr.vlik.grandfantasia.characUpgrade.Talent;
+import fr.vlik.grandfantasia.characupgrade.CombiTalent;
+import fr.vlik.grandfantasia.characupgrade.SingleTalent;
+import fr.vlik.grandfantasia.characupgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.IconBuff;

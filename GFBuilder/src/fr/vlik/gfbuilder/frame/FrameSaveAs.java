@@ -8,7 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -52,7 +52,7 @@ public class FrameSaveAs extends JCustomFrame {
 		this.setSize(400, 180);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent we) {
@@ -75,9 +75,7 @@ public class FrameSaveAs extends JCustomFrame {
 		});
 		
 		this.submit = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
-		this.submit.addActionListener(e -> {
-			createSaveConfig();
-		});
+		this.submit.addActionListener(e -> createSaveConfig() );
 		this.submit.setAlignmentX(CENTER_ALIGNMENT);
 		
 		updateLanguage(Language.FR);

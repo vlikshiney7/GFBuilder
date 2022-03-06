@@ -1,11 +1,8 @@
 package fr.vlik.grandfantasia.equip;
 
+import java.util.Arrays;
+
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.stats.Effect;
-import fr.vlik.grandfantasia.stats.Proc;
-import fr.vlik.grandfantasia.stats.RegenEffect;
-import fr.vlik.grandfantasia.stats.SkillEffect;
-import fr.vlik.grandfantasia.stats.StaticEffect;
 
 public class MultiEffect {
 	
@@ -29,31 +26,19 @@ public class MultiEffect {
 	
 	public Calculable[][] getEffects() {
 		if(this.effects == null) {
-			return null;
+			return new Calculable[0][0];
 		}
 		
 		Calculable[][] tabs = new Calculable[this.effects.length][];
 		
 		for(int i = 0; i < tabs.length; i++) {
 			if(this.effects[i] == null) {
-				tabs[i] = null;
+				tabs[i] = new Calculable[0];
 			} else {
 				Calculable[] tab = new Calculable[this.effects[i].length];
 				
 				for(int j = 0; j < tab.length; j++) {
-					Calculable c = this.effects[i][j];
-					
-					if(c instanceof Effect) {
-						tab[j] = new Effect((Effect) c);
-					} else if(c instanceof StaticEffect) {
-						tab[j] = new StaticEffect((StaticEffect) c);
-					} else if(c instanceof SkillEffect) {
-						tab[j] = new SkillEffect((SkillEffect) c);
-					} else if(c instanceof RegenEffect) {
-						tab[j] = new RegenEffect((RegenEffect) c);
-					} else if(c instanceof Proc) {
-						tab[j] = new Proc((Proc) c);
-					}
+					tab[j] = this.effects[i][j].copy();
 				}
 				
 				tabs[i] = tab;
@@ -66,11 +51,6 @@ public class MultiEffect {
 	public Calculable[] getEffectsFromLvl(int lvl) {
 		int index = lvl > this.lvlMax ? this.lvlMax - this.lvlMin : lvl - this.lvlMin;
 		
-		Calculable[] tab = new Calculable[this.effects[index].length];
-		for(int i = 0; i < tab.length; i++) {
-			tab[i] = this.effects[index][i];
-		}
-		
-		return tab;
+		return Arrays.copyOf(this.effects[index], this.effects[index].length);
 	}
 }

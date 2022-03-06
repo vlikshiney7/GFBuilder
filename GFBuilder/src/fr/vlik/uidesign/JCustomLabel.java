@@ -13,7 +13,7 @@ import fr.vlik.grandfantasia.interfaces.Writable;
 public class JCustomLabel<T> extends JLabel {
 	
 	private static final long serialVersionUID = 1L;
-	private T object;
+	private transient T object;
 	private Language lang;
 	
 	public JCustomLabel(T obj) {

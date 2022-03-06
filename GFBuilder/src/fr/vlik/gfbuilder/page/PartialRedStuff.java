@@ -7,8 +7,8 @@ import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.grandfantasia.equip.Equipment;
-import fr.vlik.grandfantasia.equipUpgrade.RedEnchantment;
-import fr.vlik.grandfantasia.equipUpgrade.RedFortification;
+import fr.vlik.grandfantasia.equipupgrade.RedEnchantment;
+import fr.vlik.grandfantasia.equipupgrade.RedFortification;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerEffect;

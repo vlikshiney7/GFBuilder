@@ -1,5 +1,6 @@
 package fr.vlik.grandfantasia.template;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,22 +14,22 @@ import fr.vlik.grandfantasia.stats.Calculable;
 
 public abstract class IconBuff extends Buff implements Iconable {
 	
-	private static final String PATH = Tools.RESOURCE + IconBuff.class.getSimpleName().toLowerCase() + "/";
-	private static Map<String, Icon> ICONS = new HashMap<String, Icon>();
+	private static final String PATH = Tools.RESOURCE + IconBuff.class.getSimpleName().toLowerCase() + File.separator;
+	private static final Map<String, Icon> ICONS = new HashMap<>();
 	
 	protected Icon icon;
 	
-	public IconBuff() {
+	protected IconBuff() {
 		super();
 		this.icon = setIcon("null");
 	}
 	
-	public IconBuff(Map<Language, String> name, String path, Calculable[] effects) {
+	protected IconBuff(Map<Language, String> name, String path, Calculable[] effects) {
 		super(name, effects);
 		this.icon = setIcon(path);
 	}
 	
-	public IconBuff(Map<Language, String> name, Calculable[] effects) {
+	protected IconBuff(Map<Language, String> name, Calculable[] effects) {
 		super(name, effects);
 	}
 	
@@ -39,14 +40,44 @@ public abstract class IconBuff extends Buff implements Iconable {
 	
 	@Override
 	public Icon setIcon(String path) {
-		if(ICONS.get(path) == null) {
-			try {
-				ICONS.put(path, new ImageIcon(IconBuff.class.getResource(PATH + path + Tools.PNG)));
-			} catch (NullPointerException e) {
-				System.out.println("Image introuvable : " + path);
-			}
+		Icon object = null;
+		
+		try {
+			object = ICONS.computeIfAbsent(path, i -> new ImageIcon(IconBuff.class.getResource(PATH + path + Tools.PNG)) );
+		} catch (NullPointerException e) {
+			System.out.println("Image introuvable : " + path);
 		}
 		
-		return ICONS.get(path);
+		return object;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((this.icon == null) ? 0 : this.icon.hashCode());
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		IconBuff other = (IconBuff) obj;
+		if (this.icon == null) {
+			if (other.icon != null) {
+				return false;
+			}
+		} else if (!this.icon.equals(other.icon)) {
+			return false;
+		}
+		return true;
 	}
 }

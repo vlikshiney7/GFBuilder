@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import fr.vlik.gfbuilder.Lang;
@@ -50,7 +50,7 @@ public class FrameSaveOnNew extends JCustomFrame {
 		this.setSize(450, 120);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent we) {

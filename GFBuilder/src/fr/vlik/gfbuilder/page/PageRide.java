@@ -17,9 +17,9 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.TypeSynthesis;
 import fr.vlik.grandfantasia.equip.Ride;
-import fr.vlik.grandfantasia.equipUpgrade.XpStuff;
+import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
-import fr.vlik.grandfantasia.subEquip.Synthesis;
+import fr.vlik.grandfantasia.subequip.Synthesis;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
@@ -315,7 +315,7 @@ public class PageRide extends PartialXpStuff {
 		
 		Synthesis[] tabSynthesis = (id == 0 ? Synthesis.getPossibleRide(this.getGroupSynthesis(id), this.getGroupQuality(id), nbStar) : Synthesis.getPossibleThrone(this.getGroupSynthesis(id), this.getGroupQuality(id), nbStar));
 		
-		if(tabSynthesis == null) {
+		if(tabSynthesis.length == 0) {
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				this.starSynthesis.get(id).get(i).setVisible(false);
 			}
@@ -361,7 +361,7 @@ public class PageRide extends PartialXpStuff {
 	private void updateStarGenki(int id, int idCheck) {
 		Synthesis[] tabSynthesis = (id == 0 ? Synthesis.getPossibleRide(this.getGroupSynthesis(id), this.getGroupQuality(id), idCheck+1) : Synthesis.getPossibleThrone(this.getGroupSynthesis(id), this.getGroupQuality(id), idCheck+1));
 		
-		if(tabSynthesis != null) {
+		if(tabSynthesis.length != 0) {
 			
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
 				if(i <= idCheck) {

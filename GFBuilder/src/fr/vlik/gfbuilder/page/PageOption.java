@@ -44,7 +44,7 @@ public class PageOption extends JCustomPanel {
 		this.setBackground(Design.UIColor[2]);
 		this.label = Lang.getDataLabel(0);
 		
-		this.save = new JCustomComboBox<SaveConfig>(SaveConfig.getData());
+		this.save = new JCustomComboBox<>(SaveConfig.getData());
 		this.save.addActionListener(e -> {
 			if(!FrameSaveLoader.isBlocked()) {
 				FrameSaveLoader.getInstance().popup();
@@ -81,14 +81,10 @@ public class PageOption extends JCustomPanel {
 		
 		this.saveAs = new JCustomButton(this.label[3].getLang(), Design.GREEN_COLOR);
 		this.saveAs.setToolTipText("Ctrl + Shift + S");
-		this.saveAs.addActionListener(e -> {
-			FrameSaveAs.getInstance().popup();
-		});
+		this.saveAs.addActionListener(e -> FrameSaveAs.getInstance().popup() );
 		
 		this.createCustom = new JCustomButton(this.label[4].getLang(), Design.GREEN_COLOR);
-		this.createCustom.addActionListener(e -> {
-			FrameCreateCustom.getInstance().popup(0, PageGeneral.getInstance().getLvl());
-		});
+		this.createCustom.addActionListener(e -> FrameCreateCustom.getInstance().popup(0, PageGeneral.getInstance().getLvl()) );
 		
 		this.parameter.setEditable(false);
 		this.parameter.setText(Lang.getDataCredit(Language.FR));
