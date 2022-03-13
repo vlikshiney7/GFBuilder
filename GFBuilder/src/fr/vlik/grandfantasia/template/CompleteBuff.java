@@ -1,7 +1,6 @@
 package fr.vlik.grandfantasia.template;
 
 import java.awt.Color;
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +15,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 
 public abstract class CompleteBuff extends IconBuff implements Colorable {
 	
-	private static final String PATH = Tools.RESOURCE + CompleteBuff.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + CompleteBuff.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	
 	protected Quality quality;

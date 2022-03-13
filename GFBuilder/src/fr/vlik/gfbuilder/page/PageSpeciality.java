@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -24,6 +25,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -33,12 +35,12 @@ public class PageSpeciality extends PartialPage {
 	private static final String SAVE_NAME = "SPECIALITY";
 	private static PageSpeciality INSTANCE = new PageSpeciality();
 	
-	private Grade currentGrade;
+	private transient Grade currentGrade;
 	
-	private Speciality[] tabSpeciality;
+	private transient Speciality[] tabSpeciality;
 	private JLabel nbSpePoint = new JLabel("1775");
-	private ArrayList<JLabel> iconSpe = new ArrayList<JLabel>(20);
-	private ArrayList<JCustomComboBox<Integer>> spePoint = new ArrayList<JCustomComboBox<Integer>>(26);
+	private ArrayList<JLabel> iconSpe = new ArrayList<>(20);
+	private transient JCustomComboBoxList<Integer> spePoint;
 	
 	private JCustomButton reinitSpe;
 	private JCustomButton maxSpe;
@@ -56,23 +58,23 @@ public class PageSpeciality extends PartialPage {
 		
 		this.tabSpeciality = Speciality.getData(this.currentGrade.getGrade());
 		
+		this.spePoint = new JCustomComboBoxList<>(26, new Integer[] { 0 });
+		this.spePoint.setVisible(false);
+		this.spePoint.addActionListener(e -> {
+			updateSpeElement();
+			updateSpePoint();
+			
+			setEffects();
+			PageWeapon.getInstance().setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
 		int numSpe = 0;
 		
 		for(int i = 0; i < 5; i++) {
-			
 			int k = i % 2 == 0 ? 6 : 4;
+			
 			for(int j = 0; j < k; j++) {
-				this.spePoint.add(new JCustomComboBox<Integer>(new Integer[] { 0 }));
-				this.spePoint.get(numSpe).addActionListener(e -> {
-					updateSpeElement();
-					updateSpePoint();
-					
-					setEffects();
-					PageWeapon.getInstance().setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.spePoint.get(numSpe).setVisible(false);
-				
 				this.iconSpe.add(new JLabel(this.tabSpeciality[numSpe].getIcon()));
 				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getTooltip());
 				this.iconSpe.get(numSpe).setVisible(false);
@@ -82,14 +84,10 @@ public class PageSpeciality extends PartialPage {
 		}
 		
 		this.reinitSpe = new JCustomButton(this.labels.get("Min").getLang(), Design.RED_COLOR);
-		this.reinitSpe.addActionListener(e -> {
-			setMinSpe();
-		});
+		this.reinitSpe.addActionListener(e -> setMinSpe() );
 		
 		this.maxSpe = new JCustomButton(this.labels.get("Max").getLang(), Design.GREEN_COLOR);
-		this.maxSpe.addActionListener(e -> {
-			setMaxSpe();
-		});
+		this.maxSpe.addActionListener(e -> setMaxSpe() );
 		
 		updateLanguage(Language.FR);
 		createPanel();
@@ -112,7 +110,7 @@ public class PageSpeciality extends PartialPage {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<Calculable>();
+		ArrayList<Calculable> list = new ArrayList<>();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(Calculable c : this.tabSpeciality[i].getEffects()) {
@@ -401,7 +399,7 @@ public class PageSpeciality extends PartialPage {
 			int itemCount = this.spePoint.get(i).getItemCount();
 			if(itemCount < rescale) {
 				while(itemCount != rescale) {
-					this.spePoint.get(i).addItem(new Integer(itemCount));
+					this.spePoint.get(i).addItem(Integer.valueOf(itemCount));
 					itemCount++;
 				}
 			} else if(itemCount > rescale && this.spePoint.get(i).getSelectedIndex() < rescale) {
@@ -418,13 +416,13 @@ public class PageSpeciality extends PartialPage {
 			int itemCount = this.spePoint.get(i).getItemCount();
 			if(this.spePoint.get(i).getSelectedIndex() > 11) {
 				while(itemCount != rescale) {
-					this.spePoint.get(i).addItem(new Integer(itemCount));
+					this.spePoint.get(i).addItem(Integer.valueOf(itemCount));
 					itemCount++;
 				}
 			} else {
 				if(itemCount < 11) {
 					while(itemCount != 11) {
-						this.spePoint.get(i).addItem(new Integer(itemCount));
+						this.spePoint.get(i).addItem(Integer.valueOf(itemCount));
 						itemCount++;
 					}
 				}
@@ -457,20 +455,24 @@ public class PageSpeciality extends PartialPage {
 	}
 	
 	private void setMinSpe() {
-		for(JCustomComboBox<Integer> speciality : this.spePoint) {
+		for(JCustomComboBox<Integer> speciality : this.spePoint.getList()) {
 			if(speciality.isVisible()) {
 				speciality.setSelectedIndex(0);
-			} else break;
+			} else {
+				break;
+			}
 		}
 	}
 	
 	private void setMaxSpe() {
 		setMinSpe();
 		
-		for(JCustomComboBox<Integer> speciality : this.spePoint) {
+		for(JCustomComboBox<Integer> speciality : this.spePoint.getList()) {
 			if(speciality.isVisible()) {
 				speciality.setSelectedIndex(10);
-			} else break;
+			} else {
+				break;
+			}
 		}
 	}
 	
@@ -481,7 +483,7 @@ public class PageSpeciality extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.spePoint.size(); i++) {
 			config.put("LvlSpeciality" + i, "" + this.spePoint.get(i).getSelectedIndex());

@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.LayoutManager;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 
@@ -13,7 +14,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
-import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomSlider;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -21,17 +22,17 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected ArrayList<JCustomComboBox<RedFortification>> redFortif = new ArrayList<JCustomComboBox<RedFortification>>();
-	protected ArrayList<JCustomComboBox<RedEnchantment>> redEnchant = new ArrayList<JCustomComboBox<RedEnchantment>>();
-	protected ArrayList<JCustomComboBox<InnerEffect>> redLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>();
-	protected ArrayList<JCustomComboBox<RedEnchantment>> refining = new ArrayList<JCustomComboBox<RedEnchantment>>();
-	protected ArrayList<JCustomComboBox<InnerEffect>> refiningLvl = new ArrayList<JCustomComboBox<InnerEffect>>();
-	protected ArrayList<JCustomSlider> valueFortif = new ArrayList<JCustomSlider>();
-	protected ArrayList<JLangLabel> labelValue = new ArrayList<JLangLabel>();
+	protected transient JCustomComboBoxList<RedFortification> redFortif;
+	protected transient JCustomComboBoxList<RedEnchantment> redEnchant;
+	protected transient JCustomComboBoxList<InnerEffect> redLvlEnchant;
+	protected transient JCustomComboBoxList<RedEnchantment> refining;
+	protected transient JCustomComboBoxList<InnerEffect> refiningLvl;
+	protected ArrayList<JCustomSlider> valueFortif = new ArrayList<>();
+	protected ArrayList<JLangLabel> labelValue = new ArrayList<>();
 	
 	protected ArrayList<JPanel> showAndHideRedEnchant;
 	
-	protected CustomList<InnerEffect> redEnchants = new CustomList<InnerEffect>();
+	protected transient CustomList<InnerEffect> redEnchants = new CustomList<>();
 
 	protected PartialRedStuff(int nbStuffRed) {
 		super(nbStuffRed);
@@ -68,38 +69,51 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 		return this.refiningLvl.get(id).getSelectedItem();
 	}
 	
-	public ArrayList<InnerEffect> getRedEnchant() {
+	public List<InnerEffect> getRedEnchant() {
 		return this.redEnchants;
 	}
 	
 	private void initRedStuff(int nbStuffRed) {
+		this.redFortif = new JCustomComboBoxList<>(nbStuffRed, RedFortification.getData());
+		this.redFortif.setVisible(false);
+		
+		this.redEnchant = new JCustomComboBoxList<>(nbStuffRed*3);
+		
+		this.redLvlEnchant = new JCustomComboBoxList<>(nbStuffRed*3);
+		this.redLvlEnchant.setVisible(false);
+		this.redLvlEnchant.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.refining = new JCustomComboBoxList<>(nbStuffRed*2);
+		
+		this.refiningLvl = new JCustomComboBoxList<>(nbStuffRed*2);
+		this.refiningLvl.setVisible(false);
+		this.refiningLvl.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
 		for(int i = 0; i < nbStuffRed; i++) {
 			int id = i;
 			
 			/* RED FORTIF */
-			this.redFortif.add(new JCustomComboBox<RedFortification>(RedFortification.getData()));
 			this.redFortif.get(i).addActionListener(e -> {
 				updateValueFortif(id);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.redFortif.get(i).setVisible(false);
 			
 			/* RED ENCHANT */
 			for(int j = 0; j < 3; j++) {
 				int idRed = i*3+j;
-				this.redEnchant.add(new JCustomComboBox<RedEnchantment>());
+				
 				this.redEnchant.get(i*3+j).addActionListener(e -> {
 					updateRedLvlEnchant(idRed);
 					updateRedEnchant(idRed);
 					
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				
-				this.redLvlEnchant.add(new JCustomComboBox<InnerEffect>());
-				this.redLvlEnchant.get(i*3+j).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
@@ -108,16 +122,10 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 			/* REFINING */
 			for(int j = 0; j < 2; j++) {
 				int idRed = i*2+j;
-				this.refining.add(new JCustomComboBox<RedEnchantment>());
+				
 				this.refining.get(i*2+j).addActionListener(e -> {
 					updateRefiningLvl(idRed);
 					
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				
-				this.refiningLvl.add(new JCustomComboBox<InnerEffect>());
-				this.refiningLvl.get(i*2+j).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
@@ -137,9 +145,10 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 			this.labelValue.get(i).setVisible(false);
 		}
 		
-		this.showAndHideRedEnchant = new ArrayList<JPanel>(nbStuffRed);
+		this.showAndHideRedEnchant = new ArrayList<>(nbStuffRed);
 	}
 	
+	@Override
 	protected void initPanel() {
 		for(JPanel panel : this.showAndHideRedEnchant) {
 			panel.setVisible(false);
@@ -168,7 +177,7 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 		double current = this.valueFortif.get(id).getDoubleValue() - 100;
 		current = current / 100 +1;
 		
-		String tooltip = "";
+		StringBuilder tooltip = new StringBuilder();
 		
 		if(equip.getEffects() != null) {
 			for(Calculable calculable : equip.getEffects()) {
@@ -176,7 +185,7 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 					Effect effect = (Effect) calculable;
 					
 					if(effect.getType().isUpgradable && ! effect.isPercent()) {
-						tooltip += effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>";
+						tooltip.append(effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>");
 					}
 				}
 			}
@@ -212,10 +221,10 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 	}
 	
 	private void updateRedLvlEnchant(int id) {
-		RedEnchantment redEnchant = this.getRedEnchantment(id);
+		RedEnchantment idRedEnchant = this.getRedEnchantment(id);
 		
-		if(redEnchant != null && redEnchant.getInnerEffect() != null) {
-			this.redLvlEnchant.get(id).setItems(redEnchant.getInnerEffect());
+		if(idRedEnchant != null && idRedEnchant.getInnerEffect() != null) {
+			this.redLvlEnchant.get(id).setItems(idRedEnchant.getInnerEffect());
 			this.redLvlEnchant.get(id).setVisible(true);
 		} else {
 			this.redLvlEnchant.get(id).setVisible(false);
@@ -223,17 +232,17 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 	}
 	
 	private void updateRefiningLvl(int id) {
-		RedEnchantment refining = this.getRefining(id);
+		RedEnchantment idRefining = this.getRefining(id);
 		
-		if(refining != null && refining.getInnerEffect() != null) {
-			this.refiningLvl.get(id).setItems(refining.getInnerEffect());
+		if(idRefining != null && idRefining.getInnerEffect() != null) {
+			this.refiningLvl.get(id).setItems(idRefining.getInnerEffect());
 			this.refiningLvl.get(id).setVisible(true);
 		} else {
 			this.refiningLvl.get(id).setVisible(false);
 		}
 	}
 	
-	abstract protected void updateTooltipFortif(int id);
+	protected abstract void updateTooltipFortif(int id);
 	
-	abstract protected void updateRedEnchant(int id);
+	protected abstract void updateRedEnchant(int id);
 }

@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.charac;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -23,7 +22,7 @@ public class Grade implements Iconable, Writable {
 		put(Language.EN, "Class");
 	}};
 	
-	public static final String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + File.separator;
+	public static final String PATH = Tools.RESOURCE + Grade.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	public static final Grade[] data = LoaderCharac.getGrade();
 	

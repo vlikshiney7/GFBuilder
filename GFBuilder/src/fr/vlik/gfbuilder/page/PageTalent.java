@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -28,6 +29,7 @@ import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
@@ -38,19 +40,19 @@ public class PageTalent extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "TALENT";
-	private static PageTalent INSTANCE = new PageTalent();
+	private static final PageTalent INSTANCE = new PageTalent();
 	
-	private Grade currentGrade;
+	private transient Grade currentGrade;
 	
-	private ArrayList<JCustomLabel<IconBuff>> tabChosenTalent = new ArrayList<JCustomLabel<IconBuff>>(9);
-	private ArrayList<JCustomButtonGroup<Talent>> groupTalent = new ArrayList<JCustomButtonGroup<Talent>>(8);
-	private ArrayList<JCustomComboBox<InnerColorEffect>> itemTalent = new ArrayList<JCustomComboBox<InnerColorEffect>>(24);
+	private ArrayList<JCustomLabel<IconBuff>> tabChosenTalent = new ArrayList<>(9);
+	private ArrayList<JCustomButtonGroup<Talent>> groupTalent = new ArrayList<>(8);
+	private transient JCustomComboBoxList<InnerColorEffect> itemTalent;
 	private JLabelTextPane combiTalentInfo;
 	
 	private JCustomButton reinitTalent;
 	private JCustomButton maxTalent;
 	
-	private ArrayList<JPanel> showAndHideTalent = new ArrayList<JPanel>();
+	private ArrayList<JPanel> showAndHideTalent = new ArrayList<>();
 	
 	public static PageTalent getInstance() {
 		return INSTANCE;
@@ -63,10 +65,11 @@ public class PageTalent extends PartialPage {
 		
 		Talent[] tabVoidTalent = Talent.getVoidData();
 		Talent[] tabTalent = Talent.getPossibleTalent(this.currentGrade);
+		this.itemTalent = new JCustomComboBoxList<>();
 		int count = 0;
 		
 		for(int i = 0; i < 8; i++) {
-			this.groupTalent.add(new JCustomButtonGroup<Talent>());
+			this.groupTalent.add(new JCustomButtonGroup<>());
 			
 			for(int j = 0; j < 4; j++) {
 				JCustomRadioButton<Talent> radioTalent;
@@ -74,12 +77,12 @@ public class PageTalent extends PartialPage {
 				int id = count;
 				
 				if(j == 0) {
-					radioTalent = new JCustomRadioButton<Talent>(tabVoidTalent[i]);
-					this.tabChosenTalent.add(new JCustomLabel<IconBuff>(new SingleTalent(tabVoidTalent[i].getMap(), tabVoidTalent[i].getIcon(), null)));
+					radioTalent = new JCustomRadioButton<>(tabVoidTalent[i]);
+					this.tabChosenTalent.add(new JCustomLabel<>(new SingleTalent(tabVoidTalent[i].getMap(), tabVoidTalent[i].getIcon(), null)));
 				} else {
 					InnerColorEffect[] innerLvl = tabTalent[count].getInnerTalent(PageGeneral.getInstance().getLvl());
 					
-					this.itemTalent.add(new JCustomComboBox<InnerColorEffect>(innerLvl));
+					this.itemTalent.add(new JCustomComboBox<>(innerLvl));
 					this.itemTalent.get(count).addActionListener(e -> {
 						updateGroupTalent(id);
 						updateSelectedTalent(global);
@@ -90,7 +93,7 @@ public class PageTalent extends PartialPage {
 						MainFrame.getInstance().updateStat();
 					});
 					
-					radioTalent = new JCustomRadioButton<Talent>(tabTalent[count]);
+					radioTalent = new JCustomRadioButton<>(tabTalent[count]);
 					count++;
 				}
 				
@@ -108,18 +111,14 @@ public class PageTalent extends PartialPage {
 			}
 		}
 		
-		this.tabChosenTalent.add(new JCustomLabel<IconBuff>(new CombiTalent()));
+		this.tabChosenTalent.add(new JCustomLabel<>(new CombiTalent()));
 		this.combiTalentInfo = new JLabelTextPane();
 		
 		this.reinitTalent = new JCustomButton(this.labels.get("Min").getLang(), Design.RED_COLOR);
-		this.reinitTalent.addActionListener(e -> {
-			setMinCBoxTalent();
-		});
+		this.reinitTalent.addActionListener(e -> setMinCBoxTalent() );
 
 		this.maxTalent = new JCustomButton(this.labels.get("Max").getLang(), Design.GREEN_COLOR);
-		this.maxTalent.addActionListener(e -> {
-			setMaxCBoxTalent();
-		});
+		this.maxTalent.addActionListener(e -> setMaxCBoxTalent() );
 		
 		updateLanguage(Language.FR);
 		createPanel();
@@ -156,7 +155,7 @@ public class PageTalent extends PartialPage {
 	
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		for(JCustomLabel<IconBuff> label : this.tabChosenTalent) {
 			list.addAll(label.getItem());
@@ -317,25 +316,23 @@ public class PageTalent extends PartialPage {
 	
 	private void trySelectTalent(int index32) {
 		int index24 = (index32/4)*3 + (index32%4) - 1;
-		if(index32 % 4 != 0) {
-			if(this.itemTalent.get(index24).getSelectedIndex() == 0) {
-				this.groupTalent.get(index32/4).setSelectedIndex(0);
-			}
+		if(index32 % 4 != 0 && this.itemTalent.get(index24).getSelectedIndex() == 0) {
+			this.groupTalent.get(index32/4).setSelectedIndex(0);
 		}
 	}
 	
 	private void updateSelectedTalent(int index32) {
-		Talent groupTalent = this.groupTalent.get(index32/4).getSelectedItem();
+		Talent talentSelected = this.groupTalent.get(index32/4).getSelectedItem();
 		int index24 = (index32/4)*3 + (index32%4) - 1;
 		
-		if(groupTalent != null) {
+		if(talentSelected != null) {
 			if(index32 % 4 != 0 && this.groupTalent.get(index32/4).getSelectedIndex() != 0) {
 				if(this.groupTalent.get(index32/4).getSelectedIndex() == (index24%3) + 1) {
-					SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), this.getLvlTalent(index24));
+					SingleTalent talent = new SingleTalent(talentSelected.getMap(), talentSelected.getIcon(), this.getLvlTalent(index24));
 					this.tabChosenTalent.get(index32/4).setItem(talent);
 				}
 			} else {
-				SingleTalent talent = new SingleTalent(groupTalent.getMap(), groupTalent.getIcon(), null);
+				SingleTalent talent = new SingleTalent(talentSelected.getMap(), talentSelected.getIcon(), null);
 				this.tabChosenTalent.get(index32/4).setItem(talent);
 			}
 		}
@@ -353,15 +350,15 @@ public class PageTalent extends PartialPage {
 		
 		this.tabChosenTalent.get(8).setItem(combi);
 		
-		String combiInfo = combi.getName(Language.FR) + "\n";
+		StringBuilder combiInfo = new StringBuilder(combi.getName(Language.FR) + "\n");
 		
 		if(combi.getEffects() != null) {
 			for(int i = 0; i < combi.getEffects().length; i++) {
-				combiInfo += "\t- " + combi.getEffects()[i].toString(Language.FR) + "\n";
+				combiInfo.append("\t- " + combi.getEffects()[i].toString(Language.FR) + "\n");
 			}
 		}
 		
-		this.combiTalentInfo.setText(combiInfo);
+		this.combiTalentInfo.setText(combiInfo.toString());
 	}
 	
 	private void updateTooltipRadio(int index32, int index24) {
@@ -370,7 +367,7 @@ public class PageTalent extends PartialPage {
 	}
 	
 	private void setMinCBoxTalent() {
-		for(JCustomComboBox<InnerColorEffect> talent : this.itemTalent) {
+		for(JCustomComboBox<InnerColorEffect> talent : this.itemTalent.getList()) {
 			if(talent.isVisible()) {
 				talent.setSelectedIndex(0);
 			} else {
@@ -380,7 +377,7 @@ public class PageTalent extends PartialPage {
 	}
 	
 	private void setMaxCBoxTalent() {
-		for(JCustomComboBox<InnerColorEffect> talent : this.itemTalent) {
+		for(JCustomComboBox<InnerColorEffect> talent : this.itemTalent.getList()) {
 			if(talent.isVisible()) {
 				talent.setSelectedIndex(talent.getItemCount()-1);
 			} else {
@@ -396,7 +393,7 @@ public class PageTalent extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.groupTalent.size(); i++) {
 			String value = this.getTalent(i) != null ? this.getTalent(i).getName(Language.FR) : "";

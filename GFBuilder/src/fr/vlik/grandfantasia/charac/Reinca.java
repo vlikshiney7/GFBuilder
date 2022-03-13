@@ -1,7 +1,6 @@
 package fr.vlik.grandfantasia.charac;
 
 import java.awt.Color;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -23,7 +22,7 @@ public class Reinca implements FullRenderer {
 		put(Language.EN, "Rebirth");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Reinca.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Color[] LEVEL = { new Color(147, 147, 147), new Color(111, 225, 28) };
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	public static final Reinca[] data = LoaderCharac.getReinca();

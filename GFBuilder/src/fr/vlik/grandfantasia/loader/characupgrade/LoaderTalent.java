@@ -32,88 +32,106 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Art de l'Épée"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-0", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 6),
+					new Effect(TypeEffect.DegEp2M, false, 6),
 					new Effect(TypeEffect.Toucher, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 8),
+					new Effect(TypeEffect.DegEp2M, false, 8),
 					new Effect(TypeEffect.Toucher, false, 6),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 10),
+					new Effect(TypeEffect.DegEp2M, false, 10),
 					new Effect(TypeEffect.Toucher, false, 9),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 11),
+					new Effect(TypeEffect.DegEp2M, false, 11),
 					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 12),
+					new Effect(TypeEffect.DegEp2M, false, 12),
 					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 13),
+					new Effect(TypeEffect.DegEp2M, false, 13),
 					new Effect(TypeEffect.Toucher, false, 18),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Hache"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-1", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 6),
+					new Effect(TypeEffect.DegHa2M, false, 6),
 					new Effect(TypeEffect.TCCP, false, 1),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 8),
+					new Effect(TypeEffect.DegHa2M, false, 8),
 					new Effect(TypeEffect.TCCP, false, 2),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 10),
+					new Effect(TypeEffect.DegHa2M, false, 10),
 					new Effect(TypeEffect.TCCP, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 11),
+					new Effect(TypeEffect.DegHa2M, false, 11),
 					new Effect(TypeEffect.TCCP, false, 4),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 12),
+					new Effect(TypeEffect.DegHa2M, false, 12),
 					new Effect(TypeEffect.TCCP, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 13),
+					new Effect(TypeEffect.DegHa2M, false, 13),
 					new Effect(TypeEffect.TCCP, false, 6),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Maillet"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-2", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 6),
+					new Effect(TypeEffect.DegMa2M, false, 6),
 					new Proc(5, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 8),
+					new Effect(TypeEffect.DegMa2M, false, 8),
 					new Proc(5, Activation.Attack, 2.5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 10),
+					new Effect(TypeEffect.DegMa2M, false, 10),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 12),
+					new Effect(TypeEffect.DegMa2M, false, 12),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 14),
+					new Effect(TypeEffect.DegMa2M, false, 14),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 16),
+					new Effect(TypeEffect.DegMa2M, false, 16),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
@@ -544,88 +562,106 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Art de l'Épée"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-0", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 6),
+					new Effect(TypeEffect.DegEp2M, false, 6),
 					new Effect(TypeEffect.Toucher, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 8),
+					new Effect(TypeEffect.DegEp2M, false, 8),
 					new Effect(TypeEffect.Toucher, false, 6),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 10),
+					new Effect(TypeEffect.DegEp2M, false, 10),
 					new Effect(TypeEffect.Toucher, false, 9),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 11),
+					new Effect(TypeEffect.DegEp2M, false, 11),
 					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 12),
+					new Effect(TypeEffect.DegEp2M, false, 12),
 					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 13),
+					new Effect(TypeEffect.DegEp2M, false, 13),
 					new Effect(TypeEffect.Toucher, false, 18),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Hache"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-1", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 6),
+					new Effect(TypeEffect.DegHa2M, false, 6),
 					new Effect(TypeEffect.TCCP, false, 1),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 8),
+					new Effect(TypeEffect.DegHa2M, false, 8),
 					new Effect(TypeEffect.TCCP, false, 2),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 10),
+					new Effect(TypeEffect.DegHa2M, false, 10),
 					new Effect(TypeEffect.TCCP, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 11),
+					new Effect(TypeEffect.DegHa2M, false, 11),
 					new Effect(TypeEffect.TCCP, false, 4),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 12),
+					new Effect(TypeEffect.DegHa2M, false, 12),
 					new Effect(TypeEffect.TCCP, false, 5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegHa, false, 13),
+					new Effect(TypeEffect.DegHa2M, false, 13),
 					new Effect(TypeEffect.TCCP, false, 6),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Maillet"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-2", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 6),
+					new Effect(TypeEffect.DegMa2M, false, 6),
 					new Proc(5, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 8),
+					new Effect(TypeEffect.DegMa2M, false, 8),
 					new Proc(5, Activation.Attack, 2.5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 10),
+					new Effect(TypeEffect.DegMa2M, false, 10),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 12),
+					new Effect(TypeEffect.DegMa2M, false, 12),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 14),
+					new Effect(TypeEffect.DegMa2M, false, 14),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 16),
+					new Effect(TypeEffect.DegMa2M, false, 16),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
@@ -1083,26 +1119,32 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Art de l'Épée"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-0", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 6),
+					new Effect(TypeEffect.DegEp2M, false, 6),
 					new Effect(TypeEffect.Toucher, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 8),
+					new Effect(TypeEffect.DegEp2M, false, 8),
 					new Effect(TypeEffect.Toucher, false, 6),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 10),
+					new Effect(TypeEffect.DegEp2M, false, 10),
 					new Effect(TypeEffect.Toucher, false, 9),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 11),
+					new Effect(TypeEffect.DegEp2M, false, 11),
 					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 12),
+					new Effect(TypeEffect.DegEp2M, false, 12),
 					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 13),
+					new Effect(TypeEffect.DegEp2M, false, 13),
 					new Effect(TypeEffect.Toucher, false, 18),
 				},
 			}),
@@ -1264,42 +1306,54 @@ public class LoaderTalent extends LoaderTemplate {
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tir Rapide"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-7", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtkD, false, 12),
+					new Effect(TypeEffect.VitAtkArc, false, 12),
+					new Effect(TypeEffect.VitAtkGun, false, 12),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtkD, false, 16),
+					new Effect(TypeEffect.VitAtkArc, false, 16),
+					new Effect(TypeEffect.VitAtkGun, false, 16),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtkD, false, 20),
+					new Effect(TypeEffect.VitAtkArc, false, 20),
+					new Effect(TypeEffect.VitAtkGun, false, 20),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtkD, false, 22),
+					new Effect(TypeEffect.VitAtkArc, false, 22),
+					new Effect(TypeEffect.VitAtkGun, false, 22),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtkD, false, 24),
+					new Effect(TypeEffect.VitAtkArc, false, 24),
+					new Effect(TypeEffect.VitAtkGun, false, 24),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtkD, false, 26),
+					new Effect(TypeEffect.VitAtkArc, false, 26),
+					new Effect(TypeEffect.VitAtkGun, false, 26),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Visée"); put(Language.EN, ""); }}, new int[] { 31, 41, 50, 69, 86, 91 }, "2-8", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 2),
+					new Effect(TypeEffect.ToucherP, false, 2),
+					new Effect(TypeEffect.ToucherD, false, 2),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 5),
+					new Effect(TypeEffect.ToucherP, false, 5),
+					new Effect(TypeEffect.ToucherD, false, 5),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 8),
+					new Effect(TypeEffect.ToucherP, false, 8),
+					new Effect(TypeEffect.ToucherD, false, 8),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 12),
+					new Effect(TypeEffect.ToucherP, false, 12),
+					new Effect(TypeEffect.ToucherD, false, 12),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 16),
+					new Effect(TypeEffect.ToucherP, false, 16),
+					new Effect(TypeEffect.ToucherD, false, 16),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.Toucher, false, 20),
+					new Effect(TypeEffect.ToucherP, false, 20),
+					new Effect(TypeEffect.ToucherD, false, 20),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Fuite Explosive Magique"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "2-9", new Calculable[][] {
@@ -1358,26 +1412,32 @@ public class LoaderTalent extends LoaderTemplate {
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -10),
 					new Effect(TypeEffect.DegEp, false, 20),
+					new Effect(TypeEffect.DegEp2M, false, 20),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -20),
 					new Effect(TypeEffect.DegEp, false, 40),
+					new Effect(TypeEffect.DegEp2M, false, 40),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -30),
 					new Effect(TypeEffect.DegEp, false, 60),
+					new Effect(TypeEffect.DegEp2M, false, 60),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -35),
 					new Effect(TypeEffect.DegEp, false, 80),
+					new Effect(TypeEffect.DegEp2M, false, 80),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -40),
 					new Effect(TypeEffect.DegEp, false, 100),
+					new Effect(TypeEffect.DegEp2M, false, 100),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -45),
 					new Effect(TypeEffect.DegEp, false, 120),
+					new Effect(TypeEffect.DegEp2M, false, 120),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Génie du Combat"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "2-12", new Calculable[][] {
@@ -1404,15 +1464,18 @@ public class LoaderTalent extends LoaderTemplate {
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Raid d'Élite"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "0-20", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtk, false, 7),
+					new Effect(TypeEffect.VitAtkArc, false, 7),
+					new Effect(TypeEffect.VitAtkGun, false, 7),
 					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtk, false, 7),
+					new Effect(TypeEffect.VitAtkArc, false, 7),
+					new Effect(TypeEffect.VitAtkGun, false, 7),
 					new Effect(TypeEffect.Toucher, false, 20),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.VitAtk, false, 8),
+					new Effect(TypeEffect.VitAtkArc, false, 8),
+					new Effect(TypeEffect.VitAtkGun, false, 8),
 					new Effect(TypeEffect.Toucher, false, 25),
 				},
 			}),
@@ -1544,26 +1607,32 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Art de l'Épée"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-0", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 6),
+					new Effect(TypeEffect.DegEp2M, false, 6),
 					new Effect(TypeEffect.Toucher, false, 3),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 8),
+					new Effect(TypeEffect.DegEp2M, false, 8),
 					new Effect(TypeEffect.Toucher, false, 6),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 10),
+					new Effect(TypeEffect.DegEp2M, false, 10),
 					new Effect(TypeEffect.Toucher, false, 9),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 11),
+					new Effect(TypeEffect.DegEp2M, false, 11),
 					new Effect(TypeEffect.Toucher, false, 12),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 12),
+					new Effect(TypeEffect.DegEp2M, false, 12),
 					new Effect(TypeEffect.Toucher, false, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegEp, false, 13),
+					new Effect(TypeEffect.DegEp2M, false, 13),
 					new Effect(TypeEffect.Toucher, false, 18),
 				},
 			}),
@@ -2023,36 +2092,42 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Maillet"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-2", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 6),
+					new Effect(TypeEffect.DegMa2M, false, 6),
 					new Proc(5, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 8),
+					new Effect(TypeEffect.DegMa2M, false, 8),
 					new Proc(5, Activation.Attack, 2.5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 10),
+					new Effect(TypeEffect.DegMa2M, false, 10),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 12),
+					new Effect(TypeEffect.DegMa2M, false, 12),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 14),
+					new Effect(TypeEffect.DegMa2M, false, 14),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 16),
+					new Effect(TypeEffect.DegMa2M, false, 16),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
@@ -2314,28 +2389,28 @@ public class LoaderTalent extends LoaderTemplate {
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Maillet Décisif"); put(Language.EN, ""); }}, new int[] { 46, 50, 54, 72, 86, 91 }, "4-11", new Calculable[][] {
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 2, false, WeaponType.MARTEAU1M),
-					new Effect(TypeEffect.TCCP, false, 2, false, WeaponType.MARTEAU2M),
+					new Effect(TypeEffect.TCCMa, false, 2),
+					new Effect(TypeEffect.TCCMa2M, false, 2),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 4, false, WeaponType.MARTEAU1M),
-					new Effect(TypeEffect.TCCP, false, 4, false, WeaponType.MARTEAU2M),
+					new Effect(TypeEffect.TCCMa, false, 4),
+					new Effect(TypeEffect.TCCMa2M, false, 4),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 6, false, WeaponType.MARTEAU1M),
-					new Effect(TypeEffect.TCCP, false, 6, false, WeaponType.MARTEAU2M),
+					new Effect(TypeEffect.TCCMa, false, 6),
+					new Effect(TypeEffect.TCCMa2M, false, 6),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 8, false, WeaponType.MARTEAU1M),
-					new Effect(TypeEffect.TCCP, false, 8, false, WeaponType.MARTEAU2M),
+					new Effect(TypeEffect.TCCMa, false, 8),
+					new Effect(TypeEffect.TCCMa2M, false, 8),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 10, false, WeaponType.MARTEAU1M),
-					new Effect(TypeEffect.TCCP, false, 10, false, WeaponType.MARTEAU2M),
+					new Effect(TypeEffect.TCCMa, false, 10),
+					new Effect(TypeEffect.TCCMa2M, false, 10),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 12, false, WeaponType.MARTEAU1M),
-					new Effect(TypeEffect.TCCP, false, 12, false, WeaponType.MARTEAU2M),
+					new Effect(TypeEffect.TCCMa, false, 12),
+					new Effect(TypeEffect.TCCMa2M, false, 12),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Acuité Magique"); put(Language.EN, ""); }}, new int[] { 66, 80, 91 }, "4-12", new Calculable[][] {
@@ -2427,13 +2502,19 @@ public class LoaderTalent extends LoaderTemplate {
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Meurtres en Série"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "0-17", new Calculable[][] {
 				new Calculable[] {
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 20),
+					new Proc(20, Activation.Attack, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 				},
 				new Calculable[] {
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 23),
+					new Proc(23, Activation.Attack, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 				},
 				new Calculable[] {
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 25),
+					new Proc(25, Activation.Attack, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Double, 50),
+					}),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Velléités d'Attaque"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "2-12", new Calculable[][] {
@@ -2526,36 +2607,42 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Spécialité Maillet"); put(Language.EN, ""); }}, new int[] { 6, 14, 31, 61, 86, 91 }, "0-2", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 6),
+					new Effect(TypeEffect.DegMa2M, false, 6),
 					new Proc(5, Activation.Attack, 2, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 8),
+					new Effect(TypeEffect.DegMa2M, false, 8),
 					new Proc(5, Activation.Attack, 2.5, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 10),
+					new Effect(TypeEffect.DegMa2M, false, 10),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 12),
+					new Effect(TypeEffect.DegMa2M, false, 12),
 					new Proc(5, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 14),
+					new Effect(TypeEffect.DegMa2M, false, 14),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DegMa, false, 16),
+					new Effect(TypeEffect.DegMa2M, false, 16),
 					new Proc(7, Activation.Attack, 3, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.Stun, Target.OPPONENT),
 					}),

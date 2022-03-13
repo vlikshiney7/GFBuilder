@@ -268,7 +268,7 @@ public class LoaderCombiTalent extends LoaderTemplate {
 		return new CombiTalent[] {
 			new CombiTalent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Clerc Martial Religieux"); put(Language.EN, "Holy Martial Monk"); }}, new int[] { 1, 3, 3, 3, }, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, 5),
-				new Effect(TypeEffect.DefM, true, 5),
+				new Effect(TypeEffect.AtkM, true, 5),
 			}),
 			new CombiTalent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Défenseur de Lumière"); put(Language.EN, "Defender of Light"); }}, new int[] { 2, 1, 1, 1, }, new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 6),
@@ -288,7 +288,7 @@ public class LoaderCombiTalent extends LoaderTemplate {
 				new Effect(TypeEffect.Parade, false, 15),
 			}),
 			new CombiTalent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guérisseur"); put(Language.EN, "High Healer"); }}, new int[] { 2, 3, 1, }, new Calculable[] {
-				new Effect(TypeEffect.RTCCM, false, 15),
+				new Effect(TypeEffect.RTCCP, false, 15),
 				new SkillEffect(TypeSkillEffect.Class4S17, 30, TypeValue.HEAL),
 				new SkillEffect(TypeSkillEffect.Class4S18, 30, TypeValue.HEAL),
 			}),

@@ -10,60 +10,49 @@ import javax.swing.DefaultComboBoxModel;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.template.Buff;
+import fr.vlik.grandfantasia.template.ProcEffect;
 
-public class JCustomComboBoxList<T> {
+public class JCompleteBoxList<T> {
 	
 	private int size;
-	private ArrayList<JCustomComboBox<T>> comboBoxList = new ArrayList<>();
+	private ArrayList<JCompleteBox<T>> completeBoxList = new ArrayList<>();
 	
-	public JCustomComboBoxList() {
-		this.comboBoxList = new ArrayList<>();
+	public JCompleteBoxList() {
+		this.completeBoxList = new ArrayList<>();
 		this.size = 0;
-	}
-	
-	public JCustomComboBoxList(int capacity) {
-		this.comboBoxList = new ArrayList<>(capacity);
-		this.size = capacity;
-		
-		for(int i = 0; i < capacity; i++) {
-			this.comboBoxList.add(new JCustomComboBox<>(new DefaultComboBoxModel<>()));
-		}
-	}
-	
-	public JCustomComboBoxList(int capacity, T[] data) {
-		this.comboBoxList = new ArrayList<>(capacity);
-		this.size = capacity;
-		
-		for(int i = 0; i < capacity; i++) {
-			this.comboBoxList.add(new JCustomComboBox<>(data));
-		}
 	}
 	
 	public int size() {
 		return this.size;
 	}
 	
-	public List<JCustomComboBox<T>> getList() {
-		return this.comboBoxList;
+	public List<JCompleteBox<T>> getList() {
+		return this.completeBoxList;
 	}
 	
-	public void add(JCustomComboBox<T> jCustomComboBox) {
-		this.comboBoxList.add(jCustomComboBox);
+	public void add(JCompleteBox<T> jCustomComboBox) {
+		this.completeBoxList.add(jCustomComboBox);
 		this.size++;
 	}
 	
 	public void addActionListener(ActionListener listener) {
-		for(JCustomComboBox<T> comboBox : this.comboBoxList) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
 			comboBox.addActionListener(listener);
 		}
 	}
 	
-	public JCustomComboBox<T> get(int i) {
-		return this.comboBoxList.get(i);
+	public void addProcActionListener(ActionListener listener) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
+			comboBox.addProcActionListener(listener);
+		}
+	}
+	
+	public JCompleteBox<T> get(int i) {
+		return this.completeBoxList.get(i);
 	}
 
 	public void setSelectedIndex(int index) {
-		for(JCustomComboBox<T> comboBox : this.comboBoxList) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
 			comboBox.setSelectedIndex(index);
 		}
 	}
@@ -71,18 +60,18 @@ public class JCustomComboBoxList<T> {
 	public void setRangeSelectedIndex(int begin, int nbElement, int index) {
 		int end = Math.min(begin + nbElement, this.size);
 		for(int i = begin; i < end; i++) {
-			this.comboBoxList.get(i).setSelectedIndex(index);
+			this.completeBoxList.get(i).setSelectedIndex(index);
 		}
 	}
 	
 	public void setSelectedItem(T item) {
-		for(JCustomComboBox<T> comboBox : this.comboBoxList) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
 			comboBox.setSelectedItem(item);
 		}
 	}
 	
 	public void setVisible(boolean visible) {
-		for(JCustomComboBox<T> comboBox : this.comboBoxList) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
 			comboBox.setVisible(visible);
 		}
 	}
@@ -90,14 +79,14 @@ public class JCustomComboBoxList<T> {
 	public void setRangeVisible(int begin, int nbElement, boolean visible) {
 		int end = Math.min(begin + nbElement, this.size);
 		for(int i = begin; i < end; i++) {
-			this.comboBoxList.get(i).setVisible(visible);
+			this.completeBoxList.get(i).setVisible(visible);
 		}
 	}
 
 	public boolean setItems(T[] tabItem) {
 		boolean result = true;
 		
-		for(JCustomComboBox<T> comboBox : this.comboBoxList) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
 			if(!comboBox.setItems(tabItem)) {
 				result = false;
 			}
@@ -109,12 +98,12 @@ public class JCustomComboBoxList<T> {
 	public void setRangeItems(int begin, int nbElement, T[] tabItem) {
 		int end = Math.min(begin + nbElement, this.size);
 		for(int i = begin; i < end; i++) {
-			this.comboBoxList.get(i).setItems(tabItem);
+			this.completeBoxList.get(i).setItems(tabItem);
 		}
 	}
 	
 	public void setModel(T[] tabItem) {
-		for(JCustomComboBox<T> comboBox : this.comboBoxList) {
+		for(JCompleteBox<T> comboBox : this.completeBoxList) {
 			comboBox.setModel(new DefaultComboBoxModel<>(tabItem));
 		}
 	}
@@ -123,10 +112,15 @@ public class JCustomComboBoxList<T> {
 		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.size; i++) {
-			T item = this.comboBoxList.get(i).getSelectedItem();
+			T item = this.completeBoxList.get(i).getSelectedItem();
 			
 			String value = item instanceof Buff ? ((Buff) item).getName(Language.FR) : "";
 			config.put(saveCode + i, value);
+			
+			JCustomCheckBox<ProcEffect> proc = this.completeBoxList.get(i).getProc();
+			if(proc != null) {
+				config.put(saveCode + "Proc" + i, "" + proc.isSelected());
+			}
 		}
 		
 		return config;

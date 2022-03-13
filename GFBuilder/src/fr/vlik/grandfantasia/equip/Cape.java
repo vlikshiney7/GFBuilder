@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -26,7 +25,7 @@ public class Cape extends Equipment {
 		put(Language.EN, "Cape");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Cape[] data = LoaderEquip.getCape();
 	private static ArrayList<Cape> customData = new ArrayList<>();

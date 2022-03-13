@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.subequip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -14,7 +13,7 @@ import fr.vlik.grandfantasia.template.ColorBuff;
 
 public class Costume extends ColorBuff {
 	
-	public static final String PATH = Tools.RESOURCE + Costume.class.getSimpleName().toLowerCase() + File.separator;
+	public static final String PATH = Tools.RESOURCE + Costume.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	public static final Quality[] ORDER_QUALITY = new Quality[] { Quality.GREY, Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.GOLD };
 	private static Map<Quality, Costume[]> data = LoaderSubEquip.getCostume();
 	

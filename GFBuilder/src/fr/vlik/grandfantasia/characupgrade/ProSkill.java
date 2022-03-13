@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.characupgrade;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -24,7 +23,7 @@ public class ProSkill extends IconBuff {
 		put(Language.EN, "Professional energy");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + ProSkill.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + ProSkill.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	private static ProSkill[][] data = LoaderCharacUpgrade.getProSkill();
 	

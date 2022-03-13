@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -36,7 +37,8 @@ import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCompleteBox;
-import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCompleteBoxList;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JIconCheckBox;
 import fr.vlik.uidesign.JLangLabel;
@@ -45,14 +47,14 @@ public class PageWeapon extends PartialRedStuff {
 
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "WEAPON";
-	private static PageWeapon INSTANCE = new PageWeapon();
+	private static final PageWeapon INSTANCE = new PageWeapon();
 	
-	private ArrayList<JCompleteBox<Weapon>> weapon = new ArrayList<JCompleteBox<Weapon>>(3);
+	private transient JCompleteBoxList<Weapon> weapon = new JCompleteBoxList<>();
 	private JCompleteBox<Bullet> bullet;
 	
-	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
-	private ArrayList<JCustomComboBox<Fortification>> fortif = new ArrayList<JCustomComboBox<Fortification>>(3);
-	private ArrayList<JCompleteBox<Pearl>> pearl = new ArrayList<JCompleteBox<Pearl>>(12);
+	private transient JCustomComboBoxList<Enchantment> enchant;
+	private transient JCustomComboBoxList<Fortification> fortif;
+	private transient JCompleteBoxList<Pearl> pearl = new JCompleteBoxList<>();
 	
 	private WeaponType[] weaponType = new WeaponType[3];
 	private boolean doubleWeapon = false;
@@ -84,26 +86,6 @@ public class PageWeapon extends PartialRedStuff {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.weapon.get(i).addProcActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			
-			/* ENCHANTEMENT */
-			this.enchant.add(new JCustomComboBox<Enchantment>());
-			this.enchant.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.enchant.get(i).setVisible(false);
-			
-			/* FORTIF */
-			this.fortif.add(new JCustomComboBox<Fortification>(Fortification.getData()));
-			this.fortif.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.fortif.get(i).setVisible(false);
 			
 			/* PEARL */
 			Pearl[] tabPearl = Pearl.getPossibleWeaponPearl(this.getWeapon(i));
@@ -111,7 +93,7 @@ public class PageWeapon extends PartialRedStuff {
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
 					int idPearl = j;
-					this.pearl.add(new JCompleteBox<Pearl>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, /*Pearl.getTags(),*/ Pearl.getQualities()));
+					this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, /*Pearl.getTags(),*/ Pearl.getQualities()));
 					this.pearl.get(j).addActionListener(e -> {
 						this.pearl.get(idPearl).activeProc();
 						updateEnchantPearl(id);
@@ -119,16 +101,11 @@ public class PageWeapon extends PartialRedStuff {
 						setEffects();
 						MainFrame.getInstance().updateStat();
 					});
-					this.pearl.get(j).setVisible(false);
-					this.pearl.get(j).addProcActionListener(e -> {
-						setEffects();
-						MainFrame.getInstance().updateStat();
-					});
 				}
 			} else {
 				for(int j = 0; j < 3; j++) {
 					int idPearl = 3*(i+1)+j;
-					this.pearl.add(new JCompleteBox<Pearl>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, /*Pearl.getTags(),*/ Pearl.getQualities()));
+					this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, /*Pearl.getTags(),*/ Pearl.getQualities()));
 					this.pearl.get(3*(i+1)+j).addActionListener(e -> {
 						this.pearl.get(idPearl).activeProc();
 						updateEnchantPearl(id);
@@ -136,17 +113,37 @@ public class PageWeapon extends PartialRedStuff {
 						setEffects();
 						MainFrame.getInstance().updateStat();
 					});
-					this.pearl.get(3*(i+1)+j).setVisible(false);
-					this.pearl.get(3*(i+1)+j).addProcActionListener(e -> {
-						setEffects();
-						MainFrame.getInstance().updateStat();
-					});
 				}
 			}
 		}
 		
+		this.weapon.addProcActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.pearl.setVisible(false);
+		this.pearl.addProcActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.enchant = new JCustomComboBoxList<>(3);
+		this.enchant.setVisible(false);
+		this.enchant.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.fortif = new JCustomComboBoxList<>(3, Fortification.getData());
+		this.fortif.setVisible(false);
+		this.fortif.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
 		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-		this.bullet = new JCompleteBox<Bullet>(tabBullet, JCompleteBox.FILTER32, 3, Bullet.getTags(), Bullet.getQualities());
+		this.bullet = new JCompleteBox<>(tabBullet, JCompleteBox.FILTER32, 3, Bullet.getTags(), Bullet.getQualities());
 		this.bullet.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -212,7 +209,7 @@ public class PageWeapon extends PartialRedStuff {
 	
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		this.redEnchants.clear();
 		this.pearlEnchants.clear();
 		
@@ -226,11 +223,11 @@ public class PageWeapon extends PartialRedStuff {
 			}
 			
 			if(weapons[i] instanceof RedWeapon) {
-				RedFortification fortif = this.getRedFortif(i);
+				RedFortification redFortif = this.getRedFortif(i);
 				
-				if(fortif.getCoef() != 1) {
+				if(redFortif.getCoef() != 1) {
 					((RedWeapon) weapons[i]).addFortif(this.valueFortif.get(i).getDoubleValue());
-					list.addAll(((RedWeapon) weapons[i]).getStarEffects(fortif.getStar()));
+					list.addAll(((RedWeapon) weapons[i]).getStarEffects(redFortif.getStar()));
 				}
 				
 				if(this.showAndHideRedEnchant.get(i).isVisible()) {
@@ -326,19 +323,19 @@ public class PageWeapon extends PartialRedStuff {
 		
 		list.addAll(this.getBullet());
 		
-		ArrayList<Pearl> notCombinablePearl = new ArrayList<Pearl>();
+		ArrayList<Pearl> notCombinablePearl = new ArrayList<>();
 		for(int i = 0; i < this.pearl.size(); i++) {
-			Pearl pearl = this.getPearl(i);
+			Pearl eachPearl = this.getPearl(i);
 			
-			if(pearl.isCumulable()) {
-				list.addAll(pearl);
+			if(eachPearl.isCumulable()) {
+				list.addAll(eachPearl);
 				
 				if(this.pearl.get(i).isProcActive()) {
 					list.addAll(this.pearl.get(i).getProc().getItem().getEffects());
 				}
-			} else if(!Pearl.isAlreadyCount(notCombinablePearl, pearl)) {
-				notCombinablePearl.add(pearl);
-				list.addAll(pearl);
+			} else if(!Pearl.isAlreadyCount(notCombinablePearl, eachPearl)) {
+				notCombinablePearl.add(eachPearl);
+				list.addAll(eachPearl);
 				
 				if(this.pearl.get(i).isProcActive()) {
 					list.addAll(this.pearl.get(i).getProc().getItem().getEffects());
@@ -438,13 +435,13 @@ public class PageWeapon extends PartialRedStuff {
 			entry.getValue().updateText(lang);
 		}
 		
-		for(JCompleteBox<Weapon> box : this.weapon) {
+		for(JCompleteBox<Weapon> box : this.weapon.getList()) {
 			box.updateLanguage(lang);
 		}
 		
 		this.bullet.updateLanguage(lang);
 		
-		for(JCompleteBox<Pearl> box : this.pearl) {
+		for(JCompleteBox<Pearl> box : this.pearl.getList()) {
 			box.updateLanguage(lang);
 		}
 	}
@@ -466,9 +463,8 @@ public class PageWeapon extends PartialRedStuff {
 				
 				this.fortif.get(i).setSelectedIndex(0);
 				this.redFortif.get(i).setSelectedIndex(0);
-				this.pearl.get(i*3).setSelectedIndex(0);
-				this.pearl.get(i*3+1).setSelectedIndex(0);
-				this.pearl.get(i*3+2).setSelectedIndex(0);
+				
+				this.pearl.setRangeSelectedIndex(i*3, 3, 0);
 				
 				MainFrame.getInstance().setRedPane(1);
 			}
@@ -488,11 +484,7 @@ public class PageWeapon extends PartialRedStuff {
 				this.fortif.get(id).setVisible(false);
 				this.redFortif.get(id).setVisible(true);
 				
-				if(this.getWeapon(id).isEnchantable()) {
-					this.showAndHideRedEnchant.get(id).setVisible(true);
-				} else {
-					this.showAndHideRedEnchant.get(id).setVisible(false);
-				}
+				this.showAndHideRedEnchant.get(id).setVisible(this.getWeapon(id).isEnchantable());
 				
 				if(this.redFortif.get(id).getSelectedIndex() != 0) {
 					this.valueFortif.get(id).setVisible(true);
@@ -511,14 +503,10 @@ public class PageWeapon extends PartialRedStuff {
 			}
 			
 			if(id == 0) {
-				this.pearl.get(0).setVisible(true);
-				this.pearl.get(1).setVisible(true);
-				this.pearl.get(2).setVisible(true);
+				this.pearl.setRangeVisible(0, 3, true);
 			}
 			
-			this.pearl.get(3*(id+1)).setVisible(true);
-			this.pearl.get(3*(id+1)+1).setVisible(true);
-			this.pearl.get(3*(id+1)+2).setVisible(true);
+			this.pearl.setRangeVisible(3*(id+1), 3, true);
 		} else {
 			this.fortif.get(id).setVisible(false);
 			this.redFortif.get(id).setVisible(false);
@@ -526,16 +514,12 @@ public class PageWeapon extends PartialRedStuff {
 			this.labelValue.get(id).setVisible(false);
 			
 			if(id == 0) {
-				for(int i = 0; i < 3; i++) {
-					this.pearl.get(i).setVisible(false);
-					this.pearl.get(i).setSelectedIndex(0);
-				}
+				this.pearl.setRangeVisible(0, 3, true);
+				this.pearl.setRangeSelectedIndex(0, 3, 0);
 			}
 			
-			for(int i = 0; i < 3; i++) {
-				this.pearl.get(3*(id+1)+i).setVisible(false);
-				this.pearl.get(3*(id+1)+i).setSelectedIndex(0);
-			}
+			this.pearl.setRangeVisible(3*(id+1), 3, true);
+			this.pearl.setRangeSelectedIndex(3*(id+1), 3, 0);
 		}
 	}
 	
@@ -543,20 +527,16 @@ public class PageWeapon extends PartialRedStuff {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
 			if(this.weaponType[id] != this.getWeapon(id).getType()) {
 				XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(this.getWeapon(id));
-				this.xpStuff.get(id*2).setItems(xpStuff);
-				this.xpStuff.get(id*2+1).setItems(xpStuff);
+				this.xpStuff.setRangeItems(id*2, 2, xpStuff);
 			}
 			this.showAndHideXpStuff.get(id).setVisible(true);	
-			this.xpStuff.get(id*2).setVisible(true);
-			this.xpStuff.get(id*2+1).setVisible(true);
+			this.xpStuff.setRangeVisible(id*2, 2, true);
 		} else {
 			this.showAndHideXpStuff.get(id).setVisible(false);
-			this.xpStuff.get(id*2).setVisible(false);
-			this.xpStuff.get(id*2+1).setVisible(false);
+			this.xpStuff.setRangeVisible(id*2, 2, false);
 			
 			if(this.getXpStuff(id*2) != null && this.getXpStuff(id*2+1) != null) {
-				this.xpStuff.get(id*2).setSelectedIndex(0);
-				this.xpStuff.get(id*2+1).setSelectedIndex(0);
+				this.xpStuff.setRangeSelectedIndex(id*2, 2, 0);
 			}
 		}
 		
@@ -583,24 +563,20 @@ public class PageWeapon extends PartialRedStuff {
 	
 	private void updateEnchant(int id) {
 		if(this.weapon.get(id).getSelectedIndex() != 0) {
-			Weapon weapon = this.getWeapon(id);
+			Weapon idWeapon = this.getWeapon(id);
 			
-			if(weapon.isEnchantable()) {
-				if(weapon.getQuality() == Quality.RED) {
-					RedEnchantment[] tabRed = RedEnchantment.getPossibleRedEnchant(weapon, null, null);
-					for(int i = 0; i < 3; i++) {
-						this.redEnchant.get(id*3+i).setItems(tabRed);
-					}
+			if(idWeapon.isEnchantable()) {
+				if(idWeapon.getQuality() == Quality.RED) {
+					RedEnchantment[] tabRed = RedEnchantment.getPossibleRedEnchant(idWeapon, null, null);
+					this.redEnchant.setRangeItems(id*3, 3, tabRed);
 					
-					RedEnchantment[] tabRefining = RedEnchantment.getPossibleRefining(weapon);
-					for(int i = 0; i < 2; i++) {
-						this.refining.get(id*2+i).setItems(tabRefining);
-					}
+					RedEnchantment[] tabRefining = RedEnchantment.getPossibleRefining(idWeapon);
+					this.refining.setRangeItems(id*2, 2, tabRefining);
 					
 					this.showAndHideRedEnchant.get(id).setVisible(true);
 					this.enchant.get(id).setVisible(false);
 				} else {
-					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(weapon);
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(idWeapon);
 					this.enchant.get(id).setItems(tabEnchant);
 					
 					this.enchant.get(id).setVisible(true);
@@ -644,6 +620,7 @@ public class PageWeapon extends PartialRedStuff {
 					}
 				}
 				break;
+			default: break;
 		}
 		
 		updateEnchantPearl(showStar, id);
@@ -664,16 +641,12 @@ public class PageWeapon extends PartialRedStuff {
 				
 				this.weapon.get(1).setItems(tabWeapon);
 				
-				for(int i = 0; i < 3; i++) {
-					this.pearl.get(3+i).setVisible(false);
-					this.pearl.get(3+i).setSelectedIndex(0);
-				}
+				this.pearl.setRangeVisible(3, 3, false);
+				this.pearl.setRangeSelectedIndex(3, 3, 0);
 				
 				if(this.weapon.get(1).getSelectedIndex() == 0) {
-					for(int i = 0; i < 3; i++) {
-						this.pearl.get(6+i).setVisible(false);
-						this.pearl.get(6+i).setSelectedIndex(0);
-					}
+					this.pearl.setRangeVisible(6, 3, false);
+					this.pearl.setRangeSelectedIndex(6, 3, 0);
 				}
 				
 				this.showAndHide.setVisible(true);
@@ -684,11 +657,9 @@ public class PageWeapon extends PartialRedStuff {
 				this.weapon.get(0).setItems(tabWeapon);
 				this.weapon.get(1).setItems(new Weapon[] { new Weapon() });
 				
-				for(int i = 0; i < 3; i++) {
-					this.pearl.get(3+i).setVisible(true);
-					this.pearl.get(6+i).setVisible(false);
-					this.pearl.get(6+i).setSelectedIndex(0);
-				}
+				this.pearl.setRangeVisible(3, 3, true);
+				this.pearl.setRangeVisible(6, 3, false);
+				this.pearl.setRangeSelectedIndex(6, 3, 0);
 				
 				this.showAndHide.setVisible(false);
 			}
@@ -720,7 +691,7 @@ public class PageWeapon extends PartialRedStuff {
 	}
 	
 	public void popoff() {
-		for(JCompleteBox<Weapon> box : this.weapon) {
+		for(JCompleteBox<Weapon> box : this.weapon.getList()) {
 			if(box.isDialogVisible()) {
 				box.popoff();
 				updateWeapon();
@@ -758,7 +729,7 @@ public class PageWeapon extends PartialRedStuff {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.weapon.size(); i++) {
 			if(this.getWeapon(i).isCustom()) {
@@ -866,18 +837,18 @@ public class PageWeapon extends PartialRedStuff {
 				}
 				
 				if(quality != null) {
-					Weapon weapon = Weapon.getCustom(valueSplit[1], quality, valueSplit[3]);
+					Weapon weaponCustom = Weapon.getCustom(valueSplit[1], quality, valueSplit[3]);
 					
-					if(weapon == null) {
+					if(weaponCustom == null) {
 						if(CustomWeapon.constructCustom(valueSplit[1], quality, valueSplit[3])) {
 							SaveConfig.overrideCustom();
 							PageWeapon.getInstance().updateWeapon();
 							
-							weapon = Weapon.getCustom(valueSplit[1], quality, valueSplit[3]);
-							this.weapon.get(i).setSelectedItem(weapon);
+							weaponCustom = Weapon.getCustom(valueSplit[1], quality, valueSplit[3]);
+							this.weapon.get(i).setSelectedItem(weaponCustom);
 						}
 					} else {
-						this.weapon.get(i).setSelectedItem(weapon);
+						this.weapon.get(i).setSelectedItem(weaponCustom);
 					}
 				}
 			} else {
@@ -904,7 +875,7 @@ public class PageWeapon extends PartialRedStuff {
 		
 		for(int i = 0; i < this.starPearl.size(); i++) {
 			ArrayList<JIconCheckBox> buttons = this.starPearl.get(i);
-			int select = Integer.valueOf(config.get("StarPearl" + i));
+			int select = Integer.parseInt(config.get("StarPearl" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {
 				if(j == select) {

@@ -1,7 +1,7 @@
 package fr.vlik.gfbuilder.page;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -20,6 +20,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -27,10 +28,10 @@ public class PageSprite extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "SPRITE";
-	private static PageSprite INSTANCE = new PageSprite();
+	private static final PageSprite INSTANCE = new PageSprite();
 	
-	private ArrayList<JCustomComboBox<Blason>> blason = new ArrayList<JCustomComboBox<Blason>>(2);
-	private ArrayList<JCustomComboBox<SpriteCost>> spriteCost = new ArrayList<JCustomComboBox<SpriteCost>>(2);
+	private transient JCustomComboBoxList<Blason> blason;
+	private transient JCustomComboBoxList<SpriteCost> spriteCost;
 	private JCustomComboBox<IslandBuff> islandBuff;
 	
 	public static PageSprite getInstance() {
@@ -40,25 +41,27 @@ public class PageSprite extends PartialPage {
 	private PageSprite() {
 		super(BoxLayout.Y_AXIS);
 		
+		this.blason = new JCustomComboBoxList<>();
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
-			this.blason.add(new JCustomComboBox<Blason>(tabBlason));
-			this.blason.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
+			this.blason.add(new JCustomComboBox<>(tabBlason));
 		}
+		this.blason.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
+		this.spriteCost = new JCustomComboBoxList<>();
 		for(int i = 0; i < 2; i++) {
 			SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), SpriteCostType.values()[i]);
-			this.spriteCost.add(new JCustomComboBox<SpriteCost>(tabCost));
-			this.spriteCost.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
+			this.spriteCost.add(new JCustomComboBox<>(tabCost));
 		}
+		this.spriteCost.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
-		this.islandBuff = new JCustomComboBox<IslandBuff>(IslandBuff.getData());
+		this.islandBuff = new JCustomComboBox<>(IslandBuff.getData());
 		this.islandBuff.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -95,7 +98,7 @@ public class PageSprite extends PartialPage {
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		for(int i = 0; i < this.blason.size(); i++) {
 			list.addAll(this.getBlason(i).getEffects());
@@ -170,7 +173,7 @@ public class PageSprite extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.blason.size(); i++) {
 			config.put("Blason" + i, this.getBlason(i).getName(Language.FR));

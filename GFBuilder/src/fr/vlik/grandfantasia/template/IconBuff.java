@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.template;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +13,7 @@ import fr.vlik.grandfantasia.stats.Calculable;
 
 public abstract class IconBuff extends Buff implements Iconable {
 	
-	private static final String PATH = Tools.RESOURCE + IconBuff.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + IconBuff.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	
 	protected Icon icon;

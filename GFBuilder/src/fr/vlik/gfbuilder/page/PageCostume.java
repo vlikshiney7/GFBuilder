@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -19,13 +20,14 @@ import fr.vlik.grandfantasia.equipupgrade.Pearl;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.subequip.CombiRunway;
 import fr.vlik.grandfantasia.subequip.Costume;
-import fr.vlik.grandfantasia.subequip.Runway;
 import fr.vlik.grandfantasia.subequip.Costume.CostumeType;
+import fr.vlik.grandfantasia.subequip.Runway;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomCheckBox;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JLangLabel;
@@ -35,17 +37,17 @@ public class PageCostume extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "COSTUME";
-	private static PageCostume INSTANCE = new PageCostume();
+	private static final PageCostume INSTANCE = new PageCostume();
 	
-	private ArrayList<JLangRadioButton> costWeapon = new ArrayList<JLangRadioButton>(2);
-	private ArrayList<JCustomButtonGroup<Quality>> groupQuality = new ArrayList<JCustomButtonGroup<Quality>>(5);
-	private ArrayList<JCustomButtonGroup<TypeSynthesis>> groupSynthesis = new ArrayList<JCustomButtonGroup<TypeSynthesis>>(5);
-	private ArrayList<JCustomComboBox<Costume>> costume = new ArrayList<JCustomComboBox<Costume>>(5);
-	private ArrayList<JCustomComboBox<Pearl>> costPearl = new ArrayList<JCustomComboBox<Pearl>>(7);
-	private ArrayList<JCustomCheckBox<CombiRunway>> checkBoxRunway = new ArrayList<JCustomCheckBox<CombiRunway>>(8);
+	private ArrayList<JLangRadioButton> costWeapon = new ArrayList<>(2);
+	private ArrayList<JCustomButtonGroup<Quality>> groupQuality = new ArrayList<>(5);
+	private ArrayList<JCustomButtonGroup<TypeSynthesis>> groupSynthesis = new ArrayList<>(5);
+	private transient JCustomComboBoxList<Costume> costume;
+	private transient JCustomComboBoxList<Pearl> pearl;
+	private ArrayList<JCustomCheckBox<CombiRunway>> checkBoxRunway = new ArrayList<>(8);
 	
 	private JPanel showAndHide;
-	private ArrayList<JPanel> showAndHideRunway = new ArrayList<JPanel>(4);
+	private ArrayList<JPanel> showAndHideRunway = new ArrayList<>(4);
 	
 	public static PageCostume getInstance() {
 		return INSTANCE;
@@ -53,6 +55,15 @@ public class PageCostume extends PartialPage {
 	
 	private PageCostume() {
 		super(BoxLayout.Y_AXIS);
+		
+		this.costume = new JCustomComboBoxList<>(5);
+		this.costume.setVisible(false);
+		this.costume.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.pearl = new JCustomComboBoxList<>();
 		
 		for(int i = 0; i < 2; i++) {
 			this.costWeapon.add(new JLangRadioButton(this.labels.get("WeaponHand" + i).getLang()));
@@ -70,9 +81,9 @@ public class PageCostume extends PartialPage {
 		
 		for(int i = 0; i < 2; i++) {
 			int id = i;
-			this.groupQuality.add(new JCustomButtonGroup<Quality>());
+			this.groupQuality.add(new JCustomButtonGroup<>());
 			for(int j = 0; j < 5; j++) {
-				JCustomRadioButton<Quality> radio = new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]);
+				JCustomRadioButton<Quality> radio = new JCustomRadioButton<>(Costume.ORDER_QUALITY[j]);
 				radio.addActionListener(e -> {
 					updateCostume(id);
 
@@ -82,9 +93,9 @@ public class PageCostume extends PartialPage {
 				this.groupQuality.get(i).add(radio);
 			}
 			
-			this.groupSynthesis.add(new JCustomButtonGroup<TypeSynthesis>());
+			this.groupSynthesis.add(new JCustomButtonGroup<>());
 			for(int j = 0; j < 2; j++) {
-				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<TypeSynthesis>(TypeSynthesis.values()[j]);
+				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<>(TypeSynthesis.values()[j]);
 				typeSynthesis.addActionListener(e -> {
 					updateCostume(id);
 
@@ -95,35 +106,18 @@ public class PageCostume extends PartialPage {
 				this.groupSynthesis.get(i).setVisible(false);
 			}
 			
-			this.costume.add(new JCustomComboBox<Costume>());
-			this.costume.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.costume.get(i).setVisible(false);
-			
 			if(i == 0) {
-				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getWeaponCostPearl()));
-				this.costPearl.get(i).addActionListener(e -> {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.costPearl.get(i).setVisible(false);
+				this.pearl.add(new JCustomComboBox<>(Pearl.getWeaponCostPearl()));
 			}
 			
-			this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getWeaponCostPearl()));
-			this.costPearl.get(i+1).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.costPearl.get(i+1).setVisible(false);
+			this.pearl.add(new JCustomComboBox<>(Pearl.getWeaponCostPearl()));
 		}
 		
 		for(int i = 0; i < 2; i++) {
 			if(i == 0) {
-				this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(0)));
+				this.checkBoxRunway.add(new JCustomCheckBox<>(CombiRunway.get(0)));
 			} else {
-				this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(4)));
+				this.checkBoxRunway.add(new JCustomCheckBox<>(CombiRunway.get(4)));
 			}
 			
 			this.checkBoxRunway.get(i).setBackground(Design.UIColor[1]);
@@ -138,10 +132,10 @@ public class PageCostume extends PartialPage {
 		}
 		
 		for(int i = 0; i < 3; i++) {
-			this.groupQuality.add(new JCustomButtonGroup<Quality>());
+			this.groupQuality.add(new JCustomButtonGroup<>());
 			for(int j = 0; j < 5; j++) {
 				int id = i+2;
-				JCustomRadioButton<Quality> radio = new JCustomRadioButton<Quality>(Costume.ORDER_QUALITY[j]);
+				JCustomRadioButton<Quality> radio = new JCustomRadioButton<>(Costume.ORDER_QUALITY[j]);
 				radio.addActionListener(e -> {
 					updateCostume(id);
 
@@ -151,10 +145,10 @@ public class PageCostume extends PartialPage {
 				this.groupQuality.get(i+2).add(radio);
 			}
 			
-			this.groupSynthesis.add(new JCustomButtonGroup<TypeSynthesis>());
+			this.groupSynthesis.add(new JCustomButtonGroup<>());
 			for(int j = 0; j < 2; j++) {
 				int id = i+2;
-				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<TypeSynthesis>(TypeSynthesis.values()[j]);
+				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<>(TypeSynthesis.values()[j]);
 				typeSynthesis.addActionListener(e -> {
 					updateCostume(id);
 
@@ -165,48 +159,18 @@ public class PageCostume extends PartialPage {
 				this.groupSynthesis.get(i+2).setVisible(false);
 			}
 			
-			this.costume.add(new JCustomComboBox<Costume>());
-			this.costume.get(i+2).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.costume.get(i+2).setVisible(false);
-			
-			if(i == 0) {
-				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+3).addActionListener(e -> {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.costPearl.get(i+3).setVisible(false);
-			} else if(i == 1) {
-				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+3).addActionListener(e -> {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.costPearl.get(i+3).setVisible(false);
-				
-				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+4).addActionListener(e -> {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.costPearl.get(i+4).setVisible(false);
+			if(i == 1) {
+				this.pearl.add(new JCustomComboBox<>(Pearl.getArmorCostPearl()));
+				this.pearl.add(new JCustomComboBox<>(Pearl.getArmorCostPearl()));
 			} else {
-				this.costPearl.add(new JCustomComboBox<Pearl>(Pearl.getArmorCostPearl()));
-				this.costPearl.get(i+4).addActionListener(e -> {
-					setEffects();
-					MainFrame.getInstance().updateStat();
-				});
-				this.costPearl.get(i+4).setVisible(false);
+				this.pearl.add(new JCustomComboBox<>(Pearl.getArmorCostPearl()));
 			}
 			
 			for(int j = 0; j < 2; j++) {
 				if(j == 0) {
-					this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(i+1)));
+					this.checkBoxRunway.add(new JCustomCheckBox<>(CombiRunway.get(i+1)));
 				} else {
-					this.checkBoxRunway.add(new JCustomCheckBox<CombiRunway>(CombiRunway.get(4)));
+					this.checkBoxRunway.add(new JCustomCheckBox<>(CombiRunway.get(4)));
 				}
 				
 				this.checkBoxRunway.get(i*2+j+2).setBackground(Design.UIColor[1]);
@@ -220,6 +184,12 @@ public class PageCostume extends PartialPage {
 				});
 			}
 		}
+		
+		this.pearl.setVisible(false);
+		this.pearl.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
 		updateLanguage(Language.FR);
 		createPanel();
@@ -240,7 +210,7 @@ public class PageCostume extends PartialPage {
 	}
 	
 	public Pearl getCostPearl(int i) {
-		return this.costPearl.get(i).getSelectedItem();
+		return this.pearl.get(i).getSelectedItem();
 	}
 	
 	public CombiRunway getRunway(int i) {
@@ -267,7 +237,7 @@ public class PageCostume extends PartialPage {
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		if(this.costWeapon.get(0).isSelected()) {
 			for(int i = 0; i < 2; i++) {
@@ -298,7 +268,7 @@ public class PageCostume extends PartialPage {
 			}
 		}
 		
-		for(int i = 0; i < this.costPearl.size(); i++) {
+		for(int i = 0; i < this.pearl.size(); i++) {
 			list.addAll(this.getCostPearl(i));
 		}
 		
@@ -327,9 +297,9 @@ public class PageCostume extends PartialPage {
 			JCustomPanel itemCost = new JCustomPanel(BoxLayout.Y_AXIS);
 			itemCost.addAll(Box.createVerticalStrut(10), qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3), this.costume.get(i));
 			if(i == 0) {
-				itemCost.addAll(Box.createVerticalStrut(3), this.costPearl.get(i));
+				itemCost.addAll(Box.createVerticalStrut(3), this.pearl.get(i));
 			}
-			itemCost.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+1));
+			itemCost.addAll(Box.createVerticalStrut(3), this.pearl.get(i+1));
 			
 			sectionCost.add(itemCost);
 			
@@ -369,11 +339,11 @@ public class PageCostume extends PartialPage {
 			elemI.addAll(this.labels.get("Cost" + i), Box.createVerticalStrut(10), qualityPanel, Box.createVerticalStrut(3), synthesisPanel, Box.createVerticalStrut(3), this.costume.get(i+2));
 			
 			if(i == 0) {
-				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+3));
+				elemI.addAll(Box.createVerticalStrut(3), this.pearl.get(i+3));
 			} else if(i == 1) {
-				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+3), Box.createVerticalStrut(3), this.costPearl.get(i+4));
+				elemI.addAll(Box.createVerticalStrut(3), this.pearl.get(i+3), Box.createVerticalStrut(3), this.pearl.get(i+4));
 			} else {
-				elemI.addAll(Box.createVerticalStrut(3), this.costPearl.get(i+4));
+				elemI.addAll(Box.createVerticalStrut(3), this.pearl.get(i+4));
 			}
 			
 			elemI.addAll(Box.createVerticalStrut(3), runwayPanel);
@@ -433,6 +403,7 @@ public class PageCostume extends PartialPage {
 			case 2:	type = CostumeType.TeteCorps;	break;
 			case 3:	type = CostumeType.TeteCorps;	break;
 			case 4:	type = CostumeType.DosArme1M;	break;
+			default: break;
 		}
 		
 		Costume[] cost = Costume.getPossibleCostume(this.getGroupSynthesis(id), type, this.getGroupQuality(id));
@@ -459,21 +430,17 @@ public class PageCostume extends PartialPage {
 		
 		if(this.getGroupQuality(id) == Quality.GREY) {
 			if(id == 0) {
-				this.costPearl.get(id).setVisible(false);
-				this.costPearl.get(id).setSelectedIndex(0);
-				this.costPearl.get(id+1).setVisible(false);
-				this.costPearl.get(id+1).setSelectedIndex(0);
+				this.pearl.setRangeVisible(id, 2, false);
+				this.pearl.setRangeSelectedIndex(id, 2, 0);
 			} else if(id < 3) {
-				this.costPearl.get(id+1).setVisible(false);
-				this.costPearl.get(id+1).setSelectedIndex(0);
+				this.pearl.get(id+1).setVisible(false);
+				this.pearl.get(id+1).setSelectedIndex(0);
 			}  else if(id == 3) {
-				this.costPearl.get(id+1).setVisible(false);
-				this.costPearl.get(id+1).setSelectedIndex(0);
-				this.costPearl.get(id+2).setVisible(false);
-				this.costPearl.get(id+2).setSelectedIndex(0);
+				this.pearl.setRangeVisible(id+1, 2, false);
+				this.pearl.setRangeSelectedIndex(id+1, 2, 0);
 			} else {
-				this.costPearl.get(id+2).setVisible(false);
-				this.costPearl.get(id+2).setSelectedIndex(0);
+				this.pearl.get(id+2).setVisible(false);
+				this.pearl.get(id+2).setSelectedIndex(0);
 			}
 			
 			if(id == 0) {
@@ -497,15 +464,13 @@ public class PageCostume extends PartialPage {
 			}
 		} else {
 			if(id == 0) {
-				this.costPearl.get(id).setVisible(true);
-				this.costPearl.get(id+1).setVisible(true);
+				this.pearl.setRangeVisible(id, 2, true);
 			} else if(id < 3) {
-				this.costPearl.get(id+1).setVisible(true);
+				this.pearl.get(id+1).setVisible(true);
 			}  else if(id == 3) {
-				this.costPearl.get(id+1).setVisible(true);
-				this.costPearl.get(id+2).setVisible(true);
+				this.pearl.setRangeVisible(id+1, 2, true);
 			} else {
-				this.costPearl.get(id+2).setVisible(true);
+				this.pearl.get(id+2).setVisible(true);
 			}
 			
 			if(id == 0) {
@@ -516,16 +481,16 @@ public class PageCostume extends PartialPage {
 		}
 		
 		if(this.costWeapon.get(0).isSelected() || this.groupQuality.get(0).getSelectedItem() == Quality.GREY) {
-			this.costPearl.get(1).setVisible(false);
-			this.costPearl.get(1).setSelectedIndex(0);
+			this.pearl.get(1).setVisible(false);
+			this.pearl.get(1).setSelectedIndex(0);
 		}
 	}
 	
 	private void updateWeaponCost() {
 		if(this.costWeapon.get(0).isSelected()) {
 			this.showAndHide.setVisible(true);
-			this.costPearl.get(1).setVisible(false);
-			this.costPearl.get(1).setSelectedIndex(0);
+			this.pearl.get(1).setVisible(false);
+			this.pearl.get(1).setSelectedIndex(0);
 			
 			if(this.groupQuality.get(1).getSelectedItem() != Quality.GREY) {
 				this.showAndHideRunway.get(0).setVisible(true);
@@ -536,7 +501,7 @@ public class PageCostume extends PartialPage {
 			this.groupQuality.get(1).setSelectedItem(Quality.GREY);
 			
 			if(this.groupQuality.get(0).getSelectedItem() != Quality.GREY) {
-				this.costPearl.get(1).setVisible(true);
+				this.pearl.get(1).setVisible(true);
 			} else {
 				this.showAndHideRunway.get(0).setVisible(false);
 			}
@@ -570,7 +535,7 @@ public class PageCostume extends PartialPage {
 
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		int select = 1;
 		while(select > 0) {
@@ -598,7 +563,7 @@ public class PageCostume extends PartialPage {
 			config.put("Costume" + i, value);
 		}
 		
-		for(int i = 0; i < this.costPearl.size(); i++) {
+		for(int i = 0; i < this.pearl.size(); i++) {
 			config.put("Pearl" + i, this.getCostPearl(i).getName(Language.FR));
 		}
 		
@@ -611,7 +576,7 @@ public class PageCostume extends PartialPage {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
-		int hand = Integer.valueOf(config.get("1or2Hand"));
+		int hand = Integer.parseInt(config.get("1or2Hand"));
 		for(int i = 0; i < this.costWeapon.size(); i++) {
 			if(i == hand) {
 				this.costWeapon.get(i).setSelected(true);
@@ -637,17 +602,18 @@ public class PageCostume extends PartialPage {
 				case 2:	type = CostumeType.TeteCorps;	break;
 				case 3:	type = CostumeType.TeteCorps;	break;
 				case 4:	type = CostumeType.DosArme1M;	break;
+				default: break;
 			}
 			
 			Costume costume = Costume.get(config.get("Costume" + i), typeSynthesis, type, quality);
 			this.costume.get(i).setSelectedItem(costume);
 		}
 		
-		for(int i = 0; i < this.costPearl.size(); i++) {
+		for(int i = 0; i < this.pearl.size(); i++) {
 			if(i < 2) {
-				this.costPearl.get(i).setSelectedItem(Pearl.getWeaponCost(config.get("Pearl" + i)));
+				this.pearl.get(i).setSelectedItem(Pearl.getWeaponCost(config.get("Pearl" + i)));
 			} else {
-				this.costPearl.get(i).setSelectedItem(Pearl.getArmorCost(config.get("Pearl" + i)));
+				this.pearl.get(i).setSelectedItem(Pearl.getArmorCost(config.get("Pearl" + i)));
 			}
 		}
 		

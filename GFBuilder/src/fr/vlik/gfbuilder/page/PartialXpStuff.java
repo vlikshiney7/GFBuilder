@@ -10,14 +10,14 @@ import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.template.InnerEffect;
-import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 
 public abstract class PartialXpStuff extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected ArrayList<JCustomComboBox<XpStuff>> xpStuff = new ArrayList<JCustomComboBox<XpStuff>>();
-	protected ArrayList<JCustomComboBox<InnerEffect>> lvlXpStuff = new ArrayList<JCustomComboBox<InnerEffect>>();
+	protected transient JCustomComboBoxList<XpStuff> xpStuff;
+	protected transient JCustomComboBoxList<InnerEffect> lvlXpStuff;
 
 	protected ArrayList<JPanel> showAndHideXpStuff;
 
@@ -45,29 +45,31 @@ public abstract class PartialXpStuff extends PartialPage {
 	}
 	
 	private void initXpStuff(int nbXpStuff) {
+		this.xpStuff = new JCustomComboBoxList<>(nbXpStuff*2);
+		this.xpStuff.setVisible(false);
+		
+		this.lvlXpStuff = new JCustomComboBoxList<>(nbXpStuff*2);
+		this.lvlXpStuff.setVisible(false);
+		
 		for(int i = 0; i < nbXpStuff*2; i++) {
 			int duo = i;
 			
-			this.xpStuff.add(new JCustomComboBox<XpStuff>());
 			this.xpStuff.get(duo).addActionListener(e -> {
 				updateLvlXpStuff(duo);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.xpStuff.get(duo).setVisible(false);
 			
-			this.lvlXpStuff.add(new JCustomComboBox<InnerEffect>());
 			this.lvlXpStuff.get(duo).addActionListener(e -> {
 				updateMaxLvlValue(duo);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.lvlXpStuff.get(duo).setVisible(false);
 		}
 		
-		this.showAndHideXpStuff = new ArrayList<JPanel>(nbXpStuff);
+		this.showAndHideXpStuff = new ArrayList<>(nbXpStuff);
 	}
 	
 	protected void initPanel() {
@@ -78,22 +80,18 @@ public abstract class PartialXpStuff extends PartialPage {
 	
 	protected void updateXpStuff(Equipment equip, int id) {
 		if(equip.getQuality() != Quality.GREY) {
-			XpStuff[] xpStuff = XpStuff.getPossibleTypeEffect(equip);
+			XpStuff[] xpStuffTab = XpStuff.getPossibleTypeEffect(equip);
 			
-			this.xpStuff.get(id*2).setItems(xpStuff);
-			this.xpStuff.get(id*2+1).setItems(xpStuff);
+			this.xpStuff.setRangeItems(id*2, 2, xpStuffTab);
+			this.xpStuff.setRangeVisible(id*2, 2, true);
 			
-			this.showAndHideXpStuff.get(id).setVisible(true);	
-			this.xpStuff.get(id*2).setVisible(true);
-			this.xpStuff.get(id*2+1).setVisible(true);
+			this.showAndHideXpStuff.get(id).setVisible(true);
 		} else {
 			this.showAndHideXpStuff.get(id).setVisible(false);
-			this.xpStuff.get(id*2).setVisible(false);
-			this.xpStuff.get(id*2+1).setVisible(false);
+			this.xpStuff.setRangeVisible(id*2, 2, false);
 			
 			if(this.getXpStuff(id*2) != null && this.getXpStuff(id*2+1) != null) {
-				this.xpStuff.get(id*2).setSelectedIndex(0);
-				this.xpStuff.get(id*2+1).setSelectedIndex(0);
+				this.xpStuff.setRangeSelectedIndex(id*2, 2, 0);
 			}
 		}
 	}
@@ -102,15 +100,14 @@ public abstract class PartialXpStuff extends PartialPage {
 		int indexPair = (id % 2 == 0) ? id + 1 : id - 1;
 		
 		if(!XpStuff.availableEffects(this.getXpStuff(id), this.getXpStuff(indexPair))) {
-			
 			this.lvlXpStuff.get(id).setVisible(false);
 			this.lvlXpStuff.get(indexPair).setVisible(false);
 		} else {
-			XpStuff xpStuff = this.getXpStuff(id);
-			XpStuff xpStuffDuo = this.getXpStuff(indexPair);
+			XpStuff idXpStuff = this.getXpStuff(id);
+			XpStuff idXpStuffDuo = this.getXpStuff(indexPair);
 			
-			this.lvlXpStuff.get(id).setItems(xpStuff.getInnerEffect());
-			this.lvlXpStuff.get(indexPair).setItems(xpStuffDuo.getInnerEffect());
+			this.lvlXpStuff.get(id).setItems(idXpStuff.getInnerEffect());
+			this.lvlXpStuff.get(indexPair).setItems(idXpStuffDuo.getInnerEffect());
 			
 			this.lvlXpStuff.get(id).setVisible(true);
 			this.lvlXpStuff.get(indexPair).setVisible(true);

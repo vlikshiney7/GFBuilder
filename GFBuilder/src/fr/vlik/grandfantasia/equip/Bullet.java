@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -27,7 +26,7 @@ public class Bullet extends CompleteBuff {
 		put(Language.EN, "Projectile");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Bullet.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Bullet[] data = LoaderEquip.getBullet();
 	

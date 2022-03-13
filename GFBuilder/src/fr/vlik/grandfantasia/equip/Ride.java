@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -26,7 +25,7 @@ public class Ride extends CompleteBuff {
 		put(Language.EN, "Ride");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Ride.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Ride[] data = LoaderEquip.getRide();
 	

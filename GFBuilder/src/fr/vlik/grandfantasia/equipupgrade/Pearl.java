@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equipupgrade;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,7 +22,7 @@ import fr.vlik.grandfantasia.template.CompleteBuff;
 
 public class Pearl extends CompleteBuff {
 
-	private static final String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Pearl.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	
 	private static Pearl[] dataWeapon = LoaderEquipUpgrade.getWeaponPearl();

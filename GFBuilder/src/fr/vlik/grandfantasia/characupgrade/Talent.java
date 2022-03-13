@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.characupgrade;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,7 +19,7 @@ import fr.vlik.grandfantasia.template.InnerColorEffect;
 
 public class Talent extends IconBuff {
 	
-	private static final String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Quality[] ORDER_QUALITY = new Quality[] { Quality.GREY, Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.BLUE, Quality.BLUE, Quality.BLUE, };
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	private static Talent[][] data = LoaderCharacUpgrade.getTalent();

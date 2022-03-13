@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.EnumMap;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -108,7 +108,9 @@ public class PageBuff extends PartialPage {
 		}
 		
 		this.nucleusEnchant = new JCustomComboBoxList<>(3, NucleusEnchantment.getData());
+		this.nucleusEnchant.setVisible(false);
 		this.nucleusLvlEnchant = new JCustomComboBoxList<>(3);
+		this.nucleusLvlEnchant.setVisible(false);
 		
 		for(int j = 0; j < 3; j++) {
 			int idNucleus = j;
@@ -127,10 +129,6 @@ public class PageBuff extends PartialPage {
 			});
 		}
 		
-		this.nucleusEnchant.setVisible(false);
-		this.nucleusLvlEnchant.setVisible(false);
-		
-		
 		for(int i = 0; i < 21; i++) {
 			this.labelEnergy.add(new JCustomLabel<>(Energy.getData()[i]));
 			this.labelEnergy.get(i).setPreferredSize(new Dimension(240, 32));
@@ -147,7 +145,6 @@ public class PageBuff extends PartialPage {
 			
 			this.labelVoidEnergy.add(new JCustomRadioButton<>(Energy.getVoidData()[i]));
 			this.labelVoidEnergy.get(i).setPreferredSize(new Dimension(270, 32));
-			
 			this.labelVoidEnergy.get(i).addChangeListener(e -> showAndHideEnergies(id) );
 		}
 		
@@ -523,8 +520,8 @@ public class PageBuff extends PartialPage {
 				this.nucleusLvlEnchant.get(0).setVisible(true);
 				updateNucleusLvlEnchant(0);
 				
-				this.nucleusEnchant.setRangeVisible(1, 3, false);
-				this.nucleusLvlEnchant.setRangeVisible(1, 3, false);
+				this.nucleusEnchant.setRangeVisible(1, 2, false);
+				this.nucleusLvlEnchant.setRangeVisible(1, 2, false);
 				
 				break;
 			case 2:
@@ -805,7 +802,7 @@ public class PageBuff extends PartialPage {
 
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			config.put("Nucleus" + i, this.getNucleus(i).getName(Language.FR));

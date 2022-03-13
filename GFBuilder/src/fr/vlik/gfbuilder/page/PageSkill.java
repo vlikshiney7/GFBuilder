@@ -2,7 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -24,6 +24,7 @@ import fr.vlik.grandfantasia.template.InnerIconEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
@@ -32,16 +33,16 @@ public class PageSkill extends PartialPage {
 
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "SKILL";
-	private static PageSkill INSTANCE = new PageSkill();
+	private static final PageSkill INSTANCE = new PageSkill();
 	
-	private Grade currentGrade;
+	private transient Grade currentGrade;
 	private int currentLvl;
 	
-	private ArrayList<JCustomLabel<InnerIconEffect>> passiveSkill = new ArrayList<JCustomLabel<InnerIconEffect>>(4);
-	private ArrayList<JCustomComboBox<InnerIconEffect>> upgradeSkill = new ArrayList<JCustomComboBox<InnerIconEffect>>(2);
+	private ArrayList<JCustomLabel<InnerIconEffect>> passiveSkill = new ArrayList<>(4);
+	private transient JCustomComboBoxList<InnerIconEffect> upgradeSkill;
 	private JCustomComboBox<ProSkill> proSkill;
 	
-	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>();
+	private ArrayList<JPanel> showAndHide = new ArrayList<>();
 	
 	public static PageSkill getInstance() {
 		return INSTANCE;
@@ -54,24 +55,23 @@ public class PageSkill extends PartialPage {
 		this.currentLvl = PageGeneral.getInstance().getLvl();
 		
 		for(int i = 0; i < 4; i++) {
-			this.passiveSkill.add(new JCustomLabel<InnerIconEffect>(null));
+			this.passiveSkill.add(new JCustomLabel<>(null));
 			this.passiveSkill.get(i).setBackground(Design.UIColor[0]);
 			this.passiveSkill.get(i).setBorder(new EmptyBorder(0, 0, 0, 5));
 			this.passiveSkill.get(i).setPreferredSize(new Dimension(380, 32));
 			this.passiveSkill.get(i).setOpaque(true);
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			this.upgradeSkill.add(new JCustomComboBox<InnerIconEffect>());
-			this.upgradeSkill.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-		}
+		this.upgradeSkill = new JCustomComboBoxList<>(2);
+		this.upgradeSkill.setVisible(false);
+		this.upgradeSkill.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(this.currentGrade.getGrade(), this.currentLvl);
-		this.proSkill = new JCustomComboBox<ProSkill>(tabProSkill);
+		this.proSkill = new JCustomComboBox<>(tabProSkill);
 		this.proSkill.addActionListener(e -> {
 			setEffects();
 			PageWeapon.getInstance().setEffects();
@@ -103,7 +103,7 @@ public class PageSkill extends PartialPage {
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		for(JCustomLabel<InnerIconEffect> passive : this.passiveSkill) {
 			if(passive.isVisible()) {
@@ -149,10 +149,6 @@ public class PageSkill extends PartialPage {
 			label.setVisible(false);
 		}
 		
-		for(JCustomComboBox<InnerIconEffect> skill : this.upgradeSkill) {
-			skill.setVisible(false);
-		}
-		
 		for(JPanel panel : this.showAndHide) {
 			panel.setVisible(false);
 		}
@@ -169,11 +165,7 @@ public class PageSkill extends PartialPage {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		if(lvl < 6) {
-			this.showAndHide.get(0).setVisible(false);
-		} else {
-			this.showAndHide.get(0).setVisible(true);
-		}
+		this.showAndHide.get(0).setVisible(lvl > 5);
 		
 		Skill[] passive = Skill.getPassiveSkill(grade);
 		
@@ -205,11 +197,7 @@ public class PageSkill extends PartialPage {
 		if(skill != null) {
 			InnerIconEffect[] innerSkill = skill.getInnerSkill(lvl);
 			
-			if(innerSkill.length > 1) {
-				this.upgradeSkill.get(0).setVisible(true);
-			} else {
-				this.upgradeSkill.get(0).setVisible(false);
-			}
+			this.upgradeSkill.get(0).setVisible(innerSkill.length > 1);
 		
 			if(!this.upgradeSkill.get(0).setItems(innerSkill)) {
 				MainFrame.getInstance().setRedPane(8);
@@ -228,11 +216,7 @@ public class PageSkill extends PartialPage {
 		if(reinca.getLvl() > 0) {
 			InnerIconEffect[] innerSkill = Skill.getReinca().getInnerSkill(lvl);
 			
-			if(innerSkill.length > 1) {
-				this.upgradeSkill.get(1).setVisible(true);
-			} else {
-				this.upgradeSkill.get(1).setVisible(false);
-			}
+			this.upgradeSkill.get(1).setVisible(innerSkill.length > 1);
 			
 			if(!this.upgradeSkill.get(1).setItems(innerSkill)) {
 				MainFrame.getInstance().setRedPane(8);
@@ -248,11 +232,7 @@ public class PageSkill extends PartialPage {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
 		
-		if(lvl < 66) {
-			this.showAndHide.get(1).setVisible(false);
-		} else {
-			this.showAndHide.get(1).setVisible(true);
-		}
+		this.showAndHide.get(1).setVisible(lvl > 65);
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(grade.getGrade(), lvl);
 		
@@ -286,7 +266,7 @@ public class PageSkill extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.upgradeSkill.size(); i++) {
 			config.put("LvlSkill" + i, "" + this.upgradeSkill.get(i).getSelectedIndex());

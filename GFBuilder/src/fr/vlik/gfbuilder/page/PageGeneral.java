@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -16,8 +17,8 @@ import fr.vlik.grandfantasia.charac.Archive;
 import fr.vlik.grandfantasia.charac.Base;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
-import fr.vlik.grandfantasia.characupgrade.Title;
 import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.characupgrade.Title;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.gamebuff.Yggdrasil;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -33,7 +34,7 @@ public class PageGeneral extends PartialPage {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "GENERAL";
-	private static PageGeneral INSTANCE = new PageGeneral();
+	private static final PageGeneral INSTANCE = new PageGeneral();
 	
 	private JCustomComboBox<Grade> grade;
 	private JCustomSpinner lvl;
@@ -49,7 +50,7 @@ public class PageGeneral extends PartialPage {
 	private PageGeneral() {
 		super(BoxLayout.X_AXIS);
 		
-		this.grade = new JCustomComboBox<Grade>(Grade.getPossibleGrade(0));
+		this.grade = new JCustomComboBox<>(Grade.getPossibleGrade(0));
 		this.grade.addActionListener(e -> {
 			PageSkill.getInstance().updateSkill();
 			PageSkill.getInstance().updateProSkill();
@@ -96,7 +97,7 @@ public class PageGeneral extends PartialPage {
 		});
 		
 		
-		this.reinca = new JCustomComboBox<Reinca>(Reinca.getPossibleReinca(1));
+		this.reinca = new JCustomComboBox<>(Reinca.getPossibleReinca(1));
 		this.reinca.addActionListener(e -> {
 			PageSkill.getInstance().updateSkillReinca();
 			PageWeapon.getInstance().updateWeapon();
@@ -117,7 +118,7 @@ public class PageGeneral extends PartialPage {
 		});
 		
 		
-		this.title = new JCompleteBox<Title>(Title.getPossibleData(), JCompleteBox.FILTER16, JCompleteBox.PROC16, 5, Title.getTags(), Title.getQualities());
+		this.title = new JCompleteBox<>(Title.getPossibleData(), JCompleteBox.FILTER16, JCompleteBox.PROC16, 5, Title.getTags(), Title.getQualities());
 		this.title.addActionListener(e -> {
 			this.title.activeProc();
 			
@@ -129,14 +130,14 @@ public class PageGeneral extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.yggdra = new JCustomComboBox<Yggdrasil>(Yggdrasil.getData());
+		this.yggdra = new JCustomComboBox<>(Yggdrasil.getData());
 		this.yggdra.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
 		
-		this.archive = new JCustomComboBox<Archive>(Archive.getData());
+		this.archive = new JCustomComboBox<>(Archive.getData());
 		this.archive.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -184,7 +185,7 @@ public class PageGeneral extends PartialPage {
 	
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		list.addAll(Base.getBase(this.getGrade(), this.getLvl()));
 		list.addAll(this.getTitle());
@@ -240,14 +241,14 @@ public class PageGeneral extends PartialPage {
 	}
 	
 	private void updateGrade() {
-		Grade tabGrade[] = Grade.getPossibleGrade(this.getLvl());
+		Grade[] tabGrade = Grade.getPossibleGrade(this.getLvl());
 		GradeName memoryGrade = this.getGrade().getGrade();
 		Grade memory = null;
 		
 		for(int i = 0; i < 2; i++) {
-			for(Grade grade : tabGrade) {
-				if(grade.getGrade().index == memoryGrade.index - i) {
-					memory = grade;
+			for(Grade eachGrade : tabGrade) {
+				if(eachGrade.getGrade().index == memoryGrade.index - i) {
+					memory = eachGrade;
 					break;
 				}
 			}
@@ -293,7 +294,7 @@ public class PageGeneral extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		config.put("Grade", this.getGrade().getName(lang));
 		config.put("Lvl", "" + this.getLvl());

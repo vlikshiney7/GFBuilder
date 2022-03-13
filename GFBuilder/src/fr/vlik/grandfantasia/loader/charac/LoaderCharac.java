@@ -148,7 +148,7 @@ public class LoaderCharac extends LoaderTemplate {
 	public static Reinca[] getReinca() {
 		return new Reinca[] {
 			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }}, 1, 1, 100, 0, "none"),
-			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 1"); put(Language.EN, "Level 1 - Eval 1"); }}, 1.045, 1, 65, 1, "lvl1"),
+			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 1"); put(Language.EN, "Level 1 - Eval 1"); }}, 1.04, 1, 65, 1, "lvl1"),
 			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 2"); put(Language.EN, "Level 1 - Eval 2"); }}, 1.08, 66, 85, 1, "lvl1"),
 			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 3"); put(Language.EN, "Level 1 - Eval 3"); }}, 1.12, 86, 90, 1, "lvl1"),
 			new Reinca(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau 1 - Éval 4"); put(Language.EN, "Level 1 - Eval 4"); }}, 1.16, 91, 99, 1, "lvl1"),

@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.customequip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +21,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class CustomArmor extends CustomEquipment {
 	
-	private static final String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Armor.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	public static CustomArmor[][] data = LoaderCustom.getCustomArmor();
 	public static final double INCREASE_VALUE_GREEN = 1.06;

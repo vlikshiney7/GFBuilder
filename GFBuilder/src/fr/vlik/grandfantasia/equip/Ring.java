@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,16 +12,20 @@ import fr.vlik.grandfantasia.charac.Grade.GradeName;
 import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
+import fr.vlik.grandfantasia.enums.Tag;
 import fr.vlik.grandfantasia.interfaces.EquipType;
 import fr.vlik.grandfantasia.loader.equip.LoaderEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
 
 public final class Ring extends Equipment {
 	
-	private static final String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + "capering/" + Ring.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Ring[] data = LoaderEquip.getRing();
 	private static ArrayList<Ring> customData = new ArrayList<>();
+	
+	private static Tag[] tags = new Tag[] { Tag.BOSS, Tag.DONJON, Tag.FORMULE, Tag.GVG, Tag.QUETE, Tag.TAROT, Tag.OTHER, };
+	private static Quality[] qualities = new Quality[] { Quality.WHITE, Quality.GREEN, Quality.BLUE, Quality.ORANGE, Quality.GOLD };
 	
 	private String setCode;
 	private boolean uniqueEquip;
@@ -171,5 +174,44 @@ public final class Ring extends Equipment {
 		}
 		
 		return result.toArray(new Ring[result.size()]);
+	}
+
+	public static Tag[] getTags() {
+		return Ring.tags;
+	}
+	
+	public static Quality[] getQualities() {
+		return Ring.qualities;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((this.setCode == null) ? 0 : this.setCode.hashCode());
+		result = prime * result + (this.uniqueEquip ? 1231 : 1237);
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Ring other = (Ring) obj;
+		if (this.setCode == null) {
+			if (other.setCode != null) {
+				return false;
+			}
+		} else if (!this.setCode.equals(other.setCode)) {
+			return false;
+		}
+		return this.uniqueEquip == other.uniqueEquip;
 	}
 }

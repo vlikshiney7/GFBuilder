@@ -22,6 +22,7 @@ public class Tools {
 	public static final String PATH32 = RESOURCE + "default/32-";
 	public static final String PATH24 = RESOURCE + "default/24-";
 	public static final String PATH16 = RESOURCE + "default/16-";
+	public static final String SEPARATOR = "/";
 	
 	public static final Color[] itemColor = { new Color(147, 147, 147), new Color(255, 255, 255), new Color(111, 225, 28), new Color(33, 171, 235), new Color(255, 123, 0), new Color(234, 225, 0), new Color(252, 20, 236), new Color(255, 0, 0) };
 	public static final Color[] reincaColor = { new Color(147, 147, 147), new Color(111, 225, 28) };

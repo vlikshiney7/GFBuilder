@@ -2,6 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.LayoutManager;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JPanel;
 
@@ -10,19 +11,20 @@ import fr.vlik.grandfantasia.equipupgrade.PearlEnchantment;
 import fr.vlik.grandfantasia.template.InnerEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JIconCheckBox;
 
 public abstract class PartialEnchantPearl extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected ArrayList<ArrayList<JIconCheckBox>> starPearl = new ArrayList<ArrayList<JIconCheckBox>>();
-	protected ArrayList<JCustomComboBox<PearlEnchantment>> pearlEnchant = new ArrayList<JCustomComboBox<PearlEnchantment>>();
-	protected ArrayList<JCustomComboBox<InnerEffect>> pearlLvlEnchant = new ArrayList<JCustomComboBox<InnerEffect>>();
+	protected ArrayList<ArrayList<JIconCheckBox>> starPearl = new ArrayList<>();
+	protected transient JCustomComboBoxList<PearlEnchantment> pearlEnchant;
+	protected transient JCustomComboBoxList<InnerEffect> pearlLvlEnchant;
 	
 	protected ArrayList<JPanel> showAndHideEnchant;
 	
-	protected CustomList<InnerEffect> pearlEnchants = new CustomList<InnerEffect>();
+	protected transient CustomList<InnerEffect> pearlEnchants = new CustomList<>();
 
 	protected PartialEnchantPearl(int nbEnchantPearl) {
 		super(nbEnchantPearl);
@@ -47,14 +49,17 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 		return this.pearlLvlEnchant.get(id).getSelectedItem();
 	}
 	
-	public ArrayList<InnerEffect> getPearlEnchant() {
+	public List<InnerEffect> getPearlEnchant() {
 		return this.pearlEnchants;
 	}
 	
 	private void initEnchantPearl(int nbEnchantPearl) {
+		this.pearlEnchant = new JCustomComboBoxList<>();
+		this.pearlLvlEnchant = new JCustomComboBoxList<>();
+		
 		for(int i = 0; i < nbEnchantPearl; i++) {
 			int id = i;
-			this.starPearl.add(new ArrayList<JIconCheckBox>(4));
+			this.starPearl.add(new ArrayList<>(4));
 			
 			for(int j = 0; j < 4; j++) {
 				int idCheck = j;
@@ -79,7 +84,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 			for(int j = 0; j < 5; j++) {
 				int idPearl = i*5+j;
 				
-				this.pearlEnchant.add(new JCustomComboBox<PearlEnchantment>(PearlEnchantment.getData()));
+				this.pearlEnchant.add(new JCustomComboBox<>(PearlEnchantment.getData()));
 				this.pearlEnchant.get(idPearl).addActionListener(e -> {
 					updatePearlLvlEnchant(idPearl);
 					updatePearlEnchant(idPearl);
@@ -87,20 +92,22 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.pearlEnchant.get(idPearl).setVisible(false);
 				
-				this.pearlLvlEnchant.add(new JCustomComboBox<InnerEffect>());
+				this.pearlLvlEnchant.add(new JCustomComboBox<>());
 				this.pearlLvlEnchant.get(idPearl).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
 				});
-				this.pearlLvlEnchant.get(idPearl).setVisible(false);
 			}
 		}
 		
-		this.showAndHideEnchant = new ArrayList<JPanel>(nbEnchantPearl);
+		this.pearlEnchant.setVisible(false);
+		this.pearlLvlEnchant.setVisible(false);
+		
+		this.showAndHideEnchant = new ArrayList<>(nbEnchantPearl);
 	}
 	
+	@Override
 	protected void initPanel() {
 		for(JPanel panel : this.showAndHideEnchant) {
 			panel.setVisible(false);
@@ -140,11 +147,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 	
 	protected void updateStarPearl(int id, int idCheck) {
 		for(int i = 0; i < this.starPearl.get(id).size(); i++) {
-			if(i <= idCheck) {
-				this.starPearl.get(id).get(i).setSelected(true);
-			} else {
-				this.starPearl.get(id).get(i).setSelected(false);
-			}
+			this.starPearl.get(id).get(i).setSelected(i <= idCheck);
 		}
 		
 		switch (idCheck) {
@@ -189,6 +192,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 					updatePearlLvlEnchant(id*5+i);
 				}
 				break;
+			default: break;
 		}
 	}
 	
@@ -202,9 +206,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 			nbStar++;
 		}
 		
-		if(nbStar <= 1) {
-			return;
-		} else if(nbStar == 2) {
+		if(nbStar == 2) {
 			int ignore1;
 			int ignore2;
 			
@@ -280,9 +282,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 	}
 	
 	private void keepPearlEnchant(int id, int idCheck) {
-		if(idCheck == 0) {
-			return;
-		} else if(idCheck == 1) {
+		if(idCheck == 1) {
 			PearlEnchantment memory1 = this.getPearlEnchantment(id*5);
 			PearlEnchantment[] tabPearl1 = PearlEnchantment.getPossiblePearlEnchant();
 			this.pearlEnchant.get(id*5).setItems(tabPearl1, memory1);
@@ -329,10 +329,10 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 			nbStar++;
 		}
 		
-		PearlEnchantment pearlEnchant = this.getPearlEnchantment(id);
+		PearlEnchantment idPearlEnchant = this.getPearlEnchantment(id);
 		
-		if(pearlEnchant != null) {
-			this.pearlLvlEnchant.get(id).setItems(pearlEnchant.getInnerLvlEffect(nbStar));
+		if(idPearlEnchant != null) {
+			this.pearlLvlEnchant.get(id).setItems(idPearlEnchant.getInnerLvlEffect(nbStar));
 			this.pearlLvlEnchant.get(id).setVisible(this.pearlEnchant.get(id).isVisible());
 		} else {
 			this.pearlLvlEnchant.get(id).setVisible(false);

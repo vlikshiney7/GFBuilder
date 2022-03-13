@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.subequip;
 
-import java.io.File;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +23,7 @@ public class Anima extends CompleteBuff {
 		put(Language.EN, "Anima");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Anima.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Anima.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Anima[] data = LoaderSubEquip.getAnima();
 	

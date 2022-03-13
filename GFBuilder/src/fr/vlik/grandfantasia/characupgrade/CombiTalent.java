@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.characupgrade;
 
-import java.io.File;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -24,7 +23,7 @@ public final class CombiTalent extends IconBuff {
 		put(Language.EN, "Speciality");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Talent.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	private static CombiTalent[][] data = LoaderCharacUpgrade.getCombiTalent();
 	

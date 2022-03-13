@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -15,8 +16,8 @@ public abstract class PartialPage extends JCustomPanel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected ArrayList<Calculable> effects;
-	protected Map<String, JLangLabel> labels = new HashMap<String, JLangLabel>();
+	protected transient ArrayList<Calculable> effects;
+	protected transient Map<String, JLangLabel> labels = new HashMap<>();
 	
 	protected PartialPage() {
 		super();
@@ -36,21 +37,21 @@ public abstract class PartialPage extends JCustomPanel {
 		setLabel();
 	}
 	
-	public ArrayList<Calculable> getEffects() {
+	public List<Calculable> getEffects() {
 		return this.effects;
 	}
 	
-	abstract protected void setLabel();
+	protected abstract void setLabel();
 	
-	abstract protected void setEffects();
+	protected abstract void setEffects();
 	
-	abstract protected void createPanel();
+	protected abstract void createPanel();
 	
-	abstract public void updateLanguage(Language lang);
+	public abstract void updateLanguage(Language lang);
 	
-	abstract public String getSaveName();
+	public abstract String getSaveName();
 	
-	abstract public Map<String, String> getConfig(Language lang);
+	public abstract Map<String, String> getConfig(Language lang);
 	
-	abstract public void setConfig(Map<String, String> config, Language lang) throws IllegalArgumentException;
+	public abstract void setConfig(Map<String, String> config, Language lang) throws IllegalArgumentException;
 }

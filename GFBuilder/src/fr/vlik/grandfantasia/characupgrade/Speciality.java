@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.characupgrade;
 
-import java.io.File;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +24,7 @@ public class Speciality extends IconBuff {
 		put(Language.EN, "Speciality");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Speciality.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Speciality.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, Icon> ICONS = new HashMap<>();
 	private static Speciality[][] data = LoaderCharacUpgrade.getSpeciality();
 	
@@ -39,6 +38,19 @@ public class Speciality extends IconBuff {
 	
 	public int getLvl() {
 		return this.lvl;
+	}
+	
+	@Override
+	public String getTooltip() {
+		StringBuilder tooltip = new StringBuilder("<ul><b>" + this.name.get(Language.FR) + "</b>");
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				tooltip.append(e.getTooltip());
+			}
+		}
+		tooltip.append("</ul>");
+		
+		return "<html>" + tooltip + "</html>";
 	}
 	
 	@Override

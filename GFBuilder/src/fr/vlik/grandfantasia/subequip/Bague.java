@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.subequip;
 
-import java.io.File;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class Bague extends CompleteBuff {
 		put(Language.EN, "Wedding ring");
 	}};
 	
-	private static final String PATH = Tools.RESOURCE + Bague.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Bague.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static Bague[] data = LoaderSubEquip.getBague();
 	
 	public Bague(Map<Language, String> name, Quality quality, String path, Effect[] effects) {

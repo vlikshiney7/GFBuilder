@@ -228,6 +228,7 @@ public class LoaderSpeciality extends LoaderTemplate {
 			}),
 			new Speciality(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Maître dans l'Usage des Flèches"); put(Language.EN, ""); }}, 45, "2-5", new Calculable[] {
 				new Effect(TypeEffect.DegArc, false, 1.5),
+				new Effect(TypeEffect.VitAtkArc, false, 1),
 			}),
 			new Speciality(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Voyage dans la Forêt"); put(Language.EN, ""); }}, 60, "2-6", new Calculable[] {
 				new Effect(TypeEffect.ESQ, false, 2),
@@ -909,7 +910,7 @@ public class LoaderSpeciality extends LoaderTemplate {
 				new Effect(TypeEffect.VOL, false, 4),
 			}),
 			new Speciality(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Amélioration Canon Lourd"); put(Language.EN, ""); }}, 75, "9-15", new Calculable[] {
-				new Effect(TypeEffect.TCCCanon, false, 1.5, WeaponType.CANON),
+				new Effect(TypeEffect.TCCGun, false, 1.5, WeaponType.CANON),
 			}),
 			new Speciality(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Transfert de Plasma"); put(Language.EN, ""); }}, 91, "9-16", new Calculable[] {
 				new Effect(TypeEffect.VOL, 3, TypeEffect.AGI, TypeCalcul.CONVERTALL),

@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -25,6 +26,7 @@ import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButtonGroup;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JIconCheckBox;
@@ -34,15 +36,15 @@ public class PageRide extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "RIDE";
-	private static PageRide INSTANCE = new PageRide();
+	private static final PageRide INSTANCE = new PageRide();
 	
 	private JCustomComboBox<Ride> ride;
-	private ArrayList<JCustomButtonGroup<TypeSynthesis>> groupSynthesis = new ArrayList<JCustomButtonGroup<TypeSynthesis>>(2);
-	private ArrayList<JCustomButtonGroup<Quality>> groupQuality = new ArrayList<JCustomButtonGroup<Quality>>(2);
-	private ArrayList<ArrayList<JIconCheckBox>> starSynthesis = new ArrayList<ArrayList<JIconCheckBox>>(2);
-	private ArrayList<JCustomComboBox<Synthesis>> synthesis = new ArrayList<JCustomComboBox<Synthesis>>(2);
+	private ArrayList<JCustomButtonGroup<TypeSynthesis>> groupSynthesis = new ArrayList<>(2);
+	private ArrayList<JCustomButtonGroup<Quality>> groupQuality = new ArrayList<>(2);
+	private ArrayList<ArrayList<JIconCheckBox>> starSynthesis = new ArrayList<>(2);
+	private transient JCustomComboBoxList<Synthesis> synthesis;
 	
-	private ArrayList<JPanel> showAndHide = new ArrayList<JPanel>(2);
+	private ArrayList<JPanel> showAndHide = new ArrayList<>(2);
 	
 	public static PageRide getInstance() {
 		return INSTANCE;
@@ -52,7 +54,7 @@ public class PageRide extends PartialXpStuff {
 		super(BoxLayout.Y_AXIS, 1);
 		
 		Ride[] tabRide = Ride.getPossibleRide(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-		this.ride = new JCustomComboBox<Ride>(tabRide);
+		this.ride = new JCustomComboBox<>(tabRide);
 		this.ride.addActionListener(e -> {
 			updateXpStuff();
 			
@@ -63,10 +65,10 @@ public class PageRide extends PartialXpStuff {
 		for(int i = 0; i < 2; i++) {
 			int id = i;
 			
-			this.groupQuality.add(new JCustomButtonGroup<Quality>());
+			this.groupQuality.add(new JCustomButtonGroup<>());
 			
 			for(int j = 0; j < 6; j++) {
-				JCustomRadioButton<Quality> radio = new JCustomRadioButton<Quality>(Quality.values()[j]);
+				JCustomRadioButton<Quality> radio = new JCustomRadioButton<>(Quality.values()[j]);
 				radio.addActionListener(e -> {
 					updateQualityGenki(id);
 					
@@ -76,9 +78,9 @@ public class PageRide extends PartialXpStuff {
 				this.groupQuality.get(i).add(radio);
 			}
 			
-			this.groupSynthesis.add(new JCustomButtonGroup<TypeSynthesis>());
+			this.groupSynthesis.add(new JCustomButtonGroup<>());
 			for(int j = 0; j < 2; j++) {
-				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<TypeSynthesis>(TypeSynthesis.values()[j]);
+				JCustomRadioButton<TypeSynthesis> typeSynthesis = new JCustomRadioButton<>(TypeSynthesis.values()[j]);
 				typeSynthesis.addActionListener(e -> {
 					updateQualityGenki(id);
 					
@@ -89,7 +91,7 @@ public class PageRide extends PartialXpStuff {
 				this.groupSynthesis.get(i).setVisible(false);
 			}
 			
-			this.starSynthesis.add(new ArrayList<JIconCheckBox>(5));
+			this.starSynthesis.add(new ArrayList<>(5));
 			
 			for(int j = 0; j < 5; j++) {
 				int idCheck = j;
@@ -103,14 +105,14 @@ public class PageRide extends PartialXpStuff {
 				});
 				this.starSynthesis.get(i).get(j).setVisible(false);
 			}
-			
-			this.synthesis.add(new JCustomComboBox<Synthesis>());
-			this.synthesis.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.synthesis.get(i).setVisible(false);
 		}
+		
+		this.synthesis = new JCustomComboBoxList<>(2);
+		this.synthesis.setVisible(false);
+		this.synthesis.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
 		updateLanguage(Language.FR);
 		createPanel();
@@ -146,7 +148,7 @@ public class PageRide extends PartialXpStuff {
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
 		list.addAll(this.getRide());
 		
@@ -250,7 +252,7 @@ public class PageRide extends PartialXpStuff {
 		int lvl = PageGeneral.getInstance().getLvl();
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
-		Ride tabRide[] = Ride.getPossibleRide(lvl, reinca);
+		Ride[] tabRide = Ride.getPossibleRide(lvl, reinca);
 		
 		if(!this.ride.setItems(tabRide)) {
 			this.showAndHideXpStuff.get(0).setVisible(false);
@@ -269,11 +271,7 @@ public class PageRide extends PartialXpStuff {
 			this.showAndHideXpStuff.get(0).setVisible(true);
 		}
 		
-		if(tabRide.length > 1) {
-			this.showAndHide.get(0).setVisible(true);
-		} else {
-			this.showAndHide.get(0).setVisible(false);
-		}
+		this.showAndHide.get(0).setVisible(tabRide.length > 1);
 	}
 	
 	private void updateXpStuff() {
@@ -364,11 +362,7 @@ public class PageRide extends PartialXpStuff {
 		if(tabSynthesis.length != 0) {
 			
 			for(int i = 0; i < this.starSynthesis.get(id).size(); i++) {
-				if(i <= idCheck) {
-					this.starSynthesis.get(id).get(i).setSelected(true);
-				} else {
-					this.starSynthesis.get(id).get(i).setSelected(false);
-				}
+				this.starSynthesis.get(id).get(i).setSelected(i <= idCheck);
 			}
 			
 			Synthesis memory = this.getSynthesis(id);
@@ -390,7 +384,7 @@ public class PageRide extends PartialXpStuff {
 
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		config.put("Ride", this.getRide().getName(Language.FR));
 		
@@ -452,7 +446,7 @@ public class PageRide extends PartialXpStuff {
 			updateQualityGenki(i);
 			
 			ArrayList<JIconCheckBox> buttons = this.starSynthesis.get(i);
-			int select = Integer.valueOf(config.get("StarSynthesis" + i));
+			int select = Integer.parseInt(config.get("StarSynthesis" + i));
 			
 			for(int j = 0; j < buttons.size(); j++) {
 				if(j == select) {

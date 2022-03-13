@@ -1,6 +1,5 @@
 package fr.vlik.grandfantasia.equip;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
@@ -13,8 +12,8 @@ import javax.swing.ImageIcon;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
-import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.charac.Reinca;
+import fr.vlik.grandfantasia.customequip.CustomEquipment;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
 import fr.vlik.grandfantasia.enums.Tag;
@@ -29,7 +28,7 @@ import fr.vlik.grandfantasia.stats.Effect;
 
 public class Weapon extends Equipment {
 	
-	private static final String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + File.separator;
+	private static final String PATH = Tools.RESOURCE + Weapon.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Weapon[][] data = LoaderEquip.getWeapon();
 	private static ArrayList<Weapon> customData = new ArrayList<>();

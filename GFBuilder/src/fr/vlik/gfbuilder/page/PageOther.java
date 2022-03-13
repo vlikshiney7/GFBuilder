@@ -1,7 +1,7 @@
 package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -22,6 +22,7 @@ import fr.vlik.grandfantasia.subequip.SouvenirEnchantment;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
 
@@ -36,7 +37,7 @@ public class PageOther extends PartialPage {
 	private JCustomComboBox<Anima> anima = new JCustomComboBox<>();
 	private JCustomComboBox<Souvenir> souvenir = new JCustomComboBox<>();
 	
-	private ArrayList<JCustomComboBox<SouvenirEnchantment>> souvenirEnchant = new ArrayList<>(3);
+	private transient JCustomComboBoxList<SouvenirEnchantment> souvenirEnchant;
 	
 	private ArrayList<JPanel> showAndHide = new ArrayList<>();
 	
@@ -76,18 +77,19 @@ public class PageOther extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
+		this.souvenirEnchant = new JCustomComboBoxList<>(3);
+		this.souvenirEnchant.setVisible(false);
+		
 		/* ENCHANT SOUVENIR */
 		for(int j = 0; j < 3; j++) {
 			int idSouvenir = j;
 			
-			this.souvenirEnchant.add(new JCustomComboBox<>());
 			this.souvenirEnchant.get(idSouvenir).addActionListener(e -> {
 				updateSouvenirEnchant(idSouvenir);
 				
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			this.souvenirEnchant.get(idSouvenir).setVisible(false);
 		}
 		
 		updateLanguage(Language.FR);
@@ -283,7 +285,7 @@ public class PageOther extends PartialPage {
 	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		config.put("Bague", this.getBague().getName(lang));
 		config.put("LoveBuff", this.getLoveCo().getName(Language.FR));

@@ -669,13 +669,13 @@ public class LoaderEquipSet extends LoaderTemplate {
 						new Effect(TypeEffect.ReflectP_old, false, 35),
 					}),
 				}),
-			new EquipSet("Marquis de Destruction", "60lingot0",
+			new EquipSet("Marquis de la Destruction", "60lingot0",
 				new Calculable[] {
 					new SkillEffect(TypeSkillEffect.Class0S2, 25, TypeValue.DAMAGE),
 					new SkillEffect(TypeSkillEffect.Class0S1, 25, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.TCCP, false, 35),
+					new Effect(TypeEffect.RDCCP, false, 35),
 					new Effect(TypeEffect.Depla, false, 5),
 				},
 				new Calculable[] {
@@ -6816,6 +6816,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RDCCP, false, 66),
+					new Effect(TypeEffect.RDCCM, false, 66),
 					new Effect(TypeEffect.PV, true, 22),
 					new Proc(80, Activation.Attack, 7, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 33),
@@ -6844,6 +6845,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RDCCP, false, 60),
+					new Effect(TypeEffect.RDCCM, false, 60),
 					new Effect(TypeEffect.PV, true, 20),
 					new Proc(80, Activation.Attack, 7, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 30),
@@ -7132,6 +7134,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RDCCP, false, 22),
+					new Effect(TypeEffect.RDCCM, false, 22),
 					new Effect(TypeEffect.PV, true, 6),
 					new Proc(50, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 32),
@@ -7156,6 +7159,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RDCCP, false, 20),
+					new Effect(TypeEffect.RDCCM, false, 20),
 					new Effect(TypeEffect.PV, true, 5),
 					new Proc(50, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 30),

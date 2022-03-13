@@ -3,6 +3,7 @@ package fr.vlik.gfbuilder.page;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -27,11 +28,12 @@ import fr.vlik.grandfantasia.equipupgrade.Enchantment;
 import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.InnerEffect;
-import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
-import fr.vlik.uidesign.JCustomCheckBox;
+import fr.vlik.uidesign.JCompleteBox;
+import fr.vlik.uidesign.JCompleteBoxList;
 import fr.vlik.uidesign.JCustomComboBox;
+import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextPane;
 import fr.vlik.uidesign.JLangLabel;
@@ -40,16 +42,16 @@ public class PageCapeRing extends PartialXpStuff {
 	
 	private static final long serialVersionUID = 1L;
 	private static final String SAVE_NAME = "CAPERING";
-	private static PageCapeRing INSTANCE = new PageCapeRing();
+	private static final PageCapeRing INSTANCE = new PageCapeRing();
 	
 	private JCustomComboBox<Cape> cape;
-	private ArrayList<JCustomComboBox<Ring>> ring = new ArrayList<JCustomComboBox<Ring>>(2);
-	private EquipSet equipSet;
-	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<JCustomTextPane<BonusEquipSet>>(3);
+	private transient JCompleteBoxList<Ring> ring = new JCompleteBoxList<>();
+	private transient EquipSet equipSet;
+	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<>(3);
 	
-	private ArrayList<JCustomComboBox<Enchantment>> enchant = new ArrayList<JCustomComboBox<Enchantment>>(3);
+	private transient JCustomComboBoxList<Enchantment> enchant;
 	
-	private ArrayList<JCustomCheckBox<ProcEffect>> proc = new ArrayList<JCustomCheckBox<ProcEffect>>(2);
+	//private ArrayList<JCustomCheckBox<ProcEffect>> proc = new ArrayList<>(2);
 	
 	public static PageCapeRing getInstance() {
 		return INSTANCE;
@@ -59,7 +61,7 @@ public class PageCapeRing extends PartialXpStuff {
 		super(BoxLayout.Y_AXIS, 3);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
-		this.cape = new JCustomComboBox<Cape>(tabCape);
+		this.cape = new JCustomComboBox<>(tabCape);
 		this.cape.addActionListener(e -> {
 			updateXpStuff(0);
 			updateEnchant(0);
@@ -70,22 +72,16 @@ public class PageCapeRing extends PartialXpStuff {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		/* ENCHANTEMENT */
-		this.enchant.add(new JCustomComboBox<Enchantment>());
-		this.enchant.get(0).addActionListener(e -> {
-			setEffects();
-			MainFrame.getInstance().updateStat();
-		});
-		this.enchant.get(0).setVisible(false);
-		
 		
 		Ring[] tabRing = Ring.getPossibleRing(PageGeneral.getInstance().getLvl(), null);
+		
 		for(int i = 0; i < 2; i++) {
 			int id = i;
 			
-			this.ring.add(new JCustomComboBox<Ring>(tabRing));
+			this.ring.add(new JCompleteBox<>(tabRing, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, /*Armor.getTags(), */Ring.getQualities()));
 			this.ring.get(i).addActionListener(e -> {
-				activeProc(id);
+				this.ring.get(id).activeProc();
+				
 				updateXpStuff(id+1);
 				updateEnchant(id+1);
 				updateDoubleRing(id);
@@ -95,26 +91,22 @@ public class PageCapeRing extends PartialXpStuff {
 				setEffects();
 				MainFrame.getInstance().updateStat();
 			});
-			
-			/* ENCHANTEMENT */
-			this.enchant.add(new JCustomComboBox<Enchantment>());
-			this.enchant.get(i+1).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
-			this.enchant.get(i+1).setVisible(false);
-			
-			/* PROC */
-			this.proc.add(new JCustomCheckBox<ProcEffect>(new ProcEffect(this.getRing(i))));
-			this.proc.get(i).setIconUI("procOn32", "procOff32");
-			this.proc.get(i).addActionListener(e -> {
-				setEffects();
-				MainFrame.getInstance().updateStat();
-			});
 		}
 		
+		this.ring.addProcActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
+		this.enchant = new JCustomComboBoxList<>(3);
+		this.enchant.setVisible(false);
+		this.enchant.addActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
+		
 		for(int i = 0; i < 2; i++) {
-			this.equipSetBonus.add(new JCustomTextPane<BonusEquipSet>(new BonusEquipSet()));
+			this.equipSetBonus.add(new JCustomTextPane<>(new BonusEquipSet()));
 		}
 		
 		updateLanguage(Language.FR);
@@ -152,12 +144,12 @@ public class PageCapeRing extends PartialXpStuff {
 
 	@Override
 	protected void setEffects() {
-		CustomList<Calculable> list = new CustomList<Calculable>();
+		CustomList<Calculable> list = new CustomList<>();
 		
-		Cape cape = new Cape(this.getCape());
-		cape.addEnchant(this.getEnchantment(0));
+		Cape capeEffect = new Cape(this.getCape());
+		capeEffect.addEnchant(this.getEnchantment(0));
 		
-		list.addAll(cape);
+		list.addAll(capeEffect);
 		
 		Ring[] rings = new Ring[2];
 		for(int i = 0; i < rings.length; i++) {
@@ -176,8 +168,8 @@ public class PageCapeRing extends PartialXpStuff {
 				int lvlXpStuff = this.getLvlXpStuff(i*2).getLvlbuff() + this.getLvlXpStuff(i*2+1).getLvlbuff();
 				
 				if(i == 0) {
-					if(lvlXpStuff >= cape.getLvl()) {
-						list.addAll(cape.getBonusXP());
+					if(lvlXpStuff >= capeEffect.getLvl()) {
+						list.addAll(capeEffect.getBonusXP());
 					}
 				} else {
 					if(lvlXpStuff >= rings[i-1].getLvl()) {
@@ -194,8 +186,8 @@ public class PageCapeRing extends PartialXpStuff {
 		}
 		
 		for(int i = 0; i < 2; i++) {
-			if(this.proc.get(i).isVisible() && this.proc.get(i).isSelected()) {
-				list.addAll(this.proc.get(i).getItem().getEffects());
+			if(this.ring.get(i).isProcActive()) {
+				list.addAll(this.ring.get(i).getProc().getItem().getEffects());
 			}
 		}
 		
@@ -225,7 +217,7 @@ public class PageCapeRing extends PartialXpStuff {
 		
 		for(int i = 0; i < 2; i++) {
 			JCustomPanel descRing = new JCustomPanel(BoxLayout.X_AXIS);
-			descRing.addAll(this.ring.get(i), this.enchant.get(i+1), Box.createHorizontalStrut(5), this.proc.get(i));
+			descRing.addAll(this.ring.get(i).getButton(), Box.createHorizontalStrut(5), this.ring.get(i), this.enchant.get(i+1), Box.createHorizontalStrut(5), this.ring.get(i).getProc());
 			
 			JCustomPanel xpRing = new JCustomPanel(new GridLayout(1, 3, 10, 3));
 			xpRing.add(this.labels.get("RingXP" + i));
@@ -248,10 +240,6 @@ public class PageCapeRing extends PartialXpStuff {
 			this.addAll(Box.createVerticalStrut(10), textPane);
 		}
 		
-		for(int i = 0; i < 2; i++) {
-			this.proc.get(i).setVisible(false);
-		}
-		
 		initPanel();
 	}
 	
@@ -259,6 +247,10 @@ public class PageCapeRing extends PartialXpStuff {
 	public void updateLanguage(Language lang) {
 		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
 			entry.getValue().updateText(lang);
+		}
+		
+		for(JCompleteBox<Ring> box : this.ring.getList()) {
+			box.updateLanguage(lang);
 		}
 	}
 	
@@ -278,7 +270,7 @@ public class PageCapeRing extends PartialXpStuff {
 		for(int i = 0; i < 2; i++) {
 			Ring[] tabRing = Ring.getPossibleRing(lvl, null);
 			
-			if(!this.ring.get(i).setItems(tabRing)) {
+			if(!this.ring.setItems(tabRing)) {
 				updateXpStuff(i+1);
 				updateEnchant(i+1);
 				
@@ -291,14 +283,14 @@ public class PageCapeRing extends PartialXpStuff {
 		JScrollPane scroll = MainFrame.getInstance().getScrollContent();
 		int valueScroll = scroll.getVerticalScrollBar().getValue();
 		
-		Cape cape = this.getCape();
+		Cape capeSet = this.getCape();
 		Ring[] rings = new Ring[2];
 		
 		for(int i = 0; i < 2; i++) {
 			rings[i] = this.getRing(i);
 		}
 		
-		EquipSet armorSet = new EquipSet(rings, cape);
+		EquipSet armorSet = new EquipSet(rings, capeSet);
 		
 		if(!armorSet.equals(this.equipSet)) {
 			if(armorSet.getCode().equals("-1")) {
@@ -317,20 +309,16 @@ public class PageCapeRing extends PartialXpStuff {
 		
 		this.equipSet = armorSet;
 		
-		SwingUtilities.invokeLater(new Runnable(){
-			public void run(){
-				scroll.getVerticalScrollBar().setValue(valueScroll);
-			}
-		});
+		SwingUtilities.invokeLater( () -> scroll.getVerticalScrollBar().setValue(valueScroll) );
 	}
 	
 	public void updateEnchant(int id) {
 		if(id == 0) {
 			if(this.cape.getSelectedIndex() != 0) {
-				Cape cape = this.getCape();
+				Cape capeEnchant = this.getCape();
 				
-				if(cape.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(cape);
+				if(capeEnchant.isEnchantable()) {
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(capeEnchant);
 					
 					this.enchant.get(id).setItems(tabEnchant);
 					this.enchant.get(id).setVisible(true);
@@ -342,10 +330,10 @@ public class PageCapeRing extends PartialXpStuff {
 			}
 		} else {
 			if(this.ring.get(id-1).getSelectedIndex() != 0) {
-				Ring ring = (Ring) this.ring.get(id-1).getSelectedItem();
+				Ring ringEnchant = this.ring.get(id-1).getSelectedItem();
 				
-				if(ring.isEnchantable()) {
-					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(ring);
+				if(ringEnchant.isEnchantable()) {
+					Enchantment[] tabEnchant = Enchantment.getPossibleEnchant(ringEnchant);
 					
 					this.enchant.get(id).setItems(tabEnchant);
 					this.enchant.get(id).setVisible(true);
@@ -374,27 +362,14 @@ public class PageCapeRing extends PartialXpStuff {
 		this.ring.get(other).setItems(tabRing);
 	}
 	
-	private void activeProc(int index2) {
-		ProcEffect proc = new ProcEffect(this.getRing(index2));
-		
-		if(proc.getEffects().length > 0) {
-			this.proc.get(index2).setItem(proc);
-			this.proc.get(index2).setVisible(true);
-		} else {
-			this.proc.get(index2).setVisible(false);
-		}
-		
-		this.proc.get(index2).setSelected(false);
-	}
-	
 	@Override
 	public String getSaveName() {
 		return SAVE_NAME;
 	}
-
+	
 	@Override
 	public Map<String, String> getConfig(Language lang) {
-		Map<String, String> config = new HashMap<String, String>();
+		Map<String, String> config = new LinkedHashMap<>();
 		
 		if(this.getCape().isCustom()) {
 			config.put("Cape", "Custom::" + this.getCape().getName(Language.FR) + "::" + this.getCape().getQuality() + "::" + this.getCape().getSignature());
@@ -408,6 +383,8 @@ public class PageCapeRing extends PartialXpStuff {
 			} else {
 				config.put("Ring" + i, this.getRing(i).getName(Language.FR));
 			}
+			
+			config.put("ProcRing" + i, "" + this.ring.get(i).getProc().isSelected());
 		}
 		
 		for(int i = 0; i < this.enchant.size(); i++) {
@@ -423,10 +400,6 @@ public class PageCapeRing extends PartialXpStuff {
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
 			Integer value = this.getLvlXpStuff(i) != null ? this.getLvlXpStuff(i).getLvlbuff() : 0;
 			config.put("LvlXpStuff" + i, "" + value);
-		}
-		
-		for(int i = 0; i < this.proc.size(); i++) {
-			config.put("Proc" + i, "" + this.proc.get(i).isSelected());
 		}
 		
 		return config;
@@ -445,18 +418,18 @@ public class PageCapeRing extends PartialXpStuff {
 			}
 			
 			if(quality != null) {
-				Cape cape = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
+				Cape capeCustom = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
 				
-				if(cape == null) {
+				if(capeCustom == null) {
 					if(CustomCape.constructCustom(valueSplit[1], quality, valueSplit[3])) {
 						SaveConfig.overrideCustom();
 						PageCapeRing.getInstance().updateCapeRing();
 						
-						cape = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
-						this.cape.setSelectedItem(cape);
+						capeCustom = Cape.getCustom(valueSplit[1], quality, valueSplit[3]);
+						this.cape.setSelectedItem(capeCustom);
 					}
 				} else {
-					this.cape.setSelectedItem(cape);
+					this.cape.setSelectedItem(capeCustom);
 				}
 			}
 		} else {
@@ -475,23 +448,25 @@ public class PageCapeRing extends PartialXpStuff {
 				}
 				
 				if(quality != null) {
-					Ring ring = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
+					Ring ringCustom = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
 					
-					if(ring == null) {
+					if(ringCustom == null) {
 						if(CustomRing.constructCustom(valueSplit[1], quality, valueSplit[3])) {
 							SaveConfig.overrideCustom();
 							PageCapeRing.getInstance().updateCapeRing();
 							
-							ring = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
-							this.ring.get(i).setSelectedItem(ring);
+							ringCustom = Ring.getCustom(valueSplit[1], quality, valueSplit[3]);
+							this.ring.get(i).setSelectedItem(ringCustom);
 						}
 					} else {
-						this.ring.get(i).setSelectedItem(ring);
+						this.ring.get(i).setSelectedItem(ringCustom);
 					}
 				}
 			} else {
 				this.ring.get(i).setSelectedItem(Ring.get(config.get("Ring" + i), Language.FR));
 			}
+			
+			this.ring.get(i).getProc().setSelected(Boolean.valueOf(config.get("ProcRing" + i)));
 		}
 		
 		this.enchant.get(0).setSelectedItem(Enchantment.get(this.getCape(), config.get("Enchantment" + 0)));
@@ -525,10 +500,6 @@ public class PageCapeRing extends PartialXpStuff {
 				InnerEffect inner = xpStuff.getInnerEffect(Integer.valueOf(config.get("LvlXpStuff" + i)));
 				this.lvlXpStuff.get(i).setSelectedItem(inner);
 			}
-		}
-		
-		for(int i = 0; i < this.proc.size(); i++) {
-			this.proc.get(i).setSelected(Boolean.valueOf(config.get("Proc" + i)));
 		}
 	}
 }
