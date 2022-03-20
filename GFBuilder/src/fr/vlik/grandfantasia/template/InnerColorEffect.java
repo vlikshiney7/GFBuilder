@@ -20,11 +20,21 @@ public class InnerColorEffect extends ColorBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
-		if("".equals(this.name.get(lang))) {
-			return this.name.get(Language.FR) + (this.lvlBuff != 0 ? " " + this.lvlBuff : "");
+	public String getSelectorInfo(Language lang) {
+		return super.getSelectorInfo(lang) + (this.lvlBuff != 0 ? " " + this.lvlBuff : "");
+	}
+	
+	@Override
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder();
+		
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				result.append(LINE + TAB + "• " + e.getFullInfo(lang) + TAB);
+			}
 		}
-		return this.name.get(lang) + (this.lvlBuff != 0 ? " " + this.lvlBuff : "");
+		
+		return toHTML(result);
 	}
 	
 	@Override

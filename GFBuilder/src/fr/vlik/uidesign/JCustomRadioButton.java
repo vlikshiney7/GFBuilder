@@ -61,16 +61,13 @@ public class JCustomRadioButton<T> extends JRadioButton {
 	
 	public void updateText(Language lang) {
 		if(this.object instanceof Writable) {
-			this.setText(((Writable) this.object).getInfo(lang));
-			this.setToolTipText(((Writable) this.object).getTooltip());
+			this.setText(((Writable) this.object).getSelectorInfo(lang));
+			this.setToolTipText(((Writable) this.object).getFullInfo(lang));
 		}
 	}
 	
 	public void setTooltip(String tooltip) {
-		if(this.object instanceof Writable) {
-			String rebuild = ((Writable) this.object).getTooltip() + tooltip;
-			this.setToolTipText(rebuild.replace("</html><html>", ""));
-		}
+		this.setToolTipText("<html>" + tooltip.replace("<html>", "").replace("</html>", "") + "</html>");
 	}
 	
 	public void setVoidUI() {

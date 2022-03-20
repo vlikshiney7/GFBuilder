@@ -7804,10 +7804,10 @@ public class LoaderEquipSet extends LoaderTemplate {
 						new Effect(TypeEffect.Depla, false, 15),
 					}, 30),
 				}),
-			new EquipSet("Bombardement ardent", "80pve9",
+			new EquipSet("Bombardement Ardent", "80pve9",
 				new Calculable[] {
 					new Effect(TypeEffect.AGI, false, 25),
-					new Effect(TypeEffect.VitAtkD, false, 20),
+					new Effect(TypeEffect.AtkD, true, 20),
 				},
 				new Calculable[] {
 					new Proc(50, Activation.Crit, new Calculable[] {

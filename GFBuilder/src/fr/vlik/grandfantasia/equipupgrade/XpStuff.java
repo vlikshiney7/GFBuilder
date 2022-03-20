@@ -64,21 +64,19 @@ public class XpStuff implements Colorable, Writable {
 		
 		return null;
 	}
-	
-	@Override
-	public String getInfo(Language lang) {
-		if(lang == Language.EN && !this.type.abbrevEN.equals("")) {
-			return this.type.abbrevEN;
-		}
-		return this.type.abbrevFR;
+
+	public String getName(Language lang) {
+		return this.type.getSelectorInfo(lang);
 	}
 	
-	@Override
-	public String getTooltip() {
-		return this.type.fr;
+	public String getSelectorInfo(Language lang) {
+		return this.type.getSelectorInfo(lang);
 	}
 	
-	@Override
+	public String getFullInfo(Language lang) {
+		return this.type.getFullInfo(lang);
+	}
+	
 	public Color getColor() {
 		return this.type.getColor();
 	}
@@ -113,7 +111,7 @@ public class XpStuff implements Colorable, Writable {
 	public static XpStuff get(Equipment equip, String name) {
 		for(XpStuff xpStuff : XpStuff.data) {
 			if(xpStuff.containType(equip.getType())
-					&& xpStuff.getInfo(Language.FR).equals(name)) {
+					&& xpStuff.getSelectorInfo(Language.FR).equals(name)) {
 				
 				return xpStuff;
 			}
@@ -125,7 +123,7 @@ public class XpStuff implements Colorable, Writable {
 	public static XpStuff get(Ride ride, String name) {
 		for(XpStuff xpStuff : XpStuff.data) {
 			if(xpStuff.containType(ride.getType())
-					&& xpStuff.getInfo(Language.FR).equals(name)) {
+					&& xpStuff.getSelectorInfo(Language.FR).equals(name)) {
 				
 				return xpStuff;
 			}

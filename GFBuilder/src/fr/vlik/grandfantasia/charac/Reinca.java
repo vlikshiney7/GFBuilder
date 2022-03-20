@@ -86,13 +86,11 @@ public class Reinca implements FullRenderer {
 		return object;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		return this.name.get(lang);
 	}
 	
-	@Override
-	public String getTooltip() {
+	public String getFullInfo(Language lang) {
 		StringBuilder tooltip = new StringBuilder("Coef :");
 		tooltip.append("<br>");
 		tooltip.append(this.coef);

@@ -1,5 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
+import java.util.EnumMap;
+import java.util.Map;
+
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -89,13 +92,22 @@ public class Condition implements Calculable {
 		SPRITE("Maître de l'Encyclopédie sprite", "Master of Sprite Encyclopedia"),
 		;
 		
-		public final String fr;
-		public final String en;
+		public final Map<Language, String> condition;
 		 
-	    private TypeCondition(String fr, String en) {
-	        this.fr = fr;
-	        this.en = en;
+	    @SuppressWarnings("serial")
+		private TypeCondition(String fr, String en) {
+	    	this.condition = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
 	    }
+	    
+	    public String getName(Language lang) {
+			if(this.condition == null) {
+				return "";
+			} else if(this.condition.get(lang) == null || this.condition.get(lang).equals("")) {
+				return this.condition.get(Language.FR);
+			}
+			
+			return this.condition.get(lang);
+		}
 	}
 	
 	public TypeEffect getTargetEffect() {
@@ -147,73 +159,49 @@ public class Condition implements Calculable {
 		}
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.specialCondition == null) {
-			if(this.target == Target.OPPONENT) {
-				tooltip.append("Adversaire : ");
-			}
-			
-			if(this.percentMin != 0) {
-				tooltip.append("Si " + this.targetEffect.abbrevFR + " entre " + this.percentMin + "% et " + this.percent + "%");
-			} else {
-				tooltip.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent + "%");
-			}
-			
-			if(this.taux > 0) {
-				tooltip.append(", " + this.taux + "% d'activer");
-			}
-		} else {
-			tooltip.append(this.specialCondition.fr);
-		}
-		
-		tooltip.append(" :");
-		
-		tooltip.append("<ul>");
-		for(Calculable calculable : this.effects) {
-			tooltip.append(calculable.getTooltip());
-		}
-		
-		if(this.cumul > 1) {
-			tooltip.append("<li>Cumulable " + this.cumul + " fois</li>");
-		}
-		
-		tooltip.append("</ul>");
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.targetEffect.getSelectorInfo(lang);
 	}
 	
-	public String toString(Language lang) {
+	public String getSelectorInfo(Language lang) {
+		return this.targetEffect.getSelectorInfo(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
 		StringBuilder result = new StringBuilder();
 		
 		if(lang == Language.FR) {
 			if(this.specialCondition == null) {
 				if(this.target == Target.OPPONENT) {
-					result.append("Adversaire : ");
+					result.append("Ennemi : ");
 				}
 				
 				if(this.percentMin != 0) {
-					result.append("Si " + this.targetEffect.abbrevFR + " entre " + this.percentMin + "% et " + this.percent + "%");
+					result.append("Si " + this.targetEffect.getSelectorInfo(lang) + " entre " + this.percentMin + "% et " + this.percent + "%");
 				} else {
-					result.append("Si " + this.targetEffect.abbrevFR + " < " + this.percent + "%");
+					result.append("Si " + this.targetEffect.getSelectorInfo(lang) + " < " + this.percent + "%");
 				}
 				
 				if(this.taux > 0) {
 					result.append(", " + this.taux + "% d'activer");
 				}
 			} else {
-				result.append(this.specialCondition.fr);
+				result.append(this.specialCondition.getName(lang));
 			}
 			
 			result.append(" :");
+			result.append(TAB);
 			
 			for(Calculable calculable : this.effects) {
-				result.append("\t\t- " + calculable.toString(lang) + "\n");
+				result.append(LINE + TAB + TAB);
+				result.append("• " + calculable.getFullInfo(lang));
+				result.append(TAB);
 			}
 			
 			if(this.cumul != 1) {
-				result.append("\t\tCumulable " + this.cumul + " fois\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Cumulable " + this.cumul + " fois");
+				result.append(TAB);
 			}
 		} else {
 			if(this.specialCondition == null) {
@@ -222,26 +210,31 @@ public class Condition implements Calculable {
 				}
 				
 				if(this.percentMin != 0) {
-					result.append("If " + this.targetEffect.abbrevEN + " between " + this.percentMin + "% and " + this.percent + "%");
+					result.append("If " + this.targetEffect.getSelectorInfo(lang) + " between " + this.percentMin + "% and " + this.percent + "%");
 				} else {
-					result.append("If " + this.targetEffect.abbrevEN + " < " + this.percent + "%");
+					result.append("If " + this.targetEffect.getSelectorInfo(lang) + " < " + this.percent + "%");
 				}
 				
 				if(this.taux > 0) {
 					result.append(", " + this.taux + "% to activate");
 				}
 			} else {
-				result.append(this.specialCondition.en);
+				result.append(this.specialCondition.getName(lang));
 			}
 			
 			result.append(":");
+			result.append(TAB);
 			
 			for(Calculable calculable : this.effects) {
-				result.append("\t\t- " + calculable.toString(lang) + "\n");
+				result.append(LINE + TAB + TAB);
+				result.append("• " + calculable.getFullInfo(lang));
+				result.append(TAB);
 			}
 			
 			if(this.cumul != 1) {
-				result.append("\t\tStacks up to " + this.cumul + " times\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Stacks up to " + this.cumul + " times");
+				result.append(TAB);
 			}
 		}
 		

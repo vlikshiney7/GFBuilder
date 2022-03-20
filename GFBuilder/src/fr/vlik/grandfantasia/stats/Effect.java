@@ -127,54 +127,15 @@ public class Effect implements Calculable {
 		this.value *= factor;
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder(this.type.abbrevFR);
-		
-		if(this.target == Target.OPPONENT) {
-			tooltip.append("Enn : ");
-		}
-		
-		tooltip.append(this.value > 0 ? " +" : " ");
-		tooltip.append(this.value);
-		tooltip.append(this.isPercent ? "%" : "");
-		
-		if(this.transfert != TypeEffect.NONE) {
-			tooltip.append(" de ");
-			tooltip.append(this.transfert.abbrevFR);
-		}
-		
-		return "<li>" + tooltip.toString().replace(".0", "") + "</li>";
+	public String getName(Language lang) {
+		return this.type.getSelectorInfo(lang);
 	}
 	
-	public String toString() {
-		String result = this.type.fr + (this.value > 0 ? " +" : " ") + this.value + (this.isPercent ? "%" :"");
-		if(this.withWeapon != WeaponType.NONE) {
-			result += " si équipé ";
-			switch (this.withWeapon) {
-				case EPEE1M :		result += "d'une épée une main";				break;
-				case MARTEAU1M :	result += "d'un marteau une main";				break;
-				case HACHE1M :		result += "d'une hache une main";				break;
-				case EPEE2M :		result += "d'une épée à deux mains";			break;
-				case MARTEAU2M :	result += "d'un marteau à deux mains";			break;
-				case HACHE2M :		result += "d'une hache à deux mains";			break;
-				case MECA1M :		result += "d'une arme mécanique une main";		break;
-				case MECA2M :		result += "d'une arme mécanique à deux mains";	break;
-				case ARC :			result += "d'un arc";							break;
-				case GUN :			result += "d'un pistolet";						break;
-				case CANON :		result += "d'un canon";							break;
-				case RELIQUE :		result += "d'une relique";						break;
-				case BATON :		result += "d'un bâton";							break;
-				case LAME :			result += "d'une lame";							break;
-				case CLE :			result += "d'une clé";							break;
-				case BOUCLIER :		result += "d'un bouclier";						break;
-				default:			result += "";									break;
-			}
-		}
-		
-		return result.replace(".0", "");
+	public String getSelectorInfo(Language lang) {
+		return this.type.getSelectorInfo(lang);
 	}
 	
-	public String toString(Language lang) {
+	public String getFullInfo(Language lang) {
 		String result = "";
 		
 		if(this.target == Target.OPPONENT) {
@@ -185,14 +146,20 @@ public class Effect implements Calculable {
 			}
 		}
 		
-		if(lang == Language.FR) {
-			result += this.type.fr;
-		} else {
-			result += this.type.en;
-		}
+		result += this.type.getSelectorInfo(lang)
+				+ (this.value > 0 ? " +" : " ")
+				+ this.value
+				+ (this.isPercent ? "%" : "");
 		
-		result += (this.value < 0 ? " " : " +");
-		result += this.value + (this.isPercent ? "%" : "");
+		if(this.transfert != TypeEffect.NONE) {
+			if(lang == Language.FR) {
+				result += " de ";
+			} else {
+				result += " of ";
+			}
+			
+			result += this.transfert.getSelectorInfo(lang);
+		}
 		
 		if(this.withWeapon != WeaponType.NONE) {
 			if(lang == Language.FR) {
@@ -200,17 +167,8 @@ public class Effect implements Calculable {
 			} else {
 				result += " if equip with ";
 			}
-			result += this.withWeapon.getInfo(lang);
-		}
-		
-		if(this.transfert != TypeEffect.NONE) {
-			if(lang == Language.FR) {
-				result += " de ";
-				result += this.transfert.fr;
-			} else {
-				result += " of ";
-				result += this.transfert.en;
-			}
+			
+			result += this.withWeapon.getFullInfo(lang);
 		}
 		
 		return result.replace(".0", "");

@@ -53,25 +53,8 @@ public class ProSkill extends IconBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
-		if("".equals(this.name.get(lang))) {
-			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
-		}
-		return "Lvl " + this.lvl + " - " + this.name.get(lang);
-	}
-	
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
-		
-		if(this.effects != null) {
-			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
-			}
-		}
-		tooltip.append("</ul>");
-		
-		return "<html>" + tooltip + "</html>";
+	public String getSelectorInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + super.getSelectorInfo(lang);
 	}
 	
 	public static ProSkill get(String name) {

@@ -28,6 +28,7 @@ import fr.vlik.grandfantasia.equipupgrade.Enchantment;
 import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCompleteBox;
@@ -50,8 +51,6 @@ public class PageCapeRing extends PartialXpStuff {
 	private ArrayList<JCustomTextPane<BonusEquipSet>> equipSetBonus = new ArrayList<>(3);
 	
 	private transient JCustomComboBoxList<Enchantment> enchant;
-	
-	//private ArrayList<JCustomCheckBox<ProcEffect>> proc = new ArrayList<>(2);
 	
 	public static PageCapeRing getInstance() {
 		return INSTANCE;
@@ -121,6 +120,10 @@ public class PageCapeRing extends PartialXpStuff {
 	public Ring getRing(int id) {
 		return this.ring.get(id).getSelectedItem();
 	}
+
+	public ProcEffect getProc(int id) {
+		return this.ring.get(id).getProc().getItem();
+	}
 	
 	public JCustomTextPane<BonusEquipSet> getEquipSetBonus(int id) {
 		return this.equipSetBonus.get(id);
@@ -157,6 +160,10 @@ public class PageCapeRing extends PartialXpStuff {
 			rings[i].addEnchant(this.getEnchantment(i+1));
 			
 			list.addAll(rings[i]);
+
+			if(this.ring.get(i).isProcActive()) {
+				list.addAll(this.getProc(i).getEffects());
+			}
 		}
 		
 		for(int i = 0; i < 3; i++) {
@@ -182,12 +189,6 @@ public class PageCapeRing extends PartialXpStuff {
 		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
 			if(textPane.getItem().isActivate()) {
 				list.addAll(textPane.getItem());
-			}
-		}
-		
-		for(int i = 0; i < 2; i++) {
-			if(this.ring.get(i).isProcActive()) {
-				list.addAll(this.ring.get(i).getProc().getItem().getEffects());
 			}
 		}
 		
@@ -241,6 +242,10 @@ public class PageCapeRing extends PartialXpStuff {
 		}
 		
 		initPanel();
+		
+		for(JCustomTextPane<BonusEquipSet> equipSetPane : this.equipSetBonus) {
+			equipSetPane.setVisible(false);
+		}
 	}
 	
 	@Override
@@ -393,7 +398,7 @@ public class PageCapeRing extends PartialXpStuff {
 		}
 		
 		for(int i = 0; i < this.xpStuff.size(); i++) {
-			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getSelectorInfo(lang) : "";
 			config.put("EffectXpStuff" + i, value);
 		}
 		

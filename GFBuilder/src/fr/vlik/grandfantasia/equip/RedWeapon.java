@@ -79,6 +79,27 @@ public class RedWeapon extends Weapon {
 	}
 	
 	@Override
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(super.getFullInfo(lang));
+		
+		if(this.starEffects != null) {
+			result.append(LINE);
+			
+			for(int i = 0; i < this.starEffects.length; i++) {
+				result.append(LINE + TAB + "<b>Fortification +" + ((i+1)*10) + "</b>" + TAB);
+				
+				if(this.starEffects[i] != null) {
+					for(Calculable e : this.starEffects[i]) {
+						result.append(LINE + TAB + TAB + "• " + e.getFullInfo(lang) + TAB);
+					}
+				}
+			}
+		}
+		
+		return toHTML(result);
+	}
+	
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();

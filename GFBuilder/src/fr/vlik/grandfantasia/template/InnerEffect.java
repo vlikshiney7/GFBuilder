@@ -19,7 +19,7 @@ public class InnerEffect extends Buff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		if("".equals(this.name.get(lang))) {
 			return this.name.get(Language.FR) + (this.lvlBuff != 0 ? " " + this.lvlBuff : "");
 		}

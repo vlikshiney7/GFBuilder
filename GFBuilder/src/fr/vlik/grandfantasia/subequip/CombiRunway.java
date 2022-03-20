@@ -32,20 +32,19 @@ public class CombiRunway implements Writable {
 		return tab;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		return this.name.get(lang);
 	}
 	
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<strong>Bonus :</strong><br>");
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(TAB + "<b>Statistique</b>" + TAB);
 		
 		for(Runway runway : this.runways) {
-			tooltip.append(runway.getTooltip());
+			result.append(LINE + LINE);
+			result.append(runway.getFullInfo(lang));
 		}
 		
-		return "<html>" + tooltip + "</html>";
+		return toHTML(result);
 	}
 	
 	public static CombiRunway get(int i) {

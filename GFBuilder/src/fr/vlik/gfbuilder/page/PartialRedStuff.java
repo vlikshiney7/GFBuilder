@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import fr.vlik.gfbuilder.MainFrame;
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.equip.Equipment;
 import fr.vlik.grandfantasia.equipupgrade.RedEnchantment;
 import fr.vlik.grandfantasia.equipupgrade.RedFortification;
@@ -185,7 +186,7 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 					Effect effect = (Effect) calculable;
 					
 					if(effect.getType().isUpgradable && ! effect.isPercent()) {
-						tooltip.append(effect.toString() + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>");
+						tooltip.append(effect.getSelectorInfo(Language.FR) + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>");
 					}
 				}
 			}

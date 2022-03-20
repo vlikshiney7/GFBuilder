@@ -44,8 +44,8 @@ public class JCustomCheckBox<T> extends JCheckBox {
 	
 	public void updateText(Language lang) {
 		if(this.object instanceof Writable) {
-			this.setText(((Writable) this.object).getInfo(lang));
-			this.setToolTipText(((Writable) this.object).getTooltip());
+			this.setText(((Writable) this.object).getSelectorInfo(lang));
+			this.setToolTipText(((Writable) this.object).getFullInfo(lang));
 		}
 	}
 	

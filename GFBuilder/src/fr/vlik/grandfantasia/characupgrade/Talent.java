@@ -62,16 +62,13 @@ public class Talent extends IconBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
-		if("".equals(this.name.get(lang))) {
-			return this.name.get(Language.FR);
-		}
+	public String getSelectorInfo(Language lang) {
 		return "";
 	}
 	
 	@Override
-	public String getTooltip() {
-		return "<html><b>" + this.name.get(Language.FR) + "</b></html>";
+	public String getFullInfo(Language lang) {
+		return toHTML("<b>" + this.name.get(lang) + "</b>");
 	}
 	
 	public InnerColorEffect[] getInnerTalent(int lvl) {

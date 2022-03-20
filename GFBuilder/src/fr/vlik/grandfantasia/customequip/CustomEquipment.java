@@ -57,7 +57,7 @@ public abstract class CustomEquipment extends IconBuff {
 	public abstract EquipType getType();
 	
 	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		if(this.name.get(lang) == null) {
 			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}

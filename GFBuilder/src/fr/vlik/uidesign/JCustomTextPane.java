@@ -36,7 +36,7 @@ public class JCustomTextPane<T> extends JTextPane {
 	
 	public void updateText(Language lang) {
 		if(this.object instanceof Writable) {
-			this.setText(((Writable) this.object).getInfo(lang));
+			this.setText(Writable.noHTML(((Writable) this.object).getFullInfo(lang)));
 		}
 	}
 	

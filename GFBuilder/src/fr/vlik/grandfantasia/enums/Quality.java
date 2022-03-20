@@ -32,17 +32,18 @@ public enum Quality implements Colorable, Filterable, Writable {
         this.color = color;
     }
     
-	@Override
-	public String getInfo(Language lang) {
+	public String getName(Language lang) {
 		return this.lang.get(lang);
 	}
 	
-	@Override
-	public String getTooltip() {
-		return "";
+	public String getSelectorInfo(Language lang) {
+		return this.lang.get(lang);
 	}
 	
-	@Override
+	public String getFullInfo(Language lang) {
+		return this.lang.get(lang);
+	}
+	
 	public Color getColor() {
 		return this.color;
 	}

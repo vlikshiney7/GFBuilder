@@ -115,14 +115,16 @@ public class Weapon extends Equipment {
 	        this.isMainOneHand = isMainOneHand;
 	    }
 	    
-		@Override
-		public String getInfo(Language lang) {
+		public String getName(Language lang) {
+			return this.lang.get(lang);
+		}
+	    
+		public String getSelectorInfo(Language lang) {
 			return this.lang.get(lang);
 		}
 		
-		@Override
-		public String getTooltip() {
-			return this.lang.get(Language.FR);
+		public String getFullInfo(Language lang) {
+			return this.lang.get(lang);
 		}
 	}
 	

@@ -33,22 +33,17 @@ public class BonusEquipSet extends ColorBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
+	public String getFullInfo(Language lang) {
 		StringBuilder result = new StringBuilder();
-		
-		if(this.name.get(lang).equals("")) {
-			result.append(this.name.get(Language.FR));
-		} else {
-			result.append(this.name.get(lang));
-		}
+		result.append(this.getName(lang));
 		
 		if(this.effects != null) {
 			for(Calculable e : this.effects) {
-				result.append("\n\t- " + e.toString(lang));
+				result.append(LINE + TAB + "• " + e.getFullInfo(lang));
 			}
 		}
 		
-		return result.toString().replaceAll("\n$", "");
+		return result.toString();
 	}
 	
 	@Override

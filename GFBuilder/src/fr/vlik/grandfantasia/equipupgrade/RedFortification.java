@@ -34,12 +34,12 @@ public class RedFortification extends Fortification {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
-		return this.getName();
+	public String getSelectorInfo(Language lang) {
+		return this.getName(lang);
 	}
 
 	@Override
-	public String getTooltip() {
+	public String getFullInfo(Language lang) {
 		return "<html>Étoile bonus : " + this.star
 				+ "<br>Bonus"
 				+ "<br>Min : +" + (Math.round((this.coefMin-1) * 100)) + "%"
@@ -53,7 +53,7 @@ public class RedFortification extends Fortification {
 	
 	public static RedFortification get(String name) {
 		for(RedFortification fortif : RedFortification.data) {
-			if(fortif.getName().equals(name)) {
+			if(fortif.getName(Language.FR).equals(name)) {
 				return fortif;
 			}
 		}

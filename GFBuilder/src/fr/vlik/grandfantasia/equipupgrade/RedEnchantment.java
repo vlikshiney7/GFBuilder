@@ -61,11 +61,11 @@ public class RedEnchantment extends Enchantment {
 	}
 	
 	@Override
-	public String getTooltip() {
+	public String getFullInfo(Language lang) {
 		if(this.lvlEffect == null) {
 			return "";
 		}
-		return this.lvlEffect[0].getTooltip();
+		return this.lvlEffect[0].getFullInfo(lang);
 	}
 	
 	public InnerEffect[] getInnerEffect() {

@@ -34,6 +34,7 @@ import fr.vlik.grandfantasia.equipupgrade.XpStuff;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
 import fr.vlik.grandfantasia.template.InnerEffect;
+import fr.vlik.grandfantasia.template.ProcEffect;
 import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCompleteBox;
@@ -162,6 +163,10 @@ public class PageWeapon extends PartialRedStuff {
 		return this.weapon.get(id).getSelectedItem();
 	}
 	
+	public ProcEffect getProc(int id) {
+		return this.weapon.get(id).getProc().getItem();
+	}
+	
 	public Bullet getBullet() {
 		return this.bullet.getSelectedItem();
 	}
@@ -270,7 +275,7 @@ public class PageWeapon extends PartialRedStuff {
 			}
 			
 			if(this.weapon.get(i).isProcActive()) {
-				list.addAll(this.weapon.get(i).getProc().getItem().getEffects());
+				list.addAll(this.getProc(i).getEffects());
 			}
 		}
 		
@@ -749,7 +754,7 @@ public class PageWeapon extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.fortif.size(); i++) {
-			config.put("Fortif" + i, this.getFortif(i).getName());
+			config.put("Fortif" + i, this.getFortif(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.pearl.size(); i++) {
@@ -773,7 +778,7 @@ public class PageWeapon extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.pearlEnchant.size(); i++) {
-			String value = this.getPearlEnchantment(i) != null ? this.getPearlEnchantment(i).getInfo(lang) : "";
+			String value = this.getPearlEnchantment(i) != null ? this.getPearlEnchantment(i).getSelectorInfo(lang) : "";
 			config.put("PearlEnchant" + i, value);
 		}
 		
@@ -783,7 +788,7 @@ public class PageWeapon extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.xpStuff.size(); i++) {
-			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getSelectorInfo(lang) : "";
 			config.put("EffectXpStuff" + i, value);
 		}
 		
@@ -793,7 +798,7 @@ public class PageWeapon extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
-			config.put("RedFortif" + i, this.getRedFortif(i).getName());
+			config.put("RedFortif" + i, this.getRedFortif(i).getName(Language.FR));
 		}
 		
 		for(int i = 0; i < this.redEnchant.size(); i++) {

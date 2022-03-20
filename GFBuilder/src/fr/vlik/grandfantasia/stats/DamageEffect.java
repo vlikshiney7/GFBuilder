@@ -38,49 +38,35 @@ public class DamageEffect implements Calculable {
 		this.value *= factor;
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.type == TypeDamage.AOE) {
-			tooltip.append(this.type.abbrevFR + " de " + this.value + "m");
-		} else {
-			if(this.value > 0) {
-				tooltip.append(this.value + "pts dégâts " + this.type.abbrevFR);
-			} else {
-				tooltip.append("Dégâts " + this.type.abbrevFR);
-			}
-		}
-		
-		if(this.value > 0) {
-			tooltip.append(this.value + "pts dégâts " + this.type.abbrevFR);
-		} else {
-			tooltip.append("Dégâts " + this.type.abbrevFR);
-		}
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.type.getShortInfo(lang);
 	}
 	
-	public String toString(Language lang) {
+	public String getSelectorInfo(Language lang) {
+		return this.type.getShortInfo(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
 		String result = "";
 		
 		if(lang == Language.FR) {
 			if(this.type == TypeDamage.AOE) {
-				result += this.type.fr + " de " + this.value + " mètres";
+				result += this.type.getShortInfo(lang) + " de " + this.value + " mètres";
 			} else {
 				if(this.value > 0) {
-					result += this.value + "pts dégâts " + this.type.fr;
+					result += this.value + "points de dégâts " + this.type.getShortInfo(lang);
 				} else {
-					result += "Dégâts " + this.type.fr;
+					result += "Dégâts " + this.type.getShortInfo(lang);
 				}
 			}
 		} else {
 			if(this.type == TypeDamage.AOE) {
-				result += this.type.en + " of " + this.value + " meters";
+				result += this.type.getShortInfo(lang) + " of " + this.value + " meters";
 			} else {
 				if(this.value > 0) {
-					result += this.value + "pts of " + this.type.en + " damages";
+					result += this.value + "points of " + this.type.getShortInfo(lang) + " damages";
 				} else {
-					result += this.type.en + " damages";
+					result += this.type.getShortInfo(lang) + " damages";
 				}
 			}
 		}

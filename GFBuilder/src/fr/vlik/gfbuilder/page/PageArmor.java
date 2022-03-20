@@ -72,7 +72,7 @@ public class PageArmor extends PartialRedStuff {
 	public static PageArmor getInstance() {
 		return INSTANCE;
 	}
-
+	
 	public PageArmor() {
 		super(BoxLayout.Y_AXIS, 5);
 		
@@ -408,6 +408,10 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		initPanel();
+		
+		for(JCustomTextPane<BonusEquipSet> equipSetPane : this.equipSetBonus) {
+			equipSetPane.setVisible(false);
+		}
 		
 		for(int i = 0; i < 5; i++) {
 			this.labels.get("PearlEnchant" + i).setVisible(false);
@@ -795,7 +799,7 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.xpStuff.size(); i++) {
-			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getSelectorInfo(lang) : "";
 			config.put("EffectXpStuff" + i, value);
 		}
 		
@@ -805,7 +809,7 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		for(int i = 0; i < this.redFortif.size(); i++) {
-			config.put("RedFortif" + i, this.getRedFortif(i).getName());
+			config.put("RedFortif" + i, this.getRedFortif(i).getName(Language.FR));
 		}
 		
 		config.putAll(this.redEnchant.getSaveConfig("RedEnchantment"));
@@ -953,7 +957,7 @@ public class PageArmor extends PartialRedStuff {
 				}
 			}
 		}
-
+		
 		for(int i = 0; i < this.valueFortif.size(); i++) {
 			if(this.getArmor(i).getQuality() == Quality.RED) {
 				this.valueFortif.get(i).setValue(Integer.valueOf(config.get("ValueFortif" + i)));

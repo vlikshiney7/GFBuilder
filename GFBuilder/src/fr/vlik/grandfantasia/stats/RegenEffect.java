@@ -1,5 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
+import java.util.EnumMap;
+import java.util.Map;
+
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
@@ -67,13 +70,22 @@ public class RegenEffect implements Calculable {
 		ABSORPTION("Absorption", "absorbing"),
 		POISON("Poison", "poison");
 		
-		public final String fr;
-		public final String en;
+		public final Map<Language, String> regen;
 		 
-	    private TypeRegen(String fr, String en) {
-	        this.fr = fr;
-	        this.en = en;
+	    @SuppressWarnings("serial")
+		private TypeRegen(String fr, String en) {
+	    	this.regen = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
 	    }
+	    
+	    public String getName(Language lang) {
+			if(this.regen == null) {
+				return "";
+			} else if(this.regen.get(lang) == null || this.regen.get(lang).equals("")) {
+				return this.regen.get(Language.FR);
+			}
+			
+			return this.regen.get(lang);
+		}
 	}
 	
 	public TypeEffect getEffect() {
@@ -114,117 +126,89 @@ public class RegenEffect implements Calculable {
 		this.rangeMax *= factor;
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.type == TypeRegen.ABSORPTION) {
-			tooltip.append("Absorbe ");
-		} else if(this.type == TypeRegen.REGENERATION) {
-			tooltip.append("+");
-		} else if(this.target == Target.OPPONENT) {
-			tooltip.append("Enn : ");
-		}
-		
-		if(this.fixValue != 0) {
-			tooltip.append(this.fixValue);
-			
-			if(isPercent) {
-				tooltip.append("%");
-			}
-		} else {
-			tooltip.append(this.rangeMin + " à " + this.rangeMax);
-			
-			if(isPercent) {
-				tooltip.append("%");
-			}
-		}
-		
-		tooltip.append(" " + this.effect.abbrevFR);
-		
-		if(this.periodicity == 1) {
-			tooltip.append(" / s");
-		} else if(this.periodicity > 1) {
-			tooltip.append(" / " + this.periodicity + "s");
-		}
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.effect.getSelectorInfo(lang);
 	}
 	
-	public String toString(Language lang) {
-		StringBuilder result = new StringBuilder();
+	public String getSelectorInfo(Language lang) {
+		return this.effect.getSelectorInfo(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
+		String result = "";
 		
 		if(lang == Language.FR) {
 			if(this.target == Target.OPPONENT) {
-				result.append("Ennemi : ");
+				result += "Ennemi : ";
 			}
 			
-			result.append(this.type.fr + " de ");
+			result += this.type.getName(lang) + " de ";
 			
 			if(this.fixValue != 0) {
-				result.append(this.fixValue);
+				result += this.fixValue;
 				
-				if(isPercent) {
-					result.append("%");
+				if(this.isPercent) {
+					result += "%";
 				}
 			} else {
-				result.append(this.rangeMin + " to " + this.rangeMax);
+				result += this.rangeMin + "-" + this.rangeMax;
 				
-				if(isPercent) {
-					result.append("%");
+				if(this.isPercent) {
+					result += "%";
 				}
 			}
 			
-			result.append(" " + this.effect.abbrevFR);
+			result += " " + this.effect.getSelectorInfo(lang);
 			
 			if(this.periodicity == 1) {
-				result.append(" par seconde");
+				result += " par seconde";
 			} else if(this.periodicity > 1) {
-				result.append(" chaque " + this.periodicity + " secondes");
+				result += " chaque " + this.periodicity + " secondes";
 			}
 			
 			if(this.type == TypeRegen.ABSORPTION || this.type == TypeRegen.POISON) {
-				result.append(" à l'ennemi");
+				result += " à l'ennemi";
 			}
 		} else {
 			if(this.target == Target.OPPONENT) {
-				result.append("Opponent: ");
+				result += "Opponent: ";
 			}
 			
 			if(this.type == TypeRegen.REGENERATION) {
-				result.append(this.type.en + " of ");
+				result += this.type.getName(lang) + " of ";
 			}
 			
 			if(this.fixValue != 0) {
-				result.append(this.fixValue);
+				result += this.fixValue;
 				
-				if(isPercent) {
-					result.append("%");
+				if(this.isPercent) {
+					result += "%";
 				}
 			} else {
-				result.append(this.rangeMin + "-" + this.rangeMax);
+				result += this.rangeMin + "-" + this.rangeMax;
 				
-				if(isPercent) {
-					result.append("%");
+				if(this.isPercent) {
+					result += "%";
 				}
 			}
 			
 			if(this.type == TypeRegen.ABSORPTION || this.type == TypeRegen.POISON) {
-				result.append(" of opponent's ");
+				result += " of opponent's ";
 			}
 			
-			result.append(" " + this.effect.abbrevEN);
+			result += " " + this.effect.getSelectorInfo(lang);
 			
 			if(this.periodicity == 1) {
-				result.append(" per second");
+				result += " per second";
 			} else if(this.periodicity > 1) {
-				result.append(" per " + this.periodicity + " seconds");
+				result += " per " + this.periodicity + " seconds";
 			}
 			
 			if(this.type == TypeRegen.ABSORPTION) {
-				result.append(" " + this.type.en);
+				result += " " + this.type.getName(lang);
 			}
 		}
 		
-		return result.toString();
+		return result;
 	}
 }

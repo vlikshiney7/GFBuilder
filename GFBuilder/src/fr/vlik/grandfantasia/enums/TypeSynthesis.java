@@ -22,13 +22,15 @@ public enum TypeSynthesis implements Writable {
         this.lang = lang;
     }
 
-	@Override
-	public String getInfo(Language lang) {
+	public String getName(Language lang) {
 		return this.lang.get(lang);
 	}
-
-	@Override
-	public String getTooltip() {
+	
+	public String getSelectorInfo(Language lang) {
+		return this.lang.get(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
 		return this.lang.get(Language.FR);
 	}
 }

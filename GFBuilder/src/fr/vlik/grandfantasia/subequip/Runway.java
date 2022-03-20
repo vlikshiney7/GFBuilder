@@ -1,62 +1,37 @@
 package fr.vlik.grandfantasia.subequip;
 
+import java.util.Map;
+
+import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.loader.subequip.LoaderSubEquip;
 import fr.vlik.grandfantasia.stats.Calculable;
+import fr.vlik.grandfantasia.template.Buff;
 
-public class Runway {
+public class Runway extends Buff {
 	
 	public static Runway[] data = LoaderSubEquip.getRunway();
 	
-	private String name;
-	private Calculable[] effects;
+	
+	public Runway(Map<Language, String> name, Calculable[] effects) {
+		super(name, effects);
+	}
 	
 	public Runway(Runway runway) {
-		this.name = runway.getName();
+		this.name = runway.getMap();
 		this.effects = runway.getEffects();
 	}
 	
-	public Runway(String name, Calculable[] effects) {
-		this.name = name;
-		this.effects = effects;
-	}
-	
-	public String getName() {
-		return this.name;
-	}
-	
-	public Calculable[] getEffects() {
-		if(this.effects == null) {
-			return new Calculable[0];
-		}
-		
-		Calculable[] tab = new Calculable[this.effects.length];
-		for(int i = 0; i < tab.length; i++) {
-			tab[i] = this.effects[i].copy();
-		}
-		
-		return tab;
-	}
-	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<strong>- " + this.name + "</strong>");
+	@Override
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(TAB + TAB + "<b>" + this.name.get(lang) + "</b>" + TAB + TAB);
 		
 		if(this.effects != null) {
 			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
+				result.append(LINE + TAB + "• " + e.getFullInfo(lang) + TAB);
 			}
 		}
 		
-		return "<ul>" + tooltip + "</ul>";
-	}
-	
-	public static String getTooltipRunway(String[] idRunway) {
-		StringBuilder tooltip = new StringBuilder("<strong>Bonus :</strong><br>");
-		
-		for(int i = 0; i < idRunway.length; i++) {
-			tooltip.append(Runway.get(idRunway[i]).getTooltip());
-		}
-		
-		return "<html>" + tooltip + "</html>";
+		return toHTML(result);
 	}
 	
 	public static Runway[] getData() {
@@ -65,7 +40,7 @@ public class Runway {
 	
 	public static Runway get(String name) {
 		for(Runway runway : Runway.data) {
-			if(runway.getName().equals(name)) {
+			if(runway.getName(Language.FR).equals(name)) {
 				return runway;
 			}
 		}

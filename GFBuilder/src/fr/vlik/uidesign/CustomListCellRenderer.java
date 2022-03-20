@@ -10,7 +10,6 @@ import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
-import fr.vlik.grandfantasia.interfaces.FullRenderer;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
@@ -27,27 +26,19 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 	public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 		JLabel renderer = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 		
-		if(value instanceof FullRenderer) {
-			FullRenderer full = (FullRenderer) value;
-			renderer.setForeground(full.getColor());
-			renderer.setIcon(full.getIcon());
-			renderer.setText(full.getInfo(CustomListCellRenderer.lang));
-			renderer.setToolTipText(full.getTooltip());
+		if(value instanceof Colorable) {
+			renderer.setForeground(((Colorable) value).getColor());
 		} else {
-			if(value instanceof Colorable) {
-				renderer.setForeground(((Colorable) value).getColor());
-			} else {
-				renderer.setForeground(Design.FontColor[0]);
-			}
-			
-			if(value instanceof Iconable) {
-				renderer.setIcon(((Iconable) value).getIcon());
-			}
-			
-			if(value instanceof Writable) {
-				renderer.setText(((Writable) value).getInfo(CustomListCellRenderer.lang));
-				renderer.setToolTipText(((Writable) value).getTooltip());
-			}
+			renderer.setForeground(Design.FontColor[0]);
+		}
+		
+		if(value instanceof Iconable) {
+			renderer.setIcon(((Iconable) value).getIcon());
+		}
+		
+		if(value instanceof Writable) {
+			renderer.setText(((Writable) value).getSelectorInfo(CustomListCellRenderer.lang));
+			renderer.setToolTipText(((Writable) value).getFullInfo(CustomListCellRenderer.lang));
 		}
 		
 		if(value instanceof Integer) {

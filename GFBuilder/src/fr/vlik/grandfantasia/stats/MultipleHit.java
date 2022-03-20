@@ -48,38 +48,32 @@ public class MultipleHit implements Calculable {
 	
 	public void multiplyValue(int factor) {}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.secondValue > 0) {
-			tooltip.append(this.effect.abbrevFR + " : " + this.value + "% du dégât double, " + this.secondValue + "% du dégât triple");
-		} else if(this.value > 0) {
-			tooltip.append(this.effect.abbrevFR + " : " + this.value + "% du dégât");
-		} else {
-			tooltip.append(this.effect.abbrevFR + " dégâts");
-		}
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.effect.getShortInfo(lang);
 	}
 	
-	public String toString(Language lang) {
+	public String getSelectorInfo(Language lang) {
+		return this.effect.getShortInfo(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
 		String result = "";
 		
 		if(lang == Language.FR) {
 			if(this.secondValue > 0) {
-				result += this.effect.fr + " : " + this.value + "% du dégât double, " + this.secondValue + "% du dégât triple";
+				result += this.effect.getShortInfo(lang) + " : " + this.value + "% du dégât double, " + this.secondValue + "% du dégât triple";
 			} else if(this.value > 0) {
-				result += this.effect.fr + " : " + this.value + "% du dégât";
+				result += this.effect.getShortInfo(lang) + " : " + this.value + "% du dégât";
 			} else {
-				result += this.effect.fr + " dégâts";
+				result += this.effect.getShortInfo(lang) + " dégâts";
 			}
 		} else {
 			if(this.secondValue > 0) {
-				result += this.effect.en + ": " + this.value + "% of double damage, " + this.secondValue + "% of triple damage";
+				result += this.effect.getShortInfo(lang) + ": " + this.value + "% of double damage, " + this.secondValue + "% of triple damage";
 			} else if(this.value > 0) {
-				result += this.effect.en + ": " + this.value + "% of damage";
+				result += this.effect.getShortInfo(lang) + ": " + this.value + "% of damage";
 			} else {
-				result += this.effect.en + " damage";
+				result += this.effect.getShortInfo(lang) + " damage";
 			}
 		}
 		

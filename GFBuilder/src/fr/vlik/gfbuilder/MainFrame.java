@@ -280,9 +280,9 @@ public class MainFrame extends JFrame {
 		
 		JCustomPanel stats = new JCustomPanel(BoxLayout.Y_AXIS);
 		
-		int sizeStat = 210;
+		int sizeStat = 240;
 		int[] section = new int[] { 5, 3, 5, 6, 3 };
-		int[] widthName = new int[] { 80, 80, 80, 130, 130, 130 };
+		int[] widthName = new int[] { 80, 80, 80, 130, 130, 140 };
 		int ordinal = 0;
 		
 		for(int i = 0; i < section.length; i++) {
@@ -577,24 +577,10 @@ public class MainFrame extends JFrame {
 			frame.updateLanguage(lang);
 		}
 		
-		if(lang == Language.FR) {
-			for(int i = 0; i < this.valueStat.size(); i++) {
-				this.labelStat.get(i).updateText(lang);
-				this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
-				this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
-			}
-		} else {
-			for(int i = 0; i < this.valueStat.size(); i++) {
-				this.labelStat.get(i).updateText(lang);
-				
-				if(TypeEffect.values()[i].en.equals("")) {
-					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
-					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].fr);
-				} else {
-					this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].en);
-					this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].en);
-				}
-			}
+		for(int i = 0; i < this.valueStat.size(); i++) {
+			this.labelStat.get(i).updateText(lang);
+			this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].getFullInfo(lang));
+			this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].getFullInfo(lang));
 		}
 	}
 	

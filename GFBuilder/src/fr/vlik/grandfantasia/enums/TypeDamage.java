@@ -1,12 +1,12 @@
 package fr.vlik.grandfantasia.enums;
 
 import java.awt.Color;
+import java.util.EnumMap;
+import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
-import fr.vlik.grandfantasia.interfaces.Colorable;
-import fr.vlik.grandfantasia.interfaces.Writable;
 
-public enum TypeDamage implements Colorable, Writable {
+public enum TypeDamage {
 	
 	Standard("Standard", "Standard", "Standard", "Standard", Tools.EffectColor[0]),
 	Phys("Physique", "Physical", "Phys", "Phys", Tools.EffectColor[0]),
@@ -14,32 +14,38 @@ public enum TypeDamage implements Colorable, Writable {
 	AOE("Attaque de zone", "Area attack", "AOE", "AOE", Tools.EffectColor[0]),
 	;
 	
-	public final String fr;
-	public final String en;
-	public final String abbrevFR;
-	public final String abbrevEN;
+	public final Map<Language, String> longInfo;
+	public final Map<Language, String> shortInfo;
 	public final Color color;
 	
-	private TypeDamage(String fr, String en, String abbrevFR, String abbrevEN, Color color) {
-    	this.fr = fr;
-    	this.en = en;
-    	this.abbrevFR = abbrevFR;
-    	this.abbrevEN = abbrevEN;
+	@SuppressWarnings("serial")
+	private TypeDamage(String longFR, String longEN, String shortFR, String shortEN, Color color) {
+		this.longInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, longFR); put(Language.EN, longEN); }};
+		this.shortInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, shortFR); put(Language.EN, shortEN); }};
         this.color = color;
     }
-
-	@Override
+	
 	public Color getColor() {
 		return this.color;
 	}
-
-	@Override
-	public String getInfo(Language lang) {
-		return lang == Language.FR ? this.abbrevFR : this.abbrevEN;
+	
+	public String getLongInfo(Language lang) {
+		if(this.longInfo == null) {
+			return "";
+		} else if(this.longInfo.get(lang) == null || this.longInfo.get(lang).equals("")) {
+			return this.longInfo.get(Language.FR);
+		}
+		
+		return this.longInfo.get(lang);
 	}
-
-	@Override
-	public String getTooltip() {
-		return this.fr;
+	
+	public String getShortInfo(Language lang) {
+		if(this.shortInfo == null) {
+			return "";
+		} else if(this.shortInfo.get(lang) == null || this.shortInfo.get(lang).equals("")) {
+			return this.shortInfo.get(Language.FR);
+		}
+		
+		return this.shortInfo.get(lang);
 	}
 }

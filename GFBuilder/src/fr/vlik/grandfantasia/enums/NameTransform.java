@@ -1,8 +1,9 @@
 package fr.vlik.grandfantasia.enums;
 
-import fr.vlik.grandfantasia.interfaces.Writable;
+import java.util.EnumMap;
+import java.util.Map;
 
-public enum NameTransform implements Writable {
+public enum NameTransform {
 	
 	Transform0("Démon Géant", "Giant Evil"),
 	Transform1("Lion", "Lion"),
@@ -47,21 +48,20 @@ public enum NameTransform implements Writable {
 	
 	;
 	
-	public final String fr;
-	public final String en;
+	public final Map<Language, String> nameTranform;
 	
-    private NameTransform(String fr, String en) {
-    	this.fr = fr;
-    	this.en = en;
+    @SuppressWarnings("serial")
+	private NameTransform(String fr, String en) {
+    	this.nameTranform = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
     }
     
-	@Override
-	public String getInfo(Language lang) {
-		return lang == Language.FR ? this.fr : this.en;
-	}
-
-	@Override
-	public String getTooltip() {
-		return this.fr;
+    public String getName(Language lang) {
+		if(this.nameTranform == null) {
+			return "";
+		} else if(this.nameTranform.get(lang) == null || this.nameTranform.get(lang).equals("")) {
+			return this.nameTranform.get(Language.FR);
+		}
+		
+		return this.nameTranform.get(lang);
 	}
 }

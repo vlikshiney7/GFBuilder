@@ -61,23 +61,25 @@ public class ProcEffect implements Writable {
 		return tab;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
+	public String getName(Language lang) {
 		return "";
 	}
-
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<ul><b>Proc</b>");
-		if(this.effects != null) {
-			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
-			}
-		}
-		tooltip.append("</ul>");
-		
-		return "<html>" + tooltip + "</html>";
+	
+	public String getSelectorInfo(Language lang) {
+		return "";
 	}
 	
-	
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(TAB + TAB + "<b>Proc</b>" + TAB + TAB);
+		
+		if(this.effects != null) {
+			for(Calculable e : this.effects) {
+				result.append(LINE + TAB);
+				result.append("• " + e.getFullInfo(lang));
+				result.append(TAB);
+			}
+		}
+		
+		return toHTML(result);
+	}
 }

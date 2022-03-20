@@ -77,9 +77,8 @@ public class PearlEnchantment extends Buff {
 		return result.toArray(new InnerEffect[result.size()]);
 	}
 	
-	@Override
-	public String getTooltip() {
-		return this.lvlEffect[0].getTooltip();
+	public String getFullInfo(Language lang) {
+		return this.lvlEffect[0].getFullInfo(lang);
 	}
 	
 	public static InnerEffect[] cumulConstraint(List<InnerEffect> innerEffect) {

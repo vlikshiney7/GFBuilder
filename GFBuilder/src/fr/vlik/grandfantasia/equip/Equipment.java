@@ -139,33 +139,23 @@ public abstract class Equipment extends CompleteBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
-		if("".equals(this.name.get(lang))) {
-			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
-		}
-		return "Lvl " + this.lvl + " - " + this.name.get(lang);
+	public String getSelectorInfo(Language lang) {
+		return "Lvl " + this.lvl + " - " + super.getSelectorInfo(lang);
 	}
 	
 	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
-		if(this.effects != null) {
-			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
-			}
-		}
-		tooltip.append("</ul>");
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(super.getFullInfo(lang));
 		
 		if(this.bonusXP != null) {
-			tooltip.append("<ul><b>Bonus XP Stuff lvl " + this.lvl + "</b>");
+			result.append(LINE + LINE + TAB + "<b>Bonus XP Stuff lvl " + this.lvl + "</b>" + TAB);
 			
 			for(Calculable e : this.bonusXP) {
-				tooltip.append(e.getTooltip());
+				result.append(LINE + TAB + TAB + "• " + e.getFullInfo(lang) + TAB);
 			}
-			tooltip.append("</ul>");
 		}
 		
-		return "<html>" + tooltip + "</html>";
+		return toHTML(result);
 	}
 	
 	@Override

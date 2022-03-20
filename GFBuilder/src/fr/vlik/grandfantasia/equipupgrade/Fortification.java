@@ -22,7 +22,7 @@ public class Fortification implements Colorable, Writable {
 		this.coef = coef;
 	}
 	
-	public String getName() {
+	public String getName(Language lang) {
 		return this.name;
 	}
 	
@@ -30,13 +30,11 @@ public class Fortification implements Colorable, Writable {
 		return this.coef;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		return this.name;
 	}
-
-	@Override
-	public String getTooltip() {
+	
+	public String getFullInfo(Language lang) {
 		return "<html>Bonus<br>+" + (Math.round((coef-1) * 100)) + "%</html>";
 	}
 	
@@ -51,7 +49,7 @@ public class Fortification implements Colorable, Writable {
 	
 	public static Fortification get(String name) {
 		for(Fortification fortif : Fortification.data) {
-			if(fortif.getName().equals(name)) {
+			if(fortif.getName(Language.FR).equals(name)) {
 				return fortif;
 			}
 		}

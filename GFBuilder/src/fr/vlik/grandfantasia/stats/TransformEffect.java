@@ -1,5 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
+import java.util.EnumMap;
+import java.util.Map;
+
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.NameTransform;
 
@@ -27,13 +30,22 @@ public class TransformEffect implements Calculable {
 		TRANSFORMATION("Transformation", "Transformation"),
 		INVOCATION("Invocation", "Invocation");
 		
-		public final String fr;
-		public final String en;
+		public final Map<Language, String> transform;
 		 
-	    private TypeTransformation(String fr, String en) {
-	        this.fr = fr;
-	        this.en = en;
+	    @SuppressWarnings("serial")
+		private TypeTransformation(String fr, String en) {
+	        this.transform = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
 	    }
+	    
+	    public String getName(Language lang) {
+			if(this.transform == null) {
+				return "";
+			} else if(this.transform.get(lang) == null || this.transform.get(lang).equals("")) {
+				return this.transform.get(Language.FR);
+			}
+			
+			return this.transform.get(lang);
+		}
 	}
 	
 	public TypeTransformation getType() {
@@ -46,27 +58,31 @@ public class TransformEffect implements Calculable {
 	
 	public void multiplyValue(int factor) {}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.type == TypeTransformation.TRANSFORMATION) {
-			tooltip.append(this.type.fr + " en " + this.transform.fr);
-		} else if(this.type == TypeTransformation.INVOCATION) {
-			tooltip.append(this.type.fr + " de " + this.transform.fr);
-		}
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.type.getName(lang);
 	}
-
-	public String toString(Language lang) {
-		StringBuilder result = new StringBuilder();
+	
+	public String getSelectorInfo(Language lang) {
+		return this.type.getName(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
+		String result = "";
 		
 		if(lang == Language.FR) {
-			result.append(this.type.fr + " : " + this.transform.fr);
+			if(this.type == TypeTransformation.TRANSFORMATION) {
+				result = this.type.getName(lang) + " en " + this.transform.getName(lang);
+			} else if(this.type == TypeTransformation.INVOCATION) {
+				result = this.type.getName(lang) + " de " + this.transform.getName(lang);
+			}
 		} else {
-			result.append(this.type.en + ": " + this.transform.en);
+			if(this.type == TypeTransformation.TRANSFORMATION) {
+				result = this.type.getName(lang) + " on " + this.transform.getName(lang);
+			} else if(this.type == TypeTransformation.INVOCATION) {
+				result = this.type.getName(lang) + " of " + this.transform.getName(lang);
+			}
 		}
 		
-		return result.toString();
+		return result;
 	}
 }

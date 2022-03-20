@@ -73,7 +73,7 @@ public class Blason extends IconBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		if("".equals(this.name.get(lang))) {
 			return "Lvl " + this.lvl + " - " + this.name.get(Language.FR);
 		}

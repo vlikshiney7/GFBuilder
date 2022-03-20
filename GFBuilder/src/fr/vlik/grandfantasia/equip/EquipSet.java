@@ -66,7 +66,7 @@ public class EquipSet implements Writable {
 		
 		for(int i = 0; i < EquipSet.dataArmor.length; i++) {
 			if(EquipSet.dataArmor[i].getCode().equals(this.code)) {
-				this.name = EquipSet.dataArmor[i].getName();
+				this.name = EquipSet.dataArmor[i].getName(Language.FR);
 				
 				this.bonus3pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus3(), this.nbCurrentUsed >= 3);
 				this.bonus4pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus4(), this.nbCurrentUsed >= 4);
@@ -90,7 +90,7 @@ public class EquipSet implements Writable {
 		
 		for(int i = 0; i < EquipSet.dataCapeRing.length; i++) {
 			if(EquipSet.dataCapeRing[i].getCode().equals(this.code)) {
-				this.name = EquipSet.dataCapeRing[i].getName();
+				this.name = EquipSet.dataCapeRing[i].getName(Language.FR);
 				
 				this.bonus2pieces = new BonusEquipSet(EquipSet.dataCapeRing[i].getBonus2(), this.nbCurrentUsed >= 2);
 				this.bonus3pieces = new BonusEquipSet(EquipSet.dataCapeRing[i].getBonus3(), this.nbCurrentUsed >= 3);
@@ -100,7 +100,7 @@ public class EquipSet implements Writable {
 		}
 	}
 	
-	public String getName() {
+	public String getName(Language lang) {
 		return this.name;
 	}
 	
@@ -128,13 +128,11 @@ public class EquipSet implements Writable {
 		return this.nbCurrentUsed;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		return this.name;
 	}
-
-	@Override
-	public String getTooltip() {
+	
+	public String getFullInfo(Language lang) {
 		return this.name;
 	}
 	

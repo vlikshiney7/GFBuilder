@@ -1,8 +1,9 @@
 package fr.vlik.grandfantasia.enums;
 
-import fr.vlik.grandfantasia.interfaces.Writable;
+import java.util.EnumMap;
+import java.util.Map;
 
-public enum TypeSkillEffect implements Writable {
+public enum TypeSkillEffect {
 	
 	Class0S0("Fureur du Gladiateur", "Warlord Fury"),
 	Class0S1("Choc Sismique", "Ground Pulse Wave"),
@@ -198,21 +199,20 @@ public enum TypeSkillEffect implements Writable {
 	
 	;
 	
-	public final String fr;
-	public final String en;
+	public final Map<Language, String> skill;
 	
-    private TypeSkillEffect(String fr, String en) {
-    	this.fr = fr;
-    	this.en = en;
+    @SuppressWarnings("serial")
+	private TypeSkillEffect(String fr, String en) {
+    	this.skill = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
     }
     
-	@Override
-	public String getInfo(Language lang) {
-		return lang == Language.FR ? this.fr : this.en;
-	}
-
-	@Override
-	public String getTooltip() {
-		return this.fr;
+	public String getName(Language lang) {
+		if(this.skill == null) {
+			return "";
+		} else if(this.skill.get(lang) == null || this.skill.get(lang).equals("")) {
+			return this.skill.get(Language.FR);
+		}
+		
+		return this.skill.get(lang);
 	}
 }

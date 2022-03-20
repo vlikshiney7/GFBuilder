@@ -1,5 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
+import java.util.EnumMap;
+import java.util.Map;
+
 import fr.vlik.grandfantasia.enums.Language;
 
 public class Proc implements Calculable {
@@ -92,13 +95,22 @@ public class Proc implements Calculable {
 		Meditation("en méditation", "on meditation"),
 		Nothing("", "");
 		
-		public final String fr;
-		public final String en;
+		public final Map<Language, String> proc;
 		
-	    private Activation(String fr, String en) {
-	        this.fr = fr;
-	        this.en = en;
+	    @SuppressWarnings("serial")
+		private Activation(String fr, String en) {
+	    	this.proc = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
 	    }
+	    
+	    public String getName(Language lang) {
+			if(this.proc == null) {
+				return "";
+			} else if(this.proc.get(lang) == null || this.proc.get(lang).equals("")) {
+				return this.proc.get(Language.FR);
+			}
+			
+			return this.proc.get(lang);
+		}
 	}
 	
 	public enum TDB {
@@ -150,95 +162,90 @@ public class Proc implements Calculable {
 		}
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.tdb == TDB.TDB) {
-			tooltip.append("Après " + this.cumul + " cumul " + this.activation.fr + " :");
-		} else {
-			if(this.activation == Activation.Sprite) {
-				tooltip.append("Activer " + this.activation.fr + ":\n");
-			} else {
-				tooltip.append(this.taux + "% d'activer " + this.activation.fr + " :");
-			}
-		}
-		
-		tooltip.append("<ul>");
-		for(Calculable calculable : this.effects) {
-			tooltip.append(calculable.getTooltip());
-		}
-		
-		if(this.time != 0) {
-			tooltip.append("<li>Actif pendant " + this.time + "s</li>");
-		}
-		
-		if(this.cumul > 1 && this.tdb != TDB.TDB) {
-			tooltip.append("<li>Cumulable " + this.cumul + " fois</li>");
-		}
-		
-		if(this.cooldown != 0) {
-			tooltip.append("<li>Rechargement : " + this.cooldown + "s</li>");
-		}
-		
-		tooltip.append("</ul>");
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.activation.getName(lang);
 	}
 	
-	public String toString(Language lang) {
+	public String getSelectorInfo(Language lang) {
+		return this.activation.getName(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
 		StringBuilder result = new StringBuilder();
 		
 		if(lang == Language.FR) {
 			if(this.tdb == TDB.TDB) {
-				result.append("Après " + this.cumul + " cumul " + this.activation.fr + " :\n");
+				result.append("Après " + this.cumul + " cumul " + this.activation.getName(lang));
 			} else {
 				if(this.activation == Activation.Sprite) {
-					result.append("Activer " + this.activation.fr + ":\n");
+					result.append("Activer " + this.activation.getName(lang));
 				} else {
-					result.append(this.taux + "% d'activer " + this.activation.fr + " :\n");
+					result.append(this.taux + "% d'activer " + this.activation.getName(lang));
 				}
 			}
 			
+			result.append(" :");
+			result.append(TAB);
+			
 			for(Calculable calculable : this.effects) {
-				result.append("\t\t- " + calculable.toString(lang) + "\n");
+				result.append(LINE + TAB + TAB);
+				result.append("• " + calculable.getFullInfo(lang));
+				result.append(TAB);
 			}
 			
 			if(this.time != 0) {
-				result.append("\t\tActif pendant " + this.time + "s\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Actif pendant " + this.time + "s");
+				result.append(TAB);
 			}
 			
 			if(this.cumul != 1 && this.tdb != TDB.TDB) {
-				result.append("\t\tCumulable " + this.cumul + " fois\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Cumulable " + this.cumul + " fois");
+				result.append(TAB);
 			}
 			
 			if(this.cooldown != 0) {
-				result.append("\t\tRechargement : " + this.cooldown + "s\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Rechargement : " + this.cooldown + "s");
+				result.append(TAB);
 			}
 		} else {
 			if(this.tdb == TDB.TDB) {
-				result.append("After " + this.cumul + " stacks " + this.activation.en + ":\n");
+				result.append("After " + this.cumul + " stacks " + this.activation.getName(lang) + ":");
 			} else {
 				if(this.activation == Activation.Sprite) {
-					result.append("Activation " + this.activation.en + ":\n");
+					result.append("Activation " + this.activation.getName(lang) + ":");
 				} else {
-					result.append(this.taux + "% to activate " + this.activation.en + ":\n");
+					result.append(this.taux + "% to activate " + this.activation.getName(lang) + ":");
 				}
 			}
 			
+			result.append(":");
+			result.append(TAB);
+			
 			for(Calculable calculable : this.effects) {
-				result.append("\t\t- " + calculable.toString(lang) + "\n");
+				result.append(LINE + TAB + TAB);
+				result.append("• " + calculable.getFullInfo(lang));
+				result.append(TAB);
 			}
 			
 			if(this.time != 0) {
-				result.append("\t\tActif for  " + this.time + "s\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Actif for " + this.time + "s");
+				result.append(TAB);
 			}
 			
 			if(this.cumul != 1 && this.tdb != TDB.TDB) {
-				result.append("\t\tStacks up to " + this.cumul + " times\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Stacks up to " + this.cumul + " times");
+				result.append(TAB);
 			}
 			
 			if(this.cooldown != 0) {
-				result.append("\t\tCooldown : " + this.cooldown + "s\n");
+				result.append(LINE + TAB + TAB);
+				result.append("- Cooldown: " + this.cooldown + "s");
+				result.append(TAB);
 			}
 		}
 		

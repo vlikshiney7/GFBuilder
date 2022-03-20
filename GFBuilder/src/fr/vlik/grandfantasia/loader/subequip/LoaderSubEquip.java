@@ -86,22 +86,22 @@ public class LoaderSubEquip extends LoaderTemplate {
 	
 	public static Runway[] getRunway() {
 		return new Runway[] {
-			new Runway("Archimage", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Archimage"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.INT, false, 7),
 				new Effect(TypeEffect.AGI, false, 7),
 				new Effect(TypeEffect.Atk, true, 1),
 				new Effect(TypeEffect.AtkM, true, 1),
 			}),
-			new Runway("Aurore", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Aurore"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 4),
 			}),
-			new Runway("Balance", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Balance"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 4),
 				new Effect(TypeEffect.INT, false, 4),
 				new Effect(TypeEffect.VOL, false, 4),
 				new Effect(TypeEffect.ESQ, false, 2),
 			}),
-			new Runway("Bénédiction de l'univers", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bénédiction de l'univers"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 15),
 				new Effect(TypeEffect.VIT, false, 15),
 				new Effect(TypeEffect.INT, false, 15),
@@ -110,17 +110,17 @@ public class LoaderSubEquip extends LoaderTemplate {
 				new Effect(TypeEffect.PV, true, 4),
 				new Effect(TypeEffect.PM, true, 4),
 			}),
-			new Runway("Bénédiction rapide", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bénédiction rapide"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.ESQ, false, 6),
 				new Effect(TypeEffect.Toucher, false, 6),
 				new Effect(TypeEffect.Depla, false, 10),
 			}),
-			new Runway("Berserker", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Berserker"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
 				new Effect(TypeEffect.AGI, false, 7),
 				new Effect(TypeEffect.VitAtk, false, 2),
 			}),
-			new Runway("Bouclier", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bouclier"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.PV, true, 2),
 				new Effect(TypeEffect.PM, true, 2),
 				new Effect(TypeEffect.ReducStdP, false, 3),
@@ -132,32 +132,32 @@ public class LoaderSubEquip extends LoaderTemplate {
 					new Effect(TypeEffect.ReflectM_old, false, 100),
 				}),
 			}),
-			new Runway("Bravoure", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bravoure"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 7),
 				new Effect(TypeEffect.VIT, false, 7),
 				new Effect(TypeEffect.Atk, true, 2),
 				new Effect(TypeEffect.AtkD, true, 2),
 			}),
-			new Runway("Chance", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chance"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.TCCP, false, 2),
 				new Effect(TypeEffect.TCCM, false, 2),
 				new Effect(TypeEffect.RTCCP, false, 2),
 				new Effect(TypeEffect.RTCCM, false, 2),
 			}),
-			new Runway("Enchantement", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Enchantement"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.VIT, false, 7),
 				new Effect(TypeEffect.INT, false, 7),
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
-			new Runway("Expert des arcanes", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Expert des arcanes"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DegSkillM, false, 8),
 				new Effect(TypeEffect.PeneM, false, 4),
 			}),
-			new Runway("Expert en physique", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Expert en physique"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DegSkillP, false, 8),
 				new Effect(TypeEffect.PeneP, false, 4),
 			}),
-			new Runway("Folie", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Folie"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 10),
 				new Effect(TypeEffect.VIT, false, 10),
 				new Effect(TypeEffect.INT, false, 10),
@@ -165,26 +165,26 @@ public class LoaderSubEquip extends LoaderTemplate {
 				new Effect(TypeEffect.AGI, false, 10),
 				new Effect(TypeEffect.BoostCraft, false, 2),
 			}),
-			new Runway("Gardien", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Gardien"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.ReducStdP, false, 3),
 				new Effect(TypeEffect.ReducStdD, false, 3),
 				new Effect(TypeEffect.ReducSkillP, false, 3),
 			}),
-			new Runway("Hymne", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Hymne"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.VitComp, false, 4),
 			}),
-			new Runway("Illusion", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Illusion"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.VitAtk, false, 3),
 				new Effect(TypeEffect.VitComp, false, 3),
 			}),
-			new Runway("L'art de la cupidité", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "L'art de la cupidité"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.AtkM, true, 4),
 				new Effect(TypeEffect.VitComp, false, 5),
 			}),
-			new Runway("Lutte", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Lutte"); put(Language.EN, ""); }}, new Calculable[] {
 				new StaticEffect(TypeStaticEffect.x2STD_old, 5),
 			}),
-			new Runway("Magistrat", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Magistrat"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.FCE, false, 6),
 				new Effect(TypeEffect.VIT, false, 6),
 				new Effect(TypeEffect.INT, false, 6),
@@ -193,53 +193,53 @@ public class LoaderSubEquip extends LoaderTemplate {
 				new Effect(TypeEffect.DefP, true, 3),
 				new Effect(TypeEffect.DefM, true, 3),
 			}),
-			new Runway("Malédiction", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Malédiction"); put(Language.EN, ""); }}, new Calculable[] {
 				new StaticEffect(TypeStaticEffect.x2Skill_old, 5),
 			}),
-			new Runway("Prêtre", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Prêtre"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.ReducSkillM, false, 3),
 			}),
-			new Runway("Ranger", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ranger"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 5),
 				new Effect(TypeEffect.ESQ, false, 3),
 				new Effect(TypeEffect.Toucher, false, 3),
 			}),
-			new Runway("Rapidité", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Rapidité"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.Toucher, false, 5),
 			}),
-			new Runway("Sang", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sang"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.RegenCB, false, 1),
 			}),
-			new Runway("Sagesse", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sagesse"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.INT, false, 7),
 				new Effect(TypeEffect.VOL, false, 7),
 				new Effect(TypeEffect.AtkM, true, 2),
 			}),
-			new Runway("Sceau de VOL", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sceau de VOL"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.VOL, false, 14),
 				new Effect(TypeEffect.DefM, true, 2),
 			}),
-			new Runway("Sorcier", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sorcier"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.DegSkillM, false, 3),
 			}),
-			new Runway("Synthétisation", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Synthétisation"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.BoostCraft, false, 2),
 				new Effect(TypeEffect.RTCCP, false, 4),
 				new Effect(TypeEffect.RTCCM, false, 4),
 				new Effect(TypeEffect.RDCCP, false, 8),
 				new Effect(TypeEffect.RDCCM, false, 8),
 			}),
-			new Runway("Tempête", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tempête"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.VIT, false, 7),
 				new Effect(TypeEffect.AGI, false, 7),
 				new Effect(TypeEffect.VitAtk, false, 2),
 			}),
-			new Runway("Turbo", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Turbo"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.Depla, false, 2),
 				new Effect(TypeEffect.VitAtk, false, 2),
 				new Effect(TypeEffect.VitComp, false, 2),
 			}),
-			new Runway("Vive la cupidité", new Calculable[] {
+			new Runway(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Vive la cupidité"); put(Language.EN, ""); }}, new Calculable[] {
 				new Effect(TypeEffect.Atk, true, 4),
 				new Effect(TypeEffect.AtkD, true, 4),
 				new Effect(TypeEffect.VitAtk, false, 4),

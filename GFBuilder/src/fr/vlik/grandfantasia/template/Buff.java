@@ -28,6 +28,12 @@ public abstract class Buff implements Writable {
 	}
 	
 	public String getName(Language lang) {
+		if(this.name == null) {
+			return "";
+		} else if(this.name.get(lang) == null || this.name.get(lang).equals("")) {
+			return this.name.get(Language.FR);
+		}
+		
 		return this.name.get(lang);
 	}
 	
@@ -44,25 +50,26 @@ public abstract class Buff implements Writable {
 		return tab;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
-		if("".equals(this.name.get(lang))) {
+	public String getSelectorInfo(Language lang) {
+		if(this.name == null) {
+			return " ";
+		} else if(this.name.get(lang) == null || this.name.get(lang).equals("")) {
 			return this.name.get(Language.FR);
 		}
+		
 		return this.name.get(lang);
 	}
 	
-	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<ul><b>Statistique</b>");
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(TAB + TAB + "<b>Statistique</b>" + TAB + TAB);
+		
 		if(this.effects != null) {
 			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
+				result.append(LINE + TAB + "• " + e.getFullInfo(lang) + TAB);
 			}
 		}
-		tooltip.append("</ul>");
 		
-		return "<html>" + tooltip + "</html>";
+		return toHTML(result);
 	}
 	
 	@Override

@@ -77,8 +77,8 @@ public class NucleusEnchantment extends Buff {
 	}
 	
 	@Override
-	public String getTooltip() {
-		return this.lvlEffect[0].getTooltip();
+	public String getFullInfo(Language lang) {
+		return this.lvlEffect[0].getFullInfo(lang);
 	}
 	
 	public static NucleusEnchantment get(String name) {

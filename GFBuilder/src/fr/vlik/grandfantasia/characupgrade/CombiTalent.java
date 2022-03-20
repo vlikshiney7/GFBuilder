@@ -45,21 +45,21 @@ public final class CombiTalent extends IconBuff {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		return "";
 	}
 	
 	@Override
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder("<ul><b>" + this.name.get(Language.FR) + "</b>");
+	public String getFullInfo(Language lang) {
+		StringBuilder result = new StringBuilder(TAB + TAB + "<b>" + this.name.get(lang) + "</b>" + TAB + TAB);
+		
 		if(this.effects != null) {
 			for(Calculable e : this.effects) {
-				tooltip.append(e.getTooltip());
+				result.append(LINE + TAB + "• " + e.getFullInfo(lang));
 			}
 		}
-		tooltip.append("</ul>");
 		
-		return "<html>" + tooltip + "</html>";
+		return toHTML(result);
 	}
 	
 	@Override

@@ -6176,15 +6176,21 @@ public class LoaderTalent extends LoaderTemplate {
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Frappe de l'Ombre"); put(Language.EN, ""); }}, new int[] { 73, 87, 97 }, "11-20", new Calculable[][] {
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -10),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 7),
+					new Proc(7, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple),
+					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -15),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 8),
+					new Proc(8, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple),
+					}),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.MEN, false, -20),
-					new StaticEffect(TypeStaticEffect.x3STD_old, 10),
+					new Proc(10, Activation.Skill, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple),
+					}),
 				},
 			}),
 			new Talent(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Déclencher l'Explosion"); put(Language.EN, ""); }}, new int[] { 77, 90, 100 }, "11-21", new Calculable[][] {

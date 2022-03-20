@@ -1,6 +1,8 @@
 package fr.vlik.grandfantasia.enums;
 
 import java.awt.Color;
+import java.util.EnumMap;
+import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.interfaces.Colorable;
@@ -160,59 +162,64 @@ public enum TypeEffect implements Colorable, Writable {
 	
 	NONE("Aucun", "None", "Aucun", "None", -1, true, Tools.EffectColor[6]);
 	
-	public final String fr;
-	public final String en;
-	public final String abbrevFR;
-	public final String abbrevEN;
+	public final Map<Language, String> longInfo;
+	public final Map<Language, String> shortInfo;
 	public final int max;
 	public final boolean entier;
 	public final boolean isUpgradable;
 	public final Color color;
 	
-    private TypeEffect(String fr, String en, String abbrevFR, String abbrevEN, int max, boolean entier, Color color) {
-    	this.fr = fr;
-    	this.en = en;
-    	this.abbrevFR = abbrevFR;
-    	this.abbrevEN = abbrevEN;
-        this.max = max;
-        this.entier = entier;
-        this.isUpgradable = false;
-        this.color = color;
-    }
-    
-    private TypeEffect(String fr, String en, String abbrevFR, String abbrevEN, int max, boolean entier, boolean isUpgradable, Color color) {
-    	this.fr = fr;
-    	this.en = en;
-    	this.abbrevFR = abbrevFR;
-    	this.abbrevEN = abbrevEN;
-        this.max = max;
-        this.entier = entier;
-        this.isUpgradable = isUpgradable;
-        this.color = color;
-    }
-    
-	@Override
+	@SuppressWarnings("serial")
+	private TypeEffect(String longFR, String longEN, String shortFR, String shortEN, int max, boolean entier, Color color) {
+		this.longInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, longFR); put(Language.EN, longEN); }};
+		this.shortInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, shortFR); put(Language.EN, shortEN); }};
+		this.max = max;
+		this.entier = entier;
+		this.isUpgradable = false;
+		this.color = color;
+	}
+	
+	@SuppressWarnings("serial")
+	private TypeEffect(String longFR, String longEN, String shortFR, String shortEN, int max, boolean entier, boolean isUpgradable, Color color) {
+		this.longInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, longFR); put(Language.EN, longEN); }};
+		this.shortInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, shortFR); put(Language.EN, shortEN); }};
+		this.max = max;
+		this.entier = entier;
+		this.isUpgradable = isUpgradable;
+		this.color = color;
+	}
+	
 	public Color getColor() {
 		return this.color;
 	}
 	
-	@Override
-	public String getInfo(Language lang) {
-		return lang == Language.FR ? this.abbrevFR : this.abbrevEN;
-	}
-	
-	@Override
-	public String getTooltip() {
-		return this.fr;
-	}
-	
-	public static TypeEffect get(String name, Language lang) {
-		for(TypeEffect type : TypeEffect.values()) {
-			if(type.getInfo(lang).equals(name)) {
-				return type;
-			}
+	public String getName(Language lang) {
+		if(this.shortInfo == null) {
+			return "";
+		} else if(this.shortInfo.get(lang) == null || this.shortInfo.get(lang).equals("")) {
+			return this.shortInfo.get(Language.FR);
 		}
 		
-		return null;
+		return this.shortInfo.get(lang);
+	}
+
+	public String getSelectorInfo(Language lang) {
+		if(this.shortInfo == null) {
+			return "";
+		} else if(this.shortInfo.get(lang) == null || this.shortInfo.get(lang).equals("")) {
+			return this.shortInfo.get(Language.FR);
+		}
+		
+		return this.shortInfo.get(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
+		if(this.longInfo == null) {
+			return "";
+		} else if(this.longInfo.get(lang) == null || this.longInfo.get(lang).equals("")) {
+			return this.longInfo.get(Language.FR);
+		}
+		
+		return this.longInfo.get(lang);
 	}
 }

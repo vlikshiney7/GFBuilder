@@ -1,5 +1,8 @@
 package fr.vlik.grandfantasia.stats;
 
+import java.util.EnumMap;
+import java.util.Map;
+
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeSkillEffect;
 
@@ -38,13 +41,22 @@ public class SkillEffect implements Calculable {
 		RELOAD("Rechargement", "Reload"),
 		LEVEL("Niveau", "Level");
 		
-		public final String fr;
-		public final String en;
+		public final Map<Language, String> skill;
 		 
-	    private TypeValue(String fr, String en) {
-	        this.fr = fr;
-	        this.en = en;
+	    @SuppressWarnings("serial")
+		private TypeValue(String fr, String en) {
+	    	this.skill = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, fr); put(Language.EN, en); }};
 	    }
+	    
+	    public String getName(Language lang) {
+			if(this.skill == null) {
+				return "";
+			} else if(this.skill.get(lang) == null || this.skill.get(lang).equals("")) {
+				return this.skill.get(Language.FR);
+			}
+			
+			return this.skill.get(lang);
+		}
 	}
 	
 	public TypeSkillEffect getSkill() {
@@ -63,53 +75,43 @@ public class SkillEffect implements Calculable {
 		this.value *= factor;
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.type == TypeValue.FUFU || this.type == TypeValue.RELOAD) {
-			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\"");
-		} else {
-			tooltip.append(this.type.fr + " de \"" + this.skill.fr + "\" +" + this.value);
-		}
-		
-		if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
-			tooltip.append("%");
-		} else if(this.type == TypeValue.DURATION) {
-			tooltip.append("s");
-		}
-		
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.skill.getName(lang);
 	}
 	
-	public String toString(Language lang) {
-		StringBuilder result = new StringBuilder();
+	public String getSelectorInfo(Language lang) {
+		return this.skill.getName(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
+		String result = "";
 		
 		if(lang == Language.FR) {
 			if(this.type == TypeValue.FUFU || this.type == TypeValue.RELOAD) {
-				result.append(this.type.fr + " de \"" + this.skill.fr + "\"");
+				result += this.type.getName(lang) + " de \"" + this.skill.getName(lang) + "\"";
 			} else {
-				result.append(this.skill.fr + " +" + this.value);
+				result += this.skill.getName(lang) + " +" + this.value;
 			}
 			
 			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
-				result.append("%");
+				result += "%";
 			} else if(this.type == TypeValue.DURATION) {
-				result.append("s");
+				result += "s";
 			}
 		} else {
 			if(this.type == TypeValue.FUFU || this.type == TypeValue.RELOAD) {
-				result.append(this.type.en + " of \"" + this.skill.en + "\"");
+				result += this.type.getName(lang) + " of \"" + this.skill.getName(lang) + "\"";
 			} else {
-				result.append(this.skill.en + " +" + this.value);
+				result += this.skill.getName(lang) + " +" + this.value;
 			}
 			
 			if(this.type == TypeValue.DAMAGE || this.type == TypeValue.HEAL || this.type == TypeValue.MANA || this.type == TypeValue.PARA) {
-				result.append("%");
+				result += "%";
 			} else if(this.type == TypeValue.DURATION) {
-				result.append("s");
+				result += "s";
 			}
 		}
 		
-		return result.toString();
+		return result;
 	}
 }

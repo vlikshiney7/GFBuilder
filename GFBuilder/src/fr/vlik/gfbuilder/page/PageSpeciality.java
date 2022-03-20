@@ -76,7 +76,7 @@ public class PageSpeciality extends PartialPage {
 			
 			for(int j = 0; j < k; j++) {
 				this.iconSpe.add(new JLabel(this.tabSpeciality[numSpe].getIcon()));
-				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getTooltip());
+				this.iconSpe.get(numSpe).setToolTipText(this.tabSpeciality[numSpe].getFullInfo(Language.FR));
 				this.iconSpe.get(numSpe).setVisible(false);
 				
 				numSpe++;
@@ -195,7 +195,7 @@ public class PageSpeciality extends PartialPage {
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			this.iconSpe.get(i).setIcon(this.tabSpeciality[i].getIcon());
-			this.iconSpe.get(i).setToolTipText(this.tabSpeciality[i].getTooltip());
+			this.iconSpe.get(i).setToolTipText(this.tabSpeciality[i].getFullInfo(Language.FR));
 			this.spePoint.get(i).setSelectedIndex(0);
 		}
 	}

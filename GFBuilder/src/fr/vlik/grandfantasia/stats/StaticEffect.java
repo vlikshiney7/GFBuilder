@@ -54,18 +54,15 @@ public class StaticEffect implements Calculable {
 		this.taux *= factor;
 	}
 	
-	public String getTooltip() {
-		StringBuilder tooltip = new StringBuilder();
-		
-		if(this.taux == -1) {
-			tooltip.append(this.type.abbrevFR);
-		} else {
-			tooltip.append(this.taux + "% " + this.type.abbrevFR);
-		}
-		return "<li>" + tooltip + "</li>";
+	public String getName(Language lang) {
+		return this.type.getShortInfo(lang);
 	}
 	
-	public String toString(Language lang) {
+	public String getSelectorInfo(Language lang) {
+		return this.type.getShortInfo(lang);
+	}
+	
+	public String getFullInfo(Language lang) {
 		String result = "";
 		
 		if(this.taux == -1) {
@@ -77,16 +74,12 @@ public class StaticEffect implements Calculable {
 				}
 			}
 			
-			if(lang == Language.FR) {
-				result += this.getType().fr;
-			} else {
-				result += this.getType().en;
-			}
+			result += this.type.getShortInfo(lang);
 		} else {
 			if(lang == Language.FR) {
-				result += this.taux + "% de " + this.getType().fr;
+				result += this.taux + "% de " + this.type.getShortInfo(lang);
 			} else {
-				result += this.taux + "% de " + this.getType().en;
+				result += this.taux + "% of " + this.type.getShortInfo(lang);
 			}
 		}
 		

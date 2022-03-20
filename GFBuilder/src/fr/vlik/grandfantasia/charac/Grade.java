@@ -91,12 +91,12 @@ public class Grade implements Iconable, Writable {
 	}
 	
 	@Override
-	public String getInfo(Language lang) {
+	public String getSelectorInfo(Language lang) {
 		return this.name.get(lang);
 	}
 	
 	@Override
-	public String getTooltip() {
+	public String getFullInfo(Language lang) {
 		return this.lvlMin + " - " + this.lvlMax;
 	}
 	

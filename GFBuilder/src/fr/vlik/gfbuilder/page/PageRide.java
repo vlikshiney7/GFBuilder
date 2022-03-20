@@ -420,7 +420,7 @@ public class PageRide extends PartialXpStuff {
 		}
 		
 		for(int i = 0; i < this.xpStuff.size(); i++) {
-			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getInfo(lang) : "";
+			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getSelectorInfo(lang) : "";
 			config.put("EffectXpStuff" + i, value);
 		}
 		

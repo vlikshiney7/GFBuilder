@@ -21,6 +21,7 @@ import fr.vlik.grandfantasia.characupgrade.CombiTalent;
 import fr.vlik.grandfantasia.characupgrade.SingleTalent;
 import fr.vlik.grandfantasia.characupgrade.Talent;
 import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.template.IconBuff;
 import fr.vlik.grandfantasia.template.InnerColorEffect;
@@ -354,7 +355,7 @@ public class PageTalent extends PartialPage {
 		
 		if(combi.getEffects() != null) {
 			for(int i = 0; i < combi.getEffects().length; i++) {
-				combiInfo.append("\t- " + combi.getEffects()[i].toString(Language.FR) + "\n");
+				combiInfo.append("\t- " + combi.getEffects()[i].getFullInfo(Language.FR) + "\n");
 			}
 		}
 		
@@ -362,8 +363,12 @@ public class PageTalent extends PartialPage {
 	}
 	
 	private void updateTooltipRadio(int index32, int index24) {
-		String selectedTooltip = this.itemTalent.get(index24).getSelectedItem().getTooltip();
-		this.groupTalent.get(index32/4).getButton(index32%4).setTooltip(selectedTooltip);
+		String tooltip = Writable.TAB + Writable.TAB
+				+ "<b>" + this.groupTalent.get(index32/4).getButton(index32%4).getItem().getName(MainFrame.getInstance().getLanguage()) + "</b>"
+				+ Writable.TAB + Writable.TAB + Writable.LINE
+				+ this.itemTalent.get(index24).getSelectedItem().getFullInfo(MainFrame.getInstance().getLanguage());
+		
+		this.groupTalent.get(index32/4).getButton(index32%4).setTooltip(tooltip);
 	}
 	
 	private void setMinCBoxTalent() {

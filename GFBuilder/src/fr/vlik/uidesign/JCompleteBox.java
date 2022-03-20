@@ -44,6 +44,19 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 	}
 	
 	@Override
+	public boolean setItems(E[] tabItems) {
+		boolean result = false;
+		boolean memoryProc = isProcActive();
+		
+		if(super.setItems(tabItems)) {
+			this.proc.setSelected(memoryProc);
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
 		this.filterDialog.getButton().setVisible(visible);
@@ -82,7 +95,7 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 	}
 	
 	public boolean isProcActive() {
-		return this.proc.isVisible() && this.proc.isSelected();
+		return this.proc != null && this.proc.isVisible() && this.proc.isSelected();
 	}
 	
 	public void activeProc() {

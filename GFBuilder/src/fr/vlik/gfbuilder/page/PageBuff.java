@@ -819,7 +819,7 @@ public class PageBuff extends PartialPage {
 		config.put("StarNucleus", "" + select);
 		
 		for(int i = 0; i < this.nucleusEnchant.size(); i++) {
-			String value = this.getNucleusEnchantment(i) != null ? this.getNucleusEnchantment(i).getInfo(lang) : "";
+			String value = this.getNucleusEnchantment(i) != null ? this.getNucleusEnchantment(i).getSelectorInfo(lang) : "";
 			config.put("NucleusEnchant" + i, value);
 		}
 		
