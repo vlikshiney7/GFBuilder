@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -108,7 +107,9 @@ public class PageCapeRing extends PartialXpStuff {
 			this.equipSetBonus.add(new JCustomTextPane<>(new BonusEquipSet()));
 		}
 		
-		updateLanguage(Language.FR);
+		this.components.addAll(this.ring.getList());
+		this.components.addAll(this.equipSetBonus);
+		
 		createPanel();
 		setEffects();
 	}
@@ -245,17 +246,6 @@ public class PageCapeRing extends PartialXpStuff {
 		
 		for(JCustomTextPane<BonusEquipSet> equipSetPane : this.equipSetBonus) {
 			equipSetPane.setVisible(false);
-		}
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		for(JCompleteBox<Ring> box : this.ring.getList()) {
-			box.updateLanguage(lang);
 		}
 	}
 	

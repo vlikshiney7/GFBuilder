@@ -4,7 +4,6 @@ import java.awt.GridLayout;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -143,7 +142,8 @@ public class PageGeneral extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		updateLanguage(Language.FR);
+		this.components.add(this.title);
+		
 		createPanel();
 		setEffects();
 	}
@@ -229,15 +229,6 @@ public class PageGeneral extends PartialPage {
 		rightCol.addAll(elem2, elem4, elem6);
 		
 		this.addAll(leftCol, Box.createHorizontalStrut(10), rightCol);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		this.title.updateLanguage(lang);
 	}
 	
 	private void updateGrade() {

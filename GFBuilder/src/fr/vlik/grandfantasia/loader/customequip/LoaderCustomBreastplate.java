@@ -33,7 +33,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.PALADIN, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 836, true),
-					new Effect(TypeEffect.DefM, false, 599, true),
+					new Effect(TypeEffect.DefM, false, 598, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCP, false, 20),
 				}),
@@ -45,11 +45,11 @@ class LoaderCustomBreastplate {
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCP, false, 2.5),
 				}),
-			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armure du Chant Éolien"); put(Language.EN, ""); }},
+			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armure du Chant Éolien "); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "40pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 836, true),
-					new Effect(TypeEffect.DefM, false, 599, true),
+					new Effect(TypeEffect.DefM, false, 598, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCP, false, 20),
 				}),
@@ -64,7 +64,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armure du Précipice"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "25pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 810, true),
+					new Effect(TypeEffect.DefP, false, 809, true),
 					new Effect(TypeEffect.DefM, false, 577, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
@@ -80,7 +80,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armure du Couchant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "100pve1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 810, true),
+					new Effect(TypeEffect.DefP, false, 809, true),
 					new Effect(TypeEffect.DefM, false, 577, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
@@ -394,7 +394,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelets Coucher de Lune"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "65pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 697, true),
+					new Effect(TypeEffect.DefP, false, 696, true),
 					new Effect(TypeEffect.DefM, false, 665, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCP, false, 2.5),
@@ -410,7 +410,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bracelets du Promeneur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 697, true),
+					new Effect(TypeEffect.DefP, false, 696, true),
 					new Effect(TypeEffect.DefM, false, 665, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCP, false, 2.5),
@@ -434,7 +434,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ombre Sereine"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "65pve3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 662, true),
+					new Effect(TypeEffect.DefP, false, 661, true),
 					new Effect(TypeEffect.DefM, false, 654, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 13),
@@ -450,7 +450,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armure Nocturne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "30pve0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 662, true),
+					new Effect(TypeEffect.DefP, false, 661, true),
 					new Effect(TypeEffect.DefM, false, 654, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 13),
@@ -649,7 +649,7 @@ class LoaderCustomBreastplate {
 					new Effect(TypeEffect.DefP, false, 517, true),
 					new Effect(TypeEffect.DefM, false, 480, true),
 				}),
-			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ombre Sereine"); put(Language.EN, ""); }},
+			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ombre Sereine "); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, },
 				59, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "40pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
@@ -772,7 +772,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste de la Suprématie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "75evo4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 752, true),
+					new Effect(TypeEffect.DefP, false, 751, true),
 					new Effect(TypeEffect.DefM, false, 584, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCP, false, 20),
@@ -788,7 +788,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste du Dompteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "25pvp5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 752, true),
+					new Effect(TypeEffect.DefP, false, 751, true),
 					new Effect(TypeEffect.DefM, false, 584, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCP, false, 20),
@@ -796,7 +796,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Robe du Croissant d'Argent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 743, true),
+					new Effect(TypeEffect.DefP, false, 742, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2.3),
@@ -805,14 +805,14 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SAGE, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "95blanc5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 728, true),
-					new Effect(TypeEffect.DefM, false, 566, true),
+					new Effect(TypeEffect.DefM, false, 565, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Robe de la Lune Pure"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 743, true),
+					new Effect(TypeEffect.DefP, false, 742, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2.3),
@@ -821,7 +821,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SAGE, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 728, true),
-					new Effect(TypeEffect.DefM, false, 566, true),
+					new Effect(TypeEffect.DefM, false, 565, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
 				}),
@@ -1135,7 +1135,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste de la Spirale Gelée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 584, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCM, false, 20),
@@ -1144,14 +1144,14 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.NECROMANCIEN, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80nucleus7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 627, true),
-					new Effect(TypeEffect.DefM, false, 573, true),
+					new Effect(TypeEffect.DefM, false, 572, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCM, false, 2.5),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste de la Foudre Apocalyptique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "51bleu7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 584, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCM, false, 20),
@@ -1160,7 +1160,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.NECROMANCIEN, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60pve7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 627, true),
-					new Effect(TypeEffect.DefM, false, 573, true),
+					new Effect(TypeEffect.DefM, false, 572, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCM, false, 2.5),
 				}),
@@ -1175,7 +1175,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Manteau de la Fureur Noire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "65pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 608, true),
+					new Effect(TypeEffect.DefP, false, 607, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2.3),
@@ -1191,7 +1191,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Manteau de Brume Noire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 608, true),
+					new Effect(TypeEffect.DefP, false, 607, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2.3),
@@ -1506,25 +1506,25 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Loup-spectre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 825, true),
+					new Effect(TypeEffect.DefP, false, 824, true),
 					new Effect(TypeEffect.DefM, false, 615, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Pâle hibou des ombres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 688, true),
+					new Effect(TypeEffect.DefP, false, 687, true),
 					new Effect(TypeEffect.DefM, false, 684, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron des Profondes aspirations au repos éternel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 825, true),
+					new Effect(TypeEffect.DefP, false, 824, true),
 					new Effect(TypeEffect.DefM, false, 615, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron des Pleurs amers"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon20", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 688, true),
+					new Effect(TypeEffect.DefP, false, 687, true),
 					new Effect(TypeEffect.DefM, false, 684, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Bête à bain de sang"); put(Language.EN, ""); }},
@@ -1554,7 +1554,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Morale corrompue"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				90, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon23", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 773, true),
+					new Effect(TypeEffect.DefP, false, 772, true),
 					new Effect(TypeEffect.DefM, false, 571, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Aimable tueur"); put(Language.EN, ""); }},
@@ -1586,7 +1586,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron des Frontières dimensionnelles"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				85, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "70nucleus9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 622, true),
+					new Effect(TypeEffect.DefP, false, 621, true),
 					new Effect(TypeEffect.DefM, false, 610, true),
 					new Effect(TypeEffect.ESQ, false, 4),
 					new Effect(TypeEffect.TCCP, false, 1.9),
@@ -1622,19 +1622,19 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Anneau tranchant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				77, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 703, true),
+					new Effect(TypeEffect.DefP, false, 702, true),
 					new Effect(TypeEffect.DefM, false, 513, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron d'Acupuncture"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				77, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 586, true),
+					new Effect(TypeEffect.DefP, false, 585, true),
 					new Effect(TypeEffect.DefM, false, 570, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ordre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				75, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "70nucleus8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 692, true),
+					new Effect(TypeEffect.DefP, false, 691, true),
 					new Effect(TypeEffect.DefM, false, 504, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 					new Effect(TypeEffect.TCCP, false, 1.5),
@@ -1650,7 +1650,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Âme stellaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				72, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "82blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 675, true),
+					new Effect(TypeEffect.DefP, false, 674, true),
 					new Effect(TypeEffect.DefM, false, 490, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Esprit lunaire"); put(Language.EN, ""); }},
@@ -1662,7 +1662,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Tortue-dragon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				70, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "82blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 664, true),
+					new Effect(TypeEffect.DefP, false, 663, true),
 					new Effect(TypeEffect.DefM, false, 481, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 					new Effect(TypeEffect.TCCP, false, 1.5),
@@ -1678,19 +1678,19 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Roche fondue"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				67, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 647, true),
+					new Effect(TypeEffect.DefP, false, 646, true),
 					new Effect(TypeEffect.DefM, false, 468, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Blanc glacial"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				67, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 539, true),
+					new Effect(TypeEffect.DefP, false, 538, true),
 					new Effect(TypeEffect.DefM, false, 520, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Squelette gris"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				65, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 635, true),
+					new Effect(TypeEffect.DefP, false, 634, true),
 					new Effect(TypeEffect.DefM, false, 458, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Gel blanc"); put(Language.EN, ""); }},
@@ -1702,49 +1702,49 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron léger"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				62, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 618, true),
+					new Effect(TypeEffect.DefP, false, 617, true),
 					new Effect(TypeEffect.DefM, false, 444, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Sans douleur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				62, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 515, true),
+					new Effect(TypeEffect.DefP, false, 514, true),
 					new Effect(TypeEffect.DefM, false, 494, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Démon de sang"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				60, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 606, true),
+					new Effect(TypeEffect.DefP, false, 605, true),
 					new Effect(TypeEffect.DefM, false, 435, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Gardien des ombres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				60, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon20", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 505, true),
+					new Effect(TypeEffect.DefP, false, 504, true),
 					new Effect(TypeEffect.DefM, false, 484, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron des Hors-la-loi"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				59, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 600, true),
+					new Effect(TypeEffect.DefP, false, 599, true),
 					new Effect(TypeEffect.DefM, false, 430, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Sort désastreux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				59, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 500, true),
+					new Effect(TypeEffect.DefP, false, 499, true),
 					new Effect(TypeEffect.DefM, false, 478, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ombre de minuit"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				59, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 600, true),
+					new Effect(TypeEffect.DefP, false, 599, true),
 					new Effect(TypeEffect.DefM, false, 430, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Plaisir crépusculaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				59, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 500, true),
+					new Effect(TypeEffect.DefP, false, 499, true),
 					new Effect(TypeEffect.DefM, false, 478, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron des Éclats de fer"); put(Language.EN, ""); }},
@@ -1774,7 +1774,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Défenseur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				43, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 501, true),
+					new Effect(TypeEffect.DefP, false, 500, true),
 					new Effect(TypeEffect.DefM, false, 356, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Rapacité"); put(Language.EN, ""); }},
@@ -1786,7 +1786,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Voyageur sans attache"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				43, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 501, true),
+					new Effect(TypeEffect.DefP, false, 500, true),
 					new Effect(TypeEffect.DefM, false, 356, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Visiteur des Terres vierges"); put(Language.EN, ""); }},
@@ -1798,25 +1798,25 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ancien mausolée"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				35, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon19", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 447, true),
+					new Effect(TypeEffect.DefP, false, 446, true),
 					new Effect(TypeEffect.DefM, false, 318, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Tombe ancestrale"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				35, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon20", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 373, true),
+					new Effect(TypeEffect.DefP, false, 372, true),
 					new Effect(TypeEffect.DefM, false, 353, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Lion à crinière"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, },
 				35, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 447, true),
+					new Effect(TypeEffect.DefP, false, 446, true),
 					new Effect(TypeEffect.DefM, false, 318, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Tigre des neiges"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, },
 				35, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon20", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 373, true),
+					new Effect(TypeEffect.DefP, false, 372, true),
 					new Effect(TypeEffect.DefM, false, 353, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste d'Attrapeur"); put(Language.EN, ""); }},
@@ -1835,13 +1835,13 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				13, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "13vert8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 207, true),
-					new Effect(TypeEffect.DefM, false, 197, true),
+					new Effect(TypeEffect.DefM, false, 196, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste de Mécanisme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, },
 				7, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "7vert8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 163, true),
-					new Effect(TypeEffect.DefM, false, 155, true),
+					new Effect(TypeEffect.DefM, false, 154, true),
 				}),
 		};
 	}
@@ -1852,7 +1852,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon25", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 857, true),
-					new Effect(TypeEffect.DefM, false, 646, true),
+					new Effect(TypeEffect.DefM, false, 645, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.DCCM, false, 20),
 				}),
@@ -1860,7 +1860,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon26", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 627, true),
-					new Effect(TypeEffect.DefM, false, 573, true),
+					new Effect(TypeEffect.DefM, false, 572, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCM, false, 2.5),
 				}),
@@ -1876,7 +1876,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
 				100, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon28", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 627, true),
-					new Effect(TypeEffect.DefM, false, 573, true),
+					new Effect(TypeEffect.DefM, false, 572, true),
 					new Effect(TypeEffect.ESQ, false, 7),
 					new Effect(TypeEffect.TCCM, false, 2.5),
 				}),
@@ -1891,7 +1891,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume de Malédiction du Temps"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "95pve11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 608, true),
+					new Effect(TypeEffect.DefP, false, 607, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2.3),
@@ -1899,7 +1899,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape de Nuages Psychédéliques"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "100evo10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 675, true),
+					new Effect(TypeEffect.DefP, false, 674, true),
 					new Effect(TypeEffect.DefM, false, 625, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCM, false, 18),
@@ -1907,7 +1907,7 @@ class LoaderCustomBreastplate {
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume Déferlant"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
 				95, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "100evo11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 608, true),
+					new Effect(TypeEffect.DefP, false, 607, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2.3),
@@ -1932,7 +1932,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				87, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon32", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 631, true),
-					new Effect(TypeEffect.DefM, false, 597, true),
+					new Effect(TypeEffect.DefM, false, 596, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue de Combat de Voyageur Temporel Pirate"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -1960,7 +1960,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				82, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
-					new Effect(TypeEffect.DefM, false, 575, true),
+					new Effect(TypeEffect.DefM, false, 574, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape de bataille du Solitaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -1988,7 +1988,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				77, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 586, true),
-					new Effect(TypeEffect.DefM, false, 554, true),
+					new Effect(TypeEffect.DefM, false, 553, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume de Cristal brut"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2000,7 +2000,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				75, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "70gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 576, true),
-					new Effect(TypeEffect.DefM, false, 545, true),
+					new Effect(TypeEffect.DefM, false, 544, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 					new Effect(TypeEffect.DCCM, false, 10),
 				}),
@@ -2016,7 +2016,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				72, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 562, true),
-					new Effect(TypeEffect.DefM, false, 532, true),
+					new Effect(TypeEffect.DefM, false, 531, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume d'extincteur du Temps"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2028,7 +2028,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				70, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "70gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 553, true),
-					new Effect(TypeEffect.DefM, false, 523, true),
+					new Effect(TypeEffect.DefM, false, 522, true),
 					new Effect(TypeEffect.ESQ, false, 2),
 					new Effect(TypeEffect.DCCM, false, 10),
 				}),
@@ -2040,11 +2040,11 @@ class LoaderCustomBreastplate {
 					new Effect(TypeEffect.ESQ, false, 2),
 					new Effect(TypeEffect.TCCM, false, 1.5),
 				}),
-			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape du Souffle Exotique"); put(Language.EN, ""); }},
+			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape du Souffle Exotique "); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				67, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 539, true),
-					new Effect(TypeEffect.DefM, false, 510, true),
+					new Effect(TypeEffect.DefM, false, 509, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue de Voleur de Soleil"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2056,7 +2056,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				65, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "75evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 529, true),
-					new Effect(TypeEffect.DefM, false, 500, true),
+					new Effect(TypeEffect.DefM, false, 499, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste de magie cristalline"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2110,7 +2110,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				59, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
-					new Effect(TypeEffect.DefM, false, 487, true),
+					new Effect(TypeEffect.DefM, false, 486, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue d'Illusoire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2146,7 +2146,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, },
 				43, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "60bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 417, true),
-					new Effect(TypeEffect.DefM, false, 405, true),
+					new Effect(TypeEffect.DefM, false, 404, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Robe Longue de Marionnette"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, },
@@ -2200,7 +2200,7 @@ class LoaderCustomBreastplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },
 				13, ArmorType.PLASTRON, LoaderBreastplate.ICONPATH + "icon34", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 242, true),
-					new Effect(TypeEffect.DefM, false, 224, true),
+					new Effect(TypeEffect.DefM, false, 223, true),
 				}),
 			new CustomArmor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume de l'Apprenti voyageur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, },

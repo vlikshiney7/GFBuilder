@@ -46,7 +46,6 @@ import fr.vlik.uidesign.JCustomComboBoxList;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomRadioButton;
 import fr.vlik.uidesign.JCustomSpinner;
-import fr.vlik.uidesign.JLangLabel;
 import fr.vlik.uidesign.JLangRadioButton;
 
 public class FrameCreateCustom extends JCustomFrame {
@@ -67,8 +66,6 @@ public class FrameCreateCustom extends JCustomFrame {
 	
 	private JCustomButton create;
 	
-	private JLangLabel[] label;
-	
 	public static FrameCreateCustom getInstance() {
 		return INSTANCE;
 	}
@@ -76,7 +73,7 @@ public class FrameCreateCustom extends JCustomFrame {
 	public FrameCreateCustom() {
 		super(new BorderLayout());
 		
-		this.label = Lang.getDataLabel(6);
+		this.labels = Lang.getDataLabel(6);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveAs.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
@@ -98,8 +95,8 @@ public class FrameCreateCustom extends JCustomFrame {
 		
 		for(int i = 0; i < 4; i++) {
 			int id = i;
-			this.label[i+1].setFont(Design.TEXT);
-			this.typeEquipment.add(new JLangRadioButton(this.label[i+1].getLang()));
+			this.labels[i+1].setFont(Design.TEXT);
+			this.typeEquipment.add(new JLangRadioButton(this.labels[i+1].getLang()));
 			this.typeEquipment.get(i).setBackground(Design.UIColor[1]);
 			this.typeEquipment.get(i).setForeground(Design.FontColor[0]);
 			this.typeEquipment.get(i).addActionListener(e -> {
@@ -170,11 +167,14 @@ public class FrameCreateCustom extends JCustomFrame {
 		this.enchantement.addActionListener(e -> checkValidity() );
 		this.enchantement.setVisible(false);
 		
-		this.create = new JCustomButton(this.label[8].getLang(), Design.GREEN_COLOR);
+		this.create = new JCustomButton(this.labels[8].getLang(), Design.GREEN_COLOR);
 		this.create.setAlignmentX(CENTER_ALIGNMENT);
 		this.create.addActionListener(e -> createEquipment() );
 	    
-		updateLanguage(Language.FR);
+		this.components.add(this.create);
+		this.components.addAll(this.typeEquipment);
+		this.components.add(this.quality);
+		
 		createPanel();
 		checkValidity();
 	}
@@ -221,8 +221,8 @@ public class FrameCreateCustom extends JCustomFrame {
 		JCustomPanel pageCustom = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageCustom.setBackground(Design.UIColor[2]);
 		
-		pageCustom.add(this.label[0], Box.createVerticalStrut(10));
-		this.label[0].setFont(Design.TITLE);
+		pageCustom.add(this.labels[0], Box.createVerticalStrut(10));
+		this.labels[0].setFont(Design.TITLE);
 		
 		ButtonGroup currentType = new ButtonGroup();
 		JCustomPanel type = new JCustomPanel(new GridLayout(1, 4, 10, 0));
@@ -234,8 +234,8 @@ public class FrameCreateCustom extends JCustomFrame {
 		
 		JCustomPanel inline1 = new JCustomPanel(new EmptyBorder(10, 10, 10, 10));
 		inline1.setBackground(Design.UIColor[2]);
-		inline1.addAll(this.label[5], this.lvl, this.typeWeapon, this.typeArmor, this.grade, Box.createHorizontalStrut(20));
-		this.label[5].setFont(Design.SUBTITLE);
+		inline1.addAll(this.labels[5], this.lvl, this.typeWeapon, this.typeArmor, this.grade, Box.createHorizontalStrut(20));
+		this.labels[5].setFont(Design.SUBTITLE);
 		
 		JCustomPanel inline2 = new JCustomPanel(new GridLayout(1, 3, 10, 0));
 		inline2.setBackground(Design.UIColor[2]);
@@ -249,21 +249,6 @@ public class FrameCreateCustom extends JCustomFrame {
 				this.customEquipment, Box.createVerticalStrut(10), listEnchant, Box.createVerticalStrut(10), this.create);
 		
 		this.add(pageCustom);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
-		}
-		
-		this.create.updateText(lang);
-		
-		for(JLangRadioButton button : this.typeEquipment) {
-			button.updateText(lang);
-		}
-		
-		this.quality.updateText(lang);
 	}
 	
 	private void updateForm(int idList) {

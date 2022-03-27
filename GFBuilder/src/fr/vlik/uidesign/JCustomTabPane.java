@@ -9,7 +9,7 @@ import javax.swing.JToggleButton;
 
 import fr.vlik.grandfantasia.enums.Language;
 
-public class JCustomTabPane extends JToggleButton {
+public class JCustomTabPane extends JToggleButton implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -21,13 +21,10 @@ public class JCustomTabPane extends JToggleButton {
 	public JCustomTabPane(JLangLabel label) {
 		this.label = label;
 		
-		this.setBackground(Design.UIColor[0]);
+		setColorUI();
+		setVoidUI();
+		
 		this.setSelectedBackgroundColor(Design.UIColor[1]);
-		this.setHoverBackgroundColor(Design.UIColor[2]);
-		this.setPressedBackgroundColor(Design.UIColor[1]);
-		this.setBorder(null);
-		this.setContentAreaFilled(false);
-		this.setFocusPainted(false);
 		
 		this.setFont(Design.TABPANE);
 		this.setForeground(Design.FontColor[0]);
@@ -38,16 +35,10 @@ public class JCustomTabPane extends JToggleButton {
 		ImageIcon object = new ImageIcon(JCustomTabPane.class.getResource(Design.RESOURCE + icon1 + Design.PNG));
 		this.setIcon(object);
 		this.setSelectedIcon(object);
-		
 		this.setDisabledIcon(new ImageIcon(JCustomTabPane.class.getResource(Design.RESOURCE + icon2 + Design.PNG)));
 		
-		this.setBackground(Design.UIColor[0]);
-		this.setSelectedBackgroundColor(Design.UIColor[0]);
-		this.setHoverBackgroundColor(Design.UIColor[2]);
-		this.setPressedBackgroundColor(Design.UIColor[1]);
-		this.setBorder(null);
-		this.setContentAreaFilled(false);
-		this.setFocusPainted(false);
+		setColorUI();
+		setVoidUI();
 	}
 
 	@Override
@@ -89,8 +80,21 @@ public class JCustomTabPane extends JToggleButton {
 		this.pressedBackgroundColor = pressedBackgroundColor;
 	}
 	
-	public void updateText(Language lang) {
-		this.label.updateText(lang);
+	public void setVoidUI() {
+		this.setBorder(null);
+		this.setContentAreaFilled(false);
+		this.setFocusPainted(false);
+	}
+	
+	public void setColorUI() {
+		this.setBackground(Design.UIColor[0]);
+		this.setSelectedBackgroundColor(Design.UIColor[0]);
+		this.setHoverBackgroundColor(Design.UIColor[2]);
+		this.setPressedBackgroundColor(Design.UIColor[1]);
+	}
+	
+	public void updateLanguage(Language lang) {
+		this.label.updateLanguage(lang);
 		this.setText(this.label.getText());
 	}
 }

@@ -20,8 +20,9 @@ import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JLangLabel;
+import fr.vlik.uidesign.JUpdateLang;
 
-public class PageOption extends JCustomPanel {
+public class PageOption extends JCustomPanel implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	private static final PageOption INSTANCE = new PageOption();
@@ -93,7 +94,6 @@ public class PageOption extends JCustomPanel {
 		this.parameter.setBackground(Design.UIColor[1]);
 		this.parameter.setForeground(Design.FontColor[0]);
 		
-		updateLanguage(Language.FR);
 		createPanel();
 	}
 	
@@ -124,14 +124,14 @@ public class PageOption extends JCustomPanel {
 	}
 	
 	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
+		for(JLangLabel entry : this.label) {
+			entry.updateLanguage(lang);
 		}
 		
-		this.newSave.updateText(lang);
-		this.currentSave.updateText(lang);
-		this.saveAs.updateText(lang);
-		this.createCustom.updateText(lang);
+		this.newSave.updateLanguage(lang);
+		this.currentSave.updateLanguage(lang);
+		this.saveAs.updateLanguage(lang);
+		this.createCustom.updateLanguage(lang);
 		this.parameter.setText(Lang.getDataCredit(lang));
 	}
 	

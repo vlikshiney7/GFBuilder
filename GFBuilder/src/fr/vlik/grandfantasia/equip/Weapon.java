@@ -320,7 +320,7 @@ public class Weapon extends Equipment {
 				Tools.containObject(filter, weapon.getType()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+			if( (andValue ? Filterable.andValue(filters) : Filterable.orValue(filters))
 					&& !choice.equals(weapon)) {
 				
 				result.add(weapon);

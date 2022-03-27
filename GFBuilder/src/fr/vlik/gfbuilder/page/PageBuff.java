@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -228,7 +227,11 @@ public class PageBuff extends PartialPage {
 			this.maxEnergy.get(i).addActionListener(e -> setMaxSpinnerEnergy(id) );
 		}
 		
-		updateLanguage(Language.FR);
+		this.components.addAll(this.labelEnergy);
+		this.components.addAll(this.labelVoidEnergy);
+		this.components.addAll(this.reinitEnergy);
+		this.components.addAll(this.maxEnergy);
+		
 		createPanel();
 		setEffects();
 	}
@@ -455,21 +458,6 @@ public class PageBuff extends PartialPage {
 		for(int i = 0; i < 3; i++) {
 			this.labelVoidEnergy.get(i).setSelected(false);
 			showAndHideEnergies(i);
-		}
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		for(int i = 0; i < this.labelEnergy.size(); i++) {
-			this.labelEnergy.get(i).updateText(lang);
-		}
-		
-		for(int i = 0; i < this.labelVoidEnergy.size(); i++) {
-			this.labelVoidEnergy.get(i).updateText(lang);
 		}
 	}
 	

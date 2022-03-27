@@ -160,7 +160,7 @@ public class Title extends ColorBuff {
 				Tools.containObject(filter, title.getTag()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+			if( (andValue ? Filterable.andValue(filters) : Filterable.orValue(filters))
 					&& !choice.equals(title)) {
 				
 				result.add(title);

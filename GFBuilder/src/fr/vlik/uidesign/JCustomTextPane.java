@@ -7,9 +7,10 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class JCustomTextPane<T> extends JTextPane {
+public class JCustomTextPane<T> extends JTextPane implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
+	private Language lang;
 	private transient T object;
 	
 	public JCustomTextPane(T obj) {
@@ -25,16 +26,18 @@ public class JCustomTextPane<T> extends JTextPane {
 	public void setItem(T object) {
 		this.object = object;
 		
-		updateText(Language.FR);
-		
 		if(this.object instanceof Colorable) {
 			this.setForeground(((Colorable) this.object).getColor());
 		} else {
 			this.setForeground(Design.FontColor[0]);
 		}
+		
+		updateLanguage(this.lang);
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
+		this.lang = lang;
+		
 		if(this.object instanceof Writable) {
 			this.setText(Writable.noHTML(((Writable) this.object).getFullInfo(lang)));
 		}

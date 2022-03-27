@@ -16,11 +16,9 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.page.PageOption;
-import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomPanel;
-import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveOnNew extends JCustomFrame {
 
@@ -31,15 +29,13 @@ public class FrameSaveOnNew extends JCustomFrame {
 	private JCustomButton notSave;
 	private JCustomButton cancel;
 	
-	private JLangLabel[] label;
-	
 	public static FrameSaveOnNew getInstance() {
 		return INSTANCE;
 	}
 	
 	private FrameSaveOnNew() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(4);
+		this.labels = Lang.getDataLabel(4);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveOnQuit.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
@@ -59,7 +55,7 @@ public class FrameSaveOnNew extends JCustomFrame {
 			}
 		});
 		
-		this.save = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
+		this.save = new JCustomButton(this.labels[1].getLang(), Design.GREEN_COLOR);
 		this.save.addActionListener(e -> {
 			PageOption.getInstance().overrideSave();
 			
@@ -69,7 +65,7 @@ public class FrameSaveOnNew extends JCustomFrame {
 			close();
 		});
 		
-		this.notSave = new JCustomButton(this.label[2].getLang(), Design.RED_COLOR);
+		this.notSave = new JCustomButton(this.labels[2].getLang(), Design.RED_COLOR);
 		this.notSave.addActionListener(e -> {
 			Overlay.getInstance().setNameSave(SaveConfig.DEFAULT_NAME);
 			Overlay.getInstance().setSave(false);
@@ -77,19 +73,21 @@ public class FrameSaveOnNew extends JCustomFrame {
 			close();
 		});
 		
-		this.cancel = new JCustomButton(this.label[3].getLang(), Design.YELLOW_COLOR);
+		this.cancel = new JCustomButton(this.labels[3].getLang(), Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> {
 			MainFrame.getInstance().toFront();
 			MainFrame.getInstance().setEnabled(true);
 			this.setVisible(false);
 		});
 		
-		updateLanguage(Language.FR);
+		this.components.add(this.save);
+		this.components.add(this.notSave);
+		this.components.add(this.cancel);
 		
 		JCustomPanel pageNew = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageNew.setBackground(Design.UIColor[2]);
-		pageNew.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		pageNew.add(this.labels[0]);
+		this.labels[0].setFont(Design.TITLE);
 		
 		JCustomPanel buttons = new JCustomPanel(new GridLayout(1, 3, 10, 10), new EmptyBorder(10, 10, 10, 10));
 		buttons.setBackground(Design.UIColor[2]);
@@ -98,17 +96,6 @@ public class FrameSaveOnNew extends JCustomFrame {
 		pageNew.add(buttons);
 		
 		this.add(pageNew);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
-		}
-		
-		this.save.updateText(lang);
-		this.notSave.updateText(lang);
-		this.cancel.updateText(lang);
 	}
 	
 	@Override

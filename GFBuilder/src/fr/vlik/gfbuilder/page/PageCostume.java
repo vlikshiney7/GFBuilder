@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -191,7 +190,11 @@ public class PageCostume extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		updateLanguage(Language.FR);
+		this.components.addAll(this.costWeapon);
+		this.components.addAll(this.groupQuality);
+		this.components.addAll(this.groupSynthesis);
+		this.components.addAll(this.checkBoxRunway);
+		
 		createPanel();
 		updateWeaponCost();
 		setEffects();
@@ -369,29 +372,6 @@ public class PageCostume extends PartialPage {
 		
 		for(JPanel panel : this.showAndHideRunway) {
 			panel.setVisible(false);
-		}
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		for(JLangRadioButton button : this.costWeapon) {
-			button.updateText(lang);
-		}
-		
-		for(JCustomButtonGroup<Quality> quality : this.groupQuality) {
-			quality.updateText(lang);
-		}
-		
-		for(JCustomButtonGroup<TypeSynthesis> typeSynthesis : this.groupSynthesis) {
-			typeSynthesis.updateText(lang);
-		}
-		
-		for(JCustomCheckBox<CombiRunway> checkBox : this.checkBoxRunway) {
-			checkBox.updateText(lang);
 		}
 	}
 	

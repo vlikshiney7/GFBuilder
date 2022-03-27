@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.equip;
 
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Quality;
@@ -14,7 +15,7 @@ public class EquipSet implements Writable {
 	private static EquipSet[] dataArmor = LoaderEquip.getArmorSet();
 	private static EquipSet[] dataCapeRing = LoaderEquip.getCapeRingSet();
 	
-	private String name;
+	private Map<Language, String> name;
 	private String code;
 	private int nbCurrentUsed;
 	
@@ -23,8 +24,9 @@ public class EquipSet implements Writable {
 	private BonusEquipSet bonus4pieces;
 	private BonusEquipSet bonus5pieces;
 	
+	@SuppressWarnings("serial")
 	public EquipSet() {
-		this.name = "Aucun";
+		this.name = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Aucun"); put(Language.EN, "None"); }};
 		this.code = "-1";
 		this.nbCurrentUsed = 0;
 		
@@ -35,7 +37,7 @@ public class EquipSet implements Writable {
 	}
 	
 	@SuppressWarnings("serial")
-	public EquipSet(String name, String code, Calculable[] with3, Calculable[] with4, Calculable[] with5) {
+	public EquipSet(Map<Language, String> name, String code, Calculable[] with3, Calculable[] with4, Calculable[] with5) {
 		this.name = name;
 		this.code = code;
 		this.nbCurrentUsed = 0;
@@ -46,7 +48,7 @@ public class EquipSet implements Writable {
 	}
 	
 	@SuppressWarnings("serial")
-	public EquipSet(String name, String code, Calculable[] with2, Calculable[] with3) {
+	public EquipSet(Map<Language, String> name, String code, Calculable[] with2, Calculable[] with3) {
 		this.name = name;
 		this.code = code;
 		this.nbCurrentUsed = 0;
@@ -66,7 +68,7 @@ public class EquipSet implements Writable {
 		
 		for(int i = 0; i < EquipSet.dataArmor.length; i++) {
 			if(EquipSet.dataArmor[i].getCode().equals(this.code)) {
-				this.name = EquipSet.dataArmor[i].getName(Language.FR);
+				this.name = EquipSet.dataArmor[i].getMap();
 				
 				this.bonus3pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus3(), this.nbCurrentUsed >= 3);
 				this.bonus4pieces = new BonusEquipSet(EquipSet.dataArmor[i].getBonus4(), this.nbCurrentUsed >= 4);
@@ -90,7 +92,7 @@ public class EquipSet implements Writable {
 		
 		for(int i = 0; i < EquipSet.dataCapeRing.length; i++) {
 			if(EquipSet.dataCapeRing[i].getCode().equals(this.code)) {
-				this.name = EquipSet.dataCapeRing[i].getName(Language.FR);
+				this.name = EquipSet.dataCapeRing[i].getMap();
 				
 				this.bonus2pieces = new BonusEquipSet(EquipSet.dataCapeRing[i].getBonus2(), this.nbCurrentUsed >= 2);
 				this.bonus3pieces = new BonusEquipSet(EquipSet.dataCapeRing[i].getBonus3(), this.nbCurrentUsed >= 3);
@@ -100,8 +102,18 @@ public class EquipSet implements Writable {
 		}
 	}
 	
+	public Map<Language, String> getMap() {
+		return new EnumMap<>(this.name);
+	}
+	
 	public String getName(Language lang) {
-		return this.name;
+		if(this.name == null) {
+			return "";
+		} else if(this.name.get(lang) == null || this.name.get(lang).equals("")) {
+			return this.name.get(Language.FR);
+		}
+		
+		return this.name.get(lang);
 	}
 	
 	public String getCode() {
@@ -129,11 +141,11 @@ public class EquipSet implements Writable {
 	}
 	
 	public String getSelectorInfo(Language lang) {
-		return this.name;
+		return getName(lang);
 	}
 	
 	public String getFullInfo(Language lang) {
-		return this.name;
+		return getName(lang);
 	}
 	
 	private int getMaxCount(String[] equipCode) {

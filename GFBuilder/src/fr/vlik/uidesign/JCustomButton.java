@@ -13,7 +13,7 @@ import javax.swing.plaf.basic.BasicButtonUI;
 
 import fr.vlik.grandfantasia.enums.Language;
 
-public class JCustomButton extends JButton {
+public class JCustomButton extends JButton implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -27,7 +27,6 @@ public class JCustomButton extends JButton {
 		
 		setColorUI(color);
 		setBlackUI();
-		updateText(Language.FR);
 	}
 	
 	public JCustomButton(String iconBase, String iconPress, String iconHover) {
@@ -39,11 +38,7 @@ public class JCustomButton extends JButton {
 	}
 	
 	public JCustomButton(String iconBase, String iconPress, String iconHover, Color[] color) {
-		setVoidUI();
-		
-		setIcon(iconBase);
-		setPressedIcon(iconPress);
-		setRolloverIcon(iconHover);
+		this(iconBase, iconPress, iconHover);
 		
 		setColorUI(color);
 	}
@@ -65,7 +60,7 @@ public class JCustomButton extends JButton {
 		this.setBorder(new LineBorder(color, 2));
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
 		this.setText(this.lang.get(lang));
 	}
 	

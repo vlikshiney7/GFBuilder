@@ -314,7 +314,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Plastron du Gardien éclairé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp1R", ICONPATH + "100pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 1330, true),
+					new Effect(TypeEffect.DefP, false, 1329, true),
 					new Effect(TypeEffect.DefM, false, 908, true),
 					new Effect(TypeEffect.FCE, false, 41, true),
 					new Effect(TypeEffect.VIT, false, 54, true),
@@ -326,7 +326,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp1", ICONPATH + "100pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1209, true),
-					new Effect(TypeEffect.DefM, false, 826, true),
+					new Effect(TypeEffect.DefM, false, 825, true),
 					new Effect(TypeEffect.FCE, false, 36, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.ESQ, false, 8),
@@ -376,7 +376,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Armure de Bouclier planétaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "95pvp1R", ICONPATH + "95pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 1229, true),
+					new Effect(TypeEffect.DefP, false, 1228, true),
 					new Effect(TypeEffect.DefM, false, 840, true),
 					new Effect(TypeEffect.FCE, false, 34, true),
 					new Effect(TypeEffect.VIT, false, 47, true),
@@ -456,7 +456,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Armure du Vindicateur Shichibukai"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "85pvp1R", ICONPATH + "85pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 967, true),
+					new Effect(TypeEffect.DefP, false, 966, true),
 					new Effect(TypeEffect.DefM, false, 662, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
@@ -3577,7 +3577,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armure du Précipice"); put(Language.EN, "Precipice Armor"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "25pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 810, true),
+					new Effect(TypeEffect.DefP, false, 809, true),
 					new Effect(TypeEffect.DefM, false, 577, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
@@ -3918,7 +3918,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Plastron du Sombretrappeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp2R", ICONPATH + "100pvp2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 943, true),
+					new Effect(TypeEffect.DefP, false, 942, true),
 					new Effect(TypeEffect.DefM, false, 860, true),
 					new Effect(TypeEffect.VIT, false, 56, true),
 					new Effect(TypeEffect.AGI, false, 42, true),
@@ -3941,7 +3941,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp3R", ICONPATH + "100pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 924, true),
-					new Effect(TypeEffect.DefM, false, 878, true),
+					new Effect(TypeEffect.DefM, false, 877, true),
 					new Effect(TypeEffect.FCE, false, 41, true),
 					new Effect(TypeEffect.VIT, false, 56, true),
 					new Effect(TypeEffect.ESQ, false, 8),
@@ -4061,7 +4061,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.RANGER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "85pvp2R", ICONPATH + "85pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 805, true),
-					new Effect(TypeEffect.DefM, false, 736, true),
+					new Effect(TypeEffect.DefM, false, 735, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 30, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -4082,7 +4082,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Armure du Ninja de Konoha"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "85pvp3R", ICONPATH + "85pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 790, true),
+					new Effect(TypeEffect.DefP, false, 789, true),
 					new Effect(TypeEffect.DefM, false, 751, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
@@ -7349,7 +7349,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Plate"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "65pve3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 662, true),
+					new Effect(TypeEffect.DefP, false, 661, true),
 					new Effect(TypeEffect.DefM, false, 654, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 13),
@@ -7703,7 +7703,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Robe du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp4", ICONPATH + "100pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 943, true),
+					new Effect(TypeEffect.DefP, false, 942, true),
 					new Effect(TypeEffect.DefM, false, 860, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
@@ -7726,7 +7726,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp5", ICONPATH + "100pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 924, true),
-					new Effect(TypeEffect.DefM, false, 878, true),
+					new Effect(TypeEffect.DefM, false, 877, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.ESQ, false, 8),
@@ -7755,7 +7755,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "95pvp4R", ICONPATH + "95pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 958, true),
-					new Effect(TypeEffect.DefM, false, 875, true),
+					new Effect(TypeEffect.DefM, false, 874, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -11096,7 +11096,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Robe du Croissant d'Argent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "50pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 743, true),
+					new Effect(TypeEffect.DefP, false, 742, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2.3),
@@ -11105,7 +11105,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "95blanc5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 728, true),
-					new Effect(TypeEffect.DefM, false, 566, true),
+					new Effect(TypeEffect.DefM, false, 565, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
 				}, null),
@@ -11463,7 +11463,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp6", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 771, true),
-					new Effect(TypeEffect.DefM, false, 939, true),
+					new Effect(TypeEffect.DefM, false, 938, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.ESQ, false, 8),
@@ -11473,7 +11473,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Robe du Chaos élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp7R", ICONPATH + "100pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 832, true),
+					new Effect(TypeEffect.DefP, false, 831, true),
 					new Effect(TypeEffect.DefM, false, 1053, true),
 					new Effect(TypeEffect.VIT, false, 56, true),
 					new Effect(TypeEffect.INT, false, 42, true),
@@ -11485,7 +11485,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.NECROMANCIEN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp7", ICONPATH + "100pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 756, true),
-					new Effect(TypeEffect.DefM, false, 958, true),
+					new Effect(TypeEffect.DefM, false, 957, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.ESQ, false, 8),
@@ -11536,7 +11536,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "95pvp7R", ICONPATH + "95pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 783, true),
-					new Effect(TypeEffect.DefM, false, 954, true),
+					new Effect(TypeEffect.DefM, false, 953, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 35, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -11883,7 +11883,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tunique d'Essence de la Magie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60nucleus6", ICONPATH + "65pvp6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 514, true),
+					new Effect(TypeEffect.DefP, false, 513, true),
 					new Effect(TypeEffect.DefM, false, 650, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 15, true),
@@ -11901,7 +11901,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste du Chant de l'Univers"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60lingot6", ICONPATH + "100pve6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 514, true),
+					new Effect(TypeEffect.DefP, false, 513, true),
 					new Effect(TypeEffect.DefM, false, 650, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 15, true),
@@ -14878,7 +14878,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Manteau de la Fureur Noire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "65pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 608, true),
+					new Effect(TypeEffect.DefP, false, 607, true),
 					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2.3),
@@ -15150,7 +15150,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 99, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "100gold8", ICONPATH + "100gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1056, true),
-					new Effect(TypeEffect.DefM, false, 753, true),
+					new Effect(TypeEffect.DefM, false, 752, true),
 					new Effect(TypeEffect.FCE, false, 58, true),
 					new Effect(TypeEffect.VIT, false, 46, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
@@ -15168,7 +15168,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold8", ICONPATH + "90gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 982, true),
-					new Effect(TypeEffect.DefM, false, 700, true),
+					new Effect(TypeEffect.DefM, false, 699, true),
 					new Effect(TypeEffect.FCE, false, 58, true),
 					new Effect(TypeEffect.VIT, false, 37, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -15177,7 +15177,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 89, Quality.GOLD, false, false,
 				ArmorType.PLASTRON, "10ans90gold8", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 982, true),
-					new Effect(TypeEffect.DefM, false, 700, true),
+					new Effect(TypeEffect.DefM, false, 699, true),
 					new Effect(TypeEffect.FCE, false, 58, true),
 					new Effect(TypeEffect.VIT, false, 37, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -15203,7 +15203,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron d'Arme de zone gelée"); put(Language.EN, "Glacial Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 79, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "80gold8", ICONPATH + "80gold8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 906, true),
+					new Effect(TypeEffect.DefP, false, 905, true),
 					new Effect(TypeEffect.DefM, false, 645, true),
 					new Effect(TypeEffect.FCE, false, 50, true),
 					new Effect(TypeEffect.VIT, false, 40, true),
@@ -15212,7 +15212,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Bête des Flammes du Démon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 79, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "80gold9", ICONPATH + "90evo8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 755, true),
+					new Effect(TypeEffect.DefP, false, 754, true),
 					new Effect(TypeEffect.DefM, false, 717, true),
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.INT, false, 40, true),
@@ -15222,7 +15222,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp8R", ICONPATH + "100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1108, true),
-					new Effect(TypeEffect.DefM, false, 790, true),
+					new Effect(TypeEffect.DefM, false, 789, true),
 					new Effect(TypeEffect.FCE, false, 47, true),
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 30, true),
@@ -15234,7 +15234,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp8", ICONPATH + "100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 1007, true),
-					new Effect(TypeEffect.DefM, false, 718, true),
+					new Effect(TypeEffect.DefM, false, 717, true),
 					new Effect(TypeEffect.FCE, false, 41, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.AGI, false, 26, true),
@@ -15269,7 +15269,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron d'Excellent guerrier"); put(Language.EN, "Warmonger Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 99, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "100pve8", ICONPATH + "100pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 959, true),
+					new Effect(TypeEffect.DefP, false, 958, true),
 					new Effect(TypeEffect.DefM, false, 683, true),
 					new Effect(TypeEffect.FCE, false, 39, true),
 					new Effect(TypeEffect.VIT, false, 24, true),
@@ -15336,7 +15336,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 94, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "95pve8", ICONPATH + "95pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 924, true),
-					new Effect(TypeEffect.DefM, false, 659, true),
+					new Effect(TypeEffect.DefM, false, 658, true),
 					new Effect(TypeEffect.FCE, false, 32, true),
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 21, true),
@@ -15345,7 +15345,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 94, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "95pve9", ICONPATH + "95pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 770, true),
-					new Effect(TypeEffect.DefM, false, 732, true),
+					new Effect(TypeEffect.DefM, false, 731, true),
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 32, true),
@@ -15362,7 +15362,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Aile de la Tempête de Sable"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 89, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "90pve9", ICONPATH + "90pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 742, true),
+					new Effect(TypeEffect.DefP, false, 741, true),
 					new Effect(TypeEffect.DefM, false, 704, true),
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 23, true),
@@ -15383,7 +15383,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Mort désintégrante"); put(Language.EN, "Soul Sealer Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "85pvp8", ICONPATH + "85pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 907, true),
+					new Effect(TypeEffect.DefP, false, 906, true),
 					new Effect(TypeEffect.DefM, false, 646, true),
 					new Effect(TypeEffect.FCE, false, 33, true),
 					new Effect(TypeEffect.VIT, false, 21, true),
@@ -15396,7 +15396,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "85pvp9R", ICONPATH + "85pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 831, true),
-					new Effect(TypeEffect.DefM, false, 790, true),
+					new Effect(TypeEffect.DefM, false, 789, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.AGI, false, 35, true),
@@ -15428,7 +15428,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de l'Oriflamme du Tonnerre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 84, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "85pve9", ICONPATH + "85pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 713, true),
+					new Effect(TypeEffect.DefP, false, 712, true),
 					new Effect(TypeEffect.DefM, false, 677, true),
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.INT, false, 19, true),
@@ -15447,7 +15447,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "80nucleus9", ICONPATH + "80nucleus9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 689, true),
-					new Effect(TypeEffect.DefM, false, 655, true),
+					new Effect(TypeEffect.DefM, false, 654, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 30, true),
@@ -15465,7 +15465,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "80lingot9", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 689, true),
-					new Effect(TypeEffect.DefM, false, 655, true),
+					new Effect(TypeEffect.DefM, false, 654, true),
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
@@ -15482,7 +15482,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Bombardement ardent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 79, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "80pve9", ICONPATH + "90evo8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 684, true),
+					new Effect(TypeEffect.DefP, false, 683, true),
 					new Effect(TypeEffect.DefM, false, 649, true),
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 18, true),
@@ -15539,7 +15539,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Démon enragé"); put(Language.EN, "Hellscream Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 74, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "75pve8", ICONPATH + "85pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 785, true),
+					new Effect(TypeEffect.DefP, false, 784, true),
 					new Effect(TypeEffect.DefM, false, 559, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
@@ -15566,7 +15566,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Chanoine du Crépuscule"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "70nucleus9", ICONPATH + "70nucleus9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 631, true),
+					new Effect(TypeEffect.DefP, false, 630, true),
 					new Effect(TypeEffect.DefM, false, 599, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.INT, false, 15, true),
@@ -15584,7 +15584,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Chanoine Grognecieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "70lingot9", ICONPATH + "70lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 631, true),
+					new Effect(TypeEffect.DefP, false, 630, true),
 					new Effect(TypeEffect.DefM, false, 599, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.INT, false, 22, true),
@@ -15602,7 +15602,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Fracture"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 69, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "70pve9", ICONPATH + "75pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 625, true),
+					new Effect(TypeEffect.DefP, false, 624, true),
 					new Effect(TypeEffect.DefM, false, 593, true),
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.INT, false, 15, true),
@@ -15648,7 +15648,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "65pvp9", ICONPATH + "65pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 632, true),
-					new Effect(TypeEffect.DefM, false, 601, true),
+					new Effect(TypeEffect.DefM, false, 600, true),
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 25, true),
@@ -15687,7 +15687,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60nucleus9", ICONPATH + "60nucleus9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 570, true),
-					new Effect(TypeEffect.DefM, false, 542, true),
+					new Effect(TypeEffect.DefM, false, 541, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
@@ -15705,7 +15705,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60lingot9", ICONPATH + "60lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 570, true),
-					new Effect(TypeEffect.DefM, false, 542, true),
+					new Effect(TypeEffect.DefM, false, 541, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
@@ -15714,7 +15714,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 59, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60pve8", ICONPATH + "60pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 677, true),
-					new Effect(TypeEffect.DefM, false, 483, true),
+					new Effect(TypeEffect.DefM, false, 482, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
@@ -15761,7 +15761,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Sombre boucher des ombres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "55pvp9", ICONPATH + "60pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 569, true),
+					new Effect(TypeEffect.DefP, false, 568, true),
 					new Effect(TypeEffect.DefM, false, 540, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 13, true),
@@ -15772,7 +15772,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 50, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "50pve8", ICONPATH + "50pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 610, true),
-					new Effect(TypeEffect.DefM, false, 435, true),
+					new Effect(TypeEffect.DefM, false, 434, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -15780,7 +15780,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Maraudeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 50, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "50pve9", ICONPATH + "50pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 509, true),
+					new Effect(TypeEffect.DefP, false, 508, true),
 					new Effect(TypeEffect.DefM, false, 483, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 9, true),
@@ -15820,7 +15820,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 44, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "45pvp9", ICONPATH + "45pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 498, true),
-					new Effect(TypeEffect.DefM, false, 474, true),
+					new Effect(TypeEffect.DefM, false, 473, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -15830,7 +15830,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 40, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "40pve8", ICONPATH + "60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 538, true),
-					new Effect(TypeEffect.DefM, false, 384, true),
+					new Effect(TypeEffect.DefM, false, 383, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -15838,7 +15838,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Pilleurs du fort"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 40, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "40pve9", ICONPATH + "60lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 449, true),
+					new Effect(TypeEffect.DefP, false, 448, true),
 					new Effect(TypeEffect.DefM, false, 426, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 7, true),
@@ -15897,7 +15897,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 20, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "20pve8", ICONPATH + "20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 282, true),
-					new Effect(TypeEffect.DefM, false, 358, true),
+					new Effect(TypeEffect.DefM, false, 357, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
@@ -16242,7 +16242,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "90gvg8", ICONPATH + "85pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 943, true),
-					new Effect(TypeEffect.DefM, false, 672, true),
+					new Effect(TypeEffect.DefM, false, 671, true),
 					new Effect(TypeEffect.FCE, false, 35, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 19, true),
@@ -16781,7 +16781,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Feu tortueux de dragon"); put(Language.EN, "Dragonfire Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 76, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 841, true),
+					new Effect(TypeEffect.DefP, false, 840, true),
 					new Effect(TypeEffect.DefM, false, 599, true),
 					new Effect(TypeEffect.FCE, false, 32, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
@@ -18598,19 +18598,19 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de la Roche fondue"); put(Language.EN, "Molten Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 67, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 647, true),
+					new Effect(TypeEffect.DefP, false, 646, true),
 					new Effect(TypeEffect.DefM, false, 468, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron du Blanc glacial"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 67, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "80lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 539, true),
+					new Effect(TypeEffect.DefP, false, 538, true),
 					new Effect(TypeEffect.DefM, false, 520, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Machine nucléaire"); put(Language.EN, "Atomic Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 28, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "25pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 298, true),
+					new Effect(TypeEffect.DefP, false, 297, true),
 					new Effect(TypeEffect.DefM, false, 283, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Rayon sombre"); put(Language.EN, "Eclipse Breastplate"); }},
@@ -18623,19 +18623,19 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 16, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "16blanc8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 227, true),
-					new Effect(TypeEffect.DefM, false, 216, true),
+					new Effect(TypeEffect.DefM, false, 215, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Veste de Collection"); put(Language.EN, "Legion Jacket"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 13, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "13vert8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 207, true),
-					new Effect(TypeEffect.DefM, false, 197, true),
+					new Effect(TypeEffect.DefM, false, 196, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Plastron de Remontée"); put(Language.EN, "Transcendent Breastplate"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "7vert8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 186, true),
-					new Effect(TypeEffect.DefM, false, 177, true),
+					new Effect(TypeEffect.DefM, false, 176, true),
 				}, null),
 		};
 	}
@@ -18784,7 +18784,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 99, Quality.PURPLE, true, false,
 				ArmorType.PLASTRON, "100vio10", ICONPATH + "100vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 915, true),
-					new Effect(TypeEffect.DefM, false, 1130, true),
+					new Effect(TypeEffect.DefM, false, 1129, true),
 					new Effect(TypeEffect.FCE, false, 60, true),
 					new Effect(TypeEffect.INT, false, 65, true),
 					new Effect(TypeEffect.VOL, false, 55, true),
@@ -18874,7 +18874,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "90gold10", ICONPATH + "90gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 818, true),
-					new Effect(TypeEffect.DefM, false, 1007, true),
+					new Effect(TypeEffect.DefM, false, 1006, true),
 					new Effect(TypeEffect.FCE, false, 42, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
@@ -18885,7 +18885,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "10ans90gold10", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 818, true),
-					new Effect(TypeEffect.DefM, false, 1007, true),
+					new Effect(TypeEffect.DefM, false, 1006, true),
 					new Effect(TypeEffect.FCE, false, 42, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
@@ -18918,7 +18918,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 79, Quality.GOLD, true, false,
 				ArmorType.PLASTRON, "80gold10", ICONPATH + "80gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 755, true),
-					new Effect(TypeEffect.DefM, false, 929, true),
+					new Effect(TypeEffect.DefM, false, 928, true),
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.INT, false, 43, true),
 					new Effect(TypeEffect.VOL, false, 37, true),
@@ -18954,7 +18954,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp10", ICONPATH + "100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 840, true),
-					new Effect(TypeEffect.DefM, false, 1016, true),
+					new Effect(TypeEffect.DefM, false, 1015, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -18967,7 +18967,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Costume de Cristal Chaotique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "100pvp11R", ICONPATH + "100pvp11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 832, true),
+					new Effect(TypeEffect.DefP, false, 831, true),
 					new Effect(TypeEffect.DefM, false, 1053, true),
 					new Effect(TypeEffect.INT, false, 55, true),
 					new Effect(TypeEffect.VOL, false, 34, true),
@@ -18982,7 +18982,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "100pvp11", ICONPATH + "100pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 756, true),
-					new Effect(TypeEffect.DefM, false, 958, true),
+					new Effect(TypeEffect.DefM, false, 957, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 30, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -18996,7 +18996,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 99, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "100pve10", ICONPATH + "100pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 799, true),
-					new Effect(TypeEffect.DefM, false, 983, true),
+					new Effect(TypeEffect.DefM, false, 982, true),
 					new Effect(TypeEffect.FCE, false, 29, true),
 					new Effect(TypeEffect.INT, false, 33, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
@@ -19032,7 +19032,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "95pvp10", ICONPATH + "95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 792, true),
-					new Effect(TypeEffect.DefM, false, 955, true),
+					new Effect(TypeEffect.DefM, false, 954, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 42, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -19046,7 +19046,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "95pvp11R", ICONPATH + "95pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 783, true),
-					new Effect(TypeEffect.DefM, false, 954, true),
+					new Effect(TypeEffect.DefM, false, 953, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -19096,7 +19096,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 89, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "90pve10", ICONPATH + "90pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 742, true),
-					new Effect(TypeEffect.DefM, false, 912, true),
+					new Effect(TypeEffect.DefM, false, 911, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
 					new Effect(TypeEffect.INT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
@@ -19117,7 +19117,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Cape du Voyageur runique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.PLASTRON, "85pvp10R", ICONPATH + "85pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 790, true),
+					new Effect(TypeEffect.DefP, false, 789, true),
 					new Effect(TypeEffect.DefM, false, 972, true),
 					new Effect(TypeEffect.FCE, false, 23, true),
 					new Effect(TypeEffect.INT, false, 42, true),
@@ -19132,7 +19132,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "85pvp10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 718, true),
-					new Effect(TypeEffect.DefM, false, 884, true),
+					new Effect(TypeEffect.DefM, false, 883, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 38, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -19240,7 +19240,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 79, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "80pve10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 684, true),
-					new Effect(TypeEffect.DefM, false, 841, true),
+					new Effect(TypeEffect.DefM, false, 840, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
@@ -19314,7 +19314,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 74, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "75pve10", ICONPATH + "80nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 654, true),
-					new Effect(TypeEffect.DefM, false, 805, true),
+					new Effect(TypeEffect.DefM, false, 804, true),
 					new Effect(TypeEffect.FCE, false, 18, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -19336,7 +19336,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "70nucleus10", ICONPATH + "85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 631, true),
-					new Effect(TypeEffect.DefM, false, 776, true),
+					new Effect(TypeEffect.DefM, false, 775, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
@@ -19358,7 +19358,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "70lingot10", ICONPATH + "70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 631, true),
-					new Effect(TypeEffect.DefM, false, 776, true),
+					new Effect(TypeEffect.DefM, false, 775, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -19451,7 +19451,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 64, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "65pve10", ICONPATH + "65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 595, true),
-					new Effect(TypeEffect.DefM, false, 732, true),
+					new Effect(TypeEffect.DefM, false, 731, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -19469,7 +19469,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60nucleus10", ICONPATH + "60pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 570, true),
-					new Effect(TypeEffect.DefM, false, 702, true),
+					new Effect(TypeEffect.DefM, false, 701, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -19487,7 +19487,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60lingot10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 570, true),
-					new Effect(TypeEffect.DefM, false, 702, true),
+					new Effect(TypeEffect.DefM, false, 701, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -19505,7 +19505,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 59, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "60pve10", ICONPATH + "60pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 564, true),
-					new Effect(TypeEffect.DefM, false, 694, true),
+					new Effect(TypeEffect.DefM, false, 693, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -19543,7 +19543,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "55pvp10", ICONPATH + "55pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 570, true),
-					new Effect(TypeEffect.DefM, false, 702, true),
+					new Effect(TypeEffect.DefM, false, 701, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -19563,7 +19563,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 50, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "50pve10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 509, true),
-					new Effect(TypeEffect.DefM, false, 626, true),
+					new Effect(TypeEffect.DefM, false, 625, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -19601,7 +19601,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 44, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "45pvp10", ICONPATH + "45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 479, true),
-					new Effect(TypeEffect.DefM, false, 590, true),
+					new Effect(TypeEffect.DefM, false, 589, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
@@ -19666,7 +19666,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue de Guerre de la Source de Cristal"); put(Language.EN, "Crystal Spring Battle Outfit"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "25pvp10", ICONPATH + "55pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 400, true),
+					new Effect(TypeEffect.DefP, false, 399, true),
 					new Effect(TypeEffect.DefM, false, 505, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.INT, false, 10, true),
@@ -19677,7 +19677,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.PLASTRON, "25pvp11", ICONPATH + "25pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 339, true),
-					new Effect(TypeEffect.DefM, false, 497, true),
+					new Effect(TypeEffect.DefM, false, 496, true),
 					new Effect(TypeEffect.FCE, false, 9, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.ESQ, false, 2),
@@ -19685,7 +19685,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue de bataille cristallisée"); put(Language.EN, "Crystalline Armor"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 20, Quality.ORANGE, true, false,
 				ArmorType.PLASTRON, "20pve10", ICONPATH + "20pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 330, true),
+					new Effect(TypeEffect.DefP, false, 329, true),
 					new Effect(TypeEffect.DefM, false, 386, true),
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.INT, false, 5, true),
@@ -20031,7 +20031,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "90gvg10", ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 786, true),
-					new Effect(TypeEffect.DefM, false, 967, true),
+					new Effect(TypeEffect.DefM, false, 966, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 49, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
@@ -20049,7 +20049,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 					new Effect(TypeEffect.PV, false, 790),
 					new Effect(TypeEffect.PM, false, 510),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape du Voyageur Temporel"); put(Language.EN, "Time Traveler Cloak"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape du Voyageur Temporel "); put(Language.EN, "Time Traveler Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "80gvg10", ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 725, true),
@@ -20592,7 +20592,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "70gvg10", ICONPATH + "70gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 664, true),
-					new Effect(TypeEffect.DefM, false, 817, true),
+					new Effect(TypeEffect.DefM, false, 816, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -20614,7 +20614,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 66, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 639, true),
-					new Effect(TypeEffect.DefM, false, 786, true),
+					new Effect(TypeEffect.DefM, false, 785, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -21153,7 +21153,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 51, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "51bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 543, true),
-					new Effect(TypeEffect.DefM, false, 686, true),
+					new Effect(TypeEffect.DefM, false, 685, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -21175,7 +21175,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 35, Quality.BLUE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "75evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 392, true),
-					new Effect(TypeEffect.DefM, false, 556, true),
+					new Effect(TypeEffect.DefM, false, 555, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -22437,7 +22437,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 47, Quality.GREEN, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "60bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 465, true),
-					new Effect(TypeEffect.DefM, false, 587, true),
+					new Effect(TypeEffect.DefM, false, 586, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Robe longue Illusoire de l'Ombre"); put(Language.EN, "Dark Illusory Long Robe"); }},
@@ -22450,7 +22450,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue de Cristal Féérique"); put(Language.EN, "Fairy Crystal Outfit"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 27, Quality.GREEN, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 335, true),
+					new Effect(TypeEffect.DefP, false, 334, true),
 					new Effect(TypeEffect.DefM, false, 424, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 				}, null),
@@ -22471,7 +22471,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume de Cristal Mystérieux"); put(Language.EN, "Mysterious Crystal Suit"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 7, Quality.GREEN, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "13vert10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 218, true),
+					new Effect(TypeEffect.DefP, false, 217, true),
 					new Effect(TypeEffect.DefM, false, 236, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 				}, null),
@@ -22487,7 +22487,7 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 82, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
-					new Effect(TypeEffect.DefM, false, 575, true),
+					new Effect(TypeEffect.DefM, false, 574, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape de bataille du Solitaire"); put(Language.EN, "Lonely Battle Cloak"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 82, Quality.WHITE, false, false,
@@ -22495,11 +22495,11 @@ public class LoaderBreastplate extends LoaderTemplate {
 					new Effect(TypeEffect.DefP, false, 559, true),
 					new Effect(TypeEffect.DefM, false, 510, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape du Souffle Exotique"); put(Language.EN, "Exotic Cloak"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cape du Souffle Exotique "); put(Language.EN, "Exotic Cloak"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 67, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "80gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 539, true),
-					new Effect(TypeEffect.DefM, false, 510, true),
+					new Effect(TypeEffect.DefM, false, 509, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue de Voleur de Soleil"); put(Language.EN, "Sun Thief's Outfit"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 67, Quality.WHITE, false, false,
@@ -22511,13 +22511,13 @@ public class LoaderBreastplate extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 28, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
-					new Effect(TypeEffect.DefM, false, 303, true),
+					new Effect(TypeEffect.DefM, false, 302, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue Cristalline"); put(Language.EN, "Crystal Outfit"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 276, true),
-					new Effect(TypeEffect.DefM, false, 269, true),
+					new Effect(TypeEffect.DefM, false, 268, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue d'Illusionniste"); put(Language.EN, "Illusionist's Suit"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 19, Quality.WHITE, false, false,
@@ -22531,10 +22531,10 @@ public class LoaderBreastplate extends LoaderTemplate {
 					new Effect(TypeEffect.DefP, false, 257, true),
 					new Effect(TypeEffect.DefM, false, 231, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume du Voyageur"); put(Language.EN, "Traveling Suit"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume du Voyageur "); put(Language.EN, "Traveling Suit"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.PLASTRON, "-1", ICONPATH + "13vert10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 227, true),
+					new Effect(TypeEffect.DefP, false, 226, true),
 					new Effect(TypeEffect.DefM, false, 189, true),
 				}, null),
 		};

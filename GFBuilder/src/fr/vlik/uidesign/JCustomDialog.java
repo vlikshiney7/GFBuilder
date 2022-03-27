@@ -171,17 +171,17 @@ public class JCustomDialog extends JDialog {
 	}
 	
 	public void updateLanguage(Language lang) {
-		this.orAnd.updateText(lang);
+		this.orAnd.updateLanguage(lang);
 		
 		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
 			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
-				checkBox.updateText(lang);
+				checkBox.updateLanguage(lang);
 			}
 		}
 		
-		this.uncheck.updateText(lang);
-		this.allcheck.updateText(lang);
-		this.close.updateText(lang);
+		this.uncheck.updateLanguage(lang);
+		this.allcheck.updateLanguage(lang);
+		this.close.updateLanguage(lang);
 	}
 	
 	private void setBlackUI() {

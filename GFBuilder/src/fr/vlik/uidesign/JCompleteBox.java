@@ -7,7 +7,7 @@ import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.template.Buff;
 import fr.vlik.grandfantasia.template.ProcEffect;
 
-public class JCompleteBox<E> extends JCustomComboBox<E> {
+public class JCompleteBox<E> extends JCustomComboBox<E> implements JUpdateLang {
 
 	private static final long serialVersionUID = 1L;
 	public static final String FILTER16 = "filter16";
@@ -49,7 +49,10 @@ public class JCompleteBox<E> extends JCustomComboBox<E> {
 		boolean memoryProc = isProcActive();
 		
 		if(super.setItems(tabItems)) {
-			this.proc.setSelected(memoryProc);
+			if(this.proc != null) {
+				this.proc.setSelected(memoryProc);
+			}
+			
 			result = true;
 		}
 		

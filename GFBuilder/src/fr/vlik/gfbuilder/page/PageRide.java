@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -114,7 +113,9 @@ public class PageRide extends PartialXpStuff {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		updateLanguage(Language.FR);
+		this.components.addAll(this.groupQuality);
+		this.components.addAll(this.groupSynthesis);
+		
 		createPanel();
 		setEffects();
 	}
@@ -231,21 +232,6 @@ public class PageRide extends PartialXpStuff {
 			star.get(0).setSelected(true);
 		}
 		
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		for(int i = 0; i < this.groupQuality.size(); i++) {
-			this.groupQuality.get(i).updateText(lang);
-		}
-		
-		for(int i = 0; i < this.groupSynthesis.size(); i++) {
-			this.groupSynthesis.get(i).updateText(lang);
-		}
 	}
 	
 	public void updateRide() {

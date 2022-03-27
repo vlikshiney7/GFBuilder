@@ -212,12 +212,12 @@ public class Proc implements Calculable {
 			}
 		} else {
 			if(this.tdb == TDB.TDB) {
-				result.append("After " + this.cumul + " stacks " + this.activation.getName(lang) + ":");
+				result.append("After " + this.cumul + " stacks " + this.activation.getName(lang));
 			} else {
 				if(this.activation == Activation.Sprite) {
-					result.append("Activation " + this.activation.getName(lang) + ":");
+					result.append("Activation " + this.activation.getName(lang));
 				} else {
-					result.append(this.taux + "% to activate " + this.activation.getName(lang) + ":");
+					result.append(this.taux + "% to activate " + this.activation.getName(lang));
 				}
 			}
 			

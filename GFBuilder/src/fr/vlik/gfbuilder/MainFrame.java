@@ -69,10 +69,11 @@ import fr.vlik.uidesign.JCustomLabel;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTabPane;
 import fr.vlik.uidesign.JLangLabel;
+import fr.vlik.uidesign.JUpdateLang;
 
 public class MainFrame extends JFrame {
 	
-	private static MainFrame instance = new MainFrame();
+	private static final MainFrame INSTANCE = new MainFrame();
 	private static final long serialVersionUID = 1L;
 	
 	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<>();
@@ -91,11 +92,11 @@ public class MainFrame extends JFrame {
 	
 	
 	public static MainFrame getInstance() {
-		return MainFrame.instance;
+		return MainFrame.INSTANCE;
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 1.4.1");
+		super("Grand Fantasia Builder - Version 1.4.3");
 		setCustomUI();
 		
 		try {
@@ -561,24 +562,20 @@ public class MainFrame extends JFrame {
 			this.language.setIcon(this.language.getDisabledIcon());
 		}
 		
-		for(int i = 0; i < this.tabPaneMenu.size(); i++) {
-			this.tabPaneMenu.get(i).updateText(lang);
+		for(JCustomTabPane tab : this.tabPaneMenu) {
+			tab.updateLanguage(lang);
 		}
 		
 		for(JCustomPanel page : this.pages) {
-			if(page instanceof PartialPage) {
-				((PartialPage) page).updateLanguage(lang);
-			} else if(page instanceof PageOption) {
-				((PageOption) page).updateLanguage(lang);
-			}
+			((JUpdateLang) page).updateLanguage(lang);
 		}
 		
-		for(JCustomFrame frame : this.frames) {
+		for(JUpdateLang frame : this.frames) {
 			frame.updateLanguage(lang);
 		}
 		
 		for(int i = 0; i < this.valueStat.size(); i++) {
-			this.labelStat.get(i).updateText(lang);
+			this.labelStat.get(i).updateLanguage(lang);
 			this.labelStat.get(i).setToolTipText(TypeEffect.values()[i].getFullInfo(lang));
 			this.valueStat.get(i).setToolTipText(TypeEffect.values()[i].getFullInfo(lang));
 		}

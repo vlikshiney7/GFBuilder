@@ -9,10 +9,11 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class JCustomCheckBox<T> extends JCheckBox {
+public class JCustomCheckBox<T> extends JCheckBox implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	private transient T object;
+	private Language lang;
 	
 	public JCustomCheckBox(T obj) {
 		this.object = obj;
@@ -30,7 +31,6 @@ public class JCustomCheckBox<T> extends JCheckBox {
 		setIconUI(checkIcon, "checkOff");
 		
 		setVoidUI();
-		updateText(Language.FR);
 	}
 	
 	public T getItem() {
@@ -39,10 +39,12 @@ public class JCustomCheckBox<T> extends JCheckBox {
 	
 	public void setItem(T obj) {
 		this.object = obj;
-		updateText(Language.FR);
+		updateLanguage(this.lang);
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
+		this.lang = lang;
+		
 		if(this.object instanceof Writable) {
 			this.setText(((Writable) this.object).getSelectorInfo(lang));
 			this.setToolTipText(((Writable) this.object).getFullInfo(lang));

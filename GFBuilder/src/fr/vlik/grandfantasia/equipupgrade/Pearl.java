@@ -173,7 +173,7 @@ public class Pearl extends CompleteBuff {
 				//Tools.containFilter(filter, armor.getTag()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+			if( (andValue ? Filterable.andValue(filters) : Filterable.orValue(filters))
 					&& !choice.equals(pearl)) {
 				
 				result.add(pearl);

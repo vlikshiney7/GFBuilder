@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -154,7 +153,10 @@ public class PageWeapon extends PartialRedStuff {
 			this.weaponType[i] = this.getWeapon(i).getType();
 		}
 		
-		updateLanguage(Language.FR);
+		this.components.addAll(this.weapon.getList());
+		this.components.add(this.bullet);
+		this.components.addAll(this.pearl.getList());
+		
 		createPanel();
 		setEffects();
 	}
@@ -434,23 +436,6 @@ public class PageWeapon extends PartialRedStuff {
 		}
 	}
 	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		for(JCompleteBox<Weapon> box : this.weapon.getList()) {
-			box.updateLanguage(lang);
-		}
-		
-		this.bullet.updateLanguage(lang);
-		
-		for(JCompleteBox<Pearl> box : this.pearl.getList()) {
-			box.updateLanguage(lang);
-		}
-	}
-	
 	public void updateWeapon() {
 		Grade grade = PageGeneral.getInstance().getGrade();
 		int lvl = PageGeneral.getInstance().getLvl();
@@ -519,11 +504,11 @@ public class PageWeapon extends PartialRedStuff {
 			this.labelValue.get(id).setVisible(false);
 			
 			if(id == 0) {
-				this.pearl.setRangeVisible(0, 3, true);
+				this.pearl.setRangeVisible(0, 3, false);
 				this.pearl.setRangeSelectedIndex(0, 3, 0);
 			}
 			
-			this.pearl.setRangeVisible(3*(id+1), 3, true);
+			this.pearl.setRangeVisible(3*(id+1), 3, false);
 			this.pearl.setRangeSelectedIndex(3*(id+1), 3, 0);
 		}
 	}
@@ -637,6 +622,7 @@ public class PageWeapon extends PartialRedStuff {
 		Reinca reinca = PageGeneral.getInstance().getReinca();
 		
 		Weapon choice = this.getWeapon(id);
+		
 		if(id == 0) {
 			Enchantment keepEnchant = this.getEnchantment(1);
 			
@@ -656,10 +642,10 @@ public class PageWeapon extends PartialRedStuff {
 				
 				this.showAndHide.setVisible(true);
 			} else {
-				Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, choice, this.doubleWeapon);
-				tabWeapon = Weapon.applyFilters(tabWeapon, this.getWeapon(0), this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.weapon.get(0).isAndValue());
+				/*Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null, this.doubleWeapon);
+				tabWeapon = Weapon.applyFilters(tabWeapon, choice, this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.weapon.get(0).isAndValue());
 				
-				this.weapon.get(0).setItems(tabWeapon);
+				this.weapon.get(0).setItems(tabWeapon);*/
 				this.weapon.get(1).setItems(new Weapon[] { new Weapon() });
 				
 				this.pearl.setRangeVisible(3, 3, true);

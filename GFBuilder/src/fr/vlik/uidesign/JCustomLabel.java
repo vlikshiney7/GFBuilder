@@ -10,7 +10,7 @@ import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class JCustomLabel<T> extends JLabel {
+public class JCustomLabel<T> extends JLabel implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	private transient T object;
@@ -23,7 +23,7 @@ public class JCustomLabel<T> extends JLabel {
 		setIcon();
 		setColor();
 		
-		updateText(Language.FR);
+		updateLanguage(Language.FR);
 	}
 	
 	public T getItem() {
@@ -34,11 +34,12 @@ public class JCustomLabel<T> extends JLabel {
 		this.object = obj;
 		setIcon();
 		setColor();
-		updateText(this.lang);
+		updateLanguage(this.lang);
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
 		this.lang = lang;
+		
 		if(this.object instanceof Writable) {
 			this.setText(((Writable) this.object).getSelectorInfo(lang));
 			this.setToolTipText(((Writable) this.object).getFullInfo(lang));

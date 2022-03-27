@@ -3086,7 +3086,7 @@ public class LoaderWeapon extends LoaderTemplate {
 		return new Weapon[] {
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Rugissement du Lion du dresseur"); put(Language.EN, "Lion Beastmaster's Roar"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
-				95, Quality.RED, true, WeaponType.EPEE2M, true, false, "epee2M/95red", new Calculable[] {
+				95, Quality.RED, true, WeaponType.EPEE2M, false, false, "epee2M/95red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 7152, true),
 					new Effect(TypeEffect.FCE, false, 124, true),
 					new Effect(TypeEffect.VIT, false, 132, true),
@@ -3113,7 +3113,7 @@ public class LoaderWeapon extends LoaderTemplate {
 				}),
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Miroir de la Colombe"); put(Language.EN, "Typhoon Sparrow Mirror"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
-				90, Quality.RED, true, WeaponType.EPEE2M, true, false, "epee2M/90red", new Calculable[] {
+				90, Quality.RED, true, WeaponType.EPEE2M, false, false, "epee2M/90red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 7152, true),
 					new Effect(TypeEffect.FCE, false, 124, true),
 					new Effect(TypeEffect.VIT, false, 132, true),
@@ -3140,7 +3140,7 @@ public class LoaderWeapon extends LoaderTemplate {
 				}),
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Véritable sceptre stellaire de la Colombe - 10e anniversaire"); put(Language.EN, "True Sparrow 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.RANGER, },
-				90, Quality.RED, false, WeaponType.EPEE2M, true, false, "default/10ansRed2M", new Calculable[] {
+				90, Quality.RED, false, WeaponType.EPEE2M, false, false, "default/10ansRed2M", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 7152, true),
 					new Effect(TypeEffect.FCE, false, 124, true),
 					new Effect(TypeEffect.VIT, false, 132, true),
@@ -4004,7 +4004,7 @@ public class LoaderWeapon extends LoaderTemplate {
 		return new Weapon[] {
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Marteau de Guerre de l'Épreuve sacrée"); put(Language.EN, "Blessed Trial Warhammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
-				95, Quality.RED, true, WeaponType.MARTEAU2M, true, false, "marteau2M/95red", new Calculable[] {
+				95, Quality.RED, true, WeaponType.MARTEAU2M, false, false, "marteau2M/95red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 8778, true),
 					new Effect(TypeEffect.AtkM, false, 3533, true),
 					new Effect(TypeEffect.FCE, false, 297, true),
@@ -4033,7 +4033,7 @@ public class LoaderWeapon extends LoaderTemplate {
 				}),
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Marteau brise-terre de furie"); put(Language.EN, "Raging Groundbreaker Hammer"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
-				90, Quality.RED, true, WeaponType.MARTEAU2M, true, false, "marteau2M/90red", new Calculable[] {
+				90, Quality.RED, true, WeaponType.MARTEAU2M, false, false, "marteau2M/90red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 8173, true),
 					new Effect(TypeEffect.AtkM, false, 3289, true),
 					new Effect(TypeEffect.FCE, false, 289, true),
@@ -4062,7 +4062,7 @@ public class LoaderWeapon extends LoaderTemplate {
 				}),
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Véritable sceptre stellaire de Fureur - 10e anniversaire"); put(Language.EN, "True Fury 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, GradeName.CLERC, GradeName.SAGE, },
-				90, Quality.RED, false, WeaponType.MARTEAU2M, true, false, "default/10ansRed2M", new Calculable[] {
+				90, Quality.RED, false, WeaponType.MARTEAU2M, false, false, "default/10ansRed2M", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 8173, true),
 					new Effect(TypeEffect.AtkM, false, 3289, true),
 					new Effect(TypeEffect.FCE, false, 289, true),
@@ -5035,7 +5035,7 @@ public class LoaderWeapon extends LoaderTemplate {
 		return new Weapon[] {
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Hache rouge rugissante"); put(Language.EN, "Red Roar Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
-				95, Quality.RED, true, WeaponType.HACHE2M, true, false, "hache2M/95red", new Calculable[] {
+				95, Quality.RED, true, WeaponType.HACHE2M, false, false, "hache2M/95red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 9876, true),
 					new Effect(TypeEffect.FCE, false, 313, true),
 					new Effect(TypeEffect.VIT, false, 123, true),
@@ -5062,7 +5062,7 @@ public class LoaderWeapon extends LoaderTemplate {
 				}),
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Hache Possédée brise-vent"); put(Language.EN, "Vicious Cleansing Axe"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
-				90, Quality.RED, true, WeaponType.HACHE2M, true, false, "hache2M/90red", new Calculable[] {
+				90, Quality.RED, true, WeaponType.HACHE2M, false, false, "hache2M/90red", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 9196, true),
 					new Effect(TypeEffect.FCE, false, 305, true),
 					new Effect(TypeEffect.VIT, false, 117, true),
@@ -5089,7 +5089,7 @@ public class LoaderWeapon extends LoaderTemplate {
 				}),
 			new RedWeapon(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Véritable sceptre stellaire des Vents violents - 10e anniversaire"); put(Language.EN, "True Stormy Gale 10th Anniversary Star Scepter"); }},
 				new GradeName[] { GradeName.BERSERKER, GradeName.PALADIN, },
-				90, Quality.RED, false, WeaponType.HACHE2M, true, false, "default/10ansRed2M", new Calculable[] {
+				90, Quality.RED, false, WeaponType.HACHE2M, false, false, "default/10ansRed2M", new Calculable[] {
 					new Effect(TypeEffect.Atk, false, 9196, true),
 					new Effect(TypeEffect.FCE, false, 305, true),
 					new Effect(TypeEffect.VIT, false, 117, true),

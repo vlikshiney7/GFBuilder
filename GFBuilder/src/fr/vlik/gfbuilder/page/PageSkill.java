@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -78,7 +77,6 @@ public class PageSkill extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
 	}
@@ -151,13 +149,6 @@ public class PageSkill extends PartialPage {
 		
 		for(JPanel panel : this.showAndHide) {
 			panel.setVisible(false);
-		}
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
 		}
 	}
 	

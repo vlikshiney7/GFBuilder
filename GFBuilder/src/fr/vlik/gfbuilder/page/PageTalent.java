@@ -7,7 +7,6 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.AbstractButton;
 import javax.swing.Box;
@@ -121,7 +120,9 @@ public class PageTalent extends PartialPage {
 		this.maxTalent = new JCustomButton(this.labels.get("Max").getLang(), Design.GREEN_COLOR);
 		this.maxTalent.addActionListener(e -> setMaxCBoxTalent() );
 		
-		updateLanguage(Language.FR);
+		this.components.add(this.reinitTalent);
+		this.components.add(this.maxTalent);
+		
 		createPanel();
 		setEffects();
 	}
@@ -243,16 +244,6 @@ public class PageTalent extends PartialPage {
 		}
 		
 		this.add(elem3);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		this.reinitTalent.updateText(lang);
-		this.maxTalent.updateText(lang);
 	}
 	
 	public void updateListTalent() {

@@ -9,7 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.grandfantasia.enums.Language;
 
-public class JLangLabel extends JLabel {
+public class JLangLabel extends JLabel implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -30,7 +30,7 @@ public class JLangLabel extends JLabel {
 		return this.lang;
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
 		this.setText(this.lang.get(lang));
 	}
 	

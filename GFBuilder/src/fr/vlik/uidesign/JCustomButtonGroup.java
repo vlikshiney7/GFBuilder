@@ -8,7 +8,7 @@ import javax.swing.ButtonGroup;
 import fr.vlik.grandfantasia.enums.Language;
 
 @SuppressWarnings("unchecked")
-public class JCustomButtonGroup<T> extends ButtonGroup {
+public class JCustomButtonGroup<T> extends ButtonGroup implements JUpdateLang {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -98,11 +98,11 @@ public class JCustomButtonGroup<T> extends ButtonGroup {
 		} while(it.hasMoreElements());
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
 		Enumeration<AbstractButton> it = this.getElements();
 		do {
 			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
-			element.updateText(lang);
+			element.updateLanguage(lang);
 		} while(it.hasMoreElements());
 	}
 }

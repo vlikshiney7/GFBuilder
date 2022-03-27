@@ -3,7 +3,6 @@ package fr.vlik.gfbuilder.page;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -92,7 +91,6 @@ public class PageOther extends PartialPage {
 			});
 		}
 		
-		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
 	}
@@ -175,13 +173,6 @@ public class PageOther extends PartialPage {
 		this.addAll(page12Elem1, Box.createVerticalStrut(10), page12Elem2, Box.createVerticalStrut(10), page12Elem3);
 		
 		this.labels.get("SouvenirEnchant").setVisible(false);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
 	}
 	
 	public void updateMarried() {

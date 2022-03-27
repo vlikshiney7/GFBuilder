@@ -11,10 +11,11 @@ import fr.vlik.grandfantasia.interfaces.Colorable;
 import fr.vlik.grandfantasia.interfaces.Iconable;
 import fr.vlik.grandfantasia.interfaces.Writable;
 
-public class JCustomRadioButton<T> extends JRadioButton {
+public class JCustomRadioButton<T> extends JRadioButton implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	private transient T object;
+	private Language lang;
 	
 	public JCustomRadioButton(T obj) {
 		this.object = obj;
@@ -36,7 +37,6 @@ public class JCustomRadioButton<T> extends JRadioButton {
 		}
 		
 		setVoidUI();
-		updateText(Language.FR);
 	}
 	
 	public T getItem() {
@@ -45,8 +45,6 @@ public class JCustomRadioButton<T> extends JRadioButton {
 	
 	public void setItem(T obj) {
 		this.object = obj;
-		
-		updateText(Language.FR);
 		
 		if(this.object instanceof Colorable) {
 			this.setForeground(((Colorable) this.object).getColor());
@@ -57,9 +55,13 @@ public class JCustomRadioButton<T> extends JRadioButton {
 		if(this.object instanceof Iconable) {
 			setIconUI(((Iconable) this.object).getIcon());
 		}
+		
+		updateLanguage(this.lang);
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
+		this.lang = lang;
+		
 		if(this.object instanceof Writable) {
 			this.setText(((Writable) this.object).getSelectorInfo(lang));
 			this.setToolTipText(((Writable) this.object).getFullInfo(lang));

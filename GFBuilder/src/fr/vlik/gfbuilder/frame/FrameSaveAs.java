@@ -18,12 +18,10 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.page.PageOption;
-import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomPanel;
 import fr.vlik.uidesign.JCustomTextField;
-import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveAs extends JCustomFrame {
 	
@@ -32,16 +30,14 @@ public class FrameSaveAs extends JCustomFrame {
 	
 	private JCustomTextField askName;
 	private JCustomButton submit;
-	
-	private JLangLabel[] label;
-	
+		
 	public static FrameSaveAs getInstance() {
 		return INSTANCE;
 	}
 	
 	private FrameSaveAs() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(1);
+		this.labels = Lang.getDataLabel(1);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveAs.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
@@ -74,30 +70,21 @@ public class FrameSaveAs extends JCustomFrame {
 			}
 		});
 		
-		this.submit = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
+		this.submit = new JCustomButton(this.labels[1].getLang(), Design.GREEN_COLOR);
 		this.submit.addActionListener(e -> createSaveConfig() );
 		this.submit.setAlignmentX(CENTER_ALIGNMENT);
 		
-		updateLanguage(Language.FR);
+		this.components.add(this.submit);
 		
 		JCustomPanel pageSave = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageSave.setBackground(Design.UIColor[2]);
 		
-		pageSave.addAll(this.label[0], Box.createVerticalStrut(10), this.askName, Box.createVerticalStrut(10), this.submit, Box.createVerticalStrut(5), this.label[2]);
-		this.label[0].setFont(Design.TITLE);
-		this.label[2].setFont(Design.SUBTITLE);
-		this.label[2].setForeground(Design.FontColor[1]);
+		pageSave.addAll(this.labels[0], Box.createVerticalStrut(10), this.askName, Box.createVerticalStrut(10), this.submit, Box.createVerticalStrut(5), this.labels[2]);
+		this.labels[0].setFont(Design.TITLE);
+		this.labels[2].setFont(Design.SUBTITLE);
+		this.labels[2].setForeground(Design.FontColor[1]);
 		
 		this.add(pageSave);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
-		}
-		
-		this.submit.updateText(lang);
 	}
 	
 	@Override
@@ -105,7 +92,7 @@ public class FrameSaveAs extends JCustomFrame {
 		MainFrame.getInstance().setEnabled(false);
 		
 		this.submit.setVisible(false);
-		this.label[2].setVisible(true);
+		this.labels[2].setVisible(true);
 		
 		this.askName.setText(Overlay.getInstance().getSaveDefaultName());
 		this.askName.requestFocus();
@@ -116,20 +103,20 @@ public class FrameSaveAs extends JCustomFrame {
 		String formatFileName = this.askName.getText().replace(" ", "_");
 		if(formatFileName.equals("") || formatFileName.matches(".*[\\/\\\\\\*\\?\"<>\\|:].*")) {
 			this.submit.setVisible(false);
-			this.label[2].setVisible(true);
+			this.labels[2].setVisible(true);
 			return;
 		}
 		
 		for(SaveConfig config : SaveConfig.getData()) {
 			if(formatFileName.equals(config.getFileName())) {
 				this.submit.setVisible(false);
-				this.label[2].setVisible(true);
+				this.labels[2].setVisible(true);
 				return;
 			}
 		}
 		
 		this.submit.setVisible(true);
-		this.label[2].setVisible(false);
+		this.labels[2].setVisible(false);
 	}
 	
 	private void createSaveConfig() {

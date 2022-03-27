@@ -3,7 +3,6 @@ package fr.vlik.gfbuilder.page;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -67,7 +66,6 @@ public class PageSprite extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		updateLanguage(Language.FR);
 		createPanel();
 		setEffects();
 	}
@@ -139,13 +137,6 @@ public class PageSprite extends PartialPage {
 		elem3.addAll(this.labels.get("Isle"), Box.createVerticalStrut(10), this.islandBuff);
 		
 		this.addAll(elem1, Box.createVerticalStrut(10), elem2, Box.createVerticalStrut(10), elem3);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
 	}
 	
 	public void updateBlason() {

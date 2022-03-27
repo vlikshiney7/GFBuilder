@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.swing.Box;
@@ -166,7 +165,10 @@ public class PageArmor extends PartialRedStuff {
 			this.equipSetBonus.add(new JCustomTextPane<>(new BonusEquipSet()));
 		}
 		
-		updateLanguage(Language.FR);
+		this.components.addAll(this.armor.getList());
+		this.components.addAll(this.pearl.getList());
+		this.components.addAll(this.equipSetBonus);
+		
 		createPanel();
 		setEffects();
 	}
@@ -189,10 +191,6 @@ public class PageArmor extends PartialRedStuff {
 	
 	public EquipSet getEquipSet() {
 		return this.equipSet;
-	}
-	
-	public JCustomTextPane<BonusEquipSet> getEquipSetBonus(int id) {
-		return this.equipSetBonus.get(id);
 	}
 	
 	public Enchantment getEnchantment(int id) {
@@ -415,25 +413,6 @@ public class PageArmor extends PartialRedStuff {
 		
 		for(int i = 0; i < 5; i++) {
 			this.labels.get("PearlEnchant" + i).setVisible(false);
-		}
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		for(JCompleteBox<Armor> box : this.armor.getList()) {
-			box.updateLanguage(lang);
-		}
-		
-		for(JCompleteBox<Pearl> box : this.pearl.getList()) {
-			box.updateLanguage(lang);
-		}
-		
-		for(JCustomTextPane<BonusEquipSet> textPane : this.equipSetBonus) {
-			textPane.updateText(lang);
 		}
 	}
 	

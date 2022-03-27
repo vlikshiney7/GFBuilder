@@ -135,7 +135,7 @@ public class Bullet extends CompleteBuff {
 				Tools.containObject(filter, bullet.getTag()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+			if( (andValue ? Filterable.andValue(filters) : Filterable.orValue(filters))
 					&& !choice.equals(bullet)) {
 				
 				result.add(bullet);

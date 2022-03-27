@@ -8,7 +8,7 @@ import javax.swing.JRadioButton;
 
 import fr.vlik.grandfantasia.enums.Language;
 
-public class JLangRadioButton extends JRadioButton {
+public class JLangRadioButton extends JRadioButton implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -18,14 +18,13 @@ public class JLangRadioButton extends JRadioButton {
 		this.lang = lang;
 		setIconUI("radioOn", "radioOff");
 		setVoidUI();
-		updateText(Language.FR);
 	}
 	
 	public JLangRadioButton(Icon icon) {
 		super(icon);
 	}
 	
-	public void updateText(Language lang) {
+	public void updateLanguage(Language lang) {
 		this.setText(this.lang.get(lang));
 	}
 	

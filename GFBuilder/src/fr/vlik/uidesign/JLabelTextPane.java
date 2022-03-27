@@ -5,7 +5,7 @@ import javax.swing.border.EmptyBorder;
 
 import fr.vlik.grandfantasia.enums.Language;
 
-public class JLabelTextPane extends JTextPane {
+public class JLabelTextPane extends JTextPane implements JUpdateLang {
 	
 	private static final long serialVersionUID = 1L;
 	private JLangLabel label;
@@ -29,8 +29,8 @@ public class JLabelTextPane extends JTextPane {
 		this.setForeground(Design.FontColor[0]);
 	}
 	
-	public void updateText(Language lang) {
-		this.label.updateText(lang);
+	public void updateLanguage(Language lang) {
+		this.label.updateLanguage(lang);
 		this.setText(this.label.getText());
 	}
 }

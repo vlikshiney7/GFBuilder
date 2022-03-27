@@ -141,8 +141,8 @@ public enum TypeEffect implements Colorable, Writable {
 	RegenPM("Régénération de Point de Mana Assis", "", "Regen PM", "", -1, false, Tools.EffectColor[0]),
 	CostPV("Coût en PV", "", "Coût PV", "", -1, false, Tools.EffectColor[0]),
 	MEN("Menace", "", "Menace", "", -1, true, Tools.EffectColor[0]), // A REVOIR
-	HealD("Soin Donné", "", "Soin Donné", "", -1, true, Tools.EffectColor[0]),
-	HealR("Soin Reçu", "", "Soin Reçu", "", -1, true, Tools.EffectColor[0]),
+	HealD("Soin Donné", "", "Soin Donné", "", -1, false, Tools.EffectColor[0]),
+	HealR("Soin Reçu", "", "Soin Reçu", "", -1, false, Tools.EffectColor[0]),
 	Bullet("Bonus d'Attaque à Distance", "", "Projectile", "", -1, true, Tools.EffectColor[7]),
 	ReflectP_old("Dégât Physique Renvoyé", "", "Deg Phys Refl", "", -1, true, Tools.EffectColor[10]),
 	ReflectM_old("Dégât Magique Renvoyé", "", "Deg Mag Refl", "", -1, true, Tools.EffectColor[11]),

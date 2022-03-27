@@ -16,11 +16,9 @@ import fr.vlik.gfbuilder.MainFrame;
 import fr.vlik.gfbuilder.Overlay;
 import fr.vlik.gfbuilder.SaveConfig;
 import fr.vlik.gfbuilder.page.PageOption;
-import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomPanel;
-import fr.vlik.uidesign.JLangLabel;
 
 public class FrameSaveLoader extends JCustomFrame {
 	
@@ -32,15 +30,13 @@ public class FrameSaveLoader extends JCustomFrame {
 	private JCustomButton delete;
 	private JCustomButton cancel;
 	
-	private JLangLabel[] label;
-	
 	public static FrameSaveLoader getInstance() {
 		return INSTANCE;
 	}
 	
 	private FrameSaveLoader() {
 		super(new BorderLayout());
-		this.label = Lang.getDataLabel(3);
+		this.labels = Lang.getDataLabel(3);
 		
 		try {
 			this.setIconImage(ImageIO.read(FrameSaveOnQuit.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
@@ -60,7 +56,7 @@ public class FrameSaveLoader extends JCustomFrame {
 			}
 		});
 		
-		this.load = new JCustomButton(this.label[1].getLang(), Design.GREEN_COLOR);
+		this.load = new JCustomButton(this.labels[1].getLang(), Design.GREEN_COLOR);
 		this.load.addActionListener(e -> {
 			PageOption.getInstance().updateSave();
 			MainFrame.getInstance().updateStat();
@@ -69,7 +65,7 @@ public class FrameSaveLoader extends JCustomFrame {
 			close();
 		});
 		
-		this.delete = new JCustomButton(this.label[2].getLang(), Design.RED_COLOR);
+		this.delete = new JCustomButton(this.labels[2].getLang(), Design.RED_COLOR);
 		this.delete.addActionListener(e -> {
 			SaveConfig.deleteData(PageOption.getInstance().getSave());
 			PageOption.getInstance().refreshSave();
@@ -77,15 +73,17 @@ public class FrameSaveLoader extends JCustomFrame {
 			close();
 		});
 		
-		this.cancel = new JCustomButton(this.label[3].getLang(), Design.YELLOW_COLOR);
+		this.cancel = new JCustomButton(this.labels[3].getLang(), Design.YELLOW_COLOR);
 		this.cancel.addActionListener(e -> close() );
 		
-		updateLanguage(Language.FR);
+		this.components.add(this.load);
+		this.components.add(this.delete);
+		this.components.add(this.cancel);
 		
 		JCustomPanel pageLoad = new JCustomPanel(BoxLayout.Y_AXIS, new EmptyBorder(10, 10, 10, 10));
 		pageLoad.setBackground(Design.UIColor[2]);
-		pageLoad.add(this.label[0]);
-		this.label[0].setFont(Design.TITLE);
+		pageLoad.add(this.labels[0]);
+		this.labels[0].setFont(Design.TITLE);
 		
 		JCustomPanel buttons = new JCustomPanel(new GridLayout(1, 3, 10, 10), new EmptyBorder(10, 10, 10, 10));
 		buttons.setBackground(Design.UIColor[2]);
@@ -94,17 +92,6 @@ public class FrameSaveLoader extends JCustomFrame {
 		pageLoad.add(buttons);
 		
 		this.add(pageLoad);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(int i = 0; i < this.label.length; i++) {
-			this.label[i].updateText(lang);
-		}
-		
-		this.load.updateText(lang);
-		this.delete.updateText(lang);
-		this.cancel.updateText(lang);
 	}
 	
 	@Override

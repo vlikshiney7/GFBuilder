@@ -283,7 +283,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de l'Apostat"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp0R", ICONPATH + "100pvp0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 1009, true),
+					new Effect(TypeEffect.DefP, false, 1008, true),
 					new Effect(TypeEffect.DefM, false, 718, true),
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.VIT, false, 54, true),
@@ -305,8 +305,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières du Gardien éclairé"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp1R", ICONPATH + "100pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 1211, true),
-					new Effect(TypeEffect.DefM, false, 827, true),
+					new Effect(TypeEffect.DefP, false, 1210, true),
+					new Effect(TypeEffect.DefM, false, 826, true),
 					new Effect(TypeEffect.FCE, false, 41, true),
 					new Effect(TypeEffect.VIT, false, 54, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -316,8 +316,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Gardien éclairé"); put(Language.EN, "Light Guardian's Greaves"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp1", ICONPATH + "100pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 1101, true),
-					new Effect(TypeEffect.DefM, false, 752, true),
+					new Effect(TypeEffect.DefP, false, 1100, true),
+					new Effect(TypeEffect.DefM, false, 751, true),
 					new Effect(TypeEffect.FCE, false, 36, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -345,7 +345,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Courroux Sanguinaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp0R", ICONPATH + "95pvp0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 945, true),
+					new Effect(TypeEffect.DefP, false, 944, true),
 					new Effect(TypeEffect.DefM, false, 673, true),
 					new Effect(TypeEffect.FCE, false, 33, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
@@ -425,8 +425,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Gladiateur du Hokuto"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.BERSERKER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp0R", ICONPATH + "85pvp0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 876, true),
-					new Effect(TypeEffect.DefM, false, 624, true),
+					new Effect(TypeEffect.DefP, false, 875, true),
+					new Effect(TypeEffect.DefM, false, 623, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -448,7 +448,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.PALADIN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp1R", ICONPATH + "85pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 893, true),
-					new Effect(TypeEffect.DefM, false, 612, true),
+					new Effect(TypeEffect.DefM, false, 611, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -3788,7 +3788,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pantalon du Précipice"); put(Language.EN, "Precipice Pants"); }},
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "100pve0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 738, true),
+					new Effect(TypeEffect.DefP, false, 737, true),
 					new Effect(TypeEffect.DefM, false, 524, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 18),
@@ -4137,7 +4137,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.RANGER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp2R", ICONPATH + "100pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 858, true),
-					new Effect(TypeEffect.DefM, false, 783, true),
+					new Effect(TypeEffect.DefM, false, 782, true),
 					new Effect(TypeEffect.VIT, false, 55, true),
 					new Effect(TypeEffect.AGI, false, 40, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -4148,7 +4148,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.RANGER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp2", ICONPATH + "100pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 780, true),
-					new Effect(TypeEffect.DefM, false, 712, true),
+					new Effect(TypeEffect.DefM, false, 711, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.AGI, false, 36, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -4158,8 +4158,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières d'Assassin nécrotique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp3R", ICONPATH + "100pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 841, true),
-					new Effect(TypeEffect.DefM, false, 799, true),
+					new Effect(TypeEffect.DefP, false, 840, true),
+					new Effect(TypeEffect.DefM, false, 798, true),
 					new Effect(TypeEffect.FCE, false, 41, true),
 					new Effect(TypeEffect.VIT, false, 55, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -4169,7 +4169,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de l'Assassin scarifié"); put(Language.EN, "Necrotic Assassin's Greaves"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp3", ICONPATH + "100pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 765, true),
+					new Effect(TypeEffect.DefP, false, 764, true),
 					new Effect(TypeEffect.DefM, false, 726, true),
 					new Effect(TypeEffect.FCE, false, 36, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
@@ -4199,7 +4199,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.RANGER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp2R", ICONPATH + "95pvp2", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 803, true),
-					new Effect(TypeEffect.DefM, false, 733, true),
+					new Effect(TypeEffect.DefM, false, 732, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -4220,7 +4220,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Samouraï Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp3R", ICONPATH + "95pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 788, true),
+					new Effect(TypeEffect.DefP, false, 787, true),
 					new Effect(TypeEffect.DefM, false, 748, true),
 					new Effect(TypeEffect.FCE, false, 34, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
@@ -4278,8 +4278,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Collant du Traqueur de Grand Line"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp2R", ICONPATH + "85pvp2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 744, true),
-					new Effect(TypeEffect.DefM, false, 679, true),
+					new Effect(TypeEffect.DefP, false, 743, true),
+					new Effect(TypeEffect.DefM, false, 678, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 30, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -7633,7 +7633,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de l'Araignée Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "30pve2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 583, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.DCCP, false, 13),
@@ -7641,7 +7641,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pantalon de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Pants"); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "65pve3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 603, true),
+					new Effect(TypeEffect.DefP, false, 602, true),
 					new Effect(TypeEffect.DefM, false, 595, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2.3),
@@ -8010,7 +8010,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Collants du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp4", ICONPATH + "100pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 858, true),
+					new Effect(TypeEffect.DefP, false, 857, true),
 					new Effect(TypeEffect.DefM, false, 783, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
@@ -8021,8 +8021,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Leggings de l'Intuition sauvage"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp5R", ICONPATH + "100pvp5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 925, true),
-					new Effect(TypeEffect.DefM, false, 879, true),
+					new Effect(TypeEffect.DefP, false, 924, true),
+					new Effect(TypeEffect.DefM, false, 878, true),
 					new Effect(TypeEffect.VIT, false, 54, true),
 					new Effect(TypeEffect.INT, false, 41, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -8032,7 +8032,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Leggings de l'Intuition sauvage"); put(Language.EN, "Feral Inspiration Leggings"); }},
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp5", ICONPATH + "100pvp5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 841, true),
+					new Effect(TypeEffect.DefP, false, 840, true),
 					new Effect(TypeEffect.DefM, false, 799, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
@@ -8083,8 +8083,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Collants de Psionique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp5R", ICONPATH + "95pvp5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 867, true),
-					new Effect(TypeEffect.DefM, false, 824, true),
+					new Effect(TypeEffect.DefP, false, 866, true),
+					new Effect(TypeEffect.DefM, false, 823, true),
 					new Effect(TypeEffect.VIT, false, 47, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -8142,7 +8142,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.CLERC, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp4R", ICONPATH + "85pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 818, true),
-					new Effect(TypeEffect.DefM, false, 747, true),
+					new Effect(TypeEffect.DefM, false, 746, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -8163,7 +8163,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Leggings de l'Oracle d'Amestris"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp5R", ICONPATH + "85pvp5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 802, true),
+					new Effect(TypeEffect.DefP, false, 801, true),
 					new Effect(TypeEffect.DefM, false, 762, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.INT, false, 30, true),
@@ -11503,7 +11503,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 676, true),
-					new Effect(TypeEffect.DefM, false, 505, true),
+					new Effect(TypeEffect.DefM, false, 504, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCP, false, 2.3),
 				}, null),
@@ -11874,7 +11874,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp6R", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 771, true),
-					new Effect(TypeEffect.DefM, false, 939, true),
+					new Effect(TypeEffect.DefM, false, 938, true),
 					new Effect(TypeEffect.VIT, false, 55, true),
 					new Effect(TypeEffect.INT, false, 41, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -11885,7 +11885,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp6", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 701, true),
-					new Effect(TypeEffect.DefM, false, 854, true),
+					new Effect(TypeEffect.DefM, false, 853, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -11906,7 +11906,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres du Chaos élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp7", ICONPATH + "100pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 688, true),
+					new Effect(TypeEffect.DefP, false, 687, true),
 					new Effect(TypeEffect.DefM, false, 871, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 36, true),
@@ -11935,8 +11935,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Collants de Doyen Sorcier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp6R", ICONPATH + "95pvp6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 710, true),
-					new Effect(TypeEffect.DefM, false, 898, true),
+					new Effect(TypeEffect.DefP, false, 709, true),
+					new Effect(TypeEffect.DefM, false, 897, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -11957,7 +11957,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Collants de Faucheur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp7R", ICONPATH + "95pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 724, true),
+					new Effect(TypeEffect.DefP, false, 723, true),
 					new Effect(TypeEffect.DefM, false, 880, true),
 					new Effect(TypeEffect.VIT, false, 48, true),
 					new Effect(TypeEffect.INT, false, 35, true),
@@ -12015,8 +12015,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Leggings de l'Archimage du Royaume de Fiore"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp6R", ICONPATH + "85pvp6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 657, true),
-					new Effect(TypeEffect.DefM, false, 832, true),
+					new Effect(TypeEffect.DefP, false, 656, true),
+					new Effect(TypeEffect.DefM, false, 831, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -12037,7 +12037,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Leggings du Démoniste de Soul Society"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp7R", ICONPATH + "85pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 670, true),
+					new Effect(TypeEffect.DefP, false, 669, true),
 					new Effect(TypeEffect.DefM, false, 815, true),
 					new Effect(TypeEffect.VIT, false, 42, true),
 					new Effect(TypeEffect.INT, false, 30, true),
@@ -15383,7 +15383,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "65pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 553, true),
-					new Effect(TypeEffect.DefM, false, 505, true),
+					new Effect(TypeEffect.DefM, false, 504, true),
 					new Effect(TypeEffect.ESQ, false, 6),
 					new Effect(TypeEffect.TCCM, false, 2.3),
 				}, null),
@@ -15673,7 +15673,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Général divin du centre de la Terre"); put(Language.EN, "Terra Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 97, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "100gold8", ICONPATH + "100gold8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 962, true),
+					new Effect(TypeEffect.DefP, false, 961, true),
 					new Effect(TypeEffect.DefM, false, 685, true),
 					new Effect(TypeEffect.FCE, false, 56, true),
 					new Effect(TypeEffect.VIT, false, 45, true),
@@ -15682,8 +15682,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Combattant loup lunaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 97, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "100gold9", ICONPATH + "100gold9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 802, true),
-					new Effect(TypeEffect.DefM, false, 762, true),
+					new Effect(TypeEffect.DefP, false, 801, true),
+					new Effect(TypeEffect.DefM, false, 761, true),
 					new Effect(TypeEffect.VIT, false, 41, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.AGI, false, 56, true),
@@ -15691,8 +15691,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Brume rugissante effrayante"); put(Language.EN, "Mistfall Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "90gold8", ICONPATH + "90gold8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 893, true),
-					new Effect(TypeEffect.DefM, false, 636, true),
+					new Effect(TypeEffect.DefP, false, 892, true),
+					new Effect(TypeEffect.DefM, false, 635, true),
 					new Effect(TypeEffect.FCE, false, 54, true),
 					new Effect(TypeEffect.VIT, false, 41, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -15700,8 +15700,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pantalon stellaire de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Trousers"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "10ans90gold8", ICONPATH + "10ansGold", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 893, true),
-					new Effect(TypeEffect.DefM, false, 636, true),
+					new Effect(TypeEffect.DefP, false, 892, true),
+					new Effect(TypeEffect.DefM, false, 635, true),
 					new Effect(TypeEffect.FCE, false, 54, true),
 					new Effect(TypeEffect.VIT, false, 41, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -15709,8 +15709,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes d'Adieu aux Sables jaunes"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 87, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "90gold9", ICONPATH + "90gold9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 744, true),
-					new Effect(TypeEffect.DefM, false, 707, true),
+					new Effect(TypeEffect.DefP, false, 743, true),
+					new Effect(TypeEffect.DefM, false, 706, true),
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 54, true),
@@ -15718,8 +15718,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pantalon stellaire de Galvatron"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 87, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "10ans90gold9", ICONPATH + "10ansGold", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 744, true),
-					new Effect(TypeEffect.DefM, false, 707, true),
+					new Effect(TypeEffect.DefP, false, 743, true),
+					new Effect(TypeEffect.DefM, false, 706, true),
 					new Effect(TypeEffect.VIT, false, 32, true),
 					new Effect(TypeEffect.INT, false, 42, true),
 					new Effect(TypeEffect.AGI, false, 54, true),
@@ -15728,7 +15728,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 77, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "80gold8", ICONPATH + "80gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 822, true),
-					new Effect(TypeEffect.DefM, false, 586, true),
+					new Effect(TypeEffect.DefM, false, 585, true),
 					new Effect(TypeEffect.FCE, false, 47, true),
 					new Effect(TypeEffect.VIT, false, 38, true),
 					new Effect(TypeEffect.AGI, false, 35, true),
@@ -15736,8 +15736,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Bête des Flammes du Démon"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 77, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "80gold9", ICONPATH + "90evo8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 685, true),
-					new Effect(TypeEffect.DefM, false, 651, true),
+					new Effect(TypeEffect.DefP, false, 684, true),
+					new Effect(TypeEffect.DefM, false, 650, true),
 					new Effect(TypeEffect.VIT, false, 34, true),
 					new Effect(TypeEffect.INT, false, 37, true),
 					new Effect(TypeEffect.AGI, false, 49, true),
@@ -15746,7 +15746,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp8R", ICONPATH + "100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 992, true),
-					new Effect(TypeEffect.DefM, false, 719, true),
+					new Effect(TypeEffect.DefM, false, 718, true),
 					new Effect(TypeEffect.FCE, false, 46, true),
 					new Effect(TypeEffect.VIT, false, 33, true),
 					new Effect(TypeEffect.AGI, false, 32, true),
@@ -15769,8 +15769,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Tunique du Rédempteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp9R", ICONPATH + "100pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 841, true),
-					new Effect(TypeEffect.DefM, false, 799, true),
+					new Effect(TypeEffect.DefP, false, 840, true),
+					new Effect(TypeEffect.DefM, false, 798, true),
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.INT, false, 36, true),
 					new Effect(TypeEffect.AGI, false, 48, true),
@@ -15802,7 +15802,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Ranger astral malicieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 97, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "100pve9", ICONPATH + "96sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 727, true),
+					new Effect(TypeEffect.DefP, false, 726, true),
 					new Effect(TypeEffect.DefM, false, 690, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 25, true),
@@ -15811,7 +15811,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Mortel-fléau"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp8R", ICONPATH + "95pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 945, true),
+					new Effect(TypeEffect.DefP, false, 944, true),
 					new Effect(TypeEffect.DefM, false, 673, true),
 					new Effect(TypeEffect.FCE, false, 39, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
@@ -15835,7 +15835,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Héraut royal"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp9R", ICONPATH + "95pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 788, true),
+					new Effect(TypeEffect.DefP, false, 787, true),
 					new Effect(TypeEffect.DefM, false, 748, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
 					new Effect(TypeEffect.INT, false, 31, true),
@@ -15860,7 +15860,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 92, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "95pve8", ICONPATH + "95pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 840, true),
-					new Effect(TypeEffect.DefM, false, 599, true),
+					new Effect(TypeEffect.DefM, false, 598, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
@@ -15877,7 +15877,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres d'Ouragan du Val de la fissure"); put(Language.EN, "Hurricane Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "90pve8", ICONPATH + "90pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 809, true),
+					new Effect(TypeEffect.DefP, false, 808, true),
 					new Effect(TypeEffect.DefM, false, 576, true),
 					new Effect(TypeEffect.FCE, false, 34, true),
 					new Effect(TypeEffect.VIT, false, 21, true),
@@ -15886,7 +15886,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de l'Aile de la Tempête de Sable"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 87, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "90pve9", ICONPATH + "86sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 674, true),
+					new Effect(TypeEffect.DefP, false, 673, true),
 					new Effect(TypeEffect.DefM, false, 640, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.INT, false, 21, true),
@@ -15895,7 +15895,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Scelleur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp8R", ICONPATH + "85pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 921, true),
+					new Effect(TypeEffect.DefP, false, 920, true),
 					new Effect(TypeEffect.DefM, false, 656, true),
 					new Effect(TypeEffect.FCE, false, 35, true),
 					new Effect(TypeEffect.VIT, false, 24, true),
@@ -15920,7 +15920,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp9R", ICONPATH + "85pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 767, true),
-					new Effect(TypeEffect.DefM, false, 729, true),
+					new Effect(TypeEffect.DefM, false, 728, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.AGI, false, 37, true),
@@ -15931,8 +15931,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres d'Apôtre de l'arracheur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "85pvp9", ICONPATH + "85pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 698, true),
-					new Effect(TypeEffect.DefM, false, 663, true),
+					new Effect(TypeEffect.DefP, false, 697, true),
+					new Effect(TypeEffect.DefM, false, 662, true),
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -15953,7 +15953,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 82, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "85pve9", ICONPATH + "85pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 647, true),
-					new Effect(TypeEffect.DefM, false, 615, true),
+					new Effect(TypeEffect.DefM, false, 614, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 33, true),
@@ -15961,7 +15961,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Balayage radical"); put(Language.EN, "Mortal Sorrow Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "80nucleus8", ICONPATH + "80nucleus8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 764, true),
+					new Effect(TypeEffect.DefP, false, 763, true),
 					new Effect(TypeEffect.DefM, false, 544, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
@@ -15971,7 +15971,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "80nucleus9", ICONPATH + "81sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
-					new Effect(TypeEffect.DefM, false, 605, true),
+					new Effect(TypeEffect.DefM, false, 604, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 31, true),
@@ -15979,7 +15979,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres du Démogorgon pleureur"); put(Language.EN, "Divine Sorrow Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "80lingot8", ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 764, true),
+					new Effect(TypeEffect.DefP, false, 763, true),
 					new Effect(TypeEffect.DefM, false, 544, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
@@ -15989,7 +15989,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "80lingot9", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 636, true),
-					new Effect(TypeEffect.DefM, false, 605, true),
+					new Effect(TypeEffect.DefM, false, 604, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
@@ -16063,8 +16063,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Démon enragé"); put(Language.EN, "Hellscream Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 72, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "75pve8", ICONPATH + "85pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 712, true),
-					new Effect(TypeEffect.DefM, false, 507, true),
+					new Effect(TypeEffect.DefP, false, 711, true),
+					new Effect(TypeEffect.DefM, false, 506, true),
 					new Effect(TypeEffect.FCE, false, 23, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
@@ -16082,7 +16082,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "70nucleus8", ICONPATH + "70nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 698, true),
-					new Effect(TypeEffect.DefM, false, 498, true),
+					new Effect(TypeEffect.DefM, false, 497, true),
 					new Effect(TypeEffect.FCE, false, 18, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -16091,7 +16091,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "70nucleus9", ICONPATH + "71sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
-					new Effect(TypeEffect.DefM, false, 553, true),
+					new Effect(TypeEffect.DefM, false, 552, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
@@ -16100,7 +16100,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "70lingot8", ICONPATH + "70lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 698, true),
-					new Effect(TypeEffect.DefM, false, 498, true),
+					new Effect(TypeEffect.DefM, false, 497, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -16109,7 +16109,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "70lingot9", ICONPATH + "76sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 582, true),
-					new Effect(TypeEffect.DefM, false, 553, true),
+					new Effect(TypeEffect.DefM, false, 552, true),
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
@@ -16118,7 +16118,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 67, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "70pve8", ICONPATH + "75pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 678, true),
-					new Effect(TypeEffect.DefM, false, 484, true),
+					new Effect(TypeEffect.DefM, false, 483, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
 					new Effect(TypeEffect.VIT, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
@@ -16147,7 +16147,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Fervent adepte de sacrifice sanglant"); put(Language.EN, "Bloodfighter Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "65pvp8", ICONPATH + "65pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 701, true),
+					new Effect(TypeEffect.DefP, false, 700, true),
 					new Effect(TypeEffect.DefM, false, 499, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
@@ -16171,8 +16171,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Danseur des rafales automnales"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "65pvp9", ICONPATH + "65pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 584, true),
-					new Effect(TypeEffect.DefM, false, 555, true),
+					new Effect(TypeEffect.DefP, false, 583, true),
+					new Effect(TypeEffect.DefM, false, 554, true),
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
@@ -16184,7 +16184,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 62, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "65pve8", ICONPATH + "65pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 645, true),
-					new Effect(TypeEffect.DefM, false, 460, true),
+					new Effect(TypeEffect.DefM, false, 459, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
@@ -16192,8 +16192,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes d'Espion Aile de la nuit"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 62, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "65pve9", ICONPATH + "65pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 538, true),
-					new Effect(TypeEffect.DefM, false, 511, true),
+					new Effect(TypeEffect.DefP, false, 537, true),
+					new Effect(TypeEffect.DefM, false, 510, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 21, true),
@@ -16201,7 +16201,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Gladiateur flamboyant"); put(Language.EN, "Ruthless Warlord Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60nucleus8", ICONPATH + "60nucleus8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 632, true),
+					new Effect(TypeEffect.DefP, false, 631, true),
 					new Effect(TypeEffect.DefM, false, 450, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 16, true),
@@ -16210,7 +16210,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes du Guide nocturne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60nucleus9", ICONPATH + "60nucleus9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 527, true),
+					new Effect(TypeEffect.DefP, false, 526, true),
 					new Effect(TypeEffect.DefM, false, 500, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 17, true),
@@ -16219,7 +16219,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Gladiateur Ballarcane"); put(Language.EN, "Profane Warlord Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60lingot8", ICONPATH + "60lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 632, true),
+					new Effect(TypeEffect.DefP, false, 631, true),
 					new Effect(TypeEffect.DefM, false, 450, true),
 					new Effect(TypeEffect.FCE, false, 15, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
@@ -16228,7 +16228,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes du Chef nocturne"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60lingot9", ICONPATH + "60lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 527, true),
+					new Effect(TypeEffect.DefP, false, 526, true),
 					new Effect(TypeEffect.DefM, false, 500, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 12, true),
@@ -16237,8 +16237,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres du Seigneur Bondinouri"); put(Language.EN, "Blood Lord Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 57, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60pve8", ICONPATH + "60pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 612, true),
-					new Effect(TypeEffect.DefM, false, 436, true),
+					new Effect(TypeEffect.DefP, false, 611, true),
+					new Effect(TypeEffect.DefM, false, 435, true),
 					new Effect(TypeEffect.FCE, false, 18, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -16246,7 +16246,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes du Glorieux Seigneur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 57, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60pve9", ICONPATH + "60pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 510, true),
+					new Effect(TypeEffect.DefP, false, 509, true),
 					new Effect(TypeEffect.DefM, false, 484, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 12, true),
@@ -16265,8 +16265,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Seigneur maniaque"); put(Language.EN, "Maniac Lord Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "55pvp8", ICONPATH + "60nucleus8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 630, true),
-					new Effect(TypeEffect.DefM, false, 449, true),
+					new Effect(TypeEffect.DefP, false, 629, true),
+					new Effect(TypeEffect.DefM, false, 448, true),
 					new Effect(TypeEffect.FCE, false, 15, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
@@ -16285,8 +16285,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Sombre boucher des ombres"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "55pvp9", ICONPATH + "60pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 525, true),
-					new Effect(TypeEffect.DefM, false, 499, true),
+					new Effect(TypeEffect.DefP, false, 524, true),
+					new Effect(TypeEffect.DefM, false, 498, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
@@ -16296,7 +16296,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 47, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "50pve8", ICONPATH + "65pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 544, true),
-					new Effect(TypeEffect.DefM, false, 388, true),
+					new Effect(TypeEffect.DefM, false, 387, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -16305,7 +16305,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 48, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "50pve9", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 453, true),
-					new Effect(TypeEffect.DefM, false, 431, true),
+					new Effect(TypeEffect.DefM, false, 430, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
@@ -16362,7 +16362,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Pilleurs du fort"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 37, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "40pve9", ICONPATH + "60lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 397, true),
+					new Effect(TypeEffect.DefP, false, 396, true),
 					new Effect(TypeEffect.DefM, false, 377, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.INT, false, 7, true),
@@ -16421,7 +16421,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 17, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "20pve8", ICONPATH + "20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 241, true),
-					new Effect(TypeEffect.DefM, false, 306, true),
+					new Effect(TypeEffect.DefM, false, 305, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
@@ -16776,7 +16776,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes d'Aigle démon dévoreur de cœurs"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 90, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "90gvg9", ICONPATH + "85pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 726, true),
+					new Effect(TypeEffect.DefP, false, 725, true),
 					new Effect(TypeEffect.DefM, false, 689, true),
 					new Effect(TypeEffect.VIT, false, 21, true),
 					new Effect(TypeEffect.INT, false, 22, true),
@@ -16787,7 +16787,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres du Combat sans fin"); put(Language.EN, "Endless Battle Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "80gvg8", ICONPATH + "85pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 804, true),
+					new Effect(TypeEffect.DefP, false, 803, true),
 					new Effect(TypeEffect.DefM, false, 572, true),
 					new Effect(TypeEffect.FCE, false, 27, true),
 					new Effect(TypeEffect.VIT, false, 22, true),
@@ -16798,7 +16798,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Feu de crevasse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "80gvg9", ICONPATH + "85pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 670, true),
+					new Effect(TypeEffect.DefP, false, 669, true),
 					new Effect(TypeEffect.DefM, false, 636, true),
 					new Effect(TypeEffect.VIT, false, 17, true),
 					new Effect(TypeEffect.INT, false, 24, true),
@@ -16809,8 +16809,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Coups de feu précis"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 77, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "80lingot9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 653, true),
-					new Effect(TypeEffect.DefM, false, 620, true),
+					new Effect(TypeEffect.DefP, false, 652, true),
+					new Effect(TypeEffect.DefM, false, 619, true),
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 					new Effect(TypeEffect.AGI, false, 31, true),
@@ -17315,7 +17315,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "70gvg8", ICONPATH + "80nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 735, true),
-					new Effect(TypeEffect.DefM, false, 524, true),
+					new Effect(TypeEffect.DefM, false, 523, true),
 					new Effect(TypeEffect.FCE, false, 25, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
@@ -17325,7 +17325,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Tireur d'élite invisible"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "70gvg9", ICONPATH + "81sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 613, true),
+					new Effect(TypeEffect.DefP, false, 612, true),
 					new Effect(TypeEffect.DefM, false, 582, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.INT, false, 21, true),
@@ -17337,7 +17337,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 68, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "80lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 721, true),
-					new Effect(TypeEffect.DefM, false, 514, true),
+					new Effect(TypeEffect.DefM, false, 513, true),
 					new Effect(TypeEffect.FCE, false, 26, true),
 					new Effect(TypeEffect.VIT, false, 18, true),
 					new Effect(TypeEffect.AGI, false, 16, true),
@@ -17851,7 +17851,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
-					new Effect(TypeEffect.DefM, false, 527, true),
+					new Effect(TypeEffect.DefM, false, 526, true),
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 23, true),
@@ -19121,7 +19121,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Pic embrumé de Sprite"); put(Language.EN, "Sprite's Mist Peak Greaves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 86, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "86sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 634, true),
+					new Effect(TypeEffect.DefP, false, 633, true),
 					new Effect(TypeEffect.DefM, false, 602, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.INT, false, 6, true),
@@ -19131,7 +19131,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 81, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "81sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
-					new Effect(TypeEffect.DefM, false, 578, true),
+					new Effect(TypeEffect.DefM, false, 577, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
@@ -19148,8 +19148,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Soldats précurseurs de Sprite"); put(Language.EN, "Sprite's Vanguard Greaves"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 71, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "71sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 557, true),
-					new Effect(TypeEffect.DefM, false, 529, true),
+					new Effect(TypeEffect.DefP, false, 556, true),
+					new Effect(TypeEffect.DefM, false, 528, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
@@ -19158,7 +19158,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 66, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "66sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
-					new Effect(TypeEffect.DefM, false, 504, true),
+					new Effect(TypeEffect.DefM, false, 503, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -19167,7 +19167,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 61, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 504, true),
-					new Effect(TypeEffect.DefM, false, 479, true),
+					new Effect(TypeEffect.DefM, false, 478, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -19185,7 +19185,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 44, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 413, true),
-					new Effect(TypeEffect.DefM, false, 393, true),
+					new Effect(TypeEffect.DefM, false, 392, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
@@ -19193,7 +19193,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres d'Armes à deux mains de Sprite"); put(Language.EN, "Sprite's Bolstered Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 34, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "54sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 359, true),
+					new Effect(TypeEffect.DefP, false, 358, true),
 					new Effect(TypeEffect.DefM, false, 341, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 					new Effect(TypeEffect.INT, false, 2, true),
@@ -19202,8 +19202,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Pratique de Sprite"); put(Language.EN, "Sprite's Stratagem Chaps"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 24, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "25pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 270, true),
-					new Effect(TypeEffect.DefM, false, 342, true),
+					new Effect(TypeEffect.DefP, false, 269, true),
+					new Effect(TypeEffect.DefM, false, 341, true),
 					new Effect(TypeEffect.FCE, false, 2, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
@@ -19211,7 +19211,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de la Cité murée de Sprite"); put(Language.EN, "Sprite's Bastion Chaps"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 14, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 210, true),
+					new Effect(TypeEffect.DefP, false, 209, true),
 					new Effect(TypeEffect.DefM, false, 265, true),
 					new Effect(TypeEffect.FCE, false, 1, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
@@ -19219,7 +19219,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pantalon d'Exercice de Sprite"); put(Language.EN, "Sprite's Workout Trousers"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 7, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "7sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 160, true),
+					new Effect(TypeEffect.DefP, false, 159, true),
 					new Effect(TypeEffect.DefM, false, 202, true),
 					new Effect(TypeEffect.FCE, false, 1, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
@@ -19227,19 +19227,19 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de la Bête à bain de sang"); put(Language.EN, "Bloody Roar Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "60bleu8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 738, true),
+					new Effect(TypeEffect.DefP, false, 737, true),
 					new Effect(TypeEffect.DefM, false, 547, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Démon dévore-cœur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 615, true),
+					new Effect(TypeEffect.DefP, false, 614, true),
 					new Effect(TypeEffect.DefM, false, 608, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de la Chute"); put(Language.EN, "Leggings of Ruin"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "87blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 699, true),
+					new Effect(TypeEffect.DefP, false, 698, true),
 					new Effect(TypeEffect.DefM, false, 515, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Splendeur"); put(Language.EN, ""); }},
@@ -19251,19 +19251,19 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de la Charge de taureau"); put(Language.EN, "Bull Charge Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 82, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "82blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 674, true),
+					new Effect(TypeEffect.DefP, false, 673, true),
 					new Effect(TypeEffect.DefM, false, 494, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes des Falaises"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 82, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "66sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 562, true),
+					new Effect(TypeEffect.DefP, false, 561, true),
 					new Effect(TypeEffect.DefM, false, 549, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de la Roche fondue"); put(Language.EN, "Molten Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 67, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 597, true),
+					new Effect(TypeEffect.DefP, false, 596, true),
 					new Effect(TypeEffect.DefM, false, 432, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes du Blanc glacial"); put(Language.EN, ""); }},
@@ -19281,7 +19281,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Lune argentée"); put(Language.EN, "Silver Moon Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 41, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 375, true),
+					new Effect(TypeEffect.DefP, false, 374, true),
 					new Effect(TypeEffect.DefM, false, 355, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres d'Armes à deux mains"); put(Language.EN, "Bolstered Leggings"); }},
@@ -19300,7 +19300,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 249, true),
-					new Effect(TypeEffect.DefM, false, 237, true),
+					new Effect(TypeEffect.DefM, false, 236, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de Pratique"); put(Language.EN, "Stratagem Chaps"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 21, Quality.WHITE, false, false,
@@ -19311,19 +19311,19 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres du Cœur fortifié"); put(Language.EN, "Fortified Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 16, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "16blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 210, true),
+					new Effect(TypeEffect.DefP, false, 209, true),
 					new Effect(TypeEffect.DefM, false, 199, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Culottes de la Cité murée"); put(Language.EN, "Bastion Chaps"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 11, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 179, true),
+					new Effect(TypeEffect.DefP, false, 178, true),
 					new Effect(TypeEffect.DefM, false, 169, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Guêtres de Remontée"); put(Language.EN, "Transcendent Leggings"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 172, true),
+					new Effect(TypeEffect.DefP, false, 171, true),
 					new Effect(TypeEffect.DefM, false, 163, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pantalon de Soldat de forage"); put(Language.EN, "Dill Soldier Trousers"); }},
@@ -19495,7 +19495,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 87, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "90vio10", ICONPATH + "90vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 791, true),
-					new Effect(TypeEffect.DefM, false, 975, true),
+					new Effect(TypeEffect.DefM, false, 974, true),
 					new Effect(TypeEffect.FCE, false, 52, true),
 					new Effect(TypeEffect.INT, false, 57, true),
 					new Effect(TypeEffect.VOL, false, 51, true),
@@ -19517,7 +19517,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 77, Quality.PURPLE, true, false,
 				ArmorType.JAMBIERE, "80vio10", ICONPATH + "80vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 736, true),
-					new Effect(TypeEffect.DefM, false, 910, true),
+					new Effect(TypeEffect.DefM, false, 909, true),
 					new Effect(TypeEffect.FCE, false, 50, true),
 					new Effect(TypeEffect.INT, false, 53, true),
 					new Effect(TypeEffect.VOL, false, 47, true),
@@ -19561,7 +19561,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 87, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "90gold10", ICONPATH + "90gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 744, true),
-					new Effect(TypeEffect.DefM, false, 915, true),
+					new Effect(TypeEffect.DefM, false, 914, true),
 					new Effect(TypeEffect.FCE, false, 42, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
@@ -19572,7 +19572,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 87, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "10ans90gold10", ICONPATH + "10ansGold", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 744, true),
-					new Effect(TypeEffect.DefM, false, 915, true),
+					new Effect(TypeEffect.DefM, false, 914, true),
 					new Effect(TypeEffect.FCE, false, 42, true),
 					new Effect(TypeEffect.INT, false, 47, true),
 					new Effect(TypeEffect.VOL, false, 39, true),
@@ -19605,7 +19605,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 77, Quality.GOLD, true, false,
 				ArmorType.JAMBIERE, "80gold10", ICONPATH + "80gold10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 685, true),
-					new Effect(TypeEffect.DefM, false, 843, true),
+					new Effect(TypeEffect.DefM, false, 842, true),
 					new Effect(TypeEffect.FCE, false, 40, true),
 					new Effect(TypeEffect.INT, false, 43, true),
 					new Effect(TypeEffect.VOL, false, 37, true),
@@ -19626,8 +19626,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières d'Explosion cristalline printanière"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "100pvp10R", ICONPATH + "100pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 841, true),
-					new Effect(TypeEffect.DefM, false, 1016, true),
+					new Effect(TypeEffect.DefP, false, 840, true),
+					new Effect(TypeEffect.DefM, false, 1015, true),
 					new Effect(TypeEffect.FCE, false, 34, true),
 					new Effect(TypeEffect.INT, false, 55, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -19639,7 +19639,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp10", ICONPATH + "100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 765, true),
-					new Effect(TypeEffect.DefM, false, 924, true),
+					new Effect(TypeEffect.DefM, false, 923, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -19662,7 +19662,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Cristal Chaotique"); put(Language.EN, "Chaotic Crystal Leggings"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "100pvp11", ICONPATH + "100pvp11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 688, true),
+					new Effect(TypeEffect.DefP, false, 687, true),
 					new Effect(TypeEffect.DefM, false, 871, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 30, true),
@@ -19693,7 +19693,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp10R", ICONPATH + "95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 803, true),
-					new Effect(TypeEffect.DefM, false, 969, true),
+					new Effect(TypeEffect.DefM, false, 968, true),
 					new Effect(TypeEffect.FCE, false, 23, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
@@ -19705,7 +19705,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "95pvp10", ICONPATH + "95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 730, true),
-					new Effect(TypeEffect.DefM, false, 881, true),
+					new Effect(TypeEffect.DefM, false, 880, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 42, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -19716,7 +19716,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières de Gardien du temps"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "95pvp11R", ICONPATH + "95pvp11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 724, true),
+					new Effect(TypeEffect.DefP, false, 723, true),
 					new Effect(TypeEffect.DefM, false, 880, true),
 					new Effect(TypeEffect.INT, false, 48, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
@@ -19759,7 +19759,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 87, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "90pve10", ICONPATH + "90pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 674, true),
-					new Effect(TypeEffect.DefM, false, 829, true),
+					new Effect(TypeEffect.DefM, false, 828, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 					new Effect(TypeEffect.VOL, false, 20, true),
@@ -19789,7 +19789,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "85pvp10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 663, true),
-					new Effect(TypeEffect.DefM, false, 816, true),
+					new Effect(TypeEffect.DefM, false, 815, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 38, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -19800,7 +19800,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Jambières du Cristalier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "85pvp11R", ICONPATH + "85pvp11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 670, true),
+					new Effect(TypeEffect.DefP, false, 669, true),
 					new Effect(TypeEffect.DefM, false, 815, true),
 					new Effect(TypeEffect.INT, false, 42, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
@@ -19879,7 +19879,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 77, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "80pve10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 620, true),
-					new Effect(TypeEffect.DefM, false, 763, true),
+					new Effect(TypeEffect.DefM, false, 762, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
@@ -19909,7 +19909,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 75, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "75pvp10", ICONPATH + "80lingot10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 609, true),
-					new Effect(TypeEffect.DefM, false, 750, true),
+					new Effect(TypeEffect.DefM, false, 749, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
@@ -19999,7 +19999,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 67, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "70pve10", ICONPATH + "70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
-					new Effect(TypeEffect.DefM, false, 696, true),
+					new Effect(TypeEffect.DefM, false, 695, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -20029,7 +20029,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "65pvp10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 554, true),
-					new Effect(TypeEffect.DefM, false, 682, true),
+					new Effect(TypeEffect.DefM, false, 681, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -20083,7 +20083,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60nucleus10", ICONPATH + "60nucleus10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
-					new Effect(TypeEffect.DefM, false, 648, true),
+					new Effect(TypeEffect.DefM, false, 647, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -20101,7 +20101,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60lingot10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
-					new Effect(TypeEffect.DefM, false, 648, true),
+					new Effect(TypeEffect.DefM, false, 647, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -20119,7 +20119,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 57, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "60pve10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 510, true),
-					new Effect(TypeEffect.DefM, false, 627, true),
+					new Effect(TypeEffect.DefM, false, 626, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -20147,7 +20147,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "55pvp10", ICONPATH + "25pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 527, true),
-					new Effect(TypeEffect.DefM, false, 648, true),
+					new Effect(TypeEffect.DefM, false, 647, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -20173,11 +20173,11 @@ public class LoaderLegging extends LoaderTemplate {
 					new Effect(TypeEffect.AGI, false, 6, true),
 					new Effect(TypeEffect.ESQ, false, 1),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Voyageur Temporel"); put(Language.EN, "Time Traveler Greaves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Voyageur Temporel "); put(Language.EN, "Time Traveler Greaves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 47, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "50pve10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 453, true),
-					new Effect(TypeEffect.DefM, false, 558, true),
+					new Effect(TypeEffect.DefM, false, 557, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
@@ -20235,7 +20235,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 37, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "40pve10", ICONPATH + "65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 397, true),
-					new Effect(TypeEffect.DefM, false, 488, true),
+					new Effect(TypeEffect.DefM, false, 487, true),
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
@@ -20261,7 +20261,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières Reforgées de la Source de Cristal"); put(Language.EN, "(Reforged) Crystal Spring Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "25pvp10R", ICONPATH + "25pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 400, true),
+					new Effect(TypeEffect.DefP, false, 399, true),
 					new Effect(TypeEffect.DefM, false, 506, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.INT, false, 11, true),
@@ -20271,8 +20271,8 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de la Source de Cristal"); put(Language.EN, "Crystal Spring Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "25pvp10", ICONPATH + "25pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 363, true),
-					new Effect(TypeEffect.DefM, false, 460, true),
+					new Effect(TypeEffect.DefP, false, 362, true),
+					new Effect(TypeEffect.DefM, false, 459, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -20282,7 +20282,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.JAMBIERE, "25pvp11R", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 339, true),
-					new Effect(TypeEffect.DefM, false, 497, true),
+					new Effect(TypeEffect.DefM, false, 496, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.ESQ, false, 1),
@@ -20290,7 +20290,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.JAMBIERE, "25pvp11", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 308, true),
+					new Effect(TypeEffect.DefP, false, 307, true),
 					new Effect(TypeEffect.DefM, false, 451, true),
 					new Effect(TypeEffect.FCE, false, 9, true),
 					new Effect(TypeEffect.INT, false, 9, true),
@@ -20299,7 +20299,7 @@ public class LoaderLegging extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières Cristallisées"); put(Language.EN, "Crystallized Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 17, Quality.ORANGE, true, false,
 				ArmorType.JAMBIERE, "20pve10", ICONPATH + "20pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 282, true),
+					new Effect(TypeEffect.DefP, false, 281, true),
 					new Effect(TypeEffect.DefM, false, 330, true),
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.INT, false, 6, true),
@@ -20689,7 +20689,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 77, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "77bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 707, true),
-					new Effect(TypeEffect.DefM, false, 803, true),
+					new Effect(TypeEffect.DefM, false, 802, true),
 					new Effect(TypeEffect.FCE, false, 30, true),
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
@@ -21747,7 +21747,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "44sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
-					new Effect(TypeEffect.DefM, false, 696, true),
+					new Effect(TypeEffect.DefM, false, 695, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -22736,7 +22736,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 28, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 351, true),
-					new Effect(TypeEffect.DefM, false, 444, true),
+					new Effect(TypeEffect.DefM, false, 443, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 				}, null),
@@ -22744,7 +22744,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 27, Quality.BLUE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
-					new Effect(TypeEffect.DefM, false, 435, true),
+					new Effect(TypeEffect.DefM, false, 434, true),
 					new Effect(TypeEffect.VOL, false, 15, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières évolutives du Voyageur réincarné"); put(Language.EN, "Reincarnated Traveler's Soul Leggings"); }},
@@ -23059,7 +23059,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 96, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "96sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 684, true),
-					new Effect(TypeEffect.DefM, false, 842, true),
+					new Effect(TypeEffect.DefM, false, 841, true),
 					new Effect(TypeEffect.INT, false, 28, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de l'Illusion du Sprite"); put(Language.EN, "Sprite's Illusory Greaves"); }},
@@ -23080,7 +23080,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 81, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 608, true),
-					new Effect(TypeEffect.DefM, false, 748, true),
+					new Effect(TypeEffect.DefM, false, 747, true),
 					new Effect(TypeEffect.INT, false, 22, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Cristal Sprite à propagation"); put(Language.EN, "Sprite's Flattened Crystalline Greaves"); }},
@@ -23094,14 +23094,14 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 71, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 557, true),
-					new Effect(TypeEffect.DefM, false, 571, true),
+					new Effect(TypeEffect.DefM, false, 570, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de rune des Sprites"); put(Language.EN, "Sprite's Rune Greaves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 66, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 530, true),
-					new Effect(TypeEffect.DefM, false, 544, true),
+					new Effect(TypeEffect.DefM, false, 543, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Messager Chorno des Sprite"); put(Language.EN, "Sprite's Chrono Messenger Leggings"); }},
@@ -23129,7 +23129,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 41, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 397, true),
-					new Effect(TypeEffect.DefM, false, 502, true),
+					new Effect(TypeEffect.DefM, false, 501, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Short Cristallisés"); put(Language.EN, "Crystalline Shorts"); }},
@@ -23139,31 +23139,31 @@ public class LoaderLegging extends LoaderTemplate {
 					new Effect(TypeEffect.DefM, false, 453, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Sanctification des Sprites"); put(Language.EN, "Sprite's Sanctified Greaves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Sanctification des Sprites "); put(Language.EN, "Sprite's Sanctified Greaves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 34, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 320, true),
+					new Effect(TypeEffect.DefP, false, 319, true),
 					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Cristal à grain des Sprites"); put(Language.EN, "Sprite's Crystal Grain Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 24, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 292, true),
+					new Effect(TypeEffect.DefP, false, 291, true),
 					new Effect(TypeEffect.DefM, false, 369, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Cristal léger des Sprites"); put(Language.EN, "Sprite's Slender Crystal Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 14, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 246, true),
+					new Effect(TypeEffect.DefP, false, 245, true),
 					new Effect(TypeEffect.DefM, false, 286, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières des anomalies Sprites"); put(Language.EN, "Sprite's Odd Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 7, Quality.GREEN, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 202, true),
+					new Effect(TypeEffect.DefP, false, 201, true),
 					new Effect(TypeEffect.DefM, false, 218, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 				}, null),
@@ -23171,7 +23171,7 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 83, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 566, true),
-					new Effect(TypeEffect.DefM, false, 535, true),
+					new Effect(TypeEffect.DefM, false, 534, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Solitaire"); put(Language.EN, "Lonely Leggings"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 83, Quality.WHITE, false, false,
@@ -23179,7 +23179,7 @@ public class LoaderLegging extends LoaderTemplate {
 					new Effect(TypeEffect.DefP, false, 519, true),
 					new Effect(TypeEffect.DefM, false, 474, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Souffle Exotique"); put(Language.EN, "Exotic Greaves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Souffle Exotique "); put(Language.EN, "Exotic Greaves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 68, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "81sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
@@ -23201,9 +23201,9 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 41, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "44sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
-					new Effect(TypeEffect.DefM, false, 355, true),
+					new Effect(TypeEffect.DefM, false, 354, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Sanctification"); put(Language.EN, "Sanctified Greaves"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Sanctification "); put(Language.EN, "Sanctified Greaves"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 31, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "61sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 287, true),
@@ -23213,43 +23213,43 @@ public class LoaderLegging extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 28, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 287, true),
-					new Effect(TypeEffect.DefM, false, 280, true),
+					new Effect(TypeEffect.DefM, false, 279, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières Cristallines"); put(Language.EN, "Crystalline Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 255, true),
-					new Effect(TypeEffect.DefM, false, 248, true),
+					new Effect(TypeEffect.DefP, false, 254, true),
+					new Effect(TypeEffect.DefM, false, 247, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Cristal à grain"); put(Language.EN, "Crystal Grain Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 21, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "30pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 257, true),
-					new Effect(TypeEffect.DefM, false, 250, true),
+					new Effect(TypeEffect.DefM, false, 249, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières Runiques"); put(Language.EN, "Runic Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 16, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "20pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 238, true),
+					new Effect(TypeEffect.DefP, false, 237, true),
 					new Effect(TypeEffect.DefM, false, 213, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de Cristal léger"); put(Language.EN, "Slender Crystal Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 11, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 209, true),
-					new Effect(TypeEffect.DefM, false, 187, true),
+					new Effect(TypeEffect.DefM, false, 186, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Voyageur"); put(Language.EN, "Traveling Leggings"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières du Voyageur "); put(Language.EN, "Traveling Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 213, true),
-					new Effect(TypeEffect.DefM, false, 175, true),
+					new Effect(TypeEffect.DefP, false, 212, true),
+					new Effect(TypeEffect.DefM, false, 174, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jambières de l'Apprenti voyageur"); put(Language.EN, "Novice Adventurer's Leggings"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 8, Quality.WHITE, false, false,
 				ArmorType.JAMBIERE, "-1", ICONPATH + "14sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 199, true),
-					new Effect(TypeEffect.DefM, false, 170, true),
+					new Effect(TypeEffect.DefM, false, 169, true),
 				}, null),
 		};
 	}

@@ -297,7 +297,7 @@ public class Armor extends Equipment {
 				//Tools.containFilter(filter, armor.getTag()),
 			};
 			
-			if(andValue ? Filterable.andValue(filters) : Filterable.orValue(filters)
+			if( (andValue ? Filterable.andValue(filters) : Filterable.orValue(filters))
 					&& !choice.equals(armor)) {
 				
 				result.add(armor);

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -89,7 +88,9 @@ public class PageSpeciality extends PartialPage {
 		this.maxSpe = new JCustomButton(this.labels.get("Max").getLang(), Design.GREEN_COLOR);
 		this.maxSpe.addActionListener(e -> setMaxSpe() );
 		
-		updateLanguage(Language.FR);
+		this.components.add(this.reinitSpe);
+		this.components.add(this.maxSpe);
+		
 		createPanel();
 		setEffects();
 	}
@@ -170,16 +171,6 @@ public class PageSpeciality extends PartialPage {
 		elem2.addAll(this.reinitSpe, this.maxSpe);
 		
 		this.add(elem2);
-	}
-	
-	@Override
-	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateText(lang);
-		}
-		
-		this.reinitSpe.updateText(lang);
-		this.maxSpe.updateText(lang);
 	}
 	
 	public void updateListSpe() {
