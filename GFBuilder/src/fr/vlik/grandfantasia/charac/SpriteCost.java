@@ -54,13 +54,7 @@ public class SpriteCost extends CompleteBuff {
 	}
 	
 	public static SpriteCost get(String name) {
-		for(SpriteCost spriteCost : SpriteCost.data) {
-			if(spriteCost.getName(Language.FR).equals(name)) {
-				return spriteCost;
-			}
-		}
-		
-		return null;
+		return get(SpriteCost.data, name, Language.FR);
 	}
 	
 	public static SpriteCost[] getPossibleSpriteCost(int lvl, Reinca reinca, SpriteCostType costType) {

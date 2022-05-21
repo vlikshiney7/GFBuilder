@@ -75,21 +75,21 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 	}
 	
 	private void initRedStuff(int nbStuffRed) {
-		this.redFortif = new JCustomComboBoxList<>(nbStuffRed, RedFortification.getData());
+		this.redFortif = new JCustomComboBoxList<>(RedFortification.class, nbStuffRed, RedFortification.getData());
 		this.redFortif.setVisible(false);
 		
-		this.redEnchant = new JCustomComboBoxList<>(nbStuffRed*3);
+		this.redEnchant = new JCustomComboBoxList<>(RedEnchantment.class, nbStuffRed*3);
 		
-		this.redLvlEnchant = new JCustomComboBoxList<>(nbStuffRed*3);
+		this.redLvlEnchant = new JCustomComboBoxList<>(InnerEffect.class, nbStuffRed*3);
 		this.redLvlEnchant.setVisible(false);
 		this.redLvlEnchant.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.refining = new JCustomComboBoxList<>(nbStuffRed*2);
+		this.refining = new JCustomComboBoxList<>(RedEnchantment.class, nbStuffRed*2);
 		
-		this.refiningLvl = new JCustomComboBoxList<>(nbStuffRed*2);
+		this.refiningLvl = new JCustomComboBoxList<>(InnerEffect.class, nbStuffRed*2);
 		this.refiningLvl.setVisible(false);
 		this.refiningLvl.addActionListener(e -> {
 			setEffects();
@@ -151,9 +151,7 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 	
 	@Override
 	protected void initPanel() {
-		for(JPanel panel : this.showAndHideRedEnchant) {
-			panel.setVisible(false);
-		}
+		this.showAndHideRedEnchant.forEach(e -> e.setVisible(false));
 		
 		super.initPanel();
 	}

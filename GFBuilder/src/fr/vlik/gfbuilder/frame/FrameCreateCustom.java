@@ -11,7 +11,6 @@ import java.util.Arrays;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.WindowConstants;
@@ -117,7 +116,7 @@ public class FrameCreateCustom extends JCustomFrame {
 		});
 		
 		WeaponType[] weaponTypeChoice = Arrays.copyOf(WeaponType.values(), WeaponType.values().length-2);
-		this.typeWeapon = new JCustomComboBox<>(new DefaultComboBoxModel<>(weaponTypeChoice));
+		this.typeWeapon = new JCustomComboBox<>(WeaponType.class, new DefaultComboBoxModel<>(weaponTypeChoice));
 		this.typeWeapon.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -126,7 +125,7 @@ public class FrameCreateCustom extends JCustomFrame {
 		});
 		
 		ArmorType[] armorTypeChoice = Arrays.copyOf(ArmorType.values(), ArmorType.values().length-1);
-		this.typeArmor = new JCustomComboBox<>(new DefaultComboBoxModel<>(armorTypeChoice));
+		this.typeArmor = new JCustomComboBox<>(ArmorType.class, new DefaultComboBoxModel<>(armorTypeChoice));
 		this.typeArmor.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -134,7 +133,7 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		this.grade = new JCustomComboBox<>(new DefaultComboBoxModel<>(Grade.getPossibleGrade(31)));
+		this.grade = new JCustomComboBox<>(Grade.class, new DefaultComboBoxModel<>(Grade.getPossibleGrade(31)));
 		this.grade.addActionListener(e -> {
 			updateList();
 			updateEnchant();
@@ -155,7 +154,7 @@ public class FrameCreateCustom extends JCustomFrame {
 			this.quality.add(radio);
 		}
 		
-		this.customEquipment = new JCustomComboBox<>(new DefaultComboBoxModel<>());
+		this.customEquipment = new JCustomComboBox<>(CustomEquipment.class, new DefaultComboBoxModel<>());
 		this.customEquipment.addActionListener(e -> {
 			updateNbEnchant();
 			updateEnchant();
@@ -163,7 +162,7 @@ public class FrameCreateCustom extends JCustomFrame {
 			checkValidity();
 		});
 		
-		this.enchantement = new JCustomComboBoxList<>(6);
+		this.enchantement = new JCustomComboBoxList<>(Enchantment.class, 6);
 		this.enchantement.addActionListener(e -> checkValidity() );
 		this.enchantement.setVisible(false);
 		
@@ -224,13 +223,11 @@ public class FrameCreateCustom extends JCustomFrame {
 		pageCustom.add(this.labels[0], Box.createVerticalStrut(10));
 		this.labels[0].setFont(Design.TITLE);
 		
-		ButtonGroup currentType = new ButtonGroup();
+		JCustomButtonGroup<JLangRadioButton> currentType = new JCustomButtonGroup<>();
 		JCustomPanel type = new JCustomPanel(new GridLayout(1, 4, 10, 0));
 		type.setBackground(Design.UIColor[2]);
-		for(int i = 0; i < 4; i++) {
-			currentType.add(this.typeEquipment.get(i));
-			type.add(this.typeEquipment.get(i));
-		}
+		type.addAll(this.typeEquipment);
+		currentType.addAll(this.typeEquipment);
 		
 		JCustomPanel inline1 = new JCustomPanel(new EmptyBorder(10, 10, 10, 10));
 		inline1.setBackground(Design.UIColor[2]);

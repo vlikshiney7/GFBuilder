@@ -2,7 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -53,7 +53,7 @@ public class PageRide extends PartialXpStuff {
 		super(BoxLayout.Y_AXIS, 1);
 		
 		Ride[] tabRide = Ride.getPossibleRide(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-		this.ride = new JCustomComboBox<>(tabRide);
+		this.ride = new JCustomComboBox<>(Ride.class, tabRide);
 		this.ride.addActionListener(e -> {
 			updateXpStuff();
 			
@@ -106,7 +106,7 @@ public class PageRide extends PartialXpStuff {
 			}
 		}
 		
-		this.synthesis = new JCustomComboBoxList<>(2);
+		this.synthesis = new JCustomComboBoxList<>(Synthesis.class, 2);
 		this.synthesis.setVisible(false);
 		this.synthesis.addActionListener(e -> {
 			setEffects();
@@ -144,11 +144,15 @@ public class PageRide extends PartialXpStuff {
 		this.labels.put("Synthesis0", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
 		this.labels.put("Synthesis1", new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
 		
-		this.labels.put("RideXP", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Monture"); put(Language.EN, "Ride Exp"); }}, Design.SUBTITLE));
+		this.labels.put("RideXP", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "XP Monture"); put(Language.EN, "Ride Exp"); }}, Design.SUBTITLE));
 	}
 
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		list.addAll(this.getRide());
@@ -372,7 +376,7 @@ public class PageRide extends PartialXpStuff {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new LinkedHashMap<>();
 		
-		config.put("Ride", this.getRide().getName(Language.FR));
+		config.putAll(this.ride.getSaveConfig());
 		
 		for(int i = 0; i < this.groupQuality.size(); i++) {
 			Quality quality = this.groupQuality.get(i).getSelectedItem();
@@ -420,6 +424,8 @@ public class PageRide extends PartialXpStuff {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		this.ride.setSelectedItem(Ride.get(config.get("Ride")));
 		
 		for(int i = 0; i < this.synthesis.size(); i++) {
@@ -444,9 +450,11 @@ public class PageRide extends PartialXpStuff {
 				}
 			}
 			
-			Synthesis synthesis = (i == 0) ? Synthesis.getRide(config.get("Synthesis" + i), typeSynthesis, quality, select+1) : Synthesis.getThrone(config.get("Synthesis" + i), typeSynthesis, quality, select+1);
+			Synthesis getSynthesis = (i == 0)
+				? Synthesis.getRide(config.get("Synthesis" + i), typeSynthesis, quality, select+1)
+				: Synthesis.getThrone(config.get("Synthesis" + i), typeSynthesis, quality, select+1);
 			
-			this.synthesis.get(i).setSelectedItem(synthesis);
+			this.synthesis.get(i).setSelectedItem(getSynthesis);
 		}
 		
 		for(int i = 0; i < this.lvlXpStuff.size(); i++) {
@@ -468,5 +476,7 @@ public class PageRide extends PartialXpStuff {
 				this.lvlXpStuff.get(i).setSelectedItem(inner);
 			}
 		}
+		
+		allowSetEffect(true);
 	}
 }

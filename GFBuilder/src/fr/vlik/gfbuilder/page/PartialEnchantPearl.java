@@ -84,7 +84,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 			for(int j = 0; j < 5; j++) {
 				int idPearl = i*5+j;
 				
-				this.pearlEnchant.add(new JCustomComboBox<>(PearlEnchantment.getData()));
+				this.pearlEnchant.add(new JCustomComboBox<>(PearlEnchantment.class, PearlEnchantment.getData()));
 				this.pearlEnchant.get(idPearl).addActionListener(e -> {
 					updatePearlLvlEnchant(idPearl);
 					updatePearlEnchant(idPearl);
@@ -93,7 +93,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 					MainFrame.getInstance().updateStat();
 				});
 				
-				this.pearlLvlEnchant.add(new JCustomComboBox<>());
+				this.pearlLvlEnchant.add(new JCustomComboBox<>(InnerEffect.class));
 				this.pearlLvlEnchant.get(idPearl).addActionListener(e -> {
 					setEffects();
 					MainFrame.getInstance().updateStat();
@@ -109,9 +109,7 @@ public abstract class PartialEnchantPearl extends PartialXpStuff {
 	
 	@Override
 	protected void initPanel() {
-		for(JPanel panel : this.showAndHideEnchant) {
-			panel.setVisible(false);
-		}
+		this.showAndHideEnchant.forEach(e -> e.setVisible(false));
 		
 		super.initPanel();
 	}

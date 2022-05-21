@@ -204,13 +204,7 @@ public class Armor extends Equipment {
 	}
 	
 	public static Armor get(String name, Language lang, int list) {
-		for(Armor armor : Armor.data[list]) {
-			if(armor.getName(lang).equals(name)) {
-				return armor;
-			}
-		}
-		
-		return null;
+		return get(Armor.data[list], name, lang);
 	}
 	
 	public static Armor getCustom(String name, Language lang) {
@@ -237,12 +231,7 @@ public class Armor extends Equipment {
 	}
 	
 	public static Armor[] getCustomData() {
-		Armor[] cast = new Armor[customData.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = customData.get(i);
-		}
-		
-		return cast;
+		return Arrays.copyOf(customData.toArray(new Armor[0]), customData.size());
 	}
 	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {

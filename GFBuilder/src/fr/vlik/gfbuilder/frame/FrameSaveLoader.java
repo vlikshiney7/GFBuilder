@@ -61,6 +61,7 @@ public class FrameSaveLoader extends JCustomFrame {
 			PageOption.getInstance().updateSave();
 			MainFrame.getInstance().updateStat();
 			Overlay.getInstance().setSave(true);
+			MainFrame.getInstance().resetStatusPane();
 			
 			close();
 		});

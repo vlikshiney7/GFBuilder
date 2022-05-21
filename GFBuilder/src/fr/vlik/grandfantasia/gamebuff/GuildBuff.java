@@ -46,13 +46,7 @@ public class GuildBuff extends IconBuff {
 	}
 	
 	public static GuildBuff get(String name) {
-		for(GuildBuff guildBuff : GuildBuff.data) {
-			if(guildBuff.getName(Language.FR).equals(name)) {
-				return guildBuff;
-			}
-		}
-		
-		return null;
+		return get(GuildBuff.data, name, Language.FR);
 	}
 
 	public static GuildBuff[] getData() {

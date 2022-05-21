@@ -253,12 +253,7 @@ public class Weapon extends Equipment {
 	}
 	
 	public static Weapon[] getCustomData() {
-		Weapon[] cast = new Weapon[customData.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = customData.get(i);
-		}
-		
-		return cast;
+		return Arrays.copyOf(customData.toArray(new Weapon[0]), customData.size());
 	}
 	
 	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
@@ -369,6 +364,14 @@ public class Weapon extends Equipment {
 		}
 		
 		return new WeaponType[0];
+	}
+	
+	public static Filterable[][] getFilters(int idList) {
+		return new Filterable[][] {
+			getWeaponType(idList, true),
+			//getTags(),
+			getQualities(),
+		};
 	}
 	
 	@Override

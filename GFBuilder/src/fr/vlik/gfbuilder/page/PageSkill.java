@@ -61,7 +61,7 @@ public class PageSkill extends PartialPage {
 			this.passiveSkill.get(i).setOpaque(true);
 		}
 		
-		this.upgradeSkill = new JCustomComboBoxList<>(2);
+		this.upgradeSkill = new JCustomComboBoxList<>(InnerIconEffect.class, 2);
 		this.upgradeSkill.setVisible(false);
 		this.upgradeSkill.addActionListener(e -> {
 			setEffects();
@@ -70,7 +70,7 @@ public class PageSkill extends PartialPage {
 		
 		
 		ProSkill[] tabProSkill = ProSkill.getPossibleProSkill(this.currentGrade.getGrade(), this.currentLvl);
-		this.proSkill = new JCustomComboBox<>(tabProSkill);
+		this.proSkill = new JCustomComboBox<>(ProSkill.class, tabProSkill);
 		this.proSkill.addActionListener(e -> {
 			setEffects();
 			PageWeapon.getInstance().setEffects();
@@ -101,6 +101,10 @@ public class PageSkill extends PartialPage {
 
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		for(JCustomLabel<InnerIconEffect> passive : this.passiveSkill) {
@@ -271,10 +275,14 @@ public class PageSkill extends PartialPage {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		for(int i = 0; i < this.upgradeSkill.size(); i++) {
 			this.upgradeSkill.get(i).setSelectedIndex(Integer.valueOf(config.get("LvlSkill" + i)));
 		}
 		
 		this.proSkill.setSelectedItem(ProSkill.get(config.get("ProSkill")));
+		
+		allowSetEffect(true);
 	}
 }

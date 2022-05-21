@@ -1,7 +1,7 @@
 package fr.vlik.gfbuilder.page;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -55,7 +55,7 @@ public class PageCostume extends PartialPage {
 	private PageCostume() {
 		super(BoxLayout.Y_AXIS);
 		
-		this.costume = new JCustomComboBoxList<>(5);
+		this.costume = new JCustomComboBoxList<>(Costume.class, 5);
 		this.costume.setVisible(false);
 		this.costume.addActionListener(e -> {
 			setEffects();
@@ -106,10 +106,10 @@ public class PageCostume extends PartialPage {
 			}
 			
 			if(i == 0) {
-				this.pearl.add(new JCustomComboBox<>(Pearl.getWeaponCostPearl()));
+				this.pearl.add(new JCustomComboBox<>(Pearl.class, Pearl.getWeaponCostPearl()));
 			}
 			
-			this.pearl.add(new JCustomComboBox<>(Pearl.getWeaponCostPearl()));
+			this.pearl.add(new JCustomComboBox<>(Pearl.class, Pearl.getWeaponCostPearl()));
 		}
 		
 		for(int i = 0; i < 2; i++) {
@@ -159,10 +159,10 @@ public class PageCostume extends PartialPage {
 			}
 			
 			if(i == 1) {
-				this.pearl.add(new JCustomComboBox<>(Pearl.getArmorCostPearl()));
-				this.pearl.add(new JCustomComboBox<>(Pearl.getArmorCostPearl()));
+				this.pearl.add(new JCustomComboBox<>(Pearl.class, Pearl.getArmorCostPearl()));
+				this.pearl.add(new JCustomComboBox<>(Pearl.class, Pearl.getArmorCostPearl()));
 			} else {
-				this.pearl.add(new JCustomComboBox<>(Pearl.getArmorCostPearl()));
+				this.pearl.add(new JCustomComboBox<>(Pearl.class, Pearl.getArmorCostPearl()));
 			}
 			
 			for(int j = 0; j < 2; j++) {
@@ -226,20 +226,23 @@ public class PageCostume extends PartialPage {
 			this.labels.put("Synthesis" + i, new JLangLabel(TypeSynthesis.CLASS_NAME, Design.SUBTITLE));
 		}
 		
-		this.labels.put("Weapons", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Armes"); put(Language.EN, "Weapons"); }}, Design.TITLE));
-		this.labels.put("Cost0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tête"); put(Language.EN, "Head"); }}, Design.TITLE));
-		this.labels.put("Cost1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tenue"); put(Language.EN, "Body"); }}, Design.TITLE));
-		this.labels.put("Cost2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Dos"); put(Language.EN, "Back"); }}, Design.TITLE));
-		this.labels.put("WeaponsType", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Type d'armes"); put(Language.EN, "Weapons type"); }}, Design.SUBTITLE));
-		this.labels.put("WeaponHand0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Armes 1 main"); put(Language.EN, "1 hand weapons"); }}, Design.TEXT));
-		this.labels.put("WeaponHand1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme 2 mains"); put(Language.EN, "2 hands weapon"); }}, Design.TEXT));
-		this.labels.put("Weapon0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme 1"); put(Language.EN, "Weapon 1"); }}, Design.SUBTITLE));
-		this.labels.put("Weapon1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme 2"); put(Language.EN, "Weapon 2"); }}, Design.SUBTITLE));
-		
+		this.labels.put("Weapons", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armes"); put(Language.EN, "Weapons"); }}, Design.TITLE));
+		this.labels.put("Cost0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tête"); put(Language.EN, "Head"); }}, Design.TITLE));
+		this.labels.put("Cost1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tenue"); put(Language.EN, "Body"); }}, Design.TITLE));
+		this.labels.put("Cost2", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dos"); put(Language.EN, "Back"); }}, Design.TITLE));
+		this.labels.put("WeaponsType", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Type d'armes"); put(Language.EN, "Weapons type"); }}, Design.SUBTITLE));
+		this.labels.put("WeaponHand0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Armes 1 main"); put(Language.EN, "1 hand weapons"); }}, Design.TEXT));
+		this.labels.put("WeaponHand1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme 2 mains"); put(Language.EN, "2 hands weapon"); }}, Design.TEXT));
+		this.labels.put("Weapon0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme 1"); put(Language.EN, "Weapon 1"); }}, Design.SUBTITLE));
+		this.labels.put("Weapon1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme 2"); put(Language.EN, "Weapon 2"); }}, Design.SUBTITLE));
 	}
 
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		if(this.costWeapon.get(0).isSelected()) {
@@ -538,14 +541,8 @@ public class PageCostume extends PartialPage {
 			config.put("TypeSynthesis" + i, "" + typeSynthesis);
 		}
 		
-		for(int i = 0; i < this.costume.size(); i++) {
-			String value = this.getCostume(i) != null ? this.getCostume(i).getName(Language.FR) : "";
-			config.put("Costume" + i, value);
-		}
-		
-		for(int i = 0; i < this.pearl.size(); i++) {
-			config.put("Pearl" + i, this.getCostPearl(i).getName(Language.FR));
-		}
+		config.putAll(this.costume.getSaveConfig());
+		config.putAll(this.pearl.getSaveConfig());
 		
 		for(int i = 0; i < this.checkBoxRunway.size(); i++) {
 			config.put("CheckboxRunway" + i, "" + this.checkBoxRunway.get(i).isSelected());
@@ -556,6 +553,8 @@ public class PageCostume extends PartialPage {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		int hand = Integer.parseInt(config.get("1or2Hand"));
 		for(int i = 0; i < this.costWeapon.size(); i++) {
 			if(i == hand) {
@@ -582,7 +581,7 @@ public class PageCostume extends PartialPage {
 				case 2:	type = CostumeType.TeteCorps;	break;
 				case 3:	type = CostumeType.TeteCorps;	break;
 				case 4:	type = CostumeType.DosArme1M;	break;
-				default: break;
+				default:								break;
 			}
 			
 			Costume costume = Costume.get(config.get("Costume" + i), typeSynthesis, type, quality);
@@ -601,6 +600,6 @@ public class PageCostume extends PartialPage {
 			this.checkBoxRunway.get(i).setSelected(Boolean.valueOf(config.get("CheckboxRunway" + i)));
 		}
 		
-		setEffects();
+		allowSetEffect(true);
 	}
 }

@@ -85,12 +85,6 @@ public class Anima extends CompleteBuff {
 	}
 	
 	public static Anima get(String name) {
-		for(Anima anima : Anima.data) {
-			if(anima.getName(Language.FR).equals(name)) {
-				return anima;
-			}
-		}
-		
-		return null;
+		return get(Anima.data, name, Language.FR);
 	}
 }

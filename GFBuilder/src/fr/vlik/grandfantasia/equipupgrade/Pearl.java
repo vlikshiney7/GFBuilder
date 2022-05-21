@@ -83,43 +83,19 @@ public class Pearl extends CompleteBuff {
 	}
 	
 	public static Pearl getWeapon(String name) {
-		for(Pearl pearl : Pearl.dataWeapon) {
-			if(pearl.getName(Language.FR).equals(name)) {
-				return pearl;
-			}
-		}
-		
-		return null;
+		return get(Pearl.dataWeapon, name, Language.FR);
 	}
 	
 	public static Pearl getArmor(String name) {
-		for(Pearl pearl : Pearl.dataArmor) {
-			if(pearl.getName(Language.FR).equals(name)) {
-				return pearl;
-			}
-		}
-		
-		return null;
+		return get(Pearl.dataArmor, name, Language.FR);
 	}
 	
 	public static Pearl getWeaponCost(String name) {
-		for(Pearl pearl : Pearl.dataWeaponCost) {
-			if(pearl.getName(Language.FR).equals(name)) {
-				return pearl;
-			}
-		}
-		
-		return null;
+		return get(Pearl.dataWeaponCost, name, Language.FR);
 	}
 	
 	public static Pearl getArmorCost(String name) {
-		for(Pearl pearl : Pearl.dataArmorCost) {
-			if(pearl.getName(Language.FR).equals(name)) {
-				return pearl;
-			}
-		}
-		
-		return null;
+		return get(Pearl.dataArmorCost, name, Language.FR);
 	}
 	
 	public static Pearl[] getPossibleWeaponPearl(Weapon weapon) {
@@ -210,6 +186,13 @@ public class Pearl extends CompleteBuff {
 	
 	public static Quality[] getQualities() {
 		return Pearl.qualities;
+	}
+
+	public static Filterable[][] getFilters() {
+		return new Filterable[][] {
+			//getTags(),
+			getQualities(),
+		};
 	}
 	
 	@Override

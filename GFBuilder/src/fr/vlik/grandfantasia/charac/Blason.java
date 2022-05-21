@@ -81,13 +81,7 @@ public class Blason extends IconBuff {
 	}
 	
 	public static Blason get(String name) {
-		for(Blason blason : Blason.data) {
-			if(blason.getName(Language.FR).equals(name)) {
-				return blason;
-			}
-		}
-		
-		return null;
+		return get(Blason.data, name, Language.FR);
 	}
 	
 	public static Blason[] getPossibleBlason(int lvl, BlasonType type) {

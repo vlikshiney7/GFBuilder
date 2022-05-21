@@ -3,8 +3,8 @@ package fr.vlik.gfbuilder.page;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -82,7 +82,7 @@ public class PageTalent extends PartialPage {
 				} else {
 					InnerColorEffect[] innerLvl = tabTalent[count].getInnerTalent(PageGeneral.getInstance().getLvl());
 					
-					this.itemTalent.add(new JCustomComboBox<>(innerLvl));
+					this.itemTalent.add(new JCustomComboBox<>(InnerColorEffect.class, innerLvl));
 					this.itemTalent.get(count).addActionListener(e -> {
 						updateGroupTalent(id);
 						updateSelectedTalent(global);
@@ -143,20 +143,24 @@ public class PageTalent extends PartialPage {
 	protected void setLabel() {
 		this.labels.put("Combi", new JLangLabel(CombiTalent.CLASS_NAME, Design.TITLE));
 		
-		this.labels.put("Category0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Classique"); put(Language.EN, "Classic"); }}, Design.TITLE));
-		this.labels.put("Category1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Ancestraux"); put(Language.EN, "Ancestral"); }}, Design.TITLE));
+		this.labels.put("Category0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Classique"); put(Language.EN, "Classic"); }}, Design.TITLE));
+		this.labels.put("Category1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ancestraux"); put(Language.EN, "Ancestral"); }}, Design.TITLE));
 		for(int i = 0; i < 2; i++) {
-			this.labels.put("Type" + (i*4), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Terrestres"); put(Language.EN, "Earth"); }}, Design.SUBTITLE));
-			this.labels.put("Type" + (i*4+1), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Stellaires"); put(Language.EN, "Stellar"); }}, Design.SUBTITLE));
-			this.labels.put("Type" + (i*4+2), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Lunaires"); put(Language.EN, "Lunar"); }}, Design.SUBTITLE));
-			this.labels.put("Type" + (i*4+3), new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Solaires"); put(Language.EN, "Solar"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4), new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Terrestres"); put(Language.EN, "Earth"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4+1), new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Stellaires"); put(Language.EN, "Stellar"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4+2), new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Lunaires"); put(Language.EN, "Lunar"); }}, Design.SUBTITLE));
+			this.labels.put("Type" + (i*4+3), new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Solaires"); put(Language.EN, "Solar"); }}, Design.SUBTITLE));
 		}
-		this.labels.put("Min", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre au minimum"); put(Language.EN, "Set all to minimum"); }}, Design.TEXT));
-		this.labels.put("Max", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tout mettre au maximum"); put(Language.EN, "Set all to maximum"); }}, Design.TEXT));
+		this.labels.put("Min", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tout mettre au minimum"); put(Language.EN, "Set all to minimum"); }}, Design.TEXT));
+		this.labels.put("Max", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tout mettre au maximum"); put(Language.EN, "Set all to maximum"); }}, Design.TEXT));
 	}
 	
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		for(JCustomLabel<IconBuff> label : this.tabChosenTalent) {
@@ -405,6 +409,8 @@ public class PageTalent extends PartialPage {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		for(int i = 0; i < this.itemTalent.size(); i++) {
 			this.itemTalent.get(i).setSelectedIndex(Integer.valueOf(config.get("TalentLvl" + i)));
 		}
@@ -418,6 +424,6 @@ public class PageTalent extends PartialPage {
 		}
 		
 		updateCombiTalent();
-		setEffects();
+		allowSetEffect(true);
 	}
 }

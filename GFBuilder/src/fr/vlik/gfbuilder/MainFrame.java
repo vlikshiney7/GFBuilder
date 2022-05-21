@@ -19,6 +19,8 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractAction;
@@ -88,21 +90,23 @@ public class MainFrame extends JFrame {
 	private ArrayList<JLabel> valueStat = new ArrayList<>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
-	private boolean unlock = false;
+	private boolean unlock;
+	private boolean allowUpdateStat;
 	
+	private transient Logger logger;
 	
 	public static MainFrame getInstance() {
 		return MainFrame.INSTANCE;
 	}
 	
 	private MainFrame() {
-		super("Grand Fantasia Builder - Version 1.4.3");
+		super("Grand Fantasia Builder - Version 1.5.0");
 		setCustomUI();
 		
 		try {
 			this.setIconImage(ImageIO.read(MainFrame.class.getResource("/fr/vlik/gfbuilder/itemIcon.png")));
 		} catch (IOException e) {
-			System.out.println("Image introuvable : itemIcon.png");
+			this.logger.log(Level.WARNING, "Image introuvable : itemIcon.png");
 		}
 		
 		this.setSize(1325, 750);
@@ -124,7 +128,7 @@ public class MainFrame extends JFrame {
 		progressPanel.setSize(1325, 750);
 		
 		JProgressBar progress = new JProgressBar(0, 17);
-		progress.setFont(new Font("Open Sans", Font.BOLD, 16));
+		progress.setFont(Design.TITLE);
 		progress.setPreferredSize(new Dimension(600, 50));
 		progress.setStringPainted(true);
 		progress.setValue(0);
@@ -134,7 +138,7 @@ public class MainFrame extends JFrame {
 		this.add(progressPanel);
 		this.setVisible(true);
 		
-		System.out.println("Début swing : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Début swing\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
 		
 		/****************************************/
@@ -174,79 +178,79 @@ public class MainFrame extends JFrame {
 		this.frames.add(FrameSaveOnNew.getInstance());
 		this.frames.add(FrameSaveOnQuit.getInstance());
 		
-		System.out.println("Fin Frames : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Frames\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
 		
 		/****************************************/
 		/*		****	   CONTENT  	****	*/
 		/****************************************/
 		
-		System.out.println("Loading Page : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Loading Page\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Genenal Page");
 		this.pages.add(PageGeneral.getInstance());
-		System.out.println("Fin General : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin General\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Weapon Page");
 		this.pages.add(PageWeapon.getInstance());
-		System.out.println("Fin Weapon : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Weapon\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Armor Page");
 		this.pages.add(PageArmor.getInstance());
-		System.out.println("Fin Armor : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Armor\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Cape&Ring Page");
 		this.pages.add(PageCapeRing.getInstance());
-		System.out.println("Fin CapeRing : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin CapeRing\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Ride Page");
 		this.pages.add(PageRide.getInstance());
-		System.out.println("Fin Mount : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Mount\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Costume Page");
 		this.pages.add(PageCostume.getInstance());
-		System.out.println("Fin Costume : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Costume\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Talent Page");
 		this.pages.add(PageTalent.getInstance());
-		System.out.println("Fin Talent : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Talent\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Speciality Page");
 		this.pages.add(PageSpeciality.getInstance());
-		System.out.println("Fin Speciality : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Speciality\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Skill Page");
 		this.pages.add(PageSkill.getInstance());
-		System.out.println("Fin Skill : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Skill\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Sprite Page");
 		this.pages.add(PageSprite.getInstance());
-		System.out.println("Fin Sprite : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Sprite\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Buff Page");
 		this.pages.add(PageBuff.getInstance());
-		System.out.println("Fin Buff : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Buff\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Other Page");
 		this.pages.add(PageOther.getInstance());
-		System.out.println("Fin Other : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Other\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Option Page");
 		this.pages.add(PageOption.getInstance());
-		System.out.println("Fin Option : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin Option\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
 		progress.setValue(progress.getValue()+1);
 		progress.setString("Loading Pages Display");
@@ -259,9 +263,7 @@ public class MainFrame extends JFrame {
 		this.scrollContent.getVerticalScrollBar().setUnitIncrement(15);
 		this.scrollContent.getHorizontalScrollBar().setUnitIncrement(15);
 		
-		for(int i = 0; i < this.pages.size(); i++) {
-			allPages.add(this.pages.get(i));
-		}
+		allPages.addAll(this.pages);
 		
 		
 		this.overlay = Overlay.getInstance();
@@ -367,11 +369,10 @@ public class MainFrame extends JFrame {
 		
 		updateTabPane(0);
 		updateLanguage();
-		updateStat();
+		allowUpdateStat(true);
 		
 		this.addWindowFocusListener(new WindowFocusListener() {
-			
-			@Override public void windowLostFocus(WindowEvent arg0) {}
+			@Override public void windowLostFocus(WindowEvent arg0) { /* vide */ }
 			@Override public void windowGainedFocus(WindowEvent e) {
 				PageGeneral.getInstance().popoff();
 				PageWeapon.getInstance().popoff();
@@ -429,7 +430,7 @@ public class MainFrame extends JFrame {
 		
 		this.unlock = true;
 		
-		System.out.println("Fin swing : " + Duration.between(this.start, Instant.now()).toMillis());
+		this.logger.log(Level.INFO, "Fin swing\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 	}
 	
 	public List<JCustomPanel> getPages() {
@@ -439,12 +440,15 @@ public class MainFrame extends JFrame {
 	public JScrollPane getScrollContent() {
 		return this.scrollContent;
 	}
-
+	
 	private void setCustomUI() {
+		System.setProperty("java.util.logging.SimpleFormatter.format", "[%1$tF %1$tT] [%3$s]\t[%4$-7s]\t%5$s %n");
+		this.logger = Logger.getLogger("MainFrame");
+		
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			System.err.println("WARNING: Look and feel code failed");
+			this.logger.log(Level.WARNING, "Look and feel code failed");
 		}
 		
 		UIManager.put("ToolTip.border", new LineBorder(Design.UIColor[1], 2));
@@ -465,7 +469,19 @@ public class MainFrame extends JFrame {
 		PageBuff.getInstance().initNucleusEnchant();
 	}
 	
+	public void allowUpdateStat(boolean locker) {
+		this.allowUpdateStat = locker;
+		
+		if(this.allowUpdateStat) {
+			updateStat();
+		}
+	}
+	
 	public void updateStat() {
+		if(!this.allowUpdateStat) {
+			return;
+		}
+		
 		double coefReinca = PageGeneral.getInstance().getReinca().getCoef();
 		WeaponType[] weaponType = PageWeapon.getInstance().getWeaponType();
 		
@@ -529,6 +545,10 @@ public class MainFrame extends JFrame {
 		Overlay.getInstance().setSave(false);
 	}
 	
+	public void resetStatusPane() {
+		this.tabPaneMenu.forEach(e -> e.setBackground(Design.UIColor[0]));
+	}
+	
 	public void setRedPane(int page) {
 		this.tabPaneMenu.get(page).setBackground(Design.UIColor[4]);
 	}
@@ -562,17 +582,10 @@ public class MainFrame extends JFrame {
 			this.language.setIcon(this.language.getDisabledIcon());
 		}
 		
-		for(JCustomTabPane tab : this.tabPaneMenu) {
-			tab.updateLanguage(lang);
-		}
+		this.tabPaneMenu.forEach(e -> e.updateLanguage(lang));
 		
-		for(JCustomPanel page : this.pages) {
-			((JUpdateLang) page).updateLanguage(lang);
-		}
-		
-		for(JUpdateLang frame : this.frames) {
-			frame.updateLanguage(lang);
-		}
+		this.pages.forEach(e -> ((JUpdateLang) e).updateLanguage(lang));
+		this.frames.forEach(e -> e.updateLanguage(lang));
 		
 		for(int i = 0; i < this.valueStat.size(); i++) {
 			this.labelStat.get(i).updateLanguage(lang);

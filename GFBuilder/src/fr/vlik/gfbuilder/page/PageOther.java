@@ -31,10 +31,10 @@ public class PageOther extends PartialPage {
 	private static final String SAVE_NAME = "OTHER";
 	private static final PageOther INSTANCE = new PageOther();
 	
-	private JCustomComboBox<Bague> bague = new JCustomComboBox<>();
-	private JCustomComboBox<LoveBuff> loveCo = new JCustomComboBox<>();
-	private JCustomComboBox<Anima> anima = new JCustomComboBox<>();
-	private JCustomComboBox<Souvenir> souvenir = new JCustomComboBox<>();
+	private JCustomComboBox<Bague> bague;
+	private JCustomComboBox<LoveBuff> loveCo;
+	private JCustomComboBox<Anima> anima;
+	private JCustomComboBox<Souvenir> souvenir;
 	
 	private transient JCustomComboBoxList<SouvenirEnchantment> souvenirEnchant;
 	
@@ -47,13 +47,13 @@ public class PageOther extends PartialPage {
 	private PageOther() {
 		super(BoxLayout.Y_AXIS);
 		
-		this.bague = new JCustomComboBox<>(Bague.getData());
+		this.bague = new JCustomComboBox<>(Bague.class, Bague.getData());
 		this.bague.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.loveCo = new JCustomComboBox<>(LoveBuff.getData());
+		this.loveCo = new JCustomComboBox<>(LoveBuff.class, LoveBuff.getData());
 		this.loveCo.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -61,14 +61,14 @@ public class PageOther extends PartialPage {
 		
 		
 		Anima[] tabAnima = Anima.getData(PageGeneral.getInstance().getLvl());
-		this.anima = new JCustomComboBox<>(tabAnima);
+		this.anima = new JCustomComboBox<>(Anima.class, tabAnima);
 		this.anima.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
 		
-		this.souvenir = new JCustomComboBox<>(Souvenir.getPossibleSouvenir(PageGeneral.getInstance().getLvl()));
+		this.souvenir = new JCustomComboBox<>(Souvenir.class, Souvenir.getPossibleSouvenir(PageGeneral.getInstance().getLvl()));
 		this.souvenir.addActionListener(e -> {
 			updateEnchantSouvenir();
 			
@@ -76,7 +76,7 @@ public class PageOther extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.souvenirEnchant = new JCustomComboBoxList<>(3);
+		this.souvenirEnchant = new JCustomComboBoxList<>(SouvenirEnchantment.class, 3);
 		this.souvenirEnchant.setVisible(false);
 		
 		/* ENCHANT SOUVENIR */
@@ -126,6 +126,10 @@ public class PageOther extends PartialPage {
 
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		list.addAll(this.getBague());
@@ -278,21 +282,19 @@ public class PageOther extends PartialPage {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new LinkedHashMap<>();
 		
-		config.put("Bague", this.getBague().getName(lang));
-		config.put("LoveBuff", this.getLoveCo().getName(Language.FR));
-		config.put("Anima", this.getAnima().getName(Language.FR));
-		config.put("Souvenir", this.getSouvenir().getName(Language.FR));
-		
-		for(int i = 0; i < this.souvenirEnchant.size(); i++) {
-			String value = this.getSouvenirEnchantment(i) != null ? this.getSouvenirEnchantment(i).getName(Language.FR) : "";
-			config.put("SouvenirEnchantment" + i, value);
-		}
+		config.putAll(this.bague.getSaveConfig());
+		config.putAll(this.loveCo.getSaveConfig());
+		config.putAll(this.anima.getSaveConfig());
+		config.putAll(this.souvenir.getSaveConfig());
+		config.putAll(this.souvenirEnchant.getSaveConfig());
 		
 		return config;
 	}
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		this.bague.setSelectedItem(Bague.get(config.get("Bague"), lang));
 		this.loveCo.setSelectedItem(LoveBuff.get(config.get("LoveBuff")));
 		this.anima.setSelectedItem(Anima.get(config.get("Anima")));
@@ -301,5 +303,7 @@ public class PageOther extends PartialPage {
 		for(int i = 0; i < this.souvenirEnchant.size(); i++) {
 			this.souvenirEnchant.get(i).setSelectedItem(SouvenirEnchantment.get(this.getSouvenir(), config.get("SouvenirEnchantment" + i)));
 		}
+		
+		allowSetEffect(true);
 	}
 }

@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.equip;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -114,13 +115,7 @@ public final class Ring extends Equipment {
 	}
 	
 	public static Ring get(String name, Language lang) {
-		for(Ring ring : Ring.data) {
-			if(ring.getName(lang).equals(name)) {
-				return ring;
-			}
-		}
-		
-		return null;
+		return get(Ring.data, name, lang);
 	}
 	
 	public static Ring getCustom(String name, Language lang) {
@@ -144,12 +139,7 @@ public final class Ring extends Equipment {
 	}
 	
 	public static Ring[] getCustomData() {
-		Ring[] cast = new Ring[customData.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = customData.get(i);
-		}
-		
-		return cast;
+		return Arrays.copyOf(customData.toArray(new Ring[0]), customData.size());
 	}
 	
 	public static Ring[] getPossibleRing(int lvl, Ring toIgnore) {

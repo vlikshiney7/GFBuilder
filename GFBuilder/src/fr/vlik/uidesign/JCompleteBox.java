@@ -1,13 +1,15 @@
 package fr.vlik.uidesign;
 
 import java.awt.event.ActionListener;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Filterable;
 import fr.vlik.grandfantasia.template.Buff;
 import fr.vlik.grandfantasia.template.ProcEffect;
 
-public class JCompleteBox<E> extends JCustomComboBox<E> implements JUpdateLang {
+public class JCompleteBox<T> extends JCustomComboBox<T> implements JUpdateLang {
 
 	private static final long serialVersionUID = 1L;
 	public static final String FILTER16 = "filter16";
@@ -21,8 +23,8 @@ public class JCompleteBox<E> extends JCustomComboBox<E> implements JUpdateLang {
 	private JCustomDialog filterDialog;
 	private JCustomCheckBox<ProcEffect> proc;
 	
-	public JCompleteBox(E[] object, String iconFilter, String[] iconProc, int gridValue, Filterable[]... filters) {
-		super(object);
+	public JCompleteBox(Class<T> clazz, T[] object, String iconFilter, String[] iconProc, int gridValue, Filterable[]... filters) {
+		super(clazz, object);
 		this.filterDialog = new JCustomDialog(iconFilter, gridValue, filters);
 		
 		this.proc = new JCustomCheckBox<>(new ProcEffect((Buff) this.getSelectedItem()));
@@ -30,8 +32,8 @@ public class JCompleteBox<E> extends JCustomComboBox<E> implements JUpdateLang {
 		this.proc.setVisible(false);
 	}
 	
-	public JCompleteBox(E[] object, String iconFilter, int gridValue, Filterable[]... filters) {
-		super(object);
+	public JCompleteBox(Class<T> clazz, T[] object, String iconFilter, int gridValue, Filterable[]... filters) {
+		super(clazz, object);
 		this.filterDialog = new JCustomDialog(iconFilter, gridValue, filters);
 	}
 	
@@ -44,7 +46,7 @@ public class JCompleteBox<E> extends JCustomComboBox<E> implements JUpdateLang {
 	}
 	
 	@Override
-	public boolean setItems(E[] tabItems) {
+	public boolean setItems(T[] tabItems) {
 		boolean result = false;
 		boolean memoryProc = isProcActive();
 		
@@ -112,5 +114,21 @@ public class JCompleteBox<E> extends JCustomComboBox<E> implements JUpdateLang {
 		}
 		
 		this.getProc().setSelected(false);
+	}
+	
+	@Override
+	public Map<String, String> getSaveConfig() {
+		Map<String, String> config = new LinkedHashMap<>();
+		
+		T item = this.getSelectedItem();
+		
+		String value = item instanceof Buff ? ((Buff) item).getName(Language.FR) : "";
+		config.put(this.saveKey, value);
+		
+		if(this.proc != null) {
+			config.put(this.saveKey + "Proc", "" + this.proc.isSelected());
+		}
+		
+		return config;
 	}
 }

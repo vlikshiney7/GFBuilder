@@ -39,12 +39,6 @@ public class Runway extends Buff {
 	}
 	
 	public static Runway get(String name) {
-		for(Runway runway : Runway.data) {
-			if(runway.getName(Language.FR).equals(name)) {
-				return runway;
-			}
-		}
-		
-		return null;
+		return get(Runway.data, name, Language.FR);
 	}
 }

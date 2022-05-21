@@ -1,32 +1,50 @@
 package fr.vlik.uidesign;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 
+import fr.vlik.grandfantasia.enums.Language;
+import fr.vlik.grandfantasia.interfaces.Writable;
+
 public class JCustomComboBox<T> extends JComboBox<T> {
 	
 	private static final long serialVersionUID = 1L;
-
-	public JCustomComboBox() {
+	
+	protected final String saveKey;
+	
+	public JCustomComboBox(Class<T> clazz) {
 		super();
+		this.saveKey = clazz.getSimpleName();
+		
 		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
 	}
 	
-	public JCustomComboBox(ComboBoxModel<T> object) {
+	public JCustomComboBox(Class<T> clazz, ComboBoxModel<T> object) {
 		super(object);
+		this.saveKey = clazz.getSimpleName();
+		
 		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
 	}
 	
-	public JCustomComboBox(T[] object) {
+	public JCustomComboBox(Class<T> clazz, T[] object) {
 		super(object);
+		this.saveKey = clazz.getSimpleName();
+		
 		this.setFont(Design.TEXT);
 		this.setRenderer(new CustomListCellRenderer());
 		setBlackUI();
+	}
+	
+	public String getSaveKey() {
+		return this.saveKey;
 	}
 	
 	public void placeItems(T[] tabItems) {
@@ -88,5 +106,16 @@ public class JCustomComboBox<T> extends JComboBox<T> {
 	@Override
 	public T getSelectedItem() {
 		return (T) super.getSelectedItem();
+	}
+	
+	public Map<String, String> getSaveConfig() {
+		Map<String, String> config = new LinkedHashMap<>();
+		
+		T item = this.getSelectedItem();
+		
+		String value = item instanceof Writable ? ((Writable) item).getName(Language.FR) : "";
+		config.put(this.saveKey, value);
+		
+		return config;
 	}
 }

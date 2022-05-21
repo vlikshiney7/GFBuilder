@@ -47,13 +47,7 @@ public class Stone extends CompleteBuff {
 	}
 	
 	public static Stone get(String name) {
-		for(Stone stone : Stone.data) {
-			if(stone.getName(Language.FR).equals(name)) {
-				return stone;
-			}
-		}
-		
-		return null;
+		return get(Stone.data, name, Language.FR);
 	}
 	
 	public static Stone[] getData() {

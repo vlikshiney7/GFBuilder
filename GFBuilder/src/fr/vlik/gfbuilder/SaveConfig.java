@@ -10,10 +10,12 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import fr.vlik.gfbuilder.frame.FrameError;
 import fr.vlik.gfbuilder.page.PartialPage;
@@ -38,14 +40,17 @@ public class SaveConfig {
 	
 	private static ArrayList<SaveConfig> data;
 	static {
+		logger = Logger.getLogger(SaveConfig.class.getSimpleName());
 		loadData();
 	}
 	
 	private String filename;
 	private String buildname;
 	private Language lang;
-	private Map<String, Map<String, String>> values = new HashMap<>();
+	private Map<String, Map<String, String>> values = new LinkedHashMap<>();
 	private int[][] indexSelector;
+	
+	private static Logger logger;
 	
 	public SaveConfig(String name, int[][] tabConfig) {
 		this.filename = name.replace(" ", "_");
@@ -78,6 +83,7 @@ public class SaveConfig {
 	
 	public void applyConfig() {
 		List<JCustomPanel> pages = MainFrame.getInstance().getPages();
+		MainFrame.getInstance().allowUpdateStat(false);
 		
 		int[] orderLoading = { 0, 6, 7, 8, 1, 2, 3, 4, 5, 9, 10, 11 };
 		
@@ -90,11 +96,12 @@ public class SaveConfig {
 						page.setConfig(pageValues, this.lang);
 					}
 				} catch (IllegalArgumentException e) {
-					System.out.println("Out of range on page : " + page.getSaveName());
+					logger.log(Level.SEVERE, "Out of range on page : {0}", page.getSaveName());
 				}
 			}
 		}
 		
+		MainFrame.getInstance().allowUpdateStat(true);
 		Overlay.getInstance().setNameSave(this.buildname);
 		Overlay.getInstance().setSave(true);
 	}
@@ -112,7 +119,8 @@ public class SaveConfig {
 		}
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.filename + EXTENSION, false), StandardCharsets.UTF_8));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(SAVE_FOLDER_NAME + File.separator + this.filename + EXTENSION, false), StandardCharsets.UTF_8));
 		) {
 			writer.append(this.buildname + "/" + this.lang.name() + "\n");
 			
@@ -129,7 +137,7 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			System.out.println("Error override config");
+			logger.log(Level.SEVERE, "Error override config");
 		}
 	}
 	
@@ -139,11 +147,11 @@ public class SaveConfig {
 		File folder = new File(SAVE_FOLDER_NAME);
 		
 		if(!folder.exists()) {
-			System.out.println("Le dossier de sauvegarde n'existe pas, création...");
+			logger.log(Level.WARNING, "Le dossier de sauvegarde n''existe pas, création...");
 			if(folder.mkdir()) {
-				System.out.println("Création terminée");
+				logger.log(Level.INFO, "Création terminée");
 			} else {
-				System.out.println("Création impossible, droit d'administration nécessaire.");
+				logger.log(Level.SEVERE, "Création impossible, droit d''administration nécessaire.");
 				FrameError.getInstance().popup();
 				return;
 			}
@@ -155,13 +163,13 @@ public class SaveConfig {
 				
 				if(!rename.exists()) {
 					if(file.renameTo(rename)) {
-						System.out.println("Renommage du fichier " + file.getName() + " réussi.");
+						logger.log(Level.INFO, "Renommage du fichier {0} réussi.", file.getName());
 						file = rename;
 					} else {
-						System.out.println("Renommage impossible du fichier " + file.getName() + ", droit d'administration nécessaire.");
+						logger.log(Level.SEVERE, "Renommage impossible du fichier {0}, droit d''administration nécessaire.", file.getName());
 					}
 				} else {
-					System.out.println("Renommage du fichier " + file.getName() + " impossible, renommage existant.");
+					logger.log(Level.WARNING, "Renommage du fichier {0} impossible, renommage existant.", file.getName());
 				}
 			}
 			
@@ -169,7 +177,7 @@ public class SaveConfig {
 				try (
 					BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
 				) {
-					Map<String, Map<String, String>> build = new HashMap<>();
+					Map<String, Map<String, String>> build = new LinkedHashMap<>();
 					
 					String[] header = reader.readLine().split("/");
 					String line = reader.readLine();
@@ -182,7 +190,7 @@ public class SaveConfig {
 							build.get(page).put(element[0], element.length != 1 ? element[1] : "");
 						} else {
 							page = line;
-							build.put(page, new HashMap<>());
+							build.put(page, new LinkedHashMap<>());
 						}
 						
 						line = reader.readLine();
@@ -190,7 +198,7 @@ public class SaveConfig {
 					
 					SaveConfig.data.add(new SaveConfig(header[0], Language.valueOf(header[1]), build));
 				} catch (IOException e) {
-					System.out.println("Error on loading save data");
+					logger.log(Level.SEVERE, "Error on loading save data");
 				}
 			}
 		}
@@ -200,48 +208,45 @@ public class SaveConfig {
 			Overlay.getInstance().setSave(false);
 		}
 		
+		String line = "";
+		String corrompu = "Ligne corrompu : {0}";
+		
 		try (
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(SAVE_FOLDER_NAME + File.separator + CUSTOM_FILENAME), StandardCharsets.UTF_8));
 		) {
-			String line = reader.readLine();
+			line = reader.readLine();
 			
 			while(line != null) {
 				
 				String[] lineSplit = line.split("::");
 				
-				Quality quality = null;
-				try {
-					quality = Quality.valueOf(lineSplit[2]);
-				} catch (Exception e) {
-					System.out.println("Ligne corrompu : " + line);
-				}
+				Quality quality = Quality.valueOf(lineSplit[2]);
 				
 				if(lineSplit.length == 4 && quality != null) {
-					
 					switch (lineSplit[0]) {
 						case "Weapon":
 							if(!CustomWeapon.constructCustom(lineSplit[1], quality, lineSplit[3])) {
-								System.out.println("Ligne corrompu : " + line);
+								logger.log(Level.WARNING, corrompu, line);
 							}
 							break;
 						case "Armor":
 							if(!CustomArmor.constructCustom(lineSplit[1], quality, lineSplit[3])) {
-								System.out.println("Ligne corrompu : " + line);
+								logger.log(Level.WARNING, corrompu, line);
 							}
 							break;
 						case "Cape":
 							if(!CustomCape.constructCustom(lineSplit[1], quality, lineSplit[3])) {
-								System.out.println("Ligne corrompu : " + line);
+								logger.log(Level.WARNING, corrompu, line);
 							}
 							break;
 						case "Ring":
 							if(!CustomRing.constructCustom(lineSplit[1], quality, lineSplit[3])) {
-								System.out.println("Ligne corrompu : " + line);
+								logger.log(Level.WARNING, corrompu, line);
 							}
 							break;
 							
 						default:
-							System.out.println("Ligne corrompu : " + line);
+							logger.log(Level.WARNING, corrompu, line);
 					}
 				}
 				
@@ -250,12 +255,14 @@ public class SaveConfig {
 			
 			SaveConfig.overrideCustom();
 		} catch (IOException e) {
-			System.out.println("Error loading custom equipment");
+			logger.log(Level.SEVERE, "Error loading custom equipment");
+		} catch (Exception e) {
+			logger.log(Level.WARNING, corrompu, line);
 		}
 	}
 	
 	public static void writeData(String name, Language lang) {
-		Map<String, Map<String, String>> build = new HashMap<>();
+		Map<String, Map<String, String>> build = new LinkedHashMap<>();
 		
 		List<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
@@ -270,7 +277,8 @@ public class SaveConfig {
 		SaveConfig.data.add(save);
 		
 		try (
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false), StandardCharsets.UTF_8));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(SAVE_FOLDER_NAME + File.separator + name + EXTENSION, false), StandardCharsets.UTF_8));
 		) {
 			writer.append(name.replace("_", " ") + "/" + lang.name() + "\n");
 			
@@ -287,7 +295,7 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			System.out.println("Error write data");
+			logger.log(Level.SEVERE, "Error write data");
 		}
 	}
 	
@@ -349,7 +357,7 @@ public class SaveConfig {
 			
 			writer.flush();
 		} catch (IOException e) {
-			System.out.println("Error override custom equipment");
+			logger.log(Level.SEVERE, "Error override custom equipment");
 		}
 	}
 }

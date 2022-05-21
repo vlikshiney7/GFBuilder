@@ -24,13 +24,7 @@ public class Nucleus extends CompleteBuff {
 	}
 	
 	public static Nucleus get(String name, int list) {
-		for(Nucleus nucleus : Nucleus.data[list]) {
-			if(nucleus.getName(Language.FR).equals(name)) {
-				return nucleus;
-			}
-		}
-		
-		return null;
+		return get(Nucleus.data[list], name, Language.FR);
 	}
 	
 	public static Nucleus[] getData(int idList) {

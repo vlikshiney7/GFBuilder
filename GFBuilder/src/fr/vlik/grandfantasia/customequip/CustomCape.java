@@ -104,13 +104,7 @@ public class CustomCape extends CustomEquipment {
 	}
 	
 	public static CustomCape get(String name, Language lang) {
-		for(CustomCape custom : CustomCape.data) {
-			if(custom.getName(lang).equals(name)) {
-				return custom;
-			}
-		}
-		
-		return null;
+		return get(CustomCape.data, name, lang);
 	}
 	
 	public static CustomCape[] getPossibleCape(Grade grade, int lvl) {

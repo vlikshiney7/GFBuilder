@@ -402,14 +402,14 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.CostComp, false, -80),
 					new Proc(25, Activation.Attacked, 12, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.AntiStun),
-					}),
+					}, 12),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.PV, true, 27),
 					new Proc(50, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -150, Target.OPPONENT),
 						new Effect(TypeEffect.AGI, false, -150, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Puissance d'Héraclès (Reforgé)"); put(Language.EN, ""); }}, "75pvp0R",
 				new Calculable[] {
@@ -649,12 +649,12 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new SkillEffect(TypeSkillEffect.Class0S8, 30, TypeValue.DAMAGE),
 					new Proc(20, Activation.Attack, 6, new Calculable[] {
-						new StaticEffect(TypeStaticEffect.NoSkill, Target.OPPONENT),
-					}),
+						new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
+					}, 8),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.PV, true, 15),
-					new Proc(25, Activation.Attacked, 0, new Calculable[] {
+					new Proc(25, Activation.Attacked, new Calculable[] {
 						new Effect(TypeEffect.ReflectP_old, false, 70),
 					}),
 				}),
@@ -726,7 +726,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(50, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -100, Target.OPPONENT),
 						new Effect(TypeEffect.AGI, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Conquête d'Attila"); put(Language.EN, ""); }}, "70gvg0",
 				new Calculable[] {
@@ -1221,13 +1221,13 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.Parade, false, 20),
 					new Proc(30, Activation.Attacked, 15, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 15),
-					}),
+					}, 15),
 				},
 				new Calculable[] {
 					new StaticEffect(TypeStaticEffect.AntiStun),
 					new Proc(32, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 4),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Défense infinie (Reforgé)"); put(Language.EN, ""); }}, "75pvp1R",
 				new Calculable[] {
@@ -1464,7 +1464,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.VitAtk, false, 10),
 					new Proc(60, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, -40, Target.OPPONENT),
-					}),
+					}, 8),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chevalier des Saints"); put(Language.EN, ""); }}, "70lingot1",
 				new Calculable[] {
@@ -1538,7 +1538,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(50, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -100, Target.OPPONENT),
 						new Effect(TypeEffect.INT, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Noblesse de Siegfried"); put(Language.EN, ""); }}, "70gvg1",
 				new Calculable[] {
@@ -2063,7 +2063,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(50, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -125, Target.OPPONENT),
 						new Effect(TypeEffect.INT, false, -125, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Roi céleste (Reforgé)"); put(Language.EN, ""); }}, "75pvp2R",
 				new Calculable[] {
@@ -2311,7 +2311,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.PV, true, 15),
 					new Proc(40, Activation.Attack, 9, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoHeal),
-					}),
+					}, 11),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Souffle des Limbes"); put(Language.EN, ""); }}, "70lingot2",
 				new Calculable[] {
@@ -2376,7 +2376,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.DCCP, false, 40),
 					new Proc(27, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 4),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Feinte de Geronimo"); put(Language.EN, ""); }}, "70gvg2",
 				new Calculable[] {
@@ -2880,7 +2880,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(30, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, 20),
 						new Effect(TypeEffect.Depla, false, 20),
-					}),
+					}, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Sacre, false, 75),
@@ -2888,14 +2888,14 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.Toucher, false, 17),
 					new Proc(30, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 100),
-					}),
+					}, 15),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 50),
 					new Effect(TypeEffect.PV, true, 17),
 					new Proc(40, Activation.Attacked, 15, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 30),
-					}),
+					}, 15),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Fourberie de Lucrezia (Reforgé)"); put(Language.EN, ""); }}, "75pvp3R",
 				new Calculable[] {
@@ -3087,7 +3087,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(45, Activation.Attack, 9, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -100, Target.OPPONENT),
 						new Effect(TypeEffect.VIT, false, -50, Target.OPPONENT),
-					}),
+					}, 11),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Crocs du Cobra"); put(Language.EN, ""); }}, "70nucleus3",
 				new Calculable[] {
@@ -3097,12 +3097,12 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(25, Activation.Attacked, 7, new Calculable[] {
 						new Effect(TypeEffect.RegenPV, false, 700),
-					}),
+					}, 9),
 				},
 				new Calculable[] {
 					new Proc(20, Activation.Attack, 7, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, -25, Target.OPPONENT),
-					}),
+					}, 9),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Samourai du Poison"); put(Language.EN, ""); }}, "60nucleus3",
 				new Calculable[] {
@@ -3124,7 +3124,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(18, Activation.Attacked, 20, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 380, TypeRegen.REGENERATION, 2),
-					}),
+					}, 22),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.AGI, false, 21),
@@ -3133,7 +3133,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(33, Activation.Attack, 6, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 8),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ombre Diabolique"); put(Language.EN, ""); }}, "70lingot3",
 				new Calculable[] {
@@ -3141,7 +3141,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new SkillEffect(TypeSkillEffect.Class3S5, 20, TypeValue.DAMAGE),
 				},
 				new Calculable[] {
-					new Proc(33, Activation.Attacked, 0, new Calculable[] {
+					new Proc(33, Activation.Attacked, new Calculable[] {
 						new Effect(TypeEffect.ReflectM_old, false, 50),
 					}),
 				},
@@ -3149,7 +3149,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.VitAtkDuo, false, 18),
 					new Proc(20, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, 20),
-					}),
+					}, 10),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Samourai du Tonnerre"); put(Language.EN, ""); }}, "60lingot3",
 				new Calculable[] {
@@ -3198,7 +3198,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.DegDuo, false, 22),
 					new Proc(37, Activation.Attacked, 15, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 40),
-					}),
+					}, 22.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dragon Sombre Atma"); put(Language.EN, ""); }}, "70gvg3",
 				new Calculable[] {
@@ -3683,7 +3683,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.VitComp, false, 22),
 					new Proc(85, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Sacre, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 30),
@@ -3696,7 +3696,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new StaticEffect(TypeStaticEffect.AntiStun),
 					new Proc(50, Activation.Attacked, 8, new Calculable[] {
 						new Effect(TypeEffect.VitComp, false, -50, Target.OPPONENT),
-					}),
+					}, 8),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Dévotion de Zenaïda (Reforgée)"); put(Language.EN, ""); }}, "75pvp4R",
 				new Calculable[] {
@@ -3916,7 +3916,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(35, Activation.Attack, 10, new Calculable[] {
 						new Effect(TypeEffect.AtkM, true, -40, Target.OPPONENT),
 						new Effect(TypeEffect.VitComp, false, -40, Target.OPPONENT),
-					}),
+					}, 12),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Jugement du Fanatique"); put(Language.EN, ""); }}, "60nucleus4",
 				new Calculable[] {
@@ -3937,7 +3937,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(28, Activation.Attacked, 6, new Calculable[] {
 						new Effect(TypeEffect.Poisse, false, 65, Target.OPPONENT),
-					}),
+					}, 8),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 20),
@@ -3957,7 +3957,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.DefM, true, -45, Target.OPPONENT),
 						new Effect(TypeEffect.TCCM, false, -45, Target.OPPONENT),
-					}),
+					}, 10),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DefM, true, 40),
@@ -4010,13 +4010,13 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.Toucher, false, 17),
 					new Proc(75, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Sacre, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new StaticEffect(TypeStaticEffect.AntiStun),
 					new Proc(30, Activation.Attack, 17, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, 20),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pureté du Clerc"); put(Language.EN, ""); }}, "70gvg4",
 				new Calculable[] {
@@ -4507,7 +4507,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.INT, false, 20),
 					new Proc(85, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Nature, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 30),
@@ -4521,7 +4521,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(70, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.INT, false, -170, Target.OPPONENT),
 						new Effect(TypeEffect.Depla, false, -30, Target.OPPONENT),
-					}),
+					}, 15),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Ruse de Sun Wukong (Reforgé)"); put(Language.EN, ""); }}, "75pvp5R",
 				new Calculable[] {
@@ -4725,7 +4725,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(25, Activation.Attack, 7, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -40, Target.OPPONENT),
-					}),
+					}, 9),
 				},
 				new Calculable[] {
 					new Condition(TypeEffect.PV, 35, new Calculable[] {
@@ -4741,12 +4741,12 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.VOL, false, 23),
 					new Proc(20, Activation.Attacked, 10, new Calculable[] {
 						new Effect(TypeEffect.RegenCB, false, 25),
-					}),
+					}, 12),
 				},
 				new Calculable[] {
 					new Proc(45, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.INT, false, -170, Target.OPPONENT),
-					}),
+					}, 14),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Prix de la Raison"); put(Language.EN, ""); }}, "60nucleus5",
 				new Calculable[] {
@@ -4780,7 +4780,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.Atk, true, 15),
 					new Effect(TypeEffect.VitAtk, false, 5),
 				}),
-			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Oeil du Cyclone"); put(Language.EN, ""); }}, "70lingot5",
+			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Œil du Cyclone"); put(Language.EN, ""); }}, "70lingot5",
 				new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, 22),
 					new Effect(TypeEffect.RTCCM, false, -18),
@@ -4790,13 +4790,13 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(18, Activation.Attacked, 7, new Calculable[] {
 						new Effect(TypeEffect.DefP, true, 20),
 						new Effect(TypeEffect.DefM, true, 40),
-					}),
+					}, 9),
 				},
 				new Calculable[] {
 					new Proc(45, Activation.Attack, 12, new Calculable[] {
 						new Effect(TypeEffect.VOL, false, -100, Target.OPPONENT),
 						new Effect(TypeEffect.VIT, false, -70, Target.OPPONENT),
-					}),
+					}, 14),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Équilibre de la Nature"); put(Language.EN, ""); }}, "60lingot5",
 				new Calculable[] {
@@ -4841,7 +4841,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.VOL, false, 12),
 					new Proc(75, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Nature, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 27),
@@ -4857,7 +4857,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.Toucher, false, 27),
 					new Proc(60, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.AGI, false, -185, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Érudition de Diviciacos"); put(Language.EN, ""); }}, "70gvg5",
 				new Calculable[] {
@@ -5339,7 +5339,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.INT, false, 38),
 					new Proc(85, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Glace, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 30),
@@ -5354,7 +5354,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.ReducSkillP, false, 22),
 					new Proc(70, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -200, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Envoûtement de Calypso (Reforgée)"); put(Language.EN, ""); }}, "75pvp6R",
@@ -5576,7 +5576,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.ReflectP_old, false, 40),
 					new Proc(60, Activation.Attacked, 12, new Calculable[] {
 						new Effect(TypeEffect.DefM, true, -45, Target.OPPONENT),
-					}),
+					}, 14),
 				},
 				new Calculable[] {
 					new StaticEffect(TypeStaticEffect.x3Skill_old, 15),
@@ -5597,7 +5597,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(32, Activation.Attacked, 7, new Calculable[] {
 						new Effect(TypeEffect.TCCP, false, -30, Target.OPPONENT),
 						new Effect(TypeEffect.VitAtk, false, -20, Target.OPPONENT),
-					}),
+					}, 9),
 				},
 				new Calculable[] {
 					new Proc(20, Activation.Mag, new Calculable[] {
@@ -5608,13 +5608,13 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new SkillEffect(TypeSkillEffect.Class6S4, 30, TypeValue.DAMAGE),
 					new Proc(17, Activation.Attack, 10, new Calculable[] {
 						new RegenEffect(TypeEffect.PV, false, 500, 800, TypeRegen.REGENERATION, 2),
-					}),
+					}, 12),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tourbillon de Glace"); put(Language.EN, ""); }}, "70lingot6",
 				new Calculable[] {
 					new Proc(50, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -25, Target.OPPONENT),
-					}),
+					}, 7),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.INT, false, 20),
@@ -5626,7 +5626,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 						new Effect(TypeEffect.DegStdP, false, -60, Target.OPPONENT),
 						new Effect(TypeEffect.DegStdD, false, -60, Target.OPPONENT),
 						new Effect(TypeEffect.DegSkillP, false, -60, Target.OPPONENT),
-					}),
+					}, 9),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Chant de l'Univers"); put(Language.EN, ""); }}, "60lingot6",
 				new Calculable[] {
@@ -5673,7 +5673,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.TCCM, false, 12),
 					new Proc(75, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Glace, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 32),
@@ -5682,7 +5682,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.ReducSkillP, false, 17),
 					new Proc(60, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.FCE, false, -175, Target.OPPONENT),
-					}),
+					}, 7.5),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Oracle d'Hécate"); put(Language.EN, ""); }}, "70gvg6",
 				new Calculable[] {
@@ -6183,7 +6183,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.INT, false, 20),
 					new Proc(85, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Ombre, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 30),
@@ -6402,7 +6402,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.VIT, false, 16),
 					new Proc(30, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.TCCM, false, 50),
-					}),
+					}, 10),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.VOL, false, 18),
@@ -6412,7 +6412,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.Depla, false, 10),
 					new Proc(50, Activation.Attack, 6, new Calculable[] {
 						new Effect(TypeEffect.Depla, false, -50, Target.OPPONENT),
-					}),
+					}, 8),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Pleurs des Damnés"); put(Language.EN, ""); }}, "70nucleus7",
 				new Calculable[] {
@@ -6422,7 +6422,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(40, Activation.Attack, 6, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoMove, Target.OPPONENT),
-					}),
+					}, 8),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.AtkM, false, 9),
@@ -6454,7 +6454,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.PV, true, 15),
 					new Proc(50, Activation.Attack, 5, new Calculable[] {
 						new Effect(TypeEffect.VitAtk, false, -30, Target.OPPONENT),
-					}),
+					}, 7),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Doigt d'Hadès"); put(Language.EN, ""); }}, "70lingot7",
 				new Calculable[] {
@@ -6467,7 +6467,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Proc(42, Activation.Attack, 9, new Calculable[] {
 						new StaticEffect(TypeStaticEffect.NoPhys, Target.OPPONENT),
-					}),
+					}, 11),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Messager de l'Horreur"); put(Language.EN, ""); }}, "60lingot7",
 				new Calculable[] {
@@ -6511,7 +6511,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.INT, false, 17),
 					new Proc(75, Activation.Attack, 15, new Calculable[] {
 						new Effect(TypeEffect.Ombre, false, -100, Target.OPPONENT),
-					}),
+					}, 7.5),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.RTCCP, false, 27),
@@ -10373,7 +10373,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Proc(10, Activation.Attacked, 5, new Calculable[] {
 						new Effect(TypeEffect.ESQ, false, 5),
 						new Effect(TypeEffect.Depla, false, 5),
-					}),
+					}, 15),
 				},
 				new Calculable[] {
 					new Proc(10, Activation.Attack, 5, new Calculable[] {

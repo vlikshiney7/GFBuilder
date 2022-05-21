@@ -28,12 +28,6 @@ public class Archive extends ColorBuff {
 	}
 	
 	public static Archive get(String name) {
-		for(Archive archive : Archive.data) {
-			if(archive.getName(Language.FR).equals(name)) {
-				return archive;
-			}
-		}
-		
-		return null;
+		return get(Archive.data, name, Language.FR);
 	}
 }

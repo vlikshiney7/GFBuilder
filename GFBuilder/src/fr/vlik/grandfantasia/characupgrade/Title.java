@@ -75,13 +75,7 @@ public class Title extends ColorBuff {
 	}
 	
 	public static Title get(String name, Language lang) {
-		for(Title title : Title.data) {
-			if(title.getName(lang).equals(name)) {
-				return title;
-			}
-		}
-		
-		return null;
+		return get(Title.data, name, lang);
 	}
 	
 	public static Title[] getPossibleData() {

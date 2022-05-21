@@ -75,20 +75,20 @@ public class PageArmor extends PartialRedStuff {
 	public PageArmor() {
 		super(BoxLayout.Y_AXIS, 5);
 		
-		this.shortcutSet = new JCustomComboBox<>(new EquipSet[] {});
+		this.shortcutSet = new JCustomComboBox<>(EquipSet.class, new EquipSet[] {});
 		this.shortcutSet.addActionListener(e -> applySet() );
 		
-		this.shortcutFortif = new JCustomComboBox<>(Fortification.getData());
+		this.shortcutFortif = new JCustomComboBox<>(Fortification.class, Fortification.getData());
 		this.shortcutFortif.addActionListener(e -> applyFortif() );
 		
-		this.shortcutEnchant = new JCustomComboBox<>();
+		this.shortcutEnchant = new JCustomComboBox<>(Enchantment.class);
 		this.shortcutEnchant.addActionListener(e -> applyEnchant() );
 		
 		for(int i = 0; i < 5; i++) {
 			int id = i;
 			
 			Armor[] tabArmor = Armor.getPossibleArmor(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-			this.armor.add(new JCompleteBox<>(tabArmor, JCompleteBox.FILTER32, 5, /*Armor.getTags(), */Armor.getQualities()));
+			this.armor.add(new JCompleteBox<>(Armor.class, tabArmor, JCompleteBox.FILTER32, 5, /*Armor.getTags(), */Armor.getQualities()));
 			this.armor.get(i).addActionListener(e -> {
 				updateXpStuff(id);
 				updateDetails(id);
@@ -106,7 +106,7 @@ public class PageArmor extends PartialRedStuff {
 			/* PERLE */
 			Pearl[] tabPearl = Pearl.getPossibleArmorPearl(this.getArmor(i));
 			
-			this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
+			this.pearl.add(new JCompleteBox<>(Pearl.class, tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
 			
 			if(i == 0) {
 				this.pearl.get(i).addActionListener(e -> {
@@ -117,7 +117,7 @@ public class PageArmor extends PartialRedStuff {
 					MainFrame.getInstance().updateStat();
 				});
 			} else if(i == 1) {
-				this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
+				this.pearl.add(new JCompleteBox<>(Pearl.class, tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 4, Pearl.getQualities()));
 				this.pearl.get(i).addActionListener(e -> {
 					this.pearl.get(id).activeProc();
 					updateEnchantPearl(id);
@@ -144,9 +144,13 @@ public class PageArmor extends PartialRedStuff {
 		}
 		
 		this.pearl.setVisible(false);
+		this.pearl.addProcActionListener(e -> {
+			setEffects();
+			MainFrame.getInstance().updateStat();
+		});
 		
 		/* ENCHANTEMENT */
-		this.enchant = new JCustomComboBoxList<>(5);
+		this.enchant = new JCustomComboBoxList<>(Enchantment.class, 5);
 		this.enchant.setVisible(false);
 		this.enchant.addActionListener(e -> {
 			setEffects();
@@ -154,7 +158,7 @@ public class PageArmor extends PartialRedStuff {
 		});
 		
 		/* FORTIF */
-		this.fortif = new JCustomComboBoxList<>(5, Fortification.getData());
+		this.fortif = new JCustomComboBoxList<>(Fortification.class, 5, Fortification.getData());
 		this.fortif.setVisible(false);
 		this.fortif.addActionListener(e -> {
 			setEffects();
@@ -225,6 +229,10 @@ public class PageArmor extends PartialRedStuff {
 	
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		this.redEnchants.clear();
 		this.pearlEnchants.clear();
@@ -407,9 +415,7 @@ public class PageArmor extends PartialRedStuff {
 		
 		initPanel();
 		
-		for(JCustomTextPane<BonusEquipSet> equipSetPane : this.equipSetBonus) {
-			equipSetPane.setVisible(false);
-		}
+		this.equipSetBonus.forEach(e -> e.setVisible(false));
 		
 		for(int i = 0; i < 5; i++) {
 			this.labels.get("PearlEnchant" + i).setVisible(false);
@@ -459,18 +465,16 @@ public class PageArmor extends PartialRedStuff {
 		
 		if(!armorSet.equals(this.equipSet)) {
 			if(armorSet.getCode().equals("-1")) {
-				for(int i = 0; i < 3; i++) {
-					this.equipSetBonus.get(i).setItem(new BonusEquipSet());
-					this.equipSetBonus.get(i).setVisible(false);
+				for (JCustomTextPane<BonusEquipSet> bonus : this.equipSetBonus) {
+					bonus.setItem(new BonusEquipSet());
+					bonus.setVisible(false);
 				}
 			} else {
 				this.equipSetBonus.get(0).setItem(armorSet.getBonus3());
 				this.equipSetBonus.get(1).setItem(armorSet.getBonus4());
 				this.equipSetBonus.get(2).setItem(armorSet.getBonus5());
 				
-				this.equipSetBonus.get(0).setVisible(true);
-				this.equipSetBonus.get(1).setVisible(true);
-				this.equipSetBonus.get(2).setVisible(true);
+				this.equipSetBonus.forEach(e -> e.setVisible(true));
 			}
 		}
 		
@@ -596,7 +600,7 @@ public class PageArmor extends PartialRedStuff {
 				showStar = true;
 			}
 		} else if(id == 1) {
-			for(int i = 1; i < 2; i++) {
+			for(int i = 1; i < 3; i++) {
 				if(this.pearl.get(i).isVisible() && this.pearl.get(i).getSelectedIndex() > 0) {
 					showStar = true;
 					break;
@@ -751,9 +755,9 @@ public class PageArmor extends PartialRedStuff {
 			}
 		}
 		
-		config.putAll(this.enchant.getSaveConfig("Enchantment"));
-		config.putAll(this.fortif.getSaveConfig("Fortif"));
-		config.putAll(this.pearl.getSaveConfig("Pearl"));
+		config.putAll(this.enchant.getSaveConfig());
+		config.putAll(this.fortif.getSaveConfig());
+		config.putAll(this.pearl.getSaveConfig());
 		
 		for(int i = 0; i < this.starPearl.size(); i++) {
 			ArrayList<JIconCheckBox> buttons = this.starPearl.get(i);
@@ -770,7 +774,7 @@ public class PageArmor extends PartialRedStuff {
 			config.put("StarPearl" + i, "" + select);
 		}
 		
-		config.putAll(this.pearlEnchant.getSaveConfig("PearlEnchant"));
+		config.putAll(this.pearlEnchant.getSaveConfig());
 		
 		for(int i = 0; i < this.pearlLvlEnchant.size(); i++) {
 			Integer value = this.getLvlPearlEnchant(i) != null ? this.getLvlPearlEnchant(i).getLvlbuff() : 0;
@@ -791,14 +795,17 @@ public class PageArmor extends PartialRedStuff {
 			config.put("RedFortif" + i, this.getRedFortif(i).getName(Language.FR));
 		}
 		
-		config.putAll(this.redEnchant.getSaveConfig("RedEnchantment"));
+		config.putAll(this.redEnchant.getSaveConfig());
 		
 		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
 			Integer value = this.getRedLvlEnchant(i) != null ? this.getRedLvlEnchant(i).getLvlbuff() : 0;
 			config.put("RedLvlEnchantment" + i, "" + value);
 		}
 		
-		config.putAll(this.refining.getSaveConfig("Refining"));
+		for(int i = 0; i < this.refining.size(); i++) {
+			String value = this.getRefining(i) != null ? this.getRefining(i).getName(Language.FR) : "";
+			config.put("Refining" + i, value);
+		}
 		
 		for(int i = 0; i < this.refiningLvl.size(); i++) {
 			Integer value = this.getRefiningLvl(i) != null ? this.getRefiningLvl(i).getLvlbuff() : 0;
@@ -814,6 +821,8 @@ public class PageArmor extends PartialRedStuff {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		for(int i = 0; i < this.armor.size(); i++) {
 			if(config.get("Armor" + i) != null && config.get("Armor" + i).startsWith("Custom")) {
 				String[] valueSplit = config.get("Armor" + i).split("::");
@@ -946,5 +955,7 @@ public class PageArmor extends PartialRedStuff {
 		for(int i = 0; i < this.armor.size(); i++) {
 			updateEnchant(i);
 		}
+		
+		allowSetEffect(true);
 	}
 }

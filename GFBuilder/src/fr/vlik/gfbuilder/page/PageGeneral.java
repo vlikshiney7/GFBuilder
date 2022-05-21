@@ -1,7 +1,7 @@
 package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -49,7 +49,7 @@ public class PageGeneral extends PartialPage {
 	private PageGeneral() {
 		super(BoxLayout.X_AXIS);
 		
-		this.grade = new JCustomComboBox<>(Grade.getPossibleGrade(0));
+		this.grade = new JCustomComboBox<>(Grade.class, Grade.getPossibleGrade(0));
 		this.grade.addActionListener(e -> {
 			PageSkill.getInstance().updateSkill();
 			PageSkill.getInstance().updateProSkill();
@@ -96,7 +96,7 @@ public class PageGeneral extends PartialPage {
 		});
 		
 		
-		this.reinca = new JCustomComboBox<>(Reinca.getPossibleReinca(1));
+		this.reinca = new JCustomComboBox<>(Reinca.class, Reinca.getPossibleReinca(1));
 		this.reinca.addActionListener(e -> {
 			PageSkill.getInstance().updateSkillReinca();
 			PageWeapon.getInstance().updateWeapon();
@@ -117,7 +117,7 @@ public class PageGeneral extends PartialPage {
 		});
 		
 		
-		this.title = new JCompleteBox<>(Title.getPossibleData(), JCompleteBox.FILTER16, JCompleteBox.PROC16, 5, Title.getTags(), Title.getQualities());
+		this.title = new JCompleteBox<>(Title.class, Title.getPossibleData(), JCompleteBox.FILTER16, JCompleteBox.PROC16, 5, Title.getTags(), Title.getQualities());
 		this.title.addActionListener(e -> {
 			this.title.activeProc();
 			
@@ -129,14 +129,14 @@ public class PageGeneral extends PartialPage {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.yggdra = new JCustomComboBox<>(Yggdrasil.getData());
+		this.yggdra = new JCustomComboBox<>(Yggdrasil.class, Yggdrasil.getData());
 		this.yggdra.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
 		
-		this.archive = new JCustomComboBox<>(Archive.getData());
+		this.archive = new JCustomComboBox<>(Archive.class, Archive.getData());
 		this.archive.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -180,11 +180,15 @@ public class PageGeneral extends PartialPage {
 		this.labels.put("Yggdrasil", new JLangLabel(Yggdrasil.CLASS_NAME, Design.TITLE));
 		this.labels.put("Archive", new JLangLabel(Archive.CLASS_NAME, Design.TITLE));
 		
-		this.labels.put("Level", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Niveau"); put(Language.EN, "Level"); }}, Design.TITLE));
+		this.labels.put("Level", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Niveau"); put(Language.EN, "Level"); }}, Design.TITLE));
 	}
 	
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		list.addAll(Base.getBase(this.getGrade(), this.getLvl()));
@@ -287,25 +291,28 @@ public class PageGeneral extends PartialPage {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new LinkedHashMap<>();
 		
-		config.put("Grade", this.getGrade().getName(lang));
+		config.putAll(this.grade.getSaveConfig());
 		config.put("Lvl", "" + this.getLvl());
-		config.put("Rebirth", this.getReinca().getName(lang));
-		config.put("Title", this.getTitle().getName(Language.FR));
-		config.put("Yggdrasil", this.getYggdrasil().getName(lang));
-		config.put("Archive", this.getArchive().getName(Language.FR));
-		config.put("Proc", "" + this.title.getProc().isSelected());
+		config.putAll(this.reinca.getSaveConfig());
+		config.putAll(this.title.getSaveConfig());
+		config.putAll(this.yggdra.getSaveConfig());
+		config.putAll(this.archive.getSaveConfig());
 		
 		return config;
 	}
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		this.lvl.setValue(Integer.valueOf(config.get("Lvl")));
-		this.grade.setSelectedItem(Grade.get(config.get("Grade"), lang));
-		this.reinca.setSelectedItem(Reinca.get(config.get("Rebirth"), lang));
-		this.title.setSelectedItem(Title.get(config.get("Title"), lang));
-		this.yggdra.setSelectedItem(Yggdrasil.get(config.get("Yggdrasil"), lang));
-		this.archive.setSelectedItem(Archive.get(config.get("Archive")));
-		this.title.getProc().setSelected(Boolean.valueOf(config.get("Proc")));
+		this.grade.setSelectedItem(Grade.get(config.get(Grade.class.getSimpleName()), lang));
+		this.reinca.setSelectedItem(Reinca.get(config.get(Reinca.class.getSimpleName()), lang));
+		this.title.setSelectedItem(Title.get(config.get(Title.class.getSimpleName()), lang));
+		this.yggdra.setSelectedItem(Yggdrasil.get(config.get(Yggdrasil.class.getSimpleName()), lang));
+		this.archive.setSelectedItem(Archive.get(config.get(Archive.class.getSimpleName())));
+		this.title.getProc().setSelected(Boolean.valueOf(config.get("TitleProc")));
+		
+		allowSetEffect(true);
 	}
 }

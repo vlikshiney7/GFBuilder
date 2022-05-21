@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.charac;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -105,13 +106,7 @@ public class Grade implements Iconable, Writable {
 	}
 	
 	public static Grade get(String name, Language lang) {
-		for(Grade grade : Grade.data) {
-			if(grade.getName(lang).equals(name)) {
-				return grade;
-			}
-		}
-		
-		return null;
+		return Arrays.asList(Grade.data).stream().filter(e -> e.getName(lang).equals(name)).findFirst().orElse(null);
 	}
 	
 	public static Grade[] getPossibleGrade(int lvl) {

@@ -79,7 +79,7 @@ public class PageBuff extends PartialPage {
 		
 		this.nucleus = new JCustomComboBoxList<>();
 		for(int i = 0; i < 7; i++) {
-			this.nucleus.add(new JCustomComboBox<>(Nucleus.getData(i)));
+			this.nucleus.add(new JCustomComboBox<>(Nucleus.class, Nucleus.getData(i)));
 		}
 		this.nucleus.addActionListener(e -> {
 			setEffects();
@@ -106,9 +106,9 @@ public class PageBuff extends PartialPage {
 			});
 		}
 		
-		this.nucleusEnchant = new JCustomComboBoxList<>(3, NucleusEnchantment.getData());
+		this.nucleusEnchant = new JCustomComboBoxList<>(NucleusEnchantment.class, 3, NucleusEnchantment.getData());
 		this.nucleusEnchant.setVisible(false);
-		this.nucleusLvlEnchant = new JCustomComboBoxList<>(3);
+		this.nucleusLvlEnchant = new JCustomComboBoxList<>(InnerEffect.class, 3);
 		this.nucleusLvlEnchant.setVisible(false);
 		
 		for(int j = 0; j < 3; j++) {
@@ -174,7 +174,7 @@ public class PageBuff extends PartialPage {
 			this.cross.get(i).setVisible(false);
 		}
 		
-		this.guildBuff = new JCustomComboBox<>(GuildBuff.getData());
+		this.guildBuff = new JCustomComboBox<>(GuildBuff.class, GuildBuff.getData());
 		this.guildBuff.setMaximumSize(new Dimension(320, 36));
 		this.guildBuff.addActionListener(e -> {
 			updateGuildBuff();
@@ -208,7 +208,7 @@ public class PageBuff extends PartialPage {
 			this.cross.get(i+4).setVisible(false);
 		}
 		
-		this.stone = new JCustomComboBox<>(Stone.getData());
+		this.stone = new JCustomComboBox<>(Stone.class, Stone.getData());
 		this.stone.setMaximumSize(new Dimension(280, 36));
 		this.stone.addActionListener(e -> {
 			updateStoneBuff();
@@ -290,6 +290,10 @@ public class PageBuff extends PartialPage {
 	
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		for(int i = 0; i < this.nucleus.size(); i++) {
@@ -792,9 +796,7 @@ public class PageBuff extends PartialPage {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new LinkedHashMap<>();
 		
-		for(int i = 0; i < this.nucleus.size(); i++) {
-			config.put("Nucleus" + i, this.getNucleus(i).getName(Language.FR));
-		}
+		config.putAll(this.nucleus.getSaveConfig());
 		
 		int select = 3;
 		while(select > 0) {
@@ -835,6 +837,8 @@ public class PageBuff extends PartialPage {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		for(int i = 0; i < this.nucleus.size(); i++) {
 			this.nucleus.get(i).setSelectedItem(Nucleus.get(config.get("Nucleus" + i), i));
 		}
@@ -891,7 +895,7 @@ public class PageBuff extends PartialPage {
 		
 		refreshGuildBuffList();
 		refreshStoneList();
-		setEffects();
+		allowSetEffect(true);
 		
 		updateSize();
 	}

@@ -28,12 +28,6 @@ public class Yggdrasil extends IconBuff {
 	}
 	
 	public static Yggdrasil get(String name, Language lang) {
-		for(Yggdrasil yggdrasil : Yggdrasil.data) {
-			if(yggdrasil.getName(lang).equals(name)) {
-				return yggdrasil;
-			}
-		}
-		
-		return null;
+		return get(Yggdrasil.data, name, lang);
 	}
 }

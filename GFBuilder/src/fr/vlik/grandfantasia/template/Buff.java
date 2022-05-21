@@ -50,6 +50,10 @@ public abstract class Buff implements Writable {
 		return tab;
 	}
 	
+	public static <T extends Buff> T get(T[] tab, String name, Language lang) {
+		return Arrays.asList(tab).stream().filter(e -> e.getName(lang).equals(name)).findFirst().orElse(null);
+	}
+	
 	public String getSelectorInfo(Language lang) {
 		if(this.name == null) {
 			return " ";

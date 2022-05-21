@@ -103,13 +103,7 @@ public class CustomRing extends CustomEquipment {
 	}
 	
 	public static CustomRing get(String name, Language lang) {
-		for(CustomRing custom : CustomRing.data) {
-			if(custom.getName(lang).equals(name)) {
-				return custom;
-			}
-		}
-		
-		return null;
+		return get(CustomRing.data, name, lang);
 	}
 	
 	public static CustomRing[] getPossibleRing(int lvl) {

@@ -22,17 +22,11 @@ public class IslandBuff extends Buff {
 		super(name, effects);
 	}
 	
-	public static IslandBuff[] getData() {
-		return IslandBuff.data;
+	public static IslandBuff get(String name) {
+		return get(IslandBuff.data, name, Language.FR);
 	}
 	
-	public static IslandBuff get(String name) {
-		for(IslandBuff island : IslandBuff.data) {
-			if(island.getName(Language.FR).equals(name)) {
-				return island;
-			}
-		}
-		
-		return null;
+	public static IslandBuff[] getData() {
+		return IslandBuff.data;
 	}
 }

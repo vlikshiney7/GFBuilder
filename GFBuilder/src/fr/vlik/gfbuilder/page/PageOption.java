@@ -45,7 +45,7 @@ public class PageOption extends JCustomPanel implements JUpdateLang {
 		this.setBackground(Design.UIColor[2]);
 		this.label = Lang.getDataLabel(0);
 		
-		this.save = new JCustomComboBox<>(SaveConfig.getData());
+		this.save = new JCustomComboBox<>(SaveConfig.class, SaveConfig.getData());
 		this.save.addActionListener(e -> {
 			if(!FrameSaveLoader.isBlocked()) {
 				FrameSaveLoader.getInstance().popup();

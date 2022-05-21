@@ -73,7 +73,7 @@ public class RedEnchantment extends Enchantment {
 	}
 	
 	public InnerEffect getInnerEffect(int lvl) {
-		if(lvl == 0) {
+		if(lvl == 0 || this.lvlEffect == null) {
 			return null;
 		}
 		

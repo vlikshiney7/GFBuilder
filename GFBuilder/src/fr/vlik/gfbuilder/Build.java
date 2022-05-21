@@ -86,9 +86,7 @@ public class Build {
 	}
 	
 	public void addEffect(List<Calculable> effects) {
-		for(Calculable c : effects) {
-			addEffect(c);
-		}
+		effects.forEach(this::addEffect);
 	}
 	
 	private boolean containIdWeapon(WeaponType type) {

@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.equipupgrade;
 
 import java.awt.Color;
+import java.util.Arrays;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Colorable;
@@ -48,12 +49,6 @@ public class Fortification implements Colorable, Writable {
 	}
 	
 	public static Fortification get(String name) {
-		for(Fortification fortif : Fortification.data) {
-			if(fortif.getName(Language.FR).equals(name)) {
-				return fortif;
-			}
-		}
-		
-		return null;
+		return Arrays.asList(Fortification.data).stream().filter(e -> e.getName(Language.FR).equals(name)).findFirst().orElse(null);
 	}
 }

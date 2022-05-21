@@ -94,13 +94,7 @@ public class Ride extends CompleteBuff {
 	}
 	
 	public static Ride get(String name) {
-		for(Ride ride : Ride.data) {
-			if(ride.getName(Language.FR).equals(name)) {
-				return ride;
-			}
-		}
-		
-		return null;
+		return get(Ride.data, name, Language.FR);
 	}
 	
 	public static Ride[] getPossibleRide(int lvl, Reinca reinca) {

@@ -45,10 +45,10 @@ public abstract class PartialXpStuff extends PartialPage {
 	}
 	
 	private void initXpStuff(int nbXpStuff) {
-		this.xpStuff = new JCustomComboBoxList<>(nbXpStuff*2);
+		this.xpStuff = new JCustomComboBoxList<>(XpStuff.class, nbXpStuff*2);
 		this.xpStuff.setVisible(false);
 		
-		this.lvlXpStuff = new JCustomComboBoxList<>(nbXpStuff*2);
+		this.lvlXpStuff = new JCustomComboBoxList<>(InnerEffect.class, nbXpStuff*2);
 		this.lvlXpStuff.setVisible(false);
 		
 		for(int i = 0; i < nbXpStuff*2; i++) {
@@ -73,9 +73,7 @@ public abstract class PartialXpStuff extends PartialPage {
 	}
 	
 	protected void initPanel() {
-		for(JPanel panel : this.showAndHideXpStuff) {
-			panel.setVisible(false);
-		}
+		this.showAndHideXpStuff.forEach(e -> e.setVisible(false));
 	}
 	
 	protected void updateXpStuff(Equipment equip, int id) {

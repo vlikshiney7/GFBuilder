@@ -28,9 +28,7 @@ public abstract class JCustomFrame extends JFrame implements JUpdateLang {
 			entry.updateLanguage(lang);
 		}
 		
-		for(JUpdateLang component : this.components) {
-			component.updateLanguage(lang);
-		}
+		this.components.forEach(e -> e.updateLanguage(lang));
 	}
 	
 	protected abstract void popup();

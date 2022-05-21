@@ -21,21 +21,21 @@ public class JCustomComboBoxList<T> {
 		this.size = 0;
 	}
 	
-	public JCustomComboBoxList(int capacity) {
+	public JCustomComboBoxList(Class<T> clazz, int capacity) {
 		this.comboBoxList = new ArrayList<>(capacity);
 		this.size = capacity;
 		
 		for(int i = 0; i < capacity; i++) {
-			this.comboBoxList.add(new JCustomComboBox<>(new DefaultComboBoxModel<>()));
+			this.comboBoxList.add(new JCustomComboBox<>(clazz, new DefaultComboBoxModel<>()));
 		}
 	}
 	
-	public JCustomComboBoxList(int capacity, T[] data) {
+	public JCustomComboBoxList(Class<T> clazz, int capacity, T[] data) {
 		this.comboBoxList = new ArrayList<>(capacity);
 		this.size = capacity;
 		
 		for(int i = 0; i < capacity; i++) {
-			this.comboBoxList.add(new JCustomComboBox<>(data));
+			this.comboBoxList.add(new JCustomComboBox<>(clazz, data));
 		}
 	}
 	
@@ -119,14 +119,14 @@ public class JCustomComboBoxList<T> {
 		}
 	}
 	
-	public Map<String, String> getSaveConfig(String saveCode) {
+	public Map<String, String> getSaveConfig() {
 		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.size; i++) {
 			T item = this.comboBoxList.get(i).getSelectedItem();
 			
-			String value = item instanceof Buff ? ((Buff) item).getName(Language.FR) : "";
-			config.put(saveCode + i, value);
+			String value = (item instanceof Buff) ? ((Buff) item).getName(Language.FR) : "";
+			config.put(this.comboBoxList.get(i).getSaveKey() + i, value);
 		}
 		
 		return config;

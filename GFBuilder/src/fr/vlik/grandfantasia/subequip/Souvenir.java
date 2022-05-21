@@ -87,13 +87,7 @@ public class Souvenir extends CompleteBuff {
 	}
 	
 	public static Souvenir get(String name) {
-		for(Souvenir souvenir : Souvenir.data) {
-			if(souvenir.getName(Language.FR).equals(name)) {
-				return souvenir;
-			}
-		}
-		
-		return null;
+		return get(Souvenir.data, name, Language.FR);
 	}
 	
 	public static Souvenir[] getPossibleSouvenir(int lvl) {

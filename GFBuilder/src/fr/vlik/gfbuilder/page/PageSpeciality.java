@@ -21,6 +21,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.stats.Calculable;
 import fr.vlik.grandfantasia.stats.Effect;
+import fr.vlik.uidesign.CustomList;
 import fr.vlik.uidesign.Design;
 import fr.vlik.uidesign.JCustomButton;
 import fr.vlik.uidesign.JCustomComboBox;
@@ -57,7 +58,7 @@ public class PageSpeciality extends PartialPage {
 		
 		this.tabSpeciality = Speciality.getData(this.currentGrade.getGrade());
 		
-		this.spePoint = new JCustomComboBoxList<>(26, new Integer[] { 0 });
+		this.spePoint = new JCustomComboBoxList<>(Integer.class, 26, new Integer[] { 0 });
 		this.spePoint.setVisible(false);
 		this.spePoint.addActionListener(e -> {
 			updateSpeElement();
@@ -111,7 +112,11 @@ public class PageSpeciality extends PartialPage {
 	
 	@Override
 	protected void setEffects() {
-		ArrayList<Calculable> list = new ArrayList<>();
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
+		CustomList<Calculable> list = new CustomList<>();
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(Calculable c : this.tabSpeciality[i].getEffects()) {
@@ -485,10 +490,14 @@ public class PageSpeciality extends PartialPage {
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		setMinSpe();
 		
 		for(int i = 0; i < this.spePoint.size(); i++) {
 			this.spePoint.get(i).setSelectedIndex(Integer.valueOf(config.get("LvlSpeciality" + i)));
 		}
+		
+		allowSetEffect(true);
 	}
 }

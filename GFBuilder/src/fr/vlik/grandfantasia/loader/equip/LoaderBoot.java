@@ -280,7 +280,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes blindées de l'Apostat"); put(Language.EN, "Unholy Frenzy Warboots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp0", ICONPATH + "100pvp0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 539, true),
+					new Effect(TypeEffect.DefP, false, 538, true),
 					new Effect(TypeEffect.DefM, false, 384, true),
 					new Effect(TypeEffect.FCE, false, 17, true),
 					new Effect(TypeEffect.VIT, false, 34, true),
@@ -292,7 +292,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp1R", ICONPATH + "100pvp1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 711, true),
-					new Effect(TypeEffect.DefM, false, 486, true),
+					new Effect(TypeEffect.DefM, false, 485, true),
 					new Effect(TypeEffect.FCE, false, 20, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -302,8 +302,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Solerets du Gardien éclairé"); put(Language.EN, "Light Guardian's Boots"); }},
 				new GradeName[] { GradeName.PALADIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp1", ICONPATH + "100pvp1", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 647, true),
-					new Effect(TypeEffect.DefM, false, 442, true),
+					new Effect(TypeEffect.DefP, false, 646, true),
+					new Effect(TypeEffect.DefM, false, 441, true),
 					new Effect(TypeEffect.FCE, false, 17, true),
 					new Effect(TypeEffect.VIT, false, 34, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -332,7 +332,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp0R", ICONPATH + "95pvp0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 551, true),
-					new Effect(TypeEffect.DefM, false, 393, true),
+					new Effect(TypeEffect.DefM, false, 392, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -3790,7 +3790,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Feu de Météore"); put(Language.EN, "Meteorfire Boots"); }},
 				new GradeName[] { GradeName.BERSERKER, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "54vert0", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 425, true),
+					new Effect(TypeEffect.DefP, false, 424, true),
 					new Effect(TypeEffect.DefM, false, 314, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCP, false, 1.8),
@@ -3799,7 +3799,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.PALADIN, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "100pve0", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 433, true),
-					new Effect(TypeEffect.DefM, false, 308, true),
+					new Effect(TypeEffect.DefM, false, 307, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null),
@@ -4130,8 +4130,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Sombretrappeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp2R", ICONPATH + "100pvp2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 504, true),
-					new Effect(TypeEffect.DefM, false, 460, true),
+					new Effect(TypeEffect.DefP, false, 503, true),
+					new Effect(TypeEffect.DefM, false, 459, true),
 					new Effect(TypeEffect.VIT, false, 40, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -4152,7 +4152,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes d'Assassin nécrotique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp3R", ICONPATH + "100pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 494, true),
+					new Effect(TypeEffect.DefP, false, 493, true),
 					new Effect(TypeEffect.DefM, false, 469, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
 					new Effect(TypeEffect.VIT, false, 40, true),
@@ -4164,7 +4164,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.ASSASSIN, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp3", ICONPATH + "100pvp3", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 449, true),
-					new Effect(TypeEffect.DefM, false, 427, true),
+					new Effect(TypeEffect.DefM, false, 426, true),
 					new Effect(TypeEffect.FCE, false, 17, true),
 					new Effect(TypeEffect.VIT, false, 34, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -4192,8 +4192,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de Héros Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp2R", ICONPATH + "95pvp2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 469, true),
-					new Effect(TypeEffect.DefM, false, 428, true),
+					new Effect(TypeEffect.DefP, false, 468, true),
+					new Effect(TypeEffect.DefM, false, 427, true),
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.AGI, false, 15, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -4214,8 +4214,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de Samouraï Fantôme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp3R", ICONPATH + "95pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 460, true),
-					new Effect(TypeEffect.DefM, false, 437, true),
+					new Effect(TypeEffect.DefP, false, 459, true),
+					new Effect(TypeEffect.DefM, false, 436, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -4272,7 +4272,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Traqueur de Grand Line"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.RANGER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp2R", ICONPATH + "85pvp2", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 435, true),
+					new Effect(TypeEffect.DefP, false, 434, true),
 					new Effect(TypeEffect.DefM, false, 397, true),
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -4294,8 +4294,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Ninja de Konoha"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.ASSASSIN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp3R", ICONPATH + "85pvp3", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 426, true),
-					new Effect(TypeEffect.DefM, false, 405, true),
+					new Effect(TypeEffect.DefP, false, 425, true),
+					new Effect(TypeEffect.DefM, false, 404, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.VIT, false, 26, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -7650,7 +7650,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de l'Araignée Fantôme"); put(Language.EN, ""); }},
 					new GradeName[] { GradeName.RANGER, }, 95, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", ICONPATH + "50pve0", new Calculable[] {
-						new Effect(TypeEffect.DefP, false, 361, true),
+						new Effect(TypeEffect.DefP, false, 360, true),
 						new Effect(TypeEffect.DefM, false, 342, true),
 						new Effect(TypeEffect.ESQ, false, 5),
 						new Effect(TypeEffect.DCCP, false, 18),
@@ -7658,7 +7658,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de l'Ombre Sereine"); put(Language.EN, "Serene Shadow Boots"); }},
 					new GradeName[] { GradeName.ASSASSIN, }, 95, Quality.WHITE, false, false,
 					ArmorType.BOTTE, "-1", ICONPATH + "65pve3", new Calculable[] {
-						new Effect(TypeEffect.DefP, false, 354, true),
+						new Effect(TypeEffect.DefP, false, 353, true),
 						new Effect(TypeEffect.DefM, false, 349, true),
 						new Effect(TypeEffect.ESQ, false, 5),
 						new Effect(TypeEffect.TCCP, false, 1.8),
@@ -8005,8 +8005,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottines du Sauveur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp4", ICONPATH + "100pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 504, true),
-					new Effect(TypeEffect.DefM, false, 460, true),
+					new Effect(TypeEffect.DefP, false, 503, true),
+					new Effect(TypeEffect.DefM, false, 459, true),
 					new Effect(TypeEffect.VIT, false, 34, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -8017,7 +8017,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SAGE, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp5R", ICONPATH + "100pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 543, true),
-					new Effect(TypeEffect.DefM, false, 516, true),
+					new Effect(TypeEffect.DefM, false, 515, true),
 					new Effect(TypeEffect.VIT, false, 38, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -8056,8 +8056,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de Secte Originelle"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp4R", ICONPATH + "95pvp4", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 516, true),
-					new Effect(TypeEffect.DefM, false, 471, true),
+					new Effect(TypeEffect.DefP, false, 515, true),
+					new Effect(TypeEffect.DefM, false, 470, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -8079,7 +8079,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp5R", ICONPATH + "95pvp5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 506, true),
-					new Effect(TypeEffect.DefM, false, 481, true),
+					new Effect(TypeEffect.DefM, false, 480, true),
 					new Effect(TypeEffect.VIT, false, 29, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -8137,7 +8137,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.CLERC, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp4R", ICONPATH + "85pvp4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 477, true),
-					new Effect(TypeEffect.DefM, false, 436, true),
+					new Effect(TypeEffect.DefM, false, 435, true),
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -8158,7 +8158,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de l'Oracle d'Amestris"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SAGE, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp5R", ICONPATH + "85pvp5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 468, true),
+					new Effect(TypeEffect.DefP, false, 467, true),
 					new Effect(TypeEffect.DefM, false, 444, true),
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.INT, false, 13, true),
@@ -11514,7 +11514,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.CLERC, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "50pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 397, true),
-					new Effect(TypeEffect.DefM, false, 297, true),
+					new Effect(TypeEffect.DefM, false, 296, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.TCCM, false, 1.8),
 				}, null),
@@ -11522,7 +11522,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SAGE, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "95pve5", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 389, true),
-					new Effect(TypeEffect.DefM, false, 303, true),
+					new Effect(TypeEffect.DefM, false, 302, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCP, false, 13),
 				}, null),
@@ -11875,7 +11875,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp6R", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 453, true),
-					new Effect(TypeEffect.DefM, false, 552, true),
+					new Effect(TypeEffect.DefM, false, 551, true),
 					new Effect(TypeEffect.VIT, false, 39, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -11886,7 +11886,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SORCIER, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp6", ICONPATH + "100pvp6", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 412, true),
-					new Effect(TypeEffect.DefM, false, 502, true),
+					new Effect(TypeEffect.DefM, false, 501, true),
 					new Effect(TypeEffect.VIT, false, 34, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.ESQ, false, 6),
@@ -11936,8 +11936,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de Doyen Sorcier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp6R", ICONPATH + "95pvp6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 414, true),
-					new Effect(TypeEffect.DefM, false, 524, true),
+					new Effect(TypeEffect.DefP, false, 413, true),
+					new Effect(TypeEffect.DefM, false, 523, true),
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -11959,7 +11959,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.NECROMANCIEN, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp7R", ICONPATH + "95pvp7", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 422, true),
-					new Effect(TypeEffect.DefM, false, 513, true),
+					new Effect(TypeEffect.DefM, false, 512, true),
 					new Effect(TypeEffect.VIT, false, 30, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.ESQ, false, 4),
@@ -12016,7 +12016,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de l'Archimage du Royaume de Fiore"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp6R", ICONPATH + "85pvp6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 383, true),
+					new Effect(TypeEffect.DefP, false, 382, true),
 					new Effect(TypeEffect.DefM, false, 485, true),
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.INT, false, 13, true),
@@ -12038,7 +12038,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Démoniste de Soul Society"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.NECROMANCIEN, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp7R", ICONPATH + "85pvp7", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 391, true),
+					new Effect(TypeEffect.DefP, false, 390, true),
 					new Effect(TypeEffect.DefM, false, 475, true),
 					new Effect(TypeEffect.VIT, false, 25, true),
 					new Effect(TypeEffect.INT, false, 13, true),
@@ -12302,7 +12302,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottines d'Essence de la Magie"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus6", ICONPATH + "65pvp6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 277, true),
+					new Effect(TypeEffect.DefP, false, 276, true),
 					new Effect(TypeEffect.DefM, false, 350, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 12, true),
@@ -12318,7 +12318,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottines du Chant de l'Univers"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot6", ICONPATH + "100pve6", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 277, true),
+					new Effect(TypeEffect.DefP, false, 276, true),
 					new Effect(TypeEffect.DefM, false, 350, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.INT, false, 12, true),
@@ -15381,7 +15381,7 @@ public class LoaderBoot extends LoaderTemplate {
 					new Effect(TypeEffect.DefM, false, 164, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Magiques des Sprites"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Magiques des Sprites "); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, GradeName.NECROMANCIEN, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "16sprite4", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 102, true),
@@ -15391,8 +15391,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de la Forge Élémentaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SORCIER, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "50pve5", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 319, true),
-					new Effect(TypeEffect.DefM, false, 303, true),
+					new Effect(TypeEffect.DefP, false, 318, true),
+					new Effect(TypeEffect.DefM, false, 302, true),
 					new Effect(TypeEffect.ESQ, false, 5),
 					new Effect(TypeEffect.DCCM, false, 13),
 				}, null),
@@ -15669,7 +15669,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold8", ICONPATH + "100gold8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 565, true),
-					new Effect(TypeEffect.DefM, false, 403, true),
+					new Effect(TypeEffect.DefM, false, 402, true),
 					new Effect(TypeEffect.FCE, false, 31, true),
 					new Effect(TypeEffect.VIT, false, 24, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -15677,7 +15677,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Combattant loup lunaire"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 98, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "100gold9", ICONPATH + "100gold9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 471, true),
+					new Effect(TypeEffect.DefP, false, 470, true),
 					new Effect(TypeEffect.DefM, false, 447, true),
 					new Effect(TypeEffect.INT, false, 25, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
@@ -15686,8 +15686,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Brume rugissante effrayante"); put(Language.EN, "Mistfall Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "90gold8", ICONPATH + "90gold8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 525, true),
-					new Effect(TypeEffect.DefM, false, 374, true),
+					new Effect(TypeEffect.DefP, false, 524, true),
+					new Effect(TypeEffect.DefM, false, 373, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -15695,8 +15695,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes stellaires de Suradanceur"); put(Language.EN, "Overclocking 10th Anniversary Star Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "10ans90gold8", ICONPATH + "10ansGold", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 525, true),
-					new Effect(TypeEffect.DefM, false, 374, true),
+					new Effect(TypeEffect.DefP, false, 524, true),
+					new Effect(TypeEffect.DefM, false, 373, true),
 					new Effect(TypeEffect.FCE, false, 28, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -15722,8 +15722,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées d'Arme de zone gelée"); put(Language.EN, "Glacial Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold8", ICONPATH + "80gold8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 484, true),
-					new Effect(TypeEffect.DefM, false, 345, true),
+					new Effect(TypeEffect.DefP, false, 483, true),
+					new Effect(TypeEffect.DefM, false, 344, true),
 					new Effect(TypeEffect.FCE, false, 24, true),
 					new Effect(TypeEffect.VIT, false, 19, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -15732,7 +15732,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 78, Quality.GOLD, true, false,
 				ArmorType.BOTTE, "80gold9", ICONPATH + "90evo8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
-					new Effect(TypeEffect.DefM, false, 383, true),
+					new Effect(TypeEffect.DefM, false, 382, true),
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
 					new Effect(TypeEffect.AGI, false, 24, true),
@@ -15741,7 +15741,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp8R", ICONPATH + "100pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 551, true),
-					new Effect(TypeEffect.DefM, false, 393, true),
+					new Effect(TypeEffect.DefM, false, 392, true),
 					new Effect(TypeEffect.FCE, false, 21, true),
 					new Effect(TypeEffect.VIT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 23, true),
@@ -15764,7 +15764,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Rédempteur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp9R", ICONPATH + "100pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 494, true),
+					new Effect(TypeEffect.DefP, false, 493, true),
 					new Effect(TypeEffect.DefM, false, 469, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 24, true),
@@ -15776,8 +15776,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Boots du Prophète sain"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp9", ICONPATH + "100pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 449, true),
-					new Effect(TypeEffect.DefM, false, 427, true),
+					new Effect(TypeEffect.DefP, false, 448, true),
+					new Effect(TypeEffect.DefM, false, 426, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 20, true),
@@ -15798,7 +15798,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 98, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "100pve9", ICONPATH + "97sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 427, true),
-					new Effect(TypeEffect.DefM, false, 406, true),
+					new Effect(TypeEffect.DefM, false, 405, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -15807,7 +15807,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp8R", ICONPATH + "95pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 551, true),
-					new Effect(TypeEffect.DefM, false, 393, true),
+					new Effect(TypeEffect.DefM, false, 392, true),
 					new Effect(TypeEffect.FCE, false, 17, true),
 					new Effect(TypeEffect.VIT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 17, true),
@@ -15830,8 +15830,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes évolutives de Héraut royal"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp9R", ICONPATH + "95pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 460, true),
-					new Effect(TypeEffect.DefM, false, 437, true),
+					new Effect(TypeEffect.DefP, false, 459, true),
+					new Effect(TypeEffect.DefM, false, 436, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 16, true),
 					new Effect(TypeEffect.AGI, false, 18, true),
@@ -15854,8 +15854,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Garde impérial"); put(Language.EN, "Imperial Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve8", ICONPATH + "95pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 494, true),
-					new Effect(TypeEffect.DefM, false, 352, true),
+					new Effect(TypeEffect.DefP, false, 493, true),
+					new Effect(TypeEffect.DefM, false, 351, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
@@ -15863,7 +15863,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Défenseur spectral"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 93, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "95pve9", ICONPATH + "95pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 412, true),
+					new Effect(TypeEffect.DefP, false, 411, true),
 					new Effect(TypeEffect.DefM, false, 391, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
@@ -15873,7 +15873,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve8", ICONPATH + "90pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 475, true),
-					new Effect(TypeEffect.DefM, false, 339, true),
+					new Effect(TypeEffect.DefM, false, 338, true),
 					new Effect(TypeEffect.FCE, false, 16, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
@@ -15891,7 +15891,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp8R", ICONPATH + "85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 537, true),
-					new Effect(TypeEffect.DefM, false, 383, true),
+					new Effect(TypeEffect.DefM, false, 382, true),
 					new Effect(TypeEffect.FCE, false, 15, true),
 					new Effect(TypeEffect.VIT, false, 14, true),
 					new Effect(TypeEffect.AGI, false, 17, true),
@@ -15903,7 +15903,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp8", ICONPATH + "85pvp8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 488, true),
-					new Effect(TypeEffect.DefM, false, 348, true),
+					new Effect(TypeEffect.DefM, false, 347, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
@@ -15914,7 +15914,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes évolutives de Pilleur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp9R", ICONPATH + "85pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 448, true),
+					new Effect(TypeEffect.DefP, false, 447, true),
 					new Effect(TypeEffect.DefM, false, 425, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
@@ -15926,8 +15926,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues d'Apôtre de l'arracheur d'âme"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp9", ICONPATH + "85pvp9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 407, true),
-					new Effect(TypeEffect.DefM, false, 387, true),
+					new Effect(TypeEffect.DefP, false, 406, true),
+					new Effect(TypeEffect.DefM, false, 386, true),
 					new Effect(TypeEffect.INT, false, 12, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
@@ -15938,7 +15938,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Péché du pénitent"); put(Language.EN, "Sinful Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve8", ICONPATH + "85pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 457, true),
+					new Effect(TypeEffect.DefP, false, 456, true),
 					new Effect(TypeEffect.DefM, false, 325, true),
 					new Effect(TypeEffect.FCE, false, 14, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
@@ -15947,8 +15947,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de l'Oriflamme du Tonnerre"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 83, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "85pve9", ICONPATH + "85pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 381, true),
-					new Effect(TypeEffect.DefM, false, 362, true),
+					new Effect(TypeEffect.DefP, false, 380, true),
+					new Effect(TypeEffect.DefM, false, 361, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 9, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
@@ -15966,7 +15966,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80nucleus9", ICONPATH + "82sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
-					new Effect(TypeEffect.DefM, false, 353, true),
+					new Effect(TypeEffect.DefM, false, 352, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
@@ -15984,7 +15984,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80lingot9", ICONPATH + "80lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 371, true),
-					new Effect(TypeEffect.DefM, false, 353, true),
+					new Effect(TypeEffect.DefM, false, 352, true),
 					new Effect(TypeEffect.INT, false, 15, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
@@ -15992,8 +15992,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Flamme de glace bleue"); put(Language.EN, "Arctic Flame Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve8", ICONPATH + "80gold8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 438, true),
-					new Effect(TypeEffect.DefM, false, 312, true),
+					new Effect(TypeEffect.DefP, false, 437, true),
+					new Effect(TypeEffect.DefM, false, 311, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
@@ -16001,8 +16001,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Bombardement ardent"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve9", ICONPATH + "90evo8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 365, true),
-					new Effect(TypeEffect.DefM, false, 347, true),
+					new Effect(TypeEffect.DefP, false, 364, true),
+					new Effect(TypeEffect.DefM, false, 346, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 14, true),
@@ -16022,8 +16022,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Ravageur massacrant"); put(Language.EN, "Butcher's Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 75, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "75pvp8", ICONPATH + "75pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 449, true),
-					new Effect(TypeEffect.DefM, false, 320, true),
+					new Effect(TypeEffect.DefP, false, 448, true),
+					new Effect(TypeEffect.DefM, false, 319, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
@@ -16058,7 +16058,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Démon enragé"); put(Language.EN, "Hellscream Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve8", ICONPATH + "85pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 419, true),
+					new Effect(TypeEffect.DefP, false, 418, true),
 					new Effect(TypeEffect.DefM, false, 298, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
@@ -16068,7 +16068,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 73, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "75pve9", ICONPATH + "85pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 349, true),
-					new Effect(TypeEffect.DefM, false, 332, true),
+					new Effect(TypeEffect.DefM, false, 331, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 12, true),
@@ -16085,8 +16085,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Chanoine du Crépuscule"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus9", ICONPATH + "72sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 340, true),
-					new Effect(TypeEffect.DefM, false, 323, true),
+					new Effect(TypeEffect.DefP, false, 339, true),
+					new Effect(TypeEffect.DefM, false, 322, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 11, true),
@@ -16103,8 +16103,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Chanoine Grognecieux"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot9", ICONPATH + "77sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 340, true),
-					new Effect(TypeEffect.DefM, false, 323, true),
+					new Effect(TypeEffect.DefP, false, 339, true),
+					new Effect(TypeEffect.DefM, false, 322, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -16112,8 +16112,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées d'Esprit dansant"); put(Language.EN, "Epiphany Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 68, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70pve8", ICONPATH + "75pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 400, true),
-					new Effect(TypeEffect.DefM, false, 285, true),
+					new Effect(TypeEffect.DefP, false, 399, true),
+					new Effect(TypeEffect.DefM, false, 284, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -16142,7 +16142,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Fervent adepte de sacrifice sanglant"); put(Language.EN, "Bloodfighter Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp8", ICONPATH + "65pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 409, true),
+					new Effect(TypeEffect.DefP, false, 408, true),
 					new Effect(TypeEffect.DefM, false, 291, true),
 					new Effect(TypeEffect.FCE, false, 11, true),
 					new Effect(TypeEffect.VIT, false, 9, true),
@@ -16167,7 +16167,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 65, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "65pvp9", ICONPATH + "65pvp9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
-					new Effect(TypeEffect.DefM, false, 324, true),
+					new Effect(TypeEffect.DefM, false, 323, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -16187,7 +16187,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues d'Espion Aile de la nuit"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve9", ICONPATH + "65pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 317, true),
+					new Effect(TypeEffect.DefP, false, 316, true),
 					new Effect(TypeEffect.DefM, false, 301, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
@@ -16196,8 +16196,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Gladiateur flamboyant"); put(Language.EN, "Ruthless Warlord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus8", ICONPATH + "60nucleus8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 369, true),
-					new Effect(TypeEffect.DefM, false, 263, true),
+					new Effect(TypeEffect.DefP, false, 368, true),
+					new Effect(TypeEffect.DefM, false, 262, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 7, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
@@ -16206,7 +16206,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus9", ICONPATH + "60nucleus9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
-					new Effect(TypeEffect.DefM, false, 292, true),
+					new Effect(TypeEffect.DefM, false, 291, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -16214,8 +16214,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Gladiateur Ballarcane"); put(Language.EN, "Profane Warlord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot8", ICONPATH + "60lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 369, true),
-					new Effect(TypeEffect.DefM, false, 263, true),
+					new Effect(TypeEffect.DefP, false, 368, true),
+					new Effect(TypeEffect.DefM, false, 262, true),
 					new Effect(TypeEffect.FCE, false, 9, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
@@ -16224,7 +16224,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot9", ICONPATH + "60lingot9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
-					new Effect(TypeEffect.DefM, false, 292, true),
+					new Effect(TypeEffect.DefM, false, 291, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
@@ -16232,8 +16232,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées du Seigneur Bondinouri"); put(Language.EN, "Blood Lord Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve8", ICONPATH + "60pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 365, true),
-					new Effect(TypeEffect.DefM, false, 260, true),
+					new Effect(TypeEffect.DefP, false, 364, true),
+					new Effect(TypeEffect.DefM, false, 259, true),
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
@@ -16241,8 +16241,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues du Glorieux Seigneur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 59, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60pve9", ICONPATH + "60pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 304, true),
-					new Effect(TypeEffect.DefM, false, 289, true),
+					new Effect(TypeEffect.DefP, false, 303, true),
+					new Effect(TypeEffect.DefM, false, 288, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
@@ -16261,7 +16261,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp8", ICONPATH + "60nucleus8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 367, true),
-					new Effect(TypeEffect.DefM, false, 262, true),
+					new Effect(TypeEffect.DefM, false, 261, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.VIT, false, 6, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
@@ -16281,7 +16281,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 55, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "55pvp9", ICONPATH + "60pve9", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 306, true),
-					new Effect(TypeEffect.DefM, false, 291, true),
+					new Effect(TypeEffect.DefM, false, 290, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 8, true),
@@ -16290,8 +16290,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Faucille de pillage"); put(Language.EN, "Brigand Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve8", ICONPATH + "50pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 325, true),
-					new Effect(TypeEffect.DefM, false, 232, true),
+					new Effect(TypeEffect.DefP, false, 324, true),
+					new Effect(TypeEffect.DefM, false, 231, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.VIT, false, 5, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
@@ -16299,7 +16299,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Maraudeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 49, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "50pve9", ICONPATH + "62sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 271, true),
+					new Effect(TypeEffect.DefP, false, 270, true),
 					new Effect(TypeEffect.DefM, false, 257, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -16349,7 +16349,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 39, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "40pve8", ICONPATH + "60lingot8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 286, true),
-					new Effect(TypeEffect.DefM, false, 204, true),
+					new Effect(TypeEffect.DefM, false, 203, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.VIT, false, 4, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
@@ -16366,8 +16366,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes d'Agent de renseignement"); put(Language.EN, "Reconnaissance Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 29, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "30pve8", ICONPATH + "30pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 183, true),
-					new Effect(TypeEffect.DefM, false, 232, true),
+					new Effect(TypeEffect.DefP, false, 182, true),
+					new Effect(TypeEffect.DefM, false, 231, true),
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.VIT, false, 3, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
@@ -16385,7 +16385,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Robuste samouraï"); put(Language.EN, "Tough Samurai Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp8", ICONPATH + "25pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 179, true),
+					new Effect(TypeEffect.DefP, false, 178, true),
 					new Effect(TypeEffect.DefM, false, 226, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
@@ -16416,7 +16416,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 19, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "20pve8", ICONPATH + "20pve8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 148, true),
-					new Effect(TypeEffect.DefM, false, 188, true),
+					new Effect(TypeEffect.DefM, false, 187, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 1, true),
@@ -16760,8 +16760,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Maléfice nocturne des âmes damnées"); put(Language.EN, "Wretched Soul Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 90, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "90gvg8", ICONPATH + "85pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 508, true),
-					new Effect(TypeEffect.DefM, false, 362, true),
+					new Effect(TypeEffect.DefP, false, 507, true),
+					new Effect(TypeEffect.DefM, false, 361, true),
 					new Effect(TypeEffect.FCE, false, 15, true),
 					new Effect(TypeEffect.VIT, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 10, true),
@@ -16809,8 +16809,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées du Combat sans fin"); put(Language.EN, "Endless Battle Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg8", ICONPATH + "85pve8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 469, true),
-					new Effect(TypeEffect.DefM, false, 334, true),
+					new Effect(TypeEffect.DefP, false, 468, true),
+					new Effect(TypeEffect.DefM, false, 333, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.VIT, false, 12, true),
 					new Effect(TypeEffect.AGI, false, 9, true),
@@ -16820,7 +16820,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Feu de crevasse"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 80, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "80gvg9", ICONPATH + "85pve9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 391, true),
+					new Effect(TypeEffect.DefP, false, 390, true),
 					new Effect(TypeEffect.DefM, false, 371, true),
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -16831,7 +16831,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Molosse lunaire"); put(Language.EN, "Moonwolf Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 78, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 461, true),
+					new Effect(TypeEffect.DefP, false, 460, true),
 					new Effect(TypeEffect.DefM, false, 328, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.VIT, false, 11, true),
@@ -17336,7 +17336,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Guerrier du Loup d'hiver"); put(Language.EN, "Snow Wolf Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 71, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "80lingot8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 433, true),
+					new Effect(TypeEffect.DefP, false, 432, true),
 					new Effect(TypeEffect.DefM, false, 308, true),
 					new Effect(TypeEffect.FCE, false, 15, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
@@ -17345,7 +17345,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Puissance éternelle"); put(Language.EN, "Eternal Power Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg8", ICONPATH + "80nucleus8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 429, true),
+					new Effect(TypeEffect.DefP, false, 428, true),
 					new Effect(TypeEffect.DefM, false, 305, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 10, true),
@@ -17357,7 +17357,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 70, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "70gvg9", ICONPATH + "82sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 357, true),
-					new Effect(TypeEffect.DefM, false, 340, true),
+					new Effect(TypeEffect.DefM, false, 339, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 13, true),
@@ -17864,7 +17864,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "60bleu8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
-					new Effect(TypeEffect.DefM, false, 277, true),
+					new Effect(TypeEffect.DefM, false, 276, true),
 					new Effect(TypeEffect.FCE, false, 12, true),
 					new Effect(TypeEffect.VIT, false, 8, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -19143,7 +19143,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées en Plumes vert jade de Sprite"); put(Language.EN, "Sprite's Jade Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 92, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "92sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 388, true),
+					new Effect(TypeEffect.DefP, false, 387, true),
 					new Effect(TypeEffect.DefM, false, 368, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -19152,7 +19152,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes du Pic embrumé de Sprite"); put(Language.EN, "Sprite's Mist Peak Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 87, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "87sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 373, true),
+					new Effect(TypeEffect.DefP, false, 372, true),
 					new Effect(TypeEffect.DefM, false, 354, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -19161,8 +19161,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Cauchemars de Sprite"); put(Language.EN, "Sprite's Nightmare Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 82, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 358, true),
-					new Effect(TypeEffect.DefM, false, 340, true),
+					new Effect(TypeEffect.DefP, false, 357, true),
+					new Effect(TypeEffect.DefM, false, 339, true),
 					new Effect(TypeEffect.INT, false, 4, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
 					new Effect(TypeEffect.AGI, false, 5, true),
@@ -19170,8 +19170,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Froide canicule de Sprite"); put(Language.EN, "Sprite's Frostbite Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 77, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "77sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 343, true),
-					new Effect(TypeEffect.DefM, false, 326, true),
+					new Effect(TypeEffect.DefP, false, 342, true),
+					new Effect(TypeEffect.DefM, false, 325, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 6, true),
@@ -19179,7 +19179,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Soldats précurseurs de Sprite"); put(Language.EN, "Sprite's Vanguard Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 72, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "72sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 328, true),
+					new Effect(TypeEffect.DefP, false, 327, true),
 					new Effect(TypeEffect.DefM, false, 311, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
@@ -19189,7 +19189,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 67, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "67sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 312, true),
-					new Effect(TypeEffect.DefM, false, 297, true),
+					new Effect(TypeEffect.DefM, false, 296, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 4, true),
@@ -19216,7 +19216,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 46, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "62sprite8", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 247, true),
-					new Effect(TypeEffect.DefM, false, 235, true),
+					new Effect(TypeEffect.DefM, false, 234, true),
 					new Effect(TypeEffect.INT, false, 2, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 					new Effect(TypeEffect.AGI, false, 2, true),
@@ -19224,7 +19224,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées d'Armes à deux mains de Sprite"); put(Language.EN, "Sprite's Bolstered Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 36, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "56sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 216, true),
+					new Effect(TypeEffect.DefP, false, 215, true),
 					new Effect(TypeEffect.DefM, false, 205, true),
 					new Effect(TypeEffect.INT, false, 1, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
@@ -19233,21 +19233,21 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Pratique de Sprite"); put(Language.EN, "Sprite's Stratagem Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 26, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "25pvp8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 164, true),
+					new Effect(TypeEffect.DefP, false, 163, true),
 					new Effect(TypeEffect.DefM, false, 207, true),
 					new Effect(TypeEffect.VIT, false, 2, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de la Cité murée de Sprite"); put(Language.EN, "Sprite's Bastion Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 16, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "16sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 130, true),
+					new Effect(TypeEffect.DefP, false, 129, true),
 					new Effect(TypeEffect.DefM, false, 164, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes d'Exercice de Sprite"); put(Language.EN, "Sprite's Workout Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "9sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 102, true),
+					new Effect(TypeEffect.DefP, false, 101, true),
 					new Effect(TypeEffect.DefM, false, 129, true),
 					new Effect(TypeEffect.VIT, false, 1, true),
 				}, null),
@@ -19260,19 +19260,19 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Démon dévore-cœur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 95, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "62sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 359, true),
+					new Effect(TypeEffect.DefP, false, 358, true),
 					new Effect(TypeEffect.DefM, false, 355, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de la Chute"); put(Language.EN, "Armor Boots of Ruin"); }},
 				new GradeName[] { GradeName.METALLEUX, }, 87, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "87blanc8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 408, true),
+					new Effect(TypeEffect.DefP, false, 407, true),
 					new Effect(TypeEffect.DefM, false, 300, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de Splendeur"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 87, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "87blanc9", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 340, true),
+					new Effect(TypeEffect.DefP, false, 339, true),
 					new Effect(TypeEffect.DefM, false, 333, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de la Charge de taureau"); put(Language.EN, "Bull Charge Armor Boots"); }},
@@ -19284,7 +19284,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues des Falaises"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.DEMOLISSEUR, }, 82, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "67sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 328, true),
+					new Effect(TypeEffect.DefP, false, 327, true),
 					new Effect(TypeEffect.DefM, false, 320, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de la Roche fondue"); put(Language.EN, "Molten Armor Boots"); }},
@@ -19302,13 +19302,13 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Garde du corps sanglant"); put(Language.EN, "Bloody Bodyguard Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 53, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "56sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 253, true),
+					new Effect(TypeEffect.DefP, false, 252, true),
 					new Effect(TypeEffect.DefM, false, 240, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Lune argentée"); put(Language.EN, "Silver Moon Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 43, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "62sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 225, true),
+					new Effect(TypeEffect.DefP, false, 224, true),
 					new Effect(TypeEffect.DefM, false, 213, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées d'Armes à deux mains"); put(Language.EN, "Bolstered Armor Boots"); }},
@@ -19344,8 +19344,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes longues de la Cité murée"); put(Language.EN, "Bastion Long Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 13, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "16sprite8", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 112, true),
-					new Effect(TypeEffect.DefM, false, 106, true),
+					new Effect(TypeEffect.DefP, false, 111, true),
+					new Effect(TypeEffect.DefM, false, 105, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes renforcées de Remontée"); put(Language.EN, "Transcendent Armor Boots"); }},
 				new GradeName[] { GradeName.METALLEUX, GradeName.DEMOLISSEUR, }, 10, Quality.WHITE, false, false,
@@ -19484,7 +19484,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 98, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "100vio10", ICONPATH + "100vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 502, true),
-					new Effect(TypeEffect.DefM, false, 609, true),
+					new Effect(TypeEffect.DefM, false, 608, true),
 					new Effect(TypeEffect.FCE, false, 26, true),
 					new Effect(TypeEffect.INT, false, 39, true),
 					new Effect(TypeEffect.VOL, false, 25, true),
@@ -19506,7 +19506,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "90vio10", ICONPATH + "90vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 461, true),
-					new Effect(TypeEffect.DefM, false, 569, true),
+					new Effect(TypeEffect.DefM, false, 568, true),
 					new Effect(TypeEffect.FCE, false, 23, true),
 					new Effect(TypeEffect.INT, false, 35, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
@@ -19528,7 +19528,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.PURPLE, true, false,
 				ArmorType.BOTTE, "80vio10", ICONPATH + "80vio10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 429, true),
-					new Effect(TypeEffect.DefM, false, 531, true),
+					new Effect(TypeEffect.DefM, false, 530, true),
 					new Effect(TypeEffect.FCE, false, 26, true),
 					new Effect(TypeEffect.INT, false, 27, true),
 					new Effect(TypeEffect.VOL, false, 22, true),
@@ -19621,8 +19621,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes d'Explosion cristalline printanière"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "100pvp10R", ICONPATH + "100pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 494, true),
-					new Effect(TypeEffect.DefM, false, 597, true),
+					new Effect(TypeEffect.DefP, false, 493, true),
+					new Effect(TypeEffect.DefM, false, 596, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.INT, false, 39, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
@@ -19634,7 +19634,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 100, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "100pvp10", ICONPATH + "100pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 449, true),
-					new Effect(TypeEffect.DefM, false, 543, true),
+					new Effect(TypeEffect.DefM, false, 542, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 34, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
@@ -19687,8 +19687,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes de voyageur temporel"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp10R", ICONPATH + "95pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 469, true),
-					new Effect(TypeEffect.DefM, false, 565, true),
+					new Effect(TypeEffect.DefP, false, 468, true),
+					new Effect(TypeEffect.DefM, false, 564, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.INT, false, 30, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -19700,7 +19700,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 95, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "95pvp10", ICONPATH + "95pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 426, true),
-					new Effect(TypeEffect.DefM, false, 514, true),
+					new Effect(TypeEffect.DefM, false, 513, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 26, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -19712,7 +19712,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 95, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "95pvp11R", ICONPATH + "95pvp11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 422, true),
-					new Effect(TypeEffect.DefM, false, 513, true),
+					new Effect(TypeEffect.DefM, false, 512, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
 					new Effect(TypeEffect.AGI, false, 3, true),
@@ -19754,7 +19754,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve10", ICONPATH + "90pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 396, true),
-					new Effect(TypeEffect.DefM, false, 488, true),
+					new Effect(TypeEffect.DefM, false, 487, true),
 					new Effect(TypeEffect.FCE, false, 9, true),
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -19771,7 +19771,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Voyageur runique"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp10R", ICONPATH + "85pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 426, true),
+					new Effect(TypeEffect.DefP, false, 425, true),
 					new Effect(TypeEffect.DefM, false, 523, true),
 					new Effect(TypeEffect.FCE, false, 13, true),
 					new Effect(TypeEffect.INT, false, 23, true),
@@ -19784,7 +19784,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 85, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "85pvp10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 387, true),
-					new Effect(TypeEffect.DefM, false, 476, true),
+					new Effect(TypeEffect.DefM, false, 475, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 20, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -19795,7 +19795,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "(Reforgé) Bottes du Cristalier"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 85, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "85pvp11R", ICONPATH + "85pvp11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 391, true),
+					new Effect(TypeEffect.DefP, false, 390, true),
 					new Effect(TypeEffect.DefM, false, 475, true),
 					new Effect(TypeEffect.INT, false, 23, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
@@ -19874,7 +19874,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "80pve10", ICONPATH + "85pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 365, true),
-					new Effect(TypeEffect.DefM, false, 449, true),
+					new Effect(TypeEffect.DefM, false, 448, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.INT, false, 17, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -19958,7 +19958,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70nucleus10", ICONPATH + "85pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
-					new Effect(TypeEffect.DefM, false, 418, true),
+					new Effect(TypeEffect.DefM, false, 417, true),
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.INT, false, 11, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
@@ -19976,7 +19976,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 70, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "70lingot10", ICONPATH + "70pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 340, true),
-					new Effect(TypeEffect.DefM, false, 418, true),
+					new Effect(TypeEffect.DefM, false, 417, true),
 					new Effect(TypeEffect.FCE, false, 8, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -20060,7 +20060,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 63, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "65pve10", ICONPATH + "65pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 317, true),
-					new Effect(TypeEffect.DefM, false, 390, true),
+					new Effect(TypeEffect.DefM, false, 389, true),
 					new Effect(TypeEffect.FCE, false, 7, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
@@ -20078,7 +20078,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60nucleus10", ICONPATH + "60pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
-					new Effect(TypeEffect.DefM, false, 378, true),
+					new Effect(TypeEffect.DefM, false, 377, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -20096,7 +20096,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "60lingot10", ICONPATH + "65pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 307, true),
-					new Effect(TypeEffect.DefM, false, 378, true),
+					new Effect(TypeEffect.DefM, false, 377, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.INT, false, 10, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -20200,7 +20200,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 41, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "45pvp10", ICONPATH + "45pvp10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
-					new Effect(TypeEffect.DefM, false, 318, true),
+					new Effect(TypeEffect.DefM, false, 317, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -20247,7 +20247,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes d'ermite"); put(Language.EN, "Hermit's Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 29, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "30pve10", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 198, true),
+					new Effect(TypeEffect.DefP, false, 197, true),
 					new Effect(TypeEffect.DefM, false, 250, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 5, true),
@@ -20255,8 +20255,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Reforgés de la Source de Cristal"); put(Language.EN, "(Reforged) Crystal Spring Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp10R", ICONPATH + "25pvp10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 226, true),
-					new Effect(TypeEffect.DefM, false, 285, true),
+					new Effect(TypeEffect.DefP, false, 225, true),
+					new Effect(TypeEffect.DefM, false, 284, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 6, true),
 					new Effect(TypeEffect.VOL, false, 3, true),
@@ -20275,7 +20275,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes évolutives Reforgées de Runes Sacrificielles"); put(Language.EN, "(Reforged) Sacrificial Rune Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, true,
 				ArmorType.BOTTE, "25pvp11R", ICONPATH + "40pve11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 192, true),
+					new Effect(TypeEffect.DefP, false, 191, true),
 					new Effect(TypeEffect.DefM, false, 280, true),
 					new Effect(TypeEffect.FCE, false, 5, true),
 					new Effect(TypeEffect.INT, false, 6, true),
@@ -20284,7 +20284,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Runes Sacrificielles"); put(Language.EN, "Sacrificial Rune Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 25, Quality.ORANGE, false, false,
 				ArmorType.BOTTE, "25pvp11", ICONPATH + "40pve11", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 174, true),
+					new Effect(TypeEffect.DefP, false, 173, true),
 					new Effect(TypeEffect.DefM, false, 254, true),
 					new Effect(TypeEffect.FCE, false, 4, true),
 					new Effect(TypeEffect.INT, false, 5, true),
@@ -20294,7 +20294,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 19, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "20pve10", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 173, true),
-					new Effect(TypeEffect.DefM, false, 203, true),
+					new Effect(TypeEffect.DefM, false, 202, true),
 					new Effect(TypeEffect.FCE, false, 2, true),
 					new Effect(TypeEffect.INT, false, 3, true),
 				}, null),
@@ -20660,7 +20660,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 88, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "90gvg10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 410, true),
-					new Effect(TypeEffect.DefM, false, 509, true),
+					new Effect(TypeEffect.DefM, false, 508, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 21, true),
 					new Effect(TypeEffect.VOL, false, 7, true),
@@ -20682,7 +20682,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 82, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 397, true),
-					new Effect(TypeEffect.DefM, false, 489, true),
+					new Effect(TypeEffect.DefM, false, 488, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 18, true),
 					new Effect(TypeEffect.VOL, false, 8, true),
@@ -20726,7 +20726,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 78, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82bleu10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 403, true),
-					new Effect(TypeEffect.DefM, false, 473, true),
+					new Effect(TypeEffect.DefM, false, 472, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 19, true),
 					new Effect(TypeEffect.VOL, false, 5, true),
@@ -21255,7 +21255,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 71, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 364, true),
-					new Effect(TypeEffect.DefM, false, 444, true),
+					new Effect(TypeEffect.DefM, false, 443, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 16, true),
 					new Effect(TypeEffect.VOL, false, 6, true),
@@ -21784,7 +21784,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 60, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "46sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 329, true),
-					new Effect(TypeEffect.DefM, false, 406, true),
+					new Effect(TypeEffect.DefM, false, 405, true),
 					new Effect(TypeEffect.FCE, false, 10, true),
 					new Effect(TypeEffect.INT, false, 14, true),
 					new Effect(TypeEffect.VOL, false, 2, true),
@@ -21806,7 +21806,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 46, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "75evo10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 275, true),
-					new Effect(TypeEffect.DefM, false, 339, true),
+					new Effect(TypeEffect.DefM, false, 338, true),
 					new Effect(TypeEffect.FCE, false, 6, true),
 					new Effect(TypeEffect.INT, false, 8, true),
 					new Effect(TypeEffect.VOL, false, 4, true),
@@ -21828,7 +21828,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 39, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "39bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 258, true),
-					new Effect(TypeEffect.DefM, false, 309, true),
+					new Effect(TypeEffect.DefM, false, 308, true),
 					new Effect(TypeEffect.VOL, false, 11, true),
 					new Effect(TypeEffect.PV, false, 40),
 					new Effect(TypeEffect.PM, false, 210),
@@ -21836,8 +21836,8 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Cristal du Voyageur"); put(Language.EN, "Wanderer's Crystalline Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 30, Quality.BLUE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "20pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 212, true),
-					new Effect(TypeEffect.DefM, false, 269, true),
+					new Effect(TypeEffect.DefP, false, 211, true),
+					new Effect(TypeEffect.DefM, false, 268, true),
 					new Effect(TypeEffect.FCE, false, 3, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
@@ -23096,14 +23096,14 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 92, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "92sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 388, true),
-					new Effect(TypeEffect.DefM, false, 477, true),
+					new Effect(TypeEffect.DefM, false, 476, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Combat de Rune de Cristal de Sprite"); put(Language.EN, "Sprite's Crystal Rune Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 87, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "87sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 373, true),
-					new Effect(TypeEffect.DefM, false, 459, true),
+					new Effect(TypeEffect.DefM, false, 458, true),
 					new Effect(TypeEffect.VOL, false, 12, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Combat d'Enchantement du Sprite"); put(Language.EN, "Sprite's Enchantment Combat Boots"); }},
@@ -23117,14 +23117,14 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 77, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 343, true),
-					new Effect(TypeEffect.DefM, false, 422, true),
+					new Effect(TypeEffect.DefM, false, 421, true),
 					new Effect(TypeEffect.VOL, false, 10, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Magiques des Sprites"); put(Language.EN, "Sprite's Magic Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 72, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 328, true),
-					new Effect(TypeEffect.DefM, false, 691, true),
+					new Effect(TypeEffect.DefM, false, 690, true),
 					new Effect(TypeEffect.INT, false, 9, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Combat de rune des Sprites"); put(Language.EN, "Sprite's Rune Combat Boots"); }},
@@ -23138,7 +23138,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 62, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "62sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 297, true),
-					new Effect(TypeEffect.DefM, false, 366, true),
+					new Effect(TypeEffect.DefM, false, 365, true),
 					new Effect(TypeEffect.INT, false, 7, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Cristal brisé des Sprites"); put(Language.EN, "Sprite's Shattered Crystal Long Boots"); }},
@@ -23152,7 +23152,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 54, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "46sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 272, true),
-					new Effect(TypeEffect.DefM, false, 344, true),
+					new Effect(TypeEffect.DefM, false, 343, true),
 					new Effect(TypeEffect.INT, false, 5, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de la Clé Temporelle"); put(Language.EN, "Time Spanner's Boots"); }},
@@ -23193,7 +23193,7 @@ public class LoaderBoot extends LoaderTemplate {
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes des anomalies Sprites"); put(Language.EN, "Sprite's Odd Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 9, Quality.GREEN, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "9sprite10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 129, true),
+					new Effect(TypeEffect.DefP, false, 128, true),
 					new Effect(TypeEffect.DefM, false, 139, true),
 					new Effect(TypeEffect.VOL, false, 1, true),
 				}, null),
@@ -23213,7 +23213,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, }, 66, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "82sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 288, true),
-					new Effect(TypeEffect.DefM, false, 272, true),
+					new Effect(TypeEffect.DefM, false, 271, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Voleur de Soleil"); put(Language.EN, "Sun Thief's Boots"); }},
 				new GradeName[] { GradeName.CHRONODERIVEUR, }, 66, Quality.WHITE, false, false,
@@ -23225,7 +23225,7 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 53, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "39bleu11", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 250, true),
-					new Effect(TypeEffect.DefM, false, 239, true),
+					new Effect(TypeEffect.DefM, false, 238, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Sanctification"); put(Language.EN, "Sanctified Long Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 43, Quality.WHITE, false, false,
@@ -23237,31 +23237,31 @@ public class LoaderBoot extends LoaderTemplate {
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 33, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "62sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 173, true),
-					new Effect(TypeEffect.DefM, false, 184, true),
+					new Effect(TypeEffect.DefM, false, 183, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de l'Idole secrète"); put(Language.EN, "Idol's Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 28, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 167, true),
-					new Effect(TypeEffect.DefM, false, 163, true),
+					new Effect(TypeEffect.DefM, false, 162, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Combat de Cristal à grain"); put(Language.EN, "Crystal Grain Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 23, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 157, true),
-					new Effect(TypeEffect.DefM, false, 153, true),
+					new Effect(TypeEffect.DefP, false, 156, true),
+					new Effect(TypeEffect.DefM, false, 152, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Cristallines"); put(Language.EN, "Crystalline Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 22, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "30pve10", new Calculable[] {
-					new Effect(TypeEffect.DefP, false, 148, true),
-					new Effect(TypeEffect.DefM, false, 145, true),
+					new Effect(TypeEffect.DefP, false, 147, true),
+					new Effect(TypeEffect.DefM, false, 144, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes Runiques"); put(Language.EN, "Runic Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 16, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "20pve10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 138, true),
-					new Effect(TypeEffect.DefM, false, 124, true),
+					new Effect(TypeEffect.DefM, false, 123, true),
 				}, null),
 			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes de Combat de Cristal léger"); put(Language.EN, "Slender Crystal Combat Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 13, Quality.WHITE, false, false,
@@ -23269,11 +23269,11 @@ public class LoaderBoot extends LoaderTemplate {
 					new Effect(TypeEffect.DefP, false, 131, true),
 					new Effect(TypeEffect.DefM, false, 117, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes du Voyageur"); put(Language.EN, "Traveling Boots"); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes du Voyageur "); put(Language.EN, "Traveling Boots"); }},
 				new GradeName[] { GradeName.SPATIODERIVEUR, GradeName.CHRONODERIVEUR, }, 10, Quality.WHITE, false, false,
 				ArmorType.BOTTE, "-1", ICONPATH + "9sprite10", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 122, true),
-					new Effect(TypeEffect.DefM, false, 102, true),
+					new Effect(TypeEffect.DefM, false, 101, true),
 				}, null),
 		};
 	}

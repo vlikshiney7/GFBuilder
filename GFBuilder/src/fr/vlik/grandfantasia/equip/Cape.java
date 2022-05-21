@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.equip;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -138,13 +139,7 @@ public class Cape extends Equipment {
 	}
 	
 	public static Cape get(String name, Language lang) {
-		for(Cape cape : Cape.data) {
-			if(cape.getName(lang).equals(name)) {
-				return cape;
-			}
-		}
-		
-		return null;
+		return get(Cape.data, name, lang);
 	}
 	
 	public static Cape getCustom(String name, Language lang) {
@@ -168,12 +163,7 @@ public class Cape extends Equipment {
 	}
 	
 	public static Cape[] getCustomData() {
-		Cape[] cast = new Cape[customData.size()];
-		for(int i = 0; i < cast.length; i++) {
-			cast[i] = customData.get(i);
-		}
-		
-		return cast;
+		return Arrays.copyOf(customData.toArray(new Cape[0]), customData.size());
 	}
 	
 	public static Cape[] getPossibleCape(GradeName grade, int lvl) {

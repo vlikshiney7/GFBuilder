@@ -77,6 +77,7 @@ public class PearlEnchantment extends Buff {
 		return result.toArray(new InnerEffect[result.size()]);
 	}
 	
+	@Override
 	public String getFullInfo(Language lang) {
 		return this.lvlEffect[0].getFullInfo(lang);
 	}
@@ -112,13 +113,7 @@ public class PearlEnchantment extends Buff {
 	}
 	
 	public static PearlEnchantment get(String name) {
-		for(PearlEnchantment pearlEnchant : PearlEnchantment.data) {
-			if(pearlEnchant.getName(Language.FR).equals(name)) {
-				return pearlEnchant;
-			}
-		}
-		
-		return null;
+		return get(PearlEnchantment.data, name, Language.FR);
 	}
 	
 	public static PearlEnchantment[] getPossiblePearlEnchant(PearlEnchantment... ignore) {

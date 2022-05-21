@@ -27,12 +27,6 @@ public class LoveBuff extends IconBuff {
 	}
 	
 	public static LoveBuff get(String name) {
-		for(LoveBuff loveBuff : LoveBuff.data) {
-			if(loveBuff.getName(Language.FR).equals(name)) {
-				return loveBuff;
-			}
-		}
-		
-		return null;
+		return get(LoveBuff.data, name, Language.FR);
 	}
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -21,6 +20,8 @@ public abstract class PartialPage extends JCustomPanel implements JUpdateLang {
 	protected transient ArrayList<Calculable> effects;
 	protected transient Map<String, JLangLabel> labels = new HashMap<>();
 	protected transient List<JUpdateLang> components = new ArrayList<>();
+	
+	protected boolean allowRefreshEffects = true;
 	
 	protected PartialPage() {
 		super();
@@ -45,12 +46,15 @@ public abstract class PartialPage extends JCustomPanel implements JUpdateLang {
 	}
 	
 	public void updateLanguage(Language lang) {
-		for(Entry<String, JLangLabel> entry : this.labels.entrySet()) {
-			entry.getValue().updateLanguage(lang);
-		}
+		this.labels.entrySet().forEach(e -> e.getValue().updateLanguage(lang));
+		this.components.forEach(e -> e.updateLanguage(lang));
+	}
+	
+	protected void allowSetEffect(boolean locker) {
+		this.allowRefreshEffects = locker;
 		
-		for(JUpdateLang component : this.components) {
-			component.updateLanguage(lang);
+		if(this.allowRefreshEffects) {
+			setEffects();
 		}
 	}
 	

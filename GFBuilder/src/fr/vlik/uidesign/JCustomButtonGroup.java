@@ -1,6 +1,7 @@
 package fr.vlik.uidesign;
 
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
@@ -104,5 +105,13 @@ public class JCustomButtonGroup<T> extends ButtonGroup implements JUpdateLang {
 			JCustomRadioButton<T> element = (JCustomRadioButton<T>) it.nextElement();
 			element.updateLanguage(lang);
 		} while(it.hasMoreElements());
+	}
+
+	public void addAll(List<T> items) {
+		for(T item : items) {
+			if(item instanceof AbstractButton) {
+				this.add((AbstractButton) item);
+			}
+		}
 	}
 }

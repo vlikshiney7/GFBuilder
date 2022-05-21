@@ -1078,7 +1078,7 @@ public class LoaderRing extends LoaderTemplate {
 					new Effect(TypeEffect.INT, false, 13, true),
 					new Effect(TypeEffect.VOL, false, 13, true),
 					new Effect(TypeEffect.Glace, false, 20),
-					new Effect(TypeEffect.IntComp, false, 30),
+					new Effect(TypeEffect.IntComp, false, -30),
 					new Proc(8, Activation.Attack, 8, new Calculable[] {
 						new Effect(TypeEffect.ReducSkillM, false, -3, Target.OPPONENT),
 					}, 10),

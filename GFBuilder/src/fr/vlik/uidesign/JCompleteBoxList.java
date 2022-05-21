@@ -9,7 +9,7 @@ import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 
 import fr.vlik.grandfantasia.enums.Language;
-import fr.vlik.grandfantasia.template.Buff;
+import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.template.ProcEffect;
 
 public class JCompleteBoxList<T> {
@@ -108,18 +108,18 @@ public class JCompleteBoxList<T> {
 		}
 	}
 	
-	public Map<String, String> getSaveConfig(String saveCode) {
+	public Map<String, String> getSaveConfig() {
 		Map<String, String> config = new LinkedHashMap<>();
 		
 		for(int i = 0; i < this.size; i++) {
 			T item = this.completeBoxList.get(i).getSelectedItem();
 			
-			String value = item instanceof Buff ? ((Buff) item).getName(Language.FR) : "";
-			config.put(saveCode + i, value);
+			String value = item instanceof Writable ? ((Writable) item).getName(Language.FR) : "";
+			config.put(this.completeBoxList.get(i).getSaveKey() + i, value);
 			
 			JCustomCheckBox<ProcEffect> proc = this.completeBoxList.get(i).getProc();
 			if(proc != null) {
-				config.put(saveCode + "Proc" + i, "" + proc.isSelected());
+				config.put(this.completeBoxList.get(i).getSaveKey() + "Proc" + i, "" + proc.isSelected());
 			}
 		}
 		

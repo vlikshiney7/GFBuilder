@@ -2,7 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -72,7 +72,7 @@ public class PageWeapon extends PartialRedStuff {
 			int id = i;
 			
 			Weapon[] tabWeapon = Weapon.getPossibleWeapon(i, PageGeneral.getInstance().getGrade(), PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), null, false);
-			this.weapon.add(new JCompleteBox<>(tabWeapon, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, Weapon.getWeaponType(i, true), /*Weapon.getTags(),*/ Weapon.getQualities()));
+			this.weapon.add(new JCompleteBox<>(Weapon.class, tabWeapon, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, Weapon.getFilters(i)));
 			this.weapon.get(i).addActionListener(e -> {
 				this.weapon.get(id).activeProc();
 				
@@ -93,7 +93,7 @@ public class PageWeapon extends PartialRedStuff {
 			if(i == 0) {
 				for(int j = 0; j < 6; j++) {
 					int idPearl = j;
-					this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, /*Pearl.getTags(),*/ Pearl.getQualities()));
+					this.pearl.add(new JCompleteBox<>(Pearl.class, tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, Pearl.getFilters()));
 					this.pearl.get(j).addActionListener(e -> {
 						this.pearl.get(idPearl).activeProc();
 						updateEnchantPearl(id);
@@ -105,7 +105,7 @@ public class PageWeapon extends PartialRedStuff {
 			} else {
 				for(int j = 0; j < 3; j++) {
 					int idPearl = 3*(i+1)+j;
-					this.pearl.add(new JCompleteBox<>(tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, /*Pearl.getTags(),*/ Pearl.getQualities()));
+					this.pearl.add(new JCompleteBox<>(Pearl.class, tabPearl, JCompleteBox.FILTER24, JCompleteBox.PROC24, 3, Pearl.getFilters()));
 					this.pearl.get(3*(i+1)+j).addActionListener(e -> {
 						this.pearl.get(idPearl).activeProc();
 						updateEnchantPearl(id);
@@ -128,14 +128,14 @@ public class PageWeapon extends PartialRedStuff {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.enchant = new JCustomComboBoxList<>(3);
+		this.enchant = new JCustomComboBoxList<>(Enchantment.class, 3);
 		this.enchant.setVisible(false);
 		this.enchant.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.fortif = new JCustomComboBoxList<>(3, Fortification.getData());
+		this.fortif = new JCustomComboBoxList<>(Fortification.class, 3, Fortification.getData());
 		this.fortif.setVisible(false);
 		this.fortif.addActionListener(e -> {
 			setEffects();
@@ -143,7 +143,7 @@ public class PageWeapon extends PartialRedStuff {
 		});
 		
 		Bullet[] tabBullet = Bullet.getPossibleBullet(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca());
-		this.bullet = new JCompleteBox<>(tabBullet, JCompleteBox.FILTER32, 3, Bullet.getTags(), Bullet.getQualities());
+		this.bullet = new JCompleteBox<>(Bullet.class, tabBullet, JCompleteBox.FILTER32, 3, Bullet.getTags(), Bullet.getQualities());
 		this.bullet.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -206,16 +206,20 @@ public class PageWeapon extends PartialRedStuff {
 			this.labels.put("Refining" + i, new JLangLabel(RedEnchantment.SUB_CLASS_NAME, Design.SUBTITLE));
 		}
 		
-		this.labels.put("Weapon0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme principale"); put(Language.EN, "Primary weapon"); }}, Design.TITLE));
-		this.labels.put("Weapon1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme secondaire"); put(Language.EN, "Secondary weapon"); }}, Design.TITLE));
-		this.labels.put("Weapon2", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Arme tertiaire"); put(Language.EN, "Tertiary weapon"); }}, Design.TITLE));
+		this.labels.put("Weapon0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme principale"); put(Language.EN, "Primary weapon"); }}, Design.TITLE));
+		this.labels.put("Weapon1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme secondaire"); put(Language.EN, "Secondary weapon"); }}, Design.TITLE));
+		this.labels.put("Weapon2", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Arme tertiaire"); put(Language.EN, "Tertiary weapon"); }}, Design.TITLE));
 		for(int i = 0; i < 3; i++) {
-			this.labels.put("WeaponXP" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Arme"); put(Language.EN, "Weapon Exp"); }}, Design.SUBTITLE));
+			this.labels.put("WeaponXP" + i, new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "XP Arme"); put(Language.EN, "Weapon Exp"); }}, Design.SUBTITLE));
 		}
 	}
 	
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		this.redEnchants.clear();
 		this.pearlEnchants.clear();
@@ -642,10 +646,6 @@ public class PageWeapon extends PartialRedStuff {
 				
 				this.showAndHide.setVisible(true);
 			} else {
-				/*Weapon[] tabWeapon = Weapon.getPossibleWeapon(0, grade, lvl, reinca, null, this.doubleWeapon);
-				tabWeapon = Weapon.applyFilters(tabWeapon, choice, this.weapon.get(0).getSearch(), this.weapon.get(0).getFilters(), this.weapon.get(0).isAndValue());
-				
-				this.weapon.get(0).setItems(tabWeapon);*/
 				this.weapon.get(1).setItems(new Weapon[] { new Weapon() });
 				
 				this.pearl.setRangeVisible(3, 3, true);
@@ -729,24 +729,14 @@ public class PageWeapon extends PartialRedStuff {
 				config.put("Weapon" + i, this.getWeapon(i).getName(lang));
 			}
 			
-			config.put("ProcWeapon" + i, "" + this.weapon.get(i).getProc().isSelected());
+			config.put("WeaponProc" + i, "" + this.weapon.get(i).getProc().isSelected());
 		}
 		
-		config.put("Bullet", this.getBullet().getName(Language.FR));
+		config.putAll(this.bullet.getSaveConfig());
 		
-		for(int i = 0; i < this.enchant.size(); i++) {
-			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName(Language.FR) : "";
-			config.put("Enchantment" + i, value);
-		}
-		
-		for(int i = 0; i < this.fortif.size(); i++) {
-			config.put("Fortif" + i, this.getFortif(i).getName(Language.FR));
-		}
-		
-		for(int i = 0; i < this.pearl.size(); i++) {
-			config.put("Pearl" + i, this.getPearl(i).getName(Language.FR));
-			config.put("ProcPearl" + i, "" + this.pearl.get(i).getProc().isSelected());
-		}
+		config.putAll(this.enchant.getSaveConfig());
+		config.putAll(this.fortif.getSaveConfig());
+		config.putAll(this.pearl.getSaveConfig());
 		
 		for(int i = 0; i < this.starPearl.size(); i++) {
 			ArrayList<JIconCheckBox> buttons = this.starPearl.get(i);
@@ -763,10 +753,7 @@ public class PageWeapon extends PartialRedStuff {
 			config.put("StarPearl" + i, "" + select);
 		}
 		
-		for(int i = 0; i < this.pearlEnchant.size(); i++) {
-			String value = this.getPearlEnchantment(i) != null ? this.getPearlEnchantment(i).getSelectorInfo(lang) : "";
-			config.put("PearlEnchant" + i, value);
-		}
+		config.putAll(this.pearlEnchant.getSaveConfig());
 		
 		for(int i = 0; i < this.pearlLvlEnchant.size(); i++) {
 			Integer value = this.getLvlPearlEnchant(i) != null ? this.getLvlPearlEnchant(i).getLvlbuff() : 0;
@@ -787,10 +774,7 @@ public class PageWeapon extends PartialRedStuff {
 			config.put("RedFortif" + i, this.getRedFortif(i).getName(Language.FR));
 		}
 		
-		for(int i = 0; i < this.redEnchant.size(); i++) {
-			String value = this.getRedEnchantment(i) != null ? this.getRedEnchantment(i).getName(Language.FR) : "";
-			config.put("RedEnchantment" + i, value);
-		}
+		config.putAll(this.redEnchant.getSaveConfig());
 		
 		for(int i = 0; i < this.redLvlEnchant.size(); i++) {
 			Integer value = this.getRedLvlEnchant(i) != null ? this.getRedLvlEnchant(i).getLvlbuff() : 0;
@@ -816,6 +800,8 @@ public class PageWeapon extends PartialRedStuff {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		for(int i = 0; i < this.weapon.size(); i++) {
 			if(config.get("Weapon" + i) != null && config.get("Weapon" + i).startsWith("Custom")) {
 				String[] valueSplit = config.get("Weapon" + i).split("::");
@@ -846,7 +832,7 @@ public class PageWeapon extends PartialRedStuff {
 				this.weapon.get(i).setSelectedItem(Weapon.get(config.get("Weapon" + i), Language.FR));
 			}
 			
-			this.weapon.get(i).getProc().setSelected(Boolean.valueOf(config.get("ProcWeapon" + i)));
+			this.weapon.get(i).getProc().setSelected(Boolean.valueOf(config.get("WeaponProc" + i)));
 		}
 		
 		this.bullet.setSelectedItem(Bullet.get(config.get("Bullet")));
@@ -861,7 +847,7 @@ public class PageWeapon extends PartialRedStuff {
 		
 		for(int i = 0; i < this.pearl.size(); i++) {
 			this.pearl.get(i).setSelectedItem(Pearl.getWeapon(config.get("Pearl" + i)));
-			this.pearl.get(i).getProc().setSelected(Boolean.valueOf(config.get("ProcPearl" + i)));
+			this.pearl.get(i).getProc().setSelected(Boolean.valueOf(config.get("PearlProc" + i)));
 		}
 		
 		for(int i = 0; i < this.starPearl.size(); i++) {
@@ -953,5 +939,7 @@ public class PageWeapon extends PartialRedStuff {
 		for(int i = 0; i < this.weapon.size(); i++) {
 			updateEnchant(i);
 		}
+		
+		allowSetEffect(true);
 	}
 }

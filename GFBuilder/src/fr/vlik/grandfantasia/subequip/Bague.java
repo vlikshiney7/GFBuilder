@@ -48,12 +48,6 @@ public class Bague extends CompleteBuff {
 	}
 	
 	public static Bague get(String name, Language lang) {
-		for(Bague bague : Bague.data) {
-			if(bague.getName(lang).equals(name)) {
-				return bague;
-			}
-		}
-		
-		return null;
+		return get(Bague.data, name, lang);
 	}
 }

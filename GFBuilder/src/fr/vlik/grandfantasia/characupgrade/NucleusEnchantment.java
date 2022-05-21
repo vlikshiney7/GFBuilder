@@ -82,13 +82,7 @@ public class NucleusEnchantment extends Buff {
 	}
 	
 	public static NucleusEnchantment get(String name) {
-		for(NucleusEnchantment pearlEnchant : NucleusEnchantment.data) {
-			if(pearlEnchant.getName(Language.FR).equals(name)) {
-				return pearlEnchant;
-			}
-		}
-		
-		return null;
+		return get(NucleusEnchantment.data, name, Language.FR);
 	}
 	
 	public static NucleusEnchantment[] getPossibleNucleusEnchant(NucleusEnchantment... ignore) {
@@ -102,4 +96,28 @@ public class NucleusEnchantment extends Buff {
 	public static NucleusEnchantment[] getData() {
 		return NucleusEnchantment.data;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Arrays.hashCode(this.lvlEffect);
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		NucleusEnchantment other = (NucleusEnchantment) obj;
+		return Arrays.equals(this.lvlEffect, other.lvlEffect);
+	}
+	
 }

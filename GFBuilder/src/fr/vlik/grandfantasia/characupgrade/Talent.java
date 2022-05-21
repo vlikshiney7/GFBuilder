@@ -98,13 +98,7 @@ public class Talent extends IconBuff {
 	}
 	
 	public static Talent get(String name, Grade grade, Language lang) {
-		for(Talent talent : Talent.data[grade.getGrade().index]) {
-			if(talent.getName(lang).equals(name)) {
-				return talent;
-			}
-		}
-		
-		return null;
+		return get(Talent.data[grade.getGrade().index], name, lang);
 	}
 	
 	public static Talent[] getPossibleTalent(Grade grade) {

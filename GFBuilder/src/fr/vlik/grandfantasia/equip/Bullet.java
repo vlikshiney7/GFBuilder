@@ -91,13 +91,7 @@ public class Bullet extends CompleteBuff {
 	}
 	
 	public static Bullet get(String name) {
-		for(Bullet bullet : Bullet.data) {
-			if(bullet.getName(Language.FR).equals(name)) {
-				return bullet;
-			}
-		}
-		
-		return null;
+		return get(Bullet.data, name, Language.FR);
 	}
 	
 	public static Bullet[] getPossibleBullet(int lvl, Reinca reinca) {

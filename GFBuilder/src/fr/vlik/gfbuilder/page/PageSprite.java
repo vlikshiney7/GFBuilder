@@ -1,6 +1,6 @@
 package fr.vlik.gfbuilder.page;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -43,7 +43,7 @@ public class PageSprite extends PartialPage {
 		this.blason = new JCustomComboBoxList<>();
 		for(int i = 0; i < 2; i++) {
 			Blason[] tabBlason = Blason.getPossibleBlason(PageGeneral.getInstance().getLvl(), BlasonType.values()[i]);
-			this.blason.add(new JCustomComboBox<>(tabBlason));
+			this.blason.add(new JCustomComboBox<>(Blason.class, tabBlason));
 		}
 		this.blason.addActionListener(e -> {
 			setEffects();
@@ -53,14 +53,14 @@ public class PageSprite extends PartialPage {
 		this.spriteCost = new JCustomComboBoxList<>();
 		for(int i = 0; i < 2; i++) {
 			SpriteCost[] tabCost = SpriteCost.getPossibleSpriteCost(PageGeneral.getInstance().getLvl(), PageGeneral.getInstance().getReinca(), SpriteCostType.values()[i]);
-			this.spriteCost.add(new JCustomComboBox<>(tabCost));
+			this.spriteCost.add(new JCustomComboBox<>(SpriteCost.class, tabCost));
 		}
 		this.spriteCost.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.islandBuff = new JCustomComboBox<>(IslandBuff.getData());
+		this.islandBuff = new JCustomComboBox<>(IslandBuff.class, IslandBuff.getData());
 		this.islandBuff.addActionListener(e -> {
 			setEffects();
 			MainFrame.getInstance().updateStat();
@@ -87,15 +87,19 @@ public class PageSprite extends PartialPage {
 		this.labels.put("Blason", new JLangLabel(Blason.CLASS_NAME, Design.TITLE));
 		this.labels.put("Isle", new JLangLabel(IslandBuff.CLASS_NAME, Design.TITLE));
 		
-		this.labels.put("Type0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Offensif"); put(Language.EN, "Aggressive"); }}, Design.SUBTITLE));
-		this.labels.put("Type1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Défensif"); put(Language.EN, "Defensive"); }}, Design.SUBTITLE));
-		this.labels.put("Costume", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Costume"); put(Language.EN, "Costume"); }}, Design.TITLE));
-		this.labels.put("SpriteCost0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Tête"); put(Language.EN, "Head"); }}, Design.SUBTITLE));
-		this.labels.put("SpriteCost1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Corps"); put(Language.EN, "Body"); }}, Design.SUBTITLE));
+		this.labels.put("Type0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Offensif"); put(Language.EN, "Aggressive"); }}, Design.SUBTITLE));
+		this.labels.put("Type1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Défensif"); put(Language.EN, "Defensive"); }}, Design.SUBTITLE));
+		this.labels.put("Costume", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Costume"); put(Language.EN, "Costume"); }}, Design.TITLE));
+		this.labels.put("SpriteCost0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Tête"); put(Language.EN, "Head"); }}, Design.SUBTITLE));
+		this.labels.put("SpriteCost1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Corps"); put(Language.EN, "Body"); }}, Design.SUBTITLE));
 	}
 
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		for(int i = 0; i < this.blason.size(); i++) {
@@ -166,21 +170,17 @@ public class PageSprite extends PartialPage {
 	public Map<String, String> getConfig(Language lang) {
 		Map<String, String> config = new LinkedHashMap<>();
 		
-		for(int i = 0; i < this.blason.size(); i++) {
-			config.put("Blason" + i, this.getBlason(i).getName(Language.FR));
-		}
-		
-		for(int i = 0; i < this.spriteCost.size(); i++) {
-			config.put("SpriteCost" + i, this.getSpriteCost(i).getName(Language.FR));
-		}
-		
-		config.put("Isle", this.getIsleBuff().getName(Language.FR));
+		config.putAll(this.blason.getSaveConfig());
+		config.putAll(this.spriteCost.getSaveConfig());
+		config.putAll(this.islandBuff.getSaveConfig());
 		
 		return config;
 	}
 
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		for(int i = 0; i < this.blason.size(); i++) {
 			this.blason.get(i).setSelectedItem(Blason.get(config.get("Blason" + i)));
 		}
@@ -189,6 +189,8 @@ public class PageSprite extends PartialPage {
 			this.spriteCost.get(i).setSelectedItem(SpriteCost.get(config.get("SpriteCost" + i)));
 		}
 		
-		this.islandBuff.setSelectedItem(IslandBuff.get(config.get("Isle")));
+		this.islandBuff.setSelectedItem(IslandBuff.get(config.get(IslandBuff.class.getSimpleName())));
+		
+		allowSetEffect(true);
 	}
 }

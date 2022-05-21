@@ -2,7 +2,7 @@ package fr.vlik.gfbuilder.page;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -59,7 +59,7 @@ public class PageCapeRing extends PartialXpStuff {
 		super(BoxLayout.Y_AXIS, 3);
 		
 		Cape[] tabCape = Cape.getPossibleCape(PageGeneral.getInstance().getGrade().getGrade(), PageGeneral.getInstance().getLvl());
-		this.cape = new JCustomComboBox<>(tabCape);
+		this.cape = new JCustomComboBox<>(Cape.class, tabCape);
 		this.cape.addActionListener(e -> {
 			updateXpStuff(0);
 			updateEnchant(0);
@@ -76,7 +76,7 @@ public class PageCapeRing extends PartialXpStuff {
 		for(int i = 0; i < 2; i++) {
 			int id = i;
 			
-			this.ring.add(new JCompleteBox<>(tabRing, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, /*Armor.getTags(), */Ring.getQualities()));
+			this.ring.add(new JCompleteBox<>(Ring.class, tabRing, JCompleteBox.FILTER32, JCompleteBox.PROC32, 5, /*Armor.getTags(), */Ring.getQualities()));
 			this.ring.get(i).addActionListener(e -> {
 				this.ring.get(id).activeProc();
 				
@@ -96,7 +96,7 @@ public class PageCapeRing extends PartialXpStuff {
 			MainFrame.getInstance().updateStat();
 		});
 		
-		this.enchant = new JCustomComboBoxList<>(3);
+		this.enchant = new JCustomComboBoxList<>(Enchantment.class, 3);
 		this.enchant.setVisible(false);
 		this.enchant.addActionListener(e -> {
 			setEffects();
@@ -138,16 +138,20 @@ public class PageCapeRing extends PartialXpStuff {
 	protected void setLabel() {
 		this.labels.put("Cape", new JLangLabel(Cape.CLASS_NAME, Design.TITLE));
 		
-		this.labels.put("Ring0", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Anneau 1"); put(Language.EN, "Ring 1"); }}, Design.TITLE));
-		this.labels.put("Ring1", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "Anneau 2"); put(Language.EN, "Ring 2"); }}, Design.TITLE));
-		this.labels.put("CapeXP", new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Cape"); put(Language.EN, "Cape Exp"); }}, Design.SUBTITLE));
+		this.labels.put("Ring0", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Anneau 1"); put(Language.EN, "Ring 1"); }}, Design.TITLE));
+		this.labels.put("Ring1", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Anneau 2"); put(Language.EN, "Ring 2"); }}, Design.TITLE));
+		this.labels.put("CapeXP", new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "XP Cape"); put(Language.EN, "Cape Exp"); }}, Design.SUBTITLE));
 		for(int i = 0; i < 2; i++) {
-			this.labels.put("RingXP" + i, new JLangLabel(new HashMap<Language, String>() {{ put(Language.FR, "XP Anneau"); put(Language.EN, "Ring Exp"); }}, Design.SUBTITLE));
+			this.labels.put("RingXP" + i, new JLangLabel(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "XP Anneau"); put(Language.EN, "Ring Exp"); }}, Design.SUBTITLE));
 		}
 	}
 
 	@Override
 	protected void setEffects() {
+		if(!this.allowRefreshEffects) {
+			return;
+		}
+		
 		CustomList<Calculable> list = new CustomList<>();
 		
 		Cape capeEffect = new Cape(this.getCape());
@@ -379,13 +383,10 @@ public class PageCapeRing extends PartialXpStuff {
 				config.put("Ring" + i, this.getRing(i).getName(Language.FR));
 			}
 			
-			config.put("ProcRing" + i, "" + this.ring.get(i).getProc().isSelected());
+			config.put("RingProc" + i, "" + this.ring.get(i).getProc().isSelected());
 		}
 		
-		for(int i = 0; i < this.enchant.size(); i++) {
-			String value = this.getEnchantment(i) != null ? this.getEnchantment(i).getName(Language.FR) : "";
-			config.put("Enchantment" + i, value);
-		}
+		config.putAll(this.enchant.getSaveConfig());
 		
 		for(int i = 0; i < this.xpStuff.size(); i++) {
 			String value = this.getXpStuff(i) != null ? this.getXpStuff(i).getSelectorInfo(lang) : "";
@@ -402,6 +403,8 @@ public class PageCapeRing extends PartialXpStuff {
 	
 	@Override
 	public void setConfig(Map<String, String> config, Language lang) {
+		allowSetEffect(false);
+		
 		if(config.get("Cape") != null && config.get("Cape").startsWith("Custom")) {
 			String[] valueSplit = config.get("Cape").split("::");
 			
@@ -461,7 +464,7 @@ public class PageCapeRing extends PartialXpStuff {
 				this.ring.get(i).setSelectedItem(Ring.get(config.get("Ring" + i), Language.FR));
 			}
 			
-			this.ring.get(i).getProc().setSelected(Boolean.valueOf(config.get("ProcRing" + i)));
+			this.ring.get(i).getProc().setSelected(Boolean.valueOf(config.get("RingProc" + i)));
 		}
 		
 		this.enchant.get(0).setSelectedItem(Enchantment.get(this.getCape(), config.get("Enchantment" + 0)));
@@ -496,5 +499,7 @@ public class PageCapeRing extends PartialXpStuff {
 				this.lvlXpStuff.get(i).setSelectedItem(inner);
 			}
 		}
+		
+		allowSetEffect(true);
 	}
 }
