@@ -26,8 +26,8 @@ public class JCustomTextPane<T> extends JTextPane implements JUpdateLang {
 	public void setItem(T object) {
 		this.object = object;
 		
-		if(this.object instanceof Colorable) {
-			this.setForeground(((Colorable) this.object).getColor());
+		if(this.object instanceof Colorable color) {
+			this.setForeground(color.getColor());
 		} else {
 			this.setForeground(Design.FontColor[0]);
 		}
@@ -38,8 +38,8 @@ public class JCustomTextPane<T> extends JTextPane implements JUpdateLang {
 	public void updateLanguage(Language lang) {
 		this.lang = lang;
 		
-		if(this.object instanceof Writable) {
-			this.setText(Writable.noHTML(((Writable) this.object).getFullInfo(lang)));
+		if(this.object instanceof Writable w) {
+			this.setText(Writable.noHTML(w.getFullInfo(lang)));
 		}
 	}
 	

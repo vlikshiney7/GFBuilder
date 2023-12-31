@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.subequip;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -99,7 +100,7 @@ public class Synthesis extends ColorBuff {
 			return new Synthesis[0];
 		}
 		
-		ArrayList<Synthesis> result = new ArrayList<>();
+		List<Synthesis> result = new ArrayList<>();
 		
 		for(Synthesis synthesis : Synthesis.dataRide.get(quality)) {
 			if(synthesis.getSynthesis() == typeSynthesis && synthesis.getStar() == star) {
@@ -115,7 +116,7 @@ public class Synthesis extends ColorBuff {
 			return new Synthesis[0];
 		}
 		
-		ArrayList<Synthesis> result = new ArrayList<>();
+		List<Synthesis> result = new ArrayList<>();
 		
 		for(Synthesis synthesis : Synthesis.dataThrone.get(quality)) {
 			if(synthesis.getSynthesis() == typeSynthesis && synthesis.getStar() == star) {

@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.characupgrade;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -70,7 +71,7 @@ public class ProSkill extends IconBuff {
 	}
 	
 	public static ProSkill[] getPossibleProSkill(GradeName grade, int lvl) {
-		ArrayList<ProSkill> result = new ArrayList<>();
+		List<ProSkill> result = new ArrayList<>();
 		
 		for(ProSkill proSkill : ProSkill.data[grade.index]) {
 			if(proSkill.getLvl() <= lvl) {

@@ -233,12 +233,12 @@ public class PageWeapon extends PartialRedStuff {
 				weapons[i] = new Weapon(this.getWeapon(i));
 			}
 			
-			if(weapons[i] instanceof RedWeapon) {
+			if(weapons[i] instanceof RedWeapon redWeapon) {
 				RedFortification redFortif = this.getRedFortif(i);
 				
 				if(redFortif.getCoef() != 1) {
-					((RedWeapon) weapons[i]).addFortif(this.valueFortif.get(i).getDoubleValue());
-					list.addAll(((RedWeapon) weapons[i]).getStarEffects(redFortif.getStar()));
+					redWeapon.addFortif(this.valueFortif.get(i).getDoubleValue());
+					list.addAll(redWeapon.getStarEffects(redFortif.getStar()));
 				}
 				
 				if(this.showAndHideRedEnchant.get(i).isVisible()) {
@@ -301,10 +301,8 @@ public class PageWeapon extends PartialRedStuff {
 		for(int i = 0; i < 3; i++) {
 			if(XpStuff.availableEffects(this.getXpStuff(i*2), this.getXpStuff(i*2+1))) {
 				for(int j = 0; j < 2; j++) {
-					for(Calculable effect : this.getLvlXpStuff(i*2+j).getEffects()) {
-						if(effect instanceof Effect) {
-							Effect e = (Effect) effect;
-							
+					for(Calculable c : this.getLvlXpStuff(i*2+j).getEffects()) {
+						if(c instanceof Effect e) {
 							if(duoWeapon && (e.getType() == TypeEffect.Atk || e.getType() == TypeEffect.AtkD || e.getType() == TypeEffect.AtkM)) {
 								e.changeValue(0.75);
 							} else if(weapons[i].getType() == WeaponType.BOUCLIER) {
@@ -319,7 +317,7 @@ public class PageWeapon extends PartialRedStuff {
 							
 							list.add(e);
 						} else {
-							list.add(effect);
+							list.add(c);
 						}
 					}
 				}

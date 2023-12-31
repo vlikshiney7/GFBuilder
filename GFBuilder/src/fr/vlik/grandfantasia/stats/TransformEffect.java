@@ -6,7 +6,7 @@ import java.util.Map;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.NameTransform;
 
-public class TransformEffect implements Calculable {
+public class TransformEffect extends Calculable {
 	
 	private TypeTransformation type;
 	private NameTransform transform;

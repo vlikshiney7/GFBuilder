@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.customequip;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -74,8 +75,7 @@ public class CustomArmor extends CustomEquipment {
 		
 		for(int i = 0; i < newCustom.getEffects().length; i++) {
 			if(quality == Quality.GREEN) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomArmor.INCREASE_VALUE_GREEN);
 					}
@@ -85,8 +85,7 @@ public class CustomArmor extends CustomEquipment {
 					mergeEffect[i] = newCustom.getEffects()[i];
 				}
 			} else if(quality == Quality.BLUE) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomArmor.INCREASE_VALUE_BLUE);
 					}
@@ -120,7 +119,7 @@ public class CustomArmor extends CustomEquipment {
 	}
 	
 	public static CustomArmor[] getPossibleArmor(ArmorType type, Grade grade, int lvl) {
-		ArrayList<CustomArmor> result = new ArrayList<>();
+		List<CustomArmor> result = new ArrayList<>();
 		
 		for(int i = 0; i < data[type.index].length; i++) {
 			CustomArmor armor = data[type.index][i];

@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.equip;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -173,9 +174,7 @@ public class Armor extends Equipment {
 	
 	protected void modifyDefense(double coef) {
 		for(Calculable c : this.effects) {
-			if(c instanceof Effect) {
-				Effect e = (Effect) c;
-				
+			if(c instanceof Effect e) {
 				if(e.getType().isUpgradable && !e.isPercent() && e.getWithReinca()) {
 					e.changeValue(coef);
 				}
@@ -235,7 +234,7 @@ public class Armor extends Equipment {
 	}
 	
 	public static Armor[] getPossibleArmor(int idList, Grade grade, int lvl, Reinca reinca) {
-		ArrayList<Armor> result = new ArrayList<>();
+		List<Armor> result = new ArrayList<>();
 		ArmorType armorType = ArmorType.values()[idList];
 		
 		result.add(new Armor());
@@ -270,7 +269,7 @@ public class Armor extends Equipment {
 	}
 	
 	public static Armor[] applyFilters(Armor[] possible, Armor choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Armor> result = new ArrayList<>();
+		List<Armor> result = new ArrayList<>();
 		
 		result.add(new Armor());
 		if(!choice.equals(new Armor())

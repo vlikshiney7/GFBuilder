@@ -1,19 +1,20 @@
 package fr.vlik.grandfantasia.stats;
 
+import fr.vlik.grandfantasia.enums.Check;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.equip.Weapon.WeaponType;
 
-public class Effect implements Calculable {
+public class Effect extends Calculable {
 
 	private TypeEffect type;
 	private boolean isPercent;
 	private double value;
+	
 	private boolean withReinca = false;
 	private WeaponType withWeapon = WeaponType.NONE;
 	private TypeEffect transfert = TypeEffect.NONE;
-	private Target target = Target.SELF;
 	
 	private TypeCalcul typeCalcul = TypeCalcul.CLASSIC;
 	
@@ -23,6 +24,12 @@ public class Effect implements Calculable {
 		this.value = value;
 		
 		this.typeCalcul = TypeCalcul.CLASSIC;
+	}
+	
+	public Effect(Check check, TypeEffect type, boolean isPercent, double value) {
+		this(type, isPercent, value);
+		
+		this.verified = check;
 	}
 	
 	public Effect(TypeEffect type, boolean isPercent, double value, boolean withReinca) {
@@ -105,10 +112,6 @@ public class Effect implements Calculable {
 	
 	public TypeEffect getTransfert() {
 		return this.transfert;
-	}
-	
-	public Target getTarget() {
-		return this.target;
 	}
 	
 	public TypeCalcul getCalcul() {

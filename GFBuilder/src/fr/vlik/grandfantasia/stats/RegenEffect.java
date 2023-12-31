@@ -7,7 +7,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 
-public class RegenEffect implements Calculable {
+public class RegenEffect extends Calculable {
 	
 	private TypeEffect effect;
 	private boolean isPercent;

@@ -246,12 +246,12 @@ public class PageArmor extends PartialRedStuff {
 				armors[i] = new Armor(this.getArmor(i));
 			}
 			
-			if(armors[i] instanceof RedArmor) {
+			if(armors[i] instanceof RedArmor redArmor) {
 				RedFortification redFortif = this.getRedFortif(i);
 				
 				if(redFortif.getCoef() != 1) {
-					((RedArmor) armors[i]).addFortif(this.valueFortif.get(i).getDoubleValue());
-					list.addAll(((RedArmor) armors[i]).getStarEffects(redFortif.getStar()));
+					redArmor.addFortif(this.valueFortif.get(i).getDoubleValue());
+					list.addAll(redArmor.getStarEffects(redFortif.getStar()));
 				}
 				
 				if(this.showAndHideRedEnchant.get(i).isVisible()) {

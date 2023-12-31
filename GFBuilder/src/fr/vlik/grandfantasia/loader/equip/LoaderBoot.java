@@ -399,7 +399,7 @@ public class LoaderBoot extends LoaderTemplate {
 					new Effect(TypeEffect.VIT, false, 15, true),
 					new Effect(TypeEffect.AGI, false, 7, true),
 				}, null),
-			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "​Bottes aux Ailes Divines"); put(Language.EN, ""); }},
+			new Armor(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Bottes aux Ailes Divines"); put(Language.EN, ""); }},
 				new GradeName[] { GradeName.PALADIN, }, 88, Quality.ORANGE, true, false,
 				ArmorType.BOTTE, "90pve1", ICONPATH + "90pve1", new Calculable[] {
 					new Effect(TypeEffect.DefP, false, 485, true),

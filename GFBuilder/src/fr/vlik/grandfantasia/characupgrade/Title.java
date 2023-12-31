@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.characupgrade;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
@@ -79,7 +80,7 @@ public class Title extends ColorBuff {
 	}
 	
 	public static Title[] getPossibleData() {
-		ArrayList<Title> result = new ArrayList<>();
+		List<Title> result = new ArrayList<>();
 		
 		result.add(new Title());
 		
@@ -102,7 +103,7 @@ public class Title extends ColorBuff {
 	}
 	
 	public static Title[] getPossibleData(GradeName grade, int lvl, Reinca reinca) {
-		ArrayList<Title> result = new ArrayList<>();
+		List<Title> result = new ArrayList<>();
 		
 		result.add(new Title());
 		
@@ -138,7 +139,7 @@ public class Title extends ColorBuff {
 	}
 	
 	public static Title[] applyFilters(Title[] possible, Title choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Title> result = new ArrayList<>();
+		List<Title> result = new ArrayList<>();
 		
 		result.add(new Title());
 		if(!choice.equals(new Title())

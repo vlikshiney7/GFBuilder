@@ -25,14 +25,14 @@ public class Stone extends CompleteBuff {
 		super(name, quality, path, effects);
 	}
 	
-	public static Stone[] getListStone(List<Stone> stone) {
-		ArrayList<Stone> result = new ArrayList<>();
+	public static Stone[] getListStone(List<Stone> stones) {
+		List<Stone> result = new ArrayList<>();
 		
 		for(Stone data : Stone.data) {
 			boolean add = true;
 			
-			for(int j = 0; j < stone.size(); j++) {
-				if(data.equals(stone.get(j))) {
+			for(Stone stone : stones) {
+				if(data.equals(stone)) {
 					add = false;
 					break;
 				}

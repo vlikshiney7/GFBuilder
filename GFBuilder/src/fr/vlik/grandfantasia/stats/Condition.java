@@ -7,7 +7,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeEffect;
 
-public class Condition implements Calculable {
+public class Condition extends Calculable {
 	
 	private Calculable[] effects;
 	private TypeEffect targetEffect;

@@ -6,7 +6,7 @@ import java.util.Map;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeSkillEffect;
 
-public class SkillEffect implements Calculable {
+public class SkillEffect extends Calculable {
 	
 	private TypeSkillEffect skill;
 	private double value;

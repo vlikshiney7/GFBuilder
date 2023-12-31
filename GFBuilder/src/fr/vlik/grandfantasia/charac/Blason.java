@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.charac;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -85,7 +86,7 @@ public class Blason extends IconBuff {
 	}
 	
 	public static Blason[] getPossibleBlason(int lvl, BlasonType type) {
-		ArrayList<Blason> result = new ArrayList<>();
+		List<Blason> result = new ArrayList<>();
 		
 		result.add(new Blason());
 		

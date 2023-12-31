@@ -115,26 +115,26 @@ public class Tools {
 	}
 	
 	private static boolean evaluateProperty(Entry<Object, Object> entry) {
-		if(entry.getKey() instanceof Integer) {
-			return (Integer) entry.getKey() <= (Integer) entry.getValue();
-		} else if(entry.getKey() instanceof Boolean) {
-			if(Boolean.FALSE.equals(entry.getKey())) {
+		if(entry.getKey() instanceof Integer i) {
+			return i <= (Integer) entry.getValue();
+		} else if(entry.getKey() instanceof Boolean b) {
+			if(Boolean.FALSE.equals(b)) {
 				return true;
 			} else {
 				return ((Reinca) entry.getValue()).getLvl() > 0;
 			}
-		} else if(entry.getValue() instanceof Quality) {
+		} else if(entry.getValue() instanceof Quality q) {
 			if((Quality) entry.getKey() != null) {
-				return (Quality) entry.getKey() == (Quality) entry.getValue();
+				return (Quality) entry.getKey() == q;
 			} else {
 				return true;
 			}
-		} else if(entry.getKey() instanceof GradeName) {
-			return (GradeName) entry.getKey() == (GradeName) entry.getValue() || (GradeName) entry.getValue() == GradeName.NONE;
-		} else if(entry.getKey() instanceof ArmorType) {
-			return (ArmorType) entry.getKey() == (ArmorType) entry.getValue();
-		} else if(entry.getKey() instanceof Object[]) {
-			boolean compare = containObject((Object[]) entry.getKey(), entry.getValue());
+		} else if(entry.getKey() instanceof GradeName g) {
+			return g == (GradeName) entry.getValue() || (GradeName) entry.getValue() == GradeName.NONE;
+		} else if(entry.getKey() instanceof ArmorType a) {
+			return a == (ArmorType) entry.getValue();
+		} else if(entry.getKey() instanceof Object[] objs) {
+			boolean compare = containObject(objs, entry.getValue());
 			
 			if(!compare) {
 				if(entry.getValue() instanceof GradeName) {

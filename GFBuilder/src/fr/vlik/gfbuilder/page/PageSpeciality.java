@@ -437,9 +437,7 @@ public class PageSpeciality extends PartialPage {
 		
 		for(int i = 0; i < this.tabSpeciality.length; i++) {
 			for(Calculable c : this.tabSpeciality[i].getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					
+				if(c instanceof Effect e) {
 					if(e.getType() == type) {
 						result += e.getValue() * this.spePoint.get(i).getSelectedIndex();
 					}

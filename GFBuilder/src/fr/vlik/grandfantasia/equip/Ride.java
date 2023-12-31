@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.equip;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -98,7 +99,7 @@ public class Ride extends CompleteBuff {
 	}
 	
 	public static Ride[] getPossibleRide(int lvl, Reinca reinca) {
-		ArrayList<Ride> result = new ArrayList<>();
+		List<Ride> result = new ArrayList<>();
 		
 		result.add(new Ride());
 		

@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.template;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
@@ -17,11 +18,9 @@ public class ProcEffect implements Writable {
 		
 		if(buff != null && buff.getEffects() != null) {
 			for(Calculable c : buff.getEffects()) {
-				if(c instanceof Proc) {
-					Proc p = (Proc) c;
+				if(c instanceof Proc p) {
 					procEffects.addAll(extractEffects(p.getEffects()));
-				} else if(c instanceof Condition) {
-					Condition co = (Condition) c;
+				} else if(c instanceof Condition co) {
 					procEffects.addAll(extractEffects(co.getEffects()));
 				}
 			}
@@ -30,15 +29,13 @@ public class ProcEffect implements Writable {
 		this.effects = procEffects.toArray(new Calculable[procEffects.size()]);
 	}
 	
-	private ArrayList<Calculable> extractEffects(Calculable[] tab) {
-		ArrayList<Calculable> procEffects = new ArrayList<>();
+	private List<Calculable> extractEffects(Calculable[] tab) {
+		List<Calculable> procEffects = new ArrayList<>();
 		
 		for(Calculable c : tab) {
-			if(c instanceof Proc) {
-				Proc p = (Proc) c;
+			if(c instanceof Proc p) {
 				procEffects.addAll(extractEffects(p.getEffects()));
-			} else if(c instanceof Condition) {
-				Condition co = (Condition) c;
+			} else if(c instanceof Condition co) {
 				procEffects.addAll(extractEffects(co.getEffects()));
 			} else {
 				procEffects.add(c);

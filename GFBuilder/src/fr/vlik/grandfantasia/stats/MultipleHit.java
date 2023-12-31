@@ -3,7 +3,7 @@ package fr.vlik.grandfantasia.stats;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeMultipleHit;
 
-public class MultipleHit implements Calculable {
+public class MultipleHit extends Calculable {
 	
 	private TypeMultipleHit effect;
 	private int value = -1;

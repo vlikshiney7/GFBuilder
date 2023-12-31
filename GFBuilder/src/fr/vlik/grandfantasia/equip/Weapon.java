@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -167,9 +168,7 @@ public class Weapon extends Equipment {
 
 	public void addShieldBonus(double shieldDefP, double shieldDefM) {
 		for(Calculable c : this.effects) {
-			if(c instanceof Effect) {
-				Effect e = (Effect) c;
-				
+			if(c instanceof Effect e) {
 				if(e.getType() == TypeEffect.DefP && !e.isPercent() && e.getWithReinca()) {
 					e.changeValue(shieldDefP / 100 + 1);
 				} else if(e.getType() == TypeEffect.DefM && !e.isPercent() && e.getWithReinca()) {
@@ -187,9 +186,7 @@ public class Weapon extends Equipment {
 	
 	protected void modifyAttack(double coef) {
 		for(Calculable c : this.effects) {
-			if(c instanceof Effect) {
-				Effect e = (Effect) c;
-				
+			if(c instanceof Effect e) {
 				if(e.getType().isUpgradable && !e.isPercent() && e.getWithReinca()) {
 					e.changeValue(coef);
 				}
@@ -257,7 +254,7 @@ public class Weapon extends Equipment {
 	}
 	
 	public static Weapon[] getPossibleWeapon(int idList, Grade grade, int lvl, Reinca reinca, Weapon toIgnore, boolean doubleWeapon) {
-		ArrayList<Weapon> result = new ArrayList<>();
+		List<Weapon> result = new ArrayList<>();
 		WeaponType[] weaponType = Weapon.getWeaponType(idList, doubleWeapon);
 		
 		result.add(new Weapon());
@@ -298,7 +295,7 @@ public class Weapon extends Equipment {
 	}
 	
 	public static Weapon[] applyFilters(Weapon[] possible, Weapon choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Weapon> result = new ArrayList<>();
+		List<Weapon> result = new ArrayList<>();
 		
 		result.add(new Weapon());
 		if(!choice.equals(new Weapon())
@@ -334,36 +331,35 @@ public class Weapon extends Equipment {
 	}
 	
 	public static WeaponType[] getWeaponType(int idList, boolean doubleWeapon) {
-		switch (idList) {
-			case 0 :
-				return new WeaponType[] {
+		return switch (idList) {
+			case 0 ->
+				new WeaponType[] {
 					WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M,
 					WeaponType.EPEE2M, WeaponType.MARTEAU2M, WeaponType.HACHE2M,
 					WeaponType.MECA1M, WeaponType.MECA2M,
 					WeaponType.BATON, WeaponType.LAME,
 					WeaponType.DEFAULT,
 				};
-			case 1 :
+			case 1 -> {
 				if(doubleWeapon) {
-					return new WeaponType[] {
+					yield new WeaponType[] {
 						WeaponType.EPEE1M, WeaponType.MARTEAU1M, WeaponType.HACHE1M,
 						WeaponType.MECA1M, WeaponType.BOUCLIER, WeaponType.DEFAULT,
 					};
 				} else {
-					return new WeaponType[] {
+					yield new WeaponType[] {
 						WeaponType.BOUCLIER,
 					};
 				}
-			case 2 :
-				return new WeaponType[] {
+			}
+			case 2 ->
+				new WeaponType[] {
 					WeaponType.ARC, WeaponType.GUN, WeaponType.CANON,
 					WeaponType.RELIQUE, WeaponType.CLE,
 				};
-			default:
-				break;
-		}
-		
-		return new WeaponType[0];
+			default ->
+				new WeaponType[0];
+		};
 	}
 	
 	public static Filterable[][] getFilters(int idList) {

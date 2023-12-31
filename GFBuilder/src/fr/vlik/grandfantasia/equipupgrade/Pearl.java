@@ -99,7 +99,7 @@ public class Pearl extends CompleteBuff {
 	}
 	
 	public static Pearl[] getPossibleWeaponPearl(Weapon weapon) {
-		ArrayList<Pearl> result = new ArrayList<>();
+		List<Pearl> result = new ArrayList<>();
 		
 		result.add(new Pearl());
 		
@@ -116,7 +116,7 @@ public class Pearl extends CompleteBuff {
 	}
 
 	public static Pearl[] getPossibleArmorPearl(Armor armor) {
-		ArrayList<Pearl> result = new ArrayList<>();
+		List<Pearl> result = new ArrayList<>();
 		
 		result.add(new Pearl());
 		
@@ -133,7 +133,7 @@ public class Pearl extends CompleteBuff {
 	}
 	
 	public static Pearl[] applyFilters(Pearl[] possible, Pearl choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Pearl> result = new ArrayList<>();
+		List<Pearl> result = new ArrayList<>();
 		
 		result.add(new Pearl());
 		if(!choice.equals(new Pearl())

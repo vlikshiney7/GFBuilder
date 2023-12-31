@@ -40,22 +40,20 @@ public class JCustomLabel<T> extends JLabel implements JUpdateLang {
 	public void updateLanguage(Language lang) {
 		this.lang = lang;
 		
-		if(this.object instanceof Writable) {
-			this.setText(((Writable) this.object).getSelectorInfo(lang));
-			this.setToolTipText(((Writable) this.object).getFullInfo(lang));
+		if(this.object instanceof Writable w) {
+			this.setText(w.getSelectorInfo(lang));
+			this.setToolTipText(w.getFullInfo(lang));
 		}
 	}
 	
 	private void setIcon() {
-		if(this.object instanceof Iconable) {
-			Iconable icon = (Iconable) this.object;
+		if(this.object instanceof Iconable icon) {
 			this.setIcon(icon.getIcon());
 		}
 	}
 	
 	private void setColor() {
-		if(this.object instanceof Colorable) {
-			Colorable color = (Colorable) this.object;
+		if(this.object instanceof Colorable color) {
 			this.setForeground(color.getColor());
 		} else {
 			this.setForeground(Design.FontColor[0]);

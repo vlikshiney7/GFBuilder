@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -87,9 +86,8 @@ public class SaveConfig {
 		
 		int[] orderLoading = { 0, 6, 7, 8, 1, 2, 3, 4, 5, 9, 10, 11 };
 		
-		for(int i = 0; i < orderLoading.length; i++) {
-			if(pages.get(orderLoading[i]) instanceof PartialPage) {
-				PartialPage page = (PartialPage) pages.get(orderLoading[i]);
+		for(int i : orderLoading) {
+			if(pages.get(i) instanceof PartialPage page) {
 				try {
 					Map<String, String> pageValues = this.getValuesFromPage(page.getSaveName());
 					if(pageValues != null) {
@@ -112,8 +110,7 @@ public class SaveConfig {
 		this.values.clear();
 		
 		for(JCustomPanel panel : pages) {
-			if(panel instanceof PartialPage) {
-				PartialPage page = (PartialPage) panel;
+			if(panel instanceof PartialPage page) {
 				this.values.put(page.getSaveName(), page.getConfig(lang));
 			}
 		}
@@ -124,13 +121,13 @@ public class SaveConfig {
 		) {
 			writer.append(this.buildname + "/" + this.lang.name() + "\n");
 			
-			for(Entry<String, Map<String, String>> entry : this.values.entrySet()) {
+			for(var entry : this.values.entrySet()) {
 				String key = entry.getKey();
 				Map<String, String> value = entry.getValue();
 				
 				writer.append(key + "\n");
 				
-				for(Entry<String, String> innerEntry : value.entrySet()) {
+				for(var innerEntry : value.entrySet()) {
 					writer.append("\t" + innerEntry.getKey() + "=" + innerEntry.getValue() + "\n");
 				}
 			}
@@ -267,8 +264,7 @@ public class SaveConfig {
 		List<JCustomPanel> pages = MainFrame.getInstance().getPages();
 		
 		for(JCustomPanel panel : pages) {
-			if(panel instanceof PartialPage) {
-				PartialPage page = (PartialPage) panel;
+			if(panel instanceof PartialPage page) {
 				build.put(page.getSaveName(), page.getConfig(lang));
 			}
 		}
@@ -282,13 +278,13 @@ public class SaveConfig {
 		) {
 			writer.append(name.replace("_", " ") + "/" + lang.name() + "\n");
 			
-			for(Entry<String, Map<String, String>> entry : build.entrySet()) {
+			for(var entry : build.entrySet()) {
 				String key = entry.getKey();
 				Map<String, String> value = entry.getValue();
 				
 				writer.append(key + "\n");
 				
-				for(Entry<String, String> innerEntry : value.entrySet()) {
+				for(var innerEntry : value.entrySet()) {
 					writer.append("\t" + innerEntry.getKey() + "=" + innerEntry.getValue() + "\n");
 				}
 			}

@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.characupgrade;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -72,7 +73,7 @@ public class Talent extends IconBuff {
 	}
 	
 	public InnerColorEffect[] getInnerTalent(int lvl) {
-		ArrayList<InnerColorEffect> result = new ArrayList<>();
+		List<InnerColorEffect> result = new ArrayList<>();
 		result.add(this.lvlEffect[0]);
 		
 		for(int i = 0; i < this.lvl.length; i++) {

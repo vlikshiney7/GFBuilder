@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.equipupgrade;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
@@ -91,7 +92,7 @@ public class Enchantment extends ColorBuff {
 	}
 	
 	public static Enchantment[] getPossibleEnchant(Equipment equip) {
-		ArrayList<Enchantment> result = new ArrayList<>();
+		List<Enchantment> result = new ArrayList<>();
 		
 		result.add(new Enchantment());
 		
@@ -108,7 +109,7 @@ public class Enchantment extends ColorBuff {
 	}
 	
 	public static Enchantment[] getPossibleEnchant(CustomEquipment equip, Quality quality) {
-		ArrayList<Enchantment> result = new ArrayList<>();
+		List<Enchantment> result = new ArrayList<>();
 		
 		result.add(new Enchantment());
 		

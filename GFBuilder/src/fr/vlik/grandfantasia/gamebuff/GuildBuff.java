@@ -25,7 +25,7 @@ public class GuildBuff extends IconBuff {
 	}
 	
 	public static GuildBuff[] getListGuildBuff(List<GuildBuff> guildBuff) {
-		ArrayList<GuildBuff> result = new ArrayList<>();
+		List<GuildBuff> result = new ArrayList<>();
 		
 		for(GuildBuff data : GuildBuff.data) {
 			boolean add = true;

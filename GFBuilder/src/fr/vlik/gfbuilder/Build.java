@@ -19,12 +19,12 @@ public class Build {
 	private boolean isDoubleWeapon = false;
 	private WeaponType[] weaponType;
 	
-	private ArrayList<Effect> baseEffects = new ArrayList<>();
-	private ArrayList<Effect> classicPointEffects = new ArrayList<>();
-	private ArrayList<Effect> classicPercentEffects = new ArrayList<>();
-	private ArrayList<Effect> convertBaseEffects = new ArrayList<>();
-	private ArrayList<Effect> convertAllEffects = new ArrayList<>();
-	private ArrayList<Effect> additionalEffects = new ArrayList<>();
+	private List<Effect> baseEffects = new ArrayList<>();
+	private List<Effect> classicPointEffects = new ArrayList<>();
+	private List<Effect> classicPercentEffects = new ArrayList<>();
+	private List<Effect> convertBaseEffects = new ArrayList<>();
+	private List<Effect> convertAllEffects = new ArrayList<>();
+	private List<Effect> additionalEffects = new ArrayList<>();
 	
 	public Build(double coefReinca, WeaponType[] weaponType) {
 		this.coefReinca = coefReinca;
@@ -44,9 +44,7 @@ public class Build {
 	}
 	
 	public void addEffect(Calculable c) {
-		if(c instanceof Effect) {
-			Effect e = (Effect) c;
-			
+		if(c instanceof Effect e) {
 			if(e.getTarget() == Target.SELF && containIdWeapon(e.getWithWeapon())) {
 				switch(e.getCalcul()) {
 					case BASE: 			this.baseEffects.add(e);		break;
@@ -70,9 +68,7 @@ public class Build {
 					}
 				}
 			}
-		} else if(c instanceof StaticEffect) {
-			StaticEffect s = (StaticEffect) c;
-			
+		} else if(c instanceof StaticEffect s) {
 			if(s.getType() == TypeStaticEffect.Duo) {
 				this.isDoubleWeapon = true;
 			}
@@ -159,14 +155,14 @@ public class Build {
 		return result;
 	}
 	
-	private double[] combineEffect(ArrayList<Effect> effects) {
+	private double[] combineEffect(List<Effect> effects) {
 		double[] combine = new double[TypeEffect.values().length];
 		
 		for(Effect e : effects) {
 			if(e.getCalcul() == TypeCalcul.BASE) {
-				combine[e.getType().ordinal()] += e.getWithReinca() ? Math.floor((e.getValue())*this.coefReinca) : e.getValue();
+				combine[e.getType().ordinal()] += e.getWithReinca() ? Math.floor((e.getValue()) * this.coefReinca) : e.getValue();
 			} else {
-				combine[e.getType().ordinal()] += e.getWithReinca() ? Math.round((e.getValue())*this.coefReinca) : e.getValue();
+				combine[e.getType().ordinal()] += e.getWithReinca() ? Math.round((e.getValue()) * this.coefReinca) : e.getValue();
 			}
 		}
 		
@@ -185,7 +181,7 @@ public class Build {
 		return merge;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] percent) {
+	private double[] convertEffect(List<Effect> effects, double[] base, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] redefinedBase = Arrays.copyOf(base, base.length);
 		
@@ -201,7 +197,7 @@ public class Build {
 		return combine;
 	}
 	
-	private double[] convertEffect(ArrayList<Effect> effects, double[] base, double[] convertBase, double[] point, double[] percent) {
+	private double[] convertEffect(List<Effect> effects, double[] base, double[] convertBase, double[] point, double[] percent) {
 		double[] combine = new double[TypeEffect.values().length];
 		double[] merge = Arrays.copyOf(base, base.length);
 		

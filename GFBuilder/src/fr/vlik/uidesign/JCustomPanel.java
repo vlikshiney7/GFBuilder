@@ -71,8 +71,8 @@ public class JCustomPanel extends JPanel {
 	
 	public void addAll(List<?> items) {
 		for(Object item : items) {
-			if(item instanceof Component) {
-				this.add((Component) item);
+			if(item instanceof Component comp) {
+				this.add(comp);
 			}
 		}
 	}

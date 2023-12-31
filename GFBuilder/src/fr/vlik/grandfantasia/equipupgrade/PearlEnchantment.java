@@ -49,7 +49,7 @@ public class PearlEnchantment extends Buff {
 	}
 	
 	public InnerEffect[] getInnerLvlEffect(int star) {
-		ArrayList<InnerEffect> result = new ArrayList<>();
+		List<InnerEffect> result = new ArrayList<>();
 		
 		switch (star) {
 			case 0:
@@ -83,7 +83,7 @@ public class PearlEnchantment extends Buff {
 	}
 	
 	public static InnerEffect[] cumulConstraint(List<InnerEffect> innerEffect) {
-		ArrayList<InnerEffect> result = new ArrayList<>();
+		List<InnerEffect> result = new ArrayList<>();
 		
 		for(InnerEffect current : innerEffect) {
 			InnerEffect toAdd = current;
@@ -117,7 +117,7 @@ public class PearlEnchantment extends Buff {
 	}
 	
 	public static PearlEnchantment[] getPossiblePearlEnchant(PearlEnchantment... ignore) {
-		ArrayList<PearlEnchantment> result = new ArrayList<>();
+		List<PearlEnchantment> result = new ArrayList<>();
 		result.addAll(Arrays.asList(PearlEnchantment.data));
 		result.removeAll(Arrays.asList(ignore));
 		

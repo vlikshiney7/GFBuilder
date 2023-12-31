@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Map;
 
+import fr.vlik.grandfantasia.enums.Check;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.interfaces.Writable;
 import fr.vlik.grandfantasia.stats.Calculable;
@@ -12,6 +13,7 @@ public abstract class Buff implements Writable {
 	
 	protected Map<Language, String> name;
 	protected Calculable[] effects;
+	protected Check verified = Check.CHECK;
 	
 	@SuppressWarnings("serial")
 	protected Buff() {
@@ -21,6 +23,14 @@ public abstract class Buff implements Writable {
 	protected Buff(Map<Language, String> name, Calculable[] effects) {
 		this.name = name;
 		this.effects = effects;
+		
+		if(this.effects != null) {
+			for (Calculable c : this.effects) {
+				if(c.getCheck().index > this.verified.index) {
+					this.verified = c.getCheck();
+				}
+			}
+		}
 	}
 	
 	public Map<Language, String> getMap() {
@@ -72,6 +82,8 @@ public abstract class Buff implements Writable {
 				result.append(LINE + TAB + "• " + e.getFullInfo(lang) + TAB);
 			}
 		}
+		
+		result.append(LINE + "<i>" + this.verified.getFullInfo(lang) + "</i>" + TAB);
 		
 		return toHTML(result);
 	}

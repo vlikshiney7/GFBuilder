@@ -169,14 +169,8 @@ public enum TypeEffect implements Colorable, Writable {
 	public final boolean isUpgradable;
 	public final Color color;
 	
-	@SuppressWarnings("serial")
 	private TypeEffect(String longFR, String longEN, String shortFR, String shortEN, int max, boolean entier, Color color) {
-		this.longInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, longFR); put(Language.EN, longEN); }};
-		this.shortInfo = new EnumMap<Language, String>(Language.class) {{ put(Language.FR, shortFR); put(Language.EN, shortEN); }};
-		this.max = max;
-		this.entier = entier;
-		this.isUpgradable = false;
-		this.color = color;
+		this(longFR, longEN, shortFR, shortEN, max, entier, false, color);
 	}
 	
 	@SuppressWarnings("serial")

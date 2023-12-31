@@ -299,7 +299,7 @@ public class LoaderRing extends LoaderTemplate {
 						new Effect(TypeEffect.Shield, false, 5000),
 					}),
 				}, null ),
-			new Ring(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "​Malédiction du Hasard"); put(Language.EN, ""); }},
+			new Ring(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Malédiction du Hasard"); put(Language.EN, ""); }},
 				90, Quality.GOLD, false, "tdb3", false, "tdb8", new Calculable[] {
 					new Effect(TypeEffect.DefM, false, 630, true),
 					new Effect(TypeEffect.INT, false, 28, true),
@@ -1080,7 +1080,7 @@ public class LoaderRing extends LoaderTemplate {
 					new Effect(TypeEffect.Glace, false, 20),
 					new Effect(TypeEffect.IntComp, false, -30),
 					new Proc(8, Activation.Attack, 8, new Calculable[] {
-						new Effect(TypeEffect.ReducSkillM, false, -3, Target.OPPONENT),
+						new Effect(TypeEffect.DegSkillM, false, 3),
 					}, 10),
 				}, null ),
 			new Ring(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Anneau Rose de Nacre"); put(Language.EN, "Sunset Ring"); }},

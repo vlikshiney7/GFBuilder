@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -56,7 +57,7 @@ public class Lang {
 			System.out.println("Error with " + Lang.class.getClass().getSimpleName() + " class, File trad.txt");
 		}
 		
-		ArrayList<ArrayList<String>> credit = new ArrayList<>();
+		List<List<String>> credit = new ArrayList<>();
 		
 		try(
 			BufferedReader reader = new BufferedReader(new InputStreamReader(

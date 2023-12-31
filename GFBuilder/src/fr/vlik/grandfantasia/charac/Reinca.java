@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -115,7 +116,7 @@ public class Reinca implements FullRenderer {
 	}
 
 	public static Reinca[] getPossibleReinca(int lvl) {
-		ArrayList<Reinca> result = new ArrayList<>();
+		List<Reinca> result = new ArrayList<>();
 		
 		for(Reinca reinca : Reinca.data) {
 			if(reinca.getLvlMin() <= lvl

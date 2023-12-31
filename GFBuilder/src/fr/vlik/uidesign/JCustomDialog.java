@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Box;
@@ -27,7 +28,7 @@ public class JCustomDialog extends JDialog {
 	private JCustomTextField search;
 	private JCustomButtonGroup<Logic> orAnd;
 	
-	private ArrayList<ArrayList<JCustomCheckBox<Filterable>>> check;
+	private List<List<JCustomCheckBox<Filterable>>> check;
 	
 	private JCustomButton uncheck;
 	private JCustomButton allcheck;
@@ -93,7 +94,7 @@ public class JCustomDialog extends JDialog {
 		
 		page.add(panelSearch);
 		
-		for(ArrayList<JCustomCheckBox<Filterable>> filterGroup : this.check) {
+		for(var filterGroup : this.check) {
 			JCustomPanel panelFilter = new JCustomPanel(new GridLayout(filterGroup.size() / gridValue + (filterGroup.size() % gridValue == 0 ? 0 : 1), gridValue), new EmptyBorder(0, 10, 10, 10));
 			panelFilter.setBackground(Design.UIColor[2]);
 			
@@ -160,8 +161,8 @@ public class JCustomDialog extends JDialog {
 		return this.orAnd.getSelectedItem() == Logic.AND;
 	}
 	
-	private ArrayList<JCustomCheckBox<Filterable>> toList(Filterable[] filter) {
-		ArrayList<JCustomCheckBox<Filterable>> listFilter = new ArrayList<>(filter.length);
+	private List<JCustomCheckBox<Filterable>> toList(Filterable[] filter) {
+		List<JCustomCheckBox<Filterable>> listFilter = new ArrayList<>(filter.length);
 		for(int i = 0; i < filter.length; i++) {
 			listFilter.add(new JCustomCheckBox<>(filter[i]));
 			listFilter.get(i).setSelected(true);
@@ -172,12 +173,7 @@ public class JCustomDialog extends JDialog {
 	
 	public void updateLanguage(Language lang) {
 		this.orAnd.updateLanguage(lang);
-		
-		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
-			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
-				checkBox.updateLanguage(lang);
-			}
-		}
+		this.check.forEach(e -> e.forEach(in -> in.updateLanguage(lang)));
 		
 		this.uncheck.updateLanguage(lang);
 		this.allcheck.updateLanguage(lang);
@@ -209,9 +205,9 @@ public class JCustomDialog extends JDialog {
 	}
 	
 	public Filterable[] getFilters() {
-		ArrayList<Filterable> result = new ArrayList<>();
+		List<Filterable> result = new ArrayList<>();
 		
-		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
+		for(var checkBoxList : this.check) {
 			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
 				if(checkBox.isSelected()) {
 					result.add(checkBox.getItem());
@@ -223,7 +219,7 @@ public class JCustomDialog extends JDialog {
 	}
 	
 	private void setCheck(boolean toCheck) {
-		for(ArrayList<JCustomCheckBox<Filterable>> checkBoxList : this.check) {
+		for(var checkBoxList : this.check) {
 			for(JCustomCheckBox<Filterable> checkBox : checkBoxList) {
 				checkBox.setSelected(toCheck);
 			}

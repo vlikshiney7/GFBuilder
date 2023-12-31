@@ -336,29 +336,25 @@ public class FrameCreateCustom extends JCustomFrame {
 			tabEnchant[i] = this.getEnchantment(i);
 		}
 		
-		if(this.getCustomEquipment() instanceof CustomWeapon) {
-			CustomWeapon custom = (CustomWeapon) this.getCustomEquipment();
+		if(this.getCustomEquipment() instanceof CustomWeapon custom) {
 			Weapon weapon = custom.transformToWeapon(this.getQuality(), tabEnchant);
 			
 			Weapon.addCustom(weapon);
 			
 			PageWeapon.getInstance().updateWeapon();
-		} else if(this.getCustomEquipment() instanceof CustomArmor) {
-			CustomArmor custom = (CustomArmor) this.getCustomEquipment();
+		} else if(this.getCustomEquipment() instanceof CustomArmor custom) {
 			Armor armor = custom.transformToArmor(this.getQuality(), tabEnchant);
 			
 			Armor.addCustom(armor);
 			
 			PageArmor.getInstance().updateArmor();
-		} else if(this.getCustomEquipment() instanceof CustomCape) {
-			CustomCape custom = (CustomCape) this.getCustomEquipment();
+		} else if(this.getCustomEquipment() instanceof CustomCape custom) {
 			Cape cape = custom.transformToCape(this.getQuality(), tabEnchant);
 			
 			Cape.addCustom(cape);
 			
 			PageCapeRing.getInstance().updateCapeRing();
-		} else if(this.getCustomEquipment() instanceof CustomRing) {
-			CustomRing custom = (CustomRing) this.getCustomEquipment();
+		} else if(this.getCustomEquipment() instanceof CustomRing custom) {
 			Ring ring = custom.transformToRing(this.getQuality(), tabEnchant);
 			
 			Ring.addCustom(ring);

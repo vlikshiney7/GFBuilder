@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.charac;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fr.vlik.grandfantasia.enums.TypeEffect;
 import fr.vlik.grandfantasia.loader.charac.LoaderCharac;
@@ -15,7 +16,7 @@ public class Base {
 	private Base() {}
 
 	public static Effect[] getBase(Grade grade, int lvl) {
-		ArrayList<Effect> result = new ArrayList<>();
+		List<Effect> result = new ArrayList<>();
 		
 		for(int i = 0; i < 5; i++) {
 			result.add(new Effect(Base.effect[i], false, Base.data[i][grade.getGrade().index][lvl-1], true, TypeCalcul.BASE));

@@ -14,7 +14,7 @@ import fr.vlik.grandfantasia.template.Buff;
 public class JCustomComboBoxList<T> {
 	
 	private int size;
-	private ArrayList<JCustomComboBox<T>> comboBoxList = new ArrayList<>();
+	private List<JCustomComboBox<T>> comboBoxList = new ArrayList<>();
 	
 	public JCustomComboBoxList() {
 		this.comboBoxList = new ArrayList<>();
@@ -125,7 +125,7 @@ public class JCustomComboBoxList<T> {
 		for(int i = 0; i < this.size; i++) {
 			T item = this.comboBoxList.get(i).getSelectedItem();
 			
-			String value = (item instanceof Buff) ? ((Buff) item).getName(Language.FR) : "";
+			String value = item instanceof Buff buff ? buff.getName(Language.FR) : "";
 			config.put(this.comboBoxList.get(i).getSaveKey() + i, value);
 		}
 		

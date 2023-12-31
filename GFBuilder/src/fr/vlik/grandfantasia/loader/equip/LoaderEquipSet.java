@@ -1717,7 +1717,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 						new Effect(TypeEffect.TCCM, false, -40, Target.OPPONENT),
 					}, 40),
 				}),
-			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Évolution du Glorieux Traqueur"); put(Language.EN, ""); }}, "80gold2",
+			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Sauvagerie d'Artémis"); put(Language.EN, ""); }}, "80gold2",
 				new Calculable[] {
 					new Effect(TypeEffect.AGI, false, 21),
 					new Effect(TypeEffect.ESQ, true, 20),
@@ -1729,7 +1729,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 					new Effect(TypeEffect.PV, true, 10),
 				},
 				new Calculable[] {
-					new Effect(TypeEffect.DegStdP, false, 10),
+					new Effect(TypeEffect.AtkD, true, 10),
 					new SkillEffect(TypeSkillEffect.Class2S1, 8, TypeValue.DURATION),
 					new SkillEffect(TypeSkillEffect.Class2S3, 8, TypeValue.DURATION),
 				}),
@@ -3376,7 +3376,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				new Calculable[] {
 					new Effect(TypeEffect.FCE, false, 45),
 					new Effect(TypeEffect.INT, false, 25),
-					new Effect(TypeEffect.Toucher, false, 20),
+					new Effect(TypeEffect.Atk, true, 20),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCP, false, 45),
@@ -4221,14 +4221,16 @@ public class LoaderEquipSet extends LoaderTemplate {
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Fureur de Fenrir"); put(Language.EN, ""); }}, "80gold5",
 				new Calculable[] {
 					new Effect(TypeEffect.VitComp, false, 15),
-					new Effect(TypeEffect.ESQ, true, 20),
+					new Effect(TypeEffect.ESQ, false, 20),
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.Toucher, false, 30),
 					new Effect(TypeEffect.VitAtk, false, 15),
 				},
 				new Calculable[] {
-					new StaticEffect(TypeStaticEffect.x2Skill_old, 15),
+					new Proc(15, Activation.Attack, new Calculable[] {
+						new MultipleHit(TypeMultipleHit.Triple, 50, 30),
+					}),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Cri Ancestral"); put(Language.EN, ""); }}, "100pve5",
 				new Calculable[] {
@@ -5047,7 +5049,7 @@ public class LoaderEquipSet extends LoaderTemplate {
 				},
 				new Calculable[] {
 					new Effect(TypeEffect.DCCM, false, 20),
-					new Effect(TypeEffect.DegSkillM, false, 8),
+					new Effect(TypeEffect.AtkM, true, 8),
 				}),
 			new EquipSet(new EnumMap<Language, String>(Language.class) {{ put(Language.FR, "Illusion de Verre"); put(Language.EN, ""); }}, "100pve6",
 				new Calculable[] {

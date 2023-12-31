@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.subequip;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -67,9 +68,7 @@ public class Souvenir extends CompleteBuff {
 	public void addStarBonus(double coef) {
 		if(this.effects != null) {
 			for(Calculable c : this.effects) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					
+				if(c instanceof Effect e) {
 					if(e.getType().isUpgradable && !e.isPercent() && e.getWithReinca()) {
 						e.changeValue(coef);
 					}
@@ -91,7 +90,7 @@ public class Souvenir extends CompleteBuff {
 	}
 	
 	public static Souvenir[] getPossibleSouvenir(int lvl) {
-		ArrayList<Souvenir> result = new ArrayList<>();
+		List<Souvenir> result = new ArrayList<>();
 		
 		result.add(new Souvenir());
 		

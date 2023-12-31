@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.customequip;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -69,8 +70,7 @@ public class CustomRing extends CustomEquipment {
 		
 		for(int i = 0; i < newCustom.getEffects().length; i++) {
 			if(quality == Quality.GREEN) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomRing.INCREASE_VALUE_GREEN);
 					}
@@ -80,8 +80,7 @@ public class CustomRing extends CustomEquipment {
 					mergeEffect[i] = newCustom.getEffects()[i];
 				}
 			} else if(quality == Quality.BLUE) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomRing.INCREASE_VALUE_BLUE);
 					}
@@ -107,7 +106,7 @@ public class CustomRing extends CustomEquipment {
 	}
 	
 	public static CustomRing[] getPossibleRing(int lvl) {
-		ArrayList<CustomRing> result = new ArrayList<>();
+		List<CustomRing> result = new ArrayList<>();
 		
 		for(int i = 0; i < data.length; i++) {
 			CustomRing ring = data[i];

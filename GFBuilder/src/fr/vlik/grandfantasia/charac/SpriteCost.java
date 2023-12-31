@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.charac;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -58,7 +59,7 @@ public class SpriteCost extends CompleteBuff {
 	}
 	
 	public static SpriteCost[] getPossibleSpriteCost(int lvl, Reinca reinca, SpriteCostType costType) {
-		ArrayList<SpriteCost> result = new ArrayList<>();
+		List<SpriteCost> result = new ArrayList<>();
 		
 		result.add(new SpriteCost());
 		

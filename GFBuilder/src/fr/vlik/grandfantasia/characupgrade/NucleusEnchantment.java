@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.characupgrade;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -48,7 +49,7 @@ public class NucleusEnchantment extends Buff {
 	}
 	
 	public InnerEffect[] getInnerLvlEffect(int star) {
-		ArrayList<InnerEffect> result = new ArrayList<>();
+		List<InnerEffect> result = new ArrayList<>();
 		
 		switch (star) {
 			case 0:
@@ -86,7 +87,7 @@ public class NucleusEnchantment extends Buff {
 	}
 	
 	public static NucleusEnchantment[] getPossibleNucleusEnchant(NucleusEnchantment... ignore) {
-		ArrayList<NucleusEnchantment> result = new ArrayList<>();
+		List<NucleusEnchantment> result = new ArrayList<>();
 		result.addAll(Arrays.asList(NucleusEnchantment.data));
 		result.removeAll(Arrays.asList(ignore));
 		

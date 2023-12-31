@@ -78,16 +78,16 @@ public class MainFrame extends JFrame {
 	private static final MainFrame INSTANCE = new MainFrame();
 	private static final long serialVersionUID = 1L;
 	
-	private ArrayList<JCustomTabPane> tabPaneMenu = new ArrayList<>();
+	private List<JCustomTabPane> tabPaneMenu = new ArrayList<>();
 	private JCustomTabPane language;
 	
 	private JCustomPanel overlay;
 	private JScrollPane scrollContent;
-	private ArrayList<JCustomPanel> pages = new ArrayList<>();
-	private ArrayList<JCustomFrame> frames = new ArrayList<>();
+	private List<JCustomPanel> pages = new ArrayList<>();
+	private List<JCustomFrame> frames = new ArrayList<>();
 	
-	private ArrayList<JCustomLabel<TypeEffect>> labelStat = new ArrayList<>(TypeEffect.values().length);
-	private ArrayList<JLabel> valueStat = new ArrayList<>(TypeEffect.values().length);
+	private List<JCustomLabel<TypeEffect>> labelStat = new ArrayList<>(TypeEffect.values().length);
+	private List<JLabel> valueStat = new ArrayList<>(TypeEffect.values().length);
 	
 	private Instant start = Instant.now();
 	private boolean unlock;
@@ -140,7 +140,6 @@ public class MainFrame extends JFrame {
 		
 		this.logger.log(Level.INFO, "Début swing\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
 		
-		
 		/****************************************/
 		/*		****	   MENU		  	****	*/
 		/****************************************/
@@ -179,7 +178,6 @@ public class MainFrame extends JFrame {
 		this.frames.add(FrameSaveOnQuit.getInstance());
 		
 		this.logger.log(Level.INFO, "Fin Frames\t: {0}", Duration.between(this.start, Instant.now()).toMillis());
-		
 		
 		/****************************************/
 		/*		****	   CONTENT  	****	*/
@@ -372,7 +370,7 @@ public class MainFrame extends JFrame {
 		allowUpdateStat(true);
 		
 		this.addWindowFocusListener(new WindowFocusListener() {
-			@Override public void windowLostFocus(WindowEvent arg0) { /* vide */ }
+			@Override public void windowLostFocus(WindowEvent arg0) {}
 			@Override public void windowGainedFocus(WindowEvent e) {
 				PageGeneral.getInstance().popoff();
 				PageWeapon.getInstance().popoff();
@@ -381,9 +379,9 @@ public class MainFrame extends JFrame {
 		});
 		
 		
-		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK), "newFile");
-		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK), "save");
-		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.SHIFT_MASK | InputEvent.CTRL_MASK), "saveAs");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK), "newFile");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK), "save");
+		this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.SHIFT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK), "saveAs");
 		
 		this.getRootPane().getActionMap().put("newFile", new AbstractAction() {
 			private static final long serialVersionUID = 1L;
@@ -443,7 +441,7 @@ public class MainFrame extends JFrame {
 	
 	private void setCustomUI() {
 		System.setProperty("java.util.logging.SimpleFormatter.format", "[%1$tF %1$tT] [%3$s]\t[%4$-7s]\t%5$s %n");
-		this.logger = Logger.getLogger("MainFrame");
+		this.logger = Logger.getLogger(MainFrame.class.getSimpleName());
 		
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -488,19 +486,19 @@ public class MainFrame extends JFrame {
 		Build build = new Build(coefReinca, weaponType);
 		
 		for(JCustomPanel page : this.pages) {
-			if(page instanceof PartialPage) {
-				build.addEffect(((PartialPage) page).getEffects());
+			if(page instanceof PartialPage p) {
+				build.addEffect(p.getEffects());
 			}
 		}
 		
-		ArrayList<InnerEffect> redEnchant = new ArrayList<>();
+		List<InnerEffect> redEnchant = new ArrayList<>();
 		redEnchant.addAll(PageWeapon.getInstance().getRedEnchant());
 		redEnchant.addAll(PageArmor.getInstance().getRedEnchant());
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(redEnchant)) {
 			build.addEffect(effects.getEffects());
 		}
 		
-		ArrayList<InnerEffect> pearlEnchant = new ArrayList<>();
+		List<InnerEffect> pearlEnchant = new ArrayList<>();
 		pearlEnchant.addAll(PageWeapon.getInstance().getPearlEnchant());
 		pearlEnchant.addAll(PageArmor.getInstance().getPearlEnchant());
 		for(InnerEffect effects : RedEnchantment.cumulConstraint(pearlEnchant)) {

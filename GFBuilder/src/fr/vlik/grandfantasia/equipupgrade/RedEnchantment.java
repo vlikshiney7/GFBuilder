@@ -87,7 +87,7 @@ public class RedEnchantment extends Enchantment {
 	}
 	
 	public static InnerEffect[] cumulConstraint(List<InnerEffect> innerEffect) {
-		ArrayList<InnerEffect> result = new ArrayList<>();
+		List<InnerEffect> result = new ArrayList<>();
 		
 		for(InnerEffect current : innerEffect) {
 			InnerEffect toAdd = current;
@@ -117,7 +117,7 @@ public class RedEnchantment extends Enchantment {
 	}
 	
 	public static RedEnchantment[] getPossibleRedEnchant(Equipment equip, RedEnchantment ignore1, RedEnchantment ignore2) {
-		ArrayList<RedEnchantment> result = new ArrayList<>();
+		List<RedEnchantment> result = new ArrayList<>();
 		
 		result.add(new RedEnchantment());
 		
@@ -147,7 +147,7 @@ public class RedEnchantment extends Enchantment {
 	
 
 	public static RedEnchantment[] getPossibleRefining(Equipment equip) {
-		ArrayList<RedEnchantment> result = new ArrayList<>();
+		List<RedEnchantment> result = new ArrayList<>();
 		
 		result.add(new RedEnchantment());
 		

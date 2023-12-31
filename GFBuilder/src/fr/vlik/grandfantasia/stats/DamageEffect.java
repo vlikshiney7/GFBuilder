@@ -3,7 +3,7 @@ package fr.vlik.grandfantasia.stats;
 import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.TypeDamage;
 
-public class DamageEffect implements Calculable {
+public class DamageEffect extends Calculable {
 	
 	private TypeDamage type;
 	private int value = -1;

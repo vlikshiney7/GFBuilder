@@ -5,7 +5,7 @@ import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
 
-public class Proc implements Calculable {
+public class Proc extends Calculable {
 	
 	private Calculable[] effects;
 	private Activation activation;

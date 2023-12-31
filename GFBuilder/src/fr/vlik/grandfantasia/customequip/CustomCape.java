@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.customequip;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -70,8 +71,7 @@ public class CustomCape extends CustomEquipment {
 		
 		for(int i = 0; i < newCustom.getEffects().length; i++) {
 			if(quality == Quality.GREEN) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomCape.INCREASE_VALUE_GREEN);
 					}
@@ -81,8 +81,7 @@ public class CustomCape extends CustomEquipment {
 					mergeEffect[i] = newCustom.getEffects()[i];
 				}
 			} else if(quality == Quality.BLUE) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomCape.INCREASE_VALUE_BLUE);
 					}
@@ -108,7 +107,7 @@ public class CustomCape extends CustomEquipment {
 	}
 	
 	public static CustomCape[] getPossibleCape(Grade grade, int lvl) {
-		ArrayList<CustomCape> result = new ArrayList<>();
+		List<CustomCape> result = new ArrayList<>();
 		
 		for(int i = 0; i < data.length; i++) {
 			CustomCape cape = data[i];

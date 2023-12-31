@@ -26,19 +26,19 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 	public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
 		JLabel renderer = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 		
-		if(value instanceof Colorable) {
-			renderer.setForeground(((Colorable) value).getColor());
+		if(value instanceof Colorable c) {
+			renderer.setForeground(c.getColor());
 		} else {
 			renderer.setForeground(Design.FontColor[0]);
 		}
 		
-		if(value instanceof Iconable) {
-			renderer.setIcon(((Iconable) value).getIcon());
+		if(value instanceof Iconable i) {
+			renderer.setIcon(i.getIcon());
 		}
 		
-		if(value instanceof Writable) {
-			renderer.setText(((Writable) value).getSelectorInfo(CustomListCellRenderer.lang));
-			renderer.setToolTipText(((Writable) value).getFullInfo(CustomListCellRenderer.lang));
+		if(value instanceof Writable w) {
+			renderer.setText(w.getSelectorInfo(CustomListCellRenderer.lang));
+			renderer.setToolTipText(w.getFullInfo(CustomListCellRenderer.lang));
 		}
 		
 		if(value instanceof Integer) {
@@ -51,8 +51,8 @@ public class CustomListCellRenderer extends DefaultListCellRenderer {
 			} else {
 				renderer.setForeground(Tools.speColor[0]);
 			}
-		} else if(value instanceof SaveConfig) {
-			renderer.setText(((SaveConfig) value).getBuildName());
+		} else if(value instanceof SaveConfig save) {
+			renderer.setText(save.getBuildName());
 		}
 		
 		if (cellHasFocus || isSelected) {

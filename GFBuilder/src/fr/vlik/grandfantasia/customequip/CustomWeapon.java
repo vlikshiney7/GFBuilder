@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.customequip;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -73,8 +74,7 @@ public class CustomWeapon extends CustomEquipment {
 		
 		for(int i = 0; i < newCustom.getEffects().length; i++) {
 			if(quality == Quality.GREEN) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomWeapon.INCREASE_VALUE_GREEN);
 					}
@@ -84,8 +84,7 @@ public class CustomWeapon extends CustomEquipment {
 					mergeEffect[i] = newCustom.getEffects()[i];
 				}
 			} else if(quality == Quality.BLUE) {
-				if(newCustom.getEffects()[i] instanceof Effect) {
-					Effect e = (Effect) newCustom.getEffects()[i];
+				if(newCustom.getEffects()[i] instanceof Effect e) {
 					if(e.getType().isUpgradable) {
 						e.changeValue(CustomWeapon.INCREASE_VALUE_BLUE);
 					}
@@ -119,7 +118,7 @@ public class CustomWeapon extends CustomEquipment {
 	}
 	
 	public static CustomWeapon[] getPossibleWeapon(WeaponType type, int lvl) {
-		ArrayList<CustomWeapon> result = new ArrayList<>();
+		List<CustomWeapon> result = new ArrayList<>();
 		
 		for(int i = 0; i < data[type.index].length; i++) {
 			CustomWeapon weapon = data[type.index][i];

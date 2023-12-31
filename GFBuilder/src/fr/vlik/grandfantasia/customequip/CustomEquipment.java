@@ -2,6 +2,7 @@ package fr.vlik.grandfantasia.customequip;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -65,7 +66,7 @@ public abstract class CustomEquipment extends IconBuff {
 	}
 	
 	public Calculable[] constructEffects(Quality quality, Enchantment[] enchant) {
-		ArrayList<Calculable> listEffects = new ArrayList<>();
+		List<Calculable> listEffects = new ArrayList<>();
 		
 		if(quality == Quality.GREEN) {
 			StringBuilder toSign = new StringBuilder();

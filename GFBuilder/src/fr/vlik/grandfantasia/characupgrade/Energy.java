@@ -33,11 +33,11 @@ public class Energy extends IconBuff {
 	public static Calculable multiplyEffect(Calculable effect, int point) {
 		Calculable copy = null;
 		
-		if(effect instanceof Effect) {
-			copy = new Effect((Effect) effect);
+		if(effect instanceof Effect e) {
+			copy = new Effect(e);
 			copy.multiplyValue(point);
-		} else if(effect instanceof Proc) {
-			copy = new Proc((Proc) effect);
+		} else if(effect instanceof Proc p) {
+			copy = new Proc(p);
 			copy.multiplyValue(point);
 		}
 		

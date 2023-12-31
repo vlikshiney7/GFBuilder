@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.subequip;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.enums.Language;
@@ -57,7 +58,7 @@ public class SouvenirEnchantment extends Buff {
 	}
 	
 	public static SouvenirEnchantment[] getPossibleSouvenirEnchant(Souvenir souvenir, SouvenirEnchantment ignore1, SouvenirEnchantment ignore2) {
-		ArrayList<SouvenirEnchantment> result = new ArrayList<>();
+		List<SouvenirEnchantment> result = new ArrayList<>();
 		
 		result.add(new SouvenirEnchantment());
 		

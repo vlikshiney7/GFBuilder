@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -29,7 +30,7 @@ public class Cape extends Equipment {
 	private static final String PATH = Tools.RESOURCE + "capering/" + Cape.class.getSimpleName().toLowerCase() + Tools.SEPARATOR;
 	private static final Map<String, ImageIcon> ICONS = new HashMap<>();
 	private static Cape[] data = LoaderEquip.getCape();
-	private static ArrayList<Cape> customData = new ArrayList<>();
+	private static List<Cape> customData = new ArrayList<>();
 	
 	private String setCode;
 	private boolean isMultiEffect;
@@ -167,7 +168,7 @@ public class Cape extends Equipment {
 	}
 	
 	public static Cape[] getPossibleCape(GradeName grade, int lvl) {
-		ArrayList<Cape> result = new ArrayList<>();
+		List<Cape> result = new ArrayList<>();
 		
 		result.add(new Cape());
 		

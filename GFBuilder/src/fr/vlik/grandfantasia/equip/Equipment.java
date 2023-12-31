@@ -2,7 +2,6 @@ package fr.vlik.grandfantasia.equip;
 
 import java.util.Arrays;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -80,14 +79,12 @@ public abstract class Equipment extends CompleteBuff {
 		}
 		
 		for(Calculable c : enchant.getEffects()) {
-			if(c instanceof Effect) {
-				Effect e = (Effect) c;
+			if(c instanceof Effect e) {
 				double value = e.getValue();
 				boolean found = false;
 				
 				for(Calculable calculable : this.effects) {
-					if(calculable instanceof Effect) {
-						Effect get = (Effect) calculable;
+					if(calculable instanceof Effect get) {
 						
 						if(e.getType().equals(get.getType()) && !get.isPercent() && get.getWithReinca()) {
 							get.addEnchantValue(value);
@@ -128,11 +125,11 @@ public abstract class Equipment extends CompleteBuff {
 	
 	protected void addNumberName(int num) {
 		if(num == 1) {
-			for(Entry<Language, String> entry : this.name.entrySet()) {
+			for(var entry : this.name.entrySet()) {
 				this.name.put(entry.getKey(), entry.getValue() + " (1)");
 			}
 		} else {
-			for(Entry<Language, String> entry : this.name.entrySet()) {
+			for(var entry : this.name.entrySet()) {
 				this.name.put(entry.getKey(), entry.getValue().replace("(" + (num-1) + ")", "(" + num + ")"));
 			}
 		}

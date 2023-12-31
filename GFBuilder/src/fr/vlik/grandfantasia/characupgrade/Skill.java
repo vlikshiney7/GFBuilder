@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.charac.Grade;
@@ -97,7 +98,7 @@ public class Skill extends Buff {
 	}
 	
 	public InnerIconEffect[] getInnerSkill(int lvl) {
-		ArrayList<InnerIconEffect> result = new ArrayList<>();
+		List<InnerIconEffect> result = new ArrayList<>();
 		result.add(this.lvlEffect[0]);
 		
 		for(int i = 0; i < this.lvl.length; i++) {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -110,7 +111,7 @@ public class Grade implements Iconable, Writable {
 	}
 	
 	public static Grade[] getPossibleGrade(int lvl) {
-		ArrayList<Grade> result = new ArrayList<>();
+		List<Grade> result = new ArrayList<>();
 		
 		for(Grade grade : Grade.data) {
 			if(grade.getLvlMin() <= lvl
@@ -120,9 +121,6 @@ public class Grade implements Iconable, Writable {
 			}
 		}
 		
-		Grade[] cast = new Grade[result.size()];
-		cast = result.toArray(cast);
-		
-		return cast;
+		return result.toArray(new Grade[result.size()]);
 	}
 }

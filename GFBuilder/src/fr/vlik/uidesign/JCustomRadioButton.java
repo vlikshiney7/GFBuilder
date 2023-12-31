@@ -1,7 +1,5 @@
 package fr.vlik.uidesign;
 
-import java.awt.Color;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
@@ -21,17 +19,16 @@ public class JCustomRadioButton<T> extends JRadioButton implements JUpdateLang {
 		this.object = obj;
 		
 		String radioIcon = "radioOn";
-		if(this.object instanceof Colorable) {
-			Color color = ((Colorable) this.object).getColor();
+		if(this.object instanceof Colorable color) {
 			
-			this.setForeground(color);
-			radioIcon += Design.iconLink.get(color);
+			this.setForeground(color.getColor());
+			radioIcon += Design.iconLink.get(color.getColor());
 		} else {
 			this.setForeground(Design.FontColor[0]);
 		}
 		
-		if(this.object instanceof Iconable) {
-			setIconUI(((Iconable) this.object).getIcon());
+		if(this.object instanceof Iconable icon) {
+			setIconUI(icon.getIcon());
 		} else {
 			setIconUI(radioIcon, "radioOff");
 		}
@@ -46,14 +43,14 @@ public class JCustomRadioButton<T> extends JRadioButton implements JUpdateLang {
 	public void setItem(T obj) {
 		this.object = obj;
 		
-		if(this.object instanceof Colorable) {
-			this.setForeground(((Colorable) this.object).getColor());
+		if(this.object instanceof Colorable color) {
+			this.setForeground(color.getColor());
 		} else {
 			this.setForeground(Design.FontColor[0]);
 		}
 		
-		if(this.object instanceof Iconable) {
-			setIconUI(((Iconable) this.object).getIcon());
+		if(this.object instanceof Iconable icon) {
+			setIconUI(icon.getIcon());
 		}
 		
 		updateLanguage(this.lang);
@@ -62,9 +59,9 @@ public class JCustomRadioButton<T> extends JRadioButton implements JUpdateLang {
 	public void updateLanguage(Language lang) {
 		this.lang = lang;
 		
-		if(this.object instanceof Writable) {
-			this.setText(((Writable) this.object).getSelectorInfo(lang));
-			this.setToolTipText(((Writable) this.object).getFullInfo(lang));
+		if(this.object instanceof Writable w) {
+			this.setText(w.getSelectorInfo(lang));
+			this.setToolTipText(w.getFullInfo(lang));
 		}
 	}
 	

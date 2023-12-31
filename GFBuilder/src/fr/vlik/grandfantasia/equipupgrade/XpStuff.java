@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import fr.vlik.grandfantasia.Tools;
 import fr.vlik.grandfantasia.enums.Language;
@@ -133,7 +134,7 @@ public class XpStuff implements Colorable, Writable {
 	}
 	
 	public static XpStuff[] getPossibleTypeEffect(Equipment equip) {
-		ArrayList<XpStuff> result = new ArrayList<>();
+		List<XpStuff> result = new ArrayList<>();
 		
 		result.add(new XpStuff());
 		
@@ -147,7 +148,7 @@ public class XpStuff implements Colorable, Writable {
 	}
 	
 	public static XpStuff[] getPossibleTypeEffect(Ride ride) {
-		ArrayList<XpStuff> result = new ArrayList<>();
+		List<XpStuff> result = new ArrayList<>();
 		
 		result.add(new XpStuff());
 		

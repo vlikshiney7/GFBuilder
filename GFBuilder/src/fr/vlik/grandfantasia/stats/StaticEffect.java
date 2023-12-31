@@ -4,7 +4,7 @@ import fr.vlik.grandfantasia.enums.Language;
 import fr.vlik.grandfantasia.enums.Target;
 import fr.vlik.grandfantasia.enums.TypeStaticEffect;
 
-public class StaticEffect implements Calculable {
+public class StaticEffect extends Calculable {
 	
 	private TypeStaticEffect type;
 	private int taux = -1;

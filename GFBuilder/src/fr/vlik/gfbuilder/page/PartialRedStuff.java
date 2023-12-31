@@ -180,9 +180,7 @@ public abstract class PartialRedStuff extends PartialEnchantPearl {
 		
 		if(equip.getEffects() != null) {
 			for(Calculable calculable : equip.getEffects()) {
-				if(calculable instanceof Effect) {
-					Effect effect = (Effect) calculable;
-					
+				if(calculable instanceof Effect effect) {
 					if(effect.getType().isUpgradable && ! effect.isPercent()) {
 						tooltip.append(effect.getSelectorInfo(Language.FR) + " +" + ((int) (effect.getValue() * current - effect.getValue())) + "<br>");
 					}

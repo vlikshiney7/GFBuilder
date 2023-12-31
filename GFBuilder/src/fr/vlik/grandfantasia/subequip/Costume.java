@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.subequip;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.Tools;
@@ -69,7 +70,7 @@ public class Costume extends ColorBuff {
 			return new Costume[0];
 		}
 		
-		ArrayList<Costume> result = new ArrayList<>();
+		List<Costume> result = new ArrayList<>();
 		
 		for(Costume cost : Costume.data.get(quality)) {
 			if(cost.getSynthesis() == synhtesis && cost.getType() == type) {

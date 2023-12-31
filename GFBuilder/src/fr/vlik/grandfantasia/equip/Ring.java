@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.equip;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -143,7 +144,7 @@ public final class Ring extends Equipment {
 	}
 	
 	public static Ring[] getPossibleRing(int lvl, Ring toIgnore) {
-		ArrayList<Ring> result = new ArrayList<>();
+		List<Ring> result = new ArrayList<>();
 		
 		result.add(new Ring());
 		

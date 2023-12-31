@@ -241,9 +241,7 @@ public class PageSkill extends PartialPage {
 		
 		if(this.showAndHide.get(1).isVisible()) {
 			for(Calculable c : this.getProSkill().getEffects()) {
-				if(c instanceof Effect) {
-					Effect e = (Effect) c;
-					
+				if(c instanceof Effect e) {
 					if(e.getType() == type) {
 						result += e.getValue();
 					}

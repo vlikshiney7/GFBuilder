@@ -122,7 +122,7 @@ public class JCompleteBox<T> extends JCustomComboBox<T> implements JUpdateLang {
 		
 		T item = this.getSelectedItem();
 		
-		String value = item instanceof Buff ? ((Buff) item).getName(Language.FR) : "";
+		String value = item instanceof Buff buff ? buff.getName(Language.FR) : "";
 		config.put(this.saveKey, value);
 		
 		if(this.proc != null) {

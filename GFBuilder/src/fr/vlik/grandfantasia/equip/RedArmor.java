@@ -1,6 +1,7 @@
 package fr.vlik.grandfantasia.equip;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import fr.vlik.grandfantasia.charac.Grade.GradeName;
@@ -50,7 +51,7 @@ public class RedArmor extends Armor {
 			return new Calculable[0];
 		}
 		
-		ArrayList<Calculable> list = new ArrayList<>();
+		List<Calculable> list = new ArrayList<>();
 		
 		for(int i = 0; i < nbStar; i++) {
 			Calculable[] tab = new Calculable[this.starEffects[i].length];

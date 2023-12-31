@@ -3,6 +3,7 @@ package fr.vlik.grandfantasia.equip;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.Icon;
@@ -95,7 +96,7 @@ public class Bullet extends CompleteBuff {
 	}
 	
 	public static Bullet[] getPossibleBullet(int lvl, Reinca reinca) {
-		ArrayList<Bullet> result = new ArrayList<>();
+		List<Bullet> result = new ArrayList<>();
 		
 		result.add(new Bullet());
 		
@@ -113,7 +114,7 @@ public class Bullet extends CompleteBuff {
 	}
 	
 	public static Bullet[] applyFilters(Bullet[] possible, Bullet choice, String key, Filterable[] filter, boolean andValue) {
-		ArrayList<Bullet> result = new ArrayList<>();
+		List<Bullet> result = new ArrayList<>();
 		
 		result.add(new Bullet());
 		if(!choice.equals(new Bullet())
